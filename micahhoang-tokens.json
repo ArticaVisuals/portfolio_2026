@@ -1,0 +1,523 @@
+{
+  "global": {
+    "color": {
+      "background": {
+        "value": "#f6f6f6",
+        "type": "color",
+        "description": "Site background"
+      },
+      "surface": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Quick-view / card background"
+      },
+      "accent": {
+        "value": "#25593a",
+        "type": "color",
+        "description": "Primary accent — active links, hover states (swatch-6)"
+      },
+      "accent-dark": {
+        "value": "#233324",
+        "type": "color",
+        "description": "Darker accent — caption & thumbnail hover"
+      },
+      "cta": {
+        "value": "#027aff",
+        "type": "color",
+        "description": "Button-1 background"
+      },
+      "error": {
+        "value": "#c00000",
+        "type": "color",
+        "description": "Red head / error color"
+      },
+      "ink-100": {
+        "value": "#000000",
+        "type": "color",
+        "description": "Pure black — h1, h2, hr, body-bold"
+      },
+      "ink-85": {
+        "value": "rgba(0, 0, 0, 0.85)",
+        "type": "color",
+        "description": "Swatch-1 — content border"
+      },
+      "ink-75": {
+        "value": "rgba(0, 0, 0, 0.75)",
+        "type": "color",
+        "description": "Swatch-2 — bodycopy, heading-4, linked-body, play-title"
+      },
+      "ink-60": {
+        "value": "rgba(0, 0, 0, 0.60)",
+        "type": "color",
+        "description": "Swatch-3"
+      },
+      "ink-44": {
+        "value": "rgba(0, 0, 0, 0.44)",
+        "type": "color",
+        "description": "Heading-3 text"
+      },
+      "ink-40": {
+        "value": "rgba(0, 0, 0, 0.40)",
+        "type": "color",
+        "description": "Swatch-4"
+      },
+      "ink-25": {
+        "value": "rgba(0, 0, 0, 0.25)",
+        "type": "color",
+        "description": "Swatch-5 — nav-bold, thumbnail-title, contact-links"
+      },
+      "gray-75": {
+        "value": "rgba(137, 137, 137, 0.75)",
+        "type": "color",
+        "description": "Gray descriptor text"
+      },
+      "white-75": {
+        "value": "rgba(255, 255, 255, 0.75)",
+        "type": "color",
+        "description": "White body text on dark backgrounds"
+      }
+    },
+    "fontFamily": {
+      "primary": {
+        "value": "Manrope",
+        "type": "fontFamilies",
+        "description": "Primary typeface — all UI text"
+      },
+      "secondary": {
+        "value": "Diatype Variable",
+        "type": "fontFamilies",
+        "description": "Secondary typeface — shop-product, audio-player"
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "value": "Regular",
+        "type": "fontWeights"
+      },
+      "medium": {
+        "value": "Medium",
+        "type": "fontWeights"
+      },
+      "semibold": {
+        "value": "Bold",
+        "type": "fontWeights",
+        "description": "Maps to Manrope Bold (700)"
+      },
+      "bold": {
+        "value": "ExtraBold",
+        "type": "fontWeights",
+        "description": "Variable axis 798 — closest Figma style is ExtraBold"
+      },
+      "extrabold": {
+        "value": "ExtraBold",
+        "type": "fontWeights"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "value": "14",
+        "type": "fontSizes",
+        "description": "0.9rem — gray-descriptor, play-links, button-1, play-title, white-body, white-body-bold"
+      },
+      "sm": {
+        "value": "16",
+        "type": "fontSizes",
+        "description": "1rem — bodycopy, body-bold, linked-body"
+      },
+      "md": {
+        "value": "18",
+        "type": "fontSizes",
+        "description": "1.15rem — contact-links"
+      },
+      "lg": {
+        "value": "20",
+        "type": "fontSizes",
+        "description": "1.25rem — heading-4"
+      },
+      "xl": {
+        "value": "27",
+        "type": "fontSizes",
+        "description": "1.7rem — h2, heading-3, white-subhead"
+      },
+      "2xl": {
+        "value": "32",
+        "type": "fontSizes",
+        "description": "2rem — caption, nav-bold, thumbnail-title"
+      },
+      "3xl": {
+        "value": "69",
+        "type": "fontSizes",
+        "description": "4.3rem — h1, white-head, red-head"
+      },
+      "h1-mobile": {
+        "value": "48",
+        "type": "fontSizes",
+        "description": "3rem — h1 on mobile"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "value": "110%",
+        "type": "lineHeights",
+        "description": "heading-4"
+      },
+      "heading": {
+        "value": "115%",
+        "type": "lineHeights",
+        "description": "h1, white-head"
+      },
+      "snug": {
+        "value": "120%",
+        "type": "lineHeights",
+        "description": "caption, gray-descriptor, contact-links, play-links, white-body"
+      },
+      "base": {
+        "value": "125%",
+        "type": "lineHeights",
+        "description": "bodycopy"
+      },
+      "normal": {
+        "value": "130%",
+        "type": "lineHeights",
+        "description": "heading-3, body-bold, nav-bold, linked-body, button-1, play-title, white-body, white-body-bold, red-head, white-subhead"
+      },
+      "relaxed": {
+        "value": "140%",
+        "type": "lineHeights",
+        "description": "thumbnail-title"
+      },
+      "loose": {
+        "value": "170%",
+        "type": "lineHeights",
+        "description": "h2"
+      }
+    },
+    "letterSpacing": {
+      "negative-lg": {
+        "value": "-3.1%",
+        "type": "letterSpacing",
+        "description": "nav-bold (-0.031em)"
+      },
+      "negative-md": {
+        "value": "-2.3%",
+        "type": "letterSpacing",
+        "description": "heading-3 (-0.023em)"
+      },
+      "negative-sm": {
+        "value": "-2%",
+        "type": "letterSpacing",
+        "description": "h1 (-0.02em)"
+      },
+      "negative-xs": {
+        "value": "-1.7%",
+        "type": "letterSpacing",
+        "description": "thumbnail-title (-0.017em)"
+      },
+      "none": {
+        "value": "0%",
+        "type": "letterSpacing",
+        "description": "h2, caption"
+      },
+      "wide": {
+        "value": "2.7%",
+        "type": "letterSpacing",
+        "description": "bodycopy, heading-4, and most body styles (0.027em)"
+      }
+    },
+    "spacing": {
+      "page-padding": {
+        "value": "67",
+        "type": "spacing",
+        "description": "4.2rem — page-content padding"
+      },
+      "quick-view-padding": {
+        "value": "48",
+        "type": "spacing",
+        "description": "3rem — quick-view overlay padding"
+      },
+      "list-ol-indent": {
+        "value": "45",
+        "type": "spacing",
+        "description": "2.8em — ordered list padding-left"
+      },
+      "list-ul-indent": {
+        "value": "32",
+        "type": "spacing",
+        "description": "2em — unordered list padding-left"
+      },
+      "blockquote-indent": {
+        "value": "32",
+        "type": "spacing",
+        "description": "2em — blockquote padding-left"
+      },
+      "divider-gap": {
+        "value": "10",
+        "type": "spacing",
+        "description": "0.6rem — HR vertical margin"
+      }
+    },
+    "borderRadius": {
+      "button": {
+        "value": "10",
+        "type": "borderRadius",
+        "description": "0.6rem — button-1"
+      },
+      "caption-bg": {
+        "value": "8",
+        "type": "borderRadius",
+        "description": "0.5rem — quick-view caption background"
+      },
+      "pill": {
+        "value": "9999",
+        "type": "borderRadius",
+        "description": "10em — fully rounded (shop product, audio-player)"
+      }
+    },
+    "boxShadow": {
+      "button": {
+        "value": {
+          "x": "0",
+          "y": "8",
+          "blur": "10",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0.15)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "button-1 drop shadow"
+      }
+    },
+    "layout": {
+      "pageMaxWidth": {
+        "value": "80%",
+        "type": "other",
+        "description": "Desktop page-layout max-width"
+      }
+    }
+  },
+  "typography": {
+    "bodycopy": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "16",
+        "lineHeight": "125%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Default body text — color: ink-75"
+    },
+    "h1": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "69",
+        "lineHeight": "115%",
+        "letterSpacing": "-2%"
+      },
+      "type": "typography",
+      "description": "Page-level headline — color: ink-100"
+    },
+    "h2": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Bold",
+        "fontSize": "27",
+        "lineHeight": "170%",
+        "letterSpacing": "0%"
+      },
+      "type": "typography",
+      "description": "Section heading — color: ink-100"
+    },
+    "heading-3": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "27",
+        "lineHeight": "130%",
+        "letterSpacing": "-2.3%"
+      },
+      "type": "typography",
+      "description": "Subtitle / descriptor — color: ink-44"
+    },
+    "heading-4": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "20",
+        "lineHeight": "110%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Project list item label — color: ink-75"
+    },
+    "caption": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Medium",
+        "fontSize": "32",
+        "lineHeight": "120%",
+        "letterSpacing": "0%"
+      },
+      "type": "typography",
+      "description": "Media caption — color: ink-100"
+    },
+    "thumbnail-title": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Medium",
+        "fontSize": "32",
+        "lineHeight": "140%",
+        "letterSpacing": "-1.7%"
+      },
+      "type": "typography",
+      "description": "Portfolio thumbnail title — color: ink-25"
+    },
+    "nav-bold": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "32",
+        "lineHeight": "130%",
+        "letterSpacing": "-3.1%"
+      },
+      "type": "typography",
+      "description": "Navigation items — color: ink-25"
+    },
+    "body-bold": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "16",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Emphasized body copy — color: ink-100"
+    },
+    "linked-body": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "16",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Linked body text — color: ink-75"
+    },
+    "contact-links": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "18",
+        "lineHeight": "120%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Footer / contact links — color: ink-25"
+    },
+    "gray-descriptor": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "14",
+        "lineHeight": "120%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Muted descriptor text — color: gray-75"
+    },
+    "play-links": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "14",
+        "lineHeight": "120%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Play section links — color: ink-75"
+    },
+    "play-title": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Bold",
+        "fontSize": "14",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Play section title — color: ink-75"
+    },
+    "button-1": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "14",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "CTA button label — color: white-100, bg: cta (#027aff)"
+    },
+    "white-head": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "69",
+        "lineHeight": "115%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Headline on dark/image backgrounds — color: #ffffff"
+    },
+    "white-subhead": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "27",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Subheading on dark backgrounds — color: #ffffff"
+    },
+    "white-body": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "Regular",
+        "fontSize": "14",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Body copy on dark backgrounds — color: white-75"
+    },
+    "white-body-bold": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "14",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Bold body on dark backgrounds — color: #ffffff"
+    },
+    "red-head": {
+      "value": {
+        "fontFamily": "Manrope",
+        "fontWeight": "ExtraBold",
+        "fontSize": "69",
+        "lineHeight": "130%",
+        "letterSpacing": "2.7%"
+      },
+      "type": "typography",
+      "description": "Red headline variant — color: #c00000"
+    }
+  },
+  "$metadata": {
+    "tokenSetOrder": ["global", "typography"]
+  }
+}

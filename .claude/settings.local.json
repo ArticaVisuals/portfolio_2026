@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:micahhoang.info)",
+      "WebFetch(domain:www.micahhoang.info)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(curl -s -L \"https://micahhoang.info\")",
+      "Bash(curl -s -L \"https://micahhoang.info/stylesheet\")",
+      "Bash(curl -s \"https://build.cargo.site/frontend/6fb38e/index.css\")",
+      "Bash(python3 -c \" import sys, json, re html = sys.stdin.read\\(\\) match = re.search\\(r'window\\\\.__PRELOADED_STATE__=\\(\\\\{.*?\\\\}\\);', html\\) if match: data = json.loads\\(match.group\\(1\\)\\) print\\(json.dumps\\(data, indent=2\\)\\) \")",
+      "Bash(curl -s \"https://micahhoang.info/api/0.1/site\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -c ' *)",
+      "WebFetch(domain:khaki-ship-257706.framer.app)",
+      "WebFetch(domain:jacob-turner.framer.website)"
+    ]
+  }
+}
