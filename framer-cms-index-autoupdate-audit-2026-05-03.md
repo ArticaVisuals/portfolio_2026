@@ -2,7 +2,7 @@
 
 **Date:** May 3, 2026  
 **Scope:** `/index` custom `IndexPage` component and CMS auto-refresh behavior  
-**Status:** Non-destructive investigation only. The live `/index` page was not replaced or published.
+**Status:** Non-destructive investigation only. The live `/index` page was not replaced or published. The temporary `/index-cms-test` route was deleted during restore.
 
 ---
 
@@ -27,7 +27,7 @@ The current `main` branch contains the baseline portfolio files plus this audit 
 - `All Projects` CMS collection: `yTHrQWMIY`
 - Existing native-style list component: `List View`, `uAVxdOWKR`
 - Existing native-style grid component: `Case Studies Filter`, `y8kvTlWMC`
-- Draft test page created for this audit: `/index-cms-test`, `QuhXOj9pq`
+- Draft test page created for this audit, then deleted during restore: `/index-cms-test`, `QuhXOj9pq`
 
 The current `/index` page contains:
 
@@ -47,13 +47,13 @@ There is no `projects` prop in the page XML.
 
 ## Test Page
 
-A draft-only page, `/index-cms-test`, was created as a safe variant. It currently contains:
+A draft-only page, `/index-cms-test`, was created as a safe variant, then deleted during restore after it disrupted the Framer layout view. It contained:
 
 1. The same custom `IndexPage` code component instance.
 2. A linked `List View` component probe.
 3. A linked `Case Studies Filter` component probe.
 
-This page exists only for comparison and should not be published until it is intentionally reviewed.
+This page no longer exists in the Framer project.
 
 ---
 
