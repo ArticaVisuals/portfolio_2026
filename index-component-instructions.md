@@ -4,140 +4,81 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last Framer MCP audit:** May 1, 2026. Framer code file `rgAZFOv` still powers `/index`. Local `IndexPage.tsx` now has a 15-project fallback synced from the CMS registry, including current thumbnail/video fields. Framer currently has two `/index` pages: `u2LOaBT5q` defaults to `Standard`, and `yKKOMVNs6` defaults to `Mono 13`.
+**Last Framer MCP audit:** May 6, 2026.
+
+> **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
+
+**State summary (May 6, 2026):**
+
+- One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
+- Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
+- The live Framer file is **newer than the repo `IndexPage.tsx`**. Do not push the repo file back to Framer without merging in the live changes (see §3.A).
+- An `IndexRuleColorOverride` instance sits on the page and unifies all `.idx-rule` and `.idx-row-divider` colors to `rgb(20, 20, 20)`.
 
 ---
 
 ## 1. What You're Building
 
-A single React code component for Framer that renders the content area of the `/index` archive page. It currently exposes two view modes (List and Grid) and taxonomy filtering (Discipline, Industry, Year). The component receives project data as props from Framer's CMS.
+A single React code component for Framer that renders the content area of the `/index` archive page. It currently exposes:
 
-**Current implementation note, May 2026:** the live implementation is Framer code file `rgAZFOv`; the local repo also has the synced `IndexPage.tsx`. The component exposes List and Grid in the bottom toggle. Older inline 3D helper code has been removed from this component. `WorldGridTest.tsx` still exists as code file `ibj8uxT`, but there is no current `/worldgrid-test` web route.
+- Three taxonomy columns (Discipline, Industry, Year) acting as multi-select filters.
+- Two view modes (List, Grid) toggled from a fixed bottom-left control.
+- Two A/B variants for List view (`Standard` vs `Mono 13` typography; `Flip` vs `Highlight` hover).
+- A trailing project-count footer.
 
-The Grid view has two data paths. In the unfiltered state, if no `projects` array is bound into `IndexPage`, it renders the native CMS-backed `Case Studies Filter` grid component (`y8kvTlWMC`, `https://framer.com/m/Case-Studies-Filter-9lC3jo.js`) so the thumbnails match `/case-studies`. When a CMS project array is bound, or when index taxonomy filters are active, it renders project-driven cards from `filteredProjects` using `title`, `category1`-`category3`, `industry`, `year`, `thumbnail`, `thumbnailVideoLink`, `slug`, and `sortOrder`.
+Project data flows in through three priority-ranked sources (described in §3). The component **does not** include the site nav, the `INDEX` heading at 110px (that's a sibling Framer text element), or any 3D/WorldGrid surface.
 
-Important caveat: the native `Case Studies Filter` component does not consume `filteredProjects`; it is used only for the unfiltered CMS-native Grid state. Filtered Grid must continue to use the project-driven path.
+**Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view always renders project-driven cards via the `https://framer.com/m/Case-Study-G9lec1.js` module. The native `Case Studies Filter` lives only on `/case-studies` now.
 
-The outer `idx-container` owns the side margin and should stay at 20px, matching the nav section. `IndexPage.tsx` owns the single List/Grid toggle; do not restore a second component-local Grid/List toggle.
-
-**Current CMS note, May 2026:** the Framer `All Projects` CMS collection has 15 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
-
-**Fallback data note, May 1 MCP audit:** local `IndexPage.tsx` has a 15-project `DEFAULT_PROJECTS` array synced from the current CMS registry. Treat the CMS as the live source of truth and refresh the fallback if CMS project metadata changes. The old WorldGrid fallback/sample array has been removed from `IndexPage.tsx`; standalone 3D exploration is currently unrouted.
+The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the single List/Grid toggle; do not restore a second component-local Grid/List toggle.
 
 **Home note, May 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It is a six-item CMS-backed selected-work query using the native Framer `Case Study` component. Do not recode Home unless Micah explicitly asks.
 
-**Current taxonomy/list note, May 2026:** the taxonomy section is mapped to Figma node `32:7531`, but implementation now uses a shared six-column grid instead of fixed pixel column widths. Keep the 20px page margin and 20px grid gaps. Do not rename the second group to `Origin`; the second group is still `Industry`. List view content must use the same column starts so Year, Title, Discipline, and Industry stay left-aligned while the screen width changes.
-
-**Published `/index` data note:** earlier audits saw simplified Industry labels in the published page, while the CMS stores longer strings. The current CMS now includes additional longer values such as `Design Education / Motion Design`, `Politics / Protest`, and `Film / Documentary / Public Media`. If you touch data mapping, decide explicitly whether the visible UI should use simplified display labels or raw CMS strings.
-
-**The component does NOT include:**
-- The site navigation bar (that's a native Framer element shared across pages)
-- The "INDEX" title at 110px (that's a native Framer text element above the component)
-- Any standalone WorldGrid page. `WorldGridTest.tsx` (`ibj8uxT`) exists as a code file only in the May 1 project map and remains separate from the `/index` List/Grid experience.
-
-**The component DOES include:**
-- Taxonomy filter columns (Discipline, Industry, Year)
-- Sticky view toggle (List / Grid) — floating bottom-left
-- List view (year-grouped project rows)
-- Grid view (project-driven filtered cards)
-- Project count footer for List/Grid views
+**CMS note, May 2026:** the Framer `All Projects` CMS collection has 15 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
 
 ---
 
 ## 2. Design Token Strategy — CRITICAL
 
-The current component uses one centralized `tokens` object with hardcoded values copied from the Framer/Figma visual system. Keep values centralized there. Do not scatter colors, fonts, or spacing magic numbers throughout new code.
+The live component uses one centralized `tokens` object with hardcoded values copied from the Framer/Figma visual system. Keep values centralized there. Do not scatter colors, fonts, or spacing magic numbers throughout new code.
 
-Earlier versions of this doc said the component must use guessed Framer CSS variable names. That is stale. Only switch a token to `var(...)` after verifying the actual variable name in Framer. Until then, preserving the current centralized token object is safer and easier for future agents to maintain.
+### Token object (live in Framer)
 
-### Color tokens to use
-
-```css
-/* Primary text — near-black */
---color-text-primary: #26211f;
-
-/* Secondary text — muted for metadata */
---color-text-secondary: #636363;
-
-/* Tertiary text — taxonomy items, lighter metadata */
---color-text-tertiary: #979797;
-
-/* Background */
---color-bg: #F7F5F0;
-
-/* Divider — strong (between year groups) */
---color-divider-strong: #26211f;
-
-/* Divider — subtle (between project rows) */
---color-divider-subtle: #979797;
-
-/* Surface — frosted cream toggle bg */
---color-surface-overlay: rgba(215, 213, 207, 0.72);
-
-/* Surface — toggle active button bg */
---color-surface-active: #EAE8E3;
-```
-
-### Typography tokens
-
-The template uses specific fonts. Reference them as CSS font-family with fallbacks:
-
-```css
-/* Display — INDEX title, year headers (40px) */
---font-display: 'GT Standard Trial', 'Inter', sans-serif;
-/* Weight: Light (300) for year headers */
-
-/* Project names — 22px medium weight */
---font-heading: 'GT Standard Trial', 'Inter', sans-serif;
-/* Weight: Medium (500) */
-
-/* Mono — all metadata, taxonomy, toggle, nav */
---font-mono: 'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace;
-/* Weight: Regular (400), Size: 13px, uppercase, line-height: 28px */
-
-/* Toggle text */
---font-toggle: 'GT Standard Mono Trial', 'Azeret Mono', monospace;
-/* Weight: Regular (400), Size: 14px, uppercase */
-```
-
-**Important:** Framer code components can sometimes access page CSS variables, but this project has been more reliable with a local `tokens` object. If a future agent maps these to Framer variables, do it in one place and verify visually in Framer.
-
-### How to discover the actual token names
-
-The component should stay structured so token names are defined in ONE place and referenced throughout. This makes it trivial to update the variable names once Micah inspects the template's actual tokens.
-
-**Recommended pattern:**
-
-```jsx
+```ts
 const tokens = {
-  textPrimary: '#26211f',
-  textSecondary: '#636363',
-  textTertiary: '#979797',
-  bg: '#F7F5F0',
-  dividerStrong: '#26211f',
-  dividerSubtle: '#979797',
-  surfaceOverlay: 'rgba(215, 213, 207, 0.72)',
-  surfaceActive: '#EAE8E3',
+  textPrimary: "#26211f",
+  textSecondary: "#636363",
+  textTertiary: "#979797",
+  bg: "#F7F5F0",
+  dividerStrong: "#26211f",
+  dividerSubtle: "#979797",
+  surfaceOverlay: "rgba(215, 213, 207, 0.72)",
+  surfaceActive: "#EAE8E3",
   fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
   fontHeading: "'GT Standard Trial', 'Inter', sans-serif",
-  fontMono: "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace",
+  fontMono:    "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace",
 }
 ```
 
-Micah or a future agent can then update this object once to match whatever Framer exposes.
+Note: although `dividerStrong` and `dividerSubtle` differ here, the page-level `IndexRuleColorOverride` instance overwrites both at runtime to `rgb(20, 20, 20)` via `!important` global CSS. If you remove the override, the lighter intra-year dividers come back.
+
+Earlier versions of this doc said the component must use guessed Framer CSS variable names. That is stale. Only switch a token to `var(...)` after verifying the actual variable name in Framer.
 
 ---
 
 ## 3. Component Props (Framer Property Controls)
 
-The component receives project data from Framer's CMS. Use the current property names from `IndexPage.tsx`; do not use the older single `discipline`, `coverImage`, `coverVideo`, or `caseStudyUrl` names.
+The live `addPropertyControls` block:
 
-```jsx
-import { addPropertyControls, ControlType } from 'framer'
-
-// Each project is an object with these fields, usually via CMS collection binding.
-
+```ts
 addPropertyControls(IndexPage, {
+  useCMS: {
+    type: ControlType.Boolean,
+    title: "Use CMS",
+    defaultValue: false,
+    enabledTitle: "On",
+    disabledTitle: "Off",
+  },
   projects: {
     type: ControlType.Array,
     title: "Projects",
@@ -155,217 +96,175 @@ addPropertyControls(IndexPage, {
         slug:               { type: ControlType.String,  title: "Slug" },
         sortOrder:          { type: ControlType.Number,  title: "Sorting Number" },
         isHomepage:         { type: ControlType.Boolean, title: "Is Homepage" },
-      }
-    }
+      },
+    },
   },
   defaultView: {
-    type: ControlType.Enum,
-    title: "Default View",
-    options: ["list", "grid"],
-    defaultValue: "list"
+    type: ControlType.Enum, title: "Default View",
+    options: ["list", "grid"], defaultValue: "list",
   },
   listTypographyVariant: {
-    type: ControlType.Enum,
-    title: "List Type",
+    type: ControlType.Enum, title: "List Type",
     options: ["standard", "mono13"],
     optionTitles: ["Standard", "Mono 13"],
-    defaultValue: "standard",
-    displaySegmentedControl: true
+    defaultValue: "standard", displaySegmentedControl: true,
   },
   listHoverVariant: {
-    type: ControlType.Enum,
-    title: "List Hover",
+    type: ControlType.Enum, title: "List Hover",
     options: ["flip", "highlight"],
     optionTitles: ["Flip", "Highlight"],
-    defaultValue: "flip",
-    displaySegmentedControl: true
-  }
+    defaultValue: "flip", displaySegmentedControl: true,
+  },
 })
 ```
 
+### 3.A Project data resolution — the registry pattern
+
+The live component picks projects in this order (inside the `allProjects` `useMemo`):
+
+1. **Window-singleton registry** at `window.__articaIndexProjectsRegistry`, when `useCMS` is `true` and at least one item has been registered. The registry is a `Map<string, Project>` plus a `Set` of listeners; `IndexPage` subscribes in a `useEffect` that runs only when `useCMS` is truthy.
+2. **`projects` prop** (manual array control), if non-empty.
+3. **`DEFAULT_PROJECTS`** — a 15-item snapshot baked into the code file.
+
+The intended Framer-side wiring for the registry is:
+
+- A separate code component named `ProjectRegistrar` is placed inside a Framer **Collection List** bound to `All Projects`.
+- Each Registrar instance receives the bound CMS row's fields as Framer `ControlType` props and calls the registry's `register(id, data)` on mount, `unregister(id)` on unmount.
+- `IndexPage` (with `useCMS=true`) subscribes to the registry and re-renders when it changes.
+
+This solves the "code components can't access the CMS directly" issue described in `framer-cms-index-autoupdate-audit-2026-05-03.md` (Variant B). **As of this audit, no `ProjectRegistrar.tsx` code component exists in the project**, so the published `/index` is currently rendering the in-code `DEFAULT_PROJECTS` snapshot. To make `/index` truly CMS-driven, the Registrar component still needs to be created and a Collection List instance placed on the page.
+
+If you build the Registrar, mirror the Framer property control names exactly (`title`, `category1..3`, `industry`, `year`, `thumbnail`, `thumbnailVideoLink`, `slug`, `sortOrder`, `isHomepage`) and use the project's `slug` as the registry key.
+
 ### CMS schema and current Industry values
 
-The Framer CMS collection is `All Projects` (`yTHrQWMIY`). See `framer-current-state.md` for the full field map. Fields directly used by `/index`:
+The Framer CMS collection is `All Projects` (`yTHrQWMIY`). See `framer-current-state.md` §2 and §7 for the full field map. Fields directly used by `/index`:
 
-- `Title` (`oeXZcmPna`) → `title`
-- `Sorting Number` (`DLBifmgp1`) → `sortOrder`
-- `Category 1` (`kuvJcmOFr`) → `category1`
-- `Category 2` (`VV1CggU2J`) → `category2`
-- `Category 3` (`E6OpH0hSs`) → `category3`
-- `Year` (`QZqSK_3OF`) → `year`. MCP reports this CMS field as type `string`; one current value is `2019-ongoing`. Local `IndexPage.tsx` still types this as a number, so update/normalize year handling before relying on CMS-bound year filters.
-- `Industry` (`mBIilFqVM`) → `industry`
-- `Is Homepage` (`myUIfK0j7`) → `isHomepage`
-- `Thumbnail` (`Jy7hBJady`) → `thumbnail`
-- `Thumbnail Video Link` (`WG62tRjG8`) → `thumbnailVideoLink`
+- `Title` → `title`
+- `Sorting Number` → `sortOrder`
+- `Category 1`/`2`/`3` → `category1`/`2`/`3`
+- `Year` (string field; `"2019-ongoing"` is one valid value) → `year`. The live component coerces year to a number via `normalizeYear` (regex `(?:19|20)\d{2}`), so `"2019-ongoing"` becomes `2019` for grouping and filtering.
+- `Industry` → `industry`
+- `Is Homepage` → `isHomepage`
+- `Thumbnail` → `thumbnail`
+- `Thumbnail Video Link` → `thumbnailVideoLink`
+- `slug` is derived from the CMS slug; project click URLs are `/case-studies/{slug}`. Do not restore the old `/work/{slug}` route.
 
-Canonical Discipline labels are locked to exactly: `Visual Identity`, `Brand Strategy`, `UX/UI`, `2D Motion`, `3D Motion`, `Packaging`, `Product`, `Editorial`. This current index nav list is the taxonomy source of truth. Do not re-expand these back to older labels like `Brand Identity`, `UI/UX Design`, `Motion Design`, `Publication Design`, `Packaging Design`, `Product Design`, `3D / Cinematic`, or `Typography`. Those older values may appear only as legacy input keys in `DISCIPLINE_ALIASES`, where they must normalize into the eight canonical labels above. Unknown CMS category strings should not be displayed or made filterable as Discipline labels.
+**Discipline labels:** the live code does **not** hardcode a canonical eight-label list and does **not** define a `DISCIPLINE_ALIASES` map. Discipline strings are taken verbatim from `category1..3` per project, de-duplicated, and listed in `sortOrder` order via `getDisciplineNavItems`. If you want to lock the navigation to the eight canonical labels (`Visual Identity`, `Brand Strategy`, `UX/UI`, `2D Motion`, `3D Motion`, `Packaging`, `Product`, `Editorial`), you must reintroduce that filter — it is not currently in the code.
 
-The second taxonomy column must be labeled `Industry`, never `Origin`. The current industry nav is derived from the normalized `allProjects` array, sorted by `sortOrder`, so CMS-bound data and fallback data cannot drift into separate nav vocabularies. In the published page those bound props may use simplified display labels; the fallback list should mirror the raw CMS-style strings:
+**Industry labels:** `getIndustryNavItems` derives the nav from the bound projects' `industry` value, in `sortOrder` order. The live `DEFAULT_PROJECTS` snapshot uses simplified labels (`Technology`, `Publishing`, `Nature & Outdoors`, `Design Education`, `Health & Wellness`, `Human Rights`, `Science`, `Music`, `Literature`) which is what the published `/index` shows today. The CMS itself stores longer values (`Consumer Electronics / Technology`, `Citizen Science / Biodiversity`, etc.). When the Registrar pattern is wired, the visible labels switch to whatever the data source provides — decide whether you want to pass the long CMS strings through or pre-simplify them upstream.
 
-```js
-const INDUSTRY_NAV_ITEMS = [
-  "Consumer Electronics / Technology",
-  "Publishing",
-  "Citizen Science / Biodiversity",
-  "Outdoor Retail / Consumer Goods",
-  "Design Education / Motion Design",
-  "Food Tech / Health & Wellness",
-  "Social Enterprise / Consumer Goods",
-  "Human Rights / Editorial",
-  "Design Education / Brand Consulting",
-  "Landscaping / Home Services",
-  "Science Communication / Experimental Motion",
-  "Music / Experimental Motion",
-  "Literature / Publishing / Education",
-  "Politics / Protest",
-  "Film / Documentary / Public Media",
-]
-```
-
-Project click URLs are derived from `slug` as `/case-studies/{slug}`. Do not restore the old `/work/{slug}` route in this component.
-
-Hybrid case-study workflow note: `/index` should continue linking to `/case-studies/{slug}`. When bespoke Framer pages are created at those same canonical paths, this component should not need link changes. Do not add a separate `caseStudyUrl` prop unless the canonical URL strategy changes; if one is added later, keep the slug-derived URL as the fallback.
-
-Published `/index` SSR was not fully reverified in the May 1 pass after the latest code update. The CMS has 15 records, and local fallback data is now synced to those 15 records; still treat the live CMS and Framer project state as source of truth.
+**Year labels:** `getYearNavItems` returns `number[]`, sorted descending. The non-numeric CMS string `"2019-ongoing"` is normalized to `2019`. If you want a separate "2019–ongoing" display label, that has to be reintroduced explicitly.
 
 ---
 
 ## 4. View: List (Default)
 
 The List view has an A/B typography control in Framer named `List Type`:
-- `Standard`: current hierarchy, with large year labels and 22px project titles.
-- `Mono 13`: Searchsystem-inspired comparison mode where year, title, discipline, and industry all use the same 13px uppercase mono treatment. This affects List view only; taxonomy, Grid view, project count, and the bottom List/Grid toggle stay as-is.
+
+- `Standard`: hierarchy with 40px GT Standard Light year labels and 22px GT Standard Medium project titles.
+- `Mono 13`: Searchsystem-inspired comparison mode where year, title, discipline, and industry all use 13px uppercase mono. This affects List view only.
 
 ### Layout structure
 
 ```
-[Taxonomy Columns]
-  Discipline (label + 8 canonical items)  |  Industry (label + CMS-derived items)  |  Year (label + CMS-derived/current-year items)
+[Taxonomy: 6-col grid, 20px gap]
+  Discipline label (col 1) | Discipline values (col 2)
+  Industry label (col 3)   | Industry values (col 4)
+  Year label (col 5)       | Year values (col 6)
 
 [40px spacer]
 
-[Year Group: 2026]
-  ── black divider (1px, full width) ──
-  Year label (40px, GT Standard Light)  |  Project rows
-    Row: Name (22px GT Standard Medium)  |  Discipline (13px mono)  |  Industry (13px mono)
-    ── subtle divider (#979797) ──
-    Row: ...
+[Year Group: 6-col grid wrapper]
+  ── black rule (1px, idx-rule, animated draw) ── (cols 1/-1)
+  Year label (col 1)  |  List content (cols 2 / span 5, 5-col inner grid)
+    Inner row grid: title (1/span 2) | discipline (3/span 2) | industry (5/span 1)
+    Standard mode row: 56px min-height, 9px vertical padding
+    Mono 13 mode row:  38px min-height, 5px vertical padding
+    ── subtle row divider (idx-row-divider, animated) ──
+    next row ...
 
-[Year Group: 2025]
-  ── black divider ──
-  ...
-
-[48px spacer]
-[Project count: "15 PROJECTS" in 13px mono when CMS-bound, or current filtered count]
+[48px top spacer, 80px bottom padding]
+[Project count: "<n> Projects" in 13px mono]
 ```
 
 ### Taxonomy specs
 
-**Taxonomy section:**
-- Font: GT Standard Mono Trial, 13px, uppercase, line-height 28px
-- Figma source: node `32:7531`
-- Layout is a shared six-column grid inside the 20px page margin: `repeat(6, minmax(0, 1fr))` with `20px` column gaps
-- Do not define taxonomy columns with fixed pixel widths. Column widths must flex with the current component/screen width.
-- Desktop/tablet placement:
-  - Column 1: `Discipline` label
-  - Column 2: Discipline values
-  - Column 3: `Industry` label
-  - Column 4: Industry values
-  - Column 5: `Year` label
-  - Column 6: Year values
-- Label text color: same as primary text (#26211f)
-- Item text color: same as primary text (#26211f) — they darken/highlight on hover and when active (selected as filter)
-- Active filter state: text stays same color but gets an underline or bold weight to indicate selection
-- Do not restore the old fixed widths (`366px`, `540px`, `140px`, `217px`, etc.). That causes jumpiness and breaks column alignment as the viewport changes.
+- Font: GT Standard Mono Trial, 13px, uppercase, line-height 28px.
+- Figma source: node `32:7531`.
+- Layout is `repeat(6, minmax(0, 1fr))` with `var(--idx-grid-gap, 20px)` column gaps.
+- Do not define taxonomy columns with fixed pixel widths.
+- Active filter state: `text-decoration: underline; text-underline-offset: 3px`. Clear-filters button appears below the columns when any filter is active.
 
-**Year group headers:**
-- Standard mode year text: GT Standard Trial, Light weight, 40px, #26211f
-- `Mono 13` mode year text: GT Standard Mono Trial, Regular, 13px, uppercase, 28px line-height, #26211f
-- Year label sits in column 1 of the same six-column grid
-- Black divider above each year group: 1px, #000000, full width
+### Year group headers
 
-**Project rows:**
-- Standard mode height: 56px
-- Standard mode padding: 9px vertical
-- `Mono 13` mode uses denser rows (`38px` min-height, `5px` vertical padding) so the comparison feels closer to a compact index.
-- Project rows use the same six-column system so every column remains left-aligned as the screen width changes:
-  - Column 1: Year label for the year group
-  - Columns 2-3: Project name
-  - Columns 4-5: Discipline
-  - Column 6: Industry
-- Standard mode project name: GT Standard Trial, Medium weight, 22px, uppercase, #26211f
-- Standard mode Discipline/Industry: GT Standard Mono Trial, Regular, 13px, uppercase, #26211f
-- `Mono 13` mode: Year, project name, Discipline, and Industry all use GT Standard Mono Trial, Regular, 13px, uppercase, 28px line-height, #26211f.
-- Never hide the Industry column at tablet or mobile breakpoints. On desktop/tablet, Discipline and Industry cells may shrink with `minmax(0, 1fr)`, `overflow: hidden`, `text-overflow: ellipsis`, and `white-space: nowrap`. On mobile, prefer a readable stacked row: Year as its own group label, project title full width, and Discipline/Industry wrapping below so information is not lost to ellipses.
-- Row divider between projects within a year: 1px, `tokens.dividerSubtle` / Framer `Light Gray` (`#979797`). Keep this explicit; do not let intra-year dividers render white.
-- All list rules use the same left-to-right reveal as the Framer `LineAnimation` reference (`node=CE4nNCCk8`): inactive width/scale starts at zero and draws to full width on entry.
-- List row hover is A/B controlled by `listHoverVariant`. Default `flip` mirrors Framer `ViewProject` reference (`node=L21w7Xq1z`): clipped vertical text stack, original title on top, active title underneath, row hover translates only the project title upward. The title flips to `View Project` when a slug exists; Discipline and Industry remain static. `highlight` preserves the older full-row background hover.
-- Rows are clickable — navigate to `/case-studies/{slug}` if `slug` exists
+- Standard mode: GT Standard Trial, weight 300, 40px, line-height 1.3, color `tokens.textPrimary`. On mobile (≤809px) it drops to 28px.
+- `Mono 13` mode: 13px uppercase mono, line-height 28px, color `tokens.textPrimary`.
+- Year labels render `year > 0 ? year : "—"`.
+- Black rule above each year group: 1px, `tokens.dividerStrong`, animated `idxRuleDraw` 700ms cubic-bezier(0.16, 1, 0.3, 1), staggered by group index up to 8.
 
-**Project count footer:**
-- GT Standard Mono Trial, Regular, 13px, uppercase, #26211f
-- Shows filtered count. CMS-bound current state should show "15 PROJECTS" before filters; a "12 PROJECTS" count means the component is using stale fallback data or a stale binding.
+### Project rows
+
+- Inner row grid: `repeat(5, minmax(0, 1fr))`, 20px column gap, `align-items: center`.
+- Title cell: cols 1/span 2, hover-flip stack (see §9).
+- Discipline cell: cols 3/span 2, 13px mono.
+- Industry cell: col 5/span 1, 13px mono.
+- Cells use `overflow: hidden; text-overflow: ellipsis; white-space: nowrap` on desktop/tablet so they shrink rather than wrap. Industry is **never hidden** by responsive CSS; on mobile the row reflows instead.
+- Row divider between projects in a year: `idx-row-divider` (1px, `tokens.dividerSubtle` inline). The page-level `IndexRuleColorOverride` then forces it to ink at runtime via `!important`.
+- Rows are clickable: navigate to `/case-studies/{slug}` if `slug` exists.
+
+### Project count footer
+
+- GT Standard Mono Trial, 13px, uppercase, color `tokens.textPrimary`.
+- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the in-code 15-project default and no filters, the live page reads `15 Projects`.
 
 ### Taxonomy filter behavior
 
-- Clicking a taxonomy item toggles it as an active filter
-- Multiple filters can be active simultaneously within a category (OR logic within category)
-- Filters across categories use AND logic (must match at least one selected discipline AND one selected industry AND one selected year)
-- When no filters are active in a category, all values pass
-- Filtering updates both the project list and the project count
-- Active filters should have a visual indicator (underline, bold weight, or subtle background)
-- Consider adding a "Clear filters" action when any filter is active
+- Clicking a taxonomy item toggles it as an active filter.
+- Multiple filters within a category use OR logic; filters across categories use AND logic.
+- "Clear filters" button appears below the taxonomy when any filter is active.
+- Search is plumbed (`filterProjects` accepts a `query` arg) but the only call site passes `""`.
 
-### Search behavior
+### Responsive breakpoints (from the live `GLOBAL_CSS`)
 
-Search is not currently implemented in `IndexPage.tsx`. If search returns later, keep it scoped to the List view first unless the Framer grid component is also updated to accept/search the same data.
+- ≤1199px: container padding 0 20px (already the desktop value, preserved as `!important` for safety).
+- ≤809px: `--idx-grid-gap: 12px`. Taxonomy collapses to `max-content / 1fr` two-column pairs (Discipline pair, Industry pair, Year pair stacked). List rows collapse to a 2-col layout: title spans the full row, discipline + industry side-by-side beneath. Year-group grid collapses to a single column. Toggle pins to bottom-center.
+- ≤520px: taxonomy fully stacks to one column. List rows collapse further so discipline and industry each get their own row.
 
 ---
 
-## 5. View: Grid (Existing Framer Component)
+## 5. View: Grid
 
 ### Source of truth
 
-The unfiltered Grid view should render the native CMS-backed `Case Studies Filter` grid when no `projects` array is bound into the code component. Filtered Grid, or CMS-bound Grid, should render from `filteredProjects`, the same array used by List view and project count, preserving the Framer-inspired alternating visual hierarchy with 3-card rows.
+Grid view always renders project-driven cards from `filteredProjects` (the same array used by List view and the project count). It uses the singular Framer `Case Study` module:
+
+```ts
+import CaseStudyFramerComponent from "https://framer.com/m/Case-Study-G9lec1.js"
+```
+
+with these prop mappings: `IXCiBqaZp` ← `/case-studies/{slug}`, `hkBSIyKIr` ← `sortOrder`, `KOMQesSr6`/`q4wsUCkLO` ← `{ src, alt }` thumbnail object, `PghzpT2k8` ← `title`, `RJ4KY9Ej1` ← `thumbnailVideoLink`, variant `L9DRr0UT2`.
+
+The earlier doc claim that the unfiltered Grid uses a native `Case Studies Filter` is **stale**. That fallback path was removed.
 
 ### Runtime behavior
 
-- Desktop/tablet renders 3-card rows with 20px column gaps and alternating weights: `2/1/1`, `1/2/1`, `1/1/2`, then repeat.
-- Featured cards use an approximately `1.723` media aspect ratio; standard cards use approximately `1.273`.
-- Mobile at `max-width: 809px` stacks cards into one column and uses the standard media aspect ratio.
+- Rows of three cards each. Pattern cycles `[2,1,1] → [1,2,1] → [1,1,2] → [1,2,1]` using flexbox weights.
+- Card heights are fixed: featured cards (weight > 1) are `325px`, standard cards `220px`. (The earlier doc reference to aspect ratios `1.723` / `1.273` is no longer how the component sizes cards.)
+- Vertical gap between rows: 120px desktop, 48px mobile.
+- ≤809px: rows stack to one column, 48px gaps; cards span full width.
 - Empty filtered state matches List view copy: "No work matches those filters."
-- `IndexPage.tsx` owns the single List/Grid toggle.
+- View transitions: 150ms opacity fade out → swap → 250ms opacity fade in, keyed on a `renderKey` increment so React remounts cleanly.
 
 ### Filtering behavior
 
-The taxonomy filters are source-of-truth state in `IndexPage.tsx` and drive List view, Grid view, and project count. Discipline filtering uses assigned `category1`, `category2`, and `category3` tags, with aliases normalized through `DISCIPLINE_ALIASES` into only the eight canonical Discipline labels.
+The taxonomy filters are source-of-truth state in `IndexPage.tsx` and drive List view, Grid view, and project count. Discipline filtering checks each project's `[category1, category2, category3]` (de-duplicated via `getDisciplines`). Industry filtering matches `industry` exactly. Year filtering matches the normalized numeric year.
 
 ---
 
 ## 6. Dormant Reference: 3D Inline WorldGrid Sphere
 
-The current `/index` UI does not expose a 3D mode. The sticky toggle is List/Grid only, with equal-width black/ink buttons. The previous inline `InlineWorldGrid` / `ThreeDPreview` helpers were removed from `IndexPage.tsx`. `WorldGridTest.tsx` remains as an unrouted code component reference unless Micah explicitly asks to bring 3D back into `/index`.
-
-### Layout
-
-```
-[Dark frame — full width, min-height 660px desktop, min-height 520px mobile]
-  background: #141414
-  border-radius: 8px
-  overflow: hidden
-
-  [Interactive thumbnail sphere]
-    Image size: 156x104
-    Radius: 280
-    Perspective: 900
-    Initial rotation: x -8, y -22
-    Drag to rotate
-    Wheel/trackpad scroll to zoom, clamped 0.65-1.65
-    Each thumbnail links to /case-studies/{slug}
-    Label overlays use 12px mono uppercase cream text
-```
-
-If revived later, the 3D view should build items from bound projects that have both `slug` and `thumbnail`; do not restore the old sample/template fallback data.
+Not exposed on `/index`. The bottom toggle is List/Grid only. Earlier inline `InlineWorldGrid` / `ThreeDPreview` helpers are gone. `WorldGridTest.tsx` (`ibj8uxT`) remains as an unrouted code component reference. Do not bring it back to `/index` unless Micah explicitly asks.
 
 ---
 
@@ -373,9 +272,8 @@ If revived later, the 3D view should build items from bound projects that have b
 
 ### Position and behavior
 
-- Fixed to viewport bottom-left and always visible
-- Position: `fixed`, `bottom: 20px`, `left: 20px`
-- Do not add an IntersectionObserver or inline/top-of-page toggle behavior unless Micah explicitly asks for it. The current implementation keeps one persistent fixed control.
+- `position: fixed`, `bottom: 20px`, `left: 20px`, `z-index: 100`.
+- On mobile (≤809px), pinned to bottom-center via `left: 50%; transform: translateX(-50%)`.
 
 ### Visual specs
 
@@ -399,6 +297,7 @@ If revived later, the 3D view should build items from bound projects that have b
   width: 100%;
   font-family: var(--font-mono);
   font-size: 14px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #26211f;
   text-align: center;
@@ -407,6 +306,7 @@ If revived later, the 3D view should build items from bound projects that have b
   background: none;
   border-radius: 4px;
   transition: all 200ms ease;
+  line-height: 1;
 }
 
 .toggle-button.active {
@@ -417,60 +317,60 @@ If revived later, the 3D view should build items from bound projects that have b
 
 ### Two equal-width buttons: LIST / GRID
 
-The bottom toggle content must remain ink/black (`#26211f`), including inactive labels. Do not add `3D` back to the toggle unless Micah explicitly asks for it.
-Because Framer/global button styles can override native button text, `IndexPage.tsx` also applies a defensive `.idx-toggle-fixed * { color: #26211f !important; -webkit-text-fill-color: #26211f !important; }` rule. Preserve that unless the fixed toggle is rebuilt.
+The bottom toggle content must remain ink/black (`#26211f`), including inactive labels. Do not add `3D` back to the toggle unless Micah explicitly asks. Because Framer/global button styles can override native button text, `IndexPage.tsx` applies a defensive `.idx-toggle-fixed *, .idx-toggle-fixed button { color: #26211f !important; -webkit-text-fill-color: #26211f !important; }` rule. Preserve that unless the fixed toggle is rebuilt.
 
 ---
 
 ## 8. Responsive Behavior
 
-### Breakpoints
+| Breakpoint | Taxonomy | List rows | Grid view | Toggle |
+|---|---|---|---|---|
+| ≥1200px | 6-col grid, 20px gap | 5-col inner grid; ellipsis truncation | weighted 3-card rows, 120px row gap | bottom-left |
+| 810–1199px | same 6-col grid (container padding pinned to 20px) | same 5-col grid; ellipsis truncation | same weighted 3-card rows | bottom-left |
+| ≤809px | label/value pairs (`max-content / 1fr`), pairs stack vertically | 2-col grid: title row, then discipline + industry; year-group label/content stack | one-column stacked cards, 48px gaps | bottom-center |
+| ≤520px | one column | 1-col grid: title, discipline, industry each on own row | one-column stacked cards | bottom-center |
 
-- **Desktop (>1199px):** Taxonomy and List view use the shared six-column grid with 20px gaps; Grid view uses weighted 3-card rows; full project row shows Title, Discipline, and Industry.
-- **Tablet (810-1199px):** Six-column grid remains active; Grid view keeps weighted 3-card rows; project rows keep Industry visible and let Discipline/Industry text truncate with ellipses.
-- **Mobile (<810px):** Grid view stacks cards into one column. List view should stop using the desktop six-column comparison grid: the Year label becomes full width, each project title spans the row, and Discipline/Industry flow below in two columns before collapsing to one column on narrow phones. Taxonomy may compress to label/value pairs or one-column groups to avoid clipped text.
-
-### Mobile toggle
-
-On mobile, the sticky toggle moves to bottom-center for thumb accessibility.
+Industry is never hidden. On desktop/tablet it truncates with ellipses if needed; on mobile it reflows.
 
 ---
 
 ## 9. Animation & Motion
 
 Follow the motion hierarchy from the framework doc:
+
 1. Does this motion serve comprehension or navigation? → Keep.
 2. Does it signal the brand's considered quality? → Keep.
 3. Is it there because it looks cool? → Delete.
 
 ### Transitions between views
 
-- View switch: content fades out (opacity 1→0, 150ms), view swaps, content fades in (opacity 0→1, 250ms)
-- No dramatic transitions. The toggle click should feel instant and considered.
+- View switch: 150ms opacity fade out → state swap + render-key bump → 250ms opacity fade in. The toggle click should feel instant and considered.
 
 ### List view entrance
 
-- On initial load or view switch to list: rows stagger in with subtle fade-up
-- Each row: `opacity: 0 → 1`, `translateY(8px) → 0`, stagger 30ms per row, duration 300ms
-- Year rules and intra-year project dividers use `.idx-rule`, drawing left-to-right over 700ms with `cubic-bezier(0.16, 1, 0.3, 1)`, staggered by year/row.
-- Only animate the first visible batch (don't animate 32 rows)
-- Preserve the reduced-motion fallback: `.idx-row`, `.idx-grid-card`, and `.idx-rule` should disable animation under `prefers-reduced-motion: reduce`.
+- Rows: `idxFadeUp` keyframe (`opacity: 0 → 1, translateY(8px) → 0`), 300ms, capped to the first 12 rows via `Math.min(ri, 12) * 30ms` stagger delay.
+- Year rules and intra-year row dividers: `idxRuleDraw` keyframe (`scaleX(0) → scaleX(1)`), 700ms, `cubic-bezier(0.16, 1, 0.3, 1)`, staggered by year/row.
+- Reduced motion: `.idx-row`, `.idx-grid-card`, `.idx-rule` have animation disabled under `prefers-reduced-motion: reduce`. The flip transform is also disabled under reduced motion.
 
-### List view hover
+### List row hover
 
-- `listHoverVariant="flip"` is the preferred/default hover treatment.
-- The flip treatment mirrors the native Framer `ViewProject` component (`node=L21w7Xq1z`): a fixed-height, overflow-hidden title mask contains two stacked copies separated by a 5px gap; row hover translates only the title stack upward over 620ms with `cubic-bezier(0.16, 1, 0.3, 1)`.
-- In flip mode, do not use the old row highlight background. Keep `listHoverVariant="highlight"` available for A/B comparison only.
-- Respect reduced motion by disabling the flip transform/transition under `prefers-reduced-motion: reduce`.
+- `listHoverVariant="flip"` is the default. The flip mirrors the native Framer `ViewProject` reference (`node=L21w7Xq1z`):
+  - Title cell wraps a `idx-flip-track` containing two stacked copies separated by a 5px gap.
+  - Track height matches `--idx-flip-height` (28px in Mono 13, 27px in Standard).
+  - On row hover/focus, the track translates upward by `-(height + 5px)` over 620ms `cubic-bezier(0.16, 1, 0.3, 1)`.
+  - The second copy reads `"View Project"` when a slug exists (otherwise mirrors the title).
+  - On mobile, the flip is disabled (track gap removed, transform forced to none) so titles stay visible.
+- `listHoverVariant="highlight"` is preserved for A/B comparison and applies a faint `rgba(20, 20, 20, 0.035)` row background on hover (no flip).
+- Discipline and Industry text never participates in the flip — only the title.
 
 ### Grid view motion
 
-- Grid cards fade up with the same lightweight `idxFadeUp` motion as list rows.
-- `IndexPage.tsx` fades the whole content area during List/Grid view switches.
+- Cards fade up with `idxFadeUp`, capped to 12 cards via `Math.min(index, 12) * 30ms` stagger.
+- View switches still fade the whole content area (the flip-related JS on rows is independent of view-level fades).
 
 ### Filter changes
 
-- When filters change: List view, Grid view, and project count update from `filteredProjects`.
+- Changes to filters update `filteredProjects` via `useMemo`; List, Grid, and the project count all re-derive from that single source.
 
 ---
 
@@ -482,113 +382,115 @@ Deliver as a single file (Framer code components must be single-file):
 IndexPage.tsx
 ```
 
-All styles should be inline (CSS-in-JS via style objects) or in a `<style>` tag within the component. Framer code components don't support external CSS files.
+All styles inline (CSS-in-JS via style objects) or in a `<style>` tag within the component. Framer code components don't support external CSS files.
 
-### Component skeleton
+### Component skeleton (matches the live Framer file)
 
 ```tsx
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
-import { addPropertyControls, ControlType } from 'framer'
-import CaseStudiesFilterFramerComponent from 'https://framer.com/m/Case-Studies-Filter-9lC3jo.js'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { addPropertyControls, ControlType } from "framer"
+// @ts-ignore Framer resolves project component module URLs at runtime.
+import CaseStudyFramerComponent from "https://framer.com/m/Case-Study-G9lec1.js"
 
-// Token configuration (single source of truth for design variables)
-const tokens = { /* ... */ }
+// Window-singleton registry that ProjectRegistrar instances write into.
+const REGISTRY_KEY = "__articaIndexProjectsRegistry"
+function getRegistry() { /* lazy-init { items, listeners, register, unregister, subscribe } */ }
 
-// Default project data
-const DEFAULT_PROJECTS = [ /* ... */ ]
+const tokens = { /* see §2 */ }
+const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
+const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
 
-// Taxonomy data
-const DISCIPLINE_NAV_ITEMS = [
-  "Visual Identity",
-  "Brand Strategy",
-  "UX/UI",
-  "2D Motion",
-  "3D Motion",
-  "Packaging",
-  "Product",
-  "Editorial",
-]
-const INDUSTRY_NAV_ITEMS = [ /* CMS Industry fallback list */ ]
-const YEAR_NAV_ITEMS = ["2026", "2025", "2024", "2023", "2019-ongoing"]
+const DEFAULT_PROJECTS = [ /* 15-item snapshot, simplified industry labels */ ]
 
-// Helper: group projects by year
-function groupByYear(projects) { /* ... */ }
+// Helpers: getDisciplines, normalizeProjectDisciplines, getDisciplineDisplay,
+// collectByProjectOrder, getDisciplineNavItems, getIndustryNavItems,
+// getYearNavItems, getCaseStudyUrl, normalizeYear, normalizeThumbnailUrl,
+// groupByYear, filterProjects.
 
-// Helper: filter projects
-function filterProjects(projects, filters) { /* ... */ }
+const GLOBAL_CSS = `/* keyframes + .idx-* selectors + responsive blocks */`
 
-// Helper: normalize CMS-bound disciplines to the current Discipline nav source of truth
-function normalizeProjectDisciplines(project) { /* ... */ }
-
-// Helper: derive Industry nav from normalized projects in Sorting Number order
-function getIndustryNavItems(projects) { /* ... */ }
-
-// Sub-components
-function TaxonomySection({ filters, industryNavItems, onFilterToggle, onClearFilters }) { /* ... */ }
+function TaxonomySection({ filters, disciplineNavItems, industryNavItems, yearNavItems, onFilterToggle, onClearFilters }) { /* ... */ }
+function HoverFlipText({ text, activeText, style, height }) { /* ... */ }
 function ListView({ projects, typographyVariant, hoverVariant }) { /* ... */ }
-function GridProjectCard({ project, index, weight }) { /* render title + thumbnail/video card */ }
-function GridView({ projects, useNativeCMSGrid }) { /* native CMS grid when unfiltered, otherwise weighted project rows */ }
-function ViewToggle({ activeView, onViewChange }) { /* ... */ }
+function GridProjectCard({ project, index, weight }) { /* renders <CaseStudyCard ... /> */ }
+function GridView({ projects }) { /* 4-pattern weighted rows */ }
+function ViewToggle({ activeView, onViewChange }) { /* fixed bottom toggle */ }
 
-// Main component
-export default function IndexPage({ projects, defaultView, listTypographyVariant, listHoverVariant }) {
+export default function IndexPage({
+  projects: projectsProp,
+  useCMS = false,
+  defaultView = "list",
+  listTypographyVariant = "standard",
+  listHoverVariant = "flip",
+}) {
+  const [registeredProjects, setRegisteredProjects] = useState(() => new Map())
+  useEffect(() => {
+    if (!useCMS) return
+    const reg = getRegistry()
+    return reg?.subscribe((items) => setRegisteredProjects(new Map(items)))
+  }, [useCMS])
+
   const allProjects = useMemo(() => {
-    const sourceProjects = projects && projects.length > 0 ? projects : DEFAULT_PROJECTS
-    return sourceProjects.map(normalizeProjectDisciplines)
-  }, [projects])
-  const initialView = defaultView === 'grid' ? 'grid' : 'list'
-  const [activeView, setActiveView] = useState(initialView)
+    const fromRegistry = useCMS && registeredProjects.size > 0
+      ? Array.from(registeredProjects.values()) : null
+    const source = fromRegistry ?? (projectsProp?.length ? projectsProp : DEFAULT_PROJECTS)
+    return source.map(normalizeProjectDisciplines)
+  }, [useCMS, registeredProjects, projectsProp])
+
+  const [activeView, setActiveView]       = useState(defaultView === "grid" ? "grid" : "list")
+  const [transitioning, setTransitioning] = useState(false)
+  const [renderKey, setRenderKey]         = useState(0)
   const [filters, setFilters] = useState({ disciplines: [], industries: [], years: [] })
-  const industryNavItems = useMemo(
-    () => getIndustryNavItems(allProjects),
-    [allProjects]
-  )
-  
-  const filteredProjects = useMemo(() => 
-    filterProjects(allProjects, filters),
-    [allProjects, filters]
-  )
-  
+  const transitionTimer = useRef(null)
+
+  const disciplineNavItems = useMemo(() => getDisciplineNavItems(allProjects), [allProjects])
+  const industryNavItems   = useMemo(() => getIndustryNavItems(allProjects),   [allProjects])
+  const yearNavItems       = useMemo(() => getYearNavItems(allProjects),       [allProjects])
+  const filteredProjects   = useMemo(() => filterProjects(allProjects, filters, ""), [allProjects, filters])
+
+  // handleViewChange: 150ms fade out -> setActiveView + bump renderKey -> render
+  // handleFilterToggle / handleClearFilters
+
   return (
-    <div style={styles.container}>
-      <TaxonomySection
-        filters={filters}
-        industryNavItems={industryNavItems}
-        onFilterToggle={handleFilterToggle}
-        onClearFilters={handleClearFilters}
-      />
-      
-      {activeView === 'grid'
-        ? <GridView projects={filteredProjects} />
-        : <ListView projects={filteredProjects} typographyVariant={listTypographyVariant} hoverVariant={listHoverVariant} />}
-      
-      <div style={styles.projectCount}>
-        {filteredProjects.length} PROJECTS
+    <>
+      <style>{GLOBAL_CSS}</style>
+      <div className="idx-container" style={{ /* 0 20px padding, fontFamily mono, minHeight 60vh */ }}>
+        <TaxonomySection ... />
+        <div key={renderKey} style={{ opacity: transitioning ? 0 : 1, transition: ... }}>
+          {activeView === "grid"
+            ? <GridView projects={filteredProjects} />
+            : <ListView projects={filteredProjects} typographyVariant={listTypographyVariant} hoverVariant={listHoverVariant} />}
+        </div>
+        <div style={{ marginTop: 48, paddingBottom: 80, /* mono 13px */ }}>
+          {filteredProjects.length} {filteredProjects.length === 1 ? "Project" : "Projects"}
+        </div>
       </div>
-      
-      <ViewToggle activeView={activeView} onViewChange={handleViewChange} />
-    </div>
+      <div className="idx-toggle-fixed" style={{ position: "fixed", bottom: 20, left: 20, zIndex: 100 }}>
+        <ViewToggle activeView={activeView} onViewChange={handleViewChange} />
+      </div>
+    </>
   )
 }
 
-// Framer property controls
-addPropertyControls(IndexPage, { /* ... */ })
+addPropertyControls(IndexPage, { /* see §3 */ })
 ```
 
 ---
 
 ## 11. Key References
 
+- **Live `/index` layout:** `framer-current-state.md` §3
 - **Taxonomy/list Figma comp:** https://www.figma.com/design/XbHEqG3zBZJrcVkgmIEkZF/Micah-Hoang-Portfolio?node-id=32-7531 (node `32:7531`)
-- **Grid source:** `GridView` and `GridProjectCard` inside `IndexPage.tsx`, rendering Framer `Case Study` cards from `https://framer.com/m/Case-Study-G9lec1.js`
+- **Grid card module:** `https://framer.com/m/Case-Study-G9lec1.js` (variant `L9DRr0UT2`)
 - **Framer code file:** `IndexPage.tsx`, code file id `rgAZFOv`
-- **Framer pages:** `/index`, page node ids `u2LOaBT5q` (`Standard`) and `yKKOMVNs6` (`Mono 13`)
+- **Framer page:** `/index`, page node id `u2LOaBT5q` (single page; the earlier `yKKOMVNs6` Mono 13 duplicate is gone)
+- **Page-level helper:** `IndexRuleColorOverride.tsx` (`tqQjSoH`), instance `p8V73bUeR` on `/index`, `ATihJFdYD` on `/case-studies`
 - **WorldGrid reference:** `WorldGridTest.tsx`, code file id `ibj8uxT`; no current `/worldgrid-test` web page
 - **CMS collection:** `All Projects`, collection id `yTHrQWMIY`
-- **Current Framer audit:** `framer-current-state.md`
-- **Taxonomy/filter reference:** https://searchsystem.co/index
-- **Framework doc:** portfolio-framework.md (in project files)
-- **Copy doc:** portfolio-copy-v2.md (in project files)
+- **Taxonomy/filter inspiration:** https://searchsystem.co/index
+- **Framework doc:** `portfolio-framework.md`
+- **Copy doc:** `portfolio-copy-v2.md`
+- **CMS auto-update audit:** `framer-cms-index-autoupdate-audit-2026-05-03.md`
 
 ---
 
@@ -596,43 +498,48 @@ addPropertyControls(IndexPage, { /* ... */ })
 
 Before delivering:
 
-- [ ] List view renders with year grouping in both `Standard` and `Mono 13` typography modes
-- [ ] Taxonomy filters work: click to toggle, AND across categories, OR within
-- [ ] Second taxonomy column is labeled `Industry`, not `Origin`
-- [ ] Industry nav values come from CMS-bound `industry` values, sorted by `Sorting Number`
-- [ ] Confirm whether the intended visible Industry labels are the current simplified labels or the longer raw CMS strings
-- [ ] Three taxonomy groups stay horizontal and do not stack vertically at tablet width
-- [ ] Taxonomy and List view share the same six-column grid within the 20px page margin
-- [ ] List row left edges stay aligned: Year column 1, Title column 2, Discipline column 4, Industry column 6
-- [ ] Industry is never hidden by responsive CSS; Discipline/Industry truncate with ellipses instead
-- [ ] Grid view filters dynamically from the same `filteredProjects` array as List view
-- [ ] Grid uses weighted 3-card rows above 809px and one-column stacked cards below 810px
-- [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section
-- [ ] View toggle is fixed bottom-left and always visible
-- [ ] View toggle has only List/Grid, equal-width buttons, and black/ink text for active and inactive labels
-- [ ] View transitions are smooth (fade, not instant swap)
-- [ ] Project count updates with filters
-- [ ] Responsive: tablet and mobile breakpoints work
-- [ ] All text is uppercase where specified
-- [ ] Token object is centralized; no scattered color/font magic values
-- [ ] Component exports with proper Framer property controls
-- [ ] Single-file output, no external dependencies beyond React
+- [ ] Single `/index` page in the project (`u2LOaBT5q`). No second `/index` page reintroduced.
+- [ ] List view renders with year grouping in both `Standard` and `Mono 13` typography modes.
+- [ ] Taxonomy filters work: click to toggle, AND across categories, OR within. Clear-filters button appears when any filter is active.
+- [ ] Second taxonomy column is labeled `Industry`, not `Origin`.
+- [ ] Discipline / Industry / Year nav values come from the bound projects via `getDisciplineNavItems` / `getIndustryNavItems` / `getYearNavItems`, not from a hardcoded list.
+- [ ] If CMS-backed live data is needed, `useCMS=true` is set AND a `ProjectRegistrar` Collection List is wired on the page. Otherwise the page falls back to `DEFAULT_PROJECTS`.
+- [ ] Three taxonomy groups stay horizontal at desktop and tablet; collapse to label/value pairs at ≤809px and a single column at ≤520px.
+- [ ] Taxonomy and List year-group share `repeat(6, minmax(0, 1fr))` within `padding: 0 20px`.
+- [ ] List inner rows use `repeat(5, minmax(0, 1fr))`: title cols 1/span 2, discipline cols 3/span 2, industry col 5/span 1.
+- [ ] Industry is never hidden by responsive CSS; Discipline/Industry truncate with ellipses on desktop/tablet, reflow on mobile.
+- [ ] Grid view renders `Case Study` cards from `https://framer.com/m/Case-Study-G9lec1.js` for all states. No `Case Studies Filter` fallback.
+- [ ] Grid uses 4-pattern weighted 3-card rows (`[2,1,1] [1,2,1] [1,1,2] [1,2,1]`) above 809px and stacked single-column below.
+- [ ] Featured grid cards 325px tall, standard cards 220px tall (fixed pixel heights).
+- [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
+- [ ] View toggle is fixed bottom-left at ≥810px and bottom-center on mobile.
+- [ ] View toggle has only List/Grid, equal-width buttons, and ink text for active and inactive labels.
+- [ ] View transitions are smooth (150ms fade out → 250ms fade in, with `renderKey` remount).
+- [ ] Project count updates with filters and uses singular/plural correctly.
+- [ ] Year `2019-ongoing` from CMS is normalized to `2019` for grouping/filtering.
+- [ ] All text is uppercase where specified; mono cells use 13px / 28px / 0 letter-spacing.
+- [ ] Token object is centralized; no scattered color/font magic values.
+- [ ] Component exports with the property controls listed in §3.
+- [ ] Single-file output, no external dependencies beyond React + the imported `Case Study` module.
+- [ ] `IndexRuleColorOverride` instance still placed on the page if you want unified ink rules.
 
 ---
 
 ## 13. What NOT to Do
 
-- Do NOT use Tailwind — Framer code components don't support it
-- Do NOT use external CSS files — everything must be inline or in `<style>` tags
-- Do NOT use localStorage or sessionStorage — not supported in Framer
-- Do NOT import heavy libraries (no framer-motion — use CSS transitions and vanilla JS for animations)
-- Do NOT scatter hardcoded colors — always go through the centralized tokens object
-- Do NOT use the linked Framer `Case Studies Filter` component for filtered Grid states; it is allowed only for the unfiltered CMS-native Grid fallback.
-- Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks to turn the inline sphere back into a separate entry state.
-- Do NOT leave fallback data at 12 projects; the CMS registry currently has 15 projects.
-- Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing
-- Do NOT add `<html>`, `<head>`, or `<body>` tags — this is a component, not a page
-- Do NOT assume fonts are loaded — use the fallback stack in the tokens object
-- Do NOT rename the `Industry` field or taxonomy label to `Origin`
-- Do NOT reintroduce taxonomy responsive CSS that stacks the three groups vertically
-- Do NOT use `/work/{slug}` routes inside this component; current case study routes are `/case-studies/{slug}`
+- Do NOT use Tailwind — Framer code components don't support it.
+- Do NOT use external CSS files — everything inline or in `<style>` tags.
+- Do NOT use localStorage or sessionStorage — not supported in Framer.
+- Do NOT import heavy libraries (no framer-motion — use CSS transitions and vanilla JS for animations).
+- Do NOT scatter hardcoded colors — always go through the centralized `tokens` object.
+- Do NOT reintroduce the `Case Studies Filter` fallback inside `IndexPage`. The native `Case Studies Filter` belongs to `/case-studies`.
+- Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.
+- Do NOT push the older repo-side `IndexPage.tsx` back to Framer without merging in the live `useCMS` registry pattern, the simplified `DEFAULT_PROJECTS`, and the dynamic taxonomy.
+- Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
+- Do NOT leave fallback data at 12 projects; the live `DEFAULT_PROJECTS` snapshot has 15 items.
+- Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing.
+- Do NOT add `<html>`, `<head>`, or `<body>` tags — this is a component, not a page.
+- Do NOT assume fonts are loaded — use the fallback stack in the tokens object.
+- Do NOT rename the `Industry` field or taxonomy label to `Origin`.
+- Do NOT reintroduce taxonomy responsive CSS that stacks the three groups vertically at desktop or tablet.
+- Do NOT use `/work/{slug}` routes inside this component; current case study routes are `/case-studies/{slug}`.

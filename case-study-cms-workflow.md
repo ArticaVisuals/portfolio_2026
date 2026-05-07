@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** May 1, 2026
+**Last verified:** May 6, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -21,8 +21,7 @@ This is intentional. The portfolio should not force AirPods, Gaia, Simon & Schus
 Verified Framer structure:
 
 - `/` - Home page, page ID `R6_F7xjGZ`
-- `/index` - Archive page with `IndexPage.tsx`, page ID `u2LOaBT5q`, default List Type `Standard`
-- `/index` - Duplicate archive page with `IndexPage.tsx`, page ID `yKKOMVNs6`, default List Type `Mono 13`
+- `/index` - Archive page with `IndexPage.tsx`, page ID `u2LOaBT5q`. Single page now; the earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted. List Type / List Hover / Default View / Use CMS are exposed as Framer property controls on this single instance.
 - `/case-studies` - Native Framer case-study index, page ID `Rnw1WO1jS`
 - `/case-studies/:slug` - dynamic case-study route, page ID `UlQco8cYi`
 - `/info` - profile page, page ID `fxz_zRIyp`
@@ -175,7 +174,7 @@ Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized
 
 `/index` uses the Framer code file `IndexPage.tsx` (`rgAZFOv`). It derives project URLs from `slug` as `/case-studies/${slug}`. That is the right behavior for the hybrid model. When bespoke pages are created at those same canonical paths, `/index` should not need link changes.
 
-Current index data note: local `IndexPage.tsx` has a 15-project fallback synced from the CMS registry, including current thumbnail/video fields. Unfiltered Grid uses the native CMS-backed `Case Studies Filter` grid if no project array is bound; filtered Grid/List use the local/bound project array. The live CMS remains the source of truth.
+Current index data note (May 6, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and a window-singleton registry (`window.__articaIndexProjectsRegistry`) intended to be populated by a separate `ProjectRegistrar` code component placed inside a Collection List bound to `All Projects`. The Registrar component has not yet been created, so the published `/index` is currently rendering the 15-project `DEFAULT_PROJECTS` snapshot baked into the live code (with simplified industry labels). Grid view no longer falls back to the native `Case Studies Filter`; that component remains in use on `/case-studies`. The live CMS remains the source of truth and will only flow into `/index` once the Registrar is built and the Collection List is placed on the page.
 
 ## 9. Recommended Starting Order
 
@@ -200,12 +199,12 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 
 ## 10. Verification Notes
 
-Last verified May 1, 2026:
+Last verified May 6, 2026:
 
 - Framer project map inspected with MCP.
-- CMS inspected with MCP: `All Projects` now has 15 real records.
-- Published Home SSR inspected: selected-work query is limited to six homepage-flagged records and currently includes Motion Connect 2025.
-- `/case-studies` still displays a 12-count even though the CMS has 15 records.
-- Framer has duplicate `/index` pages: `u2LOaBT5q` and `yKKOMVNs6`.
-- No live pages were deleted, renamed, or replaced.
+- CMS inspected with MCP: `All Projects` still has 15 real records.
+- Published `/index` HTML inspected: live page renders `IndexPage.tsx`'s in-code `DEFAULT_PROJECTS` snapshot (simplified industry labels), confirming the CMS registry is not yet wired up.
+- `/case-studies` still displays a `(12)` count via `NumberCounter` (`Counter.tsx`, `endNumber=12`) even though the CMS has 15 records.
+- Framer now has a single `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` is gone.
+- No live pages were deleted by MCP in this audit.
 - No CMS fields were changed through MCP.

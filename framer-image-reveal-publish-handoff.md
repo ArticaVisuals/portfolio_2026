@@ -55,13 +55,12 @@ The reveal was originally gated by `activation="urlFlag"` and `?imageReveal=1`; 
 
 ### Pages With ImageMaskReveal Instances Set To Always
 
-Verified/updated pages:
+Verified/updated pages (May 6, 2026 — only one `/index` page remains):
 
 - Home `/`: page `R6_F7xjGZ`, root `ZVqAQ0z7x`, instance `NuMtwybm2`
 - `/case-studies`: page `Rnw1WO1jS`, root `Z_IQof75v`, instance `hv3dg3p94`
 - `/case-studies/:slug`: page `UlQco8cYi`, root `zn7ljgmof`, instance `Yizyjt62o`
-- `/index`: page `u2LOaBT5q`, root `aezamcJ1c`, instance `qf2vKr_sV`
-- duplicate `/index`: page `yKKOMVNs6`, root `sdhxIzVvJ`, instance `KrpciVzxv`
+- `/index`: page `u2LOaBT5q`, root `aezamcJ1c`, instance `qf2vKr_sV` (single page; the earlier duplicate `yKKOMVNs6` has been deleted)
 - `/info`: page `fxz_zRIyp`, instance `S4E2dnGw0`
 - `/contact`: page `gmXtVnIzJ`, instance `gwBLOZ0CH`
 
@@ -79,7 +78,7 @@ Stroke/border attributes were removed from:
 
 ## Current Project Map
 
-From Framer MCP `getProjectXml`, current web pages include:
+From Framer MCP `getProjectXml` (May 6, 2026), current web pages:
 
 - `R6_F7xjGZ` path `/`
 - `koPvme2ig` path `/404`
@@ -87,8 +86,7 @@ From Framer MCP `getProjectXml`, current web pages include:
 - `fxz_zRIyp` path `/info`
 - `gmXtVnIzJ` path `/contact`
 - `UlQco8cYi` path `/case-studies/:slug`
-- `u2LOaBT5q` path `/index`
-- `yKKOMVNs6` path `/index`
+- `u2LOaBT5q` path `/index` (single page; the earlier duplicate `yKKOMVNs6` is gone)
 
 Important components:
 
@@ -104,6 +102,8 @@ Code components:
 - `poRGCf7` ImageMaskReveal
 - `tqQjSoH` IndexRuleColorOverride
 - `rgAZFOv` IndexPage
+- `hdPa_Gj` Counter (exports `NumberCounter`)
+- `ibj8uxT` WorldGridTest (unrouted)
 
 Code overrides:
 
@@ -222,20 +222,19 @@ The cache also contained older remote override imports like:
 
 But current Framer-visible override files now include valid local compatibility exports.
 
-## Likely Root Cause
+## Likely Root Cause (May 3 diagnosis — partially resolved)
 
-Most likely:
+Originally suspected:
 
 1. A stale hidden page/component from the original Turner template or A/B test is still included in Framer's publish graph.
 2. That stale artifact references a code override that Framer considers missing.
 3. The unfinished A/B test named `Index` may be keeping duplicate `/index` variants or old graph references alive.
 
-Supporting evidence:
+May 6 update: the duplicate `/index` page (`yKKOMVNs6`) has since been deleted, and the project now contains a single `/index` (`u2LOaBT5q`). The deployment timestamp at `https://khaki-ship-257706.framer.app` advanced to May 2, 2026 18:55 UTC, indicating publish was successful at least once after this handoff was written. If the `Code Override Missing` warning has fully cleared, this section is historical context only; if it's still appearing, retry the steps below now that the duplicate `/index` is gone.
+
+Supporting evidence (as of May 3):
 
 - Framer shows `A/B test needs configuration.`
-- Current project has duplicate `/index` pages:
-  - `u2LOaBT5q`
-  - `yKKOMVNs6`
 - Local generated cache contains stale `YIWFDAfhW`/`SmkNoZhed` artifacts that do not appear in `getProjectXml`.
 - The visible/current override files all export valid overrides, but Publish still reports `Code Override Missing`.
 
@@ -248,8 +247,8 @@ Supporting evidence:
    - Do not delete or disable the A/B test without user approval.
    - If acceptable, either complete the A/B test setup or remove/disable it to see whether the stale publish graph clears.
 
-3. Inspect both duplicate `/index` pages.
-   - Confirm both contain `ImageMaskReveal` with `activation="always"`.
+3. Inspect the (single) `/index` page.
+   - Confirm it contains `ImageMaskReveal` with `activation="always"` (verified May 6: instance `qf2vKr_sV`).
    - Look for any visible Code Overrides inspector rows showing a file but no export.
    - In particular check footer/copyright text nodes on desktop/tablet/phone breakpoints.
 

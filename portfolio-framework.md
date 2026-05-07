@@ -1,9 +1,9 @@
 # Portfolio Redesign — Strategic Framework & Information Architecture
 
 **For:** Micah Hoang
-**Version:** 1.0 — May 1 Framer audit reflected. CMS is now 15 real projects. Home is a six-item CMS-limited selected-work query. `/info` is the live profile route, `/worldgrid-test` is no longer a web route, and duplicate `/index` pages exist.
+**Version:** 1.1 — May 6 Framer audit reflected. CMS is still 15 real projects. Home is a six-item CMS-limited selected-work query. `/info` is the live profile route, `/worldgrid-test` is unrouted, and the previous duplicate `/index` page has been deleted (single `/index` now).
 **Date:** May 2026
-**Last Framer MCP audit:** May 1, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`, deployed May 1, 2026 at 12:37 PM PDT. Current-state companion: `framer-current-state.md`.
+**Last Framer MCP audit:** May 6, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
 ---
 
@@ -148,13 +148,13 @@ Additional case-study content fields now exist for credits, images, videos, next
 
 Recommended manual fields for the hybrid workflow: add `Case Study URL` as a Link field and optionally `Build Status` as an enum in Framer. The collection is user-managed, so future agents cannot add these fields through MCP. Do not repurpose existing field IDs to make room for them.
 
-Index taxonomy/list rule: the second nav column is `Industry`, not `Origin`. The current index Discipline nav is the taxonomy source of truth. Discipline labels are locked to exactly `Visual Identity`, `Brand Strategy`, `UX/UI`, `2D Motion`, `3D Motion`, `Packaging`, `Product`, and `Editorial`; older category names may exist only as legacy aliases that normalize into those eight labels, and unknown CMS category strings should not display or become filterable as Discipline labels. The taxonomy and List view share a six-column grid inside the 20px page margin, with 20px gaps and flexible column widths. Taxonomy alignment is: Discipline label/value columns 1/2, Industry label/value columns 3/4, Year label/value columns 5/6. List alignment is: Year column 1, Title columns 2-3, Discipline columns 4-5, Industry column 6. Industry must stay visible at every breakpoint; Discipline/Industry cells shrink and truncate with ellipses. Project dividers within each year use the Framer `Light Gray` token value `#979797`, not white. Year rules and intra-year project dividers animate with the same left-to-right reveal as Framer `LineAnimation` reference `node=CE4nNCCk8`. The `/index` component has a Framer `List Type` A/B control: `Standard` preserves the current large-year/22px-title hierarchy, while `Mono 13` makes year, title, discipline, and industry all 13px uppercase mono for a Searchsystem-style comparison. It also has a `List Hover` A/B control: `Flip` is the default and mirrors Framer `ViewProject` reference `node=L21w7Xq1z` with a clipped upward title-only text flip, while `Highlight` preserves the older full-row hover background for comparison.
+Index taxonomy/list rule: the second nav column is `Industry`, not `Origin`. Taxonomy and the List year-group wrapper share a six-column grid inside the 20px page margin, with 20px gaps and flexible column widths. Taxonomy alignment: Discipline label/values columns 1/2, Industry label/values columns 3/4, Year label/values columns 5/6. The List year-group puts the Year label in column 1 and the row content in `2 / span 5`; inside that content area, list rows use a five-column grid (title cols 1/span 2, discipline cols 3/span 2, industry col 5/span 1). Industry must stay visible at every breakpoint; Discipline/Industry cells shrink and truncate with ellipses. Intra-year project dividers and year rules are colored at runtime by the page-level `IndexRuleColorOverride` instance (`tqQjSoH`, `ruleColor="rgb(20, 20, 20)"`) — without that override, intra-year dividers would render as the lighter `#979797`. Year rules and intra-year project dividers animate with the same left-to-right reveal as Framer `LineAnimation` reference `node=CE4nNCCk8`. The `/index` component has a Framer `List Type` A/B control: `Standard` preserves the large-year/22px-title hierarchy, while `Mono 13` makes year, title, discipline, and industry all 13px uppercase mono for a Searchsystem-style comparison. It also has a `List Hover` A/B control: `Flip` is the default and mirrors Framer `ViewProject` reference `node=L21w7Xq1z` with a clipped upward title-only text flip; `Highlight` preserves the older full-row hover background for comparison.
 
-Important taxonomy distinction from earlier audits: the CMS `Industry` field contains longer values like `Consumer Electronics / Technology`, `Citizen Science / Biodiversity`, `Outdoor Retail / Consumer Goods`, `Design Education / Motion Design`, `Politics / Protest`, and `Film / Documentary / Public Media`. Do not assume older simplified visible `/index` labels and raw CMS field values are identical. If future agents want exact CMS-backed labels, update the Framer binding/data mapping deliberately.
+Discipline / Industry / Year nav values are no longer hardcoded — the live `IndexPage.tsx` derives all three from whatever projects are in scope (`getDisciplineNavItems`, `getIndustryNavItems`, `getYearNavItems`). The earlier "eight canonical Discipline labels" lock and the `DISCIPLINE_ALIASES` normalization map are not present in the current code; if you want them back, you must reintroduce that filter explicitly. The CMS `Industry` field stores longer values (`Consumer Electronics / Technology`, `Citizen Science / Biodiversity`, `Outdoor Retail / Consumer Goods`, `Design Education / Motion Design`, `Politics / Protest`, `Film / Documentary / Public Media`, etc.), but the in-code 15-project `DEFAULT_PROJECTS` snapshot uses simplified labels (`Technology`, `Publishing`, `Nature & Outdoors`, `Design Education`, `Health & Wellness`, `Human Rights`, `Science`, `Music`, `Literature`). Whichever data source is in scope drives the visible labels.
 
 The Archive/Index page houses work that strengthens the picture without crowding the main narrative. Current `/index` interaction is intentionally simple: taxonomy filters plus List/Grid browsing. The **WorldGrid 3D gallery interaction** should stay out of `/index` unless Micah explicitly asks to bring it back. `WorldGridTest.tsx` still exists as a code component, but there is no current `/worldgrid-test` web route.
 
-Current implementation note: Framer code file `rgAZFOv` still owns the `/index` archive component. Local `IndexPage.tsx` has a 15-project fallback synced from the CMS registry, including current thumbnail/video fields. The CMS remains the source of truth for live data; refresh the fallback if CMS project metadata changes.
+Current implementation note (May 6, 2026): Framer code file `rgAZFOv` owns the `/index` archive component, and the live Framer file is **newer than the repo `IndexPage.tsx`**. The live file adds a `useCMS` Boolean prop and a window-singleton registry (`window.__articaIndexProjectsRegistry`) intended to be populated by a separate `ProjectRegistrar` code component placed inside a Framer Collection List bound to `All Projects`. The Registrar component does not yet exist in the project, so with `useCMS=true` set on `/index` the page falls through to the in-code `DEFAULT_PROJECTS` snapshot. The CMS remains the source of truth; until the Registrar is built, CMS edits do not flow into `/index` automatically.
 
 Current `/index` XML shows the footer using `AVAILABLE FOR WORK`, LinkedIn, Resume linking to `/info`, Cosmos, and `©2026`. Continue checking shared footer instances before launch, but the older placeholder destination warning is no longer current.
 
@@ -191,28 +191,29 @@ micahhoang.info
 │   ├── /case-studies/seek-truth            [Archive/editorial pending depth decision]
 │   └── /case-studies/independent-lens      [Archive/editorial pending depth decision]
 │
-├── /index (Archive)
-│   ├── Header: "Index" title + List/Grid view toggle
-│   ├── Current Framer watchpoint: two web pages share `/index`
-│   │   ├── u2LOaBT5q — Standard list typography
-│   │   └── yKKOMVNs6 — Mono 13 list typography
+├── /index (Archive) — single page now (`u2LOaBT5q`)
+│   ├── Header: "INDEX" title (in a SectionHero above the code component) + List/Grid view toggle
+│   ├── List Type / List Hover / Default View / Use CMS exposed as Framer property controls on the IndexPage instance
 │   ├── List view (default): year-grouped all-project archive with taxonomy filters
 │   │   ├── Taxonomy source: Figma node 32:7531
-│   │   ├── Taxonomy groups stay horizontal: Discipline, Industry, Year
+│   │   ├── Taxonomy groups stay horizontal at desktop/tablet: Discipline, Industry, Year
+│   │   ├── Discipline/Industry/Year nav items derived dynamically from in-scope projects
 │   │   ├── Each row: title, discipline tags, industry
-│   │   ├── Strong year dividers
-│   │   └── Project count updates with filters
-│   ├── Grid view: project-driven filtered Case Study cards
-│   │   ├── Uses the same filteredProjects array as List view
-│   │   ├── Alternating weighted 3-card rows on desktop/tablet
+│   │   ├── Strong year dividers (unified to ink by IndexRuleColorOverride)
+│   │   └── Project count updates with filters (singular/plural)
+│   ├── Grid view: project-driven Case Study cards from `https://framer.com/m/Case-Study-G9lec1.js`
+│   │   ├── Uses the same filteredProjects array as List view (no native Case Studies Filter fallback)
+│   │   ├── 4-pattern weighted 3-card rows on desktop/tablet ([2,1,1] [1,2,1] [1,1,2] [1,2,1])
+│   │   ├── Featured cards 325px tall, standard cards 220px tall (fixed pixel heights)
+│   │   ├── 120px vertical row gap on desktop, 48px on mobile
 │   │   ├── One-column stacked cards on mobile
 │   │   └── Fills the index content width with the same 20px side margin as nav
 │   ├── 3D preview
 │   │   └── Not exposed on `/index`; keep List/Grid only unless Micah asks to bring it back
 │   ├── WorldGrid
 │   │   └── `WorldGridTest.tsx` exists as code file `ibj8uxT`, but no `/worldgrid-test` web route exists
-│   ├── All homepage projects + archive-only work from one CMS collection
-│   └── Click through to case study pages where they exist
+│   ├── Project source priority: window registry (when useCMS=true and registrars exist) > projects prop > in-code DEFAULT_PROJECTS snapshot
+│   └── Click through to case study pages at `/case-studies/{slug}`
 │
 ├── /info
     ├── Current Framer desktop is a forest-green editorial profile page
@@ -325,7 +326,7 @@ These are resolved decisions and current implementation notes. Treat them as sou
 - ~~**ArtCenter placement.**~~ ✅ Resolved. Education/background context lives on `/info`, not on the homepage. "Self-initiated" framing for school projects in case study copy.
 - ~~**Testimonials.**~~ ✅ Copy resolved and now visible on `/info`: Nadia, Aaron, and Angela appear in the `WHAT PEOPLE SAY` section. The AirPods detail page can still carry the Nadia quote if the case-study page needs the credential in context.
 - ~~**Profile page layout.**~~ ✅ Current Framer state differs from older wireframe v2 notes. `/info` is now a forest-green editorial page with a `HEY, / I'M MICAH.` hero, sticky video, intro copy, selected experience list, `WHAT PEOPLE SAY` testimonials, recognition rows, and CTA links. Resume/currently/colophon modules are not visible in the audited desktop XML.
-- ~~**Index page layout.**~~ ✅ Resolved, with one route watchpoint. List/Grid toggle only. The sticky bottom-left toggle uses two equal-width buttons and black/ink text for both active and inactive states. List view (default): year-grouped/all projects with taxonomy filters. Taxonomy follows Figma node `32:7531` but uses a flexible six-column grid, not fixed pixel columns: Discipline label/value start in columns 1/2, Industry label/value start in columns 3/4, and Year label/value start in columns 5/6. List rows use the same grid so Year, Title, Discipline, and Industry stay left-aligned as the viewport changes; Industry is never hidden, while Discipline/Industry text truncates with ellipses as columns shrink. The List view has a `List Type` A/B control: `Standard` keeps the current hierarchy, and `Mono 13` makes all list typography 13px uppercase mono for comparison. Framer currently contains two `/index` pages with different List Type defaults, so resolve/verify the published one before changing route-level behavior. The second group must be `Industry`, sourced from the CMS Industry property, not `Origin`. Unfiltered Grid uses the native CMS-backed `Case Studies Filter` grid when no project array is bound, matching `/case-studies`; filtered/CMS-bound Grid uses the project-driven `filteredProjects` path. Do not expose the old 3D mode in `/index` unless Micah explicitly asks; `WorldGridTest.tsx` exists only as an unrouted code component.
+- ~~**Index page layout.**~~ ✅ Resolved (May 6 update). Single `/index` page now (`u2LOaBT5q`); the duplicate `yKKOMVNs6` is gone. List/Grid toggle only. The sticky bottom-left toggle uses two equal-width buttons and black/ink text for both active and inactive states; on mobile it pins to bottom-center. List view (default): year-grouped projects with taxonomy filters. Taxonomy follows Figma node `32:7531` but uses a flexible six-column grid: Discipline label/value cols 1/2, Industry label/value cols 3/4, Year label/value cols 5/6. The List year-group wrapper shares that 6-col grid; inside it, list rows use a 5-col inner grid (title 1/span 2, discipline 3/span 2, industry 5/span 1). Industry is never hidden; Discipline/Industry truncate with ellipses on desktop/tablet and reflow on mobile. `List Type` A/B: `Standard` keeps large year + 22px title; `Mono 13` makes all list typography 13px uppercase mono. `List Hover` A/B: `Flip` is default (title-only upward flip mirroring `ViewProject` reference `node=L21w7Xq1z`); `Highlight` preserves the older row background hover. The second group is `Industry`, not `Origin`. Grid view always renders project-driven cards from `https://framer.com/m/Case-Study-G9lec1.js` — the unfiltered `Case Studies Filter` fallback was removed. Discipline / Industry / Year nav values are derived dynamically from the in-scope projects; the previous "eight canonical Discipline labels" lock is not enforced in code. Do not expose 3D mode in `/index` unless Micah explicitly asks; `WorldGridTest.tsx` is unrouted.
 - ~~**Domain and URL.**~~ ✅ Resolved. Keep the portfolio oriented around `micahhoang.info`. Framer staging may appear as `khaki-ship-257706.framer.app`, but the public portfolio target is `micahhoang.info`.
 - ~~**CMS cleanup.**~~ ✅ Resolved. The Jacob Turner sample projects were permanently deleted from the `All Projects` CMS collection. The collection now contains 15 real Micah projects.
 

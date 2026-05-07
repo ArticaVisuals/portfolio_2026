@@ -1,8 +1,35 @@
 # Framer Index CMS Auto-Update Audit
 
-**Date:** May 3, 2026  
-**Scope:** `/index` custom `IndexPage` component and CMS auto-refresh behavior  
+**Date:** May 3, 2026
+**Last status check:** May 6, 2026
+**Scope:** `/index` custom `IndexPage` component and CMS auto-refresh behavior
 **Status:** Non-destructive investigation only. The live `/index` page was not replaced or published. The temporary `/index-cms-test` route was deleted during restore.
+
+---
+
+## Status Update — May 6, 2026
+
+Variant B from §"Recommended Next Variants" was **partially implemented in the live Framer code**, not from this repo:
+
+- `IndexPage.tsx` (Framer code file `rgAZFOv`) now has a `useCMS` Boolean property control (default `false`) and a window-singleton registry (`window.__articaIndexProjectsRegistry`). When `useCMS=true`, `IndexPage` subscribes to the registry's `Map<string, Project>` and re-renders on changes.
+- The live `/index` page (`u2LOaBT5q`) currently has `useCMS="true"` set on the `IndexPage` instance.
+- Discipline / Industry / Year nav lists are now derived dynamically from whatever projects are in scope (registry → prop → `DEFAULT_PROJECTS` snapshot, in that priority order).
+- The `IndexPage` Grid view no longer falls back to the native `Case Studies Filter`; it always renders project-driven cards from `https://framer.com/m/Case-Study-G9lec1.js`.
+
+**What's still missing.** A separate `ProjectRegistrar` code component, intended to be placed inside a Framer Collection List bound to `All Projects` and to call `register(id, data)` per row, has **not** been created — there is no `ProjectRegistrar.tsx` in the project's code components. With `useCMS=true` and no Registrar wired up, the published page falls through to the in-code 15-project `DEFAULT_PROJECTS` snapshot.
+
+**Net behavior on `/index` today:** the published page renders the in-code snapshot, with simplified industry labels (`Technology`, `Publishing`, `Nature & Outdoors`, `Design Education`, `Health & Wellness`, `Human Rights`, `Science`, `Music`, `Literature`). It is not yet receiving live CMS updates — building the Registrar component and dropping a hidden Collection List on the page is the remaining step to close out Variant B.
+
+**Other state changes since this audit:**
+
+- The duplicate `/index` page `yKKOMVNs6` (Mono 13 default) has been **deleted**. There is now exactly one `/index` page (`u2LOaBT5q`).
+- The page-level `IndexRuleColorOverride` instance is now placed on `/index` (and on `/case-studies`); on `/index` it unifies all rules to ink, on `/case-studies` it also drives a per-card aspect-ratio layout pass.
+- `/index-cms-test` (`QuhXOj9pq`) remains deleted; no equivalent draft exists today.
+- The repo's `IndexPage.tsx` is now older than the live Framer file. Earlier the repo was newer; that has reversed. Do not push the repo file to Framer without merging in the registry / dynamic taxonomy / `DEFAULT_PROJECTS` updates.
+
+---
+
+## Original Audit (May 3, 2026)
 
 ---
 
@@ -75,6 +102,8 @@ Reference: <https://www.framer.com/help/articles/issues-with-code-components-acc
 ---
 
 ## Important Code Drift
+
+> **As of May 6, 2026 this drift has reversed.** The live Framer code file is now newer than the repo (it adds the `useCMS` registry pattern, dynamic taxonomy, simplified `DEFAULT_PROJECTS`, and removes the `Case Studies Filter` fallback). Pushing the repo file to Framer would silently revert those changes. See the Status Update at the top of this doc.
 
 The local `IndexPage.tsx` in this repo is newer than the live Framer code file `rgAZFOv`.
 
