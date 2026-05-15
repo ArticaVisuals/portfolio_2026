@@ -9,7 +9,7 @@ The user wants:
 - Case study thumbnails on the home page to mask in from bottom to top.
 - Other images across the site to get the same reveal treatment where practical.
 - The reveal to be smoother and less abrupt.
-- No thumbnail strokes around the project thumbnails.
+- No default thumbnail strokes around project thumbnails; per-project strokes are allowed only when the CMS `Thumbnail Stroke` Boolean is enabled.
 - The effect published on the normal live URL.
 
 Current live site:
@@ -55,16 +55,16 @@ The reveal was originally gated by `activation="urlFlag"` and `?imageReveal=1`; 
 
 ### Pages With ImageMaskReveal Instances Set To Always
 
-Verified/updated pages (May 6, 2026 — only one `/index` page remains):
+Verified/updated pages (May 10, 2026 — only one `/index` page remains):
 
-- Home `/`: page `R6_F7xjGZ`, root `ZVqAQ0z7x`, instance `NuMtwybm2`
-- `/case-studies`: page `Rnw1WO1jS`, root `Z_IQof75v`, instance `hv3dg3p94`
-- `/case-studies/:slug`: page `UlQco8cYi`, root `zn7ljgmof`, instance `Yizyjt62o`
-- `/index`: page `u2LOaBT5q`, root `aezamcJ1c`, instance `qf2vKr_sV` (single page; the earlier duplicate `yKKOMVNs6` has been deleted)
-- `/info`: page `fxz_zRIyp`, instance `S4E2dnGw0`
-- `/contact`: page `gmXtVnIzJ`, instance `gwBLOZ0CH`
+- Home `/`: page `R6_F7xjGZ`, root `ZVqAQ0z7x`, instance `NuMtwybm2` — `enabled="true"`
+- `/case-studies`: page `Rnw1WO1jS`, root `Z_IQof75v`, instance `hv3dg3p94` — `enabled="true"`
+- `/case-studies/:slug`: page `UlQco8cYi`, root `zn7ljgmof`, instance `Yizyjt62o` — `enabled="true"`
+- `/index`: page `u2LOaBT5q`, root `aezamcJ1c`, instance `qf2vKr_sV` — **`enabled="false"` since May 10, 2026.** The instance was left in place (with `activation="always"` and the original tuning) but disabled on the archive page so navigation to `/index` is instant. The other settings (duration, easing, direction, border timing) are preserved so re-enabling later is a single attribute flip.
+- `/info`: page `fxz_zRIyp`, instance `S4E2dnGw0` — `enabled="true"`
+- `/contact`: page `gmXtVnIzJ`, instance `gwBLOZ0CH` — `enabled="true"`
 
-### Thumbnail Strokes Removed
+### Default Thumbnail Strokes Removed; CMS Toggle Added
 
 Component:
 
@@ -76,9 +76,11 @@ Stroke/border attributes were removed from:
 - `ImageWrapper` node `LvdUb_iyY`
 - overlay `Stack` node `d3z4kFOAq`
 
+May 15, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), and `/index` (`szF9sZNWA`). Current verified state: AirPods Pro 3 is on; all other projects are off. The stroke is a non-layout pseudo-element overlay, so it should not change grid/card dimensions.
+
 ## Current Project Map
 
-From Framer MCP `getProjectXml` (May 6, 2026), current web pages:
+From Framer MCP `getProjectXml` (May 15, 2026), current web pages:
 
 - `R6_F7xjGZ` path `/`
 - `koPvme2ig` path `/404`
@@ -285,7 +287,7 @@ After publishing succeeds:
 1. Open `https://khaki-ship-257706.framer.app` without query parameters.
 2. Confirm the image reveal activates without `?imageReveal=1`.
 3. Scroll the home page and verify case study thumbnails mask from bottom to top.
-4. Confirm thumbnail strokes are gone.
+4. Confirm default thumbnail strokes are gone, and only CMS-enabled projects show the optional stroke.
 5. Check `/case-studies`, `/case-studies/:slug`, `/info`, `/contact`, and `/index` for obvious image reveal regressions.
 6. Confirm there is no visible image bounce outside the thumbnail container.
 7. Confirm the live deployment timestamp updates in Framer.

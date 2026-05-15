@@ -4,16 +4,19 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last Framer MCP audit:** May 6, 2026.
+**Last Framer MCP audit:** May 15, 2026.
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (May 6, 2026):**
+**State summary (May 10, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The live Framer file is **newer than the repo `IndexPage.tsx`**. Do not push the repo file back to Framer without merging in the live changes (see §3.A).
 - An `IndexRuleColorOverride` instance sits on the page and unifies all `.idx-rule` and `.idx-row-divider` colors to `rgb(20, 20, 20)`.
+- **Grid view rewritten (May 10, 2026):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 thumbnails, 3/2/1 column responsive grid, title above the image with the same hover-flip used in List view, optional `<video>` on hover). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
+- **ImageMaskReveal disabled on `/index` (May 10, 2026):** the page-level instance `qf2vKr_sV` is now `enabled="false"`. The site-wide instances on `/`, `/case-studies`, `/case-studies/:slug`, `/info`, and `/contact` remain `enabled="true"` with `activation="always"`. The `/index` page intentionally skips the curtain reveal so the archive loads instantly.
+- **Thumbnail stroke helper added (May 15, 2026):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. This helper is the source of truth for `.idx-grid-card-media.with-stroke`, so the old static class should not be treated as independent state.
 
 ---
 
@@ -28,7 +31,7 @@ A single React code component for Framer that renders the content area of the `/
 
 Project data flows in through three priority-ranked sources (described in §3). The component **does not** include the site nav, the `INDEX` heading at 110px (that's a sibling Framer text element), or any 3D/WorldGrid surface.
 
-**Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view always renders project-driven cards via the `https://framer.com/m/Case-Study-G9lec1.js` module. The native `Case Studies Filter` lives only on `/case-studies` now.
+**Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view now renders project-driven cards as native HTML inline in `IndexPage.tsx` (no external Framer module). The native `Case Studies Filter` lives only on `/case-studies` now.
 
 The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the single List/Grid toggle; do not restore a second component-local Grid/List toggle.
 
@@ -237,24 +240,44 @@ The List view has an A/B typography control in Framer named `List Type`:
 
 ### Source of truth
 
-Grid view always renders project-driven cards from `filteredProjects` (the same array used by List view and the project count). It uses the singular Framer `Case Study` module:
+Grid view renders project-driven cards from `filteredProjects` (the same array used by List view and the project count) as native HTML inline in `IndexPage.tsx`. There is no external module dependency. The previous import of `https://framer.com/m/Case-Study-G9lec1.js` was removed on May 10, 2026 — the responsive-image format being passed to the Framer Case Study module didn't hydrate when called from a code component, so thumbnails rendered blank. Rendering with `<img>` directly is simpler, faster, and gives full visual control.
 
-```ts
-import CaseStudyFramerComponent from "https://framer.com/m/Case-Study-G9lec1.js"
+The earlier doc claim that the unfiltered Grid uses a native `Case Studies Filter` is **stale**. That fallback path was removed before May 6, 2026.
+
+### Card structure
+
+Each card is rendered by `GridProjectCard` as:
+
+```
+<a class="idx-grid-card" href="/case-studies/{slug}">
+  <div class="idx-grid-card-title">
+    <HoverFlipText text={title} activeText="View Project" /> // 22px GT Standard, uppercase
+  </div>
+  <div class="idx-grid-card-media">                          // aspect-ratio: 16/9, overflow:hidden
+    <img class="idx-grid-card-img" src={thumbnail} loading="lazy" />
+    {hovered && videoSrc && <video class="idx-grid-card-video" src={...} muted loop autoPlay /> }
+  </div>
+</a>
 ```
 
-with these prop mappings: `IXCiBqaZp` ← `/case-studies/{slug}`, `hkBSIyKIr` ← `sortOrder`, `KOMQesSr6`/`q4wsUCkLO` ← `{ src, alt }` thumbnail object, `PghzpT2k8` ← `title`, `RJ4KY9Ej1` ← `thumbnailVideoLink`, variant `L9DRr0UT2`.
+- Title is **above** the thumbnail, matching List view typography. The hover-flip swaps to "View Project" on card hover (or focus-visible). `HoverFlipText` is the same helper used in List view.
+- Thumbnail is a plain `<img>` with `object-fit: cover` filling a `position: relative` container locked to `aspect-ratio: 16 / 9`.
+- Optional thumbnail video is mounted only on hover (so videos aren't preloaded for off-screen cards). When mounted, it autoplays muted with `loop` and `playsInline` and fades in over 200ms via the existing CSS hover rule on `.idx-grid-card-video`.
+- The card itself is the link — no inner click handlers, no inner nav. If `slug` is empty, `href` is `undefined` and the flip-text falls back to the project title (no "View Project" copy).
 
-The earlier doc claim that the unfiltered Grid uses a native `Case Studies Filter` is **stale**. That fallback path was removed.
+### Layout grid
+
+- Container `.idx-project-grid` is `display: grid` with `grid-template-columns: repeat(3, minmax(0, 1fr))`, `column-gap: var(--idx-grid-gap, 20px)`, `row-gap: 56px`.
+- Tablet (≤1199px): 2 columns.
+- Mobile (≤809px): 1 column, `row-gap: 40px`.
+- All cards are uniform width — there is no longer a weighted/featured pattern. Card heights derive from the 16:9 aspect ratio plus the title row above it.
 
 ### Runtime behavior
 
-- Rows of three cards each. Pattern cycles `[2,1,1] → [1,2,1] → [1,1,2] → [1,2,1]` using flexbox weights.
-- Card heights are fixed: featured cards (weight > 1) are `325px`, standard cards `220px`. (The earlier doc reference to aspect ratios `1.723` / `1.273` is no longer how the component sizes cards.)
-- Vertical gap between rows: 120px desktop, 48px mobile.
-- ≤809px: rows stack to one column, 48px gaps; cards span full width.
 - Empty filtered state matches List view copy: "No work matches those filters."
 - View transitions: 150ms opacity fade out → swap → 250ms opacity fade in, keyed on a `renderKey` increment so React remounts cleanly.
+- Cards fade up with `idxFadeUp`, capped to 12 cards via `Math.min(index, 12) * 30ms` stagger.
+- The hover-flip and the video reveal both use `.idx-grid-card:hover` selectors, mirroring the List view pattern. On mobile (≤809px), the flip transform is overridden to `none` so the title remains stable.
 
 ### Filtering behavior
 
@@ -389,8 +412,6 @@ All styles inline (CSS-in-JS via style objects) or in a `<style>` tag within the
 ```tsx
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { addPropertyControls, ControlType } from "framer"
-// @ts-ignore Framer resolves project component module URLs at runtime.
-import CaseStudyFramerComponent from "https://framer.com/m/Case-Study-G9lec1.js"
 
 // Window-singleton registry that ProjectRegistrar instances write into.
 const REGISTRY_KEY = "__articaIndexProjectsRegistry"
@@ -412,8 +433,8 @@ const GLOBAL_CSS = `/* keyframes + .idx-* selectors + responsive blocks */`
 function TaxonomySection({ filters, disciplineNavItems, industryNavItems, yearNavItems, onFilterToggle, onClearFilters }) { /* ... */ }
 function HoverFlipText({ text, activeText, style, height }) { /* ... */ }
 function ListView({ projects, typographyVariant, hoverVariant }) { /* ... */ }
-function GridProjectCard({ project, index, weight }) { /* renders <CaseStudyCard ... /> */ }
-function GridView({ projects }) { /* 4-pattern weighted rows */ }
+function GridProjectCard({ project, index }) { /* native <a><HoverFlipText/><img/>{hover && <video/>}</a> */ }
+function GridView({ projects }) { /* uniform 3/2/1-column CSS grid */ }
 function ViewToggle({ activeView, onViewChange }) { /* fixed bottom toggle */ }
 
 export default function IndexPage({
@@ -508,9 +529,12 @@ Before delivering:
 - [ ] Taxonomy and List year-group share `repeat(6, minmax(0, 1fr))` within `padding: 0 20px`.
 - [ ] List inner rows use `repeat(5, minmax(0, 1fr))`: title cols 1/span 2, discipline cols 3/span 2, industry col 5/span 1.
 - [ ] Industry is never hidden by responsive CSS; Discipline/Industry truncate with ellipses on desktop/tablet, reflow on mobile.
-- [ ] Grid view renders `Case Study` cards from `https://framer.com/m/Case-Study-G9lec1.js` for all states. No `Case Studies Filter` fallback.
-- [ ] Grid uses 4-pattern weighted 3-card rows (`[2,1,1] [1,2,1] [1,1,2] [1,2,1]`) above 809px and stacked single-column below.
-- [ ] Featured grid cards 325px tall, standard cards 220px tall (fixed pixel heights).
+- [ ] Grid view renders cards as native HTML inside `IndexPage.tsx` (no `Case Study` module import, no `Case Studies Filter` fallback).
+- [ ] Grid uses a uniform CSS grid: 3 columns at ≥1200px, 2 columns at 810–1199px, 1 column at ≤809px. No weighted/featured pattern.
+- [ ] Each card thumbnail is locked to `aspect-ratio: 16 / 9` via `.idx-grid-card-media`. Card heights are not hardcoded.
+- [ ] Card title sits above the thumbnail and uses the same `HoverFlipText` helper as List view ("View Project" on hover when slug exists).
+- [ ] Optional thumbnail video mounts only on `:hover` and fades in (200ms). Off-hover the card unmounts the `<video>` so it isn't preloaded for off-screen cards.
+- [ ] Per-project strokes come from CMS field `OHdUYs6Mo` via `CaseStudyThumbnailStrokeStyles.tsx`, not from hardcoded fallback classes. On `/index`, `.idx-grid-card-media.with-stroke` is allowed only because the helper toggles it from CMS.
 - [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
 - [ ] View toggle is fixed bottom-left at ≥810px and bottom-center on mobile.
 - [ ] View toggle has only List/Grid, equal-width buttons, and ink text for active and inactive labels.
@@ -520,7 +544,7 @@ Before delivering:
 - [ ] All text is uppercase where specified; mono cells use 13px / 28px / 0 letter-spacing.
 - [ ] Token object is centralized; no scattered color/font magic values.
 - [ ] Component exports with the property controls listed in §3.
-- [ ] Single-file output, no external dependencies beyond React + the imported `Case Study` module.
+- [ ] Single-file output, no external dependencies beyond React + Framer runtime APIs.
 - [ ] `IndexRuleColorOverride` instance still placed on the page if you want unified ink rules.
 
 ---
@@ -533,6 +557,12 @@ Before delivering:
 - Do NOT import heavy libraries (no framer-motion — use CSS transitions and vanilla JS for animations).
 - Do NOT scatter hardcoded colors — always go through the centralized `tokens` object.
 - Do NOT reintroduce the `Case Studies Filter` fallback inside `IndexPage`. The native `Case Studies Filter` belongs to `/case-studies`.
+- Do NOT reimport `https://framer.com/m/Case-Study-G9lec1.js` for Grid view rendering. The thumbnails rendered blank when called from a code component (responsive-image format mismatch). Render with native `<img>`/`<video>` instead, as `GridProjectCard` does today.
+- Do NOT reintroduce weighted/featured Grid row patterns (`[2,1,1] [1,2,1] [1,1,2] [1,2,1]`) or the `weight` prop on `GridProjectCard`. The Grid is uniform — 3/2/1 columns by breakpoint.
+- Do NOT hardcode pixel heights for Grid cards (e.g., 325px / 220px). Card height derives from the 16:9 aspect ratio of the media wrapper plus the title row above it.
+- Do NOT re-enable the `ImageMaskReveal` instance on `/index` (`qf2vKr_sV`). It is intentionally `enabled="false"` so the archive loads without a curtain reveal. The site-wide instances on Home, `/case-studies`, `/case-studies/:slug`, `/info`, and `/contact` stay on.
+- Do NOT hardcode `.idx-grid-card-media.with-stroke` as a permanent class in `IndexPage.tsx`. The May 15 stroke helper owns that class from CMS so each project can be toggled individually and toggled back off.
+- Do NOT remove `CaseStudyThumbnailStrokeStyles` instance `szF9sZNWA` from `/index` unless you replace the stroke system with another CMS-aware implementation.
 - Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.
 - Do NOT push the older repo-side `IndexPage.tsx` back to Framer without merging in the live `useCMS` registry pattern, the simplified `DEFAULT_PROJECTS`, and the dynamic taxonomy.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.

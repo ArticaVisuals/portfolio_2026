@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** May 6, 2026
+**Last verified:** May 15, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -78,6 +78,7 @@ The `All Projects` CMS should own:
 - client/status metadata
 - thumbnail image
 - thumbnail video link
+- thumbnail stroke toggle
 - homepage visibility
 - short index/list copy if added later
 
@@ -111,7 +112,7 @@ Do not put all of this into CMS fields unless the page can genuinely share the s
    - Newly added archive/editorial records needing final depth decisions: Seek Truth and Independent Lens.
 
 2. Update the CMS registry.
-   - Confirm title, slug, sort order, category fields, industry, year, homepage flag, thumbnail, and thumbnail video.
+   - Confirm title, slug, sort order, category fields, industry, year, homepage flag, thumbnail, thumbnail video, and thumbnail stroke.
    - Add `Case Study URL` and `Build Status` manually first if you want those fields.
 
 3. Start from the design page.
@@ -174,7 +175,9 @@ Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized
 
 `/index` uses the Framer code file `IndexPage.tsx` (`rgAZFOv`). It derives project URLs from `slug` as `/case-studies/${slug}`. That is the right behavior for the hybrid model. When bespoke pages are created at those same canonical paths, `/index` should not need link changes.
 
-Current index data note (May 6, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and a window-singleton registry (`window.__articaIndexProjectsRegistry`) intended to be populated by a separate `ProjectRegistrar` code component placed inside a Collection List bound to `All Projects`. The Registrar component has not yet been created, so the published `/index` is currently rendering the 15-project `DEFAULT_PROJECTS` snapshot baked into the live code (with simplified industry labels). Grid view no longer falls back to the native `Case Studies Filter`; that component remains in use on `/case-studies`. The live CMS remains the source of truth and will only flow into `/index` once the Registrar is built and the Collection List is placed on the page.
+Current index data note (May 10, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and a window-singleton registry (`window.__articaIndexProjectsRegistry`) intended to be populated by a separate `ProjectRegistrar` code component placed inside a Collection List bound to `All Projects`. The Registrar component has not yet been created, so the published `/index` is currently rendering the 15-project `DEFAULT_PROJECTS` snapshot baked into the live code (with simplified industry labels). Grid view was rewritten on May 10, 2026 to render native HTML cards inline (no `Case Study` module dependency, uniform 16:9 thumbnails, 3/2/1 column responsive grid, title above the image with hover-flip). The live CMS remains the source of truth and will only flow into `/index` once the Registrar is built and the Collection List is placed on the page.
+
+Thumbnail stroke note (May 15, 2026): `All Projects` now has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies the stroke on Home, `/case-studies`, and `/index` through zero-size helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on, all other projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview exposes unresolved `/case-studies/:slug` links, which is important for the Home selected-work collection. It also controls the older `/index` `.with-stroke` class so turning the CMS Boolean off removes the visual stroke.
 
 ## 9. Recommended Starting Order
 
@@ -199,10 +202,14 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 
 ## 10. Verification Notes
 
-Last verified May 6, 2026:
+Last verified May 15, 2026:
 
 - Framer project map inspected with MCP.
 - CMS inspected with MCP: `All Projects` still has 15 real records.
+- CMS thumbnail stroke field inspected with MCP: `AirPods Pro 3` is true; the other returned project records are false.
+- `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors.
+- Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
+- Playwright runtime check simulated the draft helper on the published baseline: AirPods strokes only when the CMS field is on, simulated all-off removes every stroke, and layout deltas stayed at 0 changed elements.
 - Published `/index` HTML inspected: live page renders `IndexPage.tsx`'s in-code `DEFAULT_PROJECTS` snapshot (simplified industry labels), confirming the CMS registry is not yet wired up.
 - `/case-studies` still displays a `(12)` count via `NumberCounter` (`Counter.tsx`, `endNumber=12`) even though the CMS has 15 records.
 - Framer now has a single `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` is gone.

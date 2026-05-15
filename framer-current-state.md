@@ -1,9 +1,9 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** May 6, 2026
+**Last audited:** May 15, 2026
 **Published URL:** `https://khaki-ship-257706.framer.app`
-**Latest observed deploy:** May 2, 2026 18:55 UTC (production + staging in sync)
+**Latest observed deploy:** May 10, 2026 (production + staging in sync; May 15 CMS thumbnail-stroke helper saved to Framer draft, awaiting next Publish)
 
 This file is the quick source of truth for the current Framer document state. Read this before editing the older strategy, copy, CMS, or code-component docs — they are kept reasonably current but this file leads.
 
@@ -60,6 +60,7 @@ The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been 
 - `rgAZFOv` `IndexPage.tsx` — drives `/index`. **Live Framer source is now newer than the repo copy** (see §6).
 - `tqQjSoH` `IndexRuleColorOverride.tsx` — placed on `/index` and `/case-studies`. Does two things: (a) recolors `.idx-rule` / `.idx-row-divider` to its `ruleColor` prop via global CSS, and (b) when `adjustCaseStudiesGrid="true"`, runs a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
 - `poRGCf7` `ImageMaskReveal.tsx` — site-wide scroll reveal, instance present on every page.
+- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px overlay stroke to matching project thumbnails on Home, `/case-studies`, and `/index`.
 - `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count.
 - `ibj8uxT` `WorldGridTest.tsx` — unrouted reference.
 - `LNjgKO2` `ProfileTextRevealFix.tsx`
@@ -103,6 +104,28 @@ The `All Projects` CMS collection (`yTHrQWMIY`) currently contains 15 real proje
 
 The `Journal` CMS collection (`SyZTxPxeY`) still exists, but there is no visible Journal page in the current project map.
 
+### Thumbnail Stroke Toggle
+
+The `All Projects` collection now includes a Boolean field:
+
+- `OHdUYs6Mo` — Thumbnail Stroke
+
+Current verified state (May 15, 2026): `AirPods Pro 3` (`airpods-pro-3`) is `true`; the other 14 projects are `false`.
+
+The visual stroke is not a permanent border on the `Case Study` card component. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The helper instances are zero-size, opacity-0 code components placed on:
+
+- Home `/`: page `R6_F7xjGZ`, instance `VXt8C11M9`
+- `/case-studies`: page `Rnw1WO1jS`, instance `AfVjNDU23`
+- `/index`: page `u2LOaBT5q`, instance `szF9sZNWA`
+
+Implementation notes:
+
+- The helper imports the CMS module for `yTHrQWMIY`, calls Framer's lazy initializer (`module.r()`) when available, and rescans records after mount so Framer preview iframes do not keep stale CMS stroke state.
+- Matching is by slug when real links resolve to `/case-studies/{slug}` and by title containment when Framer preview/canvas exposes unresolved links such as `/case-studies/:slug`.
+- The stroke is rendered as a pseudo-element overlay on `ImageWrapper`, `VideoWrapper`, or `.idx-grid-card-media`; it does not affect layout dimensions.
+- `/index` had an older `.idx-grid-card-media.with-stroke` path. The helper now neutralizes that box shadow and toggles the class from CMS so turning the Boolean off removes the stroke.
+- The dynamic `/case-studies/:slug` template is intentionally not using this helper; a previous attempt to insert it there caused Framer layout normalization. Related/other-project cards should be handled separately if they need per-CMS strokes later.
+
 ---
 
 ## 3. `/index` Page — Current Layout
@@ -111,7 +134,7 @@ The `/index` page (`u2LOaBT5q`) is the most custom page on the site. Live struct
 
 ```
 Desktop (root, /Cream)
-├── ImageMaskReveal (qf2vKr_sV) — activation="always", site-wide reveal helper
+├── ImageMaskReveal (qf2vKr_sV) — enabled="false" (May 10, 2026); other settings unchanged. Disabled only on /index so the archive loads without a curtain reveal.
 ├── IndexRuleColorOverride (p8V73bUeR) — ruleColor="rgb(20, 20, 20)",
 │   adjustCaseStudiesGrid="true" (no /case-studies grid lives on /index, but
 │   the prop is enabled here too because the same instance template is used
@@ -192,24 +215,27 @@ Whatever Discipline strings come out of the data source are displayed verbatim. 
 - Taxonomy uses `repeat(6, minmax(0, 1fr))`: Discipline label/items in cols 1/2, Industry label/items in cols 3/4, Year label/items in cols 5/6.
 - Year-group wrapper uses the same 6-col grid: year rule spans `1 / -1`, year label sits in col 1, list content sits in `2 / span 5`.
 - List rows inside list content use a **5-col** grid: title `1 / span 2`, discipline `3 / span 2`, industry `5 / span 1`. (Earlier docs called this 6-col; that was true at the wrapper level only.)
-- Grid view rows use flexbox with weight patterns `[2,1,1] → [1,2,1] → [1,1,2] → [1,2,1]` and 20px column gaps. Featured cards render at `height: 325px`, standard cards at `height: 220px` (fixed pixel heights, not aspect ratios). Vertical gap between rows is 120px on desktop.
-- Mobile (≤809px): list rows collapse to a 2-col layout (title full row, discipline + industry side-by-side beneath); grid rows stack vertically with 48px gaps. Below 520px, list rows and taxonomy columns fully stack to a single column.
+- Grid view (rewritten May 10, 2026) uses CSS Grid with `grid-template-columns: repeat(3, minmax(0, 1fr))`, 20px column gap, 56px row gap. Each card has a uniform 16:9 thumbnail and the title sits **above** the image with the same hover-flip used in List view ("View Project" on hover when slug exists). Optional thumbnail video mounts only on `:hover`.
+- Mobile (≤809px): list rows collapse to a 2-col layout (title full row, discipline + industry side-by-side beneath); grid drops to a single column with 40px row gap. Tablet (≤1199px): grid drops to 2 columns. Below 520px, list rows and taxonomy columns fully stack to a single column.
 - Bottom List/Grid toggle: `position: fixed`, `bottom: 20px`, `left: 20px`, 148px wide, `rgba(215, 213, 207, 0.72)` cream surface with `backdrop-filter: blur(8px)`. Active button bg `#EAE8E3`. Both labels stay ink (`#26211f`) — defensive `!important` rules in `GLOBAL_CSS` enforce this against Framer's button cascade. On mobile, the toggle moves to bottom-center.
 
 ### Grid view source
 
-The unfiltered Grid view **no longer falls back to the native `Case Studies Filter`** component. It always renders project-driven cards via:
+The Grid view renders project-driven cards as native HTML inline in `IndexPage.tsx`. There is **no external module dependency** — the previous import of `https://framer.com/m/Case-Study-G9lec1.js` was removed on May 10, 2026 because the responsive-image format being passed to that module didn't hydrate when called from a code component (thumbnails rendered blank on the published site).
 
-```ts
-import CaseStudyFramerComponent from "https://framer.com/m/Case-Study-G9lec1.js"
+`GridProjectCard` now renders:
+
+```
+<a class="idx-grid-card" href="/case-studies/{slug}">
+  <div class="idx-grid-card-title"> <HoverFlipText text={title} activeText="View Project" /> </div>
+  <div class="idx-grid-card-media">                                     // aspect-ratio: 16/9
+    <img src={thumbnail} loading="lazy" />
+    {hovered && videoSrc && <video muted loop autoPlay playsInline />}
+  </div>
+</a>
 ```
 
-i.e., the singular `Case Study` card module, with these mapped props:
-`IXCiBqaZp` → href (`/case-studies/{slug}`), `hkBSIyKIr` → sort number,
-`KOMQesSr6`/`q4wsUCkLO` → thumbnail image object, `PghzpT2k8` → title,
-`RJ4KY9Ej1` → thumbnail video URL, variant `L9DRr0UT2`.
-
-The previous repo doc claim that "unfiltered Grid uses the native CMS-backed Case Studies Filter grid when no project array is bound" is **stale**. The native `Case Studies Filter` is still used on `/case-studies`, just not from inside `IndexPage`.
+The native `Case Studies Filter` is still used on `/case-studies`, just not from inside `IndexPage`.
 
 ### `IndexRuleColorOverride` interaction
 
@@ -261,12 +287,13 @@ Karuna is currently off Home because its `Is Homepage` flag is `false`. Weaponiz
 
 ---
 
-## 6. Live vs. repo divergence (May 6, 2026)
+## 6. Live vs. repo divergence (May 15, 2026)
 
 Two artifacts diverge from the repo and it matters which way the next sync goes:
 
-- **Live Framer `IndexPage.tsx` (`rgAZFOv`)** — has `useCMS` prop, window-singleton registry pattern, dynamically derived taxonomy, no `Case Studies Filter` import, simplified `DEFAULT_PROJECTS` industry labels. This is what's published.
-- **Repo `IndexPage.tsx`** — older shape with hardcoded `DISCIPLINE_NAV_ITEMS`/`INDUSTRY_NAV_ITEMS`, `Case Studies Filter` import for unfiltered Grid fallback, no `useCMS` prop. Do not push this back without merging the live changes in.
+- **Live Framer `IndexPage.tsx` (`rgAZFOv`)** — has `useCMS` prop, window-singleton registry pattern, dynamically derived taxonomy, no `Case Study` module import, native-HTML Grid view (uniform 16:9 cards, 3/2/1 columns, title above image with hover-flip, video on hover), simplified `DEFAULT_PROJECTS` industry labels. This is what's saved in Framer (next Publish brings it live).
+- **Live Framer `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`)** — exists only in Framer and controls CMS thumbnail strokes across Home, `/case-studies`, and `/index`. The repo has documentation and verification artifacts, but not a local source copy of this code component.
+- **Repo `IndexPage.tsx`** — older shape with hardcoded `DISCIPLINE_NAV_ITEMS`/`INDUSTRY_NAV_ITEMS`, `Case Studies Filter` import for unfiltered Grid fallback, no `useCMS` prop, weighted Grid row patterns. Do not push this back without merging the live changes in.
 
 To resolve: pull the live code out of Framer (or use this doc's snapshot of the architecture) and reconcile before any further repo-side edits.
 
@@ -284,6 +311,7 @@ Core fields:
 - `VeDm9FjW4` — About the project
 - `Jy7hBJady` — Thumbnail
 - `WG62tRjG8` — Thumbnail Video Link
+- `OHdUYs6Mo` — Thumbnail Stroke
 - `vlN2R_qnF` — Client
 - `QZqSK_3OF` — Year (string)
 - `mBIilFqVM` — Industry
