@@ -60,7 +60,7 @@ The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been 
 - `rgAZFOv` `IndexPage.tsx` — drives `/index`. **Live Framer source is now newer than the repo copy** (see §6).
 - `tqQjSoH` `IndexRuleColorOverride.tsx` — placed on `/index` and `/case-studies`. Does two things: (a) recolors `.idx-rule` / `.idx-row-divider` to its `ruleColor` prop via global CSS, and (b) when `adjustCaseStudiesGrid="true"`, runs a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
 - `poRGCf7` `ImageMaskReveal.tsx` — site-wide scroll reveal, instance present on every page.
-- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px overlay stroke to matching project thumbnails on Home, `/case-studies`, and `/index`.
+- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray (`#979797`) overlay stroke to matching project thumbnails on Home, `/case-studies`, and `/index`.
 - `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count.
 - `ibj8uxT` `WorldGridTest.tsx` — unrouted reference.
 - `LNjgKO2` `ProfileTextRevealFix.tsx`
@@ -112,7 +112,7 @@ The `All Projects` collection now includes a Boolean field:
 
 Current verified state (May 15, 2026): `AirPods Pro 3` (`airpods-pro-3`) is `true`; the other 14 projects are `false`.
 
-The visual stroke is not a permanent border on the `Case Study` card component. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The helper instances are zero-size, opacity-0 code components placed on:
+The visual stroke is not a permanent border on the `Case Study` card component. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The component default and placed helper instances now use the Light Gray token `#979797` / `rgb(151, 151, 151)`. The helper instances are opacity-0 code components placed on:
 
 - Home `/`: page `R6_F7xjGZ`, instance `VXt8C11M9`
 - `/case-studies`: page `Rnw1WO1jS`, instance `AfVjNDU23`
