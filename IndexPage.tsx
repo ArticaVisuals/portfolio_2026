@@ -18,7 +18,7 @@ type FramerResponsiveImage = {
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
 const FALLBACK_THUMBNAIL_ASPECT_RATIO = 16 / 9
-const OFF_BLACK = "#141414"
+const LIGHT_GRAY = "#979797"
 
 const indexGridStyle: React.CSSProperties = {
     display: "grid",
@@ -32,8 +32,8 @@ const tokens = {
     textSecondary: "#636363",
     textTertiary: "#979797",
     bg: "#F7F5F0",
-    dividerStrong: OFF_BLACK,
-    dividerSubtle: OFF_BLACK,
+    dividerStrong: LIGHT_GRAY,
+    dividerSubtle: LIGHT_GRAY,
     surfaceOverlay: "rgba(215, 213, 207, 0.72)",
     surfaceActive: "#EAE8E3",
     fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
@@ -488,6 +488,9 @@ const GLOBAL_CSS = `
     animation: idxRuleDraw 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
     transform-origin: left center;
     will-change: transform;
+    background-color: ${tokens.dividerStrong} !important;
+    border-color: ${tokens.dividerStrong} !important;
+    opacity: 1 !important;
   }
 
   .idx-tax-item {
@@ -548,6 +551,8 @@ const GLOBAL_CSS = `
 
   .idx-row-divider {
     background-color: ${tokens.dividerSubtle} !important;
+    border-color: ${tokens.dividerSubtle} !important;
+    opacity: 1 !important;
   }
 
   @media (prefers-reduced-motion: reduce) {

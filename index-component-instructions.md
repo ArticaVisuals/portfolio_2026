@@ -4,21 +4,22 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last Framer MCP audit:** May 15, 2026.
+**Last Framer MCP audit:** May 16, 2026.
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (May 10, 2026):**
+**State summary (May 16, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
-- A separate A/B web page `/index-inline-toggle-test` (`VdRy9MV8k`) exists for comparing the original-template inline `GRID / LIST` control against the canonical floating toggle. Do not treat it as the production archive route until Micah chooses it.
+- The original-template inline `GRID / LIST` control is now the default on canonical `/index`; the previous fixed floating toggle remains underneath only as delegated behavior.
+- The side-by-side page `/index-inline-toggle-test` (`VdRy9MV8k`) remains available as a non-destructive comparison route before publishing.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The live Framer file is **newer than the repo `IndexPage.tsx`**. Do not push the repo file back to Framer without merging in the live changes (see §3.A).
-- An `IndexRuleColorOverride` instance sits on the page and unifies all `.idx-rule` and `.idx-row-divider` colors to `rgb(20, 20, 20)`.
+- All index list/grid rules should render at full-opacity Light Gray `#979797`. `IndexInlineToggleProxy.tsx` normalizes `.idx-rule` and `.idx-row-divider` on `/index`; the legacy `IndexRuleColorOverride` default is also `#979797`.
 - **Grid view rewritten (May 10, 2026):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 thumbnails, 3/2/1 column responsive grid, title above the image with the same hover-flip used in List view, optional `<video>` on hover). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **ImageMaskReveal disabled on `/index` (May 10, 2026):** the page-level instance `qf2vKr_sV` is now `enabled="false"`. The site-wide instances on `/`, `/case-studies`, `/case-studies/:slug`, `/info`, and `/contact` remain `enabled="true"` with `activation="always"`. The `/index` page intentionally skips the curtain reveal so the archive loads instantly.
 - **Thumbnail stroke helper added (May 15, 2026):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. This helper is the source of truth for `.idx-grid-card-media.with-stroke`, so the old static class should not be treated as independent state. The helper now inserts a real Light Gray (`#979797`) overlay child inside the media wrapper rather than relying on a pseudo-element.
-- **Inline toggle A/B helper added (May 16, 2026):** `IndexInlineToggleProxy.tsx` (`TexpcmJ`) is placed only on `/index-inline-toggle-test` as instance `ZKnst6HwT`. It renders uppercase `GRID / LIST` at the top-right of the project content, mutes the active option to `rgba(38, 33, 31, 0.2)`, and delegates clicks to the underlying `IndexPage` toggle. It must hide the floating toggle only by targeting the duplicate page's local `.idx-toggle-fixed`; do not use broad global CSS that hides `.idx-toggle-fixed` everywhere.
+- **Inline toggle promoted (May 16, 2026):** `IndexInlineToggleProxy.tsx` (`TexpcmJ`) is placed on `/index` as instance `HM1pZPonP` and on `/index-inline-toggle-test` as instance `ZKnst6HwT`. It renders uppercase `GRID / LIST` at the top-right of the project content, underlines the active option, shifts inactive options to `#979797` on hover, and delegates clicks to the underlying `IndexPage` toggle. It must hide the floating toggle only by targeting the local `.idx-toggle-fixed`; do not use broad global CSS that hides `.idx-toggle-fixed` everywhere.
 
 ---
 
@@ -27,7 +28,7 @@
 A single React code component for Framer that renders the content area of the `/index` archive page. It currently exposes:
 
 - Three taxonomy columns (Discipline, Industry, Year) acting as multi-select filters.
-- Two view modes (List, Grid) toggled from a fixed bottom-left control.
+- Two view modes (List, Grid) toggled from an inline `GRID / LIST` control at the top-right of the project content.
 - Two A/B variants for List view (`Standard` vs `Mono 13` typography; `Flip` vs `Highlight` hover).
 - A trailing project-count footer.
 
@@ -35,7 +36,7 @@ Project data flows in through three priority-ranked sources (described in §3). 
 
 **Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view now renders project-driven cards as native HTML inline in `IndexPage.tsx` (no external Framer module). The native `Case Studies Filter` lives only on `/case-studies` now.
 
-The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the single List/Grid toggle on the canonical `/index` route. The `/index-inline-toggle-test` page is the only current exception: it keeps the underlying `IndexPage` toggle for behavior, but `IndexInlineToggleProxy` hides it on that duplicate route and exposes the inline `GRID / LIST` control for A/B comparison.
+The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the underlying List/Grid toggle behavior; `IndexInlineToggleProxy` hides the fixed control on `/index` and exposes the inline `GRID / LIST` control for the canonical route and side-by-side comparison page.
 
 **Home note, May 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It is a six-item CMS-backed selected-work query using the native Framer `Case Study` component. Do not recode Home unless Micah explicitly asks.
 
@@ -55,7 +56,7 @@ const tokens = {
   textSecondary: "#636363",
   textTertiary: "#979797",
   bg: "#F7F5F0",
-  dividerStrong: "#26211f",
+  dividerStrong: "#979797",
   dividerSubtle: "#979797",
   surfaceOverlay: "rgba(215, 213, 207, 0.72)",
   surfaceActive: "#EAE8E3",
@@ -65,7 +66,7 @@ const tokens = {
 }
 ```
 
-Note: although `dividerStrong` and `dividerSubtle` differ here, the page-level `IndexRuleColorOverride` instance overwrites both at runtime to `rgb(20, 20, 20)` via `!important` global CSS. If you remove the override, the lighter intra-year dividers come back.
+Note: rules and dividers should stay full-opacity Light Gray `#979797`. The inline-toggle helper and legacy rule override both force `.idx-rule` / `.idx-row-divider` to this color so year rules, row dividers, and grid/list rules do not drift to lower opacity or ink.
 
 Earlier versions of this doc said the component must use guessed Framer CSS variable names. That is stale. Only switch a token to `var(...)` after verifying the actual variable name in Framer.
 
@@ -181,7 +182,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 [40px spacer]
 
 [Year Group: 6-col grid wrapper]
-  ── black rule (1px, idx-rule, animated draw) ── (cols 1/-1)
+  ── light-gray rule (1px, idx-rule, animated draw) ── (cols 1/-1)
   Year label (col 1)  |  List content (cols 2 / span 5, 5-col inner grid)
     Inner row grid: title (1/span 2) | discipline (3/span 2) | industry (5/span 1)
     Standard mode row: 56px min-height, 9px vertical padding
@@ -206,7 +207,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 - Standard mode: GT Standard Trial, weight 300, 40px, line-height 1.3, color `tokens.textPrimary`. On mobile (≤809px) it drops to 28px.
 - `Mono 13` mode: 13px uppercase mono, line-height 28px, color `tokens.textPrimary`.
 - Year labels render `year > 0 ? year : "—"`.
-- Black rule above each year group: 1px, `tokens.dividerStrong`, animated `idxRuleDraw` 700ms cubic-bezier(0.16, 1, 0.3, 1), staggered by group index up to 8.
+- Light-gray rule above each year group: 1px, `tokens.dividerStrong`, animated `idxRuleDraw` 700ms cubic-bezier(0.16, 1, 0.3, 1), staggered by group index up to 8.
 
 ### Project rows
 
@@ -215,7 +216,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 - Discipline cell: cols 3/span 2, 13px mono.
 - Industry cell: col 5/span 1, 13px mono.
 - Cells use `overflow: hidden; text-overflow: ellipsis; white-space: nowrap` on desktop/tablet so they shrink rather than wrap. Industry is **never hidden** by responsive CSS; on mobile the row reflows instead.
-- Row divider between projects in a year: `idx-row-divider` (1px, `tokens.dividerSubtle` inline). The page-level `IndexRuleColorOverride` then forces it to ink at runtime via `!important`.
+- Row divider between projects in a year: `idx-row-divider` (1px, full-opacity `#979797` via `tokens.dividerSubtle` and runtime normalization).
 - Rows are clickable: navigate to `/case-studies/{slug}` if `slug` exists.
 
 ### Project count footer
@@ -233,7 +234,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 ### Responsive breakpoints (from the live `GLOBAL_CSS`)
 
 - ≤1199px: container padding 0 20px (already the desktop value, preserved as `!important` for safety).
-- ≤809px: `--idx-grid-gap: 12px`. Taxonomy collapses to `max-content / 1fr` two-column pairs (Discipline pair, Industry pair, Year pair stacked). List rows collapse to a 2-col layout: title spans the full row, discipline + industry side-by-side beneath. Year-group grid collapses to a single column. Toggle pins to bottom-center.
+- ≤809px: `--idx-grid-gap: 12px`. Taxonomy collapses to `max-content / 1fr` two-column pairs (Discipline pair, Industry pair, Year pair stacked). List rows collapse to a 2-col layout: title spans the full row, discipline + industry side-by-side beneath. Year-group grid collapses to a single column. The visible inline toggle stays at the project-header edge.
 - ≤520px: taxonomy fully stacks to one column. List rows collapse further so discipline and industry each get their own row.
 
 ---
@@ -289,13 +290,15 @@ The taxonomy filters are source-of-truth state in `IndexPage.tsx` and drive List
 
 ## 6. Dormant Reference: 3D Inline WorldGrid Sphere
 
-Not exposed on `/index`. The bottom toggle is List/Grid only. Earlier inline `InlineWorldGrid` / `ThreeDPreview` helpers are gone. `WorldGridTest.tsx` (`ibj8uxT`) remains as an unrouted code component reference. Do not bring it back to `/index` unless Micah explicitly asks.
+Not exposed on `/index`. The visible inline toggle is Grid/List only. Earlier inline `InlineWorldGrid` / `ThreeDPreview` helpers are gone. `WorldGridTest.tsx` (`ibj8uxT`) remains as an unrouted code component reference. Do not bring it back to `/index` unless Micah explicitly asks.
 
 ---
 
-## 7. Sticky Toggle
+## 7. Underlying Sticky Toggle
 
 ### Position and behavior
+
+The fixed toggle still exists inside `IndexPage.tsx` so `IndexInlineToggleProxy.tsx` can delegate clicks without rewriting view state. On canonical `/index` it should be hidden by the proxy, not presented as the visible UI.
 
 - `position: fixed`, `bottom: 20px`, `left: 20px`, `z-index: 100`.
 - On mobile (≤809px), pinned to bottom-center via `left: 50%; transform: translateX(-50%)`.
@@ -340,9 +343,9 @@ Not exposed on `/index`. The bottom toggle is List/Grid only. Earlier inline `In
 }
 ```
 
-### Two equal-width buttons: LIST / GRID
+### Inline buttons: GRID / LIST
 
-The bottom toggle content must remain ink/black (`#26211f`), including inactive labels. Do not add `3D` back to the toggle unless Micah explicitly asks. Because Framer/global button styles can override native button text, `IndexPage.tsx` applies a defensive `.idx-toggle-fixed *, .idx-toggle-fixed button { color: #26211f !important; -webkit-text-fill-color: #26211f !important; }` rule. Preserve that unless the fixed toggle is rebuilt.
+The visible toggle is rendered by `IndexInlineToggleProxy.tsx` as uppercase `GRID / LIST` at the top-right of the project content. It uses the nav-label style: 13px uppercase mono, full ink text, Light Gray hover on inactive options, and a 1px underline on the active view. Do not add `3D` back to the toggle unless Micah explicitly asks. The underlying fixed `.idx-toggle-fixed` buttons remain in `IndexPage.tsx` only so the proxy can delegate clicks without rewriting the view state.
 
 ---
 
@@ -350,10 +353,10 @@ The bottom toggle content must remain ink/black (`#26211f`), including inactive 
 
 | Breakpoint | Taxonomy | List rows | Grid view | Toggle |
 |---|---|---|---|---|
-| ≥1200px | 6-col grid, 20px gap | 5-col inner grid; ellipsis truncation | weighted 3-card rows, 120px row gap | bottom-left |
-| 810–1199px | same 6-col grid (container padding pinned to 20px) | same 5-col grid; ellipsis truncation | same weighted 3-card rows | bottom-left |
-| ≤809px | label/value pairs (`max-content / 1fr`), pairs stack vertically | 2-col grid: title row, then discipline + industry; year-group label/content stack | one-column stacked cards, 48px gaps | bottom-center |
-| ≤520px | one column | 1-col grid: title, discipline, industry each on own row | one-column stacked cards | bottom-center |
+| ≥1200px | 6-col grid, 20px gap | 5-col inner grid; ellipsis truncation | uniform 3-column grid, 56px row gap | inline top-right |
+| 810–1199px | same 6-col grid (container padding pinned to 20px) | same 5-col grid; ellipsis truncation | uniform 2-column grid | inline top-right |
+| ≤809px | label/value pairs (`max-content / 1fr`), pairs stack vertically | 2-col grid: title row, then discipline + industry; year-group label/content stack | one-column stacked cards, 48px gaps | inline top-right |
+| ≤520px | one column | 1-col grid: title, discipline, industry each on own row | one-column stacked cards | inline top-right |
 
 Industry is never hidden. On desktop/tablet it truncates with ellipses if needed; on mobile it reflows.
 
@@ -504,10 +507,11 @@ addPropertyControls(IndexPage, { /* see §3 */ })
 
 - **Live `/index` layout:** `framer-current-state.md` §3
 - **Taxonomy/list Figma comp:** https://www.figma.com/design/XbHEqG3zBZJrcVkgmIEkZF/Micah-Hoang-Portfolio?node-id=32-7531 (node `32:7531`)
-- **Grid card module:** `https://framer.com/m/Case-Study-G9lec1.js` (variant `L9DRr0UT2`)
+- **Grid card rendering:** native `GridProjectCard` markup inside `IndexPage.tsx`; do not reimport the old `Case Study` module for `/index` Grid view.
 - **Framer code file:** `IndexPage.tsx`, code file id `rgAZFOv`
 - **Framer page:** `/index`, page node id `u2LOaBT5q` (single page; the earlier `yKKOMVNs6` Mono 13 duplicate is gone)
-- **Page-level helper:** `IndexRuleColorOverride.tsx` (`tqQjSoH`), instance `p8V73bUeR` on `/index`, `ATihJFdYD` on `/case-studies`
+- **Inline toggle/rule helper:** `IndexInlineToggleProxy.tsx` (`TexpcmJ`), instance `HM1pZPonP` on `/index`, `ZKnst6HwT` on `/index-inline-toggle-test`
+- **Legacy rule/aspect helper:** `IndexRuleColorOverride.tsx` (`tqQjSoH`), default rule color `#979797`
 - **WorldGrid reference:** `WorldGridTest.tsx`, code file id `ibj8uxT`; no current `/worldgrid-test` web page
 - **CMS collection:** `All Projects`, collection id `yTHrQWMIY`
 - **Taxonomy/filter inspiration:** https://searchsystem.co/index
@@ -538,8 +542,8 @@ Before delivering:
 - [ ] Optional thumbnail video mounts only on `:hover` and fades in (200ms). Off-hover the card unmounts the `<video>` so it isn't preloaded for off-screen cards.
 - [ ] Per-project strokes come from CMS field `OHdUYs6Mo` via `CaseStudyThumbnailStrokeStyles.tsx`, not from hardcoded fallback classes. On `/index`, `.idx-grid-card-media.with-stroke` is allowed only because the helper toggles it from CMS.
 - [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
-- [ ] View toggle is fixed bottom-left at ≥810px and bottom-center on mobile.
-- [ ] View toggle has only List/Grid, equal-width buttons, and ink text for active and inactive labels.
+- [ ] Visible view toggle is inline top-right as `GRID / LIST`.
+- [ ] View toggle has only Grid/List, ink text, Light Gray hover on inactive options, and an underline on the active view.
 - [ ] View transitions are smooth (150ms fade out → 250ms fade in, with `renderKey` remount).
 - [ ] Project count updates with filters and uses singular/plural correctly.
 - [ ] Year `2019-ongoing` from CMS is normalized to `2019` for grouping/filtering.
@@ -547,7 +551,7 @@ Before delivering:
 - [ ] Token object is centralized; no scattered color/font magic values.
 - [ ] Component exports with the property controls listed in §3.
 - [ ] Single-file output, no external dependencies beyond React + Framer runtime APIs.
-- [ ] `IndexRuleColorOverride` instance still placed on the page if you want unified ink rules.
+- [ ] All `.idx-rule` and `.idx-row-divider` lines render as full-opacity `#979797`.
 
 ---
 
