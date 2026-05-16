@@ -122,7 +122,7 @@ Implementation notes:
 
 - The helper imports the CMS module for `yTHrQWMIY`, calls Framer's lazy initializer (`module.r()`) when available, and rescans records after mount so Framer preview iframes do not keep stale CMS stroke state.
 - Matching is by slug when real links resolve to `/case-studies/{slug}` and by title containment when Framer preview/canvas exposes unresolved links such as `/case-studies/:slug`.
-- The stroke is rendered as a pseudo-element overlay on `ImageWrapper`, `VideoWrapper`, or `.idx-grid-card-media`; it does not affect layout dimensions.
+- The stroke is rendered as a real absolutely positioned overlay child inside `ImageWrapper`, `VideoWrapper`, or `.idx-grid-card-media`; it does not affect layout dimensions. This replaced the first pseudo-element approach after Framer preview did not show the stroke reliably on Home.
 - `/index` had an older `.idx-grid-card-media.with-stroke` path. The helper now neutralizes that box shadow and toggles the class from CMS so turning the Boolean off removes the stroke.
 - The dynamic `/case-studies/:slug` template is intentionally not using this helper; a previous attempt to insert it there caused Framer layout normalization. Related/other-project cards should be handled separately if they need per-CMS strokes later.
 

@@ -76,7 +76,7 @@ Stroke/border attributes were removed from:
 - `ImageWrapper` node `LvdUb_iyY`
 - overlay `Stack` node `d3z4kFOAq`
 
-May 15, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), and `/index` (`szF9sZNWA`). Current verified state: AirPods Pro 3 is on; all other projects are off. The stroke is a non-layout pseudo-element overlay, so it should not change grid/card dimensions.
+May 15, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), and `/index` (`szF9sZNWA`). Current verified state: AirPods Pro 3 is on; all other projects are off. The stroke is a non-layout real overlay child inserted inside the thumbnail wrapper, so it should not change grid/card dimensions.
 
 ## Current Project Map
 
