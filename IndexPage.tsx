@@ -7,18 +7,57 @@ import React, {
 } from "react"
 import { addPropertyControls, ControlType } from "framer"
 
-type FramerResponsiveImage = {
-    src: string
-    srcSet?: string
-    alt?: string
-    width?: number
-    height?: number
+// Shared registry the ProjectRegistrar code component writes into. State is
+// shared via a window-level singleton (identified by REGISTRY_KEY) so the two
+// code files don't have to import from each other. ProjectRegistrar instances
+// live inside a Framer Collection List placed anywhere on the canvas (the
+// list itself can be hidden from view); each one calls register() with one
+// CMS row, and IndexPage subscribes when its Use CMS prop is on.
+const REGISTRY_KEY = "__articaIndexProjectsRegistry"
+
+type RegistryShape = {
+    items: Map<string, Record<string, unknown>>
+    listeners: Set<(items: Map<string, Record<string, unknown>>) => void>
+    register: (id: string, data: Record<string, unknown>) => void
+    unregister: (id: string) => void
+    subscribe: (
+        fn: (items: Map<string, Record<string, unknown>>) => void
+    ) => () => void
+}
+
+function getRegistry(): RegistryShape | null {
+    if (typeof window === "undefined") return null
+    const w = window as unknown as Record<string, RegistryShape>
+    if (!w[REGISTRY_KEY]) {
+        const items = new Map<string, Record<string, unknown>>()
+        const listeners = new Set<
+            (items: Map<string, Record<string, unknown>>) => void
+        >()
+        w[REGISTRY_KEY] = {
+            items,
+            listeners,
+            register(id, data) {
+                items.set(id, data)
+                listeners.forEach((fn) => fn(items))
+            },
+            unregister(id) {
+                items.delete(id)
+                listeners.forEach((fn) => fn(items))
+            },
+            subscribe(fn) {
+                listeners.add(fn)
+                fn(items)
+                return () => {
+                    listeners.delete(fn)
+                }
+            },
+        }
+    }
+    return w[REGISTRY_KEY]
 }
 
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
-const FALLBACK_THUMBNAIL_ASPECT_RATIO = 16 / 9
-const LIGHT_GRAY = "#979797"
 
 const indexGridStyle: React.CSSProperties = {
     display: "grid",
@@ -32,8 +71,8 @@ const tokens = {
     textSecondary: "#636363",
     textTertiary: "#979797",
     bg: "#F7F5F0",
-    dividerStrong: LIGHT_GRAY,
-    dividerSubtle: LIGHT_GRAY,
+    dividerStrong: "#979797",
+    dividerSubtle: "#979797",
     surfaceOverlay: "rgba(215, 213, 207, 0.72)",
     surfaceActive: "#EAE8E3",
     fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
@@ -47,8 +86,8 @@ type Project = {
     category2?: string
     category3?: string
     industry: string
-    year: string | number
-    thumbnail?: string | FramerResponsiveImage
+    year: number | string
+    thumbnail?: string
     thumbnailVideoLink?: string
     slug?: string
     sortOrder?: number
@@ -58,286 +97,239 @@ type Project = {
 type Filters = {
     disciplines: string[]
     industries: string[]
-    years: string[]
+    years: number[]
 }
 
 type ListTypographyVariant = "standard" | "mono13"
 type ListHoverVariant = "flip" | "highlight"
 
-const DISCIPLINE_NAV_ITEMS = [
-    "Visual Identity",
-    "Brand Strategy",
-    "UX/UI",
-    "2D Motion",
-    "3D Motion",
-    "Packaging",
-    "Product",
-    "Editorial",
-]
-
-const DISCIPLINE_NAV_SET = new Set<string>(DISCIPLINE_NAV_ITEMS)
-
-const INDUSTRY_NAV_ITEMS = [
-    "Consumer Electronics / Technology",
-    "Publishing",
-    "Citizen Science / Biodiversity",
-    "Outdoor Retail / Consumer Goods",
-    "Design Education / Motion Design",
-    "Food Tech / Health & Wellness",
-    "Social Enterprise / Consumer Goods",
-    "Human Rights / Editorial",
-    "Design Education / Brand Consulting",
-    "Landscaping / Home Services",
-    "Science Communication / Experimental Motion",
-    "Music / Experimental Motion",
-    "Literature / Publishing / Education",
-    "Politics / Protest",
-    "Film / Documentary / Public Media",
-]
-
-const YEAR_NAV_ITEMS = ["2026", "2025", "2024", "2023", "2019-ongoing"]
-
-const DISCIPLINE_ALIASES: Record<string, string> = {
-    "Brand Identity": "Visual Identity",
-    "Visual Systems": "Visual Identity",
-    "Event Identity": "Visual Identity",
-    "Art Direction": "Visual Identity",
-    Illustration: "Visual Identity",
-    "UI/UX Design": "UX/UI",
-    "Interface Design": "UX/UI",
-    "Experience Design": "UX/UI",
-    "AI Prototyping": "UX/UI",
-    "Archive Design": "UX/UI",
-    "Data Visualization": "UX/UI",
-    "Motion Design": "2D Motion",
-    Motion: "2D Motion",
-    "3D / Cinematic": "3D Motion",
-    Cinematic: "3D Motion",
-    "Packaging Design": "Packaging",
-    "Product Design": "Product",
-    Prototyping: "Product",
-    "Publication Design": "Editorial",
-    "Editorial Design": "Editorial",
-    "Book Design": "Editorial",
-    "Poster Design": "Editorial",
-    Typography: "Editorial",
-    "Type Specimen": "Editorial",
-}
-
+// Snapshot of the "All Projects" CMS collection (15 items, captured from the
+// live CMS). Used as a fallback when Use CMS is off OR when no registrars
+// have registered yet — so an unconfigured instance still renders content.
 const DEFAULT_PROJECTS: Project[] = [
     {
         title: "AirPods Pro 3",
         category1: "Visual Identity",
         category2: "2D Motion",
         category3: "3D Motion",
-        industry: "Consumer Electronics / Technology",
+        industry: "Technology",
         year: "2025",
-        thumbnail: "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+        thumbnail:
+            "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
         thumbnailVideoLink:
             "https://freight.cargo.site/i/V2732716404789921262344304055829/AirPods-Pro-3-Introduction-1.mp4",
-        isHomepage: true,
         slug: "airpods-pro-3",
         sortOrder: 1,
+        isHomepage: true,
     },
     {
         title: "Simon & Schuster",
         category1: "Brand Strategy",
         category2: "Visual Identity",
-        category3: "UX/UI",
-        industry: "Publishing",
+        category3: "Editorial",
+        industry: "Literature",
         year: "2025",
-        thumbnail: "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+        thumbnail:
+            "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
         thumbnailVideoLink: "",
-        isHomepage: true,
         slug: "simon-schuster",
         sortOrder: 2,
+        isHomepage: true,
     },
     {
         title: "Gaia",
-        category1: "Brand Strategy",
+        category1: "Visual Identity",
         category2: "UX/UI",
-        category3: "Product",
-        industry: "Citizen Science / Biodiversity",
+        category3: "Brand Strategy",
+        industry: "Nature & Outdoors",
         year: "2026",
-        thumbnail: "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+        thumbnail:
+            "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
         thumbnailVideoLink: "",
-        isHomepage: true,
         slug: "gaia",
         sortOrder: 3,
+        isHomepage: true,
     },
     {
         title: "National Park Playing Cards",
         category1: "Product",
         category2: "Packaging",
         category3: "Visual Identity",
-        industry: "Outdoor Retail / Consumer Goods",
-        year: "2019-ongoing",
-        thumbnail: "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
+        industry: "Nature & Outdoors",
+        year: "2019",
+        thumbnail:
+            "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
         thumbnailVideoLink: "",
-        isHomepage: true,
         slug: "national-park-cards",
         sortOrder: 4,
+        isHomepage: true,
     },
     {
         title: "Motion Connect 2025",
         category1: "Visual Identity",
         category2: "2D Motion",
-        category3: "Editorial",
-        industry: "Design Education / Motion Design",
+        category3: "Social Media",
+        industry: "Design Education",
         year: "2025",
-        thumbnail: "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+        thumbnail:
+            "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
         thumbnailVideoLink:
             "https://freight.cargo.site/i/K2717924145885630584799912777237/Motion-Connect_1.mp4",
-        isHomepage: true,
         slug: "motion-connect-2025",
         sortOrder: 5,
+        isHomepage: true,
     },
     {
         title: "Yomo",
         category1: "Visual Identity",
         category2: "UX/UI",
-        category3: "Product",
-        industry: "Food Tech / Health & Wellness",
+        category3: "",
+        industry: "Health & Wellness",
         year: "2025",
-        thumbnail: "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+        thumbnail:
+            "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
         thumbnailVideoLink: "",
-        isHomepage: true,
         slug: "yomo",
         sortOrder: 6,
+        isHomepage: true,
     },
     {
         title: "Karuna",
         category1: "Visual Identity",
         category2: "Packaging",
         category3: "Product",
-        industry: "Social Enterprise / Consumer Goods",
+        industry: "Nature & Outdoors",
         year: "2025",
-        thumbnail: "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+        thumbnail:
+            "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
         thumbnailVideoLink: "",
-        isHomepage: false,
         slug: "karuna",
         sortOrder: 7,
+        isHomepage: false,
     },
     {
         title: "Weaponized Innocence",
         category1: "Editorial",
         category2: "UX/UI",
         category3: "Visual Identity",
-        industry: "Human Rights / Editorial",
+        industry: "Human Rights",
         year: "2024",
-        thumbnail: "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+        thumbnail:
+            "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
         thumbnailVideoLink: "",
-        isHomepage: true,
         slug: "weaponized-innocence",
         sortOrder: 8,
+        isHomepage: true,
     },
     {
         title: "Wolff Olins x ArtCenter",
         category1: "Visual Identity",
-        category2: "",
-        category3: "",
-        industry: "Design Education / Brand Consulting",
+        category2: "2D Motion",
+        category3: "Social Media",
+        industry: "Design Education",
         year: "2024",
         thumbnail: "",
         thumbnailVideoLink: "",
-        isHomepage: false,
         slug: "wolff-olins-x-artcenter",
         sortOrder: 9,
+        isHomepage: false,
     },
     {
         title: "Aspen Valley Landscaping",
         category1: "Visual Identity",
         category2: "Brand Strategy",
         category3: "",
-        industry: "Landscaping / Home Services",
+        industry: "Nature & Outdoors",
         year: "2024",
         thumbnail: "",
         thumbnailVideoLink: "",
-        isHomepage: false,
         slug: "aspen-valley-landscaping",
         sortOrder: 10,
+        isHomepage: false,
     },
     {
         title: "Cellular Symphony",
         category1: "3D Motion",
         category2: "",
         category3: "",
-        industry: "Science Communication / Experimental Motion",
+        industry: "Science",
         year: "2024",
-        thumbnail: "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+        thumbnail:
+            "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
         thumbnailVideoLink:
             "https://freight.cargo.site/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
-        isHomepage: false,
         slug: "cellular-symphony",
         sortOrder: 11,
+        isHomepage: false,
     },
     {
         title: "Neon Lights",
         category1: "2D Motion",
         category2: "",
         category3: "",
-        industry: "Music / Experimental Motion",
+        industry: "Music",
         year: "2024",
-        thumbnail: "",
+        thumbnail:
+            "https://framerusercontent.com/images/TYPcX0xZpgwrY5Ezh0e7forig.jpg",
         thumbnailVideoLink: "https://player.vimeo.com/video/903963136",
-        isHomepage: false,
         slug: "neon-lights",
         sortOrder: 12,
+        isHomepage: false,
     },
     {
         title: "John Steinbeck",
         category1: "Editorial",
         category2: "Visual Identity",
         category3: "",
-        industry: "Literature / Publishing / Education",
+        industry: "Literature",
         year: "2023",
         thumbnail: "",
         thumbnailVideoLink: "",
-        isHomepage: false,
         slug: "john-steinbeck",
         sortOrder: 13,
+        isHomepage: false,
     },
     {
         title: "Seek Truth",
         category1: "Editorial",
         category2: "Visual Identity",
         category3: "",
-        industry: "Politics / Protest",
+        industry: "Human Rights",
         year: "2024",
-        thumbnail: "https://framerusercontent.com/images/ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
+        thumbnail:
+            "https://framerusercontent.com/images/ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
         thumbnailVideoLink: "",
-        isHomepage: false,
         slug: "seek-truth",
         sortOrder: 14,
+        isHomepage: false,
     },
     {
         title: "Independent Lens",
         category1: "Editorial",
         category2: "Visual Identity",
         category3: "",
-        industry: "Film / Documentary / Public Media",
+        industry: "Human Rights",
         year: "2024",
-        thumbnail: "https://framerusercontent.com/images/2l7fi2HvjNmusO8H6tXWKotl8.jpg",
+        thumbnail:
+            "https://framerusercontent.com/images/2l7fi2HvjNmusO8H6tXWKotl8.jpg",
         thumbnailVideoLink: "",
-        isHomepage: false,
         slug: "independent-lens",
         sortOrder: 15,
+        isHomepage: false,
     },
 ]
 
-function canonicalDiscipline(value: string): string | undefined {
-    const trimmed = value.trim()
-    const canonical = DISCIPLINE_ALIASES[trimmed] ?? trimmed
-    return DISCIPLINE_NAV_SET.has(canonical) ? canonical : undefined
-}
-
 function getDisciplines(p: Project): string[] {
-    const disciplines = [p.category1, p.category2, p.category3]
-        .filter((c): c is string => !!c && c.trim() !== "")
-        .map(canonicalDiscipline)
-        .filter((c): c is string => !!c)
-
-    return Array.from(new Set(disciplines))
+    const seen = new Set<string>()
+    const out: string[] = []
+    for (const raw of [p.category1, p.category2, p.category3]) {
+        if (typeof raw !== "string") continue
+        const value = raw.trim()
+        if (!value || seen.has(value)) continue
+        seen.add(value)
+        out.push(value)
+    }
+    return out
 }
 
 function normalizeProjectDisciplines(p: Project): Project {
@@ -349,124 +341,128 @@ function getDisciplineDisplay(p: Project): string {
     return getDisciplines(p).join(", ")
 }
 
-function normalizeYearValue(year: Project["year"]): string {
-    return String(year ?? "").trim()
-}
-
-function getYearSortValue(year: Project["year"]): number {
-    const match = normalizeYearValue(year).match(/\d{4}/)
-    return match ? Number(match[0]) : Number.NEGATIVE_INFINITY
-}
-
-function sortProjects(a: Project, b: Project): number {
-    const aOrder = a.sortOrder ?? Number.MAX_SAFE_INTEGER
-    const bOrder = b.sortOrder ?? Number.MAX_SAFE_INTEGER
-    return aOrder - bOrder || a.title.localeCompare(b.title)
-}
-
-function getIndustryNavItems(projects?: Project[]): string[] {
-    if (!projects || projects.length === 0) return INDUSTRY_NAV_ITEMS
-
-    const items: string[] = []
-    const seen = new Set<string>()
-
-    ;[...projects].sort(sortProjects).forEach((p) => {
-        const industry = p.industry?.trim()
-        if (!industry || seen.has(industry)) return
-        seen.add(industry)
-        items.push(industry)
-    })
-
-    return items.length > 0 ? items : INDUSTRY_NAV_ITEMS
-}
-
-function getYearNavItems(projects?: Project[]): string[] {
-    if (!projects || projects.length === 0) return YEAR_NAV_ITEMS
-
+function collectByProjectOrder(
+    projects: Project[],
+    extract: (p: Project) => string[]
+): string[] {
     const items: string[] = []
     const seen = new Set<string>()
 
     ;[...projects]
-        .sort((a, b) => getYearSortValue(b.year) - getYearSortValue(a.year) || sortProjects(a, b))
+        .sort((a, b) => {
+            const aOrder = a.sortOrder ?? Number.MAX_SAFE_INTEGER
+            const bOrder = b.sortOrder ?? Number.MAX_SAFE_INTEGER
+            return aOrder - bOrder || a.title.localeCompare(b.title)
+        })
         .forEach((p) => {
-            const year = normalizeYearValue(p.year)
-            if (!year || seen.has(year)) return
-            seen.add(year)
-            items.push(year)
+            for (const raw of extract(p)) {
+                const value = typeof raw === "string" ? raw.trim() : ""
+                if (!value || seen.has(value)) continue
+                seen.add(value)
+                items.push(value)
+            }
         })
 
-    return items.length > 0 ? items : YEAR_NAV_ITEMS
+    return items
+}
+
+function getDisciplineNavItems(projects: Project[]): string[] {
+    return collectByProjectOrder(projects, getDisciplines)
+}
+
+function getIndustryNavItems(projects: Project[]): string[] {
+    return collectByProjectOrder(projects, (p) => [p.industry ?? ""])
+}
+
+function getYearNavItems(projects: Project[]): number[] {
+    const seen = new Set<number>()
+    for (const p of projects) {
+        const y = normalizeYear(p.year)
+        if (y > 0) seen.add(y)
+    }
+    return Array.from(seen).sort((a, b) => b - a)
 }
 
 function getCaseStudyUrl(p: Project): string {
     return p.slug ? `/case-studies/${p.slug}` : ""
 }
 
-function normalizeResponsiveImage(
-    image: Project["thumbnail"],
-    fallbackAlt: string
-): FramerResponsiveImage | undefined {
-    if (!image) return undefined
+function normalizeYear(raw: unknown): number {
+    if (raw === null || raw === undefined) return 0
 
-    if (typeof image === "string") {
-        const src = image.trim()
-        return src ? { src, alt: fallbackAlt } : undefined
+    if (typeof raw === "number") {
+        return Number.isFinite(raw) && raw > 1900 ? Math.floor(raw) : 0
     }
 
-    if (typeof image === "object" && typeof image.src === "string") {
-        const src = image.src.trim()
-        if (!src) return undefined
-        return {
-            ...image,
-            src,
-            alt: image.alt || fallbackAlt,
+    if (typeof raw === "object") {
+        if (raw instanceof Date) {
+            const y = raw.getFullYear()
+            return Number.isFinite(y) && y > 1900 ? y : 0
         }
+        const r = raw as Record<string, unknown>
+        if ("value" in r) return normalizeYear(r.value)
+        if ("year" in r) return normalizeYear(r.year)
+        return 0
     }
 
+    const str = String(raw).trim()
+    if (!str) return 0
+
+    const direct = Number(str)
+    if (Number.isFinite(direct) && direct > 1900) return Math.floor(direct)
+
+    const match = str.match(/(?:19|20)\d{2}/)
+    return match ? Number(match[0]) : 0
+}
+
+function normalizeThumbnailUrl(raw: unknown): string | undefined {
+    if (!raw) return undefined
+    if (typeof raw === "string") return raw || undefined
+    if (typeof raw === "object") {
+        const r = raw as Record<string, unknown>
+        if (typeof r.src === "string") return r.src || undefined
+    }
     return undefined
 }
 
-function getIntrinsicAspectRatio(image?: FramerResponsiveImage): number | undefined {
-    if (!image?.width || !image?.height || image.height <= 0) return undefined
-
-    const ratio = image.width / image.height
-    return Number.isFinite(ratio) && ratio > 0 ? ratio : undefined
-}
-
-function isEmbeddableVideoUrl(url?: string): boolean {
-    if (!url) return false
-    return /player\.vimeo\.com|youtube\.com\/embed/i.test(url)
-}
-
-function isDirectVideoUrl(url?: string): boolean {
-    if (!url) return false
-    return /\.(mp4|m4v|mov|webm)(\?|$)/i.test(url)
-}
-
 function groupByYear(projects: Project[]) {
-    const map: Record<string, Project[]> = {}
+    const map = new Map<number, Project[]>()
     for (const p of projects) {
-        const year = normalizeYearValue(p.year)
-        if (!year) continue
-        if (!map[year]) map[year] = []
-        map[year].push(p)
+        const year = normalizeYear(p.year)
+        const bucket = map.get(year)
+        if (bucket) bucket.push(p)
+        else map.set(year, [p])
     }
-    return Object.entries(map)
-        .sort(([a], [b]) => getYearSortValue(b) - getYearSortValue(a) || b.localeCompare(a))
-        .map(([year, items]) => ({ year, items: items.sort(sortProjects) }))
+    return Array.from(map.entries())
+        .sort(([a], [b]) => {
+            if (a === 0) return 1
+            if (b === 0) return -1
+            return b - a
+        })
+        .map(([year, items]) => ({
+            year,
+            items: [...items].sort((a, b) => a.title.localeCompare(b.title)),
+        }))
 }
 
-function filterProjects(projects: Project[], filters: Filters, query: string): Project[] {
+function filterProjects(
+    projects: Project[],
+    filters: Filters,
+    query: string
+): Project[] {
     return projects.filter((p) => {
         const pDisciplines = getDisciplines(p)
-        const year = normalizeYearValue(p.year)
         const matchDiscipline =
             filters.disciplines.length === 0 ||
-            filters.disciplines.some((d) => pDisciplines.includes(d))
+            filters.disciplines.every((d) => pDisciplines.includes(d))
         const matchIndustry =
-            filters.industries.length === 0 || filters.industries.includes(p.industry)
-        const matchYear = filters.years.length === 0 || filters.years.includes(year)
-        const matchSearch = !query || p.title.toLowerCase().includes(query.toLowerCase())
+            filters.industries.length === 0 ||
+            filters.industries.includes(p.industry)
+        const matchYear =
+            filters.years.length === 0 ||
+            filters.years.includes(normalizeYear(p.year))
+        const matchSearch =
+            !query || p.title.toLowerCase().includes(query.toLowerCase())
         return matchDiscipline && matchIndustry && matchYear && matchSearch
     })
 }
@@ -488,9 +484,6 @@ const GLOBAL_CSS = `
     animation: idxRuleDraw 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
     transform-origin: left center;
     will-change: transform;
-    background-color: ${tokens.dividerStrong} !important;
-    border-color: ${tokens.dividerStrong} !important;
-    opacity: 1 !important;
   }
 
   .idx-tax-item {
@@ -504,12 +497,6 @@ const GLOBAL_CSS = `
     outline-offset: 3px;
   }
 
-  .idx-toggle-fixed,
-  .idx-toggle-fixed *,
-  .idx-toggle-fixed button {
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
-  }
 
   .idx-list-row {
     transition: background 150ms ease;
@@ -549,10 +536,69 @@ const GLOBAL_CSS = `
     transform: translateY(calc((var(--idx-flip-height) + 5px) * -1));
   }
 
-  .idx-row-divider {
+  .idx-rule,
+  .idx-row-divider,
+  .idx-year-rule,
+  .idx-grid-top-rule,
+  .idx-list-bottom-rule {
     background-color: ${tokens.dividerSubtle} !important;
     border-color: ${tokens.dividerSubtle} !important;
     opacity: 1 !important;
+  }
+
+  .idx-view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin: 0 0 33px;
+    font-family: ${tokens.fontMono};
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: ${tokens.textPrimary};
+  }
+
+  .idx-view-toggle-option {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    font: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    color: ${tokens.textPrimary};
+    -webkit-text-fill-color: currentColor;
+    cursor: pointer;
+    text-decoration: none;
+    text-underline-offset: 3px;
+    transition: color 150ms ease;
+  }
+
+  .idx-view-toggle-option[data-active="true"] {
+    text-decoration: underline;
+    color: ${tokens.textPrimary};
+  }
+
+  .idx-view-toggle-option[data-active="false"]:hover {
+    color: ${tokens.textTertiary};
+  }
+
+  .idx-view-toggle-option:focus-visible {
+    outline: 1px solid ${tokens.textPrimary};
+    outline-offset: 3px;
+  }
+
+  .idx-view-toggle-divider {
+    font: inherit;
+    line-height: inherit;
+    color: ${tokens.textPrimary};
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -569,75 +615,49 @@ const GLOBAL_CSS = `
   }
 
   .idx-project-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-    width: 100%;
-  }
-  .idx-project-grid-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--idx-grid-gap, 20px);
+    row-gap: 56px;
     width: 100%;
   }
   .idx-grid-card {
     min-width: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
     animation: idxFadeUp 300ms ease both;
   }
-  .idx-grid-card-link {
-    display: block;
-    width: 100%;
-    color: inherit;
-    text-decoration: none;
-  }
-  .idx-grid-card-link:focus-visible {
-    outline: 1px solid ${tokens.textPrimary};
-    outline-offset: 4px;
-  }
-  .idx-grid-card-meta {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-    min-width: 0;
-    margin-bottom: 16px;
-    font-family: ${tokens.fontMono};
-    font-size: 13px;
-    line-height: 1;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: ${tokens.textPrimary};
-  }
   .idx-grid-card-title {
+    width: 100%;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .idx-grid-card-media {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: ${tokens.surfaceActive};
   }
-  .idx-grid-card-image {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .idx-grid-card-media.has-known-ratio .idx-grid-card-image {
-    height: 100%;
-    object-fit: cover;
-  }
-  .idx-grid-card-video,
-  .idx-grid-card-embed {
+  .idx-grid-card-img,
+  .idx-grid-card-video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     border: 0;
+  }
+  .idx-grid-card-video {
+    pointer-events: none;
+  }
+  .idx-grid-card:hover .idx-flip-track,
+  .idx-grid-card:focus-visible .idx-flip-track {
+    transform: translateY(calc((var(--idx-flip-height) + 5px) * -1));
   }
 
   .idx-tax-label-discipline { grid-column: 1 / span 1; }
@@ -653,23 +673,26 @@ const GLOBAL_CSS = `
 
   @media (max-width: 1199px) {
     .idx-container { padding: 0 20px !important; }
-  }
-  @media (max-width: 809px) {
-    .idx-container { --idx-grid-gap: 12px; padding: 0 20px !important; }
-    .idx-taxonomy-shell { grid-template-columns: max-content minmax(0, 1fr) !important; column-gap: 20px !important; row-gap: 28px !important; }
-    .idx-tax-label-discipline,
-    .idx-tax-label-industry,
-    .idx-tax-label-year { grid-column: 1 / span 1; }
-    .idx-tax-items-discipline,
-    .idx-tax-items-industry,
-    .idx-tax-items-year { grid-column: 2 / span 1; }
-    .idx-taxonomy-items { overflow: visible !important; }
-    .idx-tax-item { white-space: normal !important; overflow-wrap: anywhere; }
-    .idx-toggle-fixed { left: 50% !important; transform: translateX(-50%) !important; }
-    .idx-list-standard .idx-year-number { font-size: 28px !important; }
+    .idx-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     .idx-year-group { grid-template-columns: 1fr !important; row-gap: 8px !important; }
     .idx-year-label,
     .idx-list-content { grid-column: 1 / -1 !important; }
+  }
+  @media (max-width: 809px) {
+    .idx-container { --idx-grid-gap: 12px; padding: 0 20px !important; }
+    .idx-taxonomy-shell {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      column-gap: 16px !important;
+      row-gap: 8px !important;
+    }
+    .idx-tax-label-discipline { grid-column: 1 / span 1 !important; grid-row: 1 !important; }
+    .idx-tax-items-discipline { grid-column: 1 / span 1 !important; grid-row: 2 !important; }
+    .idx-tax-label-industry { grid-column: 2 / span 1 !important; grid-row: 1 !important; }
+    .idx-tax-items-industry { grid-column: 2 / span 1 !important; grid-row: 2 !important; }
+    .idx-tax-label-year { grid-column: 3 / span 1 !important; grid-row: 1 !important; }
+    .idx-tax-items-year { grid-column: 3 / span 1 !important; grid-row: 2 !important; }
+    .idx-taxonomy-items { overflow: visible !important; }
+    .idx-tax-item { white-space: normal !important; overflow-wrap: anywhere; }
     .idx-list-row-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       align-items: start !important;
@@ -722,10 +745,11 @@ const GLOBAL_CSS = `
       white-space: normal !important;
     }
     .idx-flip-copy + .idx-flip-copy { display: none !important; }
-    .idx-project-grid { gap: 48px !important; }
-    .idx-project-grid-row { flex-direction: column !important; gap: 48px !important; }
-    .idx-grid-card { flex: 1 1 auto !important; width: 100% !important; }
-    .idx-grid-card-title { white-space: normal !important; overflow-wrap: anywhere; }
+    .idx-project-grid { grid-template-columns: 1fr !important; row-gap: 40px !important; }
+    .idx-grid-card:hover .idx-flip-track,
+    .idx-grid-card:focus-visible .idx-flip-track {
+      transform: none !important;
+    }
   }
   @media (max-width: 520px) {
     .idx-taxonomy-shell { grid-template-columns: 1fr !important; row-gap: 0 !important; }
@@ -734,7 +758,10 @@ const GLOBAL_CSS = `
     .idx-tax-label-year,
     .idx-tax-items-discipline,
     .idx-tax-items-industry,
-    .idx-tax-items-year { grid-column: 1 / -1 !important; }
+    .idx-tax-items-year {
+      grid-column: 1 / -1 !important;
+      grid-row: auto !important;
+    }
     .idx-tax-label-industry,
     .idx-tax-label-year { margin-top: 20px; }
     .idx-list-row-grid { grid-template-columns: 1fr !important; row-gap: 0 !important; }
@@ -745,15 +772,20 @@ const GLOBAL_CSS = `
 
 function TaxonomySection({
     filters,
+    disciplineNavItems,
     industryNavItems,
     yearNavItems,
     onFilterToggle,
     onClearFilters,
 }: {
     filters: Filters
+    disciplineNavItems: string[]
     industryNavItems: string[]
-    yearNavItems: string[]
-    onFilterToggle: (type: "disciplines" | "industries" | "years", value: string) => void
+    yearNavItems: number[]
+    onFilterToggle: (
+        type: "disciplines" | "industries" | "years",
+        value: string | number
+    ) => void
     onClearFilters: () => void
 }) {
     const hasActive =
@@ -812,11 +844,17 @@ function TaxonomySection({
     return (
         <div>
             <div className="idx-taxonomy-shell" style={shellStyle}>
-                <div className="idx-taxonomy-label idx-tax-label-discipline" style={labelStyle}>
+                <div
+                    className="idx-taxonomy-label idx-tax-label-discipline"
+                    style={labelStyle}
+                >
                     Discipline
                 </div>
-                <div className="idx-taxonomy-items idx-tax-items-discipline" style={itemsStyle}>
-                    {DISCIPLINE_NAV_ITEMS.map((d) => (
+                <div
+                    className="idx-taxonomy-items idx-tax-items-discipline"
+                    style={itemsStyle}
+                >
+                    {disciplineNavItems.map((d) => (
                         <button
                             key={d}
                             type="button"
@@ -830,10 +868,16 @@ function TaxonomySection({
                     ))}
                 </div>
 
-                <div className="idx-taxonomy-label idx-tax-label-industry" style={labelStyle}>
+                <div
+                    className="idx-taxonomy-label idx-tax-label-industry"
+                    style={labelStyle}
+                >
                     Industry
                 </div>
-                <div className="idx-taxonomy-items idx-tax-items-industry" style={itemsStyle}>
+                <div
+                    className="idx-taxonomy-items idx-tax-items-industry"
+                    style={itemsStyle}
+                >
                     {industryNavItems.map((i) => (
                         <button
                             key={i}
@@ -848,10 +892,16 @@ function TaxonomySection({
                     ))}
                 </div>
 
-                <div className="idx-taxonomy-label idx-tax-label-year" style={labelStyle}>
+                <div
+                    className="idx-taxonomy-label idx-tax-label-year"
+                    style={labelStyle}
+                >
                     Year
                 </div>
-                <div className="idx-taxonomy-items idx-tax-items-year" style={itemsStyle}>
+                <div
+                    className="idx-taxonomy-items idx-tax-items-year"
+                    style={itemsStyle}
+                >
                     {yearNavItems.map((y) => (
                         <button
                             key={y}
@@ -973,10 +1023,17 @@ function ListView({
         )
     }
 
+    const closingRuleDelay = Math.min(groups.length, 8) * 70
     return (
-        <div className={`idx-list-view idx-list-${typographyVariant} idx-hover-${hoverVariant}`}>
+        <div
+            className={`idx-list-view idx-list-${typographyVariant} idx-hover-${hoverVariant}`}
+        >
             {groups.map(({ year, items }, groupIndex) => (
-                <div key={year} className="idx-year-group" style={indexGridStyle}>
+                <div
+                    key={year}
+                    className="idx-year-group"
+                    style={indexGridStyle}
+                >
                     <div
                         className="idx-rule idx-year-rule"
                         style={{
@@ -989,27 +1046,26 @@ function ListView({
 
                     <div
                         className="idx-year-label"
-                        style={{ gridColumn: "1 / span 1", minWidth: 0, paddingTop: isMono13 ? 5 : 6 }}
+                        style={{
+                            gridColumn: "1 / span 1",
+                            minWidth: 0,
+                            paddingTop: isMono13 ? 5 : 15,
+                        }}
                     >
                         <div
                             className="idx-year-number"
                             style={
-                                isMono13
-                                    ? mono13TextStyle
-                                    : {
-                                          fontFamily: tokens.fontDisplay,
-                                          fontSize: 40,
-                                          fontWeight: 300,
-                                          color: tokens.textPrimary,
-                                          lineHeight: 1.3,
-                                      }
+                                isMono13 ? mono13TextStyle : titleTextStyle
                             }
                         >
-                            {year}
+                            {year > 0 ? year : "—"}
                         </div>
                     </div>
 
-                    <div className="idx-list-content" style={{ gridColumn: "2 / span 5", minWidth: 0 }}>
+                    <div
+                        className="idx-list-content"
+                        style={{ gridColumn: "2 / span 5", minWidth: 0 }}
+                    >
                         {items.map((p, ri) => {
                             const url = getCaseStudyUrl(p)
                             const disciplineText = getDisciplineDisplay(p)
@@ -1021,11 +1077,14 @@ function ListView({
                                         className="idx-list-row idx-row idx-list-row-grid"
                                         style={{
                                             display: "grid",
-                                            gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
+                                            gridTemplateColumns:
+                                                "repeat(5, minmax(0, 1fr))",
                                             columnGap: INDEX_GRID_GAP,
                                             alignItems: "center",
                                             minHeight: isMono13 ? 38 : 56,
-                                            padding: isMono13 ? "5px 0" : "9px 0",
+                                            padding: isMono13
+                                                ? "5px 0"
+                                                : "9px 0",
                                             cursor: url ? "pointer" : "default",
                                             animationDelay: `${Math.min(ri, 12) * 30}ms`,
                                         }}
@@ -1045,12 +1104,18 @@ function ListView({
                                             {useFlipHover ? (
                                                 <HoverFlipText
                                                     text={p.title}
-                                                    activeText={url ? "View Project" : p.title}
+                                                    activeText={
+                                                        url
+                                                            ? "View Project"
+                                                            : p.title
+                                                    }
                                                     style={titleTextStyle}
                                                     height={titleFlipHeight}
                                                 />
                                             ) : (
-                                                <span style={titleTextStyle}>{p.title}</span>
+                                                <span style={titleTextStyle}>
+                                                    {p.title}
+                                                </span>
                                             )}
                                         </div>
 
@@ -1063,7 +1128,9 @@ function ListView({
                                                 whiteSpace: "nowrap",
                                             }}
                                         >
-                                            <span style={mono13TextStyle}>{disciplineText}</span>
+                                            <span style={mono13TextStyle}>
+                                                {disciplineText}
+                                            </span>
                                         </div>
 
                                         <div
@@ -1075,7 +1142,9 @@ function ListView({
                                                 whiteSpace: "nowrap",
                                             }}
                                         >
-                                            <span style={mono13TextStyle}>{p.industry}</span>
+                                            <span style={mono13TextStyle}>
+                                                {p.industry}
+                                            </span>
                                         </div>
                                     </div>
 
@@ -1084,7 +1153,8 @@ function ListView({
                                             className="idx-rule idx-row-divider"
                                             style={{
                                                 height: 1,
-                                                backgroundColor: tokens.dividerSubtle,
+                                                backgroundColor:
+                                                    tokens.dividerSubtle,
                                                 animationDelay: `${Math.min(groupIndex * 3 + ri, 16) * 35}ms`,
                                             }}
                                         />
@@ -1095,137 +1165,84 @@ function ListView({
                     </div>
                 </div>
             ))}
+            <div
+                className="idx-rule idx-list-bottom-rule"
+                style={{
+                    height: 1,
+                    width: "100%",
+                    backgroundColor: tokens.dividerStrong,
+                    animationDelay: `${closingRuleDelay}ms`,
+                }}
+            />
         </div>
     )
-}
-
-const GRID_ROW_PATTERNS = [
-    [2, 1, 1],
-    [1, 2, 1],
-    [1, 1, 2],
-    [1, 2, 1],
-]
-
-function getGridRows(projects: Project[]): Project[][] {
-    const rows: Project[][] = []
-    for (let i = 0; i < projects.length; i += 3) {
-        rows.push(projects.slice(i, i + 3))
-    }
-    return rows
 }
 
 function GridProjectCard({
     project,
     index,
-    weight,
 }: {
     project: Project
     index: number
-    weight: number
 }) {
     const href = getCaseStudyUrl(project)
-    const thumbnail = normalizeResponsiveImage(
-        project.thumbnail,
-        `${project.title} thumbnail`
-    )
-    const intrinsicAspectRatio = getIntrinsicAspectRatio(thumbnail)
-    const hasKnownRatio = !!intrinsicAspectRatio
-    const videoUrl = project.thumbnailVideoLink?.trim()
-    const directVideoUrl = isDirectVideoUrl(videoUrl) ? videoUrl : undefined
-    const mediaClassName = [
-        "idx-grid-card-media",
-        "ImageWrapper",
-        directVideoUrl ? "VideoWrapper uses-video-thumbnail" : "",
-        hasKnownRatio ? "has-known-ratio" : "",
-    ]
-        .filter(Boolean)
-        .join(" ")
-    const mediaStyle: React.CSSProperties = {
-        aspectRatio:
-            intrinsicAspectRatio ??
-            (directVideoUrl || !thumbnail
-                ? FALLBACK_THUMBNAIL_ASPECT_RATIO
-                : undefined),
+    const thumbSrc = normalizeThumbnailUrl(project.thumbnail as unknown)
+    const videoSrc = (project.thumbnailVideoLink || "").trim()
+
+    const titleStyle: React.CSSProperties = {
+        fontFamily: tokens.fontHeading,
+        fontSize: 22,
+        fontWeight: 500,
+        textTransform: "uppercase",
+        color: tokens.textPrimary,
+        lineHeight: 1.2,
     }
 
-    const cardContent = (
-        <>
-            <div className="idx-grid-card-meta">
-                <span>{project.sortOrder ?? index + 1}</span>
-                <span aria-hidden="true">/</span>
-                <span className="idx-grid-card-title">{project.title}</span>
-            </div>
-
-            <div
-                className={mediaClassName}
-                data-framer-name={directVideoUrl ? "VideoWrapper" : "ImageWrapper"}
-                style={mediaStyle}
-            >
-                {thumbnail && !directVideoUrl ? (
-                    <img
-                        className="idx-grid-card-image"
-                        src={thumbnail.src}
-                        srcSet={thumbnail.srcSet}
-                        alt={thumbnail.alt || `${project.title} thumbnail`}
-                        loading="lazy"
-                        decoding="async"
-                    />
-                ) : !directVideoUrl ? (
-                    <div aria-hidden="true" style={{ width: "100%", height: "100%" }} />
-                ) : null}
-
-                {directVideoUrl && (
-                    <video
-                        className="idx-grid-card-video idx-grid-card-video-thumbnail ThumbnailVideo"
-                        data-framer-name="ThumbnailVideo"
-                        src={directVideoUrl}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-hidden="true"
-                    />
-                )}
-
-                {!thumbnail && isEmbeddableVideoUrl(videoUrl) && (
-                    <iframe
-                        className="idx-grid-card-embed ThumbnailVideo"
-                        data-framer-name="ThumbnailVideo"
-                        src={videoUrl}
-                        title={`${project.title} video thumbnail`}
-                        loading="lazy"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                    />
-                )}
-            </div>
-        </>
-    )
-
     return (
-        <div
+        <a
             className="idx-grid-card"
+            href={href || undefined}
+            aria-label={project.title}
             style={{
-                flex: `${weight} 1 0`,
                 animationDelay: `${Math.min(index, 12) * 30}ms`,
             }}
         >
-            {href ? (
-                <a className="idx-grid-card-link" href={href} aria-label={`View ${project.title}`}>
-                    {cardContent}
-                </a>
-            ) : (
-                <div className="idx-grid-card-link" role="article" aria-label={project.title}>
-                    {cardContent}
-                </div>
-            )}
-        </div>
+            <div className="idx-grid-card-title">
+                <HoverFlipText
+                    text={project.title}
+                    activeText={href ? "View Project" : project.title}
+                    style={titleStyle}
+                    height="27px"
+                />
+            </div>
+            <div
+                className="idx-grid-card-media"
+            >
+                {videoSrc ? (
+                    <video
+                        className="idx-grid-card-video"
+                        src={videoSrc}
+                        poster={thumbSrc}
+                        muted
+                        loop
+                        playsInline
+                        autoPlay
+                        preload="metadata"
+                    />
+                ) : thumbSrc ? (
+                    <img
+                        className="idx-grid-card-img"
+                        src={thumbSrc}
+                        alt={`${project.title} thumbnail`}
+                        loading="lazy"
+                    />
+                ) : null}
+            </div>
+        </a>
     )
 }
 
 function GridView({ projects }: { projects: Project[] }) {
-    const rows = useMemo(() => getGridRows(projects), [projects])
-
     if (projects.length === 0) {
         return (
             <div
@@ -1245,23 +1262,29 @@ function GridView({ projects }: { projects: Project[] }) {
     }
 
     return (
-        <div className="idx-project-grid" aria-label="Filtered project grid">
-            {rows.map((row, rowIndex) => {
-                const pattern = GRID_ROW_PATTERNS[rowIndex % GRID_ROW_PATTERNS.length]
-                return (
-                    <div className="idx-project-grid-row" key={row.map((p) => p.title).join("-")}>
-                        {row.map((project, columnIndex) => (
-                            <GridProjectCard
-                                key={project.title}
-                                project={project}
-                                index={rowIndex * 3 + columnIndex}
-                                weight={pattern[columnIndex] ?? 1}
-                            />
-                        ))}
-                    </div>
-                )
-            })}
-        </div>
+        <>
+            <div
+                className="idx-rule idx-grid-top-rule"
+                style={{
+                    height: 1,
+                    width: "100%",
+                    backgroundColor: tokens.dividerStrong,
+                    marginBottom: 24,
+                }}
+            />
+            <div
+                className="idx-project-grid"
+                aria-label="Filtered project grid"
+            >
+                {projects.map((project, index) => (
+                    <GridProjectCard
+                        key={project.title}
+                        project={project}
+                        index={index}
+                    />
+                ))}
+            </div>
+        </>
     )
 }
 
@@ -1272,96 +1295,139 @@ function ViewToggle({
     activeView: string
     onViewChange: (v: string) => void
 }) {
-    const toggleOptions = ["list", "grid"] as const
-
-    const btnBase = (active: boolean): React.CSSProperties => ({
-        padding: "6px 10px",
-        width: "100%",
-        fontFamily: tokens.fontMono,
-        fontSize: 14,
-        textTransform: "uppercase",
-        letterSpacing: "0.06em",
-        color: tokens.textPrimary,
-        WebkitTextFillColor: tokens.textPrimary,
-        cursor: "pointer",
-        border: "none",
-        background: active ? tokens.surfaceActive : "none",
-        borderRadius: 4,
-        transition: "all 200ms ease",
-        lineHeight: 1,
-        textAlign: "center",
-    })
+    const toggleOptions = ["grid", "list"] as const
 
     return (
-        <div
-            style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${toggleOptions.length}, minmax(0, 1fr))`,
-                alignItems: "center",
-                width: 148,
-                padding: 3,
-                borderRadius: 4,
-                color: tokens.textPrimary,
-                background: tokens.surfaceOverlay,
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-                boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-            }}
-        >
-            {toggleOptions.map((v) => (
-                <button key={v} style={btnBase(activeView === v)} onClick={() => onViewChange(v)}>
-                    {v}
-                </button>
-            ))}
+        <div className="idx-view-toggle" aria-label="Project view">
+            {toggleOptions.map((v, index) => {
+                const active = activeView === v
+
+                return (
+                    <React.Fragment key={v}>
+                        {index > 0 && (
+                            <span
+                                className="idx-view-toggle-divider"
+                                aria-hidden="true"
+                            >
+                                /
+                            </span>
+                        )}
+                        <button
+                            type="button"
+                            className="idx-view-toggle-option"
+                            data-active={active ? "true" : "false"}
+                            aria-pressed={active}
+                            onClick={() => onViewChange(v)}
+                        >
+                            {v}
+                        </button>
+                    </React.Fragment>
+                )
+            })}
         </div>
     )
 }
 
 export default function IndexPage({
     projects: projectsProp,
+    useCMS = false,
     defaultView = "list",
     listTypographyVariant = "standard",
     listHoverVariant = "flip",
 }: {
     projects?: Project[]
+    useCMS?: boolean
     defaultView?: string
     listTypographyVariant?: ListTypographyVariant
     listHoverVariant?: ListHoverVariant
 }) {
-    const hasBoundProjects = !!projectsProp && projectsProp.length > 0
+    // Mirror of the window registry. ProjectRegistrar instances placed inside
+    // a Framer Collection List anywhere on the page push CMS rows into the
+    // window-level registry; this state mirrors that so React re-renders.
+    const [registeredProjects, setRegisteredProjects] = useState<
+        Map<string, Project>
+    >(() => new Map())
+
+    useEffect(() => {
+        if (!useCMS) return
+        const reg = getRegistry()
+        if (!reg) return
+        return reg.subscribe((items) => {
+            setRegisteredProjects(
+                new Map(items as Map<string, Project>)
+            )
+        })
+    }, [useCMS])
+
     const allProjects = useMemo(() => {
-        const sourceProjects = hasBoundProjects ? projectsProp! : DEFAULT_PROJECTS
-        return sourceProjects.map(normalizeProjectDisciplines).sort(sortProjects)
-    }, [hasBoundProjects, projectsProp])
+        // Priority: registry (when Use CMS is on and registrars exist) > prop
+        // > DEFAULT_PROJECTS snapshot. With Use CMS off, the instance shows
+        // the static fallback (useful for side-by-side comparison while
+        // testing CMS wiring on a duplicate instance).
+        const fromRegistry =
+            useCMS && registeredProjects.size > 0
+                ? Array.from(registeredProjects.values())
+                : null
+        const sourceProjects: Project[] =
+            fromRegistry ??
+            (projectsProp && projectsProp.length > 0
+                ? projectsProp
+                : DEFAULT_PROJECTS)
+        return sourceProjects.map(normalizeProjectDisciplines)
+    }, [useCMS, registeredProjects, projectsProp])
     const initialView = defaultView === "grid" ? "grid" : "list"
 
     const [activeView, setActiveView] = useState(initialView)
     const [transitioning, setTransitioning] = useState(false)
     const [renderKey, setRenderKey] = useState(0)
-    const [filters, setFilters] = useState<Filters>({ disciplines: [], industries: [], years: [] })
+    const [filters, setFilters] = useState<Filters>({
+        disciplines: [],
+        industries: [],
+        years: [],
+    })
     const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-    const industryNavItems = useMemo(() => getIndustryNavItems(allProjects), [allProjects])
-    const yearNavItems = useMemo(() => getYearNavItems(allProjects), [allProjects])
-    const handleViewChange = useCallback((v: string) => {
-        if (v === activeView) return
-        if (transitionTimer.current) clearTimeout(transitionTimer.current)
-        setTransitioning(true)
-        transitionTimer.current = setTimeout(() => {
-            setActiveView(v)
-            setRenderKey((k) => k + 1)
-            setTransitioning(false)
-            transitionTimer.current = null
-        }, 150)
-    }, [activeView])
+    const disciplineNavItems = useMemo(
+        () => getDisciplineNavItems(allProjects),
+        [allProjects]
+    )
+    const industryNavItems = useMemo(
+        () => getIndustryNavItems(allProjects),
+        [allProjects]
+    )
+    const yearNavItems = useMemo(
+        () => getYearNavItems(allProjects),
+        [allProjects]
+    )
 
-    useEffect(() => () => {
-        if (transitionTimer.current) clearTimeout(transitionTimer.current)
-    }, [])
+    const handleViewChange = useCallback(
+        (v: string) => {
+            if (v === activeView) return
+            if (transitionTimer.current) clearTimeout(transitionTimer.current)
+            setTransitioning(true)
+            transitionTimer.current = setTimeout(() => {
+                setActiveView(v)
+                setRenderKey((k) => k + 1)
+                setTransitioning(false)
+                transitionTimer.current = null
+            }, 150)
+        },
+        [activeView]
+    )
+
+    useEffect(
+        () => () => {
+            if (transitionTimer.current) clearTimeout(transitionTimer.current)
+        },
+        []
+    )
 
     const handleFilterToggle = useCallback(
-        (type: "disciplines" | "industries" | "years", value: string) => {
+        (
+            type: "disciplines" | "industries" | "years",
+            value: string | number
+        ) => {
             setFilters((prev) => {
-                const arr = prev[type]
+                const arr = prev[type] as any[]
                 return {
                     ...prev,
                     [type]: arr.includes(value)
@@ -1389,27 +1455,30 @@ export default function IndexPage({
 
             <div
                 className="idx-container"
-                style={{
-                    width: "100%",
-                    color: tokens.textPrimary,
-                    fontFamily: tokens.fontMono,
-                    boxSizing: "border-box",
-                    minHeight: "60vh",
-                    padding: "0 20px",
-                    WebkitFontSmoothing: "antialiased",
-                    MozOsxFontSmoothing: "grayscale",
-                } as React.CSSProperties}
+                style={
+                    {
+                        width: "100%",
+                        color: tokens.textPrimary,
+                        fontFamily: tokens.fontMono,
+                        boxSizing: "border-box",
+                        minHeight: "60vh",
+                        padding: "0 20px",
+                        WebkitFontSmoothing: "antialiased",
+                        MozOsxFontSmoothing: "grayscale",
+                    } as React.CSSProperties
+                }
             >
                 <div
                     style={{
                         opacity: 1,
                         pointerEvents: "auto",
                         transition: "opacity 200ms ease",
-                        marginBottom: 40,
+                        marginBottom: 18,
                     }}
                 >
                     <TaxonomySection
                         filters={filters}
+                        disciplineNavItems={disciplineNavItems}
                         industryNavItems={industryNavItems}
                         yearNavItems={yearNavItems}
                         onFilterToggle={handleFilterToggle}
@@ -1417,11 +1486,18 @@ export default function IndexPage({
                     />
                 </div>
 
+                <ViewToggle
+                    activeView={activeView}
+                    onViewChange={handleViewChange}
+                />
+
                 <div
                     key={renderKey}
                     style={{
                         opacity: transitioning ? 0 : 1,
-                        transition: transitioning ? "opacity 150ms ease" : "opacity 250ms ease",
+                        transition: transitioning
+                            ? "opacity 150ms ease"
+                            : "opacity 250ms ease",
                     }}
                 >
                     {activeView === "grid" ? (
@@ -1437,8 +1513,8 @@ export default function IndexPage({
 
                 <div
                     style={{
-                        marginTop: 48,
-                        paddingBottom: 80,
+                        marginTop: 16,
+                        paddingBottom: 160,
                         fontFamily: tokens.fontMono,
                         fontSize: 13,
                         lineHeight: "28px",
@@ -1450,23 +1526,18 @@ export default function IndexPage({
                     {filteredProjects.length === 1 ? "Project" : "Projects"}
                 </div>
             </div>
-
-            <div
-                className="idx-toggle-fixed"
-                style={{
-                    position: "fixed",
-                    bottom: 20,
-                    left: 20,
-                    zIndex: 100,
-                }}
-            >
-                <ViewToggle activeView={activeView} onViewChange={handleViewChange} />
-            </div>
         </>
     )
 }
 
 addPropertyControls(IndexPage, {
+    useCMS: {
+        type: ControlType.Boolean,
+        title: "Use CMS",
+        defaultValue: false,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+    },
     projects: {
         type: ControlType.Array,
         title: "Projects",
@@ -1479,10 +1550,16 @@ addPropertyControls(IndexPage, {
                 category3: { type: ControlType.String, title: "Category 3" },
                 industry: { type: ControlType.String, title: "Industry" },
                 year: { type: ControlType.String, title: "Year" },
-                thumbnail: { type: ControlType.ResponsiveImage, title: "Thumbnail" },
-                thumbnailVideoLink: { type: ControlType.String, title: "Thumbnail Video Link" },
+                thumbnail: { type: ControlType.Image, title: "Thumbnail" },
+                thumbnailVideoLink: {
+                    type: ControlType.String,
+                    title: "Thumbnail Video Link",
+                },
                 slug: { type: ControlType.String, title: "Slug" },
-                sortOrder: { type: ControlType.Number, title: "Sorting Number" },
+                sortOrder: {
+                    type: ControlType.Number,
+                    title: "Sorting Number",
+                },
                 isHomepage: { type: ControlType.Boolean, title: "Is Homepage" },
             },
         },

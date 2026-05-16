@@ -9,7 +9,7 @@
 
 ## Status Update — May 16, 2026
 
-Later design changes after this audit: canonical `/index` now uses `IndexInlineToggleProxy.tsx` (`TexpcmJ`, instance `HM1pZPonP`) to render the inline uppercase `GRID / LIST` toggle instead of the visible fixed floating control. The side-by-side `/index-inline-toggle-test` route (`VdRy9MV8k`) remains available for comparison. Index rules/dividers are now standardized to full-opacity Light Gray `#979797`; the legacy `IndexRuleColorOverride` default was updated to the same color.
+Later design changes after this audit: canonical `/index` now renders the inline uppercase `GRID / LIST` toggle directly inside `IndexPage.tsx` (`rgAZFOv`) instead of using a visible fixed floating control or helper proxy. The temporary side-by-side `/index-inline-toggle-test` route (`VdRy9MV8k`) has been removed. Index rules/dividers are now standardized to full-opacity Light Gray `#979797`; the legacy `IndexRuleColorOverride` default was updated to the same color.
 
 ## Status Update — May 6, 2026
 

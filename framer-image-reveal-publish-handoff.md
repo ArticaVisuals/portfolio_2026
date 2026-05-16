@@ -76,9 +76,9 @@ Stroke/border attributes were removed from:
 - `ImageWrapper` node `LvdUb_iyY`
 - overlay `Stack` node `d3z4kFOAq`
 
-May 16, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), `/index` (`szF9sZNWA`), and the `/index-inline-toggle-test` A/B page (`qhlZznPzR`). Current verified CMS state: AirPods Pro 3 is on; all other projects are off. The component no longer exposes fallback modes for stroke variants or selected works, so stroke status is not hard-coded into specific projects. The stroke color is Light Gray `#979797`, and the stroke is a non-layout real overlay child inserted inside the thumbnail wrapper, so it should not change grid/card dimensions.
+May 16, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), and `/index` (`szF9sZNWA`). Current verified CMS state: AirPods Pro 3 is on; all other projects are off. The component no longer exposes fallback modes for stroke variants or selected works, so stroke status is not hard-coded into specific projects. The stroke color is Light Gray `#979797`, and the stroke is a non-layout real overlay child inserted inside the thumbnail wrapper, so it should not change grid/card dimensions. The old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) have been deleted.
 
-May 16, 2026 index-toggle note: the uppercase original-template-style `GRID / LIST` control has been promoted to canonical `/index` via `IndexInlineToggleProxy.tsx` (`TexpcmJ`, instance `HM1pZPonP`). The helper hides the underlying fixed toggle locally, delegates clicks back to `IndexPage`, underlines the active view, shifts inactive options to Light Gray `#979797` on hover, and forces list/grid rules to full-opacity `#979797`. `/index-inline-toggle-test` (`VdRy9MV8k`) remains as a draft-only side-by-side comparison route using the same helper (`ZKnst6HwT`).
+May 16, 2026 index-toggle note: the uppercase original-template-style `GRID / LIST` control has been promoted to canonical `/index` and integrated directly into `IndexPage.tsx` (`rgAZFOv`). The former `IndexInlineToggleProxy.tsx` helper (`TexpcmJ`, instance `HM1pZPonP`) was removed after its behavior moved into the main component. `IndexPage` now underlines the active view, shifts inactive options to Light Gray `#979797` on hover, and forces list/grid rules to full-opacity `#979797`.
 
 ## Current Project Map
 
@@ -90,7 +90,9 @@ From Framer MCP `getProjectXml` (May 15, 2026), current web pages:
 - `fxz_zRIyp` path `/info`
 - `gmXtVnIzJ` path `/contact`
 - `UlQco8cYi` path `/case-studies/:slug`
-- `u2LOaBT5q` path `/index` (single page; the earlier duplicate `yKKOMVNs6` is gone)
+- `u2LOaBT5q` path `/index` (single page; the earlier duplicate `yKKOMVNs6` and temporary `/index-inline-toggle-test` route are gone)
+- `KbgWr_0BN` path `/playground`
+- `LB7pYBD3k` path `/case-studies/airpods`
 
 Important components:
 
