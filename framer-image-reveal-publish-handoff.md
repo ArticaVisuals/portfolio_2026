@@ -76,7 +76,9 @@ Stroke/border attributes were removed from:
 - `ImageWrapper` node `LvdUb_iyY`
 - overlay `Stack` node `d3z4kFOAq`
 
-May 15, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), and `/index` (`szF9sZNWA`). Current verified state: AirPods Pro 3 is on; all other projects are off. The stroke color is Light Gray `#979797`, and the stroke is a non-layout real overlay child inserted inside the thumbnail wrapper, so it should not change grid/card dimensions.
+May 16, 2026 update: strokes are now available as an individual CMS toggle instead of a default card border. The controlling code component is `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), reading `All Projects` field `OHdUYs6Mo` (`Thumbnail Stroke`). Helper instances are placed on Home (`VXt8C11M9`), `/case-studies` (`AfVjNDU23`), `/index` (`szF9sZNWA`), and the `/index-inline-toggle-test` A/B page (`qhlZznPzR`). Current verified CMS state: AirPods Pro 3 is on; all other projects are off. The component no longer exposes fallback modes for stroke variants or selected works, so stroke status is not hard-coded into specific projects. The stroke color is Light Gray `#979797`, and the stroke is a non-layout real overlay child inserted inside the thumbnail wrapper, so it should not change grid/card dimensions.
+
+May 16, 2026 A/B note: `/index-inline-toggle-test` (`VdRy9MV8k`) was created as a draft-only comparison against the canonical `/index`. It uses `IndexInlineToggleProxy.tsx` (`TexpcmJ`) to hide the floating toggle only on that duplicate page and render an uppercase original-template-style `GRID / LIST` control at the top-right of the project content. Canonical `/index` should keep the floating toggle visible.
 
 ## Current Project Map
 

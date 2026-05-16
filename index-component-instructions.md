@@ -11,12 +11,14 @@
 **State summary (May 10, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
+- A separate A/B web page `/index-inline-toggle-test` (`VdRy9MV8k`) exists for comparing the original-template inline `GRID / LIST` control against the canonical floating toggle. Do not treat it as the production archive route until Micah chooses it.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The live Framer file is **newer than the repo `IndexPage.tsx`**. Do not push the repo file back to Framer without merging in the live changes (see §3.A).
 - An `IndexRuleColorOverride` instance sits on the page and unifies all `.idx-rule` and `.idx-row-divider` colors to `rgb(20, 20, 20)`.
 - **Grid view rewritten (May 10, 2026):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 thumbnails, 3/2/1 column responsive grid, title above the image with the same hover-flip used in List view, optional `<video>` on hover). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **ImageMaskReveal disabled on `/index` (May 10, 2026):** the page-level instance `qf2vKr_sV` is now `enabled="false"`. The site-wide instances on `/`, `/case-studies`, `/case-studies/:slug`, `/info`, and `/contact` remain `enabled="true"` with `activation="always"`. The `/index` page intentionally skips the curtain reveal so the archive loads instantly.
 - **Thumbnail stroke helper added (May 15, 2026):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. This helper is the source of truth for `.idx-grid-card-media.with-stroke`, so the old static class should not be treated as independent state. The helper now inserts a real Light Gray (`#979797`) overlay child inside the media wrapper rather than relying on a pseudo-element.
+- **Inline toggle A/B helper added (May 16, 2026):** `IndexInlineToggleProxy.tsx` (`TexpcmJ`) is placed only on `/index-inline-toggle-test` as instance `ZKnst6HwT`. It renders uppercase `GRID / LIST` at the top-right of the project content, mutes the active option to `rgba(38, 33, 31, 0.2)`, and delegates clicks to the underlying `IndexPage` toggle. It must hide the floating toggle only by targeting the duplicate page's local `.idx-toggle-fixed`; do not use broad global CSS that hides `.idx-toggle-fixed` everywhere.
 
 ---
 
@@ -33,7 +35,7 @@ Project data flows in through three priority-ranked sources (described in §3). 
 
 **Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view now renders project-driven cards as native HTML inline in `IndexPage.tsx` (no external Framer module). The native `Case Studies Filter` lives only on `/case-studies` now.
 
-The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the single List/Grid toggle; do not restore a second component-local Grid/List toggle.
+The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the single List/Grid toggle on the canonical `/index` route. The `/index-inline-toggle-test` page is the only current exception: it keeps the underlying `IndexPage` toggle for behavior, but `IndexInlineToggleProxy` hides it on that duplicate route and exposes the inline `GRID / LIST` control for A/B comparison.
 
 **Home note, May 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It is a six-item CMS-backed selected-work query using the native Framer `Case Study` component. Do not recode Home unless Micah explicitly asks.
 

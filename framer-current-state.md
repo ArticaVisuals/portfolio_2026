@@ -1,9 +1,9 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** May 15, 2026
+**Last audited:** May 16, 2026
 **Published URL:** `https://khaki-ship-257706.framer.app`
-**Latest observed deploy:** May 10, 2026 (production + staging in sync; May 15 CMS thumbnail-stroke helper saved to Framer draft, awaiting next Publish)
+**Latest observed deploy:** May 10, 2026 (production + staging in sync; May 15–16 CMS thumbnail-stroke and index A/B helper changes saved to Framer draft, awaiting next Publish)
 
 This file is the quick source of truth for the current Framer document state. Read this before editing the older strategy, copy, CMS, or code-component docs — they are kept reasonably current but this file leads.
 
@@ -19,9 +19,10 @@ This file is the quick source of truth for the current Framer document state. Re
 - `/case-studies/:slug` — Dynamic case-study detail route, page ID `UlQco8cYi`
 - `/info` — Profile/info page, page ID `fxz_zRIyp`
 - `/contact` — Contact page, page ID `gmXtVnIzJ`
-- `/index` — Archive page (single, not duplicated), page ID `u2LOaBT5q`
+- `/index` — Archive page with the fixed floating List/Grid toggle, page ID `u2LOaBT5q`
+- `/index-inline-toggle-test` — Draft A/B comparison page with the original-template inline `GRID / LIST` toggle, page ID `VdRy9MV8k`
 
-The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been deleted**. There is now exactly one `/index` page in the project. The remaining page hosts a single `IndexPage` instance that exposes the List Type as a Framer property control. There is also no current web page for `/profile` or `/worldgrid-test`. `/info` is the live profile route. `WorldGridTest.tsx` still exists as a code file (`ibj8uxT`) but is unrouted.
+The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been deleted**. The canonical archive route is still `/index`. The new `/index-inline-toggle-test` page is only a non-destructive A/B route for comparing the original-template inline toggle against the floating toggle implementation. There is also no current web page for `/profile` or `/worldgrid-test`. `/info` is the live profile route. `WorldGridTest.tsx` still exists as a code file (`ibj8uxT`) but is unrouted.
 
 ### Design Pages
 
@@ -58,9 +59,10 @@ The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been 
 ### Code Components
 
 - `rgAZFOv` `IndexPage.tsx` — drives `/index`. **Live Framer source is now newer than the repo copy** (see §6).
+- `TexpcmJ` `IndexInlineToggleProxy.tsx` — draft A/B helper placed only on `/index-inline-toggle-test`. It hides that page's floating `.idx-toggle-fixed` instance by direct inline styles and renders an uppercase `GRID / LIST` proxy at the top-right of the project content. Active option uses muted ink (`rgba(38, 33, 31, 0.2)`); inactive option and slash use ink. Do not place this helper on `/index` unless replacing the floating toggle intentionally.
 - `tqQjSoH` `IndexRuleColorOverride.tsx` — placed on `/index` and `/case-studies`. Does two things: (a) recolors `.idx-rule` / `.idx-row-divider` to its `ruleColor` prop via global CSS, and (b) when `adjustCaseStudiesGrid="true"`, runs a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
 - `poRGCf7` `ImageMaskReveal.tsx` — site-wide scroll reveal, instance present on every page.
-- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray (`#979797`) overlay stroke to matching project thumbnails on Home, `/case-studies`, and `/index`.
+- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray (`#979797`) overlay stroke to matching project thumbnails on Home, `/case-studies`, and `/index`. As of May 16, 2026, this component is CMS-only; the older variant/selected-work fallback modes were removed.
 - `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count.
 - `ibj8uxT` `WorldGridTest.tsx` — unrouted reference.
 - `LNjgKO2` `ProfileTextRevealFix.tsx`
@@ -117,9 +119,11 @@ The visual stroke is not a permanent border on the `Case Study` card component. 
 - Home `/`: page `R6_F7xjGZ`, instance `VXt8C11M9`
 - `/case-studies`: page `Rnw1WO1jS`, instance `AfVjNDU23`
 - `/index`: page `u2LOaBT5q`, instance `szF9sZNWA`
+- `/index-inline-toggle-test`: page `VdRy9MV8k`, instance `qhlZznPzR`
 
 Implementation notes:
 
+- The helper now has no `strokeVariants` / `allSelectedWorks` mode and no project allowlist. Stroke status comes only from CMS field `OHdUYs6Mo`; `strokeWidth` and `strokeColor` control appearance only.
 - The helper imports the CMS module for `yTHrQWMIY`, calls Framer's lazy initializer (`module.r()`) when available, and rescans records after mount so Framer preview iframes do not keep stale CMS stroke state.
 - Matching is by slug when real links resolve to `/case-studies/{slug}` and by title containment when Framer preview/canvas exposes unresolved links such as `/case-studies/:slug`.
 - The stroke is rendered as a real absolutely positioned overlay child inside `ImageWrapper`, `VideoWrapper`, or `.idx-grid-card-media`; it does not affect layout dimensions. This replaced the first pseudo-element approach after Framer preview did not show the stroke reliably on Home.
@@ -141,7 +145,7 @@ Desktop (root, /Cream)
 │   site-wide; the rule-color half is what /index actually uses)
 ├── SectionHero (rvJ2mP8SJ) — height 48vh, 150px top padding, /Cream bg
 │   └── Stack → HeadingRowWrapper → "INDEX" (inlineTextStyle="/Heading 1")
-└── IndexPage instance (Gk2JQ93Ss) — componentId="rgAZFOv"
+└── IndexPage instance (rStOhD3Ex) — componentId="rgAZFOv"
     Props on the live page:
     - useCMS = true
     - defaultView = "list"
@@ -149,7 +153,13 @@ Desktop (root, /Cream)
     - listHoverVariant = "flip"
 ```
 
-The `IndexPage` code component owns all of: taxonomy filters, list rows, grid cards, project count, and the fixed bottom-left List/Grid toggle. The `INDEX` heading is a native Framer text element above it, not part of the code component.
+The `IndexPage` code component owns all of: taxonomy filters, list rows, grid cards, project count, and the fixed bottom-left List/Grid toggle. The `INDEX` heading is a native Framer text element above it, not part of the code component. The original `/index` route should keep this floating toggle visible.
+
+### `/index-inline-toggle-test` A/B route
+
+Created May 16, 2026 as a non-destructive comparison against `/index`. Structure mirrors the canonical archive page: same `IndexPage` instance props (`useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`) and the same `CaseStudyThumbnailStrokeStyles` helper using Light Gray `#979797` / `rgb(151, 151, 151)`.
+
+The only intended behavioral difference is `IndexInlineToggleProxy.tsx` (`TexpcmJ`, instance `ZKnst6HwT`). It hides the floating `.idx-toggle-fixed` on the duplicate page only, then renders an original-template-style `GRID / LIST` control at the top-right of the content area above the project list/grid. The proxy delegates clicks to the underlying `IndexPage` buttons, so filters, view transitions, and project rendering stay owned by `IndexPage`. Active state is muted ink (`rgba(38, 33, 31, 0.2)`); inactive state and the slash are full ink (`#26211f`). The helper should not use a broad global `.idx-toggle-fixed { opacity: 0 }` rule, because that can suppress the floating toggle on `/index` in Framer preview/editor navigation.
 
 ### `IndexPage.tsx` architecture (live Framer file)
 
@@ -217,7 +227,7 @@ Whatever Discipline strings come out of the data source are displayed verbatim. 
 - List rows inside list content use a **5-col** grid: title `1 / span 2`, discipline `3 / span 2`, industry `5 / span 1`. (Earlier docs called this 6-col; that was true at the wrapper level only.)
 - Grid view (rewritten May 10, 2026) uses CSS Grid with `grid-template-columns: repeat(3, minmax(0, 1fr))`, 20px column gap, 56px row gap. Each card has a uniform 16:9 thumbnail and the title sits **above** the image with the same hover-flip used in List view ("View Project" on hover when slug exists). Optional thumbnail video mounts only on `:hover`.
 - Mobile (≤809px): list rows collapse to a 2-col layout (title full row, discipline + industry side-by-side beneath); grid drops to a single column with 40px row gap. Tablet (≤1199px): grid drops to 2 columns. Below 520px, list rows and taxonomy columns fully stack to a single column.
-- Bottom List/Grid toggle: `position: fixed`, `bottom: 20px`, `left: 20px`, 148px wide, `rgba(215, 213, 207, 0.72)` cream surface with `backdrop-filter: blur(8px)`. Active button bg `#EAE8E3`. Both labels stay ink (`#26211f`) — defensive `!important` rules in `GLOBAL_CSS` enforce this against Framer's button cascade. On mobile, the toggle moves to bottom-center.
+- Bottom List/Grid toggle on canonical `/index`: `position: fixed`, `bottom: 20px`, `left: 20px`, 148px wide, `rgba(215, 213, 207, 0.72)` cream surface with `backdrop-filter: blur(8px)`. Active button bg `#EAE8E3`. Both labels stay ink (`#26211f`) — defensive `!important` rules in `GLOBAL_CSS` enforce this against Framer's button cascade. On mobile, the toggle moves to bottom-center.
 
 ### Grid view source
 

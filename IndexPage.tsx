@@ -6,8 +6,6 @@ import React, {
     useState,
 } from "react"
 import { addPropertyControls, ControlType } from "framer"
-// @ts-ignore Framer resolves project component module URLs at runtime.
-import CaseStudiesFilterFramerComponent from "https://framer.com/m/Case-Studies-Filter-9lC3jo.js"
 
 type FramerResponsiveImage = {
     src: string
@@ -17,15 +15,10 @@ type FramerResponsiveImage = {
     height?: number
 }
 
-const CaseStudiesFilterGrid =
-    CaseStudiesFilterFramerComponent as React.ComponentType<{
-        variant?: string
-        style?: React.CSSProperties
-    }>
-
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
 const FALLBACK_THUMBNAIL_ASPECT_RATIO = 16 / 9
+const OFF_BLACK = "#141414"
 
 const indexGridStyle: React.CSSProperties = {
     display: "grid",
@@ -39,8 +32,8 @@ const tokens = {
     textSecondary: "#636363",
     textTertiary: "#979797",
     bg: "#F7F5F0",
-    dividerStrong: "#26211f",
-    dividerSubtle: "#979797",
+    dividerStrong: OFF_BLACK,
+    dividerSubtle: OFF_BLACK,
     surfaceOverlay: "rgba(215, 213, 207, 0.72)",
     surfaceActive: "#EAE8E3",
     fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
@@ -570,9 +563,6 @@ const GLOBAL_CSS = `
     }
   }
 
-  .idx-native-cms-grid {
-    width: 100%;
-  }
   .idx-project-grid {
     display: flex;
     flex-direction: column;
@@ -1136,8 +1126,13 @@ function GridProjectCard({
     const intrinsicAspectRatio = getIntrinsicAspectRatio(thumbnail)
     const hasKnownRatio = !!intrinsicAspectRatio
     const videoUrl = project.thumbnailVideoLink?.trim()
+    const directVideoUrl = isDirectVideoUrl(videoUrl) ? videoUrl : undefined
     const mediaStyle: React.CSSProperties = {
-        aspectRatio: intrinsicAspectRatio ?? (!thumbnail ? FALLBACK_THUMBNAIL_ASPECT_RATIO : undefined),
+        aspectRatio:
+            intrinsicAspectRatio ??
+            (directVideoUrl || !thumbnail
+                ? FALLBACK_THUMBNAIL_ASPECT_RATIO
+                : undefined),
     }
 
     const cardContent = (
@@ -1149,11 +1144,11 @@ function GridProjectCard({
             </div>
 
             <div
-                className={`idx-grid-card-media ImageWrapper${hasKnownRatio ? " has-known-ratio" : ""}`}
-                data-framer-name="ImageWrapper"
+                className={`idx-grid-card-media ImageWrapper${directVideoUrl ? " VideoWrapper uses-video-thumbnail" : ""}${hasKnownRatio ? " has-known-ratio" : ""}`}
+                data-framer-name={directVideoUrl ? "VideoWrapper" : "ImageWrapper"}
                 style={mediaStyle}
             >
-                {thumbnail ? (
+                {thumbnail && !directVideoUrl ? (
                     <img
                         className="idx-grid-card-image"
                         src={thumbnail.src}
@@ -1162,16 +1157,15 @@ function GridProjectCard({
                         loading="lazy"
                         decoding="async"
                     />
-                ) : (
+                ) : !directVideoUrl ? (
                     <div aria-hidden="true" style={{ width: "100%", height: "100%" }} />
-                )}
+                ) : null}
 
-                {isDirectVideoUrl(videoUrl) && (
+                {directVideoUrl && (
                     <video
-                        className="idx-grid-card-video ThumbnailVideo"
+                        className="idx-grid-card-video idx-grid-card-video-thumbnail ThumbnailVideo"
                         data-framer-name="ThumbnailVideo"
-                        src={videoUrl}
-                        poster={thumbnail?.src}
+                        src={directVideoUrl}
                         autoPlay
                         muted
                         loop
@@ -1216,22 +1210,8 @@ function GridProjectCard({
     )
 }
 
-function GridView({
-    projects,
-    useNativeCMSGrid,
-}: {
-    projects: Project[]
-    useNativeCMSGrid: boolean
-}) {
+function GridView({ projects }: { projects: Project[] }) {
     const rows = useMemo(() => getGridRows(projects), [projects])
-
-    if (useNativeCMSGrid) {
-        return (
-            <div className="idx-native-cms-grid" aria-label="CMS project grid">
-                <CaseStudiesFilterGrid variant="C5P1lJcOx" style={{ width: "100%" }} />
-            </div>
-        )
-    }
 
     if (projects.length === 0) {
         return (
@@ -1349,11 +1329,6 @@ export default function IndexPage({
     const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
     const industryNavItems = useMemo(() => getIndustryNavItems(allProjects), [allProjects])
     const yearNavItems = useMemo(() => getYearNavItems(allProjects), [allProjects])
-    const hasActiveFilters =
-        filters.disciplines.length > 0 ||
-        filters.industries.length > 0 ||
-        filters.years.length > 0
-
     const handleViewChange = useCallback((v: string) => {
         if (v === activeView) return
         if (transitionTimer.current) clearTimeout(transitionTimer.current)
@@ -1394,7 +1369,6 @@ export default function IndexPage({
         () => filterProjects(allProjects, filters, ""),
         [allProjects, filters]
     )
-    const useNativeCMSGrid = activeView === "grid" && !hasBoundProjects && !hasActiveFilters
 
     return (
         <>
@@ -1438,10 +1412,7 @@ export default function IndexPage({
                     }}
                 >
                     {activeView === "grid" ? (
-                        <GridView
-                            projects={filteredProjects}
-                            useNativeCMSGrid={useNativeCMSGrid}
-                        />
+                        <GridView projects={filteredProjects} />
                     ) : (
                         <ListView
                             projects={filteredProjects}
