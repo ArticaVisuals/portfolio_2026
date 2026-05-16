@@ -1127,6 +1127,14 @@ function GridProjectCard({
     const hasKnownRatio = !!intrinsicAspectRatio
     const videoUrl = project.thumbnailVideoLink?.trim()
     const directVideoUrl = isDirectVideoUrl(videoUrl) ? videoUrl : undefined
+    const mediaClassName = [
+        "idx-grid-card-media",
+        "ImageWrapper",
+        directVideoUrl ? "VideoWrapper uses-video-thumbnail" : "",
+        hasKnownRatio ? "has-known-ratio" : "",
+    ]
+        .filter(Boolean)
+        .join(" ")
     const mediaStyle: React.CSSProperties = {
         aspectRatio:
             intrinsicAspectRatio ??
@@ -1144,7 +1152,7 @@ function GridProjectCard({
             </div>
 
             <div
-                className={`idx-grid-card-media ImageWrapper${directVideoUrl ? " VideoWrapper uses-video-thumbnail" : ""}${hasKnownRatio ? " has-known-ratio" : ""}`}
+                className={mediaClassName}
                 data-framer-name={directVideoUrl ? "VideoWrapper" : "ImageWrapper"}
                 style={mediaStyle}
             >
