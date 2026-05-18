@@ -1,9 +1,9 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** May 16, 2026
+**Last audited:** May 18, 2026
 **Published URL:** `https://khaki-ship-257706.framer.app`
-**Latest observed deploy:** May 10, 2026 (production + staging in sync; May 15–16 CMS thumbnail-stroke and inline-index toggle changes saved to Framer draft, awaiting next Publish)
+**Latest observed deploy:** May 18, 2026 (published `/index` breakpoint promotion; Framer reported No Changes after publish)
 
 This file is the quick source of truth for the current Framer document state. Read this before editing the older strategy, copy, CMS, or code-component docs — they are kept reasonably current but this file leads.
 
@@ -215,14 +215,14 @@ Whatever Discipline strings come out of the data source are displayed verbatim. 
 - Year-group wrapper uses the same 6-col grid: year rule spans `1 / -1`, year label sits in col 1, list content sits in `2 / span 5`.
 - List rows inside list content use a **5-col** grid: title `1 / span 2`, discipline `3 / span 2`, industry `5 / span 1`. (Earlier docs called this 6-col; that was true at the wrapper level only.)
 - Grid view (rewritten May 10, 2026) uses CSS Grid with `grid-template-columns: repeat(3, minmax(0, 1fr))`, 20px column gap, 56px row gap. Each card has a uniform 16:9 thumbnail and the title sits **above** the image with the same hover-flip used in List view ("View Project" on hover when slug exists). Optional thumbnail video mounts only on `:hover`.
-- Mobile (≤809px): list rows collapse to a 2-col layout (title full row, discipline + industry side-by-side beneath); grid drops to a single column with 40px row gap. Tablet (≤1199px): grid drops to 2 columns. Below 520px, list rows and taxonomy columns fully stack to a single column.
+- Mobile/tablet breakpoint promotion (published May 18, 2026): list rows scale down to 16px/20px at ≤1199px, hide Discipline metadata, and keep Industry visible/right-aligned with wrapping instead of ellipsizing. The taxonomy/index nav stays in the desktop 6-column format through 900px and switches to the SearchSystem-style label/value rows at ≤899px. Tablet/nav row gap is 28px; phone row gap is 26px.
 - Visible Grid/List toggle on canonical `/index`: `IndexPage.tsx` renders uppercase `GRID / LIST` at the top-right of the project content. Active view is full ink with a 1px underline; inactive options are full ink and shift to Light Gray `#979797` on hover. There is no fixed/floating delegated toggle on the page now.
 
-### `/index-breakpoints-draft` responsive draft
+### `/index` responsive breakpoint promotion
 
-On May 18, 2026, a non-destructive draft page was created at `/index-breakpoints-draft` (`lJsyxVMvO`) to test tablet/mobile list breakpoints before touching canonical `/index`. The draft uses a separate code component, `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`), as a CSS override layer. The original `IndexPage.tsx` code file (`rgAZFOv`) and canonical `/index` page remain unchanged.
+On May 18, 2026, the breakpoint draft was promoted to canonical `/index` (`u2LOaBT5q`) and published. The live `/index` page now includes a hidden `IndexPageBreakpointsDraft.tsx` style instance (`ATfvwee86`, code file `VwMoFWv`) after the `IndexPage` instance, making the draft behavior the official published route. The old `/index-breakpoints-draft` page (`lJsyxVMvO`) remains a Framer draft and returns 404 on the published staging URL.
 
-Current draft behavior:
+Current official `/index` behavior:
 
 - ≤1199px: list typography scales down to 16px/20px; Discipline metadata is hidden; list rows become a title + Industry two-column row; category/tag metadata does not truncate.
 - Industry metadata stays visible on tablet/mobile and can wrap instead of ellipsizing. It remains right-aligned and constrained with responsive max-widths (`180px`/`150px`/`132px` caps by breakpoint).
@@ -230,7 +230,8 @@ Current draft behavior:
 - ≤899px taxonomy: SearchSystem-style label/value rows, with the label column on the left and values on the right. Discipline, Industry, and Year stack vertically with a 28px row gap.
 - ≤809px taxonomy refines to `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap and 28px row gap.
 - ≤520px taxonomy uses `minmax(84px, 32%) minmax(0, 1fr)`, 16px column gap, 26px row gap, and 14px page padding.
-- The draft references Phantom's list-view behavior for the tablet/mobile list: type scales down, tag/category metadata disappears rather than truncating, and mobile metadata closes in without overlapping.
+- The promoted behavior references Phantom's list-view behavior for the tablet/mobile list: type scales down, tag/category metadata disappears rather than truncating, and mobile metadata closes in without overlapping.
+- Published verification on May 18 checked `/index` at 1200, 1024, 900, 810, and 390px widths: no horizontal overflow, no taxonomy overlaps, and no list-cell overlaps. `/index-breakpoints-draft` and `/playground` remained unpublished drafts (404 on staging).
 
 ### Grid view source
 
@@ -306,7 +307,7 @@ Karuna is currently off Home because its `Is Homepage` flag is `false`. Weaponiz
 
 Two artifacts diverge from the repo and it matters which way the next sync goes:
 
-- **Live Framer `IndexPage.tsx` (`rgAZFOv`)** — has `useCMS` prop, window-singleton registry pattern, dynamically derived taxonomy, no `Case Study` module import, native-HTML Grid view (uniform 16:9 cards, 3/2/1 columns, title above image with hover-flip, video on hover), simplified `DEFAULT_PROJECTS` industry labels. This is what's saved in Framer (next Publish brings it live).
+- **Live Framer `IndexPage.tsx` (`rgAZFOv`)** — has `useCMS` prop, window-singleton registry pattern, dynamically derived taxonomy, no `Case Study` module import, native-HTML Grid view (uniform 16:9 cards, 3/2/1 columns, title above image with hover-flip, video on hover), simplified `DEFAULT_PROJECTS` industry labels. Canonical `/index` also includes the hidden `IndexPageBreakpointsDraft` style helper (`ATfvwee86`) to apply the May 18 responsive breakpoint promotion on the published route.
 - **Live Framer `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`)** — exists only in Framer and controls CMS thumbnail strokes across Home, `/case-studies`, and `/index`. The repo has documentation and verification artifacts, but not a local source copy of this code component.
 - **Repo `IndexPage.tsx`** — older shape with hardcoded `DISCIPLINE_NAV_ITEMS`/`INDUSTRY_NAV_ITEMS`, `Case Studies Filter` import for unfiltered Grid fallback, no `useCMS` prop, weighted Grid row patterns. Do not push this back without merging the live changes in.
 
