@@ -218,6 +218,20 @@ Whatever Discipline strings come out of the data source are displayed verbatim. 
 - Mobile (≤809px): list rows collapse to a 2-col layout (title full row, discipline + industry side-by-side beneath); grid drops to a single column with 40px row gap. Tablet (≤1199px): grid drops to 2 columns. Below 520px, list rows and taxonomy columns fully stack to a single column.
 - Visible Grid/List toggle on canonical `/index`: `IndexPage.tsx` renders uppercase `GRID / LIST` at the top-right of the project content. Active view is full ink with a 1px underline; inactive options are full ink and shift to Light Gray `#979797` on hover. There is no fixed/floating delegated toggle on the page now.
 
+### `/index-breakpoints-draft` responsive draft
+
+On May 18, 2026, a non-destructive draft page was created at `/index-breakpoints-draft` (`lJsyxVMvO`) to test tablet/mobile list breakpoints before touching canonical `/index`. The draft uses a separate code component, `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`), as a CSS override layer. The original `IndexPage.tsx` code file (`rgAZFOv`) and canonical `/index` page remain unchanged.
+
+Current draft behavior:
+
+- ≤1199px: list typography scales down to 16px/20px; Discipline metadata is hidden; list rows become a title + Industry two-column row; category/tag metadata does not truncate.
+- Industry metadata stays visible on tablet/mobile and can wrap instead of ellipsizing. It remains right-aligned and constrained with responsive max-widths (`180px`/`150px`/`132px` caps by breakpoint).
+- The taxonomy/index nav keeps the desktop six-column layout through wider tablet sizes. It only switches at ≤899px, when the content columns start to feel tight.
+- ≤899px taxonomy: SearchSystem-style label/value rows, with the label column on the left and values on the right. Discipline, Industry, and Year stack vertically with a 28px row gap.
+- ≤809px taxonomy refines to `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap and 28px row gap.
+- ≤520px taxonomy uses `minmax(84px, 32%) minmax(0, 1fr)`, 16px column gap, 26px row gap, and 14px page padding.
+- The draft references Phantom's list-view behavior for the tablet/mobile list: type scales down, tag/category metadata disappears rather than truncating, and mobile metadata closes in without overlapping.
+
 ### Grid view source
 
 The Grid view renders project-driven cards as native HTML inline in `IndexPage.tsx`. There is **no external module dependency** — the previous import of `https://framer.com/m/Case-Study-G9lec1.js` was removed on May 10, 2026 because the responsive-image format being passed to that module didn't hydrate when called from a code component (thumbnails rendered blank on the published site).

@@ -237,6 +237,16 @@ The List view has an A/B typography control in Framer named `List Type`:
 - ≤809px: `--idx-grid-gap: 12px`. Taxonomy collapses to `max-content / 1fr` two-column pairs (Discipline pair, Industry pair, Year pair stacked). List rows collapse to a 2-col layout: title spans the full row, discipline + industry side-by-side beneath. Year-group grid collapses to a single column. The visible inline toggle stays at the project-header edge.
 - ≤520px: taxonomy fully stacks to one column. List rows collapse further so discipline and industry each get their own row.
 
+### Current breakpoint draft
+
+The current responsive direction is being tested non-destructively on `/index-breakpoints-draft` with `IndexPageBreakpointsDraft.tsx`. Do not overwrite that draft by pushing the older repo `IndexPage.tsx` back to Framer.
+
+- Keep the desktop taxonomy/index nav through wider tablet widths. The draft does not switch the taxonomy to the compact format until ≤899px, when the content columns start to feel tight.
+- ≤899px taxonomy/index nav uses a SearchSystem-style two-column structure: labels on the left, values on the right, with Discipline / Industry / Year stacked vertically and a 28px category row gap.
+- ≤809px refines the taxonomy columns to `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap and the same 28px row gap.
+- ≤520px uses `minmax(84px, 32%) minmax(0, 1fr)`, 16px column gap, 26px row gap, and tighter 14px horizontal page padding.
+- Responsive list rows follow the Phantom list-view reference: type scales down to 16px/20px; Discipline/category metadata disappears; Industry remains visible, right-aligned, and allowed to wrap rather than truncate.
+
 ---
 
 ## 5. View: Grid
@@ -353,6 +363,8 @@ The visible toggle is rendered by `IndexPage.tsx` as uppercase `GRID / LIST` at 
 | 810–1199px | same 6-col grid (container padding pinned to 20px) | same 5-col grid; ellipsis truncation | uniform 2-column grid | inline top-right |
 | ≤809px | label/value pairs (`max-content / 1fr`), pairs stack vertically | 2-col grid: title row, then discipline + industry; year-group label/content stack | one-column stacked cards, 48px gaps | inline top-right |
 | ≤520px | one column | 1-col grid: title, discipline, industry each on own row | one-column stacked cards | inline top-right |
+
+Draft note: the May 18 breakpoint draft delays taxonomy collapse until ≤899px and keeps the responsive list closer to Phantom's list view, with Discipline hidden and Industry wrapping instead of truncating.
 
 Industry is never hidden. On desktop/tablet it truncates with ellipses if needed; on mobile it reflows.
 
@@ -567,11 +579,12 @@ Before delivering:
 - Do NOT remove `CaseStudyThumbnailStrokeStyles` instance `szF9sZNWA` from `/index` unless you replace the stroke system with another CMS-aware implementation.
 - Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.
 - Do NOT push the older repo-side `IndexPage.tsx` back to Framer without merging in the live `useCMS` registry pattern, the simplified `DEFAULT_PROJECTS`, and the dynamic taxonomy.
+- Do NOT lose the May 18 `/index-breakpoints-draft` state: `IndexPageBreakpointsDraft.tsx` is the current non-destructive responsive experiment and should be merged intentionally if/when the breakpoint behavior is promoted to canonical `/index`.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
 - Do NOT leave fallback data at 12 projects; the live `DEFAULT_PROJECTS` snapshot has 15 items.
 - Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing.
 - Do NOT add `<html>`, `<head>`, or `<body>` tags — this is a component, not a page.
 - Do NOT assume fonts are loaded — use the fallback stack in the tokens object.
 - Do NOT rename the `Industry` field or taxonomy label to `Origin`.
-- Do NOT reintroduce taxonomy responsive CSS that stacks the three groups vertically at desktop or tablet.
+- Do NOT reintroduce taxonomy responsive CSS that stacks the three groups vertically at desktop or wide tablet. The current draft only switches the taxonomy/index nav at ≤899px.
 - Do NOT use `/work/{slug}` routes inside this component; current case study routes are `/case-studies/{slug}`.
