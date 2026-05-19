@@ -61,7 +61,7 @@ The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been 
 - `rgAZFOv` `IndexPage.tsx` — drives `/index`. As of May 16, 2026, it owns the inline uppercase `GRID / LIST` toggle and normalizes archive rules/dividers to full-opacity `#979797`; the repo mirror has been resynced to the live Framer source.
 - `tqQjSoH` `IndexRuleColorOverride.tsx` — legacy rule/aspect-ratio helper. Its default rule color is now Light Gray `#979797` and it forces rule opacity to 1; when `adjustCaseStudiesGrid="true"`, it can also run a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
 - `poRGCf7` `ImageMaskReveal.tsx` — site-wide scroll reveal, instance present on every page.
-- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray (`#979797`) overlay stroke to matching project thumbnails on Home, `/case-studies`, and `/index`. As of May 16, 2026, this component is CMS-only; the older variant/selected-work fallback modes were removed.
+- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray (`#979797`) overlay stroke to matching project thumbnails on Home, `/case-studies`, `/index`, and Framer canvas/editor card renders. As of May 19, 2026, the repo has a local mirror of this source file.
 - `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count.
 - `ibj8uxT` `WorldGridTest.tsx` — unrouted reference.
 - `LNjgKO2` `ProfileTextRevealFix.tsx`
@@ -111,9 +111,9 @@ The `All Projects` collection now includes a Boolean field:
 
 - `OHdUYs6Mo` — Thumbnail Stroke
 
-Current verified state (May 15, 2026): `AirPods Pro 3` (`airpods-pro-3`) is `true`; the other 14 projects are `false`.
+Current verified state (May 19, 2026): `AirPods Pro 3` (`airpods-pro-3`) is `true`; the other 14 projects are `false`.
 
-The visual stroke is not a permanent border on the `Case Study` card component. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The component default and placed helper instances now use the Light Gray token `#979797` / `rgb(151, 151, 151)`. The helper instances are opacity-0 code components placed on:
+The visual stroke is not driven by `Case Study` variants. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The component default and placed helper instances now use the Light Gray token `#979797` / `rgb(151, 151, 151)`. The helper instances are opacity-0 code components placed on:
 
 - Home `/`: page `R6_F7xjGZ`, instance `VXt8C11M9`
 - `/case-studies`: page `Rnw1WO1jS`, instance `AfVjNDU23`
@@ -122,9 +122,9 @@ The visual stroke is not a permanent border on the `Case Study` card component. 
 Implementation notes:
 
 - The helper now has no `strokeVariants` / `allSelectedWorks` mode and no project allowlist. Stroke status comes only from CMS field `OHdUYs6Mo`; `strokeWidth` and `strokeColor` control appearance only.
-- The helper imports the CMS module for `yTHrQWMIY`, calls Framer's lazy initializer (`module.r()`) when available, and rescans records after mount so Framer preview iframes do not keep stale CMS stroke state.
+- The helper imports the CMS module for `yTHrQWMIY`, calls Framer's lazy initializer (`module.r()`) when available, and rescans records after mount so Framer preview/canvas iframes do not keep stale CMS stroke state.
 - Matching is by slug when real links resolve to `/case-studies/{slug}` and by title containment when Framer preview/canvas exposes unresolved links such as `/case-studies/:slug`.
-- The stroke is rendered as a real absolutely positioned overlay child inside `ImageWrapper`, `VideoWrapper`, or `.idx-grid-card-media`; it does not affect layout dimensions. This replaced the first pseudo-element approach after Framer preview did not show the stroke reliably on Home.
+- As of May 19, 2026, `Case Study > Card > ImageWrapper` includes a real Light Gray overlay frame (`sKJdcQrXY`) at opacity 0. The helper toggles that real Framer layer when available so stroke status is visible in Framer canvas/editor, and falls back to creating a DOM overlay for custom HTML cards such as `/index`. The overlay does not affect layout dimensions.
 - `/index` no longer has the older hardcoded `.idx-grid-card-media.with-stroke` path; the helper applies the overlay directly from the CMS Boolean.
 - The old Framer `Case Study` component stroke variants (`CardStroke` / `CardStrokeHover`, node IDs `JO57Rf2Tb` / `CLK6SxWxs`) were deleted on May 16, 2026. The remaining variants are `Card` and `CardHover`; CMS is the only source of thumbnail-stroke state.
 - The dynamic `/case-studies/:slug` template is intentionally not using this helper; a previous attempt to insert it there caused Framer layout normalization. Related/other-project cards should be handled separately if they need per-CMS strokes later.
@@ -299,19 +299,19 @@ Karuna is currently off Home because its `Is Homepage` flag is `false`. Weaponiz
 - `/case-studies` still displays a `NumberCounter` ending at `endNumber=12`, even though the CMS has 15 records. The component is `NumberCounter` (named export from `Counter.tsx`, code file `hdPa_Gj`); on `/case-studies` it is configured `startNumber=1, endNumber=12, fontFamily="Switzer", fontSize=30, prefix="(", suffix=")"`. Update the `endNumber` prop to `15` (or wire it to a CMS-derived count) before launch.
 - `Case Study Starter System` design page still contains a 12-project route map and does not include Motion Connect 2025, Seek Truth, or Independent Lens.
 - `Year` is a CMS string field (`QZqSK_3OF`) and includes a non-numeric value, `2019-ongoing`. The live `IndexPage.tsx` coerces years to numbers via a `(?:19|20)\d{2}` regex, so `"2019-ongoing"` becomes `2019` for grouping/filtering.
-- The repo's `IndexPage.tsx` still imports `Case-Studies-Filter-9lC3jo.js` and hardcodes `DISCIPLINE_NAV_ITEMS`, `DISCIPLINE_NAV_SET`, and the long-string `INDUSTRY_NAV_ITEMS` list. The live Framer file does none of those things. If you push the repo file back to Framer you will silently revert the `useCMS`/registry pattern and the dynamic taxonomy.
+- The repo's `IndexPage.tsx` has been resynced with the live Framer file after the May 16 cleanup. Continue to read the live Framer file before pushing code back, because Framer may still drift ahead during canvas edits.
 
 ---
 
-## 6. Live vs. repo divergence (May 15, 2026)
+## 6. Live vs. repo sync notes (May 19, 2026)
 
-Two artifacts diverge from the repo and it matters which way the next sync goes:
+Important sync points:
 
 - **Live Framer `IndexPage.tsx` (`rgAZFOv`)** — has `useCMS` prop, window-singleton registry pattern, dynamically derived taxonomy, no `Case Study` module import, native-HTML Grid view (uniform 16:9 cards, 3/2/1 columns, title above image with hover-flip, video on hover), simplified `DEFAULT_PROJECTS` industry labels. Canonical `/index` also includes the hidden `IndexPageBreakpointsDraft` style helper (`ATfvwee86`) to apply the May 18 responsive breakpoint promotion on the published route.
-- **Live Framer `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`)** — exists only in Framer and controls CMS thumbnail strokes across Home, `/case-studies`, and `/index`. The repo has documentation and verification artifacts, but not a local source copy of this code component.
-- **Repo `IndexPage.tsx`** — older shape with hardcoded `DISCIPLINE_NAV_ITEMS`/`INDUSTRY_NAV_ITEMS`, `Case Studies Filter` import for unfiltered Grid fallback, no `useCMS` prop, weighted Grid row patterns. Do not push this back without merging the live changes in.
+- **Live Framer `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`)** — controls CMS thumbnail strokes across Home, `/case-studies`, `/index`, and Framer canvas/editor. The repo now includes a local mirror at `CaseStudyThumbnailStrokeStyles.tsx`; resync from Framer before editing if the live file changes again.
+- **Repo `IndexPage.tsx`** — mirrors the live `/index` code path after the May 16 cleanup, while Framer also has `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`) as a hidden style helper on `/index` for the May 18 breakpoint promotion.
 
-To resolve: pull the live code out of Framer (or use this doc's snapshot of the architecture) and reconcile before any further repo-side edits.
+Before any future code-file push to Framer, read the live code file first and reconcile against the local mirror.
 
 ---
 

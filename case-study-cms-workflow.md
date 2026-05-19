@@ -177,7 +177,7 @@ Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized
 
 Current index data note (May 10, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and a window-singleton registry (`window.__articaIndexProjectsRegistry`) intended to be populated by a separate `ProjectRegistrar` code component placed inside a Collection List bound to `All Projects`. The Registrar component has not yet been created, so the published `/index` is currently rendering the 15-project `DEFAULT_PROJECTS` snapshot baked into the live code (with simplified industry labels). Grid view was rewritten on May 10, 2026 to render native HTML cards inline (no `Case Study` module dependency, uniform 16:9 thumbnails, 3/2/1 column responsive grid, title above the image with hover-flip). The live CMS remains the source of truth and will only flow into `/index` once the Registrar is built and the Collection List is placed on the page.
 
-Thumbnail stroke note (May 16, 2026): `All Projects` now has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray (`#979797`) stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on, all other projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview exposes unresolved `/case-studies/:slug` links, which is important for the Home selected-work collection. It now inserts a real absolutely positioned overlay child inside the thumbnail wrapper rather than relying on a CSS pseudo-element; this was changed after the pseudo-element path did not appear reliably in Framer preview. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth. Index list/grid rules are standardized to full-opacity `#979797` directly inside `IndexPage.tsx`.
+Thumbnail stroke note (updated May 19, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray (`#979797`) stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on, all other projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved `/case-studies/:slug` links, which is important for the Home selected-work collection. `Case Study > Card > ImageWrapper` now also contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth. Index list/grid rules are standardized to full-opacity `#979797` directly inside `IndexPage.tsx`.
 
 ## 9. Recommended Starting Order
 
@@ -202,12 +202,12 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 
 ## 10. Verification Notes
 
-Last verified May 16, 2026:
+Last verified May 19, 2026:
 
 - Framer project map inspected with MCP.
 - CMS inspected with MCP: `All Projects` still has 15 real records.
 - CMS thumbnail stroke field inspected with MCP: `AirPods Pro 3` is true; the other returned project records are false.
-- `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation uses a real overlay DOM child for the stroke.
+- `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards.
 - Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
 - Playwright runtime check simulated the draft helper on the published baseline: AirPods strokes only when the CMS field is on, simulated all-off removes every stroke, and layout deltas stayed at 0 changed elements.
 - Published `/index` HTML inspected: live page renders `IndexPage.tsx`'s in-code `DEFAULT_PROJECTS` snapshot (simplified industry labels), confirming the CMS registry is not yet wired up.
