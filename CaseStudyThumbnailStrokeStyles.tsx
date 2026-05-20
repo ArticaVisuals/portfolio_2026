@@ -4,6 +4,9 @@ import { addPropertyControls, ControlType } from "framer"
 type Props = {
     strokeColor: string
     strokeWidth: number
+    enableHoverZoom: boolean
+    hoverImageScale: number
+    applyHoverZoomToIndexGrid: boolean
     collectionId: string
     collectionModuleUrl: string
     strokeFieldId: string
@@ -24,7 +27,20 @@ type StrokeRecord = { slug: string; title: string; stroke: boolean }
 const STROKE_CLASS = "framer-cms-thumbnail-stroke"
 const OVERLAY_ATTR = "data-framer-cms-thumbnail-stroke-overlay"
 const GENERATED_ATTR = "data-framer-cms-thumbnail-stroke-generated"
+const HOVER_CARD_ATTR = "data-case-study-thumbnail-hover-card"
+const HOVER_FRAME_ATTR = "data-case-study-thumbnail-hover-frame"
+const HOVER_MEDIA_ATTR = "data-case-study-thumbnail-hover-media"
+const HOVER_BG_ATTR = "data-case-study-thumbnail-hover-background"
+const HOVER_OWNER_ATTR = "data-case-study-thumbnail-hover-owner"
+const HOVER_SCALE_VAR = "--case-study-thumbnail-hover-scale"
+const HOVER_BG_IMAGE_VAR = "--case-study-thumbnail-hover-bg-image"
+const HOVER_BG_POSITION_VAR = "--case-study-thumbnail-hover-bg-position"
+const HOVER_BG_SIZE_VAR = "--case-study-thumbnail-hover-bg-size"
+const HOVER_BG_REPEAT_VAR = "--case-study-thumbnail-hover-bg-repeat"
 const DEFAULT_STROKE_COLOR = "#979797"
+const DEFAULT_HOVER_IMAGE_SCALE = 1.02
+const HOVER_DURATION_MS = 420
+const HOVER_EASING = "cubic-bezier(.22, 1, .36, 1)"
 const CANVAS_OVERLAY_NAMES = [
     "ThumbnailStrokeOverlay",
     "Thumbnail Stroke Overlay",
@@ -249,6 +265,99 @@ function findMediaElement(card: HTMLElement, imageWrapperNames: string): HTMLEle
     return null
 }
 
+function isStrokeOverlayElement(element: HTMLElement): boolean {
+    return (
+        element.getAttribute(OVERLAY_ATTR) === "true" ||
+        element.getAttribute(GENERATED_ATTR) === "true" ||
+        matchesAnySelector(element, CANVAS_OVERLAY_NAMES.map(nameSelector))
+    )
+}
+
+function findHoverMediaElements(frame: HTMLElement): HTMLElement[] {
+    const mediaSelector = [
+        "img",
+        "video",
+        "[data-framer-background-image-wrapper=\"true\"]",
+        "[style*=\"background-image\"]",
+        nameSelector("Image"),
+        nameSelector("Video"),
+        nameSelector("Img"),
+        nameSelector("ThumbnailVideo"),
+        nameSelector("Thumbnail Video"),
+    ].join(",")
+
+    return Array.from(frame.querySelectorAll<HTMLElement>(mediaSelector)).filter(
+        (media) => media !== frame && !isStrokeOverlayElement(media)
+    )
+}
+
+function hasUsableBackgroundImage(element: HTMLElement): boolean {
+    if (typeof window === "undefined" || typeof window.getComputedStyle !== "function") return false
+
+    const style = window.getComputedStyle(element)
+    return Boolean(style.backgroundImage && style.backgroundImage !== "none")
+}
+
+function storeBackgroundImageVars(element: HTMLElement) {
+    const style = window.getComputedStyle(element)
+    element.style.setProperty(HOVER_BG_IMAGE_VAR, style.backgroundImage)
+    element.style.setProperty(HOVER_BG_POSITION_VAR, style.backgroundPosition)
+    element.style.setProperty(HOVER_BG_SIZE_VAR, style.backgroundSize)
+    element.style.setProperty(HOVER_BG_REPEAT_VAR, style.backgroundRepeat)
+}
+
+function clearHoverZoom(owner: string) {
+    document.querySelectorAll<HTMLElement>(`[${HOVER_OWNER_ATTR}="${owner}"]`).forEach((element) => {
+        element.removeAttribute(HOVER_OWNER_ATTR)
+        element.removeAttribute(HOVER_CARD_ATTR)
+        element.removeAttribute(HOVER_FRAME_ATTR)
+        element.removeAttribute(HOVER_MEDIA_ATTR)
+        element.removeAttribute(HOVER_BG_ATTR)
+        element.style.removeProperty(HOVER_BG_IMAGE_VAR)
+        element.style.removeProperty(HOVER_BG_POSITION_VAR)
+        element.style.removeProperty(HOVER_BG_SIZE_VAR)
+        element.style.removeProperty(HOVER_BG_REPEAT_VAR)
+    })
+}
+
+function isIndexGridTarget(card: HTMLElement, media: HTMLElement): boolean {
+    return card.classList.contains("idx-grid-card") || media.classList.contains("idx-grid-card-media")
+}
+
+function applyHoverZoom(
+    owner: string,
+    imageWrapperNames: string,
+    applyToIndexGrid: boolean
+) {
+    clearHoverZoom(owner)
+
+    getCards(imageWrapperNames).forEach((card) => {
+        const frame = findMediaElement(card, imageWrapperNames)
+        if (!frame) return
+        if (!applyToIndexGrid && isIndexGridTarget(card, frame)) return
+
+        const mediaElements = findHoverMediaElements(frame)
+        const shouldUseBackgroundProxy = mediaElements.length === 0 && hasUsableBackgroundImage(frame)
+        if (mediaElements.length === 0 && !shouldUseBackgroundProxy) return
+
+        card.setAttribute(HOVER_CARD_ATTR, "true")
+        card.setAttribute(HOVER_OWNER_ATTR, owner)
+
+        frame.setAttribute(HOVER_FRAME_ATTR, "true")
+        frame.setAttribute(HOVER_OWNER_ATTR, owner)
+
+        if (shouldUseBackgroundProxy) {
+            frame.setAttribute(HOVER_BG_ATTR, "true")
+            storeBackgroundImageVars(frame)
+        }
+
+        mediaElements.forEach((media) => {
+            media.setAttribute(HOVER_MEDIA_ATTR, "true")
+            media.setAttribute(HOVER_OWNER_ATTR, owner)
+        })
+    })
+}
+
 function getCardTitle(card: HTMLElement): string {
     const title = card.querySelector<HTMLElement>(
         [
@@ -408,6 +517,9 @@ function applyCMSStrokes(records: StrokeRecord[], imageWrapperNames: string, str
 export default function CaseStudyThumbnailStrokeStyles({
     strokeColor = DEFAULT_STROKE_COLOR,
     strokeWidth = 1,
+    enableHoverZoom = true,
+    hoverImageScale = DEFAULT_HOVER_IMAGE_SCALE,
+    applyHoverZoomToIndexGrid = false,
     collectionId = "yTHrQWMIY",
     collectionModuleUrl = "",
     strokeFieldId = "OHdUYs6Mo",
@@ -416,9 +528,13 @@ export default function CaseStudyThumbnailStrokeStyles({
     imageWrapperNames = "ImageWrapper\nImage Wrapper\nVideoWrapper\nVideo Wrapper",
 }: Partial<Props>) {
     const width = Math.max(0, Number(strokeWidth) || 0)
+    const owner = React.useId().replace(/[^a-zA-Z0-9_-]/g, "")
+    const hoverScale = Math.max(1, Number(hoverImageScale) || 1)
+    const shouldApplyHoverZoom = enableHoverZoom && hoverScale > 1
 
     React.useEffect(() => {
-        if (width <= 0 || typeof window === "undefined") return
+        if (width <= 0 && !shouldApplyHoverZoom) return
+        if (typeof window === "undefined") return
 
         let disposed = false
         let frame = 0
@@ -427,11 +543,18 @@ export default function CaseStudyThumbnailStrokeStyles({
         const scheduleApply = () => {
             window.cancelAnimationFrame(frame)
             frame = window.requestAnimationFrame(() => {
-                if (!disposed) applyCMSStrokes(records, imageWrapperNames, strokeColor, width)
+                if (disposed) return
+                if (width > 0) applyCMSStrokes(records, imageWrapperNames, strokeColor, width)
+                if (shouldApplyHoverZoom) {
+                    applyHoverZoom(owner, imageWrapperNames, applyHoverZoomToIndexGrid)
+                } else {
+                    clearHoverZoom(owner)
+                }
             })
         }
 
         const refreshRecords = () => {
+            if (width <= 0) return
             loadStrokeRecords({
                 collectionId,
                 collectionModuleUrl,
@@ -463,7 +586,7 @@ export default function CaseStudyThumbnailStrokeStyles({
             childList: true,
             subtree: true,
             attributes: true,
-            attributeFilter: ["href", "class", "data-framer-name", "name", "style"],
+            attributeFilter: ["href", "class", "data-framer-name", "name"],
         })
         window.addEventListener("resize", scheduleApply, { passive: true })
 
@@ -475,10 +598,15 @@ export default function CaseStudyThumbnailStrokeStyles({
             window.clearInterval(refreshInterval)
             observer.disconnect()
             window.removeEventListener("resize", scheduleApply)
+            clearHoverZoom(owner)
         }
     }, [
         width,
         strokeColor,
+        owner,
+        shouldApplyHoverZoom,
+        hoverScale,
+        applyHoverZoomToIndexGrid,
         collectionId,
         collectionModuleUrl,
         strokeFieldId,
@@ -487,7 +615,7 @@ export default function CaseStudyThumbnailStrokeStyles({
         imageWrapperNames,
     ])
 
-    if (width <= 0) return null
+    if (width <= 0 && !shouldApplyHoverZoom) return null
 
     return (
         <div
@@ -508,6 +636,71 @@ export default function CaseStudyThumbnailStrokeStyles({
                     position: relative !important;
                     overflow: hidden !important;
                     isolation: isolate !important;
+                }
+
+                [${HOVER_FRAME_ATTR}="true"] {
+                    overflow: hidden !important;
+                    clip-path: inset(0);
+                    contain: paint;
+                    isolation: isolate;
+                }
+
+                [${HOVER_CARD_ATTR}="true"] {
+                    ${HOVER_SCALE_VAR}: ${hoverScale};
+                }
+
+                [${HOVER_MEDIA_ATTR}="true"] {
+                    transform: scale(1) !important;
+                    transform-origin: center center !important;
+                    transition: transform ${HOVER_DURATION_MS}ms ${HOVER_EASING} !important;
+                    backface-visibility: hidden !important;
+                    will-change: transform !important;
+                }
+
+                [${HOVER_FRAME_ATTR}="true"][${HOVER_MEDIA_ATTR}="true"] {
+                    transform: none !important;
+                    transition: none !important;
+                    will-change: auto !important;
+                }
+
+                [${HOVER_BG_ATTR}="true"] {
+                    position: relative !important;
+                }
+
+                [${HOVER_BG_ATTR}="true"]::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    z-index: 0;
+                    pointer-events: none;
+                    border-radius: inherit;
+                    background-image: var(${HOVER_BG_IMAGE_VAR});
+                    background-position: var(${HOVER_BG_POSITION_VAR}, center center);
+                    background-size: var(${HOVER_BG_SIZE_VAR}, cover);
+                    background-repeat: var(${HOVER_BG_REPEAT_VAR}, no-repeat);
+                    transform: scale(1);
+                    transform-origin: center center;
+                    transition: transform ${HOVER_DURATION_MS}ms ${HOVER_EASING};
+                    backface-visibility: hidden;
+                    will-change: transform;
+                }
+
+                [${HOVER_CARD_ATTR}="true"]:hover [${HOVER_MEDIA_ATTR}="true"],
+                [${HOVER_CARD_ATTR}="true"]:focus-visible [${HOVER_MEDIA_ATTR}="true"],
+                [${HOVER_CARD_ATTR}="true"]:focus-within [${HOVER_MEDIA_ATTR}="true"],
+                [${HOVER_CARD_ATTR}="true"]:hover [${HOVER_BG_ATTR}="true"]::before,
+                [${HOVER_CARD_ATTR}="true"]:focus-visible [${HOVER_BG_ATTR}="true"]::before,
+                [${HOVER_CARD_ATTR}="true"]:focus-within [${HOVER_BG_ATTR}="true"]::before {
+                    transform: scale(var(${HOVER_SCALE_VAR}, ${DEFAULT_HOVER_IMAGE_SCALE})) !important;
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    [${HOVER_MEDIA_ATTR}="true"],
+                    [${HOVER_BG_ATTR}="true"]::before {
+                        transform: scale(1) !important;
+                        transition: none !important;
+                        will-change: auto !important;
+                    }
                 }
 
                 .${STROKE_CLASS} > [${OVERLAY_ATTR}="true"],
@@ -540,6 +733,30 @@ addPropertyControls(CaseStudyThumbnailStrokeStyles, {
         step: 1,
         unit: "px",
         displayStepper: true,
+    },
+    enableHoverZoom: {
+        type: ControlType.Boolean,
+        title: "Hover Zoom",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+    },
+    hoverImageScale: {
+        type: ControlType.Number,
+        title: "Zoom Scale",
+        defaultValue: DEFAULT_HOVER_IMAGE_SCALE,
+        min: 1,
+        max: 1.12,
+        step: 0.005,
+        hidden: ({ enableHoverZoom }) => !enableHoverZoom,
+    },
+    applyHoverZoomToIndexGrid: {
+        type: ControlType.Boolean,
+        title: "Index Grid",
+        defaultValue: false,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: ({ enableHoverZoom }) => !enableHoverZoom,
     },
     collectionId: {
         type: ControlType.String,

@@ -199,9 +199,9 @@ export default function RelatedProjectHoverZoom({
                 [${MEDIA_ATTR}="true"] {
                     width: 100% !important;
                     height: 100% !important;
-                    object-fit: contain !important;
+                    object-fit: cover !important;
                     object-position: center center !important;
-                    background-size: contain !important;
+                    background-size: cover !important;
                     background-position: center center !important;
                     background-repeat: no-repeat !important;
                     scale: 1 !important;

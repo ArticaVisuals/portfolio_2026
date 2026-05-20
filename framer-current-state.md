@@ -401,14 +401,16 @@ Verified by reading each page's primary-variant XML on 2026-05-20.
 | `ProfileTextRevealFix.tsx` | `LNjgKO2` | `/info` | Active |
 | `FooterCopyrightYear.tsx` | `BF2H03E` | Inside `Footer` component (`xxIb0BkhJ`) | Active |
 | `Test.tsx` (`ProjectRegistrar`) | `O9WTdUJ` | `/index` (inside hidden `CMS Link` wrapper bound to `All Projects`) | **Re-wired 2026-05-20** — CMS bridge is now active; `/index` reads project data from CMS rather than the in-code `DEFAULT_PROJECTS` snapshot |
-| `IndexRuleColorOverride.tsx` | `tqQjSoH` | **No placement** | Orphaned |
-| `ResumeAssetHost.tsx` | `xDqfenf` | **No placement** | Orphaned |
-| `Playground.tsx` | `CS95xv7` | **No placement** | Orphaned (superseded by `ArchivePlayground`) |
-| `WorldGridTest.tsx` | `ibj8uxT` | **No placement** | Orphaned, references fake CMS slugs |
-| `HomeGridPreview.tsx` | `Z5xMt1E` | **No placement** | Orphaned (review-only) |
-| `HomeGridVariantPreviewStyles.tsx` | `ezlLf_J` | **No placement** | Orphaned (review-only) |
+| `PlaygroundPageV2.tsx` | `qKgyy0t` | `/play-2` (`My7p7oQST`) | **Active draft.** Performance rewrite of ArchivePlayground using rAF + refs and `AnimatePresence`. Maintenance concern: carries its own copy of the 33-item archive media array (identical to `ArchivePlayground.RAW_ITEMS`) — adding media means editing both files. Exposes `items` as a property control. |
+| `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | `/play` (`sQ55vcG1S`) | **Active.** Keeps sidebar detail-divider mounted in the panel-close snapshot. Monkey-patches `Element.prototype.remove` (restored on unmount). |
+| `IndexRuleColorOverride.tsx` | `tqQjSoH` | **No placement** | Stub-archived 2026-05-20 — see §8.4 |
+| `ResumeAssetHost.tsx` | `xDqfenf` | **No placement** | Stub-archived 2026-05-20 — see §8.4 |
+| `Playground.tsx` | `CS95xv7` | **No placement** | Stub-archived 2026-05-20 — see §8.4 (superseded by `ArchivePlayground`) |
+| `WorldGridTest.tsx` | `ibj8uxT` | **No placement** | Stub-archived 2026-05-20 — see §8.4 |
+| `HomeGridPreview.tsx` | `Z5xMt1E` | **No placement** | Stub-archived 2026-05-20 — see §8.4 (review-only) |
+| `HomeGridVariantPreviewStyles.tsx` | `ezlLf_J` | **No placement** | Stub-archived 2026-05-20 — see §8.4 (review-only) |
 
-The 5 Code Overrides (`Examples_1.tsx`, `Weather.tsx`, `Copyright_year.tsx`, `External.tsx`, `Copyright.tsx`) all appear to be remnants of the original Framer template (Mono 13 / Cargo theme). None are referenced by anything I traced; treat as candidates for deletion after a quick verification pass.
+The 5 Code Overrides (`Examples_1.tsx`, `Weather.tsx`, `Copyright_year.tsx`, `External.tsx`, `Copyright.tsx`) all appear to be remnants of the original Framer template (Mono 13 / Cargo theme). All 5 were stub-archived 2026-05-20 with no-op pass-through bodies and ARCHIVED banners — see §8.4.
 
 ### 8.2 Recommended cleanup waves
 
@@ -435,3 +437,35 @@ The pre-audit version of this doc said several things that the live state contra
 - `IndexRuleColorOverride` was described as placed on `/case-studies`; the live page XML does not include it.
 
 Re-audit recommended after any major page-structure change.
+
+### 8.4 Stub-archived files (2026-05-20)
+
+Framer has no native concept of archived/recycled code files, so the 6 orphaned code components and 5 unreferenced Code Overrides identified in this audit were **stub-archived in place**: their source was replaced with a clear `ARCHIVED 2026-05-20 (framework audit)` banner comment plus a minimal no-op body. The files remain in the project so that:
+
+1. Anyone (or any future AI agent) reading the file sees ARCHIVED immediately and won't trust it as useful
+2. If a layer or another file unexpectedly references one of them, it falls through to a no-op rather than erroring
+3. The original source can be recovered from Framer's version history if ever needed
+
+Stub-archived code components (6):
+- `Playground.tsx` (`CS95xv7`)
+- `WorldGridTest.tsx` (`ibj8uxT`)
+- `HomeGridPreview.tsx` (`Z5xMt1E`)
+- `HomeGridVariantPreviewStyles.tsx` (`ezlLf_J`)
+- `IndexRuleColorOverride.tsx` (`tqQjSoH`)
+- `ResumeAssetHost.tsx` (`xDqfenf`)
+
+Stub-archived Code Overrides (5) — exports preserved as no-op pass-throughs in case any layer references them:
+- `Examples_1.tsx` (`saw3Q19`)
+- `Weather.tsx` (`zB2BDA4`)
+- `Copyright_year.tsx` (`cXkdXam`)
+- `External.tsx` (`WHpRmeH`)
+- `Copyright.tsx` (`Cm9wqQM`)
+
+To fully delete any of these later, just delete the file from Framer's code panel — by then it'll be obvious nothing is wired up.
+
+### 8.5 New post-audit additions
+
+The following files appeared after the initial 2026-05-20 audit was written. They are active, in use on production pages, and have been folded into the §8.1 placement matrix above.
+
+- `PlaygroundPageV2.tsx` (`qKgyy0t`) — placed on `/play-2`. Performance-optimized draft of the playground using `requestAnimationFrame` + DOM transforms and `AnimatePresence`. Carries its own copy of the 33-item archive media array, which duplicates `ArchivePlayground.RAW_ITEMS`. Consolidation candidate once `/play-2` either replaces `/play` or is removed.
+- `PlaygroundRuleExitGuard.tsx` (`vdg69JZ`) — placed on `/play`. Keeps the sidebar detail-divider mounted inside the panel-close snapshot. Monkey-patches `Element.prototype.remove` and restores it on unmount.
