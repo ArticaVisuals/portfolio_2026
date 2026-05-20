@@ -1,0 +1,297 @@
+{
+  "generatedAt": "2026-05-16T05:26:59.133Z",
+  "root": "/Users/micahhoang/My Drive/Portfolio 2026/case-study-assets",
+  "sources": {
+    "currentSite": "https://micahhoang.info",
+    "framerStaging": "https://khaki-ship-257706.framer.app"
+  },
+  "totals": {
+    "pages": 35,
+    "assets": 555,
+    "downloaded": 1,
+    "skippedExisting": 554,
+    "failed": 0
+  },
+  "pages": [
+    {
+      "source": "current-site",
+      "title": "Homepage",
+      "route": "/mini-projects",
+      "folder": "current-site/mini-projects",
+      "assets": 8,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Cellular Symphony",
+      "route": "/cellular-symphony",
+      "folder": "current-site/cellular-symphony",
+      "assets": 19,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Wolff Olins x ArtCenter",
+      "route": "/wolff-olins-x-artcenter",
+      "folder": "current-site/wolff-olins-x-artcenter",
+      "assets": 21,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Track & Field Animations",
+      "route": "/track-field-animations",
+      "folder": "current-site/track-field-animations",
+      "assets": 5,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Fuzzybrain",
+      "route": "/fuzzybrain",
+      "folder": "current-site/fuzzybrain",
+      "assets": 63,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "The Kind Warrior",
+      "route": "/the-kind-warrior",
+      "folder": "current-site/the-kind-warrior",
+      "assets": 6,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "John Steinbeck",
+      "route": "/john-steinbeck",
+      "folder": "current-site/john-steinbeck",
+      "assets": 9,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "COIN Talk Too Much",
+      "route": "/coin-talk-too-much",
+      "folder": "current-site/coin-talk-too-much",
+      "assets": 9,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Independent Lens",
+      "route": "/independent-lens",
+      "folder": "current-site/independent-lens",
+      "assets": 14,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Meihao",
+      "route": "/meihao",
+      "folder": "current-site/meihao",
+      "assets": 7,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Homepage",
+      "route": "/projects",
+      "folder": "current-site/projects",
+      "assets": 8,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Simon & Schuster",
+      "route": "/simon-schuster",
+      "folder": "current-site/simon-schuster",
+      "assets": 99,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "AirPods Pro 3",
+      "route": "/airpods-pro-3",
+      "folder": "current-site/airpods-pro-3",
+      "assets": 15,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Weaponized Innocence",
+      "route": "/weaponized-innocence",
+      "folder": "current-site/weaponized-innocence",
+      "assets": 56,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Motion Connect 2025",
+      "route": "/motion-connect-2025",
+      "folder": "current-site/motion-connect-2025",
+      "assets": 33,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Karuna",
+      "route": "/karuna",
+      "folder": "current-site/karuna",
+      "assets": 36,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Yomo",
+      "route": "/yomo",
+      "folder": "current-site/yomo",
+      "assets": 25,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "Aspen Valley Landscaping",
+      "route": "/aspen-valley-landscaping",
+      "folder": "current-site/aspen-valley-landscaping",
+      "assets": 21,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "National Park Playing Cards",
+      "route": "/national-park-playing-cards",
+      "folder": "current-site/national-park-playing-cards",
+      "assets": 34,
+      "failed": 0
+    },
+    {
+      "source": "current-site",
+      "title": "TYPLDN",
+      "route": "/typldn",
+      "folder": "current-site/typldn",
+      "assets": 16,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Independent Lens",
+      "route": "/case-studies/independent-lens",
+      "folder": "framer-staging/independent-lens",
+      "assets": 4,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Seek Truth",
+      "route": "/case-studies/seek-truth",
+      "folder": "framer-staging/seek-truth",
+      "assets": 4,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Motion Connect 2025",
+      "route": "/case-studies/motion-connect-2025",
+      "folder": "framer-staging/motion-connect-2025",
+      "assets": 5,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "John Steinbeck",
+      "route": "/case-studies/john-steinbeck",
+      "folder": "framer-staging/john-steinbeck",
+      "assets": 3,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Cellular Symphony",
+      "route": "/case-studies/cellular-symphony",
+      "folder": "framer-staging/cellular-symphony",
+      "assets": 4,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Neon Lights",
+      "route": "/case-studies/neon-lights",
+      "folder": "framer-staging/neon-lights",
+      "assets": 3,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Aspen Valley Landscaping",
+      "route": "/case-studies/aspen-valley-landscaping",
+      "folder": "framer-staging/aspen-valley-landscaping",
+      "assets": 2,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Wolff Olins x ArtCenter",
+      "route": "/case-studies/wolff-olins-x-artcenter",
+      "folder": "framer-staging/wolff-olins-x-artcenter",
+      "assets": 2,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Weaponized Innocence",
+      "route": "/case-studies/weaponized-innocence",
+      "folder": "framer-staging/weaponized-innocence",
+      "assets": 2,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Karuna",
+      "route": "/case-studies/karuna",
+      "folder": "framer-staging/karuna",
+      "assets": 2,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Gaia",
+      "route": "/case-studies/gaia",
+      "folder": "framer-staging/gaia",
+      "assets": 4,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Yomo",
+      "route": "/case-studies/yomo",
+      "folder": "framer-staging/yomo",
+      "assets": 3,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "National Park Playing Cards",
+      "route": "/case-studies/national-park-cards",
+      "folder": "framer-staging/national-park-cards",
+      "assets": 4,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "AirPods Pro 3",
+      "route": "/case-studies/airpods-pro-3",
+      "folder": "framer-staging/airpods-pro-3",
+      "assets": 5,
+      "failed": 0
+    },
+    {
+      "source": "framer-staging",
+      "title": "Simon & Schuster",
+      "route": "/case-studies/simon-schuster",
+      "folder": "framer-staging/simon-schuster",
+      "assets": 4,
+      "failed": 0
+    }
+  ]
+}

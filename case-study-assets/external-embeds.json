@@ -1,0 +1,45 @@
+[
+  {
+    "page": "/cellular-symphony",
+    "source": "current-site",
+    "url": "https://player.vimeo.com/video/947718033?badge=0&autopause=0&player_id=0&app_id=58479",
+    "kind": "external-video",
+    "provider": "vimeo",
+    "title": "Cellular Symphony",
+    "thumb": "https://i.vimeocdn.com/video/1854419906-3dfb9f5b5cdc362210b366c80ae9f40dc55debf6b750ee29e5349df0080dbf25-d_200x150",
+    "hash": "C1779157057376030720220115228181",
+    "evidence": "Cargo page state URL embed",
+    "order": 1,
+    "status": "failed",
+    "files": [],
+    "durationMs": 763,
+    "error": "Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above\nWARNING: [vimeo] The extractor is attempting impersonation, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies\nERROR: [vimeo] 947718033: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)"
+  },
+  {
+    "page": "/motion-connect-2025",
+    "source": "current-site",
+    "url": "https://www.youtube.com/watch?v=je6WMia3n5E",
+    "kind": "external-video",
+    "provider": "youtube",
+    "title": "Motion Connect Fall 2025",
+    "thumb": "https://i.ytimg.com/vi/je6WMia3n5E/hqdefault.jpg",
+    "hash": "O2717862864270737963551551641109",
+    "evidence": "Cargo page state URL embed",
+    "order": 1,
+    "status": "failed",
+    "files": [],
+    "durationMs": 7743,
+    "error": "Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above\nWARNING: [youtube] je6WMia3n5E: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details\nERROR: unable to download video data: HTTP Error 403: Forbidden"
+  },
+  {
+    "page": "/case-studies/neon-lights",
+    "source": "framer-staging",
+    "url": "https://player.vimeo.com/video/903963136",
+    "kind": "external-video",
+    "evidence": "Framer rendered video-current",
+    "status": "failed",
+    "files": [],
+    "durationMs": 716,
+    "error": "Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above\nWARNING: [vimeo] The extractor is attempting impersonation, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies\nERROR: [vimeo] 903963136: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)"
+  }
+]

@@ -2,6 +2,50 @@ import React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
 const RESPONSIVE_LIST_CSS = `
+  .idx-view-toggle {
+    font-family: 'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0 !important;
+    color: #636363 !important;
+    align-items: baseline !important;
+    margin-top: 12px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .idx-taxonomy-shell + .idx-tax-item {
+    display: block !important;
+    margin-top: 12px !important;
+    line-height: 28px !important;
+  }
+
+  .idx-view-toggle-option,
+  .idx-view-toggle-divider {
+    font: inherit !important;
+    line-height: inherit !important;
+    text-transform: inherit !important;
+    letter-spacing: inherit !important;
+    color: #636363 !important;
+    -webkit-text-fill-color: #636363 !important;
+  }
+
+  .idx-view-toggle-option[data-active="true"] {
+    color: #636363 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+  }
+
+  .idx-view-toggle-option[data-active="false"]:hover {
+    color: #636363 !important;
+    opacity: 0.55 !important;
+  }
+
+  .idx-container:has(.idx-tax-item[aria-pressed="true"]) .idx-view-toggle {
+    margin-top: -28px !important;
+  }
+
   @media (max-width: 1199px) {
     .idx-container {
       --idx-grid-gap: 16px !important;
@@ -69,14 +113,14 @@ const RESPONSIVE_LIST_CSS = `
     .idx-year-number,
     .idx-list-standard .idx-title-cell > span,
     .idx-list-standard .idx-flip-copy {
-      font-size: 16px !important;
-      line-height: 20px !important;
+      font-size: 22px !important;
+      line-height: 1.2 !important;
     }
 
     .idx-list-standard .idx-flip-text {
-      --idx-flip-height: 20px !important;
-      height: 20px !important;
-      line-height: 20px !important;
+      --idx-flip-height: 27px !important;
+      height: 27px !important;
+      line-height: 27px !important;
       overflow: hidden !important;
     }
 

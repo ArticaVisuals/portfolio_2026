@@ -9,7 +9,7 @@
 
 ## Status Update — May 16, 2026
 
-Later design changes after this audit: canonical `/index` now renders the inline uppercase `GRID / LIST` toggle directly inside `IndexPage.tsx` (`rgAZFOv`) instead of using a visible fixed floating control or helper proxy. The temporary side-by-side `/index-inline-toggle-test` route (`VdRy9MV8k`) has been removed. Index rules/dividers are now standardized to full-opacity Light Gray `#979797`; the legacy `IndexRuleColorOverride` default was updated to the same color.
+Later design changes after this audit: canonical `/index` now renders the inline uppercase `GRID / LIST` toggle directly inside `IndexPage.tsx` (`rgAZFOv`) instead of using a visible fixed floating control or helper proxy. The temporary side-by-side `/index-inline-toggle-test` route (`VdRy9MV8k`) has been removed. Index rules/dividers are now standardized to the full-opacity site rule color `#233324`; the legacy `IndexRuleColorOverride` default was updated to the same color.
 
 ## Status Update — May 6, 2026
 
@@ -27,7 +27,7 @@ Variant B from §"Recommended Next Variants" was **partially implemented in the 
 **Other state changes since this audit:**
 
 - The duplicate `/index` page `yKKOMVNs6` (Mono 13 default) has been **deleted**. There is now exactly one `/index` page (`u2LOaBT5q`).
-- The old note that `IndexRuleColorOverride` unified `/index` rules to ink is stale. As of May 16, 2026, the intended rule color is Light Gray `#979797` at full opacity.
+- The old note that `IndexRuleColorOverride` unified `/index` rules to light gray is stale. As of May 19, 2026, the intended rule color is `#233324` at full opacity.
 - `/index-cms-test` (`QuhXOj9pq`) remains deleted; no equivalent draft exists today.
 - The repo's `IndexPage.tsx` is now older than the live Framer file. Earlier the repo was newer; that has reversed. Do not push the repo file to Framer without merging in the registry / dynamic taxonomy / `DEFAULT_PROJECTS` updates.
 

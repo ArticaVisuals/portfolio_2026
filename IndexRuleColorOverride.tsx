@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
-const DEFAULT_RULE_COLOR = "#979797"
+const DEFAULT_RULE_COLOR = "#233324"
 
 type Props = {
     ruleColor: string

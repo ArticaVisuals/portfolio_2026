@@ -1,11 +1,13 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** May 18, 2026
+**Last audited:** May 20, 2026 (deep framework audit — see §8)
 **Published URL:** `https://khaki-ship-257706.framer.app`
 **Latest observed deploy:** May 18, 2026 (published `/index` breakpoint promotion; Framer reported No Changes after publish)
 
 This file is the quick source of truth for the current Framer document state. Read this before editing the older strategy, copy, CMS, or code-component docs — they are kept reasonably current but this file leads.
+
+**Maintenance strategy (confirmed 2026-05-20):** every published project gets its own bespoke `/case-studies/{slug}` page. Only the header/metadata block is CMS-bound (Title, Disciplines, Industry, Year, Client). Everything below the header is hand-designed per project. The dynamic `/case-studies/:slug` template stays in place as a working fallback but is not the primary delivery surface.
 
 ---
 
@@ -16,12 +18,14 @@ This file is the quick source of truth for the current Framer document state. Re
 - `/` — Home, page ID `R6_F7xjGZ`
 - `/404` — 404, page ID `koPvme2ig`
 - `/case-studies` — Native case-study index with `NumberCounter` and `Case Studies Filter`, page ID `Rnw1WO1jS`
-- `/case-studies/:slug` — Dynamic case-study detail route, page ID `UlQco8cYi`
+- `/case-studies/:slug` — Dynamic case-study detail route (CMS-bound, kept as fallback only), page ID `UlQco8cYi`
 - `/info` — Profile/info page, page ID `fxz_zRIyp`
 - `/contact` — Contact page, page ID `gmXtVnIzJ`
 - `/index` — Archive page with the original-template inline `GRID / LIST` toggle, page ID `u2LOaBT5q`
-- `/playground` — Playground/prototype page, page ID `KbgWr_0BN`
-- `/case-studies/airpods` — AirPods project detail page, page ID `LB7pYBD3k`
+- `/play` — Archive media playground (renamed from `/playground` since the prior audit), page ID `KbgWr_0BN`
+- `/play-2` — Draft optimized playground v2 test page, page ID `xzxF41ECb`. Desktop uses `PlaygroundPageV2.tsx`; Tablet/Phone are replica breakpoints and rejected direct MCP child insertion.
+- `/playground-scroll-draft` — Draft alternate playground using a marketplace `ScrollGallery` component, page ID `GU8t_uC2U`. Not promoted; not in the production nav.
+- `/case-studies/airpods` — AirPods Pro 3 bespoke detail page, page ID `LB7pYBD3k`. This is the active pilot for the bespoke-per-project model (the doc previously described this slot as Gaia; AirPods replaced it).
 
 The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been deleted**. The temporary `/index-inline-toggle-test` A/B route (`VdRy9MV8k`) is also gone; the preferred inline-toggle version has been promoted into canonical `/index`. There is no current web page for `/profile` or `/worldgrid-test`. `/info` is the live profile route. `WorldGridTest.tsx` still exists as a code file (`ibj8uxT`) but is unrouted.
 
@@ -58,18 +62,26 @@ The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been 
 
 ### Code Components
 
-- `rgAZFOv` `IndexPage.tsx` — drives `/index`. As of May 16, 2026, it owns the inline uppercase `GRID / LIST` toggle and normalizes archive rules/dividers to full-opacity `#979797`; the repo mirror has been resynced to the live Framer source.
-- `tqQjSoH` `IndexRuleColorOverride.tsx` — legacy rule/aspect-ratio helper. Its default rule color is now Light Gray `#979797` and it forces rule opacity to 1; when `adjustCaseStudiesGrid="true"`, it can also run a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
+- `rgAZFOv` `IndexPage.tsx` — drives `/index`. As of May 19, 2026, it owns the inline uppercase `GRID / LIST` toggle and normalizes archive rules/dividers to the full-opacity site rule color `#233324`; the repo mirror has been resynced to the live Framer source.
+- `VwMoFWv` `IndexPageBreakpointsDraft.tsx` — hidden `/index` style helper (`ATfvwee86`) for the official responsive breakpoint promotion. It also applies the style-only `GRID / LIST` refinement: matching `CLEAR FILTERS` typography/color, keeping a stable 12px/28px/24px action-row rhythm, and nudging only the toggle upward when a filter is active. It does not move DOM nodes or touch filter behavior.
+- `tqQjSoH` `IndexRuleColorOverride.tsx` — legacy rule/aspect-ratio helper. Its default rule color is now the site rule color `#233324` and it forces rule opacity to 1; when `adjustCaseStudiesGrid="true"`, it can also run a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
 - `poRGCf7` `ImageMaskReveal.tsx` — site-wide scroll reveal, instance present on every page.
-- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray (`#979797`) overlay stroke to matching project thumbnails on Home, `/case-studies`, `/index`, and Framer canvas/editor card renders. As of May 19, 2026, the repo has a local mirror of this source file.
-- `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count.
-- `ibj8uxT` `WorldGridTest.tsx` — unrouted reference.
-- `LNjgKO2` `ProfileTextRevealFix.tsx`
-- `BF2H03E` `FooterCopyrightYear.tsx`
-- `Z5xMt1E` `HomeGridPreview.tsx`
-- `ezlLf_J` `HomeGridVariantPreviewStyles.tsx`
-- `p7tSTaD` `TextEncryptionEffect.tsx`
-- `O9WTdUJ` `Test.tsx` — sandbox/scratch component.
+- `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray overlay stroke to matching project thumbnails on Home, `/case-studies`, `/index`, and Framer canvas/editor card renders.
+- `QNpkYp5` `ArchivePlayground.tsx` — archive-backed draggable media playground placed on `/playground` (`Vm_TSe0rX`). Uses original Cargo `/t/original/` image/GIF URLs and video poster/original video pairs scraped from `https://micahhoang.info/archive`.
+- `RBX6jsP` `PlaygroundNavPassthrough.tsx` — invisible `/playground` helper (`NPcuvJ4mA`) that lets pointer movement pass through the nav/header shell while preserving clicks on actual nav links/buttons; it also keeps the archive grid drifting while the detail sidebar is open, normalizes sidebar media to natural full-width sizing, and owns archive media gray-stroke controls.
+- `vdg69JZ` `PlaygroundRuleExitGuard.tsx` — invisible `/play` helper (`sQ55vcG1S`) that preserves the sidebar detail rule inside the close-exit snapshot so the typography spacing stays stable while the panel slides away.
+- `qKgyy0t` `PlaygroundPageV2.tsx` — optimized draft playground placed on `/play-2` (`My7p7oQST`). Uses the same archive Cargo media as built-in defaults, moves the tiled gallery with DOM `requestAnimationFrame` transforms instead of per-frame React state, keeps media `object-fit: contain`, and uses `AnimatePresence` so detail content remains mounted through close without the helper snapshot/observer path.
+- `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count. Currently `endNumber=12` on the live page; CMS has 15 records.
+- `ibj8uxT` `WorldGridTest.tsx` — unrouted reference; orphaned. Its `DEFAULT_ITEMS` array references placeholder projects (`Vern Carter`, `Iris Wade`, `Orion Ventures`, `Echoes`, `Iconic`, `Adapting Literature`) that do not exist in CMS.
+- `LNjgKO2` `ProfileTextRevealFix.tsx` — placed on `/info` to mask-reveal selected text layers.
+- `BF2H03E` `FooterCopyrightYear.tsx` — small `©YYYY` helper that resolves the current year. Used inside the `Footer` component (`xxIb0BkhJ`).
+- `Z5xMt1E` `HomeGridPreview.tsx` — review-only "Even vs. Mosaic" Home grid explorer. Orphaned (no live instance).
+- `ezlLf_J` `HomeGridVariantPreviewStyles.tsx` — companion CSS helper for the explorer above. Orphaned.
+- `p7tSTaD` `TextEncryptionEffect.tsx` — text-scramble effect carried over from the original template; used for the Home `LINKEDIN / RESUMÉ / COSMOS` social labels.
+- `xDqfenf` `ResumeAssetHost.tsx` — invisible utility component that rewires any `RESUME` link to a Framer-hosted PDF. Currently orphaned (no live instance); the live RESUMÉ link on Home is a plain Framer link, not via this helper.
+- `GTEGUfN` `RelatedProjectHoverZoom.tsx` — scoped hover-zoom for related-project cards inside `NextProjectWrapper`. Placed on `/case-studies/airpods` (`wwubqAWHG`).
+- `CS95xv7` `Playground.tsx` — original playground implementation, superseded by `ArchivePlayground.tsx` on `/play`. Orphaned.
+- `O9WTdUJ` `Test.tsx` — file name is misleading; its default export is **`ProjectRegistrar`**, the CMS-to-`IndexPage` bridge component. **Re-wired 2026-05-20:** an instance is now placed inside a hidden `CMS Link` wrapper bound to `All Projects` on `/index`, populating the registry that `IndexPage` reads.
 
 ### Code Overrides
 
@@ -113,7 +125,7 @@ The `All Projects` collection now includes a Boolean field:
 
 Current verified state (May 19, 2026): `AirPods Pro 3` (`airpods-pro-3`) is `true`; the other 14 projects are `false`.
 
-The visual stroke is not driven by `Case Study` variants. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The component default and placed helper instances now use the Light Gray token `#979797` / `rgb(151, 151, 151)`. The helper instances are opacity-0 code components placed on:
+The visual stroke is not driven by `Case Study` variants. It is applied by `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) so each project can be toggled independently in CMS. The helper instances are opacity-0 code components placed on:
 
 - Home `/`: page `R6_F7xjGZ`, instance `VXt8C11M9`
 - `/case-studies`: page `Rnw1WO1jS`, instance `AfVjNDU23`
@@ -127,7 +139,7 @@ Implementation notes:
 - As of May 19, 2026, `Case Study > Card > ImageWrapper` includes a real Light Gray overlay frame (`sKJdcQrXY`) at opacity 0. The helper toggles that real Framer layer when available so stroke status is visible in Framer canvas/editor, and falls back to creating a DOM overlay for custom HTML cards such as `/index`. The overlay does not affect layout dimensions.
 - `/index` no longer has the older hardcoded `.idx-grid-card-media.with-stroke` path; the helper applies the overlay directly from the CMS Boolean.
 - The old Framer `Case Study` component stroke variants (`CardStroke` / `CardStrokeHover`, node IDs `JO57Rf2Tb` / `CLK6SxWxs`) were deleted on May 16, 2026. The remaining variants are `Card` and `CardHover`; CMS is the only source of thumbnail-stroke state.
-- The dynamic `/case-studies/:slug` template is intentionally not using this helper; a previous attempt to insert it there caused Framer layout normalization. Related/other-project cards should be handled separately if they need per-CMS strokes later.
+- The dynamic `/case-studies/:slug` template still does not use the CMS Boolean helper for related cards.
 
 ---
 
@@ -137,7 +149,7 @@ The `/index` page (`u2LOaBT5q`) is the most custom page on the site. Live struct
 
 ```
 Desktop (root, /Cream)
-├── CaseStudyThumbnailStrokeStyles (szF9sZNWA) — strokeColor="rgb(151, 151, 151)", CMS field `Thumbnail Stroke`
+├── CaseStudyThumbnailStrokeStyles (szF9sZNWA) — CMS field `Thumbnail Stroke`
 ├── SectionHero (rvJ2mP8SJ) — height 48vh, 150px top padding, /Cream bg
 │   └── Stack → HeadingRowWrapper → "INDEX" (inlineTextStyle="/Heading 1")
 └── IndexPage instance (rStOhD3Ex) — componentId="rgAZFOv"
@@ -148,7 +160,7 @@ Desktop (root, /Cream)
     - listHoverVariant = "flip"
 ```
 
-The `IndexPage` code component owns taxonomy filters, list rows, grid cards, project count, view state, the inline `GRID / LIST` control, and the `#979797` rule/divider styling. The older `IndexInlineToggleProxy.tsx` helper and its `/index` instance (`HM1pZPonP`) were removed after this behavior was folded into `IndexPage`. The `INDEX` heading is a native Framer text element above it, not part of the code component.
+The `IndexPage` code component owns taxonomy filters, list rows, grid cards, project count, view state, the inline `GRID / LIST` control, and the `#233324` rule/divider styling. The older `IndexInlineToggleProxy.tsx` helper and its `/index` instance (`HM1pZPonP`) were removed after this behavior was folded into `IndexPage`. The `INDEX` heading is a native Framer text element above it, not part of the code component.
 
 ### `IndexPage.tsx` architecture (live Framer file)
 
@@ -174,7 +186,7 @@ Project data resolution priority (in `IndexPage`'s `allProjects` memo):
 2. **`projects` prop** — manual array bound through Framer.
 3. **`DEFAULT_PROJECTS`** — a 15-item snapshot baked into the code file.
 
-The window-singleton registry is keyed `__articaIndexProjectsRegistry` and is intended to be populated by a separate `ProjectRegistrar` code component placed inside a Framer Collection List (per Framer's "code components inside CMS-bound collection items" pattern). **This Registrar component does not exist in the current project** — there is no `ProjectRegistrar.tsx` in the code components list. With `useCMS=true` and no Registrar wired up, the page falls through to the prop, then to `DEFAULT_PROJECTS`. The published `/index` is therefore being driven by the in-code snapshot, not by live CMS values.
+The window-singleton registry is keyed `__articaIndexProjectsRegistry` and is populated by a `ProjectRegistrar` code component placed inside a Framer Collection List bound to the `All Projects` CMS. The `ProjectRegistrar` source is the default export of `Test.tsx` (codeFileId `O9WTdUJ`), kept under the misleading template filename. **Status as of 2026-05-20:** the bridge has been re-wired. The `/index` Desktop variant now has a hidden `CMS Link` wrapper bound to `All Projects` (`yTHrQWMIY`) with a `ProjectRegistrar` instance inside its template card; the 12 registrar props are bound to the corresponding CMS fields. With this in place, `/index` reads project metadata from CMS at render time rather than from the in-code `DEFAULT_PROJECTS` snapshot. `DEFAULT_PROJECTS` is retained as a fallback for canvas previews and the case where Framer cannot iterate the Collection (for example, if it's set to Draft). Adding a new project to the `All Projects` CMS now propagates to `/index` automatically on next publish — no code edit required.
 
 ### Drift between live `DEFAULT_PROJECTS` and the CMS
 
@@ -215,8 +227,8 @@ Whatever Discipline strings come out of the data source are displayed verbatim. 
 - Year-group wrapper uses the same 6-col grid: year rule spans `1 / -1`, year label sits in col 1, list content sits in `2 / span 5`.
 - List rows inside list content use a **5-col** grid: title `1 / span 2`, discipline `3 / span 2`, industry `5 / span 1`. (Earlier docs called this 6-col; that was true at the wrapper level only.)
 - Grid view (rewritten May 10, 2026) uses CSS Grid with `grid-template-columns: repeat(3, minmax(0, 1fr))`, 20px column gap, 56px row gap. Each card has a uniform 16:9 thumbnail and the title sits **above** the image with the same hover-flip used in List view ("View Project" on hover when slug exists). Optional thumbnail video mounts only on `:hover`.
-- Mobile/tablet breakpoint promotion (published May 18, 2026): list rows scale down to 16px/20px at ≤1199px, hide Discipline metadata, and keep Industry visible/right-aligned with wrapping instead of ellipsizing. The taxonomy/index nav stays in the desktop 6-column format through 900px and switches to the SearchSystem-style label/value rows at ≤899px. Tablet/nav row gap is 28px; phone row gap is 26px.
-- Visible Grid/List toggle on canonical `/index`: `IndexPage.tsx` renders uppercase `GRID / LIST` at the top-right of the project content. Active view is full ink with a 1px underline; inactive options are full ink and shift to Light Gray `#979797` on hover. There is no fixed/floating delegated toggle on the page now.
+- Mobile/tablet breakpoint promotion (published May 18, 2026; type adjusted May 19): list rows keep the desktop 22px Standard year/title type at ≤1199px, hide Discipline metadata, and keep Industry visible/right-aligned with wrapping instead of ellipsizing. The taxonomy/index nav stays in the desktop 6-column format through 900px and switches to the SearchSystem-style label/value rows at ≤899px. Tablet/nav row gap is 28px; phone row gap is 26px.
+- Visible Grid/List toggle on canonical `/index`: `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav. `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`; the hidden `IndexPageBreakpointsDraft.tsx` helper only styles the toggle to match that action (13px uppercase mono, 28px line-height, weight 400, secondary `#636363`, active underline). The action row reserves 12px above and 24px below; when filters are active, only `GRID / LIST` gets a `-28px` top offset so selecting/deselecting filters does not shift the content below. There is no fixed/floating or DOM-mutating delegated toggle on the page now.
 
 ### `/index` responsive breakpoint promotion
 
@@ -224,14 +236,17 @@ On May 18, 2026, the breakpoint draft was promoted to canonical `/index` (`u2LOa
 
 Current official `/index` behavior:
 
-- ≤1199px: list typography scales down to 16px/20px; Discipline metadata is hidden; list rows become a title + Industry two-column row; category/tag metadata does not truncate.
+- ≤1199px: Standard year/title typography stays at desktop size (22px/1.2 with 27px flip height); Discipline metadata is hidden; list rows become a title + Industry two-column row; category/tag metadata does not truncate.
 - Industry metadata stays visible on tablet/mobile and can wrap instead of ellipsizing. It remains right-aligned and constrained with responsive max-widths (`180px`/`150px`/`132px` caps by breakpoint).
-- The taxonomy/index nav keeps the desktop six-column layout through wider tablet sizes. It only switches at ≤899px, when the content columns start to feel tight.
 - ≤899px taxonomy: SearchSystem-style label/value rows, with the label column on the left and values on the right. Discipline, Industry, and Year stack vertically with a 28px row gap.
 - ≤809px taxonomy refines to `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap and 28px row gap.
 - ≤520px taxonomy uses `minmax(84px, 32%) minmax(0, 1fr)`, 16px column gap, 26px row gap, and 14px page padding.
-- The promoted behavior references Phantom's list-view behavior for the tablet/mobile list: type scales down, tag/category metadata disappears rather than truncating, and mobile metadata closes in without overlapping.
+- The promoted behavior references Phantom's list-view behavior for the tablet/mobile list: Discipline/category metadata disappears rather than truncating, Industry stays visible, and mobile metadata closes in without overlapping.
 - Published verification on May 18 checked `/index` at 1200, 1024, 900, 810, and 390px widths: no horizontal overflow, no taxonomy overlaps, and no list-cell overlaps. `/index-breakpoints-draft` and `/playground` remained unpublished drafts (404 on staging).
+
+### `/playground` archive media pass
+
+On May 19, 2026, `/playground` (`KbgWr_0BN`) was updated from the previous placeholder `Playground.tsx` instance to `ArchivePlayground.tsx` (`QNpkYp5`) on the Desktop breakpoint. The archive scraper stored 33 original-resolution items from `https://micahhoang.info/archive` in `case-study-assets/current-site/archive/` with `manifest.json`, including 24 images, 7 videos, 2 GIFs, and 7 video poster frames. Framer uses Cargo URLs directly; local downloads are kept as verification/staging copies. `ArchivePlayground.tsx` is now a self-contained archive-backed version of the original Playground interaction: it preserves the drag/parallax/inertia/edge-scroll feel, detail panel, close-button flip interaction, and footer-hider while rendering archive media inside equal square cells with `object-fit: contain` so uploads are not cropped. Grid images request lighter Cargo width variants for smoothness, GIFs use the original animated source, and videos autoplay as muted loops with no visible controls in both thumbnail and detail states. The placed instance `Vm_TSe0rX` uses the same motion values as the prior `/playground` component instance (`driftSpeedX/Y=0.5`, `throwFriction=0.85`, `throwVelocityScale=1.75`, `throwMinSpeed=220`, `throwMaxSpeed=5200`, `parallaxEase=0.5`, `arcEnabled=false`) and has `advancedControls=true` again. The component also listens to global capture-phase pointer movement for visual tracking, so hovering actual nav links does not make the background ease back to neutral. A 1px invisible `PlaygroundNavPassthrough` instance (`NPcuvJ4mA`) is also on Desktop to apply page-scoped CSS: nav/header wrappers use `pointer-events: none`, while anchors, buttons, Framer `LogoLink`, and Framer `TextLink` descendants remain clickable. That helper keeps the grid wrapper drifting at the same `0.5 / 0.5` rate while the detail sidebar is open, then preserves the accumulated offset when the sidebar closes so the background does not snap. It also sets detail/sidebar media frames to transparent, full-width natural aspect ratios based on loaded image/video dimensions, so gray letterbox borders disappear and the text below is pushed naturally by the media height. The helper hides the archive media category label in the sidebar and inserts the same `#233324` left-origin scaleX rule animation used by the index/home rule treatment between the media content and typography; the rule is now recreated only while the detail sidebar is open so it redraws after a media click, and its bottom margin is half the previous value to pull typography closer. The same helper owns archive media strokes with a `Gray Stroke` control (`Auto`, `On`, `Off`). `Auto` is the current `/play` setting and applies half-pixel strokes to the grid thumbnails and sidebar media when sampled original media/poster edges are too low-contrast against the site cream/white background; the overlay is positioned on the actual rendered `object-fit: contain` media bounds, not on the surrounding square cell, and stroked media is clipped to those same bounds so hover zoom cannot spill outside the stroke. As of May 20, the helper no longer runs a persistent close-state MutationObserver for the Ashfall-style exit. Instead it snapshots sidebar content only on a real close/outside/Escape action, appends that non-interactive snapshot on the next frame after the panel starts exiting, and removes it after the transition. Tablet and Phone breakpoints are replica nodes and rejected direct MCP child insertion, so they still need a Framer-canvas responsive pass if `/playground` is promoted beyond draft.
 
 ### Grid view source
 
@@ -264,9 +279,9 @@ html body .idx-row-divider {
 }
 ```
 
-`IndexPage` itself colors year rules with `tokens.dividerStrong` and intra-year row dividers with `tokens.dividerSubtle`; both are now Light Gray `#979797`. The component also normalizes `.idx-rule` / `.idx-row-divider` to full opacity in its own CSS, so `/index` does not depend on the older rule override or the removed inline-toggle proxy.
+`IndexPage` itself colors year rules with `tokens.dividerStrong` and intra-year row dividers with `tokens.dividerSubtle`; both are now the site rule color `#233324`. The component also normalizes `.idx-rule` / `.idx-row-divider` to full opacity in its own CSS, so `/index` does not depend on the older rule override or the removed inline-toggle proxy.
 
-The same component instance is also placed on `/case-studies` to apply per-card aspect ratios from the source image dimensions; that DOM-mutation half is a no-op on `/index` because the queried `Section Case Study (Filter)` / `Grid View Wrapper` selectors don't exist there.
+An earlier note said this component was also placed on `/case-studies` to apply per-card aspect ratios. As of 2026-05-20, the `/case-studies` page XML contains no `IndexRuleColorOverride` instance — so the helper is currently orphaned (no live placement anywhere).
 
 ---
 
@@ -359,3 +374,64 @@ Recommended manual additions remain:
 - `Build Status` as an enum field
 
 Do not repurpose existing field IDs to create those fields.
+
+---
+
+## 8. Framework audit findings (2026-05-20)
+
+Full deep walk of every page (XML) and every code component (source). Goal was to identify maintenance debt without proposing functional or visual changes.
+
+### 8.1 Code component placement matrix
+
+Verified by reading each page's primary-variant XML on 2026-05-20.
+
+| Code component | codeFileId | Where it lives | State |
+|---|---|---|---|
+| `IndexPage.tsx` | `rgAZFOv` | `/index` | Active |
+| `IndexPageBreakpointsDraft.tsx` | `VwMoFWv` | `/index` | Active |
+| `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | Home, `/case-studies`, `/index` | Active |
+| `ImageMaskReveal.tsx` | `poRGCf7` | Home (`enabled=false`), `/case-studies` (`enabled=false`), `/contact` (`enabled=true`) | Effectively `/contact`-only |
+| `ArchivePlayground.tsx` | `QNpkYp5` | `/play` | Active |
+| `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | `/play` | Active |
+| `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | `/play` | Active |
+| `PlaygroundPageV2.tsx` | `qKgyy0t` | `/play-2` Desktop | Draft performance test |
+| `RelatedProjectHoverZoom.tsx` | `GTEGUfN` | `/case-studies/airpods` | Active (pilot) |
+| `Counter.tsx` (`NumberCounter`) | `hdPa_Gj` | `/case-studies` (`endNumber=12`, stale) | Active but stale |
+| `TextEncryptionEffect.tsx` | `p7tSTaD` | Home (3 instances: LinkedIn, Resumé, Cosmos) | Active |
+| `ProfileTextRevealFix.tsx` | `LNjgKO2` | `/info` | Active |
+| `FooterCopyrightYear.tsx` | `BF2H03E` | Inside `Footer` component (`xxIb0BkhJ`) | Active |
+| `Test.tsx` (`ProjectRegistrar`) | `O9WTdUJ` | `/index` (inside hidden `CMS Link` wrapper bound to `All Projects`) | **Re-wired 2026-05-20** — CMS bridge is now active; `/index` reads project data from CMS rather than the in-code `DEFAULT_PROJECTS` snapshot |
+| `IndexRuleColorOverride.tsx` | `tqQjSoH` | **No placement** | Orphaned |
+| `ResumeAssetHost.tsx` | `xDqfenf` | **No placement** | Orphaned |
+| `Playground.tsx` | `CS95xv7` | **No placement** | Orphaned (superseded by `ArchivePlayground`) |
+| `WorldGridTest.tsx` | `ibj8uxT` | **No placement** | Orphaned, references fake CMS slugs |
+| `HomeGridPreview.tsx` | `Z5xMt1E` | **No placement** | Orphaned (review-only) |
+| `HomeGridVariantPreviewStyles.tsx` | `ezlLf_J` | **No placement** | Orphaned (review-only) |
+
+The 5 Code Overrides (`Examples_1.tsx`, `Weather.tsx`, `Copyright_year.tsx`, `External.tsx`, `Copyright.tsx`) all appear to be remnants of the original Framer template (Mono 13 / Cargo theme). None are referenced by anything I traced; treat as candidates for deletion after a quick verification pass.
+
+### 8.2 Recommended cleanup waves
+
+**Wave A — orphan deletion (~1 hour, biggest payoff for the "code component sprawl" pain).** Delete these code files: `Playground.tsx`, `WorldGridTest.tsx`, `HomeGridPreview.tsx`, `HomeGridVariantPreviewStyles.tsx`, `IndexRuleColorOverride.tsx`, `ResumeAssetHost.tsx`. Verify the 5 Code Overrides are unused before deleting them too. `Test.tsx` is a separate question — see Wave B.
+
+**Wave B — decide the `/index` CMS bridge.** Two viable paths:
+- **B1 (recommended):** add a hidden Collection List on `/index` bound to `All Projects`, place `ProjectRegistrar` (from `Test.tsx`) inside its template card. One-time setup. After that, new project workflow drops to "add CMS row → publish" with no code edit.
+- **B2 (simpler today):** accept that `/index` is in-code, delete `Test.tsx`, set `useCMS=false` on the `IndexPage` instance, and strip the registry plumbing from `IndexPage.tsx`. Lower power but honest about the actual state.
+
+**Wave C — small hardening.** All non-visual:
+- Update `NumberCounter` `endNumber` on `/case-studies` to `15` (or wire to a CMS-derived count).
+- Decide whether `ImageMaskReveal` is site-wide or `/contact`-only; remove the inactive Home / `/case-studies` instances if the latter.
+- Consolidate the duplicate `/Heading 2` text-style definitions (two entries with the same path, different `transform`).
+- Move `ArchivePlayground.tsx`'s 33-item `RAW_ITEMS` literal and `PlaygroundNavPassthrough.tsx`'s 12-item `AUTO_STROKE_MATCHERS` literal into a JSON asset or CMS collection, so adding archive media doesn't require code edits.
+- Replace inline color hex literals (`#233324`, `#979797`, `#F7F5F0`, `#141414`) in code components with props that default to those values — lets the brand color tokens flow from Framer styles in future.
+
+### 8.3 Verified contradictions resolved
+
+The pre-audit version of this doc said several things that the live state contradicts. All of these are now corrected in the sections above:
+- `Test.tsx` was described as "sandbox/scratch"; it is actually the `ProjectRegistrar` source.
+- `/playground` was listed; the current page is `/play` (renamed).
+- `LB7pYBD3k` was described as the Gaia pilot; it is now `/case-studies/airpods`, the AirPods pilot.
+- `/playground-scroll-draft`, `ResumeAssetHost.tsx`, and `RelatedProjectHoverZoom.tsx` were missing from the inventory entirely.
+- `IndexRuleColorOverride` was described as placed on `/case-studies`; the live page XML does not include it.
+
+Re-audit recommended after any major page-structure change.

@@ -71,8 +71,8 @@ const tokens = {
     textSecondary: "#636363",
     textTertiary: "#979797",
     bg: "#F7F5F0",
-    dividerStrong: "#979797",
-    dividerSubtle: "#979797",
+    dividerStrong: "#233324",
+    dividerSubtle: "#233324",
     surfaceOverlay: "rgba(215, 213, 207, 0.72)",
     surfaceActive: "#EAE8E3",
     fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
@@ -549,17 +549,27 @@ const GLOBAL_CSS = `
   .idx-view-toggle {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: baseline;
     gap: 8px;
     width: 100%;
-    margin: 0 0 33px;
+    margin: 12px 0 24px;
     font-family: ${tokens.fontMono};
     font-size: 13px;
-    font-weight: 500;
-    line-height: 100%;
+    font-weight: 400;
+    line-height: 28px;
     text-transform: uppercase;
     letter-spacing: 0;
-    color: ${tokens.textPrimary};
+    color: ${tokens.textSecondary};
+  }
+
+  .idx-taxonomy-shell + .idx-tax-item {
+    display: block;
+    margin-top: 12px !important;
+    line-height: 28px !important;
+  }
+
+  .idx-container:has(.idx-tax-item[aria-pressed="true"]) .idx-view-toggle {
+    margin-top: -28px;
   }
 
   .idx-view-toggle-option {
@@ -573,21 +583,21 @@ const GLOBAL_CSS = `
     line-height: inherit;
     text-transform: inherit;
     letter-spacing: inherit;
-    color: ${tokens.textPrimary};
+    color: ${tokens.textSecondary};
     -webkit-text-fill-color: currentColor;
     cursor: pointer;
     text-decoration: none;
     text-underline-offset: 3px;
-    transition: color 150ms ease;
+    transition: opacity 150ms ease;
   }
 
   .idx-view-toggle-option[data-active="true"] {
     text-decoration: underline;
-    color: ${tokens.textPrimary};
+    color: ${tokens.textSecondary};
   }
 
   .idx-view-toggle-option[data-active="false"]:hover {
-    color: ${tokens.textTertiary};
+    opacity: 0.55;
   }
 
   .idx-view-toggle-option:focus-visible {
@@ -598,7 +608,7 @@ const GLOBAL_CSS = `
   .idx-view-toggle-divider {
     font: inherit;
     line-height: inherit;
-    color: ${tokens.textPrimary};
+    color: ${tokens.textSecondary};
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -836,14 +846,14 @@ const GLOBAL_CSS = `
     .idx-year-number,
     .idx-list-standard .idx-title-cell > span,
     .idx-list-standard .idx-flip-copy {
-      font-size: 16px !important;
-      line-height: 20px !important;
+      font-size: 22px !important;
+      line-height: 1.2 !important;
     }
 
     .idx-list-standard .idx-flip-text {
-      --idx-flip-height: 20px !important;
-      height: 20px !important;
-      line-height: 20px !important;
+      --idx-flip-height: 27px !important;
+      height: 27px !important;
+      line-height: 27px !important;
       overflow: hidden !important;
     }
 
