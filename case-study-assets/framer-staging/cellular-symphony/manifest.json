@@ -1,0 +1,85 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/cellular-symphony",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/cellular-symphony",
+  "title": "Cellular Symphony",
+  "slug": "cellular-symphony",
+  "folderName": "cellular-symphony",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "kind": "image",
+      "originalName": "j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; video-poster; video-poster; resource-video",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "kind": "image",
+      "originalName": "TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; resource-img",
+      "order": 6
+    },
+    {
+      "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "kind": "image",
+      "originalName": "JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 10
+    },
+    {
+      "url": "https://freight.cargo.site/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "kind": "video",
+      "originalName": "cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "evidence": "Framer rendered video-current; video-src",
+      "order": 15
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "kind": "image",
+      "originalName": "j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; video-poster; video-poster; resource-video",
+      "order": 1,
+      "file": "framer-staging/cellular-symphony/001-j9us8sz6aebouihzfxowvesrvs8.png",
+      "bytes": 398948,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://framerusercontent.com/images/TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "kind": "image",
+      "originalName": "TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/cellular-symphony/002-typcx0xzpgwry5ezh0e7forig.jpg",
+      "bytes": 7183,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "kind": "image",
+      "originalName": "JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 10,
+      "file": "framer-staging/cellular-symphony/003-jitjbiryod5ddc7juv7x5rwu9i.png",
+      "bytes": 25664,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://freight.cargo.site/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "kind": "video",
+      "originalName": "cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "evidence": "Framer rendered video-current; video-src",
+      "order": 15,
+      "file": "framer-staging/cellular-symphony/004-cellular-symphony-apple-devices-hd-best-quality.m4v",
+      "bytes": 12010831,
+      "status": "skipped-existing"
+    }
+  ]
+}

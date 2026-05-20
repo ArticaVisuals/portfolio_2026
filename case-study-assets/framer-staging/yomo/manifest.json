@@ -1,0 +1,66 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/yomo",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/yomo",
+  "title": "Yomo",
+  "slug": "yomo",
+  "folderName": "yomo",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "kind": "image",
+      "originalName": "PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "kind": "image",
+      "originalName": "Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6
+    },
+    {
+      "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "kind": "image",
+      "originalName": "BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "kind": "image",
+      "originalName": "PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1,
+      "file": "framer-staging/yomo/001-pxsrzy7ezkkjsfurvhhuup2sk4k.jpg",
+      "bytes": 405877,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "kind": "image",
+      "originalName": "Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/yomo/002-dj1klsghel5tcjkngsjkfvuimmu.png",
+      "bytes": 296038,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "kind": "image",
+      "originalName": "BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11,
+      "file": "framer-staging/yomo/003-brh73xzvlrboynh03pkxviyypw.png",
+      "bytes": 1087468,
+      "status": "skipped-existing"
+    }
+  ]
+}

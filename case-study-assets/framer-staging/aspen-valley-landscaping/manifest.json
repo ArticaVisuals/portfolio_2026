@@ -1,0 +1,50 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/aspen-valley-landscaping",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/aspen-valley-landscaping",
+  "title": "Aspen Valley Landscaping",
+  "slug": "aspen-valley-landscaping",
+  "folderName": "aspen-valley-landscaping",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "kind": "image",
+      "originalName": "j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "kind": "image",
+      "originalName": "TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; resource-img",
+      "order": 6
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "kind": "image",
+      "originalName": "j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1,
+      "file": "framer-staging/aspen-valley-landscaping/001-j9us8sz6aebouihzfxowvesrvs8.png",
+      "bytes": 398948,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://framerusercontent.com/images/TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "kind": "image",
+      "originalName": "TYPcX0xZpgwrY5Ezh0e7forig.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/aspen-valley-landscaping/002-typcx0xzpgwry5ezh0e7forig.jpg",
+      "bytes": 7183,
+      "status": "skipped-existing"
+    }
+  ]
+}

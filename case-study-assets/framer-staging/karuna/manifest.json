@@ -1,0 +1,49 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/karuna",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/karuna",
+  "title": "Karuna",
+  "slug": "karuna",
+  "folderName": "karuna",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "kind": "image",
+      "originalName": "Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "kind": "image",
+      "originalName": "BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "kind": "image",
+      "originalName": "Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1,
+      "file": "framer-staging/karuna/001-dj1klsghel5tcjkngsjkfvuimmu.png",
+      "bytes": 296038,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "kind": "image",
+      "originalName": "BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/karuna/002-brh73xzvlrboynh03pkxviyypw.png",
+      "bytes": 1087468,
+      "status": "skipped-existing"
+    }
+  ]
+}

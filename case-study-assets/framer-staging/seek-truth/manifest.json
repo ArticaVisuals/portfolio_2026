@@ -1,0 +1,84 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/seek-truth",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/seek-truth",
+  "title": "Seek Truth",
+  "slug": "seek-truth",
+  "folderName": "seek-truth",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
+      "kind": "image",
+      "originalName": "ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "kind": "image",
+      "originalName": "JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6
+    },
+    {
+      "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "kind": "image",
+      "originalName": "ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11
+    },
+    {
+      "url": "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "kind": "image",
+      "originalName": "1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
+      "kind": "image",
+      "originalName": "ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1,
+      "file": "framer-staging/seek-truth/001-zzz0tz3cmtn9zwf1r21gpbcqfnk.png",
+      "bytes": 104224,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "kind": "image",
+      "originalName": "JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/seek-truth/002-jitjbiryod5ddc7juv7x5rwu9i.png",
+      "bytes": 25664,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "kind": "image",
+      "originalName": "ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11,
+      "file": "framer-staging/seek-truth/003-zvikn9asvvse90tofnwu7sw0u.png",
+      "bytes": 476812,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "kind": "image",
+      "originalName": "1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16,
+      "file": "framer-staging/seek-truth/004-1a1ldlrx4v2knog7kx7hvwygucg.jpg",
+      "bytes": 418190,
+      "status": "skipped-existing"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/simon-schuster",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/simon-schuster",
+  "title": "Simon & Schuster",
+  "slug": "simon-schuster",
+  "folderName": "simon-schuster",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "kind": "image",
+      "originalName": "ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "kind": "image",
+      "originalName": "1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6
+    },
+    {
+      "url": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "kind": "image",
+      "originalName": "YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11
+    },
+    {
+      "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "kind": "image",
+      "originalName": "W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "kind": "image",
+      "originalName": "ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 1,
+      "file": "framer-staging/simon-schuster/001-zvikn9asvvse90tofnwu7sw0u.png",
+      "bytes": 476812,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "kind": "image",
+      "originalName": "1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/simon-schuster/002-1a1ldlrx4v2knog7kx7hvwygucg.jpg",
+      "bytes": 418190,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "kind": "image",
+      "originalName": "YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11,
+      "file": "framer-staging/simon-schuster/003-ydgkidrulzoxfodfaqnqfcx5dm.png",
+      "bytes": 417883,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "kind": "image",
+      "originalName": "W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16,
+      "file": "framer-staging/simon-schuster/004-w592y16erqrz1qfuxre3dcsv8i.png",
+      "bytes": 797294,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    }
+  ]
+}

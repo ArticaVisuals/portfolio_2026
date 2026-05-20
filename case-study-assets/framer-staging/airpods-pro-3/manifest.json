@@ -1,0 +1,101 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/airpods-pro-3",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/airpods-pro-3",
+  "title": "AirPods Pro 3",
+  "slug": "airpods-pro-3",
+  "folderName": "airpods-pro-3",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "kind": "image",
+      "originalName": "JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; video-poster; resource-video",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "kind": "image",
+      "originalName": "ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6
+    },
+    {
+      "url": "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "kind": "image",
+      "originalName": "1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11
+    },
+    {
+      "url": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "kind": "image",
+      "originalName": "YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16
+    },
+    {
+      "url": "https://freight.cargo.site/i/V2732716404789921262344304055829/AirPods-Pro-3-Introduction-1.mp4",
+      "kind": "video",
+      "originalName": "AirPods-Pro-3-Introduction-1.mp4",
+      "evidence": "Framer rendered video-current; video-src",
+      "order": 21
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "kind": "image",
+      "originalName": "JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; video-poster; resource-video",
+      "order": 1,
+      "file": "framer-staging/airpods-pro-3/001-jitjbiryod5ddc7juv7x5rwu9i.png",
+      "bytes": 25664,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "kind": "image",
+      "originalName": "ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/airpods-pro-3/002-zvikn9asvvse90tofnwu7sw0u.png",
+      "bytes": 476812,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "kind": "image",
+      "originalName": "1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11,
+      "file": "framer-staging/airpods-pro-3/003-1a1ldlrx4v2knog7kx7hvwygucg.jpg",
+      "bytes": 418190,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "kind": "image",
+      "originalName": "YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16,
+      "file": "framer-staging/airpods-pro-3/004-ydgkidrulzoxfodfaqnqfcx5dm.png",
+      "bytes": 417883,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://freight.cargo.site/i/V2732716404789921262344304055829/AirPods-Pro-3-Introduction-1.mp4",
+      "kind": "video",
+      "originalName": "AirPods-Pro-3-Introduction-1.mp4",
+      "evidence": "Framer rendered video-current; video-src",
+      "order": 21,
+      "file": "framer-staging/airpods-pro-3/005-airpods-pro-3-introduction-1.mp4",
+      "bytes": 1722354,
+      "status": "skipped-existing"
+    }
+  ]
+}

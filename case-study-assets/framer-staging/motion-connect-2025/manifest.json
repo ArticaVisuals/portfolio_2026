@@ -1,0 +1,101 @@
+{
+  "source": "framer-staging",
+  "sourceLabel": "New Framer staging",
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "route": "/case-studies/motion-connect-2025",
+  "pageUrl": "https://khaki-ship-257706.framer.app/case-studies/motion-connect-2025",
+  "title": "Motion Connect 2025",
+  "slug": "motion-connect-2025",
+  "folderName": "motion-connect-2025",
+  "media": [
+    {
+      "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "kind": "image",
+      "originalName": "W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; video-poster; video-poster; resource-video",
+      "order": 1
+    },
+    {
+      "url": "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "kind": "image",
+      "originalName": "PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6
+    },
+    {
+      "url": "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "kind": "image",
+      "originalName": "Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11
+    },
+    {
+      "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "kind": "image",
+      "originalName": "BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16
+    },
+    {
+      "url": "https://freight.cargo.site/i/K2717924145885630584799912777237/Motion-Connect_1.mp4",
+      "kind": "video",
+      "originalName": "Motion-Connect_1.mp4",
+      "evidence": "Framer rendered video-current; video-src",
+      "order": 21
+    }
+  ],
+  "externalEmbeds": [],
+  "downloaded": [
+    {
+      "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "kind": "image",
+      "originalName": "W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; video-poster; video-poster; resource-video",
+      "order": 1,
+      "file": "framer-staging/motion-connect-2025/001-w592y16erqrz1qfuxre3dcsv8i.png",
+      "bytes": 797294,
+      "status": "skipped-existing",
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "kind": "image",
+      "originalName": "PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 6,
+      "file": "framer-staging/motion-connect-2025/002-pxsrzy7ezkkjsfurvhhuup2sk4k.jpg",
+      "bytes": 405877,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "kind": "image",
+      "originalName": "Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 11,
+      "file": "framer-staging/motion-connect-2025/003-dj1klsghel5tcjkngsjkfvuimmu.png",
+      "bytes": 296038,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "kind": "image",
+      "originalName": "BRh73XzVlRBoYNh03pKXVIYYPw.png",
+      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "order": 16,
+      "file": "framer-staging/motion-connect-2025/004-brh73xzvlrboynh03pkxviyypw.png",
+      "bytes": 1087468,
+      "status": "skipped-existing"
+    },
+    {
+      "url": "https://freight.cargo.site/i/K2717924145885630584799912777237/Motion-Connect_1.mp4",
+      "kind": "video",
+      "originalName": "Motion-Connect_1.mp4",
+      "evidence": "Framer rendered video-current; video-src",
+      "order": 21,
+      "file": "framer-staging/motion-connect-2025/005-motion-connect_1.mp4",
+      "bytes": 22035040,
+      "status": "skipped-existing"
+    }
+  ]
+}
