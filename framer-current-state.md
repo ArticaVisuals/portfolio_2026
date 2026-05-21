@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** May 20, 2026 (deep framework audit — see §8)
+**Last audited:** May 20, 2026 (deep framework audit — see §8; `/play` polish notes added same day)
 **Published URL:** `https://khaki-ship-257706.framer.app`
 **Latest observed deploy:** May 18, 2026 (published `/index` breakpoint promotion; Framer reported No Changes after publish)
 
@@ -67,9 +67,11 @@ The earlier duplicate `/index` page (`yKKOMVNs6`, "Mono 13" default) **has been 
 - `tqQjSoH` `IndexRuleColorOverride.tsx` — legacy rule/aspect-ratio helper. Its default rule color is now the site rule color `#233324` and it forces rule opacity to 1; when `adjustCaseStudiesGrid="true"`, it can also run a layout pass on `/case-studies` cards to apply the source image aspect ratio to each card.
 - `poRGCf7` `ImageMaskReveal.tsx` — site-wide scroll reveal, instance present on every page.
 - `Z28JYvA` `CaseStudyThumbnailStrokeStyles.tsx` — CMS-driven thumbnail-stroke helper. Reads `All Projects` field `OHdUYs6Mo` and applies a non-layout 1px Light Gray overlay stroke to matching project thumbnails on Home, `/case-studies`, `/index`, and Framer canvas/editor card renders.
-- `QNpkYp5` `ArchivePlayground.tsx` — archive-backed draggable media playground placed on `/playground` (`Vm_TSe0rX`). Uses original Cargo `/t/original/` image/GIF URLs and video poster/original video pairs scraped from `https://micahhoang.info/archive`.
-- `RBX6jsP` `PlaygroundNavPassthrough.tsx` — invisible `/playground` helper (`NPcuvJ4mA`) that lets pointer movement pass through the nav/header shell while preserving clicks on actual nav links/buttons; it also keeps the archive grid drifting while the detail sidebar is open, normalizes sidebar media to natural full-width sizing, and owns archive media gray-stroke controls.
+- `QNpkYp5` `ArchivePlayground.tsx` — archive-backed draggable media playground placed on `/play` (`Vm_TSe0rX`). Uses original Cargo `/t/original/` image/GIF URLs and video poster/original video pairs scraped from `https://micahhoang.info/archive`.
+- `RBX6jsP` `PlaygroundNavPassthrough.tsx` — invisible `/play` helper (`NPcuvJ4mA`) that lets pointer movement pass through the nav/header shell while preserving clicks on actual nav links/buttons; it also keeps the archive grid drifting while the detail sidebar is open, normalizes sidebar media to natural full-width sizing, and owns archive media gray-stroke controls. Current `/play` setting is `Gray Stroke = Auto` with `strokeWidth=0.5`.
 - `vdg69JZ` `PlaygroundRuleExitGuard.tsx` — invisible `/play` helper (`sQ55vcG1S`) that preserves the sidebar detail rule inside the close-exit snapshot so the typography spacing stays stable while the panel slides away.
+- `c2PU6kX` `PlaygroundInstantExitSnapshot.tsx` — invisible `/play` helper (`VrJ1jUew6`) that snapshots the sidebar content immediately on outside click, close-button click, or Escape so the panel never slides out as an empty cream frame.
+- `R3ZWYKl` `PlaygroundSidebarColumnGuard.tsx` — invisible `/play` helper (`CzORbuWUR`) that enforces non-overlapping sidebar title/description columns, wraps long unbroken titles inside the title column, and stacks the metadata below narrow panel widths.
 - `qKgyy0t` `PlaygroundPageV2.tsx` — optimized draft playground placed on `/play-2` (`My7p7oQST`). Uses the same archive Cargo media as built-in defaults, moves the tiled gallery with DOM `requestAnimationFrame` transforms instead of per-frame React state, keeps media `object-fit: contain`, and uses `AnimatePresence` so detail content remains mounted through close without the helper snapshot/observer path.
 - `hdPa_Gj` `Counter.tsx` — exports `NumberCounter` (non-default). Used on `/case-studies` `(N)` count. Currently `endNumber=12` on the live page; CMS has 15 records.
 - `ibj8uxT` `WorldGridTest.tsx` — unrouted reference; orphaned. Its `DEFAULT_ITEMS` array references placeholder projects (`Vern Carter`, `Iris Wade`, `Orion Ventures`, `Echoes`, `Iconic`, `Adapting Literature`) that do not exist in CMS.
@@ -244,9 +246,11 @@ Current official `/index` behavior:
 - The promoted behavior references Phantom's list-view behavior for the tablet/mobile list: Discipline/category metadata disappears rather than truncating, Industry stays visible, and mobile metadata closes in without overlapping.
 - Published verification on May 18 checked `/index` at 1200, 1024, 900, 810, and 390px widths: no horizontal overflow, no taxonomy overlaps, and no list-cell overlaps. `/index-breakpoints-draft` and `/playground` remained unpublished drafts (404 on staging).
 
-### `/playground` archive media pass
+### `/play` archive media pass
 
-On May 19, 2026, `/playground` (`KbgWr_0BN`) was updated from the previous placeholder `Playground.tsx` instance to `ArchivePlayground.tsx` (`QNpkYp5`) on the Desktop breakpoint. The archive scraper stored 33 original-resolution items from `https://micahhoang.info/archive` in `case-study-assets/current-site/archive/` with `manifest.json`, including 24 images, 7 videos, 2 GIFs, and 7 video poster frames. Framer uses Cargo URLs directly; local downloads are kept as verification/staging copies. `ArchivePlayground.tsx` is now a self-contained archive-backed version of the original Playground interaction: it preserves the drag/parallax/inertia/edge-scroll feel, detail panel, close-button flip interaction, and footer-hider while rendering archive media inside equal square cells with `object-fit: contain` so uploads are not cropped. Grid images request lighter Cargo width variants for smoothness, GIFs use the original animated source, and videos autoplay as muted loops with no visible controls in both thumbnail and detail states. The placed instance `Vm_TSe0rX` uses the same motion values as the prior `/playground` component instance (`driftSpeedX/Y=0.5`, `throwFriction=0.85`, `throwVelocityScale=1.75`, `throwMinSpeed=220`, `throwMaxSpeed=5200`, `parallaxEase=0.5`, `arcEnabled=false`) and has `advancedControls=true` again. The component also listens to global capture-phase pointer movement for visual tracking, so hovering actual nav links does not make the background ease back to neutral. A 1px invisible `PlaygroundNavPassthrough` instance (`NPcuvJ4mA`) is also on Desktop to apply page-scoped CSS: nav/header wrappers use `pointer-events: none`, while anchors, buttons, Framer `LogoLink`, and Framer `TextLink` descendants remain clickable. That helper keeps the grid wrapper drifting at the same `0.5 / 0.5` rate while the detail sidebar is open, then preserves the accumulated offset when the sidebar closes so the background does not snap. It also sets detail/sidebar media frames to transparent, full-width natural aspect ratios based on loaded image/video dimensions, so gray letterbox borders disappear and the text below is pushed naturally by the media height. The helper hides the archive media category label in the sidebar and inserts the same `#233324` left-origin scaleX rule animation used by the index/home rule treatment between the media content and typography; the rule is now recreated only while the detail sidebar is open so it redraws after a media click, and its bottom margin is half the previous value to pull typography closer. The same helper owns archive media strokes with a `Gray Stroke` control (`Auto`, `On`, `Off`). `Auto` is the current `/play` setting and applies half-pixel strokes to the grid thumbnails and sidebar media when sampled original media/poster edges are too low-contrast against the site cream/white background; the overlay is positioned on the actual rendered `object-fit: contain` media bounds, not on the surrounding square cell, and stroked media is clipped to those same bounds so hover zoom cannot spill outside the stroke. As of May 20, the helper no longer runs a persistent close-state MutationObserver for the Ashfall-style exit. Instead it snapshots sidebar content only on a real close/outside/Escape action, appends that non-interactive snapshot on the next frame after the panel starts exiting, and removes it after the transition. Tablet and Phone breakpoints are replica nodes and rejected direct MCP child insertion, so they still need a Framer-canvas responsive pass if `/playground` is promoted beyond draft.
+On May 19, 2026, `/play` (`KbgWr_0BN`) was updated from the previous placeholder `Playground.tsx` instance to `ArchivePlayground.tsx` (`QNpkYp5`) on the Desktop breakpoint. The archive scraper stored 33 original-resolution items from `https://micahhoang.info/archive` in `case-study-assets/current-site/archive/` with `manifest.json`, including 24 images, 7 videos, 2 GIFs, and 7 video poster frames. Framer uses Cargo URLs directly; local downloads are kept as verification/staging copies. `ArchivePlayground.tsx` is now a self-contained archive-backed version of the original Playground interaction: it preserves the drag/parallax/inertia/edge-scroll feel, detail panel, close-button flip interaction, and footer-hider while rendering archive media inside equal square cells with `object-fit: contain` so uploads are not cropped. Grid images request lighter Cargo width variants for smoothness, GIFs use the original animated source, and videos autoplay as muted loops with no visible controls in both thumbnail and detail states. The placed instance `Vm_TSe0rX` uses the same motion values as the prior `/playground` component instance (`driftSpeedX/Y=0.5`, `throwFriction=0.85`, `throwVelocityScale=1.75`, `throwMinSpeed=220`, `throwMaxSpeed=5200`, `parallaxEase=0.5`, `arcEnabled=false`) and has `advancedControls=true` again. The component also listens to global capture-phase pointer movement for visual tracking, so hovering actual nav links does not make the background ease back to neutral. A 1px invisible `PlaygroundNavPassthrough` instance (`NPcuvJ4mA`) is also on Desktop to apply page-scoped CSS: nav/header wrappers use `pointer-events: none`, while anchors, buttons, Framer `LogoLink`, and Framer `TextLink` descendants remain clickable. That helper keeps the grid wrapper drifting at the same `0.5 / 0.5` rate while the detail sidebar is open, then preserves the accumulated offset when the sidebar closes so the background does not snap. It also sets detail/sidebar media frames to transparent, full-width natural aspect ratios based on loaded image/video dimensions, so gray letterbox borders disappear and the text below is pushed naturally by the media height. The helper hides the archive media category label in the sidebar and inserts the same `#233324` left-origin scaleX rule animation used by the index/home rule treatment between the media content and typography; the rule is now recreated only while the detail sidebar is open so it redraws after a media click, and its bottom margin is half the previous value to pull typography closer.
+
+May 20, 2026 `/play` polish: `PlaygroundNavPassthrough` (`NPcuvJ4mA`) is back to `Gray Stroke = Auto` with `strokeWidth=0.5`, applying half-pixel gray strokes only to grid thumbnails and sidebar media whose sampled media/poster edges need contrast against the cream/white background. The overlay is positioned on the actual rendered `object-fit: contain` media bounds, not the surrounding square cell, and stroked media is clipped to those same bounds so hover zoom cannot spill outside the stroke. Two additional invisible helpers were added on Desktop: `PlaygroundInstantExitSnapshot.tsx` (`c2PU6kX`, instance `VrJ1jUew6`) snapshots sidebar content immediately on outside click, close-button click, or Escape so the closing panel does not flash to an empty cream frame; `PlaygroundSidebarColumnGuard.tsx` (`R3ZWYKl`, instance `CzORbuWUR`) enforces `minmax(0, ...)` title/description columns, wraps long unbroken titles such as `HMCTEmailBlast`, and stacks the metadata below `430px` panel width. Tablet and Phone breakpoints are replica nodes and rejected direct MCP child insertion, so they still need a Framer-canvas responsive pass if `/play` is expanded beyond the current Desktop implementation.
 
 ### Grid view source
 
@@ -390,10 +394,12 @@ Verified by reading each page's primary-variant XML on 2026-05-20.
 | `IndexPage.tsx` | `rgAZFOv` | `/index` | Active |
 | `IndexPageBreakpointsDraft.tsx` | `VwMoFWv` | `/index` | Active |
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | Home, `/case-studies`, `/index` | Active |
-| `ImageMaskReveal.tsx` | `poRGCf7` | Home (`enabled=false`), `/case-studies` (`enabled=false`), `/contact` (`enabled=true`) | Effectively `/contact`-only |
+| `ImageMaskReveal.tsx` | `poRGCf7` | **No placement** | Stub-archived 2026-05-20 — see §8.4 (removed at user request across Home, `/case-studies`, `/contact`) |
 | `ArchivePlayground.tsx` | `QNpkYp5` | `/play` | Active |
 | `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | `/play` | Active |
 | `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | `/play` | Active |
+| `PlaygroundInstantExitSnapshot.tsx` | `c2PU6kX` | `/play` | Active — same-frame sidebar exit snapshot to prevent empty-panel flash while closing |
+| `PlaygroundSidebarColumnGuard.tsx` | `R3ZWYKl` | `/play` | Active — prevents sidebar title/description overlap and wraps long titles inside their column |
 | `PlaygroundPageV2.tsx` | `qKgyy0t` | `/play-2` Desktop | Draft performance test |
 | `RelatedProjectHoverZoom.tsx` | `GTEGUfN` | `/case-studies/airpods` | Active (pilot) |
 | `Counter.tsx` (`NumberCounter`) | `hdPa_Gj` | `/case-studies` (`endNumber=12`, stale) | Active but stale |
@@ -414,18 +420,20 @@ The 5 Code Overrides (`Examples_1.tsx`, `Weather.tsx`, `Copyright_year.tsx`, `Ex
 
 ### 8.2 Recommended cleanup waves
 
-**Wave A — orphan deletion (~1 hour, biggest payoff for the "code component sprawl" pain).** Delete these code files: `Playground.tsx`, `WorldGridTest.tsx`, `HomeGridPreview.tsx`, `HomeGridVariantPreviewStyles.tsx`, `IndexRuleColorOverride.tsx`, `ResumeAssetHost.tsx`. Verify the 5 Code Overrides are unused before deleting them too. `Test.tsx` is a separate question — see Wave B.
+**Wave A — orphan stub-archive (shipped 2026-05-20).** 6 orphan code components + 5 Code Overrides converted to ARCHIVED no-op stubs. See §8.4.
 
-**Wave B — decide the `/index` CMS bridge.** Two viable paths:
-- **B1 (recommended):** add a hidden Collection List on `/index` bound to `All Projects`, place `ProjectRegistrar` (from `Test.tsx`) inside its template card. One-time setup. After that, new project workflow drops to "add CMS row → publish" with no code edit.
-- **B2 (simpler today):** accept that `/index` is in-code, delete `Test.tsx`, set `useCMS=false` on the `IndexPage` instance, and strip the registry plumbing from `IndexPage.tsx`. Lower power but honest about the actual state.
+**Wave B — `/index` CMS bridge (shipped 2026-05-20).** Re-wired the hidden Collection List on `/index` bound to `All Projects` with `ProjectRegistrar` inside the template card. `/index` now sources project data from CMS rather than in-code snapshot. Adding new project = add CMS row + publish.
 
-**Wave C — small hardening.** All non-visual:
-- Update `NumberCounter` `endNumber` on `/case-studies` to `15` (or wire to a CMS-derived count).
-- Decide whether `ImageMaskReveal` is site-wide or `/contact`-only; remove the inactive Home / `/case-studies` instances if the latter.
-- Consolidate the duplicate `/Heading 2` text-style definitions (two entries with the same path, different `transform`).
-- Move `ArchivePlayground.tsx`'s 33-item `RAW_ITEMS` literal and `PlaygroundNavPassthrough.tsx`'s 12-item `AUTO_STROKE_MATCHERS` literal into a JSON asset or CMS collection, so adding archive media doesn't require code edits.
-- Replace inline color hex literals (`#233324`, `#979797`, `#F7F5F0`, `#141414`) in code components with props that default to those values — lets the brand color tokens flow from Framer styles in future.
+**Wave C — small hardening.**
+
+Shipped 2026-05-20:
+- ✅ Color hex literals in `IndexPage.tsx`, `ArchivePlayground.tsx`, and `PlaygroundNavPassthrough.tsx` are now `ControlType.Color` property controls with the original hex as `defaultValue`. The new props are visible in Framer's property panel and can be bound to project color styles (`/Cream`, `/Forest Green`, etc.) so brand-color tweaks cascade without code edits.
+
+Still open (defer until ready for visible change OR manual UI fix):
+- `NumberCounter` `endNumber` on `/case-studies` is `12`; CMS has 15. Visible fix; needs the user's go-ahead since it changes the rendered `(12)` to `(15)`.
+- ~~Decide whether `ImageMaskReveal` is site-wide or `/contact`-only; remove the inactive Home / `/case-studies` instances if the latter.~~ Resolved 2026-05-20 — user removed it everywhere; instances deleted, source stub-archived.
+- Consolidate the duplicate `/Heading 2` text-style definitions (two entries with the same path, different `transform`). Requires Framer's Text Styles panel — no MCP path.
+- `ArchivePlayground.tsx` still has a 33-item `RAW_ITEMS` constant; `PlaygroundNavPassthrough.tsx` has 12-item `AUTO_STROKE_MATCHERS`. Move to JSON assets or a CMS collection once playground content grows.
 
 ### 8.3 Verified contradictions resolved
 
@@ -446,13 +454,15 @@ Framer has no native concept of archived/recycled code files, so the 6 orphaned 
 2. If a layer or another file unexpectedly references one of them, it falls through to a no-op rather than erroring
 3. The original source can be recovered from Framer's version history if ever needed
 
-Stub-archived code components (6):
+Stub-archived code components (8 — 6 original orphans + `PlaygroundPageV2.tsx` after `/play-2` removal + `ImageMaskReveal.tsx` after instance removal):
 - `Playground.tsx` (`CS95xv7`)
 - `WorldGridTest.tsx` (`ibj8uxT`)
 - `HomeGridPreview.tsx` (`Z5xMt1E`)
 - `HomeGridVariantPreviewStyles.tsx` (`ezlLf_J`)
 - `IndexRuleColorOverride.tsx` (`tqQjSoH`)
 - `ResumeAssetHost.tsx` (`xDqfenf`)
+- `PlaygroundPageV2.tsx` (`qKgyy0t`)
+- `ImageMaskReveal.tsx` (`poRGCf7`)
 
 Stub-archived Code Overrides (5) — exports preserved as no-op pass-throughs in case any layer references them:
 - `Examples_1.tsx` (`saw3Q19`)
@@ -469,3 +479,5 @@ The following files appeared after the initial 2026-05-20 audit was written. The
 
 - `PlaygroundPageV2.tsx` (`qKgyy0t`) — placed on `/play-2`. Performance-optimized draft of the playground using `requestAnimationFrame` + DOM transforms and `AnimatePresence`. Carries its own copy of the 33-item archive media array, which duplicates `ArchivePlayground.RAW_ITEMS`. Consolidation candidate once `/play-2` either replaces `/play` or is removed.
 - `PlaygroundRuleExitGuard.tsx` (`vdg69JZ`) — placed on `/play`. Keeps the sidebar detail-divider mounted inside the panel-close snapshot. Monkey-patches `Element.prototype.remove` and restores it on unmount.
+- `PlaygroundInstantExitSnapshot.tsx` (`c2PU6kX`) — placed on `/play`. Captures sidebar content on close intent before React unmounts the selected detail, keeping content visible inside the panel throughout the close animation.
+- `PlaygroundSidebarColumnGuard.tsx` (`R3ZWYKl`) — placed on `/play`. Hardens the sidebar detail grid so title and description text keep separate columns, with long unbroken titles wrapping instead of overlapping adjacent text.
