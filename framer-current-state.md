@@ -428,11 +428,14 @@ The 5 Code Overrides (`Examples_1.tsx`, `Weather.tsx`, `Copyright_year.tsx`, `Ex
 
 Shipped 2026-05-20:
 - ✅ Color hex literals in `IndexPage.tsx`, `ArchivePlayground.tsx`, and `PlaygroundNavPassthrough.tsx` are now `ControlType.Color` property controls with the original hex as `defaultValue`. The new props are visible in Framer's property panel and can be bound to project color styles (`/Cream`, `/Forest Green`, etc.) so brand-color tweaks cascade without code edits.
+- ✅ GT Standard licensed Regular fonts replaced Trial in `FooterCopyrightYear.tsx`, `IndexPageBreakpointsDraft.tsx`, and `Test.tsx` (ProjectRegistrar canvas badge). Each `fontFamily` chain leads with the licensed `GT Standard Mono` / `GT Standard`, then falls back to `Trial`, then system mono. User only purchased Regular weight; `IndexPage.tsx` and `ArchivePlayground.tsx` were intentionally left on `'GT Standard Trial'` because their inline styles reference `fontWeight: 500` (Medium) — swapping the family would force a faux-bold synthesis on Medium-weight text.
+- ✅ ScrollMore component's two `↓` arrow nodes (`DZ5DcIK9N`, `BnvBsgWfa`) swapped from `GF;Azeret Mono-regular` to `inlineTextStyle="/Body - 100%"` so the arrow now renders in GT Standard Mono Regular (consistent with surrounding "scroll to view more" text). Cascades automatically to both ScrollMore instances on Home (`BgaGMMs_k`) and `/info` (`a3ZTPNPEH`).
 
 Still open (defer until ready for visible change OR manual UI fix):
 - `NumberCounter` `endNumber` on `/case-studies` is `12`; CMS has 15. Visible fix; needs the user's go-ahead since it changes the rendered `(12)` to `(15)`.
 - ~~Decide whether `ImageMaskReveal` is site-wide or `/contact`-only; remove the inactive Home / `/case-studies` instances if the latter.~~ Resolved 2026-05-20 — user removed it everywhere; instances deleted, source stub-archived.
 - Consolidate the duplicate `/Heading 2` text-style definitions (two entries with the same path, different `transform`). Requires Framer's Text Styles panel — no MCP path.
+- 3 text styles still point at Trial Regular fonts (`/Heading 3`, `/Index Title`, `/Heading 5`). `manageTextStyle` over MCP rejects the licensed `CUSTOMV2;GT Standard L Regular` / `CUSTOMV2;GT Standard Mono Regular` selectors with "Font with selector not found" — the validator only indexes built-in Framer fonts (Google/Fontshare), not project-uploaded customs. Must be swapped manually in Framer's Text Styles panel.
 - `ArchivePlayground.tsx` still has a 33-item `RAW_ITEMS` constant; `PlaygroundNavPassthrough.tsx` has 12-item `AUTO_STROKE_MATCHERS`. Move to JSON assets or a CMS collection once playground content grows.
 
 ### 8.3 Verified contradictions resolved
@@ -472,6 +475,28 @@ Stub-archived Code Overrides (5) — exports preserved as no-op pass-throughs in
 - `Copyright.tsx` (`Cm9wqQM`)
 
 To fully delete any of these later, just delete the file from Framer's code panel — by then it'll be obvious nothing is wired up.
+
+**Critical syntactic constraint for archived Code Overrides** (learned 2026-05-20 when stub-archive triggered a publish error): Framer's static analyzer only registers a function as an override when the inner-component body uses an **explicit `return` block**, not a single-expression arrow. This works:
+
+```ts
+export function withRotate(Component): ComponentType {
+    return (props) => {
+        return <Component {...props} />
+    }
+}
+```
+
+This **does not** (`exports: []` and "Code Override Missing" at publish):
+
+```ts
+export function withRotate(Component): ComponentType {
+    return (props) => <Component {...props} />
+}
+```
+
+Any future override stub must use the explicit-block form so Framer's analyzer registers it.
+
+**Special case: `ResumeAssetHost.tsx`.** Initially stub-archived with a zero-prop signature, which triggered "Footer Missing" at publish because the Footer component (`xxIb0BkhJ`) instance (`qqMNYKIQ0`) had `resumeFile` and `style` props bound. Re-archived 2026-05-20 with the original `ResumeAssetHostProps` shape and `addPropertyControls` preserved — the side effect (`wireResumeLinks`) is gone, but the prop signature matches so the Footer resolves at publish.
 
 ### 8.5 New post-audit additions
 
