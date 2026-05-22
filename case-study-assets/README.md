@@ -4,6 +4,7 @@ Generated: 2026-05-16T05:26:59.133Z
 
 - Current site: https://micahhoang.info
 - Framer staging: https://khaki-ship-257706.framer.app
+- May 22, 2026 note: `micahhoang.info` still served the Cargo site during the latest audit; Framer staging is the current redesign/build surface until domain cutover.
 - Pages: 35
 - Assets: 555
 - Downloaded media files: 555

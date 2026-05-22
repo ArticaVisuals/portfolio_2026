@@ -1,9 +1,9 @@
 # Portfolio Copy — Tone of Voice & Case Study Openings
 
 **For:** Micah Hoang
-**Version:** 1.4 — May 1 Framer audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. `/info` is the live profile route and includes testimonials.
+**Version:** 1.5 — May 22 live Framer audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. `/info` is the live profile route and includes testimonials.
 **Date:** May 2026
-**Last Framer MCP audit:** May 1, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
+**Last live route audit:** May 22, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
 ---
 
@@ -57,7 +57,7 @@ Every case study opening should pass this test: if you read it aloud to a friend
 
 No tagline. No "I design brands that..." sentence. The discipline line does the positioning; the work does the rest.
 
-**Current Framer implementation note:** the live Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Resume/Cosmos links, a scroll prompt, and `©2026`. The May 1 XML shows a spacing typo in the hero line (`mind.Strategy`), so fix that in Framer before launch. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
+**Current Framer implementation note:** the live Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. The May 22 audit confirmed the previous `mind.Strategy` spacing typo is fixed. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
 
 ### About Zone — *Locked*
 
@@ -253,7 +253,7 @@ Patterns to maintain across all case studies so the portfolio reads as one voice
 
 Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Motion Connect 2025 is now part of the six-card published Home grid. Weaponized Innocence remains Tier 2 and homepage-flagged but is not visible because Home is limited to six items by sort order. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 15 real projects and no sample/template projects.
 
-Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of the planned green-dot/time treatment, and `/info` currently uses a forest-green editorial profile structure with selected experience, testimonials, recognition, and CTA sections rather than the older photo/resume/currently layout.
+Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of the planned green-dot/time treatment, and `/info` currently uses a forest-green editorial profile structure with selected experience, testimonials, recognition, and CTA sections rather than the older photo/résumé/currently layout.
 
 **Remaining before build:**
 - Pick initial "currently into" items (reading, listening, exploring)

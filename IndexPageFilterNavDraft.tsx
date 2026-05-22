@@ -66,26 +66,19 @@ const indexGridStyle: React.CSSProperties = {
     width: "100%",
 }
 
-const DEFAULT_TOKENS = {
+const tokens = {
     textPrimary: "#26211f",
-    textSecondary: "#141414",
+    textSecondary: "#636363",
     textTertiary: "#979797",
     bg: "#F7F5F0",
-    dividerStrong: "#141414",
-    dividerSubtle: "#141414",
+    dividerStrong: "#233324",
+    dividerSubtle: "#233324",
     surfaceOverlay: "rgba(215, 213, 207, 0.72)",
     surfaceActive: "#EAE8E3",
     fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
     fontHeading: "'GT Standard Trial', 'Inter', sans-serif",
-    fontProjectCta:
-        "'GT Standard', 'GT Standard L Regular', 'GT Standard Trial', 'Inter', sans-serif",
     fontMono: "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace",
 }
-
-// Mutable copy that IndexPage rewrites from props on every render so the
-// module-scope sub-components and the global CSS template see the live
-// values without needing to thread tokens through every prop.
-const tokens: Record<keyof typeof DEFAULT_TOKENS, string> = { ...DEFAULT_TOKENS }
 
 type Project = {
     title: string
@@ -101,23 +94,6 @@ type Project = {
     isHomepage?: boolean
 }
 
-type CMSFieldValue = { value?: unknown }
-type CMSItem = {
-    data?: Record<string, CMSFieldValue | unknown>
-    [key: string]: unknown
-}
-type CMSModule = {
-    a?: {
-        collectionByLocaleId?: {
-            default?: {
-                scanItems?: () => Promise<CMSItem[]>
-            }
-        }
-    }
-    r?: () => unknown
-    [key: string]: unknown
-}
-
 type Filters = {
     disciplines: string[]
     industries: string[]
@@ -130,29 +106,10 @@ type ListTypographyVariant = "standard" | "mono13"
 type ListHoverVariant = "flip" | "highlight"
 
 const TAXONOMY_LINE_HEIGHT = "24px"
-const INDEX_CMS_COLLECTION_ID = "yTHrQWMIY"
-const INDEX_CMS_FIELD_IDS = {
-    title: "oeXZcmPna",
-    slug: "pdXVG_fBO",
-    sortOrder: "DLBifmgp1",
-    category1: "kuvJcmOFr",
-    category2: "VV1CggU2J",
-    category3: "E6OpH0hSs",
-    thumbnail: "Jy7hBJady",
-    thumbnailVideoLink: "WG62tRjG8",
-    year: "QZqSK_3OF",
-    industry: "mBIilFqVM",
-    isHomepage: "myUIfK0j7",
-} as const
-const INDEX_CMS_LIVE_SCAN_PATHS = [
-    "/",
-    "/case-studies",
-    "https://khaki-ship-257706.framer.app/",
-    "https://khaki-ship-257706.framer.app/case-studies",
-]
 
-// Snapshot of the "All Projects" CMS collection. Used only as a final fallback
-// when Use CMS is off or Framer's generated CMS module cannot be resolved.
+// Snapshot of the "All Projects" CMS collection (15 items, captured from the
+// live CMS). Used as a fallback when Use CMS is off OR when no registrars
+// have registered yet — so an unconfigured instance still renders content.
 const DEFAULT_PROJECTS: Project[] = [
     {
         title: "AirPods Pro 3",
@@ -479,166 +436,8 @@ function normalizeThumbnailUrl(raw: unknown): string | undefined {
     if (typeof raw === "object") {
         const r = raw as Record<string, unknown>
         if (typeof r.src === "string") return r.src || undefined
-        if (typeof r.url === "string") return r.url || undefined
     }
     return undefined
-}
-
-function escapeRegExp(value: string): string {
-    return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-}
-
-function uniqueStrings(values: string[]): string[] {
-    return Array.from(new Set(values.filter(Boolean)))
-}
-
-function readCMSField(
-    data: Record<string, CMSFieldValue | unknown> | undefined,
-    fieldId: string
-) {
-    const field = data?.[fieldId]
-    if (field && typeof field === "object" && "value" in field) {
-        return (field as CMSFieldValue).value
-    }
-    return field
-}
-
-function normalizeCMSText(value: unknown): string {
-    return String(value ?? "").trim()
-}
-
-function normalizeCMSNumber(value: unknown): number | undefined {
-    const parsed = typeof value === "number" ? value : Number(value)
-    return Number.isFinite(parsed) ? parsed : undefined
-}
-
-function isCMSModuleUrl(url: string, collectionId: string): boolean {
-    const collectionPattern = escapeRegExp(collectionId)
-    return new RegExp(
-        `/${collectionPattern}\\.[^/]+\\.mjs(?:[?#].*)?$`
-    ).test(url)
-}
-
-function findCMSModuleUrlInMarkup(
-    markup: string,
-    collectionId: string
-): string | undefined {
-    const collectionPattern = escapeRegExp(collectionId)
-    const match = markup.match(
-        new RegExp(
-            `https://framerusercontent\\.com/sites/[^"']+/${collectionPattern}\\.[^"']+\\.mjs`,
-            "i"
-        )
-    )
-    return match?.[0]
-}
-
-function getDocumentResourceUrls(): string[] {
-    if (typeof document === "undefined") return []
-
-    const elementUrls = Array.from(
-        document.querySelectorAll<
-            | HTMLLinkElement
-            | HTMLScriptElement
-            | HTMLImageElement
-            | HTMLSourceElement
-        >("link[href], script[src], img[src], source[src]")
-    ).map((element) => {
-        if ("href" in element && element.href) return element.href
-        if ("src" in element && element.src) return element.src
-        return ""
-    })
-
-    const performanceUrls =
-        typeof performance !== "undefined" &&
-        typeof performance.getEntriesByType === "function"
-            ? performance.getEntriesByType("resource").map((entry) => entry.name)
-            : []
-
-    return uniqueStrings([...elementUrls, ...performanceUrls])
-}
-
-function findCMSModuleUrlInDocument(collectionId: string): string | undefined {
-    const fromResources = getDocumentResourceUrls().find((url) =>
-        isCMSModuleUrl(url, collectionId)
-    )
-    if (fromResources) return fromResources
-
-    if (typeof document !== "undefined" && document.documentElement) {
-        return findCMSModuleUrlInMarkup(
-            document.documentElement.outerHTML,
-            collectionId
-        )
-    }
-
-    return undefined
-}
-
-async function resolveCMSModuleUrl(collectionId: string) {
-    const inDocument = findCMSModuleUrlInDocument(collectionId)
-    if (inDocument) return inDocument
-
-    for (const path of INDEX_CMS_LIVE_SCAN_PATHS) {
-        try {
-            const response = await fetch(path, { credentials: "same-origin" })
-            if (!response.ok) continue
-            const html = await response.text()
-            const found = findCMSModuleUrlInMarkup(html, collectionId)
-            if (found) return found
-        } catch {
-            // Framer canvas, preview, and published URLs can live on different origins.
-        }
-    }
-
-    return undefined
-}
-
-function initializeCMSModule(module: CMSModule) {
-    try {
-        if (typeof module.r === "function") module.r()
-    } catch {
-        // Framer generated modules can be initialized already in preview.
-    }
-}
-
-function cmsItemToProject(item: CMSItem): Project | null {
-    const data = item.data
-    const fields = INDEX_CMS_FIELD_IDS
-    const title = normalizeCMSText(readCMSField(data, fields.title))
-    if (!title) return null
-
-    return {
-        title,
-        slug: normalizeCMSText(readCMSField(data, fields.slug)),
-        sortOrder: normalizeCMSNumber(readCMSField(data, fields.sortOrder)),
-        category1: normalizeCMSText(readCMSField(data, fields.category1)),
-        category2: normalizeCMSText(readCMSField(data, fields.category2)),
-        category3: normalizeCMSText(readCMSField(data, fields.category3)),
-        industry: normalizeCMSText(readCMSField(data, fields.industry)),
-        year: normalizeCMSText(readCMSField(data, fields.year)),
-        thumbnail:
-            normalizeThumbnailUrl(readCMSField(data, fields.thumbnail)) || "",
-        thumbnailVideoLink: normalizeCMSText(
-            readCMSField(data, fields.thumbnailVideoLink)
-        ),
-        isHomepage: Boolean(readCMSField(data, fields.isHomepage)),
-    }
-}
-
-async function loadCMSProjects(): Promise<Project[]> {
-    const moduleUrl = await resolveCMSModuleUrl(INDEX_CMS_COLLECTION_ID)
-    if (!moduleUrl) return []
-
-    const module = (await import(/* @vite-ignore */ moduleUrl)) as CMSModule
-    initializeCMSModule(module)
-
-    const collection = module.a?.collectionByLocaleId?.default
-    if (!collection || typeof collection.scanItems !== "function") return []
-
-    const items = await collection.scanItems()
-    return items
-        .map(cmsItemToProject)
-        .filter((project): project is Project => Boolean(project))
 }
 
 function groupByYear(projects: Project[]) {
@@ -683,8 +482,7 @@ function filterProjects(
     })
 }
 
-function buildGlobalCss(): string {
-    return `
+const GLOBAL_CSS = `
   @keyframes idxFadeUp {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -776,9 +574,7 @@ function buildGlobalCss(): string {
     line-height: 28px;
     text-transform: uppercase;
     letter-spacing: 0;
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
-    opacity: 1 !important;
+    color: ${tokens.textSecondary};
   }
 
   .idx-taxonomy-shell + .idx-tax-item {
@@ -802,8 +598,8 @@ function buildGlobalCss(): string {
     line-height: inherit;
     text-transform: inherit;
     letter-spacing: inherit;
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
+    color: ${tokens.textSecondary};
+    -webkit-text-fill-color: currentColor;
     cursor: pointer;
     text-decoration: none;
     text-underline-offset: 3px;
@@ -812,15 +608,11 @@ function buildGlobalCss(): string {
 
   .idx-view-toggle-option[data-active="true"] {
     text-decoration: underline;
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
-    opacity: 1 !important;
+    color: ${tokens.textSecondary};
   }
 
   .idx-view-toggle-option[data-active="false"]:hover {
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
-    opacity: 1;
+    opacity: 0.55;
   }
 
   .idx-view-toggle-option:focus-visible {
@@ -831,9 +623,7 @@ function buildGlobalCss(): string {
   .idx-view-toggle-divider {
     font: inherit;
     line-height: inherit;
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
-    opacity: 1 !important;
+    color: ${tokens.textSecondary};
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1342,7 +1132,6 @@ function buildGlobalCss(): string {
     }
   }
 `
-}
 
 function TaxonomySection({
     filters,
@@ -1554,13 +1343,11 @@ function HoverFlipText({
     text,
     activeText,
     style,
-    activeStyle,
     height,
 }: {
     text: string
     activeText?: string
     style: React.CSSProperties
-    activeStyle?: React.CSSProperties
     height: string
 }) {
     const flipStyle = {
@@ -1572,9 +1359,7 @@ function HoverFlipText({
         <span className="idx-flip-text" style={flipStyle} aria-label={text}>
             <span className="idx-flip-track" aria-hidden="true">
                 <span className="idx-flip-copy">{text}</span>
-                <span className="idx-flip-copy" style={activeStyle}>
-                    {activeText ?? text}
-                </span>
+                <span className="idx-flip-copy">{activeText ?? text}</span>
             </span>
         </span>
     )
@@ -1610,13 +1395,6 @@ function ListView({
               color: tokens.textPrimary,
               lineHeight: 1.2,
           }
-    const projectCtaTextStyle: React.CSSProperties = {
-        ...titleTextStyle,
-        fontFamily: tokens.fontProjectCta,
-        fontWeight: 400,
-        color: tokens.textTertiary,
-        WebkitTextFillColor: tokens.textTertiary,
-    }
     const titleFlipHeight = isMono13 ? "28px" : "27px"
 
     if (groups.length === 0) {
@@ -1720,15 +1498,10 @@ function ListView({
                                                     text={p.title}
                                                     activeText={
                                                         url
-                                                            ? "View Project →"
+                                                            ? "View Project"
                                                             : p.title
                                                     }
                                                     style={titleTextStyle}
-                                                    activeStyle={
-                                                        url
-                                                            ? projectCtaTextStyle
-                                                            : undefined
-                                                    }
                                                     height={titleFlipHeight}
                                                 />
                                             ) : (
@@ -1821,13 +1594,6 @@ function GridProjectCard({
         color: tokens.textPrimary,
         lineHeight: 1.2,
     }
-    const projectCtaStyle: React.CSSProperties = {
-        ...titleStyle,
-        fontFamily: tokens.fontProjectCta,
-        fontWeight: 400,
-        color: tokens.textTertiary,
-        WebkitTextFillColor: tokens.textTertiary,
-    }
 
     return (
         <a
@@ -1838,7 +1604,17 @@ function GridProjectCard({
                 animationDelay: `${Math.min(index, 12) * 30}ms`,
             }}
         >
-            <div className="idx-grid-card-media">
+            <div className="idx-grid-card-title">
+                <HoverFlipText
+                    text={project.title}
+                    activeText={href ? "View Project" : project.title}
+                    style={titleStyle}
+                    height="27px"
+                />
+            </div>
+            <div
+                className="idx-grid-card-media"
+            >
                 {videoSrc ? (
                     <video
                         className="idx-grid-card-video"
@@ -1858,15 +1634,6 @@ function GridProjectCard({
                         loading="lazy"
                     />
                 ) : null}
-            </div>
-            <div className="idx-grid-card-title">
-                <HoverFlipText
-                    text={project.title}
-                    activeText={href ? "View Project →" : project.title}
-                    style={titleStyle}
-                    activeStyle={href ? projectCtaStyle : undefined}
-                    height="27px"
-                />
             </div>
             <div className="idx-grid-card-meta">
                 {serviceText}
@@ -1963,50 +1730,25 @@ function ViewToggle({
     )
 }
 
-export default function IndexPage({
+export default function IndexFilterNavDraftPage({
     projects: projectsProp,
     useCMS = false,
     defaultView = "list",
     listTypographyVariant = "standard",
     listHoverVariant = "flip",
-    textPrimary,
-    textSecondary,
-    textTertiary,
-    bg,
-    dividerStrong,
-    dividerSubtle,
-    surfaceActive,
 }: {
     projects?: Project[]
     useCMS?: boolean
     defaultView?: string
     listTypographyVariant?: ListTypographyVariant
     listHoverVariant?: ListHoverVariant
-    textPrimary?: string
-    textSecondary?: string
-    textTertiary?: string
-    bg?: string
-    dividerStrong?: string
-    dividerSubtle?: string
-    surfaceActive?: string
 }) {
-    // Mirror the color props onto the module-scope `tokens` so module-level
-    // sub-components and buildGlobalCss() see the live values.
-    tokens.textPrimary = textPrimary || DEFAULT_TOKENS.textPrimary
-    tokens.textSecondary = textSecondary || DEFAULT_TOKENS.textSecondary
-    tokens.textTertiary = textTertiary || DEFAULT_TOKENS.textTertiary
-    tokens.bg = bg || DEFAULT_TOKENS.bg
-    tokens.dividerStrong = dividerStrong || DEFAULT_TOKENS.dividerStrong
-    tokens.dividerSubtle = dividerSubtle || DEFAULT_TOKENS.dividerSubtle
-    tokens.surfaceActive = surfaceActive || DEFAULT_TOKENS.surfaceActive
-
     // Mirror of the window registry. ProjectRegistrar instances placed inside
     // a Framer Collection List anywhere on the page push CMS rows into the
     // window-level registry; this state mirrors that so React re-renders.
     const [registeredProjects, setRegisteredProjects] = useState<
         Map<string, Project>
     >(() => new Map())
-    const [cmsModuleProjects, setCMSModuleProjects] = useState<Project[]>([])
 
     useEffect(() => {
         if (!useCMS) return
@@ -2019,45 +1761,22 @@ export default function IndexPage({
         })
     }, [useCMS])
 
-    useEffect(() => {
-        if (!useCMS) {
-            setCMSModuleProjects([])
-            return
-        }
-
-        let cancelled = false
-
-        loadCMSProjects()
-            .then((items) => {
-                if (!cancelled) setCMSModuleProjects(items)
-            })
-            .catch(() => {
-                if (!cancelled) setCMSModuleProjects([])
-            })
-
-        return () => {
-            cancelled = true
-        }
-    }, [useCMS])
-
     const allProjects = useMemo(() => {
-        // Priority: direct CMS module data > registry (legacy Framer Collection
-        // List bridge) > prop > DEFAULT_PROJECTS snapshot. Direct CMS wins so
-        // stale or missing registrar bindings cannot mask current CMS edits.
+        // Priority: registry (when Use CMS is on and registrars exist) > prop
+        // > DEFAULT_PROJECTS snapshot. With Use CMS off, the instance shows
+        // the static fallback (useful for side-by-side comparison while
+        // testing CMS wiring on a duplicate instance).
         const fromRegistry =
             useCMS && registeredProjects.size > 0
                 ? Array.from(registeredProjects.values())
                 : null
-        const fromCMSModule =
-            useCMS && cmsModuleProjects.length > 0 ? cmsModuleProjects : null
         const sourceProjects: Project[] =
-            fromCMSModule ??
             fromRegistry ??
             (projectsProp && projectsProp.length > 0
                 ? projectsProp
                 : DEFAULT_PROJECTS)
         return sourceProjects.map(normalizeProjectDisciplines)
-    }, [useCMS, registeredProjects, cmsModuleProjects, projectsProp])
+    }, [useCMS, registeredProjects, projectsProp])
     const initialView = defaultView === "grid" ? "grid" : "list"
 
     const [activeView, setActiveView] = useState(initialView)
@@ -2105,10 +1824,7 @@ export default function IndexPage({
     )
 
     const handleFilterToggle = useCallback(
-        (
-            type: FilterType,
-            value: string | number
-        ) => {
+        (type: FilterType, value: string | number) => {
             setFilters((prev) => {
                 const arr = prev[type] as any[]
                 return {
@@ -2138,7 +1854,7 @@ export default function IndexPage({
 
     return (
         <>
-            <style>{buildGlobalCss()}</style>
+            <style>{GLOBAL_CSS}</style>
 
             <div
                 className="idx-container"
@@ -2218,7 +1934,7 @@ export default function IndexPage({
     )
 }
 
-addPropertyControls(IndexPage, {
+addPropertyControls(IndexFilterNavDraftPage, {
     useCMS: {
         type: ControlType.Boolean,
         title: "Use CMS",
@@ -2273,40 +1989,5 @@ addPropertyControls(IndexPage, {
         optionTitles: ["Flip", "Highlight"],
         defaultValue: "flip",
         displaySegmentedControl: true,
-    },
-    textPrimary: {
-        type: ControlType.Color,
-        title: "Text Primary",
-        defaultValue: "#26211f",
-    },
-    textSecondary: {
-        type: ControlType.Color,
-        title: "Text Secondary",
-        defaultValue: "#141414",
-    },
-    textTertiary: {
-        type: ControlType.Color,
-        title: "Text Tertiary",
-        defaultValue: "#979797",
-    },
-    bg: {
-        type: ControlType.Color,
-        title: "Background",
-        defaultValue: "#F7F5F0",
-    },
-    dividerStrong: {
-        type: ControlType.Color,
-        title: "Divider Strong",
-        defaultValue: "#141414",
-    },
-    dividerSubtle: {
-        type: ControlType.Color,
-        title: "Divider Subtle",
-        defaultValue: "#141414",
-    },
-    surfaceActive: {
-        type: ControlType.Color,
-        title: "Surface Active",
-        defaultValue: "#EAE8E3",
     },
 })

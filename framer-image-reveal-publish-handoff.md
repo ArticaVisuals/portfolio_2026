@@ -1,5 +1,7 @@
 # Framer Image Mask Reveal Publish Handoff
 
+> **Status update — May 22, 2026:** this handoff is historical. The `Code Override Missing` publish blocker described below is not the current launch state; Framer staging responded with fresh May 22 deployments for `/index`, `/case-studies`, `/play`, and `/case-studies/airpods`. `ImageMaskReveal.tsx` has since been stub-archived and has no live placement. Per-project thumbnail strokes are now handled by `CaseStudyThumbnailStrokeStyles.tsx`, and `/index` is maintained through `IndexPage.tsx` plus `IndexPageBreakpointsDraft.tsx`. Keep this file for forensic context only; use `framer-current-state.md` as the current source of truth.
+
 ## Goal
 
 Publish the image mask-in animation to the main Framer site URL without needing `?imageReveal=1`.
@@ -16,9 +18,9 @@ Current live site:
 
 - `https://khaki-ship-257706.framer.app`
 
-## Current Status
+## Historical Status
 
-The image reveal behavior itself is implemented in Framer and was seen working in preview/flagged testing. The remaining blocker is publishing. Framer's Publish panel currently disables the `Update` button with:
+At the time this handoff was written, the image reveal behavior itself was implemented in Framer and seen working in preview/flagged testing. The publish blocker was Framer's disabled `Update` button with:
 
 `Error: Code Override Missing`
 
@@ -228,7 +230,7 @@ The cache also contained older remote override imports like:
 
 - `Copyright.js` from Framer's modules CDN
 
-But current Framer-visible override files now include valid local compatibility exports.
+At the May 3 checkpoint, the Framer-visible override files included valid local compatibility exports.
 
 ## Likely Root Cause (May 3 diagnosis — partially resolved)
 
@@ -244,9 +246,9 @@ Supporting evidence (as of May 3):
 
 - Framer shows `A/B test needs configuration.`
 - Local generated cache contains stale `YIWFDAfhW`/`SmkNoZhed` artifacts that do not appear in `getProjectXml`.
-- The visible/current override files all export valid overrides, but Publish still reports `Code Override Missing`.
+- At the time, the visible override files all exported valid overrides, but Publish still reported `Code Override Missing`.
 
-## Recommended Next Steps
+## Historical Recommended Next Steps
 
 1. Reopen Framer MCP plugin and run `getProjectXml` to confirm the current project map.
 
@@ -300,4 +302,4 @@ After publishing succeeds:
 
 ## Short Diagnosis For Claude
 
-The reveal implementation is done; the problem is not primarily animation code anymore. The current blocker is Framer's publish validation: `Code Override Missing`. Visible override files now export valid override functions, but Framer's generated cache still references stale/deleted Turner-template or A/B-test artifacts, especially `SmkNoZhed` and `YIWFDAfhW`. The unfinished `Index` A/B test and duplicate `/index` pages are the most suspicious places to start.
+Historical May 3 diagnosis: the reveal implementation was done, and the problem was not primarily animation code anymore. The blocker was Framer's publish validation: `Code Override Missing`. Visible override files exported valid override functions, but Framer's generated cache appeared to reference stale/deleted Turner-template or A/B-test artifacts, especially `SmkNoZhed` and `YIWFDAfhW`. Treat this as forensic context only; the May 22 audit confirmed fresh Framer staging deployments and `ImageMaskReveal.tsx` is no longer a live placement.

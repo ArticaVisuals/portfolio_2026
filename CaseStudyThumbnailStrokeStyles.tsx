@@ -41,6 +41,11 @@ const DEFAULT_STROKE_COLOR = "#979797"
 const DEFAULT_HOVER_IMAGE_SCALE = 1.02
 const HOVER_DURATION_MS = 420
 const HOVER_EASING = "cubic-bezier(.22, 1, .36, 1)"
+const AZERET_MONO_LATIN_WOFF2 =
+    "https://fonts.gstatic.com/s/azeretmono/v21/3XF5ErsiyJsY9O_Gepph-FvtTQgMQUdNekSfnPVR1byb.woff2"
+const INTER_LATIN_WOFF2 = "https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2"
+const GT_SYMBOL_FALLBACK_RANGE = "U+0021-002F, U+003A-0040, U+005B-0060, U+007B-007E, U+00A9"
+const CARD_TITLE_LINE_HEIGHT = 16
 const CANVAS_OVERLAY_NAMES = [
     "ThumbnailStrokeOverlay",
     "Thumbnail Stroke Overlay",
@@ -52,6 +57,24 @@ const LIVE_SCAN_PATHS = [
     "/case-studies",
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
+]
+
+const GT_MONO_PLACEHOLDER_FAMILIES = [
+    "GT Standard Mono Trial Rg Placeholder",
+    "GT Standard Mono Trial Bd Placeholder",
+    "GT Standard Mono Trial Rg Obl Placeholder",
+    "GT Standard Mono Trial Bd Obl Placeholder",
+]
+
+const GT_STANDARD_PLACEHOLDER_FAMILIES = [
+    "GT Standard Trial L Bd Placeholder",
+    "GT Standard Trial L Rg Placeholder",
+    "GT Standard Trial L Md Placeholder",
+    "GT Standard Trial M Rg Placeholder",
+    "GT Standard Trial L Nr Bd Placeholder",
+    "GT Standard Trial L Bd Obl Placeholder",
+    "GT Standard Trial L Nr Rg Obl Placeholder",
+    "GT Standard Trial L Nr Md Obl Placeholder",
 ]
 
 function splitNames(value: string): string[] {
@@ -76,6 +99,31 @@ function unique(values: Array<string | undefined | null>): string[] {
 function nameSelector(name: string) {
     const value = escapeAttr(name)
     return `:is([data-framer-name="${value}"], [name="${value}"])`
+}
+
+function getGTFallbackFontFaces() {
+    const monoFaces = GT_MONO_PLACEHOLDER_FAMILIES.map(
+        (family) => `
+                @font-face {
+                    font-family: "${family}";
+                    src: url("${AZERET_MONO_LATIN_WOFF2}") format("woff2");
+                    font-style: normal;
+                    font-weight: normal;
+                    unicode-range: ${GT_SYMBOL_FALLBACK_RANGE};
+                }`
+    )
+    const standardFaces = GT_STANDARD_PLACEHOLDER_FAMILIES.map(
+        (family) => `
+                @font-face {
+                    font-family: "${family}";
+                    src: url("${INTER_LATIN_WOFF2}") format("woff2");
+                    font-style: normal;
+                    font-weight: normal;
+                    unicode-range: ${GT_SYMBOL_FALLBACK_RANGE};
+                }`
+    )
+
+    return [...monoFaces, ...standardFaces].join("\n")
 }
 
 function getMediaSelectors(imageWrapperNames: string): string[] {
@@ -692,6 +740,33 @@ export default function CaseStudyThumbnailStrokeStyles({
                 [${HOVER_CARD_ATTR}="true"]:focus-visible [${HOVER_BG_ATTR}="true"]::before,
                 [${HOVER_CARD_ATTR}="true"]:focus-within [${HOVER_BG_ATTR}="true"]::before {
                     transform: scale(var(${HOVER_SCALE_VAR}, ${DEFAULT_HOVER_IMAGE_SCALE})) !important;
+                }
+
+                ${getGTFallbackFontFaces()}
+
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"],
+                [data-framer-name="Card"] [name="Title Wrapper"] {
+                    min-height: ${CARD_TITLE_LINE_HEIGHT}px !important;
+                    height: ${CARD_TITLE_LINE_HEIGHT}px !important;
+                }
+
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"] [data-framer-component-type="RichTextContainer"],
+                [data-framer-name="Card"] [name="Title Wrapper"] [data-framer-component-type="RichTextContainer"],
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"] [data-framer-name^="View project"],
+                [data-framer-name="Card"] [name="Title Wrapper"] [name^="View project"],
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"] [data-framer-name="ViewProject"],
+                [data-framer-name="Card"] [name="Title Wrapper"] [name="ViewProject"],
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"] [data-framer-name^="View project"] > div,
+                [data-framer-name="Card"] [name="Title Wrapper"] [name^="View project"] > div,
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"] [data-framer-name="ViewProject"] > div,
+                [data-framer-name="Card"] [name="Title Wrapper"] [name="ViewProject"] > div {
+                    min-height: ${CARD_TITLE_LINE_HEIGHT}px !important;
+                    height: ${CARD_TITLE_LINE_HEIGHT}px !important;
+                }
+
+                [data-framer-name="Card"] [data-framer-name="Title Wrapper"] p.framer-text,
+                [data-framer-name="Card"] [name="Title Wrapper"] p.framer-text {
+                    line-height: ${CARD_TITLE_LINE_HEIGHT}px !important;
                 }
 
                 @media (prefers-reduced-motion: reduce) {

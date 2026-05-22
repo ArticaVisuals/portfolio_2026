@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** May 16, 2026
+**Last verified:** May 22, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -24,8 +24,10 @@ Verified Framer structure:
 - `/index` - Canonical archive page with `IndexPage.tsx`, page ID `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) and temporary `/index-inline-toggle-test` A/B route have been deleted. List Type / List Hover / Default View / Use CMS are exposed as Framer property controls on this instance. The inline `GRID / LIST` toggle is now owned directly by `IndexPage.tsx`.
 - `/case-studies` - Native Framer case-study index, page ID `Rnw1WO1jS`
 - `/case-studies/:slug` - dynamic case-study route, page ID `UlQco8cYi`
+- `/case-studies/airpods` - bespoke AirPods pilot page, page ID `LB7pYBD3k`
 - `/info` - profile page, page ID `fxz_zRIyp`
 - `/contact` - contact page, page ID `gmXtVnIzJ`
+- `/play` - archive media playground, page ID `KbgWr_0BN`
 - `/404` - 404 page, page ID `koPvme2ig`
 
 There is no current `/profile` web page; `/info` is the live profile route. There is also no current `/worldgrid-test` web page. `WorldGridTest.tsx` still exists as a code file, but it is not routed.
@@ -56,12 +58,17 @@ Keep all project links canonical:
 
 The home page, `/case-studies` index, `/index` archive, and custom case-study pages should all resolve to the same URL pattern.
 
-Current verified live checks returned HTTP 200 for:
+Current verified Framer staging checks returned HTTP 200 for:
 
 - `/`
 - `/case-studies`
+- `/index`
+- `/info`
+- `/contact`
+- `/play`
+- `/case-studies/airpods`
 
-The May 1 audit also observed the published Home deployment metadata and `/case-studies` HTML, but did not re-run a full clickthrough/status-code matrix for every slug.
+The draft routes `/play-2` and `/playground-scroll-draft` returned 404 on the published Framer staging URL, which is expected while they remain unpublished.
 
 The dynamic `/case-studies/:slug` page currently handles individual project routes. When creating bespoke case-study pages, only create or move a page into a canonical `/case-studies/[slug]` path after confirming how Framer will resolve that path against the existing dynamic route. Ask Micah before deleting, renaming, or shadowing the dynamic page.
 
@@ -175,9 +182,9 @@ Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized
 
 `/index` uses the Framer code file `IndexPage.tsx` (`rgAZFOv`). It derives project URLs from `slug` as `/case-studies/${slug}`. That is the right behavior for the hybrid model. When bespoke pages are created at those same canonical paths, `/index` should not need link changes.
 
-Current index data note (May 10, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and a window-singleton registry (`window.__articaIndexProjectsRegistry`) intended to be populated by a separate `ProjectRegistrar` code component placed inside a Collection List bound to `All Projects`. The Registrar component has not yet been created, so the published `/index` is currently rendering the 15-project `DEFAULT_PROJECTS` snapshot baked into the live code (with simplified industry labels). Grid view was rewritten on May 10, 2026 to render native HTML cards inline (no `Case Study` module dependency, uniform 16:9 thumbnails, 3/2/1 column responsive grid, title above the image with hover-flip). The live CMS remains the source of truth and will only flow into `/index` once the Registrar is built and the Collection List is placed on the page.
+Current index data note (May 22, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and now tries to load the generated `All Projects` CMS module (`yTHrQWMIY`) directly before falling back to the older window-singleton registry (`window.__articaIndexProjectsRegistry`), manual `projects`, then the in-code `DEFAULT_PROJECTS` snapshot. The May 22 browser audit confirmed CMS module resources load on `/index`, but the registry was empty and the visible Industry labels were still simplified (`Education`, `Health`, `Human Rights`, `Literature`, `Music`, `Nature`, `Science`, `Technology`). Grid view renders native HTML cards inline (no `Case Study` module dependency, uniform 16:9 media, 3/2/1 column responsive grid, title and metadata below media with hover-flip CTA).
 
-Thumbnail stroke note (updated May 20, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on, all other projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved `/case-studies/:slug` links, which is important for the Home selected-work collection. `Case Study > Card > ImageWrapper` now also contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth. Index list/grid rules are standardized to full-opacity `#233324` directly inside `IndexPage.tsx`.
+Thumbnail stroke note (updated May 22, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on, all other projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved `/case-studies/:slug` links, which is important for the Home selected-work collection. `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
 
 ## 9. Recommended Starting Order
 
@@ -202,15 +209,17 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 
 ## 10. Verification Notes
 
-Last verified May 19, 2026:
+Last verified May 22, 2026:
 
-- Framer project map inspected with MCP.
-- CMS inspected with MCP: `All Projects` still has 15 real records.
+- Live Framer staging routes checked with Playwright/browser: `/`, `/index`, `/case-studies`, `/info`, `/contact`, `/play`, and `/case-studies/airpods` returned 200 at desktop and mobile widths.
+- `/play-2` and `/playground-scroll-draft` returned 404 on the published staging URL, matching their draft/unpublished status.
+- No horizontal overflow was detected at 1280px desktop or 390px mobile for the checked published routes.
+- Home hero line no longer has the old `mind.Strategy` spacing typo.
+- CMS inspected previously with MCP: `All Projects` still has 15 real records.
 - CMS thumbnail stroke field inspected with MCP: `AirPods Pro 3` is true; the other returned project records are false.
 - `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards.
 - Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
-- Playwright runtime check simulated the draft helper on the published baseline: AirPods strokes only when the CMS field is on, simulated all-off removes every stroke, and layout deltas stayed at 0 changed elements.
-- Published `/index` HTML inspected: live page renders `IndexPage.tsx`'s in-code `DEFAULT_PROJECTS` snapshot (simplified industry labels), confirming the CMS registry is not yet wired up.
+- Published `/index` inspected: the page has the Year / Service / Industry taxonomy, per-group `All` actions, no horizontal overflow, and simplified visible Industry labels. CMS module resources load, but the legacy window registry was empty during the browser check.
 - `/case-studies` still displays a `(12)` count via `NumberCounter` (`Counter.tsx`, `endNumber=12`) even though the CMS has 15 records.
 - Framer now has canonical `/index` page `u2LOaBT5q`; the older duplicate `yKKOMVNs6` and the temporary `/index-inline-toggle-test` route are gone.
 - No live pages were deleted by MCP in this audit.

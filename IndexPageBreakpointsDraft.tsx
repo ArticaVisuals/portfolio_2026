@@ -9,7 +9,9 @@ const RESPONSIVE_LIST_CSS = `
     line-height: 28px !important;
     text-transform: uppercase !important;
     letter-spacing: 0 !important;
-    color: #636363 !important;
+    color: #141414 !important;
+    -webkit-text-fill-color: #141414 !important;
+    opacity: 1 !important;
     align-items: baseline !important;
     margin-top: 12px !important;
     margin-bottom: 24px !important;
@@ -27,22 +29,25 @@ const RESPONSIVE_LIST_CSS = `
     line-height: inherit !important;
     text-transform: inherit !important;
     letter-spacing: inherit !important;
-    color: #636363 !important;
-    -webkit-text-fill-color: #636363 !important;
+    color: #141414 !important;
+    -webkit-text-fill-color: #141414 !important;
   }
 
   .idx-view-toggle-option[data-active="true"] {
-    color: #636363 !important;
+    color: #141414 !important;
+    -webkit-text-fill-color: #141414 !important;
+    opacity: 1 !important;
     text-decoration: underline !important;
     text-underline-offset: 3px !important;
   }
 
   .idx-view-toggle-option[data-active="false"]:hover {
-    color: #636363 !important;
-    opacity: 0.55 !important;
+    color: #141414 !important;
+    -webkit-text-fill-color: #141414 !important;
+    opacity: 1 !important;
   }
 
-  .idx-container:has(.idx-tax-item[aria-pressed="true"]) .idx-view-toggle {
+  .idx-container:has(.idx-tax-value[aria-pressed="true"]) .idx-view-toggle {
     margin-top: -28px !important;
   }
 
@@ -167,18 +172,18 @@ const RESPONSIVE_LIST_CSS = `
       overflow: visible !important;
     }
 
+    .idx-tax-label-year,
+    .idx-tax-items-year {
+      grid-row: 1 !important;
+    }
+
     .idx-tax-label-discipline,
     .idx-tax-items-discipline {
-      grid-row: 1 !important;
+      grid-row: 2 !important;
     }
 
     .idx-tax-label-industry,
     .idx-tax-items-industry {
-      grid-row: 2 !important;
-    }
-
-    .idx-tax-label-year,
-    .idx-tax-items-year {
       grid-row: 3 !important;
     }
 
@@ -300,18 +305,18 @@ const RESPONSIVE_LIST_CSS = `
       overflow: visible !important;
     }
 
+    .idx-tax-label-year,
+    .idx-tax-items-year {
+      grid-row: 1 !important;
+    }
+
     .idx-tax-label-discipline,
     .idx-tax-items-discipline {
-      grid-row: 1 !important;
+      grid-row: 2 !important;
     }
 
     .idx-tax-label-industry,
     .idx-tax-items-industry {
-      grid-row: 2 !important;
-    }
-
-    .idx-tax-label-year,
-    .idx-tax-items-year {
       grid-row: 3 !important;
     }
 
