@@ -5,6 +5,7 @@ Generated: 2026-05-16T05:26:59.133Z
 - Current site: https://micahhoang.info
 - Framer staging: https://khaki-ship-257706.framer.app
 - May 22, 2026 note: `micahhoang.info` still served the Cargo site during the latest audit; Framer staging is the current redesign/build surface until domain cutover.
+- May 26, 2026 note: this folder is a preservation/staging archive, not the live Framer runtime. The local asset set includes the original 555-page scrape plus archive/playground media captured for `/play` work, for 595 local media files in total. Do not infer that a local asset can be deleted from Framer just because it is unused here.
 - Pages: 35
 - Assets: 555
 - Downloaded media files: 555

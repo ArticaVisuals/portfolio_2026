@@ -3,6 +3,8 @@
 Read-only backup before responsive media edits on Framer page `LB7pYBD3k`
 (`/case-studies/airpods`), Desktop root `I7h6iPgRE`.
 
+**Current note - May 26, 2026:** `/case-studies/airpods` is still the bespoke AirPods page in the current Framer web-page inventory. Active custom helpers on the page are `RelatedProjectHoverZoom.tsx` (`GTEGUfN`) and `OtherProjectCardRestored.tsx` (`vlwa5Cz`). `CaseStudyRevealTuner.tsx` was removed from Framer during the May 26 cleanup because it was not mounted in the current AirPods page XML; do not describe it as part of the active page.
+
 ## Primary Targets
 
 - Hero media wrapper `QbQy0SVpT`: `height="640px"`, `aspectRatio="1.875"`.

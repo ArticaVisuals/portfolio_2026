@@ -4,17 +4,18 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last live route audit:** May 22, 2026.
+**Last Framer structure audit:** May 26, 2026.
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (May 22, 2026):**
+**State summary (May 26, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
 - The original-template inline `GRID / LIST` control is now owned directly by `IndexPage.tsx` on canonical `/index`; the previous fixed/floating delegated toggle has been removed.
 - The side-by-side page `/index-inline-toggle-test` (`VdRy9MV8k`) was removed after the inline version was promoted to canonical `/index`.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The repo `IndexPage.tsx` mirror was reconciled against the current live direction on May 22, 2026 after the route audit.
+- Current mounted `/index` code files are `IndexPage.tsx` (`rgAZFOv`), `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), and `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`). `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
 - **Data source refined (May 22, 2026):** `IndexPage.tsx` first attempts a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then falls back to the legacy window registry, then manual `projects`, then `DEFAULT_PROJECTS`.
@@ -144,7 +145,7 @@ The legacy Framer-side wiring for the registry is:
 - Each Registrar instance receives the bound CMS row's fields as Framer `ControlType` props and calls the registry's `register(id, data)` on mount, `unregister(id)` on unmount.
 - `IndexPage` (with `useCMS=true`) subscribes to the registry and re-renders when it changes.
 
-This was the earlier workaround for the "code components can't access the CMS directly" issue described in `framer-cms-index-autoupdate-audit-2026-05-03.md` (Variant B). As of May 22, direct CMS loading is the primary path and the registry is only a fallback. The May 22 browser audit saw `yTHrQWMIY` CMS resources load on `/index`, but `window.__articaIndexProjectsRegistry.items` was empty and the visible industry labels were simplified; recheck before assuming a live page is using the long-form CMS values.
+This was the earlier workaround for the "code components can't access the CMS directly" issue described in `framer-cms-index-autoupdate-audit-2026-05-03.md` (Variant B). As of the May 26 audit, direct CMS loading remains the primary path and the registry is only a fallback. Earlier browser checks saw `yTHrQWMIY` CMS resources load on `/index`, but `window.__articaIndexProjectsRegistry.items` was empty and the visible industry labels were simplified; recheck before assuming a live page is using the long-form CMS values.
 
 If you build the Registrar, mirror the Framer property control names exactly (`title`, `category1..3`, `industry`, `year`, `thumbnail`, `thumbnailVideoLink`, `slug`, `sortOrder`, `isHomepage`) and use the project's `slug` as the registry key.
 
@@ -308,7 +309,7 @@ The taxonomy filters are source-of-truth state in `IndexPage.tsx` and drive List
 
 ## 6. Dormant Reference: 3D Inline WorldGrid Sphere
 
-Not exposed on `/index`. The visible inline toggle is Grid/List only. Earlier inline `InlineWorldGrid` / `ThreeDPreview` helpers are gone. `WorldGridTest.tsx` (`ibj8uxT`) remains as an unrouted code component reference. Do not bring it back to `/index` unless Micah explicitly asks.
+Not exposed on `/index`. The visible inline toggle is Grid/List only. Earlier inline `InlineWorldGrid` / `ThreeDPreview` helpers are gone. `WorldGridTest.tsx` is no longer present in the current Framer code-component inventory. Do not bring a 3D/gallery mode back to `/index` unless Micah explicitly asks.
 
 ---
 
@@ -515,8 +516,9 @@ addPropertyControls(IndexPage, { /* see §3 */ })
 - **Framer code file:** `IndexPage.tsx`, code file id `rgAZFOv`
 - **Framer page:** `/index`, page node id `u2LOaBT5q` (single page; the earlier `yKKOMVNs6` Mono 13 duplicate is gone)
 - **Inline toggle/rule owner:** `IndexPage.tsx` (`rgAZFOv`)
-- **Legacy rule/aspect helper:** `IndexRuleColorOverride.tsx` (`tqQjSoH`), not a live `/index` dependency
-- **WorldGrid reference:** `WorldGridTest.tsx`, code file id `ibj8uxT`; no current `/worldgrid-test` web page
+- **Stroke helper:** `CaseStudyThumbnailStrokeStyles.tsx`, code file id `Z28JYvA`
+- **Responsive/style helper:** `IndexPageBreakpointsDraft.tsx`, code file id `VwMoFWv`
+- **Removed May 26 cleanup:** `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, `IndexRuleColorOverride.tsx`, and `WorldGridTest.tsx` are not current `/index` dependencies.
 - **CMS collection:** `All Projects`, collection id `yTHrQWMIY`
 - **Taxonomy/filter inspiration:** https://searchsystem.co/index
 - **Framework doc:** `portfolio-framework.md`
@@ -570,7 +572,7 @@ Before delivering:
 - Do NOT reimport `https://framer.com/m/Case-Study-G9lec1.js` for Grid view rendering. The thumbnails rendered blank when called from a code component (responsive-image format mismatch). Render with native `<img>`/`<video>` instead, as `GridProjectCard` does today.
 - Do NOT reintroduce weighted/featured Grid row patterns (`[2,1,1] [1,2,1] [1,1,2] [1,2,1]`) or the `weight` prop on `GridProjectCard`. The Grid is uniform — 3/2/1 columns by breakpoint.
 - Do NOT hardcode pixel heights for Grid cards (e.g., 325px / 220px). Card height derives from the 16:9 aspect ratio of the media wrapper plus the title row above it.
-- Do NOT revive `ImageMaskReveal` from old handoff notes unless there is a fresh design request. It is stub-archived and not part of the current `/index` behavior.
+- Do NOT revive `ImageMaskReveal` from old handoff notes unless there is a fresh design request. It is historical and not part of the current Framer inventory.
 - Do NOT hardcode `.idx-grid-card-media.with-stroke` as a permanent class in `IndexPage.tsx`. The May 15 stroke helper owns all visible stroke output from CMS so each project can be toggled individually and toggled back off.
 - Do NOT remove `CaseStudyThumbnailStrokeStyles` instance `szF9sZNWA` from `/index` unless you replace the stroke system with another CMS-aware implementation.
 - Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.

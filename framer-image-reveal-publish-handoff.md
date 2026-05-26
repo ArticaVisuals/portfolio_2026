@@ -1,6 +1,6 @@
 # Framer Image Mask Reveal Publish Handoff
 
-> **Status update — May 22, 2026:** this handoff is historical. The `Code Override Missing` publish blocker described below is not the current launch state; Framer staging responded with fresh May 22 deployments for `/index`, `/case-studies`, `/play`, and `/case-studies/airpods`. `ImageMaskReveal.tsx` has since been stub-archived and has no live placement. Per-project thumbnail strokes are now handled by `CaseStudyThumbnailStrokeStyles.tsx`, and `/index` is maintained through `IndexPage.tsx` plus `IndexPageBreakpointsDraft.tsx`. Keep this file for forensic context only; use `framer-current-state.md` as the current source of truth.
+> **Status update - May 26, 2026:** this handoff is historical. The `Code Override Missing` publish blocker and `ImageMaskReveal.tsx` implementation below are not current launch state. The current Framer inventory has no `ImageMaskReveal.tsx`, `WorldGridTest.tsx`, `IndexRuleColorOverride.tsx`, `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, or `CaseStudyRevealTuner.tsx`. Per-project thumbnail strokes are handled by `CaseStudyThumbnailStrokeStyles.tsx`, and `/index` is maintained through `IndexPage.tsx`, `CaseStudyThumbnailStrokeStyles.tsx`, and `IndexPageBreakpointsDraft.tsx`. Keep this file for forensic context only; use `framer-current-state.md` as the current source of truth.
 
 ## Goal
 
@@ -84,9 +84,9 @@ May 19, 2026 canvas/editor update: `Case Study > Card > ImageWrapper` now contai
 
 May 19, 2026 index-toggle note: the uppercase original-template-style `GRID / LIST` control has been promoted to canonical `/index` and integrated directly into `IndexPage.tsx` (`rgAZFOv`). The former `IndexInlineToggleProxy.tsx` helper (`TexpcmJ`, instance `HM1pZPonP`) was removed after its behavior moved into the main component. `IndexPage` now underlines the active view, shifts inactive options to Light Gray `#979797` on hover, and forces list/grid rules to the full-opacity site rule color `#233324`.
 
-## Current Project Map
+## Historical Project Map
 
-From Framer MCP `getProjectXml` (May 15, 2026), current web pages:
+From Framer MCP `getProjectXml` (May 15, 2026), historical web pages at the time of this handoff:
 
 - `R6_F7xjGZ` path `/`
 - `koPvme2ig` path `/404`
@@ -95,7 +95,7 @@ From Framer MCP `getProjectXml` (May 15, 2026), current web pages:
 - `gmXtVnIzJ` path `/contact`
 - `UlQco8cYi` path `/case-studies/:slug`
 - `u2LOaBT5q` path `/index` (single page; the earlier duplicate `yKKOMVNs6` and temporary `/index-inline-toggle-test` route are gone)
-- `KbgWr_0BN` path `/playground`
+- `KbgWr_0BN` path `/playground` (historical; current route is `/play`)
 - `LB7pYBD3k` path `/case-studies/airpods`
 
 Important components:
@@ -107,13 +107,13 @@ Important components:
 - `y8kvTlWMC` Case Studies Filter
 - `yGfvD64UY` Navigation
 
-Code components:
+Historical code components from that handoff:
 
-- `poRGCf7` ImageMaskReveal
-- `tqQjSoH` IndexRuleColorOverride
+- `poRGCf7` ImageMaskReveal (not present in the May 26 current Framer inventory)
+- `tqQjSoH` IndexRuleColorOverride (not present in the May 26 current Framer inventory)
 - `rgAZFOv` IndexPage
 - `hdPa_Gj` Counter (exports `NumberCounter`)
-- `ibj8uxT` WorldGridTest (unrouted)
+- `ibj8uxT` WorldGridTest (not present in the May 26 current Framer inventory)
 
 Code overrides:
 

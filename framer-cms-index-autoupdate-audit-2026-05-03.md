@@ -1,9 +1,19 @@
 # Framer Index CMS Auto-Update Audit
 
 **Date:** May 3, 2026
-**Last status check:** May 22, 2026
+**Last status check:** May 26, 2026
 **Scope:** `/index` custom `IndexPage` component and CMS auto-refresh behavior
 **Status:** Non-destructive investigation only. The live `/index` page was not replaced or published. The temporary `/index-cms-test` route was deleted during restore.
+
+---
+
+## Status Update - May 26, 2026
+
+This file is historical. Do not revive `/index-cms-test` as a default next step just because the original recommendation below says to prototype it. Current `/index` is maintained by `IndexPage.tsx` (`rgAZFOv`) with direct CMS-module loading first, then the legacy registry fallback, manual props, and `DEFAULT_PROJECTS`.
+
+The May 26 Framer cleanup removed unused/draft helpers that were not mounted in current page XML: `IndexFilterNavDraftPage.tsx`, `IndexListCursorPreview.tsx`, and `CaseStudyRevealTuner.tsx`. Local-only mirrors `IndexPageFilterNavDraft.tsx` and `IndexRuleColorOverride.tsx` were also removed from the repo. The active `/index` helper stack is now just `IndexPage.tsx`, `CaseStudyThumbnailStrokeStyles.tsx`, and `IndexPageBreakpointsDraft.tsx`.
+
+Open watchpoint: verify the visible Industry labels after any CMS schema or binding change. Older checks saw simplified labels on published `/index`; do not assume long CMS industry strings are live without checking the current route.
 
 ---
 
@@ -161,4 +171,4 @@ Tradeoff: this adds infrastructure and should not expose private Framer CMS cred
 
 ## Recommendation
 
-Use `/index-cms-test` to prototype Variant A first. Keep the current `/index` untouched until the draft page proves that project rows, nav labels, category sections, and links update correctly after a CMS edit.
+Historical May 3 recommendation: use `/index-cms-test` to prototype Variant A first. Current May 26 guidance: do not recreate that test route unless Micah explicitly wants a native-CMS rewrite experiment. Start from `framer-current-state.md`, read live `IndexPage.tsx` through Framer MCP, and preserve the current visual/motion behavior unless a new design decision says otherwise.

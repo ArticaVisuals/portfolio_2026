@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** May 22, 2026
+**Last verified:** May 26, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -21,7 +21,7 @@ This is intentional. The portfolio should not force AirPods, Gaia, Simon & Schus
 Verified Framer structure:
 
 - `/` - Home page, page ID `R6_F7xjGZ`
-- `/index` - Canonical archive page with `IndexPage.tsx`, page ID `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) and temporary `/index-inline-toggle-test` A/B route have been deleted. List Type / List Hover / Default View / Use CMS are exposed as Framer property controls on this instance. The inline `GRID / LIST` toggle is now owned directly by `IndexPage.tsx`.
+- `/index` - Canonical archive page with `IndexPage.tsx`, page ID `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) and temporary `/index-inline-toggle-test` A/B route have been deleted. List Type / List Hover / Default View / Use CMS are exposed as Framer property controls on this instance. The inline `GRID / LIST` toggle is now owned directly by `IndexPage.tsx`. Current mounted helpers are `CaseStudyThumbnailStrokeStyles.tsx` and `IndexPageBreakpointsDraft.tsx`.
 - `/case-studies` - Native Framer case-study index, page ID `Rnw1WO1jS`
 - `/case-studies/:slug` - dynamic case-study route, page ID `UlQco8cYi`
 - `/case-studies/airpods` - bespoke AirPods pilot page, page ID `LB7pYBD3k`
@@ -30,7 +30,7 @@ Verified Framer structure:
 - `/play` - archive media playground, page ID `KbgWr_0BN`
 - `/404` - 404 page, page ID `koPvme2ig`
 
-There is no current `/profile` web page; `/info` is the live profile route. There is also no current `/worldgrid-test` web page. `WorldGridTest.tsx` still exists as a code file, but it is not routed.
+There is no current `/profile` web page; `/info` is the live profile route. There is also no current `/worldgrid-test`, `/play-2`, or `/playground-scroll-draft` web page in the May 26 Framer project inventory.
 
 Verified CMS structure:
 
@@ -56,6 +56,8 @@ Keep all project links canonical:
 /case-studies/[slug]
 ```
 
+Current exception: the bespoke AirPods pilot page is `/case-studies/airpods`, while the CMS record slug remains `airpods-pro-3`. Preserve that exception until Micah decides whether to rename the page, add a CMS `Case Study URL` override, or align the route to `/case-studies/airpods-pro-3`.
+
 The home page, `/case-studies` index, `/index` archive, and custom case-study pages should all resolve to the same URL pattern.
 
 Current verified Framer staging checks returned HTTP 200 for:
@@ -68,7 +70,7 @@ Current verified Framer staging checks returned HTTP 200 for:
 - `/play`
 - `/case-studies/airpods`
 
-The draft routes `/play-2` and `/playground-scroll-draft` returned 404 on the published Framer staging URL, which is expected while they remain unpublished.
+`/play-2` and `/playground-scroll-draft` are no longer present in the May 26 Framer web-page inventory. Treat older references to them as historical drafts, not current route obligations.
 
 The dynamic `/case-studies/:slug` page currently handles individual project routes. When creating bespoke case-study pages, only create or move a page into a canonical `/case-studies/[slug]` path after confirming how Framer will resolve that path against the existing dynamic route. Ask Micah before deleting, renaming, or shadowing the dynamic page.
 
@@ -209,10 +211,10 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 
 ## 10. Verification Notes
 
-Last verified May 22, 2026:
+Last verified May 26, 2026:
 
-- Live Framer staging routes checked with Playwright/browser: `/`, `/index`, `/case-studies`, `/info`, `/contact`, `/play`, and `/case-studies/airpods` returned 200 at desktop and mobile widths.
-- `/play-2` and `/playground-scroll-draft` returned 404 on the published staging URL, matching their draft/unpublished status.
+- Framer MCP project inventory contains nine web pages: `/`, `/404`, `/case-studies`, `/case-studies/:slug`, `/case-studies/airpods`, `/index`, `/play`, `/info`, and `/contact`.
+- Live Framer staging routes checked in the prior browser pass: `/`, `/index`, `/case-studies`, `/info`, `/contact`, `/play`, and `/case-studies/airpods` returned 200 at desktop and mobile widths. May 26 visual QA is recorded in the final audit response.
 - No horizontal overflow was detected at 1280px desktop or 390px mobile for the checked published routes.
 - Home hero line no longer has the old `mind.Strategy` spacing typo.
 - CMS inspected previously with MCP: `All Projects` still has 15 real records.
@@ -220,7 +222,7 @@ Last verified May 22, 2026:
 - `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards.
 - Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
 - Published `/index` inspected: the page has the Year / Service / Industry taxonomy, per-group `All` actions, no horizontal overflow, and simplified visible Industry labels. CMS module resources load, but the legacy window registry was empty during the browser check.
-- `/case-studies` still displays a `(12)` count via `NumberCounter` (`Counter.tsx`, `endNumber=12`) even though the CMS has 15 records.
+- `/case-studies` still appears configured for a `(12)` count via `NumberCounter` page props even though the CMS has 15 records. The `Counter.tsx` code was hardened on May 26, but the visible count prop was not changed because that would alter page copy.
 - Framer now has canonical `/index` page `u2LOaBT5q`; the older duplicate `yKKOMVNs6` and the temporary `/index-inline-toggle-test` route are gone.
 - No live pages were deleted by MCP in this audit.
 - No CMS fields were changed through MCP.

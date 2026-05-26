@@ -1,9 +1,11 @@
 # Portfolio Copy — Tone of Voice & Case Study Openings
 
 **For:** Micah Hoang
-**Version:** 1.5 — May 22 live Framer audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. `/info` is the live profile route and includes testimonials.
+**Version:** 1.6 - May 26 Framer structure audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. `/info` is the live profile route and includes testimonials.
 **Date:** May 2026
-**Last live route audit:** May 22, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
+**Last Framer structure audit:** May 26, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
+
+**Implementation note - May 26, 2026:** Active Framer web routes are tracked in `framer-current-state.md`. The AirPods bespoke page is currently `/case-studies/airpods` even though the CMS slug is `airpods-pro-3`; preserve that route exception until a routing decision is made.
 
 ---
 
@@ -57,7 +59,7 @@ Every case study opening should pass this test: if you read it aloud to a friend
 
 No tagline. No "I design brands that..." sentence. The discipline line does the positioning; the work does the rest.
 
-**Current Framer implementation note:** the live Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. The May 22 audit confirmed the previous `mind.Strategy` spacing typo is fixed. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
+**Current Framer implementation note:** the live Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. Recent audits confirmed the previous `mind.Strategy` spacing typo is fixed. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
 
 ### About Zone — *Locked*
 
