@@ -220,6 +220,7 @@ Last verified June 1, 2026:
 - CMS inspected previously with MCP: `All Projects` still has 15 real records.
 - CMS thumbnail stroke field inspected with MCP and browser import: `AirPods Pro 3` is true with slug `airpods`; the other returned project records are false.
 - `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards. The June 1 update specifically fixes Framer's current generated CMS module shape, where the collection is exported under `r` instead of legacy `a`.
+- Local regression guard added: run `node tools/check-thumbnail-stroke-resolver.mjs` before changing or publishing the helper so the stroke does not regress to the old `module.a`-only CMS lookup.
 - Public site note: `https://khaki-ship-257706.framer.app/` still serves the pre-fix published bundle until Micah publishes from Framer, so the live AirPods stroke will remain missing there until publish.
 - Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
 - Published `/index` inspected: the page has the Year / Service / Industry taxonomy, per-group `All` actions, no horizontal overflow, and simplified visible Industry labels. CMS module resources load, but the legacy window registry was empty during the browser check.

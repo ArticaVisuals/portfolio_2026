@@ -149,7 +149,7 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 
 Recommended manual additions remain `Case Study URL` and `Build Status`. Add those in Framer only if the workflow needs them; do not repurpose existing field IDs.
 
-June 1, 2026 thumbnail stroke fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. MCP verified AirPods Pro 3 is `stroke: true` with slug `airpods`. The Framer draft code file was updated and typechecked with no errors; the public `khaki-ship-257706.framer.app` bundle still needs a Framer publish before the restored stroke appears on the live site.
+June 1, 2026 thumbnail stroke fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. MCP verified AirPods Pro 3 is `stroke: true` with slug `airpods`. The Framer draft code file was updated and typechecked with no errors; the public `khaki-ship-257706.framer.app` bundle still needs a Framer publish before the restored stroke appears on the live site. Before touching or publishing this helper, run `node tools/check-thumbnail-stroke-resolver.mjs` to catch regressions back to the old `module.a`-only lookup.
 
 ---
 
@@ -280,5 +280,7 @@ For future audits, verify both surfaces:
 May 26 visual QA against `https://khaki-ship-257706.framer.app` checked `/`, `/case-studies`, `/index`, `/play`, `/info`, `/contact`, and `/case-studies/airpods` at desktop `1440x1000` and mobile `390x900`. Browser diagnostics found no suspicious route issues: no horizontal overflow, no visibly broken loaded images, and no blank pages. Manual screenshot spot-checks covered Home, `/index`, `/play`, `/case-studies`, and the AirPods page on desktop/mobile. `/index` still showed the `GRID / LIST` control and Year/Service/Industry taxonomy, and `/play` still opened a visible detail sidebar when clicking a visible archive card.
 
 June 1 stroke audit: published Home loaded `CaseStudyThumbnailStrokeStyles.DLdW5YsD.mjs` and `yTHrQWMIY.DrLdZk2a.mjs`; browser inspection showed the AirPods thumbnail had no generated overlay because the published helper looked only for `module.a`. Direct browser import of the same CMS module returned keys `n`, `r`, `t`, with AirPods `{ slug: "airpods", title: "AirPods Pro 3", stroke: true }` under `module.r`. The Framer draft helper now handles that export shape, but the public site remains unchanged until publish.
+
+Use `node tools/check-thumbnail-stroke-resolver.mjs` as the quick local regression guard for the stroke helper. It confirms the helper still uses Light Gray `#979797`, the CMS `Thumbnail Stroke` field, the current `module.r` CMS export shape, the legacy `module.a` fallback, and the shared resolver call.
 
 Known non-blocking console noise remains: Framer logged recoverable React hydration warnings (`#422` / `#425`) and some aborted analytics/media requests during route changes. No page errors were recorded in this pass.
