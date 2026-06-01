@@ -26,7 +26,7 @@ type CMSModule = {
     default?: CMSCollectionExport | (() => unknown)
     [key: string]: unknown
 }
-type StrokeRecord = { slug: string; title: string; stroke: boolean }
+type StrokeRecord = { slug: string; title: string; stroke: boolean; url: string }
 
 const STROKE_CLASS = "framer-cms-thumbnail-stroke"
 const OVERLAY_ATTR = "data-framer-cms-thumbnail-stroke-overlay"
@@ -57,6 +57,9 @@ const LIVE_SCAN_PATHS = [
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
+const CASE_STUDY_PATH_OVERRIDES: Record<string, string> = {
+    "airpods-pro-3": "/case-studies/airpods",
+}
 
 function splitNames(value: string): string[] {
     return String(value || "")
@@ -102,6 +105,16 @@ function normalizeTitle(value: string): string {
     return value.toLowerCase().replace(/\s+/g, " ").trim()
 }
 
+function normalizeSlug(value: string): string {
+    return value.trim().replace(/^\/+|\/+$/g, "")
+}
+
+function getCaseStudyUrl(slug: string): string {
+    const normalized = normalizeSlug(slug)
+    if (!normalized) return ""
+    return CASE_STUDY_PATH_OVERRIDES[normalized] || `/case-studies/${normalized}`
+}
+
 function getSlugFromHref(href: string | null): string {
     if (!href) return ""
     try {
@@ -125,6 +138,57 @@ function getCardHref(card: HTMLElement): string | null {
         card.closest<HTMLAnchorElement>('a[href*="/case-studies/"]')?.getAttribute("href") ||
         null
     )
+}
+
+function getCardAnchor(card: HTMLElement): HTMLAnchorElement | null {
+    if (card instanceof HTMLAnchorElement) return card
+    return (
+        card.querySelector<HTMLAnchorElement>("a[href]") ||
+        card.closest<HTMLAnchorElement>("a[href]") ||
+        null
+    )
+}
+
+function isBrokenProjectHref(href: string | null): boolean {
+    if (!href) return true
+    const value = href.trim()
+    if (!value || value === "#" || value === "." || value === "./") return true
+
+    try {
+        const url = new URL(value, window.location.href)
+        const path = url.pathname.replace(/\/+$/, "") || "/"
+        if (path === "/") return true
+        return path === "/case-studies/:slug" || path.endsWith("/case-studies/:slug")
+    } catch {
+        return value.includes(":slug")
+    }
+}
+
+function handleRepairedProjectLinkClick(event: MouseEvent) {
+    if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+    ) {
+        return
+    }
+
+    const target = event.target
+    if (!(target instanceof Element)) return
+
+    const anchor = target.closest<HTMLAnchorElement>('a[data-case-study-link-repaired="true"][href]')
+    if (!anchor || isBrokenProjectHref(anchor.getAttribute("href"))) return
+
+    const url = new URL(anchor.href, window.location.href)
+    if (url.origin !== window.location.origin || !url.pathname.startsWith("/case-studies/")) return
+
+    event.preventDefault()
+    event.stopPropagation()
+    event.stopImmediatePropagation()
+    window.location.assign(url.href)
 }
 
 function isCMSModuleUrl(url: string, collectionId: string): boolean {
@@ -257,10 +321,12 @@ async function loadStrokeRecords({
     const items = (await collection.scanItems()) as CMSItem[]
     return items.map((item) => {
         const data = item.data
+        const slug = normalizeSlug(normalizeText(readField(data, slugFieldId)))
         return {
-            slug: normalizeText(readField(data, slugFieldId)),
+            slug,
             title: normalizeText(readField(data, titleFieldId)),
             stroke: Boolean(readField(data, strokeFieldId)),
+            url: getCaseStudyUrl(slug),
         }
     })
 }
@@ -398,6 +464,34 @@ function getCardTitle(card: HTMLElement): string {
 function titleMatches(cardTitle: string, activeTitles: string[]) {
     if (!cardTitle) return false
     return activeTitles.some((title) => title && (cardTitle === title || cardTitle.includes(title)))
+}
+
+function findRecordForCard(card: HTMLElement, records: StrokeRecord[]): StrokeRecord | undefined {
+    const slug = normalizeSlug(getSlugFromHref(getCardHref(card)))
+    if (slug && slug !== ":slug") {
+        const bySlug = records.find((record) => record.slug === slug)
+        if (bySlug) return bySlug
+    }
+
+    const title = getCardTitle(card)
+    return records.find((record) => titleMatches(title, [normalizeTitle(record.title)]))
+}
+
+function applyProjectLinks(records: StrokeRecord[], imageWrapperNames: string) {
+    if (records.length === 0) return
+
+    getCards(imageWrapperNames).forEach((card) => {
+        const anchor = getCardAnchor(card)
+        if (!anchor || !isBrokenProjectHref(anchor.getAttribute("href"))) return
+
+        const record = findRecordForCard(card, records)
+        if (!record?.url) return
+
+        anchor.setAttribute("href", record.url)
+        anchor.removeAttribute("data-framer-page-link-current")
+        anchor.removeAttribute("aria-current")
+        anchor.setAttribute("data-case-study-link-repaired", "true")
+    })
 }
 
 function getCanvasOverlayByStyle(media: HTMLElement): HTMLElement | null {
@@ -566,6 +660,7 @@ export default function CaseStudyThumbnailStrokeStyles({
             window.cancelAnimationFrame(frame)
             frame = window.requestAnimationFrame(() => {
                 if (disposed) return
+                applyProjectLinks(records, imageWrapperNames)
                 if (width > 0) applyCMSStrokes(records, imageWrapperNames, strokeColor, width)
                 if (shouldApplyHoverZoom) {
                     applyHoverZoom(owner, imageWrapperNames, applyHoverZoomToIndexGrid)
@@ -576,7 +671,6 @@ export default function CaseStudyThumbnailStrokeStyles({
         }
 
         const refreshRecords = () => {
-            if (width <= 0) return
             loadStrokeRecords({
                 collectionId,
                 collectionModuleUrl,
@@ -611,6 +705,7 @@ export default function CaseStudyThumbnailStrokeStyles({
             attributeFilter: ["href", "class", "data-framer-name", "name"],
         })
         window.addEventListener("resize", scheduleApply, { passive: true })
+        document.addEventListener("click", handleRepairedProjectLinkClick, true)
 
         return () => {
             disposed = true
@@ -620,6 +715,7 @@ export default function CaseStudyThumbnailStrokeStyles({
             window.clearInterval(refreshInterval)
             observer.disconnect()
             window.removeEventListener("resize", scheduleApply)
+            document.removeEventListener("click", handleRepairedProjectLinkClick, true)
             clearHoverZoom(owner)
         }
     }, [
