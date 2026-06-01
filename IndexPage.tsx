@@ -10,9 +10,10 @@ import { addPropertyControls, ControlType } from "framer"
 // Shared registry the ProjectRegistrar code component writes into. State is
 // shared via a window-level singleton (identified by REGISTRY_KEY) so the two
 // code files don't have to import from each other. ProjectRegistrar instances
-// live inside a Framer Collection List placed anywhere on the canvas (the
-// list itself can be hidden from view); each one calls register() with one
-// CMS row, and IndexPage subscribes when its Use CMS prop is on.
+// live inside a Framer Collection List placed anywhere on the canvas. Keep that
+// list mounted, then move it visually out of sight; using Framer's hidden/eye
+// toggle unmounts it and stops registration. Each registrar calls register()
+// with one CMS row, and IndexPage subscribes when its Use CMS prop is on.
 const REGISTRY_KEY = "__articaIndexProjectsRegistry"
 
 type RegistryShape = {
@@ -104,17 +105,20 @@ type Project = {
 type CMSFieldValue = { value?: unknown }
 type CMSItem = {
     data?: Record<string, CMSFieldValue | unknown>
+    slug?: unknown
     [key: string]: unknown
 }
-type CMSModule = {
-    a?: {
-        collectionByLocaleId?: {
-            default?: {
-                scanItems?: () => Promise<CMSItem[]>
-            }
-        }
+type CMSCollection = {
+    scanItems: () => Promise<CMSItem[]>
+}
+type CMSCollectionExport = {
+    collectionByLocaleId?: {
+        default?: CMSCollection
     }
-    r?: () => unknown
+}
+type CMSModule = {
+    a?: CMSCollectionExport
+    r?: CMSCollectionExport | (() => unknown)
     [key: string]: unknown
 }
 
@@ -151,8 +155,8 @@ const INDEX_CMS_LIVE_SCAN_PATHS = [
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
 
-// Snapshot of the "All Projects" CMS collection. Used only as a final fallback
-// when Use CMS is off or Framer's generated CMS module cannot be resolved.
+// Snapshot of the "All Projects" CMS collection. Used only when Use CMS is off.
+// In CMS mode, stale fallback rows should never appear as if they are live CMS.
 const DEFAULT_PROJECTS: Project[] = [
     {
         title: "AirPods Pro 3",
@@ -165,7 +169,7 @@ const DEFAULT_PROJECTS: Project[] = [
             "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
         thumbnailVideoLink:
             "https://freight.cargo.site/i/V2732716404789921262344304055829/AirPods-Pro-3-Introduction-1.mp4",
-        slug: "airpods-pro-3",
+        slug: "airpods",
         sortOrder: 1,
         isHomepage: true,
     },
@@ -173,8 +177,8 @@ const DEFAULT_PROJECTS: Project[] = [
         title: "Simon & Schuster",
         category1: "Brand Strategy",
         category2: "Visual Identity",
-        category3: "Editorial",
-        industry: "Literature",
+        category3: "Experience Design",
+        industry: "Publishing, Literature, Media",
         year: "2025",
         thumbnail:
             "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
@@ -188,7 +192,7 @@ const DEFAULT_PROJECTS: Project[] = [
         category1: "Visual Identity",
         category2: "UX/UI",
         category3: "Brand Strategy",
-        industry: "Nature & Outdoors",
+        industry: "Nature",
         year: "2026",
         thumbnail:
             "https://framerusercontent.com/images/1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg",
@@ -199,10 +203,10 @@ const DEFAULT_PROJECTS: Project[] = [
     },
     {
         title: "National Park Playing Cards",
-        category1: "Product",
-        category2: "Packaging",
-        category3: "Visual Identity",
-        industry: "Nature & Outdoors",
+        category1: "Product Design",
+        category2: "Package Design",
+        category3: "Marketing",
+        industry: "Outdoors, Travel",
         year: "2019",
         thumbnail:
             "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
@@ -216,7 +220,7 @@ const DEFAULT_PROJECTS: Project[] = [
         category1: "Visual Identity",
         category2: "2D Motion",
         category3: "Social Media",
-        industry: "Design Education",
+        industry: "Education, Motion Design",
         year: "2025",
         thumbnail:
             "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
@@ -229,9 +233,9 @@ const DEFAULT_PROJECTS: Project[] = [
     {
         title: "Yomo",
         category1: "Visual Identity",
-        category2: "UX/UI",
-        category3: "",
-        industry: "Health & Wellness",
+        category2: "User Interface",
+        category3: "User Experience",
+        industry: "Food, Health, Technology",
         year: "2025",
         thumbnail:
             "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
@@ -242,10 +246,10 @@ const DEFAULT_PROJECTS: Project[] = [
     },
     {
         title: "Karuna",
-        category1: "Visual Identity",
-        category2: "Packaging",
-        category3: "Product",
-        industry: "Nature & Outdoors",
+        category1: "Brand Identity",
+        category2: "Packaging Design",
+        category3: "",
+        industry: "Consumer Goods, Sustainability, Social Enterprise",
         year: "2025",
         thumbnail:
             "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
@@ -273,7 +277,7 @@ const DEFAULT_PROJECTS: Project[] = [
         category1: "Visual Identity",
         category2: "2D Motion",
         category3: "Social Media",
-        industry: "Design Education",
+        industry: "Education",
         year: "2024",
         thumbnail: "",
         thumbnailVideoLink: "",
@@ -286,7 +290,7 @@ const DEFAULT_PROJECTS: Project[] = [
         category1: "Visual Identity",
         category2: "Brand Strategy",
         category3: "",
-        industry: "Nature & Outdoors",
+        industry: "Nature",
         year: "2024",
         thumbnail: "",
         thumbnailVideoLink: "",
@@ -574,7 +578,13 @@ function findCMSModuleUrlInDocument(collectionId: string): string | undefined {
     return undefined
 }
 
-async function resolveCMSModuleUrl(collectionId: string) {
+async function resolveCMSModuleUrl(
+    collectionId: string,
+    preferredModuleUrl?: string
+) {
+    const preferred = normalizeCMSText(preferredModuleUrl)
+    if (preferred) return preferred
+
     const inDocument = findCMSModuleUrlInDocument(collectionId)
     if (inDocument) return inDocument
 
@@ -601,15 +611,34 @@ function initializeCMSModule(module: CMSModule) {
     }
 }
 
+function getCMSCollection(module: CMSModule): CMSCollection | undefined {
+    const legacyCollection = module.a?.collectionByLocaleId?.default
+    if (legacyCollection && typeof legacyCollection.scanItems === "function") {
+        return legacyCollection
+    }
+
+    const currentExport =
+        module.r && typeof module.r === "object" ? module.r : undefined
+    const currentCollection = currentExport?.collectionByLocaleId?.default
+    if (currentCollection && typeof currentCollection.scanItems === "function") {
+        return currentCollection
+    }
+
+    return undefined
+}
+
 function cmsItemToProject(item: CMSItem): Project | null {
     const data = item.data
     const fields = INDEX_CMS_FIELD_IDS
     const title = normalizeCMSText(readCMSField(data, fields.title))
     if (!title) return null
+    const slug =
+        normalizeCMSText(readCMSField(data, fields.slug)) ||
+        normalizeCMSText(item.slug)
 
     return {
         title,
-        slug: normalizeCMSText(readCMSField(data, fields.slug)),
+        slug,
         sortOrder: normalizeCMSNumber(readCMSField(data, fields.sortOrder)),
         category1: normalizeCMSText(readCMSField(data, fields.category1)),
         category2: normalizeCMSText(readCMSField(data, fields.category2)),
@@ -625,17 +654,23 @@ function cmsItemToProject(item: CMSItem): Project | null {
     }
 }
 
-async function loadCMSProjects(): Promise<Project[]> {
-    const moduleUrl = await resolveCMSModuleUrl(INDEX_CMS_COLLECTION_ID)
+async function loadCMSProjects(
+    preferredModuleUrl?: string
+): Promise<Project[]> {
+    const moduleUrl = await resolveCMSModuleUrl(
+        INDEX_CMS_COLLECTION_ID,
+        preferredModuleUrl
+    )
     if (!moduleUrl) return []
 
     const module = (await import(/* @vite-ignore */ moduleUrl)) as CMSModule
     initializeCMSModule(module)
 
-    const collection = module.a?.collectionByLocaleId?.default
-    if (!collection || typeof collection.scanItems !== "function") return []
+    const collection = getCMSCollection(module)
+    const scanItems = collection?.scanItems
+    if (typeof scanItems !== "function") return []
 
-    const items = await collection.scanItems()
+    const items = await scanItems()
     return items
         .map(cmsItemToProject)
         .filter((project): project is Project => Boolean(project))
@@ -1966,6 +2001,7 @@ function ViewToggle({
 export default function IndexPage({
     projects: projectsProp,
     useCMS = false,
+    cmsModuleUrl = "",
     defaultView = "list",
     listTypographyVariant = "standard",
     listHoverVariant = "flip",
@@ -1979,6 +2015,7 @@ export default function IndexPage({
 }: {
     projects?: Project[]
     useCMS?: boolean
+    cmsModuleUrl?: string
     defaultView?: string
     listTypographyVariant?: ListTypographyVariant
     listHoverVariant?: ListHoverVariant
@@ -2007,6 +2044,7 @@ export default function IndexPage({
         Map<string, Project>
     >(() => new Map())
     const [cmsModuleProjects, setCMSModuleProjects] = useState<Project[]>([])
+    const [cmsModuleLoaded, setCMSModuleLoaded] = useState(false)
 
     useEffect(() => {
         if (!useCMS) return
@@ -2022,40 +2060,48 @@ export default function IndexPage({
     useEffect(() => {
         if (!useCMS) {
             setCMSModuleProjects([])
+            setCMSModuleLoaded(false)
             return
         }
 
         let cancelled = false
+        setCMSModuleLoaded(false)
 
-        loadCMSProjects()
+        loadCMSProjects(cmsModuleUrl)
             .then((items) => {
-                if (!cancelled) setCMSModuleProjects(items)
+                if (!cancelled) {
+                    setCMSModuleProjects(items)
+                    setCMSModuleLoaded(true)
+                }
             })
             .catch(() => {
-                if (!cancelled) setCMSModuleProjects([])
+                if (!cancelled) {
+                    setCMSModuleProjects([])
+                    setCMSModuleLoaded(true)
+                }
             })
 
         return () => {
             cancelled = true
         }
-    }, [useCMS])
+    }, [useCMS, cmsModuleUrl])
 
     const allProjects = useMemo(() => {
-        // Priority: direct CMS module data > registry (legacy Framer Collection
-        // List bridge) > prop > DEFAULT_PROJECTS snapshot. Direct CMS wins so
-        // stale or missing registrar bindings cannot mask current CMS edits.
+        // Priority when Use CMS is on: live ProjectRegistrar registry > direct
+        // generated CMS module > manual prop. Do not fall through to the baked
+        // snapshot in CMS mode; stale fallback data should never masquerade as
+        // current CMS content.
         const fromRegistry =
             useCMS && registeredProjects.size > 0
                 ? Array.from(registeredProjects.values())
                 : null
         const fromCMSModule =
             useCMS && cmsModuleProjects.length > 0 ? cmsModuleProjects : null
-        const sourceProjects: Project[] =
-            fromCMSModule ??
-            fromRegistry ??
-            (projectsProp && projectsProp.length > 0
-                ? projectsProp
-                : DEFAULT_PROJECTS)
+        const fromProps =
+            projectsProp && projectsProp.length > 0 ? projectsProp : null
+        const sourceProjects: Project[] = useCMS
+            ? (fromRegistry ?? fromCMSModule ?? fromProps ?? [])
+            : (fromProps ?? DEFAULT_PROJECTS)
         return sourceProjects.map(normalizeProjectDisciplines)
     }, [useCMS, registeredProjects, cmsModuleProjects, projectsProp])
     const initialView = defaultView === "grid" ? "grid" : "list"
@@ -2135,6 +2181,11 @@ export default function IndexPage({
         () => filterProjects(allProjects, filters, ""),
         [allProjects, filters]
     )
+    const isCMSLoading =
+        useCMS &&
+        registeredProjects.size === 0 &&
+        cmsModuleProjects.length === 0 &&
+        !cmsModuleLoaded
 
     return (
         <>
@@ -2188,7 +2239,21 @@ export default function IndexPage({
                             : "opacity 250ms ease",
                     }}
                 >
-                    {activeView === "grid" ? (
+                    {isCMSLoading ? (
+                        <div
+                            style={{
+                                padding: "64px 0",
+                                textAlign: "center",
+                                fontFamily: tokens.fontMono,
+                                fontSize: 13,
+                                lineHeight: "28px",
+                                textTransform: "uppercase",
+                                color: tokens.textTertiary,
+                            }}
+                        >
+                            Loading work...
+                        </div>
+                    ) : activeView === "grid" ? (
                         <GridView projects={filteredProjects} />
                     ) : (
                         <ListView
@@ -2225,6 +2290,12 @@ addPropertyControls(IndexPage, {
         defaultValue: false,
         enabledTitle: "On",
         disabledTitle: "Off",
+    },
+    cmsModuleUrl: {
+        type: ControlType.String,
+        title: "CMS Module URL",
+        defaultValue: "",
+        hidden: (props) => !props.useCMS,
     },
     projects: {
         type: ControlType.Array,

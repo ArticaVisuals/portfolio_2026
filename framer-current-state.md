@@ -183,12 +183,15 @@ Custom code on or affecting Home:
 
 `IndexPage.tsx` owns taxonomy filters, list rows, grid cards, project count, view state, and the inline `GRID / LIST` control. The visible taxonomy is `/ Year`, `/ Service`, `/ Industry`; each group has its own `All` clear action. Grid view renders native HTML cards inside the code component rather than calling the native Framer `Case Study` module.
 
-Data priority remains:
+June 1, 2026 CMS bridge note: `/index` includes a hidden-by-position CMS bridge layer, `CmsLink` (`AwTGGhR7I`), containing the `AllProject` collection item and `ProjectRegistrar` (`I063adJ_h`). Keep this layer **visible/mounted** in Framer's layer panel, but fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, `opacity="0"`, `overflow="hidden"`, and locked. Do not use the Framer hidden/eye toggle on this collection or any parent, because that unmounts the collection and stops the registrar from populating `/index`.
 
-1. Direct generated CMS module scan for `All Projects`
-2. Legacy `window.__articaIndexProjectsRegistry` fallback
+Data priority with `useCMS=true` is:
+
+1. Live `window.__articaIndexProjectsRegistry` data from `ProjectRegistrar`
+2. Direct generated CMS module scan for `All Projects`
 3. Manual `projects` prop
-4. In-code `DEFAULT_PROJECTS`
+
+In CMS mode, `IndexPage.tsx` intentionally falls through to an empty array rather than the in-code `DEFAULT_PROJECTS` snapshot, so stale fallback labels cannot appear as live CMS content. `DEFAULT_PROJECTS` is only used when `useCMS=false`.
 
 The previously mounted cursor-preview helper, `IndexListCursorPreview.tsx`, was removed May 26 because it was no longer present in the current `/index` page XML.
 

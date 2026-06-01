@@ -18,7 +18,7 @@
 - Current mounted `/index` code files are `IndexPage.tsx` (`rgAZFOv`), `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), and `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`). `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
-- **Data source refined (May 22, 2026):** `IndexPage.tsx` first attempts a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then falls back to the legacy window registry, then manual `projects`, then `DEFAULT_PROJECTS`.
+- **Data source refined (June 1, 2026):** `IndexPage.tsx` uses the mounted `ProjectRegistrar` registry first, then falls back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`.
 - **Grid view rewritten (May 10, 2026; refined May 22):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 media, 3/2/1 column responsive grid, media hover scale, title below image with the same hover-flip used in List view, and metadata below title). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **ImageMaskReveal is archived:** old notes about disabled/enabled `ImageMaskReveal` instances are historical. The reveal component is stub-archived and not part of the current `/index` behavior.
 - **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
@@ -130,14 +130,14 @@ addPropertyControls(IndexPage, {
 
 The live component also exposes color controls for `Text Primary`, `Text Secondary`, `Text Tertiary`, `Background`, `Divider Strong`, `Divider Subtle`, and `Surface Active`. Defaults should match `DEFAULT_TOKENS` unless Framer design tokens are intentionally rebound in the property panel.
 
-### 3.A Project data resolution — direct CMS first, registry fallback
+### 3.A Project data resolution — registrar first, CMS module fallback
 
 The live component picks projects in this order (inside the `allProjects` `useMemo`):
 
-1. **Direct CMS module scan**, when `useCMS` is `true` and the generated `All Projects` module (`yTHrQWMIY`) can be discovered/imported from document resources or live scan paths. The loader calls Framer's lazy initializer when present and reads `collectionByLocaleId.default.scanItems()`.
-2. **Window-singleton registry** at `window.__articaIndexProjectsRegistry`, when `useCMS` is `true` and at least one item has been registered. The registry is a legacy fallback `Map<string, Project>` plus a `Set` of listeners; `IndexPage` subscribes in a `useEffect` that runs only when `useCMS` is truthy.
+1. **Window-singleton registry** at `window.__articaIndexProjectsRegistry`, when `useCMS` is `true` and at least one item has been registered. The registry is populated by `ProjectRegistrar` instances inside the mounted CMS Collection List; `IndexPage` subscribes in a `useEffect` that runs only when `useCMS` is truthy.
+2. **Direct CMS module scan**, when `useCMS` is `true` and the generated `All Projects` module (`yTHrQWMIY`) can be discovered/imported from document resources or live scan paths. The loader calls Framer's lazy initializer when present and reads `collectionByLocaleId.default.scanItems()`.
 3. **`projects` prop** (manual array control), if non-empty.
-4. **`DEFAULT_PROJECTS`** — a 15-item snapshot baked into the code file.
+4. **`DEFAULT_PROJECTS`**, only when `useCMS=false`.
 
 The legacy Framer-side wiring for the registry is:
 
@@ -145,7 +145,7 @@ The legacy Framer-side wiring for the registry is:
 - Each Registrar instance receives the bound CMS row's fields as Framer `ControlType` props and calls the registry's `register(id, data)` on mount, `unregister(id)` on unmount.
 - `IndexPage` (with `useCMS=true`) subscribes to the registry and re-renders when it changes.
 
-This was the earlier workaround for the "code components can't access the CMS directly" issue described in `framer-cms-index-autoupdate-audit-2026-05-03.md` (Variant B). As of the May 26 audit, direct CMS loading remains the primary path and the registry is only a fallback. Earlier browser checks saw `yTHrQWMIY` CMS resources load on `/index`, but `window.__articaIndexProjectsRegistry.items` was empty and the visible industry labels were simplified; recheck before assuming a live page is using the long-form CMS values.
+June 1 canvas note: the CMS Collection List must stay mounted. On `/index`, `CmsLink` (`AwTGGhR7I`) is locked, `opacity="0"`, fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, and `overflow="hidden"`. Do not use the Framer hidden/eye toggle on this layer or any parent, because hidden layers unmount and the registry becomes empty.
 
 If you build the Registrar, mirror the Framer property control names exactly (`title`, `category1..3`, `industry`, `year`, `thumbnail`, `thumbnailVideoLink`, `slug`, `sortOrder`, `isHomepage`) and use the project's `slug` as the registry key.
 
@@ -464,7 +464,9 @@ export default function IndexPage({
   const allProjects = useMemo(() => {
     const fromRegistry = useCMS && registeredProjects.size > 0
       ? Array.from(registeredProjects.values()) : null
-    const source = fromCMSModule ?? fromRegistry ?? (projectsProp?.length ? projectsProp : DEFAULT_PROJECTS)
+    const source = useCMS
+      ? (fromRegistry ?? fromCMSModule ?? (projectsProp?.length ? projectsProp : []))
+      : (projectsProp?.length ? projectsProp : DEFAULT_PROJECTS)
     return source.map(normalizeProjectDisciplines)
   }, [useCMS, registeredProjects, projectsProp])
 
@@ -576,7 +578,7 @@ Before delivering:
 - Do NOT hardcode `.idx-grid-card-media.with-stroke` as a permanent class in `IndexPage.tsx`. The May 15 stroke helper owns all visible stroke output from CMS so each project can be toggled individually and toggled back off.
 - Do NOT remove `CaseStudyThumbnailStrokeStyles` instance `szF9sZNWA` from `/index` unless you replace the stroke system with another CMS-aware implementation.
 - Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.
-- Do NOT push an older repo-side `IndexPage.tsx` back to Framer without merging in the direct CMS module loader, registry fallback, simplified visible taxonomy, color controls, and current grid card structure.
+- Do NOT push an older repo-side `IndexPage.tsx` back to Framer without merging in the mounted ProjectRegistrar registry path, direct CMS module fallback, simplified visible taxonomy, color controls, and current grid card structure.
 - Do NOT lose the May 18 responsive promotion: canonical `/index` depends on the hidden `IndexPageBreakpointsDraft.tsx` style instance in Framer, and the repo `IndexPage.tsx` carries the same CSS for future code-file sync.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
 - Do NOT leave fallback data at 12 projects; the live `DEFAULT_PROJECTS` snapshot has 15 items.

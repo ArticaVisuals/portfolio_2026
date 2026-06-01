@@ -156,7 +156,7 @@ Year / Service / Industry nav values are no longer hardcoded lists — the live 
 
 The Archive/Index page houses work that strengthens the picture without crowding the main narrative. Current `/index` interaction is intentionally simple: taxonomy filters plus List/Grid browsing. The **WorldGrid 3D gallery interaction** should stay out of `/index` unless Micah explicitly asks to bring it back; it is no longer part of the current Framer code-component inventory.
 
-Current implementation note (May 26, 2026): Framer code file `rgAZFOv` owns the `/index` archive component. Active companion helpers are `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) and `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`). The former cursor-preview and filter-nav draft helpers were removed because they were not mounted in the current page structure. `IndexPage.tsx` still tries to load Framer's generated `All Projects` CMS module directly when `useCMS=true`, then falls back to the legacy window registry, then manual `projects`, then `DEFAULT_PROJECTS`.
+Current implementation note (June 1, 2026): Framer code file `rgAZFOv` owns the `/index` archive component. Active companion helpers are `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) and `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`). The former cursor-preview and filter-nav draft helpers were removed because they were not mounted in the current page structure. With `useCMS=true`, `IndexPage.tsx` reads the live `ProjectRegistrar` registry first, then falls back to Framer's generated `All Projects` CMS module, then manual `projects`; it intentionally does not use `DEFAULT_PROJECTS` in CMS mode. The CMS Collection bridge must remain mounted and is visually hidden by fixed off-canvas positioning, not by Framer's hidden/eye toggle.
 
 Current `/index` XML shows the footer using `AVAILABLE FOR WORK`, LinkedIn, Résumé linking to `/info`, Cosmos, and `©2026`. Continue checking shared footer instances before launch, but the older placeholder destination warning is no longer current.
 
@@ -217,7 +217,7 @@ micahhoang.info
 │   │   └── Not exposed on `/index`; keep List/Grid only unless Micah asks to bring it back
 │   ├── WorldGrid
 │   │   └── Not present in current Framer inventory; keep 3D/gallery experiments out of `/index` unless explicitly revived
-│   ├── Project source priority: direct CMS module scan > window registry fallback > projects prop > in-code DEFAULT_PROJECTS snapshot
+│   ├── Project source priority in CMS mode: mounted ProjectRegistrar registry > direct CMS module scan > projects prop > empty state; DEFAULT_PROJECTS only when Use CMS is off
 │   └── Click through to case study pages at `/case-studies/{slug}`
 │
 ├── /info
