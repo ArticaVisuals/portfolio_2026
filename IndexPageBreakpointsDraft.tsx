@@ -41,9 +41,9 @@ const RESPONSIVE_LIST_CSS = `
     text-underline-offset: 3px !important;
   }
 
-  .idx-view-toggle-option[data-active="false"]:hover {
-    color: #141414 !important;
-    -webkit-text-fill-color: #141414 !important;
+  .idx-view-toggle-option:hover {
+    color: #979797 !important;
+    -webkit-text-fill-color: #979797 !important;
     opacity: 1 !important;
   }
 

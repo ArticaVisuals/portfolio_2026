@@ -842,7 +842,9 @@ function buildGlobalCss(): string {
     cursor: pointer;
     text-decoration: none;
     text-underline-offset: 3px;
-    transition: opacity 150ms ease;
+    transition:
+      color 150ms ease,
+      -webkit-text-fill-color 150ms ease;
   }
 
   .idx-view-toggle-option[data-active="true"] {
@@ -852,9 +854,9 @@ function buildGlobalCss(): string {
     opacity: 1 !important;
   }
 
-  .idx-view-toggle-option[data-active="false"]:hover {
-    color: ${tokens.textPrimary} !important;
-    -webkit-text-fill-color: ${tokens.textPrimary} !important;
+  .idx-view-toggle-option:hover {
+    color: ${tokens.textTertiary} !important;
+    -webkit-text-fill-color: ${tokens.textTertiary} !important;
     opacity: 1;
   }
 
