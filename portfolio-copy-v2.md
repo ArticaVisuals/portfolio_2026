@@ -5,7 +5,7 @@
 **Date:** May 2026
 **Last Framer structure audit:** May 26, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
-**Implementation note - May 26, 2026:** Active Framer web routes are tracked in `framer-current-state.md`. The AirPods bespoke page is currently `/case-studies/airpods` even though the CMS slug is `airpods-pro-3`; preserve that route exception until a routing decision is made.
+**Implementation note - June 1, 2026:** Active Framer web routes are tracked in `framer-current-state.md`. The AirPods bespoke page and CMS slug are both currently `/case-studies/airpods`; the older `airpods-pro-3` slug exception is historical.
 
 ---
 

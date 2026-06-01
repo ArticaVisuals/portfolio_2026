@@ -113,7 +113,7 @@ The `All Projects` CMS collection (`yTHrQWMIY`) contains 15 real project records
 
 | Sort | Project | Slug | Year | Home flag |
 |---:|---|---|---|---|
-| 1 | AirPods Pro 3 | `airpods-pro-3` | 2025 | true |
+| 1 | AirPods Pro 3 | `airpods` | 2025 | true |
 | 2 | Simon & Schuster | `simon-schuster` | 2025 | true |
 | 3 | Gaia | `gaia` | 2026 | true |
 | 4 | National Park Playing Cards | `national-park-cards` | 2019-ongoing | true |
@@ -148,6 +148,8 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 - `myUIfK0j7` - Is Homepage
 
 Recommended manual additions remain `Case Study URL` and `Build Status`. Add those in Framer only if the workflow needs them; do not repurpose existing field IDs.
+
+June 1, 2026 thumbnail stroke fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. MCP verified AirPods Pro 3 is `stroke: true` with slug `airpods`. The Framer draft code file was updated and typechecked with no errors; the public `khaki-ship-257706.framer.app` bundle still needs a Framer publish before the restored stroke appears on the live site.
 
 ---
 
@@ -261,7 +263,7 @@ Safe to keep:
 
 Good future cleanup candidates:
 
-- `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
+- `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. It intentionally keeps a robust CMS export resolver for both legacy `a` and current `r` Framer module shapes. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
 - `/play` helper consolidation could reduce code-file count, but it is interaction-sensitive and should be treated as a parity refactor, not casual cleanup.
 - `/case-studies` still displays a `NumberCounter` configured by page props. If the visible count should match the 15 CMS records, update the page prop or wire a dynamic count. This is a visible content change, so it was not changed during the no-visual-drift cleanup.
 - Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially the `/play` helper stack and `Counter.tsx`.
@@ -276,5 +278,7 @@ For future audits, verify both surfaces:
 - Published/staging URL, because it reflects the currently published build and catches visual regressions.
 
 May 26 visual QA against `https://khaki-ship-257706.framer.app` checked `/`, `/case-studies`, `/index`, `/play`, `/info`, `/contact`, and `/case-studies/airpods` at desktop `1440x1000` and mobile `390x900`. Browser diagnostics found no suspicious route issues: no horizontal overflow, no visibly broken loaded images, and no blank pages. Manual screenshot spot-checks covered Home, `/index`, `/play`, `/case-studies`, and the AirPods page on desktop/mobile. `/index` still showed the `GRID / LIST` control and Year/Service/Industry taxonomy, and `/play` still opened a visible detail sidebar when clicking a visible archive card.
+
+June 1 stroke audit: published Home loaded `CaseStudyThumbnailStrokeStyles.DLdW5YsD.mjs` and `yTHrQWMIY.DrLdZk2a.mjs`; browser inspection showed the AirPods thumbnail had no generated overlay because the published helper looked only for `module.a`. Direct browser import of the same CMS module returned keys `n`, `r`, `t`, with AirPods `{ slug: "airpods", title: "AirPods Pro 3", stroke: true }` under `module.r`. The Framer draft helper now handles that export shape, but the public site remains unchanged until publish.
 
 Known non-blocking console noise remains: Framer logged recoverable React hydration warnings (`#422` / `#425`) and some aborted analytics/media requests during route changes. No page errors were recorded in this pass.

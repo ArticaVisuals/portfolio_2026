@@ -56,7 +56,7 @@ Keep all project links canonical:
 /case-studies/[slug]
 ```
 
-Current exception: the bespoke AirPods pilot page is `/case-studies/airpods`, while the CMS record slug remains `airpods-pro-3`. Preserve that exception until Micah decides whether to rename the page, add a CMS `Case Study URL` override, or align the route to `/case-studies/airpods-pro-3`.
+Current AirPods state: the bespoke AirPods pilot page is `/case-studies/airpods`, and the CMS record slug is also `airpods`. The old `airpods-pro-3` exception is historical and should not be reintroduced.
 
 The home page, `/case-studies` index, `/index` archive, and custom case-study pages should all resolve to the same URL pattern.
 
@@ -186,7 +186,7 @@ Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized
 
 Current index data note (May 22, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop and now tries to load the generated `All Projects` CMS module (`yTHrQWMIY`) directly before falling back to the older window-singleton registry (`window.__articaIndexProjectsRegistry`), manual `projects`, then the in-code `DEFAULT_PROJECTS` snapshot. The May 22 browser audit confirmed CMS module resources load on `/index`, but the registry was empty and the visible Industry labels were still simplified (`Education`, `Health`, `Human Rights`, `Literature`, `Music`, `Nature`, `Science`, `Technology`). Grid view renders native HTML cards inline (no `Case Study` module dependency, uniform 16:9 media, 3/2/1 column responsive grid, title and metadata below media with hover-flip CTA).
 
-Thumbnail stroke note (updated May 22, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on, all other projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved `/case-studies/:slug` links, which is important for the Home selected-work collection. `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
+Thumbnail stroke note (updated June 1, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on with slug `airpods`, all other checked projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved links, which is important for the Home selected-work collection. The June 1 fix makes the helper resolve both legacy Framer CMS exports (`module.a`) and the current published shape (`module.r`, plus scanned object exports) before calling `collectionByLocaleId.default.scanItems()`. `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
 
 ## 9. Recommended Starting Order
 
@@ -211,15 +211,16 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 
 ## 10. Verification Notes
 
-Last verified May 26, 2026:
+Last verified June 1, 2026:
 
-- Framer MCP project inventory contains nine web pages: `/`, `/404`, `/case-studies`, `/case-studies/:slug`, `/case-studies/airpods`, `/index`, `/play`, `/info`, and `/contact`.
+- Framer MCP project inventory contains the core routes `/`, `/404`, `/case-studies`, `/case-studies/:slug`, `/case-studies/airpods`, `/index`, `/play`, `/info`, and `/contact`, plus additional bespoke case-study pages.
 - Live Framer staging routes checked in the prior browser pass: `/`, `/index`, `/case-studies`, `/info`, `/contact`, `/play`, and `/case-studies/airpods` returned 200 at desktop and mobile widths. May 26 visual QA is recorded in the final audit response.
 - No horizontal overflow was detected at 1280px desktop or 390px mobile for the checked published routes.
 - Home hero line no longer has the old `mind.Strategy` spacing typo.
 - CMS inspected previously with MCP: `All Projects` still has 15 real records.
-- CMS thumbnail stroke field inspected with MCP: `AirPods Pro 3` is true; the other returned project records are false.
-- `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards.
+- CMS thumbnail stroke field inspected with MCP and browser import: `AirPods Pro 3` is true with slug `airpods`; the other returned project records are false.
+- `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards. The June 1 update specifically fixes Framer's current generated CMS module shape, where the collection is exported under `r` instead of legacy `a`.
+- Public site note: `https://khaki-ship-257706.framer.app/` still serves the pre-fix published bundle until Micah publishes from Framer, so the live AirPods stroke will remain missing there until publish.
 - Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
 - Published `/index` inspected: the page has the Year / Service / Industry taxonomy, per-group `All` actions, no horizontal overflow, and simplified visible Industry labels. CMS module resources load, but the legacy window registry was empty during the browser check.
 - `/case-studies` still appears configured for a `(12)` count via `NumberCounter` page props even though the CMS has 15 records. The `Counter.tsx` code was hardened on May 26, but the visible count prop was not changed because that would alter page copy.
