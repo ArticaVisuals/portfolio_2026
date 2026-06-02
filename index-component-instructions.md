@@ -4,11 +4,11 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last Framer structure audit:** May 26, 2026.
+**Last Framer structure audit:** June 2, 2026.
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (May 26, 2026):**
+**State summary (June 2, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
 - The original-template inline `GRID / LIST` control is now owned directly by `IndexPage.tsx` on canonical `/index`; the previous fixed/floating delegated toggle has been removed.
@@ -21,7 +21,7 @@
 - **Data source refined (June 1, 2026):** `IndexPage.tsx` uses the mounted `ProjectRegistrar` registry first, then falls back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`.
 - **Grid view rewritten (May 10, 2026; refined May 22):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 media, 3/2/1 column responsive grid, media hover scale, title below image with the same hover-flip used in List view, and metadata below title). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **ImageMaskReveal is archived:** old notes about disabled/enabled `ImageMaskReveal` instances are historical. The reveal component is stub-archived and not part of the current `/index` behavior.
-- **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19; CMS export fix June 1):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. It must resolve both legacy `module.a` and current `module.r` Framer CMS export shapes before scanning records. The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
+- **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19; CMS export fix June 1; instance prop cleanup June 2):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. It must resolve both legacy `module.a` and current `module.r` Framer CMS export shapes before scanning records. As of June 2, the helper instances use Framer item slugs directly (`slugFieldId=""`). The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
 - **Inline toggle promoted and integrated (May 16, 2026; style-aligned May 19):** `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav. `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`; the hidden `IndexPageBreakpointsDraft.tsx` helper only styles the toggle to match that action (13px uppercase mono, 28px line-height, weight 400, secondary text color, hover opacity, active underline). The action row uses a stable 12px top gap, 28px line, and 24px bottom gap so selecting/deselecting filters does not shift content. The former `IndexInlineToggleProxy.tsx` code file (`TexpcmJ`) and `/index` instance (`HM1pZPonP`) were deleted after this behavior moved into `IndexPage`.
 
 ---
@@ -43,7 +43,7 @@ The outer `idx-container` owns the side margin (`padding: 0 20px`) and that shou
 
 **Home note, May 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It is a six-item CMS-backed selected-work query using the native Framer `Case Study` component. Do not recode Home unless Micah explicitly asks.
 
-**CMS note, May 2026:** the Framer `All Projects` CMS collection has 15 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
+**CMS note, June 2026:** the Framer `All Projects` CMS collection has 16 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
 
 ---
 
@@ -229,7 +229,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 ### Project count footer
 
 - GT Standard Mono Trial, 13px, uppercase, color `tokens.textPrimary`.
-- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the in-code 15-project default and no filters, the live page reads `15 Projects`.
+- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the current 16-record CMS and no filters, the live CMS-backed page should read `16 Projects` after the Framer draft is published.
 
 ### Taxonomy filter behavior
 
@@ -431,7 +431,7 @@ const tokens = { /* see §2 */ }
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
 
-const DEFAULT_PROJECTS = [ /* 15-item snapshot, simplified industry labels */ ]
+const DEFAULT_PROJECTS = [ /* local fallback snapshot, simplified industry labels */ ]
 
 // Helpers: getDisciplines, normalizeProjectDisciplines, getDisciplineDisplay,
 // collectByProjectOrder, getDisciplineNavItems, getIndustryNavItems,
@@ -581,7 +581,7 @@ Before delivering:
 - Do NOT push an older repo-side `IndexPage.tsx` back to Framer without merging in the mounted ProjectRegistrar registry path, direct CMS module fallback, simplified visible taxonomy, color controls, and current grid card structure.
 - Do NOT lose the May 18 responsive promotion: canonical `/index` depends on the hidden `IndexPageBreakpointsDraft.tsx` style instance in Framer, and the repo `IndexPage.tsx` carries the same CSS for future code-file sync.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
-- Do NOT leave fallback data at 12 projects; the live `DEFAULT_PROJECTS` snapshot has 15 items.
+- Do NOT leave fallback data at 12 projects; the current CMS roster has 16 items. If `DEFAULT_PROJECTS` is refreshed, keep it intentionally labeled as fallback-only and do not let it render in CMS mode.
 - Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing.
 - Do NOT add `<html>`, `<head>`, or `<body>` tags — this is a component, not a page.
 - Do NOT assume fonts are loaded — use the fallback stack in the tokens object.

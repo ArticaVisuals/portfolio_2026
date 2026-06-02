@@ -5,10 +5,11 @@ Generated: 2026-05-16T05:26:59.133Z
 - Current site: https://micahhoang.info
 - Framer staging: https://khaki-ship-257706.framer.app
 - May 22, 2026 note: `micahhoang.info` still served the Cargo site during the latest audit; Framer staging is the current redesign/build surface until domain cutover.
-- May 26, 2026 note: this folder is a preservation/staging archive, not the live Framer runtime. The local asset set includes the original 555-page scrape plus archive/playground media captured for `/play` work, for 595 local media files in total. Do not infer that a local asset can be deleted from Framer just because it is unused here.
+- May 26, 2026 note: this folder is a preservation/staging archive, not the live Framer runtime. The local asset set includes the original 555 downloaded media files plus archive/playground media captured for `/play` work, for 595 local media files in `current-site` and `framer-staging` total. Do not infer that a local asset can be deleted from Framer just because it is unused here.
+- June 2, 2026 note: the `555` summary below is the original generated scrape summary; the verified current media-file count for `case-study-assets/current-site` plus `case-study-assets/framer-staging` is 595. Untracked Gaia/Figma export folders may exist locally and are separate from this scrape count.
 - Pages: 35
-- Assets: 555
-- Downloaded media files: 555
+- Assets in original generated scrape: 555
+- Downloaded media files in original generated scrape: 555
 - External embeds documented: 3
 - External embeds downloaded: 0 (Vimeo/YouTube access blocked without private/authenticated context)
 - Failed: 0

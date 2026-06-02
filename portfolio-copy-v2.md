@@ -1,11 +1,11 @@
 # Portfolio Copy — Tone of Voice & Case Study Openings
 
 **For:** Micah Hoang
-**Version:** 1.6 - May 26 Framer structure audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. `/info` is the live profile route and includes testimonials.
+**Version:** 1.7 - June 2 Framer structure audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. CMS now has 16 real projects, including TYPLDN. `/info` is the live profile route and includes testimonials.
 **Date:** May 2026
-**Last Framer structure audit:** May 26, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
+**Last Framer structure audit:** June 2, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
-**Implementation note - June 1, 2026:** Active Framer web routes are tracked in `framer-current-state.md`. The AirPods bespoke page and CMS slug are both currently `/case-studies/airpods`; the older `airpods-pro-3` slug exception is historical.
+**Implementation note - June 2, 2026:** Active Framer web routes are tracked in `framer-current-state.md`. The AirPods bespoke page and CMS slug are both currently `/case-studies/airpods`; the older `airpods-pro-3` slug exception is historical.
 
 ---
 
@@ -59,7 +59,7 @@ Every case study opening should pass this test: if you read it aloud to a friend
 
 No tagline. No "I design brands that..." sentence. The discipline line does the positioning; the work does the rest.
 
-**Current Framer implementation note:** the live Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. Recent audits confirmed the previous `mind.Strategy` spacing typo is fixed. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
+**Current Framer implementation note:** the Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. The June 2 Framer draft fix corrected the previous `mind.Strategy` spacing typo; publish from Framer UI is required before the public URL reflects it. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
 
 ### About Zone — *Locked*
 
@@ -210,6 +210,17 @@ The strategic priority set has expanded with the current CMS. The published Fram
 
 ---
 
+### 11. TYPLDN — *CMS current*
+
+**Tier:** Archive/editorial record pending final depth decision
+**Metadata line:** Concept · Visual Identity, Experience Design
+
+> TYPLDN is a branding project for an international typography and design conference hosted by ATypi.
+>
+> The identity uses a modified typeface by Wim Crouwel and turns the modular letterforms into a vertical typographic system for digital and physical touchpoints.
+
+---
+
 ## 04 — Testimonials
 
 ### Placement
@@ -253,7 +264,7 @@ Patterns to maintain across all case studies so the portfolio reads as one voice
 
 ## 06 — Status
 
-Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Motion Connect 2025 is now part of the six-card published Home grid. Weaponized Innocence remains Tier 2 and homepage-flagged but is not visible because Home is limited to six items by sort order. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 15 real projects and no sample/template projects.
+Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Motion Connect 2025 is now part of the six-card published Home grid. Weaponized Innocence remains Tier 2 and homepage-flagged but is not visible because Home is limited to six items by sort order. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 16 real projects and no sample/template projects.
 
 Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of the planned green-dot/time treatment, and `/info` currently uses a forest-green editorial profile structure with selected experience, testimonials, recognition, and CTA sections rather than the older photo/résumé/currently layout.
 
@@ -261,4 +272,4 @@ Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of t
 - Pick initial "currently into" items (reading, listening, exploring)
 - Resolve National Park Playing Cards store-count copy: older CMS/copy says 160 retail locations, while current `/info` says 220+ stores
 - Decide whether Karuna should return to Home or remain an off-Home Tier 2 showcase
-- Decide whether Seek Truth and Independent Lens remain archive records or become dedicated visual showcases
+- Decide whether Seek Truth, Independent Lens, and TYPLDN remain archive records or become dedicated visual showcases

@@ -16,7 +16,7 @@ type Props = {
 }
 
 type CMSValue = { value?: unknown }
-type CMSItem = { data?: Record<string, CMSValue> }
+type CMSItem = { slug?: string; data?: Record<string, CMSValue> }
 type CMSScanCollection = { scanItems?: () => Promise<CMSItem[]> }
 type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSScanCollection } }
 type CMSModule = {
@@ -57,10 +57,6 @@ const LIVE_SCAN_PATHS = [
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
-const CASE_STUDY_PATH_OVERRIDES: Record<string, string> = {
-    "airpods-pro-3": "/case-studies/airpods",
-}
-
 function splitNames(value: string): string[] {
     return String(value || "")
         .split(/[\n,]/)
@@ -112,7 +108,7 @@ function normalizeSlug(value: string): string {
 function getCaseStudyUrl(slug: string): string {
     const normalized = normalizeSlug(slug)
     if (!normalized) return ""
-    return CASE_STUDY_PATH_OVERRIDES[normalized] || `/case-studies/${normalized}`
+    return `/case-studies/${normalized}`
 }
 
 function getSlugFromHref(href: string | null): string {
@@ -162,6 +158,31 @@ function isBrokenProjectHref(href: string | null): boolean {
     } catch {
         return value.includes(":slug")
     }
+}
+
+function getSameOriginPath(href: string | null): string {
+    if (!href) return ""
+
+    try {
+        const url = new URL(href, window.location.href)
+        if (url.origin !== window.location.origin) return ""
+        return url.pathname.replace(/\/+$/, "") || "/"
+    } catch {
+        const value = href.split("?")[0].split("#")[0].trim()
+        if (!value) return ""
+        const path = value.startsWith("/") ? value : `/${value.replace(/^(\.\.\/|\.\/)+/, "")}`
+        return path.replace(/\/+$/, "") || "/"
+    }
+}
+
+function shouldRepairProjectHref(href: string | null, expectedUrl: string): boolean {
+    if (isBrokenProjectHref(href)) return true
+
+    const currentPath = getSameOriginPath(href)
+    const expectedPath = getSameOriginPath(expectedUrl)
+    if (!currentPath || !expectedPath) return false
+
+    return currentPath.startsWith("/case-studies/") && currentPath !== expectedPath
 }
 
 function handleRepairedProjectLinkClick(event: MouseEvent) {
@@ -321,7 +342,9 @@ async function loadStrokeRecords({
     const items = (await collection.scanItems()) as CMSItem[]
     return items.map((item) => {
         const data = item.data
-        const slug = normalizeSlug(normalizeText(readField(data, slugFieldId)))
+        const slug = normalizeSlug(
+            normalizeText(readField(data, slugFieldId)) || normalizeText(item.slug)
+        )
         return {
             slug,
             title: normalizeText(readField(data, titleFieldId)),
@@ -482,10 +505,11 @@ function applyProjectLinks(records: StrokeRecord[], imageWrapperNames: string) {
 
     getCards(imageWrapperNames).forEach((card) => {
         const anchor = getCardAnchor(card)
-        if (!anchor || !isBrokenProjectHref(anchor.getAttribute("href"))) return
+        if (!anchor) return
 
         const record = findRecordForCard(card, records)
         if (!record?.url) return
+        if (!shouldRepairProjectHref(anchor.getAttribute("href"), record.url)) return
 
         anchor.setAttribute("href", record.url)
         anchor.removeAttribute("data-framer-page-link-current")
@@ -639,7 +663,7 @@ export default function CaseStudyThumbnailStrokeStyles({
     collectionId = "yTHrQWMIY",
     collectionModuleUrl = "",
     strokeFieldId = "OHdUYs6Mo",
-    slugFieldId = "pdXVG_fBO",
+    slugFieldId = "",
     titleFieldId = "oeXZcmPna",
     imageWrapperNames = "ImageWrapper\nImage Wrapper\nVideoWrapper\nVideo Wrapper",
 }: Partial<Props>) {
@@ -895,7 +919,8 @@ addPropertyControls(CaseStudyThumbnailStrokeStyles, {
     slugFieldId: {
         type: ControlType.String,
         title: "Slug Field",
-        defaultValue: "pdXVG_fBO",
+        defaultValue: "",
+        placeholder: "Uses item slug",
     },
     titleFieldId: {
         type: ControlType.String,

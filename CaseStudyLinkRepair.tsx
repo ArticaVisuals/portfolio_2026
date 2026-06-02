@@ -11,7 +11,7 @@ type Props = {
 }
 
 type CMSValue = { value?: unknown }
-type CMSItem = { data?: Record<string, CMSValue> }
+type CMSItem = { slug?: string; data?: Record<string, CMSValue> }
 type CMSScanCollection = { scanItems?: () => Promise<CMSItem[]> }
 type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSScanCollection } }
 type CMSModule = {
@@ -29,6 +29,17 @@ const LIVE_SCAN_PATHS = [
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
+const PROJECT_CARD_SELECTOR = [
+    'a[href*="/case-studies/"]',
+    'a[href^="./case-studies/"]',
+    'a[href^="../case-studies/"]',
+    'a[data-framer-name="Card"]',
+    'a[name="Card"]',
+    'a[data-framer-name="Other Project Card"]',
+    'a[name="Other Project Card"]',
+    '[data-framer-name="Other Project Card"] a[href]',
+    '[name="Other Project Card"] a[href]',
+].join(",")
 
 function escapeRegExp(value: string): string {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
@@ -189,7 +200,9 @@ async function loadProjectRecords({
     return items
         .map((item) => {
             const data = item.data
-            const slug = normalizeSlug(normalizeText(readField(data, slugFieldId)))
+            const slug = normalizeSlug(
+                normalizeText(readField(data, slugFieldId)) || normalizeText(item.slug)
+            )
             const title = normalizeText(readField(data, titleFieldId))
             return { slug, title, url: getProjectUrl(slug, overrides) }
         })
@@ -225,6 +238,31 @@ function isBrokenProjectHref(href: string | null): boolean {
     } catch {
         return value.includes(":slug")
     }
+}
+
+function getSameOriginPath(href: string | null): string {
+    if (!href) return ""
+
+    try {
+        const url = new URL(href, window.location.href)
+        if (url.origin !== window.location.origin) return ""
+        return url.pathname.replace(/\/+$/, "") || "/"
+    } catch {
+        const value = href.split("?")[0].split("#")[0].trim()
+        if (!value) return ""
+        const path = value.startsWith("/") ? value : `/${value.replace(/^(\.\.\/|\.\/)+/, "")}`
+        return path.replace(/\/+$/, "") || "/"
+    }
+}
+
+function shouldRepairProjectHref(href: string | null, expectedUrl: string): boolean {
+    if (isBrokenProjectHref(href)) return true
+
+    const currentPath = getSameOriginPath(href)
+    const expectedPath = getSameOriginPath(expectedUrl)
+    if (!currentPath || !expectedPath) return false
+
+    return currentPath.startsWith("/case-studies/") && currentPath !== expectedPath
 }
 
 function handleRepairedProjectLinkClick(event: MouseEvent) {
@@ -286,11 +324,10 @@ function findRecordForCard(card: HTMLElement, records: ProjectRecord[]): Project
 function repairLinks(records: ProjectRecord[]) {
     if (records.length === 0) return
 
-    document.querySelectorAll<HTMLAnchorElement>('a[data-framer-name="Card"], a[name="Card"]').forEach((card) => {
-        if (!isBrokenProjectHref(card.getAttribute("href"))) return
-
+    document.querySelectorAll<HTMLAnchorElement>(PROJECT_CARD_SELECTOR).forEach((card) => {
         const record = findRecordForCard(card, records)
         if (!record?.url) return
+        if (!shouldRepairProjectHref(card.getAttribute("href"), record.url)) return
 
         card.setAttribute("href", record.url)
         card.removeAttribute("data-framer-page-link-current")
@@ -312,9 +349,9 @@ export default function CaseStudyLinkRepair({
     enabled = true,
     collectionId = "yTHrQWMIY",
     collectionModuleUrl = "",
-    slugFieldId = "pdXVG_fBO",
+    slugFieldId = "",
     titleFieldId = "oeXZcmPna",
-    urlOverrides = "airpods-pro-3=/case-studies/airpods",
+    urlOverrides = "",
 }: Partial<Props>) {
     React.useEffect(() => {
         if (!enabled || typeof window === "undefined") return
@@ -410,7 +447,8 @@ addPropertyControls(CaseStudyLinkRepair, {
     slugFieldId: {
         type: ControlType.String,
         title: "Slug Field",
-        defaultValue: "pdXVG_fBO",
+        defaultValue: "",
+        placeholder: "Uses item slug",
     },
     titleFieldId: {
         type: ControlType.String,
@@ -420,7 +458,7 @@ addPropertyControls(CaseStudyLinkRepair, {
     urlOverrides: {
         type: ControlType.String,
         title: "Overrides",
-        defaultValue: "airpods-pro-3=/case-studies/airpods",
+        defaultValue: "",
         displayTextArea: true,
     },
 })

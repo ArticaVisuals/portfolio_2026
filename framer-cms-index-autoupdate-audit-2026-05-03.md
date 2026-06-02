@@ -1,15 +1,15 @@
 # Framer Index CMS Auto-Update Audit
 
 **Date:** May 3, 2026
-**Last status check:** May 26, 2026
+**Last status check:** June 2, 2026
 **Scope:** `/index` custom `IndexPage` component and CMS auto-refresh behavior
 **Status:** Non-destructive investigation only. The live `/index` page was not replaced or published. The temporary `/index-cms-test` route was deleted during restore.
 
 ---
 
-## Status Update - May 26, 2026
+## Status Update - June 2, 2026
 
-This file is historical. Do not revive `/index-cms-test` as a default next step just because the original recommendation below says to prototype it. Current `/index` is maintained by `IndexPage.tsx` (`rgAZFOv`) with direct CMS-module loading first, then the legacy registry fallback, manual props, and `DEFAULT_PROJECTS`.
+This file is historical. Do not revive `/index-cms-test` as a default next step just because the original recommendation below says to prototype it. Current `/index` is maintained by `IndexPage.tsx` (`rgAZFOv`) with the mounted `ProjectRegistrar` registry first, then direct CMS-module scan, then manual `projects`; `DEFAULT_PROJECTS` is only used when `useCMS=false`.
 
 The May 26 Framer cleanup removed unused/draft helpers that were not mounted in current page XML: `IndexFilterNavDraftPage.tsx`, `IndexListCursorPreview.tsx`, and `CaseStudyRevealTuner.tsx`. Local-only mirrors `IndexPageFilterNavDraft.tsx` and `IndexRuleColorOverride.tsx` were also removed from the repo. The active `/index` helper stack is now just `IndexPage.tsx`, `CaseStudyThumbnailStrokeStyles.tsx`, and `IndexPageBreakpointsDraft.tsx`.
 
@@ -44,7 +44,7 @@ Variant B from §"Recommended Next Variants" was **partially implemented in the 
 - Discipline / Industry / Year nav lists were derived dynamically from whatever projects were in scope (registry → prop → `DEFAULT_PROJECTS` snapshot, in that priority order). Superseded May 22 by `/ Year / Service / Industry` and direct CMS-module scan before registry fallback.
 - The `IndexPage` Grid view no longer falls back to the native `Case Studies Filter`; later May 2026 work also removed the old `Case Study` module import and now renders project-driven cards as native HTML inside `IndexPage.tsx`.
 
-**Historical missing piece (superseded May 22).** At this May 6 checkpoint, a separate `ProjectRegistrar` code component had not been created, so `/index` fell through to the in-code 15-project `DEFAULT_PROJECTS` snapshot. Later work added the misleadingly named `Test.tsx`/`ProjectRegistrar` bridge, and the current May 22 `IndexPage.tsx` uses direct CMS-module loading before that registry fallback.
+**Historical missing piece (superseded May 22, then superseded again by the June 2 current-state docs).** At this May 6 checkpoint, a separate `ProjectRegistrar` code component had not been created, so `/index` fell through to the in-code 15-project `DEFAULT_PROJECTS` snapshot. Later work added the misleadingly named `Test.tsx`/`ProjectRegistrar` bridge. For the current data priority, use `framer-current-state.md`.
 
 **Net behavior at the May 6 checkpoint:** the published page rendered the in-code snapshot, with simplified industry labels (`Technology`, `Publishing`, `Nature & Outdoors`, `Design Education`, `Health & Wellness`, `Human Rights`, `Science`, `Music`, `Literature`). Current behavior is summarized in the May 22 status update above.
 

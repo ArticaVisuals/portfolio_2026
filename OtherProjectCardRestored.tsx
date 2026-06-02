@@ -1,9 +1,10 @@
 import * as React from "react"
-import { addPropertyControls, ControlType } from "framer"
+import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 type Props = {
     title: string
     sortingNumber: number
+    projectLink: string
     link: string
     thumbnailSrc: string
     thumbnailVideoSrc: string
@@ -14,6 +15,82 @@ const DEFAULT_TEXT_COLOR = "#233324"
 const FLIP_DISTANCE = 18
 const THUMBNAIL_ASPECT_RATIO = "1.674 / 1"
 const EASING = "cubic-bezier(.22, 1, .36, 1)"
+const KNOWN_PROJECT_LINKS: Record<string, string> = {
+    "airpods pro 3": "/case-studies/airpods",
+    "simon & schuster": "/case-studies/simon-schuster",
+    gaia: "/case-studies/gaia",
+    "national park playing cards": "/case-studies/national-park-cards",
+    "motion connect 2025": "/case-studies/motion-connect-2025",
+    yomo: "/case-studies/yomo",
+    karuna: "/case-studies/karuna",
+    "weaponized innocence": "/case-studies/weaponized-innocence",
+    typldn: "/case-studies/typldn",
+    "seek truth": "/case-studies/seek-truth",
+    "cellular symphony": "/case-studies/cellular-symphony",
+    "wolff olins x artcenter": "/case-studies/wolff-olins-x-artcenter",
+    "independent lens": "/case-studies/independent-lens",
+    "neon lights": "/case-studies/neon-lights",
+    "aspen valley landscaping": "/case-studies/aspen-valley-landscaping",
+}
+
+function normalizeTitleKey(value: unknown): string {
+    return String(value ?? "")
+        .toLowerCase()
+        .replace(/\s+/g, " ")
+        .trim()
+}
+
+function isUsableProjectHref(value: string): boolean {
+    return Boolean(value && value !== "#" && value !== "/" && value !== ".")
+}
+
+function normalizeLinkValue(value: unknown): string {
+    if (typeof value === "string") return value.trim()
+
+    if (value && typeof value === "object") {
+        const record = value as Record<string, unknown>
+        const candidate = record.href || record.url || record.path
+        if (typeof candidate === "string") return candidate.trim()
+    }
+
+    return ""
+}
+
+function resolveProjectHref(projectLink: unknown, link: unknown, title: unknown): string {
+    const configuredHref = normalizeLinkValue(projectLink)
+    if (isUsableProjectHref(configuredHref)) return configuredHref
+
+    const legacyHref = normalizeLinkValue(link)
+    if (isUsableProjectHref(legacyHref)) return legacyHref
+
+    return KNOWN_PROJECT_LINKS[normalizeTitleKey(title)] || "#"
+}
+
+function shouldHandleNavigation(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    if (
+        RenderTarget.current() === RenderTarget.canvas ||
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        !href ||
+        href === "#" ||
+        href === "/"
+    ) {
+        return false
+    }
+
+    if (typeof window === "undefined") return false
+
+    try {
+        const url = new URL(href, window.location.href)
+        return url.origin === window.location.origin && url.pathname.startsWith("/case-studies/")
+    } catch {
+        return false
+    }
+}
 
 /**
  * Restored template-style Other Projects card.
@@ -26,6 +103,7 @@ const EASING = "cubic-bezier(.22, 1, .36, 1)"
 export default function OtherProjectCardRestored({
     title = "Title",
     sortingNumber = 0,
+    projectLink = "",
     link = "#",
     thumbnailSrc = "",
     thumbnailVideoSrc = "",
@@ -36,11 +114,24 @@ export default function OtherProjectCardRestored({
         ? String(Number(sortingNumber))
         : String(sortingNumber || "")
     const hasVideo = Boolean(thumbnailVideoSrc)
+    const href = resolveProjectHref(projectLink, link, title)
+
+    const handleClick = React.useCallback(
+        (event: React.MouseEvent<HTMLAnchorElement>) => {
+            if (!shouldHandleNavigation(event, href)) return
+
+            event.preventDefault()
+            event.stopPropagation()
+            window.location.assign(new URL(href, window.location.href).href)
+        },
+        [href]
+    )
 
     return (
         <a
             data-framer-name="Other Project Card"
-            href={link || "#"}
+            href={href}
+            onClick={handleClick}
             aria-label={`${titleText} project`}
             className="mh-other-project-card"
             style={{ color: textColor }}
@@ -182,9 +273,14 @@ addPropertyControls(OtherProjectCardRestored, {
         step: 1,
         displayStepper: true,
     },
-    link: {
+    projectLink: {
         type: ControlType.Link,
         title: "Link",
+    },
+    link: {
+        type: ControlType.Link,
+        title: "Legacy Link",
+        hidden: () => true,
     },
     thumbnailSrc: {
         type: ControlType.String,
