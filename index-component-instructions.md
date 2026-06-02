@@ -41,7 +41,7 @@ Project data flows in through three priority-ranked sources (described in §3). 
 
 The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the List/Grid view state and renders the inline `GRID / LIST` control directly.
 
-**Home note, May 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It is a six-item CMS-backed selected-work query using the native Framer `Case Study` component. Do not recode Home unless Micah explicitly asks.
+**Home note, June 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It now uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) because the native Home `CaseStudy` grid lost reliable link/image/video bindings and collapsed to AirPods content after hydration. Keep Home and `/index` separate; do not reimport the old native Home grid or use `CaseStudyLinkRepair.tsx` as the primary Home mechanism.
 
 **CMS note, June 2026:** the Framer `All Projects` CMS collection has 16 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
 
@@ -229,7 +229,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 ### Project count footer
 
 - GT Standard Mono Trial, 13px, uppercase, color `tokens.textPrimary`.
-- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the current 16-record CMS and no filters, the live CMS-backed page should read `16 Projects` after the Framer draft is published.
+- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the current 16-record CMS and no filters, the live CMS-backed page should read `16 Projects`.
 
 ### Taxonomy filter behavior
 
@@ -525,7 +525,7 @@ addPropertyControls(IndexPage, { /* see §3 */ })
 - **Taxonomy/filter inspiration:** https://searchsystem.co/index
 - **Framework doc:** `portfolio-framework.md`
 - **Copy doc:** `portfolio-copy-v2.md`
-- **CMS auto-update audit:** `framer-cms-index-autoupdate-audit-2026-05-03.md`
+- **CMS workflow:** `case-study-cms-workflow.md`
 
 ---
 

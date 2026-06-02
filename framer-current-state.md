@@ -5,7 +5,7 @@
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
-This is the quick source of truth for the active Framer project and local handoff repo. Older audit docs are retained for history, but this file wins when docs disagree.
+This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
 
 ---
 
@@ -76,7 +76,7 @@ Current reusable component inventory from Framer MCP:
 
 ### Code Components
 
-Framer currently has 28 code components:
+Framer currently has 29 code components:
 
 | Code file | ID | Current role |
 |---|---|---|
@@ -107,7 +107,8 @@ Framer currently has 28 code components:
 | `CaseStudyJustifiedMediaGrid.tsx` | `c0iPrbN` | Bespoke case-study justified media grid helper. |
 | `FixedHeightMediaRows.tsx` | `IthLMt_` | Karuna fixed-height process gallery helper. |
 | `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | Simon & Schuster guidelines carousel helper. |
-| `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Mounted link-repair helper on Home, `/case-studies`, and bespoke case-study pages checked on June 2. |
+| `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS/default selected projects with direct `/case-studies/{slug}` anchors and image/video media fallback. |
+| `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; do not use it as the primary Home fix. |
 
 `RelatedProjectHoverZoom.tsx` remains as a local historical mirror, but it is not present in the June 2 Framer MCP code-component inventory and should not be described as a currently mounted helper unless a future Framer pass finds it again.
 
@@ -184,7 +185,7 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 
 Recommended manual additions remain `Case Study URL` and `Build Status`. Add those in Framer only if the workflow needs them; do not repurpose existing field IDs.
 
-June 1-2, 2026 thumbnail stroke and link repair fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`; `CaseStudyLinkRepair.tsx` (`y6ny5x4`) is mounted as a companion link repair helper. MCP verified AirPods Pro 3 is `stroke: true` with slug `airpods`. On June 2, the Home, `/case-studies`, and `/index` helper instances were updated to use Framer item slugs directly (`slugFieldId=""`) and the old AirPods-only URL override was cleared. The Framer draft needs a manual Framer publish before these latest canvas/helper prop changes appear on the public URL. Before touching or publishing this helper, run `node tools/check-thumbnail-stroke-resolver.mjs` to catch regressions back to the old `module.a`-only lookup.
+June 1-2, 2026 thumbnail stroke and Home link/media fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. MCP verified AirPods Pro 3 is `stroke: true` with slug `airpods`. On June 2, helper instances were updated to use Framer item slugs directly (`slugFieldId=""`) and the old AirPods-only URL override was cleared. The Home selected-work link/media issue was fixed by replacing the broken native Home selected-work grid with `HomeSelectedWorkGrid.tsx` and disabling the Home `CaseStudyLinkRepair.tsx` instance. Before touching or publishing the stroke helper, run `node tools/check-thumbnail-stroke-resolver.mjs` to catch regressions back to the old `module.a`-only lookup.
 
 ---
 
@@ -192,7 +193,7 @@ June 1-2, 2026 thumbnail stroke and link repair fix: the current generated `All 
 
 ### Home
 
-Home is a native Framer page using a CMS-backed selected-work query. It filters `Is Homepage`, orders by `Sorting Number`, and shows the first six items:
+Home is a native Framer page whose selected-work section is now rendered by `HomeSelectedWorkGrid.tsx` (`FecepLS`), mounted as node `h0ZkBCWe1` inside the `Projects` section (`k7gSpMtLR`). The component reads `All Projects` when the generated CMS module is available, falls back to its default project snapshot when needed, filters `Is Homepage`, orders by `Sorting Number`, and shows the first six items:
 
 1. AirPods Pro 3
 2. Simon & Schuster
@@ -203,15 +204,18 @@ Home is a native Framer page using a CMS-backed selected-work query. It filters 
 
 Karuna is off Home because its Home flag is false. Weaponized Innocence is homepage-flagged but outside the first six by sort order.
 
+The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, image/video rendering, the hover label, and the `Thumbnail Stroke` visual fallback for the selected-work section.
+
 Custom code on or affecting Home:
 
 - `TextEncryptionEffect.tsx` for social-label scramble effects.
-- `CaseStudyThumbnailStrokeStyles.tsx` for CMS-driven thumbnail strokes.
-- `CaseStudyLinkRepair.tsx` for repairing CMS card destinations from Framer item slugs.
+- `HomeSelectedWorkGrid.tsx` for selected-work card links and media.
+- `CaseStudyThumbnailStrokeStyles.tsx` for CMS-driven thumbnail strokes in native/media contexts.
+- `CaseStudyLinkRepair.tsx` legacy Home instance `uxp3mYNsy`, currently `enabled=false`.
 - `ScrollToTopButton.tsx` for scroll return.
 - Footer compatibility helpers, including the resume asset/year utilities.
 
-June 2 Framer draft fix: the Home hero line was corrected from `mind.Strategy` to `mind. Strategy`.
+June 2 published fix: the Home hero line was corrected from `mind.Strategy` to `mind. Strategy`, selected-work cards render six distinct projects, card thumbnails/text link to their canonical case-study pages, image thumbnails render for image-only projects, the profile image links to `/info`, and LinkedIn uses the external profile URL.
 
 ### `/index`
 
@@ -243,7 +247,7 @@ The previously mounted cursor-preview helper, `IndexListCursorPreview.tsx`, was 
 - `CaseStudyThumbnailStrokeStyles.tsx`
 - `CaseStudyLinkRepair.tsx`
 
-June 2 Framer draft fix: the visible `NumberCounter` end value was changed from `12` to `16` to match the current `All Projects` CMS item count. Publish from the Framer UI is still required before that count appears publicly.
+June 2 published fix: the visible `NumberCounter` end value was changed from `12` to `16` to match the current `All Projects` CMS item count. If the CMS roster changes later, update or replace this prop-driven count.
 
 ### `/play`
 
@@ -318,7 +322,7 @@ Good future cleanup candidates:
 
 - `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. It intentionally keeps a robust CMS export resolver for both legacy `a` and current `r` Framer module shapes. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
 - `/play` helper consolidation could reduce code-file count, but it is interaction-sensitive and should be treated as a parity refactor, not casual cleanup.
-- `/case-studies` still displays a `NumberCounter` configured by page props. On June 2, the Framer draft prop was updated to `16` to match the CMS roster; a future refactor could make this dynamic.
+- `/case-studies` still displays a `NumberCounter` configured by page props. On June 2, the prop was updated and published as `16` to match the CMS roster; a future refactor could make this dynamic.
 - Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially the `/play` helper stack and `Counter.tsx`.
 - No tracked local TSX or `tools/*` file met the "100% safe to remove" bar in the June 2 stale-code audit. Framer code files often have no local import graph because they are mounted by Framer code-file ID.
 
@@ -333,9 +337,9 @@ For future audits, verify both surfaces:
 
 May 26 visual QA against `https://khaki-ship-257706.framer.app` checked `/`, `/case-studies`, `/index`, `/play`, `/info`, `/contact`, and `/case-studies/airpods` at desktop `1440x1000` and mobile `390x900`. Browser diagnostics found no suspicious route issues: no horizontal overflow, no visibly broken loaded images, and no blank pages. Manual screenshot spot-checks covered Home, `/index`, `/play`, `/case-studies`, and the AirPods page on desktop/mobile. `/index` still showed the `GRID / LIST` control and Year/Service/Industry taxonomy, and `/play` still opened a visible detail sidebar when clicking a visible archive card.
 
-June 1 stroke audit: published Home loaded `CaseStudyThumbnailStrokeStyles.DLdW5YsD.mjs` and `yTHrQWMIY.DrLdZk2a.mjs`; browser inspection showed the AirPods thumbnail had no generated overlay because the published helper looked only for `module.a`. Direct browser import of the same CMS module returned keys `n`, `r`, `t`, with AirPods `{ slug: "airpods", title: "AirPods Pro 3", stroke: true }` under `module.r`. The Framer draft helper now handles that export shape, but the public site remains unchanged until publish.
+June 1 stroke audit: published Home loaded `CaseStudyThumbnailStrokeStyles.DLdW5YsD.mjs` and `yTHrQWMIY.DrLdZk2a.mjs`; browser inspection showed the AirPods thumbnail had no generated overlay because the published helper looked only for `module.a`. Direct browser import of the same CMS module returned keys `n`, `r`, `t`, with AirPods `{ slug: "airpods", title: "AirPods Pro 3", stroke: true }` under `module.r`. The June 2 publish corrected the resolver shape and the Home selected-work rendering path.
 
-June 2 MCP verification: Framer project inventory reports 23 web pages, 2 design pages, 23 native components, 28 code components, 5 override files, and 2 CMS collections. `All Projects` reports 16 records. Targeted page XML checks covered Home, `/case-studies`, `/index`, `/case-studies/airpods`, and `/case-studies/karuna`; the Framer draft was updated for the Home hero spacing typo, `/case-studies` counter value, and helper slug/override props.
+June 2 final MCP/browser verification: Framer project inventory reports 23 web pages, 2 design pages, 23 native components, 29 code components, 5 override files, and 2 CMS collections. `All Projects` reports 16 records. Targeted page XML checks covered Home, `/case-studies`, `/index`, `/case-studies/airpods`, and `/case-studies/karuna`. Published browser QA against `https://khaki-ship-257706.framer.app/` confirmed Home renders six distinct selected-work hrefs (`airpods`, `simon-schuster`, `gaia`, `national-park-cards`, `motion-connect-2025`, `yomo`), thumbnail and text clicks land on the correct case-study pages, image-only thumbnails render as images, AirPods and Motion Connect render video, the Home profile image links to `/info`, and LinkedIn links externally.
 
 Use `node tools/check-thumbnail-stroke-resolver.mjs` as the quick local regression guard for the stroke helper. It confirms the helper still uses Light Gray `#979797`, the CMS `Thumbnail Stroke` field, the current `module.r` CMS export shape, the legacy `module.a` fallback, and the shared resolver call.
 

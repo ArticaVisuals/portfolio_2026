@@ -1,7 +1,7 @@
 # Portfolio Redesign — Strategic Framework & Information Architecture
 
 **For:** Micah Hoang
-**Version:** 1.4 - June 2 Framer audit reflected. CMS has 16 real projects. Home is a six-item CMS-limited selected-work query. Current Framer web routes include the core routes plus bespoke case-study pages documented in `framer-current-state.md`.
+**Version:** 1.5 - June 2 Framer publish and Home selected-work repair reflected. CMS has 16 real projects. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`. Current Framer web routes include the core routes plus bespoke case-study pages documented in `framer-current-state.md`.
 **Date:** May 2026
 **Last Framer structure audit:** June 2, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
 
@@ -60,7 +60,7 @@ Five words to return to whenever a design decision feels unclear:
 
 ### Homepage curation (current Framer Home: 6 visible cards)
 
-The order is a deliberate argument. Each visible Home card earns its slot and reinforces the one before it. Current Framer Home is a CMS-backed selected-work query: `Is Homepage = true`, ordered by `Sorting Number`, limited to 6 records, rendered with the native `Case Study` component rather than a custom code component.
+The order is a deliberate argument. Each visible Home card earns its slot and reinforces the one before it. Current Framer Home uses `HomeSelectedWorkGrid.tsx` to render a CMS-backed selected-work set: `Is Homepage = true`, ordered by `Sorting Number`, limited to 6 records, with direct `/case-studies/{slug}` links and image/video thumbnail handling.
 
 | # | Project | Strategic job | Primary targets |
 |---|---|---|---|
@@ -129,7 +129,7 @@ As of the June 2 audit, the `All Projects` CMS collection contains 16 real proje
 - **Homepage-flagged but not visible because of the six-item query limit:** Weaponized Innocence
 - **Strategic Tier 2 but currently off Home:** Karuna
 - **Archive/off-Home:** Wolff Olins x ArtCenter, Aspen Valley Landscaping, Cellular Symphony, Neon Lights, John Steinbeck, Seek Truth, Independent Lens, TYPLDN
-- **Live `/case-studies` route:** page ID `Rnw1WO1jS`, a case-study index rendered with the native Framer `Case Studies Filter` component. The Framer draft `NumberCounter` prop was updated from `12` to `16` on June 2 to match the current CMS roster; publish from Framer UI is required before the public URL reflects it.
+- **Live `/case-studies` route:** page ID `Rnw1WO1jS`, a case-study index rendered with the native Framer `Case Studies Filter` component. The `NumberCounter` prop was updated and published as `16` on June 2 to match the current CMS roster.
 - **Full roster and field map:** see `framer-current-state.md`.
 
 Important field IDs for future CMS agents:
@@ -174,12 +174,12 @@ micahhoang.info
 │   ├── Work — 6 visible curated projects, mixed grid image/video cards with visual hierarchy
 │   │   ├── Current CMS-limited set: AirPods Pro 3, Simon & Schuster, Gaia
 │   │   ├── National Park Playing Cards, Motion Connect 2025, Yomo
-│   │   └── All cards link to /case-studies/[slug]
+│   │   └── All cards link to /case-studies/[slug] through HomeSelectedWorkGrid.tsx
 │   ├── About — portrait + two-column bio copy with "read more" link to /info
 │   └── Contact CTA — full-viewport forest-green section with email, LinkedIn, Cosmos
 │
 ├── /case-studies
-│   └── Native Framer case-study index: "CASE STUDIES (16)" after June 2 draft update + Case Studies Filter component
+│   └── Native Framer case-study index: "CASE STUDIES (16)" after June 2 publish + Case Studies Filter component
 │
 ├── /case-studies/[slug]
 │   ├── /case-studies/airpods               [Tier 1 — full case study]
@@ -253,8 +253,8 @@ No hamburger on mobile unless absolutely necessary. The current three-item nav f
 The homepage is a one-page scroll with five zones:
 
 1. **Nav bar** — "Micah Hoang" left, "Work · Index · Info" right. Contact exists through `/contact` and CTA/footer links, but is not currently in the primary nav component.
-2. **Hero zone** — current Framer desktop uses a 60vh cream hero with display-scale "MICAH HOANG", the discipline statement, `AVAILABLE FOR WORK`, LinkedIn/Résumé/Cosmos links, scroll prompt, and copyright. The June 2 Framer draft fix confirmed the hero line now uses the approved spacing: `mind. Strategy`. The earlier green-dot/live-time idea is not currently implemented.
-3. **Work zone** — current Framer implementation uses the native `Case Study` component inside a CMS-backed six-item selected-work query. Cards link to `/case-studies/[slug]`, and the `VIEW ALL` CTA links to `/index`. Do not replace this section with a custom code component unless Micah explicitly asks.
+2. **Hero zone** — current Framer desktop uses a 60vh cream hero with display-scale "MICAH HOANG", the discipline statement, `AVAILABLE FOR WORK`, LinkedIn/Résumé/Cosmos links, scroll prompt, and copyright. The June 2 publish confirmed the hero line now uses the approved spacing: `mind. Strategy`. The earlier green-dot/live-time idea is not currently implemented.
+3. **Work zone** — current Framer implementation uses `HomeSelectedWorkGrid.tsx` for the six-item selected-work section. It preserves the intended card visuals while using direct `/case-studies/[slug]` anchors, image/video thumbnail handling, and a CMS/default data fallback. The `VIEW ALL` CTA links to `/index`. Do not reintroduce the broken native Home `AllProjects` / `CaseStudy` grid or a hydration `LinkRepair` as the primary Home mechanism.
 4. **About zone** — current Framer Home uses a portrait plus two columns of bio copy and a `read more` link to `/info`.
 5. **Contact zone** — current Framer Home ends in a full-viewport forest-green CTA with email, LinkedIn, and Cosmos links.
 
@@ -331,7 +331,7 @@ These are resolved decisions and current implementation notes. Treat them as sou
 - ~~**Simon & Schuster scope statement.**~~ ✅ Resolved, then revised. Originally framed as a professional rebrand. Corrected to "concept rebrand" with honest metadata ("2025 · Concept"). Opening uses "rebrand concept" and "I saw an opportunity to reimagine" rather than implying a client engagement.
 - ~~**Concept labeling.**~~ ✅ Resolved. All school projects labeled "Concept" in metadata. Self-initiated projects with real outcomes (Gaia, NPPC) labeled "Self-initiated." Only AirPods carries a client name in metadata.
 - ~~**Weaponized Innocence tier.**~~ ✅ Promoted from Tier 3 (inline expand) to Tier 2 (dedicated visual showcase page). Fonts in Use recognition and editorial depth earn a full page, especially for Target 3.
-- ~~**Homepage layout.**~~ ✅ Resolved. Current Framer Home work section is a six-item CMS-backed selected-work query: AirPods Pro 3, Simon & Schuster, Gaia, National Park Playing Cards, Motion Connect 2025, and Yomo. Do not recode this section as a custom component unless Micah explicitly asks. Current hero is 60vh, not full viewport.
+- ~~**Homepage layout.**~~ ✅ Resolved. Current Framer Home work section is `HomeSelectedWorkGrid.tsx`, rendering six selected projects: AirPods Pro 3, Simon & Schuster, Gaia, National Park Playing Cards, Motion Connect 2025, and Yomo. This replaced the broken native Home selected-work grid whose CMS bindings collapsed to AirPods. Current hero is 60vh, not full viewport.
 - ~~**Template direction.**~~ ✅ Resolved. Jacob Turner Framer template as structural base. Reskin colors, type, spacing to natural/minimal direction. Journal CMS collection still exists but no Journal page appears in current project structure. `/index`, `/case-studies`, `/info`, and `/contact` are live routes. `/worldgrid-test` is no longer a web route.
 - ~~**ArtCenter placement.**~~ ✅ Resolved. Education/background context lives on `/info`, not on the homepage. "Self-initiated" framing for school projects in case study copy.
 - ~~**Testimonials.**~~ ✅ Copy resolved and now visible on `/info`: Nadia, Aaron, and Angela appear in the `WHAT PEOPLE SAY` section. The AirPods detail page can still carry the Nadia quote if the case-study page needs the credential in context.
@@ -339,13 +339,13 @@ These are resolved decisions and current implementation notes. Treat them as sou
 - ~~**Index page layout.**~~ ✅ Resolved (May 26 update). Canonical `/index` is `u2LOaBT5q`; the old duplicate `yKKOMVNs6` and temporary `/index-inline-toggle-test` route are gone. `/index` uses the original-template uppercase `GRID / LIST` control rendered directly by `IndexPage.tsx` after the taxonomy nav. `CLEAR FILTERS` stays as the original left-aligned `TaxonomySection` action, while `IndexPageBreakpointsDraft.tsx` applies style-only matching and keeps a stable 12px/28px/24px action-row rhythm so filters can be selected/deselected without shifting content. The selected view is underlined, and there is no delegated fixed/floating or DOM-mutating toggle helper. List view (default): year-grouped projects with taxonomy filters and near-black `#141414` rules/dividers. Taxonomy follows Figma node `32:7531` at desktop/wide tablet with a flexible six-column grid: Year label/value cols 1/2, Service label/value cols 3/4, Industry label/value cols 5/6. At <=899px the taxonomy/index nav switches to SearchSystem-style label/value rows. The List year-group wrapper shares the 6-col grid; inside it, list rows use a 5-col inner grid on desktop. At <=1199px Standard list year/title type stays at the desktop 22px scale, Service metadata/tags disappear, and Industry stays visible/right-aligned with wrapping instead of truncation. `List Type` A/B: `Standard` keeps large year + 22px title; `Mono 13` makes all list typography 13px uppercase mono. `List Hover` A/B: `Flip` is default (title-only upward flip mirroring `ViewProject` reference `node=L21w7Xq1z`); `Highlight` preserves the older full-row hover. Grid view renders project-driven cards with media, title, and metadata; the unfiltered `Case Studies Filter` fallback was removed. Year / Service / Industry nav values are derived dynamically from the in-scope projects; the previous "eight canonical Discipline labels" lock is not enforced in code. Do not expose 3D mode in `/index` unless Micah explicitly asks. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed on May 26 because they were not active in the current Framer page structure.
 - ~~**Domain and URL.**~~ ✅ Resolved. Keep the portfolio oriented around `micahhoang.info`. Framer staging may appear as `khaki-ship-257706.framer.app`, but the public portfolio target is `micahhoang.info`.
 - ~~**CMS cleanup.**~~ ✅ Resolved. The Jacob Turner sample projects were permanently deleted from the `All Projects` CMS collection. The collection now contains 16 real Micah projects.
-- ~~**Per-project thumbnail stroke.**~~ ✅ Resolved. `All Projects` has a `Thumbnail Stroke` Boolean (`OHdUYs6Mo`), currently on for AirPods Pro 3 and off for the other projects. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) owns the visible 1px Light Gray stroke from CMS, with helper instances on Home, `/case-studies`, and `/index`. The native Framer `Case Study` component also has a real overlay frame inside `ImageWrapper` so the CMS-driven stroke can be visible in the editor canvas; no `CardStroke` variants should be reintroduced. June 1 note: the helper now handles Framer's current generated CMS module export shape (`r` instead of legacy `a`), and the Framer draft must be published before the public staging site reflects that repair.
+- ~~**Per-project thumbnail stroke.**~~ ✅ Resolved. `All Projects` has a `Thumbnail Stroke` Boolean (`OHdUYs6Mo`), currently on for AirPods Pro 3 and off for the other projects. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) owns the visible 1px Light Gray stroke from CMS in native/media contexts, while `HomeSelectedWorkGrid.tsx` mirrors that field for the Home selected-work cards. The native Framer `Case Study` component also has a real overlay frame inside `ImageWrapper` so the CMS-driven stroke can be visible in the editor canvas; no `CardStroke` variants should be reintroduced. June 1-2 note: the helper now handles Framer's current generated CMS module export shape (`r` instead of legacy `a`) and the repair has been published.
 
 ---
 
 ## 07 — Build Phases (recap, for reference)
 
-- **Phase 1 — Foundation** (current status): Jacob Turner Framer template is the structural base. `All Projects` CMS has been cleaned to 16 real projects, sample/template records deleted, and Home uses the native `Case Study` card system through a six-item CMS query. Preserve the existing Home component setup unless there is an explicit redesign request.
+- **Phase 1 — Foundation** (current status): Jacob Turner Framer template is the structural base. `All Projects` CMS has been cleaned to 16 real projects, sample/template records deleted, and Home uses `HomeSelectedWorkGrid.tsx` for the six-item selected-work section. Preserve the existing Home selected-work setup unless there is an explicit redesign request.
 - **Phase 2 — Layout & identity** (current): Continue refining hero zone, project cards, Home about/CTA, `/info` editorial profile page, `/case-studies` index, and `/index` List/Grid views. `/index` Grid view now renders project-driven native HTML cards from the same `filteredProjects` path used by List view, with no native CMS grid fallback.
 - **Phase 3 — Native motion** (Week 2): Framer-native scroll reveals, hover states on project cards (lift/scale), link transitions, and light grid/list motion. The site should feel alive without overcomplicating the code component.
 - **Phase 4 — Custom components** (Week 2-3): Cursor, page transitions, and scroll-scrub on case studies should be built only when they serve the portfolio. The old WorldGrid reference is no longer active in the current Framer inventory; keep 3D/gallery experiments out of `/index` unless Micah explicitly asks to reintroduce them.

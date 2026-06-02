@@ -161,7 +161,7 @@ Ask Micah before:
 - creating a bespoke page that shadows a dynamic slug route
 - bulk-changing Home, `/index`, or `/case-studies` links
 - changing CMS field IDs or repurposing existing fields
-- replacing native Framer case-study card components with custom code
+- replacing `/case-studies` native card systems or `/index` code cards without a verified parity reason
 
 Safe changes without extra permission:
 
@@ -172,7 +172,7 @@ Safe changes without extra permission:
 
 ## 8. Home And Index Requirements
 
-Home currently uses a CMS-backed selected-work query that filters `Is Homepage`, sorts by `Sorting Number`, and limits to six records. The current published set is:
+Home currently uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) for the selected-work section. It reads the `All Projects` CMS module when available, falls back to its default project snapshot when needed, filters `Is Homepage`, sorts by `Sorting Number`, and limits to six records. The current published set is:
 
 - AirPods Pro 3
 - Simon & Schuster
@@ -181,13 +181,15 @@ Home currently uses a CMS-backed selected-work query that filters `Is Homepage`,
 - Motion Connect 2025
 - Yomo
 
-Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized Innocence has `Is Homepage` true but is outside the published first six because its sort order is 8. Project cards link to `/case-studies/[slug]`; the Home selected-work `VIEW ALL` CTA now links to `/index`.
+Karuna is currently off Home because its `Is Homepage` flag is false. Weaponized Innocence has `Is Homepage` true but is outside the published first six because its sort order is 8. Project cards link directly to `/case-studies/[slug]`; the Home selected-work `VIEW ALL` CTA links to `/index`.
+
+Do not restore the old native Home `AllProjects` / `CaseStudy` grid unless it is intentionally rebuilt and verified in the Framer editor. That grid lost reliable per-item CMS bindings and showed AirPods content over every Home card after hydration. `CaseStudyLinkRepair.tsx` is not the primary Home fix; the Home instance is disabled.
 
 `/index` uses the Framer code file `IndexPage.tsx` (`rgAZFOv`). It derives project URLs from `slug` as `/case-studies/${slug}`. That is the right behavior for the hybrid model. When bespoke pages are created at those same canonical paths, `/index` should not need link changes.
 
 Current index data note (June 2, 2026): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop. In CMS mode it reads the mounted `ProjectRegistrar` registry first, then falls back to the generated `All Projects` CMS module (`yTHrQWMIY`), then manual `projects`; it intentionally does not use `DEFAULT_PROJECTS` in CMS mode. Grid view renders native HTML cards inline (no `Case Study` module dependency, uniform 16:9 media, 3/2/1 column responsive grid, title and metadata below media with hover-flip CTA).
 
-Thumbnail stroke note (updated June 2, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). Current verified CMS state is AirPods Pro 3 on with slug `airpods`, all other checked projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved links, which is important for the Home selected-work collection. The June 1 fix makes the helper resolve both legacy Framer CMS exports (`module.a`) and the current published shape (`module.r`, plus scanned object exports) before calling `collectionByLocaleId.default.scanItems()`. On June 2, the helper instances were updated to use Framer item slugs directly (`slugFieldId=""`). `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
+Thumbnail stroke note (updated June 2, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke in native/media contexts on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). `HomeSelectedWorkGrid.tsx` mirrors the same CMS field for its Home cards. Current verified CMS state is AirPods Pro 3 on with slug `airpods`, all other checked projects off. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved links. The June 1 fix makes the helper resolve both legacy Framer CMS exports (`module.a`) and the current published shape (`module.r`, plus scanned object exports) before calling `collectionByLocaleId.default.scanItems()`. On June 2, the helper instances were updated to use Framer item slugs directly (`slugFieldId=""`). `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
 
 ## 9. Recommended Starting Order
 
@@ -217,15 +219,15 @@ Last verified June 2, 2026:
 - Framer MCP project inventory contains `/`, `/404`, `/case-studies`, `/case-studies/:slug`, `/index`, `/play`, `/info`, `/contact`, and 15 bespoke case-study pages.
 - Live Framer staging routes checked in the prior browser pass: `/`, `/index`, `/case-studies`, `/info`, `/contact`, `/play`, and `/case-studies/airpods` returned 200 at desktop and mobile widths. May 26 visual QA is recorded in the final audit response.
 - No horizontal overflow was detected at 1280px desktop or 390px mobile for the checked published routes.
-- Framer draft Home hero line no longer has the old `mind.Strategy` spacing typo; publish from Framer UI is required before the public URL reflects it.
+- Published Home hero line no longer has the old `mind.Strategy` spacing typo.
 - CMS inspected with MCP: `All Projects` has 16 real records.
 - CMS thumbnail stroke field inspected with MCP and browser import: `AirPods Pro 3` is true with slug `airpods`; the other returned project records are false.
 - `CaseStudyThumbnailStrokeStyles.tsx` updated and typechecked in Framer with no errors; final implementation toggles the real Framer overlay frame `sKJdcQrXY` inside `ImageWrapper` when available, with DOM-overlay fallback for custom HTML cards. The June 1 update specifically fixes Framer's current generated CMS module shape, where the collection is exported under `r` instead of legacy `a`.
 - Local regression guard added: run `node tools/check-thumbnail-stroke-resolver.mjs` before changing or publishing the helper so the stroke does not regress to the old `module.a`-only CMS lookup.
-- Public site note: `https://khaki-ship-257706.framer.app/` still serves the pre-fix published bundle until Micah publishes from Framer, so the live AirPods stroke will remain missing there until publish.
+- Published Home selected-work QA passed: six distinct cards render for AirPods Pro 3, Simon & Schuster, Gaia, National Park Playing Cards, Motion Connect 2025, and Yomo; thumbnail and text clicks land on the matching `/case-studies/{slug}` pages; image-only cards render image thumbnails; AirPods and Motion Connect render video.
 - Helper instances verified on Home, `/case-studies`, and `/index`; the dynamic `/case-studies/:slug` route was left untouched to avoid layout normalization risk.
 - Published `/index` inspected: the page has the Year / Service / Industry taxonomy, per-group `All` actions, no horizontal overflow, and simplified visible Industry labels. CMS module resources load, but the legacy window registry was empty during the browser check.
-- `/case-studies` was configured for a `(12)` count via `NumberCounter` page props even though the CMS has 16 records. The Framer draft prop was updated to `16` on June 2; publish from Framer UI is required before the public URL reflects it.
+- `/case-studies` was configured for a `(12)` count via `NumberCounter` page props even though the CMS has 16 records. The prop was updated and published as `16` on June 2.
 - Framer now has canonical `/index` page `u2LOaBT5q`; the older duplicate `yKKOMVNs6` and the temporary `/index-inline-toggle-test` route are gone.
 - No live pages were deleted by MCP in this audit.
 - No CMS fields were changed through MCP.

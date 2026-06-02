@@ -59,7 +59,7 @@ Every case study opening should pass this test: if you read it aloud to a friend
 
 No tagline. No "I design brands that..." sentence. The discipline line does the positioning; the work does the rest.
 
-**Current Framer implementation note:** the Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. The June 2 Framer draft fix corrected the previous `mind.Strategy` spacing typo; publish from Framer UI is required before the public URL reflects it. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
+**Current Framer implementation note:** the Home hero currently renders `MICAH HOANG`, the approved line `Brand designer with a systems mind. Strategy, visual identity, motion.`, an `AVAILABLE FOR WORK` mailto text link, LinkedIn/Résumé/Cosmos links, a scroll prompt, and `©2026`. The June 2 publish corrected the previous `mind.Strategy` spacing typo. Home does not currently render the static green dot or live Pasadena time; treat those as optional future polish, not current copy.
 
 ### About Zone — *Locked*
 
