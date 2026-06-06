@@ -110,6 +110,23 @@ check), not a global controller.
 
 ---
 
+## Consolidated wrapper: CaseStudyControllers — `CaseStudyControllers.tsx`
+
+- **Framer codeFile:** `z13WRHS`
+- **Insert URL:** `https://framer.com/m/CaseStudyControllers-0q1sTD.js`
+
+One component that renders all three controllers (Lightbox + VideoManager +
+LinkRepair) from a single instance, so a page only needs ONE drop-in instead of
+three. It imports the others via their Framer module URLs (the documented
+component-in-code-file pattern; the "cannot find module" typecheck note is just
+the linter not resolving URL imports — it bundles at runtime). Per-controller
+toggles + key props (lightbox videos, video lookahead, link-repair CMS
+collection/title field) are exposed; the rest use each sub-controller's
+defaults. Each sub-controller keeps its own singleton guard, so this is safe to
+run alongside leftover standalone instances during migration — only one of each
+ever activates. Ready to swap in per page when convenient (not yet deployed; the
+15 pages currently still carry the three separate instances).
+
 ## Placement & rollout
 
 Each page needs one instance of each controller. To cover **all case studies at
