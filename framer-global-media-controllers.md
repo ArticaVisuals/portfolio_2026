@@ -127,13 +127,51 @@ run alongside leftover standalone instances during migration — only one of eac
 ever activates. Ready to swap in per page when convenient (not yet deployed; the
 15 pages currently still carry the three separate instances).
 
-## Placement & rollout
+## Placement & rollout (status: deployed to all 15 case studies, 2026-06-06)
 
-Each page needs one instance of each controller. To cover **all case studies at
-once**, embed both inside the shared **Footer** component (so every page that
-renders the footer gets them automatically). The singleton guards make duplicate
-instances harmless. Exclude selectors (notably `a`) protect linked listing/home
-thumbnails from being hijacked.
+Both `CaseStudyLightbox` and `CaseStudyVideoManager` are placed (one instance
+each, absolute 1×1 opacity-0) on the **Desktop root of all 15 bespoke
+case-study pages**, alongside the pre-existing `CaseStudyLinkRepair`:
+motion-connect-2025, simon-schuster, airpods, national-park-cards, yomo, karuna,
+gaia, weaponized-innocence, typldn, seek-truth, cellular-symphony,
+wolff-olins-x-artcenter, independent-lens, neon-lights, aspen-valley-landscaping.
+
+It was done **per-page**, not via a shared Footer: the Footer component
+introspects empty over MCP (`<Footer nodeId="xxIb0BkhJ" />`), so appending to it
+is unsafe. The `CaseStudyControllers` wrapper (above) exists to consolidate the
+three into one instance "for later" — swap each page's three instances for one
+when convenient; the singleton guards make that migration safe.
+
+Insert pattern: `getNodeXml(pageId)` → first nodeId = Desktop root, second =
+first child → `updateXmlForNode(root, <Desktop nodeId=ROOT><FirstChild nodeId=.. />
+<CaseStudyLightbox insertUrl=.. position=absolute ... /><CaseStudyVideoManager ... />
+</Desktop>)`. **Gotcha:** `updateXmlForNode` keeps unreferenced children but places
+them before the listed ones, so on pages whose Desktop has multiple sibling
+content stacks (independent-lens, neon-lights, aspen-valley-landscaping —
+header + body as siblings, not one wrapper) you must reference ALL top-level
+content stacks in order, or the header gets pushed below the body.
+
+Each page must be **published** for instances to go live. Exclude selectors
+(notably `a`) protect linked listing/home thumbnails from being hijacked.
+
+## Posters & de-cargo (2026-06-06)
+
+The `freight.cargo.site` videos (~42) plus 6 on expiring temp hosts (gaia,
+wolff-olins) are slow/at-risk. Decision: **posters now, user re-uploads the
+video files into Framer later** (Framer's API can't ingest video, only images).
+
+- 47 poster stills were generated (ffmpeg, 25%-seek frames) and committed to
+  `case-study-assets/video-posters/` (poster01–47.jpg + `manifest.tsv` + README).
+- **API limitation:** native Framer `<Video>` nodes expose only `posterEnabled`
+  (boolean) — no poster-image attribute — so the ~40 native VideoWrappers
+  (incl. motion-connect's Hype-Reel blank tiles) can only be postered in the
+  Framer UI / during re-upload. Use the staged stills (match by URL in the
+  manifest) for those.
+- Videos in custom poster-aware components CAN be set via the API: grid
+  `c0iPrbN` (poster = 5th `|` field of `itemsData`; motion-connect's `tbZz127bk`,
+  3 videos, done), `ResponsiveCaseStudyVideo` `bsTLKCt` (`poster` prop). The
+  applied poster URLs are interim (catbox); re-point to Framer-CDN copies for
+  permanence if kept.
 
 ## QA harness
 
