@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 2, 2026, via Framer MCP, CMS read, targeted page XML checks, and local repo audit
+**Last audited:** June 8, 2026, via Framer MCP, targeted page XML checks, published-route browser QA, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
@@ -34,6 +34,7 @@ This is the quick source of truth for the active Framer project and local handof
 - `/case-studies/aspen-valley-landscaping` - Bespoke Aspen Valley Landscaping page, page ID `X7cKKlm88`
 - `/index` - Canonical archive page, page ID `u2LOaBT5q`
 - `/play` - Archive media playground, page ID `KbgWr_0BN`
+- `/play-consolidation-draft` - Safe draft mirror for Play consolidation work, page ID `Ri9885Djw`
 - `/info` - Editorial profile/info page, page ID `fxz_zRIyp`
 - `/contact` - Contact page, page ID `gmXtVnIzJ`
 
@@ -76,7 +77,7 @@ Current reusable component inventory from Framer MCP:
 
 ### Code Components
 
-Framer currently has 29 code components:
+Framer currently has 31 code components:
 
 | Code file | ID | Current role |
 |---|---|---|
@@ -89,14 +90,16 @@ Framer currently has 29 code components:
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | CMS-driven thumbnail stroke helper on Home, `/case-studies`, and `/index`. |
 | `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. |
 | `IndexPageBreakpointsDraft.tsx` | `VwMoFWv` | Active hidden `/index` responsive/style helper. Despite the name, it is part of the current `/index` implementation. |
-| `ArchivePlayground.tsx` | `QNpkYp5` | Main `/play` archive media playground. |
-| `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | `/play` nav pointer pass-through, sidebar media sizing, and archive stroke helper. |
-| `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | `/play` sidebar close-rule preservation. |
+| `ArchivePlayground.tsx` | `QNpkYp5` | Active `/play` archive media playground as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, and authorable `Archive Items` content live here. |
+| `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
+| `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Draft mirror mounted on `/play-consolidation-draft`; safe place for future parity experiments before promoting to `/play`. |
+| `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
+| `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `OtherProjectCardRestored.tsx` | `vlwa5Cz` | AirPods related-project card restoration helper. |
-| `PlaygroundInstantExitSnapshot.tsx` | `c2PU6kX` | `/play` same-frame sidebar exit snapshot. |
-| `PlaygroundSidebarColumnGuard.tsx` | `R3ZWYKl` | `/play` sidebar title/description column guard. |
-| `PlaygroundNavExitHold.tsx` | `iivBAHR` | `/play` nav/exit timing helper. |
-| `PlaygroundMediaLoadSmoother.tsx` | `FFqrKyU` | `/play` media-load smoothing helper. |
+| `PlaygroundInstantExitSnapshot.tsx` | `c2PU6kX` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
+| `PlaygroundSidebarColumnGuard.tsx` | `R3ZWYKl` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
+| `PlaygroundNavExitHold.tsx` | `iivBAHR` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
+| `PlaygroundMediaLoadSmoother.tsx` | `FFqrKyU` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `ScrollToTopButton.tsx` | `gh4ngZN` | Scroll-to-top helper used on Home and `/info`. |
 | `InfoScrollMoreColorOverride.tsx` | `AZDGWx7` | `/info` Scroll More color override. |
 | `ResponsiveCaseStudyVideo.tsx` | `bsTLKCt` | Case-study media helper for responsive video blocks. |
@@ -106,11 +109,31 @@ Framer currently has 29 code components:
 | `CaseStudyScrambleText.tsx` | `dHFQCIH` | Scramble text CTA/helper used in bespoke case-study pages. |
 | `CaseStudyJustifiedMediaGrid.tsx` | `c0iPrbN` | Bespoke case-study justified media grid helper. |
 | `FixedHeightMediaRows.tsx` | `IthLMt_` | Karuna fixed-height process gallery helper. |
-| `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | Simon & Schuster guidelines carousel helper. |
+| `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + lightbox + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. See "Reusable Image Carousel" below. |
 | `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS/default selected projects with direct `/case-studies/{slug}` anchors and image/video media fallback. |
 | `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; do not use it as the primary Home fix. |
 
 `RelatedProjectHoverZoom.tsx` remains as a local historical mirror, but it is not present in the June 2 Framer MCP code-component inventory and should not be described as a currently mounted helper unless a future Framer pass finds it again.
+
+#### Play page consolidation — active as of June 8, 2026
+
+`/play` (`KbgWr_0BN`) mounts one active production archive component on the Desktop variant: `ArchivePlayground` node `kgFbinZvY`, backed by `ArchivePlayground.tsx` (`QNpkYp5`). The promoted component was copied from the working `/play-consolidation-draft` build and now owns the archive grid, detail drawer, rotating Close text, slide-down nav reveal after close, media fade/stroke behavior, footer hiding, nav passthrough behavior, and content editing controls.
+
+Content management should happen in the Framer properties panel under `Archive Items`. Each row exposes `Title`, `Description`, `Type`, `Media / Poster`, conditional `Video`, `Category`, aspect width/height, and `Stroke`. Leave `Advanced` off for normal content edits; it hides the layout, motion, color, nav, and timing controls so the page stays easy to manage long term.
+
+The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) remain on the live `/play` canvas as rollback material, but each is set to `enabled=false`. `ArchivePlaygroundConsolidated.tsx` (`D5YVims`) also remains in the Framer code-file inventory as an unmounted earlier attempt. `/play-consolidation-draft` (`Ri9885Djw`) still mounts `ArchivePlaygroundConsolidatedDraft.tsx` (`aEyj7Rq`) at node `gITHlJyGo` and should be used for future Play experiments before promotion.
+
+#### Reusable Image Carousel — recycle this for new case studies (added 2026-06-04)
+
+`SimonSchusterGuidelinesCarousel.tsx` (code file `tYFZCey`, default export **`ImageCarousel`**) is a **general-purpose, reusable** component despite its filename — the filename is misleading because Framer MCP cannot rename code files (rename in the Framer UI if wanted; safe, since instances bind to componentId `codeFile/tYFZCey:default`). **For any future case study that needs an image gallery/slideshow, reuse this instead of writing a new helper.**
+
+Features: cross-fade autoplay (pause on hover), optional dots/counter, fullscreen lightbox, and prev/next arrows set in the site typeface (GT Standard `‹ ›` guillemets via `"GT Standard L Regular"` — verified that webfont carries U+2039/203A; the *Trial* weights do not).
+
+Two ways to supply slides (instance props):
+- **`sourceMode="manifest"` + `slidesData`**: one slide per line, `imageUrl|alt`. **Scriptable via MCP** — set the entire list in a single `updateXmlForNode` call. Use this when an agent is populating images.
+- **`sourceMode="images"` + `slides` array**: native image-picker with drag-to-reorder thumbnails. **Cannot be set via MCP** (Framer silently drops Array/ResponsiveImage instance props); must be filled in the Framer UI. The component falls back to the manifest while the array is empty, so both can coexist during migration.
+
+**Image hosting / de-cargo rule:** host slide images on Framer's own CDN (`framerusercontent.com`), never cargo. To move local/external images onto Framer's CDN via MCP: optimize (`sips -Z 1800 -s format jpeg -s formatOptions 82`), upload to litterbox (`litterbox.catbox.moe`, catbox returns 500s) for a temp URL, then set that URL as a throwaway frame's `backgroundImage` — Framer rehosts it and the `updateXmlForNode` response returns the permanent `framerusercontent.com/images/HASH.jpg` URL to harvest. Batch ≤16 frames per call (more times out at 30s); Framer dedupes identical bytes; the CDN URLs persist after the temp frames are deleted.
 
 Code files removed from the Framer project on May 26 because they were not mounted in the current page/component structure:
 
@@ -166,7 +189,8 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 - `E6OpH0hSs` - Category 3 / Service 3
 - `VeDm9FjW4` - About the project
 - `Jy7hBJady` - Thumbnail
-- `WG62tRjG8` - Thumbnail Video Link
+- `SvOqFqdby` - Thumbnail Video, File upload
+- `WG62tRjG8` - Thumbnail Video Link, legacy text field
 - `OHdUYs6Mo` - Thumbnail Stroke
 - `vlN2R_qnF` - Client
 - `QZqSK_3OF` - Year, stored as a string
@@ -251,17 +275,11 @@ June 2 published fix: the visible `NumberCounter` end value was changed from `12
 
 ### `/play`
 
-`/play` is the archive media playground. Active code files:
+`/play` is the archive media playground. Active production code file:
 
 - `ArchivePlayground.tsx`
-- `PlaygroundNavPassthrough.tsx`
-- `PlaygroundRuleExitGuard.tsx`
-- `PlaygroundInstantExitSnapshot.tsx`
-- `PlaygroundSidebarColumnGuard.tsx`
-- `PlaygroundNavExitHold.tsx`
-- `PlaygroundMediaLoadSmoother.tsx`
 
-These helpers are intentionally kept because they preserve the current pointer, sidebar, close animation, media sizing, and nav interaction behavior. Consolidating them into fewer files is possible later, but should only happen behind visual parity checks.
+The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage archive content through the `Archive Items` array on the `ArchivePlayground` instance. Use `/play-consolidation-draft` for future component experiments before touching the production `/play` page.
 
 ### `/info`
 
@@ -277,13 +295,15 @@ The current page is an editorial forest-green profile page with selected experie
 
 Bespoke pages now exist for AirPods, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, TYPLDN, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Neon Lights, and Aspen Valley Landscaping.
 
+Case-study media row rule (June 7, 2026): when a desktop case-study body row has one, two, or three media items, keep those items in a single row at tablet and phone breakpoints. Prefer native Framer layout controls: horizontal Stack/Grid, wrapping off, and no large mobile `minWidth` on the media wrappers. For existing media-grid code component instances that expose a stacking threshold, keep `forceSingleRow` enabled and lower `stackBelow` to the minimum allowed value (`240`) instead of creating a new component.
+
 Common/custom helpers seen in the checked pages include:
 
 - `OtherProjectCardRestored.tsx`
 - `CaseStudyLinkRepair.tsx`
 - `CaseStudyJustifiedMediaGrid.tsx`
 - `CaseStudyScrambleText.tsx`
-- project-specific media/gallery helpers such as `FixedHeightMediaRows.tsx`, `TypldnProcessGallery.tsx`, `SeekTruthCargoSlideshow.tsx`, and `SimonSchusterGuidelinesCarousel.tsx`
+- project-specific media/gallery helpers such as `FixedHeightMediaRows.tsx`, `TypldnProcessGallery.tsx`, and `SeekTruthCargoSlideshow.tsx` (note: `SimonSchusterGuidelinesCarousel.tsx` / code file `tYFZCey` is **no longer project-specific** — it is now the reusable `ImageCarousel`; recycle it for new galleries rather than writing a new helper. See "Reusable Image Carousel" in Code Components.)
 
 The removed `CaseStudyRevealTuner.tsx` is no longer mounted in current XML and should not be described as part of the active AirPods page. `RelatedProjectHoverZoom.tsx` is also absent from the June 2 Framer code-component inventory.
 
@@ -314,16 +334,16 @@ No web pages, native Framer components, CMS records, text styles, color styles, 
 
 Safe to keep:
 
-- `/play` helper files are mounted and currently protect interaction polish.
+- `/play` legacy helper files should remain for rollback context, but their live instances are disabled after the June 8 consolidation promotion.
 - `ResumeAssetHost.tsx` should remain because the Footer expects its prop/control shape.
 - The five legacy override files should remain unless a Framer publish check proves they are fully unused.
 
 Good future cleanup candidates:
 
 - `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. It intentionally keeps a robust CMS export resolver for both legacy `a` and current `r` Framer module shapes. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
-- `/play` helper consolidation could reduce code-file count, but it is interaction-sensitive and should be treated as a parity refactor, not casual cleanup.
+- Future `/play` changes should start on `/play-consolidation-draft`, pass visual parity checks, then be promoted into `ArchivePlayground.tsx` (`QNpkYp5`).
 - `/case-studies` still displays a `NumberCounter` configured by page props. On June 2, the prop was updated and published as `16` to match the CMS roster; a future refactor could make this dynamic.
-- Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially the `/play` helper stack and `Counter.tsx`.
+- Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially `Counter.tsx` and any unmirrored rollback helpers.
 - No tracked local TSX or `tools/*` file met the "100% safe to remove" bar in the June 2 stale-code audit. Framer code files often have no local import graph because they are mounted by Framer code-file ID.
 
 ---
@@ -344,3 +364,5 @@ June 2 final MCP/browser verification: Framer project inventory reports 23 web p
 Use `node tools/check-thumbnail-stroke-resolver.mjs` as the quick local regression guard for the stroke helper. It confirms the helper still uses Light Gray `#979797`, the CMS `Thumbnail Stroke` field, the current `module.r` CMS export shape, the legacy `module.a` fallback, and the shared resolver call.
 
 Known non-blocking console noise remains: Framer logged recoverable React hydration warnings (`#422` / `#425`) and some aborted analytics/media requests during route changes. No page errors were recorded in this pass.
+
+June 8 Play promotion QA: Framer MCP verified `/play` Desktop node `pRc4v8wUe` now mounts `ArchivePlayground` node `kgFbinZvY` backed by `ArchivePlayground.tsx` (`QNpkYp5`), with all six legacy helper instances set to `enabled=false`. Published-route browser QA at `https://khaki-ship-257706.framer.app/play` confirmed the production marker `data-playground-root`, 15 visible desktop cards with no broken visible images, 8 visible mobile cards with no broken visible images, no console errors, the rolling Close text structure, and the post-close off-canvas panel/nav passthrough state. Framer emitted only its own tree-mode fallback warnings.

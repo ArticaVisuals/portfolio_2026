@@ -1,11 +1,13 @@
 # Portfolio Redesign — Strategic Framework & Information Architecture
 
 **For:** Micah Hoang
-**Version:** 1.5 - June 2 Framer publish and Home selected-work repair reflected. CMS has 16 real projects. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`. Current Framer web routes include the core routes plus bespoke case-study pages documented in `framer-current-state.md`.
+**Version:** 1.6 - June 8 Play promotion reflected. CMS has 16 real projects. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`. `/play` now uses the promoted consolidated `ArchivePlayground.tsx` component with authorable `Archive Items` controls. Current Framer web routes include the core routes, `/play-consolidation-draft`, and bespoke case-study pages documented in `framer-current-state.md`.
 **Date:** May 2026
-**Last Framer structure audit:** June 2, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
+**Last Framer structure audit:** June 8, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
 
 **Maintenance note, May 26, 2026:** The current Framer project no longer includes `/play-2`, `/playground-scroll-draft`, `/worldgrid-test`, `WorldGridTest.tsx`, `ImageMaskReveal.tsx`, `IndexRuleColorOverride.tsx`, `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, or `CaseStudyRevealTuner.tsx`. Those names may appear in older historical notes, but they are not active current inventory.
+
+**Play note, June 8, 2026:** The live `/play` page is managed through `ArchivePlayground.tsx` (`QNpkYp5`). Add, reorder, or edit Play media through the component's `Archive Items` array in Framer; use `/play-consolidation-draft` for future interaction refactors before promoting to production.
 
 ---
 
@@ -140,7 +142,8 @@ Important field IDs for future CMS agents:
 - `VV1CggU2J` Category 2
 - `E6OpH0hSs` Category 3
 - `Jy7hBJady` Thumbnail
-- `WG62tRjG8` Thumbnail Video Link
+- `SvOqFqdby` Thumbnail Video
+- `WG62tRjG8` Thumbnail Video Link (legacy text fallback)
 - `vlN2R_qnF` Client
 - `QZqSK_3OF` Year. MCP reports this CMS field as a string field even though `IndexPage.tsx` currently types the bound prop as a number; preserve the field ID and coerce carefully if touching data plumbing.
 - `mBIilFqVM` Industry

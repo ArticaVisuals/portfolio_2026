@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** June 2, 2026
+**Last verified:** June 8, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -29,9 +29,10 @@ Verified Framer structure:
 - `/info` - profile page, page ID `fxz_zRIyp`
 - `/contact` - contact page, page ID `gmXtVnIzJ`
 - `/play` - archive media playground, page ID `KbgWr_0BN`
+- `/play-consolidation-draft` - safe draft route for future Play consolidation experiments, page ID `Ri9885Djw`
 - `/404` - 404 page, page ID `koPvme2ig`
 
-There is no current `/profile` web page; `/info` is the live profile route. There is also no current `/worldgrid-test`, `/play-2`, or `/playground-scroll-draft` web page in the May 26 Framer project inventory.
+There is no current `/profile` web page; `/info` is the live profile route. There is also no current `/worldgrid-test`, `/play-2`, or `/playground-scroll-draft` web page in the June 8 Framer project inventory.
 
 Verified CMS structure:
 
@@ -71,7 +72,7 @@ Current verified Framer staging checks returned HTTP 200 for:
 - `/play`
 - `/case-studies/airpods`
 
-`/play-2` and `/playground-scroll-draft` are no longer present in the May 26 Framer web-page inventory. Treat older references to them as historical drafts, not current route obligations.
+`/play-2` and `/playground-scroll-draft` are no longer present in the June 8 Framer web-page inventory. Treat older references to them as historical drafts, not current route obligations. Use `/play-consolidation-draft` for current Play experimentation before touching production `/play`.
 
 The dynamic `/case-studies/:slug` page currently handles individual project routes. When creating bespoke case-study pages, only create or move a page into a canonical `/case-studies/[slug]` path after confirming how Framer will resolve that path against the existing dynamic route. Ask Micah before deleting, renaming, or shadowing the dynamic page.
 
@@ -139,6 +140,7 @@ Do not put all of this into CMS fields unless the page can genuinely share the s
    - Build the page layout manually in Framer.
    - Use CMS metadata for cards and browsing, not as the only source of page structure.
    - Keep page-level typography, spacing, and media rhythm aligned with the portfolio design system.
+   - For an image gallery/slideshow, **reuse the `ImageCarousel` component** (code file `tYFZCey`) instead of building a new one — fade carousel + lightbox + GT Standard `‹ ›` arrows. Populate it via the `manifest` prop (scriptable, one `imageUrl|alt` per line) or the `images` picker (Framer UI only). Host slide images on `framerusercontent.com`, never cargo. Full details + the de-cargo asset-ingest steps are in `framer-current-state.md` → "Reusable Image Carousel".
 
 6. Preserve index/home links.
    - Home cards should continue linking to `/case-studies/[slug]`.
