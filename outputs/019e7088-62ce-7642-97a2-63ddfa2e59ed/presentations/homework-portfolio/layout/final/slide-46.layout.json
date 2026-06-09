@@ -1,0 +1,496 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/vgnjgr",
+    "id": "vgnjgr",
+    "slide": 46,
+    "layoutId": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Inter"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4zidonyd",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4F0E7",
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fepkzupw",
+      "id": "2",
+      "bbox": [
+        58,
+        26,
+        600,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Yomo / Outcomes",
+      "textPreview": "Yomo / Outcomes",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Inter",
+        "color": "#5F5A51",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Yomo / Outcomes"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Yomo / Outcomes",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 13,
+            "typeface": "Inter",
+            "color": "#5F5A51",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Yomo / Outcomes",
+              "anchor": 1,
+              "fontSize": 13,
+              "typeface": "Inter",
+              "color": "#5F5A51",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mtwra5gb",
+      "id": "3",
+      "bbox": [
+        58,
+        55,
+        1164,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D7D0C3",
+      "lineColor": "#D7D0C3",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xc3ylc7u",
+      "id": "4",
+      "bbox": [
+        58,
+        55,
+        138,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#E54F55",
+      "lineColor": "#E54F55",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4r65wjud",
+      "id": "5",
+      "bbox": [
+        58,
+        84,
+        550,
+        94
+      ],
+      "geometry": "rect",
+      "text": "Mobile + Desktop Product",
+      "textPreview": "Mobile + Desktop Product",
+      "resolvedFontSize": 35,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 35,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Mobile + Desktop Product"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Mobile + Desktop Product",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 35,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mobile + Desktop Product",
+              "anchor": 1,
+              "fontSize": 35,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f6dcbulw",
+      "id": "6",
+      "bbox": [
+        58,
+        190,
+        486,
+        128
+      ],
+      "geometry": "rect",
+      "text": "Yomo connects food restrictions to recipes, restaurants, grocery decisions, and cross-device use.",
+      "textPreview": "Yomo connects food restrictions to recipes, restaurants, grocery decisions, and cross-device use.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "Inter",
+        "color": "#5F5A51",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Yomo connects food restrictions to recipes, restaurants,"
+          },
+          {
+            "index": 2,
+            "text": "grocery decisions, and cross-device use."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Yomo connects food restrictions to recipes, restaurants, grocery decisions, and cross-device use.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 18,
+            "typeface": "Inter",
+            "color": "#5F5A51",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Yomo connects food restrictions to recipes, restaurants, grocery decisions, and cross-device use.",
+              "anchor": 1,
+              "fontSize": 18,
+              "typeface": "Inter",
+              "color": "#5F5A51",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mlkjm1cf",
+      "id": "7",
+      "bbox": [
+        58,
+        344,
+        120,
+        5
+      ],
+      "geometry": "rect",
+      "fillColor": "#E54F55",
+      "lineColor": "#E54F55",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/s36hcrmh",
+      "id": "8",
+      "bbox": [
+        536,
+        92,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "2f706597-75d5-4366-a772-b88d2b7e7599",
+        "contentType": "image/jpeg",
+        "byteLength": 655476
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hoza1gvy",
+      "id": "9",
+      "bbox": [
+        774,
+        92,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "5009eae7-ea8a-4909-9c18-7d53044d412c",
+        "contentType": "image/jpeg",
+        "byteLength": 381818
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/58z25kb6",
+      "id": "10",
+      "bbox": [
+        1012,
+        92,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "84a35f51-04eb-42af-a649-9ffcf280937f",
+        "contentType": "image/jpeg",
+        "byteLength": 641868
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/gn29gr2p",
+      "id": "11",
+      "bbox": [
+        536,
+        282,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "346a1a9b-e90a-44af-8229-1844346399e3",
+        "contentType": "image/jpeg",
+        "byteLength": 479288
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/n29gr2p8",
+      "id": "12",
+      "bbox": [
+        774,
+        282,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "4db3fecc-ce10-4432-a1fe-cde12c0698be",
+        "contentType": "image/jpeg",
+        "byteLength": 278603
+      }
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/yhgn29gr",
+      "id": "13",
+      "bbox": [
+        1012,
+        282,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "a21fc5a1-3bf2-4a6a-99bc-0ec464a14cf7",
+        "contentType": "image/jpeg",
+        "byteLength": 270078
+      }
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/5wjudg7a",
+      "id": "14",
+      "bbox": [
+        536,
+        472,
+        220,
+        168
+      ],
+      "alt": "Mobile + Desktop Product",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "97369d31-f4bb-412f-9e2d-b40577602f81",
+        "contentType": "image/jpeg",
+        "byteLength": 139122
+      }
+    }
+  ],
+  "composeRuns": []
+}

@@ -77,7 +77,7 @@ Current reusable component inventory from Framer MCP:
 
 ### Code Components
 
-Framer currently has 31 code components:
+Framer code components relevant to this handoff include:
 
 | Code file | ID | Current role |
 |---|---|---|
@@ -90,6 +90,8 @@ Framer currently has 31 code components:
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | CMS-driven thumbnail stroke helper on Home, `/case-studies`, and `/index`. |
 | `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. |
 | `IndexPageBreakpointsDraft.tsx` | `VwMoFWv` | Active hidden `/index` responsive/style helper. Despite the name, it is part of the current `/index` implementation. |
+| `IndexGridVideoHoverFix.tsx` | `kjMWwjO` | Hidden `/index` CSS guard mounted as `JvCNoMs41`; keeps helper-generated grid videos on the same hover/focus scale path as image thumbnails and respects reduced motion. |
+| `PublicEditorControlGuard.tsx` | `ztNOibx` | Hidden public a11y guard that removes Framer's `#__framer-editorbar-label` / "Edit Content" overlay from published and preview pages while skipping canvas/thumbnail render targets. |
 | `ArchivePlayground.tsx` | `QNpkYp5` | Active `/play` archive media playground as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, and authorable `Archive Items` content live here. |
 | `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
 | `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Draft mirror mounted on `/play-consolidation-draft`; safe place for future parity experiments before promoting to `/play`. |
@@ -112,8 +114,14 @@ Framer currently has 31 code components:
 | `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + lightbox + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. See "Reusable Image Carousel" below. |
 | `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS/default selected projects with direct `/case-studies/{slug}` anchors and image/video media fallback. |
 | `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; do not use it as the primary Home fix. |
+| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study page-level lightbox/controller. Mounted on bespoke case-study pages. |
+| `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study page-level autoplay video manager. Mounted on bespoke case-study pages. |
+| `CaseStudyControllers.tsx` | `z13WRHS` | Unmounted migration wrapper that can replace separate Lightbox, VideoManager, and LinkRepair instances later. Keep as the consolidation endpoint. |
+| `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Aspen Valley Landscaping mobile descriptor layout helper. Mounted on `/case-studies/aspen-valley-landscaping`. |
 
-`RelatedProjectHoverZoom.tsx` remains as a local historical mirror, but it is not present in the June 2 Framer MCP code-component inventory and should not be described as a currently mounted helper unless a future Framer pass finds it again.
+June 8 cleanup: `CaseStudyThumbnailVideoSync.tsx` (`qONpo1v`) was removed from Home, `/case-studies`, `/index`, and `/case-studies/aspen-valley-landscaping`, then deleted from Framer after its mounted behavior was consolidated into the existing page/component thumbnail video paths. `RelatedProjectHoverZoom.tsx` was also removed from the local repo; it was a historical mirror and is not present in the current Framer MCP code-component inventory.
+
+June 8 accessibility fix: `PublicEditorControlGuard.tsx` (`ztNOibx`) was created in Framer and mirrored locally. It is mounted as an invisible 1px linked instance on `/`, `/404`, `/case-studies`, `/case-studies/:slug`, all listed bespoke case-study pages, `/index`, `/play`, `/play-a11y-draft`, `/info`, and `/contact` to hide the Framer editorbar "Edit Content" control from public/preview output. Several bespoke case-study page IDs returned empty XML through MCP before the guard was added, so MCP inserted the guard directly at the page root for those routes.
 
 #### Play page consolidation — active as of June 8, 2026
 
@@ -190,7 +198,6 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 - `VeDm9FjW4` - About the project
 - `Jy7hBJady` - Thumbnail
 - `SvOqFqdby` - Thumbnail Video, File upload
-- `WG62tRjG8` - Thumbnail Video Link, legacy text field
 - `OHdUYs6Mo` - Thumbnail Stroke
 - `vlN2R_qnF` - Client
 - `QZqSK_3OF` - Year, stored as a string
@@ -209,7 +216,9 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 
 Recommended manual additions remain `Case Study URL` and `Build Status`. Add those in Framer only if the workflow needs them; do not repurpose existing field IDs.
 
-June 1-2, 2026 thumbnail stroke and Home link/media fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. MCP verified AirPods Pro 3 is `stroke: true` with slug `airpods`. On June 2, helper instances were updated to use Framer item slugs directly (`slugFieldId=""`) and the old AirPods-only URL override was cleared. The Home selected-work link/media issue was fixed by replacing the broken native Home selected-work grid with `HomeSelectedWorkGrid.tsx` and disabling the Home `CaseStudyLinkRepair.tsx` instance. Before touching or publishing the stroke helper, run `node tools/check-thumbnail-stroke-resolver.mjs` to catch regressions back to the old `module.a`-only lookup.
+June 1-2, 2026 thumbnail stroke and Home link/media fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. On June 2, helper instances were updated to use Framer item slugs directly (`slugFieldId=""`) and the old AirPods-only URL override was cleared. The Home selected-work link/media issue was fixed by replacing the broken native Home selected-work grid with `HomeSelectedWorkGrid.tsx` and disabling the Home `CaseStudyLinkRepair.tsx` instance. Before touching or publishing the stroke helper, run `node tools/check-thumbnail-stroke-resolver.mjs` to catch regressions back to the old `module.a`-only lookup.
+
+June 8, 2026 Gaia CMS/Home verification: Framer MCP and published-route Playwright inspection verified that Home remains linked to `All Projects`. Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, and `Thumbnail=https://framerusercontent.com/images/XBEu3UkNu8Hm5CPrgksq7wtmbw.gif`; the hydrated published Home card rendered the same GIF and `data-thumbnail-stroke="true"`. AirPods Pro 3 and Gaia are currently the homepage-visible projects with `Thumbnail Stroke` enabled.
 
 ---
 
@@ -248,10 +257,15 @@ June 2 published fix: the Home hero line was corrected from `mind.Strategy` to `
 - `IndexPage.tsx` (`rgAZFOv`)
 - `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`)
 - `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`)
+- `IndexGridVideoHoverFix.tsx` (`kjMWwjO`, mounted as hidden node `JvCNoMs41`)
 
 `IndexPage.tsx` owns taxonomy filters, list rows, grid cards, project count, view state, and the inline `GRID / LIST` control. The visible taxonomy is `/ Year`, `/ Service`, `/ Industry`; each group has its own `All` clear action. Grid view renders native HTML cards inside the code component rather than calling the native Framer `Case Study` module.
 
-June 1, 2026 CMS bridge note: `/index` includes a hidden-by-position CMS bridge layer, `CmsLink` (`AwTGGhR7I`), containing the `AllProject` collection item and `ProjectRegistrar` (`I063adJ_h`). Keep this layer **visible/mounted** in Framer's layer panel, but fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, `opacity="0"`, `overflow="hidden"`, and locked. Do not use the Framer hidden/eye toggle on this collection or any parent, because that unmounts the collection and stops the registrar from populating `/index`.
+June 8, 2026 Motion Connect grid hover fix: live inspection showed the published `/index` CSS did not include the direct-child `.idx-grid-card-media > video` hover selector used by helper-generated thumbnail videos, so the Motion Connect video stayed visually static while the card title hover flip still worked. `IndexGridVideoHoverFix.tsx` (`kjMWwjO`) is mounted hidden on `/index` as `JvCNoMs41` to patch `.idx-grid-card-media > img/video` hover/focus scale to `1.02` and force `scale(1)` under `prefers-reduced-motion: reduce`. Publish the Framer site after this canvas edit before expecting `khaki-ship-257706.framer.app` to reflect it.
+
+June 8, 2026 archive thumbnail video update: the live `/index` `IndexPage` instance reads `thumbnailVideoFieldIds="SvOqFqdby"`, so the `Thumbnail Video` File upload is the only active CMS thumbnail-video source. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used as a fallback. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The hidden `CmsLink` collection list remains mounted so Framer's generated CMS module is available. If the `ProjectRegistrar` bridge provides incomplete rows, `IndexPage` hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated CMS module by slug/title before rendering the grid. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` (`szF9sZNWA`) remains configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup overlay path. Wolff Olins x ArtCenter, Cellular Symphony, Neon Lights, Motion Connect 2025, and AirPods Pro 3 have populated `Thumbnail Video` File values (`SvOqFqdby`) on Framer's CDN. The published site needs a Framer publish/redeploy before canvas/CMS File-field changes appear in the generated CMS bundle. `IndexThumbnailVideoFallback.tsx` (`wvucZCT`) and its hidden node (`R9kqDJO7t`) were deleted from Framer; do not recreate a hardcoded per-project fallback helper.
+
+June 1, 2026 CMS bridge note, revised June 8: `/index` includes a hidden-by-position CMS bridge layer, `CmsLink` (`AwTGGhR7I`), containing the `AllProject` collection item. Keep this collection layer **visible/mounted** in Framer's layer panel, but fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, `opacity="0"`, `overflow="hidden"`, and locked, because it keeps Framer's generated CMS module available to `IndexPage`. If `ProjectRegistrar` (`I063adJ_h`) remains mounted, bind/pass the `Thumbnail`, `Thumbnail Video`, and `Thumbnail Stroke` fields or rely on `IndexPage`'s CMS-module hydration so registry rows cannot override richer CMS rows with stale media/stroke data.
 
 Data priority with `useCMS=true` is:
 
@@ -305,7 +319,7 @@ Common/custom helpers seen in the checked pages include:
 - `CaseStudyScrambleText.tsx`
 - project-specific media/gallery helpers such as `FixedHeightMediaRows.tsx`, `TypldnProcessGallery.tsx`, and `SeekTruthCargoSlideshow.tsx` (note: `SimonSchusterGuidelinesCarousel.tsx` / code file `tYFZCey` is **no longer project-specific** — it is now the reusable `ImageCarousel`; recycle it for new galleries rather than writing a new helper. See "Reusable Image Carousel" in Code Components.)
 
-The removed `CaseStudyRevealTuner.tsx` is no longer mounted in current XML and should not be described as part of the active AirPods page. `RelatedProjectHoverZoom.tsx` is also absent from the June 2 Framer code-component inventory.
+The removed `CaseStudyRevealTuner.tsx` is no longer mounted in current XML and should not be described as part of the active AirPods page. `RelatedProjectHoverZoom.tsx` was also absent from the Framer code-component inventory and has been removed from the local repo.
 
 ---
 

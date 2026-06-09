@@ -1,0 +1,539 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/5x6y0p",
+    "id": "5x6y0p",
+    "slide": 3,
+    "layoutId": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Inter"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6xkf6dcb",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F8F5EF",
+      "lineColor": "#F8F5EF",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "2",
+      "bbox": [
+        58,
+        64,
+        520,
+        66
+      ],
+      "geometry": "rect",
+      "text": "Editorial Spine",
+      "textPreview": "Editorial Spine",
+      "resolvedFontSize": 54,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 54,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Editorial Spine"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Editorial Spine",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 54,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Editorial Spine",
+              "anchor": 1,
+              "fontSize": 54,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oza1gvy9",
+      "id": "3",
+      "bbox": [
+        58,
+        188,
+        810,
+        74
+      ],
+      "geometry": "rect",
+      "text": "This submission is structured as a portfolio process book rather than a loose compilation of final boards.",
+      "textPreview": "This submission is structured as a portfolio process book rather than a loose compilation of final boards.",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This submission is structured as a portfolio process book rather"
+          },
+          {
+            "index": 2,
+            "text": "than a loose compilation of final boards."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This submission is structured as a portfolio process book rather than a loose compilation of final boards.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 26,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "This submission is structured as a portfolio process book rather than a loose compilation of final boards.",
+              "anchor": 1,
+              "fontSize": 26,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqtcj6to",
+      "id": "4",
+      "bbox": [
+        58,
+        304,
+        810,
+        74
+      ],
+      "geometry": "rect",
+      "text": "Each project opens with the brief and strategic approach, moves through evidence of exploration and development, and closes with outcomes or current-state documentation.",
+      "textPreview": "Each project opens with the brief and strategic approach, moves through evidence of exploration and development, and closes with outcomes...",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Each project opens with the brief and strategic approach, moves"
+          },
+          {
+            "index": 2,
+            "text": "through evidence of exploration and development, and closes"
+          },
+          {
+            "index": 3,
+            "text": "with outcomes or current-state documentation."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Each project opens with the brief and strategic approach, moves through evidence of exploration and development, and closes with outcomes or current-state documentation.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 26,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Each project opens with the brief and strategic approach, moves through evidence of exploration and development, and closes with outcomes or current-state documentation.",
+              "anchor": 1,
+              "fontSize": 26,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65wjudg7",
+      "id": "5",
+      "bbox": [
+        58,
+        420,
+        810,
+        74
+      ],
+      "geometry": "rect",
+      "text": "The draft uses existing case-study copy and local project assets so the Figma refinement pass can focus on curation, pacing, and visual polish.",
+      "textPreview": "The draft uses existing case-study copy and local project assets so the Figma refinement pass can focus on curation, pacing, and visual p...",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The draft uses existing case-study copy and local project assets"
+          },
+          {
+            "index": 2,
+            "text": "so the Figma refinement pass can focus on curation, pacing, and"
+          },
+          {
+            "index": 3,
+            "text": "visual polish."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The draft uses existing case-study copy and local project assets so the Figma refinement pass can focus on curation, pacing, and visual polish.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 26,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The draft uses existing case-study copy and local project assets so the Figma refinement pass can focus on curation, pacing, and visual polish.",
+              "anchor": 1,
+              "fontSize": 26,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwfyxobm",
+      "id": "6",
+      "bbox": [
+        972,
+        100,
+        140,
+        500
+      ],
+      "geometry": "rect",
+      "fillColor": "#151515",
+      "lineColor": "#151515",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obm58z25",
+      "id": "7",
+      "bbox": [
+        1000,
+        172,
+        110,
+        280
+      ],
+      "geometry": "rect",
+      "text": "Intro\nProcess\nOutcomes",
+      "textPreview": "Intro | Process | Outcomes",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 28,
+        "typeface": "Inter",
+        "color": "#FFFAF1",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Intro"
+          },
+          {
+            "index": 2,
+            "text": "Proces"
+          },
+          {
+            "index": 3,
+            "text": "s"
+          },
+          {
+            "index": 4,
+            "text": "Outcom"
+          },
+          {
+            "index": 5,
+            "text": "es"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Intro",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 28,
+            "typeface": "Inter",
+            "color": "#FFFAF1",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Intro",
+              "anchor": 1,
+              "fontSize": 28,
+              "typeface": "Inter",
+              "color": "#FFFAF1",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Process",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 28,
+            "typeface": "Inter",
+            "color": "#FFFAF1",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Process",
+              "anchor": 1,
+              "fontSize": 28,
+              "typeface": "Inter",
+              "color": "#FFFAF1",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Outcomes",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 28,
+            "typeface": "Inter",
+            "color": "#FFFAF1",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Outcomes",
+              "anchor": 1,
+              "fontSize": 28,
+              "typeface": "Inter",
+              "color": "#FFFAF1",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

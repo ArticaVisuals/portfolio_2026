@@ -56,6 +56,24 @@ function normalizeLinkValue(value: unknown): string {
     return ""
 }
 
+function normalizeMediaSource(value: unknown): string {
+    if (!value) return ""
+    if (typeof value === "string") return value.trim()
+    if (Array.isArray(value)) {
+        return value.map(normalizeMediaSource).find(Boolean) || ""
+    }
+    if (typeof value === "object") {
+        const record = value as Record<string, unknown>
+        if ("value" in record) return normalizeMediaSource(record.value)
+
+        for (const key of ["src", "url", "href", "file"]) {
+            const source = normalizeMediaSource(record[key])
+            if (source) return source
+        }
+    }
+    return ""
+}
+
 function resolveProjectHref(projectLink: unknown, link: unknown, title: unknown): string {
     const configuredHref = normalizeLinkValue(projectLink)
     if (isUsableProjectHref(configuredHref)) return configuredHref
@@ -113,8 +131,9 @@ export default function OtherProjectCardRestored({
     const numberText = Number.isFinite(Number(sortingNumber))
         ? String(Number(sortingNumber))
         : String(sortingNumber || "")
-    const hasVideo = Boolean(thumbnailVideoSrc)
     const href = resolveProjectHref(projectLink, link, title)
+    const videoSrc = normalizeMediaSource(thumbnailVideoSrc)
+    const hasVideo = Boolean(videoSrc)
 
     const handleClick = React.useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -242,16 +261,24 @@ export default function OtherProjectCardRestored({
             </div>
             <div data-framer-name="ImageWrapper" className="mh-other-project-media">
                 {thumbnailSrc ? (
-                    <img data-framer-name="Image" src={thumbnailSrc} alt="" loading="lazy" />
+                    <img
+                        data-framer-name="Image"
+                        src={thumbnailSrc}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                    />
                 ) : null}
                 {hasVideo ? (
                     <video
                         data-framer-name="Video"
-                        src={thumbnailVideoSrc}
+                        src={videoSrc}
+                        poster={thumbnailSrc || undefined}
                         muted
                         loop
                         autoPlay
                         playsInline
+                        preload="metadata"
                     />
                 ) : null}
             </div>

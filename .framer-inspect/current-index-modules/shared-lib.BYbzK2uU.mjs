@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime.BDzL3ECc.mjs";function t(e,t){return{description:`Micah Hoang is a brand designer based in Los Angeles, California, working across identity, product, motion, packaging, editorial systems, and digital experiences.`,favicon:`https://framerusercontent.com/assets/PuwLy5QJDAwONBEKMFs8Z7yaqLQ.png`,robots:`max-image-preview:large`,title:`Micah Hoang — Brand Designer`}}var n=e((()=>{}));export{t as n,n as t};
+//# sourceMappingURL=shared-lib.BYbzK2uU.mjs.map

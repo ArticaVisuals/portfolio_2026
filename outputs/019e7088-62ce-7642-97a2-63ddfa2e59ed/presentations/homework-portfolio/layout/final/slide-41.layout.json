@@ -1,0 +1,382 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/9d6lky",
+    "id": "9d6lky",
+    "slide": 41,
+    "layoutId": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Inter"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zupwb2hw",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4F0E7",
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sfil0rqd",
+      "id": "2",
+      "bbox": [
+        58,
+        26,
+        600,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Yomo / Introduction",
+      "textPreview": "Yomo / Introduction",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Inter",
+        "color": "#5F5A51",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Yomo / Introduction"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Yomo / Introduction",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 13,
+            "typeface": "Inter",
+            "color": "#5F5A51",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Yomo / Introduction",
+              "anchor": 1,
+              "fontSize": 13,
+              "typeface": "Inter",
+              "color": "#5F5A51",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h0fepkzu",
+      "id": "3",
+      "bbox": [
+        58,
+        55,
+        1164,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D7D0C3",
+      "lineColor": "#D7D0C3",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al87ed8b",
+      "id": "4",
+      "bbox": [
+        58,
+        55,
+        138,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#E54F55",
+      "lineColor": "#E54F55",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/e1w7mp0b",
+      "id": "5",
+      "bbox": [
+        724,
+        112,
+        498,
+        530
+      ],
+      "alt": "Brief / Challenge",
+      "contentType": "image/jpeg",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "6b5df8de-00c5-4d12-990e-c3f66fcfe9e0",
+        "contentType": "image/jpeg",
+        "byteLength": 505989
+      }
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orytsvu9",
+      "id": "6",
+      "bbox": [
+        58,
+        122,
+        540,
+        86
+      ],
+      "geometry": "rect",
+      "text": "Brief / Challenge",
+      "textPreview": "Brief / Challenge",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 46,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Brief / Challenge"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Brief / Challenge",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 46,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Brief / Challenge",
+              "anchor": 1,
+              "fontSize": 46,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcrmhk3q",
+      "id": "7",
+      "bbox": [
+        60,
+        236,
+        520,
+        260
+      ],
+      "geometry": "rect",
+      "text": "Dietary restriction tools often feel clinical or fragmented. Yomo needed to connect recipes, restaurants, groceries, and wearable contexts in a way that felt usable every day.",
+      "textPreview": "Dietary restriction tools often feel clinical or fragmented. Yomo needed to connect recipes, restaurants, groceries, and wearable context...",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 25,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Dietary restriction tools often feel clinical or"
+          },
+          {
+            "index": 2,
+            "text": "fragmented. Yomo needed to connect"
+          },
+          {
+            "index": 3,
+            "text": "recipes, restaurants, groceries, and"
+          },
+          {
+            "index": 4,
+            "text": "wearable contexts in a way that felt usable"
+          },
+          {
+            "index": 5,
+            "text": "every day."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Dietary restriction tools often feel clinical or fragmented. Yomo needed to connect recipes, restaurants, groceries, and wearable contexts in a way that felt usable every day.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 25,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Dietary restriction tools often feel clinical or fragmented. Yomo needed to connect recipes, restaurants, groceries, and wearable contexts in a way that felt usable every day.",
+              "anchor": 1,
+              "fontSize": 25,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6xkf6dcb",
+      "id": "8",
+      "bbox": [
+        60,
+        540,
+        132,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#E54F55",
+      "lineColor": "#E54F55",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

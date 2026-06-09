@@ -1,0 +1,437 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/vac1sq",
+    "id": "vac1sq",
+    "slide": 16,
+    "layoutId": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Inter"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsvu9kni",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4F0E7",
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1cfa9w3",
+      "id": "2",
+      "bbox": [
+        58,
+        26,
+        600,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Motion Connect / Process",
+      "textPreview": "Motion Connect / Process",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Inter",
+        "color": "#5F5A51",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Motion Connect / Process"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Motion Connect / Process",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 13,
+            "typeface": "Inter",
+            "color": "#5F5A51",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Motion Connect / Process",
+              "anchor": 1,
+              "fontSize": 13,
+              "typeface": "Inter",
+              "color": "#5F5A51",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm58z25k",
+      "id": "3",
+      "bbox": [
+        58,
+        55,
+        1164,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D7D0C3",
+      "lineColor": "#D7D0C3",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vmtwra5",
+      "id": "4",
+      "bbox": [
+        58,
+        55,
+        138,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#3F4BFF",
+      "lineColor": "#3F4BFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgfmlkjm",
+      "id": "5",
+      "bbox": [
+        58,
+        84,
+        550,
+        94
+      ],
+      "geometry": "rect",
+      "text": "Kinetic Language Tests",
+      "textPreview": "Kinetic Language Tests",
+      "resolvedFontSize": 35,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 35,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Kinetic Language Tests"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Kinetic Language Tests",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 35,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Kinetic Language Tests",
+              "anchor": 1,
+              "fontSize": 35,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mp0bi9s3",
+      "id": "6",
+      "bbox": [
+        58,
+        190,
+        486,
+        128
+      ],
+      "geometry": "rect",
+      "text": "The system is built from motion studies, typographic weight, and fast color shifts rather than a static logo-first identity.",
+      "textPreview": "The system is built from motion studies, typographic weight, and fast color shifts rather than a static logo-first identity.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "Inter",
+        "color": "#5F5A51",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The system is built from motion studies, typographic"
+          },
+          {
+            "index": 2,
+            "text": "weight, and fast color shifts rather than a static"
+          },
+          {
+            "index": 3,
+            "text": "logo-first identity."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The system is built from motion studies, typographic weight, and fast color shifts rather than a static logo-first identity.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 18,
+            "typeface": "Inter",
+            "color": "#5F5A51",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The system is built from motion studies, typographic weight, and fast color shifts rather than a static logo-first identity.",
+              "anchor": 1,
+              "fontSize": 18,
+              "typeface": "Inter",
+              "color": "#5F5A51",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bat47y1k",
+      "id": "7",
+      "bbox": [
+        58,
+        344,
+        120,
+        5
+      ],
+      "geometry": "rect",
+      "fillColor": "#3F4BFF",
+      "lineColor": "#3F4BFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/twra5gbq",
+      "id": "8",
+      "bbox": [
+        552,
+        96,
+        314,
+        250
+      ],
+      "alt": "Kinetic Language Tests",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "ac0bfabd-12fd-4ecc-8d3c-08078a53b406",
+        "contentType": "image/jpeg",
+        "byteLength": 165015
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/4byhgn29",
+      "id": "9",
+      "bbox": [
+        886,
+        96,
+        314,
+        250
+      ],
+      "alt": "Kinetic Language Tests",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "23bf93a6-468c-4ecc-b5e5-e99880b7c5b9",
+        "contentType": "image/jpeg",
+        "byteLength": 207899
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/m58z25kb",
+      "id": "10",
+      "bbox": [
+        552,
+        366,
+        204,
+        266
+      ],
+      "alt": "Kinetic Language Tests",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "84310ac3-65d3-4e99-bbfd-3b38356712ee",
+        "contentType": "image/jpeg",
+        "byteLength": 444739
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/bq1oryts",
+      "id": "11",
+      "bbox": [
+        774,
+        366,
+        204,
+        266
+      ],
+      "alt": "Kinetic Language Tests",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "553e9031-8311-44d5-b025-71ac9cac7b25",
+        "contentType": "image/jpeg",
+        "byteLength": 186490
+      }
+    }
+  ],
+  "composeRuns": []
+}

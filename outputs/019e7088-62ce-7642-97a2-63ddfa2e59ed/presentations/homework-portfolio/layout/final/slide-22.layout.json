@@ -1,0 +1,611 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/79ofk6",
+    "id": "79ofk6",
+    "slide": 22,
+    "layoutId": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Inter"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "5c1289eb-d9e2-413b-91a2-eb85216c6d47",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2d3f62c1-e0af-43d5-bb58-88cccec51b79",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2x4nap4r",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFF0E8",
+      "lineColor": "#FFF0E8",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/donyd0z6",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        32,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F05B34",
+      "lineColor": "#F05B34",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/lwval87e",
+      "id": "3",
+      "bbox": [
+        690,
+        0,
+        590,
+        720
+      ],
+      "alt": "Simon & Schuster",
+      "contentType": "image/jpeg",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "b543c952-1922-4750-a357-d3fa1344af13",
+        "contentType": "image/jpeg",
+        "byteLength": 441589
+      }
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/val87ed8",
+      "id": "4",
+      "bbox": [
+        70,
+        96,
+        530,
+        90
+      ],
+      "geometry": "rect",
+      "text": "Simon & Schuster",
+      "textPreview": "Simon & Schuster",
+      "resolvedFontSize": 68,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 68,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Simon &"
+          },
+          {
+            "index": 2,
+            "text": "Schuster"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Simon & Schuster",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 68,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Simon & Schuster",
+              "anchor": 1,
+              "fontSize": 68,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6psfil0r",
+      "id": "5",
+      "bbox": [
+        76,
+        198,
+        560,
+        26
+      ],
+      "geometry": "rect",
+      "text": "2025 · Concept · Brand Strategy, Visual Identity, UX/UI · Fonts in Use Feature",
+      "textPreview": "2025 · Concept · Brand Strategy, Visual Identity, UX/UI · Fonts in Use Feature",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 15,
+        "typeface": "Inter",
+        "color": "#F05B34",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2025 · Concept · Brand Strategy, Visual Identity, UX/UI · Fonts in Use Feature"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2025 · Concept · Brand Strategy, Visual Identity, UX/UI · Fonts in Use Feature",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 15,
+            "typeface": "Inter",
+            "color": "#F05B34",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2025 · Concept · Brand Strategy, Visual Identity, UX/UI · Fonts in Use Feature",
+              "anchor": 1,
+              "fontSize": 15,
+              "typeface": "Inter",
+              "color": "#F05B34",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcbulwva",
+      "id": "6",
+      "bbox": [
+        76,
+        288,
+        520,
+        132
+      ],
+      "geometry": "rect",
+      "text": "A strategic rebrand concept for Simon & Schuster rooted in independence, editorial openness, and diverse voices.",
+      "textPreview": "A strategic rebrand concept for Simon & Schuster rooted in independence, editorial openness, and diverse voices.",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 28,
+        "typeface": "Inter",
+        "color": "#12110F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A strategic rebrand concept for Simon"
+          },
+          {
+            "index": 2,
+            "text": "& Schuster rooted in independence,"
+          },
+          {
+            "index": 3,
+            "text": "editorial openness, and diverse voices."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A strategic rebrand concept for Simon & Schuster rooted in independence, editorial openness, and diverse voices.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 28,
+            "typeface": "Inter",
+            "color": "#12110F",
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A strategic rebrand concept for Simon & Schuster rooted in independence, editorial openness, and diverse voices.",
+              "anchor": 1,
+              "fontSize": 28,
+              "typeface": "Inter",
+              "color": "#12110F",
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kre1w7mp",
+      "id": "7",
+      "bbox": [
+        76,
+        564,
+        220,
+        34
+      ],
+      "geometry": "rect",
+      "fillColor": "#F05B34",
+      "lineColor": "#F05B34",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6psfil0",
+      "id": "8",
+      "bbox": [
+        90,
+        571,
+        192,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Introduction",
+      "textPreview": "Introduction",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Inter",
+        "color": "#FFFAF1",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Introduction"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Introduction",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 13,
+            "typeface": "Inter",
+            "color": "#FFFAF1",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Introduction",
+              "anchor": 1,
+              "fontSize": 13,
+              "typeface": "Inter",
+              "color": "#FFFAF1",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2lszqtcj",
+      "id": "9",
+      "bbox": [
+        306,
+        564,
+        220,
+        34
+      ],
+      "geometry": "rect",
+      "fillColor": "#F05B34",
+      "lineColor": "#F05B34",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/szqtcj6t",
+      "id": "10",
+      "bbox": [
+        320,
+        571,
+        192,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Process",
+      "textPreview": "Process",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Inter",
+        "color": "#FFFAF1",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Process"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Process",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 13,
+            "typeface": "Inter",
+            "color": "#FFFAF1",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Process",
+              "anchor": 1,
+              "fontSize": 13,
+              "typeface": "Inter",
+              "color": "#FFFAF1",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkjm1cfa",
+      "id": "11",
+      "bbox": [
+        536,
+        564,
+        220,
+        34
+      ],
+      "geometry": "rect",
+      "fillColor": "#F05B34",
+      "lineColor": "#F05B34",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/at47y1kr",
+      "id": "12",
+      "bbox": [
+        550,
+        571,
+        192,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Outcomes",
+      "textPreview": "Outcomes",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Inter",
+        "color": "#FFFAF1",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Outcomes"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Outcomes",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "fontSize": 13,
+            "typeface": "Inter",
+            "color": "#FFFAF1",
+            "bold": true,
+            "alignment": "left",
+            "verticalAlignment": "top"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Outcomes",
+              "anchor": 1,
+              "fontSize": 13,
+              "typeface": "Inter",
+              "color": "#FFFAF1",
+              "bold": true,
+              "alignment": "left",
+              "verticalAlignment": "top"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineColor": "#F4F0E7",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

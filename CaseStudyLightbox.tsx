@@ -52,6 +52,107 @@ const EASE = "cubic-bezier(0.22, 1, 0.36, 1)"
 const Z = 2147483000
 const GLYPH_FONT =
     '"GT Standard L Regular", "GT Standard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+const CASE_STUDY_NAV_LAYER_STYLE_ID = "case-study-nav-layer"
+const CASE_STUDY_NAV_LAYER_ACTIVE_KEY = "__caseStudyNavLayerActive"
+const CASE_STUDY_NAV_Z = Z - 10
+const CASE_STUDY_NAV_SELECTORS = [
+    "nav",
+    "header",
+    '[data-framer-name="Navigation"]',
+    '[name="Navigation"]',
+    '[data-framer-name="Nav"]',
+    '[name="Nav"]',
+    '[data-framer-name="Navbar"]',
+    '[name="Navbar"]',
+    '[data-framer-name="Header"]',
+    '[name="Header"]',
+].join(",")
+const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout"
+const MOBILE_FOOTER_ACTIVE_KEY = "__caseStudyMobileFooterLayoutActive"
+const MOBILE_FOOTER_STYLE = `
+@media (max-width: 809px) {
+    [data-case-study-mobile-cta-section="true"] {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    [data-case-study-mobile-cta-container="true"] {
+        align-items: flex-start !important;
+        box-sizing: border-box !important;
+        gap: 10px !important;
+        height: auto !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+    }
+
+    [data-case-study-mobile-cta-row] {
+        align-items: flex-start !important;
+        align-self: flex-start !important;
+        box-sizing: border-box !important;
+        flex: 0 0 auto !important;
+        gap: 10px !important;
+        height: 32px !important;
+        justify-content: flex-start !important;
+        max-width: calc(100vw - 30px) !important;
+        min-height: 32px !important;
+        padding: 0 !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-row="email"] {
+        height: 34px !important;
+        min-height: 34px !important;
+        padding-top: 2px !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] {
+        display: block !important;
+        flex: 0 0 auto !important;
+        height: 32px !important;
+        max-width: calc(100vw - 30px) !important;
+        min-height: 32px !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] * {
+        font-family: "GT Standard Trial L Md", "GT Standard Trial L Md Placeholder", "GT Standard Trial", sans-serif !important;
+        font-size: 32px !important;
+        font-weight: 500 !important;
+        height: 32px !important;
+        letter-spacing: -2px !important;
+        line-height: 32px !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] > * {
+        display: inline-block !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] span {
+        display: inline-block !important;
+    }
+
+    [data-case-study-mobile-cta-meta="true"] {
+        flex: 0 0 auto !important;
+        height: 13px !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-meta="true"] * {
+        font-size: 13px !important;
+        height: 13px !important;
+        letter-spacing: -0.13px !important;
+        line-height: 13px !important;
+        text-transform: uppercase !important;
+        width: auto !important;
+    }
+}
+`
 
 function setStyles(el: HTMLElement, styles: Record<string, string>) {
     const t = el.style as unknown as Record<string, string>
@@ -99,10 +200,170 @@ function canAnimate(el: Element): boolean {
 function clearAnims(el: HTMLElement | null) {
     if (el && typeof el.getAnimations === "function") el.getAnimations().forEach((a) => a.cancel())
 }
+function isCaseStudyDetailPage(): boolean {
+    if (typeof window === "undefined") return false
+    const path = window.location.pathname.replace(/\/+$/, "")
+    return path.startsWith("/case-studies/") && path.length > "/case-studies/".length
+}
+function normalizeCtaText(value: string): string {
+    return String(value || "").replace(/\s+/g, "").toUpperCase()
+}
+function getMobileFooterCtaType(anchor: HTMLAnchorElement): string {
+    const text = normalizeCtaText(anchor.textContent || "")
+    if (text === "MICAH.HOANG@HEY.COM") return "email"
+    if (text === "LINKEDINCONNECT") return "linkedin"
+    if (text === "COSMOSINSPIRE") return "cosmos"
+    return ""
+}
+function ensureMobileFooterStyles() {
+    if (typeof document === "undefined") return
+    if (document.getElementById(MOBILE_FOOTER_STYLE_ID)) return
+    const style = document.createElement("style")
+    style.id = MOBILE_FOOTER_STYLE_ID
+    style.textContent = MOBILE_FOOTER_STYLE
+    document.head.appendChild(style)
+}
+function ensureCaseStudyNavLayerStyles() {
+    if (typeof document === "undefined") return
+    if (document.getElementById(CASE_STUDY_NAV_LAYER_STYLE_ID)) return
+
+    const style = document.createElement("style")
+    style.id = CASE_STUDY_NAV_LAYER_STYLE_ID
+    style.textContent = `
+${CASE_STUDY_NAV_SELECTORS} {
+    z-index: ${CASE_STUDY_NAV_Z} !important;
+    pointer-events: auto !important;
+    isolation: isolate !important;
+}
+`
+    document.head.appendChild(style)
+}
+function elevateCaseStudyNavLayer() {
+    if (typeof document === "undefined" || typeof window === "undefined") return
+    if (!isCaseStudyDetailPage()) return
+
+    ensureCaseStudyNavLayerStyles()
+    document.querySelectorAll<HTMLElement>(CASE_STUDY_NAV_SELECTORS).forEach((el) => {
+        el.style.setProperty("z-index", String(CASE_STUDY_NAV_Z), "important")
+        el.style.setProperty("pointer-events", "auto", "important")
+        el.style.setProperty("isolation", "isolate", "important")
+
+        if (window.getComputedStyle(el).position === "static") {
+            el.style.setProperty("position", "relative", "important")
+        }
+    })
+}
+function tagMobileFooterCta() {
+    if (typeof document === "undefined") return
+    document.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor) => {
+        const type = getMobileFooterCtaType(anchor)
+        if (!type) return
+
+        const section = anchor.closest<HTMLElement>(
+            '[data-framer-name="Section CTA"], [name="Section CTA"]'
+        )
+        const container = anchor.parentElement
+        const label = anchor.firstElementChild
+        const meta = anchor.children.length > 1 ? anchor.children[1] : null
+        if (!section || !container || !(label instanceof HTMLElement)) return
+
+        section.setAttribute("data-case-study-mobile-cta-section", "true")
+        container.setAttribute("data-case-study-mobile-cta-container", "true")
+        anchor.setAttribute("data-case-study-mobile-cta-row", type)
+        label.setAttribute("data-case-study-mobile-cta-label", "true")
+        if (meta instanceof HTMLElement) meta.setAttribute("data-case-study-mobile-cta-meta", "true")
+    })
+}
+function useCaseStudyMobileFooterLayout() {
+    React.useEffect(() => {
+        if (RenderTarget.current() === RenderTarget.canvas) return
+        if (typeof document === "undefined" || typeof window === "undefined") return
+        if (!isCaseStudyDetailPage()) return
+        const W = window as unknown as Record<string, unknown>
+        if (W[MOBILE_FOOTER_ACTIVE_KEY]) return
+        W[MOBILE_FOOTER_ACTIVE_KEY] = true
+
+        ensureMobileFooterStyles()
+        let frame = 0
+        const timeouts: number[] = []
+        const run = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(tagMobileFooterCta)
+        }
+
+        run()
+        ;[75, 200, 500, 1000, 2000].forEach((delay) => {
+            timeouts.push(window.setTimeout(run, delay))
+        })
+
+        const observer = new MutationObserver(run)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["data-framer-name", "name", "style"],
+            childList: true,
+            subtree: true,
+        })
+        window.addEventListener("pageshow", run)
+        window.addEventListener("resize", run)
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+            window.removeEventListener("pageshow", run)
+            window.removeEventListener("resize", run)
+            delete W[MOBILE_FOOTER_ACTIVE_KEY]
+        }
+    }, [])
+}
+function useCaseStudyNavLayering() {
+    React.useEffect(() => {
+        if (RenderTarget.current() === RenderTarget.canvas) return
+        if (typeof document === "undefined" || typeof window === "undefined") return
+        if (!isCaseStudyDetailPage()) return
+        const W = window as unknown as Record<string, unknown>
+        if (W[CASE_STUDY_NAV_LAYER_ACTIVE_KEY]) return
+        W[CASE_STUDY_NAV_LAYER_ACTIVE_KEY] = true
+
+        let frame = 0
+        const timeouts: number[] = []
+        const run = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(elevateCaseStudyNavLayer)
+        }
+
+        run()
+        ;[75, 200, 500, 1000, 2000].forEach((delay) => {
+            timeouts.push(window.setTimeout(run, delay))
+        })
+
+        const observer = new MutationObserver(run)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["data-framer-name", "name", "style", "class"],
+            childList: true,
+            subtree: true,
+        })
+        window.addEventListener("pageshow", run)
+        window.addEventListener("resize", run)
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+            window.removeEventListener("pageshow", run)
+            window.removeEventListener("resize", run)
+            delete W[CASE_STUDY_NAV_LAYER_ACTIVE_KEY]
+        }
+    }, [])
+}
 
 export default function CaseStudyLightbox(props: Config) {
     const configRef = React.useRef<Config>(props)
     configRef.current = props
+
+    useCaseStudyNavLayering()
+    useCaseStudyMobileFooterLayout()
 
     React.useEffect(() => {
         if (RenderTarget.current() === RenderTarget.canvas) return
@@ -220,6 +481,17 @@ export default function CaseStudyLightbox(props: Config) {
                 }
             }
             return null
+        }
+        function hasExcludedAtPoint(e: MouseEvent): boolean {
+            if (typeof document.elementsFromPoint !== "function") return false
+
+            for (const node of document.elementsFromPoint(e.clientX, e.clientY)) {
+                const el = node as HTMLElement
+                if (overlay && overlay.contains(el)) continue
+                if (isExcluded(el)) return true
+            }
+
+            return false
         }
 
         // ---- Overlay construction ---------------------------------------
@@ -518,6 +790,8 @@ export default function CaseStudyLightbox(props: Config) {
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
             const target = e.target as HTMLElement | null
             if (overlay && target && overlay.contains(target)) return
+            if (target && isExcluded(target)) return
+            if (hasExcludedAtPoint(e)) return
             const media = resolveTarget(e)
             if (!media) return
             e.preventDefault(); e.stopPropagation()

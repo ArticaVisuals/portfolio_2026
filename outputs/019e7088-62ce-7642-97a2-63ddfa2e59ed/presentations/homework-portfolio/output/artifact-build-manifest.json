@@ -1,0 +1,508 @@
+{
+  "output": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/output/micah-portfolio-homework-draft.pptx",
+  "outputBytes": 42806321,
+  "slideCount": 49,
+  "slideSize": {
+    "width": 1280,
+    "height": 720
+  },
+  "previewDir": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview",
+  "previewPaths": [
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-01.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-02.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-03.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-04.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-05.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-06.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-07.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-08.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-09.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-10.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-11.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-12.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-13.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-14.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-15.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-16.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-17.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-18.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-19.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-20.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-21.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-22.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-23.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-24.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-25.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-26.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-27.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-28.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-29.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-30.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-31.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-32.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-33.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-34.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-35.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-36.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-37.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-38.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-39.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-40.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-41.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-42.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-43.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-44.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-45.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-46.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-47.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-48.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/slide-49.png"
+  ],
+  "layoutDir": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final",
+  "layoutResults": [
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-01.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-02.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-03.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-04.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-05.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-06.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-07.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-08.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-09.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-10.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-11.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-12.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-13.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-14.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-15.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-16.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-17.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-18.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-19.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-20.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-21.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-22.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-23.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-24.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-25.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-26.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-27.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-28.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-29.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-30.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-31.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-32.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-33.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-34.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-35.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-36.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-37.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-38.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-39.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-40.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-41.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-42.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-43.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-44.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-45.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-46.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-47.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-48.layout.json"
+    },
+    {
+      "layoutPath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/layout/final/slide-49.layout.json"
+    }
+  ],
+  "contactSheet": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/preview/contact-sheet.png",
+  "slides": [
+    {
+      "index": 1,
+      "requestedSlideNumber": 1,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-01.mjs",
+      "exportName": "slide01"
+    },
+    {
+      "index": 2,
+      "requestedSlideNumber": 2,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-02.mjs",
+      "exportName": "slide02"
+    },
+    {
+      "index": 3,
+      "requestedSlideNumber": 3,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-03.mjs",
+      "exportName": "slide03"
+    },
+    {
+      "index": 4,
+      "requestedSlideNumber": 4,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-04.mjs",
+      "exportName": "slide04"
+    },
+    {
+      "index": 5,
+      "requestedSlideNumber": 5,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-05.mjs",
+      "exportName": "slide05"
+    },
+    {
+      "index": 6,
+      "requestedSlideNumber": 6,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-06.mjs",
+      "exportName": "slide06"
+    },
+    {
+      "index": 7,
+      "requestedSlideNumber": 7,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-07.mjs",
+      "exportName": "slide07"
+    },
+    {
+      "index": 8,
+      "requestedSlideNumber": 8,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-08.mjs",
+      "exportName": "slide08"
+    },
+    {
+      "index": 9,
+      "requestedSlideNumber": 9,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-09.mjs",
+      "exportName": "slide09"
+    },
+    {
+      "index": 10,
+      "requestedSlideNumber": 10,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-10.mjs",
+      "exportName": "slide10"
+    },
+    {
+      "index": 11,
+      "requestedSlideNumber": 11,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-11.mjs",
+      "exportName": "slide11"
+    },
+    {
+      "index": 12,
+      "requestedSlideNumber": 12,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-12.mjs",
+      "exportName": "slide12"
+    },
+    {
+      "index": 13,
+      "requestedSlideNumber": 13,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-13.mjs",
+      "exportName": "slide13"
+    },
+    {
+      "index": 14,
+      "requestedSlideNumber": 14,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-14.mjs",
+      "exportName": "slide14"
+    },
+    {
+      "index": 15,
+      "requestedSlideNumber": 15,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-15.mjs",
+      "exportName": "slide15"
+    },
+    {
+      "index": 16,
+      "requestedSlideNumber": 16,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-16.mjs",
+      "exportName": "slide16"
+    },
+    {
+      "index": 17,
+      "requestedSlideNumber": 17,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-17.mjs",
+      "exportName": "slide17"
+    },
+    {
+      "index": 18,
+      "requestedSlideNumber": 18,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-18.mjs",
+      "exportName": "slide18"
+    },
+    {
+      "index": 19,
+      "requestedSlideNumber": 19,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-19.mjs",
+      "exportName": "slide19"
+    },
+    {
+      "index": 20,
+      "requestedSlideNumber": 20,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-20.mjs",
+      "exportName": "slide20"
+    },
+    {
+      "index": 21,
+      "requestedSlideNumber": 21,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-21.mjs",
+      "exportName": "slide21"
+    },
+    {
+      "index": 22,
+      "requestedSlideNumber": 22,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-22.mjs",
+      "exportName": "slide22"
+    },
+    {
+      "index": 23,
+      "requestedSlideNumber": 23,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-23.mjs",
+      "exportName": "slide23"
+    },
+    {
+      "index": 24,
+      "requestedSlideNumber": 24,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-24.mjs",
+      "exportName": "slide24"
+    },
+    {
+      "index": 25,
+      "requestedSlideNumber": 25,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-25.mjs",
+      "exportName": "slide25"
+    },
+    {
+      "index": 26,
+      "requestedSlideNumber": 26,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-26.mjs",
+      "exportName": "slide26"
+    },
+    {
+      "index": 27,
+      "requestedSlideNumber": 27,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-27.mjs",
+      "exportName": "slide27"
+    },
+    {
+      "index": 28,
+      "requestedSlideNumber": 28,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-28.mjs",
+      "exportName": "slide28"
+    },
+    {
+      "index": 29,
+      "requestedSlideNumber": 29,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-29.mjs",
+      "exportName": "slide29"
+    },
+    {
+      "index": 30,
+      "requestedSlideNumber": 30,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-30.mjs",
+      "exportName": "slide30"
+    },
+    {
+      "index": 31,
+      "requestedSlideNumber": 31,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-31.mjs",
+      "exportName": "slide31"
+    },
+    {
+      "index": 32,
+      "requestedSlideNumber": 32,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-32.mjs",
+      "exportName": "slide32"
+    },
+    {
+      "index": 33,
+      "requestedSlideNumber": 33,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-33.mjs",
+      "exportName": "slide33"
+    },
+    {
+      "index": 34,
+      "requestedSlideNumber": 34,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-34.mjs",
+      "exportName": "slide34"
+    },
+    {
+      "index": 35,
+      "requestedSlideNumber": 35,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-35.mjs",
+      "exportName": "slide35"
+    },
+    {
+      "index": 36,
+      "requestedSlideNumber": 36,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-36.mjs",
+      "exportName": "slide36"
+    },
+    {
+      "index": 37,
+      "requestedSlideNumber": 37,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-37.mjs",
+      "exportName": "slide37"
+    },
+    {
+      "index": 38,
+      "requestedSlideNumber": 38,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-38.mjs",
+      "exportName": "slide38"
+    },
+    {
+      "index": 39,
+      "requestedSlideNumber": 39,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-39.mjs",
+      "exportName": "slide39"
+    },
+    {
+      "index": 40,
+      "requestedSlideNumber": 40,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-40.mjs",
+      "exportName": "slide40"
+    },
+    {
+      "index": 41,
+      "requestedSlideNumber": 41,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-41.mjs",
+      "exportName": "slide41"
+    },
+    {
+      "index": 42,
+      "requestedSlideNumber": 42,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-42.mjs",
+      "exportName": "slide42"
+    },
+    {
+      "index": 43,
+      "requestedSlideNumber": 43,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-43.mjs",
+      "exportName": "slide43"
+    },
+    {
+      "index": 44,
+      "requestedSlideNumber": 44,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-44.mjs",
+      "exportName": "slide44"
+    },
+    {
+      "index": 45,
+      "requestedSlideNumber": 45,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-45.mjs",
+      "exportName": "slide45"
+    },
+    {
+      "index": 46,
+      "requestedSlideNumber": 46,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-46.mjs",
+      "exportName": "slide46"
+    },
+    {
+      "index": 47,
+      "requestedSlideNumber": 47,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-47.mjs",
+      "exportName": "slide47"
+    },
+    {
+      "index": 48,
+      "requestedSlideNumber": 48,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-48.mjs",
+      "exportName": "slide48"
+    },
+    {
+      "index": 49,
+      "requestedSlideNumber": 49,
+      "modulePath": "/Users/micahhoang/My Drive/Portfolio 2026/outputs/019e7088-62ce-7642-97a2-63ddfa2e59ed/presentations/homework-portfolio/slides/slide-49.mjs",
+      "exportName": "slide49"
+    }
+  ]
+}

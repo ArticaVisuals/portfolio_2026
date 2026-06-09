@@ -10,13 +10,16 @@ type Props = {
     collectionId: string
     collectionModuleUrl: string
     strokeFieldId: string
+    videoFieldId: string
+    thumbnailFieldId: string
     slugFieldId: string
     titleFieldId: string
+    syncThumbnailVideos: boolean
     imageWrapperNames: string
 }
 
 type CMSValue = { value?: unknown }
-type CMSItem = { slug?: string; data?: Record<string, CMSValue> }
+type CMSItem = { slug?: string; title?: string; data?: Record<string, CMSValue | unknown> }
 type CMSScanCollection = { scanItems?: () => Promise<CMSItem[]> }
 type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSScanCollection } }
 type CMSModule = {
@@ -26,7 +29,13 @@ type CMSModule = {
     default?: CMSCollectionExport | (() => unknown)
     [key: string]: unknown
 }
-type StrokeRecord = { slug: string; title: string; stroke: boolean; url: string }
+type StrokeRecord = {
+    slug: string
+    title: string
+    stroke: boolean
+    thumbnailVideoSrc: string
+    posterSrc: string
+}
 
 const STROKE_CLASS = "framer-cms-thumbnail-stroke"
 const OVERLAY_ATTR = "data-framer-cms-thumbnail-stroke-overlay"
@@ -41,6 +50,11 @@ const HOVER_BG_IMAGE_VAR = "--case-study-thumbnail-hover-bg-image"
 const HOVER_BG_POSITION_VAR = "--case-study-thumbnail-hover-bg-position"
 const HOVER_BG_SIZE_VAR = "--case-study-thumbnail-hover-bg-size"
 const HOVER_BG_REPEAT_VAR = "--case-study-thumbnail-hover-bg-repeat"
+const INVALID_VIDEO_ATTR = "data-case-study-invalid-video"
+const GENERATED_VIDEO_ATTR = "data-framer-cms-thumbnail-video"
+const GENERATED_VIDEO_FRAME_ATTR = "data-framer-cms-thumbnail-video-frame"
+const LEGACY_GENERATED_VIDEO_ATTR = "data-cms-thumbnail-video-sync"
+const LEGACY_GENERATED_VIDEO_FRAME_ATTR = "data-cms-thumbnail-video-frame"
 const DEFAULT_STROKE_COLOR = "#979797"
 const DEFAULT_HOVER_IMAGE_SCALE = 1.02
 const HOVER_DURATION_MS = 420
@@ -54,9 +68,13 @@ const CANVAS_OVERLAY_NAMES = [
 const LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
+    "/index",
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
+    "https://khaki-ship-257706.framer.app/index",
 ]
+const cmsModuleUrlCache = new Map<string, string>()
+
 function splitNames(value: string): string[] {
     return String(value || "")
         .split(/[\n,]/)
@@ -81,20 +99,84 @@ function nameSelector(name: string) {
     return `:is([data-framer-name="${value}"], [name="${value}"])`
 }
 
+const CANVAS_OVERLAY_SELECTORS = CANVAS_OVERLAY_NAMES.map(nameSelector)
+const CANVAS_OVERLAY_SELECTOR = CANVAS_OVERLAY_SELECTORS.join(",")
+const CARD_SELECTOR =
+    'a[href*="/case-studies/"], a[href^="./case-studies/"], a[href^="../case-studies/"], .idx-grid-card, .selected-work-card, .mh-other-project-card, [data-framer-name="Card"], [name="Card"]'
+const HOVER_MEDIA_SELECTOR = [
+    "img",
+    "video",
+    "[data-framer-background-image-wrapper=\"true\"]",
+    "[style*=\"background-image\"]",
+    nameSelector("Image"),
+    nameSelector("Video"),
+    nameSelector("Img"),
+    nameSelector("ThumbnailVideo"),
+    nameSelector("Thumbnail Video"),
+].join(",")
+const mediaSelectorsCache = new Map<string, string[]>()
+
 function getMediaSelectors(imageWrapperNames: string): string[] {
-    return [...splitNames(imageWrapperNames).map(nameSelector), ".idx-grid-card-media"]
+    const key = String(imageWrapperNames || "")
+    const cached = mediaSelectorsCache.get(key)
+    if (cached) return cached
+
+    const selectors = [
+        ...splitNames(imageWrapperNames).map(nameSelector),
+        ".idx-grid-card-media",
+        ".selected-work-media",
+        ".mh-other-project-media",
+    ]
+    mediaSelectorsCache.set(key, selectors)
+    return selectors
 }
 
 function getCanvasOverlaySelector(): string {
-    return CANVAS_OVERLAY_NAMES.map(nameSelector).join(",")
+    return CANVAS_OVERLAY_SELECTOR
 }
 
-function readField(data: Record<string, CMSValue> | undefined, fieldId: string) {
-    return data?.[fieldId]?.value
+function readField(data: Record<string, CMSValue | unknown> | undefined, fieldId: string) {
+    if (!fieldId) return undefined
+
+    const field = data?.[fieldId]
+    if (typeof field === "object" && field !== null && "value" in field) {
+        return (field as CMSValue).value
+    }
+
+    return field
+}
+
+function readFirstMediaField(
+    data: Record<string, CMSValue | unknown> | undefined,
+    fieldIds: string
+): string {
+    for (const fieldId of splitNames(fieldIds)) {
+        const source = normalizeMediaSource(readField(data, fieldId))
+        if (source) return source
+    }
+    return ""
 }
 
 function normalizeText(value: unknown): string {
     return String(value ?? "").trim()
+}
+
+function normalizeMediaSource(value: unknown): string {
+    if (!value) return ""
+    if (typeof value === "string") return value.trim()
+    if (Array.isArray(value)) {
+        return value.map(normalizeMediaSource).find(Boolean) || ""
+    }
+    if (typeof value === "object") {
+        const record = value as Record<string, unknown>
+        if ("value" in record) return normalizeMediaSource(record.value)
+
+        for (const key of ["src", "url", "href", "file"]) {
+            const source = normalizeMediaSource(record[key])
+            if (source) return source
+        }
+    }
+    return ""
 }
 
 function normalizeTitle(value: string): string {
@@ -103,12 +185,6 @@ function normalizeTitle(value: string): string {
 
 function normalizeSlug(value: string): string {
     return value.trim().replace(/^\/+|\/+$/g, "")
-}
-
-function getCaseStudyUrl(slug: string): string {
-    const normalized = normalizeSlug(slug)
-    if (!normalized) return ""
-    return `/case-studies/${normalized}`
 }
 
 function getSlugFromHref(href: string | null): string {
@@ -136,92 +212,18 @@ function getCardHref(card: HTMLElement): string | null {
     )
 }
 
-function getCardAnchor(card: HTMLElement): HTMLAnchorElement | null {
-    if (card instanceof HTMLAnchorElement) return card
-    return (
-        card.querySelector<HTMLAnchorElement>("a[href]") ||
-        card.closest<HTMLAnchorElement>("a[href]") ||
-        null
-    )
-}
-
-function isBrokenProjectHref(href: string | null): boolean {
-    if (!href) return true
-    const value = href.trim()
-    if (!value || value === "#" || value === "." || value === "./") return true
-
-    try {
-        const url = new URL(value, window.location.href)
-        const path = url.pathname.replace(/\/+$/, "") || "/"
-        if (path === "/") return true
-        return path === "/case-studies/:slug" || path.endsWith("/case-studies/:slug")
-    } catch {
-        return value.includes(":slug")
-    }
-}
-
-function getSameOriginPath(href: string | null): string {
-    if (!href) return ""
-
-    try {
-        const url = new URL(href, window.location.href)
-        if (url.origin !== window.location.origin) return ""
-        return url.pathname.replace(/\/+$/, "") || "/"
-    } catch {
-        const value = href.split("?")[0].split("#")[0].trim()
-        if (!value) return ""
-        const path = value.startsWith("/") ? value : `/${value.replace(/^(\.\.\/|\.\/)+/, "")}`
-        return path.replace(/\/+$/, "") || "/"
-    }
-}
-
-function shouldRepairProjectHref(href: string | null, expectedUrl: string): boolean {
-    if (isBrokenProjectHref(href)) return true
-
-    const currentPath = getSameOriginPath(href)
-    const expectedPath = getSameOriginPath(expectedUrl)
-    if (!currentPath || !expectedPath) return false
-
-    return currentPath.startsWith("/case-studies/") && currentPath !== expectedPath
-}
-
-function handleRepairedProjectLinkClick(event: MouseEvent) {
-    if (
-        event.defaultPrevented ||
-        event.button !== 0 ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.shiftKey ||
-        event.altKey
-    ) {
-        return
-    }
-
-    const target = event.target
-    if (!(target instanceof Element)) return
-
-    const anchor = target.closest<HTMLAnchorElement>('a[data-case-study-link-repaired="true"][href]')
-    if (!anchor || isBrokenProjectHref(anchor.getAttribute("href"))) return
-
-    const url = new URL(anchor.href, window.location.href)
-    if (url.origin !== window.location.origin || !url.pathname.startsWith("/case-studies/")) return
-
-    event.preventDefault()
-    event.stopPropagation()
-    event.stopImmediatePropagation()
-    window.location.assign(url.href)
-}
-
 function isCMSModuleUrl(url: string, collectionId: string): boolean {
     const collectionPattern = escapeRegExp(collectionId)
-    return new RegExp(`/${collectionPattern}\\.[^/]+\\.mjs(?:[?#].*)?$`).test(url)
+    return new RegExp(
+        `/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`
+    ).test(url)
 }
 
 function findCMSModuleUrlInMarkup(markup: string, collectionId: string): string | undefined {
     const collectionPattern = escapeRegExp(collectionId)
     const match = markup.match(
         new RegExp(
-            `https://framerusercontent\\.com/sites/[^"']+/${collectionPattern}\\.[^"']+\\.mjs`,
+            `https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`,
             "i"
         )
     )
@@ -268,8 +270,14 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
     const configured = explicitUrl.trim()
     if (configured) return configured
 
+    const cached = cmsModuleUrlCache.get(collectionId)
+    if (cached) return cached
+
     const inDocument = findCMSModuleUrlInDocument(collectionId)
-    if (inDocument) return inDocument
+    if (inDocument) {
+        cmsModuleUrlCache.set(collectionId, inDocument)
+        return inDocument
+    }
 
     for (const path of LIVE_SCAN_PATHS) {
         try {
@@ -277,7 +285,10 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
             if (!response.ok) continue
             const html = await response.text()
             const found = findCMSModuleUrlInMarkup(html, collectionId)
-            if (found) return found
+            if (found) {
+                cmsModuleUrlCache.set(collectionId, found)
+                return found
+            }
         } catch {
             // Framer canvas, preview, and published URLs can live on different origins.
         }
@@ -296,20 +307,34 @@ function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
 
 function getCMSCollection(module: CMSModule): CMSScanCollection | undefined {
     const candidates = [module.a, module.r, module.default, ...Object.values(module)]
-    const collectionExport = candidates.find(isCMSCollectionExport)
-    return collectionExport?.collectionByLocaleId?.default
+    for (const candidate of candidates) {
+        let resolved = candidate
+        if (typeof resolved === "function") {
+            try {
+                resolved = resolved()
+            } catch {
+                resolved = undefined
+            }
+        }
+
+        if (isCMSCollectionExport(resolved)) {
+            return resolved.collectionByLocaleId?.default
+        }
+    }
+
+    return undefined
 }
 
 function initializeCMSModule(module: CMSModule) {
     const maybeInitializers = [module.t, module.r, module.default, ...Object.values(module)]
 
-    try {
-        maybeInitializers.forEach((initializer) => {
+    maybeInitializers.forEach((initializer) => {
+        try {
             if (typeof initializer === "function") initializer()
-        })
-    } catch {
-        // Some Framer module initializers are already settled; ignore safely.
-    }
+        } catch {
+            // Some Framer module initializers are already settled; ignore safely.
+        }
+    })
 
     try {
         Object.keys(module).forEach((key) => {
@@ -324,11 +349,19 @@ async function loadStrokeRecords({
     collectionId,
     collectionModuleUrl,
     strokeFieldId,
+    videoFieldId,
+    thumbnailFieldId,
     slugFieldId,
     titleFieldId,
 }: Pick<
     Props,
-    "collectionId" | "collectionModuleUrl" | "strokeFieldId" | "slugFieldId" | "titleFieldId"
+    | "collectionId"
+    | "collectionModuleUrl"
+    | "strokeFieldId"
+    | "videoFieldId"
+    | "thumbnailFieldId"
+    | "slugFieldId"
+    | "titleFieldId"
 >): Promise<StrokeRecord[]> {
     const moduleUrl = await resolveCMSModuleUrl(collectionId, collectionModuleUrl)
     if (!moduleUrl) return []
@@ -347,9 +380,10 @@ async function loadStrokeRecords({
         )
         return {
             slug,
-            title: normalizeText(readField(data, titleFieldId)),
+            title: normalizeText(readField(data, titleFieldId)) || normalizeText(item.title),
             stroke: Boolean(readField(data, strokeFieldId)),
-            url: getCaseStudyUrl(slug),
+            thumbnailVideoSrc: readFirstMediaField(data, videoFieldId),
+            posterSrc: normalizeMediaSource(readField(data, thumbnailFieldId)),
         }
     })
 }
@@ -380,25 +414,16 @@ function isStrokeOverlayElement(element: HTMLElement): boolean {
     return (
         element.getAttribute(OVERLAY_ATTR) === "true" ||
         element.getAttribute(GENERATED_ATTR) === "true" ||
-        matchesAnySelector(element, CANVAS_OVERLAY_NAMES.map(nameSelector))
+        matchesAnySelector(element, CANVAS_OVERLAY_SELECTORS)
     )
 }
 
 function findHoverMediaElements(frame: HTMLElement): HTMLElement[] {
-    const mediaSelector = [
-        "img",
-        "video",
-        "[data-framer-background-image-wrapper=\"true\"]",
-        "[style*=\"background-image\"]",
-        nameSelector("Image"),
-        nameSelector("Video"),
-        nameSelector("Img"),
-        nameSelector("ThumbnailVideo"),
-        nameSelector("Thumbnail Video"),
-    ].join(",")
-
-    return Array.from(frame.querySelectorAll<HTMLElement>(mediaSelector)).filter(
-        (media) => media !== frame && !isStrokeOverlayElement(media)
+    return Array.from(frame.querySelectorAll<HTMLElement>(HOVER_MEDIA_SELECTOR)).filter(
+        (media) =>
+            media !== frame &&
+            !isStrokeOverlayElement(media) &&
+            media.getAttribute(INVALID_VIDEO_ATTR) !== "true"
     )
 }
 
@@ -437,12 +462,13 @@ function isIndexGridTarget(card: HTMLElement, media: HTMLElement): boolean {
 
 function applyHoverZoom(
     owner: string,
+    cards: HTMLElement[],
     imageWrapperNames: string,
     applyToIndexGrid: boolean
 ) {
     clearHoverZoom(owner)
 
-    getCards(imageWrapperNames).forEach((card) => {
+    cards.forEach((card) => {
         const frame = findMediaElement(card, imageWrapperNames)
         if (!frame) return
         if (!applyToIndexGrid && isIndexGridTarget(card, frame)) return
@@ -489,33 +515,299 @@ function titleMatches(cardTitle: string, activeTitles: string[]) {
     return activeTitles.some((title) => title && (cardTitle === title || cardTitle.includes(title)))
 }
 
-function findRecordForCard(card: HTMLElement, records: StrokeRecord[]): StrokeRecord | undefined {
+type StrokeRecordLookup = {
+    bySlug: Map<string, StrokeRecord>
+    byTitle: Array<{ title: string; record: StrokeRecord }>
+}
+
+function buildStrokeRecordLookup(records: StrokeRecord[]): StrokeRecordLookup {
+    return {
+        bySlug: new Map(
+            records
+                .filter((record) => record.slug)
+                .map((record): [string, StrokeRecord] => [record.slug, record])
+        ),
+        byTitle: records
+            .map((record) => ({ title: normalizeTitle(record.title), record }))
+            .filter(({ title }) => Boolean(title)),
+    }
+}
+
+function findRecordForCard(card: HTMLElement, lookup: StrokeRecordLookup): StrokeRecord | undefined {
     const slug = normalizeSlug(getSlugFromHref(getCardHref(card)))
     if (slug && slug !== ":slug") {
-        const bySlug = records.find((record) => record.slug === slug)
+        const bySlug = lookup.bySlug.get(slug)
         if (bySlug) return bySlug
     }
 
     const title = getCardTitle(card)
-    return records.find((record) => titleMatches(title, [normalizeTitle(record.title)]))
+    return lookup.byTitle.find(({ title: recordTitle }) => titleMatches(title, [recordTitle]))?.record
 }
 
-function applyProjectLinks(records: StrokeRecord[], imageWrapperNames: string) {
+function getProjectRoute(record: StrokeRecord): string {
+    return record.slug ? `/case-studies/${normalizeSlug(record.slug)}` : ""
+}
+
+function getCardAnchor(card: HTMLElement): HTMLAnchorElement | null {
+    if (card instanceof HTMLAnchorElement) return card
+    return (
+        card.querySelector<HTMLAnchorElement>("a[href]") ||
+        card.closest<HTMLAnchorElement>("a[href]") ||
+        null
+    )
+}
+
+function getSameOriginPath(href: string | null): string {
+    if (!href) return ""
+
+    try {
+        const url = new URL(href, window.location.href)
+        if (url.origin !== window.location.origin) return url.href
+        return url.pathname.replace(/\/+$/, "") || "/"
+    } catch {
+        return href.split("?")[0].split("#")[0].replace(/\/+$/, "") || href
+    }
+}
+
+function shouldRepairHref(href: string | null, expectedRoute: string): boolean {
+    if (!expectedRoute) return false
+
+    const value = String(href || "").trim()
+    if (!value || value === "#" || value === "." || value === "./") return true
+    if (value.includes(":slug")) return true
+
+    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/"
+    const path = getSameOriginPath(value)
+    if (path === "/" || path === currentPath) return true
+
+    return path.startsWith("/case-studies/") && path !== expectedRoute
+}
+
+function repairCardLink(card: HTMLElement, record: StrokeRecord) {
+    const route = getProjectRoute(record)
+    if (!route) return
+
+    const anchor = getCardAnchor(card)
+    if (!anchor) return
+    if (!shouldRepairHref(anchor.getAttribute("href"), route)) return
+
+    anchor.setAttribute("href", route)
+}
+
+function isUsableMediaUrl(value: string): boolean {
+    if (!value) return false
+
+    try {
+        const url = new URL(value, window.location.href)
+        const current = new URL(window.location.href)
+        const samePage =
+            url.origin === current.origin &&
+            url.pathname.replace(/\/+$/, "") === current.pathname.replace(/\/+$/, "")
+        if (samePage) return false
+        return /\.(mp4|m4v|mov|webm|ogg)(?:[?#].*)?$/i.test(url.pathname) || url.origin !== current.origin
+    } catch {
+        return /\.(mp4|m4v|mov|webm|ogg)(?:[?#].*)?$/i.test(value)
+    }
+}
+
+function hasUsableVideoSource(video: HTMLVideoElement): boolean {
+    const sourceUrls = [
+        video.currentSrc,
+        video.src,
+        video.getAttribute("src"),
+        ...Array.from(video.querySelectorAll("source")).map(
+            (source) => source.src || source.getAttribute("src")
+        ),
+    ]
+
+    return sourceUrls.some((url) => isUsableMediaUrl(String(url || "")))
+}
+
+function syncInvalidCardVideos(card: HTMLElement) {
+    card.querySelectorAll<HTMLVideoElement>("video").forEach((video) => {
+        const invalid = !hasUsableVideoSource(video)
+
+        if (!invalid) {
+            video.removeAttribute(INVALID_VIDEO_ATTR)
+            video.style.removeProperty("display")
+            video.style.removeProperty("visibility")
+            video.style.removeProperty("pointer-events")
+            return
+        }
+
+        video.setAttribute(INVALID_VIDEO_ATTR, "true")
+        video.setAttribute("aria-hidden", "true")
+        video.style.setProperty("display", "none", "important")
+        video.style.setProperty("visibility", "hidden", "important")
+        video.style.setProperty("pointer-events", "none", "important")
+    })
+}
+
+function getCurrentVideoSource(video: HTMLVideoElement): string {
+    return normalizeText(
+        video.currentSrc ||
+            video.src ||
+            video.getAttribute("src") ||
+            video.querySelector("source")?.getAttribute("src") ||
+            ""
+    )
+}
+
+function syncThumbnailVideoElement(
+    video: HTMLVideoElement,
+    source: string,
+    poster: string
+) {
+    const currentSource = getCurrentVideoSource(video)
+    const changed = currentSource !== source
+
+    if (changed) {
+        video.setAttribute("src", source)
+        video.querySelectorAll("source").forEach((sourceElement) => sourceElement.remove())
+    }
+
+    if (poster) {
+        video.setAttribute("poster", poster)
+    } else {
+        video.removeAttribute("poster")
+    }
+
+    video.autoplay = true
+    video.muted = true
+    video.loop = true
+    video.playsInline = true
+    video.preload = "metadata"
+    video.setAttribute("autoplay", "")
+    video.setAttribute("muted", "")
+    video.setAttribute("loop", "")
+    video.setAttribute("playsinline", "")
+    video.removeAttribute(INVALID_VIDEO_ATTR)
+    video.removeAttribute("aria-hidden")
+    video.style.removeProperty("display")
+    video.style.removeProperty("visibility")
+    video.style.removeProperty("pointer-events")
+
+    if (changed) {
+        try {
+            video.load()
+            const play = video.play()
+            if (play && typeof play.catch === "function") play.catch(() => {})
+        } catch {
+            // Autoplay can be denied in editor/canvas; published muted video will retry naturally.
+        }
+    }
+}
+
+function removeGeneratedThumbnailVideo(media: HTMLElement) {
+    media
+        .querySelectorAll<HTMLVideoElement>(
+            `video[${GENERATED_VIDEO_ATTR}="true"], video[${LEGACY_GENERATED_VIDEO_ATTR}="true"]`
+        )
+        .forEach((video) => video.remove())
+    media.removeAttribute(GENERATED_VIDEO_FRAME_ATTR)
+    media.removeAttribute(LEGACY_GENERATED_VIDEO_FRAME_ATTR)
+}
+
+function getExistingThumbnailVideo(media: HTMLElement): HTMLVideoElement | null {
+    return (
+        Array.from(media.querySelectorAll<HTMLVideoElement>("video")).find(
+            (video) =>
+                video.getAttribute(GENERATED_VIDEO_ATTR) !== "true" &&
+                video.getAttribute(LEGACY_GENERATED_VIDEO_ATTR) !== "true" &&
+                video.getAttribute(INVALID_VIDEO_ATTR) !== "true"
+        ) || null
+    )
+}
+
+function createGeneratedThumbnailVideo(media: HTMLElement): HTMLVideoElement {
+    const video = document.createElement("video")
+    video.setAttribute(GENERATED_VIDEO_ATTR, "true")
+    video.setAttribute("data-framer-name", "CMS Thumbnail Video")
+    video.setAttribute("aria-hidden", "true")
+    Object.assign(video.style, {
+        position: "absolute",
+        inset: "0px",
+        width: "100%",
+        height: "100%",
+        display: "block",
+        objectFit: "cover",
+        objectPosition: "center center",
+        pointerEvents: "none",
+        zIndex: "1",
+    })
+
+    if (typeof window !== "undefined" && window.getComputedStyle(media).position === "static") {
+        media.style.position = "relative"
+    }
+
+    media.setAttribute(GENERATED_VIDEO_FRAME_ATTR, "true")
+    media.appendChild(video)
+    return video
+}
+
+function syncCMSVideoForMedia(media: HTMLElement, record: StrokeRecord | undefined) {
+    const source = normalizeMediaSource(record?.thumbnailVideoSrc)
+    const poster = normalizeMediaSource(record?.posterSrc)
+
+    if (!source) {
+        removeGeneratedThumbnailVideo(media)
+        return
+    }
+
+    const existing = getExistingThumbnailVideo(media)
+    if (existing) {
+        syncThumbnailVideoElement(existing, source, poster)
+        removeGeneratedThumbnailVideo(media)
+        return
+    }
+
+    const generated =
+        media.querySelector<HTMLVideoElement>(`video[${GENERATED_VIDEO_ATTR}="true"]`) ||
+        createGeneratedThumbnailVideo(media)
+    syncThumbnailVideoElement(generated, source, poster)
+}
+
+function applyProjectCardRepairs(records: StrokeRecord[], cards: HTMLElement[]) {
+    const lookup = buildStrokeRecordLookup(records)
+
+    cards.forEach((card) => {
+        syncInvalidCardVideos(card)
+
+        const record = findRecordForCard(card, lookup)
+        if (!record) return
+
+        repairCardLink(card, record)
+    })
+}
+
+function applyCMSVideos(
+    records: StrokeRecord[],
+    cards: HTMLElement[],
+    imageWrapperNames: string
+) {
     if (records.length === 0) return
 
-    getCards(imageWrapperNames).forEach((card) => {
-        const anchor = getCardAnchor(card)
-        if (!anchor) return
+    const lookup = buildStrokeRecordLookup(records)
+    cards.forEach((card) => {
+        const media = findMediaElement(card, imageWrapperNames)
+        if (!media) return
 
-        const record = findRecordForCard(card, records)
-        if (!record?.url) return
-        if (!shouldRepairProjectHref(anchor.getAttribute("href"), record.url)) return
-
-        anchor.setAttribute("href", record.url)
-        anchor.removeAttribute("data-framer-page-link-current")
-        anchor.removeAttribute("aria-current")
-        anchor.setAttribute("data-case-study-link-repaired", "true")
+        syncCMSVideoForMedia(media, findRecordForCard(card, lookup))
     })
+}
+
+function getStrokeRecordSignature(records: StrokeRecord[]): string {
+    return records
+        .map((record) =>
+            [
+                record.slug,
+                record.title,
+                record.stroke ? "1" : "0",
+                record.thumbnailVideoSrc,
+                record.posterSrc,
+            ].join("\u0001")
+        )
+        .join("\u0002")
 }
 
 function getCanvasOverlayByStyle(media: HTMLElement): HTMLElement | null {
@@ -527,7 +819,7 @@ function getCanvasOverlayByStyle(media: HTMLElement): HTMLElement | null {
     return (
         children.find((child) => {
             if (child.getAttribute(GENERATED_ATTR) === "true") return false
-            if (matchesAnySelector(child, CANVAS_OVERLAY_NAMES.map(nameSelector))) return true
+            if (matchesAnySelector(child, CANVAS_OVERLAY_SELECTORS)) return true
 
             const style = window.getComputedStyle(child)
             const borderWidth = Number.parseFloat(style.borderTopWidth || "0")
@@ -596,9 +888,7 @@ function syncStrokeOverlay(media: HTMLElement, shouldStroke: boolean, strokeColo
 
 function closestCardFromMedia(media: HTMLElement): HTMLElement {
     return (
-        media.closest<HTMLElement>(
-            'a[href*="/case-studies/"], a[href^="./case-studies/"], a[href^="../case-studies/"], .idx-grid-card, [data-framer-name="Card"], [name="Card"]'
-        ) || media.parentElement || media
+        media.closest<HTMLElement>(CARD_SELECTOR) || media.parentElement || media
     )
 }
 
@@ -606,9 +896,7 @@ function getCards(imageWrapperNames: string): HTMLElement[] {
     const cards = new Set<HTMLElement>()
 
     document
-        .querySelectorAll<HTMLElement>(
-            'a[href*="/case-studies/"], a[href^="./case-studies/"], a[href^="../case-studies/"], .idx-grid-card, [data-framer-name="Card"], [name="Card"]'
-        )
+        .querySelectorAll<HTMLElement>(CARD_SELECTOR)
         .forEach((card) => cards.add(card))
 
     getMediaSelectors(imageWrapperNames).forEach((selector) => {
@@ -620,21 +908,22 @@ function getCards(imageWrapperNames: string): HTMLElement[] {
     return Array.from(cards)
 }
 
-function applyCMSStrokes(records: StrokeRecord[], imageWrapperNames: string, strokeColor: string, width: number) {
+function applyCMSStrokes(
+    records: StrokeRecord[],
+    cards: HTMLElement[],
+    imageWrapperNames: string,
+    strokeColor: string,
+    width: number
+) {
     if (records.length === 0) return
 
-    const activeRecords = records.filter((record) => record.stroke)
-    const strokedSlugs = new Set(activeRecords.map((record) => record.slug).filter(Boolean))
-    const activeTitles = activeRecords.map((record) => normalizeTitle(record.title)).filter(Boolean)
+    const activeLookup = buildStrokeRecordLookup(records.filter((record) => record.stroke))
 
-    getCards(imageWrapperNames).forEach((card) => {
+    cards.forEach((card) => {
         const media = findMediaElement(card, imageWrapperNames)
         if (!media) return
 
-        const href = getCardHref(card)
-        const slug = getSlugFromHref(href)
-        const shouldStroke = strokedSlugs.has(slug) || titleMatches(getCardTitle(card), activeTitles)
-
+        const shouldStroke = Boolean(findRecordForCard(card, activeLookup))
         syncStrokeOverlay(media, shouldStroke, strokeColor, width)
     })
 }
@@ -644,10 +933,9 @@ function applyCMSStrokes(records: StrokeRecord[], imageWrapperNames: string, str
  *
  * Reads the All Projects CMS `Thumbnail Stroke` Boolean and paints a non-layout
  * overlay stroke on matching project thumbnail cards across native Framer
- * collection cards, the Framer editor canvas, and the custom /index grid.
- *
- * Stroke status is intentionally CMS-only; this component does not contain any
- * project-specific allowlist or hard-coded selected-work fallback.
+ * collection cards, the Framer editor canvas, and the custom /index grid. It
+ * also repairs selected-work card anchors when Framer exports unresolved CMS
+ * page links and hides blank CMS videos that resolve to the current page.
  *
  * @framerIntrinsicWidth 1
  * @framerIntrinsicHeight 1
@@ -663,8 +951,11 @@ export default function CaseStudyThumbnailStrokeStyles({
     collectionId = "yTHrQWMIY",
     collectionModuleUrl = "",
     strokeFieldId = "OHdUYs6Mo",
-    slugFieldId = "",
+    videoFieldId = "SvOqFqdby",
+    thumbnailFieldId = "Jy7hBJady",
+    slugFieldId = "pdXVG_fBO",
     titleFieldId = "oeXZcmPna",
+    syncThumbnailVideos = true,
     imageWrapperNames = "ImageWrapper\nImage Wrapper\nVideoWrapper\nVideo Wrapper",
 }: Partial<Props>) {
     const width = Math.max(0, Number(strokeWidth) || 0)
@@ -673,21 +964,32 @@ export default function CaseStudyThumbnailStrokeStyles({
     const shouldApplyHoverZoom = enableHoverZoom && hoverScale > 1
 
     React.useEffect(() => {
-        if (width <= 0 && !shouldApplyHoverZoom) return
         if (typeof window === "undefined") return
 
         let disposed = false
         let frame = 0
         let records: StrokeRecord[] = []
+        let recordsSignature: string | null = null
 
         const scheduleApply = () => {
             window.cancelAnimationFrame(frame)
             frame = window.requestAnimationFrame(() => {
                 if (disposed) return
-                applyProjectLinks(records, imageWrapperNames)
-                if (width > 0) applyCMSStrokes(records, imageWrapperNames, strokeColor, width)
+                const cards = getCards(imageWrapperNames)
+                if (syncThumbnailVideos) {
+                    applyCMSVideos(records, cards, imageWrapperNames)
+                } else {
+                    cards.forEach((card) => {
+                        const media = findMediaElement(card, imageWrapperNames)
+                        if (media) removeGeneratedThumbnailVideo(media)
+                    })
+                }
+                applyProjectCardRepairs(records, cards)
+                if (width > 0) {
+                    applyCMSStrokes(records, cards, imageWrapperNames, strokeColor, width)
+                }
                 if (shouldApplyHoverZoom) {
-                    applyHoverZoom(owner, imageWrapperNames, applyHoverZoomToIndexGrid)
+                    applyHoverZoom(owner, cards, imageWrapperNames, applyHoverZoomToIndexGrid)
                 } else {
                     clearHoverZoom(owner)
                 }
@@ -695,15 +997,22 @@ export default function CaseStudyThumbnailStrokeStyles({
         }
 
         const refreshRecords = () => {
+            if (document.visibilityState === "hidden") return
+
             loadStrokeRecords({
                 collectionId,
                 collectionModuleUrl,
                 strokeFieldId,
+                videoFieldId,
+                thumbnailFieldId,
                 slugFieldId,
                 titleFieldId,
             })
                 .then((loaded) => {
                     if (disposed) return
+                    const nextSignature = getStrokeRecordSignature(loaded)
+                    if (recordsSignature === nextSignature) return
+                    recordsSignature = nextSignature
                     records = loaded
                     scheduleApply()
                 })
@@ -726,10 +1035,13 @@ export default function CaseStudyThumbnailStrokeStyles({
             childList: true,
             subtree: true,
             attributes: true,
-            attributeFilter: ["href", "class", "data-framer-name", "name"],
+            attributeFilter: ["href", "class", "data-framer-name", "name", "src", "poster"],
         })
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === "visible") refreshRecords()
+        }
         window.addEventListener("resize", scheduleApply, { passive: true })
-        document.addEventListener("click", handleRepairedProjectLinkClick, true)
+        document.addEventListener("visibilitychange", handleVisibilityChange)
 
         return () => {
             disposed = true
@@ -739,7 +1051,7 @@ export default function CaseStudyThumbnailStrokeStyles({
             window.clearInterval(refreshInterval)
             observer.disconnect()
             window.removeEventListener("resize", scheduleApply)
-            document.removeEventListener("click", handleRepairedProjectLinkClick, true)
+            document.removeEventListener("visibilitychange", handleVisibilityChange)
             clearHoverZoom(owner)
         }
     }, [
@@ -747,13 +1059,15 @@ export default function CaseStudyThumbnailStrokeStyles({
         strokeColor,
         owner,
         shouldApplyHoverZoom,
-        hoverScale,
         applyHoverZoomToIndexGrid,
         collectionId,
         collectionModuleUrl,
         strokeFieldId,
+        videoFieldId,
+        thumbnailFieldId,
         slugFieldId,
         titleFieldId,
+        syncThumbnailVideos,
         imageWrapperNames,
     ])
 
@@ -838,6 +1152,12 @@ export default function CaseStudyThumbnailStrokeStyles({
 
                 @media (prefers-reduced-motion: reduce) {
                     [${HOVER_MEDIA_ATTR}="true"],
+                    [${HOVER_CARD_ATTR}="true"]:hover [${HOVER_MEDIA_ATTR}="true"],
+                    [${HOVER_CARD_ATTR}="true"]:focus-visible [${HOVER_MEDIA_ATTR}="true"],
+                    [${HOVER_CARD_ATTR}="true"]:focus-within [${HOVER_MEDIA_ATTR}="true"],
+                    [${HOVER_CARD_ATTR}="true"]:hover [${HOVER_BG_ATTR}="true"]::before,
+                    [${HOVER_CARD_ATTR}="true"]:focus-visible [${HOVER_BG_ATTR}="true"]::before,
+                    [${HOVER_CARD_ATTR}="true"]:focus-within [${HOVER_BG_ATTR}="true"]::before,
                     [${HOVER_BG_ATTR}="true"]::before {
                         transform: scale(1) !important;
                         transition: none !important;
@@ -916,10 +1236,29 @@ addPropertyControls(CaseStudyThumbnailStrokeStyles, {
         title: "Stroke Field",
         defaultValue: "OHdUYs6Mo",
     },
+    syncThumbnailVideos: {
+        type: ControlType.Boolean,
+        title: "CMS Videos",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+    },
+    videoFieldId: {
+        type: ControlType.String,
+        title: "Video Field",
+        defaultValue: "SvOqFqdby",
+        hidden: ({ syncThumbnailVideos }) => !syncThumbnailVideos,
+    },
+    thumbnailFieldId: {
+        type: ControlType.String,
+        title: "Poster Field",
+        defaultValue: "Jy7hBJady",
+        hidden: ({ syncThumbnailVideos }) => !syncThumbnailVideos,
+    },
     slugFieldId: {
         type: ControlType.String,
         title: "Slug Field",
-        defaultValue: "",
+        defaultValue: "pdXVG_fBO",
         placeholder: "Uses item slug",
     },
     titleFieldId: {

@@ -1,0 +1,10 @@
+Contact sheet plan:
+- Cover with image rail
+- Project map list
+- Editorial statement
+- Project divider with full-height image
+- Split text/image intro slides
+- Mosaic process slides
+- Mosaic outcome slides
+- Reflection / documentation slide
+- Closing import/export notes

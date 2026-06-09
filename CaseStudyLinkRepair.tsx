@@ -3,6 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 
 type Props = {
     enabled: boolean
+    mobileFooterLayout: boolean
     collectionId: string
     collectionModuleUrl: string
     slugFieldId: string
@@ -10,51 +11,186 @@ type Props = {
     urlOverrides: string
 }
 
-type CMSValue = { value?: unknown }
-type CMSItem = { slug?: string; data?: Record<string, CMSValue> }
-type CMSScanCollection = { scanItems?: () => Promise<CMSItem[]> }
-type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSScanCollection } }
-type CMSModule = {
-    a?: CMSCollectionExport
-    r?: CMSCollectionExport | (() => unknown)
-    t?: () => unknown
-    default?: CMSCollectionExport | (() => unknown)
-    [key: string]: unknown
+type ProjectRoute = {
+    title: string
+    slug: string
 }
-type ProjectRecord = { slug: string; title: string; url: string }
 
-const LIVE_SCAN_PATHS = [
-    "/",
-    "/case-studies",
-    "https://khaki-ship-257706.framer.app/",
-    "https://khaki-ship-257706.framer.app/case-studies",
+type ProjectRecord = ProjectRoute & {
+    url: string
+    normalizedTitle: string
+    unavailable: boolean
+}
+
+const PROJECT_ROUTES: ProjectRoute[] = [
+    { title: "AirPods Pro 3", slug: "airpods" },
+    { title: "Simon & Schuster", slug: "simon-schuster" },
+    { title: "Gaia", slug: "gaia" },
+    { title: "National Park Playing Cards", slug: "national-park-cards" },
+    { title: "Motion Connect 2025", slug: "motion-connect-2025" },
+    { title: "Yomo", slug: "yomo" },
+    { title: "Karuna", slug: "karuna" },
+    { title: "Weaponized Innocence", slug: "weaponized-innocence" },
+    { title: "Wolff Olins x ArtCenter", slug: "wolff-olins-x-artcenter" },
+    { title: "Aspen Valley Landscaping", slug: "aspen-valley-landscaping" },
+    { title: "Cellular Symphony", slug: "cellular-symphony" },
+    { title: "Neon Lights", slug: "neon-lights" },
+    { title: "John Steinbeck", slug: "john-steinbeck" },
+    { title: "Seek Truth", slug: "seek-truth" },
+    { title: "Independent Lens", slug: "independent-lens" },
+    { title: "TYPLDN", slug: "typldn" },
 ]
-const PROJECT_CARD_SELECTOR = [
+
+const UNAVAILABLE_PROJECT_SLUGS = new Set(["john-steinbeck"])
+const CARD_SELECTOR = [
+    '[data-framer-name="Card"]',
+    '[name="Card"]',
+    'a[href="./"]',
+    'a[href="."]',
+    'a[href="#"]',
     'a[href*="/case-studies/"]',
     'a[href^="./case-studies/"]',
     'a[href^="../case-studies/"]',
-    'a[data-framer-name="Card"]',
-    'a[name="Card"]',
-    'a[data-framer-name="Other Project Card"]',
-    'a[name="Other Project Card"]',
-    '[data-framer-name="Other Project Card"] a[href]',
-    '[name="Other Project Card"] a[href]',
 ].join(",")
 
-function escapeRegExp(value: string): string {
-    return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-}
+const INVALID_VIDEO_ATTR = "data-case-study-invalid-video"
+const POSTER_FALLBACK_ATTR = "data-case-study-poster-fallback"
+const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout"
+const MOBILE_FOOTER_ACTIVE_KEY = "__caseStudyMobileFooterLayoutActive"
+const MOBILE_FOOTER_ATTRS = {
+    section: "data-case-study-mobile-cta-section",
+    container: "data-case-study-mobile-cta-container",
+    row: "data-case-study-mobile-cta-row",
+    label: "data-case-study-mobile-cta-label",
+    meta: "data-case-study-mobile-cta-meta",
+} as const
+const MOBILE_FOOTER_STYLE = `
+@media (max-width: 809px) {
+    [data-case-study-mobile-cta-section="true"] {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
 
-function normalizeText(value: unknown): string {
-    return String(value ?? "").trim()
+    [data-case-study-mobile-cta-container="true"] {
+        align-items: flex-start !important;
+        box-sizing: border-box !important;
+        gap: 10px !important;
+        height: auto !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+    }
+
+    [data-case-study-mobile-cta-row] {
+        align-items: flex-start !important;
+        align-self: flex-start !important;
+        box-sizing: border-box !important;
+        flex: 0 0 auto !important;
+        gap: 10px !important;
+        height: 32px !important;
+        justify-content: flex-start !important;
+        max-width: calc(100vw - 30px) !important;
+        min-height: 32px !important;
+        padding: 0 !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-row="email"] {
+        height: 34px !important;
+        min-height: 34px !important;
+        padding-top: 2px !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] {
+        display: block !important;
+        flex: 0 0 auto !important;
+        height: 32px !important;
+        max-width: calc(100vw - 30px) !important;
+        min-height: 32px !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] * {
+        font-family: "GT Standard Trial L Md", "GT Standard Trial L Md Placeholder", "GT Standard Trial", sans-serif !important;
+        font-size: 32px !important;
+        font-weight: 500 !important;
+        height: 32px !important;
+        letter-spacing: -2px !important;
+        line-height: 32px !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] > * {
+        display: inline-block !important;
+    }
+
+    [data-case-study-mobile-cta-label="true"] span {
+        display: inline-block !important;
+    }
+
+    [data-case-study-mobile-cta-meta="true"] {
+        flex: 0 0 auto !important;
+        height: 13px !important;
+        width: auto !important;
+    }
+
+    [data-case-study-mobile-cta-meta="true"] * {
+        font-size: 13px !important;
+        height: 13px !important;
+        letter-spacing: -0.13px !important;
+        line-height: 13px !important;
+        text-transform: uppercase !important;
+        width: auto !important;
+    }
+}
+`
+
+function normalizeSlug(value: string): string {
+    return String(value || "")
+        .trim()
+        .replace(/^\/+|\/+$/g, "")
 }
 
 function normalizeTitle(value: string): string {
-    return value.toLowerCase().replace(/\s+/g, " ").trim()
+    return String(value || "")
+        .toLowerCase()
+        .replace(/\s+/g, " ")
+        .trim()
 }
 
-function normalizeSlug(value: string): string {
-    return value.trim().replace(/^\/+|\/+$/g, "")
+function getHomePath(): string {
+    if (typeof window === "undefined") return ""
+    return window.location.pathname.replace(/\/+$/, "") || "/"
+}
+
+function isProjectListingPage(): boolean {
+    const path = getHomePath()
+    return path === "/" || path === "/case-studies"
+}
+
+function isCaseStudyDetailPage(): boolean {
+    const path = getHomePath()
+    return path.startsWith("/case-studies/") && path.length > "/case-studies/".length
+}
+
+function normalizeCtaText(value: string): string {
+    return String(value || "")
+        .replace(/\s+/g, "")
+        .toUpperCase()
+}
+
+function getMobileFooterCtaType(anchor: HTMLAnchorElement): string {
+    const text = normalizeCtaText(anchor.textContent || "")
+
+    if (text === "MICAH.HOANG@HEY.COM") return "email"
+    if (text === "LINKEDINCONNECT") return "linkedin"
+    if (text === "COSMOSINSPIRE") return "cosmos"
+
+    return ""
 }
 
 function parseUrlOverrides(value: string): Record<string, string> {
@@ -76,168 +212,45 @@ function parseUrlOverrides(value: string): Record<string, string> {
 function getProjectUrl(slug: string, overrides: Record<string, string>): string {
     const normalized = normalizeSlug(slug)
     if (!normalized) return ""
-    return overrides[normalized] || `/case-studies/${normalized}`
+    if (overrides[normalized]) return overrides[normalized]
+    if (UNAVAILABLE_PROJECT_SLUGS.has(normalized)) return ""
+    return `/case-studies/${normalized}`
 }
 
-function readField(data: Record<string, CMSValue> | undefined, fieldId: string) {
-    return data?.[fieldId]?.value
-}
-
-function isCMSModuleUrl(url: string, collectionId: string): boolean {
-    const collectionPattern = escapeRegExp(collectionId)
-    return new RegExp(`/${collectionPattern}\\.[^/]+\\.mjs(?:[?#].*)?$`).test(url)
-}
-
-function findCMSModuleUrlInMarkup(markup: string, collectionId: string): string | undefined {
-    const collectionPattern = escapeRegExp(collectionId)
-    const match = markup.match(
-        new RegExp(
-            `https://framerusercontent\\.com/sites/[^"']+/${collectionPattern}\\.[^"']+\\.mjs`,
-            "i"
-        )
-    )
-    return match?.[0]
-}
-
-function getDocumentResourceUrls(): string[] {
-    if (typeof document === "undefined") return []
-
-    const elementUrls = Array.from(
-        document.querySelectorAll<HTMLLinkElement | HTMLScriptElement | HTMLImageElement | HTMLSourceElement>(
-            "link[href], script[src], img[src], source[src]"
-        )
-    ).map((element) => {
-        if ("href" in element && element.href) return element.href
-        if ("src" in element && element.src) return element.src
-        return ""
-    })
-
-    const performanceUrls =
-        typeof performance !== "undefined" && typeof performance.getEntriesByType === "function"
-            ? performance.getEntriesByType("resource").map((entry) => entry.name)
-            : []
-
-    return Array.from(new Set([...elementUrls, ...performanceUrls].filter(Boolean)))
-}
-
-function findCMSModuleUrlInDocument(collectionId: string): string | undefined {
-    const fromResources = getDocumentResourceUrls().find((url) => isCMSModuleUrl(url, collectionId))
-    if (fromResources) return fromResources
-
-    if (typeof document !== "undefined" && document.documentElement) {
-        return findCMSModuleUrlInMarkup(document.documentElement.outerHTML, collectionId)
-    }
-
-    return undefined
-}
-
-async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
-    const configured = explicitUrl.trim()
-    if (configured) return configured
-
-    const inDocument = findCMSModuleUrlInDocument(collectionId)
-    if (inDocument) return inDocument
-
-    for (const path of LIVE_SCAN_PATHS) {
-        try {
-            const response = await fetch(path, { credentials: "same-origin" })
-            if (!response.ok) continue
-            const found = findCMSModuleUrlInMarkup(await response.text(), collectionId)
-            if (found) return found
-        } catch {
-            // Framer canvas, preview, and published URLs can live on different origins.
-        }
-    }
-
-    return undefined
-}
-
-function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
-    return (
-        typeof value === "object" &&
-        value !== null &&
-        typeof (value as CMSCollectionExport).collectionByLocaleId?.default?.scanItems === "function"
-    )
-}
-
-function getCMSCollection(module: CMSModule): CMSScanCollection | undefined {
-    const candidates = [module.a, module.r, module.default, ...Object.values(module)]
-    const collectionExport = candidates.find(isCMSCollectionExport)
-    return collectionExport?.collectionByLocaleId?.default
-}
-
-function initializeCMSModule(module: CMSModule) {
-    const maybeInitializers = [module.t, module.r, module.default, ...Object.values(module)]
-
-    try {
-        maybeInitializers.forEach((initializer) => {
-            if (typeof initializer === "function") initializer()
-        })
-    } catch {
-        // Generated Framer CMS modules may already be initialized.
-    }
-}
-
-async function loadProjectRecords({
-    collectionId,
-    collectionModuleUrl,
-    slugFieldId,
-    titleFieldId,
-    urlOverrides,
-}: Props): Promise<ProjectRecord[]> {
-    const moduleUrl = await resolveCMSModuleUrl(collectionId, collectionModuleUrl)
-    if (!moduleUrl) return []
-
-    const module = (await import(/* @vite-ignore */ moduleUrl)) as CMSModule
-    initializeCMSModule(module)
-
-    const collection = getCMSCollection(module)
-    if (!collection || typeof collection.scanItems !== "function") return []
-
+function getProjectRecords(urlOverrides: string): ProjectRecord[] {
     const overrides = parseUrlOverrides(urlOverrides)
-    const items = (await collection.scanItems()) as CMSItem[]
 
-    return items
-        .map((item) => {
-            const data = item.data
-            const slug = normalizeSlug(
-                normalizeText(readField(data, slugFieldId)) || normalizeText(item.slug)
-            )
-            const title = normalizeText(readField(data, titleFieldId))
-            return { slug, title, url: getProjectUrl(slug, overrides) }
-        })
-        .filter((record) => Boolean(record.slug && record.title && record.url))
-}
+    return PROJECT_ROUTES.map((route) => {
+        const url = getProjectUrl(route.slug, overrides)
 
-function getSlugFromHref(href: string | null): string {
-    if (!href) return ""
-    try {
-        const url = new URL(href, window.location.href)
-        const parts = url.pathname.split("/").filter(Boolean)
-        const caseStudiesIndex = parts.lastIndexOf("case-studies")
-        if (caseStudiesIndex >= 0 && parts[caseStudiesIndex + 1]) {
-            return decodeURIComponent(parts[caseStudiesIndex + 1])
+        return {
+            ...route,
+            normalizedTitle: normalizeTitle(route.title),
+            url,
+            unavailable: !url,
         }
-        return decodeURIComponent(parts[parts.length - 1] || "")
-    } catch {
-        const parts = href.split("?")[0].split("#")[0].split("/").filter(Boolean)
-        return decodeURIComponent(parts[parts.length - 1] || "")
-    }
+    })
 }
 
-function isBrokenProjectHref(href: string | null): boolean {
-    if (!href) return true
-    const value = href.trim()
-    if (!value || value === "#" || value === "." || value === "./") return true
+function getCardTitle(card: HTMLElement): string {
+    return normalizeTitle(card.textContent || "")
+        .replace(/^\d+\s*\/\s*/, "")
+        .replace(/view\s*project/g, "")
+        .trim()
+}
 
-    try {
-        const url = new URL(value, window.location.href)
-        const path = url.pathname.replace(/\/+$/, "") || "/"
-        if (path === "/") return true
-        return path === "/case-studies/:slug" || path.endsWith("/case-studies/:slug")
-    } catch {
-        return value.includes(":slug")
-    }
+function titleMatches(cardTitle: string, record: ProjectRecord): boolean {
+    return Boolean(
+        cardTitle &&
+            record.normalizedTitle &&
+            (cardTitle === record.normalizedTitle ||
+                cardTitle.includes(record.normalizedTitle))
+    )
+}
+
+function getCardRecord(card: HTMLElement, records: ProjectRecord[]): ProjectRecord | null {
+    const title = getCardTitle(card)
+    return records.find((record) => titleMatches(title, record)) || null
 }
 
 function getSameOriginPath(href: string | null): string {
@@ -245,190 +258,383 @@ function getSameOriginPath(href: string | null): string {
 
     try {
         const url = new URL(href, window.location.href)
-        if (url.origin !== window.location.origin) return ""
+        if (url.origin !== window.location.origin) return url.href
         return url.pathname.replace(/\/+$/, "") || "/"
     } catch {
-        const value = href.split("?")[0].split("#")[0].trim()
-        if (!value) return ""
-        const path = value.startsWith("/") ? value : `/${value.replace(/^(\.\.\/|\.\/)+/, "")}`
-        return path.replace(/\/+$/, "") || "/"
+        return href.split("?")[0].split("#")[0].replace(/\/+$/, "") || href
     }
 }
 
-function shouldRepairProjectHref(href: string | null, expectedUrl: string): boolean {
-    if (isBrokenProjectHref(href)) return true
+function shouldRepairHref(href: string | null, expectedUrl: string): boolean {
+    if (!expectedUrl) return false
 
-    const currentPath = getSameOriginPath(href)
-    const expectedPath = getSameOriginPath(expectedUrl)
-    if (!currentPath || !expectedPath) return false
+    const value = String(href || "").trim()
+    if (!value || value === "#" || value === "." || value === "./") return true
+    if (value.includes(":slug")) return true
 
-    return currentPath.startsWith("/case-studies/") && currentPath !== expectedPath
+    const path = getSameOriginPath(value)
+    return path === "/" || (path.startsWith("/case-studies/") && path !== expectedUrl)
 }
 
-function handleRepairedProjectLinkClick(event: MouseEvent) {
-    if (
-        event.defaultPrevented ||
-        event.button !== 0 ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.shiftKey ||
-        event.altKey
-    ) {
-        return
-    }
+function getAnchors(card: HTMLElement): HTMLAnchorElement[] {
+    const anchors = new Set<HTMLAnchorElement>()
 
+    if (card instanceof HTMLAnchorElement) anchors.add(card)
+
+    card.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((anchor) => anchors.add(anchor))
+
+    const closestAnchor = card.closest<HTMLAnchorElement>("a[href]")
+    if (closestAnchor) anchors.add(closestAnchor)
+
+    return Array.from(anchors)
+}
+
+function repairCardLink(card: HTMLElement, record: ProjectRecord): boolean {
+    let didRepair = false
+
+    getAnchors(card).forEach((anchor) => {
+        if (record.unavailable) {
+            anchor.removeAttribute("href")
+            anchor.removeAttribute("data-framer-page-link-current")
+            anchor.removeAttribute("aria-current")
+            anchor.setAttribute("aria-disabled", "true")
+            anchor.setAttribute("data-case-study-link-disabled", record.slug)
+            anchor.setAttribute("aria-label", `${record.title} case study unavailable`)
+            anchor.tabIndex = -1
+            anchor.style.cursor = "default"
+            anchor.addEventListener("click", preventDisabledProjectLinkClick, true)
+            didRepair = true
+            return
+        }
+
+        if (!shouldRepairHref(anchor.getAttribute("href"), record.url)) return
+
+        anchor.setAttribute("href", record.url)
+        anchor.removeAttribute("aria-disabled")
+        anchor.removeAttribute("data-case-study-link-disabled")
+        anchor.removeAttribute("data-framer-page-link-current")
+        anchor.removeAttribute("aria-current")
+        anchor.style.removeProperty("cursor")
+        anchor.setAttribute("data-case-study-link-repaired", record.slug)
+        didRepair = true
+    })
+
+    return didRepair
+}
+
+function preventDisabledProjectLinkClick(event: MouseEvent) {
     const target = event.target
     if (!(target instanceof Element)) return
 
-    const anchor = target.closest<HTMLAnchorElement>('a[data-case-study-link-repaired="true"][href]')
-    if (!anchor || isBrokenProjectHref(anchor.getAttribute("href"))) return
-
-    const url = new URL(anchor.href, window.location.href)
-    if (url.origin !== window.location.origin || !url.pathname.startsWith("/case-studies/")) return
+    const anchor = target.closest<HTMLAnchorElement>(
+        'a[data-case-study-link-disabled="john-steinbeck"]'
+    )
+    if (!anchor) return
 
     event.preventDefault()
     event.stopPropagation()
     event.stopImmediatePropagation()
-    window.location.assign(url.href)
 }
 
-function getCardTitle(card: HTMLElement): string {
-    const title = card.querySelector<HTMLElement>(
-        [
-            '[data-framer-name="ProjectTitle"]',
-            '[data-framer-name="Project Title"]',
-            '[data-framer-name="TitleWrapper"]',
-            '[data-framer-name="Title Wrapper"]',
-            '[data-framer-name="ViewProject"]',
-            '[data-framer-name="View project"]',
-            '[data-framer-name="View project "]',
-        ].join(",")
-    )
-    return normalizeTitle(title?.textContent || card.textContent || "")
+function isCurrentPageUrl(value: string): boolean {
+    if (!value || typeof window === "undefined") return false
+
+    try {
+        const url = new URL(value, window.location.href)
+        return url.origin === window.location.origin && url.pathname === window.location.pathname
+    } catch {
+        return value === "." || value === "./" || value === window.location.pathname
+    }
 }
 
-function findRecordForCard(card: HTMLElement, records: ProjectRecord[]): ProjectRecord | undefined {
-    const slug = normalizeSlug(getSlugFromHref(card.getAttribute("href")))
-    if (slug && slug !== ":slug") {
-        const bySlug = records.find((record) => record.slug === slug)
-        if (bySlug) return bySlug
+function isUsableMediaUrl(value: string): boolean {
+    if (!value) return false
+    if (value.startsWith("blob:") || value.startsWith("data:")) return true
+    if (isCurrentPageUrl(value)) return false
+
+    try {
+        const url = new URL(value, window.location.href)
+        return /\.(mp4|mov|m4v|webm)(?:$|[?#])/i.test(url.pathname)
+    } catch {
+        return /\.(mp4|mov|m4v|webm)(?:$|[?#])/i.test(value)
+    }
+}
+
+function getVideoSources(video: HTMLVideoElement): string[] {
+    const sources = [
+        video.currentSrc,
+        video.src,
+        video.getAttribute("src") || "",
+        ...Array.from(video.querySelectorAll<HTMLSourceElement>("source")).map(
+            (source) => source.src || source.getAttribute("src") || ""
+        ),
+    ]
+
+    return sources.map((source) => source.trim()).filter(Boolean)
+}
+
+function getFallbackImage(video: HTMLVideoElement): HTMLImageElement | null {
+    return video.parentElement?.querySelector<HTMLImageElement>(
+        `img[${POSTER_FALLBACK_ATTR}="true"]`
+    ) || null
+}
+
+function ensurePosterFallback(video: HTMLVideoElement): boolean {
+    const poster = video.getAttribute("poster") || ""
+    const parent = video.parentElement
+    if (!poster || !parent) return false
+
+    const computedPosition = window.getComputedStyle(parent).position
+    if (computedPosition === "static") parent.style.position = "relative"
+
+    let image = getFallbackImage(video)
+    if (!image) {
+        image = document.createElement("img")
+        image.setAttribute(POSTER_FALLBACK_ATTR, "true")
+        image.alt = ""
+        image.decoding = "async"
+        image.loading = "eager"
+        image.style.position = "absolute"
+        image.style.inset = "0"
+        image.style.width = "100%"
+        image.style.height = "100%"
+        image.style.objectFit = "cover"
+        image.style.display = "block"
+        image.style.pointerEvents = "none"
+        image.style.border = "0"
+        image.style.zIndex = "1"
+        parent.appendChild(image)
     }
 
-    const title = getCardTitle(card)
-    return records.find((record) => {
-        const recordTitle = normalizeTitle(record.title)
-        return title === recordTitle || title.includes(recordTitle)
+    if (image.src !== poster) image.src = poster
+    image.style.display = "block"
+
+    video.pause()
+    video.removeAttribute("src")
+    video.querySelectorAll<HTMLSourceElement>("source").forEach((source) => {
+        source.removeAttribute("src")
     })
+    video.load()
+    video.style.display = "none"
+    video.style.pointerEvents = "none"
+    video.setAttribute(INVALID_VIDEO_ATTR, "true")
+
+    return true
 }
 
-function repairLinks(records: ProjectRecord[]) {
-    if (records.length === 0) return
+function removePosterFallback(video: HTMLVideoElement) {
+    const image = getFallbackImage(video)
+    if (image) image.remove()
 
-    document.querySelectorAll<HTMLAnchorElement>(PROJECT_CARD_SELECTOR).forEach((card) => {
-        const record = findRecordForCard(card, records)
-        if (!record?.url) return
-        if (!shouldRepairProjectHref(card.getAttribute("href"), record.url)) return
-
-        card.setAttribute("href", record.url)
-        card.removeAttribute("data-framer-page-link-current")
-        card.removeAttribute("aria-current")
-        card.setAttribute("data-case-study-link-repaired", "true")
-    })
+    if (video.getAttribute(INVALID_VIDEO_ATTR) === "true") {
+        video.removeAttribute(INVALID_VIDEO_ATTR)
+        video.style.display = ""
+        video.style.pointerEvents = ""
+    }
 }
 
-/**
- * Repairs native Framer Case Study card links when CMS dynamic link controls
- * publish as the current page instead of the row's case-study URL.
- *
- * @framerIntrinsicWidth 1
- * @framerIntrinsicHeight 1
- * @framerSupportedLayoutWidth fixed
- * @framerSupportedLayoutHeight fixed
- */
-export default function CaseStudyLinkRepair({
-    enabled = true,
-    collectionId = "yTHrQWMIY",
-    collectionModuleUrl = "",
-    slugFieldId = "",
-    titleFieldId = "oeXZcmPna",
-    urlOverrides = "",
-}: Partial<Props>) {
+function repairThumbnailMedia(card: HTMLElement): boolean {
+    let didRepair = false
+
+    card.querySelectorAll<HTMLVideoElement>("video").forEach((video) => {
+        const sources = getVideoSources(video)
+        const hasUsableSource = sources.some(isUsableMediaUrl)
+        const hasBrokenCurrentPageSource = sources.some(isCurrentPageUrl)
+
+        if (!hasUsableSource && hasBrokenCurrentPageSource) {
+            didRepair = ensurePosterFallback(video) || didRepair
+            return
+        }
+
+        removePosterFallback(video)
+    })
+
+    return didRepair
+}
+
+function getCards(records: ProjectRecord[]): HTMLElement[] {
+    if (typeof document === "undefined") return []
+
+    const seen = new Set<HTMLElement>()
+    const cards: HTMLElement[] = []
+
+    document.querySelectorAll<HTMLElement>(CARD_SELECTOR).forEach((candidate) => {
+        const card = candidate.closest<HTMLElement>('[data-framer-name="Card"], [name="Card"]') || candidate
+        if (seen.has(card)) return
+        if (!getCardRecord(card, records)) return
+
+        seen.add(card)
+        cards.push(card)
+    })
+
+    return cards
+}
+
+function repairHomeCards(records: ProjectRecord[]): number {
+    let repairs = 0
+
+    getCards(records).forEach((card) => {
+        const record = getCardRecord(card, records)
+        if (!record) return
+
+        if (repairCardLink(card, record)) repairs += 1
+        if (repairThumbnailMedia(card)) repairs += 1
+    })
+
+    return repairs
+}
+
+function useProjectCardRepair(enabled: boolean, urlOverrides: string) {
     React.useEffect(() => {
-        if (!enabled || typeof window === "undefined") return
+        if (!enabled || typeof window === "undefined" || !isProjectListingPage()) return
 
-        let disposed = false
+        const records = getProjectRecords(urlOverrides)
         let frame = 0
-        let records: ProjectRecord[] = []
+        const timeouts: number[] = []
 
-        const scheduleRepair = () => {
+        const run = () => {
             window.cancelAnimationFrame(frame)
             frame = window.requestAnimationFrame(() => {
-                if (!disposed) repairLinks(records)
+                repairHomeCards(records)
             })
         }
 
-        const refreshRecords = () => {
-            loadProjectRecords({
-                enabled,
-                collectionId,
-                collectionModuleUrl,
-                slugFieldId,
-                titleFieldId,
-                urlOverrides,
-            })
-                .then((loaded) => {
-                    if (disposed) return
-                    records = loaded
-                    scheduleRepair()
-                })
-                .catch(() => {
-                    if (!disposed) records = []
-                })
-        }
+        run()
+        ;[75, 200, 500, 1000, 2000, 4000].forEach((delay) => {
+            timeouts.push(window.setTimeout(run, delay))
+        })
 
-        refreshRecords()
-
-        const timeoutIds = [100, 350, 900, 1800, 3200].map((delay) =>
-            window.setTimeout(scheduleRepair, delay)
-        )
-        const refreshIds = [1200, 3600].map((delay) => window.setTimeout(refreshRecords, delay))
-
-        const observer = new MutationObserver(scheduleRepair)
+        const observer = new MutationObserver(run)
         observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["href", "src", "poster", "style"],
             childList: true,
             subtree: true,
-            attributes: true,
-            attributeFilter: ["href", "data-framer-name", "name", "class"],
         })
-        document.addEventListener("click", handleRepairedProjectLinkClick, true)
+
+        window.addEventListener("pageshow", run)
+        window.addEventListener("popstate", run)
 
         return () => {
-            disposed = true
             window.cancelAnimationFrame(frame)
-            timeoutIds.forEach((id) => window.clearTimeout(id))
-            refreshIds.forEach((id) => window.clearTimeout(id))
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
             observer.disconnect()
-            document.removeEventListener("click", handleRepairedProjectLinkClick, true)
+            window.removeEventListener("pageshow", run)
+            window.removeEventListener("popstate", run)
         }
-    }, [enabled, collectionId, collectionModuleUrl, slugFieldId, titleFieldId, urlOverrides])
+    }, [enabled, urlOverrides])
+}
 
-    return (
-        <div
-            aria-hidden="true"
-            style={{
-                width: 0,
-                height: 0,
-                overflow: "hidden",
-                pointerEvents: "none",
-            }}
-        />
-    )
+function ensureMobileFooterStyles() {
+    if (typeof document === "undefined") return
+    if (document.getElementById(MOBILE_FOOTER_STYLE_ID)) return
+
+    const style = document.createElement("style")
+    style.id = MOBILE_FOOTER_STYLE_ID
+    style.textContent = MOBILE_FOOTER_STYLE
+    document.head.appendChild(style)
+}
+
+function tagMobileFooterCta(): number {
+    if (typeof document === "undefined") return 0
+
+    let count = 0
+    document.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor) => {
+        const type = getMobileFooterCtaType(anchor)
+        if (!type) return
+
+        const section = anchor.closest<HTMLElement>(
+            '[data-framer-name="Section CTA"], [name="Section CTA"]'
+        )
+        const container = anchor.parentElement
+        const label = anchor.firstElementChild
+        const meta = anchor.children.length > 1 ? anchor.children[1] : null
+
+        if (!section || !container || !(label instanceof HTMLElement)) return
+
+        section.setAttribute(MOBILE_FOOTER_ATTRS.section, "true")
+        container.setAttribute(MOBILE_FOOTER_ATTRS.container, "true")
+        anchor.setAttribute(MOBILE_FOOTER_ATTRS.row, type)
+        label.setAttribute(MOBILE_FOOTER_ATTRS.label, "true")
+        if (meta instanceof HTMLElement) meta.setAttribute(MOBILE_FOOTER_ATTRS.meta, "true")
+        count += 1
+    })
+
+    return count
+}
+
+function useCaseStudyMobileFooterLayout(enabled: boolean) {
+    React.useEffect(() => {
+        if (!enabled || typeof window === "undefined" || !isCaseStudyDetailPage()) return
+        const W = window as unknown as Record<string, unknown>
+        if (W[MOBILE_FOOTER_ACTIVE_KEY]) return
+        W[MOBILE_FOOTER_ACTIVE_KEY] = true
+
+        ensureMobileFooterStyles()
+
+        let frame = 0
+        const timeouts: number[] = []
+
+        const run = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(tagMobileFooterCta)
+        }
+
+        run()
+        ;[75, 200, 500, 1000, 2000].forEach((delay) => {
+            timeouts.push(window.setTimeout(run, delay))
+        })
+
+        const observer = new MutationObserver(run)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["data-framer-name", "name", "style"],
+            childList: true,
+            subtree: true,
+        })
+
+        window.addEventListener("pageshow", run)
+        window.addEventListener("resize", run)
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+            window.removeEventListener("pageshow", run)
+            window.removeEventListener("resize", run)
+            delete W[MOBILE_FOOTER_ACTIVE_KEY]
+        }
+    }, [enabled])
+}
+
+export default function CaseStudyLinkRepair({
+    enabled = true,
+    mobileFooterLayout = true,
+    collectionId = "yTHrQWMIY",
+    collectionModuleUrl = "",
+    slugFieldId = "QmM3yYVVK",
+    titleFieldId = "oeXZcmPna",
+    urlOverrides = "",
+}: Props) {
+    void collectionId
+    void collectionModuleUrl
+    void slugFieldId
+    void titleFieldId
+
+    useProjectCardRepair(enabled, urlOverrides)
+    useCaseStudyMobileFooterLayout(enabled && mobileFooterLayout)
+    return null
 }
 
 addPropertyControls(CaseStudyLinkRepair, {
     enabled: {
         type: ControlType.Boolean,
         title: "Enabled",
+        defaultValue: true,
+    },
+    mobileFooterLayout: {
+        type: ControlType.Boolean,
+        title: "Mobile Footer",
         defaultValue: true,
         enabledTitle: "On",
         disabledTitle: "Off",
@@ -437,28 +643,31 @@ addPropertyControls(CaseStudyLinkRepair, {
         type: ControlType.String,
         title: "Collection",
         defaultValue: "yTHrQWMIY",
+        hidden: () => true,
     },
     collectionModuleUrl: {
         type: ControlType.String,
         title: "Module URL",
         defaultValue: "",
-        placeholder: "Optional fallback",
+        hidden: () => true,
     },
     slugFieldId: {
         type: ControlType.String,
         title: "Slug Field",
-        defaultValue: "",
-        placeholder: "Uses item slug",
+        defaultValue: "QmM3yYVVK",
+        hidden: () => true,
     },
     titleFieldId: {
         type: ControlType.String,
         title: "Title Field",
         defaultValue: "oeXZcmPna",
+        hidden: () => true,
     },
     urlOverrides: {
         type: ControlType.String,
-        title: "Overrides",
+        title: "URL Overrides",
         defaultValue: "",
         displayTextArea: true,
+        placeholder: "slug=/case-studies/custom-slug",
     },
 })

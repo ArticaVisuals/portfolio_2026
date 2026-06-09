@@ -5,6 +5,7 @@ type Props = {
     useCMS: boolean
     collectionId: string
     collectionModuleUrl: string
+    thumbnailVideoFieldIds: string
     maxItems: number
     textColor: string
     strokeColor: string
@@ -46,7 +47,7 @@ const FIELD_IDS = {
     slug: "pdXVG_fBO",
     number: "DLBifmgp1",
     thumbnail: "Jy7hBJady",
-    thumbnailVideoLink: "WG62tRjG8",
+    thumbnailVideoLink: "SvOqFqdby",
     thumbnailStroke: "OHdUYs6Mo",
     isHomepage: "myUIfK0j7",
 } as const
@@ -57,6 +58,7 @@ const LIVE_SCAN_PATHS = [
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
 const cmsModuleUrlCache = new Map<string, string>()
+const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = FIELD_IDS.thumbnailVideoLink
 const DEFAULT_PROJECTS: Project[] = [
     {
         title: "AirPods Pro 3",
@@ -65,8 +67,7 @@ const DEFAULT_PROJECTS: Project[] = [
         thumbnail: {
             src: "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
         },
-        thumbnailVideoLink:
-            "https://freight.cargo.site/i/V2732716404789921262344304055829/AirPods-Pro-3-Introduction-1.mp4",
+        thumbnailVideoLink: "",
         thumbnailStroke: true,
         isHomepage: true,
     },
@@ -104,8 +105,7 @@ const DEFAULT_PROJECTS: Project[] = [
         thumbnail: {
             src: "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
         },
-        thumbnailVideoLink:
-            "https://freight.cargo.site/i/K2717924145885630584799912777237/Motion-Connect_1.mp4",
+        thumbnailVideoLink: "",
         isHomepage: true,
     },
     {
@@ -133,6 +133,42 @@ function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fi
 
 function normalizeText(value: unknown): string {
     return String(value ?? "").trim()
+}
+
+function normalizeMediaSource(value: unknown): string {
+    if (!value) return ""
+    if (typeof value === "string") return value.trim()
+    if (Array.isArray(value)) {
+        return value.map(normalizeMediaSource).find(Boolean) || ""
+    }
+    if (typeof value === "object") {
+        const record = value as Record<string, unknown>
+        if ("value" in record) return normalizeMediaSource(record.value)
+
+        for (const key of ["src", "url", "href", "file"]) {
+            const source = normalizeMediaSource(record[key])
+            if (source) return source
+        }
+    }
+    return ""
+}
+
+function splitFieldIds(value: string): string[] {
+    return String(value || "")
+        .split(/[\n,]/)
+        .map((fieldId) => fieldId.trim())
+        .filter(Boolean)
+}
+
+function readFirstMediaField(
+    data: Record<string, CMSFieldValue | unknown> | undefined,
+    fieldIds: string
+): string {
+    for (const fieldId of splitFieldIds(fieldIds)) {
+        const source = normalizeMediaSource(readField(data, fieldId))
+        if (source) return source
+    }
+    return ""
 }
 
 function normalizeSlug(value: unknown): string {
@@ -169,14 +205,16 @@ function normalizeImage(value: unknown): ImageValue | undefined {
 
 function isCMSModuleUrl(url: string, collectionId: string): boolean {
     const collectionPattern = escapeRegExp(collectionId)
-    return new RegExp(`/${collectionPattern}\\.[^/]+\\.mjs(?:[?#].*)?$`).test(url)
+    return new RegExp(
+        `/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`
+    ).test(url)
 }
 
 function findCMSModuleUrlInMarkup(markup: string, collectionId: string): string | undefined {
     const collectionPattern = escapeRegExp(collectionId)
     const match = markup.match(
         new RegExp(
-            `https://framerusercontent\\.com/sites/[^"']+/${collectionPattern}\\.[^"']+\\.mjs`,
+            `https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`,
             "i"
         )
     )
@@ -255,20 +293,34 @@ function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
 
 function getCMSCollection(module: CMSModule): CMSCollection | undefined {
     const candidates = [module.a, module.r, module.default, ...Object.values(module)]
-    const collectionExport = candidates.find(isCMSCollectionExport)
-    return collectionExport?.collectionByLocaleId?.default
+    for (const candidate of candidates) {
+        let resolved = candidate
+        if (typeof resolved === "function") {
+            try {
+                resolved = resolved()
+            } catch {
+                resolved = undefined
+            }
+        }
+
+        if (isCMSCollectionExport(resolved)) {
+            return resolved.collectionByLocaleId?.default
+        }
+    }
+
+    return undefined
 }
 
 function initializeCMSModule(module: CMSModule) {
     const maybeInitializers = [module.t, module.r, module.default, ...Object.values(module)]
 
-    try {
-        maybeInitializers.forEach((initializer) => {
+    maybeInitializers.forEach((initializer) => {
+        try {
             if (typeof initializer === "function") initializer()
-        })
-    } catch {
-        // Generated Framer CMS modules may already be initialized.
-    }
+        } catch {
+            // Generated Framer CMS modules may already be initialized.
+        }
+    })
 }
 
 function sortProjects(projects: Project[]): Project[] {
@@ -277,7 +329,11 @@ function sortProjects(projects: Project[]): Project[] {
     })
 }
 
-async function loadProjects(collectionId: string, collectionModuleUrl: string): Promise<Project[]> {
+async function loadProjects(
+    collectionId: string,
+    collectionModuleUrl: string,
+    thumbnailVideoFieldIds: string
+): Promise<Project[]> {
     const moduleUrl = await resolveCMSModuleUrl(collectionId, collectionModuleUrl)
     if (!moduleUrl) return []
 
@@ -298,7 +354,7 @@ async function loadProjects(collectionId: string, collectionModuleUrl: string): 
                 number: normalizeNumber(readField(data, FIELD_IDS.number), index + 1),
                 slug,
                 thumbnail: normalizeImage(readField(data, FIELD_IDS.thumbnail)),
-                thumbnailVideoLink: normalizeText(readField(data, FIELD_IDS.thumbnailVideoLink)),
+                thumbnailVideoLink: readFirstMediaField(data, thumbnailVideoFieldIds),
                 thumbnailStroke: normalizeBoolean(readField(data, FIELD_IDS.thumbnailStroke)),
                 isHomepage: normalizeBoolean(readField(data, FIELD_IDS.isHomepage)),
             }
@@ -316,13 +372,18 @@ function getProjectHref(project: Project): string {
     return `/case-studies/${project.slug}`
 }
 
+function getThumbnailVideoLink(project: Project): string {
+    return normalizeMediaSource(project.thumbnailVideoLink)
+}
+
 function ProjectCard({
     project,
 }: {
     project: Project
 }) {
     const href = getProjectHref(project)
-    const hasVideo = Boolean(project.thumbnailVideoLink)
+    const videoSrc = getThumbnailVideoLink(project)
+    const hasVideo = Boolean(videoSrc)
     const mediaAlt = project.thumbnail?.alt || project.title
 
     return (
@@ -343,7 +404,7 @@ function ProjectCard({
             >
                 {hasVideo ? (
                     <video
-                        src={project.thumbnailVideoLink}
+                        src={videoSrc}
                         poster={project.thumbnail?.src}
                         autoPlay
                         muted
@@ -376,6 +437,7 @@ export default function HomeSelectedWorkGrid({
     useCMS = true,
     collectionId = COLLECTION_ID,
     collectionModuleUrl = "",
+    thumbnailVideoFieldIds = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
     maxItems = 6,
     textColor = "rgb(35, 51, 36)",
     strokeColor = "rgb(151, 151, 151)",
@@ -389,7 +451,7 @@ export default function HomeSelectedWorkGrid({
         }
 
         let disposed = false
-        loadProjects(collectionId, collectionModuleUrl)
+        loadProjects(collectionId, collectionModuleUrl, thumbnailVideoFieldIds)
             .then((loaded) => {
                 if (!disposed && loaded.length > 0) setProjects(loaded)
             })
@@ -400,7 +462,7 @@ export default function HomeSelectedWorkGrid({
         return () => {
             disposed = true
         }
-    }, [useCMS, collectionId, collectionModuleUrl])
+    }, [useCMS, collectionId, collectionModuleUrl, thumbnailVideoFieldIds])
 
     const visibleProjects = React.useMemo(
         () => getVisibleProjects(projects, Math.max(1, Math.floor(Number(maxItems) || 6))),
@@ -554,6 +616,13 @@ addPropertyControls(HomeSelectedWorkGrid, {
         title: "Module URL",
         defaultValue: "",
         placeholder: "Optional fallback",
+    },
+    thumbnailVideoFieldIds: {
+        type: ControlType.String,
+        title: "Video Fields",
+        defaultValue: DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
+        placeholder: "Thumbnail Video field ID",
+        displayTextArea: true,
     },
     maxItems: {
         type: ControlType.Number,

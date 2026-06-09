@@ -9,6 +9,7 @@ type ManagedItem = {
     title?: string
     category?: string
     description?: string
+    accessibilityLabel?: string
     mediaType?: Kind
     image?: ImageValue
     poster?: ImageValue
@@ -27,6 +28,7 @@ type Item = {
     height: number
     thumbnail: string
     videoUrl: string
+    accessibilityLabel: string
     stroke?: boolean
 }
 
@@ -96,6 +98,7 @@ type InternalState = {
     lastT: number
     suppressClick: boolean
     tapIndex: number
+    tapElement: HTMLElement | null
     lastFrameT: number
 }
 
@@ -162,6 +165,14 @@ const TAP_THRESHOLD = 18
 const NAV_REVEAL_MS = 560
 const DEFAULT_NAV_SELECTOR = "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]"
 const INTERACTIVE_SELECTOR = "a, a *, button, button *, [href], [href] *, [role='link'], [role='link'] *, [role='button'], [role='button'] *"
+const FOCUSABLE_SELECTOR = [
+    "a[href]",
+    "button:not([disabled])",
+    "textarea:not([disabled])",
+    "input:not([disabled])",
+    "select:not([disabled])",
+    "[tabindex]:not([tabindex='-1'])",
+].join(", ")
 const NAV_EXIT_MANAGED_CLASS = "playground-nav-exit-managed"
 const NAV_EXIT_HIDDEN_CLASS = "playground-nav-exit-hidden"
 const NAV_EXIT_STYLE_ID = "playground-nav-exit-reveal-style"
@@ -178,6 +189,44 @@ function imageSource(value: ImageValue) {
     if (!value) return ""
     if (typeof value === "string") return value
     return value.src || ""
+}
+
+function imageAlt(value: ImageValue) {
+    if (!value || typeof value === "string") return ""
+    return (value.alt || "").trim()
+}
+
+function isAssetLikeTitle(value: string) {
+    const normalized = value.trim()
+    if (!normalized) return true
+    return [
+        /^untitled(?:\s+\d+)?$/i,
+        /^img[\s_-]?\d+/i,
+        /^_?dsc[\s_-]?\d+/i,
+        /^slide\s+\d+$/i,
+        /^original[\s_-]+[a-f0-9]{12,}$/i,
+        /^il[\s_-]?\d+x/i,
+        /ezgif/i,
+        /online video cutter/i,
+        /video to gif converter/i,
+    ].some((pattern) => pattern.test(normalized))
+}
+
+function accessibleItemLabel(title: string, category: string, kind: Kind, index: number, explicitLabel = "") {
+    const explicit = explicitLabel.trim()
+    if (explicit) return explicit
+    if (!isAssetLikeTitle(title)) return title
+
+    const readableKind = kind === "gif" ? "GIF" : kind.charAt(0).toUpperCase() + kind.slice(1)
+    const readableCategory = category || defaultCategory(kind)
+    return `${readableCategory} ${index + 1}, ${readableKind.toLowerCase()}`
+}
+
+function isFocusableElement(element: HTMLElement) {
+    if (element.hasAttribute("disabled") || element.getAttribute("aria-hidden") === "true") return false
+    if (!canUseDOM()) return true
+    const style = window.getComputedStyle(element)
+    return style.display !== "none" && style.visibility !== "hidden"
 }
 
 function stableHash(value: string) {
@@ -215,6 +264,8 @@ function normalizeItem(entry: ManagedItem, index: number): Item | null {
     const height = Math.max(1, Math.round(entry.height || 1000))
     const fallbackDescription = `${width} x ${height} ${safeKind.toUpperCase()} from the archive.`
     const description = (entry.description || fallbackDescription).trim() || fallbackDescription
+    const explicitAccessibilityLabel = (entry.accessibilityLabel || imageAlt(entry.image) || imageAlt(entry.poster)).trim()
+    const accessibilityLabel = accessibleItemLabel(title, category, safeKind, index, explicitAccessibilityLabel)
     const stroke = entry.stroke === "on" ? true : entry.stroke === "off" ? false : typeof entry.stroke === "boolean" ? entry.stroke : undefined
     const identity = (entry.id || `${title}-${thumbnail || videoUrl}`).trim()
     const id = entry.id ? `archive-${slugify(entry.id) || stableHash(identity)}` : `archive-${slugify(title) || "item"}-${stableHash(identity)}`
@@ -231,6 +282,7 @@ function normalizeItem(entry: ManagedItem, index: number): Item | null {
         height,
         thumbnail,
         videoUrl: safeKind === "video" ? videoUrl : "",
+        accessibilityLabel,
         stroke,
     }
 }
@@ -361,12 +413,11 @@ function useNavExitReveal(enabled: boolean, selector: string, holdMs: number) {
         }
         styleEl.textContent = `
             ${managed.join(",\n")} {
-                transition: transform ${NAV_REVEAL_MS}ms cubic-bezier(.22,1,.36,1), opacity 420ms cubic-bezier(.22,1,.36,1) !important;
-                will-change: transform, opacity !important;
+                transition: transform ${NAV_REVEAL_MS}ms cubic-bezier(.22,1,.36,1) !important;
+                will-change: transform !important;
             }
             ${hidden.join(",\n")} {
-                opacity: 0 !important;
-                transform: translate3d(0, -28px, 0) !important;
+                transform: translate3d(0, -120px, 0) !important;
                 pointer-events: none !important;
             }
             ${hidden.map((part) => `${part} :where(${INTERACTIVE_SELECTOR})`).join(",\n")} { pointer-events: none !important; }
@@ -395,6 +446,29 @@ function useNavExitReveal(enabled: boolean, selector: string, holdMs: number) {
     return React.useMemo(() => ({ start, cancel }), [start, cancel])
 }
 
+function usePrefersReducedMotion() {
+    const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(() => (
+        canUseDOM() && typeof window.matchMedia === "function"
+            ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            : false
+    ))
+
+    React.useEffect(() => {
+        if (!canUseDOM() || typeof window.matchMedia !== "function") return
+        const query = window.matchMedia("(prefers-reduced-motion: reduce)")
+        const update = () => setPrefersReducedMotion(query.matches)
+        update()
+        if (typeof query.addEventListener === "function") {
+            query.addEventListener("change", update)
+            return () => query.removeEventListener("change", update)
+        }
+        query.addListener(update)
+        return () => query.removeListener(update)
+    }, [])
+
+    return prefersReducedMotion
+}
+
 function MediaFrame({
     item,
     detail,
@@ -414,6 +488,7 @@ function MediaFrame({
 }) {
     const [ready, setReady] = React.useState(false)
     const videoRef = React.useRef<HTMLVideoElement>(null)
+    const prefersReducedMotion = usePrefersReducedMotion()
     const source = item.kind === "video" && item.videoUrl ? item.videoUrl : item.thumbnail
     const poster = item.thumbnail ? (detail ? item.thumbnail : cargoWidthUrl(item.thumbnail, 900)) : undefined
     const imageSrc = item.kind === "gif" ? item.thumbnail : detail ? cargoWidthUrl(item.thumbnail, 1800) : cargoWidthUrl(item.thumbnail, 900)
@@ -431,10 +506,15 @@ function MediaFrame({
         const video = videoRef.current
         if (!video) return
         video.muted = true
+        if (prefersReducedMotion) {
+            video.pause()
+            setReady(true)
+            return
+        }
         if (!video.paused) return
         const play = video.play()
         if (play && typeof play.catch === "function") play.catch(() => {})
-    }, [source])
+    }, [source, prefersReducedMotion])
 
     const innerStyle: React.CSSProperties = detail
         ? {
@@ -478,7 +558,7 @@ function MediaFrame({
                     ref={videoRef}
                     src={item.videoUrl}
                     poster={poster}
-                    autoPlay
+                    autoPlay={!prefersReducedMotion}
                     loop
                     muted
                     playsInline
@@ -486,7 +566,8 @@ function MediaFrame({
                     controls={false}
                     width={item.width}
                     height={item.height}
-                    aria-label={detail ? item.title : undefined}
+                    aria-hidden={detail ? undefined : true}
+                    aria-label={detail ? `${item.accessibilityLabel}, video` : undefined}
                     onLoadedData={() => setReady(true)}
                     onLoadedMetadata={() => setReady(true)}
                     onCanPlay={() => setReady(true)}
@@ -497,7 +578,7 @@ function MediaFrame({
             ) : (
                 <img
                     src={imageSrc}
-                    alt={detail ? item.title : ""}
+                    alt={detail ? item.accessibilityLabel : ""}
                     draggable={false}
                     loading={detail ? "eager" : "lazy"}
                     decoding="async"
@@ -527,6 +608,11 @@ export default function ArchivePlayground(props: Props) {
     const isCanvas = target === RenderTarget.canvas || target === RenderTarget.thumbnail
     const isInteractive = !isCanvas
     const rootRef = React.useRef<HTMLDivElement>(null)
+    const galleryRef = React.useRef<HTMLDivElement>(null)
+    const panelRef = React.useRef<HTMLDivElement>(null)
+    const closeButtonRef = React.useRef<HTMLButtonElement>(null)
+    const openerRef = React.useRef<HTMLElement | null>(null)
+    const focusReturnTimerRef = React.useRef<number | null>(null)
     const cfgRef = React.useRef(props)
     cfgRef.current = props
 
@@ -537,6 +623,10 @@ export default function ArchivePlayground(props: Props) {
     const [selected, setSelected] = React.useState<Item | null>(null)
     const [panelItem, setPanelItem] = React.useState<Item | null>(null)
     const [closeHover, setCloseHover] = React.useState(false)
+    const panelOpen = Boolean(selected)
+    const panelVisible = Boolean(panelItem)
+    const panelTitleId = React.useId()
+    const panelDescriptionId = React.useId()
 
     const closeTimerRef = React.useRef<number | null>(null)
     const selectedRef = React.useRef<Item | null>(null)
@@ -565,6 +655,7 @@ export default function ArchivePlayground(props: Props) {
         lastT: 0,
         suppressClick: false,
         tapIndex: -1,
+        tapElement: null,
         lastFrameT: 0,
     })
 
@@ -597,6 +688,10 @@ export default function ArchivePlayground(props: Props) {
                 window.clearTimeout(closeTimerRef.current)
                 closeTimerRef.current = null
             }
+            if (focusReturnTimerRef.current !== null && canUseDOM()) {
+                window.clearTimeout(focusReturnTimerRef.current)
+                focusReturnTimerRef.current = null
+            }
         }
     }, [])
 
@@ -628,13 +723,47 @@ export default function ArchivePlayground(props: Props) {
         }
     }, [])
 
+    React.useEffect(() => {
+        const gallery = galleryRef.current
+        if (!gallery || !canUseDOM()) return
+        if (panelOpen) {
+            gallery.setAttribute("inert", "")
+            gallery.setAttribute("aria-hidden", "true")
+        } else {
+            gallery.removeAttribute("inert")
+            gallery.removeAttribute("aria-hidden")
+        }
+
+        return () => {
+            gallery.removeAttribute("inert")
+            gallery.removeAttribute("aria-hidden")
+        }
+    }, [panelOpen])
+
+    const queueFocusReturn = React.useCallback(() => {
+        if (!canUseDOM()) return
+        if (focusReturnTimerRef.current !== null) window.clearTimeout(focusReturnTimerRef.current)
+        focusReturnTimerRef.current = window.setTimeout(() => {
+            focusReturnTimerRef.current = null
+            const opener = openerRef.current
+            if (opener?.isConnected && opener.getAttribute("aria-hidden") !== "true" && opener.tabIndex >= 0 && typeof opener.focus === "function") {
+                opener.focus({ preventScroll: true })
+                return
+            }
+            const firstCard = galleryRef.current?.querySelector<HTMLElement>("[data-playground-card='true']:not([aria-hidden='true'])")
+            firstCard?.focus({ preventScroll: true })
+        }, 0)
+    }, [])
+
     const closePanel = React.useCallback(() => {
         navExitReveal.start()
         if (closeTimerRef.current !== null && canUseDOM()) {
             window.clearTimeout(closeTimerRef.current)
             closeTimerRef.current = null
         }
+        const shouldReturnFocus = Boolean(selectedRef.current)
         setSelected(null)
+        if (shouldReturnFocus) queueFocusReturn()
         if (canUseDOM()) {
             closeTimerRef.current = window.setTimeout(() => {
                 closeTimerRef.current = null
@@ -643,19 +772,29 @@ export default function ArchivePlayground(props: Props) {
         } else {
             setPanelItem(null)
         }
-    }, [navExitReveal, panelExitMs])
+    }, [navExitReveal, panelExitMs, queueFocusReturn])
 
-    const openItem = React.useCallback((item: Item) => {
+    const openItem = React.useCallback((item: Item, opener?: HTMLElement | null) => {
         navExitReveal.cancel()
         if (closeTimerRef.current !== null && canUseDOM()) {
             window.clearTimeout(closeTimerRef.current)
             closeTimerRef.current = null
+        }
+        if (focusReturnTimerRef.current !== null && canUseDOM()) {
+            window.clearTimeout(focusReturnTimerRef.current)
+            focusReturnTimerRef.current = null
+        }
+        if (opener?.isConnected) {
+            openerRef.current = opener
+        } else if (canUseDOM() && document.activeElement instanceof HTMLElement) {
+            openerRef.current = document.activeElement
         }
         const s = state.current
         s.down = false
         s.dragging = false
         s.suppressClick = false
         s.tapIndex = -1
+        s.tapElement = null
         s.vx = 0
         s.vy = 0
         setHovered("")
@@ -665,13 +804,53 @@ export default function ArchivePlayground(props: Props) {
     }, [navExitReveal])
 
     React.useEffect(() => {
-        if (!selected || !canUseDOM()) return
+        if (!panelOpen || !canUseDOM()) return
+        const timer = window.setTimeout(() => {
+            closeButtonRef.current?.focus({ preventScroll: true })
+        }, 0)
+        return () => window.clearTimeout(timer)
+    }, [panelOpen, panelItem?.id])
+
+    React.useEffect(() => {
+        if (!panelOpen || !canUseDOM()) return
         const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "Escape") closePanel()
+            if (event.key === "Escape") {
+                event.preventDefault()
+                event.stopPropagation()
+                closePanel()
+                return
+            }
+            if (event.key !== "Tab") return
+
+            const panel = panelRef.current
+            if (!panel) return
+            const focusable = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(isFocusableElement)
+            const first = focusable[0] || panel
+            const last = focusable[focusable.length - 1] || panel
+            const active = document.activeElement
+
+            if (!panel.contains(active)) {
+                event.preventDefault()
+                first.focus({ preventScroll: true })
+                return
+            }
+            if (!(active instanceof HTMLElement) || !focusable.includes(active)) {
+                event.preventDefault()
+                first.focus({ preventScroll: true })
+                return
+            }
+
+            if (event.shiftKey && active === first) {
+                event.preventDefault()
+                last.focus({ preventScroll: true })
+            } else if (!event.shiftKey && active === last) {
+                event.preventDefault()
+                first.focus({ preventScroll: true })
+            }
         }
-        window.addEventListener("keydown", onKeyDown)
-        return () => window.removeEventListener("keydown", onKeyDown)
-    }, [selected, closePanel])
+        window.addEventListener("keydown", onKeyDown, true)
+        return () => window.removeEventListener("keydown", onKeyDown, true)
+    }, [panelOpen, closePanel])
 
     const updatePointer = React.useCallback((clientX: number, clientY: number) => {
         const element = rootRef.current
@@ -765,6 +944,11 @@ export default function ArchivePlayground(props: Props) {
         return Number.isFinite(index) ? index : -1
     }, [])
 
+    const getCardElementFromTarget = React.useCallback((target: EventTarget | null) => {
+        const element = target as HTMLElement | null
+        return element?.closest?.("[data-playground-card='true']") as HTMLElement | null
+    }, [])
+
     const onWheel = (event: React.WheelEvent<HTMLDivElement>) => {
         if (!isInteractive || selectedRef.current) return
         const deltaUnit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? Math.max(viewport.w, viewport.h) : 1
@@ -797,6 +981,7 @@ export default function ArchivePlayground(props: Props) {
         s.dragging = false
         s.suppressClick = false
         s.tapIndex = getCardIndexFromTarget(event.target)
+        s.tapElement = getCardElementFromTarget(event.target)
         s.startX = event.clientX
         s.startY = event.clientY
         s.originX = s.x
@@ -832,6 +1017,7 @@ export default function ArchivePlayground(props: Props) {
             s.dragging = true
             s.suppressClick = true
             s.tapIndex = -1
+            s.tapElement = null
         }
         if (s.dragging) {
             s.x = s.originX + dx
@@ -858,11 +1044,13 @@ export default function ArchivePlayground(props: Props) {
         s.down = false
         s.dragging = false
         s.tapIndex = -1
+        const opener = s.tapElement
+        s.tapElement = null
         setMotion({ x: s.x, y: s.y, mx: s.mx, my: s.my, dragging: false })
         try {
             event.currentTarget.releasePointerCapture(event.pointerId)
         } catch (error) {}
-        if (itemToOpen) openItem(itemToOpen)
+        if (itemToOpen) openItem(itemToOpen, opener)
         if (canUseDOM()) window.setTimeout(() => { s.suppressClick = false }, 140)
         else s.suppressClick = false
     }
@@ -889,6 +1077,7 @@ export default function ArchivePlayground(props: Props) {
             const top = gy * cellY + motion.y + motion.my + centerY
             const key = `${item.id}-${gx}-${gy}`
             const isHot = hovered === key
+            const cardIsKeyboardReachable = isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
 
             cells.push(
                 <button
@@ -896,7 +1085,9 @@ export default function ArchivePlayground(props: Props) {
                     type="button"
                     data-playground-card="true"
                     data-playground-index={index}
-                    aria-label={item.title}
+                    aria-hidden={cardIsKeyboardReachable ? undefined : true}
+                    aria-label={`Open ${item.accessibilityLabel} details`}
+                    tabIndex={cardIsKeyboardReachable ? 0 : -1}
                     onMouseEnter={() => setHovered(key)}
                     onMouseLeave={() => setHovered("")}
                     onFocus={() => setHovered(key)}
@@ -904,14 +1095,14 @@ export default function ArchivePlayground(props: Props) {
                     onKeyDown={(event) => {
                         if (event.key === "Enter" || event.key === " ") {
                             event.preventDefault()
-                            openItem(item)
+                            openItem(item, event.currentTarget)
                         }
                     }}
                     onClick={(event) => {
                         event.preventDefault()
                         event.stopPropagation()
                         if (!isInteractive || state.current.suppressClick || state.current.dragging) return
-                        openItem(item)
+                        openItem(item, event.currentTarget)
                     }}
                     style={{
                         position: "absolute",
@@ -924,7 +1115,7 @@ export default function ArchivePlayground(props: Props) {
                         borderRadius: 0,
                         background: "transparent",
                         boxShadow: "none",
-                        overflow: "hidden",
+                        overflow: "visible",
                         appearance: "none",
                         cursor: motion.dragging ? "grabbing" : "pointer",
                         transform: `translate3d(0, 0, 0) scale(${isHot ? hoverScale : 1})`,
@@ -939,8 +1130,6 @@ export default function ArchivePlayground(props: Props) {
         }
     }
 
-    const panelOpen = Boolean(selected)
-    const panelVisible = Boolean(panelItem)
     const closeTextRolled = closeHover || (panelVisible && !panelOpen)
     const modalPosition = isCanvas ? "absolute" : "fixed"
     const panelPadding = "clamp(22px, 2.8vw, 40px)"
@@ -950,6 +1139,8 @@ export default function ArchivePlayground(props: Props) {
         <div
             ref={rootRef}
             data-playground-root="true"
+            role="main"
+            aria-label="Play archive"
             style={{
                 ...props.style,
                 width: "100%",
@@ -968,6 +1159,7 @@ export default function ArchivePlayground(props: Props) {
             }}
         >
             <div
+                ref={galleryRef}
                 onWheel={onWheel}
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
@@ -996,11 +1188,15 @@ export default function ArchivePlayground(props: Props) {
                 <div style={{ position: "absolute", inset: 0, background: "hsla(35,17%,86%,.2)", opacity: 0.85 }} />
             </div>
 
-            <aside
+            <div
+                ref={panelRef}
                 data-playground-panel="true"
-                role="dialog"
-                aria-modal="true"
-                aria-label={panelItem ? `${panelItem.title} details` : "Playground detail"}
+                role={panelOpen ? "dialog" : undefined}
+                aria-modal={panelOpen ? true : undefined}
+                aria-labelledby={panelOpen ? panelTitleId : undefined}
+                aria-describedby={panelOpen ? panelDescriptionId : undefined}
+                aria-hidden={panelOpen ? undefined : true}
+                tabIndex={-1}
                 onPointerDown={(event) => event.stopPropagation()}
                 style={{
                     position: modalPosition,
@@ -1022,8 +1218,10 @@ export default function ArchivePlayground(props: Props) {
                 {panelItem && (
                     <div style={{ height: "100%", overflowY: "auto", padding: `calc(env(safe-area-inset-top, 0px) + clamp(84px, 11vh, 108px)) ${panelPadding} clamp(84px, 17vh, 140px)` }}>
                         <button
+                            ref={closeButtonRef}
                             type="button"
                             aria-label="Close detail"
+                            tabIndex={panelOpen ? 0 : -1}
                             onClick={() => {
                                 setCloseHover(true)
                                 closePanel()
@@ -1094,13 +1292,13 @@ export default function ArchivePlayground(props: Props) {
                         <div style={{ display: "grid", gridTemplateColumns: stackPanelText ? "minmax(0, 1fr)" : "minmax(0, 1.08fr) minmax(0, .92fr)", gap: stackPanelText ? 18 : 28, alignItems: "start", width: "100%" }}>
                             <div style={{ minWidth: 0, overflow: "hidden" }}>
                                 <div style={{ fontFamily: MONO, fontSize: 11, lineHeight: 1.2, letterSpacing: ".04em", textTransform: "uppercase", color: labelColor, marginBottom: 12 }}>{panelItem.category}</div>
-                                <h2 style={{ margin: 0, fontFamily: DISPLAY, fontSize: "clamp(24px, 2.2vw, 34px)", lineHeight: 1.06, fontWeight: 500, letterSpacing: 0, color: textColor, overflowWrap: "anywhere" }}>{panelItem.title}</h2>
+                                <h2 id={panelTitleId} style={{ margin: 0, fontFamily: DISPLAY, fontSize: "clamp(24px, 2.2vw, 34px)", lineHeight: 1.06, fontWeight: 500, letterSpacing: 0, color: textColor, overflowWrap: "anywhere" }}>{panelItem.title}</h2>
                             </div>
-                            <p style={{ margin: 0, minWidth: 0, fontFamily: DISPLAY, fontSize: 16, lineHeight: 1.45, letterSpacing: 0, color: mutedTextColor, overflowWrap: "break-word" }}>{panelItem.description}</p>
+                            <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: DISPLAY, fontSize: 16, lineHeight: 1.45, letterSpacing: 0, color: mutedTextColor, overflowWrap: "break-word" }}>{panelItem.description}</p>
                         </div>
                     </div>
                 )}
-            </aside>
+            </div>
         </div>
     )
 }
@@ -1120,6 +1318,7 @@ addPropertyControls<Props>(ArchivePlayground, {
             controls: {
                 id: { type: ControlType.String, title: "ID", defaultValue: "", hidden: hideInternal },
                 title: { type: ControlType.String, title: "Title", defaultValue: "Archive Item" },
+                accessibilityLabel: { type: ControlType.String, title: "A11y Label", defaultValue: "" },
                 description: { type: ControlType.String, title: "Description", defaultValue: "", displayTextArea: true },
                 mediaType: {
                     type: ControlType.Enum,

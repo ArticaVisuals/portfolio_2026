@@ -15,6 +15,9 @@ import { addPropertyControls, ControlType } from "framer"
 // toggle unmounts it and stops registration. Each registrar calls register()
 // with one CMS row, and IndexPage subscribes when its Use CMS prop is on.
 const REGISTRY_KEY = "__articaIndexProjectsRegistry"
+const HIDDEN_CMS_LINK_SELECTOR = '[data-framer-name="CmsLink"], [name="CmsLink"]'
+const HIDDEN_CMS_INTERACTIVE_SELECTOR = 'a[href], [role="link"], [tabindex]'
+const HIDDEN_CMS_LINK_INERT_ATTR = "data-index-hidden-cms-link-inert"
 
 type RegistryShape = {
     items: Map<string, Record<string, unknown>>
@@ -57,8 +60,75 @@ function getRegistry(): RegistryShape | null {
     return w[REGISTRY_KEY]
 }
 
+function preventHiddenCMSLinkClick(event: MouseEvent) {
+    const target = event.target
+    if (!(target instanceof Element)) return
+    if (!target.closest(`[${HIDDEN_CMS_LINK_INERT_ATTR}="true"]`)) return
+
+    event.preventDefault()
+    event.stopPropagation()
+    event.stopImmediatePropagation()
+}
+
+function inertHiddenCMSLinks(): number {
+    if (typeof document === "undefined") return 0
+
+    let count = 0
+    document.querySelectorAll<HTMLElement>(HIDDEN_CMS_LINK_SELECTOR).forEach((container) => {
+        container.setAttribute("aria-hidden", "true")
+
+        container
+            .querySelectorAll<HTMLElement>(HIDDEN_CMS_INTERACTIVE_SELECTOR)
+            .forEach((element) => {
+                if (element.getAttribute(HIDDEN_CMS_LINK_INERT_ATTR) !== "true") {
+                    element.addEventListener("click", preventHiddenCMSLinkClick, true)
+                }
+                element.setAttribute("tabindex", "-1")
+                element.setAttribute("aria-hidden", "true")
+                element.setAttribute(HIDDEN_CMS_LINK_INERT_ATTR, "true")
+                count += 1
+            })
+    })
+
+    return count
+}
+
+function useHiddenCMSLinkInerting(enabled: boolean) {
+    useEffect(() => {
+        if (!enabled || typeof window === "undefined") return
+
+        let frame = 0
+        const timeouts: number[] = []
+
+        const run = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(inertHiddenCMSLinks)
+        }
+
+        run()
+        ;[100, 350, 900, 1800, 3200].forEach((delay) => {
+            timeouts.push(window.setTimeout(run, delay))
+        })
+
+        const observer = new MutationObserver(run)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["href", "role", "tabindex", "data-framer-name", "name"],
+            childList: true,
+            subtree: true,
+        })
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+        }
+    }, [enabled])
+}
+
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
+const VIEW_TOGGLE_OPTIONS = ["grid", "list"] as const
 
 const indexGridStyle: React.CSSProperties = {
     display: "grid",
@@ -97,6 +167,7 @@ type Project = {
     year: number | string
     thumbnail?: string
     thumbnailVideoLink?: string
+    thumbnailStroke?: boolean
     slug?: string
     sortOrder?: number
     isHomepage?: boolean
@@ -119,6 +190,8 @@ type CMSCollectionExport = {
 type CMSModule = {
     a?: CMSCollectionExport
     r?: CMSCollectionExport | (() => unknown)
+    t?: () => unknown
+    default?: CMSCollectionExport | (() => unknown)
     [key: string]: unknown
 }
 
@@ -130,8 +203,20 @@ type Filters = {
 
 type FilterType = "disciplines" | "industries" | "years"
 
-type ListTypographyVariant = "standard" | "mono13"
 type ListHoverVariant = "flip" | "highlight"
+type AdvancedSettings = {
+    defaultView?: string
+    listHoverVariant?: ListHoverVariant
+    cmsModuleUrl?: string
+    thumbnailVideoFieldIds?: string
+    textPrimary?: string
+    textSecondary?: string
+    textTertiary?: string
+    bg?: string
+    dividerStrong?: string
+    dividerSubtle?: string
+    surfaceActive?: string
+}
 
 const TAXONOMY_LINE_HEIGHT = "24px"
 const INDEX_CMS_COLLECTION_ID = "yTHrQWMIY"
@@ -143,7 +228,8 @@ const INDEX_CMS_FIELD_IDS = {
     category2: "VV1CggU2J",
     category3: "E6OpH0hSs",
     thumbnail: "Jy7hBJady",
-    thumbnailVideoLink: "WG62tRjG8",
+    thumbnailVideoLink: "SvOqFqdby",
+    thumbnailStroke: "OHdUYs6Mo",
     year: "QZqSK_3OF",
     industry: "mBIilFqVM",
     isHomepage: "myUIfK0j7",
@@ -151,9 +237,25 @@ const INDEX_CMS_FIELD_IDS = {
 const INDEX_CMS_LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
+    "/index",
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
+    "https://khaki-ship-257706.framer.app/index",
 ]
+const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = INDEX_CMS_FIELD_IDS.thumbnailVideoLink
+const DEFAULT_ADVANCED_SETTINGS: AdvancedSettings = {
+    defaultView: "list",
+    listHoverVariant: "flip",
+    cmsModuleUrl: "",
+    thumbnailVideoFieldIds: DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
+    textPrimary: "#141414",
+    textSecondary: "#141414",
+    textTertiary: "#979797",
+    bg: "#F7F5F0",
+    dividerStrong: "#141414",
+    dividerSubtle: "#141414",
+    surfaceActive: "#EAE8E3",
+}
 
 // Snapshot of the "All Projects" CMS collection. Used only when Use CMS is off.
 // In CMS mode, stale fallback rows should never appear as if they are live CMS.
@@ -167,8 +269,8 @@ const DEFAULT_PROJECTS: Project[] = [
         year: "2025",
         thumbnail:
             "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
-        thumbnailVideoLink:
-            "https://freight.cargo.site/i/V2732716404789921262344304055829/AirPods-Pro-3-Introduction-1.mp4",
+        thumbnailVideoLink: "",
+        thumbnailStroke: true,
         slug: "airpods",
         sortOrder: 1,
         isHomepage: true,
@@ -224,8 +326,7 @@ const DEFAULT_PROJECTS: Project[] = [
         year: "2025",
         thumbnail:
             "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
-        thumbnailVideoLink:
-            "https://freight.cargo.site/i/K2717924145885630584799912777237/Motion-Connect_1.mp4",
+        thumbnailVideoLink: "",
         slug: "motion-connect-2025",
         sortOrder: 5,
         isHomepage: true,
@@ -307,8 +408,7 @@ const DEFAULT_PROJECTS: Project[] = [
         year: "2024",
         thumbnail:
             "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
-        thumbnailVideoLink:
-            "https://freight.cargo.site/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+        thumbnailVideoLink: "",
         slug: "cellular-symphony",
         sortOrder: 11,
         isHomepage: false,
@@ -322,7 +422,7 @@ const DEFAULT_PROJECTS: Project[] = [
         year: "2024",
         thumbnail:
             "https://framerusercontent.com/images/TYPcX0xZpgwrY5Ezh0e7forig.jpg",
-        thumbnailVideoLink: "https://player.vimeo.com/video/903963136",
+        thumbnailVideoLink: "",
         slug: "neon-lights",
         sortOrder: 12,
         isHomepage: false,
@@ -385,6 +485,13 @@ function getDisciplines(p: Project): string[] {
 
 function normalizeProjectDisciplines(p: Project): Project {
     const [category1 = "", category2 = "", category3 = ""] = getDisciplines(p)
+    if (
+        p.category1 === category1 &&
+        (p.category2 ?? "") === category2 &&
+        (p.category3 ?? "") === category3
+    ) {
+        return p
+    }
     return { ...p, category1, category2, category3 }
 }
 
@@ -392,39 +499,40 @@ function getDisciplineDisplay(p: Project): string {
     return getDisciplines(p).join(", ")
 }
 
-function collectByProjectOrder(
-    projects: Project[],
-    extract: (p: Project) => string[]
-): string[] {
-    const items: string[] = []
-    const seen = new Set<string>()
-
-    ;[...projects]
-        .sort((a, b) => {
-            const aOrder = a.sortOrder ?? Number.MAX_SAFE_INTEGER
-            const bOrder = b.sortOrder ?? Number.MAX_SAFE_INTEGER
-            return aOrder - bOrder || a.title.localeCompare(b.title)
-        })
-        .forEach((p) => {
-            for (const raw of extract(p)) {
-                const value = typeof raw === "string" ? raw.trim() : ""
-                if (!value || seen.has(value)) continue
-                seen.add(value)
-                items.push(value)
-            }
-        })
-
-    return items
+function sortProjectsByDisplayOrder(projects: Project[]): Project[] {
+    return [...projects].sort((a, b) => {
+        const aOrder = a.sortOrder ?? Number.MAX_SAFE_INTEGER
+        const bOrder = b.sortOrder ?? Number.MAX_SAFE_INTEGER
+        return aOrder - bOrder || a.title.localeCompare(b.title)
+    })
 }
 
-function getDisciplineNavItems(projects: Project[]): string[] {
-    return sortTaxonomyLabels(collectByProjectOrder(projects, getDisciplines))
-}
+function getTaxonomyNavItems(projects: Project[]) {
+    const disciplineItems: string[] = []
+    const industryItems: string[] = []
+    const seenDisciplines = new Set<string>()
+    const seenIndustries = new Set<string>()
 
-function getIndustryNavItems(projects: Project[]): string[] {
-    return sortTaxonomyLabels(
-        collectByProjectOrder(projects, (p) => [p.industry ?? ""])
-    )
+    for (const p of sortProjectsByDisplayOrder(projects)) {
+        for (const raw of getDisciplines(p)) {
+            const value = raw.trim()
+            if (!value || seenDisciplines.has(value)) continue
+            seenDisciplines.add(value)
+            disciplineItems.push(value)
+        }
+
+        const industry = String(p.industry ?? "").trim()
+        if (industry && !seenIndustries.has(industry)) {
+            seenIndustries.add(industry)
+            industryItems.push(industry)
+        }
+    }
+
+    return {
+        disciplines: sortTaxonomyLabels(disciplineItems),
+        industries: sortTaxonomyLabels(industryItems),
+        years: getYearNavItems(projects),
+    }
 }
 
 function getYearNavItems(projects: Project[]): number[] {
@@ -447,6 +555,75 @@ function sortTaxonomyLabels(items: string[]): string[] {
 
 function getCaseStudyUrl(p: Project): string {
     return p.slug ? `/case-studies/${p.slug}` : ""
+}
+
+function getThumbnailVideoLink(project: Project): string {
+    return normalizeMediaSource(project.thumbnailVideoLink)
+}
+
+function isLoopingImageMediaSource(source: string): boolean {
+    const cleanSource = source.split(/[?#]/)[0]?.toLowerCase() || ""
+    return /\.(gif|webp|apng)$/.test(cleanSource)
+}
+
+function getProjectLookupKey(project: Project): string {
+    const slug = String(project.slug ?? "")
+        .trim()
+        .replace(/^\/+|\/+$/g, "")
+        .toLowerCase()
+    if (slug) return `slug:${slug}`
+
+    const title = String(project.title ?? "")
+        .trim()
+        .replace(/\s+/g, " ")
+        .toLowerCase()
+    return title ? `title:${title}` : ""
+}
+
+function buildProjectLookup(projects: Project[]): Map<string, Project> {
+    const lookup = new Map<string, Project>()
+    projects.forEach((project) => {
+        const key = getProjectLookupKey(project)
+        if (key) lookup.set(key, project)
+    })
+    return lookup
+}
+
+function hydrateProjectFromCMSModule(
+    project: Project,
+    cmsLookup: Map<string, Project>
+): Project {
+    const key = getProjectLookupKey(project)
+    const cmsProject = key ? cmsLookup.get(key) : undefined
+    if (!cmsProject) {
+        return project.thumbnailStroke
+            ? { ...project, thumbnailStroke: false }
+            : project
+    }
+
+    const cmsVideo = cmsProject ? getThumbnailVideoLink(cmsProject) : ""
+    const cmsThumbnail = normalizeThumbnailUrl(cmsProject.thumbnail as unknown) || ""
+    const currentThumbnail = normalizeThumbnailUrl(project.thumbnail as unknown) || ""
+    const cmsStroke = Boolean(cmsProject.thumbnailStroke)
+    let changed = false
+    const nextProject: Project = { ...project }
+
+    if (cmsProject.thumbnail !== undefined && currentThumbnail !== cmsThumbnail) {
+        nextProject.thumbnail = cmsThumbnail
+        changed = true
+    }
+
+    if (!getThumbnailVideoLink(project) && cmsVideo) {
+        nextProject.thumbnailVideoLink = cmsVideo
+        changed = true
+    }
+
+    if (project.thumbnailStroke !== cmsStroke) {
+        nextProject.thumbnailStroke = cmsStroke
+        changed = true
+    }
+
+    return changed ? nextProject : project
 }
 
 function normalizeYear(raw: unknown): number {
@@ -488,6 +665,42 @@ function normalizeThumbnailUrl(raw: unknown): string | undefined {
     return undefined
 }
 
+function normalizeMediaSource(raw: unknown): string {
+    if (!raw) return ""
+    if (typeof raw === "string") return raw.trim()
+    if (Array.isArray(raw)) {
+        return raw.map(normalizeMediaSource).find(Boolean) || ""
+    }
+    if (typeof raw === "object") {
+        const record = raw as Record<string, unknown>
+        if ("value" in record) return normalizeMediaSource(record.value)
+
+        for (const key of ["src", "url", "href", "file"]) {
+            const source = normalizeMediaSource(record[key])
+            if (source) return source
+        }
+    }
+    return ""
+}
+
+function splitFieldIds(value: string): string[] {
+    return String(value || "")
+        .split(/[\n,]/)
+        .map((fieldId) => fieldId.trim())
+        .filter(Boolean)
+}
+
+function readFirstCMSMediaField(
+    data: Record<string, CMSFieldValue | unknown> | undefined,
+    fieldIds: string
+): string {
+    for (const fieldId of splitFieldIds(fieldIds)) {
+        const source = normalizeMediaSource(readCMSField(data, fieldId))
+        if (source) return source
+    }
+    return ""
+}
+
 function escapeRegExp(value: string): string {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 }
@@ -516,10 +729,24 @@ function normalizeCMSNumber(value: unknown): number | undefined {
     return Number.isFinite(parsed) ? parsed : undefined
 }
 
+function normalizeCMSBoolean(value: unknown): boolean {
+    if (value && typeof value === "object" && "value" in value) {
+        return normalizeCMSBoolean((value as CMSFieldValue).value)
+    }
+    if (typeof value === "boolean") return value
+    if (typeof value === "number") return value !== 0
+    if (typeof value === "string") {
+        const normalized = value.trim().toLowerCase()
+        if (!normalized || normalized === "false" || normalized === "0") return false
+        return true
+    }
+    return Boolean(value)
+}
+
 function isCMSModuleUrl(url: string, collectionId: string): boolean {
     const collectionPattern = escapeRegExp(collectionId)
     return new RegExp(
-        `/${collectionPattern}\\.[^/]+\\.mjs(?:[?#].*)?$`
+        `/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`
     ).test(url)
 }
 
@@ -530,7 +757,7 @@ function findCMSModuleUrlInMarkup(
     const collectionPattern = escapeRegExp(collectionId)
     const match = markup.match(
         new RegExp(
-            `https://framerusercontent\\.com/sites/[^"']+/${collectionPattern}\\.[^"']+\\.mjs`,
+            `https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`,
             "i"
         )
     )
@@ -604,30 +831,42 @@ async function resolveCMSModuleUrl(
 }
 
 function initializeCMSModule(module: CMSModule) {
-    try {
-        if (typeof module.r === "function") module.r()
-    } catch {
-        // Framer generated modules can be initialized already in preview.
-    }
+    const candidates = [module.t, module.r, module.default, ...Object.values(module)]
+    candidates.forEach((candidate) => {
+        try {
+            if (typeof candidate === "function") candidate()
+        } catch {
+            // Framer generated modules can be initialized already in preview.
+        }
+    })
+}
+
+function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
+    const collection = (value as CMSCollectionExport | undefined)
+        ?.collectionByLocaleId?.default
+    return !!collection && typeof collection.scanItems === "function"
 }
 
 function getCMSCollection(module: CMSModule): CMSCollection | undefined {
-    const legacyCollection = module.a?.collectionByLocaleId?.default
-    if (legacyCollection && typeof legacyCollection.scanItems === "function") {
-        return legacyCollection
-    }
-
-    const currentExport =
-        module.r && typeof module.r === "object" ? module.r : undefined
-    const currentCollection = currentExport?.collectionByLocaleId?.default
-    if (currentCollection && typeof currentCollection.scanItems === "function") {
-        return currentCollection
+    const candidates = [module.a, module.r, module.default, ...Object.values(module)]
+    for (const candidate of candidates) {
+        let resolved = candidate
+        if (typeof resolved === "function") {
+            try {
+                resolved = resolved()
+            } catch {
+                resolved = undefined
+            }
+        }
+        if (isCMSCollectionExport(resolved)) {
+            return resolved.collectionByLocaleId?.default
+        }
     }
 
     return undefined
 }
 
-function cmsItemToProject(item: CMSItem): Project | null {
+function cmsItemToProject(item: CMSItem, thumbnailVideoFieldIds: string): Project | null {
     const data = item.data
     const fields = INDEX_CMS_FIELD_IDS
     const title = normalizeCMSText(readCMSField(data, fields.title))
@@ -647,15 +886,15 @@ function cmsItemToProject(item: CMSItem): Project | null {
         year: normalizeCMSText(readCMSField(data, fields.year)),
         thumbnail:
             normalizeThumbnailUrl(readCMSField(data, fields.thumbnail)) || "",
-        thumbnailVideoLink: normalizeCMSText(
-            readCMSField(data, fields.thumbnailVideoLink)
-        ),
+        thumbnailVideoLink: readFirstCMSMediaField(data, thumbnailVideoFieldIds),
+        thumbnailStroke: normalizeCMSBoolean(readCMSField(data, fields.thumbnailStroke)),
         isHomepage: Boolean(readCMSField(data, fields.isHomepage)),
     }
 }
 
 async function loadCMSProjects(
-    preferredModuleUrl?: string
+    preferredModuleUrl?: string,
+    thumbnailVideoFieldIds: string = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS
 ): Promise<Project[]> {
     const moduleUrl = await resolveCMSModuleUrl(
         INDEX_CMS_COLLECTION_ID,
@@ -667,12 +906,11 @@ async function loadCMSProjects(
     initializeCMSModule(module)
 
     const collection = getCMSCollection(module)
-    const scanItems = collection?.scanItems
-    if (typeof scanItems !== "function") return []
+    if (typeof collection?.scanItems !== "function") return []
 
-    const items = await scanItems()
+    const items = await collection.scanItems()
     return items
-        .map(cmsItemToProject)
+        .map((item) => cmsItemToProject(item, thumbnailVideoFieldIds))
         .filter((project): project is Project => Boolean(project))
 }
 
@@ -701,21 +939,48 @@ function filterProjects(
     filters: Filters,
     query: string
 ): Project[] {
+    const normalizedQuery = query.trim().toLowerCase()
+    const hasDisciplineFilters = filters.disciplines.length > 0
+    const hasIndustryFilters = filters.industries.length > 0
+    const hasYearFilters = filters.years.length > 0
+
+    if (
+        !hasDisciplineFilters &&
+        !hasIndustryFilters &&
+        !hasYearFilters &&
+        !normalizedQuery
+    ) {
+        return projects
+    }
+
+    const disciplineFilters = hasDisciplineFilters
+        ? new Set(filters.disciplines)
+        : null
+    const industryFilters = hasIndustryFilters
+        ? new Set(filters.industries)
+        : null
+    const yearFilters = hasYearFilters ? new Set(filters.years) : null
+
     return projects.filter((p) => {
         const pDisciplines = getDisciplines(p)
         const matchDiscipline =
-            filters.disciplines.length === 0 ||
+            !disciplineFilters ||
             filters.disciplines.every((d) => pDisciplines.includes(d))
         const matchIndustry =
-            filters.industries.length === 0 ||
-            filters.industries.includes(p.industry)
+            !industryFilters || industryFilters.has(p.industry)
         const matchYear =
-            filters.years.length === 0 ||
-            filters.years.includes(normalizeYear(p.year))
+            !yearFilters || yearFilters.has(normalizeYear(p.year))
         const matchSearch =
-            !query || p.title.toLowerCase().includes(query.toLowerCase())
+            !normalizedQuery ||
+            p.title.toLowerCase().includes(normalizedQuery)
         return matchDiscipline && matchIndustry && matchYear && matchSearch
     })
+}
+
+function toggleFilterValue<T>(items: T[], value: T): T[] {
+    return items.includes(value)
+        ? items.filter((item) => item !== value)
+        : [...items, value]
 }
 
 function buildGlobalCss(): string {
@@ -823,7 +1088,7 @@ function buildGlobalCss(): string {
   }
 
   .idx-container:has(.idx-tax-value[aria-pressed="true"]) .idx-view-toggle {
-    margin-top: -28px;
+    margin-top: -28px !important;
   }
 
   .idx-view-toggle-option {
@@ -885,7 +1150,9 @@ function buildGlobalCss(): string {
       transform: none !important;
     }
     .idx-grid-card-img,
-    .idx-grid-card-video {
+    .idx-grid-card-video,
+    .idx-grid-card-media > img,
+    .idx-grid-card-media > video {
       transform: scale(1) !important;
       transition: none !important;
       will-change: auto !important;
@@ -923,6 +1190,17 @@ function buildGlobalCss(): string {
     isolation: isolate;
     background: ${tokens.surfaceActive};
   }
+  .idx-grid-card-media[data-thumbnail-stroke="true"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    box-sizing: border-box;
+    border: 1px solid ${tokens.textTertiary};
+    border-radius: inherit;
+    pointer-events: none;
+    background: transparent;
+  }
   .idx-grid-card-meta {
     margin-top: -2px;
     font-family: ${tokens.fontMono};
@@ -933,7 +1211,9 @@ function buildGlobalCss(): string {
     color: ${tokens.textTertiary};
   }
   .idx-grid-card-img,
-  .idx-grid-card-video {
+  .idx-grid-card-video,
+  .idx-grid-card-media > img,
+  .idx-grid-card-media > video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -947,16 +1227,25 @@ function buildGlobalCss(): string {
     backface-visibility: hidden;
     will-change: transform;
   }
-  .idx-grid-card-video {
+  .idx-grid-card-video,
+  .idx-grid-card-media > video {
     pointer-events: none;
   }
-  .idx-grid-card:hover .idx-grid-card-img,
-  .idx-grid-card:focus-visible .idx-grid-card-img,
-  .idx-grid-card:focus-within .idx-grid-card-img,
-  .idx-grid-card:hover .idx-grid-card-video,
-  .idx-grid-card:focus-visible .idx-grid-card-video,
-  .idx-grid-card:focus-within .idx-grid-card-video {
-    transform: scale(1.02);
+  @media (prefers-reduced-motion: no-preference) {
+    .idx-grid-card:hover .idx-grid-card-img,
+    .idx-grid-card:focus-visible .idx-grid-card-img,
+    .idx-grid-card:focus-within .idx-grid-card-img,
+    .idx-grid-card:hover .idx-grid-card-video,
+    .idx-grid-card:focus-visible .idx-grid-card-video,
+    .idx-grid-card:focus-within .idx-grid-card-video,
+    .idx-grid-card:hover .idx-grid-card-media > img,
+    .idx-grid-card:focus-visible .idx-grid-card-media > img,
+    .idx-grid-card:focus-within .idx-grid-card-media > img,
+    .idx-grid-card:hover .idx-grid-card-media > video,
+    .idx-grid-card:focus-visible .idx-grid-card-media > video,
+    .idx-grid-card:focus-within .idx-grid-card-media > video {
+      transform: scale(1.02) !important;
+    }
   }
   .idx-grid-card:hover .idx-flip-track,
   .idx-grid-card:focus-visible .idx-flip-track {
@@ -975,101 +1264,14 @@ function buildGlobalCss(): string {
   .idx-list-industry { grid-column: 5 / span 1; }
 
   @media (max-width: 1199px) {
-    .idx-container { padding: 0 20px !important; }
     .idx-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-    .idx-year-group { grid-template-columns: 1fr !important; row-gap: 8px !important; }
-    .idx-year-label,
-    .idx-list-content { grid-column: 1 / -1 !important; }
   }
   @media (max-width: 809px) {
-    .idx-container { --idx-grid-gap: 12px; padding: 0 20px !important; }
-    .idx-taxonomy-shell {
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-      column-gap: 16px !important;
-      row-gap: 8px !important;
-    }
-    .idx-tax-label-year { grid-column: 1 / span 1 !important; grid-row: 1 !important; }
-    .idx-tax-items-year { grid-column: 1 / span 1 !important; grid-row: 2 !important; }
-    .idx-tax-label-discipline { grid-column: 2 / span 1 !important; grid-row: 1 !important; }
-    .idx-tax-items-discipline { grid-column: 2 / span 1 !important; grid-row: 2 !important; }
-    .idx-tax-label-industry { grid-column: 3 / span 1 !important; grid-row: 1 !important; }
-    .idx-tax-items-industry { grid-column: 3 / span 1 !important; grid-row: 2 !important; }
-    .idx-taxonomy-items { overflow: visible !important; }
-    .idx-tax-item { white-space: normal !important; overflow-wrap: anywhere; }
-    .idx-list-row-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      align-items: start !important;
-      column-gap: 12px !important;
-      row-gap: 2px !important;
-      min-height: 0 !important;
-      padding: 12px 0 10px !important;
-    }
-    .idx-list-title {
-      grid-column: 1 / -1 !important;
-      font-size: 18px !important;
-    }
-    .idx-list-discipline { grid-column: 1 / span 1 !important; }
-    .idx-list-industry { grid-column: 2 / span 1 !important; }
-    .idx-title-cell,
-    .idx-col-discipline,
-    .idx-col-industry {
-      overflow: visible !important;
-      text-overflow: clip !important;
-      white-space: normal !important;
-      overflow-wrap: anywhere;
-    }
-    .idx-list-standard .idx-title-cell > span,
-    .idx-list-standard .idx-flip-copy {
-      font-size: 18px !important;
-      line-height: 1.18 !important;
-    }
-    .idx-flip-text {
-      height: auto !important;
-      line-height: 1.18 !important;
-      overflow: visible !important;
-    }
-    .idx-flip-track {
-      display: block !important;
-      gap: 0 !important;
-      transform: none !important;
-      transition: none !important;
-      will-change: auto !important;
-    }
-    .idx-hover-flip .idx-list-row:hover .idx-flip-track,
-    .idx-hover-flip .idx-list-row:focus-visible .idx-flip-track {
-      transform: none !important;
-    }
-    .idx-flip-copy {
-      flex: initial !important;
-      height: auto !important;
-      line-height: inherit !important;
-      overflow: visible !important;
-      text-overflow: clip !important;
-      white-space: normal !important;
-    }
-    .idx-flip-copy + .idx-flip-copy { display: none !important; }
     .idx-project-grid { grid-template-columns: 1fr !important; row-gap: 40px !important; }
     .idx-grid-card:hover .idx-flip-track,
     .idx-grid-card:focus-visible .idx-flip-track {
       transform: none !important;
     }
-  }
-  @media (max-width: 520px) {
-    .idx-taxonomy-shell { grid-template-columns: 1fr !important; row-gap: 0 !important; }
-    .idx-tax-label-discipline,
-    .idx-tax-label-industry,
-    .idx-tax-label-year,
-    .idx-tax-items-discipline,
-    .idx-tax-items-industry,
-    .idx-tax-items-year {
-      grid-column: 1 / -1 !important;
-      grid-row: auto !important;
-    }
-    .idx-tax-label-discipline,
-    .idx-tax-label-industry { margin-top: 20px; }
-    .idx-list-row-grid { grid-template-columns: 1fr !important; row-gap: 0 !important; }
-    .idx-list-discipline,
-    .idx-list-industry { grid-column: 1 / -1 !important; }
   }
 
   @media (max-width: 1199px) {
@@ -1619,16 +1821,13 @@ function HoverFlipText({
 
 function ListView({
     projects,
-    typographyVariant = "standard",
     hoverVariant = "flip",
 }: {
     projects: Project[]
-    typographyVariant?: ListTypographyVariant
     hoverVariant?: ListHoverVariant
 }) {
     const groups = useMemo(() => groupByYear(projects), [projects])
-    const isMono13 = typographyVariant === "mono13"
-    const mono13TextStyle: React.CSSProperties = {
+    const metaTextStyle: React.CSSProperties = {
         fontFamily: tokens.fontMono,
         fontSize: 13,
         fontWeight: 400,
@@ -1637,16 +1836,14 @@ function ListView({
         color: tokens.textPrimary,
         letterSpacing: 0,
     }
-    const titleTextStyle: React.CSSProperties = isMono13
-        ? mono13TextStyle
-        : {
-              fontFamily: tokens.fontHeading,
-              fontSize: 22,
-              fontWeight: 500,
-              textTransform: "uppercase",
-              color: tokens.textPrimary,
-              lineHeight: 1.2,
-          }
+    const titleTextStyle: React.CSSProperties = {
+        fontFamily: tokens.fontHeading,
+        fontSize: 22,
+        fontWeight: 500,
+        textTransform: "uppercase",
+        color: tokens.textPrimary,
+        lineHeight: 1.2,
+    }
     const projectCtaTextStyle: React.CSSProperties = {
         ...titleTextStyle,
         fontFamily: tokens.fontProjectCta,
@@ -1654,7 +1851,6 @@ function ListView({
         color: tokens.textTertiary,
         WebkitTextFillColor: tokens.textTertiary,
     }
-    const titleFlipHeight = isMono13 ? "28px" : "27px"
 
     if (groups.length === 0) {
         return (
@@ -1677,7 +1873,7 @@ function ListView({
     const closingRuleDelay = Math.min(groups.length, 8) * 70
     return (
         <div
-            className={`idx-list-view idx-list-${typographyVariant} idx-hover-${hoverVariant}`}
+            className={`idx-list-view idx-list-standard idx-hover-${hoverVariant}`}
         >
             {groups.map(({ year, items }, groupIndex) => (
                 <div
@@ -1700,14 +1896,12 @@ function ListView({
                         style={{
                             gridColumn: "1 / span 1",
                             minWidth: 0,
-                            paddingTop: isMono13 ? 5 : 15,
+                            paddingTop: 15,
                         }}
                     >
                         <div
                             className="idx-year-number"
-                            style={
-                                isMono13 ? mono13TextStyle : titleTextStyle
-                            }
+                            style={titleTextStyle}
                         >
                             {year > 0 ? year : "—"}
                         </div>
@@ -1723,7 +1917,7 @@ function ListView({
                             const useFlipHover = hoverVariant === "flip"
 
                             return (
-                                <div key={p.title}>
+                                <div key={p.slug || p.title}>
                                     <div
                                         className="idx-list-row idx-row idx-list-row-grid"
                                         style={{
@@ -1732,10 +1926,8 @@ function ListView({
                                                 "repeat(5, minmax(0, 1fr))",
                                             columnGap: INDEX_GRID_GAP,
                                             alignItems: "center",
-                                            minHeight: isMono13 ? 38 : 56,
-                                            padding: isMono13
-                                                ? "5px 0"
-                                                : "9px 0",
+                                            minHeight: 56,
+                                            padding: "9px 0",
                                             cursor: url ? "pointer" : "default",
                                             animationDelay: `${Math.min(ri, 12) * 30}ms`,
                                         }}
@@ -1766,7 +1958,7 @@ function ListView({
                                                             ? projectCtaTextStyle
                                                             : undefined
                                                     }
-                                                    height={titleFlipHeight}
+                                                    height="27px"
                                                 />
                                             ) : (
                                                 <span style={titleTextStyle}>
@@ -1784,7 +1976,7 @@ function ListView({
                                                 whiteSpace: "nowrap",
                                             }}
                                         >
-                                            <span style={mono13TextStyle}>
+                                            <span style={metaTextStyle}>
                                                 {disciplineText}
                                             </span>
                                         </div>
@@ -1798,7 +1990,7 @@ function ListView({
                                                 whiteSpace: "nowrap",
                                             }}
                                         >
-                                            <span style={mono13TextStyle}>
+                                            <span style={metaTextStyle}>
                                                 {p.industry}
                                             </span>
                                         </div>
@@ -1843,7 +2035,8 @@ function GridProjectCard({
 }) {
     const href = getCaseStudyUrl(project)
     const thumbSrc = normalizeThumbnailUrl(project.thumbnail as unknown)
-    const videoSrc = (project.thumbnailVideoLink || "").trim()
+    const videoSrc = getThumbnailVideoLink(project)
+    const usesLoopingImage = isLoopingImageMediaSource(videoSrc)
     const serviceText = getDisciplineDisplay(project)
     const yearText = normalizeYear(project.year)
     const metaLineTwo = [project.industry, yearText > 0 ? String(yearText) : ""]
@@ -1875,8 +2068,19 @@ function GridProjectCard({
                 animationDelay: `${Math.min(index, 12) * 30}ms`,
             }}
         >
-            <div className="idx-grid-card-media">
-                {videoSrc ? (
+            <div
+                className="idx-grid-card-media"
+                data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
+            >
+                {videoSrc && usesLoopingImage ? (
+                    <img
+                        className="idx-grid-card-img"
+                        src={videoSrc}
+                        alt={`${project.title} motion thumbnail`}
+                        loading="lazy"
+                        decoding="async"
+                    />
+                ) : videoSrc ? (
                     <video
                         className="idx-grid-card-video"
                         src={videoSrc}
@@ -1893,6 +2097,7 @@ function GridProjectCard({
                         src={thumbSrc}
                         alt={`${project.title} thumbnail`}
                         loading="lazy"
+                        decoding="async"
                     />
                 ) : null}
             </div>
@@ -1950,7 +2155,7 @@ function GridView({ projects }: { projects: Project[] }) {
             >
                 {projects.map((project, index) => (
                     <GridProjectCard
-                        key={project.title}
+                        key={project.slug || project.title}
                         project={project}
                         index={index}
                     />
@@ -1967,11 +2172,9 @@ function ViewToggle({
     activeView: string
     onViewChange: (v: string) => void
 }) {
-    const toggleOptions = ["grid", "list"] as const
-
     return (
         <div className="idx-view-toggle" aria-label="Project view">
-            {toggleOptions.map((v, index) => {
+            {VIEW_TOGGLE_OPTIONS.map((v, index) => {
                 const active = activeView === v
 
                 return (
@@ -2004,9 +2207,10 @@ export default function IndexPage({
     projects: projectsProp,
     useCMS = false,
     cmsModuleUrl = "",
+    thumbnailVideoFieldIds = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
     defaultView = "list",
-    listTypographyVariant = "standard",
     listHoverVariant = "flip",
+    advanced,
     textPrimary,
     textSecondary,
     textTertiary,
@@ -2018,9 +2222,10 @@ export default function IndexPage({
     projects?: Project[]
     useCMS?: boolean
     cmsModuleUrl?: string
+    thumbnailVideoFieldIds?: string
     defaultView?: string
-    listTypographyVariant?: ListTypographyVariant
     listHoverVariant?: ListHoverVariant
+    advanced?: AdvancedSettings
     textPrimary?: string
     textSecondary?: string
     textTertiary?: string
@@ -2029,15 +2234,44 @@ export default function IndexPage({
     dividerSubtle?: string
     surfaceActive?: string
 }) {
+    const resolvedCmsModuleUrl = advanced?.cmsModuleUrl ?? cmsModuleUrl
+    const resolvedThumbnailVideoFieldIds =
+        advanced?.thumbnailVideoFieldIds ??
+        thumbnailVideoFieldIds ??
+        DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS
+    const resolvedDefaultView = advanced?.defaultView ?? defaultView
+    const resolvedListHoverVariant =
+        advanced?.listHoverVariant ?? listHoverVariant
+
     // Mirror the color props onto the module-scope `tokens` so module-level
     // sub-components and buildGlobalCss() see the live values.
-    tokens.textPrimary = textPrimary || DEFAULT_TOKENS.textPrimary
-    tokens.textSecondary = textSecondary || DEFAULT_TOKENS.textSecondary
-    tokens.textTertiary = textTertiary || DEFAULT_TOKENS.textTertiary
-    tokens.bg = bg || DEFAULT_TOKENS.bg
-    tokens.dividerStrong = dividerStrong || DEFAULT_TOKENS.dividerStrong
-    tokens.dividerSubtle = dividerSubtle || DEFAULT_TOKENS.dividerSubtle
-    tokens.surfaceActive = surfaceActive || DEFAULT_TOKENS.surfaceActive
+    tokens.textPrimary =
+        advanced?.textPrimary || textPrimary || DEFAULT_TOKENS.textPrimary
+    tokens.textSecondary =
+        advanced?.textSecondary || textSecondary || DEFAULT_TOKENS.textSecondary
+    tokens.textTertiary =
+        advanced?.textTertiary || textTertiary || DEFAULT_TOKENS.textTertiary
+    tokens.bg = advanced?.bg || bg || DEFAULT_TOKENS.bg
+    tokens.dividerStrong =
+        advanced?.dividerStrong || dividerStrong || DEFAULT_TOKENS.dividerStrong
+    tokens.dividerSubtle =
+        advanced?.dividerSubtle || dividerSubtle || DEFAULT_TOKENS.dividerSubtle
+    tokens.surfaceActive =
+        advanced?.surfaceActive || surfaceActive || DEFAULT_TOKENS.surfaceActive
+    const globalCss = useMemo(
+        () => buildGlobalCss(),
+        [
+            advanced,
+            textPrimary,
+            textSecondary,
+            textTertiary,
+            bg,
+            dividerStrong,
+            dividerSubtle,
+            surfaceActive,
+        ]
+    )
+    useHiddenCMSLinkInerting(useCMS)
 
     // Mirror of the window registry. ProjectRegistrar instances placed inside
     // a Framer Collection List anywhere on the page push CMS rows into the
@@ -2069,7 +2303,7 @@ export default function IndexPage({
         let cancelled = false
         setCMSModuleLoaded(false)
 
-        loadCMSProjects(cmsModuleUrl)
+        loadCMSProjects(resolvedCmsModuleUrl, resolvedThumbnailVideoFieldIds)
             .then((items) => {
                 if (!cancelled) {
                     setCMSModuleProjects(items)
@@ -2086,16 +2320,23 @@ export default function IndexPage({
         return () => {
             cancelled = true
         }
-    }, [useCMS, cmsModuleUrl])
+    }, [useCMS, resolvedCmsModuleUrl, resolvedThumbnailVideoFieldIds])
 
     const allProjects = useMemo(() => {
         // Priority when Use CMS is on: live ProjectRegistrar registry > direct
-        // generated CMS module > manual prop. Do not fall through to the baked
-        // snapshot in CMS mode; stale fallback data should never masquerade as
-        // current CMS content.
+        // generated CMS module > manual prop. The generated CMS module can
+        // still hydrate media fields omitted by the mounted registry bridge.
+        // Do not fall through to the baked snapshot in CMS mode; stale fallback
+        // data should never masquerade as current CMS content.
+        const cmsModuleLookup = buildProjectLookup(cmsModuleProjects)
+        const registryProjects = Array.from(
+            registeredProjects.values()
+        ) as Project[]
         const fromRegistry =
-            useCMS && registeredProjects.size > 0
-                ? Array.from(registeredProjects.values())
+            useCMS && registryProjects.length > 0
+                ? registryProjects.map((project) =>
+                      hydrateProjectFromCMSModule(project, cmsModuleLookup)
+                  )
                 : null
         const fromCMSModule =
             useCMS && cmsModuleProjects.length > 0 ? cmsModuleProjects : null
@@ -2106,7 +2347,7 @@ export default function IndexPage({
             : (fromProps ?? DEFAULT_PROJECTS)
         return sourceProjects.map(normalizeProjectDisciplines)
     }, [useCMS, registeredProjects, cmsModuleProjects, projectsProp])
-    const initialView = defaultView === "grid" ? "grid" : "list"
+    const initialView = resolvedDefaultView === "grid" ? "grid" : "list"
 
     const [activeView, setActiveView] = useState(initialView)
     const [transitioning, setTransitioning] = useState(false)
@@ -2117,16 +2358,8 @@ export default function IndexPage({
         years: [],
     })
     const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-    const disciplineNavItems = useMemo(
-        () => getDisciplineNavItems(allProjects),
-        [allProjects]
-    )
-    const industryNavItems = useMemo(
-        () => getIndustryNavItems(allProjects),
-        [allProjects]
-    )
-    const yearNavItems = useMemo(
-        () => getYearNavItems(allProjects),
+    const taxonomyNavItems = useMemo(
+        () => getTaxonomyNavItems(allProjects),
         [allProjects]
     )
 
@@ -2158,12 +2391,29 @@ export default function IndexPage({
             value: string | number
         ) => {
             setFilters((prev) => {
-                const arr = prev[type] as any[]
+                if (type === "years") {
+                    return {
+                        ...prev,
+                        years: toggleFilterValue(prev.years, Number(value)),
+                    }
+                }
+
+                if (type === "industries") {
+                    return {
+                        ...prev,
+                        industries: toggleFilterValue(
+                            prev.industries,
+                            String(value)
+                        ),
+                    }
+                }
+
                 return {
                     ...prev,
-                    [type]: arr.includes(value)
-                        ? arr.filter((x) => x !== value)
-                        : [...arr, value],
+                    disciplines: toggleFilterValue(
+                        prev.disciplines,
+                        String(value)
+                    ),
                 }
             })
         },
@@ -2171,11 +2421,24 @@ export default function IndexPage({
     )
 
     const handleFilterClear = useCallback((type: FilterType) => {
-        setFilters((prev) => ({ ...prev, [type]: [] }))
+        setFilters((prev) => {
+            if (prev[type].length === 0) return prev
+            return { ...prev, [type]: [] }
+        })
     }, [])
 
     const handleClearFilters = useCallback(
-        () => setFilters({ disciplines: [], industries: [], years: [] }),
+        () =>
+            setFilters((prev) => {
+                if (
+                    prev.disciplines.length === 0 &&
+                    prev.industries.length === 0 &&
+                    prev.years.length === 0
+                ) {
+                    return prev
+                }
+                return { disciplines: [], industries: [], years: [] }
+            }),
         []
     )
 
@@ -2191,7 +2454,7 @@ export default function IndexPage({
 
     return (
         <>
-            <style>{buildGlobalCss()}</style>
+            <style>{globalCss}</style>
 
             <div
                 className="idx-container"
@@ -2218,9 +2481,9 @@ export default function IndexPage({
                 >
                     <TaxonomySection
                         filters={filters}
-                        disciplineNavItems={disciplineNavItems}
-                        industryNavItems={industryNavItems}
-                        yearNavItems={yearNavItems}
+                        disciplineNavItems={taxonomyNavItems.disciplines}
+                        industryNavItems={taxonomyNavItems.industries}
+                        yearNavItems={taxonomyNavItems.years}
                         onFilterToggle={handleFilterToggle}
                         onFilterClear={handleFilterClear}
                         onClearFilters={handleClearFilters}
@@ -2260,8 +2523,7 @@ export default function IndexPage({
                     ) : (
                         <ListView
                             projects={filteredProjects}
-                            typographyVariant={listTypographyVariant}
-                            hoverVariant={listHoverVariant}
+                            hoverVariant={resolvedListHoverVariant}
                         />
                     )}
                 </div>
@@ -2293,15 +2555,10 @@ addPropertyControls(IndexPage, {
         enabledTitle: "On",
         disabledTitle: "Off",
     },
-    cmsModuleUrl: {
-        type: ControlType.String,
-        title: "CMS Module URL",
-        defaultValue: "",
-        hidden: (props) => !props.useCMS,
-    },
     projects: {
         type: ControlType.Array,
         title: "Projects",
+        hidden: (props) => props.useCMS,
         control: {
             type: ControlType.Object,
             controls: {
@@ -2313,8 +2570,14 @@ addPropertyControls(IndexPage, {
                 year: { type: ControlType.String, title: "Year" },
                 thumbnail: { type: ControlType.Image, title: "Thumbnail" },
                 thumbnailVideoLink: {
-                    type: ControlType.String,
-                    title: "Thumbnail Video Link",
+                    type: ControlType.File,
+                    title: "Thumbnail Video",
+                    allowedFileTypes: ["mp4", "mov", "m4v", "webm"],
+                },
+                thumbnailStroke: {
+                    type: ControlType.Boolean,
+                    title: "Thumbnail Stroke",
+                    defaultValue: false,
                 },
                 slug: { type: ControlType.String, title: "Slug" },
                 sortOrder: {
@@ -2325,61 +2588,76 @@ addPropertyControls(IndexPage, {
             },
         },
     },
-    defaultView: {
-        type: ControlType.Enum,
-        title: "Default View",
-        options: ["list", "grid"],
-        defaultValue: "list",
-    },
-    listTypographyVariant: {
-        type: ControlType.Enum,
-        title: "List Type",
-        options: ["standard", "mono13"],
-        optionTitles: ["Standard", "Mono 13"],
-        defaultValue: "standard",
-        displaySegmentedControl: true,
-    },
-    listHoverVariant: {
-        type: ControlType.Enum,
-        title: "List Hover",
-        options: ["flip", "highlight"],
-        optionTitles: ["Flip", "Highlight"],
-        defaultValue: "flip",
-        displaySegmentedControl: true,
-    },
-    textPrimary: {
-        type: ControlType.Color,
-        title: "Text Primary",
-        defaultValue: "#26211f",
-    },
-    textSecondary: {
-        type: ControlType.Color,
-        title: "Text Secondary",
-        defaultValue: "#141414",
-    },
-    textTertiary: {
-        type: ControlType.Color,
-        title: "Text Tertiary",
-        defaultValue: "#979797",
-    },
-    bg: {
-        type: ControlType.Color,
-        title: "Background",
-        defaultValue: "#F7F5F0",
-    },
-    dividerStrong: {
-        type: ControlType.Color,
-        title: "Divider Strong",
-        defaultValue: "#141414",
-    },
-    dividerSubtle: {
-        type: ControlType.Color,
-        title: "Divider Subtle",
-        defaultValue: "#141414",
-    },
-    surfaceActive: {
-        type: ControlType.Color,
-        title: "Surface Active",
-        defaultValue: "#EAE8E3",
+    advanced: {
+        type: ControlType.Object,
+        title: "Advanced",
+        buttonTitle: "Edit",
+        icon: "effect",
+        defaultValue: DEFAULT_ADVANCED_SETTINGS,
+        controls: {
+            defaultView: {
+                type: ControlType.Enum,
+                title: "Default View",
+                options: ["list", "grid"],
+                optionTitles: ["List", "Grid"],
+                defaultValue: "list",
+            },
+            listHoverVariant: {
+                type: ControlType.Enum,
+                title: "List Hover",
+                options: ["flip", "highlight"],
+                optionTitles: ["Flip", "Highlight"],
+                defaultValue: "flip",
+                displaySegmentedControl: true,
+            },
+            cmsModuleUrl: {
+                type: ControlType.String,
+                title: "CMS Module",
+                defaultValue: "",
+                placeholder: "Optional module URL",
+            },
+            thumbnailVideoFieldIds: {
+                type: ControlType.String,
+                title: "Video Field",
+                defaultValue: DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
+                placeholder: "Thumbnail Video field ID",
+                displayTextArea: true,
+            },
+            textPrimary: {
+                type: ControlType.Color,
+                title: "Text Primary",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.textPrimary,
+            },
+            textSecondary: {
+                type: ControlType.Color,
+                title: "Text Secondary",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.textSecondary,
+            },
+            textTertiary: {
+                type: ControlType.Color,
+                title: "Text Tertiary",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.textTertiary,
+            },
+            bg: {
+                type: ControlType.Color,
+                title: "Background",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.bg,
+            },
+            dividerStrong: {
+                type: ControlType.Color,
+                title: "Divider Strong",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.dividerStrong,
+            },
+            dividerSubtle: {
+                type: ControlType.Color,
+                title: "Divider Subtle",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.dividerSubtle,
+            },
+            surfaceActive: {
+                type: ControlType.Color,
+                title: "Surface Active",
+                defaultValue: DEFAULT_ADVANCED_SETTINGS.surfaceActive,
+            },
+        },
     },
 })

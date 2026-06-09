@@ -1,3 +1,4 @@
 .DS_Store
 .playwright-cli/
 .claude/worktrees/
+case-study-assets/figma-export/**/Gaia Final Deck.pptx

@@ -8,17 +8,17 @@
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (June 2, 2026):**
+**State summary (June 8, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
 - The original-template inline `GRID / LIST` control is now owned directly by `IndexPage.tsx` on canonical `/index`; the previous fixed/floating delegated toggle has been removed.
 - The side-by-side page `/index-inline-toggle-test` (`VdRy9MV8k`) was removed after the inline version was promoted to canonical `/index`.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The repo `IndexPage.tsx` mirror was reconciled against the current live direction on May 22, 2026 after the route audit.
-- Current mounted `/index` code files are `IndexPage.tsx` (`rgAZFOv`), `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), and `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`). `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML.
+- Current mounted `/index` code files are `IndexPage.tsx` (`rgAZFOv`), `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`), and `IndexGridVideoHoverFix.tsx` (`kjMWwjO`, hidden node `JvCNoMs41`). `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
-- **Data source refined (June 1, 2026):** `IndexPage.tsx` uses the mounted `ProjectRegistrar` registry first, then falls back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`.
+- **Data source refined (June 1, 2026; revised June 8):** `IndexPage.tsx` can use the mounted `ProjectRegistrar` registry first, then fall back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke so incomplete bridge rows cannot override richer CMS media/stroke data.
 - **Grid view rewritten (May 10, 2026; refined May 22):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 media, 3/2/1 column responsive grid, media hover scale, title below image with the same hover-flip used in List view, and metadata below title). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **ImageMaskReveal is archived:** old notes about disabled/enabled `ImageMaskReveal` instances are historical. The reveal component is stub-archived and not part of the current `/index` behavior.
 - **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19; CMS export fix June 1; instance prop cleanup June 2):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. It must resolve both legacy `module.a` and current `module.r` Framer CMS export shapes before scanning records. As of June 2, the helper instances use Framer item slugs directly (`slugFieldId=""`). The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
@@ -102,7 +102,7 @@ addPropertyControls(IndexPage, {
         industry:           { type: ControlType.String,  title: "Industry" },
         year:               { type: ControlType.String,  title: "Year" },
         thumbnail:          { type: ControlType.Image,   title: "Thumbnail" },
-        thumbnailVideoLink: { type: ControlType.String,  title: "Thumbnail Video Link" },
+        thumbnailVideoLink: { type: ControlType.File,    title: "Thumbnail Video" },
         slug:               { type: ControlType.String,  title: "Slug" },
         sortOrder:          { type: ControlType.Number,  title: "Sorting Number" },
         isHomepage:         { type: ControlType.Boolean, title: "Is Homepage" },
@@ -160,7 +160,7 @@ The Framer CMS collection is `All Projects` (`yTHrQWMIY`). See `framer-current-s
 - `Industry` → `industry`
 - `Is Homepage` → `isHomepage`
 - `Thumbnail` → `thumbnail`
-- `Thumbnail Video Link` → `thumbnailVideoLink`
+- `Thumbnail Video` → `thumbnailVideoLink`
 - `slug` is derived from the CMS slug; project click URLs are `/case-studies/{slug}`. Do not restore the old `/work/{slug}` route.
 
 **Service labels:** the live code does **not** hardcode a canonical eight-label list and does **not** define a `DISCIPLINE_ALIASES` map. Service strings are taken verbatim from `category1..3` per project, de-duplicated, and sorted alphabetically via `getDisciplineNavItems`. If you want to lock the navigation to the eight canonical labels (`Visual Identity`, `Brand Strategy`, `UX/UI`, `2D Motion`, `3D Motion`, `Packaging`, `Product`, `Editorial`), you must reintroduce that filter — it is not currently in the code.
@@ -399,6 +399,9 @@ Follow the motion hierarchy from the framework doc:
 ### Grid view motion
 
 - Cards fade up with `idxFadeUp`, capped to 12 cards via `Math.min(index, 12) * 30ms` stagger.
+- Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. In Framer, `IndexGridVideoHoverFix.tsx` (`kjMWwjO`, node `JvCNoMs41`) is mounted hidden on `/index` as a canvas-side guard for the currently published code path.
+- `/index` currently reads only `Thumbnail Video` (`SvOqFqdby`) via the `IndexPage` instance `Video Fields` prop when it is using CMS-module data. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke before rendering, so an incomplete `ProjectRegistrar` bridge row cannot erase CMS media/stroke values. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` is configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Publish/redeploy Framer after editing File-field thumbnail videos so the generated CMS module refreshes.
+- Reduced motion forces all index grid media back to `scale(1)` and removes transitions.
 - View switches still fade the whole content area (the flip-related JS on rows is independent of view-level fades).
 
 ### Filter changes
@@ -520,6 +523,7 @@ addPropertyControls(IndexPage, { /* see §3 */ })
 - **Inline toggle/rule owner:** `IndexPage.tsx` (`rgAZFOv`)
 - **Stroke helper:** `CaseStudyThumbnailStrokeStyles.tsx`, code file id `Z28JYvA`
 - **Responsive/style helper:** `IndexPageBreakpointsDraft.tsx`, code file id `VwMoFWv`
+- **Grid video hover helper:** `IndexGridVideoHoverFix.tsx`, code file id `kjMWwjO`, mounted node `JvCNoMs41`
 - **Removed May 26 cleanup:** `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, `IndexRuleColorOverride.tsx`, and `WorldGridTest.tsx` are not current `/index` dependencies.
 - **CMS collection:** `All Projects`, collection id `yTHrQWMIY`
 - **Taxonomy/filter inspiration:** https://searchsystem.co/index
@@ -547,7 +551,7 @@ Before delivering:
 - [ ] Grid uses a uniform CSS grid: 3 columns at ≥1200px, 2 columns at 810–1199px, 1 column at ≤809px. No weighted/featured pattern.
 - [ ] Each card thumbnail is locked to `aspect-ratio: 16 / 9` via `.idx-grid-card-media`. Card heights are not hardcoded.
 - [ ] Card title sits below the thumbnail and uses the same `HoverFlipText` helper as List view (`View Project →` on hover when slug exists).
-- [ ] Optional thumbnail video renders when a video URL exists, remains muted/looped/playsInline, and respects reduced-motion behavior.
+- [ ] Optional thumbnail video renders when a video URL exists, remains muted/looped/playsInline, uses the same hover/focus `scale(1.02)` as images, and respects reduced-motion behavior.
 - [ ] Per-project strokes come from CMS field `OHdUYs6Mo` via `CaseStudyThumbnailStrokeStyles.tsx`, not from hardcoded fallback classes. On `/index`, `IndexPage.tsx` should render plain `.idx-grid-card-media`; the helper applies any visible stroke as a non-layout overlay. On native Framer `Case Study` cards, the helper toggles the real overlay frame inside `ImageWrapper` so canvas/editor can show the same status. Verify the helper can read the current generated CMS module export (`r.collectionByLocaleId.default.scanItems`) before publishing stroke-related changes.
 - [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
 - [ ] Visible view toggle is inline right as `GRID / LIST`, visually bottom-aligned with the original left-aligned `CLEAR FILTERS` action when active.
