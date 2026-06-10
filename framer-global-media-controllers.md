@@ -1,6 +1,6 @@
 # Framer Global Media Controllers — Case Studies
 
-_Last updated: 2026-06-05_
+_Last updated: 2026-06-10_
 
 Two **invisible, page-level controller components** add Cargo-style media behavior
 to case-study pages without per-element wiring. Drop ONE instance of each on a
@@ -49,10 +49,41 @@ Key props (panel): `enabled`, `lightboxVideos`, `videoControls`,
 `iconWeight` (300), `iconSize` (24), `showArrows/Close/Counter`,
 `clickImageAdvances`, `loopNavigation`, `duration` (360ms),
 `viewportPadding` (72 → responsive `clamp(20px,5vw,72px)`), `minSize` (100),
-`excludeSelector` (default `nav, header, footer, a, button, video[controls],
-[data-no-lightbox]`).
+`excludeSelector` (default now `nav, header, footer, a, button,
+video[controls], [data-no-lightbox], [data-framer-name*="No Lightbox" i],
+[data-framer-name*="NoLightbox" i]`).
 
-Per-element opt-out: add `data-no-lightbox` to any element/ancestor.
+**Opt media out (no code):** add `data-no-lightbox` to any element/ancestor, OR
+name any wrapping frame `No Lightbox` / `NoLightbox` (case-insensitive
+substring). The wrapper force-merges these "always-on" rules into whatever
+`excludeSelector` an instance carries, so it works regardless of an instance's
+baked value — no per-instance setup. Name the frame that WRAPS the whole media
+(video posters render BOTH an `<img>` and a `<video>`), not the leaf image.
+
+**Nav click guard (2026-06-10).** The nav physically overlays media at the top
+of case-study pages; the base engine opens on click by finding the topmost
+`<img>`/`<video>` at the pointer via `elementsFromPoint`, so clicking a nav item
+over media used to open the lightbox instead of navigating. Fixed with a single
+**`window`-capture** click listener (fires before the base's `document`-capture
+listener): native links → `stopImmediatePropagation` only (lightbox never sees
+the click; the browser still navigates); buttons / the scroll-to-top button →
+`preventDefault` only (their React `onClick` still runs, the base bails on the
+default-prevented click); anything else excluded → `stopImmediatePropagation`.
+This is **event-only — NO nav CSS mutation.** An earlier attempt raised the nav
+(`z-index` + `pointer-events:auto` + `isolation:isolate`, plus inline mutation
+re-applied by a `MutationObserver`); it never fixed the click (`elementsFromPoint`
+reaches under the nav) and it broke the nav hover/flip-text reset, so all of it
+was removed.
+
+**Gallery unification (2026-06-10).** The reusable `ImageCarousel`
+(`SimonSchusterGuidelinesCarousel.tsx`, `tYFZCey`) no longer ships its own
+overlay — only its visible slide is hit-testable, so gallery slides open in THIS
+lightbox and the ‹ › arrows cycle the whole gallery. See `framer-current-state.md`.
+
+**Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED
+`@hash`. Bump that hash in `CaseStudyControllers.tsx` whenever this file is
+republished, or controller pages keep bundling the old lightbox. Current
+published lightbox: `CaseStudyLightbox-yOYpGN.js@nVgKAFqnbX7espgnGQ7p`.
 
 ---
 
@@ -124,8 +155,15 @@ toggles + key props (lightbox videos, video lookahead, link-repair CMS
 collection/title field) are exposed; the rest use each sub-controller's
 defaults. Each sub-controller keeps its own singleton guard, so this is safe to
 run alongside leftover standalone instances during migration — only one of each
-ever activates. Ready to swap in per page when convenient (not yet deployed; the
-15 pages currently still carry the three separate instances).
+ever activates. **Status (2026-06-10):** deployed on 8 pages — AirPods, Simon &
+Schuster, National Park Cards, Yomo, Karuna, Gaia, Weaponized Innocence, TYPLDN —
+which now use ONE `CaseStudyControllers` instance instead of three separate
+mounts. The other 7 (Motion Connect 2025, Seek Truth, Cellular Symphony, Wolff
+Olins x ArtCenter, Independent Lens, Neon Lights, Aspen Valley Landscaping) still
+carry the three separate instances (MCP returned empty page XML for them during
+the migration pass). Both paths get lightbox fixes: wrapper pages via the pinned
+import (bump the `@hash` on republish), separate-instance pages via the live code
+file directly.
 
 ## Placement & rollout (status: deployed to all 15 case studies, 2026-06-06)
 

@@ -22,32 +22,33 @@ type Config = {
     excludeSelector: string
 }
 
-type StyleSnapshot = {
-    value: string
-    priority: string
-}
-
-type ElementSnapshot = Map<string, StyleSnapshot>
-
-const CASE_STUDY_NAV_LAYER_ROOT_ATTR = "data-case-study-nav-layer"
-const CASE_STUDY_NAV_LAYER_STYLE_ID = "case-study-nav-layer"
-const CASE_STUDY_NAV_Z = 2147482990
-const CASE_STUDY_NAV_SELECTORS = [
+// Selectors that identify the site nav layers. Used purely for hit-testing in
+// the click guard now — we no longer mutate the nav's CSS (that broke the nav
+// hover/flip-text reset). Raising z-index / isolation never actually fixed the
+// click anyway: the base lightbox finds media UNDER the nav via
+// elementsFromPoint, so the only reliable fix is the event guard below.
+const CASE_STUDY_NAV_SELECTOR_LIST = [
     "nav",
-    "header",
     '[data-framer-name="Navigation"]',
     '[name="Navigation"]',
     '[data-framer-name="Nav"]',
     '[name="Nav"]',
     '[data-framer-name="Navbar"]',
     '[name="Navbar"]',
-    '[data-framer-name="Header"]',
-    '[name="Header"]',
-].join(",")
+    '[data-framer-name*="Navigation" i]',
+    '[name*="Navigation" i]',
+    '[data-framer-name*="Navbar" i]',
+    '[name*="Navbar" i]',
+    '[data-framer-name*="Top Nav" i]',
+    '[name*="Top Nav" i]',
+    'header[data-framer-name*="Navigation" i]',
+    'header[name*="Navigation" i]',
+]
+const CASE_STUDY_NAV_SELECTORS = CASE_STUDY_NAV_SELECTOR_LIST.join(",")
 // Rules that must ALWAYS exclude an element from the lightbox, regardless of
 // what an individual instance typed into its Exclude control. The name-based
 // rules let you opt media out with zero code: name any frame "No Lightbox"
-// (or "NoLightbox" — both spellings, case-insensitive substring) and wrap the
+// (or "NoLightbox" - both spellings, case-insensitive substring) and wrap the
 // media in it.
 const ALWAYS_EXCLUDE_RULES = [
     "[data-no-lightbox]",
@@ -58,7 +59,7 @@ const DEFAULT_LIGHTBOX_EXCLUDE_SELECTOR =
     'nav, header, footer, a, button, video[controls], [data-no-lightbox], [data-framer-name*="No Lightbox" i], [data-framer-name*="NoLightbox" i]'
 // Controls that own their own click behavior. When a click on one of these is
 // guarded, we must NOT swallow the click (that previously broke the
-// scroll-to-top button and the gallery) — we only suppress the lightbox.
+// scroll-to-top button and the gallery) - we only suppress the lightbox.
 const INTERACTIVE_SELECTOR =
     'button, [role="button"], [role="link"], input, select, textarea, label, summary, a[href]'
 const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout-v2"
@@ -198,107 +199,59 @@ function getLightboxExcludeSelector(excludeSelector: string | undefined): string
     return parts.join(", ")
 }
 
-function getScopedCaseStudyNavSelectors(): string {
-    return CASE_STUDY_NAV_SELECTORS.split(",")
-        .map((selector) => `html[${CASE_STUDY_NAV_LAYER_ROOT_ATTR}="true"] ${selector}`)
-        .join(",\n")
-}
+function closestCaseStudyNavLayer(el: Element | null): HTMLElement | null {
+    if (!(el instanceof HTMLElement)) return null
 
-function ensureMobileFooterStyles() {
-    if (typeof document === "undefined") return
-
-    let style = document.getElementById(MOBILE_FOOTER_STYLE_ID)
-    if (!style) {
-        style = document.createElement("style")
-        style.id = MOBILE_FOOTER_STYLE_ID
+    try {
+        return el.closest(CASE_STUDY_NAV_SELECTORS) as HTMLElement | null
+    } catch {
+        return null
     }
-
-    if (style.textContent !== MOBILE_FOOTER_STYLE) {
-        style.textContent = MOBILE_FOOTER_STYLE
-    }
-
-    document.head.appendChild(style)
 }
 
-function ensureCaseStudyNavLayerStyles() {
-    if (typeof document === "undefined") return
-
-    let style = document.getElementById(CASE_STUDY_NAV_LAYER_STYLE_ID)
-    if (!style) {
-        style = document.createElement("style")
-        style.id = CASE_STUDY_NAV_LAYER_STYLE_ID
-    }
-
-    const css = `
-${getScopedCaseStudyNavSelectors()} {
-    z-index: ${CASE_STUDY_NAV_Z} !important;
-    pointer-events: auto !important;
-    isolation: isolate !important;
-}
-`
-
-    if (style.textContent !== css) style.textContent = css
-    document.head.appendChild(style)
-}
-
-function rememberStyle(
-    snapshots: Map<HTMLElement, ElementSnapshot>,
-    el: HTMLElement,
-    property: string
-) {
-    let snapshot = snapshots.get(el)
-    if (!snapshot) {
-        snapshot = new Map<string, StyleSnapshot>()
-        snapshots.set(el, snapshot)
-    }
-
-    if (snapshot.has(property)) return
-    snapshot.set(property, {
-        value: el.style.getPropertyValue(property),
-        priority: el.style.getPropertyPriority(property),
-    })
-}
-
-function setImportantStyle(
-    snapshots: Map<HTMLElement, ElementSnapshot>,
-    el: HTMLElement,
-    property: string,
-    value: string
-) {
-    rememberStyle(snapshots, el, property)
-    el.style.setProperty(property, value, "important")
-}
-
-function restoreNavLayerStyles(snapshots: Map<HTMLElement, ElementSnapshot>) {
-    snapshots.forEach((snapshot, el) => {
-        snapshot.forEach(({ value, priority }, property) => {
-            if (value) el.style.setProperty(property, value, priority)
-            else el.style.removeProperty(property)
-        })
-    })
-    snapshots.clear()
-}
-
-function elevateCaseStudyNavLayer(snapshots: Map<HTMLElement, ElementSnapshot>) {
-    if (typeof document === "undefined" || typeof window === "undefined") return
-    if (!isCaseStudyDetailPage()) return
-
-    ensureCaseStudyNavLayerStyles()
-    document.documentElement.setAttribute(CASE_STUDY_NAV_LAYER_ROOT_ATTR, "true")
+function getCaseStudyNavLayerElements(): HTMLElement[] {
+    if (typeof document === "undefined") return []
+    const out: HTMLElement[] = []
+    const seen = new Set<HTMLElement>()
 
     document.querySelectorAll<HTMLElement>(CASE_STUDY_NAV_SELECTORS).forEach((el) => {
-        setImportantStyle(snapshots, el, "z-index", String(CASE_STUDY_NAV_Z))
-        setImportantStyle(snapshots, el, "pointer-events", "auto")
-        setImportantStyle(snapshots, el, "isolation", "isolate")
-
-        if (window.getComputedStyle(el).position === "static") {
-            setImportantStyle(snapshots, el, "position", "relative")
-        }
+        const parentMatch = closestCaseStudyNavLayer(el.parentElement)
+        if (parentMatch) return
+        if (seen.has(el)) return
+        seen.add(el)
+        out.push(el)
     })
+
+    return out
+}
+
+function isVisibleElementAtPoint(el: HTMLElement, x: number, y: number): boolean {
+    const style = window.getComputedStyle(el)
+    const opacity = Number.parseFloat(style.opacity)
+    if (style.display === "none" || style.visibility === "hidden") return false
+    if (!Number.isNaN(opacity) && opacity <= 0.01) return false
+
+    const r = el.getBoundingClientRect()
+    if (r.width <= 0 || r.height <= 0) return false
+
+    return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom
+}
+
+function hasCaseStudyNavLayerAtPoint(x: number, y: number): boolean {
+    if (typeof document === "undefined" || typeof window === "undefined") return false
+
+    if (typeof document.elementsFromPoint === "function") {
+        for (const node of document.elementsFromPoint(x, y)) {
+            const nav = closestCaseStudyNavLayer(node)
+            if (nav && isVisibleElementAtPoint(nav, x, y)) return true
+        }
+    }
+
+    return getCaseStudyNavLayerElements().some((el) => isVisibleElementAtPoint(el, x, y))
 }
 
 function isExcludedElement(el: Element, excludeSelector: string): boolean {
-    if (el.closest(CASE_STUDY_NAV_SELECTORS)) return true
+    if (closestCaseStudyNavLayer(el)) return true
     if (el.closest("[data-no-lightbox]")) return true
     if (!excludeSelector) return false
 
@@ -321,6 +274,8 @@ function hasExcludedAtPoint(event: MouseEvent, excludeSelector: string): boolean
 
 function shouldGuardLightboxClick(event: MouseEvent, excludeSelector: string): boolean {
     if (!isCaseStudyDetailPage()) return false
+    if (hasCaseStudyNavLayerAtPoint(event.clientX, event.clientY)) return true
+
     const target = event.target instanceof Element ? event.target : null
     if (target && isExcludedElement(target, excludeSelector)) return true
     return hasExcludedAtPoint(event, excludeSelector)
@@ -393,55 +348,61 @@ function useCaseStudyMobileFooterLayout() {
     }, [])
 }
 
-function useCaseStudyNavLayering(excludeSelector: string): boolean {
-    const [ready, setReady] = React.useState(() => {
-        if (typeof document === "undefined" || typeof window === "undefined") return true
-        if (RenderTarget.current() === RenderTarget.canvas) return true
-        return !isCaseStudyDetailPage()
-    })
+function ensureMobileFooterStyles() {
+    if (typeof document === "undefined") return
 
+    let style = document.getElementById(MOBILE_FOOTER_STYLE_ID)
+    if (!style) {
+        style = document.createElement("style")
+        style.id = MOBILE_FOOTER_STYLE_ID
+    }
+
+    if (style.textContent !== MOBILE_FOOTER_STYLE) {
+        style.textContent = MOBILE_FOOTER_STYLE
+    }
+
+    document.head.appendChild(style)
+}
+
+/**
+ * Case-study nav click guard (no CSS).
+ *
+ * The nav physically overlays media at the top of case-study pages. The base
+ * lightbox opens on click by finding the topmost <img>/<video> at the pointer
+ * via elementsFromPoint — so clicking a nav item that sits over media used to
+ * open the lightbox instead of navigating. We do NOT raise/isolate the nav in
+ * CSS (that broke the nav hover/flip-text reset and never fixed the click,
+ * since elementsFromPoint reaches under the nav regardless).
+ *
+ * Instead, a single WINDOW-capture click listener — which fires before the base
+ * lightbox's own document-capture listener — suppresses the lightbox whenever
+ * the click lands on/over the nav (or any excluded region):
+ *   • Native links  -> stopImmediatePropagation only (lightbox never sees the
+ *     click; the browser still performs the default navigation).
+ *   • Other controls (buttons, scroll-to-top, etc.) -> preventDefault only, so
+ *     the control's own React handler still runs while the base lightbox bails
+ *     on the default-prevented click.
+ *   • Anything else excluded -> stopImmediatePropagation.
+ */
+function useCaseStudyNavClickGuard(excludeSelector: string) {
     React.useEffect(() => {
-        if (RenderTarget.current() === RenderTarget.canvas) {
-            setReady(true)
-            return
-        }
-        if (typeof document === "undefined" || typeof window === "undefined") {
-            setReady(true)
-            return
-        }
-        if (!isCaseStudyDetailPage()) {
-            setReady(true)
-            return
-        }
+        if (RenderTarget.current() === RenderTarget.canvas) return
+        if (typeof document === "undefined" || typeof window === "undefined") return
+        if (!isCaseStudyDetailPage()) return
 
-        const snapshots = new Map<HTMLElement, ElementSnapshot>()
-        let frame = 0
-        const timeouts: number[] = []
-
-        const run = () => {
-            window.cancelAnimationFrame(frame)
-            frame = window.requestAnimationFrame(() => elevateCaseStudyNavLayer(snapshots))
-        }
-
-        // Guard against the lightbox opening on excluded regions. Registered on
-        // WINDOW capture so it runs BEFORE the base lightbox's own document-capture
-        // listener (window precedes document in the capture phase).
-        //
-        // For interactive controls (buttons, inputs, the scroll-to-top button, the
-        // gallery, etc.) we must preserve the control's own click — so we only
-        // mark the event default-prevented, which the base lightbox honors and
-        // bails on, WITHOUT calling stopImmediatePropagation (which would also kill
-        // the control's React handler). Links/role=link are left untouched so their
-        // navigation still fires. Genuinely non-interactive excluded regions keep
-        // full suppression.
         const onClick = (event: MouseEvent) => {
             if (!shouldGuardLightboxClick(event, excludeSelector)) return
 
             const target = event.target instanceof Element ? event.target : null
-            const interactive = target?.closest(INTERACTIVE_SELECTOR) ?? null
+            const anchor = target?.closest("a[href]") ?? null
+            if (anchor) {
+                event.stopImmediatePropagation()
+                return
+            }
 
+            const interactive = target?.closest(INTERACTIVE_SELECTOR) ?? null
             if (interactive) {
-                if (!interactive.matches('a[href], [role="link"]')) {
+                if (!interactive.matches('[role="link"]')) {
                     event.preventDefault()
                 }
                 return
@@ -451,53 +412,28 @@ function useCaseStudyNavLayering(excludeSelector: string): boolean {
         }
 
         window.addEventListener("click", onClick, true)
-        run()
-        ;[75, 200, 500, 1000, 2000].forEach((delay) => {
-            timeouts.push(window.setTimeout(run, delay))
-        })
-
-        const observer = new MutationObserver(run)
-        observer.observe(document.body, {
-            attributes: true,
-            attributeFilter: ["data-framer-name", "name", "style", "class"],
-            childList: true,
-            subtree: true,
-        })
-
-        window.addEventListener("pageshow", run)
-        window.addEventListener("resize", run)
-        setReady(true)
 
         return () => {
-            window.cancelAnimationFrame(frame)
-            timeouts.forEach((timeout) => window.clearTimeout(timeout))
-            observer.disconnect()
-            window.removeEventListener("pageshow", run)
-            window.removeEventListener("resize", run)
             window.removeEventListener("click", onClick, true)
-            document.documentElement.removeAttribute(CASE_STUDY_NAV_LAYER_ROOT_ATTR)
-            restoreNavLayerStyles(snapshots)
         }
     }, [excludeSelector])
-
-    return ready
 }
 
 /**
  * Case Study Lightbox wrapper.
  * Preserves the existing versioned lightbox implementation and adds tiny
- * case-study normalizers for the mobile footer and header click layer.
+ * case-study normalizers: the mobile footer layout and a nav click guard.
  *
  * The Exclude selector passed to the base engine is always merged with the
  * "always-on" rules (see ALWAYS_EXCLUDE_RULES) so that naming a frame
- * "No Lightbox" / "NoLightbox" — or tagging it [data-no-lightbox] — opts its
+ * "No Lightbox" / "NoLightbox" - or tagging it [data-no-lightbox] - opts its
  * media out of the lightbox everywhere, with no per-instance configuration.
  * Tip: name the frame that WRAPS the whole media (esp. video posters, which
  * contain both an <img> and a <video>), not just the leaf image.
  *
- * The click guard preserves interactive controls (buttons, the scroll-to-top
- * button, links, the gallery) while still suppressing the lightbox on excluded
- * regions — see useCaseStudyNavLayering.
+ * The click guard (useCaseStudyNavClickGuard) keeps nav links, buttons, the
+ * scroll-to-top button, and the gallery working while suppressing the lightbox
+ * on the nav and other excluded regions — with NO nav CSS mutation.
  *
  * @framerIntrinsicWidth 1
  * @framerIntrinsicHeight 1
@@ -507,10 +443,10 @@ function useCaseStudyNavLayering(excludeSelector: string): boolean {
 export default function CaseStudyLightbox(props: Config) {
     useCaseStudyMobileFooterLayout()
     const mergedExcludeSelector = getLightboxExcludeSelector(props.excludeSelector)
-    const navLayerReady = useCaseStudyNavLayering(mergedExcludeSelector)
+    useCaseStudyNavClickGuard(mergedExcludeSelector)
 
     const Base = BaseCaseStudyLightbox as unknown as React.ComponentType<Config>
-    return navLayerReady ? <Base {...props} excludeSelector={mergedExcludeSelector} /> : null
+    return <Base {...props} excludeSelector={mergedExcludeSelector} />
 }
 
 CaseStudyLightbox.defaultProps = {
