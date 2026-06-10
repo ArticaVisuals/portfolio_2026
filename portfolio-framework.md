@@ -9,7 +9,7 @@
 
 **Play note, June 8, 2026:** The live `/play` page is managed through `ArchivePlayground.tsx` (`QNpkYp5`). Add, reorder, or edit Play media through the component's `Archive Items` array in Framer; use `/play-consolidation-draft` for future interaction refactors before promoting to production.
 
-**Accessibility note, June 8, 2026:** `PublicEditorControlGuard.tsx` (`ztNOibx`) hides Framer's public editorbar "Edit Content" overlay from published/preview pages while skipping the Framer canvas.
+**Cleanup note, June 10, 2026:** The former public editorbar guard was removed from Framer and the local mirror after it was no longer needed. Do not remount that guard as current inventory.
 
 ---
 

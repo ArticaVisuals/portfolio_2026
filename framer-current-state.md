@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 8, 2026, via Framer MCP, targeted page XML checks, published-route browser QA, and local repo audit
+**Last audited:** June 10, 2026, via Framer MCP, targeted page XML checks, published-route browser QA, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
@@ -91,13 +91,12 @@ Framer code components relevant to this handoff include:
 | `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. |
 | `IndexPageBreakpointsDraft.tsx` | `VwMoFWv` | Active hidden `/index` responsive/style helper. Despite the name, it is part of the current `/index` implementation. |
 | `IndexGridVideoHoverFix.tsx` | `kjMWwjO` | Hidden `/index` CSS guard mounted as `JvCNoMs41`; keeps helper-generated grid videos on the same hover/focus scale path as image thumbnails and respects reduced motion. |
-| `PublicEditorControlGuard.tsx` | `ztNOibx` | Hidden public a11y guard that removes Framer's `#__framer-editorbar-label` / "Edit Content" overlay from published and preview pages while skipping canvas/thumbnail render targets. |
 | `ArchivePlayground.tsx` | `QNpkYp5` | Active `/play` archive media playground as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, and authorable `Archive Items` content live here. |
 | `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
 | `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Draft mirror mounted on `/play-consolidation-draft`; safe place for future parity experiments before promoting to `/play`. |
 | `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
-| `OtherProjectCardRestored.tsx` | `vlwa5Cz` | AirPods related-project card restoration helper. |
+| `OtherProjectCardRestored.tsx` | `vlwa5Cz` | Related-project card restoration helper. As of June 10, it hydrates thumbnail, thumbnail video, and thumbnail stroke from `All Projects` by slug/title, with the author-entered image/video props retained as fallback. |
 | `PlaygroundInstantExitSnapshot.tsx` | `c2PU6kX` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundSidebarColumnGuard.tsx` | `R3ZWYKl` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundNavExitHold.tsx` | `iivBAHR` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
@@ -111,17 +110,25 @@ Framer code components relevant to this handoff include:
 | `CaseStudyScrambleText.tsx` | `dHFQCIH` | Scramble text CTA/helper used in bespoke case-study pages. |
 | `CaseStudyJustifiedMediaGrid.tsx` | `c0iPrbN` | Bespoke case-study justified media grid helper. |
 | `FixedHeightMediaRows.tsx` | `IthLMt_` | Karuna fixed-height process gallery helper. |
-| `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + lightbox + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. See "Reusable Image Carousel" below. |
+| `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. **As of June 10 it no longer ships its own lightbox** — gallery slides open in the page-level `CaseStudyLightbox` (see "Reusable Image Carousel" below). |
 | `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS/default selected projects with direct `/case-studies/{slug}` anchors and image/video media fallback. |
-| `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; do not use it as the primary Home fix. |
-| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study page-level lightbox/controller. Mounted on bespoke case-study pages. |
-| `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study page-level autoplay video manager. Mounted on bespoke case-study pages. |
-| `CaseStudyControllers.tsx` | `z13WRHS` | Unmounted migration wrapper that can replace separate Lightbox, VideoManager, and LinkRepair instances later. Keep as the consolidation endpoint. |
+| `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; use `CaseStudyControllers.tsx` for new bespoke page controller mounts. |
+| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **June 10 updates:** (1) opt media out of the lightbox by naming any wrapping frame `No Lightbox`/`NoLightbox` (force-merged into every instance's Exclude rule, so no per-instance setup; wrap the whole media, not the leaf img); (2) the click guard moved to `window`-capture and now preserves interactive controls (buttons, the scroll-to-top button, the gallery) instead of swallowing their clicks — it only suppresses the lightbox; (3) gallery slides now open in this lightbox (the carousel's own overlay was removed). |
+| `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study autoplay video subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. |
+| `CaseStudyControllers.tsx` | `z13WRHS` | Active hidden wrapper for the useful bespoke case-study controllers: lightbox, video manager, and link repair. Mounted on accessible bespoke pages where the three separate controller instances were consolidated. |
 | `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Aspen Valley Landscaping mobile descriptor layout helper. Mounted on `/case-studies/aspen-valley-landscaping`. |
 
 June 8 cleanup: `CaseStudyThumbnailVideoSync.tsx` (`qONpo1v`) was removed from Home, `/case-studies`, `/index`, and `/case-studies/aspen-valley-landscaping`, then deleted from Framer after its mounted behavior was consolidated into the existing page/component thumbnail video paths. `RelatedProjectHoverZoom.tsx` was also removed from the local repo; it was a historical mirror and is not present in the current Framer MCP code-component inventory.
 
-June 8 accessibility fix: `PublicEditorControlGuard.tsx` (`ztNOibx`) was created in Framer and mirrored locally. It is mounted as an invisible 1px linked instance on `/`, `/404`, `/case-studies`, `/case-studies/:slug`, all listed bespoke case-study pages, `/index`, `/play`, `/play-a11y-draft`, `/info`, and `/contact` to hide the Framer editorbar "Edit Content" control from public/preview output. Several bespoke case-study page IDs returned empty XML through MCP before the guard was added, so MCP inserted the guard directly at the page root for those routes.
+June 10 cleanup: the former public editorbar guard was removed from known mounted pages, deleted from the Framer code-file inventory, and removed from the local mirror. It is no longer part of the current public page baseline.
+
+June 10 controller cleanup: the accessible bespoke case-study pages AirPods, Simon & Schuster, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, and TYPLDN now use one hidden `CaseStudyControllers.tsx` (`z13WRHS`) instance instead of separate `CaseStudyLinkRepair.tsx`, `CaseStudyLightbox.tsx`, and `CaseStudyVideoManager.tsx` mounts. MCP returned empty XML for Motion Connect 2025, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Neon Lights, and Aspen Valley Landscaping during this pass, so those pages were not modified.
+
+June 10 scroll-to-top fix: `ScrollToTopButton.tsx` (`gh4ngZN`) did nothing on published case-study pages because the old `CaseStudyLightbox` click guard (`document`-capture `stopImmediatePropagation` on every excluded element, `button` included) killed the button's own React `onClick` before it ran. Fixed by the guard rewrite noted above (window-capture + preventDefault for interactive controls). Verified live on Motion Connect 2025 (scrollY → 0). This applies to every case-study page that carries the lightbox/controllers instance, so the button can be rolled out site-wide without per-page work.
+
+June 10 build-error resolution: a leftover orphaned instance of the deleted editorbar guard (former code file `ztNOibx`) remained on `/info` (plus `/404` and `/case-studies`) and failed the publish optimizer with `ssg-module-not-found` / `MISSING_EXPORT "default"`. All three orphaned instances were removed (check every breakpoint — the `/info` one survived on a non-Desktop breakpoint); optimization status is back to `optimized`. Re-creating the code file would NOT have fixed it (a new file gets a new id, so the dangling `ztNOibx` import still wouldn't resolve) — removing the orphaned instances is the correct fix.
+
+June 10 related-project thumbnail fix: the AirPods "Other Projects" Gaia card was rendering the static `thumbnailSrc` prop (`1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg`) while the CMS/Home/Index source of truth had Gaia's thumbnail as `XBEu3UkNu8Hm5CPrgksq7wtmbw.gif`. `OtherProjectCardRestored.tsx` now resolves the generated `All Projects` CMS module (`yTHrQWMIY`) and replaces card media/stroke from CMS when a matching slug/title exists; manual props remain fallback values. Publish the Framer site after this code-file update before expecting `khaki-ship-257706.framer.app` to reflect the new component bundle.
 
 #### Play page consolidation — active as of June 8, 2026
 
@@ -135,7 +142,9 @@ The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAH
 
 `SimonSchusterGuidelinesCarousel.tsx` (code file `tYFZCey`, default export **`ImageCarousel`**) is a **general-purpose, reusable** component despite its filename — the filename is misleading because Framer MCP cannot rename code files (rename in the Framer UI if wanted; safe, since instances bind to componentId `codeFile/tYFZCey:default`). **For any future case study that needs an image gallery/slideshow, reuse this instead of writing a new helper.**
 
-Features: cross-fade autoplay (pause on hover), optional dots/counter, fullscreen lightbox, and prev/next arrows set in the site typeface (GT Standard `‹ ›` guillemets via `"GT Standard L Regular"` — verified that webfont carries U+2039/203A; the *Trial* weights do not).
+Features: cross-fade autoplay (pause on hover), optional dots/counter, and prev/next arrows set in the site typeface (GT Standard `‹ ›` guillemets via `"GT Standard L Regular"` — verified that webfont carries U+2039/203A; the *Trial* weights do not).
+
+**Lightbox behavior (changed June 10):** the carousel no longer renders its own fullscreen overlay — that was colliding with the page-level `CaseStudyLightbox`. Instead, only the *visible* slide is hit-testable (`pointer-events:auto`; inactive slides are `pointer-events:none` but stay in the DOM), so a single click opens the on-screen slide in the same lightbox as any other image, and the lightbox's ‹ › cycle the whole gallery (all slides are collected) before flowing into the rest of the page's media. Set the instance's `Lightbox` control to **Off** to mark slides `[data-no-lightbox]` and opt the gallery out entirely. Requires a `CaseStudyLightbox`/`CaseStudyControllers` instance on the page. Verified live on Gaia + Simon & Schuster.
 
 Two ways to supply slides (instance props):
 - **`sourceMode="manifest"` + `slidesData`**: one slide per line, `imageUrl|alt`. **Scriptable via MCP** — set the entire list in a single `updateXmlForNode` call. Use this when an agent is populating images.
@@ -314,7 +323,7 @@ Case-study media row rule (June 7, 2026): when a desktop case-study body row has
 Common/custom helpers seen in the checked pages include:
 
 - `OtherProjectCardRestored.tsx`
-- `CaseStudyLinkRepair.tsx`
+- `CaseStudyControllers.tsx`
 - `CaseStudyJustifiedMediaGrid.tsx`
 - `CaseStudyScrambleText.tsx`
 - project-specific media/gallery helpers such as `FixedHeightMediaRows.tsx`, `TypldnProcessGallery.tsx`, and `SeekTruthCargoSlideshow.tsx` (note: `SimonSchusterGuidelinesCarousel.tsx` / code file `tYFZCey` is **no longer project-specific** — it is now the reusable `ImageCarousel`; recycle it for new galleries rather than writing a new helper. See "Reusable Image Carousel" in Code Components.)

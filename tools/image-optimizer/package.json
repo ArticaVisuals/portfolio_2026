@@ -1,0 +1,18 @@
+{
+  "name": "portfolio-image-optimizer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Internal portfolio image optimization tool for Framer asset workflows.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^4.19.2",
+    "multer": "^2.0.2",
+    "sharp": "^0.33.5"
+  }
+}

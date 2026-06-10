@@ -1,0 +1,444 @@
+{
+  "framer-foundation": {
+    "fontFamily": {
+      "gt-standard": {
+        "value": "GT Standard",
+        "type": "fontFamilies",
+        "description": "Framer uiFamilyName for GT Standard L/M faces."
+      },
+      "gt-standard-trial": {
+        "value": "GT Standard Trial",
+        "type": "fontFamilies",
+        "description": "Framer uiFamilyName for GT Standard Trial L faces."
+      },
+      "gt-standard-mono": {
+        "value": "GT Standard Mono",
+        "type": "fontFamilies",
+        "description": "Framer uiFamilyName for GT Standard Mono Regular faces."
+      },
+      "gt-standard-mono-trial": {
+        "value": "GT Standard Mono Trial",
+        "type": "fontFamilies",
+        "description": "Framer uiFamilyName inferred from GT Standard Mono Trial Md."
+      }
+    },
+    "fontWeight": {
+      "l-bold": {
+        "value": "L Bd",
+        "type": "fontWeights",
+        "description": "Framer CSS face: GT Standard Trial L Bd. If Figma lists the style as Bold, change this value to match Figma's font menu."
+      },
+      "l-regular": {
+        "value": "L Regular",
+        "type": "fontWeights",
+        "description": "Framer CSS face: GT Standard L Regular."
+      },
+      "l-medium": {
+        "value": "L Md",
+        "type": "fontWeights",
+        "description": "Framer CSS face: GT Standard Trial L Md."
+      },
+      "m-regular": {
+        "value": "M Regular",
+        "type": "fontWeights",
+        "description": "Framer CSS face: GT Standard M Regular."
+      },
+      "mono-regular": {
+        "value": "Regular",
+        "type": "fontWeights",
+        "description": "Framer CSS face: GT Standard Mono Regular."
+      },
+      "mono-medium": {
+        "value": "Md",
+        "type": "fontWeights",
+        "description": "Framer CSS face: GT Standard Mono Trial Md."
+      }
+    },
+    "fontSize": {
+      "display-110": {
+        "value": "110px",
+        "type": "fontSizes"
+      },
+      "display-70": {
+        "value": "70px",
+        "type": "fontSizes"
+      },
+      "title-40": {
+        "value": "40px",
+        "type": "fontSizes"
+      },
+      "heading-30": {
+        "value": "30px",
+        "type": "fontSizes"
+      },
+      "body-22": {
+        "value": "22px",
+        "type": "fontSizes"
+      },
+      "body-20": {
+        "value": "20px",
+        "type": "fontSizes"
+      },
+      "body-16": {
+        "value": "16px",
+        "type": "fontSizes"
+      },
+      "mono-13": {
+        "value": "13px",
+        "type": "fontSizes"
+      }
+    },
+    "lineHeight": {
+      "100": {
+        "value": "100%",
+        "type": "lineHeights"
+      },
+      "110": {
+        "value": "110%",
+        "type": "lineHeights"
+      },
+      "120": {
+        "value": "120%",
+        "type": "lineHeights",
+        "description": "Normalized from Framer 1.2em where applicable."
+      },
+      "130": {
+        "value": "130%",
+        "type": "lineHeights"
+      },
+      "140": {
+        "value": "140%",
+        "type": "lineHeights",
+        "description": "Normalized from Framer 1.4em."
+      },
+      "fixed-25": {
+        "value": "25px",
+        "type": "lineHeights"
+      }
+    },
+    "letterSpacing": {
+      "none": {
+        "value": "0%",
+        "type": "letterSpacing",
+        "description": "Normalized from Framer 0px."
+      },
+      "negative-1": {
+        "value": "-1%",
+        "type": "letterSpacing",
+        "description": "Normalized from Framer -0.01em."
+      },
+      "negative-3": {
+        "value": "-3%",
+        "type": "letterSpacing",
+        "description": "Normalized from Framer -0.03em."
+      }
+    },
+    "paragraphSpacing": {
+      "10": {
+        "value": "10px",
+        "type": "paragraphSpacing"
+      },
+      "16": {
+        "value": "16px",
+        "type": "paragraphSpacing"
+      },
+      "20": {
+        "value": "20px",
+        "type": "paragraphSpacing"
+      },
+      "40": {
+        "value": "40px",
+        "type": "paragraphSpacing"
+      }
+    },
+    "paragraphIndent": {
+      "none": {
+        "value": "0px",
+        "type": "dimension"
+      }
+    },
+    "textCase": {
+      "none": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "uppercase": {
+        "value": "uppercase",
+        "type": "textCase"
+      },
+      "capitalize": {
+        "value": "capitalize",
+        "type": "textCase"
+      }
+    },
+    "textDecoration": {
+      "none": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    }
+  },
+  "framer-text-styles": {
+    "Heading 1": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-trial}",
+        "fontWeight": "{fontWeight.l-bold}",
+        "fontSize": "{fontSize.display-110}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.capitalize}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Heading 1; tag h1; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Trial L Bd."
+    },
+    "Heading 2": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.l-regular}",
+        "fontSize": "{fontSize.display-70}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-3}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.capitalize}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Heading 2; tag h2; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard L Regular."
+    },
+    "Heading 2b": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-trial}",
+        "fontWeight": "{fontWeight.l-bold}",
+        "fontSize": "{fontSize.display-70}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-3}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.capitalize}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Heading 2b; tag h2; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Trial L Bd."
+    },
+    "Heading 3": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.l-regular}",
+        "fontSize": "{fontSize.heading-30}",
+        "lineHeight": "{lineHeight.120}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Heading 3; tag h3; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard L Regular."
+    },
+    "Index Title": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.l-regular}",
+        "fontSize": "{fontSize.title-40}",
+        "lineHeight": "{lineHeight.120}",
+        "letterSpacing": "{letterSpacing.negative-3}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Index Title; tag h3; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard L Regular."
+    },
+    "Heading 4": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-trial}",
+        "fontWeight": "{fontWeight.l-bold}",
+        "fontSize": "{fontSize.body-20}",
+        "lineHeight": "{lineHeight.140}",
+        "letterSpacing": "{letterSpacing.none}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Heading 4; tag h4; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Trial L Bd."
+    },
+    "Heading 5": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-mono}",
+        "fontWeight": "{fontWeight.mono-regular}",
+        "fontSize": "{fontSize.mono-13}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.40}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Heading 5; tag h5; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Mono Regular."
+    },
+    "Body": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.l-regular}",
+        "fontSize": "{fontSize.body-22}",
+        "lineHeight": "{lineHeight.120}",
+        "letterSpacing": "{letterSpacing.none}",
+        "paragraphSpacing": "{paragraphSpacing.10}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Body; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard L Regular."
+    },
+    "Body - 100%": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-mono}",
+        "fontWeight": "{fontWeight.mono-regular}",
+        "fontSize": "{fontSize.mono-13}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Body - 100%; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Mono Regular."
+    },
+    "Paragraph Small": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.l-regular}",
+        "fontSize": "{fontSize.body-22}",
+        "lineHeight": "{lineHeight.fixed-25}",
+        "letterSpacing": "{letterSpacing.none}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Paragraph Small; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard L Regular."
+    },
+    "Paragraph Regular": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.l-regular}",
+        "fontSize": "{fontSize.body-16}",
+        "lineHeight": "{lineHeight.140}",
+        "letterSpacing": "{letterSpacing.none}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Paragraph Regular; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard L Regular."
+    },
+    "Paragraph Medium": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-trial}",
+        "fontWeight": "{fontWeight.l-medium}",
+        "fontSize": "{fontSize.body-22}",
+        "lineHeight": "{lineHeight.110}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Paragraph Medium; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Trial L Md."
+    },
+    "Index Number": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard}",
+        "fontWeight": "{fontWeight.m-regular}",
+        "fontSize": "{fontSize.body-20}",
+        "lineHeight": "{lineHeight.120}",
+        "letterSpacing": "{letterSpacing.negative-3}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Index Number; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard M Regular."
+    },
+    "On Green Label": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-mono-trial}",
+        "fontWeight": "{fontWeight.mono-medium}",
+        "fontSize": "{fontSize.mono-13}",
+        "lineHeight": "{lineHeight.130}",
+        "letterSpacing": "{letterSpacing.none}",
+        "paragraphSpacing": "{paragraphSpacing.16}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /On Green Label; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Mono Trial Md."
+    },
+    "Nav On Green Label": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-mono-trial}",
+        "fontWeight": "{fontWeight.mono-medium}",
+        "fontSize": "{fontSize.mono-13}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.none}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Nav On Green Label; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Mono Trial Md."
+    },
+    "Footer Mono White": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-mono}",
+        "fontWeight": "{fontWeight.mono-regular}",
+        "fontSize": "{fontSize.mono-13}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Footer Mono White; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Mono Regular."
+    },
+    "Footer Mono Dark": {
+      "value": {
+        "fontFamily": "{fontFamily.gt-standard-mono}",
+        "fontWeight": "{fontWeight.mono-regular}",
+        "fontSize": "{fontSize.mono-13}",
+        "lineHeight": "{lineHeight.100}",
+        "letterSpacing": "{letterSpacing.negative-1}",
+        "paragraphSpacing": "{paragraphSpacing.20}",
+        "paragraphIndent": "{paragraphIndent.none}",
+        "textCase": "{textCase.uppercase}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Source: Framer MCP path /Footer Mono Dark; tag p; alignment left; balance false; Framer font selector CUSTOMV2;GT Standard Mono Regular."
+    }
+  },
+  "$metadata": {
+    "tokenSetOrder": [
+      "framer-foundation",
+      "framer-text-styles"
+    ]
+  }
+}

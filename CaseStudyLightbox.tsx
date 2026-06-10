@@ -1,30 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
-
-/**
- * Case Study Lightbox — a single, page-level Cargo-style media zoom.
- *
- * Drop ONE instance on a page. Event delegation + click-point hit testing opens
- * a full-screen lightbox for any content image/video, with a FLIP zoom, white
- * backdrop, GT Standard ‹ › × controls, keyboard nav, and touch swipe.
- *
- * Hardened against timing races (rapid open/close/open, interrupted zooms):
- * - Every deferred callback is token-guarded so a stale one can't clobber a
- *   newer session.
- * - Navigation shows the new media synchronously via showOnly() (single source
- *   of truth) — no deferred swap that could strand or double-render.
- * - Animations use fill:"none" so NO transform ever persists; the resting state
- *   is always the CSS-centered position. A short recenter watchdog enforces it.
- * - A window-level singleton guard ensures only one controller runs even if two
- *   instances render (e.g. a standalone + a Footer-embedded one).
- *
- * Runs only outside the Framer canvas. Test in Preview, not the editor.
- *
- * @framerIntrinsicWidth 1
- * @framerIntrinsicHeight 1
- * @framerSupportedLayoutWidth fixed
- * @framerSupportedLayoutHeight fixed
- */
+// @ts-ignore - Framer resolves versioned project module URLs at bundle time.
+import BaseCaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@Wd9cFUrIcpA2FcGDV0Ys"
 
 type Config = {
     enabled: boolean
@@ -45,16 +22,16 @@ type Config = {
     excludeSelector: string
 }
 
-type MediaType = "image" | "video"
-type Candidate = { el: HTMLElement; type: MediaType; src: string; hires: string; poster: string; ratio: number }
+type StyleSnapshot = {
+    value: string
+    priority: string
+}
 
-const EASE = "cubic-bezier(0.22, 1, 0.36, 1)"
-const Z = 2147483000
-const GLYPH_FONT =
-    '"GT Standard L Regular", "GT Standard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+type ElementSnapshot = Map<string, StyleSnapshot>
+
+const CASE_STUDY_NAV_LAYER_ROOT_ATTR = "data-case-study-nav-layer"
 const CASE_STUDY_NAV_LAYER_STYLE_ID = "case-study-nav-layer"
-const CASE_STUDY_NAV_LAYER_ACTIVE_KEY = "__caseStudyNavLayerActive"
-const CASE_STUDY_NAV_Z = Z - 10
+const CASE_STUDY_NAV_Z = 2147482990
 const CASE_STUDY_NAV_SELECTORS = [
     "nav",
     "header",
@@ -67,8 +44,24 @@ const CASE_STUDY_NAV_SELECTORS = [
     '[data-framer-name="Header"]',
     '[name="Header"]',
 ].join(",")
-const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout"
-const MOBILE_FOOTER_ACTIVE_KEY = "__caseStudyMobileFooterLayoutActive"
+// Rules that must ALWAYS exclude an element from the lightbox, regardless of
+// what an individual instance typed into its Exclude control. The name-based
+// rules let you opt media out with zero code: name any frame "No Lightbox"
+// (or "NoLightbox" — both spellings, case-insensitive substring) and wrap the
+// media in it.
+const ALWAYS_EXCLUDE_RULES = [
+    "[data-no-lightbox]",
+    '[data-framer-name*="No Lightbox" i]',
+    '[data-framer-name*="NoLightbox" i]',
+]
+const DEFAULT_LIGHTBOX_EXCLUDE_SELECTOR =
+    'nav, header, footer, a, button, video[controls], [data-no-lightbox], [data-framer-name*="No Lightbox" i], [data-framer-name*="NoLightbox" i]'
+// Controls that own their own click behavior. When a click on one of these is
+// guarded, we must NOT swallow the click (that previously broke the
+// scroll-to-top button and the gallery) — we only suppress the lightbox.
+const INTERACTIVE_SELECTOR =
+    'button, [role="button"], [role="link"], input, select, textarea, label, summary, a[href]'
+const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout-v2"
 const MOBILE_FOOTER_STYLE = `
 @media (max-width: 809px) {
     [data-case-study-mobile-cta-section="true"] {
@@ -84,6 +77,7 @@ const MOBILE_FOOTER_STYLE = `
         height: auto !important;
         max-width: 100% !important;
         min-height: 0 !important;
+        overflow: visible !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
         width: 100% !important;
@@ -93,32 +87,41 @@ const MOBILE_FOOTER_STYLE = `
         align-items: flex-start !important;
         align-self: flex-start !important;
         box-sizing: border-box !important;
+        display: flex !important;
         flex: 0 0 auto !important;
+        flex-direction: row !important;
         gap: 10px !important;
-        height: 32px !important;
+        height: auto !important;
         justify-content: flex-start !important;
+        max-height: none !important;
         max-width: calc(100vw - 30px) !important;
         min-height: 32px !important;
+        overflow: visible !important;
         padding: 0 !important;
-        width: auto !important;
+        width: fit-content !important;
     }
 
     [data-case-study-mobile-cta-row="email"] {
-        height: 34px !important;
         min-height: 34px !important;
         padding-top: 2px !important;
     }
 
+    [data-case-study-mobile-cta-row] > :first-child,
     [data-case-study-mobile-cta-label="true"] {
         display: block !important;
         flex: 0 0 auto !important;
         height: 32px !important;
+        max-height: none !important;
         max-width: calc(100vw - 30px) !important;
         min-height: 32px !important;
         min-width: 0 !important;
+        overflow: visible !important;
         width: auto !important;
     }
 
+    [data-case-study-mobile-cta-row] > :first-child,
+    [data-case-study-mobile-cta-row] > :first-child *,
+    [data-case-study-mobile-cta-label="true"],
     [data-case-study-mobile-cta-label="true"] * {
         font-family: "GT Standard Trial L Md", "GT Standard Trial L Md Placeholder", "GT Standard Trial", sans-serif !important;
         font-size: 32px !important;
@@ -126,135 +129,206 @@ const MOBILE_FOOTER_STYLE = `
         height: 32px !important;
         letter-spacing: -2px !important;
         line-height: 32px !important;
+        max-height: none !important;
+        overflow: visible !important;
         width: auto !important;
     }
 
-    [data-case-study-mobile-cta-label="true"] > * {
-        display: inline-block !important;
-    }
-
+    [data-case-study-mobile-cta-row] > :first-child > *,
+    [data-case-study-mobile-cta-label="true"] > *,
     [data-case-study-mobile-cta-label="true"] span {
         display: inline-block !important;
     }
 
+    [data-case-study-mobile-cta-row] > :not(:first-child),
     [data-case-study-mobile-cta-meta="true"] {
         flex: 0 0 auto !important;
         height: 13px !important;
+        max-height: none !important;
+        overflow: visible !important;
         width: auto !important;
     }
 
+    [data-case-study-mobile-cta-row] > :not(:first-child) *,
     [data-case-study-mobile-cta-meta="true"] * {
         font-size: 13px !important;
         height: 13px !important;
         letter-spacing: -0.13px !important;
         line-height: 13px !important;
+        max-height: none !important;
+        overflow: visible !important;
         text-transform: uppercase !important;
         width: auto !important;
     }
 }
 `
 
-function setStyles(el: HTMLElement, styles: Record<string, string>) {
-    const t = el.style as unknown as Record<string, string>
-    for (const k in styles) t[k] = styles[k]
-}
-function prefersReducedMotion(): boolean {
-    return (
-        typeof window !== "undefined" &&
-        typeof window.matchMedia === "function" &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
-}
-function largestFromSrcset(srcset: string): string {
-    if (!srcset) return ""
-    let best = "", bestW = -1
-    for (const part of srcset.split(",")) {
-        const seg = part.trim().split(/\s+/)
-        const url = seg[0]; if (!url) continue
-        const d = seg[1] || ""
-        let w = 0
-        if (d.endsWith("w")) w = parseInt(d, 10)
-        else if (d.endsWith("x")) w = parseFloat(d) * 10000
-        else w = 1
-        if (w > bestW) { bestW = w; best = url }
-    }
-    return best
-}
-function buildCursorCSS(exclude: string): string {
-    const rules: string[] = ["img,video{cursor:zoom-in!important}"]
-    exclude.split(",").map((t) => t.trim()).filter(Boolean).forEach((t) => {
-        const c = t === "a" || t === "button" ? "pointer" : "auto"
-        rules.push(`${t}{cursor:${c}!important}`)
-        rules.push(`${t} img,${t} video{cursor:${c}!important}`)
-    })
-    rules.push("[data-cslb-overlay] img{cursor:zoom-out!important}")
-    rules.push("[data-cslb-overlay] video{cursor:auto!important}")
-    return rules.join("")
-}
-function nextFrame(cb: () => void) {
-    requestAnimationFrame(() => requestAnimationFrame(cb))
-}
-function canAnimate(el: Element): boolean {
-    return typeof (el as HTMLElement).animate === "function"
-}
-function clearAnims(el: HTMLElement | null) {
-    if (el && typeof el.getAnimations === "function") el.getAnimations().forEach((a) => a.cancel())
-}
 function isCaseStudyDetailPage(): boolean {
     if (typeof window === "undefined") return false
     const path = window.location.pathname.replace(/\/+$/, "")
     return path.startsWith("/case-studies/") && path.length > "/case-studies/".length
 }
+
 function normalizeCtaText(value: string): string {
-    return String(value || "").replace(/\s+/g, "").toUpperCase()
+    return String(value || "")
+        .replace(/\s+/g, "")
+        .toUpperCase()
 }
+
 function getMobileFooterCtaType(anchor: HTMLAnchorElement): string {
     const text = normalizeCtaText(anchor.textContent || "")
+
     if (text === "MICAH.HOANG@HEY.COM") return "email"
     if (text === "LINKEDINCONNECT") return "linkedin"
     if (text === "COSMOSINSPIRE") return "cosmos"
+
     return ""
 }
+
+function getLightboxExcludeSelector(excludeSelector: string | undefined): string {
+    const base = String(excludeSelector || DEFAULT_LIGHTBOX_EXCLUDE_SELECTOR).trim()
+    const parts = base.length ? base.split(",").map((part) => part.trim()).filter(Boolean) : []
+
+    // Force the always-on rules to be present so opting media out keeps working
+    // even on instances whose Exclude control still holds an older value.
+    for (const rule of ALWAYS_EXCLUDE_RULES) {
+        if (!parts.some((part) => part === rule)) parts.push(rule)
+    }
+
+    return parts.join(", ")
+}
+
+function getScopedCaseStudyNavSelectors(): string {
+    return CASE_STUDY_NAV_SELECTORS.split(",")
+        .map((selector) => `html[${CASE_STUDY_NAV_LAYER_ROOT_ATTR}="true"] ${selector}`)
+        .join(",\n")
+}
+
 function ensureMobileFooterStyles() {
     if (typeof document === "undefined") return
-    if (document.getElementById(MOBILE_FOOTER_STYLE_ID)) return
-    const style = document.createElement("style")
-    style.id = MOBILE_FOOTER_STYLE_ID
-    style.textContent = MOBILE_FOOTER_STYLE
+
+    let style = document.getElementById(MOBILE_FOOTER_STYLE_ID)
+    if (!style) {
+        style = document.createElement("style")
+        style.id = MOBILE_FOOTER_STYLE_ID
+    }
+
+    if (style.textContent !== MOBILE_FOOTER_STYLE) {
+        style.textContent = MOBILE_FOOTER_STYLE
+    }
+
     document.head.appendChild(style)
 }
+
 function ensureCaseStudyNavLayerStyles() {
     if (typeof document === "undefined") return
-    if (document.getElementById(CASE_STUDY_NAV_LAYER_STYLE_ID)) return
 
-    const style = document.createElement("style")
-    style.id = CASE_STUDY_NAV_LAYER_STYLE_ID
-    style.textContent = `
-${CASE_STUDY_NAV_SELECTORS} {
+    let style = document.getElementById(CASE_STUDY_NAV_LAYER_STYLE_ID)
+    if (!style) {
+        style = document.createElement("style")
+        style.id = CASE_STUDY_NAV_LAYER_STYLE_ID
+    }
+
+    const css = `
+${getScopedCaseStudyNavSelectors()} {
     z-index: ${CASE_STUDY_NAV_Z} !important;
     pointer-events: auto !important;
     isolation: isolate !important;
 }
 `
+
+    if (style.textContent !== css) style.textContent = css
     document.head.appendChild(style)
 }
-function elevateCaseStudyNavLayer() {
+
+function rememberStyle(
+    snapshots: Map<HTMLElement, ElementSnapshot>,
+    el: HTMLElement,
+    property: string
+) {
+    let snapshot = snapshots.get(el)
+    if (!snapshot) {
+        snapshot = new Map<string, StyleSnapshot>()
+        snapshots.set(el, snapshot)
+    }
+
+    if (snapshot.has(property)) return
+    snapshot.set(property, {
+        value: el.style.getPropertyValue(property),
+        priority: el.style.getPropertyPriority(property),
+    })
+}
+
+function setImportantStyle(
+    snapshots: Map<HTMLElement, ElementSnapshot>,
+    el: HTMLElement,
+    property: string,
+    value: string
+) {
+    rememberStyle(snapshots, el, property)
+    el.style.setProperty(property, value, "important")
+}
+
+function restoreNavLayerStyles(snapshots: Map<HTMLElement, ElementSnapshot>) {
+    snapshots.forEach((snapshot, el) => {
+        snapshot.forEach(({ value, priority }, property) => {
+            if (value) el.style.setProperty(property, value, priority)
+            else el.style.removeProperty(property)
+        })
+    })
+    snapshots.clear()
+}
+
+function elevateCaseStudyNavLayer(snapshots: Map<HTMLElement, ElementSnapshot>) {
     if (typeof document === "undefined" || typeof window === "undefined") return
     if (!isCaseStudyDetailPage()) return
 
     ensureCaseStudyNavLayerStyles()
+    document.documentElement.setAttribute(CASE_STUDY_NAV_LAYER_ROOT_ATTR, "true")
+
     document.querySelectorAll<HTMLElement>(CASE_STUDY_NAV_SELECTORS).forEach((el) => {
-        el.style.setProperty("z-index", String(CASE_STUDY_NAV_Z), "important")
-        el.style.setProperty("pointer-events", "auto", "important")
-        el.style.setProperty("isolation", "isolate", "important")
+        setImportantStyle(snapshots, el, "z-index", String(CASE_STUDY_NAV_Z))
+        setImportantStyle(snapshots, el, "pointer-events", "auto")
+        setImportantStyle(snapshots, el, "isolation", "isolate")
 
         if (window.getComputedStyle(el).position === "static") {
-            el.style.setProperty("position", "relative", "important")
+            setImportantStyle(snapshots, el, "position", "relative")
         }
     })
 }
+
+function isExcludedElement(el: Element, excludeSelector: string): boolean {
+    if (el.closest(CASE_STUDY_NAV_SELECTORS)) return true
+    if (el.closest("[data-no-lightbox]")) return true
+    if (!excludeSelector) return false
+
+    try {
+        return Boolean(el.closest(excludeSelector))
+    } catch {
+        return false
+    }
+}
+
+function hasExcludedAtPoint(event: MouseEvent, excludeSelector: string): boolean {
+    if (typeof document.elementsFromPoint !== "function") return false
+
+    for (const node of document.elementsFromPoint(event.clientX, event.clientY)) {
+        if (isExcludedElement(node, excludeSelector)) return true
+    }
+
+    return false
+}
+
+function shouldGuardLightboxClick(event: MouseEvent, excludeSelector: string): boolean {
+    if (!isCaseStudyDetailPage()) return false
+    const target = event.target instanceof Element ? event.target : null
+    if (target && isExcludedElement(target, excludeSelector)) return true
+    return hasExcludedAtPoint(event, excludeSelector)
+}
+
 function tagMobileFooterCta() {
     if (typeof document === "undefined") return
+
     document.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor) => {
         const type = getMobileFooterCtaType(anchor)
         if (!type) return
@@ -265,6 +339,7 @@ function tagMobileFooterCta() {
         const container = anchor.parentElement
         const label = anchor.firstElementChild
         const meta = anchor.children.length > 1 ? anchor.children[1] : null
+
         if (!section || !container || !(label instanceof HTMLElement)) return
 
         section.setAttribute("data-case-study-mobile-cta-section", "true")
@@ -274,19 +349,20 @@ function tagMobileFooterCta() {
         if (meta instanceof HTMLElement) meta.setAttribute("data-case-study-mobile-cta-meta", "true")
     })
 }
+
 function useCaseStudyMobileFooterLayout() {
     React.useEffect(() => {
         if (RenderTarget.current() === RenderTarget.canvas) return
         if (typeof document === "undefined" || typeof window === "undefined") return
         if (!isCaseStudyDetailPage()) return
-        const W = window as unknown as Record<string, unknown>
-        if (W[MOBILE_FOOTER_ACTIVE_KEY]) return
-        W[MOBILE_FOOTER_ACTIVE_KEY] = true
 
         ensureMobileFooterStyles()
+
         let frame = 0
         const timeouts: number[] = []
+
         const run = () => {
+            ensureMobileFooterStyles()
             window.cancelAnimationFrame(frame)
             frame = window.requestAnimationFrame(tagMobileFooterCta)
         }
@@ -303,6 +379,7 @@ function useCaseStudyMobileFooterLayout() {
             childList: true,
             subtree: true,
         })
+
         window.addEventListener("pageshow", run)
         window.addEventListener("resize", run)
 
@@ -312,26 +389,68 @@ function useCaseStudyMobileFooterLayout() {
             observer.disconnect()
             window.removeEventListener("pageshow", run)
             window.removeEventListener("resize", run)
-            delete W[MOBILE_FOOTER_ACTIVE_KEY]
         }
     }, [])
 }
-function useCaseStudyNavLayering() {
-    React.useEffect(() => {
-        if (RenderTarget.current() === RenderTarget.canvas) return
-        if (typeof document === "undefined" || typeof window === "undefined") return
-        if (!isCaseStudyDetailPage()) return
-        const W = window as unknown as Record<string, unknown>
-        if (W[CASE_STUDY_NAV_LAYER_ACTIVE_KEY]) return
-        W[CASE_STUDY_NAV_LAYER_ACTIVE_KEY] = true
 
-        let frame = 0
-        const timeouts: number[] = []
-        const run = () => {
-            window.cancelAnimationFrame(frame)
-            frame = window.requestAnimationFrame(elevateCaseStudyNavLayer)
+function useCaseStudyNavLayering(excludeSelector: string): boolean {
+    const [ready, setReady] = React.useState(() => {
+        if (typeof document === "undefined" || typeof window === "undefined") return true
+        if (RenderTarget.current() === RenderTarget.canvas) return true
+        return !isCaseStudyDetailPage()
+    })
+
+    React.useEffect(() => {
+        if (RenderTarget.current() === RenderTarget.canvas) {
+            setReady(true)
+            return
+        }
+        if (typeof document === "undefined" || typeof window === "undefined") {
+            setReady(true)
+            return
+        }
+        if (!isCaseStudyDetailPage()) {
+            setReady(true)
+            return
         }
 
+        const snapshots = new Map<HTMLElement, ElementSnapshot>()
+        let frame = 0
+        const timeouts: number[] = []
+
+        const run = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(() => elevateCaseStudyNavLayer(snapshots))
+        }
+
+        // Guard against the lightbox opening on excluded regions. Registered on
+        // WINDOW capture so it runs BEFORE the base lightbox's own document-capture
+        // listener (window precedes document in the capture phase).
+        //
+        // For interactive controls (buttons, inputs, the scroll-to-top button, the
+        // gallery, etc.) we must preserve the control's own click — so we only
+        // mark the event default-prevented, which the base lightbox honors and
+        // bails on, WITHOUT calling stopImmediatePropagation (which would also kill
+        // the control's React handler). Links/role=link are left untouched so their
+        // navigation still fires. Genuinely non-interactive excluded regions keep
+        // full suppression.
+        const onClick = (event: MouseEvent) => {
+            if (!shouldGuardLightboxClick(event, excludeSelector)) return
+
+            const target = event.target instanceof Element ? event.target : null
+            const interactive = target?.closest(INTERACTIVE_SELECTOR) ?? null
+
+            if (interactive) {
+                if (!interactive.matches('a[href], [role="link"]')) {
+                    event.preventDefault()
+                }
+                return
+            }
+
+            event.stopImmediatePropagation()
+        }
+
+        window.addEventListener("click", onClick, true)
         run()
         ;[75, 200, 500, 1000, 2000].forEach((delay) => {
             timeouts.push(window.setTimeout(run, delay))
@@ -344,8 +463,10 @@ function useCaseStudyNavLayering() {
             childList: true,
             subtree: true,
         })
+
         window.addEventListener("pageshow", run)
         window.addEventListener("resize", run)
+        setReady(true)
 
         return () => {
             window.cancelAnimationFrame(frame)
@@ -353,471 +474,43 @@ function useCaseStudyNavLayering() {
             observer.disconnect()
             window.removeEventListener("pageshow", run)
             window.removeEventListener("resize", run)
-            delete W[CASE_STUDY_NAV_LAYER_ACTIVE_KEY]
+            window.removeEventListener("click", onClick, true)
+            document.documentElement.removeAttribute(CASE_STUDY_NAV_LAYER_ROOT_ATTR)
+            restoreNavLayerStyles(snapshots)
         }
-    }, [])
+    }, [excludeSelector])
+
+    return ready
 }
 
+/**
+ * Case Study Lightbox wrapper.
+ * Preserves the existing versioned lightbox implementation and adds tiny
+ * case-study normalizers for the mobile footer and header click layer.
+ *
+ * The Exclude selector passed to the base engine is always merged with the
+ * "always-on" rules (see ALWAYS_EXCLUDE_RULES) so that naming a frame
+ * "No Lightbox" / "NoLightbox" — or tagging it [data-no-lightbox] — opts its
+ * media out of the lightbox everywhere, with no per-instance configuration.
+ * Tip: name the frame that WRAPS the whole media (esp. video posters, which
+ * contain both an <img> and a <video>), not just the leaf image.
+ *
+ * The click guard preserves interactive controls (buttons, the scroll-to-top
+ * button, links, the gallery) while still suppressing the lightbox on excluded
+ * regions — see useCaseStudyNavLayering.
+ *
+ * @framerIntrinsicWidth 1
+ * @framerIntrinsicHeight 1
+ * @framerSupportedLayoutWidth fixed
+ * @framerSupportedLayoutHeight fixed
+ */
 export default function CaseStudyLightbox(props: Config) {
-    const configRef = React.useRef<Config>(props)
-    configRef.current = props
-
-    useCaseStudyNavLayering()
     useCaseStudyMobileFooterLayout()
+    const mergedExcludeSelector = getLightboxExcludeSelector(props.excludeSelector)
+    const navLayerReady = useCaseStudyNavLayering(mergedExcludeSelector)
 
-    React.useEffect(() => {
-        if (RenderTarget.current() === RenderTarget.canvas) return
-        if (typeof document === "undefined" || typeof window === "undefined") return
-        // Singleton: if another instance already owns the lightbox, bail.
-        const W = window as unknown as Record<string, unknown>
-        if (W.__cslbActive) return
-        W.__cslbActive = true
-
-        let overlay: HTMLDivElement | null = null
-        let imgEl: HTMLImageElement | null = null
-        let videoEl: HTMLVideoElement | null = null
-        let prevBtn: HTMLButtonElement | null = null
-        let nextBtn: HTMLButtonElement | null = null
-        let closeBtn: HTMLButtonElement | null = null
-        let counterEl: HTMLDivElement | null = null
-
-        let list: Candidate[] = []
-        let index = -1
-        let isOpen = false
-        let token = 0 // bumped on every open() AND close()
-        let hiddenEl: HTMLElement | null = null
-        let prevBodyOverflow = ""
-
-        const cfg = () => configRef.current
-        const padCSS = () => `clamp(20px, 5vw, ${cfg().viewportPadding}px)`
-
-        const cursorStyle = document.createElement("style")
-        cursorStyle.setAttribute("data-cslb-cursor", "")
-        cursorStyle.textContent = buildCursorCSS(cfg().excludeSelector)
-        document.head.appendChild(cursorStyle)
-
-        // ---- Media inspection -------------------------------------------
-        function srcOf(el: HTMLElement, type: MediaType) {
-            if (type === "video") {
-                const v = el as HTMLVideoElement
-                const s = v.currentSrc || v.src || ""
-                return { src: s, hires: s }
-            }
-            const img = el as HTMLImageElement
-            const big = largestFromSrcset(img.srcset)
-            const src = img.currentSrc || img.src || big
-            return { src: src || big, hires: big || src }
-        }
-        function naturalRatio(el: HTMLElement, type: MediaType): number {
-            if (type === "video") {
-                const v = el as HTMLVideoElement
-                if (v.videoWidth && v.videoHeight) return v.videoWidth / v.videoHeight
-            } else {
-                const img = el as HTMLImageElement
-                if (img.naturalWidth && img.naturalHeight) return img.naturalWidth / img.naturalHeight
-                const w = parseFloat(img.getAttribute("width") || "")
-                const h = parseFloat(img.getAttribute("height") || "")
-                if (w && h) return w / h
-            }
-            const r = el.getBoundingClientRect()
-            return r.height > 0 ? r.width / r.height : 1
-        }
-        function typeOf(el: HTMLElement): MediaType | null {
-            if (el.tagName === "IMG") return "image"
-            if (el.tagName === "VIDEO") return "video"
-            return null
-        }
-        function isExcluded(el: HTMLElement): boolean {
-            if (el.closest("[data-no-lightbox]")) return true
-            const sel = cfg().excludeSelector.trim()
-            if (sel) { try { if (el.closest(sel)) return true } catch { /* bad selector */ } }
-            return false
-        }
-        function qualifies(el: HTMLElement): boolean {
-            if (overlay && overlay.contains(el)) return false
-            const type = typeOf(el)
-            if (!type) return false
-            if (type === "video" && !cfg().lightboxVideos) return false
-            if (isExcluded(el)) return false
-            const r = el.getBoundingClientRect()
-            const min = cfg().minSize
-            if (r.width < min || r.height < min) return false
-            return Boolean(srcOf(el, type).src)
-        }
-        function toCandidate(el: HTMLElement): Candidate | null {
-            const type = typeOf(el); if (!type) return null
-            const { src, hires } = srcOf(el, type); if (!src) return null
-            const poster = type === "video" ? (el as HTMLVideoElement).poster || "" : ""
-            return { el, type, src, hires, poster, ratio: naturalRatio(el, type) }
-        }
-        function collect(): Candidate[] {
-            const out: Candidate[] = []
-            const seen = new Set<HTMLElement>()
-            document.querySelectorAll<HTMLElement>("img, video").forEach((el) => {
-                if (seen.has(el) || !qualifies(el)) return
-                const c = toCandidate(el); if (!c) return
-                seen.add(el); out.push(c)
-            })
-            out.sort((a, b) => {
-                const pos = a.el.compareDocumentPosition(b.el)
-                if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1
-                if (pos & Node.DOCUMENT_POSITION_PRECEDING) return 1
-                return 0
-            })
-            return out
-        }
-        function resolveTarget(e: MouseEvent): HTMLElement | null {
-            const direct = e.target as HTMLElement | null
-            if (direct) {
-                const via = (direct.closest("img") as HTMLElement | null) || (direct.closest("video") as HTMLElement | null)
-                if (via && qualifies(via)) return via
-            }
-            if (typeof document.elementsFromPoint === "function") {
-                for (const node of document.elementsFromPoint(e.clientX, e.clientY)) {
-                    const el = node as HTMLElement
-                    if (overlay && overlay.contains(el)) continue
-                    const media = (el.closest("img") as HTMLElement | null) || (el.closest("video") as HTMLElement | null)
-                    if (media && qualifies(media)) return media
-                }
-            }
-            return null
-        }
-        function hasExcludedAtPoint(e: MouseEvent): boolean {
-            if (typeof document.elementsFromPoint !== "function") return false
-
-            for (const node of document.elementsFromPoint(e.clientX, e.clientY)) {
-                const el = node as HTMLElement
-                if (overlay && overlay.contains(el)) continue
-                if (isExcluded(el)) return true
-            }
-
-            return false
-        }
-
-        // ---- Overlay construction ---------------------------------------
-        function glyphButton(glyph: string, label: string, nudgeX: number): HTMLButtonElement {
-            const btn = document.createElement("button")
-            btn.type = "button"
-            btn.setAttribute("aria-label", label)
-            setStyles(btn, {
-                position: "fixed", zIndex: String(Z + 2), display: "flex",
-                alignItems: "center", justifyContent: "center", width: "40px", height: "40px",
-                padding: "0", margin: "0", border: "none", background: "transparent",
-                color: cfg().chromeColor, cursor: "pointer", opacity: "0",
-                transition: "opacity 200ms ease", WebkitTapHighlightColor: "transparent",
-            })
-            const span = document.createElement("span")
-            span.textContent = glyph
-            span.setAttribute("aria-hidden", "true")
-            setStyles(span, {
-                fontFamily: GLYPH_FONT, fontSize: `${cfg().iconSize}px`, lineHeight: "1",
-                fontWeight: String(cfg().iconWeight), display: "block",
-                transform: `translate(${nudgeX}px, -1px)`,
-            })
-            btn.appendChild(span)
-            return btn
-        }
-        function build() {
-            overlay = document.createElement("div")
-            overlay.setAttribute("data-cslb-overlay", "")
-            setStyles(overlay, {
-                position: "fixed", inset: "0", zIndex: String(Z), display: "none",
-                alignItems: "center", justifyContent: "center", boxSizing: "border-box",
-                padding: padCSS(), background: cfg().backgroundColor, cursor: "zoom-out",
-                opacity: "0", overscrollBehavior: "contain",
-            })
-            const base: Record<string, string> = {
-                display: "none", maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto",
-                objectFit: "contain", transform: "none", transformOrigin: "center center",
-                willChange: "transform, opacity", backfaceVisibility: "hidden",
-                userSelect: "none", pointerEvents: "auto",
-            }
-            imgEl = document.createElement("img")
-            imgEl.decoding = "async"; imgEl.draggable = false
-            setStyles(imgEl, base)
-            videoEl = document.createElement("video")
-            videoEl.setAttribute("playsinline", "")
-            videoEl.controls = false; videoEl.loop = true
-            setStyles(videoEl, base)
-            overlay.appendChild(imgEl); overlay.appendChild(videoEl)
-
-            prevBtn = glyphButton("‹", "Previous", -1)
-            nextBtn = glyphButton("›", "Next", 1)
-            closeBtn = glyphButton("×", "Close", 0)
-            prevBtn.style.left = "16px"; prevBtn.style.top = "50%"; prevBtn.style.transform = "translateY(-50%)"
-            nextBtn.style.right = "16px"; nextBtn.style.top = "50%"; nextBtn.style.transform = "translateY(-50%)"
-            closeBtn.style.right = "18px"; closeBtn.style.top = "18px"
-
-            counterEl = document.createElement("div")
-            setStyles(counterEl, {
-                position: "fixed", left: "50%", bottom: "20px", transform: "translateX(-50%)",
-                zIndex: String(Z + 2), fontFamily: GLYPH_FONT, fontSize: "13px", lineHeight: "1",
-                letterSpacing: "0.04em", color: cfg().chromeColor, opacity: "0",
-                transition: "opacity 200ms ease", pointerEvents: "none",
-            })
-            overlay.appendChild(prevBtn); overlay.appendChild(nextBtn)
-            overlay.appendChild(closeBtn); overlay.appendChild(counterEl)
-            document.body.appendChild(overlay)
-
-            overlay.addEventListener("click", () => close())
-            imgEl.addEventListener("click", (e) => { e.stopPropagation(); if (cfg().clickImageAdvances) go(1) })
-            videoEl.addEventListener("click", (e) => e.stopPropagation())
-            prevBtn.addEventListener("click", (e) => { e.stopPropagation(); go(-1) })
-            nextBtn.addEventListener("click", (e) => { e.stopPropagation(); go(1) })
-            closeBtn.addEventListener("click", (e) => { e.stopPropagation(); close() })
-
-            let downX = 0, downY = 0, tracking = false
-            imgEl.addEventListener("pointerdown", (e) => { tracking = true; downX = e.clientX; downY = e.clientY }, { passive: true })
-            imgEl.addEventListener("pointerup", (e) => {
-                if (!tracking) return
-                tracking = false
-                const dx = e.clientX - downX, dy = e.clientY - downY
-                if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { e.stopPropagation(); go(dx < 0 ? 1 : -1) }
-            })
-        }
-
-        function activeEl(): HTMLElement | null {
-            const item = list[index]; if (!item) return null
-            return item.type === "video" ? videoEl : imgEl
-        }
-        function setChromeVisible(v: boolean) {
-            const c = cfg(); const o = v ? "1" : "0"
-            if (prevBtn) prevBtn.style.opacity = c.showArrows && v ? o : "0"
-            if (nextBtn) nextBtn.style.opacity = c.showArrows && v ? o : "0"
-            if (closeBtn) closeBtn.style.opacity = c.showClose && v ? o : "0"
-            if (counterEl) counterEl.style.opacity = c.showCounter && v ? o : "0"
-        }
-        function updateChrome() {
-            const c = cfg(); const single = list.length <= 1
-            if (prevBtn) prevBtn.style.display = c.showArrows && !single ? "flex" : "none"
-            if (nextBtn) nextBtn.style.display = c.showArrows && !single ? "flex" : "none"
-            if (closeBtn) closeBtn.style.display = c.showClose ? "flex" : "none"
-            if (counterEl) {
-                counterEl.style.display = c.showCounter ? "block" : "none"
-                counterEl.textContent = `${index + 1} / ${list.length}`
-            }
-        }
-        function applySizing(el: HTMLElement, type: MediaType, ratio: number) {
-            if (type === "video" && ratio > 0) el.style.aspectRatio = String(ratio)
-            else el.style.aspectRatio = ""
-        }
-        function hideUnderlying(el: HTMLElement | null) {
-            if (hiddenEl && hiddenEl !== el) hiddenEl.style.visibility = ""
-            hiddenEl = el
-            if (hiddenEl) hiddenEl.style.visibility = "hidden"
-        }
-        function wrap(i: number): number {
-            const n = list.length
-            if (n === 0) return 0
-            if (cfg().loopNavigation) return (i + n) % n
-            return Math.max(0, Math.min(n - 1, i))
-        }
-        function preloadNeighbors() {
-            ;[index - 1, index + 1].forEach((i) => {
-                const item = list[wrap(i)]
-                if (item && item.type === "image") { const im = new Image(); im.src = item.hires || item.src }
-            })
-        }
-
-        // Single source of truth: show exactly one media element, centered,
-        // transform/opacity reset, all stray animations cancelled.
-        function showOnly(item: Candidate): HTMLElement | null {
-            if (!imgEl || !videoEl) return null
-            clearAnims(imgEl); clearAnims(videoEl)
-            imgEl.style.transform = "none"; videoEl.style.transform = "none"
-            imgEl.style.opacity = "1"; videoEl.style.opacity = "1"
-            if (item.type === "video") {
-                imgEl.style.display = "none"; imgEl.removeAttribute("src")
-                videoEl.style.display = "block"
-                videoEl.controls = cfg().videoControls
-                if (videoEl.src !== item.src) videoEl.src = item.src
-                if (item.poster) videoEl.poster = item.poster
-                videoEl.muted = true
-                try { videoEl.currentTime = 0 } catch { /* not ready */ }
-                const p = videoEl.play(); if (p && typeof p.catch === "function") p.catch(() => {})
-                applySizing(videoEl, "video", item.ratio)
-                return videoEl
-            }
-            try { videoEl.pause() } catch { /* noop */ }
-            videoEl.removeAttribute("src"); videoEl.load()
-            videoEl.style.display = "none"
-            imgEl.style.display = "block"; imgEl.src = item.src
-            applySizing(imgEl, "image", item.ratio)
-            return imgEl
-        }
-        function upgradeHires(item: Candidate, tk: number) {
-            if (item.type !== "image" || !item.hires || item.hires === item.src) return
-            const pre = new Image()
-            pre.onload = () => { if (imgEl && tk === token && list[index] === item) imgEl.src = item.hires }
-            pre.src = item.hires
-        }
-        // Safety net: across a few frames after a transition, force the active
-        // media back to identity transform whenever no animation is running.
-        function recenterSoon(tk: number) {
-            let n = 0
-            const tick = () => {
-                if (tk !== token) return
-                const el = activeEl()
-                if (el) {
-                    const anims = typeof el.getAnimations === "function" ? el.getAnimations() : []
-                    const running = anims.some((a) => a.playState === "running")
-                    if (!running && el.style.transform !== "none") el.style.transform = "none"
-                }
-                if (++n < 5) requestAnimationFrame(tick)
-            }
-            requestAnimationFrame(tick)
-        }
-
-        // ---- Open / navigate / close ------------------------------------
-        function open(start: HTMLElement, rect: DOMRect) {
-            if (!overlay) build()
-            if (!overlay) return
-            token += 1
-            const tk = token
-            clearAnims(overlay); clearAnims(imgEl); clearAnims(videoEl)
-
-            list = collect()
-            index = list.findIndex((c) => c.el === start)
-            if (index < 0) { const c = toCandidate(start); if (!c) return; list.unshift(c); index = 0 }
-
-            isOpen = true
-            prevBodyOverflow = document.body.style.overflow
-            document.body.style.overflow = "hidden"
-            overlay.style.padding = padCSS()
-            overlay.style.background = cfg().backgroundColor
-            overlay.style.display = "flex"
-            overlay.style.opacity = "0"
-            updateChrome()
-            setChromeVisible(false)
-
-            const item = list[index]
-            const media = showOnly(item)
-            if (!media) return
-            hideUnderlying(item.el)
-            preloadNeighbors()
-
-            const reduce = prefersReducedMotion()
-            const duration = cfg().duration
-
-            nextFrame(() => {
-                if (tk !== token || !isOpen || !overlay) return
-                const to = media.getBoundingClientRect()
-                overlay.style.opacity = "1"
-                overlay.animate([{ opacity: 0 }, { opacity: 1 }], { duration: Math.round(duration * 0.75), easing: "ease-out", fill: "none" })
-                if (reduce || !rect || !canAnimate(media) || to.width < 2) {
-                    setChromeVisible(true); upgradeHires(item, tk); return
-                }
-                const s = Math.max(0.02, Math.min(rect.width / Math.max(1, to.width), rect.height / Math.max(1, to.height)))
-                const tx = rect.left + rect.width / 2 - (to.left + to.width / 2)
-                const ty = rect.top + rect.height / 2 - (to.top + to.height / 2)
-                media.animate(
-                    [{ transform: `translate(${tx}px, ${ty}px) scale(${s})` }, { transform: "translate(0px, 0px) scale(1)" }],
-                    { duration, easing: EASE, fill: "none" }
-                )
-                media.animate([{ opacity: 0 }, { opacity: 1 }], { duration: Math.round(duration * 0.45), easing: "ease-out", fill: "none" })
-                window.setTimeout(() => { if (tk === token && isOpen) setChromeVisible(true) }, duration)
-                recenterSoon(tk)
-                upgradeHires(item, tk)
-            })
-        }
-
-        // Navigation is synchronous: show the new item centered immediately,
-        // fade it in. No deferred swap, so no race can strand or double-render.
-        function go(dir: number) {
-            if (!isOpen || list.length <= 1) return
-            const next = wrap(index + dir)
-            if (next === index) return
-            index = next
-            const tk = token
-            const item = list[index]
-            updateChrome()
-            preloadNeighbors()
-            const media = showOnly(item)
-            if (!media) return
-            hideUnderlying(item.el)
-            if (canAnimate(media)) media.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 190, easing: "ease-out", fill: "none" })
-            upgradeHires(item, tk)
-            recenterSoon(tk)
-        }
-
-        function close() {
-            if (!isOpen || !overlay) return
-            token += 1
-            const tk = token
-            const media = activeEl()
-            isOpen = false
-            setChromeVisible(false)
-
-            const finish = () => {
-                // A newer open() bumped the token — do NOT clobber it.
-                if (tk !== token) return
-                if (videoEl) { try { videoEl.pause(); videoEl.removeAttribute("src"); videoEl.load() } catch { /* noop */ } }
-                if (imgEl) imgEl.style.transform = "none"
-                if (videoEl) videoEl.style.transform = "none"
-                if (overlay) { overlay.style.display = "none"; overlay.style.opacity = "0" }
-                document.body.style.overflow = prevBodyOverflow
-                hideUnderlying(null)
-            }
-
-            const current = list[index]
-            const reduce = prefersReducedMotion()
-            const duration = cfg().duration
-            const targetRect = current ? current.el.getBoundingClientRect() : null
-            const inView = targetRect && targetRect.bottom > 0 && targetRect.top < window.innerHeight && targetRect.width > 0
-
-            if (reduce || !inView || !targetRect || !media || !canAnimate(media)) {
-                const fade = overlay.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, easing: "linear", fill: "both" })
-                fade.onfinish = finish
-                return
-            }
-            const from = media.getBoundingClientRect()
-            const s = Math.max(0.02, Math.min(targetRect.width / Math.max(1, from.width), targetRect.height / Math.max(1, from.height)))
-            const tx = targetRect.left + targetRect.width / 2 - (from.left + from.width / 2)
-            const ty = targetRect.top + targetRect.height / 2 - (from.top + from.height / 2)
-            overlay.animate([{ opacity: 1 }, { opacity: 0 }], { duration, easing: EASE, fill: "both" })
-            media.animate([{ opacity: 1 }, { opacity: 0 }], { duration: Math.round(duration * 0.7), easing: "ease-in", fill: "both" })
-            const anim = media.animate(
-                [{ transform: "translate(0px, 0px) scale(1)" }, { transform: `translate(${tx}px, ${ty}px) scale(${s})` }],
-                { duration, easing: EASE, fill: "both" }
-            )
-            anim.onfinish = finish
-        }
-
-        // ---- Global listeners -------------------------------------------
-        function onDocClick(e: MouseEvent) {
-            if (!cfg().enabled || isOpen) return
-            if (e.defaultPrevented || e.button !== 0) return
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
-            const target = e.target as HTMLElement | null
-            if (overlay && target && overlay.contains(target)) return
-            if (target && isExcluded(target)) return
-            if (hasExcludedAtPoint(e)) return
-            const media = resolveTarget(e)
-            if (!media) return
-            e.preventDefault(); e.stopPropagation()
-            open(media, media.getBoundingClientRect())
-        }
-        function onKey(e: KeyboardEvent) {
-            if (!isOpen) return
-            if (e.key === "Escape") { e.preventDefault(); close() }
-            else if (e.key === "ArrowRight") { e.preventDefault(); go(1) }
-            else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1) }
-        }
-        document.addEventListener("click", onDocClick, true)
-        window.addEventListener("keydown", onKey)
-
-        return () => {
-            document.removeEventListener("click", onDocClick, true)
-            window.removeEventListener("keydown", onKey)
-            if (cursorStyle.parentNode) cursorStyle.parentNode.removeChild(cursorStyle)
-            if (hiddenEl) hiddenEl.style.visibility = ""
-            if (isOpen) document.body.style.overflow = prevBodyOverflow
-            if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay)
-            delete (window as unknown as Record<string, unknown>).__cslbActive
-        }
-    }, [])
-
-    return <span data-casestudy-lightbox="" style={{ display: "block", width: 1, height: 1, opacity: 0 }} />
+    const Base = BaseCaseStudyLightbox as unknown as React.ComponentType<Config>
+    return navLayerReady ? <Base {...props} excludeSelector={mergedExcludeSelector} /> : null
 }
 
 CaseStudyLightbox.defaultProps = {
@@ -836,7 +529,8 @@ CaseStudyLightbox.defaultProps = {
     duration: 360,
     viewportPadding: 72,
     minSize: 100,
-    excludeSelector: "nav, header, footer, a, button, video[controls], [data-no-lightbox]",
+    excludeSelector:
+        'nav, header, footer, a, button, video[controls], [data-no-lightbox], [data-framer-name*="No Lightbox" i], [data-framer-name*="NoLightbox" i]',
 }
 
 addPropertyControls(CaseStudyLightbox, {
@@ -855,5 +549,11 @@ addPropertyControls(CaseStudyLightbox, {
     duration: { type: ControlType.Number, title: "Zoom ms", defaultValue: 360, min: 120, max: 800, step: 10, unit: "ms" },
     viewportPadding: { type: ControlType.Number, title: "Padding", defaultValue: 72, min: 0, max: 160, step: 2, unit: "px" },
     minSize: { type: ControlType.Number, title: "Min Size", defaultValue: 100, min: 0, max: 400, step: 10, unit: "px" },
-    excludeSelector: { type: ControlType.String, title: "Exclude", defaultValue: "nav, header, footer, a, button, video[controls], [data-no-lightbox]", displayTextArea: true },
+    excludeSelector: {
+        type: ControlType.String,
+        title: "Exclude",
+        defaultValue:
+            'nav, header, footer, a, button, video[controls], [data-no-lightbox], [data-framer-name*="No Lightbox" i], [data-framer-name*="NoLightbox" i]',
+        displayTextArea: true,
+    },
 })

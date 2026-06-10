@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Image Optimizer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Micah Hoang / Portfolio 2026</p>
+          <h1>Image Optimizer</h1>
+        </div>
+        <div class="topbar__status" id="statusText">Ready</div>
+      </header>
+
+      <main class="workspace">
+        <aside class="panel controls" aria-label="Optimization controls">
+          <section class="control-group">
+            <div class="section-title">Source</div>
+            <label class="field">
+              <span>Portfolio path</span>
+              <input id="sourceDir" value="case-study-assets/current-site" />
+            </label>
+            <div class="button-row">
+              <button class="button button--primary" id="scanButton" type="button">Scan</button>
+              <label class="button button--secondary" for="fileInput">Files</label>
+              <label class="button button--secondary" for="folderInput">Folder</label>
+            </div>
+            <input id="fileInput" class="visually-hidden" type="file" accept="image/*" multiple />
+            <input id="folderInput" class="visually-hidden" type="file" accept="image/*" webkitdirectory multiple />
+          </section>
+
+          <section class="control-group">
+            <div class="section-title">Preset</div>
+            <div class="segmented" role="tablist" aria-label="Preset">
+              <button class="segment is-active" data-preset="case-study" type="button">Case</button>
+              <button class="segment" data-preset="thumbnail" type="button">Thumb</button>
+              <button class="segment" data-preset="poster" type="button">Poster</button>
+              <button class="segment" data-preset="detail" type="button">Detail</button>
+            </div>
+          </section>
+
+          <section class="control-group">
+            <div class="section-title">Output</div>
+            <label class="field">
+              <span>Format</span>
+              <select id="format">
+                <option value="auto" selected>Auto</option>
+                <option value="webp">WebP</option>
+                <option value="jpeg">JPEG</option>
+                <option value="avif">AVIF</option>
+                <option value="png">PNG</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Max width</span>
+              <input id="maxWidth" type="number" min="320" max="6000" step="100" value="1800" />
+            </label>
+            <label class="field">
+              <span>Quality <strong id="qualityValue">82</strong></span>
+              <input id="quality" type="range" min="45" max="95" value="82" />
+            </label>
+            <label class="check-row">
+              <input id="preventLarger" type="checkbox" checked />
+              <span>Keep smaller original</span>
+            </label>
+            <label class="check-row">
+              <input id="includeAnimatedGif" type="checkbox" />
+              <span>Convert animated GIFs</span>
+            </label>
+          </section>
+
+          <section class="control-group">
+            <div class="section-title">Batch</div>
+            <div class="button-row">
+              <button class="button button--primary" id="optimizeButton" type="button" disabled>Optimize</button>
+              <a class="button button--secondary is-disabled" id="downloadButton" href="#" download>Download</a>
+            </div>
+            <div class="output-path" id="outputPath">No output yet</div>
+          </section>
+        </aside>
+
+        <section class="main-stage">
+          <section class="stats-grid" aria-label="Batch stats">
+            <div class="stat">
+              <span>Files</span>
+              <strong id="fileCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Original</span>
+              <strong id="originalTotal">0 MB</strong>
+            </div>
+            <div class="stat">
+              <span>Optimized</span>
+              <strong id="optimizedTotal">-</strong>
+            </div>
+            <div class="stat stat--accent">
+              <span>Saved</span>
+              <strong id="savedTotal">-</strong>
+            </div>
+          </section>
+
+          <section class="panel preview-panel">
+            <div class="preview-header">
+              <div>
+                <p class="eyebrow">Preview</p>
+                <h2 id="previewTitle">No file selected</h2>
+              </div>
+              <div class="preview-meta" id="previewMeta">-</div>
+            </div>
+            <div class="preview-grid">
+              <figure>
+                <figcaption>Before</figcaption>
+                <div class="image-frame">
+                  <img id="beforeImage" alt="" />
+                </div>
+              </figure>
+              <figure>
+                <figcaption>After</figcaption>
+                <div class="image-frame">
+                  <img id="afterImage" alt="" />
+                </div>
+              </figure>
+            </div>
+          </section>
+
+          <section class="panel table-panel">
+            <div class="table-toolbar">
+              <div class="section-title">Queue</div>
+              <div class="filters">
+                <button class="filter is-active" data-filter="all" type="button">All</button>
+                <button class="filter" data-filter="oversized" type="button">Oversized</button>
+                <button class="filter" data-filter="png" type="button">PNG</button>
+                <button class="filter" data-filter="review" type="button">Review</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">File</th>
+                    <th scope="col">Use</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Output</th>
+                    <th scope="col">Saved</th>
+                  </tr>
+                </thead>
+                <tbody id="assetRows">
+                  <tr>
+                    <td colspan="5" class="empty-row">Scan a folder or add images.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

@@ -207,8 +207,6 @@ type ListHoverVariant = "flip" | "highlight"
 type AdvancedSettings = {
     defaultView?: string
     listHoverVariant?: ListHoverVariant
-    cmsModuleUrl?: string
-    thumbnailVideoFieldIds?: string
     textPrimary?: string
     textSecondary?: string
     textTertiary?: string
@@ -246,8 +244,6 @@ const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = INDEX_CMS_FIELD_IDS.thumbnailVideoLink
 const DEFAULT_ADVANCED_SETTINGS: AdvancedSettings = {
     defaultView: "list",
     listHoverVariant: "flip",
-    cmsModuleUrl: "",
-    thumbnailVideoFieldIds: DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
     textPrimary: "#141414",
     textSecondary: "#141414",
     textTertiary: "#979797",
@@ -2234,9 +2230,8 @@ export default function IndexPage({
     dividerSubtle?: string
     surfaceActive?: string
 }) {
-    const resolvedCmsModuleUrl = advanced?.cmsModuleUrl ?? cmsModuleUrl
+    const resolvedCmsModuleUrl = cmsModuleUrl
     const resolvedThumbnailVideoFieldIds =
-        advanced?.thumbnailVideoFieldIds ??
         thumbnailVideoFieldIds ??
         DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS
     const resolvedDefaultView = advanced?.defaultView ?? defaultView
@@ -2558,7 +2553,7 @@ addPropertyControls(IndexPage, {
     projects: {
         type: ControlType.Array,
         title: "Projects",
-        hidden: (props) => props.useCMS,
+        hidden: (props) => props.useCMS === true,
         control: {
             type: ControlType.Object,
             controls: {
@@ -2609,19 +2604,6 @@ addPropertyControls(IndexPage, {
                 optionTitles: ["Flip", "Highlight"],
                 defaultValue: "flip",
                 displaySegmentedControl: true,
-            },
-            cmsModuleUrl: {
-                type: ControlType.String,
-                title: "CMS Module",
-                defaultValue: "",
-                placeholder: "Optional module URL",
-            },
-            thumbnailVideoFieldIds: {
-                type: ControlType.String,
-                title: "Video Field",
-                defaultValue: DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
-                placeholder: "Thumbnail Video field ID",
-                displayTextArea: true,
             },
             textPrimary: {
                 type: ControlType.Color,
