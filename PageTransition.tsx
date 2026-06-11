@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.9 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v7.0 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -43,6 +43,7 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 const STYLE_ID = "__pt-vt-style"
 const BOOT_ID = "__pt-boot"
 const PAGE_EASE = "cubic-bezier(0.6, 0, 0.18, 1)" // softer entry, silkier landing
+const RELEASE_AT = 0.55 // load-ins start at this fraction of the slide (Zita: ~0.4 of her wipe)
 const NAV_EASE = "cubic-bezier(0.22, 1, 0.36, 1)" // measured nav spring feel
 const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
@@ -347,7 +348,7 @@ function holdAppearAnimations(
     }
 
     collect()
-    const iv = window.setInterval(collect, 90)
+    const iv = window.setInterval(collect, 150)
 
     let navEls: Element[] = []
     try {
@@ -384,8 +385,9 @@ function holdAppearAnimations(
         replayAppearEffects(skipUnion)
     }
 
-    // Primary: release when the sheet lands, so load-ins start at the same
-    // moment relative to the transition end on every page and both paths.
+    // Primary: release mid-slide (RELEASE_AT of the duration), during the
+    // sheet's deceleration — content is visibly animating as it lands, so a
+    // light page never reads as a blank flash; identical on every page/path.
     if (typeof releaseAfterMs === "number" && releaseAfterMs > 0) {
         window.setTimeout(release, releaseAfterMs)
     }
@@ -418,7 +420,7 @@ if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
         const arrivingAtPlay = isPlayPath(window.location.pathname)
         if (arrivingAtPlay) setPlayBlank(true)
         if (e && e.viewTransition) {
-            holdAppearAnimations(e.viewTransition.finished, sdDuration + 100)
+            holdAppearAnimations(e.viewTransition.finished, Math.round(sdDuration * RELEASE_AT))
             if (arrivingAtPlay) releasePlayBlankWhenSettled(e.viewTransition.finished)
         } else if (arrivingAtPlay) {
             releasePlayBlankWhenSettled(null)
@@ -497,7 +499,10 @@ function onClickCapture(e: MouseEvent) {
         holdStarted = true
         // Sheet animation starts ~90ms after this arm (the commit buffer
         // below), so the land timer accounts for it.
-        holdAppearAnimations(vt.finished, sdDuration + 180)
+        holdAppearAnimations(
+            vt.finished,
+            Math.round(sdDuration * RELEASE_AT) + 90
+        )
     }
 
     // NOTE: rendering is paused during the update callback, so timers (not
@@ -652,8 +657,8 @@ html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] {
     to { transform: translateY(0); }
 }
 @keyframes __pt-old-exit {
-    from { transform: translateY(0); filter: brightness(1); }
-    to { transform: translateY(-${drift}vh); filter: brightness(${dimB}); }
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-${drift}vh); opacity: ${dimB}; }
 }
 @keyframes __pt-nav-out {
     from { transform: translateY(0); }
