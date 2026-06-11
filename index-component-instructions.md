@@ -8,21 +8,21 @@
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (June 8, 2026):**
+**State summary (June 11, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
 - The original-template inline `GRID / LIST` control is now owned directly by `IndexPage.tsx` on canonical `/index`; the previous fixed/floating delegated toggle has been removed.
 - The side-by-side page `/index-inline-toggle-test` (`VdRy9MV8k`) was removed after the inline version was promoted to canonical `/index`.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The repo `IndexPage.tsx` mirror was reconciled against the current live direction on May 22, 2026 after the route audit.
-- Current mounted `/index` code files are `IndexPage.tsx` (`rgAZFOv`), `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`), `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`), and `IndexGridVideoHoverFix.tsx` (`kjMWwjO`, hidden node `JvCNoMs41`). `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
+- Current `/index` XML mounts `IndexPage.tsx` (`rgAZFOv`) as the archive component, alongside the site `PageTransition` and hidden CMS bridge. Responsive/index styling, direct grid-media hover scale, line-draw timing, and index nav/list/grid appear motion are consolidated inside `IndexPage.tsx`; do not split them back into hidden `/index` CSS helper components. Index nav/year/title text uses the masked slide-in preset, not the fade preset. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
 - **Data source refined (June 1, 2026; revised June 8):** `IndexPage.tsx` can use the mounted `ProjectRegistrar` registry first, then fall back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke so incomplete bridge rows cannot override richer CMS media/stroke data.
 - **Grid view rewritten (May 10, 2026; refined May 22):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 media, 3/2/1 column responsive grid, media hover scale, title below image with the same hover-flip used in List view, and metadata below title). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **ImageMaskReveal is archived:** old notes about disabled/enabled `ImageMaskReveal` instances are historical. The reveal component is stub-archived and not part of the current `/index` behavior.
 - **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19; CMS export fix June 1; instance prop cleanup June 2):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. It must resolve both legacy `module.a` and current `module.r` Framer CMS export shapes before scanning records. As of June 2, the helper instances use Framer item slugs directly (`slugFieldId=""`). The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
-- **Inline toggle promoted and integrated (May 16, 2026; style-aligned May 19):** `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav. `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`; the hidden `IndexPageBreakpointsDraft.tsx` helper only styles the toggle to match that action (13px uppercase mono, 28px line-height, weight 400, secondary text color, hover opacity, active underline). The action row uses a stable 12px top gap, 28px line, and 24px bottom gap so selecting/deselecting filters does not shift content. The former `IndexInlineToggleProxy.tsx` code file (`TexpcmJ`) and `/index` instance (`HM1pZPonP`) were deleted after this behavior moved into `IndexPage`.
+- **Inline toggle promoted and integrated (May 16, 2026; style-aligned May 19; consolidated June 11):** `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav and styles the toggle to match `CLEAR FILTERS` (13px uppercase mono, 28px line-height, weight 400, secondary text color, hover opacity, active underline). `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`. The action row uses a stable 12px top gap, 28px line, and 24px bottom gap so selecting/deselecting filters does not shift content. The former `IndexInlineToggleProxy.tsx` code file (`TexpcmJ`) and `/index` instance (`HM1pZPonP`) were deleted after this behavior moved into `IndexPage`.
 
 ---
 
@@ -247,7 +247,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 
 ### Current responsive breakpoint behavior
 
-The May 18 responsive direction is now the official published `/index`. In Framer, canonical `/index` includes a hidden `IndexPageBreakpointsDraft.tsx` style instance after the `IndexPage` instance; in the repo, the same responsive CSS is folded into `IndexPage.tsx` so the behavior is not lost if the code component is resynced.
+The May 18 responsive direction is now the official published `/index`. As of June 11, canonical `/index` keeps that responsive CSS directly inside `IndexPage.tsx`; there is no hidden breakpoint helper component to preserve.
 
 - Keep the desktop taxonomy/index nav through wider tablet widths. It does not switch the taxonomy to the compact format until ≤899px, when the content columns start to feel tight.
 - ≤899px taxonomy/index nav uses a SearchSystem-style two-column structure: labels on the left, values on the right, with Year / Service / Industry stacked vertically and a 28px category row gap.
@@ -297,8 +297,8 @@ Each card is rendered by `GridProjectCard` as:
 ### Runtime behavior
 
 - Empty filtered state matches List view copy: "No work matches those filters."
-- View transitions: 150ms opacity fade out → swap → 250ms opacity fade in, keyed on a `renderKey` increment so React remounts cleanly.
-- Cards fade up with `idxFadeUp`, capped to 12 cards via `Math.min(index, 12) * 30ms` stagger.
+- View transitions: toggle click swaps the view and bumps `renderKey` so the incoming text remounts and uses the masked slide-in on appear. Do not add a parent opacity fade around List/Grid content, because that would fade the masked text.
+- Grid card title and metadata text use the same `.idx-mask-appear` masked slide preset as List year/title text, with an uncapped 70ms stagger so visible text reveals one item at a time.
 - The hover-flip and the video reveal both use `.idx-grid-card:hover` selectors, mirroring the List view pattern. On mobile (≤809px), the flip transform is overridden to `none` so the title remains stable.
 
 ### Filtering behavior
@@ -317,7 +317,7 @@ Not exposed on `/index`. The visible inline toggle is Grid/List only. Earlier in
 
 ### Position and behavior
 
-The fixed/floating toggle path has been removed. `IndexPage.tsx` renders the visible inline `GRID / LIST` control after the taxonomy nav. `CLEAR FILTERS` remains the original left-aligned `TaxonomySection` action; `IndexPageBreakpointsDraft.tsx` applies the style-only alignment override when filters are active.
+The fixed/floating toggle path has been removed. `IndexPage.tsx` renders the visible inline `GRID / LIST` control after the taxonomy nav and applies the style-only alignment override when filters are active. `CLEAR FILTERS` remains the original left-aligned `TaxonomySection` action.
 
 ### Visual specs
 
@@ -377,13 +377,15 @@ Follow the motion hierarchy from the framework doc:
 
 ### Transitions between views
 
-- View switch: 150ms opacity fade out → state swap + render-key bump → 250ms opacity fade in. The toggle click should feel instant and considered.
+- View switch: state swap + render-key bump, then incoming view text uses the masked slide-in on appear. The toggle click should feel instant and considered; do not wrap the view in a parent opacity fade.
 
-### List view entrance
+### Index nav and List view entrance
 
-- Rows: `idxFadeUp` keyframe (`opacity: 0 → 1, translateY(8px) → 0`), 300ms, capped to the first 12 rows via `Math.min(ri, 12) * 30ms` stagger delay.
+- The taxonomy nav, inline `GRID / LIST`, List year labels such as `2026`, List project titles such as `Gaia`, Grid titles, and Grid metadata use `INDEX_MASK_REVEAL_PRESET`, not the fade preset. The wrapper is `.idx-mask-appear`; the inner `.idx-mask-reveal-text` slides from `translateY(90px)` to `0` inside an overflow-hidden mask.
+- Mask timing mirrors the top `Index` heading reveal: 1500ms, 100ms base delay, uncapped 70ms stagger, and `cubic-bezier(0.16, 1, 0.3, 1)`.
+- `.idx-mask-appear` and any remaining `.idx-appear` elements are triggered by IntersectionObserver via `data-idx-appeared="true"`, with the mask reveal deferred by two animation frames so the hidden masked state is painted before the slide begins.
 - Year rules and intra-year row dividers: `idxRuleDraw` keyframe (`scaleX(0) → scaleX(1)`), 700ms, `cubic-bezier(0.16, 1, 0.3, 1)`, staggered by year/row.
-- Reduced motion: `.idx-row`, `.idx-grid-card`, `.idx-rule` have animation disabled under `prefers-reduced-motion: reduce`. The flip transform is also disabled under reduced motion.
+- Reduced motion: `.idx-mask-appear`, `.idx-appear`, `.idx-row`, `.idx-grid-card`, and `.idx-rule` have animation disabled under `prefers-reduced-motion: reduce`, with appear items forced visible. The flip transform is also disabled under reduced motion.
 
 ### List row hover
 
@@ -398,11 +400,11 @@ Follow the motion hierarchy from the framework doc:
 
 ### Grid view motion
 
-- Cards fade up with `idxFadeUp`, capped to 12 cards via `Math.min(index, 12) * 30ms` stagger.
-- Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. In Framer, `IndexGridVideoHoverFix.tsx` (`kjMWwjO`, node `JvCNoMs41`) is mounted hidden on `/index` as a canvas-side guard for the currently published code path.
+- Grid title and metadata text use the same `.idx-mask-appear` masked slide preset as List year/title text.
+- Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. `IndexPage.tsx` owns those selectors and the masked text preset for the index nav, list rows, and grid cards.
 - `/index` currently reads only `Thumbnail Video` (`SvOqFqdby`) via the `IndexPage` instance `Video Fields` prop when it is using CMS-module data. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke before rendering, so an incomplete `ProjectRegistrar` bridge row cannot erase CMS media/stroke values. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` is configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Publish/redeploy Framer after editing File-field thumbnail videos so the generated CMS module refreshes.
 - Reduced motion forces all index grid media back to `scale(1)` and removes transitions.
-- View switches still fade the whole content area (the flip-related JS on rows is independent of view-level fades).
+- View switches remount the content so masked text can reveal again; the flip-related JS on rows remains independent of the appear animation.
 
 ### Filter changes
 
@@ -473,18 +475,16 @@ export default function IndexPage({
     return source.map(normalizeProjectDisciplines)
   }, [useCMS, registeredProjects, projectsProp])
 
-  const [activeView, setActiveView]       = useState(defaultView === "grid" ? "grid" : "list")
-  const [transitioning, setTransitioning] = useState(false)
-  const [renderKey, setRenderKey]         = useState(0)
+  const [activeView, setActiveView] = useState(defaultView === "grid" ? "grid" : "list")
+  const [renderKey, setRenderKey]   = useState(0)
   const [filters, setFilters] = useState({ disciplines: [], industries: [], years: [] })
-  const transitionTimer = useRef(null)
 
   const disciplineNavItems = useMemo(() => getDisciplineNavItems(allProjects), [allProjects])
   const industryNavItems   = useMemo(() => getIndustryNavItems(allProjects),   [allProjects])
   const yearNavItems       = useMemo(() => getYearNavItems(allProjects),       [allProjects])
   const filteredProjects   = useMemo(() => filterProjects(allProjects, filters, ""), [allProjects, filters])
 
-  // handleViewChange: 150ms fade out -> setActiveView + bump renderKey -> render
+  // handleViewChange: setActiveView + bump renderKey so masked text remounts/reveals
   // handleFilterToggle / handleClearFilters
 
   return (
@@ -495,7 +495,7 @@ export default function IndexPage({
           <TaxonomySection ... />
         </div>
         <ViewToggle activeView={activeView} onViewChange={handleViewChange} />
-        <div key={renderKey} style={{ opacity: transitioning ? 0 : 1, transition: ... }}>
+        <div key={renderKey}>
           {activeView === "grid"
             ? <GridView projects={filteredProjects} />
             : <ListView projects={filteredProjects} typographyVariant={listTypographyVariant} hoverVariant={listHoverVariant} />}
@@ -520,10 +520,7 @@ addPropertyControls(IndexPage, { /* see §3 */ })
 - **Grid card rendering:** native `GridProjectCard` markup inside `IndexPage.tsx`; do not reimport the old `Case Study` module for `/index` Grid view.
 - **Framer code file:** `IndexPage.tsx`, code file id `rgAZFOv`
 - **Framer page:** `/index`, page node id `u2LOaBT5q` (single page; the earlier `yKKOMVNs6` Mono 13 duplicate is gone)
-- **Inline toggle/rule owner:** `IndexPage.tsx` (`rgAZFOv`)
-- **Stroke helper:** `CaseStudyThumbnailStrokeStyles.tsx`, code file id `Z28JYvA`
-- **Responsive/style helper:** `IndexPageBreakpointsDraft.tsx`, code file id `VwMoFWv`
-- **Grid video hover helper:** `IndexGridVideoHoverFix.tsx`, code file id `kjMWwjO`, mounted node `JvCNoMs41`
+- **Inline toggle, responsive, line/rule, and grid-hover owner:** `IndexPage.tsx` (`rgAZFOv`)
 - **Removed May 26 cleanup:** `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, `IndexRuleColorOverride.tsx`, and `WorldGridTest.tsx` are not current `/index` dependencies.
 - **CMS collection:** `All Projects`, collection id `yTHrQWMIY`
 - **Taxonomy/filter inspiration:** https://searchsystem.co/index
@@ -583,7 +580,7 @@ Before delivering:
 - Do NOT remove `CaseStudyThumbnailStrokeStyles` instance `szF9sZNWA` from `/index` unless you replace the stroke system with another CMS-aware implementation.
 - Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.
 - Do NOT push an older repo-side `IndexPage.tsx` back to Framer without merging in the mounted ProjectRegistrar registry path, direct CMS module fallback, simplified visible taxonomy, color controls, and current grid card structure.
-- Do NOT lose the May 18 responsive promotion: canonical `/index` depends on the hidden `IndexPageBreakpointsDraft.tsx` style instance in Framer, and the repo `IndexPage.tsx` carries the same CSS for future code-file sync.
+- Do NOT lose the May 18 responsive promotion: canonical `/index` depends on the responsive CSS now consolidated directly inside `IndexPage.tsx`. Do not re-split breakpoint, toggle, appear-motion, line-draw, or direct grid-media hover CSS into hidden helper components.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
 - Do NOT leave fallback data at 12 projects; the current CMS roster has 16 items. If `DEFAULT_PROJECTS` is refreshed, keep it intentionally labeled as fallback-only and do not let it render in CMS mode.
 - Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing.

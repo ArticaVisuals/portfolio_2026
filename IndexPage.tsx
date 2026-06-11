@@ -129,6 +129,22 @@ function useHiddenCMSLinkInerting(enabled: boolean) {
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
 const VIEW_TOGGLE_OPTIONS = ["grid", "list"] as const
+const INDEX_APPEAR_PRESET = {
+    durationMs: 620,
+    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    ruleDurationMs: 1600,
+    ruleEasing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    staggerMs: 70,
+    maxStaggerIndex: 12,
+    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.01,
+} as const
+const INDEX_MASK_REVEAL_PRESET = {
+    durationMs: 1500,
+    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    baseDelayMs: 100,
+    staggerMs: 70,
+} as const
 
 const indexGridStyle: React.CSSProperties = {
     display: "grid",
@@ -979,11 +995,21 @@ function toggleFilterValue<T>(items: T[], value: T): T[] {
         : [...items, value]
 }
 
+function getIndexMaskRevealDelay(index: number): string {
+    return `${INDEX_MASK_REVEAL_PRESET.baseDelayMs + index * INDEX_MASK_REVEAL_PRESET.staggerMs}ms`
+}
+
+function getIndexMaskRevealStyle(index: number): React.CSSProperties {
+    return {
+        ["--idx-mask-delay" as string]: getIndexMaskRevealDelay(index),
+    } as React.CSSProperties
+}
+
 function buildGlobalCss(): string {
     return `
-  @keyframes idxFadeUp {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
+  @keyframes idxAppearFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
 
   @keyframes idxRuleDraw {
@@ -991,10 +1017,57 @@ function buildGlobalCss(): string {
     to   { transform: scaleX(1); }
   }
 
-  .idx-row { animation: idxFadeUp 300ms ease both; }
+  .idx-appear {
+    opacity: 0;
+    will-change: opacity;
+  }
+
+  .idx-appear[data-idx-appeared="true"] {
+    animation: idxAppearFadeIn var(--idx-appear-duration, ${INDEX_APPEAR_PRESET.durationMs}ms) var(--idx-appear-ease, ${INDEX_APPEAR_PRESET.easing}) both;
+    animation-delay: var(--idx-appear-delay, 0ms);
+  }
+
+  .idx-mask-appear {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: inherit;
+  }
+
+  .idx-mask-appear-block {
+    display: block;
+    width: 100%;
+  }
+
+  .idx-mask-reveal-text {
+    display: inline-block;
+    max-width: 100%;
+    transform: translate3d(0, 90px, 0);
+    transition-property: transform;
+    transition-duration: var(--idx-mask-duration, ${INDEX_MASK_REVEAL_PRESET.durationMs}ms);
+    transition-timing-function: var(--idx-mask-ease, ${INDEX_MASK_REVEAL_PRESET.easing});
+    transition-delay: var(--idx-mask-delay, 0ms);
+    will-change: transform;
+    line-height: inherit;
+    color: inherit;
+    -webkit-text-fill-color: inherit;
+    text-decoration: inherit;
+    text-underline-offset: inherit;
+    text-transform: inherit;
+  }
+
+  .idx-mask-appear-block > .idx-mask-reveal-text {
+    display: block;
+    width: 100%;
+  }
+
+  .idx-mask-appear[data-idx-appeared="true"] > .idx-mask-reveal-text {
+    transform: translate3d(0, 0, 0);
+  }
 
   .idx-rule {
-    animation: idxRuleDraw 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: idxRuleDraw ${INDEX_APPEAR_PRESET.ruleDurationMs}ms ${INDEX_APPEAR_PRESET.ruleEasing} both;
     transform-origin: left center;
     will-change: transform;
   }
@@ -1008,6 +1081,13 @@ function buildGlobalCss(): string {
   .idx-tax-item:focus-visible {
     outline: 1px solid ${tokens.textPrimary};
     outline-offset: 3px;
+  }
+
+  .idx-tax-item[aria-pressed="true"] .idx-mask-reveal-text,
+  .idx-clear-filters .idx-mask-reveal-text,
+  .idx-view-toggle-option[data-active="true"] .idx-mask-reveal-text {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
 
@@ -1135,11 +1215,19 @@ function buildGlobalCss(): string {
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .idx-appear,
+    .idx-appear[data-idx-appeared="true"],
+    .idx-mask-appear,
+    .idx-mask-appear[data-idx-appeared="true"],
+    .idx-mask-reveal-text,
     .idx-row,
     .idx-grid-card,
     .idx-rule {
       animation: none !important;
+      opacity: 1 !important;
       transform: none !important;
+      transition: none !important;
+      will-change: auto !important;
     }
     .idx-flip-track {
       transition: none !important;
@@ -1170,7 +1258,6 @@ function buildGlobalCss(): string {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    animation: idxFadeUp 300ms ease both;
   }
   .idx-grid-card-title {
     width: 100%;
@@ -1495,6 +1582,14 @@ function buildGlobalCss(): string {
     }
   }
 
+  @media (max-width: 809px) and (prefers-reduced-motion: reduce) {
+    .idx-flip-track {
+      transition: none !important;
+      transform: none !important;
+      will-change: auto !important;
+    }
+  }
+
   @media (max-width: 520px) {
     .idx-container {
       --idx-grid-gap: 8px !important;
@@ -1579,6 +1674,39 @@ function buildGlobalCss(): string {
 `
 }
 
+function MaskedSlideText({
+    children,
+    index,
+    block = false,
+    className,
+    style,
+}: {
+    children: React.ReactNode
+    index: number
+    block?: boolean
+    className?: string
+    style?: React.CSSProperties
+}) {
+    return (
+        <span
+            className={[
+                "idx-mask-appear",
+                block ? "idx-mask-appear-block" : "",
+                className ?? "",
+            ]
+                .filter(Boolean)
+                .join(" ")}
+            data-idx-mask-appear="true"
+            style={{
+                ...getIndexMaskRevealStyle(index),
+                ...style,
+            }}
+        >
+            <span className="idx-mask-reveal-text">{children}</span>
+        </span>
+    )
+}
+
 function TaxonomySection({
     filters,
     disciplineNavItems,
@@ -1649,6 +1777,8 @@ function TaxonomySection({
         WebkitAppearance: "none",
     })
 
+    let navRevealIndex = 0
+
     return (
         <div>
             <div className="idx-taxonomy-shell" style={shellStyle}>
@@ -1656,7 +1786,9 @@ function TaxonomySection({
                     className="idx-taxonomy-label idx-tax-label-year"
                     style={labelStyle}
                 >
-                    / Year
+                    <MaskedSlideText index={navRevealIndex++}>
+                        / Year
+                    </MaskedSlideText>
                 </div>
                 <div
                     className="idx-taxonomy-items idx-tax-items-year"
@@ -1670,7 +1802,9 @@ function TaxonomySection({
                         aria-label="Show all years"
                         onClick={() => onFilterClear("years")}
                     >
-                        All
+                        <MaskedSlideText index={navRevealIndex++}>
+                            All
+                        </MaskedSlideText>
                     </button>
                     {yearNavItems.map((y) => (
                         <button
@@ -1681,7 +1815,9 @@ function TaxonomySection({
                             aria-pressed={filters.years.includes(y)}
                             onClick={() => onFilterToggle("years", y)}
                         >
-                            {y}
+                            <MaskedSlideText index={navRevealIndex++}>
+                                {y}
+                            </MaskedSlideText>
                         </button>
                     ))}
                 </div>
@@ -1690,7 +1826,9 @@ function TaxonomySection({
                     className="idx-taxonomy-label idx-tax-label-discipline"
                     style={labelStyle}
                 >
-                    / Service
+                    <MaskedSlideText index={navRevealIndex++}>
+                        / Service
+                    </MaskedSlideText>
                 </div>
                 <div
                     className="idx-taxonomy-items idx-tax-items-discipline"
@@ -1704,7 +1842,9 @@ function TaxonomySection({
                         aria-label="Show all services"
                         onClick={() => onFilterClear("disciplines")}
                     >
-                        All
+                        <MaskedSlideText index={navRevealIndex++}>
+                            All
+                        </MaskedSlideText>
                     </button>
                     {disciplineNavItems.map((d) => (
                         <button
@@ -1715,7 +1855,9 @@ function TaxonomySection({
                             aria-pressed={filters.disciplines.includes(d)}
                             onClick={() => onFilterToggle("disciplines", d)}
                         >
-                            {d}
+                            <MaskedSlideText index={navRevealIndex++}>
+                                {d}
+                            </MaskedSlideText>
                         </button>
                     ))}
                 </div>
@@ -1724,7 +1866,9 @@ function TaxonomySection({
                     className="idx-taxonomy-label idx-tax-label-industry"
                     style={labelStyle}
                 >
-                    / Industry
+                    <MaskedSlideText index={navRevealIndex++}>
+                        / Industry
+                    </MaskedSlideText>
                 </div>
                 <div
                     className="idx-taxonomy-items idx-tax-items-industry"
@@ -1738,7 +1882,9 @@ function TaxonomySection({
                         aria-label="Show all industries"
                         onClick={() => onFilterClear("industries")}
                     >
-                        All
+                        <MaskedSlideText index={navRevealIndex++}>
+                            All
+                        </MaskedSlideText>
                     </button>
                     {industryNavItems.map((i) => (
                         <button
@@ -1749,7 +1895,9 @@ function TaxonomySection({
                             aria-pressed={filters.industries.includes(i)}
                             onClick={() => onFilterToggle("industries", i)}
                         >
-                            {i}
+                            <MaskedSlideText index={navRevealIndex++}>
+                                {i}
+                            </MaskedSlideText>
                         </button>
                     ))}
                 </div>
@@ -1758,7 +1906,7 @@ function TaxonomySection({
             {hasActive && (
                 <button
                     type="button"
-                    className="idx-tax-item"
+                    className="idx-tax-item idx-clear-filters"
                     onClick={onClearFilters}
                     style={{
                         marginTop: 4,
@@ -1778,7 +1926,9 @@ function TaxonomySection({
                         WebkitAppearance: "none",
                     }}
                 >
-                    Clear filters
+                    <MaskedSlideText index={navRevealIndex++}>
+                        Clear filters
+                    </MaskedSlideText>
                 </button>
             )}
         </div>
@@ -1867,16 +2017,21 @@ function ListView({
     }
 
     const closingRuleDelay = Math.min(groups.length, 8) * 70
+    let rowRevealIndex = 0
+
     return (
         <div
             className={`idx-list-view idx-list-standard idx-hover-${hoverVariant}`}
         >
-            {groups.map(({ year, items }, groupIndex) => (
-                <div
-                    key={year}
-                    className="idx-year-group"
-                    style={indexGridStyle}
-                >
+            {groups.map(({ year, items }, groupIndex) => {
+                const yearRevealIndex = rowRevealIndex++
+
+                return (
+                    <div
+                        key={year}
+                        className="idx-year-group"
+                        style={indexGridStyle}
+                    >
                     <div
                         className="idx-rule idx-year-rule"
                         style={{
@@ -1899,7 +2054,9 @@ function ListView({
                             className="idx-year-number"
                             style={titleTextStyle}
                         >
-                            {year > 0 ? year : "—"}
+                            <MaskedSlideText index={yearRevealIndex} block>
+                                {year > 0 ? year : "—"}
+                            </MaskedSlideText>
                         </div>
                     </div>
 
@@ -1911,6 +2068,7 @@ function ListView({
                             const url = getCaseStudyUrl(p)
                             const disciplineText = getDisciplineDisplay(p)
                             const useFlipHover = hoverVariant === "flip"
+                            const titleRevealIndex = rowRevealIndex++
 
                             return (
                                 <div key={p.slug || p.title}>
@@ -1925,7 +2083,6 @@ function ListView({
                                             minHeight: 56,
                                             padding: "9px 0",
                                             cursor: url ? "pointer" : "default",
-                                            animationDelay: `${Math.min(ri, 12) * 30}ms`,
                                         }}
                                         onClick={() => {
                                             if (url) window.location.href = url
@@ -1941,25 +2098,34 @@ function ListView({
                                             }}
                                         >
                                             {useFlipHover ? (
-                                                <HoverFlipText
-                                                    text={p.title}
-                                                    activeText={
-                                                        url
-                                                            ? "View Project →"
-                                                            : p.title
-                                                    }
-                                                    style={titleTextStyle}
-                                                    activeStyle={
-                                                        url
-                                                            ? projectCtaTextStyle
-                                                            : undefined
-                                                    }
-                                                    height="27px"
-                                                />
+                                                <MaskedSlideText
+                                                    index={titleRevealIndex}
+                                                    block
+                                                >
+                                                    <HoverFlipText
+                                                        text={p.title}
+                                                        activeText={
+                                                            url
+                                                                ? "View Project →"
+                                                                : p.title
+                                                        }
+                                                        style={titleTextStyle}
+                                                        activeStyle={
+                                                            url
+                                                                ? projectCtaTextStyle
+                                                                : undefined
+                                                        }
+                                                        height="27px"
+                                                    />
+                                                </MaskedSlideText>
                                             ) : (
-                                                <span style={titleTextStyle}>
+                                                <MaskedSlideText
+                                                    index={titleRevealIndex}
+                                                    block
+                                                    style={titleTextStyle}
+                                                >
                                                     {p.title}
-                                                </span>
+                                                </MaskedSlideText>
                                             )}
                                         </div>
 
@@ -2007,8 +2173,9 @@ function ListView({
                             )
                         })}
                     </div>
-                </div>
-            ))}
+                    </div>
+                )
+            })}
             <div
                 className="idx-rule idx-list-bottom-rule"
                 style={{
@@ -2060,9 +2227,6 @@ function GridProjectCard({
             className="idx-grid-card"
             href={href || undefined}
             aria-label={project.title}
-            style={{
-                animationDelay: `${Math.min(index, 12) * 30}ms`,
-            }}
         >
             <div
                 className="idx-grid-card-media"
@@ -2098,18 +2262,22 @@ function GridProjectCard({
                 ) : null}
             </div>
             <div className="idx-grid-card-title">
-                <HoverFlipText
-                    text={project.title}
-                    activeText={href ? "View Project →" : project.title}
-                    style={titleStyle}
-                    activeStyle={href ? projectCtaStyle : undefined}
-                    height="27px"
-                />
+                <MaskedSlideText index={index} block>
+                    <HoverFlipText
+                        text={project.title}
+                        activeText={href ? "View Project →" : project.title}
+                        style={titleStyle}
+                        activeStyle={href ? projectCtaStyle : undefined}
+                        height="27px"
+                    />
+                </MaskedSlideText>
             </div>
             <div className="idx-grid-card-meta">
-                {serviceText}
-                {serviceText && metaLineTwo ? <br /> : null}
-                {metaLineTwo}
+                <MaskedSlideText index={index + 1} block>
+                    {serviceText}
+                    {serviceText && metaLineTwo ? <br /> : null}
+                    {metaLineTwo}
+                </MaskedSlideText>
             </div>
         </a>
     )
@@ -2164,14 +2332,17 @@ function GridView({ projects }: { projects: Project[] }) {
 function ViewToggle({
     activeView,
     onViewChange,
+    maskRevealStartIndex = 0,
 }: {
     activeView: string
     onViewChange: (v: string) => void
+    maskRevealStartIndex?: number
 }) {
     return (
         <div className="idx-view-toggle" aria-label="Project view">
             {VIEW_TOGGLE_OPTIONS.map((v, index) => {
                 const active = activeView === v
+                const revealIndex = maskRevealStartIndex + index * 2
 
                 return (
                     <React.Fragment key={v}>
@@ -2180,7 +2351,9 @@ function ViewToggle({
                                 className="idx-view-toggle-divider"
                                 aria-hidden="true"
                             >
-                                /
+                                <MaskedSlideText index={revealIndex - 1}>
+                                    /
+                                </MaskedSlideText>
                             </span>
                         )}
                         <button
@@ -2190,7 +2363,9 @@ function ViewToggle({
                             aria-pressed={active}
                             onClick={() => onViewChange(v)}
                         >
-                            {v}
+                            <MaskedSlideText index={revealIndex}>
+                                {v}
+                            </MaskedSlideText>
                         </button>
                     </React.Fragment>
                 )
@@ -2345,14 +2520,13 @@ export default function IndexPage({
     const initialView = resolvedDefaultView === "grid" ? "grid" : "list"
 
     const [activeView, setActiveView] = useState(initialView)
-    const [transitioning, setTransitioning] = useState(false)
     const [renderKey, setRenderKey] = useState(0)
     const [filters, setFilters] = useState<Filters>({
         disciplines: [],
         industries: [],
         years: [],
     })
-    const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+    const indexContainerRef = useRef<HTMLDivElement | null>(null)
     const taxonomyNavItems = useMemo(
         () => getTaxonomyNavItems(allProjects),
         [allProjects]
@@ -2361,23 +2535,10 @@ export default function IndexPage({
     const handleViewChange = useCallback(
         (v: string) => {
             if (v === activeView) return
-            if (transitionTimer.current) clearTimeout(transitionTimer.current)
-            setTransitioning(true)
-            transitionTimer.current = setTimeout(() => {
-                setActiveView(v)
-                setRenderKey((k) => k + 1)
-                setTransitioning(false)
-                transitionTimer.current = null
-            }, 150)
+            setActiveView(v)
+            setRenderKey((k) => k + 1)
         },
         [activeView]
-    )
-
-    useEffect(
-        () => () => {
-            if (transitionTimer.current) clearTimeout(transitionTimer.current)
-        },
-        []
     )
 
     const handleFilterToggle = useCallback(
@@ -2441,17 +2602,83 @@ export default function IndexPage({
         () => filterProjects(allProjects, filters, ""),
         [allProjects, filters]
     )
+    const hasActiveFilters =
+        filters.disciplines.length > 0 ||
+        filters.industries.length > 0 ||
+        filters.years.length > 0
+    const taxonomyMaskRevealCount =
+        6 +
+        taxonomyNavItems.years.length +
+        taxonomyNavItems.disciplines.length +
+        taxonomyNavItems.industries.length +
+        (hasActiveFilters ? 1 : 0)
     const isCMSLoading =
         useCMS &&
         registeredProjects.size === 0 &&
         cmsModuleProjects.length === 0 &&
         !cmsModuleLoaded
 
+    useEffect(() => {
+        const scope = indexContainerRef.current
+        if (!scope || typeof window === "undefined") return
+
+        const elements = Array.from(
+            scope.querySelectorAll<HTMLElement>(
+                "[data-idx-appear], [data-idx-mask-appear]"
+            )
+        )
+        if (elements.length === 0) return
+
+        if (!("IntersectionObserver" in window)) {
+            elements.forEach((element) => {
+                element.setAttribute("data-idx-appeared", "true")
+            })
+            return
+        }
+
+        const revealFrames: number[] = []
+        const revealElement = (element: HTMLElement) => {
+            const firstFrame = window.requestAnimationFrame(() => {
+                const secondFrame = window.requestAnimationFrame(() => {
+                    element.setAttribute("data-idx-appeared", "true")
+                })
+                revealFrames.push(secondFrame)
+            })
+            revealFrames.push(firstFrame)
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return
+                    const element = entry.target as HTMLElement
+                    revealElement(element)
+                    observer.unobserve(element)
+                })
+            },
+            {
+                rootMargin: INDEX_APPEAR_PRESET.rootMargin,
+                threshold: INDEX_APPEAR_PRESET.threshold,
+            }
+        )
+
+        elements.forEach((element) => {
+            if (element.getAttribute("data-idx-appeared") === "true") return
+            observer.observe(element)
+        })
+
+        return () => {
+            revealFrames.forEach((frame) => window.cancelAnimationFrame(frame))
+            observer.disconnect()
+        }
+    }, [activeView, filteredProjects, isCMSLoading, renderKey])
+
     return (
         <>
             <style>{globalCss}</style>
 
             <div
+                ref={indexContainerRef}
                 className="idx-container"
                 style={
                     {
@@ -2467,38 +2694,35 @@ export default function IndexPage({
                 }
             >
                 <div
-                    style={{
-                        opacity: 1,
-                        pointerEvents: "auto",
-                        transition: "opacity 200ms ease",
-                        marginBottom: 18,
-                    }}
+                    className="idx-index-nav"
                 >
-                    <TaxonomySection
-                        filters={filters}
-                        disciplineNavItems={taxonomyNavItems.disciplines}
-                        industryNavItems={taxonomyNavItems.industries}
-                        yearNavItems={taxonomyNavItems.years}
-                        onFilterToggle={handleFilterToggle}
-                        onFilterClear={handleFilterClear}
-                        onClearFilters={handleClearFilters}
+                    <div
+                        style={{
+                            opacity: 1,
+                            pointerEvents: "auto",
+                            transition: "opacity 200ms ease",
+                            marginBottom: 18,
+                        }}
+                    >
+                        <TaxonomySection
+                            filters={filters}
+                            disciplineNavItems={taxonomyNavItems.disciplines}
+                            industryNavItems={taxonomyNavItems.industries}
+                            yearNavItems={taxonomyNavItems.years}
+                            onFilterToggle={handleFilterToggle}
+                            onFilterClear={handleFilterClear}
+                            onClearFilters={handleClearFilters}
+                        />
+                    </div>
+
+                    <ViewToggle
+                        activeView={activeView}
+                        onViewChange={handleViewChange}
+                        maskRevealStartIndex={taxonomyMaskRevealCount}
                     />
                 </div>
 
-                <ViewToggle
-                    activeView={activeView}
-                    onViewChange={handleViewChange}
-                />
-
-                <div
-                    key={renderKey}
-                    style={{
-                        opacity: transitioning ? 0 : 1,
-                        transition: transitioning
-                            ? "opacity 150ms ease"
-                            : "opacity 250ms ease",
-                    }}
-                >
+                <div key={renderKey}>
                     {isCMSLoading ? (
                         <div
                             style={{

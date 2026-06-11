@@ -67,6 +67,9 @@ type Props = {
     parallaxEase?: number
     parallaxWhileDragging?: boolean
     mediaFadeMs?: number
+    loadInDelayMs?: number
+    loadInFadeMs?: number
+    loadInMaxWaitMs?: number
     hideFooter?: boolean
     navPassthrough?: boolean
     navSelector?: string
@@ -177,6 +180,9 @@ const NAV_EXIT_MANAGED_CLASS = "playground-nav-exit-managed"
 const NAV_EXIT_HIDDEN_CLASS = "playground-nav-exit-hidden"
 const NAV_EXIT_STYLE_ID = "playground-nav-exit-reveal-style"
 const DRAFT_ANIMATION_STYLE_ID = "playground-animation-style"
+const LOAD_IN_DELAY_MS = 120
+const LOAD_IN_FADE_MS = 720
+const LOAD_IN_MAX_WAIT_MS = 2600
 
 const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value))
@@ -469,6 +475,101 @@ function usePrefersReducedMotion() {
     return prefersReducedMotion
 }
 
+function reducedMotionNow() {
+    try {
+        return canUseDOM() && typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    } catch (error) {
+        return false
+    }
+}
+
+function viewTransitionActive() {
+    try {
+        return canUseDOM() && document.documentElement.matches(":active-view-transition")
+    } catch (error) {
+        return false
+    }
+}
+
+function useTransitionAwareLoadIn(enabled: boolean, delayMs: number, maxWaitMs: number) {
+    const [ready, setReady] = React.useState(() => !enabled)
+    const startedRef = React.useRef(false)
+
+    React.useEffect(() => {
+        if (!enabled || !canUseDOM()) {
+            setReady(true)
+            return
+        }
+        if (startedRef.current) return
+        startedRef.current = true
+        setReady(false)
+
+        let disposed = false
+        let released = false
+        let delayTimer = 0
+        let safetyTimer = 0
+        let pollTimer = 0
+        let rafA = 0
+        let rafB = 0
+
+        const clearPending = () => {
+            window.clearTimeout(delayTimer)
+            window.clearTimeout(safetyTimer)
+            window.clearTimeout(pollTimer)
+            window.cancelAnimationFrame(rafA)
+            window.cancelAnimationFrame(rafB)
+        }
+
+        const release = () => {
+            if (disposed || released) return
+            released = true
+            window.clearTimeout(safetyTimer)
+            window.clearTimeout(pollTimer)
+
+            if (reducedMotionNow()) {
+                setReady(true)
+                return
+            }
+
+            delayTimer = window.setTimeout(() => {
+                rafA = window.requestAnimationFrame(() => {
+                    rafB = window.requestAnimationFrame(() => {
+                        if (!disposed) setReady(true)
+                    })
+                })
+            }, Math.max(0, delayMs))
+        }
+
+        const pollForTransitionEnd = () => {
+            if (disposed || released) return
+            if (viewTransitionActive()) {
+                pollTimer = window.setTimeout(pollForTransitionEnd, 50)
+                return
+            }
+            release()
+        }
+
+        const onPageReveal = (event: Event) => {
+            const vt = (event as any).viewTransition
+            if (vt && vt.finished && typeof vt.finished.then === "function") {
+                vt.finished.then(release, release)
+            }
+        }
+
+        window.addEventListener("pagereveal", onPageReveal)
+        safetyTimer = window.setTimeout(release, Math.max(400, maxWaitMs))
+        pollForTransitionEnd()
+
+        return () => {
+            disposed = true
+            window.removeEventListener("pagereveal", onPageReveal)
+            clearPending()
+        }
+    }, [enabled])
+
+    return ready
+}
+
 function MediaFrame({
     item,
     detail,
@@ -675,8 +776,13 @@ export default function ArchivePlayground(props: Props) {
     const panelWidth = props.panelWidth ?? 500
     const panelExitMs = props.panelExitMs ?? 950
     const mediaFadeMs = props.mediaFadeMs ?? 700
+    const loadInDelayMs = props.loadInDelayMs ?? LOAD_IN_DELAY_MS
+    const loadInFadeMs = props.loadInFadeMs ?? LOAD_IN_FADE_MS
+    const loadInMaxWaitMs = props.loadInMaxWaitMs ?? LOAD_IN_MAX_WAIT_MS
     const navSelector = props.navSelector || DEFAULT_NAV_SELECTOR
     const navExitReveal = useNavExitReveal(isInteractive, navSelector, panelExitMs)
+    const prefersReducedMotion = usePrefersReducedMotion()
+    const loadInReady = useTransitionAwareLoadIn(isInteractive, loadInDelayMs, loadInMaxWaitMs)
 
     useDraftAnimationStyles(isInteractive)
     useFooterHider(isInteractive && (props.hideFooter ?? true))
@@ -726,7 +832,7 @@ export default function ArchivePlayground(props: Props) {
     React.useEffect(() => {
         const gallery = galleryRef.current
         if (!gallery || !canUseDOM()) return
-        if (panelOpen) {
+        if (panelOpen || !loadInReady) {
             gallery.setAttribute("inert", "")
             gallery.setAttribute("aria-hidden", "true")
         } else {
@@ -738,7 +844,7 @@ export default function ArchivePlayground(props: Props) {
             gallery.removeAttribute("inert")
             gallery.removeAttribute("aria-hidden")
         }
-    }, [panelOpen])
+    }, [panelOpen, loadInReady])
 
     const queueFocusReturn = React.useCallback(() => {
         if (!canUseDOM()) return
@@ -1077,7 +1183,7 @@ export default function ArchivePlayground(props: Props) {
             const top = gy * cellY + motion.y + motion.my + centerY
             const key = `${item.id}-${gx}-${gy}`
             const isHot = hovered === key
-            const cardIsKeyboardReachable = isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
+            const cardIsKeyboardReachable = loadInReady && isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
 
             cells.push(
                 <button
@@ -1139,8 +1245,10 @@ export default function ArchivePlayground(props: Props) {
         <div
             ref={rootRef}
             data-playground-root="true"
+            data-playground-load-in={loadInReady ? "ready" : "blank"}
             role="main"
             aria-label="Play archive"
+            aria-busy={loadInReady ? undefined : true}
             style={{
                 ...props.style,
                 width: "100%",
@@ -1152,7 +1260,7 @@ export default function ArchivePlayground(props: Props) {
                 isolation: "isolate",
                 background: backgroundColor,
                 color: textColor,
-                cursor: panelOpen ? "default" : motion.dragging ? "grabbing" : "grab",
+                cursor: !loadInReady || panelOpen ? "default" : motion.dragging ? "grabbing" : "grab",
                 userSelect: "none",
                 touchAction: "none",
                 fontFamily: DISPLAY,
@@ -1160,12 +1268,23 @@ export default function ArchivePlayground(props: Props) {
         >
             <div
                 ref={galleryRef}
+                data-playground-gallery="true"
                 onWheel={onWheel}
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={(event) => finishPointer(event, true)}
                 onPointerCancel={(event) => finishPointer(event, false)}
-                style={{ position: "absolute", inset: 0, overflow: "hidden", perspective: 1000, perspectiveOrigin: "50% 50%", transformStyle: "preserve-3d" }}
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    overflow: "hidden",
+                    perspective: 1000,
+                    perspectiveOrigin: "50% 50%",
+                    transformStyle: "preserve-3d",
+                    opacity: loadInReady ? 1 : 0,
+                    pointerEvents: loadInReady && !panelOpen ? "auto" : "none",
+                    transition: loadInReady && !prefersReducedMotion ? `opacity ${loadInFadeMs}ms cubic-bezier(.22,1,.36,1)` : "none",
+                }}
             >
                 <div style={{ position: "absolute", inset: 0, transformStyle: "preserve-3d" }}>{cells}</div>
             </div>
@@ -1361,6 +1480,9 @@ addPropertyControls<Props>(ArchivePlayground, {
     parallaxEase: { type: ControlType.Number, title: "Ease", defaultValue: 0.5, min: 0.05, max: 1, step: 0.05, hidden: hideAdvanced },
     parallaxWhileDragging: { type: ControlType.Boolean, title: "Drag Para", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
     mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 700, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
+    loadInDelayMs: { type: ControlType.Number, title: "Load Hold", defaultValue: LOAD_IN_DELAY_MS, min: 0, max: 1000, step: 10, unit: "ms", hidden: hideAdvanced },
+    loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
+    loadInMaxWaitMs: { type: ControlType.Number, title: "Load Max", defaultValue: LOAD_IN_MAX_WAIT_MS, min: 400, max: 5000, step: 50, unit: "ms", hidden: hideAdvanced },
     backgroundColor: { type: ControlType.Color, title: "BG", defaultValue: CREAM, hidden: hideAdvanced },
     panelColor: { type: ControlType.Color, title: "Panel", defaultValue: CREAM, hidden: hideAdvanced },
     textColor: { type: ControlType.Color, title: "Text", defaultValue: BLACK, hidden: hideAdvanced },

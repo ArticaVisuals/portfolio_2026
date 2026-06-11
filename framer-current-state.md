@@ -89,8 +89,6 @@ Framer code components relevant to this handoff include:
 | `Test.tsx` | `O9WTdUJ` | Misleading filename; exports the legacy `ProjectRegistrar` CMS registry bridge. Kept as fallback. |
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | CMS-driven thumbnail stroke helper on Home, `/case-studies`, and `/index`. |
 | `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. |
-| `IndexPageBreakpointsDraft.tsx` | `VwMoFWv` | Active hidden `/index` responsive/style helper. Despite the name, it is part of the current `/index` implementation. |
-| `IndexGridVideoHoverFix.tsx` | `kjMWwjO` | Hidden `/index` CSS guard mounted as `JvCNoMs41`; keeps helper-generated grid videos on the same hover/focus scale path as image thumbnails and respects reduced motion. |
 | `ArchivePlayground.tsx` | `QNpkYp5` | Active `/play` archive media playground as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, and authorable `Archive Items` content live here. |
 | `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
 | `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Draft mirror mounted on `/play-consolidation-draft`; safe place for future parity experiments before promoting to `/play`. |
@@ -136,6 +134,8 @@ June 10 nav scroll guard: reproduced a native Navigation bug on Home where scrol
 #### Play page consolidation — active as of June 8, 2026
 
 `/play` (`KbgWr_0BN`) mounts one active production archive component on the Desktop variant: `ArchivePlayground` node `kgFbinZvY`, backed by `ArchivePlayground.tsx` (`QNpkYp5`). The promoted component was copied from the working `/play-consolidation-draft` build and now owns the archive grid, detail drawer, rotating Close text, slide-down nav reveal after close, media fade/stroke behavior, footer hiding, nav passthrough behavior, and content editing controls.
+
+June 11 Play load-in update: `ArchivePlayground.tsx` intentionally paints the root as blank Cream first, keeps the gallery inert/transparent while a browser View Transition is active, then releases the archive grid after a short Cream hold. `PageTransition.tsx` also sets `data-playground-force-blank` before navigating to `/play`, so the incoming snapshot stays blank even if the archive grid was already preloaded. The advanced controls `Load Hold`, `Load Fade`, and `Load Max` tune the archive intro timing; do not remove the hidden first frame unless the site-wide page transition model changes.
 
 Content management should happen in the Framer properties panel under `Archive Items`. Each row exposes `Title`, `Description`, `Type`, `Media / Poster`, conditional `Video`, `Category`, aspect width/height, and `Stroke`. Leave `Advanced` off for normal content edits; it hides the layout, motion, color, nav, and timing controls so the page stays easy to manage long term.
 
@@ -264,16 +264,15 @@ June 2 published fix: the Home hero line was corrected from `mind.Strategy` to `
 
 ### `/index`
 
-`/index` is the most custom page. Current active code files are:
+`/index` is the most custom page. Current active archive component code file is:
 
 - `IndexPage.tsx` (`rgAZFOv`)
-- `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`)
-- `IndexPageBreakpointsDraft.tsx` (`VwMoFWv`)
-- `IndexGridVideoHoverFix.tsx` (`kjMWwjO`, mounted as hidden node `JvCNoMs41`)
 
 `IndexPage.tsx` owns taxonomy filters, list rows, grid cards, project count, view state, and the inline `GRID / LIST` control. The visible taxonomy is `/ Year`, `/ Service`, `/ Industry`; each group has its own `All` clear action. Grid view renders native HTML cards inside the code component rather than calling the native Framer `Case Study` module.
 
-June 8, 2026 Motion Connect grid hover fix: live inspection showed the published `/index` CSS did not include the direct-child `.idx-grid-card-media > video` hover selector used by helper-generated thumbnail videos, so the Motion Connect video stayed visually static while the card title hover flip still worked. `IndexGridVideoHoverFix.tsx` (`kjMWwjO`) is mounted hidden on `/index` as `JvCNoMs41` to patch `.idx-grid-card-media > img/video` hover/focus scale to `1.02` and force `scale(1)` under `prefers-reduced-motion: reduce`. Publish the Framer site after this canvas edit before expecting `khaki-ship-257706.framer.app` to reflect it.
+June 11, 2026 index motion/style consolidation: `IndexPage.tsx` now owns the responsive CSS, inline-toggle alignment, direct `.idx-grid-card-media > img/video` hover/focus scale, and the on-appear motion presets. Text matching the index nav/year/title language (`/ Year`, `2026`, project titles like `Gaia`, grid title/meta text, and `GRID / LIST`) uses `INDEX_MASK_REVEAL_PRESET`: overflow-hidden mask, inner text transitioning from `translateY(90px)` to `0`, 1500ms, 100ms base delay, uncapped 70ms stagger, and `cubic-bezier(0.16, 1, 0.3, 1)`, matching the top `Index` heading reveal. Rule/line drawing uses the same line timing as the reference Line Animation component: 1600ms, `cubic-bezier(0.16, 1, 0.3, 1)`. A native IntersectionObserver defers `data-idx-appeared="true"` by two animation frames so the hidden mask state paints before the slide begins; reduced motion forces items visible and disables the animation. Keep this behavior inside `IndexPage.tsx`; do not add a hidden helper for it.
+
+June 8, 2026 Motion Connect grid hover fix: live inspection showed the published `/index` CSS did not include the direct-child `.idx-grid-card-media > video` hover selector used by helper-generated thumbnail videos, so the Motion Connect video stayed visually static while the card title hover flip still worked. The current source keeps the direct `.idx-grid-card-media > img/video` hover/focus scale path in `IndexPage.tsx` and forces `scale(1)` under `prefers-reduced-motion: reduce`.
 
 June 8, 2026 archive thumbnail video update: the live `/index` `IndexPage` instance reads `thumbnailVideoFieldIds="SvOqFqdby"`, so the `Thumbnail Video` File upload is the only active CMS thumbnail-video source. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used as a fallback. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The hidden `CmsLink` collection list remains mounted so Framer's generated CMS module is available. If the `ProjectRegistrar` bridge provides incomplete rows, `IndexPage` hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated CMS module by slug/title before rendering the grid. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` (`szF9sZNWA`) remains configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup overlay path. Wolff Olins x ArtCenter, Cellular Symphony, Neon Lights, Motion Connect 2025, and AirPods Pro 3 have populated `Thumbnail Video` File values (`SvOqFqdby`) on Framer's CDN. The published site needs a Framer publish/redeploy before canvas/CMS File-field changes appear in the generated CMS bundle. `IndexThumbnailVideoFallback.tsx` (`wvucZCT`) and its hidden node (`R9kqDJO7t`) were deleted from Framer; do not recreate a hardcoded per-project fallback helper.
 

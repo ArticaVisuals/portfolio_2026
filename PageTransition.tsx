@@ -1,8 +1,8 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.3 — dual-path View
-// Transitions + first-boot loader + appear-effect restart.
+// Site-wide page transition (zitafernandez.com-style). v6.4 — dual-path View
+// Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
 // ways: its SPA router (history.pushState) and real cross-document loads
@@ -14,16 +14,18 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // dims and drifts up while the ACTUAL incoming page slides up over it as a
 // sheet; the nav (its own transition group) swipes out and back in.
 //
-// APPEAR-EFFECT RESTART (v6.3) — load-in animations (text fades, header
-// slide-ups, line draws) must START when the cover ends, even if they
-// already ran while preloaded. Two mechanisms: (1) HOLD — WAAPI entrance
-// animations are frozen at frame zero while a transition is running;
-// (2) REPLAY — Framer's own appear runtime (window.animator +
-// window.__framer__appearAnimationsContent definitions) is re-invoked to
-// restart every appear effect from its initial state. Transitions replay
-// at finish (skipping elements whose held animations just resumed); the
-// boot loader replays at swipe start, while the curtain still covers, so
-// the reset is invisible and effects animate in as the page is revealed.
+// APPEAR-EFFECT RESTART (v6.4) — load-in animations must START when the
+// cover ends, even if they already ran while preloaded. Framer's
+// startOptimizedAppearAnimation no-ops when re-invoked after the hydration
+// handoff (verified live), so the replay builds WAAPI animations DIRECTLY
+// from the published appear definitions (__framer__appearAnimationsContent)
+// with el.animate(). The boot loader replays at swipe start (still fully
+// covered → invisible reset); transitions replay at finish, skipping
+// elements whose frame-zero-held animations just resumed. Each replay also
+// dispatches a "pt:reveal" CustomEvent on window so custom code components
+// (e.g. the /play views) can restart their own internal intros. /play
+// additionally gets a force-blank hold on its gallery while transitioning
+// in, released once the transition settles.
 //
 // FIRST BOOT — the SSR'd script injects a curtain + top progress bar before
 // hydration, waits for window.load (bounded), then swipes up. "Auto" mode
@@ -38,6 +40,9 @@ const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
 const Z = 2147483600
 const COLOR_RE = /[<>"'\\{}]/g
+const PLAY_PATH = "/play"
+const PLAY_FORCE_BLANK_ATTR = "data-playground-force-blank"
+const PLAY_LOAD_IN_DELAY_MS = 120
 
 // One-time hygiene: remove anything a previous version of this component
 // may have left in storage or the DOM for returning visitors.
@@ -63,6 +68,45 @@ function normPath(p: string): string {
     return out === "" ? "/" : out
 }
 
+function isPlayPath(pathname: string): boolean {
+    return normPath(pathname) === PLAY_PATH
+}
+
+function setPlayBlank(active: boolean) {
+    try {
+        if (active) document.documentElement.setAttribute(PLAY_FORCE_BLANK_ATTR, "true")
+        else document.documentElement.removeAttribute(PLAY_FORCE_BLANK_ATTR)
+    } catch (e) {}
+}
+
+function releasePlayBlank(delayMs = PLAY_LOAD_IN_DELAY_MS) {
+    if (reducedMotion()) {
+        setPlayBlank(false)
+        return
+    }
+    window.setTimeout(() => setPlayBlank(false), Math.max(0, delayMs))
+}
+
+function releasePlayBlankWhenSettled(until: Promise<any> | null) {
+    const release = () => releasePlayBlank()
+    if (until && typeof until.then === "function") {
+        until.then(release, release)
+    } else {
+        const poll = () => {
+            let active = false
+            try {
+                active = document.documentElement.matches(":active-view-transition")
+            } catch (e) {
+                active = false
+            }
+            if (!active) release()
+            else window.setTimeout(poll, 100)
+        }
+        window.setTimeout(poll, 100)
+    }
+    window.setTimeout(() => setPlayBlank(false), 4000)
+}
+
 // Duplicate view-transition-names on one page silently disable the WHOLE
 // transition (per spec). Keep the name on the first rendered nav only.
 function dedupeNavNames(navSelector: string) {
@@ -83,53 +127,116 @@ function dedupeNavNames(navSelector: string) {
 
 // ------------------------------------------------------ appear hold/replay
 
-// Re-run Framer's published appear effects from their definitions — a true
-// restart from the initial state, even if they already played. Mirrors the
-// inline starter script Framer ships. `skip` = elements whose held
-// animations were just resumed (avoid double-starting those).
+function appearTransform(v: any): string {
+    const parts: string[] = []
+    if (v.transformPerspective)
+        parts.push(`perspective(${v.transformPerspective}px)`)
+    const x = v.x || 0
+    const y = v.y || 0
+    if (x || y)
+        parts.push(
+            `translateX(${typeof x === "number" ? x + "px" : x}) translateY(${
+                typeof y === "number" ? y + "px" : y
+            })`
+        )
+    if (v.scale !== undefined && v.scale !== 1) parts.push(`scale(${v.scale})`)
+    if (v.rotate) parts.push(`rotate(${v.rotate}deg)`)
+    if (v.rotateX) parts.push(`rotateX(${v.rotateX}deg)`)
+    if (v.rotateY) parts.push(`rotateY(${v.rotateY}deg)`)
+    if (v.skewX) parts.push(`skewX(${v.skewX}deg)`)
+    if (v.skewY) parts.push(`skewY(${v.skewY}deg)`)
+    return parts.length ? parts.join(" ") : "none"
+}
+
+function appearEasing(e: any): string {
+    if (Array.isArray(e)) return `cubic-bezier(${e.join(",")})`
+    if (e === "linear") return "linear"
+    if (e === "easeIn") return "cubic-bezier(0.42,0,1,1)"
+    if (e === "easeInOut") return "cubic-bezier(0.42,0,0.58,1)"
+    return "cubic-bezier(0,0,0.58,1)" // easeOut default
+}
+
+// Restart Framer's appear effects from their published definitions — a true
+// replay from the initial state, even if they already ran. Framer's own
+// startOptimizedAppearAnimation refuses to re-run after hydration handoff,
+// so the WAAPI animations are built directly with el.animate(). `skip` =
+// elements whose frame-zero-held animations were just resumed. Dispatches
+// "pt:reveal" so custom code components can restart their own intros.
 function replayAppearEffects(skip?: Set<Element>) {
+    try {
+        window.dispatchEvent(new CustomEvent("pt:reveal"))
+    } catch (e) {}
     try {
         if (reducedMotion()) return
         const w: any = window
-        const an = w.animator
-        const defs = w.__framer__appearAnimationsContent
-        if (!an || !an.animateAppearEffects || !defs || !defs.text) return
-        let hash: any = undefined
+        const defsEl = w.__framer__appearAnimationsContent
+        if (!defsEl || !defsEl.text) return
+        const defs = JSON.parse(defsEl.text)
+        let hash: string | undefined
         try {
-            const bp = w.__framer__breakpoints
-            if (bp && bp.text && an.getActiveVariantHash)
-                hash = an.getActiveVariantHash(JSON.parse(bp.text))
+            const bps = JSON.parse(w.__framer__breakpoints.text)
+            const m = bps.find(
+                (b: any) =>
+                    b.mediaQuery && window.matchMedia(b.mediaQuery).matches
+            )
+            if (m) hash = m.hash
         } catch (e) {}
-        an.animateAppearEffects(
-            JSON.parse(defs.text),
-            (selector: string, keyframes: any, options: any) => {
-                try {
-                    const el = document.querySelector(selector)
-                    if (!el) return
-                    if (skip && skip.has(el)) return
-                    for (const k in keyframes) {
-                        try {
-                            an.startOptimizedAppearAnimation(
-                                el,
-                                k,
-                                keyframes[k],
-                                options[k]
-                            )
-                        } catch (e) {}
-                    }
-                } catch (e) {}
-            },
-            "data-framer-appear-id",
-            "__Appear_Animation_Transform__",
-            false,
-            hash
-        )
+        for (const id in defs) {
+            try {
+                const def = defs[id]
+                const variant =
+                    (hash && def[hash]) ||
+                    def.default ||
+                    def[Object.keys(def)[0]]
+                if (!variant || !variant.initial || !variant.animate) continue
+                const el = document.querySelector(
+                    `[data-framer-appear-id="${id}"]`
+                )
+                if (!el) continue
+                if (skip && skip.has(el)) continue
+                const animate = variant.animate
+                const from = variant.initial
+                const t = animate.transition || {}
+                const kfFrom: any = {}
+                const kfTo: any = {}
+                if (
+                    from.opacity !== undefined &&
+                    from.opacity !== animate.opacity
+                ) {
+                    kfFrom.opacity = String(from.opacity)
+                    kfTo.opacity = String(
+                        animate.opacity === undefined ? 1 : animate.opacity
+                    )
+                }
+                const tFrom = appearTransform(from)
+                const tTo = appearTransform(animate)
+                if (tFrom !== tTo) {
+                    kfFrom.transform = tFrom
+                    kfTo.transform = tTo
+                }
+                if (!Object.keys(kfFrom).length) continue
+                const anim = (el as HTMLElement).animate([kfFrom, kfTo], {
+                    duration: Math.max(1, (t.duration || 0.8) * 1000),
+                    delay: (t.delay || 0) * 1000,
+                    easing: appearEasing(t.ease),
+                    fill: "both",
+                })
+                // cancel on finish so the element's own styles (and hover
+                // effects) take back over cleanly
+                anim.onfinish = () => {
+                    try {
+                        anim.cancel()
+                    } catch (e) {}
+                }
+            } catch (e) {}
+        }
     } catch (e) {}
 }
 
 if (typeof window !== "undefined") {
     // The SSR'd boot script calls this at swipe start (see installScript).
     ;(window as any).__ptReplayAppear = replayAppearEffects
+    if (isPlayPath(window.location.pathname)) setPlayBlank(true)
 }
 
 function isVtAnim(a: any): boolean {
@@ -247,8 +354,13 @@ function holdAppearAnimations(until: Promise<any> | null) {
 if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
     ;(window as any).__ptRevealBound = true
     window.addEventListener("pagereveal", (e: any) => {
+        const arrivingAtPlay = isPlayPath(window.location.pathname)
+        if (arrivingAtPlay) setPlayBlank(true)
         if (e && e.viewTransition) {
             holdAppearAnimations(e.viewTransition.finished)
+            if (arrivingAtPlay) releasePlayBlankWhenSettled(e.viewTransition.finished)
+        } else if (arrivingAtPlay) {
+            releasePlayBlankWhenSettled(null)
         }
     })
 }
@@ -295,6 +407,8 @@ function onClickCapture(e: MouseEvent) {
     if (normPath(url.pathname) === normPath(window.location.pathname)) return
     if (reducedMotion()) return
 
+    const goingToPlay = isPlayPath(url.pathname)
+    if (goingToPlay) setPlayBlank(true)
     sdActive = true
     dedupeNavNames(sdNavSelector) // guard right before the old-state capture
     const fromHref = window.location.href
@@ -342,6 +456,7 @@ function onClickCapture(e: MouseEvent) {
                 mo.disconnect()
             } catch (err) {}
         }
+        if (goingToPlay) releasePlayBlank()
     }
     try {
         vt.finished.then(settle, settle)
@@ -389,6 +504,15 @@ function buildCss(
 @view-transition { navigation: auto; }
 
 ${navScoped} { view-transition-name: ${NAV_NAME}; }
+
+html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] [data-playground-gallery="true"] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: none !important;
+}
+html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] {
+    cursor: default !important;
+}
 
 ::view-transition { background-color: rgb(20, 20, 20); }
 
@@ -450,6 +574,12 @@ interface BootCfg {
 function installScript(css: string, boot: BootCfg): string {
     const bootColor = String(boot.color).replace(COLOR_RE, "")
     const barColor = String(boot.barColor).replace(COLOR_RE, "")
+    const playBlankJs =
+        'try{var __ptp=location.pathname.replace(/\\/+$/,"")||"/";if(__ptp==="' +
+        PLAY_PATH +
+        '")document.documentElement.setAttribute("' +
+        PLAY_FORCE_BLANK_ATTR +
+        '","true")}catch(e){}'
     // Zita-style gating: play on reloads and fresh entries (no referrer or
     // external referrer); skip internal-link arrivals (the page transition
     // owns those), back/forward traversals, and prerender passes.
@@ -556,6 +686,7 @@ function installScript(css: string, boot: BootCfg): string {
         "}" +
         "if(s.textContent!==c)s.textContent=c;" +
         "}catch(e){}" +
+        playBlankJs +
         bootJs +
         "})()"
     )
