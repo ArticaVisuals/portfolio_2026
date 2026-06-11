@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.1 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v6.2 — dual-path View
 // Transitions + first-boot loader + appear-effect hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -14,31 +14,30 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // dims and drifts up while the ACTUAL incoming page slides up over it as a
 // sheet; the nav (its own transition group) swipes out and back in.
 //
-// APPEAR-EFFECT HOLD (v6.1) — entrance/appear animations on the incoming
-// page are frozen at frame zero while the sheet is moving and released the
-// moment the transition finishes, so the transition visibly CAUSES the
-// load-ins. Loops, long-running ambient animations, and CSS transitions are
-// left untouched; held animations inside the nav are fast-forwarded instead
-// of replayed (the nav already has its own choreography).
+// APPEAR-EFFECT HOLD — entrance/appear animations on the incoming page are
+// frozen at frame zero while the sheet is moving and released the moment
+// the transition finishes, so the transition visibly CAUSES the load-ins.
 //
-// FIRST BOOT — on direct entry the SSR'd script injects a curtain + top
-// progress bar before hydration (Zita's loader curve), waits for
-// window.load (bounded), then swipes up. Once per tab via sessionStorage.
+// FIRST BOOT (v6.2: Zita-style gating) — the SSR'd script injects a curtain
+// + top progress bar before hydration, waits for window.load (bounded),
+// then swipes up. "Auto" mode plays it on direct entries AND reloads, and
+// skips arrivals from internal links (the page transition owns those) and
+// back/forward traversals — detected via the navigation timing entry type
+// plus a same-origin referrer check. No sessionStorage involved.
 
 const STYLE_ID = "__pt-vt-style"
 const BOOT_ID = "__pt-boot"
-const BOOT_KEY = "__ptBootSeen:v2"
-const PAGE_EASE = "cubic-bezier(0.6, 0, 0.18, 1)" // v6.1: softer entry, silkier landing
+const PAGE_EASE = "cubic-bezier(0.6, 0, 0.18, 1)" // softer entry, silkier landing
 const NAV_EASE = "cubic-bezier(0.22, 1, 0.36, 1)" // measured nav spring feel
 const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
 const Z = 2147483600
 const COLOR_RE = /[<>"'\\{}]/g
 
-// One-time hygiene: remove anything a previous (curtain-based) version of
-// this component may have left in storage or the DOM for returning visitors.
+// One-time hygiene: remove anything a previous version of this component
+// may have left in storage or the DOM for returning visitors.
 const LEGACY_IDS = ["__pt-curtain", "__pt-cover", "__pt-dim", "__pt-nav-style"]
-const LEGACY_FLAG = "__ptCover"
+const LEGACY_FLAGS = ["__ptCover", "__ptBootSeen:v2"]
 
 let sdEnabled = false
 let sdExclude = "[data-no-transition]"
@@ -57,6 +56,24 @@ function reducedMotion(): boolean {
 function normPath(p: string): string {
     const out = p.replace(/\/+$/, "")
     return out === "" ? "/" : out
+}
+
+// Duplicate view-transition-names on one page silently disable the WHOLE
+// transition (per spec). Keep the name on the first rendered nav only.
+function dedupeNavNames(navSelector: string) {
+    try {
+        const els = Array.from(document.querySelectorAll(navSelector))
+        const rendered = els.filter((el) => {
+            try {
+                return window.getComputedStyle(el).display !== "none"
+            } catch (e) {
+                return false
+            }
+        })
+        for (let i = 1; i < rendered.length; i++) {
+            ;(rendered[i] as HTMLElement).style.viewTransitionName = "none"
+        }
+    } catch (e) {}
 }
 
 // ---------------------------------------------------------------- appear hold
@@ -218,6 +235,7 @@ function onClickCapture(e: MouseEvent) {
     if (reducedMotion()) return
 
     sdActive = true
+    dedupeNavNames(sdNavSelector) // guard right before the old-state capture
     const fromHref = window.location.href
     const fromTitle = document.title
     let mutated = false
@@ -241,6 +259,9 @@ function onClickCapture(e: MouseEvent) {
                     const rendered = mutated || document.title !== fromTitle
                     if (urlChanged && rendered) {
                         contentReady = true
+                        // New nav may have mounted — keep names unique
+                        // before the new-state capture.
+                        dedupeNavNames(sdNavSelector)
                         window.setTimeout(resolve, 90) // let React commit
                         return
                     }
@@ -351,7 +372,7 @@ ${navScoped} { view-transition-name: ${NAV_NAME}; }
 
 interface BootCfg {
     enabled: boolean
-    once: boolean
+    auto: boolean
     color: string
     barColor: string
     barHeight: number
@@ -368,19 +389,27 @@ interface BootCfg {
 function installScript(css: string, boot: BootCfg): string {
     const bootColor = String(boot.color).replace(COLOR_RE, "")
     const barColor = String(boot.barColor).replace(COLOR_RE, "")
+    // Zita-style gating: play on reloads and fresh entries (no referrer or
+    // external referrer); skip internal-link arrivals (the page transition
+    // owns those), back/forward traversals, and prerender passes.
+    const freshFn =
+        "function __ptFresh(){try{" +
+        "var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];" +
+        "var t=n?n.type:'navigate';" +
+        "if(t==='reload')return true;" +
+        "if(t!=='navigate')return false;" +
+        "var r=document.referrer;" +
+        "if(!r)return true;" +
+        "try{return new URL(r).origin!==location.origin}catch(e){return true}" +
+        "}catch(e){return true}}"
     const bootJs = !boot.enabled
         ? ""
         : "try{" +
           "if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){" +
-          (boot.once
-              ? 'if(!sessionStorage.getItem("' +
-                BOOT_KEY +
-                '")){sessionStorage.setItem("' +
-                BOOT_KEY +
-                '","1");__ptBoot()}'
-              : "__ptBoot()") +
+          (boot.auto ? "if(__ptFresh())__ptBoot();" : "__ptBoot();") +
           "}" +
           "}catch(e){}" +
+          freshFn +
           "function __ptBoot(){" +
           'if(document.getElementById("' +
           BOOT_ID +
@@ -523,7 +552,9 @@ export default function PageTransition(props: Props) {
     const css = buildCss(duration, navDuration, drift, dim, navSelector)
     const boot: BootCfg = {
         enabled: firstBoot,
-        once: bootMode !== "always",
+        // "once" (legacy value, now titled Auto) = entries + reloads only;
+        // "always" = every document load.
+        auto: bootMode !== "always",
         color: bootColor,
         barColor: barColor,
         barHeight: barHeight,
@@ -544,6 +575,8 @@ export default function PageTransition(props: Props) {
         sdNavSelector = navSelector
         sdHoldAppear = holdAppear
 
+        dedupeNavNames(navSelector)
+
         // Cross-document arrival fallback: if the module evaluated after
         // pagereveal already fired, a transition may be running right now.
         if (enabled && holdAppear) {
@@ -556,10 +589,12 @@ export default function PageTransition(props: Props) {
             if (active) holdAppearAnimations(null)
         }
 
-        // Hygiene: clear leftovers from the old curtain implementation.
-        try {
-            window.sessionStorage.removeItem(LEGACY_FLAG)
-        } catch (e) {}
+        // Hygiene: clear leftovers from previous implementations.
+        LEGACY_FLAGS.forEach((k) => {
+            try {
+                window.sessionStorage.removeItem(k)
+            } catch (e) {}
+        })
         LEGACY_IDS.forEach((id) => {
             const el = document.getElementById(id)
             if (el && el.parentNode) el.parentNode.removeChild(el)
@@ -719,7 +754,7 @@ addPropertyControls(PageTransition, {
         title: "Boot mode",
         defaultValue: "once",
         options: ["once", "always"],
-        optionTitles: ["Once", "Always"],
+        optionTitles: ["Auto", "Always"],
         displaySegmentedControl: true,
         hidden: (p: any) => !p.firstBoot,
     },
