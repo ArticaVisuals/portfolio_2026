@@ -8,7 +8,7 @@ type ResponsiveImage = {
 }
 
 type SlideItem = {
-    image?: ResponsiveImage
+    image?: ResponsiveImage | string
     alt?: string
 }
 
@@ -16,6 +16,7 @@ type NormalizedSlide = {
     src: string
     srcSet?: string
     alt: string
+    aspect?: number
 }
 
 // Font family used for the prev/next glyphs. Matches the site typeface
@@ -37,6 +38,14 @@ type Props = {
     showCounter: boolean
     enableLightbox: boolean
     aspectRatio: number
+    frameMode: "fitMedia" | "layerHeight" | "customAspect"
+    customAspectRatio: number
+    cropMode: "none" | "manual"
+    cropTightness: number
+    cropTop: number
+    cropBottom: number
+    cropLeft: number
+    cropRight: number
     arrowColor: string
     controlBackground: string
     dotColor: string
@@ -81,6 +90,14 @@ export default function ImageCarousel(props: Props) {
         showCounter = false,
         enableLightbox = true,
         aspectRatio = 3014 / 1924,
+        frameMode = "fitMedia",
+        customAspectRatio = 3014 / 1924,
+        cropMode = "none",
+        cropTightness = 100,
+        cropTop = 0,
+        cropBottom = 0,
+        cropLeft = 0,
+        cropRight = 0,
         arrowColor = "rgba(255,255,255,0.9)",
         controlBackground = "rgba(87,87,87,0.35)",
         dotColor = "rgba(20,20,20,0.32)",
@@ -94,9 +111,9 @@ export default function ImageCarousel(props: Props) {
         if (customSlides.length > 0) return customSlides
         return parseManifest(slidesData)
     }, [slideControls, slidesData, sourceMode])
-
     const [index, setIndex] = React.useState(0)
     const [isHovered, setIsHovered] = React.useState(false)
+    const [naturalAspects, setNaturalAspects] = React.useState<Record<string, number>>({})
 
     const slideCount = slides.length
 
@@ -129,6 +146,20 @@ export default function ImageCarousel(props: Props) {
 
     const transition = `opacity ${Math.max(0, transitionDuration)}s ease`
     const safeAspectRatio = Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : 3014 / 1924
+    const safeCustomAspectRatio = Number.isFinite(customAspectRatio) && customAspectRatio > 0 ? customAspectRatio : safeAspectRatio
+    const cropStrength = Number.isFinite(cropTightness) ? Math.max(0, Math.min(150, cropTightness)) / 100 : 1
+    const crop = getSafeCrop(cropTop * cropStrength, cropRight, cropBottom * cropStrength, cropLeft)
+    const cropRemainingX = 1 - (crop.left + crop.right) / 100
+    const cropRemainingY = 1 - (crop.top + crop.bottom) / 100
+    const hasManualCrop = cropMode === "manual" && cropRemainingX > 0 && cropRemainingY > 0 && (crop.top > 0 || crop.right > 0 || crop.bottom > 0 || crop.left > 0)
+    const knownAspects = slides
+        .map((slide) => naturalAspects[slide.src] || slide.aspect)
+        .filter((aspect): aspect is number => Boolean(aspect && aspect > 0))
+    const tallestSlideAspect = knownAspects.length > 0 ? Math.min(...knownAspects) : safeAspectRatio
+    const mediaAspectRatio = hasManualCrop ? (tallestSlideAspect * cropRemainingX) / cropRemainingY : tallestSlideAspect
+    const layoutAspectRatio = frameMode === "customAspect" ? safeCustomAspectRatio : mediaAspectRatio
+    const shouldMeasureOwnHeight = frameMode !== "layerHeight"
+    const coverCropPosition = `${50 + (crop.left - crop.right) / 2}% ${50 + (crop.top - crop.bottom) / 2}%`
 
     if (slideCount === 0) {
         return (
@@ -156,8 +187,7 @@ export default function ImageCarousel(props: Props) {
                 ...style,
                 position: "relative",
                 width: "100%",
-                height: "auto",
-                aspectRatio: safeAspectRatio,
+                height: shouldMeasureOwnHeight ? "auto" : "100%",
                 overflow: "hidden",
                 background: "transparent",
                 borderRadius: 0,
@@ -168,6 +198,16 @@ export default function ImageCarousel(props: Props) {
             aria-roledescription="carousel"
             aria-label={ariaLabel}
         >
+            {shouldMeasureOwnHeight && (
+                <div
+                    aria-hidden="true"
+                    style={{
+                        width: "100%",
+                        paddingTop: `${100 / layoutAspectRatio}%`,
+                        pointerEvents: "none",
+                    }}
+                />
+            )}
             <div
                 role="group"
                 aria-label={ariaLabel}
@@ -186,6 +226,16 @@ export default function ImageCarousel(props: Props) {
                             alt={slide.alt}
                             loading={slideIndex < 2 ? "eager" : "lazy"}
                             draggable={false}
+                            onLoad={(event) => {
+                                const image = event.currentTarget
+                                if (image.naturalWidth <= 0 || image.naturalHeight <= 0) return
+
+                                const nextAspect = image.naturalWidth / image.naturalHeight
+                                setNaturalAspects((current) => {
+                                    if (current[slide.src] === nextAspect) return current
+                                    return { ...current, [slide.src]: nextAspect }
+                                })
+                            }}
                             // Mark every slide out when the lightbox is disabled.
                             data-no-lightbox={enableLightbox ? undefined : "true"}
                             style={{
@@ -193,8 +243,9 @@ export default function ImageCarousel(props: Props) {
                                 inset: 0,
                                 width: "100%",
                                 height: "100%",
-                                objectFit: "contain",
-                                objectPosition: "center",
+                                display: "block",
+                                objectFit: hasManualCrop || frameMode !== "fitMedia" ? "cover" : "contain",
+                                objectPosition: hasManualCrop ? coverCropPosition : "center",
                                 opacity: isActive ? 1 : 0,
                                 transition,
                                 background: "transparent",
@@ -287,22 +338,73 @@ function parseManifest(manifest: string | undefined): NormalizedSlide[] {
             return {
                 src: (src || "").trim(),
                 alt: (alt || `Slide ${index + 1}`).trim(),
+                aspect: getImageAspectFromUrl(src || ""),
             }
         })
         .filter((slide) => slide.src.length > 0)
 }
 
 function normalizeImageControls(slides: SlideItem[] | undefined): NormalizedSlide[] {
-    return (slides || [])
+    const slideItems = Array.isArray(slides) ? slides : []
+    return slideItems
         .map((slide, index) => {
-            const src = slide.image?.src || ""
+            const src = getResponsiveImageSrc(slide.image)
+            const imageAlt = typeof slide.image === "object" ? slide.image?.alt : undefined
+            const srcSet = typeof slide.image === "object" ? slide.image?.srcSet : undefined
             return {
                 src,
-                srcSet: slide.image?.srcSet,
-                alt: slide.alt || slide.image?.alt || `Slide ${index + 1}`,
+                srcSet,
+                alt: slide.alt || imageAlt || `Slide ${index + 1}`,
+                aspect: getImageAspectFromUrl(src),
             }
         })
         .filter((slide) => slide.src.length > 0)
+}
+
+function getResponsiveImageSrc(image: ResponsiveImage | string | undefined): string {
+    if (!image) return ""
+    if (typeof image === "string") return image
+    return image.src || getFirstSrcSetUrl(image.srcSet) || ""
+}
+
+function getFirstSrcSetUrl(srcSet: string | undefined): string {
+    if (!srcSet) return ""
+    return (srcSet.split(",")[0] || "").trim().split(/\s+/)[0] || ""
+}
+
+function getImageAspectFromUrl(src: string): number | undefined {
+    const width = Number(src.match(/[?&]width=(\d+)/)?.[1])
+    const height = Number(src.match(/[?&]height=(\d+)/)?.[1])
+    return width > 0 && height > 0 ? width / height : undefined
+}
+
+function getSafeCrop(top: number, right: number, bottom: number, left: number) {
+    const crop = {
+        top: clampCrop(top),
+        right: clampCrop(right),
+        bottom: clampCrop(bottom),
+        left: clampCrop(left),
+    }
+
+    const verticalTotal = crop.top + crop.bottom
+    if (verticalTotal >= 90) {
+        const scale = 89.5 / verticalTotal
+        crop.top *= scale
+        crop.bottom *= scale
+    }
+
+    const horizontalTotal = crop.left + crop.right
+    if (horizontalTotal >= 90) {
+        const scale = 89.5 / horizontalTotal
+        crop.left *= scale
+        crop.right *= scale
+    }
+
+    return crop
+}
+
+function clampCrop(value: number) {
+    return Number.isFinite(value) ? Math.max(0, Math.min(80, value)) : 0
 }
 
 type ArrowButtonProps = {
@@ -374,11 +476,10 @@ addPropertyControls(ImageCarousel, {
     },
     slidesData: {
         type: ControlType.String,
-        title: "Manifest",
+        title: "Fallback",
         defaultValue: "",
         placeholder: "imageUrl|alt text (one slide per line)",
         displayTextArea: true,
-        hidden: ({ sourceMode }) => sourceMode === "images",
     },
     slides: {
         type: ControlType.Array,
@@ -461,6 +562,79 @@ addPropertyControls(ImageCarousel, {
         min: 0.5,
         max: 3,
         step: 0.001,
+    },
+    frameMode: {
+        type: ControlType.Enum,
+        title: "Height",
+        options: ["fitMedia", "layerHeight", "customAspect"],
+        optionTitles: ["Fit Media", "Layer Height", "Custom Ratio"],
+        defaultValue: "fitMedia",
+    },
+    customAspectRatio: {
+        type: ControlType.Number,
+        title: "Custom Ratio",
+        defaultValue: 3014 / 1924,
+        min: 0.5,
+        max: 3,
+        step: 0.001,
+        hidden: ({ frameMode }) => frameMode !== "customAspect",
+    },
+    cropMode: {
+        type: ControlType.Enum,
+        title: "Crop",
+        options: ["none", "manual"],
+        optionTitles: ["None", "Manual"],
+        defaultValue: "none",
+    },
+    cropTightness: {
+        type: ControlType.Number,
+        title: "Crop Tightness",
+        defaultValue: 100,
+        min: 0,
+        max: 150,
+        step: 1,
+        unit: "%",
+        hidden: ({ cropMode }) => cropMode !== "manual",
+    },
+    cropTop: {
+        type: ControlType.Number,
+        title: "Crop Top",
+        defaultValue: 0,
+        min: 0,
+        max: 80,
+        step: 0.5,
+        unit: "%",
+        hidden: ({ cropMode }) => cropMode !== "manual",
+    },
+    cropBottom: {
+        type: ControlType.Number,
+        title: "Crop Bottom",
+        defaultValue: 0,
+        min: 0,
+        max: 80,
+        step: 0.5,
+        unit: "%",
+        hidden: ({ cropMode }) => cropMode !== "manual",
+    },
+    cropLeft: {
+        type: ControlType.Number,
+        title: "Crop Left",
+        defaultValue: 0,
+        min: 0,
+        max: 80,
+        step: 0.5,
+        unit: "%",
+        hidden: ({ cropMode }) => cropMode !== "manual",
+    },
+    cropRight: {
+        type: ControlType.Number,
+        title: "Crop Right",
+        defaultValue: 0,
+        min: 0,
+        max: 80,
+        step: 0.5,
+        unit: "%",
+        hidden: ({ cropMode }) => cropMode !== "manual",
     },
     arrowColor: {
         type: ControlType.Color,
