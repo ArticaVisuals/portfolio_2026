@@ -1,0 +1,649 @@
+{
+  "url": "https://khaki-ship-257706.framer.app/",
+  "checkedAt": "2026-06-11T15:33:58.164Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "desktop: boot label attached",
+      "passed": true,
+      "initial": {
+        "text": "Micah Hoang ©2026",
+        "bootExists": true,
+        "labelExists": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000,
+          "cx": 720,
+          "cy": 500
+        },
+        "bootRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        "style": {
+          "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "30px",
+          "lineHeight": "36px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.3px",
+          "color": "rgb(247, 245, 240)",
+          "textAlign": "center",
+          "opacity": "1",
+          "whiteSpace": "normal"
+        }
+      }
+    },
+    {
+      "name": "desktop: boot label text",
+      "passed": true,
+      "text": "Micah Hoang ©2026"
+    },
+    {
+      "name": "desktop: boot label centered",
+      "passed": true,
+      "centerDx": 0,
+      "centerDy": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "cx": 720,
+        "cy": 500
+      }
+    },
+    {
+      "name": "desktop: boot label does not overflow",
+      "passed": true,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "cx": 720,
+        "cy": 500
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "name": "desktop: font family matches home descriptor",
+      "passed": true,
+      "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+    },
+    {
+      "name": "desktop: font weight matches /Heading 3",
+      "passed": true,
+      "fontWeight": "400"
+    },
+    {
+      "name": "desktop: font size matches responsive /Heading 3",
+      "passed": true,
+      "actual": "30px",
+      "expected": "30px"
+    },
+    {
+      "name": "desktop: line height matches /Heading 3",
+      "passed": true,
+      "actual": "36px",
+      "expected": "36px"
+    },
+    {
+      "name": "desktop: letter spacing matches -1%",
+      "passed": true,
+      "actual": "-0.3px",
+      "expected": "-0.3px"
+    },
+    {
+      "name": "desktop: text color is Cream on boot",
+      "passed": true,
+      "color": "rgb(247, 245, 240)"
+    },
+    {
+      "name": "desktop: label fades before swipe",
+      "passed": true,
+      "fadeZeroAt": 1085,
+      "swipeStartAt": 1189
+    },
+    {
+      "name": "desktop: boot curtain removed",
+      "passed": true,
+      "bootGoneAt": 2526,
+      "lastSample": {
+        "t": 2526,
+        "bootExists": false,
+        "labelExists": false,
+        "bootTransform": null,
+        "labelOpacity": null
+      }
+    },
+    {
+      "name": "desktop: final home visible",
+      "passed": true,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      }
+    },
+    {
+      "name": "desktop: no Framer editorbar visible",
+      "passed": true,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      }
+    },
+    {
+      "name": "desktop: no console/page errors",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "tablet: boot label attached",
+      "passed": true,
+      "initial": {
+        "text": "Micah Hoang ©2026",
+        "bootExists": true,
+        "labelExists": true,
+        "viewport": {
+          "width": 810,
+          "height": 1000
+        },
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 810,
+          "height": 1000,
+          "cx": 405,
+          "cy": 500
+        },
+        "bootRect": {
+          "x": 0,
+          "y": 0,
+          "width": 810,
+          "height": 1000
+        },
+        "style": {
+          "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "24px",
+          "lineHeight": "28.8px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.24px",
+          "color": "rgb(247, 245, 240)",
+          "textAlign": "center",
+          "opacity": "1",
+          "whiteSpace": "normal"
+        }
+      }
+    },
+    {
+      "name": "tablet: boot label text",
+      "passed": true,
+      "text": "Micah Hoang ©2026"
+    },
+    {
+      "name": "tablet: boot label centered",
+      "passed": true,
+      "centerDx": 0,
+      "centerDy": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 810,
+        "height": 1000,
+        "cx": 405,
+        "cy": 500
+      }
+    },
+    {
+      "name": "tablet: boot label does not overflow",
+      "passed": true,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 810,
+        "height": 1000,
+        "cx": 405,
+        "cy": 500
+      },
+      "viewport": {
+        "width": 810,
+        "height": 1000
+      }
+    },
+    {
+      "name": "tablet: font family matches home descriptor",
+      "passed": true,
+      "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+    },
+    {
+      "name": "tablet: font weight matches /Heading 3",
+      "passed": true,
+      "fontWeight": "400"
+    },
+    {
+      "name": "tablet: font size matches responsive /Heading 3",
+      "passed": true,
+      "actual": "24px",
+      "expected": "24px"
+    },
+    {
+      "name": "tablet: line height matches /Heading 3",
+      "passed": true,
+      "actual": "28.8px",
+      "expected": "28.8px"
+    },
+    {
+      "name": "tablet: letter spacing matches -1%",
+      "passed": true,
+      "actual": "-0.24px",
+      "expected": "-0.24px"
+    },
+    {
+      "name": "tablet: text color is Cream on boot",
+      "passed": true,
+      "color": "rgb(247, 245, 240)"
+    },
+    {
+      "name": "tablet: label fades before swipe",
+      "passed": true,
+      "fadeZeroAt": 1094,
+      "swipeStartAt": 1275
+    },
+    {
+      "name": "tablet: boot curtain removed",
+      "passed": true,
+      "bootGoneAt": 2593,
+      "lastSample": {
+        "t": 2593,
+        "bootExists": false,
+        "labelExists": false,
+        "bootTransform": null,
+        "labelOpacity": null
+      }
+    },
+    {
+      "name": "tablet: final home visible",
+      "passed": true,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      }
+    },
+    {
+      "name": "tablet: no Framer editorbar visible",
+      "passed": true,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      }
+    },
+    {
+      "name": "tablet: no console/page errors",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "mobile: boot label attached",
+      "passed": true,
+      "initial": {
+        "text": "Micah Hoang ©2026",
+        "bootExists": true,
+        "labelExists": true,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "cx": 195,
+          "cy": 422
+        },
+        "bootRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "style": {
+          "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "19px",
+          "lineHeight": "22.8px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.19px",
+          "color": "rgb(247, 245, 240)",
+          "textAlign": "center",
+          "opacity": "1",
+          "whiteSpace": "normal"
+        }
+      }
+    },
+    {
+      "name": "mobile: boot label text",
+      "passed": true,
+      "text": "Micah Hoang ©2026"
+    },
+    {
+      "name": "mobile: boot label centered",
+      "passed": true,
+      "centerDx": 0,
+      "centerDy": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "cx": 195,
+        "cy": 422
+      }
+    },
+    {
+      "name": "mobile: boot label does not overflow",
+      "passed": true,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "cx": 195,
+        "cy": 422
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "mobile: font family matches home descriptor",
+      "passed": true,
+      "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+    },
+    {
+      "name": "mobile: font weight matches /Heading 3",
+      "passed": true,
+      "fontWeight": "400"
+    },
+    {
+      "name": "mobile: font size matches responsive /Heading 3",
+      "passed": true,
+      "actual": "19px",
+      "expected": "19px"
+    },
+    {
+      "name": "mobile: line height matches /Heading 3",
+      "passed": true,
+      "actual": "22.8px",
+      "expected": "22.8px"
+    },
+    {
+      "name": "mobile: letter spacing matches -1%",
+      "passed": true,
+      "actual": "-0.19px",
+      "expected": "-0.19px"
+    },
+    {
+      "name": "mobile: text color is Cream on boot",
+      "passed": true,
+      "color": "rgb(247, 245, 240)"
+    },
+    {
+      "name": "mobile: label fades before swipe",
+      "passed": true,
+      "fadeZeroAt": 1092,
+      "swipeStartAt": 1282
+    },
+    {
+      "name": "mobile: boot curtain removed",
+      "passed": true,
+      "bootGoneAt": 2569,
+      "lastSample": {
+        "t": 2569,
+        "bootExists": false,
+        "labelExists": false,
+        "bootTransform": null,
+        "labelOpacity": null
+      }
+    },
+    {
+      "name": "mobile: final home visible",
+      "passed": true,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      }
+    },
+    {
+      "name": "mobile: no Framer editorbar visible",
+      "passed": true,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      }
+    },
+    {
+      "name": "mobile: no console/page errors",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "non-home direct entry skips boot curtain",
+      "passed": true,
+      "infoBoot": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "results": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "mobile": false,
+        "expectedFont": 30,
+        "expectedLineHeight": 36,
+        "expectedLetterSpacing": -0.3
+      },
+      "initial": {
+        "text": "Micah Hoang ©2026",
+        "bootExists": true,
+        "labelExists": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000,
+          "cx": 720,
+          "cy": 500
+        },
+        "bootRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        "style": {
+          "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "30px",
+          "lineHeight": "36px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.3px",
+          "color": "rgb(247, 245, 240)",
+          "textAlign": "center",
+          "opacity": "1",
+          "whiteSpace": "normal"
+        }
+      },
+      "fadeZeroAt": 1085,
+      "swipeStartAt": 1189,
+      "bootGoneAt": 2526,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "name": "tablet",
+        "width": 810,
+        "height": 1000,
+        "dpr": 1,
+        "mobile": false,
+        "expectedFont": 24,
+        "expectedLineHeight": 28.8,
+        "expectedLetterSpacing": -0.24
+      },
+      "initial": {
+        "text": "Micah Hoang ©2026",
+        "bootExists": true,
+        "labelExists": true,
+        "viewport": {
+          "width": 810,
+          "height": 1000
+        },
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 810,
+          "height": 1000,
+          "cx": 405,
+          "cy": 500
+        },
+        "bootRect": {
+          "x": 0,
+          "y": 0,
+          "width": 810,
+          "height": 1000
+        },
+        "style": {
+          "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "24px",
+          "lineHeight": "28.8px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.24px",
+          "color": "rgb(247, 245, 240)",
+          "textAlign": "center",
+          "opacity": "1",
+          "whiteSpace": "normal"
+        }
+      },
+      "fadeZeroAt": 1094,
+      "swipeStartAt": 1275,
+      "bootGoneAt": 2593,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "dpr": 2,
+        "mobile": true,
+        "expectedFont": 19,
+        "expectedLineHeight": 22.8,
+        "expectedLetterSpacing": -0.19
+      },
+      "initial": {
+        "text": "Micah Hoang ©2026",
+        "bootExists": true,
+        "labelExists": true,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "cx": 195,
+          "cy": 422
+        },
+        "bootRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "style": {
+          "fontFamily": "\"GT Standard L Regular\", \"GT Standard L Regular Placeholder\", \"GT Standard\", -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "fontSize": "19px",
+          "lineHeight": "22.8px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.19px",
+          "color": "rgb(247, 245, 240)",
+          "textAlign": "center",
+          "opacity": "1",
+          "whiteSpace": "normal"
+        }
+      },
+      "fadeZeroAt": 1092,
+      "swipeStartAt": 1282,
+      "bootGoneAt": 2569,
+      "finalState": {
+        "bootExists": false,
+        "hasHomeName": true,
+        "hasHeroDescriptor": true,
+        "editorbarPresent": true,
+        "editorbarDisplay": "none",
+        "editorbarVisibility": "hidden"
+      },
+      "errors": []
+    }
+  ]
+}

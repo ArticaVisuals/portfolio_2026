@@ -33,6 +33,7 @@ type Item = {
 }
 
 type Props = {
+    archiveItems?: ManagedItem[]
     items?: ManagedItem[]
     advancedControls?: boolean
     backgroundColor?: string
@@ -69,6 +70,7 @@ type Props = {
     mediaFadeMs?: number
     loadInDelayMs?: number
     loadInFadeMs?: number
+    loadInStaggerMs?: number
     loadInMaxWaitMs?: number
     hideFooter?: boolean
     navPassthrough?: boolean
@@ -180,8 +182,12 @@ const NAV_EXIT_MANAGED_CLASS = "playground-nav-exit-managed"
 const NAV_EXIT_HIDDEN_CLASS = "playground-nav-exit-hidden"
 const NAV_EXIT_STYLE_ID = "playground-nav-exit-reveal-style"
 const DRAFT_ANIMATION_STYLE_ID = "playground-animation-style"
-const LOAD_IN_DELAY_MS = 120
-const LOAD_IN_FADE_MS = 720
+const LOAD_IN_DELAY_MS = 70
+const LOAD_IN_FADE_MS = 1280
+const LOAD_IN_STAGGER_MS = 58
+const LOAD_IN_STAGGER_SLOTS = 15
+const LOAD_IN_LIFT_PX = 12
+const LOAD_IN_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const LOAD_IN_MAX_WAIT_MS = 2600
 
 const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
@@ -717,7 +723,8 @@ export default function ArchivePlayground(props: Props) {
     const cfgRef = React.useRef(props)
     cfgRef.current = props
 
-    const items = React.useMemo(() => normalizeItems(props.items), [props.items])
+    const managedItems = props.archiveItems ?? props.items
+    const items = React.useMemo(() => normalizeItems(managedItems), [managedItems])
     const [viewport, setViewport] = React.useState({ w: 1200, h: 800 })
     const [motion, setMotion] = React.useState<Motion>({ x: 0, y: 0, mx: 0, my: 0, dragging: false })
     const [hovered, setHovered] = React.useState("")
@@ -778,15 +785,36 @@ export default function ArchivePlayground(props: Props) {
     const mediaFadeMs = props.mediaFadeMs ?? 700
     const loadInDelayMs = props.loadInDelayMs ?? LOAD_IN_DELAY_MS
     const loadInFadeMs = props.loadInFadeMs ?? LOAD_IN_FADE_MS
+    const loadInStaggerMs = props.loadInStaggerMs ?? LOAD_IN_STAGGER_MS
     const loadInMaxWaitMs = props.loadInMaxWaitMs ?? LOAD_IN_MAX_WAIT_MS
     const navSelector = props.navSelector || DEFAULT_NAV_SELECTOR
     const navExitReveal = useNavExitReveal(isInteractive, navSelector, panelExitMs)
     const prefersReducedMotion = usePrefersReducedMotion()
     const loadInReady = useTransitionAwareLoadIn(isInteractive, loadInDelayMs, loadInMaxWaitMs)
+    const [loadInSettled, setLoadInSettled] = React.useState(() => !isInteractive)
 
     useDraftAnimationStyles(isInteractive)
     useFooterHider(isInteractive && (props.hideFooter ?? true))
     useNavPassthrough(isInteractive && (props.navPassthrough ?? true), navSelector)
+
+    React.useEffect(() => {
+        if (!isInteractive || prefersReducedMotion) {
+            setLoadInSettled(true)
+            return
+        }
+        if (!loadInReady) {
+            setLoadInSettled(false)
+            return
+        }
+
+        setLoadInSettled(false)
+        const totalMs =
+            Math.max(0, loadInFadeMs) +
+            Math.max(0, loadInStaggerMs) * (LOAD_IN_STAGGER_SLOTS - 1) +
+            160
+        const timer = window.setTimeout(() => setLoadInSettled(true), totalMs)
+        return () => window.clearTimeout(timer)
+    }, [isInteractive, loadInReady, loadInFadeMs, loadInStaggerMs, prefersReducedMotion])
 
     React.useEffect(() => {
         return () => {
@@ -1184,6 +1212,15 @@ export default function ArchivePlayground(props: Props) {
             const key = `${item.id}-${gx}-${gy}`
             const isHot = hovered === key
             const cardIsKeyboardReachable = loadInReady && isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
+            const introActive = loadInReady && !loadInSettled && !prefersReducedMotion
+            const introDelayMs = introActive ? mod(gx * 37 + gy * 61 + index * 17, LOAD_IN_STAGGER_SLOTS) * Math.max(0, loadInStaggerMs) : 0
+            const introTransformMs = Math.max(620, Math.round(loadInFadeMs * 0.82))
+            const cardTransition =
+                !loadInReady || prefersReducedMotion || motion.dragging
+                    ? "none"
+                    : introActive
+                      ? `opacity ${loadInFadeMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms, transform ${introTransformMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms`
+                      : "transform 300ms cubic-bezier(.22,1,.36,1)"
 
             cells.push(
                 <button
@@ -1224,9 +1261,10 @@ export default function ArchivePlayground(props: Props) {
                         overflow: "visible",
                         appearance: "none",
                         cursor: motion.dragging ? "grabbing" : "pointer",
-                        transform: `translate3d(0, 0, 0) scale(${isHot ? hoverScale : 1})`,
-                        transition: motion.dragging ? "none" : "transform 300ms cubic-bezier(.22,1,.36,1)",
-                        willChange: isHot || motion.dragging ? "transform" : "auto",
+                        opacity: loadInReady ? 1 : 0,
+                        transform: `translate3d(0, ${loadInReady ? 0 : LOAD_IN_LIFT_PX}px, 0) scale(${isHot ? hoverScale : 1})`,
+                        transition: cardTransition,
+                        willChange: introActive || !loadInReady || isHot || motion.dragging ? "opacity, transform" : "auto",
                         WebkitTapHighlightColor: "transparent",
                     }}
                 >
@@ -1283,7 +1321,7 @@ export default function ArchivePlayground(props: Props) {
                     transformStyle: "preserve-3d",
                     opacity: loadInReady ? 1 : 0,
                     pointerEvents: loadInReady && !panelOpen ? "auto" : "none",
-                    transition: loadInReady && !prefersReducedMotion ? `opacity ${loadInFadeMs}ms cubic-bezier(.22,1,.36,1)` : "none",
+                    transition: loadInReady && !prefersReducedMotion ? `opacity 140ms ${LOAD_IN_EASE}` : "none",
                 }}
             >
                 <div style={{ position: "absolute", inset: 0, transformStyle: "preserve-3d" }}>{cells}</div>
@@ -1427,7 +1465,7 @@ const hideInternal = () => true
 const hideUnlessVideo = ({ mediaType }: any) => mediaType !== "video"
 
 addPropertyControls<Props>(ArchivePlayground, {
-    items: {
+    archiveItems: {
         type: ControlType.Array,
         title: "Archive Items",
         maxCount: 120,
@@ -1481,8 +1519,9 @@ addPropertyControls<Props>(ArchivePlayground, {
     parallaxWhileDragging: { type: ControlType.Boolean, title: "Drag Para", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
     mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 700, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
     loadInDelayMs: { type: ControlType.Number, title: "Load Hold", defaultValue: LOAD_IN_DELAY_MS, min: 0, max: 1000, step: 10, unit: "ms", hidden: hideAdvanced },
-    loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
-    loadInMaxWaitMs: { type: ControlType.Number, title: "Load Max", defaultValue: LOAD_IN_MAX_WAIT_MS, min: 400, max: 5000, step: 50, unit: "ms", hidden: hideAdvanced },
+    loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 2600, step: 10, unit: "ms", hidden: hideAdvanced },
+    loadInStaggerMs: { type: ControlType.Number, title: "Load Stagger", defaultValue: LOAD_IN_STAGGER_MS, min: 0, max: 180, step: 1, unit: "ms", hidden: hideAdvanced },
+    loadInMaxWaitMs: { type: ControlType.Number, title: "Load Max", defaultValue: LOAD_IN_MAX_WAIT_MS, min: 400, max: 5500, step: 50, unit: "ms", hidden: hideAdvanced },
     backgroundColor: { type: ControlType.Color, title: "BG", defaultValue: CREAM, hidden: hideAdvanced },
     panelColor: { type: ControlType.Color, title: "Panel", defaultValue: CREAM, hidden: hideAdvanced },
     textColor: { type: ControlType.Color, title: "Text", defaultValue: BLACK, hidden: hideAdvanced },

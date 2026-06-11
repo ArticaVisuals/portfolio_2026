@@ -1,0 +1,36 @@
+{
+  "frames": [
+    {
+      "label": "mobile-direct-0000ms",
+      "url": "https://khaki-ship-257706.framer.app/play?codex_mobile=1781169221569",
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "galleryOpacity": "0",
+      "cardCount": 80,
+      "visibleCount": 0,
+      "brokenImgs": []
+    },
+    {
+      "label": "mobile-direct-1200ms",
+      "url": "https://khaki-ship-257706.framer.app/play?codex_mobile=1781169221569",
+      "forceBlank": null,
+      "loadIn": "ready",
+      "galleryOpacity": "1",
+      "cardCount": 63,
+      "visibleCount": 8,
+      "brokenImgs": []
+    },
+    {
+      "label": "mobile-direct-3000ms",
+      "url": "https://khaki-ship-257706.framer.app/play?codex_mobile=1781169221569",
+      "forceBlank": null,
+      "loadIn": "ready",
+      "galleryOpacity": "1",
+      "cardCount": 63,
+      "visibleCount": 8,
+      "brokenImgs": []
+    }
+  ],
+  "errorCount": 0,
+  "errors": []
+}

@@ -1,0 +1,817 @@
+{
+  "clickedLink": {
+    "text": "PLAYPLAY",
+    "href": "https://khaki-ship-257706.framer.app/play",
+    "visible": true,
+    "rect": {
+      "x": 1258.265625,
+      "y": 20,
+      "w": 30.6875,
+      "h": 13
+    }
+  },
+  "links": [
+    {
+      "text": "PLAYPLAY",
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "visible": true,
+      "rect": {
+        "x": 1258.265625,
+        "y": 20,
+        "w": 30.6875,
+        "h": 13
+      }
+    }
+  ],
+  "states": [
+    {
+      "mark": 0,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": false,
+      "rootBg": null,
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 0,
+      "firstMedia": [],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang\nBrand designer with a systems mind.\nStrategy, visual identity, motion.\n\nLINKEDIN\n\n,\n\nR"
+    },
+    {
+      "mark": 40,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 80,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 160,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 300,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.205673",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.597683",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.205673",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.384995",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.597683",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 500,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.70263",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.866688",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.70263",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.782773",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.866688",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 750,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.904896",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.961387",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": false
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.904896",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.932911",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.961387",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0",
+          "complete": true
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 1000,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.978835",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.993521",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.205371",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.978835",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.986366",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.653494",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.597497",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.993521",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.597497",
+          "complete": true
+        }
+      ],
+      "vtActive": true,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 1400,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.986369",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.997365",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.996362",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "0.996362",
+          "complete": true
+        }
+      ],
+      "vtActive": false,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    },
+    {
+      "mark": 2000,
+      "href": "https://khaki-ship-257706.framer.app/play",
+      "forceBlank": null,
+      "loadIn": null,
+      "rootExists": true,
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryExists": false,
+      "galleryOpacity": null,
+      "galleryTransition": null,
+      "cardCount": 99,
+      "firstMedia": [
+        {
+          "tag": "VIDEO",
+          "opacity": "0",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0.298303",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "VIDEO",
+          "opacity": "0.782669",
+          "readyState": 0
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        },
+        {
+          "tag": "IMG",
+          "opacity": "1",
+          "complete": true
+        }
+      ],
+      "vtActive": false,
+      "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+    }
+  ],
+  "finalState": {
+    "mark": "final",
+    "href": "https://khaki-ship-257706.framer.app/play",
+    "forceBlank": null,
+    "loadIn": null,
+    "rootExists": true,
+    "rootBg": "rgb(247, 245, 240)",
+    "galleryExists": false,
+    "galleryOpacity": null,
+    "galleryTransition": null,
+    "cardCount": 99,
+    "firstMedia": [
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "VIDEO",
+        "opacity": "1",
+        "readyState": 0
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "VIDEO",
+        "opacity": "1",
+        "readyState": 0
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "VIDEO",
+        "opacity": "1",
+        "readyState": 0
+      },
+      {
+        "tag": "IMG",
+        "opacity": "0",
+        "complete": true
+      },
+      {
+        "tag": "IMG",
+        "opacity": "1",
+        "complete": true
+      }
+    ],
+    "vtActive": false,
+    "visibleText": "MICAH HOANG\nBRAND DESIGNER\nLOS ANGELES, CALIFORNIA\n\nWORK\n\nWORK\n\nPLAY\n\nPLAY\n\nINDEX\n\nINDEX\n\nINFO\n\nINFO\n\nMicah Hoang — Brand Designer"
+  },
+  "consoleMessages": [
+    {
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at div\n    at Pt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pzBGbrhW9J1QZFf0hr7zSzcjFH1u4iBOGPBBMbqSJWw.BVTgphXh.mjs:1:12881)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at div\n    at section\n    at main\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pzBGbrhW9J1QZFf0hr7zSzcjFH1u4iBOGPBBMbqSJWw.BVTgphXh.mjs:112:10433\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.N23VPZG2.mjs:1:61279\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.N23VPZG2.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    },
+    {
+      "type": "warning",
+      "text": "Post failed: %s TypeError: Failed to fetch"
+    }
+  ]
+}

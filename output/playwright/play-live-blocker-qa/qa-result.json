@@ -1,0 +1,645 @@
+{
+  "url": "https://khaki-ship-257706.framer.app",
+  "generatedAt": "2026-06-11T09:12:20.878Z",
+  "direct": {
+    "finalForceBlank": null,
+    "finalLoadIn": "ready",
+    "finalVisibleCount": 35,
+    "finalGalleryOpacity": "1",
+    "stuckBlank": false,
+    "frames": [
+      {
+        "elapsed": 0,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 80,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 120,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 80,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 500,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 1000,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 1800,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 2600,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 3800,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false
+      },
+      {
+        "elapsed": 5200,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 35,
+        "cardCount": 99,
+        "activeTransition": false
+      }
+    ]
+  },
+  "navigation": {
+    "finalForceBlank": null,
+    "finalLoadIn": "ready",
+    "finalVisibleCount": 24,
+    "finalGalleryOpacity": "1",
+    "blankThrough1200": true,
+    "staggerObserved": true,
+    "frames": [
+      {
+        "elapsed": 0,
+        "forceBlank": "true",
+        "loadIn": null,
+        "galleryOpacity": null,
+        "visibleCount": 0,
+        "cardCount": 0,
+        "activeTransition": true,
+        "sample": []
+      },
+      {
+        "elapsed": 80,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": true,
+        "sample": [
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          }
+        ]
+      },
+      {
+        "elapsed": 180,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": true,
+        "sample": [
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          }
+        ]
+      },
+      {
+        "elapsed": 500,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": true,
+        "sample": [
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          }
+        ]
+      },
+      {
+        "elapsed": 900,
+        "forceBlank": "true",
+        "loadIn": "blank",
+        "galleryOpacity": "0",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0s",
+            "duration": "0s"
+          }
+        ]
+      },
+      {
+        "elapsed": 1200,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0.266s, 0.266s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0.304s, 0.304s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0.470034",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0.342s, 0.342s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 10)",
+            "delay": "0.38s, 0.38s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 1.70538)",
+            "delay": "0s, 0s",
+            "duration": "0.96s, 0.79s"
+          }
+        ]
+      },
+      {
+        "elapsed": 1500,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 0,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "0.432171",
+            "transform": "matrix(1, 0, 0, 1, 0, 0.806577)",
+            "delay": "0.266s, 0.266s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 1.13369)",
+            "delay": "0.304s, 0.304s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0.909554",
+            "transform": "matrix(1, 0, 0, 1, 0, 1.58856)",
+            "delay": "0.342s, 0.342s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0.578812",
+            "transform": "matrix(1, 0, 0, 1, 0, 2.22669)",
+            "delay": "0.38s, 0.38s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "0.542714",
+            "transform": "matrix(1, 0, 0, 1, 0, 0.0451363)",
+            "delay": "0s, 0s",
+            "duration": "0.96s, 0.79s"
+          }
+        ]
+      },
+      {
+        "elapsed": 1800,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.114s, 0.114s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.152s, 0.152s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.19s, 0.19s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.228s, 0.228s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.266s, 0.266s",
+            "duration": "0.96s, 0.79s"
+          }
+        ]
+      },
+      {
+        "elapsed": 2200,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.076s, 0.076s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.114s, 0.114s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.152s, 0.152s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.19s, 0.19s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0.228s, 0.228s",
+            "duration": "0.96s, 0.79s"
+          }
+        ]
+      },
+      {
+        "elapsed": 2600,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          }
+        ]
+      },
+      {
+        "elapsed": 3400,
+        "forceBlank": null,
+        "loadIn": "ready",
+        "galleryOpacity": "1",
+        "visibleCount": 24,
+        "cardCount": 99,
+        "activeTransition": false,
+        "sample": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          },
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "delay": "0s",
+            "duration": "0.96s, 0.79s"
+          }
+        ]
+      }
+    ]
+  },
+  "detail": {
+    "error": "locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-playground-card=\"true\"]').filter({ hasNot: locator('[aria-hidden=\"true\"]') }).first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" tabindex=\"-1\" aria-hidden=\"true\" data-playground-index=\"22\" data-playground-card=\"true\" aria-label=\"Open Archive GIF 23, gif details\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    9 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n"
+  },
+  "pageErrorCount": 0,
+  "consoleErrorCount": 0,
+  "consoleErrors": [],
+  "warningCount": 2,
+  "requestFailureCount": 67,
+  "requestFailures": [
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/F2292210670065998838228532319765/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://framerusercontent.com/assets/JBWmgoL4YXIgZfGWVzv7pCVDGw.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    }
+  ]
+}

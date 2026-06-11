@@ -1,0 +1,319 @@
+{
+  "results": [
+    {
+      "name": "desktop-home: boot appears",
+      "pass": true,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 1440,
+        "viewportH": 1000,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.0148431, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "desktop-home: centered Micah label",
+      "pass": false,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 1440,
+        "viewportH": 1000,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.0148431, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "desktop-home: label visually centered",
+      "pass": false,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 1440,
+        "viewportH": 1000,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.0148431, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "desktop-home: Paragraph Medium scale",
+      "pass": false,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 1440,
+        "viewportH": 1000,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.0148431, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "desktop-home: identity faded before/end of swipe",
+      "pass": true,
+      "details": {
+        "atFade": {
+          "t": 1650,
+          "hasBoot": true,
+          "hasLabel": false,
+          "text": null,
+          "labelOpacity": null,
+          "labelDisplay": null,
+          "labelColor": null,
+          "labelFontFamily": null,
+          "labelFontSize": null,
+          "labelLineHeight": null,
+          "labelLetterSpacing": null,
+          "labelCenterX": null,
+          "labelCenterY": null,
+          "viewportW": 1440,
+          "viewportH": 1000,
+          "bootTransform": "matrix(1, 0, 0, 1, 0, -803.116)",
+          "bootBg": "rgb(35, 51, 36)",
+          "barTransform": "matrix(1, 0, 0, 1, 0, 0)"
+        }
+      }
+    },
+    {
+      "name": "desktop-home: boot removed after swipe",
+      "pass": true,
+      "details": {
+        "t": 3100,
+        "hasBoot": false,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 1440,
+        "viewportH": 1000,
+        "bootTransform": null,
+        "bootBg": null,
+        "barTransform": null
+      }
+    },
+    {
+      "name": "mobile-home: boot appears",
+      "pass": true,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 390,
+        "viewportH": 844,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.00654517, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "mobile-home: centered Micah label",
+      "pass": false,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 390,
+        "viewportH": 844,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.00654517, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "mobile-home: label visually centered",
+      "pass": false,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 390,
+        "viewportH": 844,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.00654517, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "mobile-home: Paragraph Medium scale",
+      "pass": false,
+      "details": {
+        "t": 120,
+        "hasBoot": true,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 390,
+        "viewportH": 844,
+        "bootTransform": "none",
+        "bootBg": "rgb(35, 51, 36)",
+        "barTransform": "matrix(0.00654517, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "mobile-home: identity faded before/end of swipe",
+      "pass": true,
+      "details": {
+        "atFade": {
+          "t": 1650,
+          "hasBoot": true,
+          "hasLabel": false,
+          "text": null,
+          "labelOpacity": null,
+          "labelDisplay": null,
+          "labelColor": null,
+          "labelFontFamily": null,
+          "labelFontSize": null,
+          "labelLineHeight": null,
+          "labelLetterSpacing": null,
+          "labelCenterX": null,
+          "labelCenterY": null,
+          "viewportW": 390,
+          "viewportH": 844,
+          "bootTransform": "matrix(1, 0, 0, 1, 0, -61.7551)",
+          "bootBg": "rgb(35, 51, 36)",
+          "barTransform": "matrix(1, 0, 0, 1, 0, 0)"
+        }
+      }
+    },
+    {
+      "name": "mobile-home: boot removed after swipe",
+      "pass": true,
+      "details": {
+        "t": 3100,
+        "hasBoot": false,
+        "hasLabel": false,
+        "text": null,
+        "labelOpacity": null,
+        "labelDisplay": null,
+        "labelColor": null,
+        "labelFontFamily": null,
+        "labelFontSize": null,
+        "labelLineHeight": null,
+        "labelLetterSpacing": null,
+        "labelCenterX": null,
+        "labelCenterY": null,
+        "viewportW": 390,
+        "viewportH": 844,
+        "bootTransform": null,
+        "bootBg": null,
+        "barTransform": null
+      }
+    }
+  ],
+  "consoleMessages": [
+    {
+      "page": "desktop-home",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at div\n    at Pt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:1:12874)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at div\n    at section\n    at main\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:112:10420\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:61279\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "page": "desktop-home",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    },
+    {
+      "page": "mobile-home",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at div\n    at Pt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:1:12874)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at div\n    at section\n    at main\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:112:10420\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:61279\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "page": "mobile-home",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    }
+  ],
+  "errors": []
+}

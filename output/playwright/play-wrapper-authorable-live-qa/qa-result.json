@@ -1,0 +1,3219 @@
+{
+  "outDir": "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/play-wrapper-authorable-live-qa",
+  "usedClickNavigation": true,
+  "frames": [
+    {
+      "label": "0ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": "true",
+      "activeViewTransition": true,
+      "rootExists": false,
+      "loadIn": null,
+      "rootBg": null,
+      "galleryOpacity": null,
+      "galleryPointerEvents": null,
+      "cardCount": 0,
+      "visibleCardCount": 0,
+      "sampleCards": [],
+      "firstLabels": [],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "80ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": "true",
+      "activeViewTransition": true,
+      "rootExists": true,
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "galleryPointerEvents": "none",
+      "cardCount": 99,
+      "visibleCardCount": 0,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -850,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -588,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -326,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -64,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 197,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 459,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 721,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 983,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1245,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1507,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1769,
+            "y": -878,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -850,
+            "y": -600,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "180ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": "true",
+      "activeViewTransition": true,
+      "rootExists": true,
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "galleryPointerEvents": "none",
+      "cardCount": 99,
+      "visibleCardCount": 0,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -848,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -586,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -324,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -62,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 200,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 462,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 724,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 986,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1248,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1510,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1772,
+            "y": -876,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -848,
+            "y": -598,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "500ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": "true",
+      "activeViewTransition": true,
+      "rootExists": true,
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "galleryPointerEvents": "none",
+      "cardCount": 99,
+      "visibleCardCount": 0,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -846,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -584,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -322,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -60,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 202,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 464,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 726,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 988,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1250,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1512,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1774,
+            "y": -874,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -846,
+            "y": -596,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "900ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": "true",
+      "activeViewTransition": true,
+      "rootExists": true,
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "galleryPointerEvents": "none",
+      "cardCount": 99,
+      "visibleCardCount": 0,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -833,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -571,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -309,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -47,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 215,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 477,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 739,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1001,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1263,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1525,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1787,
+            "y": -861,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -833,
+            "y": -583,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "1200ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": "true",
+      "activeViewTransition": true,
+      "rootExists": true,
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "galleryPointerEvents": "none",
+      "cardCount": 99,
+      "visibleCardCount": 0,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -824,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -562,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -300,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -38,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 224,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 486,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 748,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1010,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1272,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1534,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1796,
+            "y": -852,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transitionTimingFunction": "ease",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -824,
+            "y": -574,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "1500ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": null,
+      "activeViewTransition": false,
+      "rootExists": true,
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "galleryPointerEvents": "none",
+      "cardCount": 99,
+      "visibleCardCount": 1,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0.048225,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -815,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -553,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -291,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -29,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 233,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 495,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 757,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1019,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1281,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1543,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": 1805,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -815,
+            "y": -565,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "1800ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": null,
+      "activeViewTransition": false,
+      "rootExists": true,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "galleryPointerEvents": "auto",
+      "cardCount": 99,
+      "visibleCardCount": 7,
+      "sampleCards": [
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0.787803,
+          "transitionDelay": "0.266s, 0.266s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -806,
+            "y": -834,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 0.6983,
+          "transitionDelay": "0.304s, 0.304s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -544,
+            "y": -834,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 0.745876,
+          "transitionDelay": "0.342s, 0.342s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -282,
+            "y": -834,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "16",
+          "aria": "Open Independent Lens Poster Mockup details",
+          "opacity": 0.576722,
+          "transitionDelay": "0.38s, 0.38s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)",
+          "rect": {
+            "x": -20,
+            "y": -834,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "21",
+          "aria": "Open DevWars Ranking System details",
+          "opacity": 0,
+          "transitionDelay": "0s, 0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.26973)",
+          "rect": {
+            "x": 241,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "26",
+          "aria": "Open Archive Image 27, image details",
+          "opacity": 0.149592,
+          "transitionDelay": "0.038s, 0.038s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.77876)",
+          "rect": {
+            "x": 503,
+            "y": -843,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "31",
+          "aria": "Open Cellular Symphony Apple Devices HD Best Quality details",
+          "opacity": 0.56395,
+          "transitionDelay": "0.076s, 0.076s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 2.49516)",
+          "rect": {
+            "x": 765,
+            "y": -842,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "3",
+          "aria": "Open Archive Image 4, image details",
+          "opacity": 0,
+          "transitionDelay": "0.114s, 0.114s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 3.51164)",
+          "rect": {
+            "x": 1027,
+            "y": -841,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0.152s, 0.152s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 4.95376)",
+          "rect": {
+            "x": 1289,
+            "y": -840,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "13",
+          "aria": "Open Flower details",
+          "opacity": 0,
+          "transitionDelay": "0.19s, 0.19s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 6.95687)",
+          "rect": {
+            "x": 1551,
+            "y": -838,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "18",
+          "aria": "Open Seek Truth Thumbnail details",
+          "opacity": 0.367745,
+          "transitionDelay": "0.228s, 0.228s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 9.58884)",
+          "rect": {
+            "x": 1813,
+            "y": -835,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "8",
+          "aria": "Open Christmas Card 2020 Copy details",
+          "opacity": 0,
+          "transitionDelay": "0s, 0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.26973)",
+          "rect": {
+            "x": -806,
+            "y": -565,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open RootGrwoth details",
+        "Open AVL Truck Mockup Min 1 details",
+        "Open Archive Image 12, image details",
+        "Open Independent Lens Poster Mockup details",
+        "Open DevWars Ranking System details",
+        "Open Archive Image 27, image details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "2200ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": null,
+      "activeViewTransition": false,
+      "rootExists": true,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "galleryPointerEvents": "auto",
+      "cardCount": 99,
+      "visibleCardCount": 44,
+      "sampleCards": [
+        {
+          "index": "27",
+          "aria": "Open Process Book Mockup 1 details",
+          "opacity": 1,
+          "transitionDelay": "0.114s, 0.114s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -794,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "32",
+          "aria": "Open Archive Image 33, image details",
+          "opacity": 1,
+          "transitionDelay": "0.152s, 0.152s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -532,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "4",
+          "aria": "Open Archive Image 5, image details",
+          "opacity": 1,
+          "transitionDelay": "0.19s, 0.19s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -270,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "9",
+          "aria": "Open Archive Image 10, image details",
+          "opacity": 1,
+          "transitionDelay": "0.228s, 0.228s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -8,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "14",
+          "aria": "Open Gazelle Final details",
+          "opacity": 1,
+          "transitionDelay": "0.266s, 0.266s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 253,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "19",
+          "aria": "Open Teacaps Billboard Mockup details",
+          "opacity": 1,
+          "transitionDelay": "0.304s, 0.304s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 515,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "24",
+          "aria": "Open Archive Image 25, image details",
+          "opacity": 1,
+          "transitionDelay": "0.342s, 0.342s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 777,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0.38s, 0.38s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1039,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 1,
+          "transitionDelay": "0s, 0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1301,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 1,
+          "transitionDelay": "0.038s, 0.038s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1563,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "11",
+          "aria": "Open Archive Image 12, image details",
+          "opacity": 1,
+          "transitionDelay": "0.076s, 0.076s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1825,
+            "y": -1110,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 0.973476,
+          "transitionDelay": "0.266s, 0.266s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.371214)",
+          "rect": {
+            "x": -794,
+            "y": -832,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open Process Book Mockup 1 details",
+        "Open Archive Image 33, image details",
+        "Open Archive Image 5, image details",
+        "Open Archive Image 10, image details",
+        "Open Gazelle Final details",
+        "Open Teacaps Billboard Mockup details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "2600ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": null,
+      "activeViewTransition": false,
+      "rootExists": true,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "galleryPointerEvents": "auto",
+      "cardCount": 99,
+      "visibleCardCount": 99,
+      "sampleCards": [
+        {
+          "index": "22",
+          "aria": "Open Archive GIF 23, gif details",
+          "opacity": 1,
+          "transitionDelay": "0.076s, 0.076s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -1044,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "27",
+          "aria": "Open Process Book Mockup 1 details",
+          "opacity": 1,
+          "transitionDelay": "0.114s, 0.114s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -782,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "32",
+          "aria": "Open Archive Image 33, image details",
+          "opacity": 1,
+          "transitionDelay": "0.152s, 0.152s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -520,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "4",
+          "aria": "Open Archive Image 5, image details",
+          "opacity": 1,
+          "transitionDelay": "0.19s, 0.19s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -258,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "9",
+          "aria": "Open Archive Image 10, image details",
+          "opacity": 1,
+          "transitionDelay": "0.228s, 0.228s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 3,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "14",
+          "aria": "Open Gazelle Final details",
+          "opacity": 1,
+          "transitionDelay": "0.266s, 0.266s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 265,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "19",
+          "aria": "Open Teacaps Billboard Mockup details",
+          "opacity": 1,
+          "transitionDelay": "0.304s, 0.304s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 527,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "24",
+          "aria": "Open Archive Image 25, image details",
+          "opacity": 1,
+          "transitionDelay": "0.342s, 0.342s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 789,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0.38s, 0.38s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1051,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 1,
+          "transitionDelay": "0s, 0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1313,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 1,
+          "transitionDelay": "0.038s, 0.038s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1575,
+            "y": -1098,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0.228s, 0.228s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -1044,
+            "y": -820,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open Archive GIF 23, gif details",
+        "Open Process Book Mockup 1 details",
+        "Open Archive Image 33, image details",
+        "Open Archive Image 5, image details",
+        "Open Archive Image 10, image details",
+        "Open Gazelle Final details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "3200ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": null,
+      "activeViewTransition": false,
+      "rootExists": true,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "galleryPointerEvents": "auto",
+      "cardCount": 99,
+      "visibleCardCount": 99,
+      "sampleCards": [
+        {
+          "index": "22",
+          "aria": "Open Archive GIF 23, gif details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -1026,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "27",
+          "aria": "Open Process Book Mockup 1 details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -764,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "32",
+          "aria": "Open Archive Image 33, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -502,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "4",
+          "aria": "Open Archive Image 5, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -240,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "9",
+          "aria": "Open Archive Image 10, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 21,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "14",
+          "aria": "Open Gazelle Final details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 283,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "19",
+          "aria": "Open Teacaps Billboard Mockup details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 545,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "24",
+          "aria": "Open Archive Image 25, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 807,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1069,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1331,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1593,
+            "y": -1080,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -1026,
+            "y": -802,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open Archive GIF 23, gif details",
+        "Open Process Book Mockup 1 details",
+        "Open Archive Image 33, image details",
+        "Open Archive Image 5, image details",
+        "Open Archive Image 10, image details",
+        "Open Gazelle Final details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    },
+    {
+      "label": "3900ms",
+      "url": "https://khaki-ship-257706.framer.app/play",
+      "bg": "rgb(247, 245, 240)",
+      "htmlBg": "rgba(0, 0, 0, 0)",
+      "forceBlank": null,
+      "activeViewTransition": false,
+      "rootExists": true,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "galleryPointerEvents": "auto",
+      "cardCount": 99,
+      "visibleCardCount": 99,
+      "sampleCards": [
+        {
+          "index": "22",
+          "aria": "Open Archive GIF 23, gif details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -1005,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "27",
+          "aria": "Open Process Book Mockup 1 details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -743,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "32",
+          "aria": "Open Archive Image 33, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -481,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "4",
+          "aria": "Open Archive Image 5, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -219,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "9",
+          "aria": "Open Archive Image 10, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 42,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "14",
+          "aria": "Open Gazelle Final details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 304,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "19",
+          "aria": "Open Teacaps Billboard Mockup details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 566,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "24",
+          "aria": "Open Archive Image 25, image details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 828,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1090,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "1",
+          "aria": "Open RootGrwoth details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1352,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "6",
+          "aria": "Open AVL Truck Mockup Min 1 details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 1614,
+            "y": -1059,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "index": "29",
+          "aria": "Open TrackBeast First Look details",
+          "opacity": 1,
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": -1005,
+            "y": -781,
+            "w": 190,
+            "h": 190
+          }
+        }
+      ],
+      "firstLabels": [
+        "Open Archive GIF 23, gif details",
+        "Open Process Book Mockup 1 details",
+        "Open Archive Image 33, image details",
+        "Open Archive Image 5, image details",
+        "Open Archive Image 10, image details",
+        "Open Gazelle Final details"
+      ],
+      "visibleBrokenImages": [],
+      "horizontalOverflow": 0,
+      "panelOpen": false,
+      "panelTitle": "",
+      "panelDescription": ""
+    }
+  ],
+  "postTransition": {
+    "label": "post-transition-final",
+    "url": "https://khaki-ship-257706.framer.app/play",
+    "bg": "rgb(247, 245, 240)",
+    "htmlBg": "rgba(0, 0, 0, 0)",
+    "forceBlank": null,
+    "activeViewTransition": false,
+    "rootExists": true,
+    "loadIn": "ready",
+    "rootBg": "rgb(247, 245, 240)",
+    "galleryOpacity": 1,
+    "galleryPointerEvents": "auto",
+    "cardCount": 99,
+    "visibleCardCount": 99,
+    "sampleCards": [
+      {
+        "index": "22",
+        "aria": "Open Archive GIF 23, gif details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -984,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "27",
+        "aria": "Open Process Book Mockup 1 details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -722,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "32",
+        "aria": "Open Archive Image 33, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -460,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "4",
+        "aria": "Open Archive Image 5, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -198,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "9",
+        "aria": "Open Archive Image 10, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 63,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "14",
+        "aria": "Open Gazelle Final details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 325,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "19",
+        "aria": "Open Teacaps Billboard Mockup details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 587,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "24",
+        "aria": "Open Archive Image 25, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 849,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "29",
+        "aria": "Open TrackBeast First Look details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1111,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "1",
+        "aria": "Open RootGrwoth details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1373,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "6",
+        "aria": "Open AVL Truck Mockup Min 1 details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1635,
+          "y": -1038,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "29",
+        "aria": "Open TrackBeast First Look details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -984,
+          "y": -760,
+          "w": 190,
+          "h": 190
+        }
+      }
+    ],
+    "firstLabels": [
+      "Open Archive GIF 23, gif details",
+      "Open Process Book Mockup 1 details",
+      "Open Archive Image 33, image details",
+      "Open Archive Image 5, image details",
+      "Open Archive Image 10, image details",
+      "Open Gazelle Final details"
+    ],
+    "visibleBrokenImages": [],
+    "horizontalOverflow": 0,
+    "panelOpen": false,
+    "panelTitle": "",
+    "panelDescription": ""
+  },
+  "detail": {
+    "label": "detail-after-click",
+    "url": "https://khaki-ship-257706.framer.app/play",
+    "bg": "rgb(247, 245, 240)",
+    "htmlBg": "rgba(0, 0, 0, 0)",
+    "forceBlank": null,
+    "activeViewTransition": false,
+    "rootExists": true,
+    "loadIn": "ready",
+    "rootBg": "rgb(247, 245, 240)",
+    "galleryOpacity": 1,
+    "galleryPointerEvents": "none",
+    "cardCount": 99,
+    "visibleCardCount": 99,
+    "sampleCards": [
+      {
+        "index": "22",
+        "aria": "Open Archive GIF 23, gif details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -961,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "27",
+        "aria": "Open Process Book Mockup 1 details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -699,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "32",
+        "aria": "Open Archive Image 33, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -437,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "4",
+        "aria": "Open Archive Image 5, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -175,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "9",
+        "aria": "Open Archive Image 10, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 86,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "14",
+        "aria": "Open Gazelle Final details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 348,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "19",
+        "aria": "Open Teacaps Billboard Mockup details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 610,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "24",
+        "aria": "Open Archive Image 25, image details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 872,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "29",
+        "aria": "Open TrackBeast First Look details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1134,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "1",
+        "aria": "Open RootGrwoth details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1396,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "6",
+        "aria": "Open AVL Truck Mockup Min 1 details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1658,
+          "y": -1015,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "29",
+        "aria": "Open TrackBeast First Look details",
+        "opacity": 1,
+        "transitionDelay": "0s",
+        "transitionDuration": "0.96s, 0.79s",
+        "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -961,
+          "y": -737,
+          "w": 190,
+          "h": 190
+        }
+      }
+    ],
+    "firstLabels": [
+      "Open Archive GIF 23, gif details",
+      "Open Process Book Mockup 1 details",
+      "Open Archive Image 33, image details",
+      "Open Archive Image 5, image details",
+      "Open Archive Image 10, image details",
+      "Open Gazelle Final details"
+    ],
+    "visibleBrokenImages": [],
+    "horizontalOverflow": 0,
+    "panelOpen": true,
+    "panelTitle": "Untitled 1",
+    "panelDescription": "1588 x 1059 IMAGE from the archive."
+  },
+  "direct": {
+    "label": "direct-play-final",
+    "url": "https://khaki-ship-257706.framer.app/play",
+    "bg": "rgb(247, 245, 240)",
+    "htmlBg": "rgba(0, 0, 0, 0)",
+    "forceBlank": "true",
+    "activeViewTransition": false,
+    "rootExists": true,
+    "loadIn": "ready",
+    "rootBg": "rgb(247, 245, 240)",
+    "galleryOpacity": 0,
+    "galleryPointerEvents": "none",
+    "cardCount": 99,
+    "visibleCardCount": 0,
+    "sampleCards": [
+      {
+        "index": "22",
+        "aria": "Open Archive GIF 23, gif details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -1018,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "27",
+        "aria": "Open Process Book Mockup 1 details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -756,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "32",
+        "aria": "Open Archive Image 33, image details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -494,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "4",
+        "aria": "Open Archive Image 5, image details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -232,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "9",
+        "aria": "Open Archive Image 10, image details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 29,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "14",
+        "aria": "Open Gazelle Final details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 291,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "19",
+        "aria": "Open Teacaps Billboard Mockup details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 553,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "24",
+        "aria": "Open Archive Image 25, image details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 815,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "29",
+        "aria": "Open TrackBeast First Look details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1077,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "1",
+        "aria": "Open RootGrwoth details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1339,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "6",
+        "aria": "Open AVL Truck Mockup Min 1 details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 1601,
+          "y": -1072,
+          "w": 190,
+          "h": 190
+        }
+      },
+      {
+        "index": "29",
+        "aria": "Open TrackBeast First Look details",
+        "opacity": 0,
+        "transitionDelay": "0s",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": -1018,
+          "y": -794,
+          "w": 190,
+          "h": 190
+        }
+      }
+    ],
+    "firstLabels": [
+      "Open Archive GIF 23, gif details",
+      "Open Process Book Mockup 1 details",
+      "Open Archive Image 33, image details",
+      "Open Archive Image 5, image details",
+      "Open Archive Image 10, image details",
+      "Open Gazelle Final details"
+    ],
+    "visibleBrokenImages": [],
+    "horizontalOverflow": 0,
+    "panelOpen": false,
+    "panelTitle": "",
+    "panelDescription": ""
+  },
+  "console": [
+    {
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at div\n    at Pt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:1:12874)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at div\n    at section\n    at main\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:112:10420\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:61279\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    }
+  ],
+  "pageErrors": [],
+  "requestFailures": [
+    {
+      "url": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://framerusercontent.com/assets/JBWmgoL4YXIgZfGWVzv7pCVDGw.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://site-b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e.framercanvas.com/s/app.9fdca5ed273a176846e02979df259cc03695417b/canvas-sandbox-on-page.html?experiment=prototypeTreeDriver%3DdynamicOverrides",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://o20425.ingest.sentry.io/api/1860728/envelope/?sentry_version=7&sentry_key=ec6f39c7d6654defa8ab3d67acd9f94f&sentry_client=sentry.javascript.browser%2F8.41.0",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://app.framerstatic.com/chunk-NTRMAMBZ.mjs",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://app.framerstatic.com/Inter-Regular.latin-EHCEA6SA.woff2",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://app.framerstatic.com/Inter-SemiBold.latin-LDEJ65ZA.woff2",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/F2292210670065998838228532319765/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/F2292210670065998838228532319765/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://events.framer.com/anonymous",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/w/1800/i/F2250541485363637417331537466901/Untitled-1.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/F2292210670065998838228532319765/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "summary": {
+    "frameBlankThrough1500": true,
+    "staggerObserved": true,
+    "finalCardCount": 99,
+    "directCardCount": 99,
+    "detailHasText": true,
+    "visibleBrokenImages": [],
+    "pageErrorCount": 0,
+    "consoleErrorCount": 0
+  }
+}

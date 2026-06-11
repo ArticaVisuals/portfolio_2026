@@ -34,6 +34,12 @@ constraints, CMS collections, component overrides, and design tokens.
   producing page structure or React components.
 - Use reusable modern React patterns and Framer Motion principles when motion or
   interaction is required.
+- Prefer native Framer capabilities before creating custom code components. Do
+  not create a new component when the task can be handled cleanly with Framer's
+  built-in layout, styling, CMS, effects, or interaction tools.
+- When custom helper code is needed, extend an existing helper component before
+  adding a new helper component. Create a new helper only when the task truly
+  requires a separate abstraction.
 - Before extensive layout generation or broad structural changes, outline a
   short plan and wait for approval.
 - Prevent design drift. If the work starts to look too plain, do not invent new
@@ -41,6 +47,21 @@ constraints, CMS collections, component overrides, and design tokens.
   Framer exports, or ask for the original brand guidelines.
 - Keep edits scoped to the Portfolio 2026 system and preserve existing project
   architecture.
+
+## Protected Framer Authoring Contracts
+
+- `/play` media must remain authorable through Framer property controls. Do not
+  replace the managed archive with hardcoded-only arrays, static JSX, detached
+  image layers, or a helper that hides or removes the `Archive Items` /
+  `archiveItems` control.
+- The `/play` production wrapper is `Play.tsx` (`PN1RVOf`). It must expose an
+  `Archive Items` array backed by `archiveItems`, including media/poster,
+  optional video, title, description, category, aspect dimensions, and stroke
+  controls. `ArchivePlayground.tsx` (`QNpkYp5`) must continue accepting managed
+  item arrays for runtime rendering and fallback.
+- If refactoring `/play`, preserve or migrate existing authorable content first,
+  verify the Framer inspector still exposes the media controls, then run
+  published visual QA after Framer publish.
 
 ## Documentation References
 

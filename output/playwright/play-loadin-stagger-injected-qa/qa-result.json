@@ -1,0 +1,1429 @@
+{
+  "url": "https://khaki-ship-257706.framer.app",
+  "samples": [
+    {
+      "label": "0000ms",
+      "elapsed": 80,
+      "pathname": "/",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": null,
+      "rootBg": null,
+      "galleryOpacity": null,
+      "cardCount": 0,
+      "inViewportCardCount": 0,
+      "visibleCardCount": 0,
+      "cardSamples": []
+    },
+    {
+      "label": "0040ms",
+      "elapsed": 1085,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": null,
+      "rootBg": null,
+      "galleryOpacity": null,
+      "cardCount": 0,
+      "inViewportCardCount": 0,
+      "visibleCardCount": 0,
+      "cardSamples": []
+    },
+    {
+      "label": "0080ms",
+      "elapsed": 1168,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0120ms",
+      "elapsed": 1229,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0180ms",
+      "elapsed": 1339,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0260ms",
+      "elapsed": 1446,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0360ms",
+      "elapsed": 1502,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0500ms",
+      "elapsed": 1567,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0700ms",
+      "elapsed": 1618,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "0900ms",
+      "elapsed": 1684,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "1200ms",
+      "elapsed": 1750,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "1500ms",
+      "elapsed": 1816,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "1800ms",
+      "elapsed": 1866,
+      "pathname": "/play",
+      "activeVT": true,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "2200ms",
+      "elapsed": 2267,
+      "pathname": "/play",
+      "activeVT": false,
+      "forceBlank": "true",
+      "loadIn": "blank",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 0,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 0,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0s",
+          "transform": "matrix(1, 0, 0, 1, 0, 10)"
+        }
+      ]
+    },
+    {
+      "label": "2800ms",
+      "elapsed": 2926,
+      "pathname": "/play",
+      "activeVT": false,
+      "forceBlank": null,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 2,
+      "cardSamples": [
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0.228s, 0.228s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.04288)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0.342s, 0.342s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 2.87707)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0.038s, 0.038s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.166329)"
+        },
+        {
+          "opacity": 0.0324741,
+          "delay": "266",
+          "transitionDelay": "0.152s, 0.152s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.522312)"
+        },
+        {
+          "opacity": 0.0562639,
+          "delay": "380",
+          "transitionDelay": "0.266s, 0.266s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.46194)"
+        },
+        {
+          "opacity": 0,
+          "delay": "76",
+          "transitionDelay": "0.38s, 0.38s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 4.05463)"
+        },
+        {
+          "opacity": 0,
+          "delay": "228",
+          "transitionDelay": "0.114s, 0.114s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.363664)"
+        },
+        {
+          "opacity": 0,
+          "delay": "342",
+          "transitionDelay": "0.228s, 0.228s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.04288)"
+        },
+        {
+          "opacity": 0,
+          "delay": "38",
+          "transitionDelay": "0.342s, 0.342s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 2.87707)"
+        },
+        {
+          "opacity": 0,
+          "delay": "152",
+          "transitionDelay": "0.038s, 0.038s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.166329)"
+        },
+        {
+          "opacity": 0,
+          "delay": "266",
+          "transitionDelay": "0.152s, 0.152s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.522312)"
+        },
+        {
+          "opacity": 0,
+          "delay": "380",
+          "transitionDelay": "0.266s, 0.266s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.46194)"
+        }
+      ]
+    },
+    {
+      "label": "final-settled",
+      "elapsed": 18567,
+      "pathname": "/play",
+      "activeVT": false,
+      "forceBlank": null,
+      "loadIn": "ready",
+      "rootBg": "rgb(247, 245, 240)",
+      "galleryOpacity": 1,
+      "cardCount": 99,
+      "inViewportCardCount": 24,
+      "visibleCardCount": 24,
+      "cardSamples": [
+        {
+          "opacity": 1,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "114",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "190",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "304",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "0",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "266",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "380",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "opacity": 1,
+          "delay": "76",
+          "transitionDelay": "0s",
+          "transitionDuration": "0.96s, 0.79s",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        }
+      ]
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+    },
+    {
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+    }
+  ]
+}

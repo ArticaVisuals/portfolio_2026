@@ -15,7 +15,7 @@
 - The side-by-side page `/index-inline-toggle-test` (`VdRy9MV8k`) was removed after the inline version was promoted to canonical `/index`.
 - Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
 - The repo `IndexPage.tsx` mirror was reconciled against the current live direction on May 22, 2026 after the route audit.
-- Current `/index` XML mounts `IndexPage.tsx` (`rgAZFOv`) as the archive component, alongside the site `PageTransition` and hidden CMS bridge. Responsive/index styling, direct grid-media hover scale, line-draw timing, and index nav/list/grid appear motion are consolidated inside `IndexPage.tsx`; do not split them back into hidden `/index` CSS helper components. Index nav/year/title text uses the masked slide-in preset, not the fade preset. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
+- Current `/index` XML mounts `IndexPage.tsx` (`rgAZFOv`) as the archive component, alongside the site `PageTransition` and hidden CMS bridge. Responsive/index styling, direct grid-media hover scale, line-draw timing, and index nav/list/grid appear motion are consolidated inside `IndexPage.tsx`; do not split them back into hidden `/index` CSS helper components. Large year/title text uses the masked slide-in preset, while smaller mono nav/meta text fades in. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
 - **Data source refined (June 1, 2026; revised June 8):** `IndexPage.tsx` can use the mounted `ProjectRegistrar` registry first, then fall back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke so incomplete bridge rows cannot override richer CMS media/stroke data.
@@ -214,7 +214,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 - Standard mode: GT Standard Trial, weight 300, 40px, line-height 1.3, color `tokens.textPrimary`. On mobile (≤809px) it drops to 28px.
 - `Mono 13` mode: 13px uppercase mono, line-height 28px, color `tokens.textPrimary`.
 - Year labels render `year > 0 ? year : "—"`.
-- Full-opacity rule above each year group: 1px, `tokens.dividerStrong`, animated `idxRuleDraw` 700ms cubic-bezier(0.16, 1, 0.3, 1), staggered by group index up to 8.
+- Full-opacity rule above each year group: 1px, `tokens.dividerStrong`, viewport-triggered WAAPI `scaleX(0) → scaleX(1)` over 2200ms cubic-bezier(0.33, 0, 0.67, 1), staggered by group index up to 8.
 
 ### Project rows
 
@@ -297,8 +297,8 @@ Each card is rendered by `GridProjectCard` as:
 ### Runtime behavior
 
 - Empty filtered state matches List view copy: "No work matches those filters."
-- View transitions: toggle click swaps the view and bumps `renderKey` so the incoming text remounts and uses the masked slide-in on appear. Do not add a parent opacity fade around List/Grid content, because that would fade the masked text.
-- Grid card title and metadata text use the same `.idx-mask-appear` masked slide preset as List year/title text, with an uncapped 70ms stagger so visible text reveals one item at a time.
+- View transitions: toggle click swaps the view and bumps `renderKey` so incoming large year/title text remounts with the masked slide-in and incoming mono metadata remounts with fade-in. Do not add a parent opacity fade around List/Grid content, because that would flatten the individual text motion.
+- Grid card title uses the same `.idx-mask-appear` masked slide preset as List year/title text; grid metadata uses `.idx-fade-appear`.
 - The hover-flip and the video reveal both use `.idx-grid-card:hover` selectors, mirroring the List view pattern. On mobile (≤809px), the flip transform is overridden to `none` so the title remains stable.
 
 ### Filtering behavior
@@ -377,15 +377,16 @@ Follow the motion hierarchy from the framework doc:
 
 ### Transitions between views
 
-- View switch: state swap + render-key bump, then incoming view text uses the masked slide-in on appear. The toggle click should feel instant and considered; do not wrap the view in a parent opacity fade.
+- View switch: state swap + render-key bump, then incoming large title/year text masks in and incoming mono metadata fades in on appear. The toggle click should feel instant and considered; do not wrap the view in a parent opacity fade.
 
 ### Index nav and List view entrance
 
-- The taxonomy nav, inline `GRID / LIST`, List year labels such as `2026`, List project titles such as `Gaia`, Grid titles, and Grid metadata use `INDEX_MASK_REVEAL_PRESET`, not the fade preset. The wrapper is `.idx-mask-appear`; the inner `.idx-mask-reveal-text` slides from `translateY(90px)` to `0` inside an overflow-hidden mask.
-- Mask timing mirrors the top `Index` heading reveal: 1500ms, 100ms base delay, uncapped 70ms stagger, and `cubic-bezier(0.16, 1, 0.3, 1)`.
-- `.idx-mask-appear` and any remaining `.idx-appear` elements are triggered by IntersectionObserver via `data-idx-appeared="true"`, with the mask reveal deferred by two animation frames so the hidden masked state is painted before the slide begins.
-- Year rules and intra-year row dividers: `idxRuleDraw` keyframe (`scaleX(0) → scaleX(1)`), 700ms, `cubic-bezier(0.16, 1, 0.3, 1)`, staggered by year/row.
-- Reduced motion: `.idx-mask-appear`, `.idx-appear`, `.idx-row`, `.idx-grid-card`, and `.idx-rule` have animation disabled under `prefers-reduced-motion: reduce`, with appear items forced visible. The flip transform is also disabled under reduced motion.
+- The taxonomy nav, inline `GRID / LIST`, Clear Filters, and smaller mono metadata use `.idx-fade-appear` with `INDEX_APPEAR_PRESET`.
+- List year labels such as `2026`, List project titles such as `Gaia`, and Grid titles use `INDEX_MASK_REVEAL_PRESET`. The wrapper is `.idx-mask-appear`; the inner `.idx-mask-reveal-text` animates from `translateY(90px)` to `0` inside an overflow-hidden mask, mirroring the Framer top `Index` heading node (`M_Ry0NG_m`) inside `HeadingRowWrapper` (`height=113px`, `overflow=hidden`).
+- Mask timing mirrors the top `Index` heading reveal: 1500ms, 100ms base delay, 70ms stagger capped at index 12, and `cubic-bezier(0.16, 1, 0.3, 1)`.
+- `.idx-fade-appear`, `.idx-mask-appear`, and `.idx-rule` elements are triggered by the local `useIndexAppearTrigger` IntersectionObserver, with reveal deferred by two animation frames so the hidden state is painted before WAAPI begins. If an element becomes visible while a browser View Transition is active, the hook waits for `pt:reveal` from `PageTransition.tsx` or the transition-active fallback to clear, then reveals once after the page cover ends. Do not restart already-revealed elements on `pt:reveal`; that causes the `/play` → `/index` double animation glitch.
+- Year rules and intra-year row dividers: WAAPI transform (`scaleX(0) → scaleX(1)`), 2200ms, `cubic-bezier(0.33, 0, 0.67, 1)`, staggered by year/row.
+- Reduced motion: `.idx-fade-appear`, `.idx-mask-appear`, `.idx-row`, `.idx-grid-card`, and `.idx-rule` have animation disabled under `prefers-reduced-motion: reduce`, with appear items forced visible. The flip transform is also disabled under reduced motion.
 
 ### List row hover
 
@@ -400,11 +401,11 @@ Follow the motion hierarchy from the framework doc:
 
 ### Grid view motion
 
-- Grid title and metadata text use the same `.idx-mask-appear` masked slide preset as List year/title text.
-- Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. `IndexPage.tsx` owns those selectors and the masked text preset for the index nav, list rows, and grid cards.
+- Grid title uses `.idx-mask-appear`; grid metadata uses `.idx-fade-appear`.
+- Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. `IndexPage.tsx` owns those selectors and the index appear presets for nav, list rows, and grid cards.
 - `/index` currently reads only `Thumbnail Video` (`SvOqFqdby`) via the `IndexPage` instance `Video Fields` prop when it is using CMS-module data. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke before rendering, so an incomplete `ProjectRegistrar` bridge row cannot erase CMS media/stroke values. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` is configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Publish/redeploy Framer after editing File-field thumbnail videos so the generated CMS module refreshes.
 - Reduced motion forces all index grid media back to `scale(1)` and removes transitions.
-- View switches remount the content so masked text can reveal again; the flip-related JS on rows remains independent of the appear animation.
+- View switches remount the content so masked and faded text can reveal again; the flip-related JS on rows remains independent of the appear animation.
 
 ### Filter changes
 
@@ -484,7 +485,7 @@ export default function IndexPage({
   const yearNavItems       = useMemo(() => getYearNavItems(allProjects),       [allProjects])
   const filteredProjects   = useMemo(() => filterProjects(allProjects, filters, ""), [allProjects, filters])
 
-  // handleViewChange: setActiveView + bump renderKey so masked text remounts/reveals
+  // handleViewChange: setActiveView + bump renderKey so masked/faded text remounts/reveals
   // handleFilterToggle / handleClearFilters
 
   return (
@@ -553,7 +554,7 @@ Before delivering:
 - [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
 - [ ] Visible view toggle is inline right as `GRID / LIST`, visually bottom-aligned with the original left-aligned `CLEAR FILTERS` action when active.
 - [ ] View toggle has only Grid/List, matches the `CLEAR FILTERS` action style, and underlines the active view.
-- [ ] View transitions are smooth (150ms fade out → 250ms fade in, with `renderKey` remount).
+- [ ] View switches are immediate, bump `renderKey`, and let incoming large title/year text remount with masked slide-in while mono metadata fades in on appear. Do not add a parent opacity fade around List/Grid content.
 - [ ] Project count updates with filters and uses singular/plural correctly.
 - [ ] Year `2019-ongoing` from CMS is normalized to `2019` for grouping/filtering.
 - [ ] All text is uppercase where specified; mono cells use 13px / 28px / 0 letter-spacing.

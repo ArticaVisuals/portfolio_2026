@@ -1,0 +1,586 @@
+{
+  "baseUrl": "https://khaki-ship-257706.framer.app",
+  "outDir": "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z",
+  "startedAt": "2026-06-11T09:03:11.021Z",
+  "checks": [
+    {
+      "name": "home direct load shows boot curtain",
+      "pass": true,
+      "details": {
+        "background": "rgb(35, 51, 36)",
+        "bar": "rgb(247, 245, 240)",
+        "label": null
+      }
+    },
+    {
+      "name": "home boot has forest background",
+      "pass": true,
+      "details": {
+        "background": "rgb(35, 51, 36)"
+      }
+    },
+    {
+      "name": "home boot has cream/white progress bar",
+      "pass": true,
+      "details": {
+        "bar": "rgb(247, 245, 240)"
+      }
+    },
+    {
+      "name": "home boot identity label present",
+      "pass": false,
+      "details": {
+        "label": null
+      }
+    },
+    {
+      "name": "home direct boot curtain clears after load",
+      "pass": true,
+      "details": {
+        "bootExists": false,
+        "transform": null
+      }
+    },
+    {
+      "name": "home reload shows boot curtain",
+      "pass": true,
+      "details": {
+        "background": "rgb(35, 51, 36)",
+        "label": null
+      }
+    },
+    {
+      "name": "/index direct load skips site boot",
+      "pass": false,
+      "details": {
+        "bootExists": true,
+        "path": "/index",
+        "playLoadIn": null,
+        "idxTrue": 0,
+        "idxTotal": 0
+      }
+    },
+    {
+      "name": "/index reload skips site boot",
+      "pass": false,
+      "details": {
+        "bootExists": true,
+        "path": "/index",
+        "playLoadIn": null,
+        "idxTrue": 3,
+        "idxTotal": 3
+      }
+    },
+    {
+      "name": "/play direct load skips site boot",
+      "pass": false,
+      "details": {
+        "bootExists": true,
+        "path": "/play",
+        "playLoadIn": "blank",
+        "idxTrue": 0,
+        "idxTotal": 0
+      }
+    },
+    {
+      "name": "/play reload skips site boot",
+      "pass": false,
+      "details": {
+        "bootExists": true,
+        "path": "/play",
+        "playLoadIn": "ready",
+        "idxTrue": 0,
+        "idxTotal": 0
+      }
+    },
+    {
+      "name": "/play reload releases local load-in",
+      "pass": true,
+      "details": {
+        "playLoadIn": "ready",
+        "cards": 90,
+        "visibleCards": 90
+      }
+    },
+    {
+      "name": "/case-studies direct load skips site boot",
+      "pass": false,
+      "details": {
+        "bootExists": true,
+        "path": "/case-studies",
+        "playLoadIn": null,
+        "idxTrue": 0,
+        "idxTotal": 0
+      }
+    },
+    {
+      "name": "/case-studies reload skips site boot",
+      "pass": false,
+      "details": {
+        "bootExists": true,
+        "path": "/case-studies",
+        "playLoadIn": null,
+        "idxTrue": 0,
+        "idxTotal": 0
+      }
+    },
+    {
+      "name": "/play -> /index sees an active View Transition",
+      "pass": true,
+      "details": {
+        "activeIndexSamples": 7
+      }
+    },
+    {
+      "name": "/play -> /index does not reveal index while transition is active",
+      "pass": false,
+      "details": {
+        "earlyTrue": [
+          {
+            "label": "play-to-index-0320ms",
+            "idxTrue": 3
+          },
+          {
+            "label": "play-to-index-0520ms",
+            "idxTrue": 3
+          },
+          {
+            "label": "play-to-index-0760ms",
+            "idxTrue": 3
+          },
+          {
+            "label": "play-to-index-0980ms",
+            "idxTrue": 3
+          },
+          {
+            "label": "play-to-index-1300ms",
+            "idxTrue": 3
+          }
+        ]
+      }
+    },
+    {
+      "name": "/play -> /index emits one pt:reveal",
+      "pass": false,
+      "details": {
+        "events": [
+          {
+            "type": "pt:reveal",
+            "t": 2046,
+            "href": "https://khaki-ship-257706.framer.app/index"
+          },
+          {
+            "type": "pt:reveal",
+            "t": 3339.399999976158,
+            "href": "https://khaki-ship-257706.framer.app/index"
+          },
+          {
+            "type": "pt:reveal",
+            "t": 3385.300000011921,
+            "href": "https://khaki-ship-257706.framer.app/index"
+          }
+        ]
+      }
+    },
+    {
+      "name": "/play -> /index index appears after pt:reveal",
+      "pass": true,
+      "details": {
+        "revealT": 2046,
+        "firstTrueT": 2283.899999976158,
+        "firstTrueLabel": "play-to-index-0320ms",
+        "finalIdxTrue": 3,
+        "finalIdxTotal": 3
+      }
+    },
+    {
+      "name": "/index -> /play sees an active View Transition",
+      "pass": true,
+      "details": {
+        "activePlaySamples": 6
+      }
+    },
+    {
+      "name": "/index -> /play keeps play load-in blank while transition is active",
+      "pass": true,
+      "details": {
+        "readyDuringActive": []
+      }
+    },
+    {
+      "name": "/index -> /play releases play local load-in after landing",
+      "pass": true,
+      "details": {
+        "finalPlayLoadIn": "ready",
+        "finalLabel": "index-to-play-settled"
+      }
+    },
+    {
+      "name": "/index -> /play emits one pt:reveal",
+      "pass": false,
+      "details": {
+        "events": [
+          {
+            "type": "pt:reveal",
+            "t": 1753,
+            "href": "https://khaki-ship-257706.framer.app/play"
+          },
+          {
+            "type": "pt:reveal",
+            "t": 2323.899999976158,
+            "href": "https://khaki-ship-257706.framer.app/play"
+          },
+          {
+            "type": "pt:reveal",
+            "t": 2397.800000011921,
+            "href": "https://khaki-ship-257706.framer.app/play"
+          }
+        ]
+      }
+    },
+    {
+      "name": "browser console has no errors/pageerrors during QA",
+      "pass": true,
+      "details": {
+        "errors": [],
+        "warningCount": 10
+      }
+    }
+  ],
+  "screenshots": [
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/home-direct-0120ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/home-direct-settled.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/home-reload-0120ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-direct-0140ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-direct-reload-0140ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-direct-0140ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-direct-reload-0140ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-reload-ready.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/case-studies-direct-0140ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/case-studies-direct-reload-0140ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-to-index-before-click.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-to-index-0160ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-to-index-0520ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-to-index-0980ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/play-to-index-settled.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-to-play-before-click.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-to-play-0160ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-to-play-0520ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-to-play-0980ms.png",
+    "/Users/micahhoang/My Drive/Portfolio 2026/output/playwright/transition-gating-qa-2026-06-11T09-03-11-020Z/index-to-play-settled.png"
+  ],
+  "console": [
+    {
+      "label": "home-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at div\n    at Pt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:1:12874)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at div\n    at section\n    at main\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:112:10420\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:61279\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "label": "home-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    },
+    {
+      "label": "home-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at div\n    at Pt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:1:12874)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at div\n    at section\n    at main\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/zRvrIWsArBXwlWU5mY4kMgaLqMdIRUDcWse_lyzPmd0.DvU-m2AI.mjs:112:10420\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:61279\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "label": "home-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    },
+    {
+      "label": "index-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at gt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWqdQOaChPaeQeZcVjyHBIUrnPvgoSfbcoQ_BdX-VaI.HbVjPGQ3.mjs:608:8208)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWqdQOaChPaeQeZcVjyHBIUrnPvgoSfbcoQ_BdX-VaI.HbVjPGQ3.mjs:608:24020\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:34880\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "label": "index-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    },
+    {
+      "label": "index-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at gt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWqdQOaChPaeQeZcVjyHBIUrnPvgoSfbcoQ_BdX-VaI.HbVjPGQ3.mjs:608:8208)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWqdQOaChPaeQeZcVjyHBIUrnPvgoSfbcoQ_BdX-VaI.HbVjPGQ3.mjs:608:24020\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:34880\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "label": "index-direct",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    },
+    {
+      "label": "index-to-play-start",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ii (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:6:68)\n    at us (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:14036)\n    at ec (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37372)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37134)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) \n    at style\n    at gt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWqdQOaChPaeQeZcVjyHBIUrnPvgoSfbcoQ_BdX-VaI.HbVjPGQ3.mjs:608:8208)\n    at zx (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:716)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at nl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:69054)\n    at tl (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68916)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at Hi (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:22649)\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:1471\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32218\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32031\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWqdQOaChPaeQeZcVjyHBIUrnPvgoSfbcoQ_BdX-VaI.HbVjPGQ3.mjs:608:24020\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:757\n    at div\n    at s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:5743)\n    at uf (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:72374)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:34880\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at er (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.6tDITEnu.mjs:1:69486)\n    at Fu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:6124)\n    at o_ (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:6151)\n    at Suspense\n    at Xc (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:68389)\n    at Px (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1002:32318)\n    at uu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:82307)\n    at xr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:7161)\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:2512\n    at https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:112:34554\n    at Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:3:2957)\n    at Pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:2003)\n    at pu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:83163)\n    at nC (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:13349)\n    at un (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:9287)\n    at sa (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.DU_WqCOV.mjs:9:1423)\n    at dr (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:49:6495)\n    at Gu (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:51:7389)\n    at uS (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:1009:6070)\n    at jn (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.C6dnUXMe.mjs:7:14159)"
+    },
+    {
+      "label": "index-to-play-start",
+      "type": "warning",
+      "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at ns (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:8255)\n    at $o (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:7196)\n    at cp (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:68482)\n    at $s (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37073)\n    at Qs (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:37046)\n    at Ls (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:8:32130)\n    at wt (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:10651)\n    at MessagePort.Et (https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.DsErKZ3P.mjs:1:11006) null"
+    }
+  ],
+  "transitions": {
+    "playToIndex": {
+      "before": {
+        "label": "before-click",
+        "t": 1798.800000011921,
+        "href": "https://khaki-ship-257706.framer.app/play?qa=1781168601712-play-to-index-start",
+        "pathname": "/play",
+        "activeViewTransition": false,
+        "bootExists": true,
+        "idxTotal": 0,
+        "idxTrue": 0,
+        "idxFalse": 0,
+        "playLoadIn": "ready"
+      },
+      "samples": [
+        {
+          "label": "play-to-index-0060ms",
+          "t": 1863.5999999642372,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "ready"
+        },
+        {
+          "label": "play-to-index-0160ms",
+          "t": 1965.3999999761581,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "ready"
+        },
+        {
+          "label": "play-to-index-0320ms",
+          "t": 2283.899999976158,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        },
+        {
+          "label": "play-to-index-0520ms",
+          "t": 2324,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        },
+        {
+          "label": "play-to-index-0760ms",
+          "t": 2565.300000011921,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        },
+        {
+          "label": "play-to-index-0980ms",
+          "t": 2860.099999964237,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        },
+        {
+          "label": "play-to-index-1300ms",
+          "t": 3104.300000011921,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        },
+        {
+          "label": "play-to-index-settled",
+          "t": 3807.5,
+          "href": "https://khaki-ship-257706.framer.app/index",
+          "pathname": "/index",
+          "activeViewTransition": false,
+          "bootExists": false,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        }
+      ],
+      "events": [
+        {
+          "type": "pt:reveal",
+          "t": 2046,
+          "href": "https://khaki-ship-257706.framer.app/index"
+        },
+        {
+          "type": "pt:reveal",
+          "t": 3339.399999976158,
+          "href": "https://khaki-ship-257706.framer.app/index"
+        },
+        {
+          "type": "pt:reveal",
+          "t": 3385.300000011921,
+          "href": "https://khaki-ship-257706.framer.app/index"
+        }
+      ]
+    },
+    "indexToPlay": {
+      "before": {
+        "label": "before-click",
+        "t": 991.3000000119209,
+        "href": "https://khaki-ship-257706.framer.app/index?qa=1781168605678-index-to-play-start",
+        "pathname": "/index",
+        "activeViewTransition": false,
+        "bootExists": true,
+        "idxTotal": 3,
+        "idxTrue": 3,
+        "idxFalse": 0,
+        "playLoadIn": null
+      },
+      "samples": [
+        {
+          "label": "index-to-play-0060ms",
+          "t": 1054.5,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 3,
+          "idxTrue": 3,
+          "idxFalse": 0,
+          "playLoadIn": null
+        },
+        {
+          "label": "index-to-play-0160ms",
+          "t": 1152.699999988079,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "blank"
+        },
+        {
+          "label": "index-to-play-0320ms",
+          "t": 1313,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "blank"
+        },
+        {
+          "label": "index-to-play-0520ms",
+          "t": 1513.699999988079,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "blank"
+        },
+        {
+          "label": "index-to-play-0760ms",
+          "t": 1756.3999999761581,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "blank"
+        },
+        {
+          "label": "index-to-play-0980ms",
+          "t": 1974.0999999642372,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "blank"
+        },
+        {
+          "label": "index-to-play-1300ms",
+          "t": 2294.699999988079,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": true,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "blank"
+        },
+        {
+          "label": "index-to-play-settled",
+          "t": 2997.300000011921,
+          "href": "https://khaki-ship-257706.framer.app/play",
+          "pathname": "/play",
+          "activeViewTransition": false,
+          "bootExists": true,
+          "idxTotal": 0,
+          "idxTrue": 0,
+          "idxFalse": 0,
+          "playLoadIn": "ready"
+        }
+      ],
+      "events": [
+        {
+          "type": "pt:reveal",
+          "t": 1753,
+          "href": "https://khaki-ship-257706.framer.app/play"
+        },
+        {
+          "type": "pt:reveal",
+          "t": 2323.899999976158,
+          "href": "https://khaki-ship-257706.framer.app/play"
+        },
+        {
+          "type": "pt:reveal",
+          "t": 2397.800000011921,
+          "href": "https://khaki-ship-257706.framer.app/play"
+        }
+      ]
+    }
+  },
+  "completedAt": "2026-06-11T09:03:28.775Z",
+  "pass": false
+}

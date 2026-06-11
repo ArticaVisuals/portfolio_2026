@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.4 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v6.7 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -29,8 +29,9 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 //
 // FIRST BOOT — the SSR'd script injects a curtain + top progress bar before
 // hydration, waits for window.load (bounded), then swipes up. "Auto" mode
-// plays it on direct entries AND reloads and skips internal-link arrivals
-// and back/forward (navigation timing type + same-origin referrer).
+// plays it only on home direct entries/reloads and skips other route reloads,
+// internal-link arrivals, and back/forward (route + navigation timing type +
+// same-origin referrer).
 
 const STYLE_ID = "__pt-vt-style"
 const BOOT_ID = "__pt-boot"
@@ -40,9 +41,20 @@ const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
 const Z = 2147483600
 const COLOR_RE = /[<>"'\\{}]/g
+const BOOT_LABEL = "Micah Hoang ©2026"
+const BOOT_LABEL_ID = "__pt-boot-label"
+const BOOT_LABEL_FADE_MS = 260
+const HOME_PATH = "/"
 const PLAY_PATH = "/play"
 const PLAY_FORCE_BLANK_ATTR = "data-playground-force-blank"
-const PLAY_LOAD_IN_DELAY_MS = 120
+const PLAY_LOAD_IN_DELAY_MS = 70
+const PLAY_DIRECT_BLANK_SAFETY_MS = 1800
+const PLAY_BLANK_COLOR = "rgb(247, 245, 240)"
+const PLAY_CARD_FADE_MS = 960
+const PLAY_CARD_TRANSFORM_MS = 790
+const PLAY_CARD_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+const FRAMER_EDITORBAR_SELECTOR =
+    "#__framer-editorbar-container, #__framer-editorbar-label"
 
 // One-time hygiene: remove anything a previous version of this component
 // may have left in storage or the DOM for returning visitors.
@@ -236,7 +248,10 @@ function replayAppearEffects(skip?: Set<Element>) {
 if (typeof window !== "undefined") {
     // The SSR'd boot script calls this at swipe start (see installScript).
     ;(window as any).__ptReplayAppear = replayAppearEffects
-    if (isPlayPath(window.location.pathname)) setPlayBlank(true)
+    if (isPlayPath(window.location.pathname)) {
+        setPlayBlank(true)
+        releasePlayBlankWhenSettled(null)
+    }
 }
 
 function isVtAnim(a: any): boolean {
@@ -250,8 +265,10 @@ function isVtAnim(a: any): boolean {
 
 // Freeze just-started, finite entrance animations at frame zero until
 // `until` settles (or the safety timeout fires), then let them play and
-// replay any appear effects the hold missed. Nav animations are finished
-// instantly instead — the nav has its own VT group.
+// replay any appear effects the hold missed. On same-document transitions,
+// this is armed inside the update callback before the incoming state is
+// captured, so page load-ins cannot advance underneath the moving sheet. Nav
+// animations are finished instantly instead — the nav has its own VT group.
 function holdAppearAnimations(until: Promise<any> | null) {
     if (!sdHoldAppear || reducedMotion()) return
     const d: any = document
@@ -423,9 +440,23 @@ function onClickCapture(e: MouseEvent) {
     } catch (err) {}
 
     let contentReady = false
+    let vt: any = null
+    let holdStarted = false
+    let pendingHoldStart = false
+    const startIncomingHold = () => {
+        if (holdStarted) return
+        if (!vt) {
+            pendingHoldStart = true
+            return
+        }
+        pendingHoldStart = false
+        holdStarted = true
+        holdAppearAnimations(vt.finished)
+    }
+
     // NOTE: rendering is paused during the update callback, so timers (not
     // rAF) drive the polling. Timers and MutationObserver still run.
-    const vt = d.startViewTransition(
+    vt = d.startViewTransition(
         () =>
             new Promise<void>((resolve) => {
                 const t0 = Date.now()
@@ -437,6 +468,10 @@ function onClickCapture(e: MouseEvent) {
                         // New nav may have mounted — keep names unique
                         // before the new-state capture.
                         dedupeNavNames(sdNavSelector)
+                        // Arm the global appear hold before resolving the
+                        // update callback so incoming load-ins are frozen
+                        // before the browser captures the new state.
+                        startIncomingHold()
                         window.setTimeout(resolve, 90) // let React commit
                         return
                     }
@@ -449,6 +484,7 @@ function onClickCapture(e: MouseEvent) {
                 poll()
             })
     )
+    if (pendingHoldStart) startIncomingHold()
     const settle = () => {
         sdActive = false
         if (mo) {
@@ -469,8 +505,8 @@ function onClickCapture(e: MouseEvent) {
                         vt.skipTransition()
                     } catch (err) {}
                 } else {
-                    // New page's appear effects wait for the sheet to land.
-                    holdAppearAnimations(vt.finished)
+                    // The incoming appear hold was armed before the new-state
+                    // capture, so nothing should start until the sheet lands.
                 }
             },
             () => {}
@@ -503,14 +539,51 @@ function buildCss(
     return `
 @view-transition { navigation: auto; }
 
-${navScoped} { view-transition-name: ${NAV_NAME}; }
+	${navScoped} { view-transition-name: ${NAV_NAME}; }
 
-html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] [data-playground-gallery="true"] {
+	${FRAMER_EDITORBAR_SELECTOR} {
+	    display: none !important;
+	    visibility: hidden !important;
+	    pointer-events: none !important;
+	}
+
+	#${BOOT_LABEL_ID} {
+	    font-family: "GT Standard L Regular", "GT Standard L Regular Placeholder", "GT Standard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+	    font-size: 30px !important;
+	    line-height: 120% !important;
+	    font-weight: 400 !important;
+	    letter-spacing: -0.01em !important;
+	}
+
+	@media (max-width: 1199px) {
+	    #${BOOT_LABEL_ID} {
+	        font-size: 24px !important;
+	    }
+	}
+
+	@media (max-width: 809px) {
+	    #${BOOT_LABEL_ID} {
+	        font-size: 19px !important;
+	    }
+	}
+
+	html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] [data-playground-gallery="true"] {
     opacity: 0 !important;
     pointer-events: none !important;
     transition: none !important;
 }
+html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] [data-playground-card="true"] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: none !important;
+}
+html:not([${PLAY_FORCE_BLANK_ATTR}="true"]) [data-playground-root="true"] [data-playground-card="true"] {
+    transition-property: opacity, transform !important;
+    transition-duration: ${PLAY_CARD_FADE_MS}ms, ${PLAY_CARD_TRANSFORM_MS}ms !important;
+    transition-timing-function: ${PLAY_CARD_EASE}, ${PLAY_CARD_EASE} !important;
+}
 html[${PLAY_FORCE_BLANK_ATTR}="true"] [data-playground-root="true"] {
+    background: ${PLAY_BLANK_COLOR} !important;
     cursor: default !important;
 }
 
@@ -570,19 +643,29 @@ interface BootCfg {
 }
 
 // Installs the CSS into <head> during HTML parse (idempotent by id) and, on
-// direct entry, runs the first-boot loader before hydration.
+// qualifying home entries, runs the first-boot loader before hydration.
 function installScript(css: string, boot: BootCfg): string {
     const bootColor = String(boot.color).replace(COLOR_RE, "")
     const barColor = String(boot.barColor).replace(COLOR_RE, "")
     const playBlankJs =
-        'try{var __ptp=location.pathname.replace(/\\/+$/,"")||"/";if(__ptp==="' +
-        PLAY_PATH +
-        '")document.documentElement.setAttribute("' +
+        "try{var __ptp=location.pathname.replace(/\\/+$/,'')||'/';if(__ptp===" +
+        JSON.stringify(PLAY_PATH) +
+        "){document.documentElement.setAttribute('" +
         PLAY_FORCE_BLANK_ATTR +
-        '","true")}catch(e){}'
-    // Zita-style gating: play on reloads and fresh entries (no referrer or
-    // external referrer); skip internal-link arrivals (the page transition
-    // owns those), back/forward traversals, and prerender passes.
+        "','true');setTimeout(function(){try{document.documentElement.removeAttribute('" +
+        PLAY_FORCE_BLANK_ATTR +
+        "')}catch(e){}}," +
+        PLAY_DIRECT_BLANK_SAFETY_MS +
+        ")}}catch(e){}"
+    // Zita-style gating: in Auto mode, play only on home reloads and fresh
+    // home entries (no referrer or external referrer); skip non-home route
+    // reloads, internal-link arrivals (the page transition owns those),
+    // back/forward traversals, and prerender passes.
+    const homeFn =
+        "function __ptHome(){try{" +
+        "return (location.pathname.replace(/\\/+$/,'')||'/')===" +
+        JSON.stringify(HOME_PATH) +
+        "}catch(e){return false}}"
     const freshFn =
         "function __ptFresh(){try{" +
         "var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];" +
@@ -597,9 +680,12 @@ function installScript(css: string, boot: BootCfg): string {
         ? ""
         : "try{" +
           "if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){" +
-          (boot.auto ? "if(__ptFresh())__ptBoot();" : "__ptBoot();") +
+          (boot.auto
+              ? "if(__ptHome()&&__ptFresh())__ptBoot();"
+              : "if(__ptHome())__ptBoot();") +
           "}" +
           "}catch(e){}" +
+          homeFn +
           freshFn +
           "function __ptBoot(){" +
           'if(document.getElementById("' +
@@ -621,7 +707,18 @@ function installScript(css: string, boot: BootCfg): string {
           "px;background:" +
           barColor +
           ';transform:scaleX(0);transform-origin:left center;will-change:transform;";' +
+          'var m=document.createElement("div");' +
+          'm.id="' +
+          BOOT_LABEL_ID +
+          '";' +
+          "m.textContent=" +
+          JSON.stringify(BOOT_LABEL) +
+          ";" +
+          'm.style.cssText="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:32px;text-align:center;color:' +
+          barColor +
+          ';white-space:normal;will-change:opacity;";' +
           "w.appendChild(b);" +
+          "w.appendChild(m);" +
           "document.documentElement.appendChild(w);" +
           "var start=Date.now();" +
           "requestAnimationFrame(function(){requestAnimationFrame(function(){" +
@@ -645,6 +742,12 @@ function installScript(css: string, boot: BootCfg): string {
           LOADER_EASE +
           '";' +
           'b.style.transform="scaleX(1)";' +
+          'm.style.transition="opacity ' +
+          BOOT_LABEL_FADE_MS +
+          "ms " +
+          LOADER_EASE +
+          '";' +
+          'm.style.opacity="0";' +
           "setTimeout(function(){" +
           // Restart all appear effects while still fully covered, so the
           // page is revealed mid-animation — cause and effect.
@@ -747,8 +850,8 @@ export default function PageTransition(props: Props) {
     const css = buildCss(duration, navDuration, drift, dim, navSelector)
     const boot: BootCfg = {
         enabled: firstBoot,
-        // "once" (legacy value, now titled Auto) = entries + reloads only;
-        // "always" = every document load.
+        // "once" (legacy value, now titled Auto) = home entries/reloads only;
+        // "always" = every home document load.
         auto: bootMode !== "always",
         color: bootColor,
         barColor: barColor,
@@ -774,6 +877,9 @@ export default function PageTransition(props: Props) {
 
         // Cross-document arrival fallback: if the module evaluated after
         // pagereveal already fired, a transition may be running right now.
+        // Also release /play's pre-paint blank on direct refreshes now that
+        // the full boot curtain is intentionally home-only.
+        const onPlayPath = isPlayPath(window.location.pathname)
         if (enabled && holdAppear) {
             let active = false
             try {
@@ -783,6 +889,7 @@ export default function PageTransition(props: Props) {
             } catch (e) {}
             if (active) holdAppearAnimations(null)
         }
+        if (enabled && onPlayPath) releasePlayBlankWhenSettled(null)
 
         // Hygiene: clear leftovers from previous implementations.
         LEGACY_FLAGS.forEach((k) => {
