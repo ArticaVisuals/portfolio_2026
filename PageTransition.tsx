@@ -1,8 +1,8 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.2 — dual-path View
-// Transitions + first-boot loader + appear-effect hold.
+// Site-wide page transition (zitafernandez.com-style). v6.3 — dual-path View
+// Transitions + first-boot loader + appear-effect restart.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
 // ways: its SPA router (history.pushState) and real cross-document loads
@@ -14,16 +14,21 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // dims and drifts up while the ACTUAL incoming page slides up over it as a
 // sheet; the nav (its own transition group) swipes out and back in.
 //
-// APPEAR-EFFECT HOLD — entrance/appear animations on the incoming page are
-// frozen at frame zero while the sheet is moving and released the moment
-// the transition finishes, so the transition visibly CAUSES the load-ins.
+// APPEAR-EFFECT RESTART (v6.3) — load-in animations (text fades, header
+// slide-ups, line draws) must START when the cover ends, even if they
+// already ran while preloaded. Two mechanisms: (1) HOLD — WAAPI entrance
+// animations are frozen at frame zero while a transition is running;
+// (2) REPLAY — Framer's own appear runtime (window.animator +
+// window.__framer__appearAnimationsContent definitions) is re-invoked to
+// restart every appear effect from its initial state. Transitions replay
+// at finish (skipping elements whose held animations just resumed); the
+// boot loader replays at swipe start, while the curtain still covers, so
+// the reset is invisible and effects animate in as the page is revealed.
 //
-// FIRST BOOT (v6.2: Zita-style gating) — the SSR'd script injects a curtain
-// + top progress bar before hydration, waits for window.load (bounded),
-// then swipes up. "Auto" mode plays it on direct entries AND reloads, and
-// skips arrivals from internal links (the page transition owns those) and
-// back/forward traversals — detected via the navigation timing entry type
-// plus a same-origin referrer check. No sessionStorage involved.
+// FIRST BOOT — the SSR'd script injects a curtain + top progress bar before
+// hydration, waits for window.load (bounded), then swipes up. "Auto" mode
+// plays it on direct entries AND reloads and skips internal-link arrivals
+// and back/forward (navigation timing type + same-origin referrer).
 
 const STYLE_ID = "__pt-vt-style"
 const BOOT_ID = "__pt-boot"
@@ -76,7 +81,56 @@ function dedupeNavNames(navSelector: string) {
     } catch (e) {}
 }
 
-// ---------------------------------------------------------------- appear hold
+// ------------------------------------------------------ appear hold/replay
+
+// Re-run Framer's published appear effects from their definitions — a true
+// restart from the initial state, even if they already played. Mirrors the
+// inline starter script Framer ships. `skip` = elements whose held
+// animations were just resumed (avoid double-starting those).
+function replayAppearEffects(skip?: Set<Element>) {
+    try {
+        if (reducedMotion()) return
+        const w: any = window
+        const an = w.animator
+        const defs = w.__framer__appearAnimationsContent
+        if (!an || !an.animateAppearEffects || !defs || !defs.text) return
+        let hash: any = undefined
+        try {
+            const bp = w.__framer__breakpoints
+            if (bp && bp.text && an.getActiveVariantHash)
+                hash = an.getActiveVariantHash(JSON.parse(bp.text))
+        } catch (e) {}
+        an.animateAppearEffects(
+            JSON.parse(defs.text),
+            (selector: string, keyframes: any, options: any) => {
+                try {
+                    const el = document.querySelector(selector)
+                    if (!el) return
+                    if (skip && skip.has(el)) return
+                    for (const k in keyframes) {
+                        try {
+                            an.startOptimizedAppearAnimation(
+                                el,
+                                k,
+                                keyframes[k],
+                                options[k]
+                            )
+                        } catch (e) {}
+                    }
+                } catch (e) {}
+            },
+            "data-framer-appear-id",
+            "__Appear_Animation_Transform__",
+            false,
+            hash
+        )
+    } catch (e) {}
+}
+
+if (typeof window !== "undefined") {
+    // The SSR'd boot script calls this at swipe start (see installScript).
+    ;(window as any).__ptReplayAppear = replayAppearEffects
+}
 
 function isVtAnim(a: any): boolean {
     try {
@@ -88,13 +142,15 @@ function isVtAnim(a: any): boolean {
 }
 
 // Freeze just-started, finite entrance animations at frame zero until
-// `until` settles (or the safety timeout fires), then let them play. Nav
-// animations are finished instantly instead — the nav has its own VT group.
+// `until` settles (or the safety timeout fires), then let them play and
+// replay any appear effects the hold missed. Nav animations are finished
+// instantly instead — the nav has its own VT group.
 function holdAppearAnimations(until: Promise<any> | null) {
     if (!sdHoldAppear || reducedMotion()) return
     const d: any = document
     if (typeof d.getAnimations !== "function") return
     const held: any[] = []
+    const heldEls = new Set<Element>()
     const seen = new Set<any>()
     let released = false
 
@@ -125,6 +181,8 @@ function holdAppearAnimations(until: Promise<any> | null) {
                 a.currentTime = 0
                 a.pause()
                 held.push(a)
+                const el = a.effect && a.effect.target
+                if (el) heldEls.add(el)
             } catch (e) {}
         }
     }
@@ -158,6 +216,9 @@ function holdAppearAnimations(until: Promise<any> | null) {
                 } catch (e2) {}
             }
         }
+        // Anything the hold missed (e.g. effects that finished or were
+        // handed off before collection) restarts from its initial state.
+        replayAppearEffects(heldEls)
     }
 
     if (until && typeof until.then === "function") {
@@ -455,6 +516,9 @@ function installScript(css: string, boot: BootCfg): string {
           '";' +
           'b.style.transform="scaleX(1)";' +
           "setTimeout(function(){" +
+          // Restart all appear effects while still fully covered, so the
+          // page is revealed mid-animation — cause and effect.
+          "try{if(window.__ptReplayAppear)window.__ptReplayAppear()}catch(e){}" +
           'w.style.transition="transform ' +
           boot.swipeMs +
           "ms " +
