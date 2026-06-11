@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.7 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v6.8 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -26,6 +26,13 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // (e.g. the /play views) can restart their own internal intros. /play
 // additionally gets a force-blank hold on its gallery while transitioning
 // in, released once the transition settles.
+//
+// v6.8 — SINGLE-ARM HOLD GUARD: on transition arrivals, both the navigation
+// path AND the mount effect's :active-view-transition fallback could arm
+// holdAppearAnimations, double-firing pt:reveal and restarting every appear
+// effect twice (~100ms apart). A module-level sdHoldActive flag ensures only
+// one hold runs at a time, so load-ins replay exactly once, after the
+// transition finishes.
 //
 // FIRST BOOT — the SSR'd script injects a curtain + top progress bar before
 // hydration, waits for window.load (bounded), then swipes up. "Auto" mode
@@ -66,6 +73,7 @@ let sdExclude = "[data-no-transition]"
 let sdNavSelector = "nav"
 let sdHoldAppear = true
 let sdActive = false
+let sdHoldActive = false
 
 function reducedMotion(): boolean {
     try {
@@ -271,8 +279,10 @@ function isVtAnim(a: any): boolean {
 // animations are finished instantly instead — the nav has its own VT group.
 function holdAppearAnimations(until: Promise<any> | null) {
     if (!sdHoldAppear || reducedMotion()) return
+    if (sdHoldActive) return // a hold is already running for this arrival
     const d: any = document
     if (typeof d.getAnimations !== "function") return
+    sdHoldActive = true
     const held: any[] = []
     const heldEls = new Set<Element>()
     const seen = new Set<any>()
@@ -322,6 +332,7 @@ function holdAppearAnimations(until: Promise<any> | null) {
     const release = () => {
         if (released) return
         released = true
+        sdHoldActive = false
         window.clearInterval(iv)
         for (let i = 0; i < held.length; i++) {
             const a: any = held[i]
