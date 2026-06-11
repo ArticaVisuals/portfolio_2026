@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v6.8 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v6.9 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -74,6 +74,7 @@ let sdNavSelector = "nav"
 let sdHoldAppear = true
 let sdActive = false
 let sdHoldActive = false
+let sdDuration = 700
 
 function reducedMotion(): boolean {
     try {
@@ -176,18 +177,14 @@ function appearEasing(e: any): string {
     return "cubic-bezier(0,0,0.58,1)" // easeOut default
 }
 
-// Restart Framer's appear effects from their published definitions — a true
-// replay from the initial state, even if they already ran. Framer's own
-// startOptimizedAppearAnimation refuses to re-run after hydration handoff,
-// so the WAAPI animations are built directly with el.animate(). `skip` =
-// elements whose frame-zero-held animations were just resumed. Dispatches
-// "pt:reveal" so custom code components can restart their own intros.
-function replayAppearEffects(skip?: Set<Element>) {
+// Build a WAAPI animation per appear-def element from the published
+// definitions and hand it to onCreate (running). Shared by the autoplay
+// replay (stragglers) and the paused preplay (transition arm).
+function buildAppearAnimations(
+    skip: Set<Element> | null,
+    onCreate: (el: Element, anim: any) => void
+) {
     try {
-        window.dispatchEvent(new CustomEvent("pt:reveal"))
-    } catch (e) {}
-    try {
-        if (reducedMotion()) return
         const w: any = window
         const defsEl = w.__framer__appearAnimationsContent
         if (!defsEl || !defsEl.text) return
@@ -248,9 +245,20 @@ function replayAppearEffects(skip?: Set<Element>) {
                         anim.cancel()
                     } catch (e) {}
                 }
+                onCreate(el, anim)
             } catch (e) {}
         }
     } catch (e) {}
+}
+
+// Restart appear effects immediately (boot path + release stragglers).
+// Dispatches ONE "pt:reveal" so custom code components restart their intros.
+function replayAppearEffects(skip?: Set<Element>) {
+    try {
+        window.dispatchEvent(new CustomEvent("pt:reveal"))
+    } catch (e) {}
+    if (reducedMotion()) return
+    buildAppearAnimations(skip || null, () => {})
 }
 
 if (typeof window !== "undefined") {
@@ -271,13 +279,17 @@ function isVtAnim(a: any): boolean {
     }
 }
 
-// Freeze just-started, finite entrance animations at frame zero until
-// `until` settles (or the safety timeout fires), then let them play and
-// replay any appear effects the hold missed. On same-document transitions,
-// this is armed inside the update callback before the incoming state is
-// captured, so page load-ins cannot advance underneath the moving sheet. Nav
-// animations are finished instantly instead — the nav has its own VT group.
-function holdAppearAnimations(until: Promise<any> | null) {
+// Arm the appear system for a transition arrival. Preplays every appear-def
+// element paused at frame zero (pinning it at its initial state for the
+// whole slide), freezes any other just-started entrance animations, then
+// releases everything at sheet-land (releaseAfterMs) — with the transition's
+// finished promise, an :active-view-transition poll, and a 4s timeout as
+// fallbacks. Nav-subtree animations are finished instantly (the nav has its
+// own VT group). Single-armed via sdHoldActive.
+function holdAppearAnimations(
+    until: Promise<any> | null,
+    releaseAfterMs?: number
+) {
     if (!sdHoldAppear || reducedMotion()) return
     if (sdHoldActive) return // a hold is already running for this arrival
     const d: any = document
@@ -287,6 +299,19 @@ function holdAppearAnimations(until: Promise<any> | null) {
     const heldEls = new Set<Element>()
     const seen = new Set<any>()
     let released = false
+
+    // PREPLAY: create the replay animations now, paused at frame zero.
+    const preplayed: any[] = []
+    const preplayEls = new Set<Element>()
+    buildAppearAnimations(null, (el, anim) => {
+        try {
+            anim.pause()
+            anim.currentTime = 0
+        } catch (e) {}
+        preplayed.push(anim)
+        preplayEls.add(el)
+        seen.add(anim) // never re-collected by the hold below
+    })
 
     const collect = () => {
         if (released) return
@@ -328,37 +353,45 @@ function holdAppearAnimations(until: Promise<any> | null) {
     try {
         navEls = Array.from(document.querySelectorAll(sdNavSelector))
     } catch (e) {}
+    const inNav = (el: any) =>
+        !!el && navEls.some((n) => n === el || (n.contains && n.contains(el)))
 
     const release = () => {
         if (released) return
         released = true
         sdHoldActive = false
         window.clearInterval(iv)
-        for (let i = 0; i < held.length; i++) {
-            const a: any = held[i]
-            try {
-                const el = a.effect && a.effect.target
-                const inNav =
-                    el &&
-                    navEls.some(
-                        (n) => n === el || (n.contains && n.contains(el))
-                    )
-                if (inNav) a.finish()
-                else a.play()
-            } catch (e) {
+        const playAll = (list: any[]) => {
+            for (let i = 0; i < list.length; i++) {
+                const a: any = list[i]
                 try {
-                    a.play()
-                } catch (e2) {}
+                    if (inNav(a.effect && a.effect.target)) a.finish()
+                    else a.play()
+                } catch (e) {
+                    try {
+                        a.play()
+                    } catch (e2) {}
+                }
             }
         }
-        // Anything the hold missed (e.g. effects that finished or were
-        // handed off before collection) restarts from its initial state.
-        replayAppearEffects(heldEls)
+        playAll(preplayed)
+        playAll(held)
+        // Stragglers the arm missed (e.g. elements that mounted after the
+        // preplay pass) restart from their initial state; single pt:reveal.
+        const skipUnion = new Set<Element>()
+        heldEls.forEach((el) => skipUnion.add(el))
+        preplayEls.forEach((el) => skipUnion.add(el))
+        replayAppearEffects(skipUnion)
     }
 
+    // Primary: release when the sheet lands, so load-ins start at the same
+    // moment relative to the transition end on every page and both paths.
+    if (typeof releaseAfterMs === "number" && releaseAfterMs > 0) {
+        window.setTimeout(release, releaseAfterMs)
+    }
     if (until && typeof until.then === "function") {
         until.then(release, release)
-    } else {
+    } else if (!(typeof releaseAfterMs === "number" && releaseAfterMs > 0)) {
         // No finished promise available — poll the active-transition state.
         const poll = () => {
             if (released) return
@@ -385,7 +418,7 @@ if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
         const arrivingAtPlay = isPlayPath(window.location.pathname)
         if (arrivingAtPlay) setPlayBlank(true)
         if (e && e.viewTransition) {
-            holdAppearAnimations(e.viewTransition.finished)
+            holdAppearAnimations(e.viewTransition.finished, sdDuration + 100)
             if (arrivingAtPlay) releasePlayBlankWhenSettled(e.viewTransition.finished)
         } else if (arrivingAtPlay) {
             releasePlayBlankWhenSettled(null)
@@ -462,7 +495,9 @@ function onClickCapture(e: MouseEvent) {
         }
         pendingHoldStart = false
         holdStarted = true
-        holdAppearAnimations(vt.finished)
+        // Sheet animation starts ~90ms after this arm (the commit buffer
+        // below), so the land timer accounts for it.
+        holdAppearAnimations(vt.finished, sdDuration + 180)
     }
 
     // NOTE: rendering is paused during the update callback, so timers (not
@@ -883,6 +918,7 @@ export default function PageTransition(props: Props) {
         sdExclude = excludeSelector
         sdNavSelector = navSelector
         sdHoldAppear = holdAppear
+        sdDuration = duration
 
         dedupeNavNames(navSelector)
 
@@ -962,6 +998,7 @@ export default function PageTransition(props: Props) {
         excludeSelector,
         navSelector,
         holdAppear,
+        duration,
         isCanvas,
     ])
 
