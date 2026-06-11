@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v7.0 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v7.1 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -76,6 +76,7 @@ let sdHoldAppear = true
 let sdActive = false
 let sdHoldActive = false
 let sdDuration = 700
+let sdSynth = false // re-dispatched click in flight (see onClickCapture)
 
 function reducedMotion(): boolean {
     try {
@@ -301,6 +302,25 @@ function holdAppearAnimations(
     const seen = new Set<any>()
     let released = false
 
+    // Pause every playing video for the duration of the transition — video
+    // decode is the main main-thread cost stuttering the slide on heavy
+    // case studies. Videos mounted mid-slide are caught by the collect
+    // ticks below; everything recorded resumes at release.
+    const pausedVideos: any[] = []
+    const pauseVideos = () => {
+        try {
+            document.querySelectorAll("video").forEach((v: any) => {
+                try {
+                    if (!v.paused && !v.ended) {
+                        v.pause()
+                        pausedVideos.push(v)
+                    }
+                } catch (e) {}
+            })
+        } catch (e) {}
+    }
+    pauseVideos()
+
     // PREPLAY: create the replay animations now, paused at frame zero.
     const preplayed: any[] = []
     const preplayEls = new Set<Element>()
@@ -316,6 +336,7 @@ function holdAppearAnimations(
 
     const collect = () => {
         if (released) return
+        pauseVideos()
         let list: any[] = []
         try {
             list = d.getAnimations()
@@ -377,6 +398,12 @@ function holdAppearAnimations(
         }
         playAll(preplayed)
         playAll(held)
+        for (let i = 0; i < pausedVideos.length; i++) {
+            try {
+                const p = pausedVideos[i].play()
+                if (p && p.catch) p.catch(() => {})
+            } catch (e) {}
+        }
         // Stragglers the arm missed (e.g. elements that mounted after the
         // preplay pass) restart from their initial state; single pt:reveal.
         const skipUnion = new Set<Element>()
@@ -431,6 +458,7 @@ if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
 // ------------------------------------------------------- same-document path
 
 function onClickCapture(e: MouseEvent) {
+    if (sdSynth) return // our own re-dispatched click — let it through
     if (!sdEnabled || sdActive) return
     const d: any = document
     if (typeof d.startViewTransition !== "function") return
@@ -470,6 +498,13 @@ function onClickCapture(e: MouseEvent) {
     if (normPath(url.pathname) === normPath(window.location.pathname)) return
     if (reducedMotion()) return
 
+    // Swallow the original click completely: the router must not start
+    // swapping DOM before the old page is captured (that race painted a
+    // one-frame snippet of the destination before the transition). The
+    // click is re-fired inside the update callback, after the capture.
+    e.preventDefault()
+    e.stopImmediatePropagation()
+
     const goingToPlay = isPlayPath(url.pathname)
     if (goingToPlay) setPlayBlank(true)
     sdActive = true
@@ -484,6 +519,32 @@ function onClickCapture(e: MouseEvent) {
         })
         mo.observe(document.body, { childList: true, subtree: true })
     } catch (err) {}
+
+    const dest = url.href
+    let fired = false
+    const fire = () => {
+        if (fired) return
+        fired = true
+        try {
+            sdSynth = true
+            if (a.isConnected) a.click()
+            else window.location.assign(dest)
+        } catch (err) {
+            try {
+                window.location.assign(dest)
+            } catch (err2) {}
+        } finally {
+            sdSynth = false
+        }
+        // If neither the router nor native navigation took the click
+        // (e.g. a listener swallowed it), navigate directly.
+        window.setTimeout(() => {
+            try {
+                if (window.location.href === fromHref)
+                    window.location.assign(dest)
+            } catch (err) {}
+        }, 1200)
+    }
 
     let contentReady = false
     let vt: any = null
@@ -510,6 +571,9 @@ function onClickCapture(e: MouseEvent) {
     vt = d.startViewTransition(
         () =>
             new Promise<void>((resolve) => {
+                // Old state is captured by now — hand the click to the
+                // router (or native navigation) with the screen frozen.
+                fire()
                 const t0 = Date.now()
                 const poll = () => {
                     const urlChanged = window.location.href !== fromHref
