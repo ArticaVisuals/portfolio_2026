@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v7.1 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v7.4 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
@@ -9,30 +9,54 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // (e.g. on case-study pages where the lightbox click-guard stops the
 // router's listener). @view-transition CSS covers the cross-document path;
 // a module-scope capture listener wraps router clicks in
-// document.startViewTransition() WITHOUT preventing default. Both paths
-// share the same ::view-transition-* pseudo-elements: the outgoing page
-// dims and drifts up while the ACTUAL incoming page slides up over it as a
-// sheet; the nav (its own transition group) swipes out and back in.
+// document.startViewTransition(). v7.4 restores v7.1's DETERMINISTIC
+// OLD-CAPTURE (v7.2 had reverted it and the pre-transition flash of the
+// blank destination came back on warm caches, where the router can swap
+// the DOM before the browser snapshots the old page): the original click
+// is swallowed (preventDefault + stopImmediatePropagation) and re-fired
+// via anchor.click() INSIDE the update callback — after the old capture,
+// with rendering frozen. The serialization cost is ~one frame; the flash
+// it prevents is far worse. Router pages take the re-fired click as
+// pushState; guard pages fall through to native nav + the cross-doc VT;
+// a 1.2s href-unchanged fallback assigns directly. Both paths share the
+// same ::view-transition-* pseudo-elements: the outgoing page dims and
+// drifts up while the ACTUAL incoming page slides up over it as a sheet;
+// the nav (its own transition group) swipes out and back in.
 //
-// APPEAR-EFFECT RESTART (v6.4) — load-in animations must START when the
-// cover ends, even if they already ran while preloaded. Framer's
-// startOptimizedAppearAnimation no-ops when re-invoked after the hydration
-// handoff (verified live), so the replay builds WAAPI animations DIRECTLY
-// from the published appear definitions (__framer__appearAnimationsContent)
-// with el.animate(). The boot loader replays at swipe start (still fully
-// covered → invisible reset); transitions replay at finish, skipping
-// elements whose frame-zero-held animations just resumed. Each replay also
-// dispatches a "pt:reveal" CustomEvent on window so custom code components
-// (e.g. the /play views) can restart their own internal intros. /play
-// additionally gets a force-blank hold on its gallery while transitioning
-// in, released once the transition settles.
+// APPEAR-EFFECT SYSTEM (one motion system):
+// 1. PREPLAY AT ARM — when a transition arms, the replay animations for
+//    every appear-def element are created immediately, PAUSED at frame
+//    zero. WAAPI overrides Framer Motion's inline styles, so SPA mount
+//    animations can never show final-state content inside the moving sheet
+//    (the old "already visible, then re-animates" jump).
+// 2. RELEASE MID-SLIDE — held + preplayed animations play at RELEASE_AT
+//    (~40%, v7.4; was 55%) of the slide duration, early in the sheet's
+//    deceleration. Frame analysis showed the sheet sliding for ~450ms as a
+//    completely blank cream surface at 55% — long enough to read as a
+//    white flash on case studies. Home re-entry is still the exception:
+//    the big "Micah Hoang" hero reveal and nearby rules use longer Framer
+//    appear timings, so home releases even earlier and caps those replay
+//    timings so the hero does not lag behind the rest of the page.
+// 3. Framer's startOptimizedAppearAnimation no-ops post-hydration-handoff
+//    (verified live), so all replay animations are built directly from the
+//    published defs (__framer__appearAnimationsContent) with el.animate().
+//    Each release dispatches ONE "pt:reveal" CustomEvent for custom code
+//    components (e.g. the /play views). /play additionally gets a
+//    force-blank hold on its gallery while transitioning in.
 //
-// v6.8 — SINGLE-ARM HOLD GUARD: on transition arrivals, both the navigation
-// path AND the mount effect's :active-view-transition fallback could arm
-// holdAppearAnimations, double-firing pt:reveal and restarting every appear
-// effect twice (~100ms apart). A module-level sdHoldActive flag ensures only
-// one hold runs at a time, so load-ins replay exactly once, after the
-// transition finishes.
+// SMOOTHNESS — compositor-only properties everywhere: the old-page dim is
+// an opacity fade over the dark ::view-transition backdrop (not a filter);
+// the hold's collection poll runs at 150ms; and every playing video is
+// paused while a transition runs — video decode was the main main-thread
+// cost stuttering the slide into heavy case studies — and resumed only
+// when the transition fully ENDS (v7.2; resuming at the mid-slide release
+// caused a decode burst that janked the slide's deceleration). v7.4 also
+// WARMS IMAGE DECODE during the hold (img.decode() on appear-held
+// subtrees + video posters): releasing dozens of opacity-0 images at once
+// forced a raster/decode burst that stalled the compositor ~70ms right at
+// the release moment — decoding them while the sheet is still covered
+// makes the release start on time. The appear-defs JSON is parsed once
+// per page, not on every replay pass.
 //
 // FIRST BOOT — the SSR'd script injects a curtain + top progress bar before
 // hydration, waits for window.load (bounded), then swipes up. "Auto" mode
@@ -43,7 +67,14 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 const STYLE_ID = "__pt-vt-style"
 const BOOT_ID = "__pt-boot"
 const PAGE_EASE = "cubic-bezier(0.6, 0, 0.18, 1)" // softer entry, silkier landing
-const RELEASE_AT = 0.55 // load-ins start at this fraction of the slide (Zita: ~0.4 of her wipe)
+const RELEASE_AT = 0.4 // load-ins start at this fraction of the slide (v7.4: 0.55 left the sheet blank too long)
+const HOME_RELEASE_AT = 0.22 // home hero has long masked reveals; start it earlier on re-entry
+const SAME_DOC_COMMIT_BUFFER_MS = 90
+const HOME_LONG_REVEAL_Y = 70
+const HOME_LONG_REVEAL_DELAY_S = 0.02
+const HOME_LONG_REVEAL_DURATION_S = 1.05
+const HOME_FADE_DELAY_S = 0.14
+const HOME_FADE_DURATION_S = 0.45
 const NAV_EASE = "cubic-bezier(0.22, 1, 0.36, 1)" // measured nav spring feel
 const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
@@ -77,6 +108,8 @@ let sdActive = false
 let sdHoldActive = false
 let sdDuration = 700
 let sdSynth = false // re-dispatched click in flight (see onClickCapture)
+let sdDefsText = ""
+let sdDefs: any = null // parsed appear defs, cached per published page
 
 function reducedMotion(): boolean {
     try {
@@ -93,6 +126,14 @@ function normPath(p: string): string {
 
 function isPlayPath(pathname: string): boolean {
     return normPath(pathname) === PLAY_PATH
+}
+
+function isHomePath(pathname: string): boolean {
+    return normPath(pathname) === HOME_PATH
+}
+
+function transitionReleaseMs(duration: number, quickHomeReentry: boolean) {
+    return Math.round(duration * (quickHomeReentry ? HOME_RELEASE_AT : RELEASE_AT))
 }
 
 function setPlayBlank(active: boolean) {
@@ -179,18 +220,45 @@ function appearEasing(e: any): string {
     return "cubic-bezier(0,0,0.58,1)" // easeOut default
 }
 
+interface AppearReplayOptions {
+    quickHomeReentry?: boolean
+}
+
+function appearTiming(t: any, from: any, options?: AppearReplayOptions) {
+    let delay = Number(t.delay || 0)
+    let duration = Math.max(0.001, Number(t.duration || 0.8))
+    if (options && options.quickHomeReentry) {
+        const initialY = Math.abs(Number((from && from.y) || 0))
+        if (initialY >= HOME_LONG_REVEAL_Y && duration >= 1) {
+            delay = Math.min(delay, HOME_LONG_REVEAL_DELAY_S)
+            duration = Math.min(duration, HOME_LONG_REVEAL_DURATION_S)
+        } else if (delay >= 0.45 && duration <= 0.8) {
+            delay = Math.min(delay, HOME_FADE_DELAY_S)
+            duration = Math.min(duration, HOME_FADE_DURATION_S)
+        }
+    }
+    return { delay, duration }
+}
+
 // Build a WAAPI animation per appear-def element from the published
 // definitions and hand it to onCreate (running). Shared by the autoplay
 // replay (stragglers) and the paused preplay (transition arm).
 function buildAppearAnimations(
     skip: Set<Element> | null,
-    onCreate: (el: Element, anim: any) => void
+    onCreate: (el: Element, anim: any) => void,
+    options?: AppearReplayOptions
 ) {
     try {
         const w: any = window
         const defsEl = w.__framer__appearAnimationsContent
         if (!defsEl || !defsEl.text) return
-        const defs = JSON.parse(defsEl.text)
+        if (defsEl.text !== sdDefsText) {
+            sdDefsText = defsEl.text
+            sdDefs = null // broken JSON must not leave the previous page's defs
+            sdDefs = JSON.parse(defsEl.text)
+        }
+        const defs = sdDefs
+        if (!defs) return
         let hash: string | undefined
         try {
             const bps = JSON.parse(w.__framer__breakpoints.text)
@@ -234,9 +302,10 @@ function buildAppearAnimations(
                     kfTo.transform = tTo
                 }
                 if (!Object.keys(kfFrom).length) continue
+                const timing = appearTiming(t, from, options)
                 const anim = (el as HTMLElement).animate([kfFrom, kfTo], {
-                    duration: Math.max(1, (t.duration || 0.8) * 1000),
-                    delay: (t.delay || 0) * 1000,
+                    duration: Math.max(1, timing.duration * 1000),
+                    delay: timing.delay * 1000,
                     easing: appearEasing(t.ease),
                     fill: "both",
                 })
@@ -255,12 +324,12 @@ function buildAppearAnimations(
 
 // Restart appear effects immediately (boot path + release stragglers).
 // Dispatches ONE "pt:reveal" so custom code components restart their intros.
-function replayAppearEffects(skip?: Set<Element>) {
+function replayAppearEffects(skip?: Set<Element>, options?: AppearReplayOptions) {
     try {
         window.dispatchEvent(new CustomEvent("pt:reveal"))
     } catch (e) {}
     if (reducedMotion()) return
-    buildAppearAnimations(skip || null, () => {})
+    buildAppearAnimations(skip || null, () => {}, options)
 }
 
 if (typeof window !== "undefined") {
@@ -290,7 +359,8 @@ function isVtAnim(a: any): boolean {
 // own VT group). Single-armed via sdHoldActive.
 function holdAppearAnimations(
     until: Promise<any> | null,
-    releaseAfterMs?: number
+    releaseAfterMs?: number,
+    options?: AppearReplayOptions
 ) {
     if (!sdHoldAppear || reducedMotion()) return
     if (sdHoldActive) return // a hold is already running for this arrival
@@ -302,12 +372,16 @@ function holdAppearAnimations(
     const seen = new Set<any>()
     let released = false
 
-    // Pause every playing video for the duration of the transition — video
-    // decode is the main main-thread cost stuttering the slide on heavy
-    // case studies. Videos mounted mid-slide are caught by the collect
-    // ticks below; everything recorded resumes at release.
+    // Pause every playing video for the WHOLE transition — video decode is
+    // the main main-thread cost stuttering the slide on heavy case studies.
+    // Videos mounted mid-slide are caught by a dedicated tick. Resume only
+    // when the transition fully ends (finished promise / 4s safety) — NOT at
+    // the mid-slide release, where a simultaneous decode burst would jank
+    // the slide's deceleration.
     const pausedVideos: any[] = []
-    const pauseVideos = () => {
+    let videosResumed = false
+    const pauseVideosTick = () => {
+        if (videosResumed) return
         try {
             document.querySelectorAll("video").forEach((v: any) => {
                 try {
@@ -319,7 +393,23 @@ function holdAppearAnimations(
             })
         } catch (e) {}
     }
-    pauseVideos()
+    pauseVideosTick()
+    const vIv = window.setInterval(pauseVideosTick, 200)
+    const resumeVideos = () => {
+        if (videosResumed) return
+        videosResumed = true
+        window.clearInterval(vIv)
+        for (let i = 0; i < pausedVideos.length; i++) {
+            try {
+                const p = pausedVideos[i].play()
+                if (p && p.catch) p.catch(() => {})
+            } catch (e) {}
+        }
+    }
+    if (until && typeof until.then === "function") {
+        until.then(resumeVideos, resumeVideos)
+    }
+    window.setTimeout(resumeVideos, 4000)
 
     // PREPLAY: create the replay animations now, paused at frame zero.
     const preplayed: any[] = []
@@ -332,11 +422,45 @@ function holdAppearAnimations(
         preplayed.push(anim)
         preplayEls.add(el)
         seen.add(anim) // never re-collected by the hold below
-    })
+    }, options)
+
+    // Warm raster caches while the sheet still covers the content: images
+    // inside appear-held subtrees are at opacity 0, so the browser defers
+    // their decode until the release makes them visible — dozens decoding
+    // in one frame stalled the compositor ~70ms mid-slide. decode() is
+    // async and off-main-thread; a second pass catches late mounts.
+    const warmDecode = () => {
+        try {
+            const decodeImg = (im: any) => {
+                try {
+                    if (im && typeof im.decode === "function") {
+                        const p = im.decode()
+                        if (p && p.catch) p.catch(() => {})
+                    }
+                } catch (e) {}
+            }
+            preplayEls.forEach((root: any) => {
+                try {
+                    if (root.tagName === "IMG") decodeImg(root)
+                    root.querySelectorAll("img").forEach(decodeImg)
+                } catch (e) {}
+            })
+            document.querySelectorAll("video[poster]").forEach((v: any) => {
+                try {
+                    const src = v.getAttribute("poster")
+                    if (!src) return
+                    const im = new Image()
+                    im.src = src
+                    decodeImg(im)
+                } catch (e) {}
+            })
+        } catch (e) {}
+    }
+    warmDecode()
+    window.setTimeout(warmDecode, 180)
 
     const collect = () => {
         if (released) return
-        pauseVideos()
         let list: any[] = []
         try {
             list = d.getAnimations()
@@ -349,6 +473,16 @@ function holdAppearAnimations(
             seen.add(a)
             if (isVtAnim(a)) continue
             try {
+                const el = a.effect && a.effect.target
+                // Framer often has its own optimized appear animation running
+                // on the same element we already preplayed. Cancel that
+                // duplicate so stale native delays do not override the replay.
+                if (el && preplayEls.has(el)) {
+                    try {
+                        a.cancel()
+                    } catch (e) {}
+                    continue
+                }
                 if (
                     typeof (window as any).CSSTransition !== "undefined" &&
                     a instanceof (window as any).CSSTransition
@@ -362,7 +496,6 @@ function holdAppearAnimations(
                 a.currentTime = 0
                 a.pause()
                 held.push(a)
-                const el = a.effect && a.effect.target
                 if (el) heldEls.add(el)
             } catch (e) {}
         }
@@ -398,23 +531,18 @@ function holdAppearAnimations(
         }
         playAll(preplayed)
         playAll(held)
-        for (let i = 0; i < pausedVideos.length; i++) {
-            try {
-                const p = pausedVideos[i].play()
-                if (p && p.catch) p.catch(() => {})
-            } catch (e) {}
-        }
         // Stragglers the arm missed (e.g. elements that mounted after the
         // preplay pass) restart from their initial state; single pt:reveal.
         const skipUnion = new Set<Element>()
         heldEls.forEach((el) => skipUnion.add(el))
         preplayEls.forEach((el) => skipUnion.add(el))
-        replayAppearEffects(skipUnion)
+        replayAppearEffects(skipUnion, options)
     }
 
     // Primary: release mid-slide (RELEASE_AT of the duration), during the
     // sheet's deceleration — content is visibly animating as it lands, so a
-    // light page never reads as a blank flash; identical on every page/path.
+    // light page never reads as a blank flash. Home uses the earlier
+    // HOME_RELEASE_AT path because its masked hero reveal is much longer.
     if (typeof releaseAfterMs === "number" && releaseAfterMs > 0) {
         window.setTimeout(release, releaseAfterMs)
     }
@@ -432,8 +560,10 @@ function holdAppearAnimations(
             } catch (e) {
                 active = false
             }
-            if (!active) release()
-            else window.setTimeout(poll, 100)
+            if (!active) {
+                release()
+                resumeVideos()
+            } else window.setTimeout(poll, 100)
         }
         window.setTimeout(poll, 100)
     }
@@ -445,9 +575,14 @@ if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
     ;(window as any).__ptRevealBound = true
     window.addEventListener("pagereveal", (e: any) => {
         const arrivingAtPlay = isPlayPath(window.location.pathname)
+        const quickHomeReentry = isHomePath(window.location.pathname)
         if (arrivingAtPlay) setPlayBlank(true)
         if (e && e.viewTransition) {
-            holdAppearAnimations(e.viewTransition.finished, Math.round(sdDuration * RELEASE_AT))
+            holdAppearAnimations(
+                e.viewTransition.finished,
+                transitionReleaseMs(sdDuration, quickHomeReentry),
+                { quickHomeReentry }
+            )
             if (arrivingAtPlay) releasePlayBlankWhenSettled(e.viewTransition.finished)
         } else if (arrivingAtPlay) {
             releasePlayBlankWhenSettled(null)
@@ -500,12 +635,15 @@ function onClickCapture(e: MouseEvent) {
 
     // Swallow the original click completely: the router must not start
     // swapping DOM before the old page is captured (that race painted a
-    // one-frame snippet of the destination before the transition). The
-    // click is re-fired inside the update callback, after the capture.
+    // flash of the blank destination before the transition — visible on
+    // warm caches, where the destination chunk renders within the click
+    // task). The click is re-fired inside the update callback, after the
+    // capture, with rendering frozen.
     e.preventDefault()
     e.stopImmediatePropagation()
 
     const goingToPlay = isPlayPath(url.pathname)
+    const goingToHome = isHomePath(url.pathname)
     if (goingToPlay) setPlayBlank(true)
     sdActive = true
     dedupeNavNames(sdNavSelector) // guard right before the old-state capture
@@ -562,7 +700,9 @@ function onClickCapture(e: MouseEvent) {
         // below), so the land timer accounts for it.
         holdAppearAnimations(
             vt.finished,
-            Math.round(sdDuration * RELEASE_AT) + 90
+            transitionReleaseMs(sdDuration, goingToHome) +
+                SAME_DOC_COMMIT_BUFFER_MS,
+            { quickHomeReentry: goingToHome }
         )
     }
 
