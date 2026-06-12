@@ -1,8 +1,17 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v7.4 — dual-path View
-// Transitions + first-boot loader + appear-effect restart + /play blank-hold.
+// Site-wide page transition (zitafernandez.com-style). v7.5 — dual-path View
+// Transitions + first-boot loader + appear-effect restart + /play blank-hold
+// + hover-prerender (see the speculation-rules block for why).
+//
+// NAV-MODE MAP (live-probed 2026-06-12): Framer's router takes untrusted
+// re-fired clicks on its own Link components (nav links → SPA), but its
+// global anchor listener is trusted-only, so custom DOM anchors (the
+// Selected Work cards) fall through to NATIVE navigation; case-study exits
+// are native too (lightbox click-guard). Native legs ride the cross-doc
+// @view-transition and, with v7.5's hover-prerender, activate instantly —
+// which closes the white inter-document gap users saw before the swipe.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
 // ways: its SPA router (history.pushState) and real cross-document loads
@@ -1175,7 +1184,16 @@ export default function PageTransition(props: Props) {
             }
         }
 
-        // Hover-prefetch internal pages so full-document swaps start fast.
+        // Hover-PRERENDER internal pages (v7.5). Case-study navigations are
+        // real document loads (custom card anchors + the lightbox click
+        // guard bypass the SPA router), and the fetch/parse gap between
+        // documents is where the brief white flash before the swipe lives —
+        // Chrome only paint-holds the old page for so long. A prerendered
+        // destination activates instantly (live-verified: the cross-doc
+        // view transition still runs on prerender activation, and the page
+        // arrives fully rendered, hero video frames included). Chrome caps
+        // moderate-eagerness prerenders at 2, LRU — hover signals intent.
+        // Prefetch stays as the cheaper fallback when prerender is skipped.
         if (enabled && prefetch) {
             try {
                 const HS: any = (window as any).HTMLScriptElement
@@ -1183,13 +1201,19 @@ export default function PageTransition(props: Props) {
                     HS &&
                     HS.supports &&
                     HS.supports("speculationrules") &&
-                    !document.querySelector("script[data-pt-prefetch]")
+                    !document.querySelector("script[data-pt-prerender]")
                 ) {
                     const s = document.createElement("script")
                     s.type = "speculationrules"
-                    ;(s as any).dataset.ptPrefetch = "1"
+                    ;(s as any).dataset.ptPrerender = "1"
                     s.text = JSON.stringify({
                         prefetch: [
+                            {
+                                where: { href_matches: "/*" },
+                                eagerness: "moderate",
+                            },
+                        ],
+                        prerender: [
                             {
                                 where: { href_matches: "/*" },
                                 eagerness: "moderate",
