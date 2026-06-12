@@ -108,39 +108,39 @@ type InternalState = {
 }
 
 const RAW_ITEMS: RawItem[] = [
-    ["001", "Untitled 2", "image", 1219, 1566, "https://freight.cargo.site/t/original/i/P2188739791288083579115147613717/Untitled-2.png"],
-    ["002", "RootGrwoth", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/X2649446305161701741114404623893/RootGrwoth.jpg", "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4"],
-    ["003", "AirPods Pro 3 Hero", "image", 1306, 1306, "https://freight.cargo.site/t/original/i/B2558373790970332005928259540501/AirPods-Pro-3-Hero.jpg"],
-    ["004", "Untitled 1", "image", 3000, 2000, "https://freight.cargo.site/t/original/i/C2283847322832324823936936433173/Untitled-1.png"],
-    ["005", "Untitled 1", "image", 1588, 1059, "https://freight.cargo.site/t/original/i/F2250541485363637417331537466901/Untitled-1.png"],
-    ["006", "VisArt Com FA24 Poster Mockup", "image", 2986, 4478, "https://freight.cargo.site/t/original/i/G2196608913004046629699366147605/VisArt-Com-FA24-Poster-Mockup.jpg"],
-    ["007", "AVL Truck Mockup Min 1", "image", 4000, 2250, "https://freight.cargo.site/t/original/i/C2250533449076475193912795059733/AVL-Truck-Mockup-min-1.png"],
-    ["008", "IMG 2522", "image", 2316, 1510, "https://freight.cargo.site/t/original/i/Y1655438473919868746064881505813/IMG_2522.png"],
-    ["009", "Christmas Card 2020 Copy", "image", 2000, 1333, "https://freight.cargo.site/t/original/i/X2283837639287810306402653820437/Christmas-Card-2020-copy.png"],
-    ["010", "IMG 4680", "image", 1600, 998, "https://freight.cargo.site/t/original/i/N2408686988067186379802246632981/IMG_4680.PNG"],
-    ["011", "MD2 WK03 RotatingCube MH", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/R2626186471525519680749229561365/MD2_WK03_RotatingCube_MH.jpg", "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4"],
-    ["012", "Original A4a05ca89b58af473aa281505ed92b89", "image", 1024, 1024, "https://freight.cargo.site/t/original/i/U2251593566395153013662831334933/original-a4a05ca89b58af473aa281505ed92b89.png"],
-    ["013", "Il 794xN.4695296984 Lxnq", "image", 794, 529, "https://freight.cargo.site/t/original/i/K2251597109295266554393024255509/il_794xN.4695296984_lxnq.jpg"],
-    ["014", "Flower", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/N2649449445627646569797019489813/Flower.jpg", "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4"],
-    ["015", "Gazelle Final", "image", 1012, 1800, "https://freight.cargo.site/t/original/i/G2283853859952596176980419008021/Gazelle-Final.png"],
-    ["016", "DSC9572 1", "image", 1062, 739, "https://freight.cargo.site/t/original/i/Y2250529952735943695225510417941/_DSC9572-1.png"],
-    ["017", "Independent Lens Poster Mockup", "image", 3227, 4760, "https://freight.cargo.site/t/original/i/M1547656418279722570375177164309/Independent-Lens-Poster-Mockup.png"],
-    ["018", "AB Bag", "image", 793, 818, "https://freight.cargo.site/t/original/i/B2251633459471460770528832509461/AB-Bag.png"],
-    ["019", "Seek Truth Thumbnail", "image", 4800, 3784, "https://freight.cargo.site/t/original/i/N1547679404841299796142284068373/Seek-Truth-Thumbnail.png"],
-    ["020", "Teacaps Billboard Mockup", "image", 1800, 1354, "https://freight.cargo.site/t/original/i/G2283816417286430939470125848085/Teacaps-billboard-mockup.jpg"],
-    ["021", "MicahHoang 3 Final Online Video Cutter.Com", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/X1525933261254490830714347705877/MicahHoang_3_Final-online-video-cutter.jpg", "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4"],
-    ["022", "DevWars Ranking System", "image", 2400, 1801, "https://freight.cargo.site/t/original/i/T2283821659445268318103084979733/DevWars-Ranking-System.png"],
-    ["023", "MicahHoangMotionFinalFinal 1 Ezgif.Com Video To Gif Converter", "gif", 600, 338, "https://freight.cargo.site/t/original/i/I2244538183317969342209712182805/MicahHoangMotionFinalFinal_1-ezgif.com-video-to-gif-converter.gif"],
-    ["024", "DSC03254", "image", 5299, 3693, "https://freight.cargo.site/t/original/i/Q2244531664958036712128843601429/DSC03254.png"],
-    ["025", "Untitled 1", "image", 1598, 2000, "https://freight.cargo.site/t/original/i/U2244551962150348687706710857237/Untitled-1.png"],
-    ["026", "HMCTEmailBlast", "gif", 1920, 1080, "https://freight.cargo.site/t/original/i/G2250544389785045078826729854485/HMCTEmailBlast.gif"],
-    ["027", "IMG 5149 Edit 2", "image", 3648, 2432, "https://freight.cargo.site/t/original/i/N2752991907198854043636255151637/IMG_5149-Edit-2.jpg"],
-    ["028", "Process Book Mockup 1", "image", 933, 700, "https://freight.cargo.site/t/original/i/P2244537370775786383451382601237/Process-Book-Mockup-1.png"],
-    ["029", "Slide 1", "video", 1920, 1920, "https://freight.cargo.site/t/original/i/O2292210683679695964626181412373/Slide-1.jpg", "https://freight.cargo.site/t/original/i/F2292210670065998838228532319765/Slide-1.mp4"],
-    ["030", "TrackBeast First Look", "image", 2401, 1801, "https://freight.cargo.site/t/original/i/O2283835809112543777383199790613/TrackBeast-First-Look.png"],
-    ["031", "Slide 1", "video", 1080, 1080, "https://freight.cargo.site/t/original/i/F2335206701381019332535229077013/Slide-1.jpg", "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4"],
-    ["032", "Cellular Symphony Apple Devices HD Best Quality", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/X1779235248420239436213479790101/cellular-symphony-Apple-Devices-HD-Best-Quality.jpg", "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v"],
-    ["033", "Il 1588xN.4553485979 A78d", "image", 1588, 1196, "https://freight.cargo.site/t/original/i/S2250538151022412373961535116821/il_1588xN.4553485979_a78d.jpg"],
+    ["001", "Untitled 2", "image", 1219, 1566, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/001-001-untitled-2.webp"],
+    ["002", "RootGrwoth", "video", 1920, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/002-poster-002-poster-rootgrwoth.jpg", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/002-002-rootgrwoth.mp4"],
+    ["003", "AirPods Pro 3 Hero", "image", 1306, 1306, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/003-003-airpods-pro-3-hero.jpg"],
+    ["004", "Untitled 1", "image", 3000, 2000, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/004-004-untitled-1.webp"],
+    ["005", "Untitled 1", "image", 1588, 1059, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/005-005-untitled-1.webp"],
+    ["006", "VisArt Com FA24 Poster Mockup", "image", 2986, 4478, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/006-006-visart-com-fa24-poster-mockup.jpg"],
+    ["007", "AVL Truck Mockup Min 1", "image", 4000, 2250, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/007-007-avl-truck-mockup-min-1.png"],
+    ["008", "IMG 2522", "image", 2316, 1510, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/008-008-img_2522.webp"],
+    ["009", "Christmas Card 2020 Copy", "image", 2000, 1333, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/009-009-christmas-card-2020-copy.webp"],
+    ["010", "IMG 4680", "image", 1600, 998, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/010-010-img_4680.png"],
+    ["011", "MD2 WK03 RotatingCube MH", "video", 1920, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/011-poster-011-poster-md2_wk03_rotatingcube_mh.jpg", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/011-011-md2_wk03_rotatingcube_mh.mp4"],
+    ["012", "Original A4a05ca89b58af473aa281505ed92b89", "image", 1024, 1024, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/012-012-original-a4a05ca89b58af473aa281505ed92b89.png"],
+    ["013", "Il 794xN.4695296984 Lxnq", "image", 794, 529, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/013-013-il_794xn.4695296984_lxnq.jpg"],
+    ["014", "Flower", "video", 1920, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/014-poster-014-poster-flower.jpg", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/014-014-flower.mp4"],
+    ["015", "Gazelle Final", "image", 1012, 1800, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/015-015-gazelle-final.webp"],
+    ["016", "DSC9572 1", "image", 1062, 739, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/016-016-_dsc9572-1.webp"],
+    ["017", "Independent Lens Poster Mockup", "image", 3227, 4760, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/017-017-independent-lens-poster-mockup.webp"],
+    ["018", "AB Bag", "image", 793, 818, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/018-018-ab-bag.png"],
+    ["019", "Seek Truth Thumbnail", "image", 4800, 3784, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/019-019-seek-truth-thumbnail.webp"],
+    ["020", "Teacaps Billboard Mockup", "image", 1800, 1354, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/020-020-teacaps-billboard-mockup.jpg"],
+    ["021", "MicahHoang 3 Final Online Video Cutter.Com", "video", 1920, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/021-poster-021-poster-micahhoang_3_final-online-video-cutter.jpg", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/021-021-micahhoang_3_final-online-video-cutter.com.mp4"],
+    ["022", "DevWars Ranking System", "image", 2400, 1801, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/022-022-devwars-ranking-system.png"],
+    ["023", "MicahHoangMotionFinalFinal 1 Ezgif.Com Video To Gif Converter", "gif", 600, 338, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/023-023-micahhoangmotionfinalfinal_1-ezgif.com-video-to-gif-converter.gif"],
+    ["024", "DSC03254", "image", 5299, 3693, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/024-024-dsc03254.webp"],
+    ["025", "Untitled 1", "image", 1598, 2000, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/025-025-untitled-1.jpg"],
+    ["026", "HMCTEmailBlast", "gif", 1920, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/026-026-hmctemailblast.gif"],
+    ["027", "IMG 5149 Edit 2", "image", 3648, 2432, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/027-027-img_5149-edit-2.jpg"],
+    ["028", "Process Book Mockup 1", "image", 933, 700, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/028-028-process-book-mockup-1.png"],
+    ["029", "Slide 1", "video", 1920, 1920, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/029-poster-029-poster-slide-1.jpg", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/029-029-slide-1.mp4"],
+    ["030", "TrackBeast First Look", "image", 2401, 1801, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/030-030-trackbeast-first-look.png"],
+    ["031", "Slide 1", "video", 1080, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/031-poster-031-poster-slide-1.jpg", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/031-031-slide-1.mp4"],
+    ["032", "Cellular Symphony Apple Devices HD Best Quality", "video", 1920, 1080, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/032-poster-032-poster-cellular-symphony-apple-devices-hd-best-quality.webp", "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/032-032-cellular-symphony-apple-devices-hd-best-quality.mp4"],
+    ["033", "Il 1588xN.4553485979 A78d", "image", 1588, 1196, "https://raw.githubusercontent.com/ArticaVisuals/portfolio_2026/b2cd6f7c07a8680e7190e1cc58972fd294311d55/case-study-assets/optimized/play-archive-under-1mb-2026-06-12/media/033-033-il_1588xn.4553485979_a78d.jpg"],
 ]
 
 const AUTO_STROKE_MATCHERS = [
@@ -196,6 +196,8 @@ const mod = (value: number, length: number) => ((value % length) + length) % len
 const canUseDOM = () => typeof window !== "undefined" && typeof document !== "undefined"
 const now = () => (typeof performance !== "undefined" ? performance.now() : Date.now())
 const defaultCategory = (kind: Kind) => (kind === "video" ? "Archive Video" : kind === "gif" ? "Archive GIF" : "Archive Image")
+const DEFAULT_STROKE_ON_IDS = new Set(["003", "006", "008", "012", "015", "018", "019", "021", "024", "025", "033"])
+const defaultStroke = (order: string) => (DEFAULT_STROKE_ON_IDS.has(order) ? "on" : "auto")
 
 function imageSource(value: ImageValue) {
     if (!value) return ""
@@ -258,7 +260,7 @@ const DEFAULT_CONTENT_ITEMS: ManagedItem[] = RAW_ITEMS.map(([order, title, kind,
     video,
     width,
     height,
-    stroke: "auto",
+    stroke: defaultStroke(order),
 }))
 
 function normalizeItem(entry: ManagedItem, index: number): Item | null {
