@@ -1,9 +1,10 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v7.5 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v7.6 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold
-// + hover-prerender (see the speculation-rules block for why).
+// + load-time prerender of flash-prone native legs (see the
+// speculation-rules block for why).
 //
 // NAV-MODE MAP (live-probed 2026-06-12): Framer's router takes untrusted
 // re-fired clicks on its own Link components (nav links → SPA), but its
@@ -1184,29 +1185,31 @@ export default function PageTransition(props: Props) {
             }
         }
 
-        // Hover-PRERENDER internal pages (v7.5). Case-study navigations are
+        // PRERENDER internal pages (v7.5/v7.6). Case-study navigations are
         // real document loads (custom card anchors + the lightbox click
         // guard bypass the SPA router), and the fetch/parse gap between
         // documents is where the brief white flash before the swipe lives —
         // Chrome only paint-holds the old page for so long. A prerendered
         // destination activates instantly (live-verified: the cross-doc
         // view transition still runs on prerender activation, and the page
-        // arrives fully rendered, hero video frames included). Chrome caps
-        // moderate-eagerness prerenders at 2, LRU — hover signals intent.
-        // Prefetch stays as the cheaper fallback when prerender is skipped.
+        // arrives fully rendered, hero video frames included).
+        //
+        // v7.6: hover-only (moderate) prerendering lost to fast first
+        // clicks, so the flash-prone NATIVE legs are now prerendered as
+        // soon as this effect runs, not on hover: from home, every
+        // case-study card destination (eager, Chrome caps eager+immediate
+        // prerenders at 10); from a case-study page, the four nav
+        // destinations — ALL exits there are native because of the
+        // lightbox guard — plus sibling case studies (Other Projects
+        // cards). Everything else keeps the cheap moderate hover rules.
+        // Prerender fetches run at low priority after the current page has
+        // hydrated; unsupported browsers ignore the script entirely.
         if (enabled && prefetch) {
             try {
                 const HS: any = (window as any).HTMLScriptElement
-                if (
-                    HS &&
-                    HS.supports &&
-                    HS.supports("speculationrules") &&
-                    !document.querySelector("script[data-pt-prerender]")
-                ) {
-                    const s = document.createElement("script")
-                    s.type = "speculationrules"
-                    ;(s as any).dataset.ptPrerender = "1"
-                    s.text = JSON.stringify({
+                if (HS && HS.supports && HS.supports("speculationrules")) {
+                    const path = normPath(window.location.pathname)
+                    const rules: any = {
                         prefetch: [
                             {
                                 where: { href_matches: "/*" },
@@ -1219,8 +1222,39 @@ export default function PageTransition(props: Props) {
                                 eagerness: "moderate",
                             },
                         ],
-                    })
-                    document.head.appendChild(s)
+                    }
+                    if (isHomePath(path)) {
+                        rules.prerender.push({
+                            where: { href_matches: "/case-studies/*" },
+                            eagerness: "eager",
+                        })
+                    } else if (path.indexOf("/case-studies/") === 0) {
+                        rules.prerender.push({
+                            urls: ["/", "/index", "/play", "/info"],
+                            eagerness: "immediate",
+                        })
+                        rules.prerender.push({
+                            where: { href_matches: "/case-studies/*" },
+                            eagerness: "eager",
+                        })
+                    }
+                    const desired = JSON.stringify(rules)
+                    let s = document.querySelector(
+                        "script[data-pt-prerender]"
+                    ) as HTMLScriptElement | null
+                    // Speculation-rules scripts are immutable once inserted;
+                    // remove + re-add to swap rule sets after an SPA nav.
+                    if (s && s.text !== desired) {
+                        if (s.parentNode) s.parentNode.removeChild(s)
+                        s = null
+                    }
+                    if (!s) {
+                        s = document.createElement("script")
+                        s.type = "speculationrules"
+                        ;(s as any).dataset.ptPrerender = "1"
+                        s.text = desired
+                        document.head.appendChild(s)
+                    }
                 }
             } catch (e) {}
         }
