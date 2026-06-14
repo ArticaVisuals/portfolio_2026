@@ -1,18 +1,31 @@
+// @ts-nocheck
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
-// Site-wide page transition (zitafernandez.com-style). v7.6 — dual-path View
+// Site-wide page transition (zitafernandez.com-style). v7.12 — dual-path View
 // Transitions + first-boot loader + appear-effect restart + /play blank-hold
-// + load-time prerender of flash-prone native legs (see the
-// speculation-rules block for why).
+// + case-study bypass + load-time PREFETCH of native legs (NO prerender —
+// see the speculation-rules block for the hard-won why).
+//
+// v7.12 — /index hero heading hold on the SAME-DOCUMENT path. home -> /index
+// is a router (same-document) nav: no new document loads, so the SSR install
+// script never runs there and Framer never re-fires the heading's load-in
+// appear. The hero "Index" heading (data-framer-appear-id, data-framer-name
+// "Index") therefore painted at its final state instantly while the rest of
+// the page was held — "Index comes in way too early / no animation". Fix:
+// arm the existing data-pt-index-heading-hold CSS pin at click time for
+// /index router navs (the previously-dead goingToIndex branch), so the
+// heading is held through the slide, then released back to Framer's native
+// appear owner so the title is not animated by two systems.
 //
 // NAV-MODE MAP (live-probed 2026-06-12): Framer's router takes untrusted
 // re-fired clicks on its own Link components (nav links → SPA), but its
 // global anchor listener is trusted-only, so custom DOM anchors (the
 // Selected Work cards) fall through to NATIVE navigation; case-study exits
 // are native too (lightbox click-guard). Native legs ride the cross-doc
-// @view-transition and, with v7.5's hover-prerender, activate instantly —
-// which closes the white inter-document gap users saw before the swipe.
+// @view-transition, but v7.9 deliberately opts case-study legs OUT of page
+// transitions because that surface is too hydration/media heavy to animate
+// reliably. Case-study navigation is now plain browser/Framer navigation.
 //
 // NAVIGATION — Framer's published runtime navigates internal links TWO
 // ways: its SPA router (history.pushState) and real cross-document loads
@@ -75,16 +88,29 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // same-origin referrer).
 
 const STYLE_ID = "__pt-vt-style"
+const CASE_BYPASS_STYLE_ID = "__pt-case-study-vt-bypass"
 const BOOT_ID = "__pt-boot"
 const PAGE_EASE = "cubic-bezier(0.6, 0, 0.18, 1)" // softer entry, silkier landing
 const RELEASE_AT = 0.4 // load-ins start at this fraction of the slide (v7.4: 0.55 left the sheet blank too long)
 const HOME_RELEASE_AT = 0.22 // home hero has long masked reveals; start it earlier on re-entry
 const SAME_DOC_COMMIT_BUFFER_MS = 90
-const HOME_LONG_REVEAL_Y = 70
-const HOME_LONG_REVEAL_DELAY_S = 0.02
-const HOME_LONG_REVEAL_DURATION_S = 1.05
+const TYPE_REVEAL_MIN_Y = 70
+const TYPE_REVEAL_MIN_DURATION_S = 1
+const TYPE_REVEAL_DELAY_S = 0.09
+const TYPE_REVEAL_STAGGER_S = 0.09
+const TYPE_REVEAL_DURATION_S = 0.9
+const TYPE_REVEAL_EASE = "cubic-bezier(0.22, 1, 0.36, 1)"
+const TYPE_REVEAL_DIRECT_REPLAY_MS = 40
+const SAME_DOC_REPLAY_SUPPRESS_MS = 5000
 const HOME_FADE_DELAY_S = 0.14
 const HOME_FADE_DURATION_S = 0.45
+const INDEX_HEADING_HOLD_ATTR = "data-pt-index-heading-hold"
+const INDEX_HEADING_PATH_RELEASE_DELAY_MS = 140
+const INDEX_HEADING_SELECTOR =
+    '[data-framer-name="Index"][data-framer-appear-id]'
+const INDEX_HEADING_HIDDEN_TRANSFORM = "perspective(1200px) translateY(115%)"
+const INDEX_LOCAL_MASK_CLASS = "idx-mask-reveal-text"
+const SAME_DOC_HOLD_CAPTURE_BUFFER_MS = 24
 const NAV_EASE = "cubic-bezier(0.22, 1, 0.36, 1)" // measured nav spring feel
 const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
@@ -94,6 +120,7 @@ const BOOT_LABEL = "Micah Hoang ©2026"
 const BOOT_LABEL_ID = "__pt-boot-label"
 const BOOT_LABEL_FADE_MS = 260
 const HOME_PATH = "/"
+const INDEX_PATH = "/index"
 const PLAY_PATH = "/play"
 const PLAY_FORCE_BLANK_ATTR = "data-playground-force-blank"
 const PLAY_LOAD_IN_DELAY_MS = 70
@@ -114,12 +141,16 @@ let sdEnabled = false
 let sdExclude = "[data-no-transition]"
 let sdNavSelector = "nav"
 let sdHoldAppear = true
+let sdSkipCaseStudyTransitions = true
 let sdActive = false
 let sdHoldActive = false
 let sdDuration = 700
 let sdSynth = false // re-dispatched click in flight (see onClickCapture)
 let sdDefsText = ""
 let sdDefs: any = null // parsed appear defs, cached per published page
+let indexHeadingRevealToken = 0
+let indexHeadingPathReleaseTimer = 0
+let indexHeadingPathReleasePollTimer = 0
 
 function reducedMotion(): boolean {
     try {
@@ -142,8 +173,84 @@ function isHomePath(pathname: string): boolean {
     return normPath(pathname) === HOME_PATH
 }
 
+function isIndexPath(pathname: string): boolean {
+    return normPath(pathname) === INDEX_PATH
+}
+
+function isCaseStudyPath(pathname: string): boolean {
+    const path = normPath(pathname)
+    return path === "/case-studies" || path.indexOf("/case-studies/") === 0
+}
+
+function isCaseStudyUrl(value: unknown): boolean {
+    if (typeof value !== "string" || !value) return false
+    try {
+        return isCaseStudyPath(new URL(value, window.location.href).pathname)
+    } catch (e) {
+        return false
+    }
+}
+
+function pageswapDestinationIsCaseStudy(e: any): boolean {
+    try {
+        const activation = e && e.activation
+        return [
+            activation && activation.entry && activation.entry.url,
+            activation && activation.to && activation.to.url,
+            activation && activation.destination && activation.destination.url,
+        ].some(isCaseStudyUrl)
+    } catch (err) {
+        return false
+    }
+}
+
+function armCaseStudyTransitionBypass() {
+    try {
+        document.documentElement.setAttribute(
+            "data-pt-case-study-transition",
+            "off"
+        )
+        let s = document.getElementById(
+            CASE_BYPASS_STYLE_ID
+        ) as HTMLStyleElement | null
+        if (!s) {
+            s = document.createElement("style")
+            s.id = CASE_BYPASS_STYLE_ID
+            document.head.appendChild(s)
+        }
+        s.textContent = "@view-transition { navigation: none; }"
+        window.setTimeout(() => {
+            try {
+                if (isCaseStudyPath(window.location.pathname)) return
+                const current = document.getElementById(CASE_BYPASS_STYLE_ID)
+                if (current && current.parentNode)
+                    current.parentNode.removeChild(current)
+                document.documentElement.removeAttribute(
+                    "data-pt-case-study-transition"
+                )
+            } catch (err) {}
+        }, 2500)
+    } catch (err) {}
+}
+
 function transitionReleaseMs(duration: number, quickHomeReentry: boolean) {
     return Math.round(duration * (quickHomeReentry ? HOME_RELEASE_AT : RELEASE_AT))
+}
+
+function markSameDocumentTransition() {
+    try {
+        ;(window as any).__ptSameDocumentTransitionUntil =
+            Date.now() + SAME_DOC_REPLAY_SUPPRESS_MS
+    } catch (e) {}
+}
+
+function hasRecentSameDocumentTransition(): boolean {
+    try {
+        const until = Number((window as any).__ptSameDocumentTransitionUntil || 0)
+        return Number.isFinite(until) && until > Date.now()
+    } catch (e) {
+        return false
+    }
 }
 
 function setPlayBlank(active: boolean) {
@@ -222,6 +329,10 @@ function appearTransform(v: any): string {
     return parts.length ? parts.join(" ") : "none"
 }
 
+function typeRevealHiddenTransform(from: any): string {
+    return appearTransform({ ...(from || {}), y: "115%" })
+}
+
 function appearEasing(e: any): string {
     if (Array.isArray(e)) return `cubic-bezier(${e.join(",")})`
     if (e === "linear") return "linear"
@@ -232,22 +343,35 @@ function appearEasing(e: any): string {
 
 interface AppearReplayOptions {
     quickHomeReentry?: boolean
+    normalizeTypeReveals?: boolean
+    onlyTypeReveals?: boolean
+    skipIndexHeading?: boolean
 }
 
-function appearTiming(t: any, from: any, options?: AppearReplayOptions) {
+function isTypeReveal(from: any, duration: number): boolean {
+    const initialY = Math.abs(Number((from && from.y) || 0))
+    return initialY >= TYPE_REVEAL_MIN_Y && duration >= TYPE_REVEAL_MIN_DURATION_S
+}
+
+function appearTiming(
+    t: any,
+    from: any,
+    options?: AppearReplayOptions,
+    typeRevealIndex = 0
+) {
     let delay = Number(t.delay || 0)
     let duration = Math.max(0.001, Number(t.duration || 0.8))
-    if (options && options.quickHomeReentry) {
-        const initialY = Math.abs(Number((from && from.y) || 0))
-        if (initialY >= HOME_LONG_REVEAL_Y && duration >= 1) {
-            delay = Math.min(delay, HOME_LONG_REVEAL_DELAY_S)
-            duration = Math.min(duration, HOME_LONG_REVEAL_DURATION_S)
-        } else if (delay >= 0.45 && duration <= 0.8) {
+    const typeReveal = isTypeReveal(from, duration)
+    if (options && options.normalizeTypeReveals && typeReveal) {
+        delay = TYPE_REVEAL_DELAY_S + typeRevealIndex * TYPE_REVEAL_STAGGER_S
+        duration = TYPE_REVEAL_DURATION_S
+    } else if (options && options.quickHomeReentry) {
+        if (delay >= 0.45 && duration <= 0.8) {
             delay = Math.min(delay, HOME_FADE_DELAY_S)
             duration = Math.min(duration, HOME_FADE_DURATION_S)
         }
     }
-    return { delay, duration }
+    return { delay, duration, typeReveal }
 }
 
 // Build a WAAPI animation per appear-def element from the published
@@ -278,6 +402,7 @@ function buildAppearAnimations(
             )
             if (m) hash = m.hash
         } catch (e) {}
+        let typeRevealIndex = 0
         for (const id in defs) {
             try {
                 const def = defs[id]
@@ -291,6 +416,13 @@ function buildAppearAnimations(
                 )
                 if (!el) continue
                 if (skip && skip.has(el)) continue
+                if (
+                    isIndexPath(window.location.pathname) &&
+                    isIndexHeadingEl(el)
+                )
+                    continue
+                if (options && options.skipIndexHeading && isIndexHeadingEl(el))
+                    continue
                 const animate = variant.animate
                 const from = variant.initial
                 const t = animate.transition || {}
@@ -305,18 +437,39 @@ function buildAppearAnimations(
                         animate.opacity === undefined ? 1 : animate.opacity
                     )
                 }
-                const tFrom = appearTransform(from)
+                const baseDuration = Math.max(0.001, Number(t.duration || 0.8))
+                const typeReveal = isTypeReveal(from, baseDuration)
+                if (options && options.onlyTypeReveals && !typeReveal) continue
+                const tFrom =
+                    options && options.normalizeTypeReveals && typeReveal
+                        ? typeRevealHiddenTransform(from)
+                        : appearTransform(from)
                 const tTo = appearTransform(animate)
                 if (tFrom !== tTo) {
                     kfFrom.transform = tFrom
                     kfTo.transform = tTo
                 }
                 if (!Object.keys(kfFrom).length) continue
-                const timing = appearTiming(t, from, options)
+                const timing = appearTiming(
+                    t,
+                    from,
+                    options,
+                    typeReveal ? typeRevealIndex++ : 0
+                )
+                if (options && options.onlyTypeReveals) {
+                    try {
+                        ;(el as HTMLElement)
+                            .getAnimations()
+                            .forEach((animation: any) => animation.cancel())
+                    } catch (e) {}
+                }
                 const anim = (el as HTMLElement).animate([kfFrom, kfTo], {
                     duration: Math.max(1, timing.duration * 1000),
                     delay: timing.delay * 1000,
-                    easing: appearEasing(t.ease),
+                    easing:
+                        options && options.normalizeTypeReveals && timing.typeReveal
+                            ? TYPE_REVEAL_EASE
+                            : appearEasing(t.ease),
                     fill: "both",
                 })
                 // cancel on finish so the element's own styles (and hover
@@ -342,7 +495,244 @@ function replayAppearEffects(skip?: Set<Element>, options?: AppearReplayOptions)
     buildAppearAnimations(skip || null, () => {}, options)
 }
 
+function disarmIndexHeadingHold() {
+    try {
+        window.clearTimeout(indexHeadingPathReleaseTimer)
+        window.clearTimeout(indexHeadingPathReleasePollTimer)
+        indexHeadingPathReleaseTimer = 0
+        indexHeadingPathReleasePollTimer = 0
+        document.documentElement.removeAttribute(INDEX_HEADING_HOLD_ATTR)
+    } catch (err) {}
+}
+
+function clearIndexHeadingHold() {
+    disarmIndexHeadingHold()
+    indexHeadingRevealToken++
+}
+
+function activeViewTransition(): boolean {
+    try {
+        return document.documentElement.matches(":active-view-transition")
+    } catch (e) {
+        return false
+    }
+}
+
+function getIndexHeadingEls(): HTMLElement[] {
+    try {
+        return Array.from(
+            document.querySelectorAll<HTMLElement>(INDEX_HEADING_SELECTOR)
+        )
+    } catch (err) {
+        return []
+    }
+}
+
+function isIndexHeadingEl(el: any): el is Element {
+    try {
+        return !!(
+            el &&
+            el instanceof Element &&
+            el.matches &&
+            el.matches(INDEX_HEADING_SELECTOR)
+        )
+    } catch (err) {
+        return false
+    }
+}
+
+function releaseIndexHeadingHold(existingEls?: Iterable<Element>): Set<Element> {
+    window.clearTimeout(indexHeadingPathReleaseTimer)
+    window.clearTimeout(indexHeadingPathReleasePollTimer)
+    indexHeadingPathReleaseTimer = 0
+    indexHeadingPathReleasePollTimer = 0
+    const els = new Set<Element>()
+    const headingEls = existingEls
+        ? Array.from(existingEls).filter(
+              (el): el is HTMLElement => el instanceof HTMLElement
+          )
+        : getIndexHeadingEls()
+
+    headingEls.forEach((el) => els.add(el))
+    if (!isIndexPath(window.location.pathname)) {
+        clearIndexHeadingHold()
+        return els
+    }
+    if (!document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
+        return els
+    }
+    // The Index heading already has a native Framer appear animation. This
+    // release only removes the route-level CSS hold and returns the heading
+    // as a skip target so the fallback replay system cannot animate it twice.
+    clearIndexHeadingHold()
+    return els
+}
+
+function scheduleIndexHeadingPathRelease(attempt = 0) {
+    try {
+        window.clearTimeout(indexHeadingPathReleasePollTimer)
+        if (!isIndexPath(window.location.pathname)) {
+            if (attempt > 160) return
+            indexHeadingPathReleasePollTimer = window.setTimeout(
+                () => scheduleIndexHeadingPathRelease(attempt + 1),
+                50
+            )
+            return
+        }
+        if (!document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
+            clearIndexHeadingHold()
+            return
+        }
+        const headingEls = getIndexHeadingEls()
+        if (!headingEls.length) {
+            if (attempt > 160) return
+            indexHeadingPathReleasePollTimer = window.setTimeout(
+                () => scheduleIndexHeadingPathRelease(attempt + 1),
+                50
+            )
+            return
+        }
+        if (headingEls.some((el) => el.getAnimations().length > 0)) {
+            disarmIndexHeadingHold()
+            return
+        }
+        if (sdHoldActive || activeViewTransition()) {
+            if (attempt > 160) return
+            indexHeadingPathReleasePollTimer = window.setTimeout(
+                () => scheduleIndexHeadingPathRelease(attempt + 1),
+                50
+            )
+            return
+        }
+        if (indexHeadingPathReleaseTimer) return
+        indexHeadingPathReleaseTimer = window.setTimeout(() => {
+            indexHeadingPathReleaseTimer = 0
+            if (
+                !isIndexPath(window.location.pathname) ||
+                !document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR) ||
+                sdHoldActive ||
+                activeViewTransition()
+            )
+                return
+            releaseIndexHeadingHold()
+        }, INDEX_HEADING_PATH_RELEASE_DELAY_MS)
+    } catch (err) {}
+}
+
+// Pin the hero "Index" heading hidden only for same-document router navs.
+// Fresh /index documents rely on the normal appear/direct replay path; carrying
+// this hold in the SSR install script was what let the title get stuck. On
+// home -> /index, no new document loads, so the click path arms the hold until
+// Framer's heading appear animation has been collected/released. The fallback
+// release intentionally does not animate the heading; it only prevents a stuck
+// hidden state and keeps the replay layer from owning the title twice.
+function armIndexHeadingHold() {
+    try {
+        document.documentElement.setAttribute(INDEX_HEADING_HOLD_ATTR, "true")
+        scheduleIndexHeadingPathRelease()
+        window.setTimeout(() => {
+            if (document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
+                clearIndexHeadingHold()
+            }
+        }, 4000)
+    } catch (err) {}
+}
+
+function normalizeIndexMaskDelay(delayMs: number): number {
+    if (!Number.isFinite(delayMs)) return TYPE_REVEAL_DELAY_S * 1000
+    if (delayMs < 100) return Math.max(delayMs, TYPE_REVEAL_DELAY_S * 1000)
+    return TYPE_REVEAL_DELAY_S * 1000 + ((delayMs - 100) / 70) * 90
+}
+
+function normalizeIndexMaskKeyframes(keyframes: any) {
+    if (!Array.isArray(keyframes) || !keyframes.length) return keyframes
+    const first = keyframes[0]
+    if (!first || typeof first !== "object" || !("transform" in first)) {
+        return keyframes
+    }
+    return [
+        { ...first, transform: "translate3d(0, 115px, 0)" },
+        ...keyframes.slice(1),
+    ]
+}
+
+function installIndexMaskRevealNormalizer() {
+    try {
+        const w: any = window
+        if (w.__ptIndexMaskRevealNormalizer) return
+        const proto: any = Element && Element.prototype
+        const nativeAnimate = proto && proto.animate
+        if (typeof nativeAnimate !== "function") return
+        w.__ptIndexMaskRevealNormalizer = true
+        proto.animate = function (keyframes: any, options?: any) {
+            try {
+                const el = this as Element
+                if (
+                    el &&
+                    el.classList &&
+                    el.classList.contains(INDEX_LOCAL_MASK_CLASS)
+                ) {
+                    const timing =
+                        typeof options === "number"
+                            ? { duration: options }
+                            : { ...(options || {}) }
+                    timing.duration = TYPE_REVEAL_DURATION_S * 1000
+                    timing.delay = normalizeIndexMaskDelay(
+                        Number(timing.delay || 0)
+                    )
+                    timing.easing = TYPE_REVEAL_EASE
+                    return nativeAnimate.call(
+                        this,
+                        normalizeIndexMaskKeyframes(keyframes),
+                        timing
+                    )
+                }
+            } catch (err) {}
+            return nativeAnimate.call(this, keyframes, options)
+        }
+    } catch (err) {}
+}
+
+function replayDirectTypeReveals() {
+    if (sdActive || activeViewTransition() || hasRecentSameDocumentTransition()) {
+        return
+    }
+    if (reducedMotion()) {
+        clearIndexHeadingHold()
+        return
+    }
+    const indexHeadingEls = new Set<Element>()
+    if (isIndexPath(window.location.pathname)) {
+        const headingEls = getIndexHeadingEls()
+        headingEls.forEach((el) => indexHeadingEls.add(el))
+        if (
+            headingEls.length &&
+            document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)
+        ) {
+                releaseIndexHeadingHold(headingEls).forEach((el) =>
+                indexHeadingEls.add(el)
+            )
+        }
+    }
+    try {
+        window.dispatchEvent(new CustomEvent("pt:reveal"))
+    } catch (err) {
+    }
+    try {
+        buildAppearAnimations(indexHeadingEls, () => {}, {
+            normalizeTypeReveals: true,
+            onlyTypeReveals: true,
+        })
+    } catch (err) {
+    } finally {
+        if (!document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
+            clearIndexHeadingHold()
+        }
+    }
+}
+
 if (typeof window !== "undefined") {
+    installIndexMaskRevealNormalizer()
     // The SSR'd boot script calls this at swipe start (see installScript).
     ;(window as any).__ptReplayAppear = replayAppearEffects
     if (isPlayPath(window.location.pathname)) {
@@ -526,11 +916,31 @@ function holdAppearAnimations(
         released = true
         sdHoldActive = false
         window.clearInterval(iv)
+        const indexHeadingReplayEls = new Set<Element>()
+        if (document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
+            preplayEls.forEach((el) => {
+                if (isIndexHeadingEl(el)) indexHeadingReplayEls.add(el)
+            })
+            heldEls.forEach((el) => {
+                if (isIndexHeadingEl(el)) indexHeadingReplayEls.add(el)
+            })
+        }
+        const explicitIndexHeadingEls =
+            document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR) &&
+            !indexHeadingReplayEls.size
+                ? releaseIndexHeadingHold()
+                : new Set<Element>()
+        if (indexHeadingReplayEls.size) {
+            disarmIndexHeadingHold()
+        }
         const playAll = (list: any[]) => {
             for (let i = 0; i < list.length; i++) {
                 const a: any = list[i]
                 try {
-                    if (inNav(a.effect && a.effect.target)) a.finish()
+                    const target = a.effect && a.effect.target
+                    if (target && explicitIndexHeadingEls.has(target)) {
+                        a.cancel()
+                    } else if (inNav(target)) a.finish()
                     else a.play()
                 } catch (e) {
                     try {
@@ -546,6 +956,8 @@ function holdAppearAnimations(
         const skipUnion = new Set<Element>()
         heldEls.forEach((el) => skipUnion.add(el))
         preplayEls.forEach((el) => skipUnion.add(el))
+        indexHeadingReplayEls.forEach((el) => skipUnion.add(el))
+        explicitIndexHeadingEls.forEach((el) => skipUnion.add(el))
         replayAppearEffects(skipUnion, options)
     }
 
@@ -583,15 +995,28 @@ function holdAppearAnimations(
 // Cross-document arrivals: pagereveal carries the ViewTransition object.
 if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
     ;(window as any).__ptRevealBound = true
+    window.addEventListener("pageswap", (e: any) => {
+        if (!sdSkipCaseStudyTransitions || !e || !e.viewTransition) return
+        if (
+            isCaseStudyPath(window.location.pathname) ||
+            pageswapDestinationIsCaseStudy(e)
+        ) {
+            try {
+                e.viewTransition.skipTransition()
+            } catch (err) {}
+        }
+    })
     window.addEventListener("pagereveal", (e: any) => {
         const arrivingAtPlay = isPlayPath(window.location.pathname)
+        const arrivingAtCaseStudy = isCaseStudyPath(window.location.pathname)
         const quickHomeReentry = isHomePath(window.location.pathname)
+        if (sdSkipCaseStudyTransitions && arrivingAtCaseStudy) return
         if (arrivingAtPlay) setPlayBlank(true)
         if (e && e.viewTransition) {
             holdAppearAnimations(
                 e.viewTransition.finished,
                 transitionReleaseMs(sdDuration, quickHomeReentry),
-                { quickHomeReentry }
+                { quickHomeReentry, normalizeTypeReveals: true }
             )
             if (arrivingAtPlay) releasePlayBlankWhenSettled(e.viewTransition.finished)
         } else if (arrivingAtPlay) {
@@ -642,6 +1067,14 @@ function onClickCapture(e: MouseEvent) {
     if (url.origin !== window.location.origin) return
     if (normPath(url.pathname) === normPath(window.location.pathname)) return
     if (reducedMotion()) return
+    const caseStudyLeg =
+        sdSkipCaseStudyTransitions &&
+        (isCaseStudyPath(window.location.pathname) ||
+            isCaseStudyPath(url.pathname))
+    if (caseStudyLeg) {
+        armCaseStudyTransitionBypass()
+        return
+    }
 
     // Swallow the original click completely: the router must not start
     // swapping DOM before the old page is captured (that race painted a
@@ -651,10 +1084,17 @@ function onClickCapture(e: MouseEvent) {
     // capture, with rendering frozen.
     e.preventDefault()
     e.stopImmediatePropagation()
+    markSameDocumentTransition()
 
     const goingToPlay = isPlayPath(url.pathname)
     const goingToHome = isHomePath(url.pathname)
+    const goingToIndex = isIndexPath(url.pathname)
     if (goingToPlay) setPlayBlank(true)
+    // Same-document nav to /index: pin the hero heading hidden NOW (before the
+    // route subtree mounts) so it is held through the slide and revealed with
+    // the rest of the page at release, matching /info. No SSR script runs on a
+    // router nav, so this is the only place the hold gets armed for this path.
+    if (goingToIndex && sdHoldAppear) armIndexHeadingHold()
     sdActive = true
     dedupeNavNames(sdNavSelector) // guard right before the old-state capture
     const fromHref = window.location.href
@@ -711,8 +1151,12 @@ function onClickCapture(e: MouseEvent) {
         holdAppearAnimations(
             vt.finished,
             transitionReleaseMs(sdDuration, goingToHome) +
-                SAME_DOC_COMMIT_BUFFER_MS,
-            { quickHomeReentry: goingToHome }
+                SAME_DOC_HOLD_CAPTURE_BUFFER_MS,
+            {
+                quickHomeReentry: goingToHome,
+                normalizeTypeReveals: true,
+                skipIndexHeading: goingToIndex,
+            }
         )
     }
 
@@ -730,14 +1174,20 @@ function onClickCapture(e: MouseEvent) {
                     const rendered = mutated || document.title !== fromTitle
                     if (urlChanged && rendered) {
                         contentReady = true
-                        // New nav may have mounted — keep names unique
-                        // before the new-state capture.
-                        dedupeNavNames(sdNavSelector)
-                        // Arm the global appear hold before resolving the
-                        // update callback so incoming load-ins are frozen
-                        // before the browser captures the new state.
-                        startIncomingHold()
-                        window.setTimeout(resolve, 90) // let React commit
+                        window.setTimeout(() => {
+                            // New nav may have mounted — keep names unique
+                            // before the new-state capture.
+                            dedupeNavNames(sdNavSelector)
+                            // Arm the global appear hold after the route commit
+                            // and just before resolving the update callback, so
+                            // incoming load-ins are frozen for the new-state
+                            // capture without racing the destination DOM.
+                            startIncomingHold()
+                            window.setTimeout(
+                                resolve,
+                                SAME_DOC_HOLD_CAPTURE_BUFFER_MS
+                            )
+                        }, SAME_DOC_COMMIT_BUFFER_MS)
                         return
                     }
                     if (Date.now() - t0 > 2500) {
@@ -793,7 +1243,8 @@ function buildCss(
     navDuration: number,
     drift: number,
     dim: number,
-    navSelector: string
+    navSelector: string,
+    crossDocumentNavigation = true
 ): string {
     const dimB = Math.max(0, Math.min(1, 1 - dim))
     const navScoped = navSelector
@@ -801,8 +1252,11 @@ function buildCss(
         .map((s) => s.trim())
         .filter(Boolean)
         .join(", ")
+    const crossDocumentRule = crossDocumentNavigation
+        ? "@view-transition { navigation: auto; }"
+        : "@view-transition { navigation: none; }"
     return `
-@view-transition { navigation: auto; }
+${crossDocumentRule}
 
 	${navScoped} { view-transition-name: ${NAV_NAME}; }
 
@@ -818,6 +1272,10 @@ function buildCss(
 	    line-height: 120% !important;
 	    font-weight: 400 !important;
 	    letter-spacing: -0.01em !important;
+	}
+
+	html[${INDEX_HEADING_HOLD_ATTR}="true"] ${INDEX_HEADING_SELECTOR} {
+	    transform: ${INDEX_HEADING_HIDDEN_TRANSFORM} !important;
 	}
 
 	@media (max-width: 1199px) {
@@ -909,7 +1367,12 @@ interface BootCfg {
 
 // Installs the CSS into <head> during HTML parse (idempotent by id) and, on
 // qualifying home entries, runs the first-boot loader before hydration.
-function installScript(css: string, boot: BootCfg): string {
+function installScript(
+    css: string,
+    caseStudyCss: string,
+    boot: BootCfg,
+    skipCaseStudyTransitions: boolean
+): string {
     const bootColor = String(boot.color).replace(COLOR_RE, "")
     const barColor = String(boot.barColor).replace(COLOR_RE, "")
     const playBlankJs =
@@ -941,13 +1404,24 @@ function installScript(css: string, boot: BootCfg): string {
         "if(!r)return true;" +
         "try{return new URL(r).origin!==location.origin}catch(e){return true}" +
         "}catch(e){return true}}"
+    const caseStudyPathJs =
+        "function __ptCaseStudy(){try{var p=location.pathname.replace(/\\/+$/,'')||'/';return p==='/case-studies'||p.indexOf('/case-studies/')===0}catch(e){return false}}"
+    const indexHeadingHoldJs = ""
+    const caseStudyCssJs = skipCaseStudyTransitions
+        ? caseStudyPathJs +
+          "var __ptCaseOff=__ptCaseStudy();" +
+          "try{if(__ptCaseOff)document.documentElement.setAttribute('data-pt-case-study-transition','off');else document.documentElement.removeAttribute('data-pt-case-study-transition')}catch(e){}"
+        : "var __ptCaseOff=false;"
     const bootJs = !boot.enabled
         ? ""
         : "try{" +
           "if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){" +
+          "if(!window.__ptBootContextSeen){" +
+          "window.__ptBootContextSeen=true;" +
           (boot.auto
               ? "if(__ptHome()&&__ptFresh())__ptBoot();"
               : "if(__ptHome())__ptBoot();") +
+          "}" +
           "}" +
           "}catch(e){}" +
           homeFn +
@@ -1039,9 +1513,14 @@ function installScript(css: string, boot: BootCfg): string {
           "}"
     return (
         "(function(){try{" +
-        "var c=" +
+        "var __ptNormalCss=" +
         JSON.stringify(css) +
         ";" +
+        "var __ptCaseCss=" +
+        JSON.stringify(caseStudyCss) +
+        ";" +
+        caseStudyCssJs +
+        "var c=__ptCaseOff?__ptCaseCss:__ptNormalCss;" +
         'var s=document.getElementById("' +
         STYLE_ID +
         '");' +
@@ -1054,6 +1533,7 @@ function installScript(css: string, boot: BootCfg): string {
         "}" +
         "if(s.textContent!==c)s.textContent=c;" +
         "}catch(e){}" +
+        indexHeadingHoldJs +
         playBlankJs +
         bootJs +
         "})()"
@@ -1070,6 +1550,7 @@ interface Props {
     excludeSelector: string
     prefetch: boolean
     holdAppear: boolean
+    skipCaseStudyTransitions: boolean
     firstBoot: boolean
     bootMode: string
     bootColor: string
@@ -1098,6 +1579,7 @@ export default function PageTransition(props: Props) {
         excludeSelector = "[data-no-transition]",
         prefetch = true,
         holdAppear = true,
+        skipCaseStudyTransitions = true,
         firstBoot = true,
         bootMode = "once",
         bootColor = "#233324",
@@ -1112,7 +1594,15 @@ export default function PageTransition(props: Props) {
     } = props
 
     const isCanvas = RenderTarget.current() === RenderTarget.canvas
-    const css = buildCss(duration, navDuration, drift, dim, navSelector)
+    const css = buildCss(duration, navDuration, drift, dim, navSelector, true)
+    const caseStudyCss = buildCss(
+        duration,
+        navDuration,
+        drift,
+        dim,
+        navSelector,
+        false
+    )
     const boot: BootCfg = {
         enabled: firstBoot,
         // "once" (legacy value, now titled Auto) = home entries/reloads only;
@@ -1137,6 +1627,7 @@ export default function PageTransition(props: Props) {
         sdExclude = excludeSelector
         sdNavSelector = navSelector
         sdHoldAppear = holdAppear
+        sdSkipCaseStudyTransitions = skipCaseStudyTransitions
         sdDuration = duration
 
         dedupeNavNames(navSelector)
@@ -1146,14 +1637,43 @@ export default function PageTransition(props: Props) {
         // Also release /play's pre-paint blank on direct refreshes now that
         // the full boot curtain is intentionally home-only.
         const onPlayPath = isPlayPath(window.location.pathname)
-        if (enabled && holdAppear) {
-            let active = false
-            try {
-                active = document.documentElement.matches(
-                    ":active-view-transition"
-                )
-            } catch (e) {}
-            if (active) holdAppearAnimations(null)
+        const onHomePath = isHomePath(window.location.pathname)
+        const onIndexPath = isIndexPath(window.location.pathname)
+        const skipCurrentCaseStudy =
+            skipCaseStudyTransitions &&
+            isCaseStudyPath(window.location.pathname)
+        let active = false
+        try {
+            active = document.documentElement.matches(":active-view-transition")
+        } catch (e) {}
+        if (skipCurrentCaseStudy) {
+            document.documentElement.setAttribute(
+                "data-pt-case-study-transition",
+                "off"
+            )
+        } else {
+            document.documentElement.removeAttribute(
+                "data-pt-case-study-transition"
+            )
+        }
+        if (enabled && holdAppear && !skipCurrentCaseStudy) {
+            if (active)
+                holdAppearAnimations(null, undefined, {
+                    quickHomeReentry: onHomePath,
+                    normalizeTypeReveals: true,
+                    skipIndexHeading: onIndexPath,
+                })
+        }
+        if (
+            enabled &&
+            holdAppear &&
+            (onHomePath || onIndexPath) &&
+            !active &&
+            !skipCurrentCaseStudy
+        ) {
+            window.setTimeout(replayDirectTypeReveals, TYPE_REVEAL_DIRECT_REPLAY_MS)
+        } else if (!onIndexPath) {
+            clearIndexHeadingHold()
         }
         if (enabled && onPlayPath) releasePlayBlankWhenSettled(null)
 
@@ -1175,35 +1695,41 @@ export default function PageTransition(props: Props) {
             if (styleEl && styleEl.parentNode)
                 styleEl.parentNode.removeChild(styleEl)
         } else {
+            const desiredCss = skipCurrentCaseStudy ? caseStudyCss : css
             if (styleEl) {
-                if (styleEl.textContent !== css) styleEl.textContent = css
+                if (styleEl.textContent !== desiredCss)
+                    styleEl.textContent = desiredCss
             } else {
                 const s = document.createElement("style")
                 s.id = STYLE_ID
-                s.textContent = css
+                s.textContent = desiredCss
                 document.head.appendChild(s)
             }
         }
 
-        // PRERENDER internal pages (v7.5/v7.6). Case-study navigations are
-        // real document loads (custom card anchors + the lightbox click
-        // guard bypass the SPA router), and the fetch/parse gap between
-        // documents is where the brief white flash before the swipe lives —
-        // Chrome only paint-holds the old page for so long. A prerendered
-        // destination activates instantly (live-verified: the cross-doc
-        // view transition still runs on prerender activation, and the page
-        // arrives fully rendered, hero video frames included).
+        // PREFETCH internal pages (v7.7). Case-study navigations are real
+        // document loads (custom card anchors + the lightbox click guard
+        // bypass the SPA router), and the fetch gap between documents is
+        // where the brief white flash before the swipe lives — Chrome only
+        // paint-holds the old page for so long, and a cold fetch of a heavy
+        // case-study document blows past it.
         //
-        // v7.6: hover-only (moderate) prerendering lost to fast first
-        // clicks, so the flash-prone NATIVE legs are now prerendered as
-        // soon as this effect runs, not on hover: from home, every
-        // case-study card destination (eager, Chrome caps eager+immediate
-        // prerenders at 10); from a case-study page, the four nav
-        // destinations — ALL exits there are native because of the
-        // lightbox guard — plus sibling case studies (Other Projects
-        // cards). Everything else keeps the cheap moderate hover rules.
-        // Prerender fetches run at low priority after the current page has
-        // hydrated; unsupported browsers ignore the script entirely.
+        // PRERENDER IS DELIBERATELY NOT USED. v7.5/v7.6 tried it (it does
+        // make activation instant and the cross-doc VT survives) but
+        // Framer pages are hydration- and IntersectionObserver-dependent:
+        // activating a prerender that has not finished hydrating slides in
+        // a half-built page — scrambled Selected Work grid, footer rows
+        // floating above the fold, white blocks behind the sheet (all
+        // user-reported on published v7.6, reproduced on film). Prefetch
+        // only caches the HTML response — no rendering, no side effects —
+        // and with the document already cached, commit-to-first-paint is
+        // short enough for paint-holding to bridge, which removes the
+        // white gap. Flash-prone legs prefetch at load time (first clicks
+        // were beating hover-triggered warming): from home, every
+        // case-study card destination; from a case-study page, the four
+        // nav destinations (every exit there is native because of the
+        // lightbox guard) plus sibling case studies. Everything else
+        // prefetches on hover. Unsupported browsers ignore the script.
         if (enabled && prefetch) {
             try {
                 const HS: any = (window as any).HTMLScriptElement
@@ -1216,31 +1742,33 @@ export default function PageTransition(props: Props) {
                                 eagerness: "moderate",
                             },
                         ],
-                        prerender: [
-                            {
-                                where: { href_matches: "/*" },
-                                eagerness: "moderate",
-                            },
-                        ],
                     }
-                    if (isHomePath(path)) {
-                        rules.prerender.push({
+                    if (!skipCaseStudyTransitions && isHomePath(path)) {
+                        rules.prefetch.push({
                             where: { href_matches: "/case-studies/*" },
                             eagerness: "eager",
                         })
-                    } else if (path.indexOf("/case-studies/") === 0) {
-                        rules.prerender.push({
+                    } else if (
+                        !skipCaseStudyTransitions &&
+                        path.indexOf("/case-studies/") === 0
+                    ) {
+                        rules.prefetch.push({
                             urls: ["/", "/index", "/play", "/info"],
                             eagerness: "immediate",
                         })
-                        rules.prerender.push({
+                        rules.prefetch.push({
                             where: { href_matches: "/case-studies/*" },
                             eagerness: "eager",
                         })
                     }
                     const desired = JSON.stringify(rules)
+                    document
+                        .querySelectorAll("script[data-pt-prerender]")
+                        .forEach((old) => {
+                            if (old.parentNode) old.parentNode.removeChild(old)
+                        })
                     let s = document.querySelector(
-                        "script[data-pt-prerender]"
+                        "script[data-pt-prefetch]"
                     ) as HTMLScriptElement | null
                     // Speculation-rules scripts are immutable once inserted;
                     // remove + re-add to swap rule sets after an SPA nav.
@@ -1251,7 +1779,7 @@ export default function PageTransition(props: Props) {
                     if (!s) {
                         s = document.createElement("script")
                         s.type = "speculationrules"
-                        ;(s as any).dataset.ptPrerender = "1"
+                        ;(s as any).dataset.ptPrefetch = "1"
                         s.text = desired
                         document.head.appendChild(s)
                     }
@@ -1262,9 +1790,11 @@ export default function PageTransition(props: Props) {
         enabled,
         prefetch,
         css,
+        caseStudyCss,
         excludeSelector,
         navSelector,
         holdAppear,
+        skipCaseStudyTransitions,
         duration,
         isCanvas,
     ])
@@ -1282,7 +1812,12 @@ export default function PageTransition(props: Props) {
                 <script
                     suppressHydrationWarning
                     dangerouslySetInnerHTML={{
-                        __html: installScript(css, boot),
+                        __html: installScript(
+                            css,
+                            caseStudyCss,
+                            boot,
+                            skipCaseStudyTransitions
+                        ),
                     }}
                 />
             )}
@@ -1358,6 +1893,13 @@ addPropertyControls(PageTransition, {
         defaultValue: true,
         enabledTitle: "Until done",
         disabledTitle: "Off",
+    },
+    skipCaseStudyTransitions: {
+        type: ControlType.Boolean,
+        title: "Case studies",
+        defaultValue: true,
+        enabledTitle: "Skip",
+        disabledTitle: "Animate",
     },
     firstBoot: {
         type: ControlType.Boolean,

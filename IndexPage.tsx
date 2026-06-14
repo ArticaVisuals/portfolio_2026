@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {
     useCallback,
     useEffect,
@@ -139,12 +140,33 @@ const INDEX_APPEAR_PRESET = {
     rootMargin: "0px 0px -8% 0px",
     threshold: 0.01,
 } as const
+const INDEX_NAV_FADE_PRESET = {
+    durationMs: 820,
+    easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    baseDelayMs: 120,
+    rowStaggerMs: 92,
+    columnStaggerMs: 0,
+    maxRowIndex: 12,
+} as const
+const INDEX_CONTENT_REVEAL_PRESET = {
+    baseDelayMs: 130,
+    rowStaggerMs: 64,
+    columnStaggerMs: 24,
+    maxRowIndex: 34,
+} as const
+const INDEX_MEDIA_FADE_PRESET = {
+    durationMs: 620,
+    easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    baseDelayMs: 140,
+    itemStaggerMs: 58,
+    maxItemIndex: 24,
+} as const
 const INDEX_MASK_REVEAL_PRESET = {
-    durationMs: 1500,
-    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-    baseDelayMs: 100,
-    staggerMs: 70,
-    distancePx: 90,
+    durationMs: 900,
+    easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    baseDelayMs: 90,
+    staggerMs: 90,
+    distancePx: 115,
 } as const
 
 const indexGridStyle: React.CSSProperties = {
@@ -1030,6 +1052,43 @@ function getIndexFadeDelayMs(index: number): number {
     return getIndexStaggerIndex(index) * INDEX_APPEAR_PRESET.staggerMs
 }
 
+function getIndexNavFadeDelayMs(rowIndex: number, columnIndex = 0): number {
+    const row = Math.max(
+        0,
+        Math.min(rowIndex, INDEX_NAV_FADE_PRESET.maxRowIndex)
+    )
+    const column = Math.max(0, columnIndex)
+    return (
+        INDEX_NAV_FADE_PRESET.baseDelayMs +
+        row * INDEX_NAV_FADE_PRESET.rowStaggerMs +
+        column * INDEX_NAV_FADE_PRESET.columnStaggerMs
+    )
+}
+
+function getIndexContentRevealDelayMs(rowIndex: number, columnIndex = 0): number {
+    const row = Math.max(
+        0,
+        Math.min(rowIndex, INDEX_CONTENT_REVEAL_PRESET.maxRowIndex)
+    )
+    const column = Math.max(0, columnIndex)
+    return (
+        INDEX_CONTENT_REVEAL_PRESET.baseDelayMs +
+        row * INDEX_CONTENT_REVEAL_PRESET.rowStaggerMs +
+        column * INDEX_CONTENT_REVEAL_PRESET.columnStaggerMs
+    )
+}
+
+function getIndexMediaFadeDelayMs(index: number): number {
+    return (
+        INDEX_MEDIA_FADE_PRESET.baseDelayMs +
+        Math.max(
+            0,
+            Math.min(index, INDEX_MEDIA_FADE_PRESET.maxItemIndex)
+        ) *
+            INDEX_MEDIA_FADE_PRESET.itemStaggerMs
+    )
+}
+
 function useIndexAppearTrigger<T extends HTMLElement>() {
     const ref = useRef<T | null>(null)
     const [appeared, setAppeared] = useState(false)
@@ -1048,8 +1107,10 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
         let firstFrame = 0
         let secondFrame = 0
         let transitionPoll = 0
+        let pageRevealTimer = 0
         let revealed = false
         let waitingForTransition = false
+        let waitingRequiresVisible = true
         let observer: IntersectionObserver | null = null
 
         const isVisible = () => {
@@ -1075,9 +1136,15 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
             })
         }
 
-        const waitForTransitionThenReveal = () => {
-            if (revealed || waitingForTransition) return
+        const waitForTransitionThenReveal = (requireVisible: boolean) => {
+            if (revealed) return
+            if (waitingForTransition) {
+                waitingRequiresVisible =
+                    waitingRequiresVisible && requireVisible
+                return
+            }
             waitingForTransition = true
+            waitingRequiresVisible = requireVisible
 
             const poll = () => {
                 if (revealed) return
@@ -1085,8 +1152,9 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
                     transitionPoll = window.setTimeout(poll, 50)
                     return
                 }
+                const shouldRequireVisible = waitingRequiresVisible
                 waitingForTransition = false
-                if (isVisible()) reveal()
+                if (!shouldRequireVisible || isVisible()) reveal()
             }
 
             transitionPoll = window.setTimeout(poll, 50)
@@ -1095,10 +1163,20 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
         const revealIfVisible = () => {
             if (revealed || !isVisible()) return
             if (indexViewTransitionActive()) {
-                waitForTransitionThenReveal()
+                waitForTransitionThenReveal(true)
                 return
             }
             observer?.disconnect()
+            reveal()
+        }
+
+        const revealForPageTransition = () => {
+            if (revealed) return
+            observer?.disconnect()
+            if (indexViewTransitionActive()) {
+                waitForTransitionThenReveal(false)
+                return
+            }
             reveal()
         }
 
@@ -1114,14 +1192,16 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
         )
 
         observer.observe(element)
-        window.addEventListener("pt:reveal", revealIfVisible)
+        window.addEventListener("pt:reveal", revealForPageTransition)
+        pageRevealTimer = window.setTimeout(revealForPageTransition, 220)
 
         return () => {
             window.clearTimeout(transitionPoll)
+            window.clearTimeout(pageRevealTimer)
             window.cancelAnimationFrame(firstFrame)
             window.cancelAnimationFrame(secondFrame)
             observer?.disconnect()
-            window.removeEventListener("pt:reveal", revealIfVisible)
+            window.removeEventListener("pt:reveal", revealForPageTransition)
         }
     }, [])
 
@@ -1341,10 +1421,11 @@ function buildGlobalCss(): string {
     .idx-fade-appear[data-idx-appeared="true"],
     .idx-mask-appear,
     .idx-mask-appear[data-idx-appeared="true"],
-    .idx-mask-reveal-text,
-    .idx-row,
-    .idx-grid-card,
-    .idx-rule {
+	    .idx-mask-reveal-text,
+	    .idx-row,
+	    .idx-grid-card,
+	    .idx-grid-card-media,
+	    .idx-rule {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
@@ -1394,6 +1475,11 @@ function buildGlobalCss(): string {
     contain: paint;
     isolation: isolate;
     background: ${tokens.surfaceActive};
+    opacity: 0;
+    will-change: opacity;
+  }
+  .idx-grid-card-media[data-idx-media-appeared="true"] {
+    opacity: 1;
   }
   .idx-grid-card-media[data-thumbnail-stroke="true"]::after {
     content: "";
@@ -1799,12 +1885,14 @@ function buildGlobalCss(): string {
 function MaskedSlideText({
     children,
     index,
+    delayMs,
     block = false,
     className,
     style,
 }: {
     children: React.ReactNode
     index: number
+    delayMs?: number
     block?: boolean
     className?: string
     style?: React.CSSProperties
@@ -1837,7 +1925,7 @@ function MaskedSlideText({
             ],
             {
                 duration: INDEX_MASK_REVEAL_PRESET.durationMs,
-                delay: getIndexMaskRevealDelayMs(index),
+                delay: delayMs ?? getIndexMaskRevealDelayMs(index),
                 easing: INDEX_MASK_REVEAL_PRESET.easing,
                 fill: "both",
             }
@@ -1846,7 +1934,7 @@ function MaskedSlideText({
         return () => {
             animation.cancel()
         }
-    }, [appeared, index])
+    }, [appeared, delayMs, index])
 
     return (
         <span
@@ -1871,12 +1959,18 @@ function MaskedSlideText({
 function FadeInText({
     children,
     index = 0,
+    delayMs,
+    durationMs,
+    easing,
     block = false,
     className,
     style,
 }: {
     children: React.ReactNode
     index?: number
+    delayMs?: number
+    durationMs?: number
+    easing?: string
     block?: boolean
     className?: string
     style?: React.CSSProperties
@@ -1901,16 +1995,16 @@ function FadeInText({
 
         element.style.opacity = "0"
         const animation = element.animate([{ opacity: 0 }, { opacity: 1 }], {
-            duration: INDEX_APPEAR_PRESET.durationMs,
-            delay: getIndexFadeDelayMs(index),
-            easing: INDEX_APPEAR_PRESET.easing,
+            duration: durationMs ?? INDEX_APPEAR_PRESET.durationMs,
+            delay: delayMs ?? getIndexFadeDelayMs(index),
+            easing: easing ?? INDEX_APPEAR_PRESET.easing,
             fill: "both",
         })
 
         return () => {
             animation.cancel()
         }
-    }, [appeared, index])
+    }, [appeared, delayMs, durationMs, easing, index])
 
     return (
         <span
@@ -2053,7 +2147,18 @@ function TaxonomySection({
         WebkitAppearance: "none",
     })
 
-    let navRevealIndex = 0
+    const navFadeProps = (rowIndex: number, columnIndex = 0) => ({
+        delayMs: getIndexNavFadeDelayMs(rowIndex, columnIndex),
+        durationMs: INDEX_NAV_FADE_PRESET.durationMs,
+        easing: INDEX_NAV_FADE_PRESET.easing,
+    })
+
+    const clearFiltersRow =
+        Math.max(
+            yearNavItems.length,
+            disciplineNavItems.length,
+            industryNavItems.length
+        ) + 2
 
     return (
         <div>
@@ -2062,7 +2167,7 @@ function TaxonomySection({
                     className="idx-taxonomy-label idx-tax-label-year"
                     style={labelStyle}
                 >
-                    <FadeInText index={navRevealIndex++}>
+                    <FadeInText {...navFadeProps(0, 0)}>
                         / Year
                     </FadeInText>
                 </div>
@@ -2078,11 +2183,11 @@ function TaxonomySection({
                         aria-label="Show all years"
                         onClick={() => onFilterClear("years")}
                     >
-                        <FadeInText index={navRevealIndex++}>
+                        <FadeInText {...navFadeProps(0, 0)}>
                             All
                         </FadeInText>
                     </button>
-                    {yearNavItems.map((y) => (
+                    {yearNavItems.map((y, rowIndex) => (
                         <button
                             key={y}
                             type="button"
@@ -2091,7 +2196,7 @@ function TaxonomySection({
                             aria-pressed={filters.years.includes(y)}
                             onClick={() => onFilterToggle("years", y)}
                         >
-                            <FadeInText index={navRevealIndex++}>
+                            <FadeInText {...navFadeProps(rowIndex + 1, 0)}>
                                 {y}
                             </FadeInText>
                         </button>
@@ -2102,7 +2207,7 @@ function TaxonomySection({
                     className="idx-taxonomy-label idx-tax-label-discipline"
                     style={labelStyle}
                 >
-                    <FadeInText index={navRevealIndex++}>
+                    <FadeInText {...navFadeProps(0, 1)}>
                         / Service
                     </FadeInText>
                 </div>
@@ -2118,11 +2223,11 @@ function TaxonomySection({
                         aria-label="Show all services"
                         onClick={() => onFilterClear("disciplines")}
                     >
-                        <FadeInText index={navRevealIndex++}>
+                        <FadeInText {...navFadeProps(0, 1)}>
                             All
                         </FadeInText>
                     </button>
-                    {disciplineNavItems.map((d) => (
+                    {disciplineNavItems.map((d, rowIndex) => (
                         <button
                             key={d}
                             type="button"
@@ -2131,7 +2236,7 @@ function TaxonomySection({
                             aria-pressed={filters.disciplines.includes(d)}
                             onClick={() => onFilterToggle("disciplines", d)}
                         >
-                            <FadeInText index={navRevealIndex++}>
+                            <FadeInText {...navFadeProps(rowIndex + 1, 1)}>
                                 {d}
                             </FadeInText>
                         </button>
@@ -2142,7 +2247,7 @@ function TaxonomySection({
                     className="idx-taxonomy-label idx-tax-label-industry"
                     style={labelStyle}
                 >
-                    <FadeInText index={navRevealIndex++}>
+                    <FadeInText {...navFadeProps(0, 2)}>
                         / Industry
                     </FadeInText>
                 </div>
@@ -2158,11 +2263,11 @@ function TaxonomySection({
                         aria-label="Show all industries"
                         onClick={() => onFilterClear("industries")}
                     >
-                        <FadeInText index={navRevealIndex++}>
+                        <FadeInText {...navFadeProps(0, 2)}>
                             All
                         </FadeInText>
                     </button>
-                    {industryNavItems.map((i) => (
+                    {industryNavItems.map((i, rowIndex) => (
                         <button
                             key={i}
                             type="button"
@@ -2171,7 +2276,7 @@ function TaxonomySection({
                             aria-pressed={filters.industries.includes(i)}
                             onClick={() => onFilterToggle("industries", i)}
                         >
-                            <FadeInText index={navRevealIndex++}>
+                            <FadeInText {...navFadeProps(rowIndex + 1, 2)}>
                                 {i}
                             </FadeInText>
                         </button>
@@ -2202,7 +2307,7 @@ function TaxonomySection({
                         WebkitAppearance: "none",
                     }}
                 >
-                    <FadeInText index={navRevealIndex++}>
+                    <FadeInText {...navFadeProps(clearFiltersRow, 0)}>
                         Clear filters
                     </FadeInText>
                 </button>
@@ -2292,15 +2397,19 @@ function ListView({
         )
     }
 
-    const closingRuleDelay = Math.min(groups.length, 8) * 120
+    const totalRevealRows = groups.reduce(
+        (count, group) => count + 1 + group.items.length,
+        0
+    )
+    const closingRuleDelay = getIndexContentRevealDelayMs(totalRevealRows, 0)
     let rowRevealIndex = 0
 
     return (
         <div
             className={`idx-list-view idx-list-standard idx-hover-${hoverVariant}`}
         >
-            {groups.map(({ year, items }, groupIndex) => {
-                const yearRevealIndex = rowRevealIndex++
+            {groups.map(({ year, items }) => {
+                const yearRevealRow = rowRevealIndex++
 
                 return (
                     <div
@@ -2310,7 +2419,10 @@ function ListView({
                     >
                     <IndexRule
                         className="idx-year-rule"
-                        delayMs={Math.min(groupIndex, 8) * 120}
+                        delayMs={getIndexContentRevealDelayMs(
+                            yearRevealRow,
+                            0
+                        )}
                         style={{
                             gridColumn: "1 / -1",
                             height: 1,
@@ -2330,7 +2442,14 @@ function ListView({
                             className="idx-year-number"
                             style={titleTextStyle}
                         >
-                            <MaskedSlideText index={yearRevealIndex} block>
+                            <MaskedSlideText
+                                index={yearRevealRow}
+                                delayMs={getIndexContentRevealDelayMs(
+                                    yearRevealRow,
+                                    0
+                                )}
+                                block
+                            >
                                 {year > 0 ? year : "—"}
                             </MaskedSlideText>
                         </div>
@@ -2344,8 +2463,13 @@ function ListView({
                             const url = getCaseStudyUrl(p)
                             const disciplineText = getDisciplineDisplay(p)
                             const useFlipHover = hoverVariant === "flip"
-                            const titleRevealIndex = rowRevealIndex++
-                            const metaRevealIndex = rowRevealIndex++
+                            const itemRevealRow = rowRevealIndex++
+                            const titleRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 0)
+                            const disciplineRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 1)
+                            const industryRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 2)
 
                             return (
                                 <div key={p.slug || p.title}>
@@ -2375,10 +2499,11 @@ function ListView({
                                             }}
                                         >
                                             {useFlipHover ? (
-                                                <MaskedSlideText
-                                                    index={titleRevealIndex}
-                                                    block
-                                                >
+	                                                <MaskedSlideText
+	                                                    index={itemRevealRow}
+                                                        delayMs={titleRevealDelay}
+	                                                    block
+	                                                >
                                                     <HoverFlipText
                                                         text={p.title}
                                                         activeText={
@@ -2396,10 +2521,11 @@ function ListView({
                                                     />
                                                 </MaskedSlideText>
                                             ) : (
-                                                <MaskedSlideText
-                                                    index={titleRevealIndex}
-                                                    block
-                                                    style={titleTextStyle}
+	                                                <MaskedSlideText
+	                                                    index={itemRevealRow}
+                                                        delayMs={titleRevealDelay}
+	                                                    block
+	                                                    style={titleTextStyle}
                                                 >
                                                     {p.title}
                                                 </MaskedSlideText>
@@ -2415,10 +2541,11 @@ function ListView({
                                                 whiteSpace: "nowrap",
                                             }}
                                         >
-                                            <FadeInText
-                                                index={metaRevealIndex}
-                                                block
-                                                style={metaTextStyle}
+	                                            <FadeInText
+	                                                index={itemRevealRow}
+                                                    delayMs={disciplineRevealDelay}
+	                                                block
+	                                                style={metaTextStyle}
                                             >
                                                 {disciplineText}
                                             </FadeInText>
@@ -2433,10 +2560,11 @@ function ListView({
                                                 whiteSpace: "nowrap",
                                             }}
                                         >
-                                            <FadeInText
-                                                index={metaRevealIndex + 1}
-                                                block
-                                                style={metaTextStyle}
+	                                            <FadeInText
+	                                                index={itemRevealRow}
+                                                    delayMs={industryRevealDelay}
+	                                                block
+	                                                style={metaTextStyle}
                                             >
                                                 {p.industry}
                                             </FadeInText>
@@ -2446,12 +2574,12 @@ function ListView({
                                     {ri < items.length - 1 && (
                                         <IndexRule
                                             className="idx-row-divider"
-                                            delayMs={
-                                                Math.min(
-                                                    groupIndex * 3 + ri,
-                                                    16
-                                                ) * 70
-                                            }
+	                                            delayMs={
+	                                                getIndexContentRevealDelayMs(
+	                                                    itemRevealRow,
+	                                                    0
+	                                                )
+	                                            }
                                             style={{
                                                 height: 1,
                                                 backgroundColor:
@@ -2475,6 +2603,58 @@ function ListView({
                     backgroundColor: tokens.dividerStrong,
                 }}
             />
+        </div>
+    )
+}
+
+function GridMediaFrame({
+    children,
+    index,
+    thumbnailStroke,
+}: {
+    children: React.ReactNode
+    index: number
+    thumbnailStroke?: boolean
+}) {
+    const { ref, appeared } = useIndexAppearTrigger<HTMLDivElement>()
+
+    useEffect(() => {
+        const element = ref.current
+        if (!element || typeof window === "undefined") return
+
+        element.getAnimations().forEach((animation) => animation.cancel())
+
+        if (!appeared) {
+            element.style.opacity = "0"
+            return
+        }
+
+        if (prefersReducedIndexMotion() || typeof element.animate !== "function") {
+            element.style.opacity = "1"
+            return
+        }
+
+        element.style.opacity = "0"
+        const animation = element.animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: INDEX_MEDIA_FADE_PRESET.durationMs,
+            delay: getIndexMediaFadeDelayMs(index),
+            easing: INDEX_MEDIA_FADE_PRESET.easing,
+            fill: "both",
+        })
+
+        return () => {
+            animation.cancel()
+        }
+    }, [appeared, index])
+
+    return (
+        <div
+            ref={ref}
+            className="idx-grid-card-media"
+            data-thumbnail-stroke={thumbnailStroke ? "true" : undefined}
+            data-idx-media-appeared={appeared ? "true" : "false"}
+        >
+            {children}
         </div>
     )
 }
@@ -2518,9 +2698,9 @@ function GridProjectCard({
             href={href || undefined}
             aria-label={project.title}
         >
-            <div
-                className="idx-grid-card-media"
-                data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
+            <GridMediaFrame
+                index={index}
+                thumbnailStroke={project.thumbnailStroke}
             >
                 {videoSrc && usesLoopingImage ? (
                     <img
@@ -2550,7 +2730,7 @@ function GridProjectCard({
                         decoding="async"
                     />
                 ) : null}
-            </div>
+            </GridMediaFrame>
             <div className="idx-grid-card-title">
                 <MaskedSlideText index={index} block>
                     <HoverFlipText
@@ -2622,15 +2802,23 @@ function GridView({ projects }: { projects: Project[] }) {
 function ViewToggle({
     activeView,
     onViewChange,
+    revealStartRow = 0,
 }: {
     activeView: string
     onViewChange: (v: string) => void
+    revealStartRow?: number
 }) {
+    const navFadeProps = (rowIndex: number, columnIndex = 0) => ({
+        delayMs: getIndexNavFadeDelayMs(rowIndex, columnIndex),
+        durationMs: INDEX_NAV_FADE_PRESET.durationMs,
+        easing: INDEX_NAV_FADE_PRESET.easing,
+    })
+
     return (
         <div className="idx-view-toggle" aria-label="Project view">
             {VIEW_TOGGLE_OPTIONS.map((v, index) => {
                 const active = activeView === v
-                const revealIndex = index * 2
+                const revealColumn = index * 2
 
                 return (
                     <React.Fragment key={v}>
@@ -2639,7 +2827,12 @@ function ViewToggle({
                                 className="idx-view-toggle-divider"
                                 aria-hidden="true"
                             >
-                                <FadeInText index={revealIndex - 1}>
+                                <FadeInText
+                                    {...navFadeProps(
+                                        revealStartRow,
+                                        revealColumn - 1
+                                    )}
+                                >
                                     /
                                 </FadeInText>
                             </span>
@@ -2651,7 +2844,9 @@ function ViewToggle({
                             aria-pressed={active}
                             onClick={() => onViewChange(v)}
                         >
-                            <FadeInText index={revealIndex}>
+                            <FadeInText
+                                {...navFadeProps(revealStartRow, revealColumn)}
+                            >
                                 {v}
                             </FadeInText>
                         </button>
@@ -2899,6 +3094,14 @@ export default function IndexPage({
         registeredProjects.size === 0 &&
         cmsModuleProjects.length === 0 &&
         !cmsModuleLoaded
+    const viewToggleRevealRow = Math.max(
+        10,
+        Math.max(
+            taxonomyNavItems.years.length,
+            taxonomyNavItems.disciplines.length,
+            taxonomyNavItems.industries.length
+        ) + 2
+    )
 
     return (
         <>
@@ -2943,6 +3146,7 @@ export default function IndexPage({
                     <ViewToggle
                         activeView={activeView}
                         onViewChange={handleViewChange}
+                        revealStartRow={viewToggleRevealRow}
                     />
                 </div>
 
