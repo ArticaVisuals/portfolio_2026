@@ -561,29 +561,10 @@ function releaseIndexHeadingHold(existingEls?: Iterable<Element>): Set<Element> 
     if (!document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
         return els
     }
-    // When Framer's native appear animation is present it owns the reveal, so
-    // we only drop the route-level CSS hold and return the heading as a skip
-    // target (the replay layer must not animate it twice). But on the first
-    // home -> /index hop after the boot curtain the native animation is never
-    // created, so the pin would otherwise just snap away (the abrupt pop-in).
-    // In that case animate the reveal here so it matches later hops.
-    const hasNativeAnim = headingEls.some(
-        (el) => el.getAnimations && el.getAnimations().length > 0
-    )
+    // The Index heading already has a native Framer appear animation. This
+    // release only removes the route-level CSS hold and returns the heading
+    // as a skip target so the fallback replay system cannot animate it twice.
     clearIndexHeadingHold()
-    if (!hasNativeAnim) {
-        headingEls.forEach((el) => {
-            try {
-                el.animate(
-                    [
-                        { transform: "perspective(1200px) translateY(115%)" },
-                        { transform: "perspective(1200px) translateY(0%)" },
-                    ],
-                    { duration: 640, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-                )
-            } catch (e) {}
-        })
-    }
     return els
 }
 
@@ -651,7 +632,7 @@ function armIndexHeadingHold() {
         scheduleIndexHeadingPathRelease()
         window.setTimeout(() => {
             if (document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
-                releaseIndexHeadingHold()
+                clearIndexHeadingHold()
             }
         }, 4000)
     } catch (err) {}
