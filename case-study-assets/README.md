@@ -57,3 +57,31 @@ Generated: 2026-05-16T05:26:59.133Z
 - current-site/cellular-symphony — Vimeo embed `947718033` is documented in `external-embeds.json`; Vimeo returned 401 without an authenticated/private context.
 - current-site/motion-connect-2025 — YouTube embed `je6WMia3n5E` is documented in `external-embeds.json`; yt-dlp exposed a 360p format but the video bytes returned 403. The direct Cargo MP4 clips on the page were downloaded.
 - framer-staging/neon-lights — Vimeo embed `903963136` is documented in `external-embeds.json`; Vimeo returned 401 without an authenticated/private context.
+
+## Organization Notes - 2026-06-15
+
+This folder is a preservation/staging archive. It is not the live Framer runtime,
+and files here should not be deleted just because the current Framer project no
+longer exposes a matching page.
+
+Current active Framer/CMS project slugs are:
+
+`gaia`, `airpods`, `peak-energy`, `simon-schuster`,
+`motion-connect-2025`, `national-park-cards`, `yomo`, `karuna`,
+`weaponized-innocence`, `wolff-olins-x-artcenter`, `cellular-symphony`,
+`seek-truth`, `independent-lens`, `typldn`.
+
+Folder meanings:
+
+- `current-site/` is the older `micahhoang.info` Cargo/current-public scrape.
+- `framer-staging/` is a Framer staging scrape. It contains active project
+  folders plus historical route folders such as `neon-lights`,
+  `aspen-valley-landscaping`, and `john-steinbeck`.
+- `optimized/` stores generated optimization batches for rehosting/upload.
+- `video-posters/` stores poster stills and a manifest for manual Framer video
+  poster work.
+- `figma-export/` and `gaia-selected/` are Gaia/Figma-derived working material.
+
+For the full active/retired folder map, see `ARCHIVE_NOTES.md`. Before moving
+media, check manifests and docs for path references. For the broader cleanup
+plan, see `../workspace-organization-plan.md`.

@@ -65,6 +65,7 @@ type JustifiedRow = {
 
 const STROKE_COLOR = "rgb(151, 151, 151)"
 const STROKE_WIDTH = 0.5
+const COMPACT_GAP_BREAKPOINT = 810
 
 function getRatio(item: Pick<MediaItem, "ratio">) {
     const ratio = Number(item.ratio)
@@ -98,13 +99,26 @@ function getMediaUrlRatio(src: string) {
     }
 }
 
+function getMediaSrcSetRatio(srcSet?: string) {
+    if (!srcSet) return 0
+
+    for (const candidate of srcSet.split(",")) {
+        const src = candidate.trim().split(/\s+/)[0]
+        const ratio = getMediaUrlRatio(src)
+        if (ratio > 0) return ratio
+    }
+
+    return 0
+}
+
 function getResponsiveImageRatio(value: ResponsiveImageValue) {
     if (!value) return 0
     if (typeof value === "string") return getMediaUrlRatio(value)
 
     return (
         ratioFromDimensions(value.width, value.height) ||
-        getMediaUrlRatio(value.src || "")
+        getMediaUrlRatio(value.src || "") ||
+        getMediaSrcSetRatio(value.srcSet)
     )
 }
 
@@ -370,7 +384,9 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
     const safeMinHeight = Math.max(1, Number(minRowHeight) || 160)
     const safeStackBelow = Math.max(0, Number(stackBelow) || 0)
     const shouldStack = containerWidth > 0 && containerWidth < safeStackBelow
-    const activeGap = shouldStack ? safeMobileGap : safeGap
+    const useCompactGap =
+        containerWidth > 0 && containerWidth < COMPACT_GAP_BREAKPOINT
+    const activeGap = useCompactGap ? safeMobileGap : safeGap
     const rows = shouldStack
         ? safeItems.map((item) => ({
               items: [item],
@@ -433,8 +449,38 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                       availableWidth,
                                       containerWidth
                                   )
+                            const numericItemWidth =
+                                typeof itemWidth === "number"
+                                    ? itemWidth
+                                    : shouldStack && containerWidth > 0
+                                      ? containerWidth
+                                      : undefined
+                            const frameRatio =
+                                numericItemWidth && rowHeight > 0
+                                    ? numericItemWidth / rowHeight
+                                    : ratio
+                            const containsMedia =
+                                item.fit === "contain" && numericItemWidth
+                            const containedWidth =
+                                containsMedia && frameRatio > ratio
+                                    ? rowHeight * ratio
+                                    : numericItemWidth
+                            const containedHeight =
+                                containsMedia && frameRatio <= ratio
+                                    ? numericItemWidth / ratio
+                                    : rowHeight
+                            const shellWidth =
+                                containsMedia && containedWidth
+                                    ? containedWidth
+                                    : "100%"
+                            const shellHeight =
+                                containsMedia && containedHeight
+                                    ? containedHeight
+                                    : "100%"
                             const frameStyle: React.CSSProperties = {
-                                display: "block",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
                                 width: itemWidth,
                                 height: rowHeight,
                                 position: "relative",
@@ -444,6 +490,14 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                 background: "transparent",
                                 borderRadius: 0,
                                 overflow: "visible",
+                            }
+                            const mediaShellStyle: React.CSSProperties = {
+                                width: shellWidth,
+                                height: shellHeight,
+                                position: "relative",
+                                flex: "0 0 auto",
+                                borderRadius: "inherit",
+                                overflow: "hidden",
                             }
                             const mediaStyle: React.CSSProperties = {
                                 display: "block",
@@ -474,6 +528,14 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                         controls={controls}
                                         playsInline
                                         preload="metadata"
+                                        ref={(video) => {
+                                            if (!video || video.readyState < 1) return
+                                            rememberRatio(
+                                                item.src,
+                                                video.videoWidth,
+                                                video.videoHeight
+                                            )
+                                        }}
                                         onLoadedMetadata={(event) => {
                                             const video = event.currentTarget
                                             rememberRatio(
@@ -514,10 +576,12 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
 
                             return (
                                 <div key={`${item.src}-${itemIndex}`} style={frameStyle}>
-                                    {media}
-                                    {item.stroke ? (
-                                        <div aria-hidden="true" style={strokeStyle} />
-                                    ) : null}
+                                    <div style={mediaShellStyle}>
+                                        {media}
+                                        {item.stroke ? (
+                                            <div aria-hidden="true" style={strokeStyle} />
+                                        ) : null}
+                                    </div>
                                 </div>
                             )
                         })}

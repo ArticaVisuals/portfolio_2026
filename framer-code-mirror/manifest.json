@@ -1,0 +1,532 @@
+{
+  "generatedAt": "2026-06-15T00:00:00-07:00",
+  "projectUrl": "https://khaki-ship-257706.framer.app",
+  "notes": [
+    "Root active TSX files remain the editable working mirrors for current Framer code files.",
+    "Files under code-components/compiled-js are downloaded compiled Framer module snapshots from insert URLs, not original editable TypeScript source.",
+    "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output."
+  ],
+  "counts": {
+    "activeRootCodeComponents": 18,
+    "mirroredCompiledCodeComponents": 22,
+    "mirroredCodeOverrides": 5,
+    "componentMirrorErrors": 0
+  },
+  "activeRootCodeComponents": [
+    {
+      "codeFileId": "QNpkYp5",
+      "path": "ArchivePlayground.tsx",
+      "role": "/play archive renderer",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "ArchivePlayground.tsx",
+      "bytes": 71763,
+      "sha256": "40a8ffdde783d986eb4956ff0bdd2c8ba2ddcaef84d946b12b2ff6e9fa28a62b"
+    },
+    {
+      "codeFileId": "z13WRHS",
+      "path": "CaseStudyControllers.tsx",
+      "role": "Consolidated controller wrapper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyControllers.tsx",
+      "bytes": 4746,
+      "sha256": "ec068b19afea8482ecdc9ba0a00d792290c469620909ce23ac5cc88d7f0a4254"
+    },
+    {
+      "codeFileId": "c0iPrbN",
+      "path": "CaseStudyJustifiedMediaGrid.tsx",
+      "role": "Case-study media grid",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyJustifiedMediaGrid.tsx",
+      "bytes": 26218,
+      "sha256": "5e434273c35b77d2cc165c72b79c37e204f0c2c0a68ac71d2c87ed7b019de71a"
+    },
+    {
+      "codeFileId": "F2K4_SV",
+      "path": "CaseStudyLightbox.tsx",
+      "role": "Page-level case-study lightbox",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyLightbox.tsx",
+      "bytes": 25977,
+      "sha256": "3852e3f077ba6ae5e1e30447257878ed198c724ebc1701e778e27e6ec39847e8"
+    },
+    {
+      "codeFileId": "y6ny5x4",
+      "path": "CaseStudyLinkRepair.tsx",
+      "role": "Legacy/case-study link repair",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyLinkRepair.tsx",
+      "bytes": 21207,
+      "sha256": "1e3a423506ee48c0d1f05b51f05f34f8637d0cbd5e40f8081b61d477fb6918c8"
+    },
+    {
+      "codeFileId": "W62Sy75",
+      "path": "CaseStudyMobileDescriptorLayout.tsx",
+      "role": "Mobile descriptor layout helper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyMobileDescriptorLayout.tsx",
+      "bytes": 7698,
+      "sha256": "1678d502e60c5561fd8582872db8b552bb51f491d874338518332afe2d08a92a"
+    },
+    {
+      "codeFileId": "Z28JYvA",
+      "path": "CaseStudyThumbnailStrokeStyles.tsx",
+      "role": "CMS thumbnail stroke/helper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyThumbnailStrokeStyles.tsx",
+      "bytes": 43795,
+      "sha256": "bd8eb3b5b5b824588a234510c11c955223607fd18161935e14ecaf43e95610b1"
+    },
+    {
+      "codeFileId": "rGMwETR",
+      "path": "CaseStudyVideoManager.tsx",
+      "role": "Case-study autoplay manager",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyVideoManager.tsx",
+      "bytes": 6012,
+      "sha256": "f339ee320798b52b2b3263367a98082a60fcf38bf0967c72acceda620997f267"
+    },
+    {
+      "codeFileId": "Vu82U8E",
+      "path": "CaseStudyWorkInProgressGate.tsx",
+      "role": "WIP-gated case-study shell helper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "CaseStudyWorkInProgressGate.tsx",
+      "bytes": 11731,
+      "sha256": "ebaa145ba06ead68390f94b773d7e5fd19b3665f25742cfda84863c04fda7359"
+    },
+    {
+      "codeFileId": "FecepLS",
+      "path": "HomeSelectedWorkGrid.tsx",
+      "role": "Home selected-work grid",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "HomeSelectedWorkGrid.tsx",
+      "bytes": 35333,
+      "sha256": "32e38950089f93305dca8ca7cb42f2b62e01e8eb7d61a034b7868c23b0f66201"
+    },
+    {
+      "codeFileId": "rgAZFOv",
+      "path": "IndexPage.tsx",
+      "role": "/index archive component",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "IndexPage.tsx",
+      "bytes": 105143,
+      "sha256": "cc6baa048e8cddd8f16f63b98fbbf86f5d71635d11c216ca8d278c0cb33ad0d9"
+    },
+    {
+      "codeFileId": "AZDGWx7",
+      "path": "InfoScrollMoreColorOverride.tsx",
+      "role": "/info Scroll More color override",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "InfoScrollMoreColorOverride.tsx",
+      "bytes": 1435,
+      "sha256": "399b481faf5550b91ae2bdac45b6dee77c157640e21dc82f794a89b15c729bb2"
+    },
+    {
+      "codeFileId": "Wnd19lx",
+      "path": "NavigationScrollGuard.tsx",
+      "role": "Native navigation scroll guard",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "NavigationScrollGuard.tsx",
+      "bytes": 4310,
+      "sha256": "39db2f709d1e5e22385e5921025b83bff25ac48bfaf40b6fac373f74d75eec40"
+    },
+    {
+      "codeFileId": "vlwa5Cz",
+      "path": "OtherProjectCardRestored.tsx",
+      "role": "Related-project card helper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "OtherProjectCardRestored.tsx",
+      "bytes": 32355,
+      "sha256": "c12564485df74365a3dee5f02fc731c33ce82664cd41739b3daa8fb98e123e9d"
+    },
+    {
+      "codeFileId": "gmalnRr",
+      "path": "PageTransition.tsx",
+      "role": "Site-wide page transition",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "PageTransition.tsx",
+      "bytes": 73894,
+      "sha256": "0d734d14bcb83af6dc998248bf1956e07d90eebad8c5013109f862f6ede4e119"
+    },
+    {
+      "codeFileId": "PN1RVOf",
+      "path": "Play.tsx",
+      "role": "Protected /play authoring wrapper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "Play.tsx",
+      "bytes": 25902,
+      "sha256": "8d1ad6d8c17a65e0ba6a6cdffa964e58df4eb34bb1ebf989da26aef2c80773f7"
+    },
+    {
+      "codeFileId": "gh4ngZN",
+      "path": "ScrollToTopButton.tsx",
+      "role": "Scroll-to-top helper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "ScrollToTopButton.tsx",
+      "bytes": 8186,
+      "sha256": "e1b764f7a2b19b7196e152d72f8a4d4b3d57b18bfb1243ae01fdfefb5d46017e"
+    },
+    {
+      "codeFileId": "tYFZCey",
+      "path": "SimonSchusterGuidelinesCarousel.tsx",
+      "role": "Reusable image carousel",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "SimonSchusterGuidelinesCarousel.tsx",
+      "bytes": 22643,
+      "sha256": "454e74927b71123b96d2d34b6656e44d1e4cbe9013025ff81959a72ed2cd456d"
+    }
+  ],
+  "mirroredCompiledCodeComponents": [
+    {
+      "codeFileId": "D5YVims",
+      "path": "ArchivePlaygroundConsolidated.tsx",
+      "insertUrl": "https://framer.com/m/ArchivePlaygroundConsolidated-IY3r3h.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/ArchivePlaygroundConsolidated.js",
+      "wrapperBytes": 361,
+      "wrapperSha256": "49de3e0210ea1dbeb15c0c17b984c6014b5f47880d47b04222a01faa18c1bb0c",
+      "moduleUrl": "https://framerusercontent.com/modules/peL8WypYajryLtGrccAs/HMWgVacgqgrlSrTtZHoi/ArchivePlaygroundConsolidated.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/ArchivePlaygroundConsolidated.js",
+      "bytes": 46193,
+      "sha256": "537dfcdf214e5664bd1c9506434e2404c41ac0a85972c9baaa6ad616c219d394"
+    },
+    {
+      "codeFileId": "aEyj7Rq",
+      "path": "ArchivePlaygroundConsolidatedDraft.tsx",
+      "insertUrl": "https://framer.com/m/ArchivePlaygroundConsolidatedDraft-vOvUdP.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/ArchivePlaygroundConsolidatedDraft.js",
+      "wrapperBytes": 376,
+      "wrapperSha256": "aea4d427d817191dfbe67381585db13b4be77c675a8f5baffac66b83317af940",
+      "moduleUrl": "https://framerusercontent.com/modules/IWxm6ZT4608rA5olLW5V/RcN3sdsL3wrX95ceMQNx/ArchivePlaygroundConsolidatedDraft.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/ArchivePlaygroundConsolidatedDraft.js",
+      "bytes": 22877,
+      "sha256": "bc4acf62bb91c350d5e1b042290436cb5ad8cbbcf90732c2e10b3435e38b107e"
+    },
+    {
+      "codeFileId": "dHFQCIH",
+      "path": "CaseStudyScrambleText.tsx",
+      "insertUrl": "https://framer.com/m/CaseStudyScrambleText-yuHLep.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/CaseStudyScrambleText.js",
+      "wrapperBytes": 337,
+      "wrapperSha256": "6f4cbd9f9a435abb166116740eb3acc284345d6d0144dda598788fd33a4811c9",
+      "moduleUrl": "https://framerusercontent.com/modules/VD11iNqIOb2PKCzMcXD6/11eQYGuxgRrcldjynfHW/CaseStudyScrambleText.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/CaseStudyScrambleText.js",
+      "bytes": 2514,
+      "sha256": "74d5cc7b2aeec61fb08233228e2ba226f86b9836b079924eb60ab702dba91275"
+    },
+    {
+      "codeFileId": "hdPa_Gj",
+      "path": "Counter.tsx",
+      "insertUrl": "https://framer.com/m/Counter-8f6X2g.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/Counter.js",
+      "wrapperBytes": 178,
+      "wrapperSha256": "a9a7ff5eea379580c35dba4c90d8a464f21ce9c2462be597cc880a987b24548e",
+      "moduleUrl": "https://framerusercontent.com/modules/w4Lph1tUvFP7lz68cNbO/MT2RyK3Ofy1JyMjXVpd6/Counter.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/Counter.js",
+      "bytes": 2629,
+      "sha256": "cf5e3f0e76434c63794e034fb56ddd02a4524311ea782bda8afc911bcb5bb3bb"
+    },
+    {
+      "codeFileId": "IthLMt_",
+      "path": "FixedHeightMediaRows.tsx",
+      "insertUrl": "https://framer.com/m/FixedHeightMediaRows-V3d6JC.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/FixedHeightMediaRows.js",
+      "wrapperBytes": 334,
+      "wrapperSha256": "85c258a1bcf90397d5a453b01b137338b8310388c64654796b958963d1bc8aab",
+      "moduleUrl": "https://framerusercontent.com/modules/guOpeZKTAXxtPwbkI76b/T7WS1Bl6vJZm3jyoJbNh/FixedHeightMediaRows.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/FixedHeightMediaRows.js",
+      "bytes": 14418,
+      "sha256": "b45e4b92a4d8a05d2f5de3a80355a2f0beafa8da644e5b62c1f79d145d345e95"
+    },
+    {
+      "codeFileId": "BF2H03E",
+      "path": "FooterCopyrightYear.tsx",
+      "insertUrl": "https://framer.com/m/FooterCopyrightYear-BzEHEy.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/FooterCopyrightYear.js",
+      "wrapperBytes": 331,
+      "wrapperSha256": "8d0c9441f50ffc15fee5b897675111b4cc3a656a31413d90dafac564ed48539b",
+      "moduleUrl": "https://framerusercontent.com/modules/ynKzHUvWshHUSDGIVB4t/jZ2NcsuYNhKLpDPudUIy/FooterCopyrightYear.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/FooterCopyrightYear.js",
+      "bytes": 1051,
+      "sha256": "b9f4d3d944db06669765e2f1ca724896c9be98a74bec49b96d3d9f11e9ce3a25"
+    },
+    {
+      "codeFileId": "IPugK6y",
+      "path": "PlayAccessibilityDraftPatch.tsx",
+      "insertUrl": "https://framer.com/m/PlayAccessibilityDraftPatch-UnUooF.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlayAccessibilityDraftPatch.js",
+      "wrapperBytes": 355,
+      "wrapperSha256": "cf15b7735847a7a693d299f375d0a3f50e86f1f04c1bb472dacfaa5d846d464a",
+      "moduleUrl": "https://framerusercontent.com/modules/GTixzuPlQwjyqdsAdvbB/7RLmFzgQQDvocNdSxtiR/PlayAccessibilityDraftPatch.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlayAccessibilityDraftPatch.js",
+      "bytes": 12331,
+      "sha256": "76f0dd8857b930c201e83d530abf89a9c1040760fc0885a899dda5d94c5147b9"
+    },
+    {
+      "codeFileId": "uO7AzzY",
+      "path": "PlayDraftViewportFix.tsx",
+      "insertUrl": "https://framer.com/m/PlayDraftViewportFix-wrOT3S.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlayDraftViewportFix.js",
+      "wrapperBytes": 334,
+      "wrapperSha256": "fa3110cb900059821f9df4767f4ea4022296b3a897d07d3ffe187f19c027c4b2",
+      "moduleUrl": "https://framerusercontent.com/modules/XSk5urQleGCFi5mDC7DK/njgZmPrnzR1a6Fv4psXP/PlayDraftViewportFix.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlayDraftViewportFix.js",
+      "bytes": 2721,
+      "sha256": "03700552f305743bd7fff5970299958195592ac91915498cf0900fba88e2b2b3"
+    },
+    {
+      "codeFileId": "c2PU6kX",
+      "path": "PlaygroundInstantExitSnapshot.tsx",
+      "insertUrl": "https://framer.com/m/PlaygroundInstantExitSnapshot-WmySwq.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlaygroundInstantExitSnapshot.js",
+      "wrapperBytes": 361,
+      "wrapperSha256": "6e2065fe740c12d1747f042411a5321ef4fe5d318dbda73a09022acc8c50134a",
+      "moduleUrl": "https://framerusercontent.com/modules/nPJOyvWmxKHov7wAMLao/b0yDTTQ1fEnLN9iQHDrT/PlaygroundInstantExitSnapshot.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlaygroundInstantExitSnapshot.js",
+      "bytes": 4872,
+      "sha256": "7cfb5bab1fb847b8264db63d0f5264104eeefd231f14526c990f99e178fd9e08"
+    },
+    {
+      "codeFileId": "FFqrKyU",
+      "path": "PlaygroundMediaLoadSmoother.tsx",
+      "insertUrl": "https://framer.com/m/PlaygroundMediaLoadSmoother-wfvXvN.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlaygroundMediaLoadSmoother.js",
+      "wrapperBytes": 355,
+      "wrapperSha256": "f8f34191e696d6cdc38ad386533923e60a4478cf49a962fd1b4d04175df8eb30",
+      "moduleUrl": "https://framerusercontent.com/modules/Lca1VAFTbNHp0evfhhhQ/6HhzTumN841KJupJaCMa/PlaygroundMediaLoadSmoother.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlaygroundMediaLoadSmoother.js",
+      "bytes": 12777,
+      "sha256": "ce51e6ef0d33b20602dd4f86f72d795a3994bc5d25bde5b4b0c8935d977bcbe9"
+    },
+    {
+      "codeFileId": "iivBAHR",
+      "path": "PlaygroundNavExitHold.tsx",
+      "insertUrl": "https://framer.com/m/PlaygroundNavExitHold-CYFOZy.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlaygroundNavExitHold.js",
+      "wrapperBytes": 337,
+      "wrapperSha256": "e2e3c23578e5b076d4b4850a0676041398d71df84bd67227d77ccf3396fed4ae",
+      "moduleUrl": "https://framerusercontent.com/modules/V8yjeJIWQyju4cbgOz3M/nm6uBYjn9bBFlnmVSj3B/PlaygroundNavExitHold.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlaygroundNavExitHold.js",
+      "bytes": 4031,
+      "sha256": "5e89b5d30d9ecd7259c63c164df813cc2449260bf3319b2f21e37a25575d1018"
+    },
+    {
+      "codeFileId": "RBX6jsP",
+      "path": "PlaygroundNavPassthrough.tsx",
+      "insertUrl": "https://framer.com/m/PlaygroundNavPassthrough-aU5mxf.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlaygroundNavPassthrough.js",
+      "wrapperBytes": 346,
+      "wrapperSha256": "1bb91f973ab0524b68027675dd92b0563321a521a3dfc53c4ca61884dcb3a714",
+      "moduleUrl": "https://framerusercontent.com/modules/ogcPuiPyn3Sk9sJcDp9q/NeQoqMVxiWZiAQp8tjph/PlaygroundNavPassthrough.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlaygroundNavPassthrough.js",
+      "bytes": 14873,
+      "sha256": "7d84e39b474b99fea5386af1f04e6200bb4f6398598085d2605de0ceed9b6b99"
+    },
+    {
+      "codeFileId": "vdg69JZ",
+      "path": "PlaygroundRuleExitGuard.tsx",
+      "insertUrl": "https://framer.com/m/PlaygroundRuleExitGuard-IXnV9j.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlaygroundRuleExitGuard.js",
+      "wrapperBytes": 343,
+      "wrapperSha256": "22bb798bc9eb1bbbeb4a74e6bb67656bc463b6ec7cd7b20c63c558b15d13e098",
+      "moduleUrl": "https://framerusercontent.com/modules/oLKGVkaUY9pQoRSXcbdw/As7flaoY1JILXat84vkr/PlaygroundRuleExitGuard.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlaygroundRuleExitGuard.js",
+      "bytes": 3534,
+      "sha256": "8e46eb26996157c84cd6c6c5adc0d5131acd10bc92e16bbb97995c7a209c3c07"
+    },
+    {
+      "codeFileId": "R3ZWYKl",
+      "path": "PlaygroundSidebarColumnGuard.tsx",
+      "insertUrl": "https://framer.com/m/PlaygroundSidebarColumnGuard-LLAoaQ.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/PlaygroundSidebarColumnGuard.js",
+      "wrapperBytes": 358,
+      "wrapperSha256": "b2092e754ed2c04708539ea33a2ee783ecf60c43479c40122a895fdfa2f626b7",
+      "moduleUrl": "https://framerusercontent.com/modules/gKftjGv4UjDcUEaFwyqS/dPNnGZA9xtrxOAHbxLIr/PlaygroundSidebarColumnGuard.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/PlaygroundSidebarColumnGuard.js",
+      "bytes": 3706,
+      "sha256": "c34679d63d2b6a581a8f5b53f023d09aa1558fca3e8b2de11150e90594b8ffe1"
+    },
+    {
+      "codeFileId": "LNjgKO2",
+      "path": "ProfileTextRevealFix.tsx",
+      "insertUrl": "https://framer.com/m/ProfileTextRevealFix-Rb9wbB.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/ProfileTextRevealFix.js",
+      "wrapperBytes": 334,
+      "wrapperSha256": "f66cde6f1e6b93216ab40c47f07b62de4bd165a59372b8858c96adcb61a426c8",
+      "moduleUrl": "https://framerusercontent.com/modules/QjUomZJF2Oy0xrMpDKMB/n14VG60VPdIz1P4t5lhm/ProfileTextRevealFix.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/ProfileTextRevealFix.js",
+      "bytes": 5372,
+      "sha256": "6836e29bc925f49112dfbdc4ff0eb4c143de0e7ded2038b918aa947b4b407362"
+    },
+    {
+      "codeFileId": "vIFnGmg",
+      "path": "ResponsiveCaseStudyImage.tsx",
+      "insertUrl": "https://framer.com/m/ResponsiveCaseStudyImage-B48b4a.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/ResponsiveCaseStudyImage.js",
+      "wrapperBytes": 346,
+      "wrapperSha256": "8c0456b805c84fdd95261e83874e03c46e1ffc7978a977f73822ddab5116c0b1",
+      "moduleUrl": "https://framerusercontent.com/modules/ILIzhe0ByUuKAAo5D3Pb/yWIOgqCAjPk2cFU1Nyzl/ResponsiveCaseStudyImage.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/ResponsiveCaseStudyImage.js",
+      "bytes": 1349,
+      "sha256": "8ede20f4aab57d03541c955f5e0278ee4339b8b85c5ce51734b1e1e35c4b5fd3"
+    },
+    {
+      "codeFileId": "bsTLKCt",
+      "path": "ResponsiveCaseStudyVideo.tsx",
+      "insertUrl": "https://framer.com/m/ResponsiveCaseStudyVideo-DHzg5s.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/ResponsiveCaseStudyVideo.js",
+      "wrapperBytes": 346,
+      "wrapperSha256": "768c3f78b7be899fc4df8903eb97518d3b97e96204322594fa13060b1adf4450",
+      "moduleUrl": "https://framerusercontent.com/modules/Mqfmy5oFhpZT6Dikc4Mx/7hdIbax3FLawYfN4cCrT/ResponsiveCaseStudyVideo.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/ResponsiveCaseStudyVideo.js",
+      "bytes": 3416,
+      "sha256": "459e4286160a41ba0fc4fe6b203566d8e9a3ed79d42eff4a7220fca96baaa037"
+    },
+    {
+      "codeFileId": "xDqfenf",
+      "path": "ResumeAssetHost.tsx",
+      "insertUrl": "https://framer.com/m/ResumeAssetHost-oJ9Q3K.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/ResumeAssetHost.js",
+      "wrapperBytes": 319,
+      "wrapperSha256": "6fc70d8b232cb2caff5e3a75d619974743bc626f8bb23fcee3edf7c89252caea",
+      "moduleUrl": "https://framerusercontent.com/modules/ySw2UAI64drRFEdHWuqx/ERBaSKxQe4HhL88CFeTE/ResumeAssetHost.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/ResumeAssetHost.js",
+      "bytes": 703,
+      "sha256": "376f074d0cc32bd043035a2e488040198392cedb5475d0b6bb279e0e3119c1bd"
+    },
+    {
+      "codeFileId": "BgeH0il",
+      "path": "SeekTruthCargoSlideshow.tsx",
+      "insertUrl": "https://framer.com/m/SeekTruthCargoSlideshow-mPU0l9.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/SeekTruthCargoSlideshow.js",
+      "wrapperBytes": 343,
+      "wrapperSha256": "98bfc85e3d4d085b486a40adabe54f41c60f1af7af149ab69c79b3c5b8413778",
+      "moduleUrl": "https://framerusercontent.com/modules/Ff4L2cLAS4MfKVz45xvd/NlKhLkIIuKQr7faNPGRa/SeekTruthCargoSlideshow.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/SeekTruthCargoSlideshow.js",
+      "bytes": 11373,
+      "sha256": "e4c7c1333bd0b7f6d81aff018e34092009be7c5b02bcd8eae3b79a9fcc5ed627"
+    },
+    {
+      "codeFileId": "O9WTdUJ",
+      "path": "Test.tsx",
+      "insertUrl": "https://framer.com/m/Test-oQZqfE.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/Test.js",
+      "wrapperBytes": 286,
+      "wrapperSha256": "3c5bde7cea44db8bc2dc4e2195c46f34c6b0e14eb64198cb127b9ad45034702c",
+      "moduleUrl": "https://framerusercontent.com/modules/7wAxq1De7FNdKskWyMo6/Md49SRbB1xd7eGbDV3Ir/Test.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/Test.js",
+      "bytes": 4885,
+      "sha256": "6c93a72932e26abb81303ce16900d053a76f68b6df9e1f3d24d3e147934cdf95"
+    },
+    {
+      "codeFileId": "p7tSTaD",
+      "path": "TextEncryptionEffect.tsx",
+      "insertUrl": "https://framer.com/m/TextEncryptionEffect-Mdf26D.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/TextEncryptionEffect.js",
+      "wrapperBytes": 334,
+      "wrapperSha256": "7fb01ba6fc9ac3ad7e37cf84fd012d5c9c3f2ec85095f04098789ef13f093151",
+      "moduleUrl": "https://framerusercontent.com/modules/wf5VvyimLJBY7hIKUoj1/tj62kBQuByxOUY2RcN87/TextEncryptionEffect.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/TextEncryptionEffect.js",
+      "bytes": 4585,
+      "sha256": "484a1eada3449ba7adf996c103fc63c928ea59a09bc3ab871a4d910955ecfb28"
+    },
+    {
+      "codeFileId": "jFSLix7",
+      "path": "TypldnProcessGallery.tsx",
+      "insertUrl": "https://framer.com/m/TypldnProcessGallery-19MLMa.js",
+      "sourceKind": "framer-compiled-module-snapshot",
+      "wrapperPath": "framer-code-mirror/code-components/wrappers/TypldnProcessGallery.js",
+      "wrapperBytes": 334,
+      "wrapperSha256": "73d38138826a49473b0cc6b7f800289577d2099cd487040c8b8b083fb4b588eb",
+      "moduleUrl": "https://framerusercontent.com/modules/QeeYrkdyKKM0ohLwcdAR/T42jJqpcm46jRZ89zGzw/TypldnProcessGallery.js",
+      "localPath": "framer-code-mirror/code-components/compiled-js/TypldnProcessGallery.js",
+      "bytes": 4278,
+      "sha256": "fd0132f1181acca48590bc5e5a77affbfd9697d7cf4d750c514c96429b4df511"
+    }
+  ],
+  "mirroredCodeOverrides": [
+    {
+      "codeFileId": "Cm9wqQM",
+      "path": "Copyright.tsx",
+      "sourceKind": "framer-override-source-readCodeFile",
+      "localPath": "framer-code-mirror/code-overrides/source-tsx/Copyright.tsx",
+      "bytes": 338,
+      "sha256": "afe4a1377b5aa981acb8b3ca11c749d1f2173bd66298e44de783f32f4a7cf592",
+      "exports": [
+        "AutoCopyrightStatement"
+      ]
+    },
+    {
+      "codeFileId": "cXkdXam",
+      "path": "Copyright_year.tsx",
+      "sourceKind": "framer-override-source-readCodeFile",
+      "localPath": "framer-code-mirror/code-overrides/source-tsx/Copyright_year.tsx",
+      "bytes": 338,
+      "sha256": "afe4a1377b5aa981acb8b3ca11c749d1f2173bd66298e44de783f32f4a7cf592",
+      "exports": [
+        "AutoCopyrightStatement"
+      ]
+    },
+    {
+      "codeFileId": "saw3Q19",
+      "path": "Examples_1.tsx",
+      "sourceKind": "framer-override-source-readCodeFile",
+      "localPath": "framer-code-mirror/code-overrides/source-tsx/Examples_1.tsx",
+      "bytes": 586,
+      "sha256": "4507ed24e2d54a78742ee7ece51ac16ae57f9f842c22dce6710ee232df5ae0e5",
+      "exports": [
+        "withHover",
+        "withRotate",
+        "withRandomColor"
+      ]
+    },
+    {
+      "codeFileId": "WHpRmeH",
+      "path": "External.tsx",
+      "sourceKind": "framer-override-source-readCodeFile",
+      "localPath": "framer-code-mirror/code-overrides/source-tsx/External.tsx",
+      "bytes": 865,
+      "sha256": "36d55bd8adc74d62e4b63a0b2f2ca595ad3e8d540a1dcacf1e4644a149f7125f",
+      "exports": [
+        "Noop",
+        "withOverride",
+        "AutoCopyrightStatement",
+        "External",
+        "withExternal"
+      ]
+    },
+    {
+      "codeFileId": "zB2BDA4",
+      "path": "Weather.tsx",
+      "sourceKind": "framer-override-source-readCodeFile",
+      "localPath": "framer-code-mirror/code-overrides/source-tsx/Weather.tsx",
+      "bytes": 587,
+      "sha256": "790349525176d4c84296a2d89efb6d2c48850819b13151332a782cf5c7d238fd",
+      "exports": [
+        "withWeather",
+        "withClock",
+        "withWeatherIcon"
+      ]
+    }
+  ]
+}

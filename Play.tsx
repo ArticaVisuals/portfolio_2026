@@ -331,6 +331,7 @@ export default function Play(props: Props) {
                 {...archiveProps}
                 items={resolvedItems}
                 navSelector={navSelector}
+                navHideOffset={navHideOffset}
                 loadInDelayMs={loadInDelayMs}
                 loadInFadeMs={loadInFadeMs}
                 loadInStaggerMs={loadInStaggerMs}

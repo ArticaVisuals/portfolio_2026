@@ -1,5 +1,7 @@
 import * as React from "react"
-import { addPropertyControls, ControlType, RenderTarget } from "framer"
+// Framer's code-file type package can lag behind the published runtime.
+// @ts-ignore
+import { addPropertyControls, ControlType, RenderTarget, useRouter } from "framer"
 // @ts-ignore - Framer resolves versioned project module URLs at bundle time.
 import BaseCaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@Wd9cFUrIcpA2FcGDV0Ys"
 
@@ -20,6 +22,25 @@ type Config = {
     viewportPadding: number
     minSize: number
     excludeSelector: string
+}
+type FramerRoute = {
+    path?: string
+    pathLocalized?: Record<string, string>
+    page?: { preload?: () => unknown }
+}
+type FramerRouter = {
+    navigate?: (
+        routeId: string,
+        hash?: string,
+        pathVariables?: Record<string, string>,
+        smoothScroll?: boolean
+    ) => unknown
+    routes?: Record<string, FramerRoute | undefined>
+}
+type RouterMatch = {
+    routeId: string
+    hash?: string
+    pathVariables?: Record<string, string>
 }
 
 // Selectors that identify the site nav layers. Used purely for hit-testing in
@@ -168,6 +189,168 @@ function isCaseStudyDetailPage(): boolean {
     if (typeof window === "undefined") return false
     const path = window.location.pathname.replace(/\/+$/, "")
     return path.startsWith("/case-studies/") && path.length > "/case-studies/".length
+}
+
+function escapeRegExp(value: string): string {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+function stripTrailingSlash(pathname: string): string {
+    if (!pathname || pathname === "/") return "/"
+    return pathname.replace(/\/+$/, "") || "/"
+}
+
+function getSameOriginUrl(href: string): URL | null {
+    if (!href || href === "#") return null
+    if (typeof window === "undefined") return null
+
+    try {
+        const url = new URL(href, window.location.href)
+        return url.origin === window.location.origin ? url : null
+    } catch {
+        return null
+    }
+}
+
+function matchRoutePath(pattern: string, pathname: string): Record<string, string> | null {
+    const normalizedPattern = stripTrailingSlash(pattern)
+    const normalizedPathname = stripTrailingSlash(pathname)
+    if (normalizedPattern === normalizedPathname) return {}
+
+    const variableNames: string[] = []
+    const source = normalizedPattern
+        .split("/")
+        .map((part) => {
+            if (part.startsWith(":") && part.length > 1) {
+                variableNames.push(part.slice(1))
+                return "([^/]+)"
+            }
+            return escapeRegExp(part)
+        })
+        .join("/")
+    const match = normalizedPathname.match(new RegExp(`^${source}$`))
+    if (!match) return null
+
+    return variableNames.reduce<Record<string, string>>((pathVariables, name, index) => {
+        const value = match[index + 1]
+        if (value !== undefined) pathVariables[name] = decodeURIComponent(value)
+        return pathVariables
+    }, {})
+}
+
+function getRoutePaths(route: FramerRoute): string[] {
+    return [route.path, ...Object.values(route.pathLocalized || {})].filter(Boolean) as string[]
+}
+
+function getFramerRouteMatch(router: FramerRouter | undefined, href: string): RouterMatch | null {
+    const url = getSameOriginUrl(href)
+    const routes = router?.routes
+    if (!url || !routes) return null
+
+    const pathname = stripTrailingSlash(url.pathname)
+    const routeEntries = Object.entries(routes)
+        .filter((entry): entry is [string, FramerRoute] => Boolean(entry[1]?.path))
+        .sort(([, a], [, b]) => {
+            const aDepth = (a.path || "/").split("/").length
+            const bDepth = (b.path || "/").split("/").length
+            return bDepth - aDepth
+        })
+
+    for (const [routeId, route] of routeEntries) {
+        for (const routePath of getRoutePaths(route)) {
+            const pathVariables = matchRoutePath(routePath, pathname)
+            if (pathVariables) {
+                return {
+                    routeId,
+                    hash: url.hash ? decodeURIComponent(url.hash.slice(1)) : undefined,
+                    pathVariables,
+                }
+            }
+        }
+    }
+
+    return null
+}
+
+function navigateFramerRoute(router: FramerRouter | undefined, match: RouterMatch): boolean {
+    if (typeof router?.navigate !== "function") return false
+
+    try {
+        router.routes?.[match.routeId]?.page?.preload?.()
+        router.navigate(match.routeId, match.hash, match.pathVariables, false)
+        return true
+    } catch {
+        return false
+    }
+}
+
+function scheduleFramerRouteFallback(
+    router: FramerRouter | undefined,
+    match: RouterMatch,
+    href: string,
+    fromHref: string
+) {
+    const targetUrl = getSameOriginUrl(href)
+    if (!targetUrl) return
+
+    const hasArrived = () => {
+        try {
+            const current = new URL(window.location.href)
+            return (
+                stripTrailingSlash(current.pathname) === stripTrailingSlash(targetUrl.pathname) &&
+                current.hash === targetUrl.hash
+            )
+        } catch {
+            return false
+        }
+    }
+
+    const fallback = () => {
+        if (hasArrived() || window.location.href !== fromHref) return
+        if (!navigateFramerRoute(router, match)) window.location.assign(targetUrl.href)
+    }
+
+    window.setTimeout(fallback, 180)
+    window.setTimeout(fallback, 900)
+}
+
+function stabilizeTopScrollAfterRoute(href: string) {
+    const targetUrl = getSameOriginUrl(href)
+    if (!targetUrl || targetUrl.hash) return
+
+    const targetPath = stripTrailingSlash(targetUrl.pathname)
+    const start = performance.now()
+    const duration = 700
+
+    const tick = () => {
+        try {
+            if (stripTrailingSlash(window.location.pathname) === targetPath) {
+                window.scrollTo(0, 0)
+            }
+            if (performance.now() - start < duration) {
+                window.requestAnimationFrame(tick)
+            }
+        } catch {
+            // Best-effort scroll hygiene only.
+        }
+    }
+
+    window.requestAnimationFrame(tick)
+}
+
+function shouldHandleAnchorRoute(event: MouseEvent, anchor: HTMLAnchorElement): boolean {
+    if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+    ) {
+        return false
+    }
+
+    const target = anchor.getAttribute("target")
+    return !target || target === "_self"
 }
 
 function normalizeCtaText(value: string): string {
@@ -377,14 +560,17 @@ function ensureMobileFooterStyles() {
  * Instead, a single WINDOW-capture click listener — which fires before the base
  * lightbox's own document-capture listener — suppresses the lightbox whenever
  * the click lands on/over the nav (or any excluded region):
- *   • Native links  -> stopImmediatePropagation only (lightbox never sees the
- *     click; the browser still performs the default navigation).
+ *   • Internal links -> preventDefault only, so the base lightbox sees a
+ *     handled event and bails, while Framer/custom React link handlers still
+ *     receive the click. A short router fallback catches plain anchors.
+ *   • Other native links -> stopImmediatePropagation only (lightbox never sees
+ *     the click; the browser still performs the default navigation).
  *   • Other controls (buttons, scroll-to-top, etc.) -> preventDefault only, so
  *     the control's own React handler still runs while the base lightbox bails
  *     on the default-prevented click.
  *   • Anything else excluded -> stopImmediatePropagation.
  */
-function useCaseStudyNavClickGuard(excludeSelector: string) {
+function useCaseStudyNavClickGuard(excludeSelector: string, router: FramerRouter | undefined) {
     React.useEffect(() => {
         if (RenderTarget.current() === RenderTarget.canvas) return
         if (typeof document === "undefined" || typeof window === "undefined") return
@@ -394,8 +580,20 @@ function useCaseStudyNavClickGuard(excludeSelector: string) {
             if (!shouldGuardLightboxClick(event, excludeSelector)) return
 
             const target = event.target instanceof Element ? event.target : null
-            const anchor = target?.closest("a[href]") ?? null
+            const anchor = target?.closest("a[href]") as HTMLAnchorElement | null
             if (anchor) {
+                const href = anchor.getAttribute("href") || ""
+                const match = shouldHandleAnchorRoute(event, anchor)
+                    ? getFramerRouteMatch(router, href)
+                    : null
+                if (match) {
+                    const fromHref = window.location.href
+                    event.preventDefault()
+                    stabilizeTopScrollAfterRoute(href)
+                    scheduleFramerRouteFallback(router, match, href, fromHref)
+                    return
+                }
+
                 event.stopImmediatePropagation()
                 return
             }
@@ -416,7 +614,7 @@ function useCaseStudyNavClickGuard(excludeSelector: string) {
         return () => {
             window.removeEventListener("click", onClick, true)
         }
-    }, [excludeSelector])
+    }, [excludeSelector, router])
 }
 
 /**
@@ -442,8 +640,9 @@ function useCaseStudyNavClickGuard(excludeSelector: string) {
  */
 export default function CaseStudyLightbox(props: Config) {
     useCaseStudyMobileFooterLayout()
+    const router = useRouter() as FramerRouter
     const mergedExcludeSelector = getLightboxExcludeSelector(props.excludeSelector)
-    useCaseStudyNavClickGuard(mergedExcludeSelector)
+    useCaseStudyNavClickGuard(mergedExcludeSelector, router)
 
     const Base = BaseCaseStudyLightbox as unknown as React.ComponentType<Config>
     return <Base {...props} excludeSelector={mergedExcludeSelector} />

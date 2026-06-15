@@ -1,0 +1,3 @@
+import{jsx as _jsx}from"react/jsx-runtime";import{addPropertyControls,ControlType}from"framer";export default function ResumeAssetHost(props){return /*#__PURE__*/_jsx("div",{"aria-hidden":"true","data-resume-file":props.resumeFile||"",style:{...props.style,width:"100%",height:"100%",opacity:0,overflow:"hidden",pointerEvents:"none"}});}addPropertyControls(ResumeAssetHost,{resumeFile:{type:ControlType.File,title:"Resume PDF",allowedFileTypes:["pdf"]}});
+export const __FramerMetadata__ = {"exports":{"default":{"type":"reactComponent","name":"ResumeAssetHost","slots":[],"annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./ResumeAssetHost.map

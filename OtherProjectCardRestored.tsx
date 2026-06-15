@@ -1,5 +1,5 @@
 import * as React from "react"
-import { addPropertyControls, ControlType, RenderTarget } from "framer"
+import { addPropertyControls, ControlType, RenderTarget, useRouter } from "framer"
 
 type LinkValue =
     | string
@@ -48,6 +48,25 @@ type CMSProjectRecord = {
     thumbnailVideoSrc: string
     thumbnailStroke: boolean
 }
+type FramerRoute = {
+    path?: string
+    pathLocalized?: Record<string, string>
+    page?: { preload?: () => unknown }
+}
+type FramerRouter = {
+    navigate?: (
+        routeId: string,
+        hash?: string,
+        pathVariables?: Record<string, string>,
+        smoothScroll?: boolean
+    ) => unknown
+    routes?: Record<string, FramerRoute | undefined>
+}
+type RouterMatch = {
+    routeId: string
+    hash?: string
+    pathVariables?: Record<string, string>
+}
 
 const DEFAULT_TEXT_COLOR = "#233324"
 const DEFAULT_STROKE_COLOR = "#979797"
@@ -79,6 +98,7 @@ const NEXT_PROJECT_WRAPPER_SELECTOR =
 const ALL_PROJECTS_SELECTOR = ':is([data-framer-name="AllProjects"], [name="AllProjects"])'
 const KNOWN_PROJECT_LINKS: Record<string, string> = {
     "airpods pro 3": "/case-studies/airpods",
+    "peak energy": "/case-studies/peak-energy",
     "simon & schuster": "/case-studies/simon-schuster",
     gaia: "/case-studies/gaia",
     "national park playing cards": "/case-studies/national-park-cards",
@@ -91,8 +111,6 @@ const KNOWN_PROJECT_LINKS: Record<string, string> = {
     "cellular symphony": "/case-studies/cellular-symphony",
     "wolff olins x artcenter": "/case-studies/wolff-olins-x-artcenter",
     "independent lens": "/case-studies/independent-lens",
-    "neon lights": "/case-studies/neon-lights",
-    "aspen valley landscaping": "/case-studies/aspen-valley-landscaping",
 }
 
 const cmsModuleUrlCache = new Map<string, string>()
@@ -233,6 +251,106 @@ function shouldHandleNavigation(event: React.MouseEvent<HTMLAnchorElement>, href
     try {
         const url = new URL(href, window.location.href)
         return url.origin === window.location.origin && url.pathname.startsWith("/case-studies/")
+    } catch {
+        return false
+    }
+}
+
+function stripTrailingSlash(pathname: string): string {
+    if (!pathname || pathname === "/") return "/"
+    return pathname.replace(/\/+$/, "") || "/"
+}
+
+function getSameOriginUrl(href: string): URL | null {
+    if (!href || href === "#") return null
+    if (typeof window === "undefined") return null
+
+    try {
+        const url = new URL(href, window.location.href)
+        return url.origin === window.location.origin ? url : null
+    } catch {
+        return null
+    }
+}
+
+function matchRoutePath(pattern: string, pathname: string): Record<string, string> | null {
+    const normalizedPattern = stripTrailingSlash(pattern)
+    const normalizedPathname = stripTrailingSlash(pathname)
+    if (normalizedPattern === normalizedPathname) return {}
+
+    const variableNames: string[] = []
+    const source = normalizedPattern
+        .split("/")
+        .map((part) => {
+            if (part.startsWith(":") && part.length > 1) {
+                variableNames.push(part.slice(1))
+                return "([^/]+)"
+            }
+            return escapeRegExp(part)
+        })
+        .join("/")
+    const match = normalizedPathname.match(new RegExp(`^${source}$`))
+    if (!match) return null
+
+    return variableNames.reduce<Record<string, string>>((pathVariables, name, index) => {
+        const value = match[index + 1]
+        if (value !== undefined) pathVariables[name] = decodeURIComponent(value)
+        return pathVariables
+    }, {})
+}
+
+function getRoutePaths(route: FramerRoute): string[] {
+    return [route.path, ...Object.values(route.pathLocalized || {})].filter(Boolean) as string[]
+}
+
+function getFramerRouteMatch(router: FramerRouter | undefined, href: string): RouterMatch | null {
+    const url = getSameOriginUrl(href)
+    const routes = router?.routes
+    if (!url || !routes) return null
+
+    const pathname = stripTrailingSlash(url.pathname)
+    const routeEntries = Object.entries(routes)
+        .filter((entry): entry is [string, FramerRoute] => Boolean(entry[1]?.path))
+        .sort(([, a], [, b]) => {
+            const aDepth = (a.path || "/").split("/").length
+            const bDepth = (b.path || "/").split("/").length
+            return bDepth - aDepth
+        })
+
+    for (const [routeId, route] of routeEntries) {
+        for (const routePath of getRoutePaths(route)) {
+            const pathVariables = matchRoutePath(routePath, pathname)
+            if (pathVariables) {
+                return {
+                    routeId,
+                    hash: url.hash ? decodeURIComponent(url.hash.slice(1)) : undefined,
+                    pathVariables,
+                }
+            }
+        }
+    }
+
+    return null
+}
+
+function preloadFramerRoute(router: FramerRouter | undefined, href: string) {
+    const match = getFramerRouteMatch(router, href)
+    if (!match) return
+
+    try {
+        router?.routes?.[match.routeId]?.page?.preload?.()
+    } catch {
+        // Preload is opportunistic; navigation can still handle the route.
+    }
+}
+
+function navigateFramerRoute(router: FramerRouter | undefined, match: RouterMatch): boolean {
+    if (typeof router?.navigate !== "function") return false
+
+    try {
+        router.routes?.[match.routeId]?.page?.preload?.()
+        router.navigate(match.routeId, match.hash, match.pathVariables, false)
+        return true
     } catch {
         return false
     }
@@ -487,6 +605,7 @@ export default function OtherProjectCardRestored({
         ? String(Number(sortingNumber))
         : String(sortingNumber || "")
     const href = resolveProjectHref(projectLink, link, title)
+    const router = useRouter() as FramerRouter
     const cmsRecord = useCMSRecord({
         enabled: Boolean(useCMS),
         collectionId,
@@ -503,24 +622,27 @@ export default function OtherProjectCardRestored({
         (event: React.MouseEvent<HTMLAnchorElement>) => {
             if (!shouldHandleNavigation(event, href)) return
 
+            const match = getFramerRouteMatch(router, href)
+            if (!match) return
+
             event.preventDefault()
             event.stopPropagation()
-            window.location.assign(new URL(href, window.location.href).href)
+
+            if (!navigateFramerRoute(router, match)) {
+                const url = getSameOriginUrl(href)
+                if (url) window.location.assign(url.href)
+            }
         },
-        [href]
+        [href, router]
     )
 
+    const handleWarmRoute = React.useCallback(() => {
+        preloadFramerRoute(router, href)
+    }, [href, router])
+
     return (
-        <a
-            data-framer-name="Other Project Card"
-            href={href}
-            onClick={handleClick}
-            aria-label={`${titleText} project`}
-            className="mh-other-project-card"
-            data-project-slug={cmsRecord?.slug || getSlugFromHref(href) || undefined}
-            style={{ color: textColor }}
-        >
-            <style>{`
+        <>
+            <style suppressHydrationWarning>{`
                 .mh-other-project-card {
                     width: 100%;
                     height: auto;
@@ -700,51 +822,63 @@ export default function OtherProjectCardRestored({
                     }
                 }
             `}</style>
-            <div data-framer-name="Title Wrapper" className="mh-other-project-title">
-                <span className="mh-other-project-title__number">{numberText}</span>
-                <span className="mh-other-project-title__slash">/</span>
-                <span className="mh-other-project-title__copy">
-                    <span className="mh-other-project-title__track">
-                        <span className="mh-other-project-title__line">{titleText}</span>
-                        <span className="mh-other-project-title__line mh-other-project-title__line--hover">
-                            VIEW PROJECT
+            <a
+                data-framer-name="Other Project Card"
+                href={href}
+                onClick={handleClick}
+                onFocus={handleWarmRoute}
+                onMouseEnter={handleWarmRoute}
+                aria-label={`${titleText} project`}
+                className="mh-other-project-card"
+                data-project-slug={cmsRecord?.slug || getSlugFromHref(href) || undefined}
+                style={{ color: textColor }}
+            >
+                <div data-framer-name="Title Wrapper" className="mh-other-project-title">
+                    <span className="mh-other-project-title__number">{numberText}</span>
+                    <span className="mh-other-project-title__slash">/</span>
+                    <span className="mh-other-project-title__copy">
+                        <span className="mh-other-project-title__track">
+                            <span className="mh-other-project-title__line">{titleText}</span>
+                            <span className="mh-other-project-title__line mh-other-project-title__line--hover">
+                                VIEW PROJECT
+                            </span>
                         </span>
                     </span>
-                </span>
-            </div>
-            <div
-                data-framer-name="ImageWrapper"
-                className="mh-other-project-media"
-                data-thumbnail-stroke={cmsRecord?.thumbnailStroke ? "true" : undefined}
-                style={
-                    {
-                        "--mh-other-project-stroke": strokeColor,
-                    } as React.CSSProperties
-                }
-            >
-                {resolvedThumbnailSrc ? (
-                    <img
-                        data-framer-name="Image"
-                        src={resolvedThumbnailSrc}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                    />
-                ) : null}
-                {hasVideo ? (
-                    <video
-                        data-framer-name="Video"
-                        src={resolvedVideoSrc}
-                        poster={resolvedThumbnailSrc || undefined}
-                        muted
-                        loop
-                        autoPlay
-                        playsInline
-                        preload="metadata"
-                    />
-                ) : null}
-            </div>
-        </a>
+                </div>
+                <div
+                    data-framer-name="ImageWrapper"
+                    className="mh-other-project-media"
+                    data-thumbnail-stroke={cmsRecord?.thumbnailStroke ? "true" : undefined}
+                    style={
+                        {
+                            "--mh-other-project-stroke": strokeColor,
+                        } as React.CSSProperties
+                    }
+                >
+                    {resolvedThumbnailSrc ? (
+                        <img
+                            data-framer-name="Image"
+                            src={resolvedThumbnailSrc}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    ) : null}
+                    {hasVideo ? (
+                        <video
+                            data-framer-name="Video"
+                            src={resolvedVideoSrc}
+                            poster={resolvedThumbnailSrc || undefined}
+                            muted
+                            loop
+                            autoPlay
+                            playsInline
+                            preload="metadata"
+                        />
+                    ) : null}
+                </div>
+            </a>
+        </>
     )
 }
 

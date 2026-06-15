@@ -2,3 +2,8 @@
 .playwright-cli/
 .claude/worktrees/
 case-study-assets/figma-export/**/Gaia Final Deck.pptx
+
+# Generated QA/media batches. Existing tracked artifacts remain tracked.
+output/playwright/
+output/media-compression-audit-*/
+case-study-assets/optimized/

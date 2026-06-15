@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 10, 2026, via Framer MCP, targeted page XML checks, published-route browser QA, and local repo audit
+**Last audited:** June 15, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
@@ -18,6 +18,7 @@ This is the quick source of truth for the active Framer project and local handof
 - `/case-studies` - Native case-study index, page ID `Rnw1WO1jS`
 - `/case-studies/:slug` - Dynamic CMS fallback route, page ID `UlQco8cYi`
 - `/case-studies/airpods` - Bespoke AirPods Pro 3 case-study page, page ID `LB7pYBD3k`
+- `/case-studies/peak-energy` - Bespoke Peak Energy WIP case-study page, page ID `fgNnSwTVX`
 - `/case-studies/simon-schuster` - Bespoke Simon & Schuster page, page ID `izKMx6JM4`
 - `/case-studies/motion-connect-2025` - Bespoke Motion Connect page, page ID `ZYKsxrq7a`
 - `/case-studies/national-park-cards` - Bespoke National Park Playing Cards page, page ID `Bt_XoCbyE`
@@ -30,20 +31,17 @@ This is the quick source of truth for the active Framer project and local handof
 - `/case-studies/cellular-symphony` - Bespoke Cellular Symphony page, page ID `F4kVWqVcV`
 - `/case-studies/wolff-olins-x-artcenter` - Bespoke Wolff Olins x ArtCenter page, page ID `LrmGxP3EV`
 - `/case-studies/independent-lens` - Bespoke Independent Lens page, page ID `N3bZoqp15`
-- `/case-studies/neon-lights` - Bespoke Neon Lights page, page ID `CIiMjjVXQ`
-- `/case-studies/aspen-valley-landscaping` - Bespoke Aspen Valley Landscaping page, page ID `X7cKKlm88`
 - `/index` - Canonical archive page, page ID `u2LOaBT5q`
 - `/play` - Archive media playground, page ID `KbgWr_0BN`
-- `/play-consolidation-draft` - Safe draft mirror for Play consolidation work, page ID `Ri9885Djw`
 - `/info` - Editorial profile/info page, page ID `fxz_zRIyp`
-- `/contact` - Contact page, page ID `gmXtVnIzJ`
 
-No current Framer web page is exposed for `/profile`, `/worldgrid-test`, `/play-2`, `/playground`, or `/playground-scroll-draft`.
+No current Framer web page is exposed for `/profile`, `/contact`, `/worldgrid-test`, `/play-2`, `/play-consolidation-draft`, `/playground`, or `/playground-scroll-draft`.
+
+June 15 CMS parity update: the `All Projects` CMS roster has 14 items and each CMS slug now has a matching bespoke `/case-studies/{slug}` web page. `/case-studies/peak-energy` was created as a WIP case-study shell with the cleared Peak Energy x GM handoff details. The non-CMS orphan routes `/case-studies/neon-lights` and `/case-studies/aspen-valley-landscaping` were deleted from Framer. The dynamic `/case-studies/:slug` route remains as the generic CMS fallback/template route, not as an additional project.
 
 ### Design Pages
 
 - `Design`, design page ID `NLQmOR3If`
-- `Asset Migration - Simon Schuster`, design page ID `AWMq0CPqb`
 
 Older docs mention `Case Study Starter System` (`qDjep9bZD`), but it is not in the June 2 Framer MCP project inventory.
 
@@ -92,7 +90,7 @@ Framer code components relevant to this handoff include:
 | `Play.tsx` | `PN1RVOf` | Active `/play` production wrapper. Exposes protected Framer authoring controls through `Archive Items` / `archiveItems`, normalizes blank legacy items, and passes managed media plus load-in timing to `ArchivePlayground.tsx`. Do not remove this authoring surface or replace it with hardcoded-only media. |
 | `ArchivePlayground.tsx` | `QNpkYp5` | Underlying `/play` archive renderer as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, and managed `Archive Items` rendering live here. Must continue accepting authorable item arrays from the production wrapper. |
 | `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
-| `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Draft mirror mounted on `/play-consolidation-draft`; safe place for future parity experiments before promoting to `/play`. |
+| `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Legacy draft mirror code file. The `/play-consolidation-draft` web page is not present in the June 15 Framer inventory. |
 | `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundRuleExitGuard.tsx` | `vdg69JZ` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `OtherProjectCardRestored.tsx` | `vlwa5Cz` | Related-project card restoration helper. As of June 10, it hydrates thumbnail, thumbnail video, and thumbnail stroke from `All Projects` by slug/title, with the author-entered image/video props retained as fallback. |
@@ -115,7 +113,7 @@ Framer code components relevant to this handoff include:
 | `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **June 10 updates:** (1) opt media out of the lightbox by naming any wrapping frame `No Lightbox`/`NoLightbox` (force-merged into every instance's Exclude rule, so no per-instance setup; wrap the whole media, not the leaf img); (2) the lightbox-suppression logic is a single `window`-capture click listener (fires before the base engine's `document`-capture listener) — native links navigate (`stopImmediatePropagation`, no `preventDefault`), buttons/scroll-to-top keep their own React `onClick` (`preventDefault` only), other excluded regions are fully suppressed; (3) gallery slides open in this lightbox (the carousel's own overlay was removed); (4) **nav-overlay click fix** — clicking a nav item that physically overlays media now navigates instead of opening the lightbox, handled by the event guard ALONE. All nav **CSS mutation was removed** (`z-index`, `pointer-events`, `isolation:isolate`, inline style mutation, the `data-case-study-nav-layer` stylesheet): it never fixed the click (the base engine reaches media *under* the nav via `elementsFromPoint`) and it broke the nav hover/flip-text reset. **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED `@hash` — bump that hash whenever this file is republished, or controller pages keep loading the old lightbox. Current published version: `@nVgKAFqnbX7espgnGQ7p`. |
 | `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study autoplay video subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. |
 | `CaseStudyControllers.tsx` | `z13WRHS` | Active hidden wrapper for the useful bespoke case-study controllers: lightbox, video manager, and link repair. Mounted on accessible bespoke pages where the three separate controller instances were consolidated. |
-| `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Aspen Valley Landscaping mobile descriptor layout helper. Mounted on `/case-studies/aspen-valley-landscaping`. |
+| `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Case-study mobile descriptor layout helper. Mounted on bespoke case-study pages that need the compact descriptor rhythm, including the Peak Energy WIP shell. |
 | `NavigationScrollGuard.tsx` | `Wnd19lx` | Hidden child of the native `Navigation` component (`I0Wh3P9o8`). Keeps the nav visible/clickable at page top if Framer's scroll-hide transform gets stuck after scrolling down and returning to `scrollY=0`. |
 
 June 8 cleanup: `CaseStudyThumbnailVideoSync.tsx` (`qONpo1v`) was removed from Home, `/case-studies`, `/index`, and `/case-studies/aspen-valley-landscaping`, then deleted from Framer after its mounted behavior was consolidated into the existing page/component thumbnail video paths. `RelatedProjectHoverZoom.tsx` was also removed from the local repo; it was a historical mirror and is not present in the current Framer MCP code-component inventory.
@@ -144,9 +142,11 @@ June 11 Play load-in update: `ArchivePlayground.tsx` intentionally paints the ro
 
 June 11 authorability repair: `Play.tsx` uses visible `Archive Items` controls backed by the `archiveItems` prop as the Framer editor surface while still accepting legacy `items` so stale page-instance props cannot erase content. Default `RAW_ITEMS` are fallback/seed data only. Publish Framer after code-file changes before checking staging, because the public route can keep serving the previous component bundle until publish completes.
 
+June 13 detail nav behavior: `ArchivePlayground.tsx` owns the `/play` detail-drawer nav state. Opening an item must call the existing nav exit hook to apply `playground-nav-exit-hidden` and slide the native nav above the viewport so the drawer Close button is unobstructed; closing the drawer must release that class immediately and let the nav transition back in. Keep the `Nav Hide`/`navHideOffset` control wired through `Play.tsx` to `ArchivePlayground.tsx` instead of adding another helper component.
+
 Content management should happen in the Framer properties panel under `Archive Items`. Each row exposes `Title`, `Description`, `Type`, `Media / Poster`, conditional `Video`, `Category`, aspect width/height, and `Stroke`; this authorable media control must never be removed. Leave `Advanced` off for normal content edits; it hides the layout, motion, color, nav, and timing controls so the page stays easy to manage long term.
 
-The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) remain on the live `/play` canvas as rollback material, but each is set to `enabled=false`. `ArchivePlaygroundConsolidated.tsx` (`D5YVims`) also remains in the Framer code-file inventory as an unmounted earlier attempt. `/play-consolidation-draft` (`Ri9885Djw`) still mounts `ArchivePlaygroundConsolidatedDraft.tsx` (`aEyj7Rq`) at node `gITHlJyGo` and should be used for future Play experiments before promotion.
+The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) remain on the live `/play` canvas as rollback material, but each is set to `enabled=false`. `ArchivePlaygroundConsolidated.tsx` (`D5YVims`) and `ArchivePlaygroundConsolidatedDraft.tsx` (`aEyj7Rq`) remain in the Framer code-file inventory as unmounted historical attempts. The earlier `/play-consolidation-draft` web page is not present in the June 15 inventory; create a new draft/design page before future Play experiments.
 
 #### Reusable Image Carousel — recycle this for new case studies (added 2026-06-04)
 
@@ -184,26 +184,24 @@ Treat these as legacy/template compatibility files unless a future Framer inspec
 
 ## Current CMS State
 
-The `All Projects` CMS collection (`yTHrQWMIY`) contains 16 real project records and no Jacob Turner sample/template records.
+The `All Projects` CMS collection (`yTHrQWMIY`) contains 14 real project records and no Jacob Turner sample/template records.
 
 | Sort | Project | Slug | Year | Home flag |
 |---:|---|---|---|---|
-| 1 | AirPods Pro 3 | `airpods` | 2025 | true |
-| 2 | Simon & Schuster | `simon-schuster` | 2025 | true |
-| 3 | Gaia | `gaia` | 2026 | true |
-| 4 | National Park Playing Cards | `national-park-cards` | 2019-ongoing | true |
+| 1 | Gaia | `gaia` | 2026 | true |
+| 2 | AirPods Pro 3 | `airpods` | 2025 | true |
+| 3 | Peak Energy | `peak-energy` | 2026 | true |
+| 4 | Simon & Schuster | `simon-schuster` | 2025 | true |
 | 5 | Motion Connect 2025 | `motion-connect-2025` | 2025 | true |
-| 6 | Yomo | `yomo` | 2025 | true |
-| 7 | Karuna | `karuna` | 2025 | false |
-| 8 | Weaponized Innocence | `weaponized-innocence` | 2024 | true |
-| 9 | Wolff Olins x ArtCenter | `wolff-olins-x-artcenter` | 2024 | false |
-| 10 | Aspen Valley Landscaping | `aspen-valley-landscaping` | 2024 | false |
+| 6 | National Park Playing Cards | `national-park-cards` | 2019 | true |
+| 7 | Yomo | `yomo` | 2024 | true |
+| 8 | Karuna | `karuna` | 2025 | false |
+| 9 | Weaponized Innocence | `weaponized-innocence` | 2024 | true |
+| 10 | Wolff Olins x ArtCenter | `wolff-olins-x-artcenter` | 2024 | false |
 | 11 | Cellular Symphony | `cellular-symphony` | 2024 | false |
-| 12 | Neon Lights | `neon-lights` | 2024 | false |
-| 13 | John Steinbeck | `john-steinbeck` | 2023 | false |
-| 14 | Seek Truth | `seek-truth` | 2024 | false |
-| 15 | Independent Lens | `independent-lens` | 2024 | false |
-| 16 | TYPLDN | `typldn` |  | false |
+| 12 | Seek Truth | `seek-truth` | 2024 | false |
+| 13 | Independent Lens | `independent-lens` | 2024 | false |
+| 14 | TYPLDN | `typldn` | 2023 | false |
 
 The `Journal` CMS collection still exists, but there is no visible Journal page in the current Framer project map.
 
@@ -214,30 +212,22 @@ The `Journal` CMS collection still exists, but there is no visible Journal page 
 - `kuvJcmOFr` - Category 1 / Service 1
 - `VV1CggU2J` - Category 2 / Service 2
 - `E6OpH0hSs` - Category 3 / Service 3
-- `VeDm9FjW4` - About the project
 - `Jy7hBJady` - Thumbnail
-- `SvOqFqdby` - Thumbnail Video, File upload
-- `OHdUYs6Mo` - Thumbnail Stroke
-- `vlN2R_qnF` - Client
+- `WG62tRjG8` - Thumbnail Video Link, retired text field
 - `QZqSK_3OF` - Year, stored as a string
-- `QF3AEVk8r` - Image 1
-- `xOL69akmU` - CMS Video 1
-- `FwLb0MrAN` - CMS Video Poster 1
 - `fsFlSPDTa` - Image 2
-- `xpyes5aGJ` - CMS Video 2
-- `Y9u0naHRi` - CMS Video Poster 2
-- `X4mkKflln` - Next Project 1
-- `z_tutvcUx` - Next Project 2
-- `OoXOWcQvg` - Next Project 3
-- `vqPrQQLOM` - Content
 - `mBIilFqVM` - Industry
 - `myUIfK0j7` - Is Homepage
+- `SvOqFqdby` - Thumbnail Video, File upload
+- `OHdUYs6Mo` - Thumbnail Stroke
+
+June 15 schema note: Framer MCP no longer reports the older expanded content/credits/next-project fields in `All Projects`, and current CMS items expose the canonical slug as `item.slug` rather than a field value. Existing code can keep the old optional slug field fallback (`pdXVG_fBO`) as long as it falls back to `item.slug`.
 
 Recommended manual additions remain `Case Study URL` and `Build Status`. Add those in Framer only if the workflow needs them; do not repurpose existing field IDs.
 
 June 1-2, 2026 thumbnail stroke and Home link/media fix: the current generated `All Projects` CMS module exports the collection under `r` with legacy `a` absent. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) now scans `a`, `r`, `default`, and object exports for `collectionByLocaleId.default.scanItems()` before reading `OHdUYs6Mo`. On June 2, helper instances were updated to use Framer item slugs directly (`slugFieldId=""`) and the old AirPods-only URL override was cleared. The Home selected-work link/media issue was fixed by replacing the broken native Home selected-work grid with `HomeSelectedWorkGrid.tsx` and disabling the Home `CaseStudyLinkRepair.tsx` instance. Before touching or publishing the stroke helper, run `node tools/check-thumbnail-stroke-resolver.mjs` to catch regressions back to the old `module.a`-only lookup.
 
-June 8, 2026 Gaia CMS/Home verification: Framer MCP and published-route Playwright inspection verified that Home remains linked to `All Projects`. Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, and `Thumbnail=https://framerusercontent.com/images/XBEu3UkNu8Hm5CPrgksq7wtmbw.gif`; the hydrated published Home card rendered the same GIF and `data-thumbnail-stroke="true"`. AirPods Pro 3 and Gaia are currently the homepage-visible projects with `Thumbnail Stroke` enabled.
+June 15, 2026 Gaia CMS/Home verification: Framer MCP verified that Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, and `Thumbnail=https://framerusercontent.com/images/3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg`. AirPods Pro 3, Gaia, and Karuna currently have `Thumbnail Stroke` enabled; only Gaia and AirPods are in the first six homepage-visible projects.
 
 ---
 
@@ -247,14 +237,14 @@ June 8, 2026 Gaia CMS/Home verification: Framer MCP and published-route Playwrig
 
 Home is a native Framer page whose selected-work section is now rendered by `HomeSelectedWorkGrid.tsx` (`FecepLS`), mounted as node `h0ZkBCWe1` inside the `Projects` section (`k7gSpMtLR`). The component reads `All Projects` when the generated CMS module is available, falls back to its default project snapshot when needed, filters `Is Homepage`, orders by `Sorting Number`, and shows the first six items:
 
-1. AirPods Pro 3
-2. Simon & Schuster
-3. Gaia
-4. National Park Playing Cards
+1. Gaia
+2. AirPods Pro 3
+3. Peak Energy
+4. Simon & Schuster
 5. Motion Connect 2025
-6. Yomo
+6. National Park Playing Cards
 
-Karuna is off Home because its Home flag is false. Weaponized Innocence is homepage-flagged but outside the first six by sort order.
+Yomo and Weaponized Innocence are homepage-flagged but outside the first six by sort order. Karuna is off Home because its Home flag is false.
 
 The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, image/video rendering, the hover label, and the `Thumbnail Stroke` visual fallback for the selected-work section.
 
@@ -281,7 +271,7 @@ June 11, 2026 index motion/style consolidation, updated June 14: `IndexPage.tsx`
 
 June 8, 2026 Motion Connect grid hover fix: live inspection showed the published `/index` CSS did not include the direct-child `.idx-grid-card-media > video` hover selector used by helper-generated thumbnail videos, so the Motion Connect video stayed visually static while the card title hover flip still worked. The current source keeps the direct `.idx-grid-card-media > img/video` hover/focus scale path in `IndexPage.tsx` and forces `scale(1)` under `prefers-reduced-motion: reduce`.
 
-June 8, 2026 archive thumbnail video update: the live `/index` `IndexPage` instance reads `thumbnailVideoFieldIds="SvOqFqdby"`, so the `Thumbnail Video` File upload is the only active CMS thumbnail-video source. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used as a fallback. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The hidden `CmsLink` collection list remains mounted so Framer's generated CMS module is available. If the `ProjectRegistrar` bridge provides incomplete rows, `IndexPage` hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated CMS module by slug/title before rendering the grid. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` (`szF9sZNWA`) remains configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup overlay path. Wolff Olins x ArtCenter, Cellular Symphony, Neon Lights, Motion Connect 2025, and AirPods Pro 3 have populated `Thumbnail Video` File values (`SvOqFqdby`) on Framer's CDN. The published site needs a Framer publish/redeploy before canvas/CMS File-field changes appear in the generated CMS bundle. `IndexThumbnailVideoFallback.tsx` (`wvucZCT`) and its hidden node (`R9kqDJO7t`) were deleted from Framer; do not recreate a hardcoded per-project fallback helper.
+June 15, 2026 archive thumbnail video update: the live `/index` `IndexPage` instance reads `thumbnailVideoFieldIds="SvOqFqdby"`, so the `Thumbnail Video` File upload is the only active CMS thumbnail-video source. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used as a fallback. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The hidden `CmsLink` collection list remains mounted so Framer's generated CMS module is available. If the `ProjectRegistrar` bridge provides incomplete rows, `IndexPage` hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated CMS module by slug/title before rendering the grid. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` (`szF9sZNWA`) remains configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup overlay path. AirPods Pro 3, Motion Connect 2025, Wolff Olins x ArtCenter, and Cellular Symphony have populated `Thumbnail Video` File values (`SvOqFqdby`) on Framer's CDN. The published site needs a Framer publish/redeploy before canvas/CMS File-field changes appear in the generated CMS bundle. `IndexThumbnailVideoFallback.tsx` (`wvucZCT`) and its hidden node (`R9kqDJO7t`) were deleted from Framer; do not recreate a hardcoded per-project fallback helper.
 
 June 1, 2026 CMS bridge note, revised June 8: `/index` includes a hidden-by-position CMS bridge layer, `CmsLink` (`AwTGGhR7I`), containing the `AllProject` collection item. Keep this collection layer **visible/mounted** in Framer's layer panel, but fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, `opacity="0"`, `overflow="hidden"`, and locked, because it keeps Framer's generated CMS module available to `IndexPage`. If `ProjectRegistrar` (`I063adJ_h`) remains mounted, bind/pass the `Thumbnail`, `Thumbnail Video`, and `Thumbnail Stroke` fields or rely on `IndexPage`'s CMS-module hydration so registry rows cannot override richer CMS rows with stale media/stroke data.
 
@@ -303,7 +293,7 @@ The previously mounted cursor-preview helper, `IndexListCursorPreview.tsx`, was 
 - `CaseStudyThumbnailStrokeStyles.tsx`
 - `CaseStudyLinkRepair.tsx`
 
-June 2 published fix: the visible `NumberCounter` end value was changed from `12` to `16` to match the current `All Projects` CMS item count. If the CMS roster changes later, update or replace this prop-driven count.
+June 15 CMS sync: `All Projects` now contains 14 items. The visible `NumberCounter` on `/case-studies` is prop-driven; update it to `14` in Framer or replace it with a dynamic CMS count before publishing this CMS roster.
 
 ### `/play`
 
@@ -311,7 +301,7 @@ June 2 published fix: the visible `NumberCounter` end value was changed from `12
 
 - `ArchivePlayground.tsx`
 
-The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage archive content through the `Archive Items` array on the `ArchivePlayground` instance. Use `/play-consolidation-draft` for future component experiments before touching the production `/play` page.
+The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage archive content through the `Archive Items` array on the `ArchivePlayground` instance. Create a fresh draft/design page for future component experiments before touching the production `/play` page.
 
 ### `/info`
 
@@ -325,7 +315,7 @@ The current page is an editorial forest-green profile page with selected experie
 
 ### Bespoke Case Study Pages
 
-Bespoke pages now exist for AirPods, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, TYPLDN, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Neon Lights, and Aspen Valley Landscaping.
+Bespoke pages currently exist for all 14 CMS projects: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, and TYPLDN. Peak Energy is currently a WIP shell behind `CaseStudyWorkInProgressGate` with the source-of-truth snapshot content from the June 15 handoff. Neon Lights and Aspen Valley Landscaping were removed from Framer because they are no longer in CMS.
 
 Case-study media row rule (June 7, 2026): when a desktop case-study body row has one, two, or three media items, keep those items in a single row at tablet and phone breakpoints. Prefer native Framer layout controls: horizontal Stack/Grid, wrapping off, and no large mobile `minWidth` on the media wrappers. For existing media-grid code component instances that expose a stacking threshold, keep `forceSingleRow` enabled and lower `stackBelow` to the minimum allowed value (`240`) instead of creating a new component.
 
@@ -373,8 +363,8 @@ Safe to keep:
 Good future cleanup candidates:
 
 - `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. It intentionally keeps a robust CMS export resolver for both legacy `a` and current `r` Framer module shapes. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
-- Future `/play` changes should start on `/play-consolidation-draft`, pass visual parity checks, then be promoted into `ArchivePlayground.tsx` (`QNpkYp5`).
-- `/case-studies` still displays a `NumberCounter` configured by page props. On June 2, the prop was updated and published as `16` to match the CMS roster; a future refactor could make this dynamic.
+- Future `/play` changes should start on a fresh draft/design page, pass visual parity checks, then be promoted into `ArchivePlayground.tsx` (`QNpkYp5`).
+- `/case-studies` still displays a `NumberCounter` configured by page props. As of the June 15 CMS sync, the prop needs to be updated to `14` or replaced with a dynamic count before publish.
 - Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially `Counter.tsx` and any unmirrored rollback helpers.
 - No tracked local TSX or `tools/*` file met the "100% safe to remove" bar in the June 2 stale-code audit. Framer code files often have no local import graph because they are mounted by Framer code-file ID.
 

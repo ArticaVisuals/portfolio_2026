@@ -75,6 +75,7 @@ type Props = {
     hideFooter?: boolean
     navPassthrough?: boolean
     navSelector?: string
+    navHideOffset?: number
     style?: React.CSSProperties
 }
 
@@ -394,7 +395,7 @@ function useDraftAnimationStyles(enabled: boolean) {
     }, [enabled])
 }
 
-function useNavExitReveal(enabled: boolean, selector: string, holdMs: number) {
+function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
     const timersRef = React.useRef({ release: 0, cleanup: 0 })
 
     const clearTimers = React.useCallback(() => {
@@ -405,10 +406,21 @@ function useNavExitReveal(enabled: boolean, selector: string, holdMs: number) {
         timersRef.current.cleanup = 0
     }, [])
 
-    const cancel = React.useCallback(() => {
+    const reset = React.useCallback(() => {
         if (!canUseDOM()) return
         clearTimers()
         document.body.classList.remove(NAV_EXIT_MANAGED_CLASS, NAV_EXIT_HIDDEN_CLASS)
+    }, [clearTimers])
+
+    const reveal = React.useCallback(() => {
+        if (!canUseDOM()) return
+        clearTimers()
+        document.body.classList.add(NAV_EXIT_MANAGED_CLASS)
+        document.body.classList.remove(NAV_EXIT_HIDDEN_CLASS)
+        timersRef.current.cleanup = window.setTimeout(() => {
+            document.body.classList.remove(NAV_EXIT_MANAGED_CLASS)
+            timersRef.current.cleanup = 0
+        }, NAV_REVEAL_MS + 120)
     }, [clearTimers])
 
     React.useEffect(() => {
@@ -429,33 +441,25 @@ function useNavExitReveal(enabled: boolean, selector: string, holdMs: number) {
                 will-change: transform !important;
             }
             ${hidden.join(",\n")} {
-                transform: translate3d(0, -120px, 0) !important;
+                transform: translate3d(0, -${Math.max(0, Math.round(offset))}px, 0) !important;
                 pointer-events: none !important;
             }
             ${hidden.map((part) => `${part} :where(${INTERACTIVE_SELECTOR})`).join(",\n")} { pointer-events: none !important; }
         `
 
         return () => {
-            cancel()
+            reset()
             if (styleEl?.parentNode) styleEl.parentNode.removeChild(styleEl)
         }
-    }, [enabled, selector, cancel])
+    }, [enabled, offset, selector, reset])
 
     const start = React.useCallback(() => {
         if (!enabled || !canUseDOM()) return
         clearTimers()
         document.body.classList.add(NAV_EXIT_MANAGED_CLASS, NAV_EXIT_HIDDEN_CLASS)
-        timersRef.current.release = window.setTimeout(() => {
-            document.body.classList.remove(NAV_EXIT_HIDDEN_CLASS)
-            timersRef.current.cleanup = window.setTimeout(() => {
-                document.body.classList.remove(NAV_EXIT_MANAGED_CLASS)
-                timersRef.current.cleanup = 0
-            }, NAV_REVEAL_MS + 120)
-            timersRef.current.release = 0
-        }, Math.max(0, holdMs))
-    }, [clearTimers, enabled, holdMs])
+    }, [clearTimers, enabled])
 
-    return React.useMemo(() => ({ start, cancel }), [start, cancel])
+    return React.useMemo(() => ({ start, cancel: reveal }), [start, reveal])
 }
 
 function usePrefersReducedMotion() {
@@ -788,7 +792,8 @@ export default function ArchivePlayground(props: Props) {
     const loadInStaggerMs = props.loadInStaggerMs ?? LOAD_IN_STAGGER_MS
     const loadInMaxWaitMs = props.loadInMaxWaitMs ?? LOAD_IN_MAX_WAIT_MS
     const navSelector = props.navSelector || DEFAULT_NAV_SELECTOR
-    const navExitReveal = useNavExitReveal(isInteractive, navSelector, panelExitMs)
+    const navHideOffset = props.navHideOffset ?? 120
+    const navExitReveal = useNavExitReveal(isInteractive, navSelector, navHideOffset)
     const prefersReducedMotion = usePrefersReducedMotion()
     const loadInReady = useTransitionAwareLoadIn(isInteractive, loadInDelayMs, loadInMaxWaitMs)
     const [loadInSettled, setLoadInSettled] = React.useState(() => !isInteractive)
@@ -890,7 +895,7 @@ export default function ArchivePlayground(props: Props) {
     }, [])
 
     const closePanel = React.useCallback(() => {
-        navExitReveal.start()
+        navExitReveal.cancel()
         if (closeTimerRef.current !== null && canUseDOM()) {
             window.clearTimeout(closeTimerRef.current)
             closeTimerRef.current = null
@@ -909,7 +914,7 @@ export default function ArchivePlayground(props: Props) {
     }, [navExitReveal, panelExitMs, queueFocusReturn])
 
     const openItem = React.useCallback((item: Item, opener?: HTMLElement | null) => {
-        navExitReveal.cancel()
+        navExitReveal.start()
         if (closeTimerRef.current !== null && canUseDOM()) {
             window.clearTimeout(closeTimerRef.current)
             closeTimerRef.current = null
@@ -1533,6 +1538,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     hideFooter: { type: ControlType.Boolean, title: "Footer", defaultValue: true, enabledTitle: "Hide", disabledTitle: "Show", hidden: hideAdvanced },
     navPassthrough: { type: ControlType.Boolean, title: "Nav Fix", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
     navSelector: { type: ControlType.String, title: "Nav Sel", defaultValue: DEFAULT_NAV_SELECTOR, hidden: hideAdvanced },
+    navHideOffset: { type: ControlType.Number, title: "Nav Hide", defaultValue: 120, min: 60, max: 240, step: 1, unit: "px", hidden: hideAdvanced },
 })
 
 ArchivePlayground.displayName = "Archive Playground"

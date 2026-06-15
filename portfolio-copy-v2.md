@@ -1,9 +1,9 @@
 # Portfolio Copy — Tone of Voice & Case Study Openings
 
 **For:** Micah Hoang
-**Version:** 1.7 - June 2 Framer structure audit reflected. Home shows six CMS-limited selected-work cards with Motion Connect 2025 now visible. CMS now has 16 real projects, including TYPLDN. `/info` is the live profile route and includes testimonials.
+**Version:** 1.9 - June 15 CMS/page parity reflected. Home shows six CMS-limited selected-work cards with Peak Energy now visible. CMS now has 14 real projects, including Peak Energy and TYPLDN, and each CMS slug has a matching bespoke case-study route. `/info` is the live profile route and includes testimonials.
 **Date:** May 2026
-**Last Framer structure audit:** June 2, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
+**Last Framer structure audit:** June 15, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
 **Implementation note - June 2, 2026:** Active Framer web routes are tracked in `framer-current-state.md`. The AirPods bespoke page and CMS slug are both currently `/case-studies/airpods`; the older `airpods-pro-3` slug exception is historical.
 
@@ -81,7 +81,7 @@ A single rotating line below the About paragraph. Updated whenever you feel like
 
 ## 03 — Case Study Openings
 
-The strategic priority set has expanded with the current CMS. The published Framer Home page visibly shows six selected-work cards: AirPods Pro 3, Simon & Schuster, Gaia, National Park Playing Cards, Motion Connect 2025, and Yomo. Karuna is currently off Home because its CMS `Is Homepage` flag is false. Weaponized Innocence is homepage-flagged but outside the published six-item query. These paragraphs live at the top of each case study page, not on the homepage. The homepage shows only: project title, media, and the "View Project" card label.
+The strategic priority set has shifted with the current CMS. The CMS-backed Framer Home query shows six selected-work cards: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. Yomo and Weaponized Innocence are homepage-flagged but outside the six-item query. Karuna is currently off Home because its CMS `Is Homepage` flag is false. These paragraphs live at the top of each case study page, not on the homepage. The homepage shows only: project title, media, and the "View Project" card label.
 
 ---
 
@@ -101,6 +101,15 @@ The strategic priority set has expanded with the current CMS. The published Fram
 
 > "He was collaborative, thoughtful, and took direction well."
 > — Nadia Shireen Husain, Associate Creative Director, Apple
+
+---
+
+### Peak Energy — *WIP shell created, copy needs clearance*
+
+**Tier:** Pending depth decision
+**Metadata line:** 2026, 2D Motion, 3D Motion, Social Media, Technology
+
+Peak Energy is now in `All Projects` with slug `peak-energy`, sort `3`, and `Is Homepage=true`. A bespoke WIP-gated page exists at `/case-studies/peak-energy` with the Peak Energy x GM handoff snapshot: hero brand film, 2D/3D motion role, 2026, Technology, and an explicit mutual-NDA note. Do not infer additional public copy from the title alone; final case-study story, studio attribution, distribution details, and responsibilities need NDA plus production-contract clearance before the page is switched from WIP to ready.
 
 ---
 
@@ -264,7 +273,7 @@ Patterns to maintain across all case studies so the portfolio reads as one voice
 
 ## 06 — Status
 
-Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Motion Connect 2025 is now part of the six-card published Home grid. Weaponized Innocence remains Tier 2 and homepage-flagged but is not visible because Home is limited to six items by sort order. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 16 real projects and no sample/template projects.
+Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Peak Energy is now part of the six-card CMS-backed Home grid and has a WIP-gated bespoke page, but still needs approved case-study copy before public launch. Yomo and Weaponized Innocence remain homepage-flagged but are not visible because Home is limited to six items by sort order. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 14 real projects and no sample/template projects.
 
 Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of the planned green-dot/time treatment, and `/info` currently uses a forest-green editorial profile structure with selected experience, testimonials, recognition, and CTA sections rather than the older photo/résumé/currently layout.
 

@@ -1,0 +1,12 @@
+import{jsx as _jsx}from"react/jsx-runtime";import*as React from"react";import{addPropertyControls,ControlType}from"framer";/**
+ * Case Study Header Link
+ *
+ * A simple hover-color treatment for standalone case-study links.
+ *
+ * @framerIntrinsicWidth 240
+ * @framerIntrinsicHeight 36
+ * @framerSupportedLayoutWidth any-prefer-fixed
+ * @framerSupportedLayoutHeight fixed
+ */export default function CaseStudyScrambleText(props){const{text="View project →",color="rgb(35, 51, 36)",hoverColor="#979797",fontFamily="GT Standard L Regular, sans-serif",fontSize=22,lineHeight="120%",letterSpacing="0px",userSelect=true,style}=props;const[isHovered,setIsHovered]=React.useState(false);return /*#__PURE__*/_jsx("span",{"aria-label":text,tabIndex:0,onMouseEnter:()=>setIsHovered(true),onMouseLeave:()=>setIsHovered(false),onFocus:()=>setIsHovered(true),onBlur:()=>setIsHovered(false),style:{...style,display:"inline-block",width:"fit-content",maxWidth:"100%",color:isHovered?hoverColor:color,fontFamily,fontSize,lineHeight,letterSpacing,whiteSpace:"normal",overflowWrap:"anywhere",cursor:"pointer",userSelect:userSelect?"text":"none",transition:"color 160ms ease"},children:text});}addPropertyControls(CaseStudyScrambleText,{text:{type:ControlType.String,title:"Text",defaultValue:"View project →"},color:{type:ControlType.Color,title:"Color",defaultValue:"rgb(35, 51, 36)"},hoverColor:{type:ControlType.Color,title:"Hover",defaultValue:"#979797"},fontFamily:{type:ControlType.String,title:"Font",defaultValue:"GT Standard L Regular, sans-serif"},fontSize:{type:ControlType.Number,title:"Size",defaultValue:22,min:8,max:80,step:1,unit:"px"},lineHeight:{type:ControlType.String,title:"Line",defaultValue:"120%"},letterSpacing:{type:ControlType.String,title:"Tracking",defaultValue:"0px"},userSelect:{type:ControlType.Boolean,title:"Select",defaultValue:true,enabledTitle:"On",disabledTitle:"Off"},characters:{type:ControlType.String,title:"Chars",defaultValue:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",hidden:()=>true},interval:{type:ControlType.Number,title:"Interval",defaultValue:.07,min:.01,max:.2,step:.01,hidden:()=>true}});
+export const __FramerMetadata__ = {"exports":{"default":{"type":"reactComponent","name":"CaseStudyScrambleText","slots":[],"annotations":{"framerSupportedLayoutWidth":"any-prefer-fixed","framerIntrinsicWidth":"240","framerSupportedLayoutHeight":"fixed","framerIntrinsicHeight":"36","framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./CaseStudyScrambleText.map

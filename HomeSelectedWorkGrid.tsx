@@ -1,10 +1,12 @@
 import * as React from "react"
-import { addPropertyControls, ControlType } from "framer"
+import * as Framer from "framer"
+import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 type Props = {
     useCMS: boolean
     collectionId: string
     collectionModuleUrl: string
+    sortFieldIds: string
     thumbnailVideoFieldIds: string
     maxItems: number
     textColor: string
@@ -14,6 +16,7 @@ type Props = {
 type CMSFieldValue = { value?: unknown }
 type CMSItem = {
     data?: Record<string, CMSFieldValue | unknown>
+    fieldData?: Record<string, CMSFieldValue | unknown>
     slug?: unknown
     [key: string]: unknown
 }
@@ -40,6 +43,25 @@ type ImageValue = {
     srcSet?: string
     alt?: string
 }
+type FramerRoute = {
+    path?: string
+    pathLocalized?: Record<string, string>
+    page?: { preload?: () => unknown }
+}
+type FramerRouter = {
+    navigate?: (
+        routeId: string,
+        hash?: string,
+        pathVariables?: Record<string, string>,
+        smoothScroll?: boolean
+    ) => unknown
+    routes?: Record<string, FramerRoute | undefined>
+}
+type RouterMatch = {
+    routeId: string
+    hash?: string
+    pathVariables?: Record<string, string>
+}
 
 const COLLECTION_ID = "yTHrQWMIY"
 const FIELD_IDS = {
@@ -51,9 +73,12 @@ const FIELD_IDS = {
     thumbnailStroke: "OHdUYs6Mo",
     isHomepage: "myUIfK0j7",
 } as const
+const DEFAULT_SORT_FIELD_IDS = FIELD_IDS.number
 const LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
+    "https://micahhoang.info/",
+    "https://micahhoang.info/case-studies",
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
@@ -61,40 +86,38 @@ const cmsModuleUrlCache = new Map<string, string>()
 const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = FIELD_IDS.thumbnailVideoLink
 const DEFAULT_PROJECTS: Project[] = [
     {
-        title: "AirPods Pro 3",
+        title: "Gaia",
         number: 1,
-        slug: "airpods",
+        slug: "gaia",
         thumbnail: {
-            src: "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+            src: "https://framerusercontent.com/images/3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg",
         },
-        thumbnailVideoLink: "",
         thumbnailStroke: true,
         isHomepage: true,
     },
     {
-        title: "Simon & Schuster",
+        title: "AirPods Pro 3",
         number: 2,
+        slug: "airpods",
+        thumbnail: {
+            src: "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+        },
+        thumbnailVideoLink: "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        thumbnailStroke: true,
+        isHomepage: true,
+    },
+    {
+        title: "Peak Energy",
+        number: 3,
+        slug: "peak-energy",
+        isHomepage: true,
+    },
+    {
+        title: "Simon & Schuster",
+        number: 4,
         slug: "simon-schuster",
         thumbnail: {
             src: "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
-        },
-        isHomepage: true,
-    },
-    {
-        title: "Gaia",
-        number: 3,
-        slug: "gaia",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/oCdgMnyGzAZv1HcI8JKkYeNiSVk.png",
-        },
-        isHomepage: true,
-    },
-    {
-        title: "National Park Playing Cards",
-        number: 4,
-        slug: "national-park-cards",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
         },
         isHomepage: true,
     },
@@ -105,15 +128,15 @@ const DEFAULT_PROJECTS: Project[] = [
         thumbnail: {
             src: "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
         },
-        thumbnailVideoLink: "",
+        thumbnailVideoLink: "https://framerusercontent.com/assets/JBWmgoL4YXIgZfGWVzv7pCVDGw.mp4",
         isHomepage: true,
     },
     {
-        title: "Yomo",
+        title: "National Park Playing Cards",
         number: 6,
-        slug: "yomo",
+        slug: "national-park-cards",
         thumbnail: {
-            src: "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
+            src: "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
         },
         isHomepage: true,
     },
@@ -133,6 +156,12 @@ function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fi
 
 function normalizeText(value: unknown): string {
     return String(value ?? "").trim()
+}
+
+function hasCMSValue(value: unknown): boolean {
+    if (value === null || value === undefined) return false
+    if (typeof value === "string") return value.trim().length > 0
+    return true
 }
 
 function normalizeMediaSource(value: unknown): string {
@@ -171,13 +200,25 @@ function readFirstMediaField(
     return ""
 }
 
+function readFirstField(
+    data: Record<string, CMSFieldValue | unknown> | undefined,
+    fieldIds: string
+): unknown {
+    for (const fieldId of splitFieldIds(fieldIds)) {
+        const value = readField(data, fieldId)
+        if (hasCMSValue(value)) return value
+    }
+    return undefined
+}
+
 function normalizeSlug(value: unknown): string {
     return normalizeText(value).replace(/^\/+|\/+$/g, "")
 }
 
 function normalizeNumber(value: unknown, fallback: number): number {
+    if (!hasCMSValue(value)) return fallback
     const next = Number(value)
-    return Number.isFinite(next) && next > 0 ? next : fallback
+    return Number.isFinite(next) ? next : fallback
 }
 
 function normalizeBoolean(value: unknown): boolean {
@@ -332,6 +373,7 @@ function sortProjects(projects: Project[]): Project[] {
 async function loadProjects(
     collectionId: string,
     collectionModuleUrl: string,
+    sortFieldIds: string,
     thumbnailVideoFieldIds: string
 ): Promise<Project[]> {
     const moduleUrl = await resolveCMSModuleUrl(collectionId, collectionModuleUrl)
@@ -346,12 +388,13 @@ async function loadProjects(
     const items = (await collection.scanItems()) as CMSItem[]
     return items
         .map((item, index) => {
-            const data = item.data
+            const data = item.data || item.fieldData
             const slug = normalizeSlug(readField(data, FIELD_IDS.slug)) || normalizeSlug(item.slug)
             const title = normalizeText(readField(data, FIELD_IDS.title))
+            const sortValue = readFirstField(data, sortFieldIds) ?? readField(data, FIELD_IDS.number)
             return {
                 title,
-                number: normalizeNumber(readField(data, FIELD_IDS.number), index + 1),
+                number: normalizeNumber(sortValue, index + 1),
                 slug,
                 thumbnail: normalizeImage(readField(data, FIELD_IDS.thumbnail)),
                 thumbnailVideoLink: readFirstMediaField(data, thumbnailVideoFieldIds),
@@ -376,18 +419,175 @@ function getThumbnailVideoLink(project: Project): string {
     return normalizeMediaSource(project.thumbnailVideoLink)
 }
 
+function isCanvasTarget(): boolean {
+    try {
+        return RenderTarget.current() === RenderTarget.canvas
+    } catch {
+        return false
+    }
+}
+
+function stripTrailingSlash(pathname: string): string {
+    if (!pathname || pathname === "/") return "/"
+    return pathname.replace(/\/+$/, "") || "/"
+}
+
+function getSameOriginUrl(href: string): URL | null {
+    if (!href || href === "#") return null
+    if (typeof window === "undefined") return null
+
+    try {
+        const url = new URL(href, window.location.href)
+        return url.origin === window.location.origin ? url : null
+    } catch {
+        return null
+    }
+}
+
+function matchRoutePath(pattern: string, pathname: string): Record<string, string> | null {
+    const normalizedPattern = stripTrailingSlash(pattern)
+    const normalizedPathname = stripTrailingSlash(pathname)
+    if (normalizedPattern === normalizedPathname) return {}
+
+    const variableNames: string[] = []
+    const source = normalizedPattern
+        .split("/")
+        .map((part) => {
+            if (part.startsWith(":") && part.length > 1) {
+                variableNames.push(part.slice(1))
+                return "([^/]+)"
+            }
+            return escapeRegExp(part)
+        })
+        .join("/")
+    const match = normalizedPathname.match(new RegExp(`^${source}$`))
+    if (!match) return null
+
+    return variableNames.reduce<Record<string, string>>((pathVariables, name, index) => {
+        const value = match[index + 1]
+        if (value !== undefined) pathVariables[name] = decodeURIComponent(value)
+        return pathVariables
+    }, {})
+}
+
+function getRoutePaths(route: FramerRoute): string[] {
+    return [route.path, ...Object.values(route.pathLocalized || {})].filter(Boolean) as string[]
+}
+
+function getFramerRouteMatch(router: FramerRouter | undefined, href: string): RouterMatch | null {
+    const url = getSameOriginUrl(href)
+    const routes = router?.routes
+    if (!url || !routes) return null
+
+    const pathname = stripTrailingSlash(url.pathname)
+    const routeEntries = Object.entries(routes)
+        .filter((entry): entry is [string, FramerRoute] => Boolean(entry[1]?.path))
+        .sort(([, a], [, b]) => {
+            const aDepth = (a.path || "/").split("/").length
+            const bDepth = (b.path || "/").split("/").length
+            return bDepth - aDepth
+        })
+
+    for (const [routeId, route] of routeEntries) {
+        for (const routePath of getRoutePaths(route)) {
+            const pathVariables = matchRoutePath(routePath, pathname)
+            if (pathVariables) {
+                return {
+                    routeId,
+                    hash: url.hash ? decodeURIComponent(url.hash.slice(1)) : undefined,
+                    pathVariables,
+                }
+            }
+        }
+    }
+
+    return null
+}
+
+function preloadFramerRoute(router: FramerRouter | undefined, href: string) {
+    const match = getFramerRouteMatch(router, href)
+    if (!match) return
+
+    try {
+        router?.routes?.[match.routeId]?.page?.preload?.()
+    } catch {
+        // Preload is opportunistic; navigation can still handle the route.
+    }
+}
+
+function navigateFramerRoute(router: FramerRouter | undefined, match: RouterMatch): boolean {
+    if (typeof router?.navigate !== "function") return false
+
+    try {
+        router.routes?.[match.routeId]?.page?.preload?.()
+        router.navigate(match.routeId, match.hash, match.pathVariables, false)
+        return true
+    } catch {
+        return false
+    }
+}
+
+function shouldHandleRouteClick(event: React.MouseEvent<HTMLAnchorElement>, href: string): boolean {
+    return !(
+        isCanvasTarget() ||
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        !href ||
+        href === "#"
+    )
+}
+
+function useFramerRouter(): FramerRouter | undefined {
+    const maybeUseRouter = (Framer as unknown as { useRouter?: () => FramerRouter }).useRouter
+    return typeof maybeUseRouter === "function" ? maybeUseRouter() : undefined
+}
+
 function ProjectCard({
     project,
 }: {
     project: Project
 }) {
+    const router = useFramerRouter()
     const href = getProjectHref(project)
     const videoSrc = getThumbnailVideoLink(project)
     const hasVideo = Boolean(videoSrc)
     const mediaAlt = project.thumbnail?.alt || project.title
 
+    const handleClick = React.useCallback(
+        (event: React.MouseEvent<HTMLAnchorElement>) => {
+            if (!shouldHandleRouteClick(event, href)) return
+
+            const match = getFramerRouteMatch(router, href)
+            if (!match) return
+
+            event.preventDefault()
+            event.stopPropagation()
+
+            if (!navigateFramerRoute(router, match)) {
+                const url = getSameOriginUrl(href)
+                if (url) window.location.assign(url.href)
+            }
+        },
+        [href, router]
+    )
+
+    const handleWarmRoute = React.useCallback(() => {
+        preloadFramerRoute(router, href)
+    }, [href, router])
+
     return (
-        <a className="selected-work-card" href={href} aria-label={`${project.title} case study`}>
+        <a
+            className="selected-work-card"
+            href={href}
+            onClick={handleClick}
+            onFocus={handleWarmRoute}
+            onMouseEnter={handleWarmRoute}
+            aria-label={`${project.title} case study`}
+        >
             <div className="selected-work-card-meta">
                 <span className="selected-work-card-number">{project.number}</span>
                 <span aria-hidden="true">/</span>
@@ -437,6 +637,7 @@ export default function HomeSelectedWorkGrid({
     useCMS = true,
     collectionId = COLLECTION_ID,
     collectionModuleUrl = "",
+    sortFieldIds = DEFAULT_SORT_FIELD_IDS,
     thumbnailVideoFieldIds = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
     maxItems = 6,
     textColor = "rgb(35, 51, 36)",
@@ -451,7 +652,7 @@ export default function HomeSelectedWorkGrid({
         }
 
         let disposed = false
-        loadProjects(collectionId, collectionModuleUrl, thumbnailVideoFieldIds)
+        loadProjects(collectionId, collectionModuleUrl, sortFieldIds, thumbnailVideoFieldIds)
             .then((loaded) => {
                 if (!disposed && loaded.length > 0) setProjects(loaded)
             })
@@ -462,7 +663,7 @@ export default function HomeSelectedWorkGrid({
         return () => {
             disposed = true
         }
-    }, [useCMS, collectionId, collectionModuleUrl, thumbnailVideoFieldIds])
+    }, [useCMS, collectionId, collectionModuleUrl, sortFieldIds, thumbnailVideoFieldIds])
 
     const visibleProjects = React.useMemo(
         () => getVisibleProjects(projects, Math.max(1, Math.floor(Number(maxItems) || 6))),
@@ -575,6 +776,65 @@ export default function HomeSelectedWorkGrid({
                     transform: translateX(-50%) scale(1.02);
                 }
 
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]) {
+                    clip-path: inset(0);
+                    contain: paint;
+                    isolation: isolate;
+                    overflow: hidden !important;
+                }
+
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"])
+                :is([data-framer-name="Image"], [name="Image"]) {
+                    backface-visibility: hidden;
+                    transform: scale(1) !important;
+                    transform-origin: center center;
+                    transition: transform 420ms cubic-bezier(.22, 1, .36, 1) !important;
+                    will-change: transform;
+                }
+
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"])
+                :is([data-framer-name="Image"], [name="Image"]) img {
+                    transform: none !important;
+                    transition: none !important;
+                }
+
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover
+                :is([data-framer-name="Image"], [name="Image"]),
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible
+                :is([data-framer-name="Image"], [name="Image"]),
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within
+                :is([data-framer-name="Image"], [name="Image"]) {
+                    transform: scale(1.02) !important;
+                }
+
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    transform: translateY(0);
+                    transition: transform 420ms cubic-bezier(.22, 1, .36, 1) !important;
+                    will-change: transform;
+                }
+
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):hover > a,
+                :is([data-framer-name="Section About"], [name="Section About"])
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):focus-within > a {
+                    transform: translateY(-13px) !important;
+                }
+
                 @media (max-width: 809px) {
                     .selected-work-grid {
                         grid-template-columns: minmax(0, 1fr);
@@ -584,13 +844,43 @@ export default function HomeSelectedWorkGrid({
                 @media (prefers-reduced-motion: reduce) {
                     .selected-work-title-stack,
                     .selected-work-media img,
-                    .selected-work-media video {
+                    .selected-work-media video,
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"])
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a {
                         transition: none;
                     }
 
                     .selected-work-card:hover .selected-work-title-stack,
                     .selected-work-card:focus-visible .selected-work-title-stack {
                         transform: translateY(0);
+                    }
+
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within
+                    :is([data-framer-name="Image"], [name="Image"]) {
+                        transform: scale(1) !important;
+                    }
+
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):hover > a,
+                    :is([data-framer-name="Section About"], [name="Section About"])
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):focus-within > a {
+                        transform: translateY(0) !important;
                     }
                 }
             `}</style>
@@ -616,6 +906,13 @@ addPropertyControls(HomeSelectedWorkGrid, {
         title: "Module URL",
         defaultValue: "",
         placeholder: "Optional fallback",
+    },
+    sortFieldIds: {
+        type: ControlType.String,
+        title: "Sort Fields",
+        defaultValue: DEFAULT_SORT_FIELD_IDS,
+        placeholder: "Sorting Number field ID",
+        displayTextArea: true,
     },
     thumbnailVideoFieldIds: {
         type: ControlType.String,
