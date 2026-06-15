@@ -31,13 +31,16 @@ This is the quick source of truth for the active Framer project and local handof
 - `/case-studies/cellular-symphony` - Bespoke Cellular Symphony page, page ID `F4kVWqVcV`
 - `/case-studies/wolff-olins-x-artcenter` - Bespoke Wolff Olins x ArtCenter page, page ID `LrmGxP3EV`
 - `/case-studies/independent-lens` - Bespoke Independent Lens page, page ID `N3bZoqp15`
+- `/case-studies/rejuve` - Bespoke Rejuve WIP case-study page, page ID `NZ3DSAXip`
+- `/case-studies/belly-bar` - Bespoke Belly Bar WIP case-study page, page ID `n740YSYm1`
+- `/case-studies/whatsapp` - Bespoke WhatsApp WIP case-study page, page ID `UpcNhW2Dy`
 - `/index` - Canonical archive page, page ID `u2LOaBT5q`
 - `/play` - Archive media playground, page ID `KbgWr_0BN`
 - `/info` - Editorial profile/info page, page ID `fxz_zRIyp`
 
 No current Framer web page is exposed for `/profile`, `/contact`, `/worldgrid-test`, `/play-2`, `/play-consolidation-draft`, `/playground`, or `/playground-scroll-draft`.
 
-June 15 CMS parity update: the `All Projects` CMS roster has 14 items and each CMS slug now has a matching bespoke `/case-studies/{slug}` web page. `/case-studies/peak-energy` was created as a WIP case-study shell with the cleared Peak Energy x GM handoff details. The non-CMS orphan routes `/case-studies/neon-lights` and `/case-studies/aspen-valley-landscaping` were deleted from Framer. The dynamic `/case-studies/:slug` route remains as the generic CMS fallback/template route, not as an additional project.
+June 15 CMS parity update: the `All Projects` CMS roster has 17 items and each CMS slug now has a matching bespoke `/case-studies/{slug}` web page. `/case-studies/peak-energy` was created as a WIP case-study shell with the cleared Peak Energy x GM handoff details; `/case-studies/rejuve`, `/case-studies/belly-bar`, and `/case-studies/whatsapp` were added as CMS-metadata WIP shells. The non-CMS orphan routes `/case-studies/neon-lights` and `/case-studies/aspen-valley-landscaping` were deleted in the earlier June 15 parity pass. The dynamic `/case-studies/:slug` route remains as the generic CMS fallback/template route, not as an additional project.
 
 ### Design Pages
 
@@ -184,7 +187,7 @@ Treat these as legacy/template compatibility files unless a future Framer inspec
 
 ## Current CMS State
 
-The `All Projects` CMS collection (`yTHrQWMIY`) contains 14 real project records and no Jacob Turner sample/template records.
+The `All Projects` CMS collection (`yTHrQWMIY`) contains 17 real project records and no Jacob Turner sample/template records.
 
 | Sort | Project | Slug | Year | Home flag |
 |---:|---|---|---|---|
@@ -194,14 +197,17 @@ The `All Projects` CMS collection (`yTHrQWMIY`) contains 14 real project records
 | 4 | Simon & Schuster | `simon-schuster` | 2025 | true |
 | 5 | Motion Connect 2025 | `motion-connect-2025` | 2025 | true |
 | 6 | National Park Playing Cards | `national-park-cards` | 2019 | true |
-| 7 | Yomo | `yomo` | 2024 | true |
+| 7 | Yomo | `yomo` | 2024 | false |
 | 8 | Karuna | `karuna` | 2025 | false |
-| 9 | Weaponized Innocence | `weaponized-innocence` | 2024 | true |
+| 9 | Weaponized Innocence | `weaponized-innocence` | 2024 | false |
 | 10 | Wolff Olins x ArtCenter | `wolff-olins-x-artcenter` | 2024 | false |
 | 11 | Cellular Symphony | `cellular-symphony` | 2024 | false |
 | 12 | Seek Truth | `seek-truth` | 2024 | false |
-| 13 | Independent Lens | `independent-lens` | 2024 | false |
+| 13 | Independent Lens | `independent-lens` | 2023 | false |
 | 14 | TYPLDN | `typldn` | 2023 | false |
+| 15 | Rejuve | `rejuve` | 2025 | false |
+| 16 | Belly Bar | `belly-bar` | 2025 | false |
+| 17 | WhatsApp | `whatsapp` | - | true |
 
 The `Journal` CMS collection still exists, but there is no visible Journal page in the current Framer project map.
 
@@ -244,7 +250,7 @@ Home is a native Framer page whose selected-work section is now rendered by `Hom
 5. Motion Connect 2025
 6. National Park Playing Cards
 
-Yomo and Weaponized Innocence are homepage-flagged but outside the first six by sort order. Karuna is off Home because its Home flag is false.
+WhatsApp is homepage-flagged but outside the first six by sort order. Yomo, Karuna, and Weaponized Innocence are off Home because their Home flags are false.
 
 The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, image/video rendering, the hover label, and the `Thumbnail Stroke` visual fallback for the selected-work section.
 
@@ -271,7 +277,7 @@ June 11, 2026 index motion/style consolidation, updated June 14: `IndexPage.tsx`
 
 June 8, 2026 Motion Connect grid hover fix: live inspection showed the published `/index` CSS did not include the direct-child `.idx-grid-card-media > video` hover selector used by helper-generated thumbnail videos, so the Motion Connect video stayed visually static while the card title hover flip still worked. The current source keeps the direct `.idx-grid-card-media > img/video` hover/focus scale path in `IndexPage.tsx` and forces `scale(1)` under `prefers-reduced-motion: reduce`.
 
-June 15, 2026 archive thumbnail video update: the live `/index` `IndexPage` instance reads `thumbnailVideoFieldIds="SvOqFqdby"`, so the `Thumbnail Video` File upload is the only active CMS thumbnail-video source. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used as a fallback. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The hidden `CmsLink` collection list remains mounted so Framer's generated CMS module is available. If the `ProjectRegistrar` bridge provides incomplete rows, `IndexPage` hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated CMS module by slug/title before rendering the grid. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` (`szF9sZNWA`) remains configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup overlay path. AirPods Pro 3, Motion Connect 2025, Wolff Olins x ArtCenter, and Cellular Symphony have populated `Thumbnail Video` File values (`SvOqFqdby`) on Framer's CDN. The published site needs a Framer publish/redeploy before canvas/CMS File-field changes appear in the generated CMS bundle. `IndexThumbnailVideoFallback.tsx` (`wvucZCT`) and its hidden node (`R9kqDJO7t`) were deleted from Framer; do not recreate a hardcoded per-project fallback helper.
+June 15, 2026 archive thumbnail video update: the live `/index` `IndexPage` instance reads `thumbnailVideoFieldIds="SvOqFqdby"`, so the `Thumbnail Video` File upload is the only active CMS thumbnail-video source. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used as a fallback. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The hidden `CmsLink` collection list remains mounted so Framer's generated CMS module is available. If the `ProjectRegistrar` bridge provides incomplete rows, `IndexPage` hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated CMS module by slug/title before rendering the grid. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` (`szF9sZNWA`) remains configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup overlay path. AirPods Pro 3, Peak Energy, Motion Connect 2025, Wolff Olins x ArtCenter, and Cellular Symphony have populated `Thumbnail Video` File values (`SvOqFqdby`) on Framer's CDN. The published site needs a Framer publish/redeploy before canvas/CMS File-field changes appear in the generated CMS bundle. `IndexThumbnailVideoFallback.tsx` (`wvucZCT`) and its hidden node (`R9kqDJO7t`) were deleted from Framer; do not recreate a hardcoded per-project fallback helper.
 
 June 1, 2026 CMS bridge note, revised June 8: `/index` includes a hidden-by-position CMS bridge layer, `CmsLink` (`AwTGGhR7I`), containing the `AllProject` collection item. Keep this collection layer **visible/mounted** in Framer's layer panel, but fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, `opacity="0"`, `overflow="hidden"`, and locked, because it keeps Framer's generated CMS module available to `IndexPage`. If `ProjectRegistrar` (`I063adJ_h`) remains mounted, bind/pass the `Thumbnail`, `Thumbnail Video`, and `Thumbnail Stroke` fields or rely on `IndexPage`'s CMS-module hydration so registry rows cannot override richer CMS rows with stale media/stroke data.
 
@@ -293,7 +299,7 @@ The previously mounted cursor-preview helper, `IndexListCursorPreview.tsx`, was 
 - `CaseStudyThumbnailStrokeStyles.tsx`
 - `CaseStudyLinkRepair.tsx`
 
-June 15 CMS sync: `All Projects` now contains 14 items. The visible `NumberCounter` on `/case-studies` is prop-driven; update it to `14` in Framer or replace it with a dynamic CMS count before publishing this CMS roster.
+June 15 CMS sync: `All Projects` now contains 17 items. The visible `NumberCounter` on `/case-studies` is prop-driven; update it to `17` in Framer or replace it with a dynamic CMS count before publishing this CMS roster.
 
 ### `/play`
 
@@ -315,7 +321,7 @@ The current page is an editorial forest-green profile page with selected experie
 
 ### Bespoke Case Study Pages
 
-Bespoke pages currently exist for all 14 CMS projects: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, and TYPLDN. Peak Energy is currently a WIP shell behind `CaseStudyWorkInProgressGate` with the source-of-truth snapshot content from the June 15 handoff. Neon Lights and Aspen Valley Landscaping were removed from Framer because they are no longer in CMS.
+Bespoke pages currently exist for all 17 CMS projects: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp. Peak Energy, Rejuve, Belly Bar, and WhatsApp are currently WIP shells behind `CaseStudyWorkInProgressGate`; Peak carries the source-of-truth snapshot content from the June 15 handoff, while the three newer shells carry CMS metadata only. Neon Lights and Aspen Valley Landscaping were removed from Framer because they are no longer in CMS.
 
 Case-study media row rule (June 7, 2026): when a desktop case-study body row has one, two, or three media items, keep those items in a single row at tablet and phone breakpoints. Prefer native Framer layout controls: horizontal Stack/Grid, wrapping off, and no large mobile `minWidth` on the media wrappers. For existing media-grid code component instances that expose a stacking threshold, keep `forceSingleRow` enabled and lower `stackBelow` to the minimum allowed value (`240`) instead of creating a new component.
 
@@ -364,7 +370,7 @@ Good future cleanup candidates:
 
 - `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. It intentionally keeps a robust CMS export resolver for both legacy `a` and current `r` Framer module shapes. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
 - Future `/play` changes should start on a fresh draft/design page, pass visual parity checks, then be promoted into `ArchivePlayground.tsx` (`QNpkYp5`).
-- `/case-studies` still displays a `NumberCounter` configured by page props. As of the June 15 CMS sync, the prop needs to be updated to `14` or replaced with a dynamic count before publish.
+- `/case-studies` still displays a `NumberCounter` configured by page props. As of the June 15 CMS sync, the prop needs to be updated to `17` or replaced with a dynamic count before publish.
 - Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially `Counter.tsx` and any unmirrored rollback helpers.
 - No tracked local TSX or `tools/*` file met the "100% safe to remove" bar in the June 2 stale-code audit. Framer code files often have no local import graph because they are mounted by Framer code-file ID.
 
@@ -389,7 +395,7 @@ Known non-blocking console noise remains: Framer logged recoverable React hydrat
 
 June 8 Play promotion QA: Framer MCP verified `/play` Desktop node `pRc4v8wUe` now mounts `ArchivePlayground` node `kgFbinZvY` backed by `ArchivePlayground.tsx` (`QNpkYp5`), with all six legacy helper instances set to `enabled=false`. Published-route browser QA at `https://khaki-ship-257706.framer.app/play` confirmed the production marker `data-playground-root`, 15 visible desktop cards with no broken visible images, 8 visible mobile cards with no broken visible images, no console errors, the rolling Close text structure, and the post-close off-canvas panel/nav passthrough state. Framer emitted only its own tree-mode fallback warnings.
 
-June 11 page transitions, updated June 14: `PageTransition.tsx` (codeFile `gmalnRr`) is v7.12 and pushed to Framer draft as module revision `https://framer.com/m/PageTransition-br4HFc.js@bbSlpLfHHbqvIK6OnvX4`; `/index` code file `rgAZFOv` is pushed as `https://framer.com/m/IndexPage-msQHCf.js@4KN1kk4GdkWbPm8a3hJU`. The normal public URL still needs a Framer Publish before the final v7.12 timing can be verified live. Cross-document View Transitions and same-document router transitions still share the same sheet animation for normal routes (destination page slides up over the dimming/drifting old page; nav exits up and re-enters as its own transition group; Speculation Rules document prefetch). v7.9/v7.10 deliberately disables page transitions for every navigation entering or leaving `/case-studies` / `/case-studies/*`: same-document case-study clicks return before `preventDefault()` / `document.startViewTransition()`, case-study documents install `@view-transition { navigation: none; }`, and `pageswap` skips any remaining cross-document transition fallback. v7.12 keeps the `/index` `data-pt-index-heading-hold` only as a route-level safety pin, releases it without running another custom heading animation, and skips the top `Index` heading from generic appear replay so Framer's native heading animation owns the title. The first-boot home loader uses a Forest Green curtain with an 8px Cream top progress bar and centered `Micah Hoang ©2026` identity before the curtain swipes up to reveal the loaded page. The identity text matches the Home hero descriptor's `/Heading 3` style: GT Standard L Regular, 400 weight, 120% line height, -0.01em tracking, and responsive sizes of 30px desktop / 24px tablet / 19px mobile. The earlier v1-v4 click-intercept curtain implementations remain retired. Placed as first child of the Desktop root on every published route: home, `/info`, `/index`, `/play`, `/case-studies`, `/case-studies/:slug`, `/404`, and all 15 bespoke case studies. `/contact` was an unpublished draft and has been deleted from the project. Full details: framer-page-transition.md.
+June 11 page transitions, updated June 14 and June 15: `PageTransition.tsx` (codeFile `gmalnRr`) is v7.12 and pushed to Framer draft as module revision `https://framer.com/m/PageTransition-br4HFc.js@bbSlpLfHHbqvIK6OnvX4`; `/index` code file `rgAZFOv` is pushed as `https://framer.com/m/IndexPage-msQHCf.js@4KN1kk4GdkWbPm8a3hJU`. The normal public URL still needs a Framer Publish before the final v7.12 timing can be verified live. Cross-document View Transitions and same-document router transitions still share the same sheet animation for normal routes (destination page slides up over the dimming/drifting old page; nav exits up and re-enters as its own transition group; Speculation Rules document prefetch). v7.9/v7.10 deliberately disables page transitions for every navigation entering or leaving `/case-studies` / `/case-studies/*`: same-document case-study clicks return before `preventDefault()` / `document.startViewTransition()`, case-study documents install `@view-transition { navigation: none; }`, and `pageswap` skips any remaining cross-document transition fallback. v7.12 keeps the `/index` `data-pt-index-heading-hold` only as a route-level safety pin, releases it without running another custom heading animation, and skips the top `Index` heading from generic appear replay so Framer's native heading animation owns the title. The first-boot home loader uses a Forest Green curtain with an 8px Cream top progress bar and centered `Micah Hoang ©2026` identity before the curtain swipes up to reveal the loaded page. The identity text matches the Home hero descriptor's `/Heading 3` style: GT Standard L Regular, 400 weight, 120% line height, -0.01em tracking, and responsive sizes of 30px desktop / 24px tablet / 19px mobile. The earlier v1-v4 click-intercept curtain implementations remain retired. Placed as first child of the Desktop root on every published route: home, `/info`, `/index`, `/play`, `/case-studies`, `/case-studies/:slug`, `/404`, and all 17 bespoke case studies. `/contact` was an unpublished draft and has been deleted from the project. Full details: framer-page-transition.md.
 
 June 12 transition investigation: published staging was initially serving v7.6-style Speculation Rules with `prerender` for `/case-studies/*` from Home and `prerender` for `/`, `/index`, `/play`, `/info`, plus sibling case studies from case-study pages. That matched the likely footer/white-flash artifact: prerender activation can expose a not-yet-settled Framer page. `PageTransition.tsx` first moved to the v7.7 prefetch-only correction, then v7.9/v7.10 removed the page-transition choreography from case-study legs entirely. Final in-app retest clicked the actual Home AirPods card and the case-study Work nav link on the live bundle: Home had `navigation:auto` and no eager `/case-studies/*` rule; AirPods had `data-pt-case-study-transition="off"` and `navigation:none`; returning Home restored `navigation:auto`. Rapid samples during both clicks reported `:active-view-transition === false`, and every return sample reported `footerVisible === false`. Screenshots: `output/playwright/case-study-transition-bypass-2026-06-12/iab-real-01-home-before.png`, `iab-real-02-airpods-after.png`, and `iab-real-03-home-after.png`. `OtherProjectCardRestored.tsx` was also pushed earlier so its CSS `<style>` no longer lives inside the card `<a>` and now uses `suppressHydrationWarning`; remaining React #422/#425 hydration warnings still point at generated style tags in multiple Framer code components and should be handled as a separate cleanup pass.
 

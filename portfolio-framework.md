@@ -1,7 +1,7 @@
 # Portfolio Redesign — Strategic Framework & Information Architecture
 
 **For:** Micah Hoang
-**Version:** 1.10 - June 15 CMS/page parity reflected. CMS has 14 real projects and each CMS slug has a matching bespoke `/case-studies/{slug}` page. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`; the current CMS-limited set is Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. `/play` uses the `Play.tsx` production wrapper around `ArchivePlayground.tsx` with protected authorable `Archive Items` controls. Current Framer web routes are documented in `framer-current-state.md`.
+**Version:** 1.11 - June 15 CMS/page parity reflected. CMS has 17 real projects and each CMS slug has a matching bespoke `/case-studies/{slug}` page. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`; the current CMS-limited set is Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. `/play` uses the `Play.tsx` production wrapper around `ArchivePlayground.tsx` with protected authorable `Archive Items` controls. Current Framer web routes are documented in `framer-current-state.md`.
 **Date:** May 2026
 **Last Framer structure audit:** June 15, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
 
@@ -75,9 +75,9 @@ The order is a deliberate argument. Each visible Home card earns its slot and re
 | 5 | **Motion Connect 2025** | Event identity and motion system. Adds current ArtCenter/community signal and kinetic range. | 2, 3 |
 | 6 | **National Park Playing Cards** | Entrepreneurial, shipped, human. 20K copies, REI/National Park retail. Store-count copy needs final confirmation. | 2, 3 |
 
-**Home query nuance:** Yomo and Weaponized Innocence have `Is Homepage` set to `true`, but they are not visible in the first six Home cards because the query stops at the first six homepage-flagged records by sort order. Karuna is currently off Home because its `Is Homepage` flag is `false`. To change Home curation, update both the CMS flag and sort order, then verify the six-item query.
+**Home query nuance:** WhatsApp has `Is Homepage` set to `true`, but it is not visible in the first six Home cards because the query stops at the first six homepage-flagged records by sort order. Yomo, Karuna, and Weaponized Innocence are currently off Home because their `Is Homepage` flags are `false`. To change Home curation, update both the CMS flag and sort order, then verify the six-item query.
 
-**Explicitly off the current Home grid:** Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, and TYPLDN. Neon Lights, Aspen Valley Landscaping, and John Steinbeck are no longer in CMS; Neon/Aspen's old bespoke Framer routes were deleted during the June 15 parity pass. Current Home visibility is governed by the CMS/query state above.
+**Explicitly off the current Home grid:** Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp. Neon Lights, Aspen Valley Landscaping, and John Steinbeck are no longer in CMS; Neon/Aspen's old bespoke Framer routes were deleted during the June 15 parity pass. Current Home visibility is governed by the CMS/query state above.
 
 **Deleted from CMS:** all Jacob Turner sample/template records, including Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, and Harmony in Motion.
 
@@ -91,7 +91,7 @@ Not every homepage project needs the same depth. A uniform depth requirement is 
 - **Tier 2 — Visual showcase + context** (5 projects): National Park Playing Cards, Motion Connect 2025, Yomo, Karuna, Weaponized Innocence.
   One rich page, minimal copy, lots of imagery, a clear frame of the problem and outcome. The work carries the weight. Weaponized Innocence remains Tier 2 due to Fonts in Use recognition and editorial depth that serves Target 3 (studios).
 
-- **Archive/editorial records needing a final depth decision**: Seek Truth, Independent Lens, and TYPLDN.
+- **Archive/editorial records needing a final depth decision**: Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp.
   These now exist in CMS and/or bespoke Framer pages. Decide whether they remain archive entries or become dedicated visual showcase pages before adding them to the primary case-study build order.
 
 ### Locked case study openings
@@ -124,17 +124,17 @@ Not every homepage project needs the same depth. A uniform depth requirement is 
 
 ### Current Framer CMS state
 
-As of the June 15 audit, the `All Projects` CMS collection contains 14 real projects and zero sample/template projects.
+As of the June 15 audit, the `All Projects` CMS collection contains 17 real projects and zero sample/template projects.
 
 - **Hybrid case-study workflow:** use `All Projects` as the registry for metadata, browsing, sorting, filters, thumbnails, and homepage/index visibility. Use bespoke Framer pages for individual case-study storytelling when a project needs custom layout, pacing, or media. See `case-study-cms-workflow.md`.
 - **CMS collection:** `All Projects`, collection ID `yTHrQWMIY`
 - **Secondary CMS collection still present:** `Journal`, collection ID `SyZTxPxeY`. No visible Journal page exists in the current project structure; ignore it unless Micah explicitly asks to revive journal content.
 - **Visible on CMS-backed Home:** Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards
-- **Homepage-flagged but not visible because of the six-item query limit:** Yomo, Weaponized Innocence
-- **Strategic Tier 2 but currently off Home:** Karuna
-- **Archive/off-Home:** Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN
+- **Homepage-flagged but not visible because of the six-item query limit:** WhatsApp
+- **Strategic Tier 2 but currently off Home:** Yomo, Karuna, Weaponized Innocence
+- **Archive/off-Home:** Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar
 - **Removed from CMS and deleted from Framer bespoke routes:** Neon Lights, Aspen Valley Landscaping
-- **Live `/case-studies` route:** page ID `Rnw1WO1jS`, a case-study index rendered with the native Framer `Case Studies Filter` component. The `NumberCounter` prop should be updated to `14` before publishing the current CMS roster.
+- **Live `/case-studies` route:** page ID `Rnw1WO1jS`, a case-study index rendered with the native Framer `Case Studies Filter` component. The `NumberCounter` prop should be updated to `17` before publishing the current CMS roster.
 - **Full roster and field map:** see `framer-current-state.md`.
 
 Important field IDs for future CMS agents:
@@ -186,7 +186,7 @@ micahhoang.info
 │   └── Contact CTA — full-viewport forest-green section with email, LinkedIn, Cosmos
 │
 ├── /case-studies
-│   └── Native Framer case-study index: Case Studies Filter component + prop-driven count that needs `14` for the current CMS roster
+│   └── Native Framer case-study index: Case Studies Filter component + prop-driven count that needs `17` for the current CMS roster
 │
 ├── /case-studies/[slug]
 │   ├── /case-studies/airpods               [Tier 1 — full case study]
@@ -201,6 +201,9 @@ micahhoang.info
 │   ├── /case-studies/seek-truth            [Archive/editorial pending depth decision]
 │   ├── /case-studies/independent-lens      [Archive/editorial pending depth decision]
 │   ├── /case-studies/typldn                [Archive/editorial pending depth decision]
+│   ├── /case-studies/rejuve                [WIP-gated bespoke shell — pending public copy/depth decision]
+│   ├── /case-studies/belly-bar             [WIP-gated bespoke shell — pending public copy/depth decision]
+│   ├── /case-studies/whatsapp              [WIP-gated bespoke shell — pending public copy/depth decision]
 │   ├── /case-studies/cellular-symphony     [Archive]
 │   └── /case-studies/wolff-olins-x-artcenter [Archive]
 │
@@ -341,14 +344,14 @@ These are resolved decisions and current implementation notes. Treat them as sou
 - ~~**Profile page layout.**~~ ✅ Current Framer state differs from older wireframe v2 notes. `/info` is now a forest-green editorial page with a `HEY, / I'M MICAH.` hero, sticky video, intro copy, selected experience list, `WHAT PEOPLE SAY` testimonials, recognition rows, and CTA links. Résumé/currently/colophon modules are not visible in the audited desktop XML.
 - ~~**Index page layout.**~~ ✅ Resolved (May 26 update; consolidated June 11). Canonical `/index` is `u2LOaBT5q`; the old duplicate `yKKOMVNs6` and temporary `/index-inline-toggle-test` route are gone. `/index` uses the original-template uppercase `GRID / LIST` control rendered directly by `IndexPage.tsx` after the taxonomy nav. `CLEAR FILTERS` stays as the original left-aligned `TaxonomySection` action; `IndexPage.tsx` applies the style-only matching and keeps a stable 12px/28px/24px action-row rhythm so filters can be selected/deselected without shifting content. The selected view is underlined, and there is no delegated fixed/floating or DOM-mutating toggle helper. List view (default): year-grouped projects with taxonomy filters and near-black `#141414` rules/dividers. Taxonomy follows Figma node `32:7531` at desktop/wide tablet with a flexible six-column grid: Year label/value cols 1/2, Service label/value cols 3/4, Industry label/value cols 5/6. At <=899px the taxonomy/index nav switches to SearchSystem-style label/value rows. The List year-group wrapper shares the 6-col grid; inside it, list rows use a 5-col inner grid on desktop. At <=1199px Standard list year/title type stays at the desktop 22px scale, Service metadata/tags disappear, and Industry stays visible/right-aligned with wrapping instead of truncation. `List Type` A/B: `Standard` keeps large year + 22px title; `Mono 13` makes all list typography 13px uppercase mono. `List Hover` A/B: `Flip` is default (title-only upward flip mirroring `ViewProject` reference `node=L21w7Xq1z`); `Highlight` preserves the older full-row hover. Grid view renders project-driven cards with media, title, and metadata; the unfiltered `Case Studies Filter` fallback was removed. Year / Service / Industry nav values are derived dynamically from the in-scope projects; the previous "eight canonical Discipline labels" lock is not enforced in code. Do not expose 3D mode in `/index` unless Micah explicitly asks. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed on May 26 because they were not active in the current Framer page structure.
 - ~~**Domain and URL.**~~ ✅ Resolved. Keep the portfolio oriented around `micahhoang.info`. Framer staging may appear as `khaki-ship-257706.framer.app`, but the public portfolio target is `micahhoang.info`.
-- ~~**CMS cleanup.**~~ ✅ Resolved. The Jacob Turner sample projects were permanently deleted from the `All Projects` CMS collection. The collection now contains 14 real Micah projects after the June 15 roster update.
+- ~~**CMS cleanup.**~~ ✅ Resolved. The Jacob Turner sample projects were permanently deleted from the `All Projects` CMS collection. The collection now contains 17 real Micah projects after the June 15 roster update.
 - ~~**Per-project thumbnail stroke.**~~ ✅ Resolved. `All Projects` has a `Thumbnail Stroke` Boolean (`OHdUYs6Mo`), currently on for Gaia, AirPods Pro 3, and Karuna. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) owns the visible 1px Light Gray stroke from CMS in native/media contexts, while `HomeSelectedWorkGrid.tsx` mirrors that field for the Home selected-work cards. The native Framer `Case Study` component also has a real overlay frame inside `ImageWrapper` so the CMS-driven stroke can be visible in the editor canvas; no `CardStroke` variants should be reintroduced. June 1-15 note: the helper and Home grid handle Framer's current generated CMS module export shape (`r` instead of legacy `a`) and function-shaped exports.
 
 ---
 
 ## 07 — Build Phases (recap, for reference)
 
-- **Phase 1 — Foundation** (current status): Jacob Turner Framer template is the structural base. `All Projects` CMS has been cleaned to 14 real projects, sample/template records deleted, and Home uses `HomeSelectedWorkGrid.tsx` for the six-item selected-work section. Preserve the existing Home selected-work setup unless there is an explicit redesign request.
+- **Phase 1 — Foundation** (current status): Jacob Turner Framer template is the structural base. `All Projects` CMS has been cleaned to 17 real projects, sample/template records deleted, and Home uses `HomeSelectedWorkGrid.tsx` for the six-item selected-work section. Preserve the existing Home selected-work setup unless there is an explicit redesign request.
 - **Phase 2 — Layout & identity** (current): Continue refining hero zone, project cards, Home about/CTA, `/info` editorial profile page, `/case-studies` index, and `/index` List/Grid views. `/index` Grid view now renders project-driven native HTML cards from the same `filteredProjects` path used by List view, with no native CMS grid fallback.
 - **Phase 3 — Native motion** (Week 2): Framer-native scroll reveals, hover states on project cards (lift/scale), link transitions, and light grid/list motion. The site should feel alive without overcomplicating the code component.
 - **Phase 4 — Custom components** (Week 2-3): Cursor, page transitions, and scroll-scrub on case studies should be built only when they serve the portfolio. The old WorldGrid reference is no longer active in the current Framer inventory; keep 3D/gallery experiments out of `/index` unless Micah explicitly asks to reintroduce them.

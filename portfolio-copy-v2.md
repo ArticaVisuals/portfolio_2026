@@ -1,7 +1,7 @@
 # Portfolio Copy — Tone of Voice & Case Study Openings
 
 **For:** Micah Hoang
-**Version:** 1.9 - June 15 CMS/page parity reflected. Home shows six CMS-limited selected-work cards with Peak Energy now visible. CMS now has 14 real projects, including Peak Energy and TYPLDN, and each CMS slug has a matching bespoke case-study route. `/info` is the live profile route and includes testimonials.
+**Version:** 1.10 - June 15 CMS/page parity reflected. Home shows six CMS-limited selected-work cards with Peak Energy still visible. CMS now has 17 real projects, including Rejuve, Belly Bar, and WhatsApp, and each CMS slug has a matching bespoke case-study route. `/info` is the live profile route and includes testimonials.
 **Date:** May 2026
 **Last Framer structure audit:** June 15, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
@@ -81,7 +81,7 @@ A single rotating line below the About paragraph. Updated whenever you feel like
 
 ## 03 — Case Study Openings
 
-The strategic priority set has shifted with the current CMS. The CMS-backed Framer Home query shows six selected-work cards: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. Yomo and Weaponized Innocence are homepage-flagged but outside the six-item query. Karuna is currently off Home because its CMS `Is Homepage` flag is false. These paragraphs live at the top of each case study page, not on the homepage. The homepage shows only: project title, media, and the "View Project" card label.
+The strategic priority set has shifted with the current CMS. The CMS-backed Framer Home query shows six selected-work cards: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. WhatsApp is homepage-flagged but outside the six-item query because its sort order is 17. Yomo, Karuna, and Weaponized Innocence are currently off Home because their CMS `Is Homepage` flags are false. These paragraphs live at the top of each case study page, not on the homepage. The homepage shows only: project title, media, and the "View Project" card label.
 
 ---
 
@@ -110,6 +110,12 @@ The strategic priority set has shifted with the current CMS. The CMS-backed Fram
 **Metadata line:** 2026, 2D Motion, 3D Motion, Social Media, Technology
 
 Peak Energy is now in `All Projects` with slug `peak-energy`, sort `3`, and `Is Homepage=true`. A bespoke WIP-gated page exists at `/case-studies/peak-energy` with the Peak Energy x GM handoff snapshot: hero brand film, 2D/3D motion role, 2026, Technology, and an explicit mutual-NDA note. Do not infer additional public copy from the title alone; final case-study story, studio attribution, distribution details, and responsibilities need NDA plus production-contract clearance before the page is switched from WIP to ready.
+
+---
+
+### Rejuve, Belly Bar, and WhatsApp - *WIP shells created*
+
+Rejuve, Belly Bar, and WhatsApp are now in `All Projects` and each has a matching WIP-gated bespoke route: `/case-studies/rejuve`, `/case-studies/belly-bar`, and `/case-studies/whatsapp`. These pages should stay as metadata shells until public case-study copy, credits, role details, and visual assets are approved.
 
 ---
 
@@ -273,7 +279,7 @@ Patterns to maintain across all case studies so the portfolio reads as one voice
 
 ## 06 — Status
 
-Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Peak Energy is now part of the six-card CMS-backed Home grid and has a WIP-gated bespoke page, but still needs approved case-study copy before public launch. Yomo and Weaponized Innocence remain homepage-flagged but are not visible because Home is limited to six items by sort order. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 14 real projects and no sample/template projects.
+Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Peak Energy is part of the six-card CMS-backed Home grid and has a WIP-gated bespoke page, but still needs approved case-study copy before public launch. Rejuve, Belly Bar, and WhatsApp now have WIP-gated bespoke shells; WhatsApp is homepage-flagged but remains outside the six-card Home query because its sort order is 17. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 17 real projects and no sample/template projects.
 
 Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of the planned green-dot/time treatment, and `/info` currently uses a forest-green editorial profile structure with selected experience, testimonials, recognition, and CTA sections rather than the older photo/résumé/currently layout.
 
@@ -281,4 +287,4 @@ Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of t
 - Pick initial "currently into" items (reading, listening, exploring)
 - Resolve National Park Playing Cards store-count copy: older CMS/copy says 160 retail locations, while current `/info` says 220+ stores
 - Decide whether Karuna should return to Home or remain an off-Home Tier 2 showcase
-- Decide whether Seek Truth, Independent Lens, and TYPLDN remain archive records or become dedicated visual showcases
+- Decide whether Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp remain archive records or become dedicated visual showcases

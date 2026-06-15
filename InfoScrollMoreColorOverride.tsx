@@ -29,7 +29,7 @@ export default function InfoScrollMoreColorOverride({
                 pointerEvents: "none",
             }}
         >
-            <style>{`
+            <style suppressHydrationWarning>{`
                 html body [data-framer-name="SectionHeading"] [data-framer-name="HeaderBottom"] [data-framer-name="ArrowWrapper"],
                 html body [data-framer-name="SectionHeading"] [data-framer-name="HeaderBottom"] [data-framer-name="ArrowWrapper"] * {
                     color: ${arrowColor} !important;

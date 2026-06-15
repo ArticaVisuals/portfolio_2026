@@ -77,8 +77,8 @@ const DEFAULT_SORT_FIELD_IDS = FIELD_IDS.number
 const LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
-    "https://micahhoang.info/",
-    "https://micahhoang.info/case-studies",
+    "https://micahhoang.com/",
+    "https://micahhoang.com/case-studies",
     "https://khaki-ship-257706.framer.app/",
     "https://khaki-ship-257706.framer.app/case-studies",
 ]
@@ -110,6 +110,8 @@ const DEFAULT_PROJECTS: Project[] = [
         title: "Peak Energy",
         number: 3,
         slug: "peak-energy",
+        thumbnailVideoLink:
+            "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
         isHomepage: true,
     },
     {
@@ -555,7 +557,55 @@ function ProjectCard({
     const href = getProjectHref(project)
     const videoSrc = getThumbnailVideoLink(project)
     const hasVideo = Boolean(videoSrc)
+    const imageSrc = project.thumbnail?.src || ""
+    const imageSrcSet = project.thumbnail?.srcSet || ""
+    const hasMedia = hasVideo || Boolean(imageSrc)
+    const mediaKey = hasVideo
+        ? `video:${videoSrc}:${imageSrc}`
+        : imageSrc
+          ? `image:${imageSrc}:${imageSrcSet}`
+          : ""
+    const [loadedMediaKey, setLoadedMediaKey] = React.useState("")
+    const [failedMediaKey, setFailedMediaKey] = React.useState("")
     const mediaAlt = project.thumbnail?.alt || project.title
+
+    const markMediaReady = React.useCallback(() => {
+        if (!mediaKey) return
+        setLoadedMediaKey(mediaKey)
+        setFailedMediaKey((current) => (current === mediaKey ? "" : current))
+    }, [mediaKey])
+
+    const markMediaFailed = React.useCallback(() => {
+        if (!mediaKey) return
+        setFailedMediaKey(mediaKey)
+        setLoadedMediaKey((current) => (current === mediaKey ? "" : current))
+    }, [mediaKey])
+
+    const handleImageRef = React.useCallback(
+        (image: HTMLImageElement | null) => {
+            if (image?.complete && image.naturalWidth > 0) markMediaReady()
+        },
+        [markMediaReady]
+    )
+
+    const handleVideoError = React.useCallback(() => {
+        if (!imageSrc) markMediaFailed()
+    }, [imageSrc, markMediaFailed])
+
+    React.useEffect(() => {
+        if (!hasVideo || !imageSrc || !mediaKey || typeof window === "undefined") return
+
+        let disposed = false
+        const posterImage = new window.Image()
+        posterImage.onload = () => {
+            if (!disposed) markMediaReady()
+        }
+        posterImage.src = imageSrc
+
+        return () => {
+            disposed = true
+        }
+    }, [hasVideo, imageSrc, markMediaReady, mediaKey])
 
     const handleClick = React.useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -600,24 +650,34 @@ function ProjectCard({
             </div>
             <div
                 className="selected-work-media"
+                data-has-media={hasMedia ? "true" : undefined}
+                data-media-ready={loadedMediaKey === mediaKey ? "true" : undefined}
+                data-media-failed={failedMediaKey === mediaKey ? "true" : undefined}
                 data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
             >
                 {hasVideo ? (
                     <video
                         src={videoSrc}
-                        poster={project.thumbnail?.src}
+                        poster={imageSrc || undefined}
                         autoPlay
                         muted
                         loop
+                        onCanPlay={markMediaReady}
+                        onError={handleVideoError}
+                        onLoadedData={markMediaReady}
                         playsInline
                         preload="metadata"
                     />
                 ) : project.thumbnail?.src ? (
                     <img
-                        src={project.thumbnail.src}
+                        ref={handleImageRef}
+                        src={imageSrc}
                         srcSet={project.thumbnail.srcSet}
                         alt={mediaAlt}
+                        decoding="async"
                         loading="lazy"
+                        onError={markMediaFailed}
+                        onLoad={markMediaReady}
                     />
                 ) : null}
             </div>
@@ -683,7 +743,7 @@ export default function HomeSelectedWorkGrid({
             {visibleProjects.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
             ))}
-            <style>{`
+            <style suppressHydrationWarning>{`
                 .selected-work-grid {
                     display: grid;
                     gap: 50px 20px;
@@ -745,6 +805,25 @@ export default function HomeSelectedWorkGrid({
                     width: 100%;
                 }
 
+                .selected-work-media[data-has-media="true"]::before {
+                    background: var(--selected-work-stroke);
+                    content: "";
+                    inset: 0;
+                    opacity: 1;
+                    pointer-events: none;
+                    position: absolute;
+                    transition: opacity 360ms cubic-bezier(.22, 1, .36, 1);
+                    z-index: 0;
+                }
+
+                .selected-work-media[data-media-ready="true"]::before {
+                    opacity: 0;
+                }
+
+                .selected-work-media[data-media-failed="true"]::before {
+                    opacity: 1;
+                }
+
                 .selected-work-media[data-thumbnail-stroke="true"]::after {
                     border: 1px solid var(--selected-work-stroke);
                     box-sizing: border-box;
@@ -752,7 +831,7 @@ export default function HomeSelectedWorkGrid({
                     inset: 0;
                     pointer-events: none;
                     position: absolute;
-                    z-index: 1;
+                    z-index: 2;
                 }
 
                 .selected-work-media img,
@@ -762,11 +841,25 @@ export default function HomeSelectedWorkGrid({
                     object-fit: cover;
                     left: 50%;
                     max-width: none;
+                    opacity: 0;
                     position: absolute;
                     top: 0;
                     transform: translateX(-50%) scale(1);
-                    transition: transform 420ms cubic-bezier(.22, 1, .36, 1);
+                    transition:
+                        opacity 420ms cubic-bezier(.22, 1, .36, 1),
+                        transform 420ms cubic-bezier(.22, 1, .36, 1);
                     width: 101%;
+                    z-index: 1;
+                }
+
+                .selected-work-media[data-media-ready="true"] img,
+                .selected-work-media[data-media-ready="true"] video {
+                    opacity: 1;
+                }
+
+                .selected-work-media[data-media-failed="true"] img,
+                .selected-work-media[data-media-failed="true"] video {
+                    opacity: 0;
                 }
 
                 .selected-work-card:hover .selected-work-media img,
@@ -843,6 +936,7 @@ export default function HomeSelectedWorkGrid({
 
                 @media (prefers-reduced-motion: reduce) {
                     .selected-work-title-stack,
+                    .selected-work-media[data-has-media="true"]::before,
                     .selected-work-media img,
                     .selected-work-media video,
                     :is([data-framer-name="Section About"], [name="Section About"])
@@ -856,6 +950,13 @@ export default function HomeSelectedWorkGrid({
                     .selected-work-card:hover .selected-work-title-stack,
                     .selected-work-card:focus-visible .selected-work-title-stack {
                         transform: translateY(0);
+                    }
+
+                    .selected-work-card:hover .selected-work-media img,
+                    .selected-work-card:focus-visible .selected-work-media img,
+                    .selected-work-card:hover .selected-work-media video,
+                    .selected-work-card:focus-visible .selected-work-media video {
+                        transform: translateX(-50%) scale(1);
                     }
 
                     :is([data-framer-name="Section About"], [name="Section About"])

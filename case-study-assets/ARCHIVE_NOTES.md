@@ -27,6 +27,9 @@ from the June 15 Framer MCP inventory:
 | `seek-truth` | `/case-studies/seek-truth` | `framer-staging/seek-truth`; no Cargo/current-site folder seen |
 | `independent-lens` | `/case-studies/independent-lens` | `framer-staging/independent-lens`, `current-site/independent-lens` |
 | `typldn` | `/case-studies/typldn` | `current-site/typldn`; no Framer staging folder seen |
+| `rejuve` | `/case-studies/rejuve` | WIP shell; no obvious local asset folder yet |
+| `belly-bar` | `/case-studies/belly-bar` | WIP shell; no obvious local asset folder yet |
+| `whatsapp` | `/case-studies/whatsapp` | WIP shell; `framer-staging/brand-new-school` stores the current optimized video batch and posters |
 
 ## Folder Groups
 
@@ -40,6 +43,7 @@ source of truth.
 Active or active-adjacent folders:
 
 - `airpods-pro-3` - maps to current CMS slug `airpods`
+- `brand-new-school` - working media batch for current CMS slug `whatsapp`
 - `cellular-symphony`
 - `gaia`
 - `independent-lens`

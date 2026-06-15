@@ -81,7 +81,7 @@ Local regression suites (all green at snapshot time): /tmp/ptqa — 14 curtain-e
 
 One instance per page, **first child of the Desktop root** (1×1, opacity 0). For cross-document transitions both the outgoing AND incoming page must carry an instance; navigations involving an instance-less page are plain instant loads (graceful).
 
-**Placed (complete as of 2026-06-11):** home, /info, /index, /play, /case-studies, /case-studies/:slug template, /404, and all 15 case studies. /contact was an unpublished draft and has been deleted from the project.
+**Placed (updated 2026-06-15):** home, /info, /index, /play, /case-studies, /case-studies/:slug template, /404, and all 17 current bespoke CMS case-study pages. /contact was an unpublished draft and has been deleted from the project.
 
 ## Degradation matrix
 

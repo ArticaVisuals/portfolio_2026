@@ -111,6 +111,9 @@ const KNOWN_PROJECT_LINKS: Record<string, string> = {
     "cellular symphony": "/case-studies/cellular-symphony",
     "wolff olins x artcenter": "/case-studies/wolff-olins-x-artcenter",
     "independent lens": "/case-studies/independent-lens",
+    rejuve: "/case-studies/rejuve",
+    "belly bar": "/case-studies/belly-bar",
+    whatsapp: "/case-studies/whatsapp",
 }
 
 const cmsModuleUrlCache = new Map<string, string>()

@@ -115,8 +115,9 @@ Framer.
 Suggested labels:
 
 - `case-study-assets/current-site/` - older Cargo/public-site scrape.
-- `case-study-assets/framer-staging/` - Framer staging scrape. Contains active
-  project folders plus retired route folders.
+- `case-study-assets/framer-staging/` - Framer staging scrape and staging media
+  batches. Contains active project folders, `brand-new-school` working media for
+  the `/case-studies/whatsapp` WIP shell, plus retired route folders.
 - `case-study-assets/optimized/` - optimized batches for upload/rehosting.
 - `case-study-assets/video-posters/` - poster stills and manifest for manual
   Framer video poster work.
@@ -128,7 +129,8 @@ Current Framer/CMS active project slugs:
 `gaia`, `airpods`, `peak-energy`, `simon-schuster`,
 `motion-connect-2025`, `national-park-cards`, `yomo`, `karuna`,
 `weaponized-innocence`, `wolff-olins-x-artcenter`, `cellular-symphony`,
-`seek-truth`, `independent-lens`, `typldn`
+`seek-truth`, `independent-lens`, `typldn`, `rejuve`, `belly-bar`,
+`whatsapp`
 
 Archive/retired local asset folders include:
 

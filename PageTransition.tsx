@@ -106,11 +106,12 @@ const HOME_FADE_DELAY_S = 0.14
 const HOME_FADE_DURATION_S = 0.45
 const INDEX_HEADING_HOLD_ATTR = "data-pt-index-heading-hold"
 const INDEX_HEADING_PATH_RELEASE_DELAY_MS = 140
-const INDEX_HEADING_DIRECT_HOLD_SAFETY_MS = 3500
 const INDEX_HEADING_SELECTOR =
     '[data-framer-name="Index"][data-framer-appear-id]'
 const INDEX_HEADING_HIDDEN_TRANSFORM = "perspective(1200px) translateY(115%)"
 const INDEX_LOCAL_MASK_CLASS = "idx-mask-reveal-text"
+const HOME_HEADER_BOTTOM_SELECTOR = '[data-framer-name="Header Bottom"]'
+const HOME_HEADER_BOTTOM_RESTORE_DELAYS = [60, 240, 700, 1400, 3200]
 const SAME_DOC_HOLD_CAPTURE_BUFFER_MS = 24
 const NAV_EASE = "cubic-bezier(0.22, 1, 0.36, 1)" // measured nav spring feel
 const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
@@ -347,6 +348,7 @@ interface AppearReplayOptions {
     normalizeTypeReveals?: boolean
     onlyTypeReveals?: boolean
     skipIndexHeading?: boolean
+    skipHomeHeaderBottom?: boolean
 }
 
 function isTypeReveal(from: any, duration: number): boolean {
@@ -423,6 +425,12 @@ function buildAppearAnimations(
                 )
                     continue
                 if (options && options.skipIndexHeading && isIndexHeadingEl(el))
+                    continue
+                if (
+                    options &&
+                    options.skipHomeHeaderBottom &&
+                    isHomeHeaderBottomAppearEl(el)
+                )
                     continue
                 const animate = variant.animate
                 const from = variant.initial
@@ -542,6 +550,64 @@ function isIndexHeadingEl(el: any): el is Element {
     }
 }
 
+function isHomeHeaderBottomAppearEl(el: any): el is HTMLElement {
+    try {
+        return !!(
+            isHomePath(window.location.pathname) &&
+            el &&
+            el instanceof HTMLElement &&
+            el.matches &&
+            el.matches("[data-framer-appear-id]") &&
+            el.closest &&
+            el.closest(HOME_HEADER_BOTTOM_SELECTOR)
+        )
+    } catch (err) {
+        return false
+    }
+}
+
+// The Home header-bottom social/scroll/year items are persistent chrome, not
+// page content. Letting the global appear replay own them can leave their
+// nested Framer appear nodes parked at opacity .001 after history restores.
+function getHomeHeaderBottomAppearEls(): HTMLElement[] {
+    if (!isHomePath(window.location.pathname)) return []
+    try {
+        return Array.from(
+            document.querySelectorAll<HTMLElement>(
+                `${HOME_HEADER_BOTTOM_SELECTOR} [data-framer-appear-id]`
+            )
+        )
+    } catch (err) {
+        return []
+    }
+}
+
+function revealHomeHeaderBottomAppearEls() {
+    const els = getHomeHeaderBottomAppearEls()
+    if (!els.length) return
+    els.forEach((el) => {
+        try {
+            el.getAnimations().forEach((animation: any) => {
+                try {
+                    if (!isVtAnim(animation)) animation.cancel()
+                } catch (err) {}
+            })
+        } catch (err) {}
+        try {
+            el.style.opacity = "1"
+            el.style.transform = "none"
+            el.style.visibility = "visible"
+        } catch (err) {}
+    })
+}
+
+function scheduleHomeHeaderBottomReveal() {
+    if (!isHomePath(window.location.pathname)) return
+    HOME_HEADER_BOTTOM_RESTORE_DELAYS.forEach((delay) => {
+        window.setTimeout(revealHomeHeaderBottomAppearEls, delay)
+    })
+}
+
 function releaseIndexHeadingHold(existingEls?: Iterable<Element>): Set<Element> {
     window.clearTimeout(indexHeadingPathReleaseTimer)
     window.clearTimeout(indexHeadingPathReleasePollTimer)
@@ -562,43 +628,10 @@ function releaseIndexHeadingHold(existingEls?: Iterable<Element>): Set<Element> 
     if (!document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)) {
         return els
     }
-    // Heading not mounted yet — keep the pin so the path-release poll (or a
-    // later caller) retries once it exists, instead of clearing the hold into
-    // an instant snap on an element that has not arrived.
-    if (!headingEls.length) {
-        return els
-    }
-    // The generic appear replay deliberately SKIPS this heading (see
-    // buildAppearAnimations) so it can never be animated twice. Framer's own
-    // native heading appear is the normal owner of the reveal — but it is not
-    // reliably present on the first cold / same-document arrival, and the CSS
-    // hold rule has no transition, so dropping the pin alone snaps the title
-    // into place. Guard: if NO native animation is currently running on the
-    // heading, drive a single WAAPI reveal here from the held transform back
-    // to rest. If a native animation IS present, only drop the pin and let it
-    // own the reveal — no double animation.
-    const hasNativeAnim = headingEls.some(
-        (el) => el.getAnimations && el.getAnimations().length > 0
-    )
+    // The Index heading already has a native Framer appear animation. This
+    // release only removes the route-level CSS hold and returns the heading
+    // as a skip target so the fallback replay system cannot animate it twice.
     clearIndexHeadingHold()
-    if (!hasNativeAnim) {
-        indexHeadingRevealToken++
-        headingEls.forEach((el) => {
-            try {
-                el.animate(
-                    [
-                        { transform: INDEX_HEADING_HIDDEN_TRANSFORM },
-                        { transform: "perspective(1200px) translateY(0px)" },
-                    ],
-                    {
-                        duration: TYPE_REVEAL_DURATION_S * 1000,
-                        easing: TYPE_REVEAL_EASE,
-                        fill: "none",
-                    }
-                )
-            } catch (e) {}
-        })
-    }
     return els
 }
 
@@ -737,10 +770,16 @@ function replayDirectTypeReveals() {
     }
     const indexHeadingEls = new Set<Element>()
     if (isIndexPath(window.location.pathname)) {
-        // Keep the heading OUT of the generic type-reveal replay; its hold is
-        // owned and released by scheduleIndexHeadingPathRelease (armed from the
-        // React effect), which drives the single heading reveal.
-        getIndexHeadingEls().forEach((el) => indexHeadingEls.add(el))
+        const headingEls = getIndexHeadingEls()
+        headingEls.forEach((el) => indexHeadingEls.add(el))
+        if (
+            headingEls.length &&
+            document.documentElement.hasAttribute(INDEX_HEADING_HOLD_ATTR)
+        ) {
+                releaseIndexHeadingHold(headingEls).forEach((el) =>
+                indexHeadingEls.add(el)
+            )
+        }
     }
     try {
         window.dispatchEvent(new CustomEvent("pt:reveal"))
@@ -902,6 +941,12 @@ function holdAppearAnimations(
             if (isVtAnim(a)) continue
             try {
                 const el = a.effect && a.effect.target
+                if (
+                    options &&
+                    options.skipHomeHeaderBottom &&
+                    isHomeHeaderBottomAppearEl(el)
+                )
+                    continue
                 // Framer often has its own optimized appear animation running
                 // on the same element we already preplayed. Cancel that
                 // duplicate so stale native delays do not override the replay.
@@ -987,6 +1032,9 @@ function holdAppearAnimations(
         indexHeadingReplayEls.forEach((el) => skipUnion.add(el))
         explicitIndexHeadingEls.forEach((el) => skipUnion.add(el))
         replayAppearEffects(skipUnion, options)
+        if (options && options.skipHomeHeaderBottom) {
+            scheduleHomeHeaderBottomReveal()
+        }
     }
 
     // Primary: release mid-slide (RELEASE_AT of the duration), during the
@@ -1020,6 +1068,19 @@ function holdAppearAnimations(
     window.setTimeout(release, 4000) // hard safety
 }
 
+if (typeof window !== "undefined" && !(window as any).__ptHomeHeaderRevealBound) {
+    ;(window as any).__ptHomeHeaderRevealBound = true
+    window.addEventListener("pageshow", () => {
+        scheduleHomeHeaderBottomReveal()
+    })
+    window.addEventListener("popstate", () => {
+        scheduleHomeHeaderBottomReveal()
+    })
+    window.addEventListener("pt:reveal", () => {
+        scheduleHomeHeaderBottomReveal()
+    })
+}
+
 // Cross-document arrivals: pagereveal carries the ViewTransition object.
 if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
     ;(window as any).__ptRevealBound = true
@@ -1044,11 +1105,17 @@ if (typeof window !== "undefined" && !(window as any).__ptRevealBound) {
             holdAppearAnimations(
                 e.viewTransition.finished,
                 transitionReleaseMs(sdDuration, quickHomeReentry),
-                { quickHomeReentry, normalizeTypeReveals: true }
+                {
+                    quickHomeReentry,
+                    normalizeTypeReveals: true,
+                    skipHomeHeaderBottom: quickHomeReentry,
+                }
             )
+            if (quickHomeReentry) scheduleHomeHeaderBottomReveal()
             if (arrivingAtPlay) releasePlayBlankWhenSettled(e.viewTransition.finished)
-        } else if (arrivingAtPlay) {
-            releasePlayBlankWhenSettled(null)
+        } else {
+            if (quickHomeReentry) scheduleHomeHeaderBottomReveal()
+            if (arrivingAtPlay) releasePlayBlankWhenSettled(null)
         }
     })
 }
@@ -1184,6 +1251,7 @@ function onClickCapture(e: MouseEvent) {
                 quickHomeReentry: goingToHome,
                 normalizeTypeReveals: true,
                 skipIndexHeading: goingToIndex,
+                skipHomeHeaderBottom: goingToHome,
             }
         )
     }
@@ -1434,22 +1502,7 @@ function installScript(
         "}catch(e){return true}}"
     const caseStudyPathJs =
         "function __ptCaseStudy(){try{var p=location.pathname.replace(/\\/+$/,'')||'/';return p==='/case-studies'||p.indexOf('/case-studies/')===0}catch(e){return false}}"
-    // Direct /index document loads: pin the hero heading hidden BEFORE paint
-    // so it cannot flash its final state while Framer hydrates. The React
-    // effect schedules the poll-based release (native appear if present, else
-    // the WAAPI fallback). A safety timeout drops the pin no matter what, so a
-    // missing/failed release can never leave the title stuck (the v7.12
-    // regression).
-    const indexHeadingHoldJs =
-        "try{var __pti=(location.pathname.replace(/\\/+$/,'')||'/');if(__pti===" +
-        JSON.stringify(INDEX_PATH) +
-        "){document.documentElement.setAttribute('" +
-        INDEX_HEADING_HOLD_ATTR +
-        "','true');setTimeout(function(){try{document.documentElement.removeAttribute('" +
-        INDEX_HEADING_HOLD_ATTR +
-        "')}catch(e){}}," +
-        INDEX_HEADING_DIRECT_HOLD_SAFETY_MS +
-        ")}}catch(e){}"
+    const indexHeadingHoldJs = ""
     const caseStudyCssJs = skipCaseStudyTransitions
         ? caseStudyPathJs +
           "var __ptCaseOff=__ptCaseStudy();" +
@@ -1705,8 +1758,10 @@ export default function PageTransition(props: Props) {
                     quickHomeReentry: onHomePath,
                     normalizeTypeReveals: true,
                     skipIndexHeading: onIndexPath,
+                    skipHomeHeaderBottom: onHomePath,
                 })
         }
+        if (onHomePath) scheduleHomeHeaderBottomReveal()
         if (
             enabled &&
             holdAppear &&
@@ -1714,11 +1769,6 @@ export default function PageTransition(props: Props) {
             !active &&
             !skipCurrentCaseStudy
         ) {
-            // Direct /index arrivals were pinned hidden pre-paint by the SSR
-            // script; schedule the poll-based release. It waits for the heading
-            // to mount, disarms in favour of Framer's native appear if one
-            // runs, otherwise drives the single WAAPI fallback reveal.
-            if (onIndexPath) scheduleIndexHeadingPathRelease()
             window.setTimeout(replayDirectTypeReveals, TYPE_REVEAL_DIRECT_REPLAY_MS)
         } else if (!onIndexPath) {
             clearIndexHeadingHold()

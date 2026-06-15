@@ -165,14 +165,21 @@ the migration pass). Both paths get lightbox fixes: wrapper pages via the pinned
 import (bump the `@hash` on republish), separate-instance pages via the live code
 file directly.
 
-## Placement & rollout (status: deployed to all 15 case studies, 2026-06-06)
+## Placement & rollout (historical 15-page pass, 2026-06-06)
 
-Both `CaseStudyLightbox` and `CaseStudyVideoManager` are placed (one instance
-each, absolute 1×1 opacity-0) on the **Desktop root of all 15 bespoke
-case-study pages**, alongside the pre-existing `CaseStudyLinkRepair`:
+Both `CaseStudyLightbox` and `CaseStudyVideoManager` were placed (one instance
+each, absolute 1×1 opacity-0) on the **Desktop root of the 15 bespoke
+case-study pages active at that time**, alongside the pre-existing
+`CaseStudyLinkRepair`:
 motion-connect-2025, simon-schuster, airpods, national-park-cards, yomo, karuna,
 gaia, weaponized-innocence, typldn, seek-truth, cellular-symphony,
 wolff-olins-x-artcenter, independent-lens, neon-lights, aspen-valley-landscaping.
+
+June 15 CMS/page parity changed the active route set: Neon Lights and Aspen
+Valley Landscaping were removed, and Peak Energy, Rejuve, Belly Bar, and
+WhatsApp now exist as WIP-gated bespoke CMS routes. Verify controller placement
+in Framer before assuming lightbox/video-manager coverage on those newer WIP
+pages; use `CaseStudyControllers.tsx` for any new page-level controller mount.
 
 It was done **per-page**, not via a shared Footer: the Footer component
 introspects empty over MCP (`<Footer nodeId="xxIb0BkhJ" />`), so appending to it

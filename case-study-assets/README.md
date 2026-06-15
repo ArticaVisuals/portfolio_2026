@@ -7,6 +7,10 @@ Generated: 2026-05-16T05:26:59.133Z
 - May 22, 2026 note: `micahhoang.info` still served the Cargo site during the latest audit; Framer staging is the current redesign/build surface until domain cutover.
 - May 26, 2026 note: this folder is a preservation/staging archive, not the live Framer runtime. The local asset set includes the original 555 downloaded media files plus archive/playground media captured for `/play` work, for 595 local media files in `current-site` and `framer-staging` total. Do not infer that a local asset can be deleted from Framer just because it is unused here.
 - June 2, 2026 note: the `555` summary below is the original generated scrape summary; the verified current media-file count for `case-study-assets/current-site` plus `case-study-assets/framer-staging` is 595. Untracked Gaia/Figma export folders may exist locally and are separate from this scrape count.
+- June 15, 2026 note: `framer-staging/brand-new-school` is a newer staging
+  media batch for the `/case-studies/whatsapp` WIP shell, with optimized MP4s,
+  poster frames, a contact sheet, and a manifest. It is separate from the
+  original scrape-count summary above.
 - Pages: 35
 - Assets in original generated scrape: 555
 - Downloaded media files in original generated scrape: 555
@@ -69,14 +73,16 @@ Current active Framer/CMS project slugs are:
 `gaia`, `airpods`, `peak-energy`, `simon-schuster`,
 `motion-connect-2025`, `national-park-cards`, `yomo`, `karuna`,
 `weaponized-innocence`, `wolff-olins-x-artcenter`, `cellular-symphony`,
-`seek-truth`, `independent-lens`, `typldn`.
+`seek-truth`, `independent-lens`, `typldn`, `rejuve`, `belly-bar`,
+`whatsapp`.
 
 Folder meanings:
 
 - `current-site/` is the older `micahhoang.info` Cargo/current-public scrape.
-- `framer-staging/` is a Framer staging scrape. It contains active project
-  folders plus historical route folders such as `neon-lights`,
-  `aspen-valley-landscaping`, and `john-steinbeck`.
+- `framer-staging/` is a Framer staging scrape plus newer staging batches. It
+  contains active project folders, `brand-new-school` working media for the
+  `/case-studies/whatsapp` WIP shell, and historical route folders such as
+  `neon-lights`, `aspen-valley-landscaping`, and `john-steinbeck`.
 - `optimized/` stores generated optimization batches for rehosting/upload.
 - `video-posters/` stores poster stills and a manifest for manual Framer video
   poster work.
