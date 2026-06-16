@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 15, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
+**Last audited:** June 16, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
@@ -253,6 +253,8 @@ Home is a native Framer page whose selected-work section is now rendered by `Hom
 WhatsApp is homepage-flagged but outside the first six by sort order. Yomo, Karuna, and Weaponized Innocence are off Home because their Home flags are false.
 
 The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, image/video rendering, the hover label, and the `Thumbnail Stroke` visual fallback for the selected-work section.
+
+Home About read-more contract, updated June 16, 2026: the `/info` click target is `SectionAbout > Paragraph > ButtonWrapper` node `TvfJmt1e6`. That wrapper may carry `link="/info"`, but it must not contain a linked `Text Link` component instance. Its visible child is a detached/native `TextLinkBlack` layer (`UpLdtDkH8`) created from the reusable `Text Link` component and then unlinked. `TextLinkBlack` is the 13px clipping window; its inner stack `uHhvuxijx` must remain `height="fit-content"` and `overflow="visible"` so the second `READ MORE` row can slide into view. The two text rows are `gtUBNGFea` and `FodWCgmfK`, both reading `READ MORE`. Do not replace this with a linked `TextLink` carrying `bwVWMSt6G="/info"` inside the linked wrapper, because Framer's optimizer reports that as a nested link. Do not add a new custom code component for this interaction; the existing `HomeSelectedWorkGrid.tsx` CSS targets the `Button Wrapper` / `Text Link Black` names and preserves the flip-up text plus portrait hover behavior. After edits, verify three states: Framer optimizer has no nested-link warning for Home, hovering the portrait still flips `READ MORE`, and hovering the text does not disappear.
 
 Custom code on or affecting Home:
 
