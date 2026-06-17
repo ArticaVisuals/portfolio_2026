@@ -26,15 +26,15 @@ Completed locally and uploaded to the Framer draft code files:
 
 - `IndexPage.tsx`
   - Smooths index nav fade timing from top row to bottom row with one consistent
-    fade preset: 820ms, `cubic-bezier(0.22, 1, 0.36, 1)`, 120ms base delay, 92ms
-    row stagger.
+    fade preset: 820ms, Snappy `cubic-bezier(0.16, 1, 0.3, 1)`, 120ms base
+    delay, 92ms row stagger.
   - Moves list-row reveal from viewport-only triggering to a page-level reveal,
     so offscreen rows are already marked appeared before the user scrolls down.
   - Gives list titles/meta a deterministic top-to-bottom delay using
     `INDEX_CONTENT_REVEAL_PRESET`.
   - Adds `GridMediaFrame` so grid thumbnails fade in with case-study-like media
-    timing: 620ms, `cubic-bezier(0.22, 1, 0.36, 1)`, 140ms base delay, 58ms item
-    stagger.
+    timing: 620ms, Snappy `cubic-bezier(0.16, 1, 0.3, 1)`, 140ms base delay,
+    58ms item stagger.
 
 Reference analyzed:
 
@@ -52,7 +52,7 @@ Reference analyzed:
   - delay: 90ms
   - duration: 900ms
   - stagger: 90ms
-  - easing: `cubic-bezier(0.22, 1, 0.36, 1)`
+  - easing: Snappy `cubic-bezier(0.16, 1, 0.3, 1)`
   - hidden transform: `translateY(115%)`
 - `/index` heading:
   - owned by Framer's native heading appear animation.
@@ -62,7 +62,7 @@ Reference analyzed:
   - duration: 820ms
   - base delay: 120ms
   - row stagger: 92ms
-  - easing: `cubic-bezier(0.22, 1, 0.36, 1)`
+  - easing: Snappy `cubic-bezier(0.16, 1, 0.3, 1)`
 - `/index` list reveal:
   - base delay: 130ms
   - row stagger: 64ms
@@ -73,7 +73,13 @@ Reference analyzed:
   - base delay: 140ms
   - item stagger: 58ms
   - max item index: 24
-  - easing: `cubic-bezier(0.22, 1, 0.36, 1)`
+  - easing: Snappy `cubic-bezier(0.16, 1, 0.3, 1)`
+
+June 17 source-of-truth update: the current Framer `IndexPage.tsx` code file
+consolidates coded motion to Snappy for decelerating ease-out reveals/fades and
+Smooth `cubic-bezier(0.12, 0.23, 0.5, 1)` for symmetric rule/UI transitions.
+Treat earlier `0.22, 1, 0.36, 1`, `0.33, 0, 0.67, 1`, and bare `ease`
+mentions in this handoff as superseded by that two-curve canon.
 
 ## Framer Draft State
 
@@ -134,7 +140,8 @@ Local component harness QA:
 - Grid result:
   - 15 grid media targets.
   - First three media animations at 100ms had delays 140ms, 198ms, 256ms.
-  - All used duration 620ms and `cubic-bezier(0.22, 1, 0.36, 1)`.
+  - Current source-of-truth expectation is duration 620ms and Snappy
+    `cubic-bezier(0.16, 1, 0.3, 1)`; rerun published QA after Framer publish.
   - 0 hidden by 2200ms.
   - No console/page errors captured.
 

@@ -214,7 +214,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 - Standard mode: GT Standard Trial, weight 300, 40px, line-height 1.3, color `tokens.textPrimary`. On mobile (≤809px) it drops to 28px.
 - `Mono 13` mode: 13px uppercase mono, line-height 28px, color `tokens.textPrimary`.
 - Year labels render `year > 0 ? year : "—"`.
-- Full-opacity rule above each year group: 1px, `tokens.dividerStrong`, viewport-triggered WAAPI `scaleX(0) → scaleX(1)` over 2200ms cubic-bezier(0.33, 0, 0.67, 1), staggered by group index up to 8.
+- Full-opacity rule above each year group: 1px, `tokens.dividerStrong`, viewport-triggered WAAPI `scaleX(0) → scaleX(1)` over 2200ms Smooth `cubic-bezier(0.12, 0.23, 0.5, 1)`, staggered by group index up to 8.
 
 ### Project rows
 
@@ -375,18 +375,24 @@ Follow the motion hierarchy from the framework doc:
 2. Does it signal the brand's considered quality? → Keep.
 3. Is it there because it looks cool? → Delete.
 
+Canonical coded easing is intentionally narrow after the June 17 consolidation:
+
+- **Snappy:** `cubic-bezier(0.16, 1, 0.3, 1)` for decelerating ease-out motion, including reveals, fades, masks, hover transforms, and media scale.
+- **Smooth:** `cubic-bezier(0.12, 0.23, 0.5, 1)` for symmetric in/out motion, including rule draws, small UI state changes, and old bare `ease` transitions.
+- Legacy decel `cubic-bezier(0.22, 1, 0.36, 1)` maps to Snappy. Legacy symmetric `cubic-bezier(0.33, 0, 0.67, 1)` maps to Smooth.
+
 ### Transitions between views
 
 - View switch: state swap + render-key bump, then incoming large title/year text masks in and incoming mono metadata fades in on appear. The toggle click should feel instant and considered; do not wrap the view in a parent opacity fade.
 
 ### Index nav and List view entrance
 
-- The taxonomy nav, inline `GRID / LIST`, Clear Filters, and smaller mono metadata use `.idx-fade-appear`. The nav uses `INDEX_NAV_FADE_PRESET` so labels/`All` actions enter first and values fade top row to bottom row rather than sprinkling in arbitrarily.
+- The taxonomy nav, inline `GRID / LIST`, Clear Filters, and smaller mono metadata use `.idx-fade-appear`. The nav uses `INDEX_NAV_FADE_PRESET` with Snappy easing so labels/`All` actions enter first and values fade top row to bottom row rather than sprinkling in arbitrarily.
 - List year labels such as `2026`, List project titles such as `Gaia`, and Grid titles use `INDEX_MASK_REVEAL_PRESET`. The wrapper is `.idx-mask-appear`; the inner `.idx-mask-reveal-text` animates from `translateY(115px)` to `0` inside an overflow-hidden mask, mirroring the Framer top `Index` heading node (`M_Ry0NG_m`) inside `HeadingRowWrapper` (`height=113px`, `overflow=hidden`).
-- Mask timing follows the shared Info-style site type rhythm: 900ms, 90ms base delay, 90ms stagger, and `cubic-bezier(0.22, 1, 0.36, 1)`. `PageTransition.tsx` v7.12 also normalizes existing `.idx-mask-reveal-text` WAAPI calls at runtime while skipping the top `Index` heading so it remains owned by Framer's native heading animation.
+- Mask timing follows the shared Info-style site type rhythm: 900ms, 90ms base delay, 90ms stagger, and Snappy `cubic-bezier(0.16, 1, 0.3, 1)`. `PageTransition.tsx` v7.12 also normalizes existing `.idx-mask-reveal-text` WAAPI calls at runtime while skipping the top `Index` heading so it remains owned by Framer's native heading animation.
 - `.idx-fade-appear`, `.idx-mask-appear`, and `.idx-rule` elements are triggered by the local `useIndexAppearTrigger` hook, with reveal deferred by two animation frames so the hidden state is painted before WAAPI begins. If an element is mounted while a browser View Transition is active, the hook waits for `pt:reveal` from `PageTransition.tsx` or the transition-active fallback to clear, then reveals once after the page cover ends. The hook also has a page-level fallback reveal so list rows below the fold are already animated by the time the user scrolls down. Do not restart already-revealed elements on `pt:reveal`; that causes the `/play` → `/index` double animation glitch.
 - List titles/meta use deterministic row delays from `INDEX_CONTENT_REVEAL_PRESET` (130ms base, 64ms row stagger, 24ms column stagger, max row index 34), so the reveal continues through all rows instead of clamping only to visible rows.
-- Year rules and intra-year row dividers: WAAPI transform (`scaleX(0) → scaleX(1)`), 2200ms, `cubic-bezier(0.33, 0, 0.67, 1)`, staggered by year/row.
+- Year rules and intra-year row dividers: WAAPI transform (`scaleX(0) → scaleX(1)`), 2200ms, Smooth `cubic-bezier(0.12, 0.23, 0.5, 1)`, staggered by year/row.
 - Reduced motion: `.idx-fade-appear`, `.idx-mask-appear`, `.idx-row`, `.idx-grid-card`, and `.idx-rule` have animation disabled under `prefers-reduced-motion: reduce`, with appear items forced visible. The flip transform is also disabled under reduced motion.
 
 ### List row hover
@@ -394,7 +400,7 @@ Follow the motion hierarchy from the framework doc:
 - `listHoverVariant="flip"` is the default. The flip mirrors the native Framer `ViewProject` reference (`node=L21w7Xq1z`):
   - Title cell wraps a `idx-flip-track` containing two stacked copies separated by a 5px gap.
   - Track height matches `--idx-flip-height` (28px in Mono 13, 27px in Standard).
-  - On row hover/focus, the track translates upward by `-(height + 5px)` over 620ms `cubic-bezier(0.16, 1, 0.3, 1)`.
+  - On row hover/focus, the track translates upward by `-(height + 5px)` over 620ms Snappy `cubic-bezier(0.16, 1, 0.3, 1)`.
   - The second copy reads `"View Project"` when a slug exists (otherwise mirrors the title).
   - On mobile, the flip is disabled (track gap removed, transform forced to none) so titles stay visible.
 - `listHoverVariant="highlight"` is preserved for A/B comparison and applies a faint `rgba(20, 20, 20, 0.035)` row background on hover (no flip).
@@ -403,7 +409,7 @@ Follow the motion hierarchy from the framework doc:
 ### Grid view motion
 
 - Grid title uses `.idx-mask-appear`; grid metadata uses `.idx-fade-appear`.
-- Grid thumbnails are wrapped in `GridMediaFrame`, which owns the `.idx-grid-card-media` fade-in state and uses `INDEX_MEDIA_FADE_PRESET` (620ms, 140ms base delay, 58ms item stagger, `cubic-bezier(0.22, 1, 0.36, 1)`) to match the smoother case-study media feel.
+- Grid thumbnails are wrapped in `GridMediaFrame`, which owns the `.idx-grid-card-media` fade-in state and uses `INDEX_MEDIA_FADE_PRESET` (620ms, 140ms base delay, 58ms item stagger, Snappy `cubic-bezier(0.16, 1, 0.3, 1)`) to match the smoother case-study media feel.
 - Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. `IndexPage.tsx` owns those selectors and the index appear presets for nav, list rows, and grid media.
 - `/index` currently reads only `Thumbnail Video` (`SvOqFqdby`) via the `IndexPage` instance `Video Fields` prop when it is using CMS-module data. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke before rendering, so an incomplete `ProjectRegistrar` bridge row cannot erase CMS media/stroke values. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` is configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Publish/redeploy Framer after editing File-field thumbnail videos so the generated CMS module refreshes.
 - Reduced motion forces all index grid media back to `scale(1)` and removes transitions.
