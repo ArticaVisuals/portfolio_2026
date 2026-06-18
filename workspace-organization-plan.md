@@ -207,3 +207,24 @@ Phase 4, optional mirror completion: completed 2026-06-15
   `node tools/check-thumbnail-stroke-resolver.mjs` before thumbnail helper work
 - For published parity after Framer publish: check `/`, `/index`, `/play`,
   `/info`, `/case-studies`, and at least one bespoke case-study route
+
+## Phase 5, framework-audit code retirement (2026-06-18, in progress)
+
+Backup committed first at `_archive/retired-play-helpers-2026-06-18/` (10 compiled
+snapshots + editable `ArchivePlaygroundConsolidated.tsx` + README with rollback
+paths) and pushed to GitHub `main`.
+
+Done (deleted from Framer via MCP; PUBLISH to apply):
+- `ArchivePlaygroundConsolidated.tsx` (`D5YVims`)
+- `ArchivePlaygroundConsolidatedDraft.tsx` (`aEyj7Rq`)
+- `PlayAccessibilityDraftPatch.tsx` (`IPugK6y`)
+- `PlayDraftViewportFix.tsx` (`uO7AzzY`)
+
+Pending (needs Framer UI — MCP can't expand `/play` breakpoint nodes): detach the
+six disabled `Playground*` helper instances from `/play` on every breakpoint, then
+delete `RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`.
+
+Not retired (kept deliberately): the 5 code overrides (publish-validation safety),
+`Counter.tsx`/`NumberCounter` (LIVE on `/case-studies`), `IndexPageGridPreview.tsx`
+(LIVE `/index` wrapper). Phase 2/3 (gallery + responsive-media + CMS-scraper
+consolidation) deferred — those are live components, not drafts.
