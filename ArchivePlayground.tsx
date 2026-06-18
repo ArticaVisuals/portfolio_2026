@@ -189,6 +189,8 @@ const LOAD_IN_STAGGER_MS = 58
 const LOAD_IN_STAGGER_SLOTS = 15
 const LOAD_IN_LIFT_PX = 12
 const LOAD_IN_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const LOAD_IN_MAX_WAIT_MS = 2600
 
 const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
@@ -437,7 +439,7 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
         }
         styleEl.textContent = `
             ${managed.join(",\n")} {
-                transition: transform ${NAV_REVEAL_MS}ms cubic-bezier(.22,1,.36,1) !important;
+                transition: transform ${NAV_REVEAL_MS}ms ${SNAPPY_EASE} !important;
                 will-change: transform !important;
             }
             ${hidden.join(",\n")} {
@@ -648,7 +650,7 @@ function MediaFrame({
               boxSizing: "border-box",
               border: drawStroke ? `${strokeWidth}px solid ${strokeColor}` : undefined,
               transform: `translate(-50%, -50%) scale(${hot ? 1 + zoom / 100 : 1})`,
-              transition: "transform 420ms cubic-bezier(.22,1,.36,1)",
+              transition: `transform 420ms ${SNAPPY_EASE}`,
               willChange: hot ? "transform" : "auto",
           }
 
@@ -658,7 +660,7 @@ function MediaFrame({
         display: "block",
         objectFit: "cover",
         opacity: ready ? 1 : 0,
-        transition: `opacity ${fadeMs}ms cubic-bezier(.22,1,.36,1)`,
+        transition: `opacity ${fadeMs}ms ${SNAPPY_EASE}`,
         pointerEvents: "none",
     }
 
@@ -1225,7 +1227,7 @@ export default function ArchivePlayground(props: Props) {
                     ? "none"
                     : introActive
                       ? `opacity ${loadInFadeMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms, transform ${introTransformMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms`
-                      : "transform 300ms cubic-bezier(.22,1,.36,1)"
+                      : `transform 300ms ${SNAPPY_EASE}`
 
             cells.push(
                 <button
@@ -1343,7 +1345,7 @@ export default function ArchivePlayground(props: Props) {
                     pointerEvents: panelOpen ? "auto" : "none",
                     WebkitBackdropFilter: panelOpen ? "blur(25px)" : "blur(0px)",
                     backdropFilter: panelOpen ? "blur(25px)" : "blur(0px)",
-                    transition: panelOpen ? "opacity .8s cubic-bezier(.22,1,.36,1), backdrop-filter .8s cubic-bezier(.22,1,.36,1)" : "opacity .45s cubic-bezier(.84,0,.16,1), backdrop-filter .45s cubic-bezier(.84,0,.16,1)",
+                    transition: panelOpen ? `opacity .8s ${SNAPPY_EASE}, backdrop-filter .8s ${SNAPPY_EASE}` : `opacity .45s ${SMOOTH_EASE}, backdrop-filter .45s ${SMOOTH_EASE}`,
                 }}
             >
                 <div style={{ position: "absolute", inset: 0, background: "#212121", opacity: 0.05 }} />
@@ -1372,7 +1374,7 @@ export default function ArchivePlayground(props: Props) {
                     color: textColor,
                     overflow: "hidden",
                     transform: panelOpen ? "translateX(0)" : "translateX(100%)",
-                    transition: panelOpen ? "transform 1s cubic-bezier(.22,1,.36,1)" : "transform .8s cubic-bezier(.84,0,.16,1)",
+                    transition: panelOpen ? `transform 1s ${SNAPPY_EASE}` : `transform .8s ${SMOOTH_EASE}`,
                     pointerEvents: panelOpen ? "auto" : "none",
                     boxSizing: "border-box",
                 }}
@@ -1425,7 +1427,7 @@ export default function ArchivePlayground(props: Props) {
                                         flexDirection: "column",
                                         alignItems: "flex-end",
                                         transform: closeTextRolled ? "translateY(-13px)" : "translateY(0)",
-                                        transition: "transform 360ms cubic-bezier(.22,1,.36,1)",
+                                        transition: `transform 360ms ${SNAPPY_EASE}`,
                                         willChange: "transform",
                                     }}
                                 >

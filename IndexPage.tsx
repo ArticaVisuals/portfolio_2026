@@ -130,11 +130,13 @@ function useHiddenCMSLinkInerting(enabled: boolean) {
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
 const VIEW_TOGGLE_OPTIONS = ["grid", "list"] as const
+const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const INDEX_APPEAR_PRESET = {
     durationMs: 620,
-    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    easing: SNAPPY_EASE,
     ruleDurationMs: 2200,
-    ruleEasing: "cubic-bezier(0.33, 0, 0.67, 1)",
+    ruleEasing: SMOOTH_EASE,
     staggerMs: 70,
     maxStaggerIndex: 12,
     rootMargin: "0px 0px -8% 0px",
@@ -142,7 +144,7 @@ const INDEX_APPEAR_PRESET = {
 } as const
 const INDEX_NAV_FADE_PRESET = {
     durationMs: 820,
-    easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    easing: SNAPPY_EASE,
     baseDelayMs: 120,
     rowStaggerMs: 92,
     columnStaggerMs: 0,
@@ -156,14 +158,14 @@ const INDEX_CONTENT_REVEAL_PRESET = {
 } as const
 const INDEX_MEDIA_FADE_PRESET = {
     durationMs: 620,
-    easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    easing: SNAPPY_EASE,
     baseDelayMs: 140,
     itemStaggerMs: 58,
     maxItemIndex: 24,
 } as const
 const INDEX_MASK_REVEAL_PRESET = {
     durationMs: 900,
-    easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    easing: SNAPPY_EASE,
     baseDelayMs: 90,
     staggerMs: 90,
     distancePx: 115,
@@ -1307,7 +1309,7 @@ function buildGlobalCss(): string {
 
   .idx-tax-item {
     cursor: pointer;
-    transition: opacity 150ms ease;
+    transition: opacity 150ms ${SMOOTH_EASE};
     user-select: none;
   }
   .idx-tax-item:hover { opacity: 0.55; }
@@ -1328,7 +1330,7 @@ function buildGlobalCss(): string {
 
 
   .idx-list-row {
-    transition: background 150ms ease;
+    transition: background 150ms ${SMOOTH_EASE};
     border-radius: 2px;
   }
   .idx-hover-highlight .idx-list-row:hover { background: rgba(20, 20, 20, 0.035); }
@@ -1420,8 +1422,8 @@ function buildGlobalCss(): string {
     text-decoration: none;
     text-underline-offset: 3px;
     transition:
-      color 150ms ease,
-      -webkit-text-fill-color 150ms ease;
+      color 150ms ${SMOOTH_EASE},
+      -webkit-text-fill-color 150ms ${SMOOTH_EASE};
   }
 
   .idx-view-toggle-option[data-active="true"] {
@@ -1548,7 +1550,7 @@ function buildGlobalCss(): string {
     border: 0;
     transform: scale(1);
     transform-origin: center center;
-    transition: transform 420ms cubic-bezier(.22, 1, .36, 1);
+    transition: transform 420ms ${SNAPPY_EASE};
     backface-visibility: hidden;
     will-change: transform;
   }
@@ -3162,7 +3164,7 @@ export default function IndexPage({
                         style={{
                             opacity: 1,
                             pointerEvents: "auto",
-                            transition: "opacity 200ms ease",
+                            transition: `opacity 200ms ${SMOOTH_EASE}`,
                             marginBottom: 18,
                         }}
                     >

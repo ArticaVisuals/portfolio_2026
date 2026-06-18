@@ -144,7 +144,7 @@ export default function ImageCarousel(props: Props) {
         return () => window.clearInterval(timer)
     }, [advance, autoplay, interval, isHovered, slideCount])
 
-    const transition = `opacity ${Math.max(0, transitionDuration)}s ease`
+    const transition = `opacity ${Math.max(0, transitionDuration)}s cubic-bezier(0.12, 0.23, 0.5, 1)`
     const safeAspectRatio = Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : 3014 / 1924
     const safeCustomAspectRatio = Number.isFinite(customAspectRatio) && customAspectRatio > 0 ? customAspectRatio : safeAspectRatio
     const cropStrength = Number.isFinite(cropTightness) ? Math.max(0, Math.min(150, cropTightness)) / 100 : 1
@@ -299,7 +299,7 @@ export default function ImageCarousel(props: Props) {
                                 padding: 0,
                                 background: dotIndex === index ? activeDotColor : dotColor,
                                 cursor: "pointer",
-                                transition: "width 0.2s ease, background 0.2s ease",
+                                transition: "width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1)",
                             }}
                         />
                     ))}

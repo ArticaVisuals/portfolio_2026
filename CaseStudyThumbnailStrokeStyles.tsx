@@ -58,7 +58,7 @@ const LEGACY_GENERATED_VIDEO_FRAME_ATTR = "data-cms-thumbnail-video-frame"
 const DEFAULT_STROKE_COLOR = "#979797"
 const DEFAULT_HOVER_IMAGE_SCALE = 1.02
 const HOVER_DURATION_MS = 420
-const HOVER_EASING = "cubic-bezier(.22, 1, .36, 1)"
+const HOVER_EASING = "cubic-bezier(0.16, 1, 0.3, 1)"
 const CANVAS_OVERLAY_NAMES = [
     "ThumbnailStrokeOverlay",
     "Thumbnail Stroke Overlay",

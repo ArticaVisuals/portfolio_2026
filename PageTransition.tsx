@@ -99,7 +99,7 @@ const TYPE_REVEAL_MIN_DURATION_S = 1
 const TYPE_REVEAL_DELAY_S = 0.09
 const TYPE_REVEAL_STAGGER_S = 0.09
 const TYPE_REVEAL_DURATION_S = 0.9
-const TYPE_REVEAL_EASE = "cubic-bezier(0.22, 1, 0.36, 1)"
+const TYPE_REVEAL_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const TYPE_REVEAL_DIRECT_REPLAY_MS = 40
 const SAME_DOC_REPLAY_SUPPRESS_MS = 5000
 const HOME_FADE_DELAY_S = 0.14
@@ -113,7 +113,7 @@ const INDEX_LOCAL_MASK_CLASS = "idx-mask-reveal-text"
 const HOME_HEADER_BOTTOM_SELECTOR = '[data-framer-name="Header Bottom"]'
 const HOME_HEADER_BOTTOM_RESTORE_DELAYS = [60, 240, 700, 1400, 3200]
 const SAME_DOC_HOLD_CAPTURE_BUFFER_MS = 24
-const NAV_EASE = "cubic-bezier(0.22, 1, 0.36, 1)" // measured nav spring feel
+const NAV_EASE = "cubic-bezier(0.16, 1, 0.3, 1)" // measured nav spring feel
 const LOADER_EASE = "cubic-bezier(0.65, 0.01, 0.05, 0.99)" // Zita's loader
 const NAV_NAME = "__pt-nav"
 const Z = 2147483600

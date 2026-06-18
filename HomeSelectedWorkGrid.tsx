@@ -73,6 +73,7 @@ const FIELD_IDS = {
     thumbnailStroke: "OHdUYs6Mo",
     isHomepage: "myUIfK0j7",
 } as const
+const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const DEFAULT_SORT_FIELD_IDS = FIELD_IDS.number
 const LIVE_SCAN_PATHS = [
     "/",
@@ -789,7 +790,7 @@ export default function HomeSelectedWorkGrid({
                     flex-direction: column;
                     gap: 5px;
                     transform: translateY(0);
-                    transition: transform 420ms cubic-bezier(.22, 1, .36, 1);
+                    transition: transform 420ms ${SNAPPY_EASE};
                 }
 
                 .selected-work-card:hover .selected-work-title-stack,
@@ -812,7 +813,7 @@ export default function HomeSelectedWorkGrid({
                     opacity: 1;
                     pointer-events: none;
                     position: absolute;
-                    transition: opacity 360ms cubic-bezier(.22, 1, .36, 1);
+                    transition: opacity 360ms ${SNAPPY_EASE};
                     z-index: 0;
                 }
 
@@ -846,8 +847,8 @@ export default function HomeSelectedWorkGrid({
                     top: 0;
                     transform: translateX(-50%) scale(1);
                     transition:
-                        opacity 420ms cubic-bezier(.22, 1, .36, 1),
-                        transform 420ms cubic-bezier(.22, 1, .36, 1);
+                        opacity 420ms ${SNAPPY_EASE},
+                        transform 420ms ${SNAPPY_EASE};
                     width: 101%;
                     z-index: 1;
                 }
@@ -883,7 +884,7 @@ export default function HomeSelectedWorkGrid({
                     backface-visibility: hidden;
                     transform: scale(1) !important;
                     transform-origin: center center;
-                    transition: transform 420ms cubic-bezier(.22, 1, .36, 1) !important;
+                    transition: transform 420ms ${SNAPPY_EASE} !important;
                     will-change: transform;
                 }
 
@@ -911,7 +912,7 @@ export default function HomeSelectedWorkGrid({
                     display: flex !important;
                     flex-direction: column !important;
                     transform: translateY(0);
-                    transition: transform 420ms cubic-bezier(.22, 1, .36, 1) !important;
+                    transition: transform 420ms ${SNAPPY_EASE} !important;
                     will-change: transform;
                 }
 

@@ -375,10 +375,11 @@ Follow the motion hierarchy from the framework doc:
 2. Does it signal the brand's considered quality? → Keep.
 3. Is it there because it looks cool? → Delete.
 
-Canonical coded easing is intentionally narrow after the June 17 consolidation:
+Canonical coded easing is intentionally narrow after the June 18 consolidation:
 
 - **Snappy:** `cubic-bezier(0.16, 1, 0.3, 1)` for decelerating ease-out motion, including reveals, fades, masks, hover transforms, and media scale.
 - **Smooth:** `cubic-bezier(0.12, 0.23, 0.5, 1)` for symmetric in/out motion, including rule draws, small UI state changes, and old bare `ease` transitions.
+- **Springy:** `cubic-bezier(0.25, 1, 0.5, 1)` only for Image Trail's punchy gestural cursor animation in the live Framer source; keep index/list/page-transition motion on Snappy or Smooth.
 - Legacy decel `cubic-bezier(0.22, 1, 0.36, 1)` maps to Snappy. Legacy symmetric `cubic-bezier(0.33, 0, 0.67, 1)` maps to Smooth.
 
 ### Transitions between views

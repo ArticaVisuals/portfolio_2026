@@ -10,7 +10,7 @@ type ScrollToTopButtonProps = {
 }
 
 const DEFAULT_COLOR = "#233324"
-const DEFAULT_EASING = "cubic-bezier(0.22, 1, 0.36, 1)"
+const DEFAULT_EASING = "cubic-bezier(0.16, 1, 0.3, 1)"
 const DEFAULT_SCROLL_DURATION = 900
 const ROW_HEIGHT = 16
 const ROW_GAP = 4

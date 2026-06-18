@@ -89,7 +89,7 @@ const LIVE_SCAN_PATHS = [
 const THUMBNAIL_ASPECT_RATIO = "1.674 / 1"
 const TITLE_LINE_HEIGHT = 13
 const HOVER_DURATION = 420
-const HOVER_EASING = "cubic-bezier(.22, 1, .36, 1)"
+const HOVER_EASING = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SECTION_NEXT_PROJECT_SELECTOR =
     ':is([data-framer-name="SectionNextProject"], [name="SectionNextProject"], [data-framer-name="Section Next Project"], [name="Section Next Project"])'
 const SECTION_HEADING_SELECTOR = ':is([data-framer-name="Heading"], [name="Heading"])'

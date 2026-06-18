@@ -75,11 +75,14 @@ Reference analyzed:
   - max item index: 24
   - easing: Snappy `cubic-bezier(0.16, 1, 0.3, 1)`
 
-June 17 source-of-truth update: the current Framer `IndexPage.tsx` code file
-consolidates coded motion to Snappy for decelerating ease-out reveals/fades and
-Smooth `cubic-bezier(0.12, 0.23, 0.5, 1)` for symmetric rule/UI transitions.
-Treat earlier `0.22, 1, 0.36, 1`, `0.33, 0, 0.67, 1`, and bare `ease`
-mentions in this handoff as superseded by that two-curve canon.
+June 18 source-of-truth update: current Framer code files consolidate coded
+motion to Snappy `cubic-bezier(0.16, 1, 0.3, 1)` for decelerating ease-out
+reveals/fades and Smooth `cubic-bezier(0.12, 0.23, 0.5, 1)` for symmetric
+rule/UI transitions. Image Trail is the named exception: Springy
+`cubic-bezier(0.25, 1, 0.5, 1)` replaces its old custom `powerOut4` curve so the
+cursor/gesture feel stays punchy. Treat earlier `0.22, 1, 0.36, 1`,
+`0.33, 0, 0.67, 1`, and bare `ease` mentions in this handoff as superseded by
+that canon.
 
 ## Framer Draft State
 
