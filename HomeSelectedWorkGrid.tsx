@@ -1033,7 +1033,7 @@ export default function HomeSelectedWorkGrid({
                 }
 
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]) {
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]) {
                     clip-path: inset(0);
                     contain: paint;
                     isolation: isolate;
@@ -1041,7 +1041,7 @@ export default function HomeSelectedWorkGrid({
                 }
 
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
                 :is([data-framer-name="Image"], [name="Image"]) {
                     backface-visibility: hidden;
                     transform: scale(1) !important;
@@ -1051,26 +1051,38 @@ export default function HomeSelectedWorkGrid({
                 }
 
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"])
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
                 :is([data-framer-name="Image"], [name="Image"]) img {
                     transform: none !important;
                     transition: none !important;
                 }
 
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):hover
                 :is([data-framer-name="Image"], [name="Image"]),
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-visible
                 :is([data-framer-name="Image"], [name="Image"]),
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-within
+                :is([data-framer-name="Image"], [name="Image"]),
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):hover)
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
+                :is([data-framer-name="Image"], [name="Image"]),
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):focus-within)
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
+                :is([data-framer-name="Image"], [name="Image"]),
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):hover)
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
+                :is([data-framer-name="Image"], [name="Image"]),
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):focus-within)
+                :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
                 :is([data-framer-name="Image"], [name="Image"]) {
                     transform: scale(1.02) !important;
                 }
 
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a {
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > * {
                     display: flex !important;
                     flex-direction: column !important;
                     transform: translateY(0);
@@ -1078,16 +1090,20 @@ export default function HomeSelectedWorkGrid({
                     will-change: transform;
                 }
 
-                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover)
-                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
-                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible)
-                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
-                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within)
-                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):hover)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-visible)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-within)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):hover)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):focus-within)
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):hover > a,
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):hover > *,
                 :is([data-framer-name="Section About"], [name="Section About"])
-                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):focus-within > a {
+                :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):focus-within > * {
                     transform: translateY(-13px) !important;
                 }
 
@@ -1113,10 +1129,10 @@ export default function HomeSelectedWorkGrid({
                     .selected-work-media img,
                     .selected-work-media video,
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"])
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
                     :is([data-framer-name="Image"], [name="Image"]),
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a {
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > * {
                         transition: none;
                     }
 
@@ -1133,27 +1149,43 @@ export default function HomeSelectedWorkGrid({
                     }
 
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):hover
                     :is([data-framer-name="Image"], [name="Image"]),
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-visible
                     :is([data-framer-name="Image"], [name="Image"]),
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-within
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):hover)
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):focus-within)
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):hover)
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
+                    :is([data-framer-name="Image"], [name="Image"]),
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):focus-within)
+                    :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"])
                     :is([data-framer-name="Image"], [name="Image"]) {
                         transform: scale(1) !important;
                     }
 
-                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):hover)
-                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
-                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-visible)
-                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
-                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]):focus-within)
-                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]) > a,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):hover)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-visible)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"], [data-framer-name="Column Image"], [name="Column Image"], [data-framer-name="ColumnImage"], [name="ColumnImage"]):focus-within)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):hover)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
+                    :is([data-framer-name="Section About"], [name="Section About"]):has(:is([data-framer-name="Button Wrapper"], [name="Button Wrapper"], [data-framer-name="ButtonWrapper"], [name="ButtonWrapper"]):focus-within)
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]) > *,
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):hover > a,
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):hover > *,
                     :is([data-framer-name="Section About"], [name="Section About"])
-                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"]):focus-within > a {
+                    :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):focus-within > * {
                         transform: translateY(0) !important;
                     }
                 }

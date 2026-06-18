@@ -4,22 +4,27 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last Framer structure audit:** June 2, 2026.
+**Last Framer structure audit:** June 18, 2026.
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (June 11, 2026):**
+**State summary (June 18, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
+- The old `/index-grid-preview` page was deleted. The Figma grid layout is now promoted to canonical `/index`.
+- The mounted Framer-facing component is `IndexPageGridPreview.tsx` (`LgIzFjJ`), exported/displayed as `IndexPage`. It imports the CMS-backed base component from `IndexPage.tsx` (`rgAZFOv`, insert URL `https://framer.com/m/IndexPage-msQHCf.js`).
+- `IndexPageGridPreview.tsx` exposes the authoring `View` segmented control (`Grid` / `List`) and remounts the base component with a keyed wrapper so changing the property panel control updates the Framer canvas. The base component's own inline `GRID / LIST` control remains the runtime visitor control.
 - The original-template inline `GRID / LIST` control is now owned directly by `IndexPage.tsx` on canonical `/index`; the previous fixed/floating delegated toggle has been removed.
 - The side-by-side page `/index-inline-toggle-test` (`VdRy9MV8k`) was removed after the inline version was promoted to canonical `/index`.
-- Live Framer code file `rgAZFOv` powers `/index`. The published page binds `useCMS=true`, `defaultView="list"`, `listTypographyVariant="standard"`, `listHoverVariant="flip"`.
+- Live Framer code file `LgIzFjJ` powers the mounted `/index` instance, with `useCMS=true`, wrapper `view="grid"` as the current instance default, and `thumbnailVideoFieldIds="SvOqFqdby"`. The base archive code still lives in `rgAZFOv`.
 - The repo `IndexPage.tsx` mirror was reconciled against the current live direction on May 22, 2026 after the route audit.
-- Current `/index` XML mounts `IndexPage.tsx` (`rgAZFOv`) as the archive component, alongside the site `PageTransition` and hidden CMS bridge. Responsive/index styling, direct grid-media hover scale, line-draw timing, and index nav/list/grid appear motion are consolidated inside `IndexPage.tsx`; do not split them back into hidden `/index` CSS helper components. Large year/title text uses the masked slide-in preset, while smaller mono nav/meta text fades in. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
+- Current `/index` XML mounts `IndexPageGridPreview.tsx` (`LgIzFjJ`) as the archive component, alongside the site `PageTransition` and hidden CMS bridge. Responsive/index styling, direct grid-media hover scale, line-draw timing, and index nav/list/grid appear motion are consolidated in the base component plus the wrapper's Figma-specific CSS overrides; do not split them back into hidden `/index` CSS helper components. Large year/title text uses the masked slide-in preset, while smaller mono nav/meta text fades in. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
 - **Data source refined (June 1, 2026; revised June 8):** `IndexPage.tsx` can use the mounted `ProjectRegistrar` registry first, then fall back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke so incomplete bridge rows cannot override richer CMS media/stroke data.
 - **Grid view rewritten (May 10, 2026; refined May 22):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 media, 3/2/1 column responsive grid, media hover scale, title below image with the same hover-flip used in List view, and metadata below title). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
+- **Figma grid/card treatment promoted (June 18, 2026):** `IndexPageGridPreview.tsx` locks the active Grid layout to the Figma node direction: 3 columns on desktop, 2 columns below 1200px, and 1 column at 899px; cards stretch to the full content width with no max-width choke point; grid headings use the same 13px uppercase mono treatment as the homepage selected-work titles, with the order number above the thumbnail; CMS Category 1/2/3 tags render under thumbnails as 12px Light Gray mono pills.
+- **List/Grid responsive alignment (June 18, 2026):** the single-column grid and mobile list simplification now share the same 899px container breakpoint. At and below that point, List view hides the year indicator and service/industry/category columns, keeps titles left-aligned to the page margin, and stretches row/year/bottom rules full width.
 - **ImageMaskReveal is archived:** old notes about disabled/enabled `ImageMaskReveal` instances are historical. The reveal component is stub-archived and not part of the current `/index` behavior.
 - **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19; CMS export fix June 1; instance prop cleanup June 2):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. It must resolve both legacy `module.a` and current `module.r` Framer CMS export shapes before scanning records. As of June 2, the helper instances use Framer item slugs directly (`slugFieldId=""`). The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
 - **Inline toggle promoted and integrated (May 16, 2026; style-aligned May 19; consolidated June 11):** `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav and styles the toggle to match `CLEAR FILTERS` (13px uppercase mono, 28px line-height, weight 400, secondary text color, hover opacity, active underline). `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`. The action row uses a stable 12px top gap, 28px line, and 24px bottom gap so selecting/deselecting filters does not shift content. The former `IndexInlineToggleProxy.tsx` code file (`TexpcmJ`) and `/index` instance (`HM1pZPonP`) were deleted after this behavior moved into `IndexPage`.
@@ -28,7 +33,7 @@
 
 ## 1. What You're Building
 
-A single React code component for Framer that renders the content area of the `/index` archive page. It currently exposes:
+The `/index` archive is maintained as a base Framer code component plus a mounted wrapper. `IndexPage.tsx` (`rgAZFOv`) owns the CMS/data rendering; `IndexPageGridPreview.tsx` (`LgIzFjJ`) is the production Framer-facing wrapper that previews/publishes the Figma Grid/List layout. Together they expose:
 
 - Three taxonomy columns (Year, Service, Industry) acting as multi-select filters.
 - Two view modes (List, Grid) toggled from an inline `GRID / LIST` control after the taxonomy nav.
@@ -39,11 +44,11 @@ Project data flows in through three priority-ranked sources (described in §3). 
 
 **Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view now renders project-driven cards as native HTML inline in `IndexPage.tsx` (no external Framer module). The native `Case Studies Filter` lives only on `/case-studies` now.
 
-The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the List/Grid view state and renders the inline `GRID / LIST` control directly.
+The outer `idx-container` owns the side margin (`padding: 0 20px`) and that should match the nav section. `IndexPage.tsx` owns the runtime List/Grid view state and renders the inline `GRID / LIST` control directly. `IndexPageGridPreview.tsx` owns the Framer authoring `View` property control and remounts the base component when that control changes so the Framer canvas can preview both modes.
 
 **Home note, June 2026:** the Home selected-work grid is not owned by `IndexPage.tsx`. It now uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) because the native Home `CaseStudy` grid lost reliable link/image/video bindings and collapsed to AirPods content after hydration. Keep Home and `/index` separate; do not reimport the old native Home grid or use `CaseStudyLinkRepair.tsx` as the primary Home mechanism.
 
-**CMS note, June 2026:** the Framer `All Projects` CMS collection has 16 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
+**CMS note, June 2026:** the Framer `All Projects` CMS collection has 17 real projects. All Jacob Turner sample/template projects were permanently deleted. Do not re-add sample fallback data such as Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, or Harmony in Motion.
 
 ---
 
@@ -211,7 +216,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 
 ### Year group headers
 
-- Standard mode: GT Standard Trial, weight 300, 40px, line-height 1.3, color `tokens.textPrimary`. On mobile (≤809px) it drops to 28px.
+- Standard mode in the base component: GT Standard Trial, weight 300, 40px, line-height 1.3, color `tokens.textPrimary`; its internal mobile style drops to 28px. In the mounted wrapper's current Figma layout, the year indicator is hidden at the shared ≤899px single-column/list-simplification breakpoint.
 - `Mono 13` mode: 13px uppercase mono, line-height 28px, color `tokens.textPrimary`.
 - Year labels render `year > 0 ? year : "—"`.
 - Full-opacity rule above each year group: 1px, `tokens.dividerStrong`, viewport-triggered WAAPI `scaleX(0) → scaleX(1)` over 2200ms Smooth `cubic-bezier(0.12, 0.23, 0.5, 1)`, staggered by group index up to 8.
@@ -229,7 +234,7 @@ The List view has an A/B typography control in Framer named `List Type`:
 ### Project count footer
 
 - GT Standard Mono Trial, 13px, uppercase, color `tokens.textPrimary`.
-- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the current 16-record CMS and no filters, the live CMS-backed page should read `16 Projects`.
+- Format: `<count> Project` or `<count> Projects` (singular/plural is handled). With the current 17-record CMS and no filters, the live CMS-backed page should read `17 Projects`.
 
 ### Taxonomy filter behavior
 
@@ -242,7 +247,8 @@ The List view has an A/B typography control in Framer named `List Type`:
 
 - ≤1199px: container padding 0 20px (already the desktop value, preserved as `!important` for safety).
 - ≤899px: taxonomy switches to SearchSystem-style label/value rows in the order Year, Service, Industry.
-- ≤809px: taxonomy uses `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap. List rows collapse to a title + Industry layout; Service metadata is hidden at tighter widths.
+- ≤899px: taxonomy/nav stacks into label/value rows and the Grid switches to one column. List view switches at the same point: year indicators and service/industry/category columns are hidden, titles align to the left page margin, and all row rules span full width.
+- ≤809px: taxonomy uses `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap while preserving the simplified one-column List/Grid behavior.
 - ≤520px: taxonomy keeps the label/value row format with tighter `minmax(84px, 32%) minmax(0, 1fr)` columns, 16px column gap, and 26px row gap.
 
 ### Current responsive breakpoint behavior
@@ -251,6 +257,7 @@ The May 18 responsive direction is now the official published `/index`. As of Ju
 
 - Keep the desktop taxonomy/index nav through wider tablet widths. It does not switch the taxonomy to the compact format until ≤899px, when the content columns start to feel tight.
 - ≤899px taxonomy/index nav uses a SearchSystem-style two-column structure: labels on the left, values on the right, with Year / Service / Industry stacked vertically and a 28px category row gap.
+- ≤899px also activates the wrapper's list simplification: no year indicator, no service/industry/category columns, left-aligned full-width titles, and full-width rules.
 - ≤809px refines the taxonomy columns to `minmax(96px, 28%) minmax(0, 1fr)` with 18px column gap and the same 28px row gap.
 - ≤520px uses `minmax(84px, 32%) minmax(0, 1fr)`, 16px column gap, 26px row gap, and tighter 14px horizontal page padding.
 - Responsive list rows follow the Phantom list-view reference structurally: Service/category metadata disappears first; Industry remains visible, right-aligned, and allowed to wrap rather than truncate. Standard year/title typography stays at the desktop 22px scale on tablet.
@@ -291,7 +298,7 @@ Each card is rendered by `GridProjectCard` as:
 
 - Container `.idx-project-grid` is `display: grid` with `grid-template-columns: repeat(3, minmax(0, 1fr))`, `column-gap: var(--idx-grid-gap, 20px)`, `row-gap: 56px`.
 - Tablet (≤1199px): 2 columns.
-- Mobile (≤809px): 1 column, `row-gap: 40px`.
+- Single-column (≤899px in the mounted wrapper): 1 column, `row-gap: 52px` for the Figma layout.
 - All cards are uniform width — there is no longer a weighted/featured pattern. Card heights derive from the 16:9 media aspect ratio plus the title and metadata below it.
 
 ### Runtime behavior
@@ -358,12 +365,12 @@ The visible toggle is rendered by `IndexPage.tsx` as uppercase `GRID / LIST` aft
 |---|---|---|---|---|
 | ≥1200px | 6-col grid, 20px gap; Year / Service / Industry | 5-col inner grid; ellipsis truncation | uniform 3-column grid, 56px row gap | taxonomy footer right |
 | 900–1199px | same 6-col grid (container padding pinned to 20px) | title + Industry; Service hidden | uniform 2-column grid | taxonomy footer right |
-| ≤899px | label/value pairs, groups stack vertically | title + Industry; year-group label/content stack | one-column stacked cards, 48px gaps | taxonomy footer right |
-| ≤520px | tighter label/value pairs | title + Industry on narrow row | one-column stacked cards | taxonomy footer right |
+| ≤899px | label/value pairs, groups stack vertically | year indicator and metadata columns hidden; title full-width and left-aligned | one-column stacked cards, 52px row gap | taxonomy footer right |
+| ≤520px | tighter label/value pairs | same simplified full-width title rows | one-column stacked cards | taxonomy footer right |
 
-May 18/22 promotion note: the published breakpoint behavior delays taxonomy collapse until ≤899px and keeps the responsive list closer to Phantom's list view, with Service hidden and Industry wrapping instead of truncating.
+May 18/22 promotion note, revised June 18: the published breakpoint behavior delays taxonomy collapse until ≤899px. At that same 899px point, the mounted wrapper now switches Grid to one column and List to the simplified mobile structure so both views break at the same visual moment.
 
-Industry is never hidden. On desktop/tablet it truncates or wraps per breakpoint if needed; on mobile it reflows. Service metadata is the first thing hidden on tighter list rows.
+On desktop/tablet, Industry stays visible after Service is hidden and can wrap or truncate per breakpoint. At and below the shared 899px single-column breakpoint, the simplified mobile List hides year, service, and industry/category columns so project titles sit directly on the left margin.
 
 ---
 
@@ -424,13 +431,19 @@ Canonical coded easing is intentionally narrow after the June 18 consolidation:
 
 ## 10. File Structure
 
-Deliver as a single file (Framer code components must be single-file):
+The base archive renderer remains a single Framer code file:
 
 ```
 IndexPage.tsx
 ```
 
-All styles inline (CSS-in-JS via style objects) or in a `<style>` tag within the component. Framer code components don't support external CSS files.
+The production `/index` page currently mounts a second single-file wrapper:
+
+```
+IndexPageGridPreview.tsx
+```
+
+Keep both files single-file Framer code components. All styles should stay inline (CSS-in-JS via style objects) or in a `<style>` tag within the component. Framer code components don't support external CSS files. Do not remove the wrapper unless its Figma grid/list overrides and the Framer authoring `View` preview behavior have been migrated into the base component and verified on `/index`.
 
 ### Component skeleton (matches the live Framer file)
 
@@ -529,6 +542,7 @@ addPropertyControls(IndexPage, { /* see §3 */ })
 - **Taxonomy/list Figma comp:** https://www.figma.com/design/XbHEqG3zBZJrcVkgmIEkZF/Micah-Hoang-Portfolio?node-id=32-7531 (node `32:7531`)
 - **Grid card rendering:** native `GridProjectCard` markup inside `IndexPage.tsx`; do not reimport the old `Case Study` module for `/index` Grid view.
 - **Framer code file:** `IndexPage.tsx`, code file id `rgAZFOv`
+- **Mounted Framer wrapper:** `IndexPageGridPreview.tsx`, code file id `LgIzFjJ`, exported as `IndexPage`
 - **Framer page:** `/index`, page node id `u2LOaBT5q` (single page; the earlier `yKKOMVNs6` Mono 13 duplicate is gone)
 - **Inline toggle, responsive, line/rule, and grid-hover owner:** `IndexPage.tsx` (`rgAZFOv`)
 - **Removed May 26 cleanup:** `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, `IndexRuleColorOverride.tsx`, and `WorldGridTest.tsx` are not current `/index` dependencies.
@@ -550,17 +564,18 @@ Before delivering:
 - [ ] Taxonomy groups are labeled `/ Year`, `/ Service`, `/ Industry`; no `Origin` label returns.
 - [ ] Year / Service / Industry nav values come from the bound projects via `getDisciplineNavItems` / `getIndustryNavItems` / `getYearNavItems`, not from a hardcoded list.
 - [ ] If CMS-backed live data is needed, `useCMS=true` is set and the generated `yTHrQWMIY` CMS module loads; `ProjectRegistrar`/window registry is only a fallback.
-- [ ] Three taxonomy groups stay horizontal at desktop and tablet; collapse to label/value pairs at ≤809px and a single column at ≤520px.
+- [ ] Three taxonomy groups stay horizontal at desktop and wide tablet; collapse to label/value pairs at ≤899px, with tighter column values at ≤809px and ≤520px.
 - [ ] Taxonomy and List year-group share `repeat(6, minmax(0, 1fr))` within `padding: 0 20px`.
 - [ ] List inner rows use `repeat(5, minmax(0, 1fr))`: title cols 1/span 2, service cols 3/span 2, industry col 5/span 1.
-- [ ] Industry is never hidden by responsive CSS; Service can hide at tighter breakpoints while Industry stays visible.
+- [ ] Industry stays visible on desktop/tablet after Service hides, then hides together with year/service at the shared ≤899px single-column breakpoint.
 - [ ] Grid view renders cards as native HTML inside `IndexPage.tsx` (no `Case Study` module import, no `Case Studies Filter` fallback).
-- [ ] Grid uses a uniform CSS grid: 3 columns at ≥1200px, 2 columns at 810–1199px, 1 column at ≤809px. No weighted/featured pattern.
+- [ ] Grid uses a uniform CSS grid: 3 columns at ≥1200px, 2 columns at 900–1199px, 1 column at ≤899px. No weighted/featured pattern and no max-width choke point.
 - [ ] Each card thumbnail is locked to `aspect-ratio: 16 / 9` via `.idx-grid-card-media`. Card heights are not hardcoded.
 - [ ] Card title sits below the thumbnail and uses the same `HoverFlipText` helper as List view (`View Project →` on hover when slug exists).
 - [ ] Optional thumbnail video renders when a video URL exists, remains muted/looped/playsInline, uses the same hover/focus `scale(1.02)` as images, and respects reduced-motion behavior.
 - [ ] Per-project strokes come from CMS field `OHdUYs6Mo` via `CaseStudyThumbnailStrokeStyles.tsx`, not from hardcoded fallback classes. On `/index`, `IndexPage.tsx` should render plain `.idx-grid-card-media`; the helper applies any visible stroke as a non-layout overlay. On native Framer `Case Study` cards, the helper toggles the real overlay frame inside `ImageWrapper` so canvas/editor can show the same status. Verify the helper can read the current generated CMS module export (`r.collectionByLocaleId.default.scanItems`) before publishing stroke-related changes.
 - [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
+- [ ] In Framer, the mounted `IndexPage` wrapper `View` control can preview both Grid and List; changing it remounts the base component so canvas state does not get stuck.
 - [ ] Visible view toggle is inline right as `GRID / LIST`, visually bottom-aligned with the original left-aligned `CLEAR FILTERS` action when active.
 - [ ] View toggle has only Grid/List, matches the `CLEAR FILTERS` action style, and underlines the active view.
 - [ ] View switches are immediate, bump `renderKey`, and let incoming large title/year text remount with masked slide-in while mono metadata fades in on appear. Do not add a parent opacity fade around List/Grid content.
@@ -592,7 +607,7 @@ Before delivering:
 - Do NOT push an older repo-side `IndexPage.tsx` back to Framer without merging in the mounted ProjectRegistrar registry path, direct CMS module fallback, simplified visible taxonomy, color controls, and current grid card structure.
 - Do NOT lose the May 18 responsive promotion: canonical `/index` depends on the responsive CSS now consolidated directly inside `IndexPage.tsx`. Do not re-split breakpoint, toggle, appear-motion, line-draw, or direct grid-media hover CSS into hidden helper components.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
-- Do NOT leave fallback data at 12 projects; the current CMS roster has 16 items. If `DEFAULT_PROJECTS` is refreshed, keep it intentionally labeled as fallback-only and do not let it render in CMS mode.
+- Do NOT leave fallback data at 12 projects; the current CMS roster has 17 items. If `DEFAULT_PROJECTS` is refreshed, keep it intentionally labeled as fallback-only and do not let it render in CMS mode.
 - Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing.
 - Do NOT add `<html>`, `<head>`, or `<body>` tags — this is a component, not a page.
 - Do NOT assume fonts are loaded — use the fallback stack in the tokens object.

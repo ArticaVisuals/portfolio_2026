@@ -245,9 +245,11 @@ type Filters = {
 type FilterType = "disciplines" | "industries" | "years"
 
 type ListHoverVariant = "flip" | "highlight"
+type GridLayoutVariant = "classic" | "figma"
 type AdvancedSettings = {
     defaultView?: string
     listHoverVariant?: ListHoverVariant
+    gridLayoutVariant?: GridLayoutVariant
     textPrimary?: string
     textSecondary?: string
     textTertiary?: string
@@ -285,6 +287,7 @@ const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = INDEX_CMS_FIELD_IDS.thumbnailVideoLink
 const DEFAULT_ADVANCED_SETTINGS: AdvancedSettings = {
     defaultView: "list",
     listHoverVariant: "flip",
+    gridLayoutVariant: "classic",
     textPrimary: "#141414",
     textSecondary: "#141414",
     textTertiary: "#979797",
@@ -1472,6 +1475,10 @@ function buildGlobalCss(): string {
       transition: none !important;
       transform: none !important;
     }
+    .idx-grid-title-stack {
+      transition: none !important;
+      transform: none !important;
+    }
     .idx-grid-card-img,
     .idx-grid-card-video,
     .idx-grid-card-media > img,
@@ -1489,6 +1496,12 @@ function buildGlobalCss(): string {
     row-gap: 56px;
     width: 100%;
   }
+  .idx-project-grid[data-grid-layout="figma"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    max-width: none;
+    row-gap: 52px;
+  }
   .idx-grid-card {
     min-width: 0;
     display: flex;
@@ -1497,6 +1510,57 @@ function buildGlobalCss(): string {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+  }
+  .idx-grid-card[data-grid-layout="figma"] {
+    gap: 14px;
+  }
+  .idx-grid-card:focus-visible {
+    outline: 1px solid ${tokens.textPrimary};
+    outline-offset: 4px;
+  }
+  .idx-grid-card-heading {
+    align-items: start;
+    color: ${tokens.textPrimary};
+    display: grid;
+    font-family: ${tokens.fontMono};
+    font-size: 13px;
+    font-weight: 400;
+    grid-template-columns: 24px 11px minmax(0, 1fr);
+    letter-spacing: 0;
+    line-height: 100%;
+    min-height: 13px;
+    overflow: hidden;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .idx-grid-card-order {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .idx-grid-title-frame {
+    display: block;
+    height: 13px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .idx-grid-title-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transform: translateY(0);
+    transition: transform 420ms ${SNAPPY_EASE};
+    will-change: transform;
+  }
+  .idx-grid-title-stack > span {
+    display: block;
+    height: 13px;
+    line-height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .idx-grid-card-title {
     width: 100%;
@@ -1536,6 +1600,34 @@ function buildGlobalCss(): string {
     letter-spacing: 0;
     text-transform: uppercase;
     color: ${tokens.textTertiary};
+  }
+  .idx-grid-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+    width: 100%;
+  }
+  .idx-grid-card-tag {
+    align-items: center;
+    border: 1px solid ${tokens.textTertiary};
+    border-radius: 999px;
+    box-sizing: border-box;
+    color: ${tokens.textTertiary};
+    display: inline-flex;
+    font-family: ${tokens.fontMono};
+    font-size: 12px;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 1;
+    max-width: 100%;
+    min-height: 23px;
+    overflow: hidden;
+    padding: 5px 10px 6px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .idx-grid-card-img,
   .idx-grid-card-video,
@@ -1578,6 +1670,10 @@ function buildGlobalCss(): string {
   .idx-grid-card:focus-visible .idx-flip-track {
     transform: translateY(calc((var(--idx-flip-height) + 5px) * -1));
   }
+  .idx-grid-card:hover .idx-grid-title-stack,
+  .idx-grid-card:focus-visible .idx-grid-title-stack {
+    transform: translateY(-18px);
+  }
 
   .idx-tax-label-year { grid-column: 1 / span 1; grid-row: 1; }
   .idx-tax-items-year { grid-column: 2 / span 1; grid-row: 1; }
@@ -1592,11 +1688,27 @@ function buildGlobalCss(): string {
 
   @media (max-width: 1199px) {
     .idx-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    .idx-project-grid[data-grid-layout="figma"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      max-width: none !important;
+    }
+  }
+  @media (max-width: 899px) {
+    .idx-project-grid[data-grid-layout="figma"] {
+      grid-template-columns: 1fr !important;
+      row-gap: 52px !important;
+    }
   }
   @media (max-width: 809px) {
     .idx-project-grid { grid-template-columns: 1fr !important; row-gap: 40px !important; }
+    .idx-project-grid[data-grid-layout="figma"] {
+      grid-template-columns: 1fr !important;
+      row-gap: 52px !important;
+    }
     .idx-grid-card:hover .idx-flip-track,
-    .idx-grid-card:focus-visible .idx-flip-track {
+    .idx-grid-card:focus-visible .idx-flip-track,
+    .idx-grid-card:hover .idx-grid-title-stack,
+    .idx-grid-card:focus-visible .idx-grid-title-stack {
       transform: none !important;
     }
   }
@@ -1615,7 +1727,7 @@ function buildGlobalCss(): string {
 
     .idx-year-label {
       grid-column: 1 / span 1 !important;
-      padding-top: 10px !important;
+      padding-top: 15px !important;
     }
 
     .idx-list-content {
@@ -1628,8 +1740,8 @@ function buildGlobalCss(): string {
       align-items: center !important;
       column-gap: var(--idx-grid-gap, 16px) !important;
       row-gap: 0 !important;
-      min-height: 45px !important;
-      padding: 3px 0 !important;
+      min-height: 56px !important;
+      padding: 9px 0 !important;
     }
 
     .idx-list-title {
@@ -1768,7 +1880,7 @@ function buildGlobalCss(): string {
 
     .idx-year-label {
       grid-column: 1 / span 1 !important;
-      padding-top: 10px !important;
+      padding-top: 15px !important;
     }
 
     .idx-list-content {
@@ -1780,8 +1892,8 @@ function buildGlobalCss(): string {
       align-items: center !important;
       column-gap: var(--idx-grid-gap, 10px) !important;
       row-gap: 0 !important;
-      min-height: 45px !important;
-      padding: 3px 0 !important;
+      min-height: 56px !important;
+      padding: 9px 0 !important;
     }
 
     .idx-list-title {
@@ -1799,9 +1911,9 @@ function buildGlobalCss(): string {
     }
 
     .idx-flip-text {
-      --idx-flip-height: 20px !important;
-      height: 20px !important;
-      line-height: 20px !important;
+      --idx-flip-height: 27px !important;
+      height: 27px !important;
+      line-height: 27px !important;
       overflow: hidden !important;
     }
 
@@ -1884,35 +1996,43 @@ function buildGlobalCss(): string {
     }
 
     .idx-year-group {
-      grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
-      column-gap: var(--idx-grid-gap, 8px) !important;
+      grid-template-columns: 1fr !important;
+      column-gap: 0 !important;
     }
 
     .idx-year-label {
-      grid-column: 1 / span 1 !important;
+      display: none !important;
     }
 
     .idx-list-content {
-      grid-column: 2 / span 5 !important;
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
     }
 
     .idx-list-row-grid {
-      grid-template-columns: minmax(0, 1fr) max-content !important;
-      column-gap: var(--idx-grid-gap, 8px) !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      column-gap: 0 !important;
     }
 
     .idx-list-title {
-      grid-column: 1 / span 1 !important;
+      grid-column: 1 / -1 !important;
+      justify-self: stretch !important;
+      text-align: left !important;
+      width: 100% !important;
     }
 
     .idx-list-discipline,
-    .idx-list-industry {
-      grid-column: auto !important;
+    .idx-col-discipline,
+    .idx-list-industry,
+    .idx-col-industry {
+      display: none !important;
     }
 
-    .idx-list-industry {
-      grid-column: 2 / span 1 !important;
-      max-width: min(132px, 36vw) !important;
+    .idx-list-view .idx-year-rule,
+    .idx-list-view .idx-row-divider,
+    .idx-list-bottom-rule {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
     }
   }
 `
@@ -2695,7 +2815,62 @@ function GridMediaFrame({
     )
 }
 
-function GridProjectCard({
+function GridProjectMedia({ project }: { project: Project }) {
+    const thumbSrc = normalizeThumbnailUrl(project.thumbnail as unknown)
+    const videoSrc = getThumbnailVideoLink(project)
+    const usesLoopingImage = isLoopingImageMediaSource(videoSrc)
+
+    if (videoSrc && usesLoopingImage) {
+        return (
+            <img
+                className="idx-grid-card-img"
+                src={videoSrc}
+                alt={`${project.title} motion thumbnail`}
+                loading="lazy"
+                decoding="async"
+            />
+        )
+    }
+
+    if (videoSrc) {
+        return (
+            <video
+                className="idx-grid-card-video"
+                src={videoSrc}
+                poster={thumbSrc}
+                muted
+                loop
+                playsInline
+                autoPlay
+                preload="metadata"
+            />
+        )
+    }
+
+    if (thumbSrc) {
+        return (
+            <img
+                className="idx-grid-card-img"
+                src={thumbSrc}
+                alt={`${project.title} thumbnail`}
+                loading="lazy"
+                decoding="async"
+            />
+        )
+    }
+
+    return null
+}
+
+function getGridProjectOrder(project: Project, index: number): string {
+    const sortOrder = Number(project.sortOrder)
+    if (Number.isFinite(sortOrder) && sortOrder > 0) {
+        return String(Math.floor(sortOrder))
+    }
+    return String(index + 1)
+}
+
+function ClassicGridProjectCard({
     project,
     index,
 }: {
@@ -2703,9 +2878,6 @@ function GridProjectCard({
     index: number
 }) {
     const href = getCaseStudyUrl(project)
-    const thumbSrc = normalizeThumbnailUrl(project.thumbnail as unknown)
-    const videoSrc = getThumbnailVideoLink(project)
-    const usesLoopingImage = isLoopingImageMediaSource(videoSrc)
     const serviceText = getDisciplineDisplay(project)
     const yearText = normalizeYear(project.year)
     const metaLineTwo = [project.industry, yearText > 0 ? String(yearText) : ""]
@@ -2738,34 +2910,7 @@ function GridProjectCard({
                 index={index}
                 thumbnailStroke={project.thumbnailStroke}
             >
-                {videoSrc && usesLoopingImage ? (
-                    <img
-                        className="idx-grid-card-img"
-                        src={videoSrc}
-                        alt={`${project.title} motion thumbnail`}
-                        loading="lazy"
-                        decoding="async"
-                    />
-                ) : videoSrc ? (
-                    <video
-                        className="idx-grid-card-video"
-                        src={videoSrc}
-                        poster={thumbSrc}
-                        muted
-                        loop
-                        playsInline
-                        autoPlay
-                        preload="metadata"
-                    />
-                ) : thumbSrc ? (
-                    <img
-                        className="idx-grid-card-img"
-                        src={thumbSrc}
-                        alt={`${project.title} thumbnail`}
-                        loading="lazy"
-                        decoding="async"
-                    />
-                ) : null}
+                <GridProjectMedia project={project} />
             </GridMediaFrame>
             <div className="idx-grid-card-title">
                 <MaskedSlideText index={index} block>
@@ -2789,7 +2934,63 @@ function GridProjectCard({
     )
 }
 
-function GridView({ projects }: { projects: Project[] }) {
+function FigmaGridProjectCard({
+    project,
+    index,
+}: {
+    project: Project
+    index: number
+}) {
+    const href = getCaseStudyUrl(project)
+    const tags = getDisciplines(project).slice(0, 3)
+    const order = getGridProjectOrder(project, index)
+
+    return (
+        <a
+            className="idx-grid-card"
+            data-grid-layout="figma"
+            href={href || undefined}
+            aria-label={project.title}
+        >
+            <div className="idx-grid-card-heading" aria-label={`${order} / ${project.title}`}>
+                <span className="idx-grid-card-order">{order}</span>
+                <span aria-hidden="true">/</span>
+                <span className="idx-grid-title-frame">
+                    <span className="idx-grid-title-stack" aria-hidden="true">
+                        <span>{project.title}</span>
+                        <span>VIEW PROJECT</span>
+                    </span>
+                </span>
+            </div>
+            <GridMediaFrame
+                index={index}
+                thumbnailStroke={project.thumbnailStroke}
+            >
+                <GridProjectMedia project={project} />
+            </GridMediaFrame>
+            {tags.length > 0 && (
+                <div
+                    className="idx-grid-card-tags"
+                    aria-label={`${project.title} services`}
+                >
+                    {tags.map((tag) => (
+                        <span className="idx-grid-card-tag" key={tag}>
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+            )}
+        </a>
+    )
+}
+
+function GridView({
+    projects,
+    layoutVariant = "classic",
+}: {
+    projects: Project[]
+    layoutVariant?: GridLayoutVariant
+}) {
     if (projects.length === 0) {
         return (
             <div
@@ -2808,28 +3009,41 @@ function GridView({ projects }: { projects: Project[] }) {
         )
     }
 
+    const isFigmaLayout = layoutVariant === "figma"
+
     return (
         <>
-            <IndexRule
-                className="idx-grid-top-rule"
-                style={{
-                    height: 1,
-                    width: "100%",
-                    backgroundColor: tokens.dividerStrong,
-                    marginBottom: 24,
-                }}
-            />
+            {!isFigmaLayout && (
+                <IndexRule
+                    className="idx-grid-top-rule"
+                    style={{
+                        height: 1,
+                        width: "100%",
+                        backgroundColor: tokens.dividerStrong,
+                        marginBottom: 24,
+                    }}
+                />
+            )}
             <div
                 className="idx-project-grid"
+                data-grid-layout={layoutVariant}
                 aria-label="Filtered project grid"
             >
-                {projects.map((project, index) => (
-                    <GridProjectCard
-                        key={project.slug || project.title}
-                        project={project}
-                        index={index}
-                    />
-                ))}
+                {projects.map((project, index) =>
+                    isFigmaLayout ? (
+                        <FigmaGridProjectCard
+                            key={project.slug || project.title}
+                            project={project}
+                            index={index}
+                        />
+                    ) : (
+                        <ClassicGridProjectCard
+                            key={project.slug || project.title}
+                            project={project}
+                            index={index}
+                        />
+                    )
+                )}
             </div>
         </>
     )
@@ -2900,6 +3114,7 @@ export default function IndexPage({
     thumbnailVideoFieldIds = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
     defaultView = "list",
     listHoverVariant = "flip",
+    gridLayoutVariant = "classic",
     advanced,
     textPrimary,
     textSecondary,
@@ -2915,6 +3130,7 @@ export default function IndexPage({
     thumbnailVideoFieldIds?: string
     defaultView?: string
     listHoverVariant?: ListHoverVariant
+    gridLayoutVariant?: GridLayoutVariant
     advanced?: AdvancedSettings
     textPrimary?: string
     textSecondary?: string
@@ -2931,6 +3147,8 @@ export default function IndexPage({
     const resolvedDefaultView = advanced?.defaultView ?? defaultView
     const resolvedListHoverVariant =
         advanced?.listHoverVariant ?? listHoverVariant
+    const resolvedGridLayoutVariant =
+        advanced?.gridLayoutVariant ?? gridLayoutVariant
 
     // Mirror the color props onto the module-scope `tokens` so module-level
     // sub-components and buildGlobalCss() see the live values.
@@ -3202,7 +3420,10 @@ export default function IndexPage({
                             Loading work...
                         </div>
                     ) : activeView === "grid" ? (
-                        <GridView projects={filteredProjects} />
+                        <GridView
+                            projects={filteredProjects}
+                            layoutVariant={resolvedGridLayoutVariant}
+                        />
                     ) : (
                         <ListView
                             projects={filteredProjects}
@@ -3291,6 +3512,14 @@ addPropertyControls(IndexPage, {
                 options: ["flip", "highlight"],
                 optionTitles: ["Flip", "Highlight"],
                 defaultValue: "flip",
+                displaySegmentedControl: true,
+            },
+            gridLayoutVariant: {
+                type: ControlType.Enum,
+                title: "Grid Layout",
+                options: ["classic", "figma"],
+                optionTitles: ["Current", "Figma"],
+                defaultValue: "classic",
                 displaySegmentedControl: true,
             },
             textPrimary: {

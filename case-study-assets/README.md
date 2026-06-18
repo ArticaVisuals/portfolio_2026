@@ -11,6 +11,13 @@ Generated: 2026-05-16T05:26:59.133Z
   media batch for the `/case-studies/whatsapp` WIP shell, with optimized MP4s,
   poster frames, a contact sheet, and a manifest. It is separate from the
   original scrape-count summary above.
+- June 18, 2026 note: `current-site/simon-schuster` has been organized beyond
+  the original scrape shape. The long 011-072 book photo sequence now lives in
+  `current-site/simon-schuster/Book/`, with a nested
+  `current-site/simon-schuster/Book/Web Optimized/` batch. Other web-ready
+  derivatives live in `current-site/simon-schuster/Web Optimized/`. Treat the
+  generated scrape counts below as historical, not as an exact count after this
+  organization pass.
 - Pages: 35
 - Assets in original generated scrape: 555
 - Downloaded media files in original generated scrape: 555

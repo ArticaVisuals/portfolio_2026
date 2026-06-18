@@ -16,7 +16,7 @@ from the June 15 Framer MCP inventory:
 | `gaia` | `/case-studies/gaia` | `framer-staging/gaia`, `figma-export/gaia`, `figma-export/gaia-final-deck`, `gaia-selected` |
 | `airpods` | `/case-studies/airpods` | `framer-staging/airpods-pro-3`, `current-site/airpods-pro-3` use the older descriptive folder name |
 | `peak-energy` | `/case-studies/peak-energy` | no obvious local asset folder yet |
-| `simon-schuster` | `/case-studies/simon-schuster` | `framer-staging/simon-schuster`, `current-site/simon-schuster` |
+| `simon-schuster` | `/case-studies/simon-schuster` | `framer-staging/simon-schuster`, `current-site/simon-schuster`; book photo sequence lives in `current-site/simon-schuster/Book/`, book derivatives in `current-site/simon-schuster/Book/Web Optimized/`, and other web-ready derivatives in `current-site/simon-schuster/Web Optimized/` |
 | `motion-connect-2025` | `/case-studies/motion-connect-2025` | `framer-staging/motion-connect-2025`, `current-site/motion-connect-2025` |
 | `national-park-cards` | `/case-studies/national-park-cards` | `framer-staging/national-park-cards`, `current-site/national-park-playing-cards` |
 | `yomo` | `/case-studies/yomo` | `framer-staging/yomo`, `current-site/yomo` |
@@ -110,6 +110,14 @@ Cargo-era or retired/reference-only folders:
 
 - `case-study-assets/manifest.json` records the original scrape folders and
   routes. Keep it stable unless regenerating the scrape manifest intentionally.
+- `current-site/simon-schuster/Book/` preserves the 011-072 book photo sequence
+  that previously sat at the Simon & Schuster folder root. Update any direct
+  path references if using those files in scripts or uploads.
+- `current-site/simon-schuster/Book/Web Optimized/` stores optimized derivatives
+  for the book sequence. `current-site/simon-schuster/Web Optimized/` stores
+  optimized derivatives for the broader Simon & Schuster asset set. Prefer
+  these for web transfer when the exact original-resolution files are not
+  required.
 - `case-study-assets/external-embeds.json` documents private/blocked embeds from
   the scrape and should stay beside the scrape archive.
 - `tools/image-optimizer` defaults to scanning `case-study-assets/current-site`,

@@ -84,6 +84,14 @@ const DEFAULT_LIGHTBOX_EXCLUDE_SELECTOR =
 const INTERACTIVE_SELECTOR =
     'button, [role="button"], [role="link"], input, select, textarea, label, summary, a[href]'
 const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout-v2"
+const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+const MEDIA_SKELETON_STYLE_ID = "case-study-media-skeleton-v1"
+const MEDIA_SKELETON_COLOR = "rgba(255, 255, 255, 0.6)"
+const MEDIA_SKELETON_SELECTOR = "img, video, iframe"
+const MEDIA_SKELETON_STATE_ATTR = "data-case-study-media-state"
+// Framer's native video layer is 16:9 until metadata arrives. Most case-study
+// social video rows are portrait, so this prevents first-boot row collapse.
+const MEDIA_SKELETON_VIDEO_FALLBACK_RATIO = 4 / 5
 const MOBILE_FOOTER_STYLE = `
 @media (max-width: 809px) {
     [data-case-study-mobile-cta-section="true"] {
@@ -181,6 +189,51 @@ const MOBILE_FOOTER_STYLE = `
         overflow: visible !important;
         text-transform: uppercase !important;
         width: auto !important;
+    }
+}
+`
+const MEDIA_SKELETON_STYLE = `
+[data-case-study-media-skeleton="true"]::before {
+    background: var(--case-study-media-skeleton-color, ${MEDIA_SKELETON_COLOR});
+    border-radius: inherit;
+    box-sizing: border-box;
+    content: "";
+    inset: 0;
+    opacity: 1;
+    pointer-events: none;
+    position: absolute;
+    transition: opacity 420ms ${SNAPPY_EASE};
+    z-index: 2147483647;
+}
+
+[data-case-study-media-skeleton="true"]:not([data-case-study-media-ready="true"]) {
+    border-color: transparent !important;
+}
+
+[data-case-study-media-skeleton-ratio="true"]:not([data-case-study-media-ready="true"]) {
+    aspect-ratio: var(--case-study-media-skeleton-aspect-ratio) !important;
+}
+
+[data-case-study-media-skeleton="true"][data-case-study-media-ready="true"]::before {
+    opacity: 0;
+}
+
+[data-case-study-media-skeleton="true"][data-case-study-media-failed="true"]::before {
+    opacity: 1;
+}
+
+[data-case-study-media-skeleton-media="true"] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+[data-case-study-media-skeleton-media="true"][data-case-study-media-state="failed"] {
+    opacity: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-case-study-media-skeleton="true"]::before {
+        transition: none !important;
     }
 }
 `
@@ -547,6 +600,451 @@ function ensureMobileFooterStyles() {
     document.head.appendChild(style)
 }
 
+function ensureMediaSkeletonStyles() {
+    if (typeof document === "undefined") return
+
+    let style = document.getElementById(MEDIA_SKELETON_STYLE_ID)
+    if (!style) {
+        style = document.createElement("style")
+        style.id = MEDIA_SKELETON_STYLE_ID
+    }
+
+    if (style.textContent !== MEDIA_SKELETON_STYLE) {
+        style.textContent = MEDIA_SKELETON_STYLE
+    }
+
+    document.head.appendChild(style)
+}
+
+function getMediaSource(media: HTMLElement): string {
+    if (media instanceof HTMLImageElement) return media.currentSrc || media.src || ""
+    if (media instanceof HTMLVideoElement) return media.currentSrc || media.src || media.poster || ""
+    if (media instanceof HTMLIFrameElement) return media.src || ""
+    return ""
+}
+
+function getMediaSignature(media: HTMLElement): string {
+    const source = getMediaSource(media)
+    const poster = media instanceof HTMLVideoElement ? media.poster || media.getAttribute("poster") || "" : ""
+    return `${media.tagName.toLowerCase()}:${source}:${poster}`
+}
+
+function ratioFromDimensions(width: unknown, height: unknown): number {
+    const safeWidth = Number(width)
+    const safeHeight = Number(height)
+    return Number.isFinite(safeWidth) && Number.isFinite(safeHeight) && safeWidth > 0 && safeHeight > 0
+        ? safeWidth / safeHeight
+        : 0
+}
+
+function getUrlRatio(src: string): number {
+    if (!src) return 0
+
+    try {
+        const url = new URL(src, window.location.href)
+        return ratioFromDimensions(
+            url.searchParams.get("width"),
+            url.searchParams.get("height")
+        )
+    } catch {
+        const width = src.match(/[?&]width=(\d+(?:\.\d+)?)/)?.[1]
+        const height = src.match(/[?&]height=(\d+(?:\.\d+)?)/)?.[1]
+        return ratioFromDimensions(width, height)
+    }
+}
+
+function getMediaSkeletonRatio(media: HTMLElement): number {
+    if (media instanceof HTMLImageElement) {
+        return (
+            ratioFromDimensions(media.naturalWidth, media.naturalHeight) ||
+            ratioFromDimensions(media.getAttribute("width"), media.getAttribute("height")) ||
+            getUrlRatio(media.currentSrc || media.src || "")
+        )
+    }
+
+    if (media instanceof HTMLVideoElement) {
+        return (
+            ratioFromDimensions(media.videoWidth, media.videoHeight) ||
+            ratioFromDimensions(media.getAttribute("width"), media.getAttribute("height")) ||
+            getUrlRatio(media.currentSrc || media.src || "")
+        )
+    }
+
+    if (media instanceof HTMLIFrameElement) {
+        return (
+            ratioFromDimensions(media.getAttribute("width"), media.getAttribute("height")) ||
+            getUrlRatio(media.src || "")
+        )
+    }
+
+    return 0
+}
+
+function getMediaSkeletonFallbackRatio(media: HTMLElement): number {
+    if (media instanceof HTMLVideoElement) return MEDIA_SKELETON_VIDEO_FALLBACK_RATIO
+    return getMediaSkeletonRatio(media)
+}
+
+function getElementArea(element: HTMLElement): number {
+    const rect = element.getBoundingClientRect()
+    return Math.max(0, rect.width) * Math.max(0, rect.height)
+}
+
+function isUnsafeMediaSkeletonHost(element: HTMLElement): boolean {
+    const tagName = element.tagName.toLowerCase()
+    if (tagName === "html" || tagName === "body" || tagName === "nav" || tagName === "header" || tagName === "footer") {
+        return true
+    }
+
+    return Boolean(element.closest("[aria-modal='true'], [role='dialog']"))
+}
+
+function hasFramePaint(element: HTMLElement): boolean {
+    const style = window.getComputedStyle(element)
+    const borderWidth =
+        Number.parseFloat(style.borderTopWidth) +
+        Number.parseFloat(style.borderRightWidth) +
+        Number.parseFloat(style.borderBottomWidth) +
+        Number.parseFloat(style.borderLeftWidth)
+    const hasBorder = borderWidth > 0 && style.borderTopStyle !== "none"
+    const hasShadow = style.boxShadow && style.boxShadow !== "none"
+    const hasClipping =
+        style.overflow !== "visible" ||
+        style.overflowX !== "visible" ||
+        style.overflowY !== "visible" ||
+        (style.clipPath && style.clipPath !== "none")
+    const namedFrame = `${element.getAttribute("data-framer-name") || ""} ${element.getAttribute("name") || ""}`
+
+    return (
+        hasBorder ||
+        Boolean(hasShadow) ||
+        hasClipping ||
+        /image|media|video|poster|wrapper|frame/i.test(namedFrame)
+    )
+}
+
+function getMediaSkeletonHost(media: HTMLElement): HTMLElement | null {
+    let current = media.parentElement
+    if (!current) return null
+
+    if (current.tagName.toLowerCase() === "picture") {
+        current = current.parentElement || current
+    }
+
+    const mediaArea = getElementArea(media)
+    let fallback: HTMLElement | null = null
+    let depth = 0
+
+    while (current && depth < 7) {
+        if (isUnsafeMediaSkeletonHost(current)) break
+
+        const area = getElementArea(current)
+        if (area >= 4096) {
+            const isReasonableFrame =
+                mediaArea <= 0 || area <= Math.max(mediaArea * 3.5, mediaArea + 4096)
+            if (!isReasonableFrame) break
+            if (!fallback) fallback = current
+
+            if (hasFramePaint(current)) return current
+        }
+
+        current = current.parentElement
+        depth += 1
+    }
+
+    return fallback
+}
+
+function shouldSkipMediaSkeleton(media: HTMLElement, host: HTMLElement | null): boolean {
+    if (!host || !getMediaSource(media)) return true
+    if (media.closest(CASE_STUDY_NAV_SELECTORS)) return true
+    if (media.closest("nav, header, footer, [aria-modal='true'], [role='dialog']")) return true
+    if (media.closest("[data-no-media-skeleton], [data-no-lightbox]")) return true
+
+    if (getElementArea(host) < 4096) return true
+
+    return false
+}
+
+function prepareMediaSkeletonHost(host: HTMLElement) {
+    host.setAttribute("data-case-study-media-skeleton", "true")
+    host.style.setProperty("--case-study-media-skeleton-color", MEDIA_SKELETON_COLOR)
+
+    if (window.getComputedStyle(host).position === "static") {
+        host.style.position = "relative"
+        host.setAttribute("data-case-study-media-positioned", "true")
+    }
+}
+
+function setMediaSkeletonHostRatio(host: HTMLElement, mediaItems: HTMLElement[]) {
+    const ratios = mediaItems
+        .map((media) => getMediaSkeletonRatio(media) || getMediaSkeletonFallbackRatio(media))
+        .filter((ratio) => Number.isFinite(ratio) && ratio > 0)
+
+    if (!ratios.length) {
+        host.removeAttribute("data-case-study-media-skeleton-ratio")
+        host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+        return
+    }
+
+    const ratio = ratios.reduce((sum, value) => sum + value, 0) / ratios.length
+    host.setAttribute("data-case-study-media-skeleton-ratio", "true")
+    host.style.setProperty("--case-study-media-skeleton-aspect-ratio", `${ratio}`)
+}
+
+function getManagedHostMedia(host: HTMLElement): HTMLElement[] {
+    return Array.from(host.querySelectorAll<HTMLElement>(MEDIA_SKELETON_SELECTOR)).filter(
+        (media) => getMediaSkeletonHost(media) === host && !shouldSkipMediaSkeleton(media, host)
+    )
+}
+
+function updateHostMediaSkeletonState(host: HTMLElement) {
+    const mediaItems = getManagedHostMedia(host)
+    if (!mediaItems.length) return
+
+    const states = mediaItems.map((media) => media.getAttribute(MEDIA_SKELETON_STATE_ATTR) || "")
+    if (states.includes("ready")) {
+        host.setAttribute("data-case-study-media-ready", "true")
+        host.removeAttribute("data-case-study-media-failed")
+        host.removeAttribute("data-case-study-media-skeleton-ratio")
+        host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+        return
+    }
+
+    setMediaSkeletonHostRatio(host, mediaItems)
+
+    if (states.every((state) => state === "failed")) {
+        host.removeAttribute("data-case-study-media-ready")
+        host.setAttribute("data-case-study-media-failed", "true")
+        return
+    }
+
+    host.removeAttribute("data-case-study-media-ready")
+    host.removeAttribute("data-case-study-media-failed")
+}
+
+function markMediaSkeletonState(media: HTMLElement, state: "ready" | "failed") {
+    const host = getMediaSkeletonHost(media)
+    if (!host) return
+    if (shouldSkipMediaSkeleton(media, host)) return
+
+    const signature = getMediaSignature(media)
+    if (!signature) return
+
+    media.dataset.caseStudyMediaSkeletonSignature = signature
+    prepareMediaSkeletonHost(host)
+    media.setAttribute(MEDIA_SKELETON_STATE_ATTR, state)
+
+    if (state === "ready") media.removeAttribute("data-case-study-media-skeleton-media")
+    else media.setAttribute("data-case-study-media-skeleton-media", "true")
+
+    updateHostMediaSkeletonState(host)
+}
+
+function preloadVideoPoster(video: HTMLVideoElement) {
+    const poster = video.poster || video.getAttribute("poster") || ""
+    if (!poster || typeof window === "undefined") return false
+    if (video.dataset.caseStudyMediaSkeletonPoster === poster) {
+        if (video.dataset.caseStudyMediaSkeletonPosterReady === poster) {
+            markMediaSkeletonState(video, "ready")
+        }
+        return true
+    }
+
+    video.dataset.caseStudyMediaSkeletonPoster = poster
+    delete video.dataset.caseStudyMediaSkeletonPosterReady
+    const posterImage = new window.Image()
+    posterImage.onload = () => {
+        if (video.dataset.caseStudyMediaSkeletonPoster !== poster) return
+        if ((video.poster || video.getAttribute("poster") || "") !== poster) return
+        video.dataset.caseStudyMediaSkeletonPosterReady = poster
+        markMediaSkeletonState(video, "ready")
+    }
+    posterImage.onerror = () => {
+        if (video.dataset.caseStudyMediaSkeletonPoster !== poster) return
+        if ((video.poster || video.getAttribute("poster") || "") !== poster) return
+        markMediaSkeletonState(video, "failed")
+    }
+    posterImage.src = poster
+
+    return true
+}
+
+function getLoadedIframeSignature(iframe: HTMLIFrameElement): string {
+    const signature = getMediaSignature(iframe)
+
+    try {
+        if (iframe.contentDocument?.readyState === "complete") return signature
+        void iframe.contentWindow?.location.href
+    } catch {
+        return signature
+    }
+
+    return ""
+}
+
+function syncMediaSkeleton(media: HTMLElement) {
+    const host = getMediaSkeletonHost(media)
+    if (!host) return
+    if (shouldSkipMediaSkeleton(media, host)) return
+
+    const signature = getMediaSignature(media)
+    if (!signature) return
+
+    prepareMediaSkeletonHost(host)
+
+    if (media.dataset.caseStudyMediaSkeletonSignature !== signature) {
+        media.dataset.caseStudyMediaSkeletonSignature = signature
+        media.setAttribute("data-case-study-media-skeleton-media", "true")
+        media.removeAttribute(MEDIA_SKELETON_STATE_ATTR)
+
+        if (media instanceof HTMLIFrameElement) {
+            delete media.dataset.caseStudyMediaSkeletonLoaded
+        }
+
+        updateHostMediaSkeletonState(host)
+    } else if (media.getAttribute(MEDIA_SKELETON_STATE_ATTR) !== "ready") {
+        media.setAttribute("data-case-study-media-skeleton-media", "true")
+    }
+
+    if (media instanceof HTMLImageElement) {
+        if (!media.complete) return
+        markMediaSkeletonState(media, media.naturalWidth > 0 ? "ready" : "failed")
+        return
+    }
+
+    if (media instanceof HTMLVideoElement) {
+        if (media.readyState >= 2) {
+            markMediaSkeletonState(media, "ready")
+            return
+        }
+
+        preloadVideoPoster(media)
+        return
+    }
+
+    if (media instanceof HTMLIFrameElement) {
+        if (media.dataset.caseStudyMediaSkeletonLoaded === signature) {
+            markMediaSkeletonState(media, "ready")
+        }
+    }
+}
+
+function attachMediaSkeletonListeners(
+    media: HTMLElement,
+    cleanups: Map<HTMLElement, () => void>
+) {
+    if (cleanups.has(media)) return
+
+    const ready = () => markMediaSkeletonState(media, "ready")
+    const failed = () => {
+        if (media instanceof HTMLVideoElement && preloadVideoPoster(media)) return
+        markMediaSkeletonState(media, "failed")
+    }
+    const iframeReady = () => {
+        media.dataset.caseStudyMediaSkeletonLoaded = getMediaSignature(media)
+        ready()
+    }
+
+    if (media instanceof HTMLImageElement) {
+        media.addEventListener("load", ready)
+        media.addEventListener("error", failed)
+        cleanups.set(media, () => {
+            media.removeEventListener("load", ready)
+            media.removeEventListener("error", failed)
+        })
+        return
+    }
+
+    if (media instanceof HTMLVideoElement) {
+        media.addEventListener("loadeddata", ready)
+        media.addEventListener("canplay", ready)
+        media.addEventListener("error", failed)
+        cleanups.set(media, () => {
+            media.removeEventListener("loadeddata", ready)
+            media.removeEventListener("canplay", ready)
+            media.removeEventListener("error", failed)
+        })
+        return
+    }
+
+    if (media instanceof HTMLIFrameElement) {
+        media.addEventListener("load", iframeReady)
+        const loadedSignature = getLoadedIframeSignature(media)
+        if (loadedSignature) {
+            media.dataset.caseStudyMediaSkeletonLoaded = loadedSignature
+        }
+        cleanups.set(media, () => {
+            media.removeEventListener("load", iframeReady)
+        })
+    }
+}
+
+function useCaseStudyMediaSkeletons() {
+    React.useEffect(() => {
+        if (RenderTarget.current() === RenderTarget.canvas) return
+        if (typeof document === "undefined" || typeof window === "undefined") return
+        if (!isCaseStudyDetailPage()) return
+
+        ensureMediaSkeletonStyles()
+
+        let frame = 0
+        const timeouts: number[] = []
+        const cleanups = new Map<HTMLElement, () => void>()
+
+        const pruneCleanups = () => {
+            cleanups.forEach((cleanup, media) => {
+                if (document.contains(media)) return
+                cleanup()
+                cleanups.delete(media)
+            })
+        }
+
+        const scan = () => {
+            ensureMediaSkeletonStyles()
+            pruneCleanups()
+
+            document.querySelectorAll<HTMLElement>(MEDIA_SKELETON_SELECTOR).forEach((media) => {
+                const host = getMediaSkeletonHost(media)
+                if (shouldSkipMediaSkeleton(media, host)) return
+                attachMediaSkeletonListeners(media, cleanups)
+                syncMediaSkeleton(media)
+            })
+        }
+
+        const scheduleScan = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(scan)
+        }
+
+        scheduleScan()
+        ;[75, 200, 500, 1000, 2000, 3500].forEach((delay) => {
+            timeouts.push(window.setTimeout(scheduleScan, delay))
+        })
+
+        const observer = new MutationObserver(scheduleScan)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["src", "srcset", "poster"],
+            childList: true,
+            subtree: true,
+        })
+
+        window.addEventListener("pageshow", scheduleScan)
+        window.addEventListener("resize", scheduleScan)
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+            window.removeEventListener("pageshow", scheduleScan)
+            window.removeEventListener("resize", scheduleScan)
+            cleanups.forEach((cleanup) => cleanup())
+            cleanups.clear()
+        }
+    }, [])
+}
+
 /**
  * Case-study nav click guard (no CSS).
  *
@@ -640,6 +1138,7 @@ function useCaseStudyNavClickGuard(excludeSelector: string, router: FramerRouter
  */
 export default function CaseStudyLightbox(props: Config) {
     useCaseStudyMobileFooterLayout()
+    useCaseStudyMediaSkeletons()
     const router = useRouter() as FramerRouter
     const mergedExcludeSelector = getLightboxExcludeSelector(props.excludeSelector)
     useCaseStudyNavClickGuard(mergedExcludeSelector, router)

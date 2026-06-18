@@ -3,11 +3,19 @@ import { addPropertyControls, ControlType } from "framer"
 // Framer resolves these module URLs to the project's other code components at
 // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
 // @ts-ignore
-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@vXQ0iJKoAmaRRaZmY2SX"
+import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@PzBU0qbq6VXZsBBhxKjb"
 // @ts-ignore
 import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
 // @ts-ignore
 import CaseStudyLinkRepair from "https://framer.com/m/CaseStudyLinkRepair-xbwFmJ.js"
+
+const SKELETON_RATIO_STYLE_ID = "case-study-media-skeleton-ratio-v1"
+const VIDEO_FALLBACK_RATIO = 4 / 5
+const SKELETON_RATIO_STYLE = `
+[data-case-study-media-skeleton-ratio="true"]:not([data-case-study-media-ready="true"]) {
+    aspect-ratio: var(--case-study-media-skeleton-aspect-ratio) !important;
+}
+`
 
 /**
  * Case Study Controllers — bundles the three invisible, page-level case-study
@@ -44,7 +52,132 @@ type Props = {
     linkTitleFieldId: string
 }
 
+function isCaseStudyDetailPage(): boolean {
+    if (typeof window === "undefined") return false
+    const path = window.location.pathname.replace(/\/+$/, "")
+    return path.startsWith("/case-studies/") && path.length > "/case-studies/".length
+}
+
+function ratioFromDimensions(width: unknown, height: unknown): number {
+    const safeWidth = Number(width)
+    const safeHeight = Number(height)
+    return Number.isFinite(safeWidth) && Number.isFinite(safeHeight) && safeWidth > 0 && safeHeight > 0
+        ? safeWidth / safeHeight
+        : 0
+}
+
+function getUrlRatio(src: string): number {
+    if (!src) return 0
+
+    try {
+        const url = new URL(src, window.location.href)
+        return ratioFromDimensions(
+            url.searchParams.get("width"),
+            url.searchParams.get("height")
+        )
+    } catch {
+        const width = src.match(/[?&]width=(\d+(?:\.\d+)?)/)?.[1]
+        const height = src.match(/[?&]height=(\d+(?:\.\d+)?)/)?.[1]
+        return ratioFromDimensions(width, height)
+    }
+}
+
+function getVideoSkeletonRatio(video: HTMLVideoElement): number {
+    return (
+        ratioFromDimensions(video.videoWidth, video.videoHeight) ||
+        ratioFromDimensions(video.getAttribute("width"), video.getAttribute("height")) ||
+        getUrlRatio(video.currentSrc || video.src || "") ||
+        VIDEO_FALLBACK_RATIO
+    )
+}
+
+function ensureSkeletonRatioStyle() {
+    if (typeof document === "undefined") return
+
+    let style = document.getElementById(SKELETON_RATIO_STYLE_ID)
+    if (!style) {
+        style = document.createElement("style")
+        style.id = SKELETON_RATIO_STYLE_ID
+    }
+
+    if (style.textContent !== SKELETON_RATIO_STYLE) {
+        style.textContent = SKELETON_RATIO_STYLE
+    }
+
+    document.head.appendChild(style)
+}
+
+function syncSkeletonAspectRatios() {
+    if (typeof document === "undefined") return
+
+    ensureSkeletonRatioStyle()
+
+    document.querySelectorAll<HTMLElement>("[data-case-study-media-skeleton='true']").forEach((host) => {
+        if (host.getAttribute("data-case-study-media-ready") === "true") {
+            host.removeAttribute("data-case-study-media-skeleton-ratio")
+            host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+            return
+        }
+
+        const unresolvedVideo = Array.from(host.querySelectorAll("video")).find(
+            (video) => video.getAttribute("data-case-study-media-state") !== "ready"
+        )
+        if (!(unresolvedVideo instanceof HTMLVideoElement)) return
+
+        host.setAttribute("data-case-study-media-skeleton-ratio", "true")
+        host.style.setProperty(
+            "--case-study-media-skeleton-aspect-ratio",
+            `${getVideoSkeletonRatio(unresolvedVideo)}`
+        )
+    })
+}
+
+function useCaseStudySkeletonAspectGuard() {
+    React.useEffect(() => {
+        if (typeof document === "undefined" || typeof window === "undefined") return
+        if (!isCaseStudyDetailPage()) return
+
+        let frame = 0
+        const timeouts: number[] = []
+        const schedule = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(syncSkeletonAspectRatios)
+        }
+
+        schedule()
+        ;[75, 200, 500, 1000, 2000, 3500].forEach((delay) => {
+            timeouts.push(window.setTimeout(schedule, delay))
+        })
+
+        const observer = new MutationObserver(schedule)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: [
+                "data-case-study-media-ready",
+                "data-case-study-media-failed",
+                "data-case-study-media-state",
+                "src",
+                "poster",
+            ],
+            childList: true,
+            subtree: true,
+        })
+
+        window.addEventListener("pageshow", schedule)
+        window.addEventListener("resize", schedule)
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+            window.removeEventListener("pageshow", schedule)
+            window.removeEventListener("resize", schedule)
+        }
+    }, [])
+}
+
 export default function CaseStudyControllers(props: Props) {
+    useCaseStudySkeletonAspectGuard()
     const Lightbox = CaseStudyLightbox as unknown as React.ComponentType<Record<string, unknown>>
     const VideoManager = CaseStudyVideoManager as unknown as React.ComponentType<Record<string, unknown>>
     const LinkRepair = CaseStudyLinkRepair as unknown as React.ComponentType<Record<string, unknown>>

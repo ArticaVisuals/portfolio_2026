@@ -41,6 +41,7 @@ Framer path, codeFileId, and local path.
 | Local file | Framer codeFileId | Role |
 |---|---:|---|
 | `IndexPage.tsx` | `rgAZFOv` | `/index` archive component |
+| `IndexPageGridPreview.tsx` | `LgIzFjJ` | Mounted `/index` wrapper exported as `IndexPage`; Framer Grid/List preview and Figma responsive overrides |
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | CMS thumbnail stroke/helper |
 | `ArchivePlayground.tsx` | `QNpkYp5` | `/play` archive renderer |
 | `OtherProjectCardRestored.tsx` | `vlwa5Cz` | Related-project card helper |
@@ -105,6 +106,12 @@ were moved during Phase 2 on 2026-06-15.
   app artifact, not project source.
 - `_archive/handoffs/claude-mcp-handoff-case-study-wip-gate.md` - one-off
   handoff after the WIP gate work. Keep `case-study-wip-gate.md` active for now.
+
+## Root Reference Artifacts
+
+- `Micah-Portfolio-ICP.pdf` - six-page ICP/strategy reference artifact for the
+  portfolio positioning work. Keep at root unless a broader references folder is
+  introduced and linked from `portfolio-framework.md`.
 
 ## Asset Folders
 
