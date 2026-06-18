@@ -1020,6 +1020,18 @@ export default function HomeSelectedWorkGrid({
                     white-space: nowrap;
                 }
 
+                @media (max-width: 1199px) {
+                    .selected-work-tags {
+                        gap: 5px;
+                    }
+
+                    .selected-work-tag {
+                        font-size: 12px;
+                        min-height: 23px;
+                        padding: 5px 9px 6px;
+                    }
+                }
+
                 :is([data-framer-name="Section About"], [name="Section About"])
                 :is([data-framer-name="Image Wrapper"], [name="Image Wrapper"], [data-framer-name="ImageWrapper"], [name="ImageWrapper"]) {
                     clip-path: inset(0);
@@ -1082,6 +1094,16 @@ export default function HomeSelectedWorkGrid({
                 @media (max-width: 809px) {
                     .selected-work-grid {
                         grid-template-columns: minmax(0, 1fr);
+                    }
+
+                    .selected-work-tags {
+                        gap: 5px;
+                    }
+
+                    .selected-work-tag {
+                        font-size: 11px;
+                        min-height: 21px;
+                        padding: 4px 8px 5px;
                     }
                 }
 
