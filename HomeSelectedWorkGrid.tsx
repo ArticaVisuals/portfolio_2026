@@ -8,9 +8,12 @@ type Props = {
     collectionModuleUrl: string
     sortFieldIds: string
     thumbnailVideoFieldIds: string
+    tagFieldIds: string
     maxItems: number
+    showTags: boolean
     textColor: string
     strokeColor: string
+    tagColor: string
 }
 
 type CMSFieldValue = { value?: unknown }
@@ -36,6 +39,9 @@ type Project = {
     thumbnail?: ImageValue
     thumbnailVideoLink?: string
     thumbnailStroke?: boolean
+    category1?: string
+    category2?: string
+    category3?: string
     isHomepage?: boolean
 }
 type ImageValue = {
@@ -71,6 +77,9 @@ const FIELD_IDS = {
     thumbnail: "Jy7hBJady",
     thumbnailVideoLink: "SvOqFqdby",
     thumbnailStroke: "OHdUYs6Mo",
+    category1: "kuvJcmOFr",
+    category2: "VV1CggU2J",
+    category3: "E6OpH0hSs",
     isHomepage: "myUIfK0j7",
 } as const
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
@@ -85,6 +94,11 @@ const LIVE_SCAN_PATHS = [
 ]
 const cmsModuleUrlCache = new Map<string, string>()
 const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = FIELD_IDS.thumbnailVideoLink
+const DEFAULT_TAG_FIELD_IDS = [
+    FIELD_IDS.category1,
+    FIELD_IDS.category2,
+    FIELD_IDS.category3,
+].join("\n")
 const DEFAULT_PROJECTS: Project[] = [
     {
         title: "Gaia",
@@ -94,6 +108,9 @@ const DEFAULT_PROJECTS: Project[] = [
             src: "https://framerusercontent.com/images/3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg",
         },
         thumbnailStroke: true,
+        category1: "Visual Identity",
+        category2: "UX/UI",
+        category3: "Strategy",
         isHomepage: true,
     },
     {
@@ -105,6 +122,9 @@ const DEFAULT_PROJECTS: Project[] = [
         },
         thumbnailVideoLink: "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
         thumbnailStroke: true,
+        category1: "Visual Identity",
+        category2: "2D Motion",
+        category3: "3D Motion",
         isHomepage: true,
     },
     {
@@ -113,6 +133,9 @@ const DEFAULT_PROJECTS: Project[] = [
         slug: "peak-energy",
         thumbnailVideoLink:
             "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        category1: "2D Motion",
+        category2: "3D Motion",
+        category3: "Social Media",
         isHomepage: true,
     },
     {
@@ -122,6 +145,9 @@ const DEFAULT_PROJECTS: Project[] = [
         thumbnail: {
             src: "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
         },
+        category1: "Strategy",
+        category2: "Visual Identity",
+        category3: "Editorial",
         isHomepage: true,
     },
     {
@@ -132,6 +158,9 @@ const DEFAULT_PROJECTS: Project[] = [
             src: "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
         },
         thumbnailVideoLink: "https://framerusercontent.com/assets/JBWmgoL4YXIgZfGWVzv7pCVDGw.mp4",
+        category1: "Visual Identity",
+        category2: "2D Motion",
+        category3: "Social Media",
         isHomepage: true,
     },
     {
@@ -141,6 +170,9 @@ const DEFAULT_PROJECTS: Project[] = [
         thumbnail: {
             src: "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
         },
+        category1: "Product",
+        category2: "Packaging",
+        category3: "",
         isHomepage: true,
     },
 ]
@@ -159,6 +191,10 @@ function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fi
 
 function normalizeText(value: unknown): string {
     return String(value ?? "").trim()
+}
+
+function normalizeTagText(value: unknown): string {
+    return normalizeText(value).replace(/\s+/g, " ")
 }
 
 function hasCMSValue(value: unknown): boolean {
@@ -212,6 +248,28 @@ function readFirstField(
         if (hasCMSValue(value)) return value
     }
     return undefined
+}
+
+function readTagFields(
+    data: Record<string, CMSFieldValue | unknown> | undefined,
+    fieldIds: string
+): Pick<Project, "category1" | "category2" | "category3"> {
+    const tags: string[] = []
+    const seen = new Set<string>()
+
+    for (const fieldId of splitFieldIds(fieldIds || DEFAULT_TAG_FIELD_IDS)) {
+        const value = normalizeTagText(readField(data, fieldId))
+        const key = value.toLowerCase()
+        if (!value || seen.has(key)) continue
+        seen.add(key)
+        tags.push(value)
+    }
+
+    return {
+        category1: tags[0] || "",
+        category2: tags[1] || "",
+        category3: tags[2] || "",
+    }
 }
 
 function normalizeSlug(value: unknown): string {
@@ -377,7 +435,8 @@ async function loadProjects(
     collectionId: string,
     collectionModuleUrl: string,
     sortFieldIds: string,
-    thumbnailVideoFieldIds: string
+    thumbnailVideoFieldIds: string,
+    tagFieldIds: string
 ): Promise<Project[]> {
     const moduleUrl = await resolveCMSModuleUrl(collectionId, collectionModuleUrl)
     if (!moduleUrl) return []
@@ -402,6 +461,7 @@ async function loadProjects(
                 thumbnail: normalizeImage(readField(data, FIELD_IDS.thumbnail)),
                 thumbnailVideoLink: readFirstMediaField(data, thumbnailVideoFieldIds),
                 thumbnailStroke: normalizeBoolean(readField(data, FIELD_IDS.thumbnailStroke)),
+                ...readTagFields(data, tagFieldIds),
                 isHomepage: normalizeBoolean(readField(data, FIELD_IDS.isHomepage)),
             }
         })
@@ -420,6 +480,21 @@ function getProjectHref(project: Project): string {
 
 function getThumbnailVideoLink(project: Project): string {
     return normalizeMediaSource(project.thumbnailVideoLink)
+}
+
+function getProjectTags(project: Project): string[] {
+    const tags: string[] = []
+    const seen = new Set<string>()
+
+    for (const raw of [project.category1, project.category2, project.category3]) {
+        const value = normalizeTagText(raw)
+        const key = value.toLowerCase()
+        if (!value || seen.has(key)) continue
+        seen.add(key)
+        tags.push(value)
+    }
+
+    return tags
 }
 
 function isCanvasTarget(): boolean {
@@ -551,8 +626,10 @@ function useFramerRouter(): FramerRouter | undefined {
 
 function ProjectCard({
     project,
+    showTags,
 }: {
     project: Project
+    showTags: boolean
 }) {
     const router = useFramerRouter()
     const href = getProjectHref(project)
@@ -569,6 +646,7 @@ function ProjectCard({
     const [loadedMediaKey, setLoadedMediaKey] = React.useState("")
     const [failedMediaKey, setFailedMediaKey] = React.useState("")
     const mediaAlt = project.thumbnail?.alt || project.title
+    const tags = showTags ? getProjectTags(project) : []
 
     const markMediaReady = React.useCallback(() => {
         if (!mediaKey) return
@@ -682,6 +760,18 @@ function ProjectCard({
                     />
                 ) : null}
             </div>
+            {tags.length > 0 ? (
+                <div
+                    className="selected-work-tags"
+                    aria-label={`${project.title} services`}
+                >
+                    {tags.map((tag) => (
+                        <span className="selected-work-tag" key={tag}>
+                            <span className="selected-work-tag-text">{tag}</span>
+                        </span>
+                    ))}
+                </div>
+            ) : null}
         </a>
     )
 }
@@ -700,9 +790,12 @@ export default function HomeSelectedWorkGrid({
     collectionModuleUrl = "",
     sortFieldIds = DEFAULT_SORT_FIELD_IDS,
     thumbnailVideoFieldIds = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
+    tagFieldIds = DEFAULT_TAG_FIELD_IDS,
     maxItems = 6,
+    showTags = true,
     textColor = "rgb(35, 51, 36)",
     strokeColor = "rgb(151, 151, 151)",
+    tagColor = "rgb(151, 151, 151)",
 }: Partial<Props>) {
     const [projects, setProjects] = React.useState<Project[]>(DEFAULT_PROJECTS)
 
@@ -713,7 +806,13 @@ export default function HomeSelectedWorkGrid({
         }
 
         let disposed = false
-        loadProjects(collectionId, collectionModuleUrl, sortFieldIds, thumbnailVideoFieldIds)
+        loadProjects(
+            collectionId,
+            collectionModuleUrl,
+            sortFieldIds,
+            thumbnailVideoFieldIds,
+            tagFieldIds
+        )
             .then((loaded) => {
                 if (!disposed && loaded.length > 0) setProjects(loaded)
             })
@@ -724,7 +823,14 @@ export default function HomeSelectedWorkGrid({
         return () => {
             disposed = true
         }
-    }, [useCMS, collectionId, collectionModuleUrl, sortFieldIds, thumbnailVideoFieldIds])
+    }, [
+        useCMS,
+        collectionId,
+        collectionModuleUrl,
+        sortFieldIds,
+        thumbnailVideoFieldIds,
+        tagFieldIds,
+    ])
 
     const visibleProjects = React.useMemo(
         () => getVisibleProjects(projects, Math.max(1, Math.floor(Number(maxItems) || 6))),
@@ -738,11 +844,16 @@ export default function HomeSelectedWorkGrid({
                 {
                     "--selected-work-text": textColor,
                     "--selected-work-stroke": strokeColor,
+                    "--selected-work-tag": tagColor || strokeColor,
                 } as React.CSSProperties
             }
         >
             {visibleProjects.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
+                <ProjectCard
+                    key={project.slug}
+                    project={project}
+                    showTags={showTags}
+                />
             ))}
             <style suppressHydrationWarning>{`
                 .selected-work-grid {
@@ -868,6 +979,45 @@ export default function HomeSelectedWorkGrid({
                 .selected-work-card:hover .selected-work-media video,
                 .selected-work-card:focus-visible .selected-work-media video {
                     transform: translateX(-50%) scale(1.02);
+                }
+
+                .selected-work-tags {
+                    align-items: flex-start;
+                    color: var(--selected-work-tag);
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    min-width: 0;
+                    width: 100%;
+                }
+
+                .selected-work-tag {
+                    align-items: center;
+                    border: 1px solid var(--selected-work-tag);
+                    border-radius: 250px;
+                    box-sizing: border-box;
+                    color: var(--selected-work-tag);
+                    display: inline-flex;
+                    flex: 0 1 auto;
+                    font-family: "GT Standard Mono Trial", "GT Standard Mono", "Azeret Mono", monospace;
+                    font-size: 13px;
+                    font-weight: 400;
+                    justify-content: center;
+                    letter-spacing: 0;
+                    line-height: 1;
+                    max-width: 100%;
+                    min-height: 24px;
+                    min-width: 0;
+                    padding: 5px 10px 6px;
+                    text-transform: uppercase;
+                }
+
+                .selected-work-tag-text {
+                    display: block;
+                    min-width: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
 
                 :is([data-framer-name="Section About"], [name="Section About"])
@@ -1023,6 +1173,13 @@ addPropertyControls(HomeSelectedWorkGrid, {
         placeholder: "Thumbnail Video field ID",
         displayTextArea: true,
     },
+    tagFieldIds: {
+        type: ControlType.String,
+        title: "Tag Fields",
+        defaultValue: DEFAULT_TAG_FIELD_IDS,
+        placeholder: "Category field IDs",
+        displayTextArea: true,
+    },
     maxItems: {
         type: ControlType.Number,
         title: "Max Items",
@@ -1032,6 +1189,13 @@ addPropertyControls(HomeSelectedWorkGrid, {
         step: 1,
         displayStepper: true,
     },
+    showTags: {
+        type: ControlType.Boolean,
+        title: "Show Tags",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+    },
     textColor: {
         type: ControlType.Color,
         title: "Text",
@@ -1040,6 +1204,11 @@ addPropertyControls(HomeSelectedWorkGrid, {
     strokeColor: {
         type: ControlType.Color,
         title: "Stroke",
+        defaultValue: "rgb(151, 151, 151)",
+    },
+    tagColor: {
+        type: ControlType.Color,
+        title: "Tags",
         defaultValue: "rgb(151, 151, 151)",
     },
 })

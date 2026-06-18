@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** June 15, 2026
+**Last verified:** June 18, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -184,6 +184,8 @@ Home currently uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) for the selected-work
 - National Park Playing Cards
 
 WhatsApp has `Is Homepage` true but is outside the first six because its sort order is 17. Yomo, Karuna, and Weaponized Innocence are currently off Home because their `Is Homepage` flags are false. Project cards link directly to `/case-studies/[slug]`; the Home selected-work `VIEW ALL` CTA links to `/index`.
+
+Home selected-work tag pills are CMS-bound to the same Category 1/2/3 fields used by the archive taxonomy: `kuvJcmOFr`, `VV1CggU2J`, and `E6OpH0hSs`. `HomeSelectedWorkGrid.tsx` exposes those bindings as the `Tag Fields` control, with `Show Tags` for non-destructive visibility testing and `Tags` for the pill stroke/text color. Keep the default tag color aligned to the existing Light Gray style value (`rgb(151, 151, 151)`). Do not hardcode per-card Home services in Framer layers; update the CMS category values instead so Home and `/index` stay in sync.
 
 Do not restore the old native Home `AllProjects` / `CaseStudy` grid unless it is intentionally rebuilt and verified in the Framer editor. That grid lost reliable per-item CMS bindings and showed AirPods content over every Home card after hydration. `CaseStudyLinkRepair.tsx` is not the primary Home fix; the Home instance is disabled.
 

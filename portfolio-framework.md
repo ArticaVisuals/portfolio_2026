@@ -1,9 +1,9 @@
 # Portfolio Redesign — Strategic Framework & Information Architecture
 
 **For:** Micah Hoang
-**Version:** 1.11 - June 15 CMS/page parity reflected. CMS has 17 real projects and each CMS slug has a matching bespoke `/case-studies/{slug}` page. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`; the current CMS-limited set is Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. `/play` uses the `Play.tsx` production wrapper around `ArchivePlayground.tsx` with protected authorable `Archive Items` controls. Current Framer web routes are documented in `framer-current-state.md`.
+**Version:** 1.12 - June 18 Home selected-work tag pills reflected. CMS has 17 real projects and each CMS slug has a matching bespoke `/case-studies/{slug}` page. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`; the current CMS-limited set is Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. `/play` uses the `Play.tsx` production wrapper around `ArchivePlayground.tsx` with protected authorable `Archive Items` controls. Current Framer web routes are documented in `framer-current-state.md`.
 **Date:** May 2026
-**Last Framer structure audit:** June 15, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
+**Last Framer structure audit:** June 18, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
 
 **Maintenance note, May 26, 2026:** The current Framer project no longer includes `/play-2`, `/playground-scroll-draft`, `/worldgrid-test`, `WorldGridTest.tsx`, `ImageMaskReveal.tsx`, `IndexRuleColorOverride.tsx`, `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, or `CaseStudyRevealTuner.tsx`. Those names may appear in older historical notes, but they are not active current inventory.
 
@@ -64,7 +64,7 @@ Five words to return to whenever a design decision feels unclear:
 
 ### Homepage curation (current Framer Home: 6 visible cards)
 
-The order is a deliberate argument. Each visible Home card earns its slot and reinforces the one before it. Current Framer Home uses `HomeSelectedWorkGrid.tsx` to render a CMS-backed selected-work set: `Is Homepage = true`, ordered by `Sorting Number`, limited to 6 records, with direct `/case-studies/{slug}` links and image/video thumbnail handling.
+The order is a deliberate argument. Each visible Home card earns its slot and reinforces the one before it. Current Framer Home uses `HomeSelectedWorkGrid.tsx` to render a CMS-backed selected-work set: `Is Homepage = true`, ordered by `Sorting Number`, limited to 6 records, with direct `/case-studies/{slug}` links, image/video thumbnail handling, thumbnail strokes, and Category 1/2/3 tag pills.
 
 | # | Project | Strategic job | Primary targets |
 |---|---|---|---|
@@ -260,7 +260,7 @@ The homepage is a one-page scroll with five zones:
 
 1. **Nav bar** — "Micah Hoang" left, "Work · Index · Info" right. Contact exists through CTA/footer links, but is not currently in the primary nav component or page inventory.
 2. **Hero zone** — current Framer desktop uses a 60vh cream hero with display-scale "MICAH HOANG", the discipline statement, `AVAILABLE FOR WORK`, LinkedIn/Résumé/Cosmos links, scroll prompt, and copyright. The June 2 publish confirmed the hero line now uses the approved spacing: `mind. Strategy`. The earlier green-dot/live-time idea is not currently implemented.
-3. **Work zone** — current Framer implementation uses `HomeSelectedWorkGrid.tsx` for the six-item selected-work section. It preserves the intended card visuals while using direct `/case-studies/[slug]` anchors, image/video thumbnail handling, and a CMS/default data fallback. The `VIEW ALL` CTA links to `/index`. Do not reintroduce the broken native Home `AllProjects` / `CaseStudy` grid or a hydration `LinkRepair` as the primary Home mechanism.
+3. **Work zone** — current Framer implementation uses `HomeSelectedWorkGrid.tsx` for the six-item selected-work section. It preserves the intended card visuals while using direct `/case-studies/[slug]` anchors, image/video thumbnail handling, Category 1/2/3 tag pills, and a CMS/default data fallback. The `VIEW ALL` CTA links to `/index`. Do not reintroduce the broken native Home `AllProjects` / `CaseStudy` grid or a hydration `LinkRepair` as the primary Home mechanism.
 4. **About zone** — current Framer Home uses a portrait plus two columns of bio copy and a `read more` link to `/info`. Preserve the June 16 Framer layer contract: the `Button Wrapper` owns the `/info` link, while the visible `READ MORE` flip text is detached native `TextLinkBlack` content, not a linked `Text Link` component. This avoids Framer nested-link optimizer warnings while keeping the portrait/text hover flip interaction.
 5. **Contact zone** — current Framer Home ends in a full-viewport forest-green CTA with email, LinkedIn, and Cosmos links.
 
