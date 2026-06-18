@@ -70,6 +70,9 @@ local `.md` project documents, or the Framer MCP when available.
 
 Start with nearby project documentation such as:
 
+- `code-components-map.md` — at-a-glance map of every custom code component, the
+  two recurring patterns, Framer gotchas, and the consolidation backlog. Read this
+  first to orient on the custom TSX.
 - `framer-current-state.md`
 - `portfolio-framework.md`
 - `index-component-instructions.md`
