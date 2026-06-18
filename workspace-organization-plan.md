@@ -214,15 +214,24 @@ Backup committed first at `_archive/retired-play-helpers-2026-06-18/` (10 compil
 snapshots + editable `ArchivePlaygroundConsolidated.tsx` + README with rollback
 paths) and pushed to GitHub `main`.
 
-Done (deleted from Framer via MCP; PUBLISH to apply):
+Done (all 10 deleted from Framer via MCP; PUBLISH to apply):
 - `ArchivePlaygroundConsolidated.tsx` (`D5YVims`)
 - `ArchivePlaygroundConsolidatedDraft.tsx` (`aEyj7Rq`)
 - `PlayAccessibilityDraftPatch.tsx` (`IPugK6y`)
 - `PlayDraftViewportFix.tsx` (`uO7AzzY`)
+- `PlaygroundNavPassthrough.tsx` (`RBX6jsP`)
+- `PlaygroundRuleExitGuard.tsx` (`vdg69JZ`)
+- `PlaygroundInstantExitSnapshot.tsx` (`c2PU6kX`)
+- `PlaygroundSidebarColumnGuard.tsx` (`R3ZWYKl`)
+- `PlaygroundNavExitHold.tsx` (`iivBAHR`)
+- `PlaygroundMediaLoadSmoother.tsx` (`FFqrKyU`)
 
-Pending (needs Framer UI — MCP can't expand `/play` breakpoint nodes): detach the
-six disabled `Playground*` helper instances from `/play` on every breakpoint, then
-delete `RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`.
+The six `Playground*` helpers' previously-disabled `/play` instances were already
+gone (confirmed in Framer UI June 18), so the orphaned code files were safe to delete.
+
+Phase 4 clarity edit done via MCP: `CaseStudyScrambleText.tsx` (`dHFQCIH`) display
+name set to "Case Study Header Link" + header rewritten (it is a hover-color link,
+NOT a scramble). File rename still needs the Framer UI.
 
 Not retired (kept deliberately): the 5 code overrides (publish-validation safety),
 `Counter.tsx`/`NumberCounter` (LIVE on `/case-studies`), `IndexPageGridPreview.tsx`
