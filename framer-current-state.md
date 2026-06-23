@@ -1,11 +1,39 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 18, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
+**Last audited:** June 23, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
+
+---
+
+## 2026-06-23 Update
+
+- **New code component `TestimonialLineReveal` (`tpDdaaJ`).** Osmo-style line-mask
+  testimonial built on the project system: GT Standard type, `/Off-Black` +
+  `/Light Gray`, canonical `cubic-bezier(0.12, 0.23, 0.5, 1)` ease. Quote reveals
+  line-by-line on scroll-into-view; name + role, **no profile photo**. Toggles for
+  arrows (GT Standard ← → glyphs), counter, autoplay; blank eyebrow hides it; an
+  `Advanced` switch hides colors/ease/sizing. **Responsive:** quote scales down at
+  tablet/mobile from its own measured width (18px floor); long quotes get a mobile
+  **Read more** collapse for legibility/a11y. Placed as a one-off on
+  `/case-studies/airpods` (instance `fJKupkZPa`, arrows/counter off) carrying the
+  real Nadia Shireen Husain (ACD, Apple) recommendation. Intended for reuse on
+  `/info` with arrows on. Mirror: `TestimonialLineReveal.tsx`.
+- **Case-study share/OG thumbnails.** Goal: every `/case-studies/:slug` share
+  preview defaults to the CMS **Thumbnail** image (the hero/card thumbnail). All
+  17 `All Projects` items now have a Thumbnail image **except** `rejuve`,
+  `belly-bar`, `whatsapp` (WIP, no image and no thumbnail video to derive one).
+  `peak-energy` had only a thumbnail video → a poster frame was generated from it
+  (frame ~1.8s of `h3NSQj4n…mp4`) and set as its Thumbnail
+  (`framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg`). The page-level
+  OG-image **binding** (`/case-studies/:slug` → Settings → social image = CMS
+  Thumbnail field) is a Framer UI setting that MCP can't read/set — verify it in
+  the editor. See `case-study-cms-workflow.md`.
+- **`DoubleStackGalleryGrid`** mirror added (new case-study gallery layout: two
+  stacked media left + one tall right). Confirm its Framer codeFileId on import.
 
 ---
 

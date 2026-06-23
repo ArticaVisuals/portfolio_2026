@@ -1,12 +1,15 @@
 # Custom Code Map — Portfolio 2026 (handoff reference)
 
-Last updated: 2026-06-18 (framework audit). Plain-English map of every custom
+Last updated: 2026-06-23 (testimonial component + responsive pass). Plain-English map of every custom
 Framer **code component** so a new dev can orient fast. For chronological history
 and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
 `workspace-organization-plan.md` + `framer-code-mirror/manifest.json`.
 
 After the 2026-06-18 audit: **34 code components + 5 overrides** (down from 44).
+2026-06-23 additions: **`TestimonialLineReveal`** (`tpDdaaJ`, live) and
+**`DoubleStackGalleryGrid`** (new case-study gallery layout; local mirror present,
+confirm its Framer codeFileId on import).
 
 ---
 
@@ -54,6 +57,8 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 | `SeekTruthCargoSlideshow` | `BgeH0il` | One-off slideshow (Seek Truth). |
 | `TypldnProcessGallery` | `jFSLix7` | One-off process gallery (TYPLDN). |
 | `VimeoPrivateEmbed` | `lDvvMS2` | Private/unlisted Vimeo iframe (Peak Energy brand film). |
+| `TestimonialLineReveal` | `tpDdaaJ` | Osmo-style line-mask testimonial: quote reveals line-by-line (per-line clip + staggered translateY), then name + role, **no photo**. System GT Standard type + `SITE_EASE`. Arrow/counter toggles, optional autoplay, blank-eyebrow-hides, `Advanced` toggle gating colors/ease/sizes. **Responsive:** quote scales down at tablet/mobile (own-width measured) with an 18px floor; long quotes get a mobile **Read more** collapse. One-off on AirPods (instance `fJKupkZPa`, arrows/counter off); reusable on `/info` with arrows on. |
+| `DoubleStackGalleryGrid` | _(new — confirm id)_ | Case-study gallery layout: two stacked media on the left + one tall media on the right, responsive `mobileBelow` stack, per-slot image/video/poster/fit. Mirror added 2026-06-23. |
 
 ### Case-study page controllers (invisible)
 | Component | id | What it does |

@@ -107,6 +107,19 @@ function ensureSkeletonRatioStyle() {
     document.head.appendChild(style)
 }
 
+function getElementArea(element: HTMLElement): number {
+    const rect = element.getBoundingClientRect()
+    return Math.max(0, rect.width) * Math.max(0, rect.height)
+}
+
+function isLayoutMediaSkeletonHost(host: HTMLElement, media: HTMLElement): boolean {
+    const directChildren = Array.from(host.children).filter(
+        (child): child is HTMLElement => child instanceof HTMLElement && getElementArea(child) >= 1024
+    )
+
+    return directChildren.length > 1 && !directChildren.includes(media)
+}
+
 function syncSkeletonAspectRatios() {
     if (typeof document === "undefined") return
 
@@ -122,7 +135,11 @@ function syncSkeletonAspectRatios() {
         const unresolvedVideo = Array.from(host.querySelectorAll("video")).find(
             (video) => video.getAttribute("data-case-study-media-state") !== "ready"
         )
-        if (!(unresolvedVideo instanceof HTMLVideoElement)) return
+        if (!(unresolvedVideo instanceof HTMLVideoElement) || isLayoutMediaSkeletonHost(host, unresolvedVideo)) {
+            host.removeAttribute("data-case-study-media-skeleton-ratio")
+            host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+            return
+        }
 
         host.setAttribute("data-case-study-media-skeleton-ratio", "true")
         host.style.setProperty(

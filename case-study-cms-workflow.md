@@ -1,7 +1,7 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** June 18, 2026
+**Last verified:** June 23, 2026
 **Framer URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
@@ -98,6 +98,34 @@ Recommended manual CMS additions in Framer:
 - `Build Status` - Enum field with values like `Stub`, `Draft`, `Ready`, `Published`.
 
 Because `All Projects` is user-managed, add these fields manually in Framer if you want them. Do not repurpose existing field IDs casually because `/index`, Home, and case-study card components already depend on the current field bindings.
+
+## 4b. Share / Open Graph Thumbnails
+
+When a case-study link is shared (iMessage, Slack, social), the preview image should
+default to that project's **hero = CMS `Thumbnail` image** (`Jy7hBJady`).
+
+Two parts:
+
+1. **The Thumbnail field must be populated.** As of 2026-06-23, 14/17 `All Projects`
+   records have a Thumbnail image. Exceptions: `rejuve`, `belly-bar`, `whatsapp`
+   (WIP — no image and no thumbnail video to derive one; leave until real assets land).
+   `peak-energy` previously had only a **thumbnail video** (`Thumbnail Video`,
+   `SvOqFqdby`); a poster frame was generated from it (ffmpeg frame grab → JPG) and
+   set as its `Thumbnail`. **Procedure for any video-only thumbnail:**
+   - `ffmpeg -ss <t> -i <video> -frames:v 1 frame.png` (avoid black/transition frames),
+     `sips -s format jpeg`.
+   - Framer's asset service **can't fetch from catbox**; upload to **litterbox**
+     (`litterbox.catbox.moe`), then ingest via the `backgroundImage` trick (set it on a
+     throwaway frame, read back the rehosted `framerusercontent.com/...` URL, delete the
+     frame) — see `reference_framer_asset_ingest`. Then `upsertCMSItem` with the
+     framerusercontent URL (fast; an external URL times out the 30s MCP call while Framer
+     re-ingests).
+
+2. **The OG binding is a Framer page setting, not MCP-reachable.** On the
+   `/case-studies/:slug` page (and any bespoke slug page that should differ), open
+   **Settings → Open Graph / social image** and bind it to the CMS `Thumbnail` field.
+   MCP cannot read or set this, so verify it in the editor. Once bound + the field is
+   populated, every shared case-study link previews with its hero thumbnail.
 
 ## 5. Page Responsibilities
 
