@@ -28,10 +28,13 @@ This is the quick source of truth for the active Framer project and local handof
   `belly-bar`, `whatsapp` (WIP, no image and no thumbnail video to derive one).
   `peak-energy` had only a thumbnail video → a poster frame was generated from it
   (frame ~1.8s of `h3NSQj4n…mp4`) and set as its Thumbnail
-  (`framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg`). The page-level
-  OG-image **binding** (`/case-studies/:slug` → Settings → social image = CMS
-  Thumbnail field) is a Framer UI setting that MCP can't read/set — verify it in
-  the editor. See `case-study-cms-workflow.md`.
+  (`framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg`). **OG image is
+  still NOT set, verified 2026-06-23 against published HTML: no `og:image` on any
+  page (no site-wide default either).** The case studies are bespoke shadow pages,
+  not the `:slug` CMS template, so OG can't bind to the Thumbnail field — each needs
+  a static per-page OG image (or a site default), set manually in Framer (MCP can't).
+  Thumbnail URLs to paste are in `case-study-cms-workflow.md` §4b. CMS Thumbnail data
+  is done; the OG binding is the outstanding half.
 - **`DoubleStackGalleryGrid`** mirror added (new case-study gallery layout: two
   stacked media left + one tall right). Confirm its Framer codeFileId on import.
 

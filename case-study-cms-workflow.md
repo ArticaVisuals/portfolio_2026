@@ -121,11 +121,46 @@ Two parts:
      framerusercontent URL (fast; an external URL times out the 30s MCP call while Framer
      re-ingests).
 
-2. **The OG binding is a Framer page setting, not MCP-reachable.** On the
-   `/case-studies/:slug` page (and any bespoke slug page that should differ), open
-   **Settings → Open Graph / social image** and bind it to the CMS `Thumbnail` field.
-   MCP cannot read or set this, so verify it in the editor. Once bound + the field is
-   populated, every shared case-study link previews with its hero thumbnail.
+2. **The OG image binding is a Framer page setting, not MCP-reachable — and as of
+   2026-06-23 it is NOT set anywhere.** Verified against published HTML
+   (`micahhoang.com`): **no `og:image` / `twitter:image` on any page**, including the
+   home page (so there's no site-wide default either). `twitter:card` is
+   `summary_large_image` but with no image, so shared links currently render a
+   text-only card. **This part is NOT done** — populating the CMS Thumbnails (above)
+   is only the data half.
+
+   Gotcha: the case studies are served by **bespoke standalone pages**
+   (`/case-studies/airpods`, etc.), which **shadow** the dynamic `/case-studies/:slug`
+   CMS route. Only a CMS-connected page (the `:slug` template) can bind its OG image to
+   a CMS field; **bespoke pages take a static OG image per page**. So binding-to-field
+   does not apply here — each bespoke page needs its OG image set manually.
+
+   To fix (manual in Framer, then re-publish):
+   - **Site default:** Site Settings → Metadata/SEO → set a default Open Graph image
+     (gives every page a fallback preview immediately).
+   - **Per case-study page:** open each page → Settings → Open Graph image → set the
+     project's hero/thumbnail. The CMS Thumbnail URLs to paste:
+
+   | slug | OG image (framerusercontent.com/images/…) |
+   |---|---|
+   | airpods | `JITjBIRyOd5DdC7juV7X5RwU9I.jpg` |
+   | peak-energy | `JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg` (poster from thumbnail video) |
+   | gaia | `3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg` |
+   | simon-schuster | `ZViKn9ASVVsE90tOfnWU7sW0U.png` |
+   | motion-connect-2025 | `W592y16ERqrZ1qFuxRe3dcsv8I.jpg` |
+   | national-park-cards | `YdGKidrUlzOXfODfaQNqfCx5dM.png` |
+   | yomo | `PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg` |
+   | karuna | `Dj1KLsghEL5tCJkNgSjKFvuIMMU.png` |
+   | weaponized-innocence | `BRh73XzVlRBoYNh03pKXVIYYPw.png` |
+   | wolff-olins-x-artcenter | `ELzZlQSqNMinwyzcolf0mLOAopM.jpg` |
+   | cellular-symphony | `j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg` |
+   | seek-truth | `ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png` |
+   | independent-lens | `2l7fi2HvjNmusO8H6tXWKotl8.jpg` |
+   | typldn | `jchJlOWt16iY8J0NEXEfm3G8cTE.png` |
+
+   `rejuve`, `belly-bar`, `whatsapp` have no thumbnail yet (WIP). Longer-term, letting
+   the `:slug` CMS template render these (instead of bespoke shadow pages) would allow
+   a single OG-to-Thumbnail binding instead of 14 manual settings.
 
 ## 5. Page Responsibilities
 
