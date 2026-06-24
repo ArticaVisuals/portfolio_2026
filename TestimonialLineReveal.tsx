@@ -18,7 +18,10 @@
 //   quoteSize per breakpoint in the Framer panel.
 // - Long quotes on MOBILE get an optional "Read more" collapse (default on) so
 //   a 12-line quote doesn't dominate a phone screen; desktop/tablet always show
-//   the full quote.
+//   the full quote. The collapse only VISUALLY clips (max-height + fade) — the
+//   full quote stays in the DOM/a11y tree, so screen-reader and reflow users get
+//   everything regardless of the toggle (disclosure pattern: aria-expanded +
+//   aria-controls, 44px min hit area per Apple HIG).
 //
 // Notes on system fidelity:
 // - Ease defaults to the site's canonical SMOOTH_EASE cubic-bezier(0.12,0.23,0.5,1).
@@ -41,6 +44,7 @@ import {
     startTransition,
     useCallback,
     useEffect,
+    useId,
     useLayoutEffect,
     useMemo,
     useRef,
@@ -423,11 +427,19 @@ export default function TestimonialLineReveal(props: Props) {
     const showCounterEl = showCounter && canNavigate
 
     // ---- Read-more (mobile only, long quotes) ---------------------------
+    // A11y: the FULL quote always stays in the DOM/accessibility tree. When
+    // collapsed we only *visually* clip it to clampN lines (with a soft fade),
+    // so screen-reader and reflow users get the whole quote regardless of the
+    // toggle — "Read more" is a sighted-user convenience, not a content gate.
+    const quoteId = useId()
     const clampN = Math.max(2, Math.round(mobileClampLines))
     const clampable =
         isMobile && mobileReadMore && !isStatic && lines.length > clampN
     const collapsed = clampable && !expanded
-    const visibleLines = collapsed ? lines.slice(0, clampN) : lines
+    const collapsedMaxHeight = Math.round(
+        clampN * quoteSizeEff * quoteLineHeight + quoteSizeEff * 0.2
+    )
+    const fadeMask = "linear-gradient(to bottom, #000 72%, transparent 100%)"
 
     return (
         <section
@@ -544,10 +556,17 @@ export default function TestimonialLineReveal(props: Props) {
                     plain block before the measure pass runs (SSR / no-JS) so the
                     quote is never invisible. */}
                 <blockquote
+                    id={quoteId}
                     style={{
                         ...quoteTypeStyle,
                         width: "100%",
                         position: "relative",
+                        // Visually clip (not remove) when collapsed; full text
+                        // remains in the a11y tree.
+                        maxHeight: collapsed ? collapsedMaxHeight : undefined,
+                        overflow: collapsed ? "hidden" : undefined,
+                        WebkitMaskImage: collapsed ? fadeMask : undefined,
+                        maskImage: collapsed ? fadeMask : undefined,
                     }}
                 >
                     {lines.length === 0
@@ -556,7 +575,7 @@ export default function TestimonialLineReveal(props: Props) {
                                   {decorated}
                               </span>
                           )
-                        : visibleLines.map((line, i) => (
+                        : lines.map((line, i) => (
                               <span
                                   key={`${safeIndex}-${i}-${line}`}
                                   style={{
@@ -592,6 +611,7 @@ export default function TestimonialLineReveal(props: Props) {
                     <button
                         type="button"
                         aria-expanded={expanded}
+                        aria-controls={quoteId}
                         onClick={() => setExpanded((e) => !e)}
                         style={{
                             // 44px min hit area (Apple HIG) without bloating the
