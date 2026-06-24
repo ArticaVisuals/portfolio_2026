@@ -21,6 +21,27 @@ This is the quick source of truth for the active Framer project and local handof
   current `CaseStudyLightbox` export
   `CaseStudyLightbox-yOYpGN.js@Cphhu4ZJ1CxHLPy7kC6e`; live Framer typecheck
   passed after the code-file update.
+- **`/play` reveal reworked to soft / smooth / cinematic** (`Play.tsx` `PN1RVOf`,
+  `ArchivePlayground.tsx` `QNpkYp5`):
+  - **No more upward bounce** — `LOAD_IN_LIFT_PX` 12 → 0; the load-in is pure
+    opacity now (no `translateY`).
+  - **Ordered radial stagger** (center-out ripple) replaces the random
+    `Math.random()` / hash scatter, in both the CSS load-in (`introDelayMs` by
+    grid ring) and the `pt:reveal` WAAPI replay (by each card's distance from
+    viewport center). Stagger bumped `LOAD_IN_STAGGER_MS` 58 → 90 (more
+    pronounced).
+  - **Canonical smooth ease** `cubic-bezier(0.12,0.23,0.5,1)` for the load-in +
+    replay (was the snappy `0.16,1,0.3,1`). Interactions (hover/panel) keep
+    `SNAPPY_EASE`.
+  - **Stroke fades in WITH the media** — the per-card stroke `border` now lives
+    on a container that holds at opacity 0 until the media is `ready`, so there
+    are no blank stroke skeletons; stroke + media reveal as one unit.
+  - **Media fade is smoother + slower** — switched to `SMOOTH_EASE`, floored to
+    `Math.max(1000, mediaFadeMs)`; `mediaFadeMs` default 700 → 1100.
+  - Verified live (published) via Playwright: zero card `translateY` across the
+    whole reveal, ordered ripple (~99→6 not-started while mid-fade ramps to 80
+    over ~1.6s), 0 console errors, panel open/close intact. **Stroke/media-fade
+    changes pushed 2026-06-24, pending Publish.**
 
 ## 2026-06-23 Update
 

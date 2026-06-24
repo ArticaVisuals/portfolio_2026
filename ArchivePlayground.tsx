@@ -185,10 +185,12 @@ const NAV_EXIT_STYLE_ID = "playground-nav-exit-reveal-style"
 const DRAFT_ANIMATION_STYLE_ID = "playground-animation-style"
 const LOAD_IN_DELAY_MS = 70
 const LOAD_IN_FADE_MS = 1280
-const LOAD_IN_STAGGER_MS = 58
+const LOAD_IN_STAGGER_MS = 90
 const LOAD_IN_STAGGER_SLOTS = 15
-const LOAD_IN_LIFT_PX = 12
-const LOAD_IN_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+// Pure fade — no upward lift/bounce on first load (per design: soft fade only).
+const LOAD_IN_LIFT_PX = 0
+// Load-in uses the canonical smooth ease (interactions keep SNAPPY_EASE below).
+const LOAD_IN_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const LOAD_IN_MAX_WAIT_MS = 2600
@@ -629,6 +631,11 @@ function MediaFrame({
         if (play && typeof play.catch === "function") play.catch(() => {})
     }, [source, prefersReducedMotion])
 
+    // Stroke + media fade in TOGETHER on the canonical smooth ease — the border
+    // lives on this container, which stays at opacity 0 until the media is
+    // ready, so there are no blank stroke skeletons before the media arrives.
+    // Floor the duration so it always reads as a soft, unhurried fade.
+    const revealMs = Math.max(1000, fadeMs)
     const innerStyle: React.CSSProperties = detail
         ? {
               position: "absolute",
@@ -636,6 +643,9 @@ function MediaFrame({
               overflow: "hidden",
               boxSizing: "border-box",
               border: drawStroke ? `${strokeWidth}px solid ${strokeColor}` : undefined,
+              opacity: ready ? 1 : 0,
+              transition: `opacity ${revealMs}ms ${SMOOTH_EASE}`,
+              willChange: ready ? "auto" : "opacity",
           }
         : {
               position: "absolute",
@@ -649,9 +659,10 @@ function MediaFrame({
               overflow: "hidden",
               boxSizing: "border-box",
               border: drawStroke ? `${strokeWidth}px solid ${strokeColor}` : undefined,
+              opacity: ready ? 1 : 0,
               transform: `translate(-50%, -50%) scale(${hot ? 1 + zoom / 100 : 1})`,
-              transition: `transform 420ms ${SNAPPY_EASE}`,
-              willChange: hot ? "transform" : "auto",
+              transition: `transform 420ms ${SNAPPY_EASE}, opacity ${revealMs}ms ${SMOOTH_EASE}`,
+              willChange: hot || !ready ? "transform, opacity" : "auto",
           }
 
     const mediaStyle: React.CSSProperties = {
@@ -659,8 +670,8 @@ function MediaFrame({
         height: "100%",
         display: "block",
         objectFit: "cover",
-        opacity: ready ? 1 : 0,
-        transition: `opacity ${fadeMs}ms ${SNAPPY_EASE}`,
+        // Opacity is handled by the bordered container above so the stroke and
+        // media reveal as a single unit.
         pointerEvents: "none",
     }
 
@@ -1220,7 +1231,13 @@ export default function ArchivePlayground(props: Props) {
             const isHot = hovered === key
             const cardIsKeyboardReachable = loadInReady && isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
             const introActive = loadInReady && !loadInSettled && !prefersReducedMotion
-            const introDelayMs = introActive ? mod(gx * 37 + gy * 61 + index * 17, LOAD_IN_STAGGER_SLOTS) * Math.max(0, loadInStaggerMs) : 0
+            // Ordered radial stagger: ripples out from the center of the visible
+            // window (cinematic), not a random/hash scatter.
+            const introRing = Math.hypot(row - (visibleRows - 1) / 2, col - (visibleCols - 1) / 2)
+            const introMaxRing = Math.hypot((visibleRows - 1) / 2, (visibleCols - 1) / 2) || 1
+            const introDelayMs = introActive
+                ? Math.round((introRing / introMaxRing) * Math.max(0, loadInStaggerMs) * (LOAD_IN_STAGGER_SLOTS - 1))
+                : 0
             const introTransformMs = Math.max(620, Math.round(loadInFadeMs * 0.82))
             const cardTransition =
                 !loadInReady || prefersReducedMotion || motion.dragging
@@ -1524,7 +1541,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     parallaxStrength: { type: ControlType.Number, title: "Parallax", defaultValue: 0.06, min: 0, max: 0.2, step: 0.005, hidden: hideAdvanced },
     parallaxEase: { type: ControlType.Number, title: "Ease", defaultValue: 0.5, min: 0.05, max: 1, step: 0.05, hidden: hideAdvanced },
     parallaxWhileDragging: { type: ControlType.Boolean, title: "Drag Para", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 700, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
+    mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 1100, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
     loadInDelayMs: { type: ControlType.Number, title: "Load Hold", defaultValue: LOAD_IN_DELAY_MS, min: 0, max: 1000, step: 10, unit: "ms", hidden: hideAdvanced },
     loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 2600, step: 10, unit: "ms", hidden: hideAdvanced },
     loadInStaggerMs: { type: ControlType.Number, title: "Load Stagger", defaultValue: LOAD_IN_STAGGER_MS, min: 0, max: 180, step: 1, unit: "ms", hidden: hideAdvanced },

@@ -122,8 +122,10 @@ const CARD_SELECTOR = "[data-playground-card='true']"
 const EDITOR_LABEL_ID = "__framer-editorbar-label"
 const LOAD_IN_DELAY_MS = 70
 const LOAD_IN_FADE_MS = 1280
-const LOAD_IN_STAGGER_MS = 58
+const LOAD_IN_STAGGER_MS = 90
 const LOAD_IN_MAX_WAIT_MS = 2600
+// Canonical site smooth ease (see framer-current-state.md "motion ease canon").
+const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 
 const canUseDOM = () => typeof window !== "undefined" && typeof document !== "undefined"
 const isCanvas = () => RenderTarget.current() === RenderTarget.canvas || RenderTarget.current() === RenderTarget.thumbnail
@@ -272,16 +274,26 @@ function usePtRevealReplay(enabled: boolean, containerRef: React.RefObject<HTMLD
                 const root = containerRef.current?.querySelector<HTMLElement>(ROOT_SELECTOR)
                 if (!root) return
                 const cards = Array.from(root.querySelectorAll<HTMLElement>(CARD_SELECTOR))
-                cards.forEach((card, index) => {
+                // Soft / smooth / cinematic: pure opacity fade on the canonical
+                // smooth ease, with an ORDERED radial stagger that ripples out
+                // from the viewport center (no random scatter, no upward lift).
+                const fadeDuration = Math.max(1200, Math.round(fadeMs * 1.05))
+                const maxSpread = Math.max(1, staggerMs) * 14
+                const vw = window.innerWidth || 1
+                const vh = window.innerHeight || 1
+                const cx = vw / 2
+                const cy = vh / 2
+                const maxDist = Math.hypot(cx, cy) || 1
+                cards.forEach((card) => {
                     try {
-                        const fadeDuration = Math.max(1200, Math.round(fadeMs * 1.05))
-                        const staggerUnit = Math.max(1, staggerMs)
-                        const randomSpread = Math.max(850, staggerUnit * 20)
-                        const gridOffset = (index % 13) * Math.max(10, staggerUnit * 0.55)
+                        const r = card.getBoundingClientRect()
+                        const dx = r.left + r.width / 2 - cx
+                        const dy = r.top + r.height / 2 - cy
+                        const delay = Math.round((Math.hypot(dx, dy) / maxDist) * maxSpread)
                         const anim = card.animate([{ opacity: 0 }, { opacity: 1 }], {
                             duration: fadeDuration,
-                            delay: Math.min(Math.random() * randomSpread + gridOffset, randomSpread + staggerUnit * 8),
-                            easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+                            delay,
+                            easing: SMOOTH_EASE,
                             fill: "both",
                         })
                         anim.onfinish = () => {
