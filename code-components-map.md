@@ -95,6 +95,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 | `CaseStudyScrambleText` | `dHFQCIH` | **Misnomer — NOT a scramble.** Plain hover-color link; relabeled "Case Study Header Link" 2026-06-18. |
 | `ProfileTextRevealFix` | `LNjgKO2` | `/info` masked text reveal (DOM-patch). |
 | `Counter` | `hdPa_Gj` | `NumberCounter` — **live** project count on `/case-studies` (keep at 17). |
+| `GrainOverlay` | `MhR7Ukl` | Toggleable SVG `feTurbulence` film-grain overlay; portals a `position:fixed`, `pointer-events:none` layer to `<body>` (immune to transformed ancestors). Tunable opacity/blend/color/exposure/contrast/size/octaves + animated shimmer; `topInset` + `zIndex` for layering. Default recipe = oxblood `#501d07`, multiply, 0.10, animated 16fps (locked in the local "grain lab"). For `/play` content texture. |
 
 ### Overrides (5) — all archived no-op pass-throughs
 `Examples_1`, `Weather`, `Copyright_year`, `Copyright`, `External`. Kept because
