@@ -42,6 +42,17 @@ This is the quick source of truth for the active Framer project and local handof
     whole reveal, ordered ripple (~99→6 not-started while mid-fade ramps to 80
     over ~1.6s), 0 console errors, panel open/close intact. **Stroke/media-fade
     changes pushed 2026-06-24, pending Publish.**
+- **New `GrainOverlay` component (`MhR7Ukl`) for `/play` texture.** Subtle film
+  grain locked in via a local "grain lab" sandbox (HTML + sliders over a real
+  3200×2000 `/play` screenshot). Recipe: SVG `feTurbulence`, oxblood `#501d07`,
+  multiply, `grainOpacity` 0.10, exposure −0.58, contrast 2.35, baseFrequency
+  1.14, 4 octaves, animated 16fps. Portals a `position:fixed`,
+  `pointer-events:none` layer to `<body>` (immune to transformed ancestors;
+  mount-guarded for SSR; reduced-motion aware). **`clearNav`** (default on) starts
+  the grain at the nav's live bottom edge and tracks it during the panel
+  open/close slide, so the header stays clean with no exposed seam. Placed on
+  `/play` Desktop (instance `JSrIX4EmY`); inherited across breakpoints. Mirror:
+  `GrainOverlay.tsx`. Pending Publish.
 
 ## 2026-06-23 Update
 
