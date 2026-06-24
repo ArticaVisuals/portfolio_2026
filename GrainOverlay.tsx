@@ -15,8 +15,12 @@
 // - Editor/SSR (static renderer): renders an in-place preview filling the layer
 //   so you can see the grain on the canvas; animation is frozen there.
 // - Respects prefers-reduced-motion (freezes the shimmer).
-// - Tune `zIndex` so the grain sits over the content but under the nav / detail
-//   panel if you want those to stay clean; raise `topInset` to clear a header.
+// - `clearNav` (default on) measures the top nav bar and starts the grain just
+//   below it, so the nav header stays clean WITHOUT z-index tuning. The detail
+//   panel is already clean (its z-index sits far above this overlay). `topInset`
+//   adds extra clearance below the nav; `zIndex` remains for advanced layering.
+// - `grainOpacity` is named distinctly so it doesn't collide with Framer's
+//   built-in node opacity.
 //
 // Framer code file id: MhR7Ukl. insertUrl GrainOverlay-qwnRd2.js.
 
@@ -32,6 +36,8 @@ import {
 
 type Props = {
     enabled: boolean
+    clearNav: boolean
+    navSelector: string
     grainOpacity: number
     blendMode: string
     grainColor: string
@@ -66,6 +72,8 @@ function hexToRGB01(hex: string): [number, number, number] {
 export default function GrainOverlay(props: Props) {
     const {
         enabled = true,
+        clearNav = true,
+        navSelector = "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]",
         grainOpacity = 0.1,
         blendMode = "multiply",
         grainColor = "#501d07",
@@ -89,6 +97,61 @@ export default function GrainOverlay(props: Props) {
     // avoiding a hydration mismatch on the published site.
     const [mounted, setMounted] = useState(false)
     useEffect(() => setMounted(true), [])
+
+    // Keep the nav header clean by starting the grain at the nav's LIVE bottom
+    // edge (responsive, no z-index tuning). The grain boundary tracks the nav, so
+    // when the detail panel opens and the nav slides up & away, the boundary rides
+    // with it down to 0 (full coverage) — no exposed seam where the grain ends.
+    // Seeded with a fallback so the header is never grained on first paint.
+    const [navBottom, setNavBottom] = useState(56)
+    useEffect(() => {
+        if (!clearNav || isStatic || typeof document === "undefined") return
+        const nowMs = () =>
+            typeof performance !== "undefined" ? performance.now() : Date.now()
+        const measure = () => {
+            try {
+                const vw = window.innerWidth || 0
+                let found = false
+                let bottom = 0
+                document.querySelectorAll(navSelector).forEach((el) => {
+                    const r = (el as HTMLElement).getBoundingClientRect()
+                    // top-anchored, full-ish width = the real nav bar (top can go
+                    // negative as it slides up).
+                    if (r.top <= 8 && r.height >= 8 && r.width >= vw * 0.5) {
+                        found = true
+                        bottom = Math.max(bottom, r.bottom)
+                    }
+                })
+                if (found) {
+                    const next = Math.max(0, Math.round(bottom))
+                    setNavBottom((prev) => (prev === next ? prev : next))
+                }
+            } catch (e) {}
+        }
+        // Track the nav for a short window whenever something toggles (the nav
+        // show/hide is driven by a body class), so the boundary follows the slide.
+        let raf = 0
+        let until = 0
+        const frame = (t: number) => {
+            measure()
+            raf = t < until ? window.requestAnimationFrame(frame) : 0
+        }
+        const startBurst = () => {
+            until = nowMs() + 820 // covers the ~560ms nav transition + buffer
+            if (!raf) raf = window.requestAnimationFrame(frame)
+        }
+        measure()
+        const timers = [150, 500, 1200].map((d) => window.setTimeout(measure, d))
+        window.addEventListener("resize", measure)
+        const mo = new MutationObserver(startBurst)
+        mo.observe(document.body, { attributes: true, attributeFilter: ["class"] })
+        return () => {
+            timers.forEach((t) => window.clearTimeout(t))
+            window.removeEventListener("resize", measure)
+            mo.disconnect()
+            if (raf) window.cancelAnimationFrame(raf)
+        }
+    }, [clearNav, navSelector, isStatic])
 
     useEffect(() => {
         if (typeof window === "undefined" || !window.matchMedia) return
@@ -120,6 +183,8 @@ export default function GrainOverlay(props: Props) {
     if (!enabled) return null
 
     const [cr, cg, cb] = hexToRGB01(grainColor)
+    // Grain starts below the nav (when clearNav) plus any extra manual inset.
+    const grainTop = (clearNav ? Math.max(0, navBottom) : 0) + Math.max(0, topInset)
 
     const grainSvg = (
         <svg
@@ -198,7 +263,7 @@ export default function GrainOverlay(props: Props) {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                top: Math.max(0, topInset),
+                top: grainTop,
                 pointerEvents: "none",
                 opacity: grainOpacity,
                 mixBlendMode: blendMode as CSSProperties["mixBlendMode"],
@@ -219,6 +284,20 @@ addPropertyControls(GrainOverlay, {
         defaultValue: true,
         enabledTitle: "On",
         disabledTitle: "Off",
+    },
+    clearNav: {
+        type: ControlType.Boolean,
+        title: "Clear Nav",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+    },
+    navSelector: {
+        type: ControlType.String,
+        title: "Nav Selector",
+        defaultValue:
+            "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]",
+        hidden: ({ clearNav }) => !clearNav,
     },
     grainOpacity: {
         type: ControlType.Number,
@@ -306,7 +385,7 @@ addPropertyControls(GrainOverlay, {
     },
     topInset: {
         type: ControlType.Number,
-        title: "Top Inset",
+        title: "Extra Inset",
         defaultValue: 0,
         min: 0,
         max: 400,
