@@ -25,7 +25,8 @@
 // - Type is the GT Standard family stack (CUSTOMV2 custom font): quote = GT
 //   Standard L Regular (/Heading 2 minus capitalize), name = GT Standard Trial
 //   L Bd (/Heading 4), role = GT Standard L Regular, label = GT Standard Mono
-//   (/Heading 5). Colors default to /Off-Black (#141414) and /Light Gray (#979797).
+//   (/Heading 5). Colors default to /Off-Black (#141414) for quote/name/eyebrow
+//   and Text Gray (#6E6E6E, WCAG-AA on cream) for role/counter.
 //
 // Framer code file id: tpDdaaJ. Instance fJKupkZPa lives on /case-studies/airpods
 // (arrows/counter off one-off). See code-components-map.md + framer-current-state.md.
@@ -161,9 +162,9 @@ export default function TestimonialLineReveal(props: Props) {
         ease = SITE_EASE,
         quoteColor = "#141414",
         nameColor = "#141414",
-        roleColor = "#979797",
+        roleColor = "#6E6E6E",
         labelColor = "#141414",
-        counterColor = "#979797",
+        counterColor = "#6E6E6E",
         arrowColor = "#141414",
         arrowBorderColor = "rgba(20,20,20,0.18)",
         backgroundColor = "rgba(0,0,0,0)",
@@ -433,8 +434,9 @@ export default function TestimonialLineReveal(props: Props) {
             ref={sectionRef}
             onKeyDown={onKeyDown}
             tabIndex={showArrowRow ? 0 : -1}
-            aria-roledescription="carousel"
-            aria-label="Testimonials"
+            aria-roledescription={canNavigate ? "carousel" : undefined}
+            role={canNavigate ? undefined : "figure"}
+            aria-label={canNavigate ? "Testimonials" : "Testimonial"}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={{
@@ -592,22 +594,33 @@ export default function TestimonialLineReveal(props: Props) {
                         aria-expanded={expanded}
                         onClick={() => setExpanded((e) => !e)}
                         style={{
-                            ...labelStyle,
-                            marginTop: Math.round(rhythm * 0.45),
+                            // 44px min hit area (Apple HIG) without bloating the
+                            // visible label — the underline sits on the inner span.
+                            minHeight: 44,
+                            marginTop: Math.round(rhythm * 0.2),
                             display: "inline-flex",
                             alignItems: "center",
-                            gap: 6,
-                            padding: "2px 0",
+                            padding: 0,
                             border: "none",
                             background: "transparent",
-                            color: labelColor,
                             cursor: "pointer",
-                            borderBottom: `1px solid ${arrowBorderColor}`,
                         }}
                     >
-                        {expanded ? "Read less" : "Read more"}
-                        <span aria-hidden="true" style={{ fontFamily: FONT_DISPLAY }}>
-                            {expanded ? "↑" : "↓"}
+                        <span
+                            style={{
+                                ...labelStyle,
+                                color: labelColor,
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: 6,
+                                paddingBottom: 3,
+                                borderBottom: `1px solid ${arrowBorderColor}`,
+                            }}
+                        >
+                            {expanded ? "Read less" : "Read more"}
+                            <span aria-hidden="true" style={{ fontFamily: FONT_DISPLAY }}>
+                                {expanded ? "↑" : "↓"}
+                            </span>
                         </span>
                     </button>
                 )}
@@ -974,7 +987,7 @@ addPropertyControls(TestimonialLineReveal, {
     roleColor: {
         type: ControlType.Color,
         title: "Role",
-        defaultValue: "#979797",
+        defaultValue: "#6E6E6E",
         hidden: hideUnlessAdvanced,
     },
     labelColor: {
@@ -986,7 +999,7 @@ addPropertyControls(TestimonialLineReveal, {
     counterColor: {
         type: ControlType.Color,
         title: "Counter",
-        defaultValue: "#979797",
+        defaultValue: "#6E6E6E",
         hidden: hideUnlessAdvanced,
     },
     arrowColor: {

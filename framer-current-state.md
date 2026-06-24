@@ -38,6 +38,35 @@ This is the quick source of truth for the active Framer project and local handof
 - **`DoubleStackGalleryGrid`** mirror added (new case-study gallery layout: two
   stacked media left + one tall right). Confirm its Framer codeFileId on import.
 
+### A11y audit (Gaia, Simon & Schuster, AirPods, Peak Energy — published, 3 breakpoints)
+
+Method: Playwright (system Chrome) at 1440/810/390 + axe-core (WCAG 2.1 AA) + DOM
+metrics (tap targets, overflow, headings, alt, color). No horizontal overflow, no
+broken layouts, no missing `<img alt>`, `lang=en`, no console errors anywhere.
+
+**Fixed 2026-06-23:**
+- **New `/Text Gray` color token = `rgb(110,110,110)` (#6E6E6E, ~4.6:1 on `/Cream`).**
+  Applied to the **`/Paragraph Regular`** text style (the 18px case-study section
+  body copy), which was `/Light Gray #979797` = **2.68:1 (fails AA)** across all case
+  studies. The dark 22px `/Body` intro copy was left as-is (already passes). Done via
+  `manageTextStyle` color-only update (custom-font gotcha only blocks font changes).
+- **`TestimonialLineReveal`**: role/counter default → `#6E6E6E`; Read-more button now
+  44px min hit area (Apple HIG); `aria-roledescription="carousel"` dropped for a
+  single static quote (now `role=figure`). AirPods instance role/counter → Text Gray.
+
+**Outstanding (Framer-side, design-system decisions):**
+- **No `<h1>` on any page** — hero title is `/Heading 2` (h2), nav wordmark is h5;
+  order skips h1. Make each case-study hero title an h1.
+- **Sub-44px tap targets**: nav links (~13px tall), footer social links, carousel
+  ‹ › arrows (30×30), scroll-to-top (16px tall). Pad hit areas to ≥44.
+- **`link-name`**: the logo/icon link (empty 19×27 `<a>`) has no accessible name on
+  Gaia + Simon — add `aria-label`.
+- **Peak Energy hero text** runs words together ("GM,Announcing", "newera") because
+  the line breaks ate the spaces — fix so SR/SEO read "new era", "GM, Announcing".
+- **AirPods testimonial quote truncates** when set via MCP XML (~310 char cap, cuts at
+  "…high quality work."). Paste the full Nadia quote in the Testimonials panel.
+- OG image (see above).
+
 ---
 
 ## Current Framer Structure
