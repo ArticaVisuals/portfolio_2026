@@ -83,7 +83,7 @@ lightbox and the ‹ › arrows cycle the whole gallery. See `framer-current-sta
 **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED
 `@hash`. Bump that hash in `CaseStudyControllers.tsx` whenever this file is
 republished, or controller pages keep bundling the old lightbox. Current
-published lightbox: `CaseStudyLightbox-yOYpGN.js@nVgKAFqnbX7espgnGQ7p`.
+published lightbox: `CaseStudyLightbox-yOYpGN.js@Cphhu4ZJ1CxHLPy7kC6e`.
 
 ---
 
@@ -155,15 +155,16 @@ toggles + key props (lightbox videos, video lookahead, link-repair CMS
 collection/title field) are exposed; the rest use each sub-controller's
 defaults. Each sub-controller keeps its own singleton guard, so this is safe to
 run alongside leftover standalone instances during migration — only one of each
-ever activates. **Status (2026-06-10):** deployed on 8 pages — AirPods, Simon &
-Schuster, National Park Cards, Yomo, Karuna, Gaia, Weaponized Innocence, TYPLDN —
-which now use ONE `CaseStudyControllers` instance instead of three separate
-mounts. The other 7 (Motion Connect 2025, Seek Truth, Cellular Symphony, Wolff
-Olins x ArtCenter, Independent Lens, Neon Lights, Aspen Valley Landscaping) still
-carry the three separate instances (MCP returned empty page XML for them during
-the migration pass). Both paths get lightbox fixes: wrapper pages via the pinned
-import (bump the `@hash` on republish), separate-instance pages via the live code
-file directly.
+ever activates. **Status (2026-06-24):** deployed on 9 pages — AirPods, Simon &
+Schuster, Motion Connect 2025, National Park Cards, Yomo, Karuna, Gaia,
+Weaponized Innocence, TYPLDN — which now use ONE `CaseStudyControllers`
+instance instead of three separate mounts. Seek Truth, Cellular Symphony, Wolff
+Olins x ArtCenter, and Independent Lens still need verification/migration if
+they are meant to use the consolidated wrapper. Removed CMS-era pages Neon
+Lights and Aspen Valley Landscaping should not be restored just for controller
+parity. Both paths get lightbox fixes: wrapper pages via the pinned import (bump
+the `@hash` on republish), separate-instance pages via the live code file
+directly.
 
 ## Placement & rollout (historical 15-page pass, 2026-06-06)
 

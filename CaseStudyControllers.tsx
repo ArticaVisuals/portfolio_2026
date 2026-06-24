@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 // Framer resolves these module URLs to the project's other code components at
 // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
 // @ts-ignore
-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@PzBU0qbq6VXZsBBhxKjb"
+import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@Cphhu4ZJ1CxHLPy7kC6e"
 // @ts-ignore
 import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
 // @ts-ignore

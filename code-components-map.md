@@ -1,6 +1,6 @@
 # Custom Code Map — Portfolio 2026 (handoff reference)
 
-Last updated: 2026-06-23 (testimonial component + responsive pass). Plain-English map of every custom
+Last updated: 2026-06-24 (Motion Connect controller consolidation). Plain-English map of every custom
 Framer **code component** so a new dev can orient fast. For chronological history
 and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
@@ -63,7 +63,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 ### Case-study page controllers (invisible)
 | Component | id | What it does |
 |---|---|---|
-| `CaseStudyControllers` | `z13WRHS` | **Preferred** single mount that bundles the three below. Lightbox import is PINNED `@hash` — bump it when the lightbox is republished. |
+| `CaseStudyControllers` | `z13WRHS` | **Preferred** single mount that bundles the three below. Lightbox import is PINNED `@hash` — bump it when the lightbox is republished. Mounted on Motion Connect as `eHJ5dzLyY` after the June 24 cleanup. |
 | `CaseStudyLightbox` | `F2K4_SV` | Cargo-style zoom + nav-click guard. Opt out by naming a wrapper `No Lightbox`. |
 | `CaseStudyVideoManager` | `rGMwETR` | Pauses off-screen autoplay videos. |
 | `CaseStudyLinkRepair` | `y6ny5x4` | Repairs unresolved CMS card links + mobile CTA footer layout. (CMS scraper.) |

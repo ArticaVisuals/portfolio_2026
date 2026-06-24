@@ -1,13 +1,26 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 23, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
+**Last audited:** June 24, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
 
 ---
+
+## 2026-06-24 Update
+
+- **Motion Connect controller consolidation.** `/case-studies/motion-connect-2025`
+  (`ZYKsxrq7a`) now uses one hidden `CaseStudyControllers` instance on Desktop
+  (`eHJ5dzLyY`) before `PageTransition` (`rVW2qgeah`) and `Main` (`cnnVXlYFT`).
+  Removed the older standalone `CaseStudyLinkRepair` (`QaiMmRLMA`),
+  `CaseStudyLightbox` (`wL6vLw1rT`), `CaseStudyVideoManager` (`bwRzDn0Jf`), and
+  the ready-only `CaseStudyWorkInProgressGate` (`EM3WDlf0K`) from that page.
+- **Controller import pin refreshed.** `CaseStudyControllers.tsx` now imports the
+  current `CaseStudyLightbox` export
+  `CaseStudyLightbox-yOYpGN.js@Cphhu4ZJ1CxHLPy7kC6e`; live Framer typecheck
+  passed after the code-file update.
 
 ## 2026-06-23 Update
 
@@ -174,7 +187,7 @@ Framer code components relevant to this handoff include:
 | `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. **As of June 10 it no longer ships its own lightbox** — gallery slides open in the page-level `CaseStudyLightbox` (see "Reusable Image Carousel" below). |
 | `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS/default selected projects with direct `/case-studies/{slug}` anchors, image/video media fallback, CMS-driven thumbnail strokes, and Category 1/2/3 tag pills. |
 | `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; use `CaseStudyControllers.tsx` for new bespoke page controller mounts. |
-| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **June 10 updates:** (1) opt media out of the lightbox by naming any wrapping frame `No Lightbox`/`NoLightbox` (force-merged into every instance's Exclude rule, so no per-instance setup; wrap the whole media, not the leaf img); (2) the lightbox-suppression logic is a single `window`-capture click listener (fires before the base engine's `document`-capture listener) — native links navigate (`stopImmediatePropagation`, no `preventDefault`), buttons/scroll-to-top keep their own React `onClick` (`preventDefault` only), other excluded regions are fully suppressed; (3) gallery slides open in this lightbox (the carousel's own overlay was removed); (4) **nav-overlay click fix** — clicking a nav item that physically overlays media now navigates instead of opening the lightbox, handled by the event guard ALONE. All nav **CSS mutation was removed** (`z-index`, `pointer-events`, `isolation:isolate`, inline style mutation, the `data-case-study-nav-layer` stylesheet): it never fixed the click (the base engine reaches media *under* the nav via `elementsFromPoint`) and it broke the nav hover/flip-text reset. **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED `@hash` — bump that hash whenever this file is republished, or controller pages keep loading the old lightbox. Current published version: `@nVgKAFqnbX7espgnGQ7p`. |
+| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **June 10 updates:** (1) opt media out of the lightbox by naming any wrapping frame `No Lightbox`/`NoLightbox` (force-merged into every instance's Exclude rule, so no per-instance setup; wrap the whole media, not the leaf img); (2) the lightbox-suppression logic is a single `window`-capture click listener (fires before the base engine's `document`-capture listener) — native links navigate (`stopImmediatePropagation`, no `preventDefault`), buttons/scroll-to-top keep their own React `onClick` (`preventDefault` only), other excluded regions are fully suppressed; (3) gallery slides open in this lightbox (the carousel's own overlay was removed); (4) **nav-overlay click fix** — clicking a nav item that physically overlays media now navigates instead of opening the lightbox, handled by the event guard ALONE. All nav **CSS mutation was removed** (`z-index`, `pointer-events`, `isolation:isolate`, inline style mutation, the `data-case-study-nav-layer` stylesheet): it never fixed the click (the base engine reaches media *under* the nav via `elementsFromPoint`) and it broke the nav hover/flip-text reset. **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED `@hash` — bump that hash whenever this file is republished, or controller pages keep loading the old lightbox. Current published version: `@Cphhu4ZJ1CxHLPy7kC6e`. |
 | `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study autoplay video subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. |
 | `CaseStudyControllers.tsx` | `z13WRHS` | Active hidden wrapper for the useful bespoke case-study controllers: lightbox, video manager, and link repair. Mounted on accessible bespoke pages where the three separate controller instances were consolidated. |
 | `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Case-study mobile descriptor layout helper. Mounted on bespoke case-study pages that need the compact descriptor rhythm, including the Peak Energy WIP shell. |
@@ -186,7 +199,7 @@ June 10 cleanup: the former public editorbar guard was removed from known mounte
 
 June 11 post-publish QA note: Framer's own `#__framer-editorbar-container` / `#__framer-editorbar-label` overlay still appeared on anonymous public routes after publishing the boot identity update. `PageTransition.tsx` now suppresses that Framer-injected editorbar in its globally installed CSS, instead of recreating the removed guard component.
 
-June 10 controller cleanup: the accessible bespoke case-study pages AirPods, Simon & Schuster, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, and TYPLDN now use one hidden `CaseStudyControllers.tsx` (`z13WRHS`) instance instead of separate `CaseStudyLinkRepair.tsx`, `CaseStudyLightbox.tsx`, and `CaseStudyVideoManager.tsx` mounts. MCP returned empty XML for Motion Connect 2025, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Neon Lights, and Aspen Valley Landscaping during this pass, so those pages were not modified.
+June 10/24 controller cleanup: the bespoke case-study pages AirPods, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, and TYPLDN now use one hidden `CaseStudyControllers.tsx` (`z13WRHS`) instance instead of separate `CaseStudyLinkRepair.tsx`, `CaseStudyLightbox.tsx`, and `CaseStudyVideoManager.tsx` mounts. Motion Connect's consolidated instance is `eHJ5dzLyY`; its old standalone helper layers and ready-only WIP gate were deleted on June 24. Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, and Independent Lens still need verification/migration if they should use the wrapper.
 
 June 10 scroll-to-top fix: `ScrollToTopButton.tsx` (`gh4ngZN`) did nothing on published case-study pages because the old `CaseStudyLightbox` click guard (`document`-capture `stopImmediatePropagation` on every excluded element, `button` included) killed the button's own React `onClick` before it ran. Fixed by the guard rewrite noted above (window-capture + preventDefault for interactive controls). Verified live on Motion Connect 2025 (scrollY → 0). This applies to every case-study page that carries the lightbox/controllers instance, so the button can be rolled out site-wide without per-page work.
 
