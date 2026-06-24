@@ -32,7 +32,7 @@ import {
 
 type Props = {
     enabled: boolean
-    opacity: number
+    grainOpacity: number
     blendMode: string
     grainColor: string
     chromatic: boolean
@@ -66,7 +66,7 @@ function hexToRGB01(hex: string): [number, number, number] {
 export default function GrainOverlay(props: Props) {
     const {
         enabled = true,
-        opacity = 0.1,
+        grainOpacity = 0.1,
         blendMode = "multiply",
         grainColor = "#501d07",
         chromatic = false,
@@ -176,7 +176,7 @@ export default function GrainOverlay(props: Props) {
                     minWidth: 80,
                     minHeight: 80,
                     overflow: "hidden",
-                    opacity,
+                    opacity: grainOpacity,
                     mixBlendMode: blendMode as CSSProperties["mixBlendMode"],
                     pointerEvents: "none",
                 }}
@@ -200,7 +200,7 @@ export default function GrainOverlay(props: Props) {
                 bottom: 0,
                 top: Math.max(0, topInset),
                 pointerEvents: "none",
-                opacity,
+                opacity: grainOpacity,
                 mixBlendMode: blendMode as CSSProperties["mixBlendMode"],
                 zIndex,
                 overflow: "hidden",
@@ -220,9 +220,9 @@ addPropertyControls(GrainOverlay, {
         enabledTitle: "On",
         disabledTitle: "Off",
     },
-    opacity: {
+    grainOpacity: {
         type: ControlType.Number,
-        title: "Opacity",
+        title: "Grain Opacity",
         defaultValue: 0.1,
         min: 0,
         max: 1,
