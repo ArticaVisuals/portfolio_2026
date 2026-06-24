@@ -85,6 +85,10 @@ export default function GrainOverlay(props: Props) {
     const filterId = useId().replace(/:/g, "")
     const turbRef = useRef<SVGFETurbulenceElement>(null)
     const [reducedMotion, setReducedMotion] = useState(false)
+    // Only portal after mount so SSR and the first client render agree (null),
+    // avoiding a hydration mismatch on the published site.
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
 
     useEffect(() => {
         if (typeof window === "undefined" || !window.matchMedia) return
@@ -159,9 +163,9 @@ export default function GrainOverlay(props: Props) {
         </svg>
     )
 
-    // Editor / SSR: show the grain in place (filling the layer) so it's visible
-    // on the canvas. Animation is frozen by the static guard above.
-    if (isStatic || typeof document === "undefined") {
+    // Editor canvas: show the grain in place (filling the layer) so it's visible
+    // while designing. Animation is frozen by the static guard above.
+    if (isStatic) {
         return (
             <div
                 style={{
@@ -181,6 +185,9 @@ export default function GrainOverlay(props: Props) {
             </div>
         )
     }
+
+    // SSR + first client render: nothing (keeps hydration consistent).
+    if (!mounted || typeof document === "undefined") return null
 
     // Runtime: full-viewport fixed layer portaled to <body>.
     return createPortal(
