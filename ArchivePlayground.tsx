@@ -1903,16 +1903,16 @@ export default function ArchivePlayground(props: Props) {
                                 background: ruleColor,
                                 margin: "clamp(28px, 4vw, 54px) 0 clamp(12px, 1.5vw, 18px)",
                                 transformOrigin: "left center",
-                                animation: panelOpen ? "playgroundRuleDraw 700ms cubic-bezier(0.16, 1, 0.3, 1) both" : undefined,
+                                animation: panelOpen ? `playgroundRuleDraw 700ms ${SMOOTH_EASE} both` : undefined,
                             }}
                         />
 
                         <div style={{ display: "grid", gridTemplateColumns: stackPanelText || !panelHasDescription ? "minmax(0, 1fr)" : "minmax(0, 1.08fr) minmax(0, .92fr)", gap: stackPanelText ? 18 : 28, alignItems: "start", width: "100%" }}>
-                            <div style={{ minWidth: 0, overflow: "hidden" }}>
+                            <div style={{ minWidth: 0, maxWidth: "100%" }}>
                                 {panelItem.category && (
                                     <div style={{ fontFamily: MONO, fontSize: 11, lineHeight: 1.2, letterSpacing: ".04em", textTransform: "uppercase", color: labelColor, marginBottom: 12 }}>{panelItem.category}</div>
                                 )}
-                                <h2 id={panelTitleId} style={{ margin: 0, fontFamily: DISPLAY, fontSize: "clamp(24px, 2.2vw, 34px)", lineHeight: 1.06, fontWeight: 500, letterSpacing: 0, color: textColor, overflowWrap: "anywhere" }}>{panelItem.title}</h2>
+                                <h2 id={panelTitleId} style={{ margin: 0, maxWidth: "100%", fontFamily: DISPLAY, fontSize: "clamp(24px, 2.2vw, 34px)", lineHeight: 1.08, fontWeight: 500, letterSpacing: 0, color: textColor, whiteSpace: "normal", wordBreak: "normal", overflowWrap: "break-word", hyphens: "auto" }}>{panelItem.title}</h2>
                             </div>
                             {panelHasDescription && (
                                 <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: DISPLAY, fontSize: 16, lineHeight: 1.45, letterSpacing: 0, color: mutedTextColor, overflowWrap: "break-word" }}>{panelItem.description}</p>
