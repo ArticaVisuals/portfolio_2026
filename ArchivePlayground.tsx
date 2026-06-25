@@ -1018,9 +1018,8 @@ function MediaFrame({
         if (play && typeof play.catch === "function") play.catch(() => {})
     }, [source, prefersReducedMotion])
 
-    // Stroke + media fade in TOGETHER on the canonical smooth ease — the border
-    // lives on this container, which stays at opacity 0 until the media is
-    // ready, so there are no blank stroke skeletons before the media arrives.
+    // Stroke + media fade in together. The stroke is a separate inset overlay
+    // above the media so subpixel clipping at video/image edges cannot crop it.
     const revealMs = Math.max(1000, fadeMs)
     const innerStyle: React.CSSProperties = detail
         ? {
@@ -1028,7 +1027,6 @@ function MediaFrame({
               inset: 0,
               overflow: "hidden",
               boxSizing: "border-box",
-              border: drawStroke ? `${strokeWidth}px solid ${strokeColor}` : undefined,
               opacity: ready ? 1 : 0,
               transition: `opacity ${revealMs}ms ${SMOOTH_EASE}`,
               willChange: ready ? "auto" : "opacity",
@@ -1044,7 +1042,6 @@ function MediaFrame({
               aspectRatio: `${item.width} / ${item.height}`,
               overflow: "hidden",
               boxSizing: "border-box",
-              border: drawStroke ? `${strokeWidth}px solid ${strokeColor}` : undefined,
               opacity: ready ? 1 : 0,
               transform: `translate(-50%, -50%) scale(${hot ? 1 + zoom / 100 : 1})`,
               transition: `transform 420ms ${SNAPPY_EASE}, opacity ${revealMs}ms ${SMOOTH_EASE}`,
@@ -1052,12 +1049,27 @@ function MediaFrame({
           }
 
     const mediaStyle: React.CSSProperties = {
+        position: "absolute",
+        inset: 0,
         width: "100%",
         height: "100%",
         display: "block",
         objectFit: "cover",
         pointerEvents: "none",
     }
+
+    const strokeOverlay = drawStroke ? (
+        <span
+            aria-hidden="true"
+            style={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 2,
+                pointerEvents: "none",
+                boxShadow: `inset 0 0 0 ${strokeWidth}px ${strokeColor}`,
+            }}
+        />
+    ) : null
 
     return (
         <div style={innerStyle}>
@@ -1101,6 +1113,7 @@ function MediaFrame({
                     style={mediaStyle}
                 />
             )}
+            {strokeOverlay}
         </div>
     )
 }
