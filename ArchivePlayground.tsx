@@ -2,7 +2,6 @@ import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 type Kind = "image" | "video" | "gif"
-type RawItem = [string, string, Kind, number, number, string, string?]
 type ImageValue = { src?: string; srcSet?: string; alt?: string } | string | null | undefined
 type ManagedItem = {
     id?: string
@@ -32,9 +31,24 @@ type Item = {
     stroke?: boolean
 }
 
+// ---- CMS reader types (mirrors the proven OtherProjectCardRestored pattern) ----
+type CMSFieldValue = { value?: unknown }
+type CMSRow = { data?: Record<string, CMSFieldValue | unknown>; slug?: unknown; [key: string]: unknown }
+type CMSCollection = { scanItems: () => Promise<CMSRow[]> }
+type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSCollection } }
+type CMSModule = {
+    a?: CMSCollectionExport
+    r?: CMSCollectionExport | (() => unknown)
+    t?: () => unknown
+    default?: CMSCollectionExport | (() => unknown)
+    [key: string]: unknown
+}
+
 type Props = {
     archiveItems?: ManagedItem[]
     items?: ManagedItem[]
+    collectionId?: string
+    collectionModuleUrl?: string
     advancedControls?: boolean
     backgroundColor?: string
     panelColor?: string
@@ -68,6 +82,7 @@ type Props = {
     parallaxEase?: number
     parallaxWhileDragging?: boolean
     mediaFadeMs?: number
+    maxConcurrentVideos?: number
     loadInDelayMs?: number
     loadInFadeMs?: number
     loadInStaggerMs?: number
@@ -108,57 +123,6 @@ type InternalState = {
     lastFrameT: number
 }
 
-const RAW_ITEMS: RawItem[] = [
-    ["001", "Untitled 2", "image", 1219, 1566, "https://freight.cargo.site/t/original/i/P2188739791288083579115147613717/Untitled-2.png"],
-    ["002", "RootGrwoth", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/X2649446305161701741114404623893/RootGrwoth.jpg", "https://freight.cargo.site/t/original/i/W2649446300365548281949921203733/RootGrwoth.mp4"],
-    ["003", "AirPods Pro 3 Hero", "image", 1306, 1306, "https://freight.cargo.site/t/original/i/B2558373790970332005928259540501/AirPods-Pro-3-Hero.jpg"],
-    ["004", "Untitled 1", "image", 3000, 2000, "https://freight.cargo.site/t/original/i/C2283847322832324823936936433173/Untitled-1.png"],
-    ["005", "Untitled 1", "image", 1588, 1059, "https://freight.cargo.site/t/original/i/F2250541485363637417331537466901/Untitled-1.png"],
-    ["006", "VisArt Com FA24 Poster Mockup", "image", 2986, 4478, "https://freight.cargo.site/t/original/i/G2196608913004046629699366147605/VisArt-Com-FA24-Poster-Mockup.jpg"],
-    ["007", "AVL Truck Mockup Min 1", "image", 4000, 2250, "https://freight.cargo.site/t/original/i/C2250533449076475193912795059733/AVL-Truck-Mockup-min-1.png"],
-    ["008", "IMG 2522", "image", 2316, 1510, "https://freight.cargo.site/t/original/i/Y1655438473919868746064881505813/IMG_2522.png"],
-    ["009", "Christmas Card 2020 Copy", "image", 2000, 1333, "https://freight.cargo.site/t/original/i/X2283837639287810306402653820437/Christmas-Card-2020-copy.png"],
-    ["010", "IMG 4680", "image", 1600, 998, "https://freight.cargo.site/t/original/i/N2408686988067186379802246632981/IMG_4680.PNG"],
-    ["011", "MD2 WK03 RotatingCube MH", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/R2626186471525519680749229561365/MD2_WK03_RotatingCube_MH.jpg", "https://freight.cargo.site/t/original/i/H2626186461822532297978005411349/MD2_WK03_RotatingCube_MH.mp4"],
-    ["012", "Original A4a05ca89b58af473aa281505ed92b89", "image", 1024, 1024, "https://freight.cargo.site/t/original/i/U2251593566395153013662831334933/original-a4a05ca89b58af473aa281505ed92b89.png"],
-    ["013", "Il 794xN.4695296984 Lxnq", "image", 794, 529, "https://freight.cargo.site/t/original/i/K2251597109295266554393024255509/il_794xN.4695296984_lxnq.jpg"],
-    ["014", "Flower", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/N2649449445627646569797019489813/Flower.jpg", "https://freight.cargo.site/t/original/i/D2649449436570295229605629646357/Flower.mp4"],
-    ["015", "Gazelle Final", "image", 1012, 1800, "https://freight.cargo.site/t/original/i/G2283853859952596176980419008021/Gazelle-Final.png"],
-    ["016", "DSC9572 1", "image", 1062, 739, "https://freight.cargo.site/t/original/i/Y2250529952735943695225510417941/_DSC9572-1.png"],
-    ["017", "Independent Lens Poster Mockup", "image", 3227, 4760, "https://freight.cargo.site/t/original/i/M1547656418279722570375177164309/Independent-Lens-Poster-Mockup.png"],
-    ["018", "AB Bag", "image", 793, 818, "https://freight.cargo.site/t/original/i/B2251633459471460770528832509461/AB-Bag.png"],
-    ["019", "Seek Truth Thumbnail", "image", 4800, 3784, "https://freight.cargo.site/t/original/i/N1547679404841299796142284068373/Seek-Truth-Thumbnail.png"],
-    ["020", "Teacaps Billboard Mockup", "image", 1800, 1354, "https://freight.cargo.site/t/original/i/G2283816417286430939470125848085/Teacaps-billboard-mockup.jpg"],
-    ["021", "MicahHoang 3 Final Online Video Cutter.Com", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/X1525933261254490830714347705877/MicahHoang_3_Final-online-video-cutter.jpg", "https://freight.cargo.site/t/original/i/S1525933248544684163928466642453/MicahHoang_3_Final-online-video-cutter.com.mp4"],
-    ["022", "DevWars Ranking System", "image", 2400, 1801, "https://freight.cargo.site/t/original/i/T2283821659445268318103084979733/DevWars-Ranking-System.png"],
-    ["023", "MicahHoangMotionFinalFinal 1 Ezgif.Com Video To Gif Converter", "gif", 600, 338, "https://freight.cargo.site/t/original/i/I2244538183317969342209712182805/MicahHoangMotionFinalFinal_1-ezgif.com-video-to-gif-converter.gif"],
-    ["024", "DSC03254", "image", 5299, 3693, "https://freight.cargo.site/t/original/i/Q2244531664958036712128843601429/DSC03254.png"],
-    ["025", "Untitled 1", "image", 1598, 2000, "https://freight.cargo.site/t/original/i/U2244551962150348687706710857237/Untitled-1.png"],
-    ["026", "HMCTEmailBlast", "gif", 1920, 1080, "https://freight.cargo.site/t/original/i/G2250544389785045078826729854485/HMCTEmailBlast.gif"],
-    ["027", "IMG 5149 Edit 2", "image", 3648, 2432, "https://freight.cargo.site/t/original/i/N2752991907198854043636255151637/IMG_5149-Edit-2.jpg"],
-    ["028", "Process Book Mockup 1", "image", 933, 700, "https://freight.cargo.site/t/original/i/P2244537370775786383451382601237/Process-Book-Mockup-1.png"],
-    ["029", "Slide 1", "video", 1920, 1920, "https://freight.cargo.site/t/original/i/O2292210683679695964626181412373/Slide-1.jpg", "https://freight.cargo.site/t/original/i/F2292210670065998838228532319765/Slide-1.mp4"],
-    ["030", "TrackBeast First Look", "image", 2401, 1801, "https://freight.cargo.site/t/original/i/O2283835809112543777383199790613/TrackBeast-First-Look.png"],
-    ["031", "Slide 1", "video", 1080, 1080, "https://freight.cargo.site/t/original/i/F2335206701381019332535229077013/Slide-1.jpg", "https://freight.cargo.site/t/original/i/P2335206683026508979194225219093/Slide-1.mp4"],
-    ["032", "Cellular Symphony Apple Devices HD Best Quality", "video", 1920, 1080, "https://freight.cargo.site/t/original/i/X1779235248420239436213479790101/cellular-symphony-Apple-Devices-HD-Best-Quality.jpg", "https://freight.cargo.site/t/original/i/K1779235211065582686951637767701/cellular-symphony-Apple-Devices-HD-Best-Quality.m4v"],
-    ["033", "Il 1588xN.4553485979 A78d", "image", 1588, 1196, "https://freight.cargo.site/t/original/i/S2250538151022412373961535116821/il_1588xN.4553485979_a78d.jpg"],
-]
-
-const AUTO_STROKE_MATCHERS = [
-    "B2558373790970332005928259540501",
-    "G2196608913004046629699366147605",
-    "Y1655438473919868746064881505813",
-    "U2251593566395153013662831334933",
-    "G2283853859952596176980419008021",
-    "B2251633459471460770528832509461",
-    "N1547679404841299796142284068373",
-    "S1525933248544684163928466642453",
-    "X1525933261254490830714347705877",
-    "Q2244531664958036712128843601429",
-    "U2244551962150348687706710857237",
-    "S2250538151022412373961535116821",
-]
-
 const CREAM = "rgb(247, 245, 240)"
 const BLACK = "rgb(20, 20, 20)"
 const MUTED = "rgb(85, 85, 85)"
@@ -194,6 +158,23 @@ const LOAD_IN_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const LOAD_IN_MAX_WAIT_MS = 2600
+
+// ---- Play Archive CMS collection ----
+// /play renders from this collection (Framer-hosted media, publishes reliably).
+// The Array panel below is only a canvas/editor fallback. No Cargo in code.
+const DEFAULT_COLLECTION_ID = "EySMRbI2N"
+const CMS_FIELDS = {
+    title: "XwW7XD5jI",
+    order: "c2qQhVGwP",
+    image: "uqRtTdRM1",
+    video: "KWCosE6Ef",
+    stroke: "vq9I0excy",
+    content: "vxCKd8ka_",
+} as const
+const LIVE_SCAN_PATHS = ["/play", "/"]
+const cmsModuleUrlCache = new Map<string, string>()
+const cmsItemsCache = new Map<string, Item[]>()
+const cmsItemsPromiseCache = new Map<string, Promise<Item[]>>()
 
 const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value))
@@ -252,35 +233,305 @@ function stableHash(value: string) {
     return (hash >>> 0).toString(36)
 }
 
-const DEFAULT_CONTENT_ITEMS: ManagedItem[] = RAW_ITEMS.map(([order, title, kind, width, height, thumbnail, video = ""]) => ({
-    id: order,
-    title,
-    category: defaultCategory(kind),
-    description: `${width} x ${height} ${kind.toUpperCase()} from the archive.`,
-    mediaType: kind,
-    image: { src: thumbnail },
-    poster: { src: thumbnail },
-    video,
-    width,
-    height,
-    stroke: "auto",
-}))
+// ---- CMS reading helpers (faithful port of the working scraper) ----
+function escapeRegExp(value: string) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
 
+function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fieldId: string) {
+    const field = data?.[fieldId]
+    if (field && typeof field === "object" && "value" in field) return (field as CMSFieldValue).value
+    return field
+}
+
+function normalizeText(value: unknown) {
+    return String(value ?? "").trim()
+}
+
+function decodeHtmlEntities(value: string) {
+    if (canUseDOM()) {
+        const element = document.createElement("textarea")
+        element.innerHTML = value
+        return element.value
+    }
+    return value
+        .replace(/&nbsp;/g, " ")
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+}
+
+function normalizeFormattedText(value: unknown) {
+    const raw = normalizeText(value)
+    if (!raw) return ""
+    const text = decodeHtmlEntities(
+        raw
+            .replace(/<br\s*\/?>/gi, "\n")
+            .replace(/<\/(p|div|li|h[1-6]|blockquote)>/gi, "\n")
+            .replace(/<li[^>]*>/gi, "- ")
+            .replace(/<[^>]*>/g, "")
+    )
+    return text
+        .replace(/\u00a0/g, " ")
+        .replace(/[ \t]+\n/g, "\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim()
+}
+
+function normalizeBoolean(value: unknown) {
+    if (typeof value === "boolean") return value
+    if (typeof value === "number") return value !== 0
+    const text = normalizeText(value).toLowerCase()
+    return text === "true" || text === "yes" || text === "1"
+}
+
+function normalizeMediaSource(value: unknown): string {
+    if (!value) return ""
+    if (typeof value === "string") return value.trim()
+    if (Array.isArray(value)) return value.map(normalizeMediaSource).find(Boolean) || ""
+    if (typeof value === "object") {
+        const record = value as Record<string, unknown>
+        if ("value" in record) return normalizeMediaSource(record.value)
+        for (const key of ["src", "url", "href", "file"]) {
+            const source = normalizeMediaSource(record[key])
+            if (source) return source
+        }
+    }
+    return ""
+}
+
+function getDocumentResourceUrls(): string[] {
+    if (typeof document === "undefined") return []
+    const elementUrls = Array.from(
+        document.querySelectorAll<HTMLLinkElement | HTMLScriptElement>("link[href], script[src]")
+    ).map((element) => ("href" in element && element.href ? element.href : "src" in element && element.src ? element.src : ""))
+    const performanceUrls =
+        typeof performance !== "undefined" && typeof performance.getEntriesByType === "function"
+            ? performance.getEntriesByType("resource").map((entry) => entry.name)
+            : []
+    return Array.from(new Set([...elementUrls, ...performanceUrls].filter(Boolean)))
+}
+
+function isCMSModuleUrl(url: string, collectionId: string) {
+    const collectionPattern = escapeRegExp(collectionId)
+    return new RegExp(`/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`).test(url)
+}
+
+function findCMSModuleUrlInMarkup(markup: string, collectionId: string) {
+    const collectionPattern = escapeRegExp(collectionId)
+    const match = markup.match(
+        new RegExp(`https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`, "i")
+    )
+    return match?.[0]
+}
+
+function findCMSModuleUrlInDocument(collectionId: string) {
+    const fromResources = getDocumentResourceUrls().find((url) => isCMSModuleUrl(url, collectionId))
+    if (fromResources) return fromResources
+    if (typeof document !== "undefined" && document.documentElement) {
+        return findCMSModuleUrlInMarkup(document.documentElement.outerHTML, collectionId)
+    }
+    return undefined
+}
+
+async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
+    const configured = explicitUrl.trim()
+    if (configured) return configured
+    const cached = cmsModuleUrlCache.get(collectionId)
+    if (cached) return cached
+    const inDocument = findCMSModuleUrlInDocument(collectionId)
+    if (inDocument) {
+        cmsModuleUrlCache.set(collectionId, inDocument)
+        return inDocument
+    }
+    for (const path of LIVE_SCAN_PATHS) {
+        try {
+            const response = await fetch(path, { credentials: "same-origin" })
+            if (!response.ok) continue
+            const found = findCMSModuleUrlInMarkup(await response.text(), collectionId)
+            if (found) {
+                cmsModuleUrlCache.set(collectionId, found)
+                return found
+            }
+        } catch {
+            // Preview, canvas, and public URLs can resolve from different origins.
+        }
+    }
+    return undefined
+}
+
+function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
+    return (
+        typeof value === "object" &&
+        value !== null &&
+        typeof (value as CMSCollectionExport).collectionByLocaleId?.default?.scanItems === "function"
+    )
+}
+
+function getCMSCollection(module: CMSModule): CMSCollection | undefined {
+    const candidates = [module.a, module.r, module.default, ...Object.values(module)]
+    for (const candidate of candidates) {
+        let resolved: unknown = candidate
+        if (typeof resolved === "function") {
+            try {
+                resolved = (resolved as () => unknown)()
+            } catch {
+                resolved = undefined
+            }
+        }
+        if (isCMSCollectionExport(resolved)) return resolved.collectionByLocaleId?.default
+    }
+    return undefined
+}
+
+function initializeCMSModule(module: CMSModule) {
+    const maybeInitializers = [module.t, module.r, module.default, ...Object.values(module)]
+    maybeInitializers.forEach((initializer) => {
+        try {
+            if (typeof initializer === "function") (initializer as () => unknown)()
+        } catch {
+            // Generated Framer CMS modules may already be initialized.
+        }
+    })
+}
+
+function cmsRowToItem(row: CMSRow, index: number): Item | null {
+    const data = row.data
+    const title = normalizeText(readField(data, CMS_FIELDS.title)) || `Archive Item ${index + 1}`
+    const image = normalizeMediaSource(readField(data, CMS_FIELDS.image))
+    const video = normalizeMediaSource(readField(data, CMS_FIELDS.video))
+    const stroke = normalizeBoolean(readField(data, CMS_FIELDS.stroke))
+    const description = normalizeFormattedText(readField(data, CMS_FIELDS.content))
+    if (!image && !video) return null
+
+    const isGif = !video && /\.gif(?:[?#]|$)/i.test(image)
+    const kind: Kind = video ? "video" : isGif ? "gif" : "image"
+    const category = defaultCategory(kind)
+    const accessibilityLabel = accessibleItemLabel(title, category, kind, index)
+    const slug = normalizeText(row.slug)
+    const id = `archive-${slugify(slug || title) || stableHash(`${title}-${image}-${video}`)}`
+
+    return {
+        id,
+        title,
+        category,
+        // Aspect ratio is unknown until the media loads; measured at runtime.
+        description: description || `${kind === "gif" ? "GIF" : kind === "video" ? "Video" : "Image"} from the archive.`,
+        kind,
+        width: 1,
+        height: 1,
+        thumbnail: image,
+        videoUrl: video,
+        accessibilityLabel,
+        stroke,
+    }
+}
+
+async function loadCMSItems(collectionId: string, explicitUrl: string): Promise<Item[]> {
+    const cacheKey = `${collectionId}:${explicitUrl}`
+    const cached = cmsItemsCache.get(cacheKey)
+    if (cached) return cached
+    const pending = cmsItemsPromiseCache.get(cacheKey)
+    if (pending) return pending
+
+    const promise = (async () => {
+        const moduleUrl = await resolveCMSModuleUrl(collectionId, explicitUrl)
+        if (!moduleUrl) return []
+        const module = (await import(/* @vite-ignore */ moduleUrl)) as CMSModule
+        initializeCMSModule(module)
+        const collection = getCMSCollection(module)
+        if (!collection) return []
+        const rows = (await collection.scanItems()) as CMSRow[]
+        const items = rows
+            .map((row, index) => ({ row, order: Number(readField(row.data, CMS_FIELDS.order) ?? index) }))
+            .sort((a, b) => a.order - b.order)
+            .map(({ row }, index) => cmsRowToItem(row, index))
+            .filter((item): item is Item => Boolean(item))
+        cmsItemsCache.set(cacheKey, items)
+        return items
+    })()
+
+    cmsItemsPromiseCache.set(cacheKey, promise)
+    return promise
+}
+
+function useCMSArchiveItems(enabled: boolean, collectionId: string, moduleUrl: string): Item[] | null {
+    const [items, setItems] = React.useState<Item[] | null>(null)
+    React.useEffect(() => {
+        if (!enabled || !canUseDOM()) return
+        let alive = true
+        loadCMSItems(collectionId, moduleUrl)
+            .then((result) => {
+                if (alive) setItems(result)
+            })
+            .catch(() => {
+                if (alive) setItems([])
+            })
+        return () => {
+            alive = false
+        }
+    }, [enabled, collectionId, moduleUrl])
+    return items
+}
+
+// Migrated snapshot of the "Play Archive" collection — all media is Framer-hosted
+// (framerusercontent), Cargo-free. This is the reliable data source: it publishes
+// as plain string URLs (unlike nested File uploads) and needs no runtime CMS
+// module. The live CMS scraper above overrides this whenever its module is
+// actually shipped on the page. Re-bake from the CMS when collection content
+// changes (read EySMRbI2N → image/video URLs).
+const BAKED_ITEMS: ManagedItem[] = [
+    { title: "Untitled 2", mediaType: "image", image: "https://framerusercontent.com/images/qFtiO5xwy51sMflzxQajxyHZw.png" },
+    { title: "RootGrwoth", mediaType: "video", image: "https://framerusercontent.com/images/SzlHeSZKCNT5magIroInR9DucY.jpg", video: "https://framerusercontent.com/assets/nuV5bQ9xGFCXYBrg3DX1Cx8R8E.mp4" },
+    { title: "AirPods Pro 3 Hero", mediaType: "image", image: "https://framerusercontent.com/images/hVmTANYK8ScvXop7gCUqAnZMMEU.jpg", stroke: true },
+    { title: "Untitled 1", mediaType: "image", image: "https://framerusercontent.com/images/5xdeX5cCYT2vYASaGmAkqr5vdtk.png" },
+    { title: "Untitled 1", mediaType: "image", image: "https://framerusercontent.com/images/SZyYFXq0ktiJrU4kINnI8xr6mLg.png" },
+    { title: "VisArt Com FA24 Poster Mockup", mediaType: "image", image: "https://framerusercontent.com/images/n3u8Isk1OnfJbAMDJ1QRFVv4kA.jpg", stroke: true },
+    { title: "AVL Truck Mockup Min 1", mediaType: "image", image: "https://framerusercontent.com/images/au150HINnI8TTVII6VVwguYifV4.png" },
+    { title: "IMG 2522", mediaType: "image", image: "https://framerusercontent.com/images/wG9H8OPrHLEEsiWffJAJBHhdzDE.png", stroke: true },
+    { title: "Christmas Card 2020 Copy", mediaType: "image", image: "https://framerusercontent.com/images/68dgbclBrZUIgaL0O7uWhPHdHU.png" },
+    { title: "IMG 4680", mediaType: "image", image: "https://framerusercontent.com/images/cyoEaNclPlLyaXzHPOpBAy2Eiw.png" },
+    { title: "MD2 WK03 RotatingCube MH", mediaType: "video", image: "https://framerusercontent.com/images/qN4yMb8tsMFQepqurhdS3v8oYS0.jpg", video: "https://framerusercontent.com/assets/1AwaCGog7Zgq3zZQ2sTzBO5Vr9M.mp4" },
+    { title: "Original A4a05ca89b58af473aa281505ed92b89", mediaType: "image", image: "https://framerusercontent.com/images/xdsNcz2HOfuGgVgMvqEwMH54CtE.png", stroke: true },
+    { title: "Il 794xN.4695296984 Lxnq", mediaType: "image", image: "https://framerusercontent.com/images/WZ5YpEyiFdiPyMEdAd1iOCP2Ws.jpg" },
+    { title: "Flower", mediaType: "video", image: "https://framerusercontent.com/images/oCU8mDgqbkywm802Er2ZZLsWKVo.jpg", video: "https://framerusercontent.com/assets/r2WCriMMdBXrgrHc5Xqd4ckiH8.mp4" },
+    { title: "Gazelle Final", mediaType: "image", image: "https://framerusercontent.com/images/qMWw9T0ZYTpzoJQK4eCsH70Xw7I.png", stroke: true },
+    { title: "DSC9572 1", mediaType: "image", image: "https://framerusercontent.com/images/HmcBYmfsMX5xHJkiM9Xq3q5n78.png" },
+    { title: "Independent Lens Poster Mockup", mediaType: "image", image: "https://framerusercontent.com/images/8CNWzwV9yOzqVW8OjNDz3HEZY.png" },
+    { title: "AB Bag", mediaType: "image", image: "https://framerusercontent.com/images/FYDP3hrSdwWFCWQwel65WsFEtz8.png", stroke: true },
+    { title: "Seek Truth Thumbnail", mediaType: "image", image: "https://framerusercontent.com/images/uSToQfBmM1C6JmY8Z5TuAu2E6E.png", stroke: true },
+    { title: "Teacaps Billboard Mockup", mediaType: "image", image: "https://framerusercontent.com/images/9gK5RyII0wkPFxEqPKWDSUZjhBM.jpg" },
+    { title: "MicahHoang 3 Final Online Video Cutter.Com", mediaType: "video", image: "https://framerusercontent.com/images/lQnoRTJFWvmA9IoTh6NipWn8oQ.jpg", video: "https://framerusercontent.com/assets/injxMqGGnFEV37kRywgP4egJ1Pg.mp4", stroke: true },
+    { title: "DevWars Ranking System", mediaType: "image", image: "https://framerusercontent.com/images/wDFIXECzI2jmZO4OFFYYPtYo8o.png" },
+    { title: "MicahHoangMotionFinalFinal 1 Ezgif.Com Video To Gif Converter", mediaType: "video", image: "https://framerusercontent.com/images/kipyILNrVzA7ZrhyQvJJnBPQ.gif", video: "https://framerusercontent.com/assets/PSunpuiaTFJuq1drGmHuqPbKU.mp4" },
+    { title: "DSC03254", mediaType: "image", image: "https://framerusercontent.com/images/fI3gK2q2zBwpviNv4ZkIHGN2suI.png", stroke: true },
+    { title: "Untitled 1", mediaType: "image", image: "https://framerusercontent.com/images/cUFXmLquiPf0Yt4Y8g1chWjtog.png", stroke: true },
+    { title: "HMCTEmailBlast", mediaType: "video", image: "https://framerusercontent.com/images/7eWr8EC6q3v1d4Al9B4BaN00xo.gif", video: "https://framerusercontent.com/assets/FcYV1Eih8W7oCuIwrSlPfz3wE4.mp4" },
+    { title: "IMG 5149 Edit 2", mediaType: "image", image: "https://framerusercontent.com/images/71dcYgQ5IK9DYgOwvHrRiH3CM.jpg" },
+    { title: "Process Book Mockup 1", mediaType: "image", image: "https://framerusercontent.com/images/LIj0cvlRTj0G6hYingYo9OEYc0M.png" },
+    { title: "Slide 1", mediaType: "video", image: "https://framerusercontent.com/images/cxkNy3oV0hyulOmWiAYj1slQZF4.jpg", video: "https://framerusercontent.com/assets/m0r53FklqFdWbK7cbL1wFsqgU.mp4" },
+    { title: "TrackBeast First Look", mediaType: "image", image: "https://framerusercontent.com/images/KMUA6fgB0FszuQaywr0IoUa4sg.png" },
+    { title: "Slide 1", mediaType: "video", image: "https://framerusercontent.com/images/Aj9cScyeATjrlbSABBqknznejhE.jpg", video: "https://framerusercontent.com/assets/huKz7bwQqB9zw88vP6DheQaGjE.mp4" },
+    { title: "Il 1588xN.4553485979 A78d", mediaType: "image", image: "https://framerusercontent.com/images/iy1sObMg41oR8m9v2WvxmlEd4.jpg", stroke: true },
+]
+
+// ---- Panel fallback normalization (canvas/editor only — no Cargo) ----
 function normalizeItem(entry: ManagedItem, index: number): Item | null {
     const requestedKind = entry.mediaType === "video" || entry.mediaType === "gif" ? entry.mediaType : "image"
     const image = imageSource(entry.image)
     const poster = imageSource(entry.poster)
-    const videoUrl = typeof entry.video === "string" ? entry.video : ""
+    const videoUrl = typeof entry.video === "string" && entry.video ? entry.video : ""
     const thumbnail = image || poster
     const safeKind: Kind = requestedKind === "video" && videoUrl ? "video" : requestedKind === "gif" && thumbnail ? "gif" : thumbnail ? "image" : videoUrl ? "video" : "image"
     const fallbackTitle = `Archive Item ${index + 1}`
     const title = (entry.title || fallbackTitle).trim() || fallbackTitle
     const fallbackCategory = defaultCategory(safeKind)
     const category = (entry.category || fallbackCategory).trim() || fallbackCategory
-    const width = Math.max(1, Math.round(entry.width || 1600))
-    const height = Math.max(1, Math.round(entry.height || 1000))
-    const fallbackDescription = `${width} x ${height} ${safeKind.toUpperCase()} from the archive.`
-    const description = (entry.description || fallbackDescription).trim() || fallbackDescription
+    const width = Math.max(1, Math.round(entry.width || 1))
+    const height = Math.max(1, Math.round(entry.height || 1))
+    const description = (entry.description || `${safeKind.toUpperCase()} from the archive.`).trim()
     const explicitAccessibilityLabel = (entry.accessibilityLabel || imageAlt(entry.image) || imageAlt(entry.poster)).trim()
     const accessibilityLabel = accessibleItemLabel(title, category, safeKind, index, explicitAccessibilityLabel)
     const stroke = entry.stroke === "on" ? true : entry.stroke === "off" ? false : typeof entry.stroke === "boolean" ? entry.stroke : undefined
@@ -305,22 +556,16 @@ function normalizeItem(entry: ManagedItem, index: number): Item | null {
 }
 
 function normalizeItems(input?: ManagedItem[]): Item[] {
-    const source = Array.isArray(input) && input.length ? input : DEFAULT_CONTENT_ITEMS
-    const items = source
-        .map(normalizeItem)
-        .filter((item): item is Item => Boolean(item))
-
-    return items.length ? items : DEFAULT_CONTENT_ITEMS.map(normalizeItem).filter((item): item is Item => Boolean(item))
+    if (!Array.isArray(input) || !input.length) return []
+    return input.map(normalizeItem).filter((item): item is Item => Boolean(item))
 }
 
-function cargoWidthUrl(url: string, width = 900) {
+const BAKED_NORMALIZED = normalizeItems(BAKED_ITEMS)
+
+function mediaWidthUrl(url: string, width = 900) {
+    // Legacy Cargo thumbnails could be resized via path; Framer-hosted URLs pass
+    // through untouched.
     return url.includes("/t/original/i/") ? url.replace("/t/original/i/", `/w/${width}/i/`) : url
-}
-
-function shouldStroke(item: Item) {
-    if (typeof item.stroke === "boolean") return item.stroke
-    const source = `${item.thumbnail} ${item.videoUrl}`
-    return AUTO_STROKE_MATCHERS.some((matcher) => source.includes(matcher))
 }
 
 function scopedSelectors(selector: string, className: string) {
@@ -592,6 +837,8 @@ function MediaFrame({
     strokeColor,
     strokeWidth,
     fadeMs,
+    onMeasure,
+    active = true,
 }: {
     item: Item
     detail?: boolean
@@ -600,22 +847,35 @@ function MediaFrame({
     strokeColor: string
     strokeWidth: number
     fadeMs: number
+    onMeasure?: (width: number, height: number) => void
+    active?: boolean
 }) {
     const [ready, setReady] = React.useState(false)
     const videoRef = React.useRef<HTMLVideoElement>(null)
     const prefersReducedMotion = usePrefersReducedMotion()
-    const source = item.kind === "video" && item.videoUrl ? item.videoUrl : item.thumbnail
-    const poster = item.thumbnail ? (detail ? item.thumbnail : cargoWidthUrl(item.thumbnail, 900)) : undefined
-    const imageSrc = item.kind === "gif" ? item.thumbnail : detail ? cargoWidthUrl(item.thumbnail, 1800) : cargoWidthUrl(item.thumbnail, 900)
+    // Concurrent-video limiter: only mount a <video> (which decodes) when this
+    // cell is active (on-screen + within the budget). Off-screen video cells
+    // render their static poster instead, so we never decode dozens at once.
+    const showVideo = item.kind === "video" && !!item.videoUrl && active
+    const source = showVideo ? item.videoUrl : item.thumbnail
+    const poster = item.thumbnail ? (detail ? item.thumbnail : mediaWidthUrl(item.thumbnail, 900)) : undefined
+    const imageSrc = item.kind === "gif" ? item.thumbnail : detail ? mediaWidthUrl(item.thumbnail, 1800) : mediaWidthUrl(item.thumbnail, 900)
     const wide = item.width / item.height >= 1
-    const drawStroke = shouldStroke(item) && strokeWidth > 0
+    const drawStroke = Boolean(item.stroke) && strokeWidth > 0
+
+    const measure = React.useCallback(
+        (w: number, h: number) => {
+            if (w > 0 && h > 0) onMeasure?.(w, h)
+        },
+        [onMeasure]
+    )
 
     React.useEffect(() => {
         setReady(false)
-        if (!canUseDOM() || item.kind !== "video" || !item.videoUrl) return
+        if (!canUseDOM() || !showVideo) return
         const timer = window.setTimeout(() => setReady(true), 2500)
         return () => window.clearTimeout(timer)
-    }, [source, item.kind, item.videoUrl])
+    }, [source, showVideo])
 
     React.useEffect(() => {
         const video = videoRef.current
@@ -634,7 +894,6 @@ function MediaFrame({
     // Stroke + media fade in TOGETHER on the canonical smooth ease — the border
     // lives on this container, which stays at opacity 0 until the media is
     // ready, so there are no blank stroke skeletons before the media arrives.
-    // Floor the duration so it always reads as a soft, unhurried fade.
     const revealMs = Math.max(1000, fadeMs)
     const innerStyle: React.CSSProperties = detail
         ? {
@@ -670,14 +929,12 @@ function MediaFrame({
         height: "100%",
         display: "block",
         objectFit: "cover",
-        // Opacity is handled by the bordered container above so the stroke and
-        // media reveal as a single unit.
         pointerEvents: "none",
     }
 
     return (
         <div style={innerStyle}>
-            {item.kind === "video" && item.videoUrl ? (
+            {showVideo ? (
                 <video
                     ref={videoRef}
                     src={item.videoUrl}
@@ -688,12 +945,14 @@ function MediaFrame({
                     playsInline
                     preload={detail ? "auto" : "metadata"}
                     controls={false}
-                    width={item.width}
-                    height={item.height}
                     aria-hidden={detail ? undefined : true}
                     aria-label={detail ? `${item.accessibilityLabel}, video` : undefined}
                     onLoadedData={() => setReady(true)}
-                    onLoadedMetadata={() => setReady(true)}
+                    onLoadedMetadata={(event) => {
+                        const v = event.currentTarget
+                        measure(v.videoWidth, v.videoHeight)
+                        setReady(true)
+                    }}
                     onCanPlay={() => setReady(true)}
                     onStalled={() => setReady(true)}
                     onError={() => setReady(true)}
@@ -706,9 +965,11 @@ function MediaFrame({
                     draggable={false}
                     loading={detail ? "eager" : "lazy"}
                     decoding="async"
-                    width={item.width}
-                    height={item.height}
-                    onLoad={() => setReady(true)}
+                    onLoad={(event) => {
+                        const im = event.currentTarget
+                        measure(im.naturalWidth, im.naturalHeight)
+                        setReady(true)
+                    }}
                     onError={() => setReady(true)}
                     style={mediaStyle}
                 />
@@ -720,7 +981,9 @@ function MediaFrame({
 /**
  * Archive Playground
  *
- * Consolidated archive playground with authorable Framer content controls.
+ * /play archive — renders from the "Play Archive" CMS collection (Framer-hosted
+ * media). The Array panel is a canvas/editor fallback only. Aspect ratios are
+ * measured from each media file at runtime.
  *
  * @framerIntrinsicWidth 1200
  * @framerIntrinsicHeight 800
@@ -740,8 +1003,24 @@ export default function ArchivePlayground(props: Props) {
     const cfgRef = React.useRef(props)
     cfgRef.current = props
 
-    const managedItems = props.archiveItems ?? props.items
-    const items = React.useMemo(() => normalizeItems(managedItems), [managedItems])
+    const collectionId = props.collectionId || DEFAULT_COLLECTION_ID
+    const collectionModuleUrl = props.collectionModuleUrl || ""
+    const cmsItems = useCMSArchiveItems(isInteractive, collectionId, collectionModuleUrl)
+    const panelItems = React.useMemo(() => normalizeItems(props.archiveItems ?? props.items), [props.archiveItems, props.items])
+    // Live CMS overrides when its runtime module is shipped on the page; otherwise
+    // fall back to the authored panel (canvas), then to the baked Framer-hosted
+    // snapshot (the reliable default that always publishes).
+    const baseItems = cmsItems && cmsItems.length ? cmsItems : panelItems.length ? panelItems : BAKED_NORMALIZED
+    const [aspectMap, setAspectMap] = React.useState<Record<string, { w: number; h: number }>>({})
+    const items = React.useMemo(
+        () => baseItems.map((item) => (aspectMap[item.id] ? { ...item, width: aspectMap[item.id].w, height: aspectMap[item.id].h } : item)),
+        [baseItems, aspectMap]
+    )
+    const handleMeasure = React.useCallback((id: string, w: number, h: number) => {
+        if (!w || !h) return
+        setAspectMap((prev) => (prev[id] && prev[id].w === w && prev[id].h === h ? prev : { ...prev, [id]: { w, h } }))
+    }, [])
+
     const [viewport, setViewport] = React.useState({ w: 1200, h: 800 })
     const [motion, setMotion] = React.useState<Motion>({ x: 0, y: 0, mx: 0, my: 0, dragging: false })
     const [hovered, setHovered] = React.useState("")
@@ -799,7 +1078,8 @@ export default function ArchivePlayground(props: Props) {
     const hoverImageZoom = props.hoverImageZoom ?? 4
     const panelWidth = props.panelWidth ?? 500
     const panelExitMs = props.panelExitMs ?? 950
-    const mediaFadeMs = props.mediaFadeMs ?? 700
+    const mediaFadeMs = props.mediaFadeMs ?? 1100
+    const maxConcurrentVideos = props.maxConcurrentVideos ?? 8
     const loadInDelayMs = props.loadInDelayMs ?? LOAD_IN_DELAY_MS
     const loadInFadeMs = props.loadInFadeMs ?? LOAD_IN_FADE_MS
     const loadInStaggerMs = props.loadInStaggerMs ?? LOAD_IN_STAGGER_MS
@@ -1218,83 +1498,100 @@ export default function ArchivePlayground(props: Props) {
     const startX = Math.floor((-motion.x - centerX) / cellX) - Math.ceil(extra / 2)
     const startY = Math.floor((-motion.y - centerY) / cellY) - Math.ceil(extra / 2)
     const cells: React.ReactNode[] = []
+    let videoBudget = maxConcurrentVideos
 
-    for (let row = 0; row < visibleRows; row++) {
-        const gy = startY + row
-        for (let col = 0; col < visibleCols; col++) {
-            const gx = startX + col
-            const index = mod(gx * 5 + gy * 7, count)
-            const item = items[index]
-            const left = gx * cellX + motion.x + motion.mx + centerX
-            const top = gy * cellY + motion.y + motion.my + centerY
-            const key = `${item.id}-${gx}-${gy}`
-            const isHot = hovered === key
-            const cardIsKeyboardReachable = loadInReady && isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
-            const introActive = loadInReady && !loadInSettled && !prefersReducedMotion
-            // Ordered radial stagger: ripples out from the center of the visible
-            // window (cinematic), not a random/hash scatter.
-            const introRing = Math.hypot(row - (visibleRows - 1) / 2, col - (visibleCols - 1) / 2)
-            const introMaxRing = Math.hypot((visibleRows - 1) / 2, (visibleCols - 1) / 2) || 1
-            const introDelayMs = introActive
-                ? Math.round((introRing / introMaxRing) * Math.max(0, loadInStaggerMs) * (LOAD_IN_STAGGER_SLOTS - 1))
-                : 0
-            const introTransformMs = Math.max(620, Math.round(loadInFadeMs * 0.82))
-            const cardTransition =
-                !loadInReady || prefersReducedMotion || motion.dragging
-                    ? "none"
-                    : introActive
-                      ? `opacity ${loadInFadeMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms, transform ${introTransformMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms`
-                      : `transform 300ms ${SNAPPY_EASE}`
+    if (count > 0) {
+        for (let row = 0; row < visibleRows; row++) {
+            const gy = startY + row
+            for (let col = 0; col < visibleCols; col++) {
+                const gx = startX + col
+                const index = mod(gx * 5 + gy * 7, count)
+                const item = items[index]
+                const left = gx * cellX + motion.x + motion.mx + centerX
+                const top = gy * cellY + motion.y + motion.my + centerY
+                const key = `${item.id}-${gx}-${gy}`
+                const isHot = hovered === key
+                // Concurrent-video limiter: a video cell only decodes when it's
+                // on-screen (with a cell of lookahead) AND within the budget.
+                const inView = left > -cellSize && top > -cellSize && left < viewport.w + cellSize && top < viewport.h + cellSize
+                const activeVideo = item.kind === "video" && !!item.videoUrl && inView && videoBudget > 0
+                if (activeVideo) videoBudget--
+                const cardIsKeyboardReachable = loadInReady && isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
+                const introActive = loadInReady && !loadInSettled && !prefersReducedMotion
+                // Ordered radial stagger: ripples out from the center of the visible
+                // window (cinematic), not a random/hash scatter.
+                const introRing = Math.hypot(row - (visibleRows - 1) / 2, col - (visibleCols - 1) / 2)
+                const introMaxRing = Math.hypot((visibleRows - 1) / 2, (visibleCols - 1) / 2) || 1
+                const introDelayMs = introActive
+                    ? Math.round((introRing / introMaxRing) * Math.max(0, loadInStaggerMs) * (LOAD_IN_STAGGER_SLOTS - 1))
+                    : 0
+                const introTransformMs = Math.max(620, Math.round(loadInFadeMs * 0.82))
+                const cardTransition =
+                    !loadInReady || prefersReducedMotion || motion.dragging
+                        ? "none"
+                        : introActive
+                          ? `opacity ${loadInFadeMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms, transform ${introTransformMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms`
+                          : `transform 300ms ${SNAPPY_EASE}`
 
-            cells.push(
-                <button
-                    key={key}
-                    type="button"
-                    data-playground-card="true"
-                    data-playground-index={index}
-                    aria-hidden={cardIsKeyboardReachable ? undefined : true}
-                    aria-label={`Open ${item.accessibilityLabel} details`}
-                    tabIndex={cardIsKeyboardReachable ? 0 : -1}
-                    onMouseEnter={() => setHovered(key)}
-                    onMouseLeave={() => setHovered("")}
-                    onFocus={() => setHovered(key)}
-                    onBlur={() => setHovered("")}
-                    onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
+                cells.push(
+                    <button
+                        key={key}
+                        type="button"
+                        data-playground-card="true"
+                        data-playground-index={index}
+                        aria-hidden={cardIsKeyboardReachable ? undefined : true}
+                        aria-label={`Open ${item.accessibilityLabel} details`}
+                        tabIndex={cardIsKeyboardReachable ? 0 : -1}
+                        onMouseEnter={() => setHovered(key)}
+                        onMouseLeave={() => setHovered("")}
+                        onFocus={() => setHovered(key)}
+                        onBlur={() => setHovered("")}
+                        onKeyDown={(event) => {
+                            if (event.key === "Enter" || event.key === " ") {
+                                event.preventDefault()
+                                openItem(item, event.currentTarget)
+                            }
+                        }}
+                        onClick={(event) => {
                             event.preventDefault()
+                            event.stopPropagation()
+                            if (!isInteractive || state.current.suppressClick || state.current.dragging) return
                             openItem(item, event.currentTarget)
-                        }
-                    }}
-                    onClick={(event) => {
-                        event.preventDefault()
-                        event.stopPropagation()
-                        if (!isInteractive || state.current.suppressClick || state.current.dragging) return
-                        openItem(item, event.currentTarget)
-                    }}
-                    style={{
-                        position: "absolute",
-                        left,
-                        top,
-                        width: cellSize,
-                        height: cellSize,
-                        padding: 0,
-                        border: 0,
-                        borderRadius: 0,
-                        background: "transparent",
-                        boxShadow: "none",
-                        overflow: "visible",
-                        appearance: "none",
-                        cursor: motion.dragging ? "grabbing" : "pointer",
-                        opacity: loadInReady ? 1 : 0,
-                        transform: `translate3d(0, ${loadInReady ? 0 : LOAD_IN_LIFT_PX}px, 0) scale(${isHot ? hoverScale : 1})`,
-                        transition: cardTransition,
-                        willChange: introActive || !loadInReady || isHot || motion.dragging ? "opacity, transform" : "auto",
-                        WebkitTapHighlightColor: "transparent",
-                    }}
-                >
-                    <MediaFrame item={item} hot={isHot} zoom={hoverImageZoom} strokeColor={strokeColor} strokeWidth={strokeWidth} fadeMs={mediaFadeMs} />
-                </button>,
-            )
+                        }}
+                        style={{
+                            position: "absolute",
+                            left,
+                            top,
+                            width: cellSize,
+                            height: cellSize,
+                            padding: 0,
+                            border: 0,
+                            borderRadius: 0,
+                            background: "transparent",
+                            boxShadow: "none",
+                            overflow: "visible",
+                            appearance: "none",
+                            cursor: motion.dragging ? "grabbing" : "pointer",
+                            opacity: loadInReady ? 1 : 0,
+                            transform: `translate3d(0, ${loadInReady ? 0 : LOAD_IN_LIFT_PX}px, 0) scale(${isHot ? hoverScale : 1})`,
+                            transition: cardTransition,
+                            willChange: introActive || !loadInReady || isHot || motion.dragging ? "opacity, transform" : "auto",
+                            WebkitTapHighlightColor: "transparent",
+                        }}
+                    >
+                        <MediaFrame
+                            item={item}
+                            hot={isHot}
+                            active={activeVideo}
+                            zoom={hoverImageZoom}
+                            strokeColor={strokeColor}
+                            strokeWidth={strokeWidth}
+                            fadeMs={mediaFadeMs}
+                            onMeasure={(w, h) => handleMeasure(item.id, w, h)}
+                        />
+                    </button>,
+                )
+            }
         }
     }
 
@@ -1455,7 +1752,15 @@ export default function ArchivePlayground(props: Props) {
                         </button>
 
                         <figure style={{ margin: 0, position: "relative", width: "100%", aspectRatio: `${panelItem.width} / ${panelItem.height}`, background: "transparent", overflow: "hidden" }}>
-                            <MediaFrame item={panelItem} detail zoom={0} strokeColor={strokeColor} strokeWidth={strokeWidth} fadeMs={mediaFadeMs} />
+                            <MediaFrame
+                                item={panelItem}
+                                detail
+                                zoom={0}
+                                strokeColor={strokeColor}
+                                strokeWidth={strokeWidth}
+                                fadeMs={mediaFadeMs}
+                                onMeasure={(w, h) => handleMeasure(panelItem.id, w, h)}
+                            />
                         </figure>
 
                         <div
@@ -1491,9 +1796,9 @@ const hideUnlessVideo = ({ mediaType }: any) => mediaType !== "video"
 addPropertyControls<Props>(ArchivePlayground, {
     archiveItems: {
         type: ControlType.Array,
-        title: "Archive Items",
+        title: "Items (fallback)",
         maxCount: 120,
-        defaultValue: DEFAULT_CONTENT_ITEMS,
+        defaultValue: [],
         control: {
             type: ControlType.Object,
             controls: {
@@ -1508,15 +1813,15 @@ addPropertyControls<Props>(ArchivePlayground, {
                     optionTitles: ["Image", "Video", "GIF"],
                     defaultValue: "image",
                 },
-                image: { type: ControlType.ResponsiveImage, title: "Media / Poster" },
+                image: { type: ControlType.ResponsiveImage, title: "Image / Poster" },
                 video: { type: ControlType.File, title: "Video", allowedFileTypes: ["mp4", "mov", "m4v", "webm"], hidden: hideUnlessVideo },
                 category: { type: ControlType.String, title: "Category", defaultValue: "Archive Image" },
-                width: { type: ControlType.Number, title: "Aspect W", defaultValue: 1600, min: 1, max: 8000, step: 1 },
-                height: { type: ControlType.Number, title: "Aspect H", defaultValue: 1000, min: 1, max: 8000, step: 1 },
                 stroke: { type: ControlType.Enum, title: "Stroke", options: ["auto", "on", "off"], optionTitles: ["Auto", "On", "Off"], defaultValue: "auto" },
             },
         },
     },
+    collectionId: { type: ControlType.String, title: "Collection", defaultValue: DEFAULT_COLLECTION_ID, hidden: hideAdvanced },
+    collectionModuleUrl: { type: ControlType.String, title: "Module URL", defaultValue: "", hidden: hideAdvanced },
     advancedControls: { type: ControlType.Boolean, title: "Advanced", defaultValue: false, enabledTitle: "Show", disabledTitle: "Hide" },
     cellSize: { type: ControlType.Number, title: "Cell", defaultValue: 190, min: 100, max: 360, step: 1, unit: "px", hidden: hideAdvanced },
     columnGap: { type: ControlType.Number, title: "Column", defaultValue: 72, min: 0, max: 200, step: 1, unit: "px", hidden: hideAdvanced },
@@ -1542,6 +1847,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     parallaxEase: { type: ControlType.Number, title: "Ease", defaultValue: 0.5, min: 0.05, max: 1, step: 0.05, hidden: hideAdvanced },
     parallaxWhileDragging: { type: ControlType.Boolean, title: "Drag Para", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
     mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 1100, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
+    maxConcurrentVideos: { type: ControlType.Number, title: "Max Videos", defaultValue: 8, min: 0, max: 30, step: 1, hidden: hideAdvanced },
     loadInDelayMs: { type: ControlType.Number, title: "Load Hold", defaultValue: LOAD_IN_DELAY_MS, min: 0, max: 1000, step: 10, unit: "ms", hidden: hideAdvanced },
     loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 2600, step: 10, unit: "ms", hidden: hideAdvanced },
     loadInStaggerMs: { type: ControlType.Number, title: "Load Stagger", defaultValue: LOAD_IN_STAGGER_MS, min: 0, max: 180, step: 1, unit: "ms", hidden: hideAdvanced },
