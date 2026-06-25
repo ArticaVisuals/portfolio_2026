@@ -17,8 +17,8 @@ type ManagedItem = {
     image?: ImageValue
     poster?: ImageValue
     video?: string
-    // Cargo (or any external) per-item backup, used ONLY when no Framer upload
-    // exists. Framer uploads (image/video) are the source of truth.
+    // Optional external per-item backup, used only when no Framer upload exists.
+    // Framer uploads remain the source of truth for this canvas/rollback surface.
     backupImage?: string
     backupVideo?: string
     width?: number
@@ -101,9 +101,8 @@ const canUseDOM = () => typeof window !== "undefined" && typeof document !== "un
 const isCanvas = () => RenderTarget.current() === RenderTarget.canvas || RenderTarget.current() === RenderTarget.thumbnail
 const defaultCategory = (kind: Kind) => (kind === "video" ? "Archive Video" : kind === "gif" ? "Archive GIF" : "Archive Image")
 
-// Built-in defaults: the cargo URLs are kept ONLY as per-item backups (Cargo is
-// being retired). Primary image/video are intentionally empty so Framer uploads
-// are the source of truth — until uploaded, an item shows via its cargo backup.
+// Built-in defaults stay empty. Live `/play` content is CMS-only in
+// ArchivePlayground; this array remains for canvas/rollback authoring only.
 const DEFAULT_CONTENT_ITEMS: ManagedItem[] = RAW_ITEMS.map(([order, title, kind, width, height, thumbnail, video = ""]) => ({
     id: order,
     title,
@@ -134,10 +133,9 @@ function hasMedia(item: ManagedItem) {
 }
 
 function resolveItems(items?: ManagedItem[]) {
-    // Archive Items is retained as a fallback/rollback authoring surface. The
-    // long-term source of truth should be Play Archive CMS once the runtime
-    // bridge is available; until then, preserve authored removals instead of
-    // silently re-injecting defaults.
+    // Archive Items is retained for canvas previews and emergency rollback.
+    // Published /play content is resolved by ArchivePlayground from Play Archive
+    // CMS only, so stale panel/default rows cannot leak onto the live site.
     if (!Array.isArray(items) || !items.length) return DEFAULT_CONTENT_ITEMS
     return items
 }
@@ -355,7 +353,7 @@ addPropertyControls<Props>(Play, {
                 mediaType: { type: ControlType.Enum, title: "Type", options: ["image", "video", "gif"], optionTitles: ["Image", "Video", "GIF"], defaultValue: "image" },
                 image: { type: ControlType.ResponsiveImage, title: "Image / Poster" },
                 video: { type: ControlType.File, title: "Video", allowedFileTypes: ["mp4", "mov", "m4v", "webm"], hidden: hideUnlessVideo },
-                backupImage: { type: ControlType.String, title: "Backup Image URL", defaultValue: "", placeholder: "fallback if no upload (Cargo — retiring)" },
+                backupImage: { type: ControlType.String, title: "Backup Image URL", defaultValue: "", placeholder: "fallback if no upload" },
                 backupVideo: { type: ControlType.String, title: "Backup Video URL", defaultValue: "", placeholder: "fallback if no upload", hidden: hideUnlessVideo },
                 category: { type: ControlType.String, title: "Category", defaultValue: "Archive Image" },
                 width: { type: ControlType.Number, title: "Aspect W", defaultValue: 1600, min: 1, max: 8000, step: 1 },

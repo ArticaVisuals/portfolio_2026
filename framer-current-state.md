@@ -1,13 +1,37 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026  
-**Last audited:** June 24, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
+**Last audited:** June 25, 2026, via Framer MCP, CMS item inspection, targeted page inventory checks, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`  
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
 
 ---
+
+## 2026-06-25 Update
+
+- **`/play` CMS-only contract.** `ArchivePlayground.tsx` no longer contains or
+  renders the baked 32-item Play snapshot. Live mode now resolves Play data in
+  this order only: `window.__articaPlayArchiveRegistry` rows from
+  `PlayArchiveRegistrar`, then a generated Framer CMS module for `Play Archive`
+  (`EySMRbI2N`) if Framer emits one, then empty state. The Framer `Archive Items`
+  array remains available through `Play.tsx` for canvas preview/rollback, but it
+  is not a published content fallback. CMS rows also no longer generate
+  fallback drawer copy such as "Image from the archive"; empty `Content`
+  renders no description paragraph.
+- **`PlayArchiveRegistrar.tsx` added** (`jDwcdGN`, insert URL
+  `https://framer.com/m/PlayArchiveRegistrar-uZVoh9.js`; current `/play`
+  scaffold node `jHFyFgJNt`). This invisible bridge should be mounted
+  inside a hidden-but-mounted `Play Archive` Collection List and bound to
+  `Title`, `Order`, `Image / Poster`, `Video`, `Stroke`, and `Content`. The list
+  must not be hidden with Framer's eye toggle and its limit must include every
+  CMS row. Full workflow: `play-cms-workflow.md`.
+- **Radial reveal preserved.** The repo-side `/play` load-in still uses the
+  June 24 center-out radial fade pattern (`LOAD_IN_LIFT_PX = 0`,
+  `LOAD_IN_STAGGER_MS = 90`, Smooth ease, and `pt:reveal` WAAPI replay by card
+  distance from viewport center). Do not replace it with random/hash scatter or
+  a vertical lift.
 
 ## 2026-06-24 Update
 
@@ -255,7 +279,7 @@ June 13 detail nav behavior: `ArchivePlayground.tsx` owns the `/play` detail-dra
 
 June 18, 2026 motion-ease follow-up: Framer readback showed `ProfileTextRevealFix.tsx` (`LNjgKO2`) and `PlaygroundMediaLoadSmoother.tsx` (`FFqrKyU`) still had the legacy `cubic-bezier(0.22, 1, 0.36, 1)` decel curve. Both live Framer code files now use local `SNAPPY_EASE` constants plus runtime normalization for saved legacy prop values. Current readback insert URLs are `https://framer.com/m/ProfileTextRevealFix-Rb9wbB.js@Uvy5PFTO3rssTlXNLk9w` and `https://framer.com/m/PlaygroundMediaLoadSmoother-wfvXvN.js@INAsxIPMxQsSK86hCQNv`. Local editable TSX mirrors were also normalized for legacy decel, symmetric/generic ease, and panel-close curves; generated `framer-code-mirror` compiled snapshots remain reference-only until regenerated. The broader live-Framer ease canon is Snappy for decel, Smooth for symmetric/UI, and Springy `cubic-bezier(0.25, 1, 0.5, 1)` only for Image Trail's gestural cursor animation.
 
-June 24 Play Archive CMS audit: the target content source is the user-managed `Play Archive` CMS collection (`EySMRbI2N`). Editable fields are `Title` (`XwW7XD5jI`), `Order` (`c2qQhVGwP`), `Image / Poster` (`uqRtTdRM1`), `Video` (`KWCosE6Ef`), `Stroke` (`vq9I0excy`), and drawer/sidebar copy from `Content` (`vxCKd8ka_`). Current published `/play` matches CMS title/media for the 32-row snapshot but does not prove live CMS loading: the page does not load a separate `EySMRbI2N` module, and drawer copy is generated fallback text until `Content` is wired into Framer/published. `ArchivePlayground.tsx` still accepts the `archiveItems` / `items` array and `Play.tsx` still exposes `Archive Items`, but that panel should be treated as fallback/rollback unless the runtime CMS bridge is incomplete. Until a full bridge is installed, rebake/publish after CMS content changes.
+June 24 Play Archive CMS audit, superseded June 25 by CMS-only bridge work: the target content source is the user-managed `Play Archive` CMS collection (`EySMRbI2N`). Editable fields are `Title` (`XwW7XD5jI`), `Order` (`c2qQhVGwP`), `Image / Poster` (`uqRtTdRM1`), `Video` (`KWCosE6Ef`), `Stroke` (`vq9I0excy`), and drawer/sidebar copy from `Content` (`vxCKd8ka_`). The June 24 published `/play` matched CMS title/media for the 32-row snapshot but did not prove live CMS loading: the page did not load a separate `EySMRbI2N` module, the hidden native list was capped at 10, and drawer copy was generated fallback text. The June 25 contract removes the baked snapshot and requires the `PlayArchiveRegistrar` bridge or generated CMS module before live content appears.
 
 The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) remain on the live `/play` canvas as rollback material, but each is set to `enabled=false`. The earlier `/play-consolidation-draft` web page is not present in the June 15 inventory; create a new draft/design page before future Play experiments.
 
@@ -427,7 +451,7 @@ June 15 CMS sync: `All Projects` now contains 17 items. The visible `NumberCount
 - `Play.tsx` wrapper
 - `ArchivePlayground.tsx` renderer
 
-The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage target content in the `Play Archive` CMS collection, but remember the published site uses a baked/fallback snapshot unless the runtime CMS bridge is confirmed. Create a fresh draft/design page for future component experiments before touching the production `/play` page.
+The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage target content in the `Play Archive` CMS collection. The published site should not use baked/fallback snapshots; if content is missing after publish, inspect the `PlayArchiveRegistrar` bindings and the hidden Collection List limit before touching code. Create a fresh draft/design page for future component experiments before touching the production `/play` page.
 
 ### `/info`
 

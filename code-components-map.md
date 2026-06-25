@@ -1,6 +1,6 @@
 # Custom Code Map — Portfolio 2026 (handoff reference)
 
-Last updated: 2026-06-24 (Motion Connect controller consolidation). Plain-English map of every custom
+Last updated: 2026-06-25 (`/play` CMS-only bridge). Plain-English map of every custom
 Framer **code component** so a new dev can orient fast. For chronological history
 and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
@@ -10,6 +10,8 @@ After the 2026-06-18 audit: **34 code components + 5 overrides** (down from 44).
 2026-06-23 additions: **`TestimonialLineReveal`** (`tpDdaaJ`, live) and
 **`DoubleStackGalleryGrid`** (new case-study gallery layout; local mirror present,
 confirm its Framer codeFileId on import).
+2026-06-25 addition: **`PlayArchiveRegistrar`** (`jDwcdGN`)
+is the Play Archive CMS bridge. See `play-cms-workflow.md`.
 
 ---
 
@@ -43,8 +45,9 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 |---|---|---|
 | `IndexPage` | `rgAZFOv` | Base CMS-backed `/index` List/Grid archive (taxonomy filters, rows, cards, count). Imported by the wrapper below. |
 | `IndexPageGridPreview` | `LgIzFjJ` | **Mounted** `/index` wrapper (exported as `IndexPage`). Adds the `View` control, Grid/List remount preview, Figma responsive overrides. |
-| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as fallback/rollback, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes media to the engine below. Do not strip the authoring surface. |
-| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: attempts Play Archive CMS when an importable runtime module is available; otherwise uses fallback panel items/baked snapshot. Owns grid, detail drawer, sidebar copy, media smoothing, nav passthrough, close timing. |
+| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as canvas/rollback surface, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes controls to the engine below. Do not strip the authoring surface. |
+| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: live mode renders Play Archive CMS rows only (`PlayArchiveRegistrar` registry first, generated `EySMRbI2N` module second, otherwise empty). Owns grid, detail drawer, CMS `Content`, media smoothing, nav passthrough, close timing. |
+| `PlayArchiveRegistrar` | `jDwcdGN` | Invisible bridge mounted inside the hidden `Play Archive` Collection List. Registers Title/Order/Image/Video/Stroke/Content rows into `window.__articaPlayArchiveRegistry`. |
 | `Test` | `O9WTdUJ` | **Misnomer** — it's the legacy `ProjectRegistrar` CMS bridge, kept as fallback. (Rename file in UI.) |
 
 ### Case-study media

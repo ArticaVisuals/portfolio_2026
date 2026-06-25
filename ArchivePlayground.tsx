@@ -43,6 +43,28 @@ type CMSModule = {
     default?: CMSCollectionExport | (() => unknown)
     [key: string]: unknown
 }
+type RegistryRow = {
+    id?: string
+    slug?: string
+    title?: string
+    order?: number
+    image?: unknown
+    poster?: unknown
+    video?: unknown
+    content?: unknown
+    description?: unknown
+    stroke?: boolean | "auto" | "on" | "off"
+    width?: number
+    height?: number
+    source?: string
+}
+type PlayArchiveRegistry = {
+    items: Map<string, RegistryRow>
+    listeners: Set<(items: Map<string, RegistryRow>) => void>
+    register: (id: string, data: RegistryRow) => void
+    unregister: (id: string) => void
+    subscribe: (fn: (items: Map<string, RegistryRow>) => void) => () => void
+}
 
 type Props = {
     archiveItems?: ManagedItem[]
@@ -163,6 +185,7 @@ const LOAD_IN_MAX_WAIT_MS = 2600
 // /play renders from this collection (Framer-hosted media, publishes reliably).
 // The Array panel below is only a canvas/editor fallback. No Cargo in code.
 const DEFAULT_COLLECTION_ID = "EySMRbI2N"
+const PLAY_REGISTRY_KEY = "__articaPlayArchiveRegistry"
 const CMS_FIELDS = {
     title: "XwW7XD5jI",
     order: "c2qQhVGwP",
@@ -399,7 +422,7 @@ function initializeCMSModule(module: CMSModule) {
 
 function cmsRowToItem(row: CMSRow, index: number): Item | null {
     const data = row.data
-    const title = normalizeText(readField(data, CMS_FIELDS.title)) || `Archive Item ${index + 1}`
+    const title = normalizeText(readField(data, CMS_FIELDS.title))
     const image = normalizeMediaSource(readField(data, CMS_FIELDS.image))
     const video = normalizeMediaSource(readField(data, CMS_FIELDS.video))
     const stroke = normalizeBoolean(readField(data, CMS_FIELDS.stroke))
@@ -408,7 +431,7 @@ function cmsRowToItem(row: CMSRow, index: number): Item | null {
 
     const isGif = !video && /\.gif(?:[?#]|$)/i.test(image)
     const kind: Kind = video ? "video" : isGif ? "gif" : "image"
-    const category = defaultCategory(kind)
+    const category = ""
     const accessibilityLabel = accessibleItemLabel(title, category, kind, index)
     const slug = normalizeText(row.slug)
     const id = `archive-${slugify(slug || title) || stableHash(`${title}-${image}-${video}`)}`
@@ -418,7 +441,7 @@ function cmsRowToItem(row: CMSRow, index: number): Item | null {
         title,
         category,
         // Aspect ratio is unknown until the media loads; measured at runtime.
-        description: description || `${kind === "gif" ? "GIF" : kind === "video" ? "Video" : "Image"} from the archive.`,
+        description,
         kind,
         width: 1,
         height: 1,
@@ -427,6 +450,90 @@ function cmsRowToItem(row: CMSRow, index: number): Item | null {
         accessibilityLabel,
         stroke,
     }
+}
+
+function getPlayArchiveRegistry(): PlayArchiveRegistry | null {
+    if (!canUseDOM()) return null
+    const w = window as unknown as Record<string, PlayArchiveRegistry>
+    if (!w[PLAY_REGISTRY_KEY]) {
+        const items = new Map<string, RegistryRow>()
+        const listeners = new Set<(items: Map<string, RegistryRow>) => void>()
+        w[PLAY_REGISTRY_KEY] = {
+            items,
+            listeners,
+            register(id, data) {
+                items.set(id, data)
+                listeners.forEach((fn) => fn(items))
+            },
+            unregister(id) {
+                items.delete(id)
+                listeners.forEach((fn) => fn(items))
+            },
+            subscribe(fn) {
+                listeners.add(fn)
+                fn(items)
+                return () => {
+                    listeners.delete(fn)
+                }
+            },
+        }
+    }
+    return w[PLAY_REGISTRY_KEY]
+}
+
+function registryRowToItem(row: RegistryRow, index: number): Item | null {
+    const image = normalizeMediaSource(row.image) || normalizeMediaSource(row.poster)
+    const video = normalizeMediaSource(row.video)
+    if (!image && !video) return null
+
+    const title = normalizeText(row.title)
+    const description = normalizeFormattedText(row.content ?? row.description)
+    const isGif = !video && /\.gif(?:[?#]|$)/i.test(image)
+    const kind: Kind = video ? "video" : isGif ? "gif" : "image"
+    const category = ""
+    const accessibilityLabel = accessibleItemLabel(title, category, kind, index)
+    const identity = normalizeText(row.slug || row.id || title) || `${title}-${image}-${video}`
+    const width = Math.max(1, Math.round(Number(row.width) || 1))
+    const height = Math.max(1, Math.round(Number(row.height) || 1))
+    const stroke = row.stroke === "on" ? true : row.stroke === "off" ? false : typeof row.stroke === "boolean" ? row.stroke : normalizeBoolean(row.stroke)
+
+    return {
+        id: `archive-${slugify(identity) || stableHash(identity)}`,
+        title,
+        category,
+        description,
+        kind,
+        width,
+        height,
+        thumbnail: image,
+        videoUrl: video,
+        accessibilityLabel,
+        stroke,
+    }
+}
+
+function rowsToItems(rows: RegistryRow[]) {
+    return rows
+        .map((row, index) => ({
+            row,
+            order: typeof row.order === "number" && Number.isFinite(row.order) ? row.order : index,
+        }))
+        .sort((a, b) => a.order - b.order)
+        .map(({ row }, index) => registryRowToItem(row, index))
+        .filter((item): item is Item => Boolean(item))
+}
+
+function usePlayArchiveRegistryItems(enabled: boolean): Item[] | null {
+    const [items, setItems] = React.useState<Item[] | null>(null)
+    React.useEffect(() => {
+        if (!enabled || !canUseDOM()) return
+        const registry = getPlayArchiveRegistry()
+        if (!registry) return
+        return registry.subscribe((registered) => {
+            setItems(rowsToItems(Array.from(registered.values())))
+        })
+    }, [enabled])
+    return items
 }
 
 async function loadCMSItems(collectionId: string, explicitUrl: string): Promise<Item[]> {
@@ -476,45 +583,6 @@ function useCMSArchiveItems(enabled: boolean, collectionId: string, moduleUrl: s
     return items
 }
 
-// Migrated snapshot of the "Play Archive" collection — all media is Framer-hosted
-// (framerusercontent), Cargo-free. This is a publish-safe fallback, not a live
-// CMS source. Re-bake it from Play Archive CMS after content changes unless a
-// complete runtime CMS bridge is installed.
-const BAKED_ITEMS: ManagedItem[] = [
-    { title: "Untitled 2", mediaType: "image", image: "https://framerusercontent.com/images/qFtiO5xwy51sMflzxQajxyHZw.png" },
-    { title: "RootGrwoth", mediaType: "video", image: "https://framerusercontent.com/images/SzlHeSZKCNT5magIroInR9DucY.jpg", video: "https://framerusercontent.com/assets/nuV5bQ9xGFCXYBrg3DX1Cx8R8E.mp4" },
-    { title: "AirPods Pro 3 Hero", mediaType: "image", image: "https://framerusercontent.com/images/hVmTANYK8ScvXop7gCUqAnZMMEU.jpg", stroke: true },
-    { title: "Untitled 1", mediaType: "image", image: "https://framerusercontent.com/images/5xdeX5cCYT2vYASaGmAkqr5vdtk.png" },
-    { title: "Untitled 1", mediaType: "image", image: "https://framerusercontent.com/images/SZyYFXq0ktiJrU4kINnI8xr6mLg.png" },
-    { title: "VisArt Com FA24 Poster Mockup", mediaType: "image", image: "https://framerusercontent.com/images/n3u8Isk1OnfJbAMDJ1QRFVv4kA.jpg", stroke: true },
-    { title: "AVL Truck Mockup Min 1", mediaType: "image", image: "https://framerusercontent.com/images/au150HINnI8TTVII6VVwguYifV4.png" },
-    { title: "IMG 2522", mediaType: "image", image: "https://framerusercontent.com/images/wG9H8OPrHLEEsiWffJAJBHhdzDE.png", stroke: true },
-    { title: "Christmas Card 2020 Copy", mediaType: "image", image: "https://framerusercontent.com/images/68dgbclBrZUIgaL0O7uWhPHdHU.png" },
-    { title: "IMG 4680", mediaType: "image", image: "https://framerusercontent.com/images/cyoEaNclPlLyaXzHPOpBAy2Eiw.png" },
-    { title: "MD2 WK03 RotatingCube MH", mediaType: "video", image: "https://framerusercontent.com/images/qN4yMb8tsMFQepqurhdS3v8oYS0.jpg", video: "https://framerusercontent.com/assets/1AwaCGog7Zgq3zZQ2sTzBO5Vr9M.mp4" },
-    { title: "Original A4a05ca89b58af473aa281505ed92b89", mediaType: "image", image: "https://framerusercontent.com/images/xdsNcz2HOfuGgVgMvqEwMH54CtE.png", stroke: true },
-    { title: "Il 794xN.4695296984 Lxnq", mediaType: "image", image: "https://framerusercontent.com/images/WZ5YpEyiFdiPyMEdAd1iOCP2Ws.jpg" },
-    { title: "Flower", mediaType: "video", image: "https://framerusercontent.com/images/oCU8mDgqbkywm802Er2ZZLsWKVo.jpg", video: "https://framerusercontent.com/assets/r2WCriMMdBXrgrHc5Xqd4ckiH8.mp4" },
-    { title: "Gazelle Final", mediaType: "image", image: "https://framerusercontent.com/images/qMWw9T0ZYTpzoJQK4eCsH70Xw7I.png", stroke: true },
-    { title: "DSC9572 1", mediaType: "image", image: "https://framerusercontent.com/images/HmcBYmfsMX5xHJkiM9Xq3q5n78.png" },
-    { title: "Independent Lens Poster Mockup", mediaType: "image", image: "https://framerusercontent.com/images/8CNWzwV9yOzqVW8OjNDz3HEZY.png" },
-    { title: "AB Bag", mediaType: "image", image: "https://framerusercontent.com/images/FYDP3hrSdwWFCWQwel65WsFEtz8.png", stroke: true },
-    { title: "Seek Truth Thumbnail", mediaType: "image", image: "https://framerusercontent.com/images/uSToQfBmM1C6JmY8Z5TuAu2E6E.png", stroke: true },
-    { title: "Teacaps Billboard Mockup", mediaType: "image", image: "https://framerusercontent.com/images/9gK5RyII0wkPFxEqPKWDSUZjhBM.jpg" },
-    { title: "MicahHoang 3 Final Online Video Cutter.Com", mediaType: "video", image: "https://framerusercontent.com/images/lQnoRTJFWvmA9IoTh6NipWn8oQ.jpg", video: "https://framerusercontent.com/assets/injxMqGGnFEV37kRywgP4egJ1Pg.mp4", stroke: true },
-    { title: "DevWars Ranking System", mediaType: "image", image: "https://framerusercontent.com/images/wDFIXECzI2jmZO4OFFYYPtYo8o.png" },
-    { title: "MicahHoangMotionFinalFinal 1 Ezgif.Com Video To Gif Converter", mediaType: "video", image: "https://framerusercontent.com/images/kipyILNrVzA7ZrhyQvJJnBPQ.gif", video: "https://framerusercontent.com/assets/PSunpuiaTFJuq1drGmHuqPbKU.mp4" },
-    { title: "DSC03254", mediaType: "image", image: "https://framerusercontent.com/images/fI3gK2q2zBwpviNv4ZkIHGN2suI.png", stroke: true },
-    { title: "Untitled 1", mediaType: "image", image: "https://framerusercontent.com/images/cUFXmLquiPf0Yt4Y8g1chWjtog.png", stroke: true },
-    { title: "HMCTEmailBlast", mediaType: "video", image: "https://framerusercontent.com/images/7eWr8EC6q3v1d4Al9B4BaN00xo.gif", video: "https://framerusercontent.com/assets/FcYV1Eih8W7oCuIwrSlPfz3wE4.mp4" },
-    { title: "IMG 5149 Edit 2", mediaType: "image", image: "https://framerusercontent.com/images/71dcYgQ5IK9DYgOwvHrRiH3CM.jpg" },
-    { title: "Process Book Mockup 1", mediaType: "image", image: "https://framerusercontent.com/images/LIj0cvlRTj0G6hYingYo9OEYc0M.png" },
-    { title: "Slide 1", mediaType: "video", image: "https://framerusercontent.com/images/cxkNy3oV0hyulOmWiAYj1slQZF4.jpg", video: "https://framerusercontent.com/assets/m0r53FklqFdWbK7cbL1wFsqgU.mp4" },
-    { title: "TrackBeast First Look", mediaType: "image", image: "https://framerusercontent.com/images/KMUA6fgB0FszuQaywr0IoUa4sg.png" },
-    { title: "Slide 1", mediaType: "video", image: "https://framerusercontent.com/images/Aj9cScyeATjrlbSABBqknznejhE.jpg", video: "https://framerusercontent.com/assets/huKz7bwQqB9zw88vP6DheQaGjE.mp4" },
-    { title: "Il 1588xN.4553485979 A78d", mediaType: "image", image: "https://framerusercontent.com/images/iy1sObMg41oR8m9v2WvxmlEd4.jpg", stroke: true },
-]
-
 // ---- Panel fallback normalization (canvas/editor only — no Cargo) ----
 function normalizeItem(entry: ManagedItem, index: number): Item | null {
     const requestedKind = entry.mediaType === "video" || entry.mediaType === "gif" ? entry.mediaType : "image"
@@ -557,8 +625,6 @@ function normalizeItems(input?: ManagedItem[]): Item[] {
     if (!Array.isArray(input) || !input.length) return []
     return input.map(normalizeItem).filter((item): item is Item => Boolean(item))
 }
-
-const BAKED_NORMALIZED = normalizeItems(BAKED_ITEMS)
 
 function mediaWidthUrl(url: string, width = 900) {
     // Legacy Cargo thumbnails could be resized via path; Framer-hosted URLs pass
@@ -1003,12 +1069,16 @@ export default function ArchivePlayground(props: Props) {
 
     const collectionId = props.collectionId || DEFAULT_COLLECTION_ID
     const collectionModuleUrl = props.collectionModuleUrl || ""
+    const registryItems = usePlayArchiveRegistryItems(isInteractive)
     const cmsItems = useCMSArchiveItems(isInteractive, collectionId, collectionModuleUrl)
     const panelItems = React.useMemo(() => normalizeItems(props.archiveItems ?? props.items), [props.archiveItems, props.items])
-    // Live CMS wins only when Framer ships an importable collection module on the
-    // page. Otherwise we fall back to authored panel items, then the baked
-    // snapshot so the published route stays usable.
-    const baseItems = cmsItems && cmsItems.length ? cmsItems : panelItems.length ? panelItems : BAKED_NORMALIZED
+    const baseItems = isCanvas
+        ? panelItems
+        : registryItems && registryItems.length
+          ? registryItems
+          : cmsItems && cmsItems.length
+            ? cmsItems
+            : []
     const [aspectMap, setAspectMap] = React.useState<Record<string, { w: number; h: number }>>({})
     const items = React.useMemo(
         () => baseItems.map((item) => (aspectMap[item.id] ? { ...item, width: aspectMap[item.id].w, height: aspectMap[item.id].h } : item)),
@@ -1597,6 +1667,7 @@ export default function ArchivePlayground(props: Props) {
     const modalPosition = isCanvas ? "absolute" : "fixed"
     const panelPadding = "clamp(22px, 2.8vw, 40px)"
     const stackPanelText = panelWidth < 430 || viewport.w < 560
+    const panelHasDescription = Boolean(panelItem?.description)
 
     return (
         <div
@@ -1670,7 +1741,7 @@ export default function ArchivePlayground(props: Props) {
                 role={panelOpen ? "dialog" : undefined}
                 aria-modal={panelOpen ? true : undefined}
                 aria-labelledby={panelOpen ? panelTitleId : undefined}
-                aria-describedby={panelOpen ? panelDescriptionId : undefined}
+                aria-describedby={panelOpen && panelHasDescription ? panelDescriptionId : undefined}
                 aria-hidden={panelOpen ? undefined : true}
                 tabIndex={-1}
                 onPointerDown={(event) => event.stopPropagation()}
@@ -1773,12 +1844,16 @@ export default function ArchivePlayground(props: Props) {
                             }}
                         />
 
-                        <div style={{ display: "grid", gridTemplateColumns: stackPanelText ? "minmax(0, 1fr)" : "minmax(0, 1.08fr) minmax(0, .92fr)", gap: stackPanelText ? 18 : 28, alignItems: "start", width: "100%" }}>
+                        <div style={{ display: "grid", gridTemplateColumns: stackPanelText || !panelHasDescription ? "minmax(0, 1fr)" : "minmax(0, 1.08fr) minmax(0, .92fr)", gap: stackPanelText ? 18 : 28, alignItems: "start", width: "100%" }}>
                             <div style={{ minWidth: 0, overflow: "hidden" }}>
-                                <div style={{ fontFamily: MONO, fontSize: 11, lineHeight: 1.2, letterSpacing: ".04em", textTransform: "uppercase", color: labelColor, marginBottom: 12 }}>{panelItem.category}</div>
+                                {panelItem.category && (
+                                    <div style={{ fontFamily: MONO, fontSize: 11, lineHeight: 1.2, letterSpacing: ".04em", textTransform: "uppercase", color: labelColor, marginBottom: 12 }}>{panelItem.category}</div>
+                                )}
                                 <h2 id={panelTitleId} style={{ margin: 0, fontFamily: DISPLAY, fontSize: "clamp(24px, 2.2vw, 34px)", lineHeight: 1.06, fontWeight: 500, letterSpacing: 0, color: textColor, overflowWrap: "anywhere" }}>{panelItem.title}</h2>
                             </div>
-                            <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: DISPLAY, fontSize: 16, lineHeight: 1.45, letterSpacing: 0, color: mutedTextColor, overflowWrap: "break-word" }}>{panelItem.description}</p>
+                            {panelHasDescription && (
+                                <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: DISPLAY, fontSize: 16, lineHeight: 1.45, letterSpacing: 0, color: mutedTextColor, overflowWrap: "break-word" }}>{panelItem.description}</p>
+                            )}
                         </div>
                     </div>
                 )}
