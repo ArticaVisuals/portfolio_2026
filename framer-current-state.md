@@ -196,8 +196,8 @@ Framer code components relevant to this handoff include:
 | `Test.tsx` | `O9WTdUJ` | Misleading filename; exports the legacy `ProjectRegistrar` CMS registry bridge. Kept as fallback. |
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | CMS-driven thumbnail stroke helper on Home, `/case-studies`, and `/index`. |
 | `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. |
-| `Play.tsx` | `PN1RVOf` | Active `/play` production wrapper. Exposes protected Framer authoring controls through `Archive Items` / `archiveItems`, normalizes blank legacy items, and passes managed media plus load-in timing to `ArchivePlayground.tsx`. Do not remove this authoring surface or replace it with hardcoded-only media. |
-| `ArchivePlayground.tsx` | `QNpkYp5` | Underlying `/play` archive renderer as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, and managed `Archive Items` rendering live here. Must continue accepting authorable item arrays from the production wrapper. |
+| `Play.tsx` | `PN1RVOf` | Active `/play` production wrapper. Keeps protected Framer authoring controls through `Archive Items` / `archiveItems` as fallback/rollback, and passes managed media plus load-in timing to `ArchivePlayground.tsx`. Do not remove this authoring surface or replace it with unrelated static media. |
+| `ArchivePlayground.tsx` | `QNpkYp5` | Underlying `/play` archive renderer as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, attempted Play Archive CMS loading, fallback panel items, and baked snapshot rendering live here. Must continue accepting authorable item arrays from the production wrapper. |
 | `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
 | `ArchivePlaygroundConsolidatedDraft.tsx` | `aEyj7Rq` | Legacy draft mirror code file. The `/play-consolidation-draft` web page is not present in the June 15 Framer inventory. |
 | `PlaygroundNavPassthrough.tsx` | `RBX6jsP` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
@@ -245,7 +245,7 @@ June 10 nav scroll guard: reproduced a native Navigation bug on Home where scrol
 
 `/play` (`KbgWr_0BN`) currently uses the production wrapper `Play.tsx` (`PN1RVOf`) around `ArchivePlayground.tsx` (`QNpkYp5`). The promoted archive was copied from the working `/play-consolidation-draft` build and now owns the archive grid, detail drawer, rotating Close text, slide-down nav reveal after close, media fade/stroke behavior, footer hiding, nav passthrough behavior, and content editing controls.
 
-The authorable media surface is non-negotiable. `Archive Items` must remain editable in Framer with upload, reorder, title, description, category, aspect, and stroke controls. Do not remove the `archiveItems` / `items` managed-item path, replace the archive with hardcoded-only `RAW_ITEMS`, hide these controls behind `Advanced`, or route future edits through static JSX/media layers. If the prop name changes, preserve legacy `items` as a runtime fallback and migrate the visible Framer control so existing page overrides cannot blank the archive.
+The fallback/rollback authoring surface is non-negotiable. `Archive Items` must remain editable in Framer with upload, reorder, title, description, category, aspect, and stroke controls. Do not remove the `archiveItems` / `items` managed-item path, replace the archive with unrelated hardcoded-only media, hide these controls behind `Advanced`, or route future edits through detached static JSX/media layers. If the prop name changes, preserve legacy `items` as a runtime fallback and migrate the visible Framer control so existing page overrides cannot blank the archive.
 
 June 11 Play load-in update: `ArchivePlayground.tsx` intentionally paints the root as blank Cream first, keeps the gallery inert/transparent while a browser View Transition is active, then releases the archive grid after a short Cream hold. `PageTransition.tsx` also sets `data-playground-force-blank` before navigating to `/play`, so the incoming snapshot stays blank even if the archive grid was already preloaded. The advanced controls `Load Hold`, `Load Fade`, and `Load Max` tune the archive intro timing; do not remove the hidden first frame unless the site-wide page transition model changes.
 
@@ -255,7 +255,7 @@ June 13 detail nav behavior: `ArchivePlayground.tsx` owns the `/play` detail-dra
 
 June 18, 2026 motion-ease follow-up: Framer readback showed `ProfileTextRevealFix.tsx` (`LNjgKO2`) and `PlaygroundMediaLoadSmoother.tsx` (`FFqrKyU`) still had the legacy `cubic-bezier(0.22, 1, 0.36, 1)` decel curve. Both live Framer code files now use local `SNAPPY_EASE` constants plus runtime normalization for saved legacy prop values. Current readback insert URLs are `https://framer.com/m/ProfileTextRevealFix-Rb9wbB.js@Uvy5PFTO3rssTlXNLk9w` and `https://framer.com/m/PlaygroundMediaLoadSmoother-wfvXvN.js@INAsxIPMxQsSK86hCQNv`. Local editable TSX mirrors were also normalized for legacy decel, symmetric/generic ease, and panel-close curves; generated `framer-code-mirror` compiled snapshots remain reference-only until regenerated. The broader live-Framer ease canon is Snappy for decel, Smooth for symmetric/UI, and Springy `cubic-bezier(0.25, 1, 0.5, 1)` only for Image Trail's gestural cursor animation.
 
-June 24 Play Archive CMS migration: `/play` now prefers the user-managed `Play Archive` CMS collection (`EySMRbI2N`) for live media. Editable fields are `Title` (`XwW7XD5jI`), `Order` (`c2qQhVGwP`), `Image / Poster` (`uqRtTdRM1`), `Video` (`KWCosE6Ef`), `Stroke` (`vq9I0excy`), and drawer/sidebar copy from `Content` (`vxCKd8ka_`). `ArchivePlayground.tsx` still accepts the `archiveItems` / `items` array and `Play.tsx` still exposes `Archive Items`, but that panel is now the canvas/editor fallback and rollback authoring surface. Leave `Advanced` off for normal content edits; it hides the layout, motion, color, nav, and timing controls so the page stays easy to manage long term.
+June 24 Play Archive CMS audit: the target content source is the user-managed `Play Archive` CMS collection (`EySMRbI2N`). Editable fields are `Title` (`XwW7XD5jI`), `Order` (`c2qQhVGwP`), `Image / Poster` (`uqRtTdRM1`), `Video` (`KWCosE6Ef`), `Stroke` (`vq9I0excy`), and drawer/sidebar copy from `Content` (`vxCKd8ka_`). Current published `/play` matches CMS title/media for the 32-row snapshot but does not prove live CMS loading: the page does not load a separate `EySMRbI2N` module, and drawer copy is generated fallback text until `Content` is wired into Framer/published. `ArchivePlayground.tsx` still accepts the `archiveItems` / `items` array and `Play.tsx` still exposes `Archive Items`, but that panel should be treated as fallback/rollback unless the runtime CMS bridge is incomplete. Until a full bridge is installed, rebake/publish after CMS content changes.
 
 The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) remain on the live `/play` canvas as rollback material, but each is set to `enabled=false`. The earlier `/play-consolidation-draft` web page is not present in the June 15 inventory; create a new draft/design page before future Play experiments.
 
@@ -422,11 +422,12 @@ June 15 CMS sync: `All Projects` now contains 17 items. The visible `NumberCount
 
 ### `/play`
 
-`/play` is the archive media playground. Active production code file:
+`/play` is the archive media playground. Active production code files:
 
-- `ArchivePlayground.tsx`
+- `Play.tsx` wrapper
+- `ArchivePlayground.tsx` renderer
 
-The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage archive content through the `Archive Items` array on the `ArchivePlayground` instance. Create a fresh draft/design page for future component experiments before touching the production `/play` page.
+The helper stack that used to patch nav/pointer/media/close behavior remains in the Framer project and on the live canvas with `enabled=false`. Manage target content in the `Play Archive` CMS collection, but remember the published site uses a baked/fallback snapshot unless the runtime CMS bridge is confirmed. Create a fresh draft/design page for future component experiments before touching the production `/play` page.
 
 ### `/info`
 

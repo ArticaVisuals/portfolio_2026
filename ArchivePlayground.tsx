@@ -477,11 +477,9 @@ function useCMSArchiveItems(enabled: boolean, collectionId: string, moduleUrl: s
 }
 
 // Migrated snapshot of the "Play Archive" collection — all media is Framer-hosted
-// (framerusercontent), Cargo-free. This is the reliable data source: it publishes
-// as plain string URLs (unlike nested File uploads) and needs no runtime CMS
-// module. The live CMS scraper above overrides this whenever its module is
-// actually shipped on the page. Re-bake from the CMS when collection content
-// changes (read EySMRbI2N → image/video URLs).
+// (framerusercontent), Cargo-free. This is a publish-safe fallback, not a live
+// CMS source. Re-bake it from Play Archive CMS after content changes unless a
+// complete runtime CMS bridge is installed.
 const BAKED_ITEMS: ManagedItem[] = [
     { title: "Untitled 2", mediaType: "image", image: "https://framerusercontent.com/images/qFtiO5xwy51sMflzxQajxyHZw.png" },
     { title: "RootGrwoth", mediaType: "video", image: "https://framerusercontent.com/images/SzlHeSZKCNT5magIroInR9DucY.jpg", video: "https://framerusercontent.com/assets/nuV5bQ9xGFCXYBrg3DX1Cx8R8E.mp4" },
@@ -1007,9 +1005,9 @@ export default function ArchivePlayground(props: Props) {
     const collectionModuleUrl = props.collectionModuleUrl || ""
     const cmsItems = useCMSArchiveItems(isInteractive, collectionId, collectionModuleUrl)
     const panelItems = React.useMemo(() => normalizeItems(props.archiveItems ?? props.items), [props.archiveItems, props.items])
-    // Live CMS overrides when its runtime module is shipped on the page; otherwise
-    // fall back to the authored panel (canvas), then to the baked Framer-hosted
-    // snapshot (the reliable default that always publishes).
+    // Live CMS wins only when Framer ships an importable collection module on the
+    // page. Otherwise we fall back to authored panel items, then the baked
+    // snapshot so the published route stays usable.
     const baseItems = cmsItems && cmsItems.length ? cmsItems : panelItems.length ? panelItems : BAKED_NORMALIZED
     const [aspectMap, setAspectMap] = React.useState<Record<string, { w: number; h: number }>>({})
     const items = React.useMemo(

@@ -134,9 +134,10 @@ function hasMedia(item: ManagedItem) {
 }
 
 function resolveItems(items?: ManagedItem[]) {
-    // The Archive Items panel is the source of truth. Only fall back to the
-    // built-in defaults when nothing has been authored at all — never silently
-    // re-inject the full default list, so removed items stay removed.
+    // Archive Items is retained as a fallback/rollback authoring surface. The
+    // long-term source of truth should be Play Archive CMS once the runtime
+    // bridge is available; until then, preserve authored removals instead of
+    // silently re-injecting defaults.
     if (!Array.isArray(items) || !items.length) return DEFAULT_CONTENT_ITEMS
     return items
 }

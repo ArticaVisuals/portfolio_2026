@@ -44,7 +44,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 | `IndexPage` | `rgAZFOv` | Base CMS-backed `/index` List/Grid archive (taxonomy filters, rows, cards, count). Imported by the wrapper below. |
 | `IndexPageGridPreview` | `LgIzFjJ` | **Mounted** `/index` wrapper (exported as `IndexPage`). Adds the `View` control, Grid/List remount preview, Figma responsive overrides. |
 | `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as fallback/rollback, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes media to the engine below. Do not strip the authoring surface. |
-| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: Play Archive CMS reader, grid, detail drawer, CMS `Content` sidebar copy, media smoothing, nav passthrough, close timing. |
+| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: attempts Play Archive CMS when an importable runtime module is available; otherwise uses fallback panel items/baked snapshot. Owns grid, detail drawer, sidebar copy, media smoothing, nav passthrough, close timing. |
 | `Test` | `O9WTdUJ` | **Misnomer** — it's the legacy `ProjectRegistrar` CMS bridge, kept as fallback. (Rename file in UI.) |
 
 ### Case-study media
