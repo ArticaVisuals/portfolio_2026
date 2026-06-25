@@ -80,9 +80,9 @@ type Snapshot = Partial<Pick<CSSStyleDeclaration, "position" | "top" | "right" |
 
 const CREAM = "rgb(247, 245, 240)"
 const BLACK = "rgb(20, 20, 20)"
-const MUTED = "rgb(85, 85, 85)"
 const LABEL = "rgb(151, 151, 151)"
 const RULE = "rgb(35, 51, 36)"
+const TEXT_GRAY = "rgb(110, 110, 110)"
 const DEFAULT_NAV_SELECTOR = "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]"
 const ROOT_SELECTOR = "[data-playground-root='true']"
 const CARD_SELECTOR = "[data-playground-card='true']"
@@ -91,6 +91,7 @@ const LOAD_IN_DELAY_MS = 70
 const LOAD_IN_FADE_MS = 1280
 const LOAD_IN_STAGGER_MS = 90
 const LOAD_IN_MAX_WAIT_MS = 2600
+const DEFAULT_PANEL_WIDTH = 960
 // Canonical site smooth ease (see framer-current-state.md "motion ease canon").
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 
@@ -348,7 +349,7 @@ addPropertyControls<Props>(Play, {
     rowGap: { type: ControlType.Number, title: "Row", defaultValue: 88, min: 0, max: 220, step: 1, unit: "px", hidden: hideAdvanced },
     hoverScale: { type: ControlType.Number, title: "Hover", defaultValue: 1.035, min: 1, max: 1.15, step: 0.005, hidden: hideAdvanced },
     hoverImageZoom: { type: ControlType.Number, title: "Zoom", defaultValue: 4, min: 0, max: 12, step: 0.5, unit: "%", hidden: hideAdvanced },
-    panelWidth: { type: ControlType.Number, title: "Panel", defaultValue: 500, min: 300, max: 760, step: 1, unit: "px", hidden: hideAdvanced },
+    panelWidth: { type: ControlType.Number, title: "Panel", defaultValue: DEFAULT_PANEL_WIDTH, min: 300, max: 1200, step: 1, unit: "px", hidden: hideAdvanced },
     panelExitMs: { type: ControlType.Number, title: "Close", defaultValue: 950, min: 200, max: 1400, step: 10, unit: "ms", hidden: hideAdvanced },
     driftSpeedX: { type: ControlType.Number, title: "Drift X", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
     driftSpeedY: { type: ControlType.Number, title: "Drift Y", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
@@ -374,7 +375,7 @@ addPropertyControls<Props>(Play, {
     backgroundColor: { type: ControlType.Color, title: "BG", defaultValue: CREAM, hidden: hideAdvanced },
     panelColor: { type: ControlType.Color, title: "Panel", defaultValue: CREAM, hidden: hideAdvanced },
     textColor: { type: ControlType.Color, title: "Text", defaultValue: BLACK, hidden: hideAdvanced },
-    mutedTextColor: { type: ControlType.Color, title: "Muted", defaultValue: MUTED, hidden: hideAdvanced },
+    mutedTextColor: { type: ControlType.Color, title: "Muted", defaultValue: TEXT_GRAY, hidden: hideAdvanced },
     labelColor: { type: ControlType.Color, title: "Label", defaultValue: LABEL, hidden: hideAdvanced },
     ruleColor: { type: ControlType.Color, title: "Rule", defaultValue: RULE, hidden: hideAdvanced },
     strokeColor: { type: ControlType.Color, title: "Stroke", defaultValue: LABEL, hidden: hideAdvanced },

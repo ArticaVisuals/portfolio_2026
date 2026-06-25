@@ -32,6 +32,13 @@ This is the quick source of truth for the active Framer project and local handof
   `LOAD_IN_STAGGER_MS = 90`, Smooth ease, and `pt:reveal` WAAPI replay by card
   distance from viewport center). Do not replace it with random/hash scatter or
   a vertical lift.
+- **`/play` detail drawer style update.** The drawer now defaults to a wider
+  Ashfall-style panel (`50vw` on desktop, capped by the `Panel` control at
+  `960px`, full-width below `700px`). Drawer title uses `/Text Gray`
+  `rgb(110,110,110)` with the `/Paragraph Medium` 22px treatment; drawer
+  `Content`/description uses the same gray with an 18px `/Paragraph Regular`
+  treatment. This is a visual treatment only; source content still comes from
+  the Play Archive CMS fields documented below.
 
 ## 2026-06-24 Update
 

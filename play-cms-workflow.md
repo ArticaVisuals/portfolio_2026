@@ -69,3 +69,12 @@ preview. The mounted `Play.tsx` wrapper should not ship baked default items.
 An empty `Content` field intentionally renders no description paragraph.
 An empty category intentionally renders no category label, because `Play
 Archive` does not currently have a category field.
+
+## Drawer Styling
+
+The drawer title and description are visual treatments applied by
+`ArchivePlayground.tsx`; they do not change the CMS source of truth. Title uses
+the `/Text Gray` token (`rgb(110,110,110)`) with the `/Paragraph Medium` 22px
+treatment. Description uses the same gray with an 18px `/Paragraph Regular`
+treatment. The drawer defaults to a wider desktop panel near half the viewport
+and becomes full-width on small screens.

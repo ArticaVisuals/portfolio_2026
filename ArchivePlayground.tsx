@@ -148,11 +148,13 @@ type InternalState = {
 
 const CREAM = "rgb(247, 245, 240)"
 const BLACK = "rgb(20, 20, 20)"
-const MUTED = "rgb(85, 85, 85)"
 const LABEL = "rgb(151, 151, 151)"
 const RULE = "rgb(35, 51, 36)"
+const TEXT_GRAY = "rgb(110, 110, 110)"
 const MONO = "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace"
 const DISPLAY = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
+const PARAGRAPH_MEDIUM = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
+const PARAGRAPH_REGULAR = "'GT Standard L Regular', 'GT Standard', 'Inter', system-ui, sans-serif"
 const MODAL_Z = 2147483646
 const TAP_THRESHOLD = 18
 const NAV_REVEAL_MS = 560
@@ -181,6 +183,10 @@ const LOAD_IN_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const LOAD_IN_MAX_WAIT_MS = 2600
+const DEFAULT_PANEL_WIDTH = 960
+const PANEL_DESKTOP_RATIO = 0.5
+const PANEL_FULL_WIDTH_BREAKPOINT = 700
+const PANEL_TEXT_STACK_WIDTH = 520
 
 // ---- Play Archive CMS collection ----
 // /play renders from this collection (Framer-hosted media, publishes reliably).
@@ -1210,7 +1216,6 @@ export default function ArchivePlayground(props: Props) {
     const backgroundColor = props.backgroundColor || CREAM
     const panelColor = props.panelColor || CREAM
     const textColor = props.textColor || BLACK
-    const mutedTextColor = props.mutedTextColor || MUTED
     const labelColor = props.labelColor || LABEL
     const ruleColor = props.ruleColor || RULE
     const strokeColor = props.strokeColor || LABEL
@@ -1220,7 +1225,7 @@ export default function ArchivePlayground(props: Props) {
     const rowGap = props.rowGap ?? 88
     const hoverScale = props.hoverScale ?? 1.035
     const hoverImageZoom = props.hoverImageZoom ?? 4
-    const panelWidth = props.panelWidth ?? 500
+    const panelWidth = props.panelWidth ?? DEFAULT_PANEL_WIDTH
     const panelExitMs = props.panelExitMs ?? 950
     const mediaFadeMs = props.mediaFadeMs ?? 1100
     const maxConcurrentVideos = props.maxConcurrentVideos ?? 8
@@ -1742,7 +1747,16 @@ export default function ArchivePlayground(props: Props) {
     const closeTextRolled = closeHover || (panelVisible && !panelOpen)
     const modalPosition = isCanvas ? "absolute" : "fixed"
     const panelPadding = "clamp(22px, 2.8vw, 40px)"
-    const stackPanelText = panelWidth < 430 || viewport.w < 560
+    const viewportWidth = viewport.w || DEFAULT_PANEL_WIDTH
+    const renderedPanelWidth =
+        viewportWidth < PANEL_FULL_WIDTH_BREAKPOINT
+            ? viewportWidth
+            : Math.min(panelWidth, viewportWidth * PANEL_DESKTOP_RATIO)
+    const panelWidthCss =
+        viewportWidth < PANEL_FULL_WIDTH_BREAKPOINT
+            ? "100vw"
+            : `min(${panelWidth}px, ${PANEL_DESKTOP_RATIO * 100}vw)`
+    const stackPanelText = renderedPanelWidth < PANEL_TEXT_STACK_WIDTH
     const panelHasDescription = Boolean(panelItem?.description)
 
     return (
@@ -1827,7 +1841,7 @@ export default function ArchivePlayground(props: Props) {
                     right: 0,
                     bottom: 0,
                     zIndex: MODAL_Z + 1,
-                    width: `min(${panelWidth}px, 100vw)`,
+                    width: panelWidthCss,
                     maxWidth: "100%",
                     background: panelColor,
                     color: textColor,
@@ -1925,10 +1939,10 @@ export default function ArchivePlayground(props: Props) {
                                 {panelItem.category && (
                                     <div style={{ fontFamily: MONO, fontSize: 11, lineHeight: 1.2, letterSpacing: ".04em", textTransform: "uppercase", color: labelColor, marginBottom: 12 }}>{panelItem.category}</div>
                                 )}
-                                <h2 id={panelTitleId} style={{ margin: 0, maxWidth: "100%", fontFamily: DISPLAY, fontSize: "clamp(24px, 2.2vw, 34px)", lineHeight: 1.08, fontWeight: 500, letterSpacing: 0, color: textColor, whiteSpace: "normal", wordBreak: "normal", overflowWrap: "break-word", hyphens: "auto" }}>{panelItem.title}</h2>
+                                <h2 id={panelTitleId} style={{ margin: 0, maxWidth: "100%", fontFamily: PARAGRAPH_MEDIUM, fontSize: 22, lineHeight: "110%", fontWeight: 500, letterSpacing: 0, color: TEXT_GRAY, whiteSpace: "normal", wordBreak: "normal", overflowWrap: "break-word", hyphens: "auto" }}>{panelItem.title}</h2>
                             </div>
                             {panelHasDescription && (
-                                <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: DISPLAY, fontSize: 16, lineHeight: 1.45, letterSpacing: 0, color: mutedTextColor, overflowWrap: "break-word" }}>{panelItem.description}</p>
+                                <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: PARAGRAPH_REGULAR, fontSize: 18, lineHeight: "140%", fontWeight: 400, letterSpacing: 0, color: TEXT_GRAY, overflowWrap: "break-word" }}>{panelItem.description}</p>
                             )}
                         </div>
                     </div>
@@ -1977,7 +1991,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     rowGap: { type: ControlType.Number, title: "Row", defaultValue: 88, min: 0, max: 220, step: 1, unit: "px", hidden: hideAdvanced },
     hoverScale: { type: ControlType.Number, title: "Hover", defaultValue: 1.035, min: 1, max: 1.15, step: 0.005, hidden: hideAdvanced },
     hoverImageZoom: { type: ControlType.Number, title: "Zoom", defaultValue: 4, min: 0, max: 12, step: 0.5, unit: "%", hidden: hideAdvanced },
-    panelWidth: { type: ControlType.Number, title: "Panel", defaultValue: 500, min: 300, max: 760, step: 1, unit: "px", hidden: hideAdvanced },
+    panelWidth: { type: ControlType.Number, title: "Panel", defaultValue: DEFAULT_PANEL_WIDTH, min: 300, max: 1200, step: 1, unit: "px", hidden: hideAdvanced },
     panelExitMs: { type: ControlType.Number, title: "Close", defaultValue: 950, min: 200, max: 1400, step: 10, unit: "ms", hidden: hideAdvanced },
     driftSpeedX: { type: ControlType.Number, title: "Drift X", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
     driftSpeedY: { type: ControlType.Number, title: "Drift Y", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
@@ -2004,7 +2018,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     backgroundColor: { type: ControlType.Color, title: "BG", defaultValue: CREAM, hidden: hideAdvanced },
     panelColor: { type: ControlType.Color, title: "Panel", defaultValue: CREAM, hidden: hideAdvanced },
     textColor: { type: ControlType.Color, title: "Text", defaultValue: BLACK, hidden: hideAdvanced },
-    mutedTextColor: { type: ControlType.Color, title: "Muted", defaultValue: MUTED, hidden: hideAdvanced },
+    mutedTextColor: { type: ControlType.Color, title: "Muted", defaultValue: TEXT_GRAY, hidden: hideAdvanced },
     labelColor: { type: ControlType.Color, title: "Label", defaultValue: LABEL, hidden: hideAdvanced },
     ruleColor: { type: ControlType.Color, title: "Rule", defaultValue: RULE, hidden: hideAdvanced },
     strokeColor: { type: ControlType.Color, title: "Stroke", defaultValue: LABEL, hidden: hideAdvanced },
