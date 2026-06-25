@@ -25,10 +25,11 @@ the codebase reads quickly.
    Examples: `NavigationScrollGuard`, `CaseStudyMobileDescriptorLayout`,
    `CaseStudyLinkRepair`, `InfoScrollMoreColorOverride`,
    `CaseStudyThumbnailStrokeStyles`, the controllers inside `CaseStudyControllers`.
-2. **CMS scraper.** Resolves the generated `All Projects` collection module
-   (`yTHrQWMIY`), dynamically `import()`s it, calls `scanItems()`, and reads
-   fields by ID. The resolve→import→scan boilerplate is currently **copy-pasted in
-   3 files** (see Consolidation backlog → C1).
+2. **CMS scraper.** Resolves a generated Framer CMS collection module,
+   dynamically `import()`s it, calls `scanItems()`, and reads fields by ID. Most
+   existing helpers read `All Projects` (`yTHrQWMIY`); `/play` now also reads the
+   `Play Archive` collection (`EySMRbI2N`). The resolve→import→scan boilerplate is
+   copy-pasted across multiple files (see Consolidation backlog → C1).
 
 Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 `pdXVG_fBO`, thumbnail `Jy7hBJady`, thumbnail video `SvOqFqdby`, stroke `OHdUYs6Mo`.
@@ -42,8 +43,8 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 |---|---|---|
 | `IndexPage` | `rgAZFOv` | Base CMS-backed `/index` List/Grid archive (taxonomy filters, rows, cards, count). Imported by the wrapper below. |
 | `IndexPageGridPreview` | `LgIzFjJ` | **Mounted** `/index` wrapper (exported as `IndexPage`). Adds the `View` control, Grid/List remount preview, Figma responsive overrides. |
-| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Owns authorable `Archive Items`, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes media to the engine below. Do not strip the authoring surface. |
-| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: grid, detail drawer, media smoothing, nav passthrough, close timing. |
+| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as fallback/rollback, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes media to the engine below. Do not strip the authoring surface. |
+| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: Play Archive CMS reader, grid, detail drawer, CMS `Content` sidebar copy, media smoothing, nav passthrough, close timing. |
 | `Test` | `O9WTdUJ` | **Misnomer** — it's the legacy `ProjectRegistrar` CMS bridge, kept as fallback. (Rename file in UI.) |
 
 ### Case-study media
