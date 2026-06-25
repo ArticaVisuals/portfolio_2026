@@ -6,7 +6,6 @@ import ArchivePlayground from "https://framer.com/m/ArchivePlayground-hjPIIx.js"
 
 type Kind = "image" | "video" | "gif"
 type ImageValue = { src?: string; srcSet?: string; alt?: string } | string | null | undefined
-type RawItem = [string, string, Kind, number, number, string, string?]
 type ManagedItem = {
     id?: string
     title?: string
@@ -79,8 +78,6 @@ type Props = {
 
 type Snapshot = Partial<Pick<CSSStyleDeclaration, "position" | "top" | "right" | "bottom" | "left" | "width" | "height" | "minHeight" | "transform" | "zIndex">>
 
-const RAW_ITEMS: RawItem[] = []
-
 const CREAM = "rgb(247, 245, 240)"
 const BLACK = "rgb(20, 20, 20)"
 const MUTED = "rgb(85, 85, 85)"
@@ -99,22 +96,6 @@ const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 
 const canUseDOM = () => typeof window !== "undefined" && typeof document !== "undefined"
 const isCanvas = () => RenderTarget.current() === RenderTarget.canvas || RenderTarget.current() === RenderTarget.thumbnail
-const defaultCategory = (kind: Kind) => (kind === "video" ? "Archive Video" : kind === "gif" ? "Archive GIF" : "Archive Image")
-
-// Built-in defaults stay empty. Live `/play` content is CMS-only in
-// ArchivePlayground; this array remains for canvas/rollback authoring only.
-const DEFAULT_CONTENT_ITEMS: ManagedItem[] = RAW_ITEMS.map(([order, title, kind, width, height, thumbnail, video = ""]) => ({
-    id: order,
-    title,
-    category: defaultCategory(kind),
-    description: `${width} x ${height} ${kind.toUpperCase()} from the archive.`,
-    mediaType: kind,
-    backupImage: thumbnail,
-    backupVideo: video,
-    width,
-    height,
-    stroke: "auto",
-}))
 
 function imageSource(value: ImageValue) {
     if (!value) return ""
@@ -136,8 +117,7 @@ function resolveItems(items?: ManagedItem[]) {
     // Archive Items is retained for canvas previews and emergency rollback.
     // Published /play content is resolved by ArchivePlayground from Play Archive
     // CMS only, so stale panel/default rows cannot leak onto the live site.
-    if (!Array.isArray(items) || !items.length) return DEFAULT_CONTENT_ITEMS
-    return items
+    return Array.isArray(items) ? items : []
 }
 
 function useViewportFix(enabled: boolean, containerRef: React.RefObject<HTMLDivElement>, ancestorDepth: number) {
@@ -342,7 +322,7 @@ addPropertyControls<Props>(Play, {
         type: ControlType.Array,
         title: "Archive Items",
         maxCount: 120,
-        defaultValue: DEFAULT_CONTENT_ITEMS,
+        defaultValue: [],
         control: {
             type: ControlType.Object,
             controls: {

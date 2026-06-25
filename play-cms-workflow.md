@@ -21,7 +21,8 @@ Edit these fields in `Play Archive`:
 
 Do not manage live `/play` content from `Play.tsx` `Archive Items`, detached
 image layers, local arrays, or baked snapshots. `Archive Items` remains only as
-a Framer canvas/rollback authoring surface.
+a Framer canvas/rollback authoring surface and should default to an empty list,
+not a seeded copy of old archive content.
 
 ## Required Bridge
 
@@ -52,7 +53,8 @@ Set the Collection List limit high enough to include every Play Archive item
 2. A generated Framer CMS module for `EySMRbI2N`, if Framer emits one.
 3. Empty state.
 
-In canvas/thumbnail mode only, it may use `Archive Items` for preview.
+In canvas/thumbnail mode only, it may use manually supplied `Archive Items` for
+preview. The mounted `Play.tsx` wrapper should not ship baked default items.
 
 ## Editing Workflow
 

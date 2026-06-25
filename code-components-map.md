@@ -45,7 +45,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 |---|---|---|
 | `IndexPage` | `rgAZFOv` | Base CMS-backed `/index` List/Grid archive (taxonomy filters, rows, cards, count). Imported by the wrapper below. |
 | `IndexPageGridPreview` | `LgIzFjJ` | **Mounted** `/index` wrapper (exported as `IndexPage`). Adds the `View` control, Grid/List remount preview, Figma responsive overrides. |
-| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as canvas/rollback surface, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes controls to the engine below. Do not strip the authoring surface. |
+| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as an empty-by-default canvas/rollback surface, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes controls to the engine below. Do not strip the authoring surface or seed it with live content. |
 | `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: live mode renders Play Archive CMS rows only (`PlayArchiveRegistrar` registry first, generated `EySMRbI2N` module second, otherwise empty). Owns grid, detail drawer, CMS `Content`, media smoothing, nav passthrough, close timing. |
 | `PlayArchiveRegistrar` | `jDwcdGN` | Invisible bridge mounted inside the hidden `Play Archive` Collection List. Registers Title/Order/Image/Video/Stroke/Content rows into `window.__articaPlayArchiveRegistry`. |
 | `Test` | `O9WTdUJ` | **Misnomer** — it's the legacy `ProjectRegistrar` CMS bridge, kept as fallback. (Rename file in UI.) |

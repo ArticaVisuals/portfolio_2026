@@ -16,8 +16,8 @@ This is the quick source of truth for the active Framer project and local handof
   this order only: `window.__articaPlayArchiveRegistry` rows from
   `PlayArchiveRegistrar`, then a generated Framer CMS module for `Play Archive`
   (`EySMRbI2N`) if Framer emits one, then empty state. The Framer `Archive Items`
-  array remains available through `Play.tsx` for canvas preview/rollback, but it
-  is not a published content fallback. CMS rows also no longer generate
+  array remains available through `Play.tsx` for canvas preview/rollback and
+  now defaults to empty; it is not a published content fallback. CMS rows also no longer generate
   fallback drawer copy such as "Image from the archive"; empty `Content`
   renders no description paragraph.
 - **`PlayArchiveRegistrar.tsx` added** (`jDwcdGN`, insert URL
@@ -273,7 +273,7 @@ The fallback/rollback authoring surface is non-negotiable. `Archive Items` must 
 
 June 11 Play load-in update: `ArchivePlayground.tsx` intentionally paints the root as blank Cream first, keeps the gallery inert/transparent while a browser View Transition is active, then releases the archive grid after a short Cream hold. `PageTransition.tsx` also sets `data-playground-force-blank` before navigating to `/play`, so the incoming snapshot stays blank even if the archive grid was already preloaded. The advanced controls `Load Hold`, `Load Fade`, and `Load Max` tune the archive intro timing; do not remove the hidden first frame unless the site-wide page transition model changes.
 
-June 11 authorability repair: `Play.tsx` uses visible `Archive Items` controls backed by the `archiveItems` prop as the Framer editor surface while still accepting legacy `items` so stale page-instance props cannot erase content. Default `RAW_ITEMS` are fallback/seed data only. Publish Framer after code-file changes before checking staging, because the public route can keep serving the previous component bundle until publish completes.
+June 11 authorability repair, updated June 25 for CMS-only cleanup: `Play.tsx` uses visible `Archive Items` controls backed by the `archiveItems` prop as the Framer editor surface while still accepting legacy `items` so stale page-instance props cannot erase content. The old baked default `RAW_ITEMS` seed path has been removed; `Archive Items` now defaults to an empty array and should not contain live content unless someone is intentionally using it for canvas preview or emergency rollback. Publish Framer after code-file changes before checking staging, because the public route can keep serving the previous component bundle until publish completes.
 
 June 13 detail nav behavior: `ArchivePlayground.tsx` owns the `/play` detail-drawer nav state. Opening an item must call the existing nav exit hook to apply `playground-nav-exit-hidden` and slide the native nav above the viewport so the drawer Close button is unobstructed; closing the drawer must release that class immediately and let the nav transition back in. Keep the `Nav Hide`/`navHideOffset` control wired through `Play.tsx` to `ArchivePlayground.tsx` instead of adding another helper component.
 
