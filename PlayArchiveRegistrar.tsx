@@ -3,14 +3,18 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 type AssetObject = {
     src?: AssetValue
+    srcSet?: string
     url?: AssetValue
     href?: AssetValue
     file?: AssetValue
     value?: AssetValue
+    width?: number | string
+    height?: number | string
     pixelWidth?: number
     pixelHeight?: number
 }
 type AssetValue = string | AssetObject | AssetValue[] | null | undefined
+type AssetDimensions = { width: number; height: number }
 
 type Props = {
     id?: string
@@ -93,16 +97,64 @@ function normalizeAssetSrc(value: AssetValue): string | undefined {
     )
 }
 
+function positiveDimension(value: unknown) {
+    const numberValue = typeof value === "number" ? value : typeof value === "string" && value.trim() ? Number(value) : 0
+    return Number.isFinite(numberValue) && numberValue > 0 ? Math.round(numberValue) : 0
+}
+
+function assetDimensionsFromPair(width: unknown, height: unknown): AssetDimensions | undefined {
+    const safeWidth = positiveDimension(width)
+    const safeHeight = positiveDimension(height)
+    return safeWidth && safeHeight ? { width: safeWidth, height: safeHeight } : undefined
+}
+
+function assetDimensionsFromUrl(src?: string): AssetDimensions | undefined {
+    if (!src) return undefined
+    try {
+        const url = new URL(src, "https://framer.local")
+        return assetDimensionsFromPair(url.searchParams.get("width"), url.searchParams.get("height"))
+    } catch {
+        return assetDimensionsFromPair(src.match(/[?&]width=(\d+(?:\.\d+)?)/)?.[1], src.match(/[?&]height=(\d+(?:\.\d+)?)/)?.[1])
+    }
+}
+
+function assetDimensionsFromSrcSet(srcSet?: string): AssetDimensions | undefined {
+    if (!srcSet) return undefined
+    for (const candidate of srcSet.split(",")) {
+        const dimensions = assetDimensionsFromUrl(candidate.trim().split(/\s+/)[0])
+        if (dimensions) return dimensions
+    }
+    return undefined
+}
+
+function assetDimensions(value: AssetValue): AssetDimensions | undefined {
+    if (!value) return undefined
+    if (typeof value === "string") return assetDimensionsFromUrl(value)
+    if (Array.isArray(value)) {
+        for (const item of value) {
+            const dimensions = assetDimensions(item)
+            if (dimensions) return dimensions
+        }
+        return undefined
+    }
+    return (
+        assetDimensionsFromPair(value.width ?? value.pixelWidth, value.height ?? value.pixelHeight) ||
+        assetDimensionsFromUrl(normalizeAssetSrc(value)) ||
+        assetDimensionsFromSrcSet(value.srcSet) ||
+        assetDimensions(value.value) ||
+        assetDimensions(value.src) ||
+        assetDimensions(value.url) ||
+        assetDimensions(value.href) ||
+        assetDimensions(value.file)
+    )
+}
+
 function assetWidth(value: AssetValue): number | undefined {
-    if (!value || typeof value === "string") return undefined
-    if (Array.isArray(value)) return value.map(assetWidth).find(Boolean)
-    return typeof value.pixelWidth === "number" ? value.pixelWidth : undefined
+    return assetDimensions(value)?.width
 }
 
 function assetHeight(value: AssetValue): number | undefined {
-    if (!value || typeof value === "string") return undefined
-    if (Array.isArray(value)) return value.map(assetHeight).find(Boolean)
-    return typeof value.pixelHeight === "number" ? value.pixelHeight : undefined
+    return assetDimensions(value)?.height
 }
 
 function stableKey(value: string) {

@@ -30,6 +30,7 @@ type Item = {
     accessibilityLabel: string
     stroke?: boolean
 }
+type MediaDimensions = { width: number; height: number }
 
 // ---- CMS reader types (mirrors the proven OtherProjectCardRestored pattern) ----
 type CMSFieldValue = { value?: unknown }
@@ -325,6 +326,61 @@ function normalizeMediaSource(value: unknown): string {
     return ""
 }
 
+function positiveDimension(value: unknown) {
+    const numberValue = typeof value === "number" ? value : typeof value === "string" && value.trim() ? Number(value) : 0
+    return Number.isFinite(numberValue) && numberValue > 0 ? Math.round(numberValue) : 0
+}
+
+function mediaDimensionsFromPair(width: unknown, height: unknown): MediaDimensions | undefined {
+    const safeWidth = positiveDimension(width)
+    const safeHeight = positiveDimension(height)
+    return safeWidth && safeHeight ? { width: safeWidth, height: safeHeight } : undefined
+}
+
+function mediaDimensionsFromUrl(src: string): MediaDimensions | undefined {
+    if (!src) return undefined
+    try {
+        const url = new URL(src, "https://framer.local")
+        return mediaDimensionsFromPair(url.searchParams.get("width"), url.searchParams.get("height"))
+    } catch {
+        return mediaDimensionsFromPair(src.match(/[?&]width=(\d+(?:\.\d+)?)/)?.[1], src.match(/[?&]height=(\d+(?:\.\d+)?)/)?.[1])
+    }
+}
+
+function mediaDimensionsFromSrcSet(srcSet: unknown): MediaDimensions | undefined {
+    if (typeof srcSet !== "string") return undefined
+    for (const candidate of srcSet.split(",")) {
+        const dimensions = mediaDimensionsFromUrl(candidate.trim().split(/\s+/)[0] || "")
+        if (dimensions) return dimensions
+    }
+    return undefined
+}
+
+function normalizeMediaDimensions(value: unknown): MediaDimensions | undefined {
+    if (!value) return undefined
+    if (typeof value === "string") return mediaDimensionsFromUrl(value)
+    if (Array.isArray(value)) {
+        for (const item of value) {
+            const dimensions = normalizeMediaDimensions(item)
+            if (dimensions) return dimensions
+        }
+        return undefined
+    }
+    if (typeof value !== "object") return undefined
+
+    const record = value as Record<string, unknown>
+    return (
+        mediaDimensionsFromPair(record.width ?? record.pixelWidth, record.height ?? record.pixelHeight) ||
+        mediaDimensionsFromUrl(normalizeMediaSource(record)) ||
+        mediaDimensionsFromSrcSet(record.srcSet) ||
+        normalizeMediaDimensions(record.value) ||
+        normalizeMediaDimensions(record.src) ||
+        normalizeMediaDimensions(record.url) ||
+        normalizeMediaDimensions(record.href) ||
+        normalizeMediaDimensions(record.file)
+    )
+}
+
 function getDocumentResourceUrls(): string[] {
     if (typeof document === "undefined") return []
     const elementUrls = Array.from(
@@ -423,8 +479,11 @@ function initializeCMSModule(module: CMSModule) {
 function cmsRowToItem(row: CMSRow, index: number): Item | null {
     const data = row.data
     const title = normalizeText(readField(data, CMS_FIELDS.title))
-    const image = normalizeMediaSource(readField(data, CMS_FIELDS.image))
-    const video = normalizeMediaSource(readField(data, CMS_FIELDS.video))
+    const imageField = readField(data, CMS_FIELDS.image)
+    const videoField = readField(data, CMS_FIELDS.video)
+    const image = normalizeMediaSource(imageField)
+    const video = normalizeMediaSource(videoField)
+    const dimensions = normalizeMediaDimensions(imageField) || normalizeMediaDimensions(videoField) || normalizeMediaDimensions(image) || normalizeMediaDimensions(video)
     const stroke = normalizeBoolean(readField(data, CMS_FIELDS.stroke))
     const description = normalizeFormattedText(readField(data, CMS_FIELDS.content))
     if (!image && !video) return null
@@ -440,11 +499,10 @@ function cmsRowToItem(row: CMSRow, index: number): Item | null {
         id,
         title,
         category,
-        // Aspect ratio is unknown until the media loads; measured at runtime.
         description,
         kind,
-        width: 1,
-        height: 1,
+        width: dimensions?.width ?? 1,
+        height: dimensions?.height ?? 1,
         thumbnail: image,
         videoUrl: video,
         accessibilityLabel,
@@ -482,7 +540,10 @@ function getPlayArchiveRegistry(): PlayArchiveRegistry | null {
 }
 
 function registryRowToItem(row: RegistryRow, index: number): Item | null {
-    const image = normalizeMediaSource(row.image) || normalizeMediaSource(row.poster)
+    const imageSource = normalizeMediaSource(row.image)
+    const posterSource = normalizeMediaSource(row.poster)
+    const imageField = imageSource ? row.image : row.poster
+    const image = imageSource || posterSource
     const video = normalizeMediaSource(row.video)
     if (!image && !video) return null
 
@@ -493,8 +554,10 @@ function registryRowToItem(row: RegistryRow, index: number): Item | null {
     const category = ""
     const accessibilityLabel = accessibleItemLabel(title, category, kind, index)
     const identity = normalizeText(row.slug || row.id || title) || `${title}-${image}-${video}`
-    const width = Math.max(1, Math.round(Number(row.width) || 1))
-    const height = Math.max(1, Math.round(Number(row.height) || 1))
+    const rowDimensions = mediaDimensionsFromPair(row.width, row.height)
+    const mediaDimensions = normalizeMediaDimensions(imageField) || normalizeMediaDimensions(row.video) || normalizeMediaDimensions(image) || normalizeMediaDimensions(video)
+    const width = rowDimensions?.width ?? mediaDimensions?.width ?? 1
+    const height = rowDimensions?.height ?? mediaDimensions?.height ?? 1
     const stroke = row.stroke === "on" ? true : row.stroke === "off" ? false : typeof row.stroke === "boolean" ? row.stroke : normalizeBoolean(row.stroke)
 
     return {
