@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "play-024",
+    "title": "DSC03254",
+    "field": "Image / Poster",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-024-image-dsc03254.png",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-024-image-dsc03254-1800q78.webp",
+    "originalBytes": 5573725,
+    "optimizedBytes": 135320,
+    "savings": 97.6
+  },
+  {
+    "slug": "play-026",
+    "title": "HMCTEmailBlast poster GIF",
+    "field": "Image / Poster",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-026-image-hmctemailblast-poster-gif.gif",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-026-image-hmctemailblast-poster-gif-1800q78.webp",
+    "originalBytes": 4909291,
+    "optimizedBytes": 568388,
+    "savings": 88.4
+  },
+  {
+    "slug": "play-019",
+    "title": "Seek Truth Thumbnail",
+    "field": "Image / Poster",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-019-image-seek-truth-thumbnail.png",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-019-image-seek-truth-thumbnail-1800q78.webp",
+    "originalBytes": 4224520,
+    "optimizedBytes": 61988,
+    "savings": 98.5
+  },
+  {
+    "slug": "play-017",
+    "title": "Independent Lens Poster Mockup",
+    "field": "Image / Poster",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-017-image-independent-lens-poster-mockup.png",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-017-image-independent-lens-poster-mockup-1800q78.webp",
+    "originalBytes": 3758287,
+    "optimizedBytes": 120230,
+    "savings": 96.8
+  },
+  {
+    "slug": "play-006",
+    "title": "VisArt Com FA24 Poster Mockup",
+    "field": "Image / Poster",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-006-image-visart-com-fa24-poster-mockup.jpg",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-006-image-visart-com-fa24-poster-mockup-1800q78.webp",
+    "originalBytes": 2477765,
+    "optimizedBytes": 191268,
+    "savings": 92.3
+  },
+  {
+    "slug": "play-002",
+    "title": "RootGrwoth video",
+    "field": "Video",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-002-video-rootgrwoth-video.mp4",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-002-video-rootgrwoth-video-720p-crf28-noaudio.mp4",
+    "originalBytes": 2179237,
+    "optimizedBytes": 1493179,
+    "savings": 31.5
+  },
+  {
+    "slug": "play-021",
+    "title": "MicahHoang 3 Final video",
+    "field": "Video",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-021-video-micahhoang-3-final-video.mp4",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-021-video-micahhoang-3-final-video-720p-crf28-noaudio.mp4",
+    "originalBytes": 1503426,
+    "optimizedBytes": 185005,
+    "savings": 87.7
+  },
+  {
+    "slug": "play-027",
+    "title": "IMG 5149 Edit 2",
+    "field": "Image / Poster",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-027-image-img-5149-edit-2.jpg",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-027-image-img-5149-edit-2-1800q78.webp",
+    "originalBytes": 1377281,
+    "optimizedBytes": 160346,
+    "savings": 88.4
+  },
+  {
+    "slug": "play-011",
+    "title": "MD2 WK03 RotatingCube MH video",
+    "field": "Video",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-011-video-md2-wk03-rotatingcube-mh-video.mp4",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-011-video-md2-wk03-rotatingcube-mh-video-720p-crf28-noaudio.mp4",
+    "originalBytes": 1118095,
+    "optimizedBytes": 785755,
+    "savings": 29.7
+  },
+  {
+    "slug": "play-026",
+    "title": "HMCTEmailBlast video",
+    "field": "Video",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-026-video-hmctemailblast-video.mp4",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-026-video-hmctemailblast-video-720p-crf28-noaudio.mp4",
+    "originalBytes": 917337,
+    "optimizedBytes": 374208,
+    "savings": 59.2
+  },
+  {
+    "slug": "play-014",
+    "title": "Flower video",
+    "field": "Video",
+    "original": "output/play-asset-optimization-2026-06-25/raw/play-014-video-flower-video.mp4",
+    "optimized": "output/play-asset-optimization-2026-06-25/optimized/play-014-video-flower-video-720p-crf28-noaudio.mp4",
+    "originalBytes": 634190,
+    "optimizedBytes": 500119,
+    "savings": 21.1
+  }
+]

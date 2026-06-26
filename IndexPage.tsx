@@ -1211,12 +1211,9 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
 
         const revealForPageTransition = () => {
             if (revealed) return
+            window.clearTimeout(pageRevealTimer)
             observer?.disconnect()
-            if (indexViewTransitionActive()) {
-                waitForTransitionThenReveal(false)
-                return
-            }
-            reveal()
+            reveal() // no VT-gate — page-arrival reveal fires during the curtain
         }
 
         observer = new IntersectionObserver(
@@ -1233,6 +1230,13 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
         observer.observe(element)
         window.addEventListener("pt:reveal", revealForPageTransition)
         pageRevealTimer = window.setTimeout(revealForPageTransition, 220)
+
+        // Catch a pt:reveal that already fired before this effect mounted
+        // (home→index race) so we still reveal at curtain-lift, not 220ms later.
+        const recentPageRevealAt = Number((window as any).__ptRevealedAt || 0)
+        if (recentPageRevealAt > 0 && Date.now() - recentPageRevealAt < 2000) {
+            revealForPageTransition()
+        }
 
         return () => {
             window.clearTimeout(transitionPoll)
@@ -3258,6 +3262,24 @@ export default function IndexPage({
 
     const [activeView, setActiveView] = useState(initialView)
     const [renderKey, setRenderKey] = useState(0)
+    // Defer the heavy grid/list (200+ media elements) by a couple of frames so
+    // the hero "Index" title + page chrome commit FIRST. Otherwise React renders
+    // the entire index in one ~2s commit, and the title only appears after the
+    // page-transition slide is already over (reads as "Index comes in late").
+    const [deferHeavyContentReady, setDeferHeavyContentReady] = useState(false)
+    useEffect(() => {
+        let raf1 = 0
+        let raf2 = 0
+        raf1 = requestAnimationFrame(() => {
+            raf2 = requestAnimationFrame(() =>
+                setDeferHeavyContentReady(true)
+            )
+        })
+        return () => {
+            cancelAnimationFrame(raf1)
+            cancelAnimationFrame(raf2)
+        }
+    }, [])
     const [filters, setFilters] = useState<Filters>({
         disciplines: [],
         industries: [],
@@ -3405,7 +3427,7 @@ export default function IndexPage({
                 </div>
 
                 <div key={renderKey}>
-                    {isCMSLoading ? (
+                    {isCMSLoading || !deferHeavyContentReady ? (
                         <div
                             style={{
                                 padding: "64px 0",

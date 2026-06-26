@@ -84,7 +84,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 ### Site chrome
 | Component | id | What it does |
 |---|---|---|
-| `PageTransition` | `gmalnRr` | Site-wide curtain transition + boot identity + Framer editorbar suppression. |
+| `PageTransition` | `gmalnRr` | Thin wrapper over the compiled v7.12 runtime module. Adds: site-wide curtain transition + boot identity + Framer editorbar suppression (runtime), Home Header Bottom appear recovery, `/index` hero-title rise-on-arrival, and home hero rise-on-arrival (2026-06-26). Runtime source preserved as `PageTransition.runtime-backup.tsx`. See `framer-page-transition.md`. |
 | `PageTransition_v7_12_Backup` | `Uv2k27l` | **Rollback wrapper** to the pre-v7.13 module. Retire candidate (keep frozen URL in a note). |
 | `NavigationScrollGuard` | `Wnd19lx` | Keeps native nav clickable when its scroll-hide transform gets stranded at top. Lives inside `Navigation`. |
 | `ScrollToTopButton` | `gh4ngZN` | Scroll-to-top mono button (Home, `/info`). Shares the flip-rail cadence of the `Scroll More` design component. |

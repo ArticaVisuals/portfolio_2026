@@ -120,6 +120,27 @@ function isLayoutMediaSkeletonHost(host: HTMLElement, media: HTMLElement): boole
     return directChildren.length > 1 && !directChildren.includes(media)
 }
 
+function syncNestedReadySkeletonHosts() {
+    if (typeof document === "undefined") return
+
+    document
+        .querySelectorAll<HTMLElement>(
+            "[data-case-study-media-skeleton='true']:not([data-case-study-media-ready='true'])"
+        )
+        .forEach((host) => {
+            const hasReadyNestedMedia = Boolean(
+                host.querySelector("[data-case-study-media-state='ready'], [data-case-study-media-ready='true']")
+            )
+
+            if (!hasReadyNestedMedia) return
+
+            host.setAttribute("data-case-study-media-ready", "true")
+            host.removeAttribute("data-case-study-media-failed")
+            host.removeAttribute("data-case-study-media-skeleton-ratio")
+            host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+        })
+}
+
 function syncSkeletonAspectRatios() {
     if (typeof document === "undefined") return
 
@@ -149,6 +170,11 @@ function syncSkeletonAspectRatios() {
     })
 }
 
+function syncCaseStudySkeletonGuards() {
+    syncNestedReadySkeletonHosts()
+    syncSkeletonAspectRatios()
+}
+
 function useCaseStudySkeletonAspectGuard() {
     React.useEffect(() => {
         if (typeof document === "undefined" || typeof window === "undefined") return
@@ -158,7 +184,7 @@ function useCaseStudySkeletonAspectGuard() {
         const timeouts: number[] = []
         const schedule = () => {
             window.cancelAnimationFrame(frame)
-            frame = window.requestAnimationFrame(syncSkeletonAspectRatios)
+            frame = window.requestAnimationFrame(syncCaseStudySkeletonGuards)
         }
 
         schedule()
