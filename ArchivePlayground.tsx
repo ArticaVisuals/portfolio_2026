@@ -2478,82 +2478,82 @@ export default function ArchivePlayground(props: Props) {
                             />
                         </figure>
 
-                        {/* Title (+ divider under it) and body copy (+ CTA).
-                            Two columns on wider panels; stacked + left-aligned
-                            on the smallest breakpoint. The divider sits directly
-                            under the title, and the CTA aligns to the body copy. */}
+                        {/* Title (full width), then a full-width divider under
+                            it spanning both columns. Description + CTA sit below
+                            the divider in the right column (empty left column on
+                            wide); everything stacks left-aligned on small. */}
                         <div
                             style={{
-                                marginTop: "clamp(24px, 3vw, 40px)",
-                                display: "grid",
-                                gridTemplateColumns: stackPanelText
-                                    ? "minmax(0, 1fr)"
-                                    : "minmax(0, 1.1fr) minmax(0, 0.9fr)",
-                                columnGap: 32,
-                                rowGap: "clamp(24px, 3.2vw, 44px)",
-                                alignItems: "start",
                                 width: "100%",
+                                minWidth: 0,
+                                maxWidth: "100%",
+                                marginTop: "clamp(28px, 4vw, 54px)",
                             }}
                         >
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    minWidth: 0,
-                                    maxWidth: "100%",
-                                }}
-                            >
-                                {panelItem.category && (
-                                    <div
-                                        style={{
-                                            fontFamily: MONO,
-                                            fontSize: 11,
-                                            lineHeight: 1.2,
-                                            letterSpacing: ".04em",
-                                            textTransform: "uppercase",
-                                            color: labelColor,
-                                            marginBottom: 12,
-                                        }}
-                                    >
-                                        {panelItem.category}
-                                    </div>
-                                )}
-                                <h2
-                                    id={panelTitleId}
+                            {panelItem.category && (
+                                <div
                                     style={{
-                                        margin: 0,
-                                        maxWidth: "100%",
-                                        fontFamily: PARAGRAPH_MEDIUM,
-                                        fontSize: 22,
-                                        lineHeight: "110%",
-                                        fontWeight: 500,
-                                        letterSpacing: 0,
-                                        color: textColor,
-                                        whiteSpace: "normal",
-                                        wordBreak: "normal",
-                                        overflowWrap: "break-word",
-                                        hyphens: "auto",
+                                        fontFamily: MONO,
+                                        fontSize: 11,
+                                        lineHeight: 1.2,
+                                        letterSpacing: ".04em",
+                                        textTransform: "uppercase",
+                                        color: labelColor,
+                                        marginBottom: 12,
                                     }}
                                 >
-                                    {panelItem.title}
-                                </h2>
-                                <div
-                                    aria-hidden="true"
-                                    style={{
-                                        width: "100%",
-                                        height: 1,
-                                        background: ruleColor,
-                                        marginTop: "clamp(12px, 1.5vw, 18px)",
-                                        transformOrigin: "left center",
-                                        animation: panelOpen
-                                            ? `playgroundRuleDraw 700ms ${SMOOTH_EASE} both`
-                                            : undefined,
-                                    }}
-                                />
-                            </div>
+                                    {panelItem.category}
+                                </div>
+                            )}
+                            <h2
+                                id={panelTitleId}
+                                style={{
+                                    margin: 0,
+                                    maxWidth: "100%",
+                                    fontFamily: PARAGRAPH_MEDIUM,
+                                    fontSize: 22,
+                                    lineHeight: "110%",
+                                    fontWeight: 500,
+                                    letterSpacing: 0,
+                                    color: textColor,
+                                    whiteSpace: "normal",
+                                    wordBreak: "normal",
+                                    overflowWrap: "break-word",
+                                    hyphens: "auto",
+                                }}
+                            >
+                                {panelItem.title}
+                            </h2>
+                        </div>
 
-                            {(panelHasDescription || panelHasCta) && (
+                        <div
+                            aria-hidden="true"
+                            style={{
+                                width: "100%",
+                                height: 1,
+                                background: ruleColor,
+                                marginTop: "clamp(12px, 1.5vw, 18px)",
+                                transformOrigin: "left center",
+                                animation: panelOpen
+                                    ? `playgroundRuleDraw 700ms ${SMOOTH_EASE} both`
+                                    : undefined,
+                            }}
+                        />
+
+                        {(panelHasDescription || panelHasCta) && (
+                            <div
+                                style={{
+                                    marginTop: "clamp(24px, 3.2vw, 44px)",
+                                    display: "grid",
+                                    gridTemplateColumns: stackPanelText
+                                        ? "minmax(0, 1fr)"
+                                        : "minmax(0, 1.1fr) minmax(0, 0.9fr)",
+                                    columnGap: 32,
+                                    alignItems: "start",
+                                    width: "100%",
+                                }}
+                            >
+                                {!stackPanelText && <div aria-hidden="true" />}
                                 <div
                                     style={{
                                         display: "flex",
@@ -2676,8 +2676,8 @@ export default function ArchivePlayground(props: Props) {
                                         </a>
                                     )}
                                 </div>
-                            )}
-                        </div>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>

@@ -91,15 +91,12 @@ The drawer title, description, and CTA are visual treatments applied by
   back to the `panelCtaLabel` prop ("View project"). `panelCtaNewTab` controls
   whether it opens in a new tab (default on).
 
-Layout: a two-column grid on wider panels, collapsing to a single left-aligned
-stack on the smallest breakpoint.
-
-- Left column: the **title**, with the **divider rule directly underneath it**.
-- Right column (body copy): the **description**, then the **CTA underneath it,
-  left-aligned to the body copy** — not the panel edge.
-- Smallest breakpoint: everything stacks as title → divider → description → CTA,
-  all left-aligned, with extra padding between the title/divider group and the
-  description/CTA group.
+Layout: the **title sits on top**, with a **full-width divider directly under it
+spanning both columns**. Below the divider, on wider panels the **description +
+CTA sit in the right column** (the left column is empty), keeping the body copy
+aligned to the right; on the smallest breakpoint everything collapses to a single
+left-aligned stack (title → divider → description → CTA), with extra padding
+between the title/divider and the description/CTA group.
 
 The drawer defaults to a wider desktop panel near half the viewport and becomes
 full-width on small screens. Video cells with no `Image / Poster` render nothing
