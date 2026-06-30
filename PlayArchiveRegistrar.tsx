@@ -24,6 +24,8 @@ type Props = {
     image?: AssetValue
     video?: AssetValue
     content?: unknown
+    linkTitle?: string
+    link?: AssetValue
     stroke?: boolean
 }
 
@@ -35,6 +37,8 @@ type RegistryRow = {
     image?: AssetValue
     video?: AssetValue
     content?: unknown
+    linkTitle?: string
+    link?: string
     stroke?: boolean
     width?: number
     height?: number
@@ -191,6 +195,8 @@ export default function PlayArchiveRegistrar(props: Props) {
     const row = React.useMemo<RegistryRow>(() => {
         const image = normalizeAssetSrc(props.image)
         const video = normalizeAssetSrc(props.video)
+        const link = normalizeAssetSrc(props.link)
+        const linkTitle = (props.linkTitle || "").trim()
         return {
             id: props.id || registryId,
             slug: props.slug || "",
@@ -199,12 +205,14 @@ export default function PlayArchiveRegistrar(props: Props) {
             image: image || undefined,
             video: video || undefined,
             content: props.content,
+            linkTitle: linkTitle || undefined,
+            link: link || undefined,
             stroke: !!props.stroke,
             width: assetWidth(props.image),
             height: assetHeight(props.image),
             source: "play-archive-registrar-v1",
         }
-    }, [props.id, props.slug, props.title, props.order, props.image, props.video, props.content, props.stroke, registryId])
+    }, [props.id, props.slug, props.title, props.order, props.image, props.video, props.content, props.linkTitle, props.link, props.stroke, registryId])
 
     React.useEffect(() => {
         const registry = getRegistry()
@@ -261,6 +269,8 @@ addPropertyControls(PlayArchiveRegistrar, {
         title: "Content",
         displayTextArea: true,
     },
+    linkTitle: { type: ControlType.String, title: "Link Title" },
+    link: { type: ControlType.Link, title: "Link" },
     stroke: { type: ControlType.Boolean, title: "Stroke" },
 })
 

@@ -1,6 +1,6 @@
 # Play CMS Workflow
 
-Last updated: 2026-06-25
+Last updated: 2026-06-29
 
 `/play` is managed from the Framer CMS collection `Play Archive`
 (`EySMRbI2N`). Published content should be exactly the CMS content. If a value
@@ -17,7 +17,9 @@ Edit these fields in `Play Archive`:
 | `Image / Poster` | `uqRtTdRM1` | Image item or video poster |
 | `Video` | `KWCosE6Ef` | Optional video source |
 | `Stroke` | `vq9I0excy` | Per-item media stroke |
-| `Content` | `vxCKd8ka_` | Drawer/sidebar description |
+| `Content` | `uhNqEiZxv` | Drawer/sidebar description |
+| `Link Title` | `VfgNuQyis` | Drawer CTA label (falls back to "View project") |
+| `Link` | `YTkltwLjJ` | Drawer CTA destination; the CTA only renders when this is set |
 
 Do not manage live `/play` content from `Play.tsx` `Archive Items`, detached
 image layers, local arrays, or baked snapshots. `Archive Items` remains only as
@@ -41,6 +43,8 @@ current `/play` scaffold node `jHFyFgJNt`) and bind:
 - `image` to `Image / Poster`.
 - `video` to `Video`.
 - `content` to `Content`.
+- `linkTitle` to `Link Title`.
+- `link` to `Link`.
 - `stroke` to `Stroke`.
 
 Set the Collection List limit high enough to include every Play Archive item
@@ -61,20 +65,43 @@ preview. The mounted `Play.tsx` wrapper should not ship baked default items.
 1. Open Framer CMS and edit `Play Archive`.
 2. Add or remove rows there. Do not add hardcoded archive rows in code.
 3. For each item, set `Order`, `Title`, `Image / Poster`, optional `Video`,
-   `Stroke`, and optional `Content`.
+   `Stroke`, optional `Content`, and optional `Link` + `Link Title`.
 4. Publish the Framer site after CMS or code changes.
 5. Verify the published `/play` page. If an item, video, stroke, or description
    is missing, fix the CMS row or the registrar binding, not the code fallback.
 
 An empty `Content` field intentionally renders no description paragraph.
-An empty category intentionally renders no category label, because `Play
-Archive` does not currently have a category field.
+An empty `Link` field intentionally renders no CTA (the `Link Title` is ignored
+without a `Link`). An empty category intentionally renders no category label,
+because `Play Archive` does not currently have a category field.
 
 ## Drawer Styling
 
-The drawer title and description are visual treatments applied by
-`ArchivePlayground.tsx`; they do not change the CMS source of truth. Title uses
-the `/Text Gray` token (`rgb(110,110,110)`) with the `/Paragraph Medium` 22px
-treatment. Description uses the same gray with an 18px `/Paragraph Regular`
-treatment. The drawer defaults to a wider desktop panel near half the viewport
-and becomes full-width on small screens.
+The drawer title, description, and CTA are visual treatments applied by
+`ArchivePlayground.tsx`; they do not change the CMS source of truth.
+
+- **Title:** off-black (`textColor`, `rgb(20,20,20)` / `/Off-Black`) with the
+  `/Paragraph Medium` 22px treatment.
+- **Description (body copy):** `/Text Gray` (`rgb(110,110,110)`) with an 18px
+  `/Paragraph Regular` treatment.
+- **CTA:** mono nav-button treatment (`GT Standard Mono Trial`, 13px, uppercase,
+  `letterSpacing 0`) with a static `→` glyph to its left and a two-line vertical
+  roll on hover — the same motion as the CLOSE button and the Info/Index nav
+  links. It renders ONLY when `Link` is set; the label is `Link Title`, falling
+  back to the `panelCtaLabel` prop ("View project"). `panelCtaNewTab` controls
+  whether it opens in a new tab (default on).
+
+Layout: a two-column grid on wider panels, collapsing to a single left-aligned
+stack on the smallest breakpoint.
+
+- Left column: the **title**, with the **divider rule directly underneath it**.
+- Right column (body copy): the **description**, then the **CTA underneath it,
+  left-aligned to the body copy** — not the panel edge.
+- Smallest breakpoint: everything stacks as title → divider → description → CTA,
+  all left-aligned, with extra padding between the title/divider group and the
+  description/CTA group.
+
+The drawer defaults to a wider desktop panel near half the viewport and becomes
+full-width on small screens. Video cells with no `Image / Poster` render nothing
+(not a broken-image icon) when they fall outside the concurrent-video budget;
+add a poster so an inactive video cell shows a still instead of going blank.

@@ -2,7 +2,11 @@ import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 type Kind = "image" | "video" | "gif"
-type ImageValue = { src?: string; srcSet?: string; alt?: string } | string | null | undefined
+type ImageValue =
+    | { src?: string; srcSet?: string; alt?: string }
+    | string
+    | null
+    | undefined
 type ManagedItem = {
     id?: string
     title?: string
@@ -28,15 +32,23 @@ type Item = {
     thumbnail: string
     videoUrl: string
     accessibilityLabel: string
+    link?: string
+    linkTitle?: string
     stroke?: boolean
 }
 type MediaDimensions = { width: number; height: number }
 
 // ---- CMS reader types (mirrors the proven OtherProjectCardRestored pattern) ----
 type CMSFieldValue = { value?: unknown }
-type CMSRow = { data?: Record<string, CMSFieldValue | unknown>; slug?: unknown; [key: string]: unknown }
+type CMSRow = {
+    data?: Record<string, CMSFieldValue | unknown>
+    slug?: unknown
+    [key: string]: unknown
+}
 type CMSCollection = { scanItems: () => Promise<CMSRow[]> }
-type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSCollection } }
+type CMSCollectionExport = {
+    collectionByLocaleId?: { default?: CMSCollection }
+}
 type CMSModule = {
     a?: CMSCollectionExport
     r?: CMSCollectionExport | (() => unknown)
@@ -54,6 +66,8 @@ type RegistryRow = {
     video?: unknown
     content?: unknown
     description?: unknown
+    link?: unknown
+    linkTitle?: unknown
     stroke?: boolean | "auto" | "on" | "off"
     width?: number
     height?: number
@@ -114,10 +128,18 @@ type Props = {
     navPassthrough?: boolean
     navSelector?: string
     navHideOffset?: number
+    panelCtaLabel?: string
+    panelCtaNewTab?: boolean
     style?: React.CSSProperties
 }
 
-type Motion = { x: number; y: number; mx: number; my: number; dragging: boolean }
+type Motion = {
+    x: number
+    y: number
+    mx: number
+    my: number
+    dragging: boolean
+}
 
 type InternalState = {
     x: number
@@ -154,12 +176,15 @@ const TEXT_GRAY = "rgb(110, 110, 110)"
 const MONO = "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace"
 const DISPLAY = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
 const PARAGRAPH_MEDIUM = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
-const PARAGRAPH_REGULAR = "'GT Standard L Regular', 'GT Standard', 'Inter', system-ui, sans-serif"
+const PARAGRAPH_REGULAR =
+    "'GT Standard L Regular', 'GT Standard', 'Inter', system-ui, sans-serif"
 const MODAL_Z = 2147483646
 const TAP_THRESHOLD = 18
 const NAV_REVEAL_MS = 560
-const DEFAULT_NAV_SELECTOR = "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]"
-const INTERACTIVE_SELECTOR = "a, a *, button, button *, [href], [href] *, [role='link'], [role='link'] *, [role='button'], [role='button'] *"
+const DEFAULT_NAV_SELECTOR =
+    "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]"
+const INTERACTIVE_SELECTOR =
+    "a, a *, button, button *, [href], [href] *, [role='link'], [role='link'] *, [role='button'], [role='button'] *"
 const FOCUSABLE_SELECTOR = [
     "a[href]",
     "button:not([disabled])",
@@ -199,19 +224,34 @@ const CMS_FIELDS = {
     image: "uqRtTdRM1",
     video: "KWCosE6Ef",
     stroke: "vq9I0excy",
-    content: "vxCKd8ka_",
+    content: "uhNqEiZxv",
+    linkTitle: "VfgNuQyis",
+    link: "YTkltwLjJ",
 } as const
 const LIVE_SCAN_PATHS = ["/play", "/"]
 const cmsModuleUrlCache = new Map<string, string>()
 const cmsItemsCache = new Map<string, Item[]>()
 const cmsItemsPromiseCache = new Map<string, Promise<Item[]>>()
 
-const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
-const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value))
-const mod = (value: number, length: number) => ((value % length) + length) % length
-const canUseDOM = () => typeof window !== "undefined" && typeof document !== "undefined"
-const now = () => (typeof performance !== "undefined" ? performance.now() : Date.now())
-const defaultCategory = (kind: Kind) => (kind === "video" ? "Archive Video" : kind === "gif" ? "Archive GIF" : "Archive Image")
+const slugify = (value: string) =>
+    value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+const clamp = (value: number, min: number, max: number) =>
+    Math.max(min, Math.min(max, value))
+const mod = (value: number, length: number) =>
+    ((value % length) + length) % length
+const canUseDOM = () =>
+    typeof window !== "undefined" && typeof document !== "undefined"
+const now = () =>
+    typeof performance !== "undefined" ? performance.now() : Date.now()
+const defaultCategory = (kind: Kind) =>
+    kind === "video"
+        ? "Archive Video"
+        : kind === "gif"
+          ? "Archive GIF"
+          : "Archive Image"
 
 function imageSource(value: ImageValue) {
     if (!value) return ""
@@ -240,18 +280,29 @@ function isAssetLikeTitle(value: string) {
     ].some((pattern) => pattern.test(normalized))
 }
 
-function accessibleItemLabel(title: string, category: string, kind: Kind, index: number, explicitLabel = "") {
+function accessibleItemLabel(
+    title: string,
+    category: string,
+    kind: Kind,
+    index: number,
+    explicitLabel = ""
+) {
     const explicit = explicitLabel.trim()
     if (explicit) return explicit
     if (!isAssetLikeTitle(title)) return title
 
-    const readableKind = kind === "gif" ? "GIF" : kind.charAt(0).toUpperCase() + kind.slice(1)
+    const readableKind =
+        kind === "gif" ? "GIF" : kind.charAt(0).toUpperCase() + kind.slice(1)
     const readableCategory = category || defaultCategory(kind)
     return `${readableCategory} ${index + 1}, ${readableKind.toLowerCase()}`
 }
 
 function isFocusableElement(element: HTMLElement) {
-    if (element.hasAttribute("disabled") || element.getAttribute("aria-hidden") === "true") return false
+    if (
+        element.hasAttribute("disabled") ||
+        element.getAttribute("aria-hidden") === "true"
+    )
+        return false
     if (!canUseDOM()) return true
     const style = window.getComputedStyle(element)
     return style.display !== "none" && style.visibility !== "hidden"
@@ -259,7 +310,8 @@ function isFocusableElement(element: HTMLElement) {
 
 function stableHash(value: string) {
     let hash = 5381
-    for (let index = 0; index < value.length; index++) hash = (hash * 33) ^ value.charCodeAt(index)
+    for (let index = 0; index < value.length; index++)
+        hash = (hash * 33) ^ value.charCodeAt(index)
     return (hash >>> 0).toString(36)
 }
 
@@ -268,9 +320,13 @@ function escapeRegExp(value: string) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 }
 
-function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fieldId: string) {
+function readField(
+    data: Record<string, CMSFieldValue | unknown> | undefined,
+    fieldId: string
+) {
     const field = data?.[fieldId]
-    if (field && typeof field === "object" && "value" in field) return (field as CMSFieldValue).value
+    if (field && typeof field === "object" && "value" in field)
+        return (field as CMSFieldValue).value
     return field
 }
 
@@ -304,7 +360,7 @@ function normalizeFormattedText(value: unknown) {
             .replace(/<[^>]*>/g, "")
     )
     return text
-        .replace(/\u00a0/g, " ")
+        .replace(/ /g, " ")
         .replace(/[ \t]+\n/g, "\n")
         .replace(/\n{3,}/g, "\n\n")
         .trim()
@@ -320,7 +376,8 @@ function normalizeBoolean(value: unknown) {
 function normalizeMediaSource(value: unknown): string {
     if (!value) return ""
     if (typeof value === "string") return value.trim()
-    if (Array.isArray(value)) return value.map(normalizeMediaSource).find(Boolean) || ""
+    if (Array.isArray(value))
+        return value.map(normalizeMediaSource).find(Boolean) || ""
     if (typeof value === "object") {
         const record = value as Record<string, unknown>
         if ("value" in record) return normalizeMediaSource(record.value)
@@ -333,30 +390,52 @@ function normalizeMediaSource(value: unknown): string {
 }
 
 function positiveDimension(value: unknown) {
-    const numberValue = typeof value === "number" ? value : typeof value === "string" && value.trim() ? Number(value) : 0
-    return Number.isFinite(numberValue) && numberValue > 0 ? Math.round(numberValue) : 0
+    const numberValue =
+        typeof value === "number"
+            ? value
+            : typeof value === "string" && value.trim()
+              ? Number(value)
+              : 0
+    return Number.isFinite(numberValue) && numberValue > 0
+        ? Math.round(numberValue)
+        : 0
 }
 
-function mediaDimensionsFromPair(width: unknown, height: unknown): MediaDimensions | undefined {
+function mediaDimensionsFromPair(
+    width: unknown,
+    height: unknown
+): MediaDimensions | undefined {
     const safeWidth = positiveDimension(width)
     const safeHeight = positiveDimension(height)
-    return safeWidth && safeHeight ? { width: safeWidth, height: safeHeight } : undefined
+    return safeWidth && safeHeight
+        ? { width: safeWidth, height: safeHeight }
+        : undefined
 }
 
 function mediaDimensionsFromUrl(src: string): MediaDimensions | undefined {
     if (!src) return undefined
     try {
         const url = new URL(src, "https://framer.local")
-        return mediaDimensionsFromPair(url.searchParams.get("width"), url.searchParams.get("height"))
+        return mediaDimensionsFromPair(
+            url.searchParams.get("width"),
+            url.searchParams.get("height")
+        )
     } catch {
-        return mediaDimensionsFromPair(src.match(/[?&]width=(\d+(?:\.\d+)?)/)?.[1], src.match(/[?&]height=(\d+(?:\.\d+)?)/)?.[1])
+        return mediaDimensionsFromPair(
+            src.match(/[?&]width=(\d+(?:\.\d+)?)/)?.[1],
+            src.match(/[?&]height=(\d+(?:\.\d+)?)/)?.[1]
+        )
     }
 }
 
-function mediaDimensionsFromSrcSet(srcSet: unknown): MediaDimensions | undefined {
+function mediaDimensionsFromSrcSet(
+    srcSet: unknown
+): MediaDimensions | undefined {
     if (typeof srcSet !== "string") return undefined
     for (const candidate of srcSet.split(",")) {
-        const dimensions = mediaDimensionsFromUrl(candidate.trim().split(/\s+/)[0] || "")
+        const dimensions = mediaDimensionsFromUrl(
+            candidate.trim().split(/\s+/)[0] || ""
+        )
         if (dimensions) return dimensions
     }
     return undefined
@@ -376,7 +455,10 @@ function normalizeMediaDimensions(value: unknown): MediaDimensions | undefined {
 
     const record = value as Record<string, unknown>
     return (
-        mediaDimensionsFromPair(record.width ?? record.pixelWidth, record.height ?? record.pixelHeight) ||
+        mediaDimensionsFromPair(
+            record.width ?? record.pixelWidth,
+            record.height ?? record.pixelHeight
+        ) ||
         mediaDimensionsFromUrl(normalizeMediaSource(record)) ||
         mediaDimensionsFromSrcSet(record.srcSet) ||
         normalizeMediaDimensions(record.value) ||
@@ -390,33 +472,56 @@ function normalizeMediaDimensions(value: unknown): MediaDimensions | undefined {
 function getDocumentResourceUrls(): string[] {
     if (typeof document === "undefined") return []
     const elementUrls = Array.from(
-        document.querySelectorAll<HTMLLinkElement | HTMLScriptElement>("link[href], script[src]")
-    ).map((element) => ("href" in element && element.href ? element.href : "src" in element && element.src ? element.src : ""))
+        document.querySelectorAll<HTMLLinkElement | HTMLScriptElement>(
+            "link[href], script[src]"
+        )
+    ).map((element) =>
+        "href" in element && element.href
+            ? element.href
+            : "src" in element && element.src
+              ? element.src
+              : ""
+    )
     const performanceUrls =
-        typeof performance !== "undefined" && typeof performance.getEntriesByType === "function"
-            ? performance.getEntriesByType("resource").map((entry) => entry.name)
+        typeof performance !== "undefined" &&
+        typeof performance.getEntriesByType === "function"
+            ? performance
+                  .getEntriesByType("resource")
+                  .map((entry) => entry.name)
             : []
-    return Array.from(new Set([...elementUrls, ...performanceUrls].filter(Boolean)))
+    return Array.from(
+        new Set([...elementUrls, ...performanceUrls].filter(Boolean))
+    )
 }
 
 function isCMSModuleUrl(url: string, collectionId: string) {
     const collectionPattern = escapeRegExp(collectionId)
-    return new RegExp(`/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`).test(url)
+    return new RegExp(
+        `/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`
+    ).test(url)
 }
 
 function findCMSModuleUrlInMarkup(markup: string, collectionId: string) {
     const collectionPattern = escapeRegExp(collectionId)
     const match = markup.match(
-        new RegExp(`https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`, "i")
+        new RegExp(
+            `https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`,
+            "i"
+        )
     )
     return match?.[0]
 }
 
 function findCMSModuleUrlInDocument(collectionId: string) {
-    const fromResources = getDocumentResourceUrls().find((url) => isCMSModuleUrl(url, collectionId))
+    const fromResources = getDocumentResourceUrls().find((url) =>
+        isCMSModuleUrl(url, collectionId)
+    )
     if (fromResources) return fromResources
     if (typeof document !== "undefined" && document.documentElement) {
-        return findCMSModuleUrlInMarkup(document.documentElement.outerHTML, collectionId)
+        return findCMSModuleUrlInMarkup(
+            document.documentElement.outerHTML,
+            collectionId
+        )
     }
     return undefined
 }
@@ -435,7 +540,10 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
         try {
             const response = await fetch(path, { credentials: "same-origin" })
             if (!response.ok) continue
-            const found = findCMSModuleUrlInMarkup(await response.text(), collectionId)
+            const found = findCMSModuleUrlInMarkup(
+                await response.text(),
+                collectionId
+            )
             if (found) {
                 cmsModuleUrlCache.set(collectionId, found)
                 return found
@@ -451,12 +559,18 @@ function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
     return (
         typeof value === "object" &&
         value !== null &&
-        typeof (value as CMSCollectionExport).collectionByLocaleId?.default?.scanItems === "function"
+        typeof (value as CMSCollectionExport).collectionByLocaleId?.default
+            ?.scanItems === "function"
     )
 }
 
 function getCMSCollection(module: CMSModule): CMSCollection | undefined {
-    const candidates = [module.a, module.r, module.default, ...Object.values(module)]
+    const candidates = [
+        module.a,
+        module.r,
+        module.default,
+        ...Object.values(module),
+    ]
     for (const candidate of candidates) {
         let resolved: unknown = candidate
         if (typeof resolved === "function") {
@@ -466,16 +580,23 @@ function getCMSCollection(module: CMSModule): CMSCollection | undefined {
                 resolved = undefined
             }
         }
-        if (isCMSCollectionExport(resolved)) return resolved.collectionByLocaleId?.default
+        if (isCMSCollectionExport(resolved))
+            return resolved.collectionByLocaleId?.default
     }
     return undefined
 }
 
 function initializeCMSModule(module: CMSModule) {
-    const maybeInitializers = [module.t, module.r, module.default, ...Object.values(module)]
+    const maybeInitializers = [
+        module.t,
+        module.r,
+        module.default,
+        ...Object.values(module),
+    ]
     maybeInitializers.forEach((initializer) => {
         try {
-            if (typeof initializer === "function") (initializer as () => unknown)()
+            if (typeof initializer === "function")
+                (initializer as () => unknown)()
         } catch {
             // Generated Framer CMS modules may already be initialized.
         }
@@ -489,9 +610,17 @@ function cmsRowToItem(row: CMSRow, index: number): Item | null {
     const videoField = readField(data, CMS_FIELDS.video)
     const image = normalizeMediaSource(imageField)
     const video = normalizeMediaSource(videoField)
-    const dimensions = normalizeMediaDimensions(imageField) || normalizeMediaDimensions(videoField) || normalizeMediaDimensions(image) || normalizeMediaDimensions(video)
+    const dimensions =
+        normalizeMediaDimensions(imageField) ||
+        normalizeMediaDimensions(videoField) ||
+        normalizeMediaDimensions(image) ||
+        normalizeMediaDimensions(video)
     const stroke = normalizeBoolean(readField(data, CMS_FIELDS.stroke))
-    const description = normalizeFormattedText(readField(data, CMS_FIELDS.content))
+    const description = normalizeFormattedText(
+        readField(data, CMS_FIELDS.content)
+    )
+    const link = normalizeMediaSource(readField(data, CMS_FIELDS.link))
+    const linkTitle = normalizeText(readField(data, CMS_FIELDS.linkTitle))
     if (!image && !video) return null
 
     const isGif = !video && /\.gif(?:[?#]|$)/i.test(image)
@@ -506,6 +635,8 @@ function cmsRowToItem(row: CMSRow, index: number): Item | null {
         title,
         category,
         description,
+        link,
+        linkTitle,
         kind,
         width: dimensions?.width ?? 1,
         height: dimensions?.height ?? 1,
@@ -555,22 +686,39 @@ function registryRowToItem(row: RegistryRow, index: number): Item | null {
 
     const title = normalizeText(row.title)
     const description = normalizeFormattedText(row.content ?? row.description)
+    const link = normalizeMediaSource(row.link)
+    const linkTitle = normalizeText(row.linkTitle)
     const isGif = !video && /\.gif(?:[?#]|$)/i.test(image)
     const kind: Kind = video ? "video" : isGif ? "gif" : "image"
     const category = ""
     const accessibilityLabel = accessibleItemLabel(title, category, kind, index)
-    const identity = normalizeText(row.slug || row.id || title) || `${title}-${image}-${video}`
+    const identity =
+        normalizeText(row.slug || row.id || title) ||
+        `${title}-${image}-${video}`
     const rowDimensions = mediaDimensionsFromPair(row.width, row.height)
-    const mediaDimensions = normalizeMediaDimensions(imageField) || normalizeMediaDimensions(row.video) || normalizeMediaDimensions(image) || normalizeMediaDimensions(video)
+    const mediaDimensions =
+        normalizeMediaDimensions(imageField) ||
+        normalizeMediaDimensions(row.video) ||
+        normalizeMediaDimensions(image) ||
+        normalizeMediaDimensions(video)
     const width = rowDimensions?.width ?? mediaDimensions?.width ?? 1
     const height = rowDimensions?.height ?? mediaDimensions?.height ?? 1
-    const stroke = row.stroke === "on" ? true : row.stroke === "off" ? false : typeof row.stroke === "boolean" ? row.stroke : normalizeBoolean(row.stroke)
+    const stroke =
+        row.stroke === "on"
+            ? true
+            : row.stroke === "off"
+              ? false
+              : typeof row.stroke === "boolean"
+                ? row.stroke
+                : normalizeBoolean(row.stroke)
 
     return {
         id: `archive-${slugify(identity) || stableHash(identity)}`,
         title,
         category,
         description,
+        link,
+        linkTitle,
         kind,
         width,
         height,
@@ -585,7 +733,10 @@ function rowsToItems(rows: RegistryRow[]) {
     return rows
         .map((row, index) => ({
             row,
-            order: typeof row.order === "number" && Number.isFinite(row.order) ? row.order : index,
+            order:
+                typeof row.order === "number" && Number.isFinite(row.order)
+                    ? row.order
+                    : index,
         }))
         .sort((a, b) => a.order - b.order)
         .map(({ row }, index) => registryRowToItem(row, index))
@@ -605,7 +756,10 @@ function usePlayArchiveRegistryItems(enabled: boolean): Item[] | null {
     return items
 }
 
-async function loadCMSItems(collectionId: string, explicitUrl: string): Promise<Item[]> {
+async function loadCMSItems(
+    collectionId: string,
+    explicitUrl: string
+): Promise<Item[]> {
     const cacheKey = `${collectionId}:${explicitUrl}`
     const cached = cmsItemsCache.get(cacheKey)
     if (cached) return cached
@@ -621,7 +775,10 @@ async function loadCMSItems(collectionId: string, explicitUrl: string): Promise<
         if (!collection) return []
         const rows = (await collection.scanItems()) as CMSRow[]
         const items = rows
-            .map((row, index) => ({ row, order: Number(readField(row.data, CMS_FIELDS.order) ?? index) }))
+            .map((row, index) => ({
+                row,
+                order: Number(readField(row.data, CMS_FIELDS.order) ?? index),
+            }))
             .sort((a, b) => a.order - b.order)
             .map(({ row }, index) => cmsRowToItem(row, index))
             .filter((item): item is Item => Boolean(item))
@@ -633,7 +790,11 @@ async function loadCMSItems(collectionId: string, explicitUrl: string): Promise<
     return promise
 }
 
-function useCMSArchiveItems(enabled: boolean, collectionId: string, moduleUrl: string): Item[] | null {
+function useCMSArchiveItems(
+    enabled: boolean,
+    collectionId: string,
+    moduleUrl: string
+): Item[] | null {
     const [items, setItems] = React.useState<Item[] | null>(null)
     React.useEffect(() => {
         if (!enabled || !canUseDOM()) return
@@ -654,24 +815,59 @@ function useCMSArchiveItems(enabled: boolean, collectionId: string, moduleUrl: s
 
 // ---- Panel fallback normalization (canvas/editor only — no Cargo) ----
 function normalizeItem(entry: ManagedItem, index: number): Item | null {
-    const requestedKind = entry.mediaType === "video" || entry.mediaType === "gif" ? entry.mediaType : "image"
+    const requestedKind =
+        entry.mediaType === "video" || entry.mediaType === "gif"
+            ? entry.mediaType
+            : "image"
     const image = imageSource(entry.image)
     const poster = imageSource(entry.poster)
-    const videoUrl = typeof entry.video === "string" && entry.video ? entry.video : ""
+    const videoUrl =
+        typeof entry.video === "string" && entry.video ? entry.video : ""
     const thumbnail = image || poster
-    const safeKind: Kind = requestedKind === "video" && videoUrl ? "video" : requestedKind === "gif" && thumbnail ? "gif" : thumbnail ? "image" : videoUrl ? "video" : "image"
+    const safeKind: Kind =
+        requestedKind === "video" && videoUrl
+            ? "video"
+            : requestedKind === "gif" && thumbnail
+              ? "gif"
+              : thumbnail
+                ? "image"
+                : videoUrl
+                  ? "video"
+                  : "image"
     const fallbackTitle = `Archive Item ${index + 1}`
     const title = (entry.title || fallbackTitle).trim() || fallbackTitle
     const fallbackCategory = defaultCategory(safeKind)
-    const category = (entry.category || fallbackCategory).trim() || fallbackCategory
+    const category =
+        (entry.category || fallbackCategory).trim() || fallbackCategory
     const width = Math.max(1, Math.round(entry.width || 1))
     const height = Math.max(1, Math.round(entry.height || 1))
-    const description = (entry.description || `${safeKind.toUpperCase()} from the archive.`).trim()
-    const explicitAccessibilityLabel = (entry.accessibilityLabel || imageAlt(entry.image) || imageAlt(entry.poster)).trim()
-    const accessibilityLabel = accessibleItemLabel(title, category, safeKind, index, explicitAccessibilityLabel)
-    const stroke = entry.stroke === "on" ? true : entry.stroke === "off" ? false : typeof entry.stroke === "boolean" ? entry.stroke : undefined
+    const description = (
+        entry.description || `${safeKind.toUpperCase()} from the archive.`
+    ).trim()
+    const explicitAccessibilityLabel = (
+        entry.accessibilityLabel ||
+        imageAlt(entry.image) ||
+        imageAlt(entry.poster)
+    ).trim()
+    const accessibilityLabel = accessibleItemLabel(
+        title,
+        category,
+        safeKind,
+        index,
+        explicitAccessibilityLabel
+    )
+    const stroke =
+        entry.stroke === "on"
+            ? true
+            : entry.stroke === "off"
+              ? false
+              : typeof entry.stroke === "boolean"
+                ? entry.stroke
+                : undefined
     const identity = (entry.id || `${title}-${thumbnail || videoUrl}`).trim()
-    const id = entry.id ? `archive-${slugify(entry.id) || stableHash(identity)}` : `archive-${slugify(title) || "item"}-${stableHash(identity)}`
+    const id = entry.id
+        ? `archive-${slugify(entry.id) || stableHash(identity)}`
+        : `archive-${slugify(title) || "item"}-${stableHash(identity)}`
 
     if (!thumbnail && !videoUrl) return null
 
@@ -692,13 +888,24 @@ function normalizeItem(entry: ManagedItem, index: number): Item | null {
 
 function normalizeItems(input?: ManagedItem[]): Item[] {
     if (!Array.isArray(input) || !input.length) return []
-    return input.map(normalizeItem).filter((item): item is Item => Boolean(item))
+    return input
+        .map(normalizeItem)
+        .filter((item): item is Item => Boolean(item))
 }
 
 function mediaWidthUrl(url: string, width = 900) {
-    // Legacy Cargo thumbnails could be resized via path; Framer-hosted URLs pass
-    // through untouched.
-    return url.includes("/t/original/i/") ? url.replace("/t/original/i/", `/w/${width}/i/`) : url
+    // Legacy Cargo thumbnails resize via path swap.
+    if (url.includes("/t/original/i/"))
+        return url.replace("/t/original/i/", `/w/${width}/i/`)
+    // Framer-hosted images: route through the CDN optimizer (sized WebP). Baked
+    // originals were full-res (width params up to 4000px / multi-MB each); this
+    // serves a ~width-px WebP instead (~90%+ smaller). GIFs never reach here —
+    // callers pass item.thumbnail straight through for kind === "gif".
+    if (url.includes("framerusercontent.com/images/")) {
+        const base = url.split("?")[0]
+        return `${base}?scale-down-to=${Math.round(width)}&format=webp`
+    }
+    return url
 }
 
 function scopedSelectors(selector: string, className: string) {
@@ -713,14 +920,18 @@ function useFooterHider(enabled: boolean) {
     React.useEffect(() => {
         if (!enabled || !canUseDOM()) return
         const hidden = new Map<HTMLElement, string>()
-        const selector = "footer, [data-framer-name*='Footer' i], [aria-label*='Footer' i]"
+        const selector =
+            "footer, [data-framer-name*='Footer' i], [aria-label*='Footer' i]"
         const hide = () => {
-            document.querySelectorAll<HTMLElement>(selector).forEach((element) => {
-                if (element.closest("[data-playground-root='true']")) return
-                if (!hidden.has(element)) hidden.set(element, element.style.display || "")
-                element.style.setProperty("display", "none", "important")
-                element.setAttribute("aria-hidden", "true")
-            })
+            document
+                .querySelectorAll<HTMLElement>(selector)
+                .forEach((element) => {
+                    if (element.closest("[data-playground-root='true']")) return
+                    if (!hidden.has(element))
+                        hidden.set(element, element.style.display || "")
+                    element.style.setProperty("display", "none", "important")
+                    element.setAttribute("aria-hidden", "true")
+                })
         }
         hide()
         const observer = new MutationObserver(hide)
@@ -728,7 +939,9 @@ function useFooterHider(enabled: boolean) {
         return () => {
             observer.disconnect()
             hidden.forEach((display, element) => {
-                display ? (element.style.display = display) : element.style.removeProperty("display")
+                display
+                    ? (element.style.display = display)
+                    : element.style.removeProperty("display")
                 element.removeAttribute("aria-hidden")
             })
         }
@@ -743,7 +956,9 @@ function useNavPassthrough(enabled: boolean, selector: string) {
         const scoped = scopedSelectors(selector, className)
         if (!scoped.length) return
         document.body.classList.add(className)
-        let styleEl = document.getElementById(styleId) as HTMLStyleElement | null
+        let styleEl = document.getElementById(
+            styleId
+        ) as HTMLStyleElement | null
         if (!styleEl) {
             styleEl = document.createElement("style")
             styleEl.id = styleId
@@ -763,13 +978,16 @@ function useNavPassthrough(enabled: boolean, selector: string) {
 function useDraftAnimationStyles(enabled: boolean) {
     React.useEffect(() => {
         if (!enabled || !canUseDOM()) return
-        let styleEl = document.getElementById(DRAFT_ANIMATION_STYLE_ID) as HTMLStyleElement | null
+        let styleEl = document.getElementById(
+            DRAFT_ANIMATION_STYLE_ID
+        ) as HTMLStyleElement | null
         if (!styleEl) {
             styleEl = document.createElement("style")
             styleEl.id = DRAFT_ANIMATION_STYLE_ID
             document.head.appendChild(styleEl)
         }
-        styleEl.textContent = "@keyframes playgroundRuleDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
+        styleEl.textContent =
+            "@keyframes playgroundRuleDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
 
         return () => {
             if (styleEl?.parentNode) styleEl.parentNode.removeChild(styleEl)
@@ -791,7 +1009,10 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
     const reset = React.useCallback(() => {
         if (!canUseDOM()) return
         clearTimers()
-        document.body.classList.remove(NAV_EXIT_MANAGED_CLASS, NAV_EXIT_HIDDEN_CLASS)
+        document.body.classList.remove(
+            NAV_EXIT_MANAGED_CLASS,
+            NAV_EXIT_HIDDEN_CLASS
+        )
     }, [clearTimers])
 
     const reveal = React.useCallback(() => {
@@ -811,7 +1032,9 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
         const hidden = scopedSelectors(selector, NAV_EXIT_HIDDEN_CLASS)
         if (!managed.length || !hidden.length) return
 
-        let styleEl = document.getElementById(NAV_EXIT_STYLE_ID) as HTMLStyleElement | null
+        let styleEl = document.getElementById(
+            NAV_EXIT_STYLE_ID
+        ) as HTMLStyleElement | null
         if (!styleEl) {
             styleEl = document.createElement("style")
             styleEl.id = NAV_EXIT_STYLE_ID
@@ -838,18 +1061,22 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
     const start = React.useCallback(() => {
         if (!enabled || !canUseDOM()) return
         clearTimers()
-        document.body.classList.add(NAV_EXIT_MANAGED_CLASS, NAV_EXIT_HIDDEN_CLASS)
+        document.body.classList.add(
+            NAV_EXIT_MANAGED_CLASS,
+            NAV_EXIT_HIDDEN_CLASS
+        )
     }, [clearTimers, enabled])
 
     return React.useMemo(() => ({ start, cancel: reveal }), [start, reveal])
 }
 
 function usePrefersReducedMotion() {
-    const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(() => (
-        canUseDOM() && typeof window.matchMedia === "function"
-            ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-            : false
-    ))
+    const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(
+        () =>
+            canUseDOM() && typeof window.matchMedia === "function"
+                ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                : false
+    )
 
     React.useEffect(() => {
         if (!canUseDOM() || typeof window.matchMedia !== "function") return
@@ -869,7 +1096,11 @@ function usePrefersReducedMotion() {
 
 function reducedMotionNow() {
     try {
-        return canUseDOM() && typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        return (
+            canUseDOM() &&
+            typeof window.matchMedia === "function" &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        )
     } catch (error) {
         return false
     }
@@ -877,13 +1108,20 @@ function reducedMotionNow() {
 
 function viewTransitionActive() {
     try {
-        return canUseDOM() && document.documentElement.matches(":active-view-transition")
+        return (
+            canUseDOM() &&
+            document.documentElement.matches(":active-view-transition")
+        )
     } catch (error) {
         return false
     }
 }
 
-function useTransitionAwareLoadIn(enabled: boolean, delayMs: number, maxWaitMs: number) {
+function useTransitionAwareLoadIn(
+    enabled: boolean,
+    delayMs: number,
+    maxWaitMs: number
+) {
     const [ready, setReady] = React.useState(() => !enabled)
     const startedRef = React.useRef(false)
 
@@ -923,13 +1161,16 @@ function useTransitionAwareLoadIn(enabled: boolean, delayMs: number, maxWaitMs: 
                 return
             }
 
-            delayTimer = window.setTimeout(() => {
-                rafA = window.requestAnimationFrame(() => {
-                    rafB = window.requestAnimationFrame(() => {
-                        if (!disposed) setReady(true)
+            delayTimer = window.setTimeout(
+                () => {
+                    rafA = window.requestAnimationFrame(() => {
+                        rafB = window.requestAnimationFrame(() => {
+                            if (!disposed) setReady(true)
+                        })
                     })
-                })
-            }, Math.max(0, delayMs))
+                },
+                Math.max(0, delayMs)
+            )
         }
 
         const pollForTransitionEnd = () => {
@@ -991,8 +1232,17 @@ function MediaFrame({
     // render their static poster instead, so we never decode dozens at once.
     const showVideo = item.kind === "video" && !!item.videoUrl && active
     const source = showVideo ? item.videoUrl : item.thumbnail
-    const poster = item.thumbnail ? (detail ? item.thumbnail : mediaWidthUrl(item.thumbnail, 900)) : undefined
-    const imageSrc = item.kind === "gif" ? item.thumbnail : detail ? mediaWidthUrl(item.thumbnail, 1800) : mediaWidthUrl(item.thumbnail, 900)
+    const poster = item.thumbnail
+        ? detail
+            ? item.thumbnail
+            : mediaWidthUrl(item.thumbnail, 900)
+        : undefined
+    const imageSrc =
+        item.kind === "gif"
+            ? item.thumbnail
+            : detail
+              ? mediaWidthUrl(item.thumbnail, 1800)
+              : mediaWidthUrl(item.thumbnail, 900)
     const wide = item.width / item.height >= 1
     const drawStroke = Boolean(item.stroke) && strokeWidth > 0
 
@@ -1091,7 +1341,9 @@ function MediaFrame({
                     preload={detail ? "auto" : "metadata"}
                     controls={false}
                     aria-hidden={detail ? undefined : true}
-                    aria-label={detail ? `${item.accessibilityLabel}, video` : undefined}
+                    aria-label={
+                        detail ? `${item.accessibilityLabel}, video` : undefined
+                    }
                     onLoadedData={() => setReady(true)}
                     onLoadedMetadata={(event) => {
                         const v = event.currentTarget
@@ -1103,7 +1355,7 @@ function MediaFrame({
                     onError={() => setReady(true)}
                     style={mediaStyle}
                 />
-            ) : (
+            ) : imageSrc ? (
                 <img
                     src={imageSrc}
                     alt={detail ? item.accessibilityLabel : ""}
@@ -1118,7 +1370,7 @@ function MediaFrame({
                     onError={() => setReady(true)}
                     style={mediaStyle}
                 />
-            )}
+            ) : null}
             {strokeOverlay}
         </div>
     )
@@ -1138,7 +1390,8 @@ function MediaFrame({
  */
 export default function ArchivePlayground(props: Props) {
     const target = RenderTarget.current()
-    const isCanvas = target === RenderTarget.canvas || target === RenderTarget.thumbnail
+    const isCanvas =
+        target === RenderTarget.canvas || target === RenderTarget.thumbnail
     const isInteractive = !isCanvas
     const rootRef = React.useRef<HTMLDivElement>(null)
     const galleryRef = React.useRef<HTMLDivElement>(null)
@@ -1152,8 +1405,15 @@ export default function ArchivePlayground(props: Props) {
     const collectionId = props.collectionId || DEFAULT_COLLECTION_ID
     const collectionModuleUrl = props.collectionModuleUrl || ""
     const registryItems = usePlayArchiveRegistryItems(isInteractive)
-    const cmsItems = useCMSArchiveItems(isInteractive, collectionId, collectionModuleUrl)
-    const panelItems = React.useMemo(() => normalizeItems(props.archiveItems ?? props.items), [props.archiveItems, props.items])
+    const cmsItems = useCMSArchiveItems(
+        isInteractive,
+        collectionId,
+        collectionModuleUrl
+    )
+    const panelItems = React.useMemo(
+        () => normalizeItems(props.archiveItems ?? props.items),
+        [props.archiveItems, props.items]
+    )
     const baseItems = isCanvas
         ? panelItems
         : registryItems && registryItems.length
@@ -1161,22 +1421,47 @@ export default function ArchivePlayground(props: Props) {
           : cmsItems && cmsItems.length
             ? cmsItems
             : []
-    const [aspectMap, setAspectMap] = React.useState<Record<string, { w: number; h: number }>>({})
+    const [aspectMap, setAspectMap] = React.useState<
+        Record<string, { w: number; h: number }>
+    >({})
     const items = React.useMemo(
-        () => baseItems.map((item) => (aspectMap[item.id] ? { ...item, width: aspectMap[item.id].w, height: aspectMap[item.id].h } : item)),
+        () =>
+            baseItems.map((item) =>
+                aspectMap[item.id]
+                    ? {
+                          ...item,
+                          width: aspectMap[item.id].w,
+                          height: aspectMap[item.id].h,
+                      }
+                    : item
+            ),
         [baseItems, aspectMap]
     )
-    const handleMeasure = React.useCallback((id: string, w: number, h: number) => {
-        if (!w || !h) return
-        setAspectMap((prev) => (prev[id] && prev[id].w === w && prev[id].h === h ? prev : { ...prev, [id]: { w, h } }))
-    }, [])
+    const handleMeasure = React.useCallback(
+        (id: string, w: number, h: number) => {
+            if (!w || !h) return
+            setAspectMap((prev) =>
+                prev[id] && prev[id].w === w && prev[id].h === h
+                    ? prev
+                    : { ...prev, [id]: { w, h } }
+            )
+        },
+        []
+    )
 
     const [viewport, setViewport] = React.useState({ w: 1200, h: 800 })
-    const [motion, setMotion] = React.useState<Motion>({ x: 0, y: 0, mx: 0, my: 0, dragging: false })
+    const [motion, setMotion] = React.useState<Motion>({
+        x: 0,
+        y: 0,
+        mx: 0,
+        my: 0,
+        dragging: false,
+    })
     const [hovered, setHovered] = React.useState("")
     const [selected, setSelected] = React.useState<Item | null>(null)
     const [panelItem, setPanelItem] = React.useState<Item | null>(null)
     const [closeHover, setCloseHover] = React.useState(false)
+    const [ctaHover, setCtaHover] = React.useState(false)
     const panelOpen = Boolean(selected)
     const panelVisible = Boolean(panelItem)
     const panelTitleId = React.useId()
@@ -1220,6 +1505,8 @@ export default function ArchivePlayground(props: Props) {
     const ruleColor = props.ruleColor || RULE
     const strokeColor = props.strokeColor || LABEL
     const strokeWidth = props.strokeWidth ?? 0.5
+    const panelCtaLabel = props.panelCtaLabel || "View project"
+    const panelCtaNewTab = props.panelCtaNewTab ?? true
     const cellSize = props.cellSize ?? 190
     const columnGap = props.columnGap ?? 72
     const rowGap = props.rowGap ?? 88
@@ -1235,14 +1522,27 @@ export default function ArchivePlayground(props: Props) {
     const loadInMaxWaitMs = props.loadInMaxWaitMs ?? LOAD_IN_MAX_WAIT_MS
     const navSelector = props.navSelector || DEFAULT_NAV_SELECTOR
     const navHideOffset = props.navHideOffset ?? 120
-    const navExitReveal = useNavExitReveal(isInteractive, navSelector, navHideOffset)
+    const navExitReveal = useNavExitReveal(
+        isInteractive,
+        navSelector,
+        navHideOffset
+    )
     const prefersReducedMotion = usePrefersReducedMotion()
-    const loadInReady = useTransitionAwareLoadIn(isInteractive, loadInDelayMs, loadInMaxWaitMs)
-    const [loadInSettled, setLoadInSettled] = React.useState(() => !isInteractive)
+    const loadInReady = useTransitionAwareLoadIn(
+        isInteractive,
+        loadInDelayMs,
+        loadInMaxWaitMs
+    )
+    const [loadInSettled, setLoadInSettled] = React.useState(
+        () => !isInteractive
+    )
 
     useDraftAnimationStyles(isInteractive)
     useFooterHider(isInteractive && (props.hideFooter ?? true))
-    useNavPassthrough(isInteractive && (props.navPassthrough ?? true), navSelector)
+    useNavPassthrough(
+        isInteractive && (props.navPassthrough ?? true),
+        navSelector
+    )
 
     React.useEffect(() => {
         if (!isInteractive || prefersReducedMotion) {
@@ -1261,7 +1561,13 @@ export default function ArchivePlayground(props: Props) {
             160
         const timer = window.setTimeout(() => setLoadInSettled(true), totalMs)
         return () => window.clearTimeout(timer)
-    }, [isInteractive, loadInReady, loadInFadeMs, loadInStaggerMs, prefersReducedMotion])
+    }, [
+        isInteractive,
+        loadInReady,
+        loadInFadeMs,
+        loadInStaggerMs,
+        prefersReducedMotion,
+    ])
 
     React.useEffect(() => {
         return () => {
@@ -1292,10 +1598,16 @@ export default function ArchivePlayground(props: Props) {
         if (!element || !canUseDOM()) return
         const resize = () => {
             const rect = element.getBoundingClientRect()
-            setViewport({ w: Math.max(1, rect.width), h: Math.max(1, rect.height) })
+            setViewport({
+                w: Math.max(1, rect.width),
+                h: Math.max(1, rect.height),
+            })
         }
         resize()
-        const observer = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null
+        const observer =
+            typeof ResizeObserver !== "undefined"
+                ? new ResizeObserver(resize)
+                : null
         observer?.observe(element)
         window.addEventListener("resize", resize)
         return () => {
@@ -1323,15 +1635,23 @@ export default function ArchivePlayground(props: Props) {
 
     const queueFocusReturn = React.useCallback(() => {
         if (!canUseDOM()) return
-        if (focusReturnTimerRef.current !== null) window.clearTimeout(focusReturnTimerRef.current)
+        if (focusReturnTimerRef.current !== null)
+            window.clearTimeout(focusReturnTimerRef.current)
         focusReturnTimerRef.current = window.setTimeout(() => {
             focusReturnTimerRef.current = null
             const opener = openerRef.current
-            if (opener?.isConnected && opener.getAttribute("aria-hidden") !== "true" && opener.tabIndex >= 0 && typeof opener.focus === "function") {
+            if (
+                opener?.isConnected &&
+                opener.getAttribute("aria-hidden") !== "true" &&
+                opener.tabIndex >= 0 &&
+                typeof opener.focus === "function"
+            ) {
                 opener.focus({ preventScroll: true })
                 return
             }
-            const firstCard = galleryRef.current?.querySelector<HTMLElement>("[data-playground-card='true']:not([aria-hidden='true'])")
+            const firstCard = galleryRef.current?.querySelector<HTMLElement>(
+                "[data-playground-card='true']:not([aria-hidden='true'])"
+            )
             firstCard?.focus({ preventScroll: true })
         }, 0)
     }, [])
@@ -1355,34 +1675,40 @@ export default function ArchivePlayground(props: Props) {
         }
     }, [navExitReveal, panelExitMs, queueFocusReturn])
 
-    const openItem = React.useCallback((item: Item, opener?: HTMLElement | null) => {
-        navExitReveal.start()
-        if (closeTimerRef.current !== null && canUseDOM()) {
-            window.clearTimeout(closeTimerRef.current)
-            closeTimerRef.current = null
-        }
-        if (focusReturnTimerRef.current !== null && canUseDOM()) {
-            window.clearTimeout(focusReturnTimerRef.current)
-            focusReturnTimerRef.current = null
-        }
-        if (opener?.isConnected) {
-            openerRef.current = opener
-        } else if (canUseDOM() && document.activeElement instanceof HTMLElement) {
-            openerRef.current = document.activeElement
-        }
-        const s = state.current
-        s.down = false
-        s.dragging = false
-        s.suppressClick = false
-        s.tapIndex = -1
-        s.tapElement = null
-        s.vx = 0
-        s.vy = 0
-        setHovered("")
-        setCloseHover(false)
-        setPanelItem(item)
-        setSelected(item)
-    }, [navExitReveal])
+    const openItem = React.useCallback(
+        (item: Item, opener?: HTMLElement | null) => {
+            navExitReveal.start()
+            if (closeTimerRef.current !== null && canUseDOM()) {
+                window.clearTimeout(closeTimerRef.current)
+                closeTimerRef.current = null
+            }
+            if (focusReturnTimerRef.current !== null && canUseDOM()) {
+                window.clearTimeout(focusReturnTimerRef.current)
+                focusReturnTimerRef.current = null
+            }
+            if (opener?.isConnected) {
+                openerRef.current = opener
+            } else if (
+                canUseDOM() &&
+                document.activeElement instanceof HTMLElement
+            ) {
+                openerRef.current = document.activeElement
+            }
+            const s = state.current
+            s.down = false
+            s.dragging = false
+            s.suppressClick = false
+            s.tapIndex = -1
+            s.tapElement = null
+            s.vx = 0
+            s.vy = 0
+            setHovered("")
+            setCloseHover(false)
+            setPanelItem(item)
+            setSelected(item)
+        },
+        [navExitReveal]
+    )
 
     React.useEffect(() => {
         if (!panelOpen || !canUseDOM()) return
@@ -1405,7 +1731,9 @@ export default function ArchivePlayground(props: Props) {
 
             const panel = panelRef.current
             if (!panel) return
-            const focusable = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(isFocusableElement)
+            const focusable = Array.from(
+                panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
+            ).filter(isFocusableElement)
             const first = focusable[0] || panel
             const last = focusable[focusable.length - 1] || panel
             const active = document.activeElement
@@ -1415,7 +1743,10 @@ export default function ArchivePlayground(props: Props) {
                 first.focus({ preventScroll: true })
                 return
             }
-            if (!(active instanceof HTMLElement) || !focusable.includes(active)) {
+            if (
+                !(active instanceof HTMLElement) ||
+                !focusable.includes(active)
+            ) {
                 event.preventDefault()
                 first.focus({ preventScroll: true })
                 return
@@ -1433,41 +1764,52 @@ export default function ArchivePlayground(props: Props) {
         return () => window.removeEventListener("keydown", onKeyDown, true)
     }, [panelOpen, closePanel])
 
-    const updatePointer = React.useCallback((clientX: number, clientY: number) => {
-        const element = rootRef.current
-        if (!element) return
-        const rect = element.getBoundingClientRect()
-        const x = clientX - rect.left
-        const y = clientY - rect.top
-        const s = state.current
-        const edgeScrollZone = cfgRef.current.edgeScrollZone ?? 90
-        const edgeScrollSpeed = cfgRef.current.edgeScrollSpeed ?? 220
-        const parallaxStrength = cfgRef.current.parallaxStrength ?? 0.06
+    const updatePointer = React.useCallback(
+        (clientX: number, clientY: number) => {
+            const element = rootRef.current
+            if (!element) return
+            const rect = element.getBoundingClientRect()
+            const x = clientX - rect.left
+            const y = clientY - rect.top
+            const s = state.current
+            const edgeScrollZone = cfgRef.current.edgeScrollZone ?? 90
+            const edgeScrollSpeed = cfgRef.current.edgeScrollSpeed ?? 220
+            const parallaxStrength = cfgRef.current.parallaxStrength ?? 0.06
 
-        s.inside = x >= 0 && y >= 0 && x <= rect.width && y <= rect.height
-        s.targetMx = (rect.width / 2 - x) * parallaxStrength
-        s.targetMy = (rect.height / 2 - y) * parallaxStrength
+            s.inside = x >= 0 && y >= 0 && x <= rect.width && y <= rect.height
+            s.targetMx = (rect.width / 2 - x) * parallaxStrength
+            s.targetMy = (rect.height / 2 - y) * parallaxStrength
 
-        const zone = Math.max(1, edgeScrollZone)
-        const left = 1 - clamp(x / zone, 0, 1)
-        const right = 1 - clamp((rect.width - x) / zone, 0, 1)
-        const top = 1 - clamp(y / zone, 0, 1)
-        const bottom = 1 - clamp((rect.height - y) / zone, 0, 1)
-        s.edgeX = (left - right) * edgeScrollSpeed * 0.016
-        s.edgeY = (top - bottom) * edgeScrollSpeed * 0.016
-    }, [])
+            const zone = Math.max(1, edgeScrollZone)
+            const left = 1 - clamp(x / zone, 0, 1)
+            const right = 1 - clamp((rect.width - x) / zone, 0, 1)
+            const top = 1 - clamp(y / zone, 0, 1)
+            const bottom = 1 - clamp((rect.height - y) / zone, 0, 1)
+            s.edgeX = (left - right) * edgeScrollSpeed * 0.016
+            s.edgeY = (top - bottom) * edgeScrollSpeed * 0.016
+        },
+        []
+    )
 
     React.useEffect(() => {
         if (!isInteractive || !canUseDOM()) return
-        const onGlobalPointerMove = (event: PointerEvent) => updatePointer(event.clientX, event.clientY)
+        const onGlobalPointerMove = (event: PointerEvent) =>
+            updatePointer(event.clientX, event.clientY)
         window.addEventListener("pointermove", onGlobalPointerMove, true)
-        return () => window.removeEventListener("pointermove", onGlobalPointerMove, true)
+        return () =>
+            window.removeEventListener("pointermove", onGlobalPointerMove, true)
     }, [isInteractive, updatePointer])
 
     React.useEffect(() => {
         const current = state.current
         if (!isInteractive || !canUseDOM()) {
-            setMotion({ x: current.x, y: current.y, mx: 0, my: 0, dragging: false })
+            setMotion({
+                x: current.x,
+                y: current.y,
+                mx: 0,
+                my: 0,
+                dragging: false,
+            })
             return
         }
 
@@ -1475,7 +1817,9 @@ export default function ArchivePlayground(props: Props) {
         const tick = (time: number) => {
             const s = state.current
             const c = cfgRef.current
-            const dt = s.lastFrameT ? Math.min(0.05, (time - s.lastFrameT) / 1000) : 1 / 60
+            const dt = s.lastFrameT
+                ? Math.min(0.05, (time - s.lastFrameT) / 1000)
+                : 1 / 60
             s.lastFrameT = time
 
             const panelOpen = Boolean(selectedRef.current)
@@ -1485,17 +1829,35 @@ export default function ArchivePlayground(props: Props) {
                     if ((c.inertiaEnabled ?? true) && speed > 1 && !panelOpen) {
                         s.x += s.vx * dt
                         s.y += s.vy * dt
-                        const friction = Math.pow(c.throwFriction ?? 0.85, dt * 60)
+                        const friction = Math.pow(
+                            c.throwFriction ?? 0.85,
+                            dt * 60
+                        )
                         s.vx *= friction
                         s.vy *= friction
                     } else {
                         s.vx = 0
                         s.vy = 0
-                        s.x += (panelOpen ? c.panelDriftSpeedX ?? 0.5 : c.driftSpeedX ?? 0.5) * dt * 60
-                        s.y += (panelOpen ? c.panelDriftSpeedY ?? 0.5 : c.driftSpeedY ?? 0.5) * dt * 60
+                        s.x +=
+                            (panelOpen
+                                ? (c.panelDriftSpeedX ?? 0.5)
+                                : (c.driftSpeedX ?? 0.5)) *
+                            dt *
+                            60
+                        s.y +=
+                            (panelOpen
+                                ? (c.panelDriftSpeedY ?? 0.5)
+                                : (c.driftSpeedY ?? 0.5)) *
+                            dt *
+                            60
                     }
                 }
-                if ((c.edgeScrollEnabled ?? true) && s.inside && !s.dragging && !panelOpen) {
+                if (
+                    (c.edgeScrollEnabled ?? true) &&
+                    s.inside &&
+                    !s.dragging &&
+                    !panelOpen
+                ) {
                     s.x += s.edgeX
                     s.y += s.edgeY
                 }
@@ -1510,29 +1872,50 @@ export default function ArchivePlayground(props: Props) {
                 s.my += (0 - s.my) * ease
             }
 
-            setMotion({ x: s.x, y: s.y, mx: s.mx, my: s.my, dragging: s.dragging })
+            setMotion({
+                x: s.x,
+                y: s.y,
+                mx: s.mx,
+                my: s.my,
+                dragging: s.dragging,
+            })
             raf = window.requestAnimationFrame(tick)
         }
         raf = window.requestAnimationFrame(tick)
         return () => window.cancelAnimationFrame(raf)
     }, [isInteractive])
 
-    const getCardIndexFromTarget = React.useCallback((target: EventTarget | null) => {
-        const element = target as HTMLElement | null
-        const card = element?.closest?.("[data-playground-card='true']") as HTMLElement | null
-        const raw = card?.dataset?.playgroundIndex
-        const index = raw ? Number(raw) : -1
-        return Number.isFinite(index) ? index : -1
-    }, [])
+    const getCardIndexFromTarget = React.useCallback(
+        (target: EventTarget | null) => {
+            const element = target as HTMLElement | null
+            const card = element?.closest?.(
+                "[data-playground-card='true']"
+            ) as HTMLElement | null
+            const raw = card?.dataset?.playgroundIndex
+            const index = raw ? Number(raw) : -1
+            return Number.isFinite(index) ? index : -1
+        },
+        []
+    )
 
-    const getCardElementFromTarget = React.useCallback((target: EventTarget | null) => {
-        const element = target as HTMLElement | null
-        return element?.closest?.("[data-playground-card='true']") as HTMLElement | null
-    }, [])
+    const getCardElementFromTarget = React.useCallback(
+        (target: EventTarget | null) => {
+            const element = target as HTMLElement | null
+            return element?.closest?.(
+                "[data-playground-card='true']"
+            ) as HTMLElement | null
+        },
+        []
+    )
 
     const onWheel = (event: React.WheelEvent<HTMLDivElement>) => {
         if (!isInteractive || selectedRef.current) return
-        const deltaUnit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? Math.max(viewport.w, viewport.h) : 1
+        const deltaUnit =
+            event.deltaMode === 1
+                ? 16
+                : event.deltaMode === 2
+                  ? Math.max(viewport.w, viewport.h)
+                  : 1
         const dx = event.deltaX * deltaUnit
         const dy = event.deltaY * deltaUnit
         if (Math.abs(dx) + Math.abs(dy) < 0.1) return
@@ -1540,7 +1923,9 @@ export default function ArchivePlayground(props: Props) {
         event.preventDefault()
         const s = state.current
         const currentTime = now()
-        const dt = s.lastT ? Math.max(0.016, (currentTime - s.lastT) / 1000) : 0.016
+        const dt = s.lastT
+            ? Math.max(0.016, (currentTime - s.lastT) / 1000)
+            : 0.016
         const velocityScale = props.throwVelocityScale ?? 1.75
         const maxSpeed = props.throwMaxSpeed ?? 5200
 
@@ -1556,7 +1941,12 @@ export default function ArchivePlayground(props: Props) {
     }
 
     const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-        if (!isInteractive || selectedRef.current || (event.pointerType === "mouse" && event.button !== 0)) return
+        if (
+            !isInteractive ||
+            selectedRef.current ||
+            (event.pointerType === "mouse" && event.button !== 0)
+        )
+            return
         const s = state.current
         s.down = true
         s.dragging = false
@@ -1587,8 +1977,16 @@ export default function ArchivePlayground(props: Props) {
         const dt = Math.max(0.001, (currentTime - s.lastT) / 1000)
         const velocityScale = props.throwVelocityScale ?? 1.75
         const maxSpeed = props.throwMaxSpeed ?? 5200
-        s.vx = clamp(((event.clientX - s.lastX) / dt) * velocityScale, -maxSpeed, maxSpeed)
-        s.vy = clamp(((event.clientY - s.lastY) / dt) * velocityScale, -maxSpeed, maxSpeed)
+        s.vx = clamp(
+            ((event.clientX - s.lastX) / dt) * velocityScale,
+            -maxSpeed,
+            maxSpeed
+        )
+        s.vy = clamp(
+            ((event.clientY - s.lastY) / dt) * velocityScale,
+            -maxSpeed,
+            maxSpeed
+        )
         s.lastX = event.clientX
         s.lastY = event.clientY
         s.lastT = currentTime
@@ -1607,12 +2005,22 @@ export default function ArchivePlayground(props: Props) {
         }
     }
 
-    const finishPointer = (event: React.PointerEvent<HTMLDivElement>, allowOpen: boolean) => {
+    const finishPointer = (
+        event: React.PointerEvent<HTMLDivElement>,
+        allowOpen: boolean
+    ) => {
         if (!isInteractive) return
         const s = state.current
         const minSpeed = props.throwMinSpeed ?? 220
         const maxSpeed = props.throwMaxSpeed ?? 5200
-        const itemToOpen = allowOpen && s.down && !s.dragging && !s.suppressClick && s.tapIndex >= 0 ? items[s.tapIndex] : null
+        const itemToOpen =
+            allowOpen &&
+            s.down &&
+            !s.dragging &&
+            !s.suppressClick &&
+            s.tapIndex >= 0
+                ? items[s.tapIndex]
+                : null
         const speed = Math.hypot(s.vx, s.vy)
         if (speed < minSpeed) {
             s.vx = 0
@@ -1632,7 +2040,10 @@ export default function ArchivePlayground(props: Props) {
             event.currentTarget.releasePointerCapture(event.pointerId)
         } catch (error) {}
         if (itemToOpen) openItem(itemToOpen, opener)
-        if (canUseDOM()) window.setTimeout(() => { s.suppressClick = false }, 140)
+        if (canUseDOM())
+            window.setTimeout(() => {
+                s.suppressClick = false
+            }, 140)
         else s.suppressClick = false
     }
 
@@ -1642,10 +2053,20 @@ export default function ArchivePlayground(props: Props) {
     const centerX = viewport.w / 2
     const centerY = viewport.h / 2
     const extra = isCanvas ? 3 : 5
-    const visibleCols = clamp(Math.ceil(viewport.w / Math.max(1, cellX)) + extra, 5, isCanvas ? 9 : 12)
-    const visibleRows = clamp(Math.ceil(viewport.h / Math.max(1, cellY)) + extra, 5, isCanvas ? 8 : 10)
-    const startX = Math.floor((-motion.x - centerX) / cellX) - Math.ceil(extra / 2)
-    const startY = Math.floor((-motion.y - centerY) / cellY) - Math.ceil(extra / 2)
+    const visibleCols = clamp(
+        Math.ceil(viewport.w / Math.max(1, cellX)) + extra,
+        5,
+        isCanvas ? 9 : 12
+    )
+    const visibleRows = clamp(
+        Math.ceil(viewport.h / Math.max(1, cellY)) + extra,
+        5,
+        isCanvas ? 8 : 10
+    )
+    const startX =
+        Math.floor((-motion.x - centerX) / cellX) - Math.ceil(extra / 2)
+    const startY =
+        Math.floor((-motion.y - centerY) / cellY) - Math.ceil(extra / 2)
     const cells: React.ReactNode[] = []
     let videoBudget = maxConcurrentVideos
 
@@ -1662,19 +2083,47 @@ export default function ArchivePlayground(props: Props) {
                 const isHot = hovered === key
                 // Concurrent-video limiter: a video cell only decodes when it's
                 // on-screen (with a cell of lookahead) AND within the budget.
-                const inView = left > -cellSize && top > -cellSize && left < viewport.w + cellSize && top < viewport.h + cellSize
-                const activeVideo = item.kind === "video" && !!item.videoUrl && inView && videoBudget > 0
+                const inView =
+                    left > -cellSize &&
+                    top > -cellSize &&
+                    left < viewport.w + cellSize &&
+                    top < viewport.h + cellSize
+                const activeVideo =
+                    item.kind === "video" &&
+                    !!item.videoUrl &&
+                    inView &&
+                    videoBudget > 0
                 if (activeVideo) videoBudget--
-                const cardIsKeyboardReachable = loadInReady && isInteractive && !panelOpen && left >= 0 && top >= 0 && left < viewport.w && top < viewport.h
-                const introActive = loadInReady && !loadInSettled && !prefersReducedMotion
+                const cardIsKeyboardReachable =
+                    loadInReady &&
+                    isInteractive &&
+                    !panelOpen &&
+                    left >= 0 &&
+                    top >= 0 &&
+                    left < viewport.w &&
+                    top < viewport.h
+                const introActive =
+                    loadInReady && !loadInSettled && !prefersReducedMotion
                 // Ordered radial stagger: ripples out from the center of the visible
                 // window (cinematic), not a random/hash scatter.
-                const introRing = Math.hypot(row - (visibleRows - 1) / 2, col - (visibleCols - 1) / 2)
-                const introMaxRing = Math.hypot((visibleRows - 1) / 2, (visibleCols - 1) / 2) || 1
+                const introRing = Math.hypot(
+                    row - (visibleRows - 1) / 2,
+                    col - (visibleCols - 1) / 2
+                )
+                const introMaxRing =
+                    Math.hypot((visibleRows - 1) / 2, (visibleCols - 1) / 2) ||
+                    1
                 const introDelayMs = introActive
-                    ? Math.round((introRing / introMaxRing) * Math.max(0, loadInStaggerMs) * (LOAD_IN_STAGGER_SLOTS - 1))
+                    ? Math.round(
+                          (introRing / introMaxRing) *
+                              Math.max(0, loadInStaggerMs) *
+                              (LOAD_IN_STAGGER_SLOTS - 1)
+                      )
                     : 0
-                const introTransformMs = Math.max(620, Math.round(loadInFadeMs * 0.82))
+                const introTransformMs = Math.max(
+                    620,
+                    Math.round(loadInFadeMs * 0.82)
+                )
                 const cardTransition =
                     !loadInReady || prefersReducedMotion || motion.dragging
                         ? "none"
@@ -1704,7 +2153,12 @@ export default function ArchivePlayground(props: Props) {
                         onClick={(event) => {
                             event.preventDefault()
                             event.stopPropagation()
-                            if (!isInteractive || state.current.suppressClick || state.current.dragging) return
+                            if (
+                                !isInteractive ||
+                                state.current.suppressClick ||
+                                state.current.dragging
+                            )
+                                return
                             openItem(item, event.currentTarget)
                         }}
                         style={{
@@ -1724,7 +2178,13 @@ export default function ArchivePlayground(props: Props) {
                             opacity: loadInReady ? 1 : 0,
                             transform: `translate3d(0, ${loadInReady ? 0 : LOAD_IN_LIFT_PX}px, 0) scale(${isHot ? hoverScale : 1})`,
                             transition: cardTransition,
-                            willChange: introActive || !loadInReady || isHot || motion.dragging ? "opacity, transform" : "auto",
+                            willChange:
+                                introActive ||
+                                !loadInReady ||
+                                isHot ||
+                                motion.dragging
+                                    ? "opacity, transform"
+                                    : "auto",
                             WebkitTapHighlightColor: "transparent",
                         }}
                     >
@@ -1738,7 +2198,7 @@ export default function ArchivePlayground(props: Props) {
                             fadeMs={mediaFadeMs}
                             onMeasure={(w, h) => handleMeasure(item.id, w, h)}
                         />
-                    </button>,
+                    </button>
                 )
             }
         }
@@ -1758,6 +2218,9 @@ export default function ArchivePlayground(props: Props) {
             : `min(${panelWidth}px, ${PANEL_DESKTOP_RATIO * 100}vw)`
     const stackPanelText = renderedPanelWidth < PANEL_TEXT_STACK_WIDTH
     const panelHasDescription = Boolean(panelItem?.description)
+    const panelCtaUrl = (panelItem?.link || "").trim()
+    const panelCtaText = (panelItem?.linkTitle || "").trim() || panelCtaLabel
+    const panelHasCta = Boolean(panelCtaUrl)
 
     return (
         <div
@@ -1778,7 +2241,12 @@ export default function ArchivePlayground(props: Props) {
                 isolation: "isolate",
                 background: backgroundColor,
                 color: textColor,
-                cursor: !loadInReady || panelOpen ? "default" : motion.dragging ? "grabbing" : "grab",
+                cursor:
+                    !loadInReady || panelOpen
+                        ? "default"
+                        : motion.dragging
+                          ? "grabbing"
+                          : "grab",
                 userSelect: "none",
                 touchAction: "none",
                 fontFamily: DISPLAY,
@@ -1801,10 +2269,21 @@ export default function ArchivePlayground(props: Props) {
                     transformStyle: "preserve-3d",
                     opacity: loadInReady ? 1 : 0,
                     pointerEvents: loadInReady && !panelOpen ? "auto" : "none",
-                    transition: loadInReady && !prefersReducedMotion ? `opacity 140ms ${LOAD_IN_EASE}` : "none",
+                    transition:
+                        loadInReady && !prefersReducedMotion
+                            ? `opacity 140ms ${LOAD_IN_EASE}`
+                            : "none",
                 }}
             >
-                <div style={{ position: "absolute", inset: 0, transformStyle: "preserve-3d" }}>{cells}</div>
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        transformStyle: "preserve-3d",
+                    }}
+                >
+                    {cells}
+                </div>
             </div>
 
             <div
@@ -1816,13 +2295,31 @@ export default function ArchivePlayground(props: Props) {
                     zIndex: MODAL_Z,
                     opacity: panelOpen ? 1 : 0,
                     pointerEvents: panelOpen ? "auto" : "none",
-                    WebkitBackdropFilter: panelOpen ? "blur(25px)" : "blur(0px)",
+                    WebkitBackdropFilter: panelOpen
+                        ? "blur(25px)"
+                        : "blur(0px)",
                     backdropFilter: panelOpen ? "blur(25px)" : "blur(0px)",
-                    transition: panelOpen ? `opacity .8s ${SNAPPY_EASE}, backdrop-filter .8s ${SNAPPY_EASE}` : `opacity .45s ${SMOOTH_EASE}, backdrop-filter .45s ${SMOOTH_EASE}`,
+                    transition: panelOpen
+                        ? `opacity .8s ${SNAPPY_EASE}, backdrop-filter .8s ${SNAPPY_EASE}`
+                        : `opacity .45s ${SMOOTH_EASE}, backdrop-filter .45s ${SMOOTH_EASE}`,
                 }}
             >
-                <div style={{ position: "absolute", inset: 0, background: "#212121", opacity: 0.05 }} />
-                <div style={{ position: "absolute", inset: 0, background: "hsla(35,17%,86%,.2)", opacity: 0.85 }} />
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "#212121",
+                        opacity: 0.05,
+                    }}
+                />
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "hsla(35,17%,86%,.2)",
+                        opacity: 0.85,
+                    }}
+                />
             </div>
 
             <div
@@ -1831,7 +2328,11 @@ export default function ArchivePlayground(props: Props) {
                 role={panelOpen ? "dialog" : undefined}
                 aria-modal={panelOpen ? true : undefined}
                 aria-labelledby={panelOpen ? panelTitleId : undefined}
-                aria-describedby={panelOpen && panelHasDescription ? panelDescriptionId : undefined}
+                aria-describedby={
+                    panelOpen && panelHasDescription
+                        ? panelDescriptionId
+                        : undefined
+                }
                 aria-hidden={panelOpen ? undefined : true}
                 tabIndex={-1}
                 onPointerDown={(event) => event.stopPropagation()}
@@ -1847,13 +2348,21 @@ export default function ArchivePlayground(props: Props) {
                     color: textColor,
                     overflow: "hidden",
                     transform: panelOpen ? "translateX(0)" : "translateX(100%)",
-                    transition: panelOpen ? `transform 1s ${SNAPPY_EASE}` : `transform .8s ${SMOOTH_EASE}`,
+                    transition: panelOpen
+                        ? `transform 1s ${SNAPPY_EASE}`
+                        : `transform .8s ${SMOOTH_EASE}`,
                     pointerEvents: panelOpen ? "auto" : "none",
                     boxSizing: "border-box",
                 }}
             >
                 {panelItem && (
-                    <div style={{ height: "100%", overflowY: "auto", padding: `calc(env(safe-area-inset-top, 0px) + clamp(84px, 11vh, 108px)) ${panelPadding} clamp(84px, 17vh, 140px)` }}>
+                    <div
+                        style={{
+                            height: "100%",
+                            overflowY: "auto",
+                            padding: `calc(env(safe-area-inset-top, 0px) + clamp(84px, 11vh, 108px)) ${panelPadding} clamp(84px, 17vh, 140px)`,
+                        }}
+                    >
                         <button
                             ref={closeButtonRef}
                             type="button"
@@ -1892,25 +2401,70 @@ export default function ArchivePlayground(props: Props) {
                                 WebkitTapHighlightColor: "transparent",
                             }}
                         >
-                            <span aria-hidden="true" style={{ display: "inline-block", flex: "0 0 auto", height: 13, lineHeight: "13px" }}>&times;</span>
-                            <span aria-hidden="true" style={{ display: "inline-block", height: 13, lineHeight: "13px", overflow: "hidden" }}>
+                            <span
+                                aria-hidden="true"
+                                style={{
+                                    display: "inline-block",
+                                    flex: "0 0 auto",
+                                    height: 13,
+                                    lineHeight: "13px",
+                                }}
+                            >
+                                &times;
+                            </span>
+                            <span
+                                aria-hidden="true"
+                                style={{
+                                    display: "inline-block",
+                                    height: 13,
+                                    lineHeight: "13px",
+                                    overflow: "hidden",
+                                }}
+                            >
                                 <span
                                     style={{
                                         display: "flex",
                                         flexDirection: "column",
                                         alignItems: "flex-end",
-                                        transform: closeTextRolled ? "translateY(-13px)" : "translateY(0)",
+                                        transform: closeTextRolled
+                                            ? "translateY(-13px)"
+                                            : "translateY(0)",
                                         transition: `transform 360ms ${SNAPPY_EASE}`,
                                         willChange: "transform",
                                     }}
                                 >
-                                    <span style={{ height: 13, lineHeight: "13px", whiteSpace: "nowrap" }}>CLOSE</span>
-                                    <span style={{ height: 13, lineHeight: "13px", whiteSpace: "nowrap" }}>CLOSE</span>
+                                    <span
+                                        style={{
+                                            height: 13,
+                                            lineHeight: "13px",
+                                            whiteSpace: "nowrap",
+                                        }}
+                                    >
+                                        CLOSE
+                                    </span>
+                                    <span
+                                        style={{
+                                            height: 13,
+                                            lineHeight: "13px",
+                                            whiteSpace: "nowrap",
+                                        }}
+                                    >
+                                        CLOSE
+                                    </span>
                                 </span>
                             </span>
                         </button>
 
-                        <figure style={{ margin: 0, position: "relative", width: "100%", aspectRatio: `${panelItem.width} / ${panelItem.height}`, background: "transparent", overflow: "hidden" }}>
+                        <figure
+                            style={{
+                                margin: 0,
+                                position: "relative",
+                                width: "100%",
+                                aspectRatio: `${panelItem.width} / ${panelItem.height}`,
+                                background: "transparent",
+                                overflow: "hidden",
+                            }}
+                        >
                             <MediaFrame
                                 item={panelItem}
                                 detail
@@ -1918,31 +2472,210 @@ export default function ArchivePlayground(props: Props) {
                                 strokeColor={strokeColor}
                                 strokeWidth={strokeWidth}
                                 fadeMs={mediaFadeMs}
-                                onMeasure={(w, h) => handleMeasure(panelItem.id, w, h)}
+                                onMeasure={(w, h) =>
+                                    handleMeasure(panelItem.id, w, h)
+                                }
                             />
                         </figure>
 
+                        {/* Title (+ divider under it) and body copy (+ CTA).
+                            Two columns on wider panels; stacked + left-aligned
+                            on the smallest breakpoint. The divider sits directly
+                            under the title, and the CTA aligns to the body copy. */}
                         <div
-                            aria-hidden="true"
                             style={{
+                                marginTop: "clamp(24px, 3vw, 40px)",
+                                display: "grid",
+                                gridTemplateColumns: stackPanelText
+                                    ? "minmax(0, 1fr)"
+                                    : "minmax(0, 1.1fr) minmax(0, 0.9fr)",
+                                columnGap: 32,
+                                rowGap: "clamp(24px, 3.2vw, 44px)",
+                                alignItems: "start",
                                 width: "100%",
-                                height: 1,
-                                background: ruleColor,
-                                margin: "clamp(28px, 4vw, 54px) 0 clamp(12px, 1.5vw, 18px)",
-                                transformOrigin: "left center",
-                                animation: panelOpen ? `playgroundRuleDraw 700ms ${SMOOTH_EASE} both` : undefined,
                             }}
-                        />
-
-                        <div style={{ display: "grid", gridTemplateColumns: stackPanelText || !panelHasDescription ? "minmax(0, 1fr)" : "minmax(0, 1.08fr) minmax(0, .92fr)", gap: stackPanelText ? 18 : 28, alignItems: "start", width: "100%" }}>
-                            <div style={{ minWidth: 0, maxWidth: "100%" }}>
+                        >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "flex-start",
+                                    minWidth: 0,
+                                    maxWidth: "100%",
+                                }}
+                            >
                                 {panelItem.category && (
-                                    <div style={{ fontFamily: MONO, fontSize: 11, lineHeight: 1.2, letterSpacing: ".04em", textTransform: "uppercase", color: labelColor, marginBottom: 12 }}>{panelItem.category}</div>
+                                    <div
+                                        style={{
+                                            fontFamily: MONO,
+                                            fontSize: 11,
+                                            lineHeight: 1.2,
+                                            letterSpacing: ".04em",
+                                            textTransform: "uppercase",
+                                            color: labelColor,
+                                            marginBottom: 12,
+                                        }}
+                                    >
+                                        {panelItem.category}
+                                    </div>
                                 )}
-                                <h2 id={panelTitleId} style={{ margin: 0, maxWidth: "100%", fontFamily: PARAGRAPH_MEDIUM, fontSize: 22, lineHeight: "110%", fontWeight: 500, letterSpacing: 0, color: TEXT_GRAY, whiteSpace: "normal", wordBreak: "normal", overflowWrap: "break-word", hyphens: "auto" }}>{panelItem.title}</h2>
+                                <h2
+                                    id={panelTitleId}
+                                    style={{
+                                        margin: 0,
+                                        maxWidth: "100%",
+                                        fontFamily: PARAGRAPH_MEDIUM,
+                                        fontSize: 22,
+                                        lineHeight: "110%",
+                                        fontWeight: 500,
+                                        letterSpacing: 0,
+                                        color: textColor,
+                                        whiteSpace: "normal",
+                                        wordBreak: "normal",
+                                        overflowWrap: "break-word",
+                                        hyphens: "auto",
+                                    }}
+                                >
+                                    {panelItem.title}
+                                </h2>
+                                <div
+                                    aria-hidden="true"
+                                    style={{
+                                        width: "100%",
+                                        height: 1,
+                                        background: ruleColor,
+                                        marginTop: "clamp(12px, 1.5vw, 18px)",
+                                        transformOrigin: "left center",
+                                        animation: panelOpen
+                                            ? `playgroundRuleDraw 700ms ${SMOOTH_EASE} both`
+                                            : undefined,
+                                    }}
+                                />
                             </div>
-                            {panelHasDescription && (
-                                <p id={panelDescriptionId} style={{ margin: 0, minWidth: 0, fontFamily: PARAGRAPH_REGULAR, fontSize: 18, lineHeight: "140%", fontWeight: 400, letterSpacing: 0, color: TEXT_GRAY, overflowWrap: "break-word" }}>{panelItem.description}</p>
+
+                            {(panelHasDescription || panelHasCta) && (
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "flex-start",
+                                        gap: "clamp(20px, 2.6vw, 32px)",
+                                        minWidth: 0,
+                                        maxWidth: "100%",
+                                    }}
+                                >
+                                    {panelHasDescription && (
+                                        <p
+                                            id={panelDescriptionId}
+                                            style={{
+                                                margin: 0,
+                                                minWidth: 0,
+                                                fontFamily: PARAGRAPH_REGULAR,
+                                                fontSize: 18,
+                                                lineHeight: "140%",
+                                                fontWeight: 400,
+                                                letterSpacing: 0,
+                                                color: TEXT_GRAY,
+                                                overflowWrap: "break-word",
+                                            }}
+                                        >
+                                            {panelItem.description}
+                                        </p>
+                                    )}
+                                    {panelHasCta && (
+                                        <a
+                                            href={panelCtaUrl}
+                                            target={
+                                                panelCtaNewTab
+                                                    ? "_blank"
+                                                    : undefined
+                                            }
+                                            rel={
+                                                panelCtaNewTab
+                                                    ? "noopener noreferrer"
+                                                    : undefined
+                                            }
+                                            aria-label={panelCtaText}
+                                            tabIndex={panelOpen ? 0 : -1}
+                                            onMouseEnter={() => setCtaHover(true)}
+                                            onMouseLeave={() =>
+                                                setCtaHover(false)
+                                            }
+                                            onFocus={() => setCtaHover(true)}
+                                            onBlur={() => setCtaHover(false)}
+                                            style={{
+                                                display: "inline-flex",
+                                                alignItems: "flex-start",
+                                                gap: 5,
+                                                width: "fit-content",
+                                                height: 13,
+                                                color: textColor,
+                                                fontFamily: MONO,
+                                                fontSize: 13,
+                                                lineHeight: "13px",
+                                                letterSpacing: 0,
+                                                textTransform: "uppercase",
+                                                textDecoration: "none",
+                                                cursor: "pointer",
+                                                overflow: "visible",
+                                                WebkitTapHighlightColor:
+                                                    "transparent",
+                                            }}
+                                        >
+                                            <span
+                                                aria-hidden="true"
+                                                style={{
+                                                    display: "inline-block",
+                                                    flex: "0 0 auto",
+                                                    height: 13,
+                                                    lineHeight: "13px",
+                                                }}
+                                            >
+                                                {"→"}
+                                            </span>
+                                            <span
+                                                aria-hidden="true"
+                                                style={{
+                                                    display: "inline-block",
+                                                    height: 13,
+                                                    lineHeight: "13px",
+                                                    overflow: "hidden",
+                                                }}
+                                            >
+                                                <span
+                                                    style={{
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        transform: ctaHover
+                                                            ? "translateY(-13px)"
+                                                            : "translateY(0)",
+                                                        transition: `transform 360ms ${SNAPPY_EASE}`,
+                                                        willChange: "transform",
+                                                    }}
+                                                >
+                                                    <span
+                                                        style={{
+                                                            height: 13,
+                                                            lineHeight: "13px",
+                                                            whiteSpace: "nowrap",
+                                                        }}
+                                                    >
+                                                        {panelCtaText}
+                                                    </span>
+                                                    <span
+                                                        style={{
+                                                            height: 13,
+                                                            lineHeight: "13px",
+                                                            whiteSpace: "nowrap",
+                                                        }}
+                                                    >
+                                                        {panelCtaText}
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    )}
+                                </div>
                             )}
                         </div>
                     </div>
@@ -1965,10 +2698,28 @@ addPropertyControls<Props>(ArchivePlayground, {
         control: {
             type: ControlType.Object,
             controls: {
-                id: { type: ControlType.String, title: "ID", defaultValue: "", hidden: hideInternal },
-                title: { type: ControlType.String, title: "Title", defaultValue: "Archive Item" },
-                accessibilityLabel: { type: ControlType.String, title: "A11y Label", defaultValue: "" },
-                description: { type: ControlType.String, title: "Description", defaultValue: "", displayTextArea: true },
+                id: {
+                    type: ControlType.String,
+                    title: "ID",
+                    defaultValue: "",
+                    hidden: hideInternal,
+                },
+                title: {
+                    type: ControlType.String,
+                    title: "Title",
+                    defaultValue: "Archive Item",
+                },
+                accessibilityLabel: {
+                    type: ControlType.String,
+                    title: "A11y Label",
+                    defaultValue: "",
+                },
+                description: {
+                    type: ControlType.String,
+                    title: "Description",
+                    defaultValue: "",
+                    displayTextArea: true,
+                },
                 mediaType: {
                     type: ControlType.Enum,
                     title: "Type",
@@ -1976,57 +2727,415 @@ addPropertyControls<Props>(ArchivePlayground, {
                     optionTitles: ["Image", "Video", "GIF"],
                     defaultValue: "image",
                 },
-                image: { type: ControlType.ResponsiveImage, title: "Image / Poster" },
-                video: { type: ControlType.File, title: "Video", allowedFileTypes: ["mp4", "mov", "m4v", "webm"], hidden: hideUnlessVideo },
-                category: { type: ControlType.String, title: "Category", defaultValue: "Archive Image" },
-                stroke: { type: ControlType.Enum, title: "Stroke", options: ["auto", "on", "off"], optionTitles: ["Auto", "On", "Off"], defaultValue: "auto" },
+                image: {
+                    type: ControlType.ResponsiveImage,
+                    title: "Image / Poster",
+                },
+                video: {
+                    type: ControlType.File,
+                    title: "Video",
+                    allowedFileTypes: ["mp4", "mov", "m4v", "webm"],
+                    hidden: hideUnlessVideo,
+                },
+                category: {
+                    type: ControlType.String,
+                    title: "Category",
+                    defaultValue: "Archive Image",
+                },
+                stroke: {
+                    type: ControlType.Enum,
+                    title: "Stroke",
+                    options: ["auto", "on", "off"],
+                    optionTitles: ["Auto", "On", "Off"],
+                    defaultValue: "auto",
+                },
             },
         },
     },
-    collectionId: { type: ControlType.String, title: "Collection", defaultValue: DEFAULT_COLLECTION_ID, hidden: hideAdvanced },
-    collectionModuleUrl: { type: ControlType.String, title: "Module URL", defaultValue: "", hidden: hideAdvanced },
-    advancedControls: { type: ControlType.Boolean, title: "Advanced", defaultValue: false, enabledTitle: "Show", disabledTitle: "Hide" },
-    cellSize: { type: ControlType.Number, title: "Cell", defaultValue: 190, min: 100, max: 360, step: 1, unit: "px", hidden: hideAdvanced },
-    columnGap: { type: ControlType.Number, title: "Column", defaultValue: 72, min: 0, max: 200, step: 1, unit: "px", hidden: hideAdvanced },
-    rowGap: { type: ControlType.Number, title: "Row", defaultValue: 88, min: 0, max: 220, step: 1, unit: "px", hidden: hideAdvanced },
-    hoverScale: { type: ControlType.Number, title: "Hover", defaultValue: 1.035, min: 1, max: 1.15, step: 0.005, hidden: hideAdvanced },
-    hoverImageZoom: { type: ControlType.Number, title: "Zoom", defaultValue: 4, min: 0, max: 12, step: 0.5, unit: "%", hidden: hideAdvanced },
-    panelWidth: { type: ControlType.Number, title: "Panel", defaultValue: DEFAULT_PANEL_WIDTH, min: 300, max: 1200, step: 1, unit: "px", hidden: hideAdvanced },
-    panelExitMs: { type: ControlType.Number, title: "Close", defaultValue: 950, min: 200, max: 1400, step: 10, unit: "ms", hidden: hideAdvanced },
-    driftSpeedX: { type: ControlType.Number, title: "Drift X", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    driftSpeedY: { type: ControlType.Number, title: "Drift Y", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    driftWhilePanelOpen: { type: ControlType.Boolean, title: "Panel Drift", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    panelDriftSpeedX: { type: ControlType.Number, title: "Panel X", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    panelDriftSpeedY: { type: ControlType.Number, title: "Panel Y", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    inertiaEnabled: { type: ControlType.Boolean, title: "Inertia", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    throwFriction: { type: ControlType.Number, title: "Friction", defaultValue: 0.85, min: 0.4, max: 0.98, step: 0.01, hidden: hideAdvanced },
-    throwVelocityScale: { type: ControlType.Number, title: "Throw", defaultValue: 1.75, min: 0.2, max: 4, step: 0.05, hidden: hideAdvanced },
-    throwMinSpeed: { type: ControlType.Number, title: "Min V", defaultValue: 220, min: 0, max: 1200, step: 10, hidden: hideAdvanced },
-    throwMaxSpeed: { type: ControlType.Number, title: "Max V", defaultValue: 5200, min: 400, max: 9000, step: 50, hidden: hideAdvanced },
-    edgeScrollEnabled: { type: ControlType.Boolean, title: "Edges", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    edgeScrollSpeed: { type: ControlType.Number, title: "Edge V", defaultValue: 220, min: 0, max: 800, step: 10, hidden: hideAdvanced },
-    edgeScrollZone: { type: ControlType.Number, title: "Zone", defaultValue: 90, min: 30, max: 220, step: 1, unit: "px", hidden: hideAdvanced },
-    parallaxStrength: { type: ControlType.Number, title: "Parallax", defaultValue: 0.06, min: 0, max: 0.2, step: 0.005, hidden: hideAdvanced },
-    parallaxEase: { type: ControlType.Number, title: "Ease", defaultValue: 0.5, min: 0.05, max: 1, step: 0.05, hidden: hideAdvanced },
-    parallaxWhileDragging: { type: ControlType.Boolean, title: "Drag Para", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 1100, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
-    maxConcurrentVideos: { type: ControlType.Number, title: "Max Videos", defaultValue: 8, min: 0, max: 30, step: 1, hidden: hideAdvanced },
-    loadInDelayMs: { type: ControlType.Number, title: "Load Hold", defaultValue: LOAD_IN_DELAY_MS, min: 0, max: 1000, step: 10, unit: "ms", hidden: hideAdvanced },
-    loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 2600, step: 10, unit: "ms", hidden: hideAdvanced },
-    loadInStaggerMs: { type: ControlType.Number, title: "Load Stagger", defaultValue: LOAD_IN_STAGGER_MS, min: 0, max: 180, step: 1, unit: "ms", hidden: hideAdvanced },
-    loadInMaxWaitMs: { type: ControlType.Number, title: "Load Max", defaultValue: LOAD_IN_MAX_WAIT_MS, min: 400, max: 5500, step: 50, unit: "ms", hidden: hideAdvanced },
-    backgroundColor: { type: ControlType.Color, title: "BG", defaultValue: CREAM, hidden: hideAdvanced },
-    panelColor: { type: ControlType.Color, title: "Panel", defaultValue: CREAM, hidden: hideAdvanced },
-    textColor: { type: ControlType.Color, title: "Text", defaultValue: BLACK, hidden: hideAdvanced },
-    mutedTextColor: { type: ControlType.Color, title: "Muted", defaultValue: TEXT_GRAY, hidden: hideAdvanced },
-    labelColor: { type: ControlType.Color, title: "Label", defaultValue: LABEL, hidden: hideAdvanced },
-    ruleColor: { type: ControlType.Color, title: "Rule", defaultValue: RULE, hidden: hideAdvanced },
-    strokeColor: { type: ControlType.Color, title: "Stroke", defaultValue: LABEL, hidden: hideAdvanced },
-    strokeWidth: { type: ControlType.Number, title: "Stroke W", defaultValue: 0.5, min: 0, max: 4, step: 0.25, unit: "px", hidden: hideAdvanced },
-    hideFooter: { type: ControlType.Boolean, title: "Footer", defaultValue: true, enabledTitle: "Hide", disabledTitle: "Show", hidden: hideAdvanced },
-    navPassthrough: { type: ControlType.Boolean, title: "Nav Fix", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    navSelector: { type: ControlType.String, title: "Nav Sel", defaultValue: DEFAULT_NAV_SELECTOR, hidden: hideAdvanced },
-    navHideOffset: { type: ControlType.Number, title: "Nav Hide", defaultValue: 120, min: 60, max: 240, step: 1, unit: "px", hidden: hideAdvanced },
+    collectionId: {
+        type: ControlType.String,
+        title: "Collection",
+        defaultValue: DEFAULT_COLLECTION_ID,
+        hidden: hideAdvanced,
+    },
+    collectionModuleUrl: {
+        type: ControlType.String,
+        title: "Module URL",
+        defaultValue: "",
+        hidden: hideAdvanced,
+    },
+    advancedControls: {
+        type: ControlType.Boolean,
+        title: "Advanced",
+        defaultValue: false,
+        enabledTitle: "Show",
+        disabledTitle: "Hide",
+    },
+    cellSize: {
+        type: ControlType.Number,
+        title: "Cell",
+        defaultValue: 190,
+        min: 100,
+        max: 360,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    columnGap: {
+        type: ControlType.Number,
+        title: "Column",
+        defaultValue: 72,
+        min: 0,
+        max: 200,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    rowGap: {
+        type: ControlType.Number,
+        title: "Row",
+        defaultValue: 88,
+        min: 0,
+        max: 220,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    hoverScale: {
+        type: ControlType.Number,
+        title: "Hover",
+        defaultValue: 1.035,
+        min: 1,
+        max: 1.15,
+        step: 0.005,
+        hidden: hideAdvanced,
+    },
+    hoverImageZoom: {
+        type: ControlType.Number,
+        title: "Zoom",
+        defaultValue: 4,
+        min: 0,
+        max: 12,
+        step: 0.5,
+        unit: "%",
+        hidden: hideAdvanced,
+    },
+    panelWidth: {
+        type: ControlType.Number,
+        title: "Panel",
+        defaultValue: DEFAULT_PANEL_WIDTH,
+        min: 300,
+        max: 1200,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    panelExitMs: {
+        type: ControlType.Number,
+        title: "Close",
+        defaultValue: 950,
+        min: 200,
+        max: 1400,
+        step: 10,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    driftSpeedX: {
+        type: ControlType.Number,
+        title: "Drift X",
+        defaultValue: 0.5,
+        min: -3,
+        max: 3,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    driftSpeedY: {
+        type: ControlType.Number,
+        title: "Drift Y",
+        defaultValue: 0.5,
+        min: -3,
+        max: 3,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    driftWhilePanelOpen: {
+        type: ControlType.Boolean,
+        title: "Panel Drift",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    panelDriftSpeedX: {
+        type: ControlType.Number,
+        title: "Panel X",
+        defaultValue: 0.5,
+        min: -3,
+        max: 3,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    panelDriftSpeedY: {
+        type: ControlType.Number,
+        title: "Panel Y",
+        defaultValue: 0.5,
+        min: -3,
+        max: 3,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    inertiaEnabled: {
+        type: ControlType.Boolean,
+        title: "Inertia",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    throwFriction: {
+        type: ControlType.Number,
+        title: "Friction",
+        defaultValue: 0.85,
+        min: 0.4,
+        max: 0.98,
+        step: 0.01,
+        hidden: hideAdvanced,
+    },
+    throwVelocityScale: {
+        type: ControlType.Number,
+        title: "Throw",
+        defaultValue: 1.75,
+        min: 0.2,
+        max: 4,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    throwMinSpeed: {
+        type: ControlType.Number,
+        title: "Min V",
+        defaultValue: 220,
+        min: 0,
+        max: 1200,
+        step: 10,
+        hidden: hideAdvanced,
+    },
+    throwMaxSpeed: {
+        type: ControlType.Number,
+        title: "Max V",
+        defaultValue: 5200,
+        min: 400,
+        max: 9000,
+        step: 50,
+        hidden: hideAdvanced,
+    },
+    edgeScrollEnabled: {
+        type: ControlType.Boolean,
+        title: "Edges",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    edgeScrollSpeed: {
+        type: ControlType.Number,
+        title: "Edge V",
+        defaultValue: 220,
+        min: 0,
+        max: 800,
+        step: 10,
+        hidden: hideAdvanced,
+    },
+    edgeScrollZone: {
+        type: ControlType.Number,
+        title: "Zone",
+        defaultValue: 90,
+        min: 30,
+        max: 220,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    parallaxStrength: {
+        type: ControlType.Number,
+        title: "Parallax",
+        defaultValue: 0.06,
+        min: 0,
+        max: 0.2,
+        step: 0.005,
+        hidden: hideAdvanced,
+    },
+    parallaxEase: {
+        type: ControlType.Number,
+        title: "Ease",
+        defaultValue: 0.5,
+        min: 0.05,
+        max: 1,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    parallaxWhileDragging: {
+        type: ControlType.Boolean,
+        title: "Drag Para",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    mediaFadeMs: {
+        type: ControlType.Number,
+        title: "Fade",
+        defaultValue: 1100,
+        min: 0,
+        max: 1600,
+        step: 10,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    maxConcurrentVideos: {
+        type: ControlType.Number,
+        title: "Max Videos",
+        defaultValue: 8,
+        min: 0,
+        max: 30,
+        step: 1,
+        hidden: hideAdvanced,
+    },
+    loadInDelayMs: {
+        type: ControlType.Number,
+        title: "Load Hold",
+        defaultValue: LOAD_IN_DELAY_MS,
+        min: 0,
+        max: 1000,
+        step: 10,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    loadInFadeMs: {
+        type: ControlType.Number,
+        title: "Load Fade",
+        defaultValue: LOAD_IN_FADE_MS,
+        min: 0,
+        max: 2600,
+        step: 10,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    loadInStaggerMs: {
+        type: ControlType.Number,
+        title: "Load Stagger",
+        defaultValue: LOAD_IN_STAGGER_MS,
+        min: 0,
+        max: 180,
+        step: 1,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    loadInMaxWaitMs: {
+        type: ControlType.Number,
+        title: "Load Max",
+        defaultValue: LOAD_IN_MAX_WAIT_MS,
+        min: 400,
+        max: 5500,
+        step: 50,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    backgroundColor: {
+        type: ControlType.Color,
+        title: "BG",
+        defaultValue: CREAM,
+        hidden: hideAdvanced,
+    },
+    panelColor: {
+        type: ControlType.Color,
+        title: "Panel",
+        defaultValue: CREAM,
+        hidden: hideAdvanced,
+    },
+    textColor: {
+        type: ControlType.Color,
+        title: "Text",
+        defaultValue: BLACK,
+        hidden: hideAdvanced,
+    },
+    mutedTextColor: {
+        type: ControlType.Color,
+        title: "Muted",
+        defaultValue: TEXT_GRAY,
+        hidden: hideAdvanced,
+    },
+    labelColor: {
+        type: ControlType.Color,
+        title: "Label",
+        defaultValue: LABEL,
+        hidden: hideAdvanced,
+    },
+    ruleColor: {
+        type: ControlType.Color,
+        title: "Rule",
+        defaultValue: RULE,
+        hidden: hideAdvanced,
+    },
+    strokeColor: {
+        type: ControlType.Color,
+        title: "Stroke",
+        defaultValue: LABEL,
+        hidden: hideAdvanced,
+    },
+    strokeWidth: {
+        type: ControlType.Number,
+        title: "Stroke W",
+        defaultValue: 0.5,
+        min: 0,
+        max: 4,
+        step: 0.25,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    hideFooter: {
+        type: ControlType.Boolean,
+        title: "Footer",
+        defaultValue: true,
+        enabledTitle: "Hide",
+        disabledTitle: "Show",
+        hidden: hideAdvanced,
+    },
+    navPassthrough: {
+        type: ControlType.Boolean,
+        title: "Nav Fix",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    navSelector: {
+        type: ControlType.String,
+        title: "Nav Sel",
+        defaultValue: DEFAULT_NAV_SELECTOR,
+        hidden: hideAdvanced,
+    },
+    navHideOffset: {
+        type: ControlType.Number,
+        title: "Nav Hide",
+        defaultValue: 120,
+        min: 60,
+        max: 240,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    panelCtaLabel: {
+        type: ControlType.String,
+        title: "CTA Label",
+        defaultValue: "View project",
+    },
+    panelCtaNewTab: {
+        type: ControlType.Boolean,
+        title: "CTA Tab",
+        defaultValue: true,
+        enabledTitle: "New",
+        disabledTitle: "Same",
+    },
 })
 
 ArchivePlayground.displayName = "Archive Playground"
