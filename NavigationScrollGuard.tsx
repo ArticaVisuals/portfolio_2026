@@ -12,6 +12,7 @@ const DEFAULT_SELECTOR =
     'nav[data-framer-name="Navigation"], nav[name="Navigation"], [data-framer-name="Navigation"], [name="Navigation"]'
 const ROOT_CLASS = "mh-nav-at-page-top"
 const STYLE_ID = "mh-navigation-scroll-guard-style"
+const INFO_ROUTE = "/info"
 
 function canUseDOM() {
     return typeof window !== "undefined" && typeof document !== "undefined"
@@ -55,6 +56,25 @@ ${scoped
 `
 }
 
+function labelText(element: Element) {
+    return (element.textContent || "").replace(/\s+/g, "").toUpperCase()
+}
+
+function isInfoLink(anchor: HTMLAnchorElement) {
+    return /^(INFO)+$/.test(labelText(anchor))
+}
+
+function normalizeInfoLinks(selector: string) {
+    document.querySelectorAll(selector).forEach((root) => {
+        root.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((anchor) => {
+            if (!isInfoLink(anchor)) return
+            if (anchor.getAttribute("href") === INFO_ROUTE) return
+
+            anchor.setAttribute("href", INFO_ROUTE)
+        })
+    })
+}
+
 /**
  * Navigation Scroll Guard
  *
@@ -77,8 +97,10 @@ export default function NavigationScrollGuard({
         if (RenderTarget.current() === RenderTarget.canvas) return
 
         ensureStyle(selector)
+        normalizeInfoLinks(selector)
 
         let frame = 0
+        let linkFrame = 0
         const update = () => {
             frame = 0
             const scrollY =
@@ -91,19 +113,44 @@ export default function NavigationScrollGuard({
         const schedule = () => {
             if (!frame) frame = window.requestAnimationFrame(update)
         }
+        const scheduleLinkNormalize = () => {
+            if (!linkFrame) {
+                linkFrame = window.requestAnimationFrame(() => {
+                    linkFrame = 0
+                    normalizeInfoLinks(selector)
+                })
+            }
+        }
+
+        const observer =
+            typeof MutationObserver !== "undefined"
+                ? new MutationObserver(scheduleLinkNormalize)
+                : null
+        observer?.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ["href"],
+        })
 
         update()
         window.addEventListener("scroll", schedule, { passive: true })
         window.addEventListener("resize", schedule)
         window.addEventListener("pageshow", schedule)
         window.addEventListener("popstate", schedule)
+        window.addEventListener("pageshow", scheduleLinkNormalize)
+        window.addEventListener("popstate", scheduleLinkNormalize)
 
         return () => {
             window.cancelAnimationFrame(frame)
+            window.cancelAnimationFrame(linkFrame)
+            observer?.disconnect()
             window.removeEventListener("scroll", schedule)
             window.removeEventListener("resize", schedule)
             window.removeEventListener("pageshow", schedule)
             window.removeEventListener("popstate", schedule)
+            window.removeEventListener("pageshow", scheduleLinkNormalize)
+            window.removeEventListener("popstate", scheduleLinkNormalize)
             document.documentElement.classList.remove(ROOT_CLASS)
 
             const style = document.getElementById(STYLE_ID)
