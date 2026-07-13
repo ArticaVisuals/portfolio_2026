@@ -37,6 +37,12 @@ routes before removing or consolidating draft pages.
   The MCP connection dropped before the wrapper could be moved back under
   `cdhMc3QIX`. Do not publish until the Navigation component is inspected and
   the INFO stack nesting is corrected.
+- A later MCP retry found that the Navigation component still exists and has an
+  insert URL, but the previous child node IDs (`cdhMc3QIX`, `Ou8gIyThB`,
+  `qgb8Pm0bn`) no longer resolve and `getNodeXml` for `yGfvD64UY` errors with
+  `Node is not a text node`. The safest recovery path is to undo the interrupted
+  Navigation edits in Framer history or restore the Navigation component from a
+  prior Framer version before publishing.
 
 ## Recognition Content In Snapshot
 
