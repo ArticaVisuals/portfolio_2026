@@ -70,6 +70,10 @@ type RouterMatch = {
 }
 
 const COLLECTION_ID = "yTHrQWMIY"
+const KNOWN_CMS_MODULE_URLS: Record<string, string> = {
+    yTHrQWMIY:
+        "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.C4v6sro0.mjs",
+}
 const FIELD_IDS = {
     title: "oeXZcmPna",
     slug: "pdXVG_fBO",
@@ -100,12 +104,20 @@ function escapeRegExp(value: string): string {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 }
 
-function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fieldId: string) {
-    const field = data?.[fieldId]
-    if (field && typeof field === "object" && "value" in field) {
-        return (field as CMSFieldValue).value
+function unwrapField(value: unknown): unknown {
+    let current = value
+    for (let index = 0; index < 5; index++) {
+        if (current && typeof current === "object" && "value" in current) {
+            current = (current as CMSFieldValue).value
+            continue
+        }
+        break
     }
-    return field
+    return current
+}
+
+function readField(data: Record<string, CMSFieldValue | unknown> | undefined, fieldId: string) {
+    return unwrapField(data?.[fieldId])
 }
 
 function normalizeText(value: unknown): string {
@@ -366,6 +378,12 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
         return inLoadedScripts
     }
 
+    const knownModuleUrl = KNOWN_CMS_MODULE_URLS[collectionId]
+    if (knownModuleUrl) {
+        cmsModuleUrlCache.set(collectionId, knownModuleUrl)
+        return knownModuleUrl
+    }
+
     for (const path of LIVE_SCAN_PATHS) {
         try {
             const response = await fetch(path, { credentials: "same-origin" })
@@ -468,6 +486,36 @@ async function loadProjects(
             }
         })
         .filter((project) => project.title && project.slug)
+}
+
+function delay(ms: number): Promise<void> {
+    return new Promise((resolve) => window.setTimeout(resolve, ms))
+}
+
+async function loadProjectsWithRetry(
+    collectionId: string,
+    collectionModuleUrl: string,
+    sortFieldIds: string,
+    thumbnailVideoFieldIds: string,
+    tagFieldIds: string
+): Promise<Project[]> {
+    let latest: Project[] = []
+
+    for (let attempt = 0; attempt < 4; attempt++) {
+        latest = await loadProjects(
+            collectionId,
+            collectionModuleUrl,
+            sortFieldIds,
+            thumbnailVideoFieldIds,
+            tagFieldIds
+        )
+        if (latest.length > 0 || attempt === 3) return latest
+
+        cmsModuleUrlCache.delete(collectionId)
+        await delay(180 * (attempt + 1))
+    }
+
+    return latest
 }
 
 function getVisibleProjects(projects: Project[], maxItems: number): Project[] {
@@ -793,7 +841,7 @@ export default function HomeSelectedWorkGrid({
         }
 
         let disposed = false
-        loadProjects(
+        loadProjectsWithRetry(
             collectionId,
             collectionModuleUrl,
             sortFieldIds,
