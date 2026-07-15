@@ -87,10 +87,6 @@ const DEFAULT_SORT_FIELD_IDS = FIELD_IDS.number
 const LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
-    "https://micahhoang.com/",
-    "https://micahhoang.com/case-studies",
-    "https://khaki-ship-257706.framer.app/",
-    "https://khaki-ship-257706.framer.app/case-studies",
 ]
 const cmsModuleUrlCache = new Map<string, string>()
 const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = FIELD_IDS.thumbnailVideoLink
@@ -643,11 +639,12 @@ function ProjectCard({
     const hasVideo = Boolean(videoSrc)
     const imageSrc = project.thumbnail?.src || ""
     const imageSrcSet = project.thumbnail?.srcSet || ""
+    const shouldRenderVideo = hasVideo && !imageSrc
     const hasMedia = hasVideo || Boolean(imageSrc)
-    const mediaKey = hasVideo
-        ? `video:${videoSrc}:${imageSrc}`
-        : imageSrc
-          ? `image:${imageSrc}:${imageSrcSet}`
+    const mediaKey = imageSrc
+        ? `image:${imageSrc}:${imageSrcSet}`
+        : shouldRenderVideo
+          ? `video:${videoSrc}`
           : ""
     const [loadedMediaKey, setLoadedMediaKey] = React.useState("")
     const [failedMediaKey, setFailedMediaKey] = React.useState("")
@@ -676,21 +673,6 @@ function ProjectCard({
     const handleVideoError = React.useCallback(() => {
         if (!imageSrc) markMediaFailed()
     }, [imageSrc, markMediaFailed])
-
-    React.useEffect(() => {
-        if (!hasVideo || !imageSrc || !mediaKey || typeof window === "undefined") return
-
-        let disposed = false
-        const posterImage = new window.Image()
-        posterImage.onload = () => {
-            if (!disposed) markMediaReady()
-        }
-        posterImage.src = imageSrc
-
-        return () => {
-            disposed = true
-        }
-    }, [hasVideo, imageSrc, markMediaReady, mediaKey])
 
     const handleClick = React.useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -740,10 +722,20 @@ function ProjectCard({
                 data-media-failed={failedMediaKey === mediaKey ? "true" : undefined}
                 data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
             >
-                {hasVideo ? (
+                {imageSrc ? (
+                    <img
+                        ref={handleImageRef}
+                        src={imageSrc}
+                        srcSet={project.thumbnail?.srcSet}
+                        alt={mediaAlt}
+                        decoding="async"
+                        loading="lazy"
+                        onError={markMediaFailed}
+                        onLoad={markMediaReady}
+                    />
+                ) : shouldRenderVideo ? (
                     <video
                         src={videoSrc}
-                        poster={imageSrc || undefined}
                         autoPlay
                         muted
                         loop
@@ -752,17 +744,6 @@ function ProjectCard({
                         onLoadedData={markMediaReady}
                         playsInline
                         preload="metadata"
-                    />
-                ) : project.thumbnail?.src ? (
-                    <img
-                        ref={handleImageRef}
-                        src={imageSrc}
-                        srcSet={project.thumbnail.srcSet}
-                        alt={mediaAlt}
-                        decoding="async"
-                        loading="lazy"
-                        onError={markMediaFailed}
-                        onLoad={markMediaReady}
                     />
                 ) : null}
             </div>
