@@ -1,6 +1,6 @@
 # Custom Code Map — Portfolio 2026 (handoff reference)
 
-Last updated: 2026-07-01 (`/play` CMS/performance/no-gap pass). Plain-English map of every custom
+Last updated: 2026-07-15 (Home selected-work video-first + About hover folded back into HomeSelectedWorkGrid). Plain-English map of every custom
 Framer **code component** so a new dev can orient fast. For chronological history
 and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
@@ -12,6 +12,13 @@ After the 2026-06-18 audit: **34 code components + 5 overrides** (down from 44).
 confirm its Framer codeFileId on import).
 2026-06-25 addition: **`PlayArchiveRegistrar`** (`jDwcdGN`)
 is the Play Archive CMS bridge. See `play-cms-workflow.md`.
+2026-07-15 note: the Home About portrait/read-more linked hover CSS lives back
+inside **`HomeSelectedWorkGrid`** (`FecepLS`), where git showed the interaction
+originally lived. The same component is also the current Home selected-work
+media source of truth: `Thumbnail Video` (`SvOqFqdby`) renders as the preferred
+video layer, while `Thumbnail` (`Jy7hBJady`) stays underneath as the poster/image
+fallback. The selected-work number/title treatment is the original 13px mono
+style.
 
 ---
 
@@ -78,7 +85,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 ### Home / index CMS helpers
 | Component | id | What it does |
 |---|---|---|
-| `HomeSelectedWorkGrid` | `FecepLS` | Home's 6 selected projects with direct slug anchors + CMS media/stroke. |
+| `HomeSelectedWorkGrid` | `FecepLS` | Home's 6 selected projects with direct slug anchors, no baked project fallback rows, `Thumbnail Video` preferred over CMS poster images, CMS thumbnail strokes, 13px selected-work number/title text, Category 1/2/3 tag pills, plus the Home About portrait zoom + `READ MORE` flip CSS. |
 | `CaseStudyThumbnailStrokeStyles` | `Z28JYvA` | CMS thumbnail stroke + hover zoom + CMS video sync + link repair on Home/`/case-studies`/`/index`. (CMS scraper.) |
 | `OtherProjectCardRestored` | `vlwa5Cz` | Related-project card; hydrates thumbnail/video/stroke from CMS by slug/title. (CMS scraper.) |
 

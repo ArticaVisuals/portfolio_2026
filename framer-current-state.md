@@ -1,13 +1,36 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** July 1, 2026, via Framer MCP, published `/play` browser QA, CMS item inspection, targeted page inventory checks, and local repo audit
+**Last audited:** July 15, 2026, via Framer MCP, published Home selected-work browser QA, and local repo audit
 **Published/staging URL:** `https://khaki-ship-257706.framer.app`
 **Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
 
 ---
+
+## 2026-07-15 Update
+
+- **Home About hover interactions restored inside `HomeSelectedWorkGrid`.** The
+  visible Home `READ MORE` link and portrait were still native Framer layers,
+  but the live `HomeSelectedWorkGrid.tsx` code file had drifted and no longer
+  injected the About-zone CSS that drove the flip-up text and portrait zoom.
+  The CSS is folded back into `HomeSelectedWorkGrid.tsx` (`FecepLS`), preserving
+  the native `/info` links on `ButtonWrapper` (`TvfJmt1e6`) and the portrait
+  image. Hover/focus on `TextLinkBlack` moves the inner stack up 13px,
+  hover/focus on the portrait also flips `READ MORE`, and either hover scales
+  the portrait image to `1.02`. The temporary restore component was removed.
+- **Home selected-work media is now video-first and published.**
+  `HomeSelectedWorkGrid.tsx` (`FecepLS`) is the current Home work-section source
+  of truth in Framer and GitHub (`024e4ab`, insert URL hash
+  `@Isb9487LDsf04M4kk1Me`). It has no baked project fallback rows. CMS
+  `Thumbnail Video` (`SvOqFqdby`) renders as the preferred `<video
+  preload="auto">`; CMS `Thumbnail` (`Jy7hBJady`) remains the visible poster
+  while video loads and the fallback if video fails. Published browser QA on
+  `https://khaki-ship-257706.framer.app/` confirmed Gaia, AirPods Pro 3, Peak
+  Energy, and Motion Connect 2025 render video nodes over poster images; Simon &
+  Schuster and National Park Playing Cards render image-only cards; all
+  selected-work number/title text resolves to the original `13px` mono scale.
 
 ## 2026-07-01 Update
 
@@ -268,7 +291,7 @@ Framer code components relevant to this handoff include:
 | `CaseStudyJustifiedMediaGrid.tsx` | `c0iPrbN` | Bespoke case-study justified media grid helper. |
 | `FixedHeightMediaRows.tsx` | `IthLMt_` | Karuna fixed-height process gallery helper. |
 | `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. **As of June 10 it no longer ships its own lightbox** — gallery slides open in the page-level `CaseStudyLightbox` (see "Reusable Image Carousel" below). |
-| `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS selected projects with direct `/case-studies/{slug}` anchors, CMS image/video media, CMS-driven thumbnail strokes, and Category 1/2/3 tag pills. No baked project fallback rows. |
+| `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS selected projects with direct `/case-studies/{slug}` anchors, `Thumbnail Video` preferred over CMS poster images, CMS-driven thumbnail strokes, 13px number/title text, and Category 1/2/3 tag pills. No baked project fallback rows. Also carries the Home About portrait/read-more hover CSS. |
 | `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; use `CaseStudyControllers.tsx` for new bespoke page controller mounts. |
 | `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **June 10 updates:** (1) opt media out of the lightbox by naming any wrapping frame `No Lightbox`/`NoLightbox` (force-merged into every instance's Exclude rule, so no per-instance setup; wrap the whole media, not the leaf img); (2) the lightbox-suppression logic is a single `window`-capture click listener (fires before the base engine's `document`-capture listener) — native links navigate (`stopImmediatePropagation`, no `preventDefault`), buttons/scroll-to-top keep their own React `onClick` (`preventDefault` only), other excluded regions are fully suppressed; (3) gallery slides open in this lightbox (the carousel's own overlay was removed); (4) **nav-overlay click fix** — clicking a nav item that physically overlays media now navigates instead of opening the lightbox, handled by the event guard ALONE. All nav **CSS mutation was removed** (`z-index`, `pointer-events`, `isolation:isolate`, inline style mutation, the `data-case-study-nav-layer` stylesheet): it never fixed the click (the base engine reaches media *under* the nav via `elementsFromPoint`) and it broke the nav hover/flip-text reset. **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED `@hash` — bump that hash whenever this file is republished, or controller pages keep loading the old lightbox. Current published version: `@Cphhu4ZJ1CxHLPy7kC6e`. |
 | `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study autoplay video subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. |
@@ -398,7 +421,7 @@ June 1-2, 2026 thumbnail stroke and Home link/media fix: the current generated `
 
 June 18, 2026 Home tag-pill update: `HomeSelectedWorkGrid.tsx` reads Category 1/2/3 from `kuvJcmOFr`, `VV1CggU2J`, and `E6OpH0hSs` by default, exposed through the Framer `Tag Fields` property control. The visible pills are enabled by `Show Tags`, use the `Tags` color control defaulting to the existing Light Gray value (`rgb(151, 151, 151)`), and render in the same uppercase GT Standard Mono pill treatment used by the list/grid taxonomy surfaces: 13px on desktop, 12px on tablet, and 11px on the mobile/single-column breakpoint. Blank or duplicate category values are skipped, so CMS edits to project categories automatically update the Home selected-work pills after the generated CMS bundle refreshes.
 
-June 15, 2026 Gaia CMS/Home verification: Framer MCP verified that Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, and `Thumbnail=https://framerusercontent.com/images/3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg`. AirPods Pro 3, Gaia, and Karuna currently have `Thumbnail Stroke` enabled; only Gaia and AirPods are in the first six homepage-visible projects.
+July 15, 2026 Gaia CMS/Home verification: Framer/browser checks verified that Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, `Thumbnail=https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png`, and `Thumbnail Video=https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4`. AirPods Pro 3, Gaia, Karuna, and Seek Truth currently have `Thumbnail Stroke` enabled; Gaia and AirPods are in the first six homepage-visible projects, while Karuna and Seek Truth are not.
 
 ---
 
@@ -406,7 +429,7 @@ June 15, 2026 Gaia CMS/Home verification: Framer MCP verified that Gaia item `Qw
 
 ### Home
 
-Home is a native Framer page whose selected-work section is now rendered by `HomeSelectedWorkGrid.tsx` (`FecepLS`), mounted as node `h0ZkBCWe1` inside the `Projects` section (`k7gSpMtLR`). The component reads `All Projects`, filters `Is Homepage`, orders by `Sorting Number`, and shows the first six items. As of July 14, 2026, it no longer falls back to a baked project snapshot; if CMS loading fails, the grid stays empty instead of showing stale media.
+Home is a native Framer page whose selected-work section is now rendered by `HomeSelectedWorkGrid.tsx` (`FecepLS`), mounted as node `h0ZkBCWe1` inside the `Projects` section (`k7gSpMtLR`). The component reads `All Projects`, filters `Is Homepage`, orders by `Sorting Number`, and shows the first six items. As of July 15, 2026, it no longer falls back to a baked project snapshot; if CMS loading fails, the grid stays empty instead of showing stale media. When CMS media exists, `Thumbnail Video` is preferred and `Thumbnail` is only the poster/fallback image.
 
 1. Gaia
 2. AirPods Pro 3
@@ -417,9 +440,9 @@ Home is a native Framer page whose selected-work section is now rendered by `Hom
 
 WhatsApp is homepage-flagged but outside the first six by sort order. Yomo, Karuna, and Weaponized Innocence are off Home because their Home flags are false.
 
-The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, image/video rendering, the hover label, the `Thumbnail Stroke` visual fallback, and the CMS Category 1/2/3 tag-pill row for the selected-work section.
+The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, video-first CMS media rendering, the hover label, the `Thumbnail Stroke` visual fallback, the original 13px selected-work number/title styling, and the CMS Category 1/2/3 tag-pill row for the selected-work section.
 
-Home About read-more contract, updated June 16, 2026: the `/info` click target is `SectionAbout > Paragraph > ButtonWrapper` node `TvfJmt1e6`. That wrapper may carry `link="/info"`, but it must not contain a linked `Text Link` component instance. Its visible child is a detached/native `TextLinkBlack` layer (`UpLdtDkH8`) created from the reusable `Text Link` component and then unlinked. `TextLinkBlack` is the 13px clipping window; its inner stack `uHhvuxijx` must remain `height="fit-content"` and `overflow="visible"` so the second `READ MORE` row can slide into view. The two text rows are `gtUBNGFea` and `FodWCgmfK`, both reading `READ MORE`. Do not replace this with a linked `TextLink` carrying `bwVWMSt6G="/info"` inside the linked wrapper, because Framer's optimizer reports that as a nested link. Do not add a new custom code component for this interaction; the existing `HomeSelectedWorkGrid.tsx` CSS targets the `Button Wrapper` / `Text Link Black` names and preserves the flip-up text plus portrait hover behavior. After edits, verify three states: Framer optimizer has no nested-link warning for Home, hovering the portrait still flips `READ MORE`, and hovering the text does not disappear.
+Home About read-more contract, updated July 15, 2026: the `/info` click target is `SectionAbout > Paragraph > ButtonWrapper` node `TvfJmt1e6`. That wrapper may carry `link="/info"`, but it must not contain a linked `Text Link` component instance. Its visible child is a detached/native `TextLinkBlack` layer (`UpLdtDkH8`) created from the reusable `Text Link` component and then unlinked. `TextLinkBlack` is the 13px clipping window; its inner stack `uHhvuxijx` must remain `height="fit-content"` and `overflow="visible"` so the second `READ MORE` row can slide into view. The two text rows are `gtUBNGFea` and `FodWCgmfK`, both reading `READ MORE`. Do not replace this with a linked `TextLink` carrying `bwVWMSt6G="/info"` inside the linked wrapper, because Framer's optimizer reports that as a nested link. The hover behavior is restored by the About-zone CSS inside `HomeSelectedWorkGrid.tsx` (`FecepLS`) after the live code drifted away from the local CSS mirror; do not add a separate restore component for this interaction. After edits, verify three states: Framer optimizer has no nested-link warning for Home, hovering the portrait still flips `READ MORE`, and hovering the text does not disappear.
 
 Custom code on or affecting Home:
 
@@ -561,6 +584,8 @@ May 26 visual QA against `https://khaki-ship-257706.framer.app` checked `/`, `/c
 June 1 stroke audit: published Home loaded `CaseStudyThumbnailStrokeStyles.DLdW5YsD.mjs` and `yTHrQWMIY.DrLdZk2a.mjs`; browser inspection showed the AirPods thumbnail had no generated overlay because the published helper looked only for `module.a`. Direct browser import of the same CMS module returned keys `n`, `r`, `t`, with AirPods `{ slug: "airpods", title: "AirPods Pro 3", stroke: true }` under `module.r`. The June 2 publish corrected the resolver shape and the Home selected-work rendering path.
 
 June 2 final MCP/browser verification: Framer project inventory reports 23 web pages, 2 design pages, 23 native components, 29 code components, 5 override files, and 2 CMS collections. `All Projects` reports 16 records. Targeted page XML checks covered Home, `/case-studies`, `/index`, `/case-studies/airpods`, and `/case-studies/karuna`. Published browser QA against `https://khaki-ship-257706.framer.app/` confirmed Home renders six distinct selected-work hrefs (`airpods`, `simon-schuster`, `gaia`, `national-park-cards`, `motion-connect-2025`, `yomo`), thumbnail and text clicks land on the correct case-study pages, image-only thumbnails render as images, AirPods and Motion Connect render video, the Home profile image links to `/info`, and LinkedIn links externally.
+
+July 15 current Home selected-work verification: after publishing `HomeSelectedWorkGrid.tsx` (`FecepLS`) hash `@Isb9487LDsf04M4kk1Me`, browser QA against `https://khaki-ship-257706.framer.app/` confirmed the current six-card order is Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon & Schuster, and National Park Playing Cards. Gaia, AirPods Pro 3, Peak Energy, and Motion Connect 2025 render real video elements from `Thumbnail Video` with CMS `Thumbnail` poster images underneath; Simon & Schuster and National Park Playing Cards render image-only cards. The selected-work number/title style is back to 13px uppercase mono.
 
 Use `node framer/tools/check-thumbnail-stroke-resolver.mjs` as the quick local regression guard for the stroke helper. It confirms the helper still uses Light Gray `#979797`, the CMS `Thumbnail Stroke` field, the current `module.r` CMS export shape, the legacy `module.a` fallback, and the shared resolver call.
 
