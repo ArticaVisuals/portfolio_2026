@@ -99,83 +99,6 @@ const DEFAULT_TAG_FIELD_IDS = [
     FIELD_IDS.category2,
     FIELD_IDS.category3,
 ].join("\n")
-const DEFAULT_PROJECTS: Project[] = [
-    {
-        title: "Gaia",
-        number: 1,
-        slug: "gaia",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg",
-        },
-        thumbnailStroke: true,
-        category1: "Visual Identity",
-        category2: "UX/UI",
-        category3: "Strategy",
-        isHomepage: true,
-    },
-    {
-        title: "AirPods Pro 3",
-        number: 2,
-        slug: "airpods",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
-        },
-        thumbnailVideoLink: "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
-        thumbnailStroke: true,
-        category1: "Visual Identity",
-        category2: "2D Motion",
-        category3: "3D Motion",
-        isHomepage: true,
-    },
-    {
-        title: "Peak Energy",
-        number: 3,
-        slug: "peak-energy",
-        thumbnailVideoLink:
-            "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
-        category1: "2D Motion",
-        category2: "3D Motion",
-        category3: "Social Media",
-        isHomepage: true,
-    },
-    {
-        title: "Simon & Schuster",
-        number: 4,
-        slug: "simon-schuster",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
-        },
-        category1: "Strategy",
-        category2: "Visual Identity",
-        category3: "Editorial",
-        isHomepage: true,
-    },
-    {
-        title: "Motion Connect 2025",
-        number: 5,
-        slug: "motion-connect-2025",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
-        },
-        thumbnailVideoLink: "https://framerusercontent.com/assets/JBWmgoL4YXIgZfGWVzv7pCVDGw.mp4",
-        category1: "Visual Identity",
-        category2: "2D Motion",
-        category3: "Social Media",
-        isHomepage: true,
-    },
-    {
-        title: "National Park Playing Cards",
-        number: 6,
-        slug: "national-park-cards",
-        thumbnail: {
-            src: "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
-        },
-        category1: "Product",
-        category2: "Packaging",
-        category3: "",
-        isHomepage: true,
-    },
-]
 
 function escapeRegExp(value: string): string {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
@@ -312,15 +235,44 @@ function isCMSModuleUrl(url: string, collectionId: string): boolean {
     ).test(url)
 }
 
-function findCMSModuleUrlInMarkup(markup: string, collectionId: string): string | undefined {
+function normalizeModuleUrl(url: string, baseUrl?: string): string | undefined {
+    if (!url) return undefined
+    let resolvedBaseUrl = baseUrl
+    if (!resolvedBaseUrl && typeof document !== "undefined") {
+        resolvedBaseUrl = document.baseURI
+    }
+    if (!resolvedBaseUrl && typeof window !== "undefined") {
+        resolvedBaseUrl = window.location.href
+    }
+
+    try {
+        return new URL(url, resolvedBaseUrl).href
+    } catch {
+        return undefined
+    }
+}
+
+function findCMSModuleUrlInMarkup(
+    markup: string,
+    collectionId: string,
+    baseUrl?: string
+): string | undefined {
     const collectionPattern = escapeRegExp(collectionId)
-    const match = markup.match(
+    const absoluteMatch = markup.match(
         new RegExp(
             `https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`,
             "i"
         )
     )
-    return match?.[0]
+    if (absoluteMatch?.[0]) return absoluteMatch[0]
+
+    const relativeMatch = markup.match(
+        new RegExp(
+            `["'\`]((?:\\./|/)[^"'\`]*/?${collectionPattern}(?:\\.[^"'\`/]+)?\\.(?:js|mjs))["'\`]`,
+            "i"
+        )
+    )
+    return relativeMatch?.[1] ? normalizeModuleUrl(relativeMatch[1], baseUrl) : undefined
 }
 
 function getDocumentResourceUrls(): string[] {
@@ -349,7 +301,51 @@ function findCMSModuleUrlInDocument(collectionId: string): string | undefined {
     if (fromResources) return fromResources
 
     if (typeof document !== "undefined" && document.documentElement) {
-        return findCMSModuleUrlInMarkup(document.documentElement.outerHTML, collectionId)
+        return findCMSModuleUrlInMarkup(
+            document.documentElement.outerHTML,
+            collectionId,
+            document.baseURI
+        )
+    }
+
+    return undefined
+}
+
+function isScriptResourceUrl(url: string): boolean {
+    return /\.(?:js|mjs)(?:[?#].*)?$/.test(url)
+}
+
+function getScriptSearchRank(url: string, collectionId: string): number {
+    const lowerUrl = url.toLowerCase()
+    const lowerCollectionId = collectionId.toLowerCase()
+    if (lowerUrl.includes(`/${lowerCollectionId}`)) return 0
+    if (lowerUrl.includes("/script_main.")) return 1
+    if (lowerUrl.includes("framerusercontent.com/sites/")) return 2
+    return 3
+}
+
+async function findCMSModuleUrlInLoadedScripts(collectionId: string): Promise<string | undefined> {
+    const scriptUrls = getDocumentResourceUrls()
+        .filter(isScriptResourceUrl)
+        .sort(
+            (a, b) =>
+                getScriptSearchRank(a, collectionId) -
+                getScriptSearchRank(b, collectionId)
+        )
+
+    for (const scriptUrl of scriptUrls) {
+        try {
+            const response = await fetch(scriptUrl, { credentials: "omit" })
+            if (!response.ok) continue
+            const found = findCMSModuleUrlInMarkup(
+                await response.text(),
+                collectionId,
+                response.url || scriptUrl
+            )
+            if (found) return found
+        } catch {
+            // Some Framer/CDN resources are intentionally opaque in preview.
+        }
     }
 
     return undefined
@@ -368,11 +364,21 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
         return inDocument
     }
 
+    const inLoadedScripts = await findCMSModuleUrlInLoadedScripts(collectionId)
+    if (inLoadedScripts) {
+        cmsModuleUrlCache.set(collectionId, inLoadedScripts)
+        return inLoadedScripts
+    }
+
     for (const path of LIVE_SCAN_PATHS) {
         try {
             const response = await fetch(path, { credentials: "same-origin" })
             if (!response.ok) continue
-            const found = findCMSModuleUrlInMarkup(await response.text(), collectionId)
+            const found = findCMSModuleUrlInMarkup(
+                await response.text(),
+                collectionId,
+                response.url || path
+            )
             if (found) {
                 cmsModuleUrlCache.set(collectionId, found)
                 return found
@@ -469,9 +475,9 @@ async function loadProjects(
 }
 
 function getVisibleProjects(projects: Project[], maxItems: number): Project[] {
-    const source = projects.length > 0 ? projects : DEFAULT_PROJECTS
-    const homepage = source.filter((project) => project.isHomepage)
-    return sortProjects(homepage.length > 0 ? homepage : source).slice(0, maxItems)
+    if (projects.length === 0) return []
+    const homepage = projects.filter((project) => project.isHomepage)
+    return sortProjects(homepage.length > 0 ? homepage : projects).slice(0, maxItems)
 }
 
 function getProjectHref(project: Project): string {
@@ -797,11 +803,11 @@ export default function HomeSelectedWorkGrid({
     strokeColor = "rgb(151, 151, 151)",
     tagColor = "rgb(151, 151, 151)",
 }: Partial<Props>) {
-    const [projects, setProjects] = React.useState<Project[]>(DEFAULT_PROJECTS)
+    const [projects, setProjects] = React.useState<Project[]>([])
 
     React.useEffect(() => {
         if (!useCMS || typeof window === "undefined") {
-            setProjects(DEFAULT_PROJECTS)
+            setProjects([])
             return
         }
 
@@ -814,10 +820,10 @@ export default function HomeSelectedWorkGrid({
             tagFieldIds
         )
             .then((loaded) => {
-                if (!disposed && loaded.length > 0) setProjects(loaded)
+                if (!disposed) setProjects(loaded)
             })
             .catch(() => {
-                if (!disposed) setProjects(DEFAULT_PROJECTS)
+                if (!disposed) setProjects([])
             })
 
         return () => {
@@ -1211,7 +1217,7 @@ addPropertyControls(HomeSelectedWorkGrid, {
         type: ControlType.String,
         title: "Module URL",
         defaultValue: "",
-        placeholder: "Optional fallback",
+        placeholder: "Optional CMS module URL",
     },
     sortFieldIds: {
         type: ControlType.String,

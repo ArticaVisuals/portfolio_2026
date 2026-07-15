@@ -237,7 +237,7 @@ Safe changes without extra permission:
 
 ## 8. Home And Index Requirements
 
-Home currently uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) for the selected-work section. It reads the `All Projects` CMS module when available, falls back to its default project snapshot when needed, filters `Is Homepage`, sorts by `Sorting Number`, and limits to six records. The current CMS-backed six-item set is:
+Home currently uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) for the selected-work section. It reads the `All Projects` CMS module, filters `Is Homepage`, sorts by `Sorting Number`, and limits to six records. As of July 14, 2026, Home no longer ships a default project snapshot; if the CMS module cannot load, the grid stays empty rather than showing stale thumbnail media. The current CMS-backed six-item set is:
 
 - Gaia
 - AirPods Pro 3
@@ -293,7 +293,7 @@ Current CMS sync verified June 15, 2026:
 - Peak Energy is present in CMS with slug `peak-energy`, `Is Homepage=true`, sort `3`, year `2026`, services `2D Motion`, `3D Motion`, and `Social Media`, and industry `Technology`; its bespoke route is `/case-studies/peak-energy` and is intentionally WIP-gated.
 - Rejuve, Belly Bar, and WhatsApp are present in CMS and now have matching WIP-gated bespoke routes at `/case-studies/rejuve`, `/case-studies/belly-bar`, and `/case-studies/whatsapp`.
 - Neon Lights and Aspen Valley Landscaping are no longer in CMS and their bespoke Framer pages were deleted.
-- Local fallback snapshots in `HomeSelectedWorkGrid.tsx` and `IndexPage.tsx` were updated to match the current CMS order/roster.
+- `IndexPage.tsx` keeps a local fallback snapshot only for `useCMS=false`; `HomeSelectedWorkGrid.tsx` no longer carries local project fallback rows.
 
 Historical verification from June 2, 2026:
 
