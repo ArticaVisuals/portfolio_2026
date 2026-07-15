@@ -1,0 +1,199 @@
+<!--
+  Backup of the /case-studies hub page (nodeId Rnw1WO1jS), taken 2026-07-13
+  immediately before deleting the page so /case-studies returns a 404.
+
+  Context: the page rendered broken on the live site (title overlapping the grid,
+  counter said 16 vs 17 projects) and was unreachable from any nav link.
+  To restore: create a page at path /case-studies and rebuild from this XML
+  (Tablet dw88I0pXk / Phone N4C7miKKF variants were empty inheritors of Desktop).
+  The grid itself was the "Case Studies Filter" component (y8kvTlWMC), which
+  still exists in the project and is NOT deleted by removing this page.
+-->
+<Desktop
+    nodeId="Z_IQof75v"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    backgroundColor="/Cream"
+    overflow="hidden"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+>
+  <PageTransition
+      nodeId="JaabReFnC"
+      opacity="0"
+      width="1px"
+      height="1px"
+      componentId="gmalnRr"
+      enabled="true"
+      duration="700"
+      navDuration="400"
+      drift="10"
+      dim="0.35"
+      navSelector="nav[data-framer-name=&quot;Navigation&quot;], nav"
+      excludeSelector="[data-no-transition]"
+      prefetch="true"
+      holdAppear="true"
+      skipCaseStudyTransitions="true"
+      firstBoot="true"
+      bootMode="once"
+      bootColor="rgb(35, 51, 36)"
+      barColor="rgb(247, 245, 240)"
+      barHeight="8"
+      bootMinMs="1200"
+      bootMaxWaitMs="4500"
+      barEaseMs="3000"
+      barHold="0.86"
+      bootSwipeMs="1200"
+      bootSwipeDelayMs="300"
+   />
+  <CaseStudyThumbnailStrokeStyles
+      nodeId="AfVjNDU23"
+      opacity="0"
+      position="fixed"
+      width="1px"
+      height="1px"
+      top="0px"
+      left="-202px"
+      componentId="Z28JYvA"
+      strokeColor="rgb(151, 151, 151)"
+      strokeWidth="1"
+      enableHoverZoom="true"
+      hoverImageScale="1.02"
+      applyHoverZoomToIndexGrid="false"
+      collectionId="yTHrQWMIY"
+      collectionModuleUrl=""
+      strokeFieldId="OHdUYs6Mo"
+      syncThumbnailVideos="true"
+      videoFieldId="SvOqFqdby"
+      thumbnailFieldId="Jy7hBJady"
+      slugFieldId=""
+      titleFieldId="oeXZcmPna"
+      imageWrapperNames="ImageWrapper
+Image Wrapper
+VideoWrapper
+Video Wrapper"
+   />
+  <CaseStudyLinkRepair
+      nodeId="MS9uyWiko"
+      opacity="0"
+      position="fixed"
+      width="1px"
+      height="1px"
+      top="0px"
+      left="-101px"
+      componentId="y6ny5x4"
+      enabled="true"
+      mobileFooterLayout="true"
+      collectionId="yTHrQWMIY"
+      collectionModuleUrl=""
+      slugFieldId="pdXVG_fBO"
+      titleFieldId="oeXZcmPna"
+      urlOverrides=""
+   />
+  <Main
+      nodeId="XrpWDI60C"
+      position="absolute"
+      width="1fr"
+      height="fit-content"
+      top="133px"
+      centerX="50%"
+      overflow="hidden"
+      layout="stack"
+      padding="0px 20px 200px 20px"
+      stackDirection="vertical"
+      stackDistribution="start"
+      stackAlignment="start"
+  >
+    <SectionHeader
+        nodeId="gcYNqRDS8"
+        position="absolute"
+        width="1fr"
+        height="50vh"
+        top="120px"
+        centerX="50%"
+        overflow="hidden"
+        layout="stack"
+        gap="10px"
+        padding="0px 0px 20px 0px"
+        stackDirection="horizontal"
+        stackDistribution="start"
+        stackAlignment="end"
+    >
+      <HeadingWrapper
+          nodeId="xycWgNdml"
+          width="fit-content"
+          height="114px"
+          overflow="hidden"
+          layout="stack"
+          gap="10px"
+          stackDirection="horizontal"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Stack
+            nodeId="XFQvE4RFF"
+            width="fit-content"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="center"
+            stackAlignment="center"
+        >
+          <CaseStudies
+              nodeId="AhbYXGVhK"
+              width="fit-content"
+              height="fit-content"
+              inlineTextStyle="/Heading 1"
+          >
+            CASE STUDIES
+          </CaseStudies>
+        </Stack>
+        <Stack
+            nodeId="Hw94Y35YM"
+            width="fit-content"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="center"
+            stackAlignment="center"
+        >
+          <NumberCounter
+              nodeId="X6HvlcpLq"
+              width="fit-content"
+              height="fit-content"
+              componentId="hdPa_Gj"
+              startNumber="1"
+              endNumber="16"
+              fontColor="rgb(35, 51, 36)"
+              fontSize="30"
+              fontWeight="italic"
+              fontFamily="Switzer"
+              speed="100"
+              prefix="("
+              suffix=")"
+              loop="false"
+           />
+        </Stack>
+      </HeadingWrapper>
+    </SectionHeader>
+    <SectionCaseStudyFilter
+        nodeId="eh8Pe4R26"
+        position="absolute"
+        width="1fr"
+        height="fit-content"
+        centerX="50%"
+        centerY="59%"
+        componentId="y8kvTlWMC"
+        variant="C5P1lJcOx"
+     />
+  </Main>
+</Desktop>

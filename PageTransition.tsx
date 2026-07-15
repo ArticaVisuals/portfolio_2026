@@ -3,14 +3,6 @@ import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 import PageTransitionV712 from "https://framerusercontent.com/modules/kWINdCIvJNyHW4g36u2k/Witnbh97hqwtM7YLb8Op/PageTransition.js"
 
-// NOTE (2026-06-26): This file is the LIVE Framer code file `gmalnRr`
-// (`PageTransition.tsx`). It is a THIN WRAPPER that imports the compiled v7.12
-// runtime module from framerusercontent.com and layers on three custom
-// behaviours: (1) Home Header Bottom appear recovery, (2) the /index hero title
-// rise-on-arrival, and (3) the home hero rise-on-arrival. The full v7.12 runtime
-// SOURCE (the ~2100-line integrated file that compiles to the imported module)
-// is preserved alongside as `PageTransition.runtime-backup.tsx`.
-
 const HOME_PATH = "/"
 const HOME_HEADER_BOTTOM_SELECTOR = '[data-framer-name="Header Bottom"]'
 const HOME_HEADER_BOTTOM_APPEAR_SELECTOR = `${HOME_HEADER_BOTTOM_SELECTOR} [data-framer-appear-id]`
@@ -247,21 +239,7 @@ function useHomeHeaderBottomReveal() {
 }
 
 // ---------------------------------------------------------------------------
-// Index hero title rise.
-//
-// The "Index" hero title is a native Framer element that DOES mount fast on a
-// same-document /index nav (~100ms, during the slide). The reason it read as
-// "late" is v7.12's data-pt-index-heading-hold: it pins the title at
-// translateY(115%) through the slide and only releases it to Framer's native
-// appear AFTER the view transition ends — so the title rose after the curtain.
-// We instead drive the rise ourselves the moment the title mounts, so it is on
-// its way up DURING the slide like the home / info titles. Framer's late native
-// appear keeps trying to re-pin the title, and it overrides a plain WAAPI/CSS
-// transition, so the rise is a MANUAL animation: a setInterval ticks ~60fps,
-// cancels Framer's appear, and re-writes the eased transform with !important
-// every tick (Framer can't win because we overwrite every frame), ending pinned
-// at the final position. Chromium same-document /index navs only (detected via
-// v7.12's data-pt-index-heading-hold arm).
+// Index hero title rise. (Unchanged — see comments in git history.)
 // ---------------------------------------------------------------------------
 const INDEX_HEADING_HOLD_ATTR = "data-pt-index-heading-hold"
 const INDEX_HEADING_SELECTOR = '[data-framer-name="Index"][data-framer-appear-id]'
@@ -386,29 +364,60 @@ function useIndexHeadingRiseOnArrival() {
 }
 
 // ---------------------------------------------------------------------------
-// Home hero rise.
+// Home hero on nav arrival — DOCUMENT-GLOBAL controller.
 //
-// Same problem as the index title, on the other side: arriving at "/" via a
-// page transition, Framer parks the home hero appear elements (the "Micah
-// Hoang" headline at translateY(110px), the tagline at ~90px, etc.) and only
-// plays their upward rise AFTER the slide — so the headline reads as coming in
-// late. We replay the rise ourselves, on time, by reading each element's own
-// published appear-def (so the motion + stagger match the home design) and
-// driving the transform manually, cancelling Framer's late appear every frame.
-// Fires only on a real nav arrival at "/", never the first cold load; skips the
-// nav and the Header Bottom recovery zone to avoid fighting other handlers.
+// SCOPE: acts ONLY on arrivals at "/" that came FROM a case-study page (the
+// curtain-skipped leg). All other routes into home use the v7.12 curtain +
+// holdAppear pipeline and must never be touched.
+//
+// STYLESHEET AUTHORITY (2026-07-14): Framer's appear on high-refresh
+// machines is JS-driven inline style writes every rAF — an inline-style
+// tug-of-war is a last-writer race the controller can lose on every painted
+// frame (120Hz displays). The rise is therefore driven through a <style>
+// sheet: author-stylesheet !important declarations beat plain inline styles
+// UNCONDITIONALLY, so Framer's writes simply never apply while the sheet is
+// active. Each target gets a data-mh-rise attribute; the sheet holds one
+// rule per target, rewritten every animation frame. WAAPI animations (which
+// sit above stylesheets in the cascade) are cancelled each frame as before.
+//
+// MONOTONIC RULE: pre-paint start (click-armed observer) plays the full
+// choreography from geometric offsets (element height = mask park offset);
+// late start resumes each element from its CURRENT offset (settled → pinned,
+// no replay; mid-rise → continues upward). Downward motion is impossible.
+//
+// The guard never expires on a timer — it runs until the visitor navigates
+// away from "/". Once risen, the hero stays put.
 // ---------------------------------------------------------------------------
 const HOME_HERO_HEADLINE_SELECTOR = '[data-framer-name="art"][data-framer-appear-id]'
 const HOME_HERO_REGION_MAX_TOP = 860
-const HOME_HERO_DEFAULT_DURATION_MS = 1400
+const HOME_HERO_RISE_DURATION_MS = 1150
+const HOME_HERO_STAGGER_MS = 110
+const HOME_HERO_MAX_FROM_Y = 220
+const HOME_HERO_MIN_RESUME_MS = 250
+const HOME_HERO_RISE_ATTR = "data-mh-rise"
+const HOME_HERO_RISE_STYLE_ID = "mh-hero-rise-style"
+const HOME_SETTLE_INIT_KEY = "__mhHomeHeroSettleInit"
+const HOME_SETTLE_MODE_KEY = "__mhHomeHeroSettleMode"
+const HOME_SETTLE_BUSY_AT_KEY = "__mhHomeHeroSettleBusyAt"
+const HOME_ARRIVAL_AT_KEY = "__mhArrivalAt"
+const HOME_NAV_FROM_KEY = "__mhNavFromPath"
+const HOME_CUR_PATH_KEY = "__mhCurPath"
+const HOME_BUSY_EXPIRY_MS = 6000
+const HOME_ARRIVAL_FRESH_MS = 2500
+const HOME_PREPIN_TIMEOUT_MS = 4000
+const CASE_STUDY_SOURCE_RE = /^\/case-studies(\/|$)/
 let homeHeroRiseAt = 0
+let prePinObserver = null
+let prePinTimer = 0
 
-function readAppearDefs() {
+function markArrival() {
     try {
-        const raw = (window as any).__framer__appearAnimationsContent
-        if (typeof raw === "string" && raw) return JSON.parse(raw)
+        const w = window as any
+        // Source = the last stable path (maintained by the watcher / init),
+        // which at click time is the page the user is leaving.
+        w[HOME_NAV_FROM_KEY] = w[HOME_CUR_PATH_KEY] || window.location.pathname
+        w[HOME_ARRIVAL_AT_KEY] = Date.now()
     } catch (err) {}
-    return null
 }
 
 function currentTranslateY(el) {
@@ -419,8 +428,34 @@ function currentTranslateY(el) {
     }
 }
 
-function collectHomeHeroRisers() {
-    const defs = readAppearDefs()
+function clearRiseArtifacts() {
+    try {
+        const style = document.getElementById(HOME_HERO_RISE_STYLE_ID)
+        if (style) style.remove()
+    } catch (err) {}
+    try {
+        document
+            .querySelectorAll("[" + HOME_HERO_RISE_ATTR + "]")
+            .forEach((el) => el.removeAttribute(HOME_HERO_RISE_ATTR))
+    } catch (err) {}
+}
+
+function ensureRiseStyleEl() {
+    let style = document.getElementById(HOME_HERO_RISE_STYLE_ID)
+    if (!style) {
+        const parent = document.head || document.documentElement
+        style = document.createElement("style")
+        style.id = HOME_HERO_RISE_STYLE_ID
+        parent.appendChild(style)
+    }
+    return style
+}
+
+// Every appear element in the hero region is a target, unconditionally.
+// fresh=true: full choreography from the geometric park offset.
+// fresh=false: resume from the element's CURRENT offset (monotonic — an
+// element that is already up never comes back down).
+function collectHomeHeroRisers(fresh) {
     const out = []
     let els
     try {
@@ -428,57 +463,104 @@ function collectHomeHeroRisers() {
     } catch (err) {
         return out
     }
+    let idx = 0
     els.forEach((el) => {
         try {
             if (el.closest("nav")) return
             if (el.closest(HOME_HEADER_BOTTOM_SELECTOR)) return
             const r = el.getBoundingClientRect()
-            if (r.width <= 0 || r.top > HOME_HERO_REGION_MAX_TOP) return
-            const curY = currentTranslateY(el)
-            const id = el.getAttribute("data-framer-appear-id")
-            const def = defs && id && defs[id] && defs[id].default
-            const initY = def && def.initial ? Number(def.initial.y) || 0 : 0
-            // Only elements that rise and are still parked below their final
-            // spot. With no defs, fall back to "currently offset downward".
-            if (Math.abs(curY) < 2 && initY === 0) return
-            const fromY = Math.abs(curY) >= 2 ? curY : initY
-            if (fromY <= 0) return
-            const tr = def && def.animate ? def.animate.transition : null
-            out.push({
-                el,
-                fromY,
-                durationMs:
-                    tr && tr.duration
-                        ? tr.duration * 1000
-                        : HOME_HERO_DEFAULT_DURATION_MS,
-                delayMs: tr && tr.delay ? tr.delay * 1000 : 0,
-            })
+            if (r.width <= 0 || r.height <= 0) return
+            if (r.top > HOME_HERO_REGION_MAX_TOP) return
+            const geomY = Math.min(
+                Math.ceil(r.height) + 6,
+                HOME_HERO_MAX_FROM_Y
+            )
+            const curY = Math.abs(currentTranslateY(el))
+            let fromY, delayMs, durationMs
+            if (fresh) {
+                fromY = Math.min(
+                    Math.max(curY, geomY),
+                    HOME_HERO_MAX_FROM_Y
+                )
+                delayMs = idx * HOME_HERO_STAGGER_MS
+                durationMs = HOME_HERO_RISE_DURATION_MS
+            } else {
+                // Resume from wherever the element is right now. Settled
+                // elements (curY < 2) get fromY 0 = pin only, no replay.
+                fromY = curY < 2 ? 0 : Math.min(curY, HOME_HERO_MAX_FROM_Y)
+                delayMs = 0
+                durationMs =
+                    fromY <= 0
+                        ? 0
+                        : Math.max(
+                              HOME_HERO_RISE_DURATION_MS * (fromY / geomY),
+                              HOME_HERO_MIN_RESUME_MS
+                          )
+            }
+            out.push({ el, fromY, durationMs, delayMs, idx })
+            idx += 1
         } catch (err) {}
     })
     return out
 }
 
-function riseHomeHero() {
+function riseHomeHero(mode, fresh) {
     if (Date.now() - homeHeroRiseAt < 1800) return false
-    const targets = collectHomeHeroRisers()
+    const targets = collectHomeHeroRisers(fresh)
     if (!targets.length) return false
     homeHeroRiseAt = Date.now()
+    const sessionStamp = homeHeroRiseAt
+    const settle = mode === "settle"
     const startedAt = Date.now()
     const easeOutExpo = (p) => (p >= 1 ? 1 : 1 - Math.pow(2, -10 * p))
-    let maxEnd = 0
+
+    // Tag targets and drive them through a stylesheet: author-sheet
+    // !important beats Framer's plain inline writes on every frame,
+    // regardless of write order or display refresh rate.
+    clearRiseArtifacts()
     targets.forEach((t) => {
-        if (t.delayMs + t.durationMs > maxEnd) maxEnd = t.delayMs + t.durationMs
+        try {
+            t.el.setAttribute(HOME_HERO_RISE_ATTR, String(t.idx))
+        } catch (err) {}
     })
-    maxEnd += 250
+
+    let raf = 0
+    const stopGuard = () => {
+        if (raf) window.cancelAnimationFrame(raf)
+        raf = 0
+        clearRiseArtifacts()
+    }
 
     const tick = () => {
+        if (!isHomePath() || homeHeroRiseAt !== sessionStamp) {
+            stopGuard()
+            return
+        }
         const now = Date.now()
+        let css = ""
         targets.forEach((t) => {
-            const local = now - startedAt - t.delayMs
             let y
-            if (local <= 0) y = t.fromY
-            else if (local >= t.durationMs) y = 0
-            else y = (1 - easeOutExpo(local / t.durationMs)) * t.fromY
+            if (settle || t.fromY <= 0 || t.durationMs <= 0) {
+                y = 0
+            } else {
+                const local = now - startedAt - t.delayMs
+                if (local <= 0) y = t.fromY
+                else if (local >= t.durationMs) y = 0
+                else y = (1 - easeOutExpo(local / t.durationMs)) * t.fromY
+            }
+            const transform =
+                Math.abs(y) < 0.1
+                    ? "none"
+                    : "perspective(1200px) translateY(" + y.toFixed(2) + "px)"
+            css +=
+                "[" +
+                HOME_HERO_RISE_ATTR +
+                '="' +
+                t.idx +
+                '"]{transform:' +
+                transform +
+                " !important;opacity:1 !important;transition:none !important;}"
+            // WAAPI animations sit above stylesheets — cancel them.
             try {
                 t.el.getAnimations().forEach((animation) => {
                     try {
@@ -487,81 +569,182 @@ function riseHomeHero() {
                     } catch (err) {}
                 })
             } catch (err) {}
-            try {
-                t.el.style.setProperty("transition", "none", "important")
-                t.el.style.setProperty(
-                    "transform",
-                    Math.abs(y) < 0.1
-                        ? "none"
-                        : "perspective(1200px) translateY(" +
-                              y.toFixed(2) +
-                              "px)",
-                    "important"
-                )
-                t.el.style.setProperty("opacity", "1", "important")
-            } catch (err) {}
         })
+        try {
+            const style = ensureRiseStyleEl()
+            if (style.textContent !== css) style.textContent = css
+        } catch (err) {}
+        raf = window.requestAnimationFrame(tick)
     }
 
     tick()
-    const iv = window.setInterval(tick, 16)
-    window.setTimeout(() => {
-        tick()
-        window.clearInterval(iv)
-    }, maxEnd)
     return true
 }
 
-function useHomeHeroRise() {
-    React.useEffect(() => {
-        if (typeof window === "undefined") return
+function stopPrePin() {
+    try {
+        if (prePinObserver) prePinObserver.disconnect()
+    } catch (err) {}
+    prePinObserver = null
+    if (prePinTimer) window.clearTimeout(prePinTimer)
+    prePinTimer = 0
+}
 
-        let pollTimer = 0
-        let busy = false
-
-        const begin = () => {
-            if (busy) return
-            if (!isHomePath()) return
-            // Only on a real page-transition arrival (a recent nav), never the
-            // first cold load — Framer's appear plays fine on a fresh document.
-            const navAt = Number((window as any).__ptRevealedAt || 0)
-            if (!(navAt > 0 && Date.now() - navAt < 2500)) return
-            busy = true
-            let attempts = 0
-            const poll = () => {
-                attempts += 1
+// Armed at click time (case-study page, link targeting home). Fires as a
+// microtask when the home DOM mounts — BEFORE the browser paints it — and
+// pins the risers synchronously, so the settled hero can never flash.
+function armPrePaintPin() {
+    if (typeof window === "undefined") return
+    if (typeof MutationObserver === "undefined") return
+    stopPrePin()
+    try {
+        const w = window as any
+        prePinObserver = new MutationObserver(() => {
+            try {
+                if (!isHomePath()) return
                 const headline = document.querySelector(
                     HOME_HERO_HEADLINE_SELECTOR
                 )
-                if (headline && Math.abs(currentTranslateY(headline)) >= 2) {
-                    riseHomeHero()
-                    busy = false
-                    return
-                }
-                if (attempts < 180 && isHomePath()) {
-                    pollTimer = window.setTimeout(poll, 16)
+                if (!headline) return
+                const mode = w[HOME_SETTLE_MODE_KEY] || "animate"
+                if (riseHomeHero(mode, true)) stopPrePin()
+            } catch (err) {}
+        })
+        prePinObserver.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+        })
+        prePinTimer = window.setTimeout(stopPrePin, HOME_PREPIN_TIMEOUT_MS)
+    } catch (err) {}
+}
+
+function beginHomeHeroSettle() {
+    if (typeof window === "undefined") return
+    if (!isHomePath()) return
+    const w = window as any
+    // ONLY the curtain-skipped path: arrivals coming from a case study.
+    if (!CASE_STUDY_SOURCE_RE.test(String(w[HOME_NAV_FROM_KEY] || ""))) return
+    // Only on a real arrival (a recent nav / nav intent), never a cold load.
+    const navAt = Number(w[HOME_ARRIVAL_AT_KEY] || 0)
+    if (!(navAt > 0 && Date.now() - navAt < HOME_ARRIVAL_FRESH_MS)) return
+    // Busy flag is a timestamp so a wedged run can never disable the
+    // controller for the rest of the session.
+    const busyAt = Number(w[HOME_SETTLE_BUSY_AT_KEY] || 0)
+    if (busyAt && Date.now() - busyAt < HOME_BUSY_EXPIRY_MS) return
+    w[HOME_SETTLE_BUSY_AT_KEY] = Date.now()
+
+    let attempts = 0
+    const done = () => {
+        w[HOME_SETTLE_BUSY_AT_KEY] = 0
+    }
+    const poll = () => {
+        try {
+            attempts += 1
+            if (!isHomePath()) return done()
+            if (Date.now() - homeHeroRiseAt < 1800) return done()
+            const mode = w[HOME_SETTLE_MODE_KEY] || "animate"
+            const headline = document.querySelector(
+                HOME_HERO_HEADLINE_SELECTOR
+            )
+            // Late path: monotonic resume — never a restart.
+            if (headline && riseHomeHero(mode, false)) return done()
+            // The poll is window-owned: no component unmount can cancel it.
+            if (attempts < 240) window.setTimeout(poll, 16)
+            else done()
+        } catch (err) {
+            done()
+        }
+    }
+    poll()
+}
+
+function initHomeHeroSettleController() {
+    if (typeof window === "undefined") return
+    const w = window as any
+    if (w[HOME_SETTLE_INIT_KEY]) return
+    w[HOME_SETTLE_INIT_KEY] = true
+    w[HOME_CUR_PATH_KEY] = window.location.pathname
+
+    const onArrive = () => {
+        window.setTimeout(beginHomeHeroSettle, 0)
+    }
+
+    window.addEventListener("pt:reveal", onArrive)
+    window.addEventListener("popstate", onArrive)
+    window.addEventListener("mh:locationchange", onArrive)
+
+    // Primary signal: an internal link click records the SOURCE path and
+    // stamps nav intent BEFORE the router even processes the navigation.
+    // If the click leaves a case study for home, also arm the pre-paint pin.
+    try {
+        document.addEventListener(
+            "click",
+            (e) => {
+                try {
+                    const a =
+                        e.target && e.target.closest
+                            ? e.target.closest("a[href]")
+                            : null
+                    if (!a) return
+                    const href = a.getAttribute("href") || ""
+                    if (/^(https?:)?\/\//.test(href)) {
+                        if (a.host && a.host !== window.location.host) return
+                    }
+                    if (/^(mailto:|tel:|#)/.test(href)) return
+                    markArrival()
+                    try {
+                        const destPath = (a.pathname || "").replace(/\/+$/, "") || "/"
+                        if (
+                            destPath === HOME_PATH &&
+                            CASE_STUDY_SOURCE_RE.test(
+                                window.location.pathname
+                            )
+                        ) {
+                            armPrePaintPin()
+                        }
+                    } catch (err) {}
+                } catch (err) {}
+            },
+            true
+        )
+    } catch (err) {}
+
+    // Fallback: a lightweight pathname watcher. Records the source path on
+    // any change (covers browser back too). Initialized with the cold-load
+    // path, so a first document load never registers a change.
+    try {
+        window.setInterval(() => {
+            try {
+                const p = window.location.pathname
+                if (p !== w[HOME_CUR_PATH_KEY]) {
+                    const at = Number(w[HOME_ARRIVAL_AT_KEY] || 0)
+                    if (!(at && Date.now() - at < 1500)) {
+                        markArrival()
+                    }
+                    w[HOME_CUR_PATH_KEY] = p
+                    window.setTimeout(beginHomeHeroSettle, 0)
                 } else {
-                    busy = false
+                    w[HOME_CUR_PATH_KEY] = p
                 }
-            }
-            poll()
-        }
+            } catch (err) {}
+        }, 150)
+    } catch (err) {}
+}
 
-        const onArrive = () => {
-            window.setTimeout(begin, 0)
-        }
-
-        window.addEventListener("pt:reveal", onArrive)
-        window.addEventListener("popstate", onArrive)
-        window.addEventListener("pageshow", onArrive)
-        window.addEventListener("mh:locationchange", onArrive)
-        return () => {
-            window.removeEventListener("pt:reveal", onArrive)
-            window.removeEventListener("popstate", onArrive)
-            window.removeEventListener("pageshow", onArrive)
-            window.removeEventListener("mh:locationchange", onArrive)
-            window.clearTimeout(pollTimer)
-            busy = false
+function useHomeHeroRise(mode) {
+    if (typeof window !== "undefined") {
+        try {
+            ;(window as any)[HOME_SETTLE_MODE_KEY] =
+                mode === "settle" ? "settle" : "animate"
+        } catch (err) {}
+    }
+    React.useEffect(() => {
+        initHomeHeroSettleController()
+        // Also check on mount: if this instance mounted as part of a nav
+        // arrival at "/", the arrival stamp (usually from the link click)
+        // is still fresh and the headline may just have appeared.
+        if (typeof window !== "undefined") {
+            window.setTimeout(beginHomeHeroSettle, 0)
         }
     }, [])
 }
@@ -570,8 +753,11 @@ function useHomeHeroRise() {
  * PageTransition
  *
  * Active rollback to the exact PageTransition v7.12 module that was live before
- * the v7.13 pinned-nav experiment, plus a narrow Home Header Bottom recovery,
- * the /index hero title rise-on-arrival, and the home hero rise-on-arrival.
+ * the v7.13 pinned-nav experiment, plus a narrow Home Header Bottom recovery
+ * and a document-global "home hero on case-study arrival" controller: pre-paint
+ * pin, monotonic (never-downward) choreography driven through a stylesheet
+ * (beats Framer's inline writes on any refresh rate), hold-until-navigation
+ * guard; case-study → home navigations only.
  *
  * @framerSupportedLayoutWidth fixed
  * @framerSupportedLayoutHeight fixed
@@ -579,7 +765,7 @@ function useHomeHeroRise() {
 export default function PageTransition(props) {
     useHomeHeaderBottomReveal()
     useIndexHeadingRiseOnArrival()
-    useHomeHeroRise()
+    useHomeHeroRise(props.homeArrivalMode)
     return <PageTransitionV712 {...props} />
 }
 
@@ -588,6 +774,14 @@ addPropertyControls(PageTransition, {
         type: ControlType.Boolean,
         title: "Enabled",
         defaultValue: true,
+    },
+    homeArrivalMode: {
+        type: ControlType.Enum,
+        title: "Home arrival",
+        defaultValue: "animate",
+        options: ["animate", "settle"],
+        optionTitles: ["Animate", "Settle"],
+        displaySegmentedControl: true,
     },
     duration: {
         type: ControlType.Number,
