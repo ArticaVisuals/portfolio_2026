@@ -25,6 +25,7 @@ type CMSItem = {
 }
 type CMSCollection = { scanItems: () => Promise<CMSItem[]> }
 type CMSCollectionExport = { collectionByLocaleId?: { default?: CMSCollection } }
+type ResolvedCMSCollectionExport = { collectionByLocaleId: { default: CMSCollection } }
 type CMSModule = {
     a?: CMSCollectionExport
     r?: CMSCollectionExport | (() => unknown)
@@ -405,7 +406,7 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
     return undefined
 }
 
-function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
+function isCMSCollectionExport(value: unknown): value is ResolvedCMSCollectionExport {
     return (
         typeof value === "object" &&
         value !== null &&
@@ -416,18 +417,16 @@ function isCMSCollectionExport(value: unknown): value is CMSCollectionExport {
 function getCMSCollection(module: CMSModule): CMSCollection | undefined {
     const candidates = [module.a, module.r, module.default, ...Object.values(module)]
     for (const candidate of candidates) {
-        let resolved = candidate
-        if (typeof resolved === "function") {
+        let resolved: unknown = candidate
+        if (typeof candidate === "function") {
             try {
-                resolved = resolved()
+                resolved = (candidate as () => unknown)()
             } catch {
-                resolved = undefined
+                continue
             }
         }
 
-        if (isCMSCollectionExport(resolved)) {
-            return resolved.collectionByLocaleId?.default
-        }
+        if (isCMSCollectionExport(resolved)) return resolved.collectionByLocaleId.default
     }
 
     return undefined
@@ -687,40 +686,39 @@ function ProjectCard({
     const hasVideo = Boolean(videoSrc)
     const imageSrc = project.thumbnail?.src || ""
     const imageSrcSet = project.thumbnail?.srcSet || ""
-    const shouldRenderVideo = hasVideo && !imageSrc
+    const hasImage = Boolean(imageSrc)
     const hasMedia = hasVideo || Boolean(imageSrc)
-    const mediaKey = imageSrc
-        ? `image:${imageSrc}:${imageSrcSet}`
-        : shouldRenderVideo
-          ? `video:${videoSrc}`
+    const mediaKey = hasVideo
+        ? `video:${videoSrc}:${imageSrc}:${imageSrcSet}`
+        : hasImage
+          ? `image:${imageSrc}:${imageSrcSet}`
           : ""
-    const [loadedMediaKey, setLoadedMediaKey] = React.useState("")
-    const [failedMediaKey, setFailedMediaKey] = React.useState("")
+    const [posterReady, setPosterReady] = React.useState(false)
+    const [posterFailed, setPosterFailed] = React.useState(false)
+    const [videoReady, setVideoReady] = React.useState(false)
+    const [videoFailed, setVideoFailed] = React.useState(false)
     const mediaAlt = project.thumbnail?.alt || project.title
     const tags = showTags ? getProjectTags(project) : []
+    const hasReadyMedia = (hasVideo && videoReady) || (hasImage && posterReady)
+    const hasFailedMedia = (!hasVideo || videoFailed) && (!hasImage || posterFailed)
 
-    const markMediaReady = React.useCallback(() => {
-        if (!mediaKey) return
-        setLoadedMediaKey(mediaKey)
-        setFailedMediaKey((current) => (current === mediaKey ? "" : current))
-    }, [mediaKey])
-
-    const markMediaFailed = React.useCallback(() => {
-        if (!mediaKey) return
-        setFailedMediaKey(mediaKey)
-        setLoadedMediaKey((current) => (current === mediaKey ? "" : current))
+    React.useEffect(() => {
+        setPosterReady(false)
+        setPosterFailed(false)
+        setVideoReady(false)
+        setVideoFailed(false)
     }, [mediaKey])
 
     const handleImageRef = React.useCallback(
         (image: HTMLImageElement | null) => {
-            if (image?.complete && image.naturalWidth > 0) markMediaReady()
+            if (image?.complete && image.naturalWidth > 0) setPosterReady(true)
         },
-        [markMediaReady]
+        []
     )
 
-    const handleVideoError = React.useCallback(() => {
-        if (!imageSrc) markMediaFailed()
-    }, [imageSrc, markMediaFailed])
+    const handleVideoRef = React.useCallback((video: HTMLVideoElement | null) => {
+        if (video && video.readyState >= 2) setVideoReady(true)
+    }, [])
 
     const handleClick = React.useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -766,32 +764,58 @@ function ProjectCard({
             <div
                 className="selected-work-media"
                 data-has-media={hasMedia ? "true" : undefined}
-                data-media-ready={loadedMediaKey === mediaKey ? "true" : undefined}
-                data-media-failed={failedMediaKey === mediaKey ? "true" : undefined}
+                data-has-video={hasVideo ? "true" : undefined}
+                data-has-poster={hasImage ? "true" : undefined}
+                data-media-ready={hasReadyMedia ? "true" : undefined}
+                data-media-failed={hasFailedMedia ? "true" : undefined}
+                data-video-ready={videoReady ? "true" : undefined}
+                data-video-failed={videoFailed ? "true" : undefined}
+                data-poster-ready={posterReady ? "true" : undefined}
                 data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
             >
                 {imageSrc ? (
                     <img
                         ref={handleImageRef}
+                        className="selected-work-poster"
                         src={imageSrc}
                         srcSet={project.thumbnail?.srcSet}
                         alt={mediaAlt}
                         decoding="async"
                         loading="lazy"
-                        onError={markMediaFailed}
-                        onLoad={markMediaReady}
+                        onError={() => setPosterFailed(true)}
+                        onLoad={() => {
+                            setPosterReady(true)
+                            setPosterFailed(false)
+                        }}
                     />
-                ) : shouldRenderVideo ? (
+                ) : null}
+                {hasVideo ? (
                     <video
+                        ref={handleVideoRef}
+                        className="selected-work-video"
                         src={videoSrc}
+                        poster={imageSrc || undefined}
                         autoPlay
                         muted
                         loop
-                        onCanPlay={markMediaReady}
-                        onError={handleVideoError}
-                        onLoadedData={markMediaReady}
+                        onCanPlay={() => {
+                            setVideoReady(true)
+                            setVideoFailed(false)
+                        }}
+                        onPlaying={() => {
+                            setVideoReady(true)
+                            setVideoFailed(false)
+                        }}
+                        onError={() => {
+                            setVideoReady(false)
+                            setVideoFailed(true)
+                        }}
+                        onLoadedData={() => {
+                            setVideoReady(true)
+                            setVideoFailed(false)
+                        }}
                         playsInline
-                        preload="metadata"
+                        preload="auto"
                     />
                 ) : null}
             </div>
@@ -996,15 +1020,35 @@ export default function HomeSelectedWorkGrid({
                         opacity 420ms ${SNAPPY_EASE},
                         transform 420ms ${SNAPPY_EASE};
                     width: 101%;
+                }
+
+                .selected-work-media img {
                     z-index: 1;
                 }
 
-                .selected-work-media[data-media-ready="true"] img,
-                .selected-work-media[data-media-ready="true"] video {
+                .selected-work-media video {
+                    z-index: 2;
+                }
+
+                .selected-work-media[data-poster-ready="true"] img,
+                .selected-work-media:not([data-has-video="true"])[data-media-ready="true"] img {
                     opacity: 1;
                 }
 
-                .selected-work-media[data-media-failed="true"] img,
+                .selected-work-media[data-has-video="true"][data-video-ready="true"] img,
+                .selected-work-media[data-media-failed="true"] img {
+                    opacity: 0;
+                }
+
+                .selected-work-media[data-has-video="true"][data-video-ready="true"] video {
+                    opacity: 1;
+                }
+
+                .selected-work-media[data-has-video="true"][data-video-failed="true"][data-poster-ready="true"] img {
+                    opacity: 1;
+                }
+
+                .selected-work-media[data-has-video="true"][data-video-failed="true"] video,
                 .selected-work-media[data-media-failed="true"] video {
                     opacity: 0;
                 }
