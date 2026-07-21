@@ -43,6 +43,11 @@ the codebase reads quickly.
 Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 `pdXVG_fBO`, thumbnail `Jy7hBJady`, thumbnail video `SvOqFqdby`, stroke `OHdUYs6Mo`.
 
+`/index` CMS mode is generated-module only. Do not use `ProjectRegistrar`,
+manual `projects`, `DEFAULT_PROJECTS`, or hardcoded media URLs as fallback rows;
+see `index-component-instructions.md` §3.B before touching index media or grid
+hover CSS.
+
 ---
 
 ## Inventory by function
@@ -56,13 +61,13 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 | `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: live mode renders Play Archive CMS rows only (`PlayArchiveRegistrar` registry first, generated `EySMRbI2N` module second, otherwise empty). Owns grid + media smoothing + nav passthrough + close timing, and the detail drawer: **off-black** title, `/Text Gray` description, **divider directly under the title**, and a **Link-gated CTA** (renders only when CMS `Link` is set; label from `Link Title`, nav-mono `→` glyph + hover roll). On wide panels: title on top, a full-width divider under it (spanning both columns), then description+CTA in the right column below it (empty left column); collapses to a single left-aligned stack on the smallest breakpoint. Grid performance/no-gap behavior: `720px` Framer thumbnail requests, grid videos `preload="none"`, default/capped gap `56px` (`246px` step with `190px` cells), up to `16 × 12` rendered wide-screen coverage, and grid media wrappers stay visible immediately instead of waiting at `opacity:0` for load callbacks. |
 | `PlayArchiveRegistrar` | `jDwcdGN` | Invisible bridge mounted inside the hidden `Play Archive` Collection List. Registers Title/Order/Image/Video/Stroke/Content/**LinkTitle/Link** rows into `window.__articaPlayArchiveRegistry`. |
 | `PlayLinkBlock` | `gPwlq_8` | Standalone, CMS-bindable nav-styled link block (linked title + muted description + optional CTA, `GT Standard Mono` hover-roll). Not wired into `/play`; for CMS-template/list contexts. Property controls. |
-| `Test` | `O9WTdUJ` | **Misnomer** — it's the legacy `ProjectRegistrar` CMS bridge, kept as fallback. (Rename file in UI.) |
+| `Test` | `O9WTdUJ` | **Misnomer** — legacy `ProjectRegistrar` CMS bridge. Retained for canvas compatibility only; not a `/index` render fallback. (Rename file in UI.) |
 
 ### Case-study media
 | Component | id | What it does |
 |---|---|---|
-| `CaseStudyJustifiedMediaGrid` | `c0iPrbN` | Cargo-style justified rows, per-item contain/cover + stroke. Bespoke pages. |
-| `FixedHeightMediaRows` | `IthLMt_` | Near-duplicate justified gallery (gallery-height mode, singleton-merge). **Karuna.** |
+| `CaseStudyJustifiedMediaGrid` | `c0iPrbN` | Cargo-style justified rows, per-item contain/cover + stroke. Primary case-study gallery component. |
+| `FixedHeightMediaRows` | `IthLMt_` | Deprecated compatibility bridge only. Legacy instances now delegate into `CaseStudyJustifiedMediaGrid`; do not add new instances. |
 | `SimonSchusterGuidelinesCarousel` | `tYFZCey` | **Reusable `ImageCarousel`** (filename legacy). Fade carousel + GT Standard ‹ › arrows; slides open in the page lightbox. Reuse for any gallery. |
 | `ResponsiveCaseStudyVideo` | `bsTLKCt` | Responsive video/iframe block (YouTube/Vimeo/native + auto-detects images). |
 | `ResponsiveCaseStudyImage` | `vIFnGmg` | Responsive image block — **strict subset of the video one.** |
@@ -97,6 +102,7 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 | `NavigationScrollGuard` | `Wnd19lx` | Keeps native nav clickable when its scroll-hide transform gets stranded at top. Lives inside `Navigation`. |
 | `ScrollToTopButton` | `gh4ngZN` | Scroll-to-top mono button (Home, `/info`). Shares the flip-rail cadence of the `Scroll More` design component. |
 | `InfoScrollMoreColorOverride` | `AZDGWx7` | `/info` hero Scroll-More arrow color fix (DOM-patch). |
+| `LineAnimationBorder` | `j7WYIMf` | Nondestructive border-frame replacement for native `Line Animation`; keeps the same 0.2s delay, 2s duration, and `[0.25, 1, 0.5, 1]` draw easing, with a `Viewport Once` self-trigger for copy-page swaps. |
 | `FooterCopyrightYear` | `BF2H03E` | Auto current-year in footer. |
 | `ResumeAssetHost` | `xDqfenf` | **Archived no-op** stub kept so the Footer instance resolves. |
 
@@ -125,6 +131,23 @@ delete casually.
   breakpoint have failed the publish optimizer (`ssg-module-not-found`).
 - **Cross-file imports use versioned module URLs** — a republished dependency needs
   its importers' pinned `@hash` bumped (see `CaseStudyControllers`→lightbox).
+- **CMS-module resolution must anchor to the CURRENT route, never the session
+  resource buffer** — `IndexPage` (`rgAZFOv`) and `HomeSelectedWorkGrid` (`FecepLS`)
+  both import the same `All Projects` collection (`yTHrQWMIY`) by resolving its
+  hashed module URL at runtime. Framer SPA navigation does **not** clear
+  `performance.getEntriesByType("resource")`, so a module hash one route loaded
+  stays visible to the other. If a resolver takes the *first* `yTHrQWMIY.*.mjs` it
+  finds in that shared buffer, a client-side nav (e.g. home → `/index`) can import
+  a **stale hash** and render thumbnails no longer in the CMS — intermittently, and
+  "fixed" only by a hard refresh (which clears the buffer). Fix (2026-07-20):
+  `resolveCMSModuleUrl` now fetches the **current route's own HTML first**
+  (`fetch(location.pathname, {cache:"no-store"})` + live-scan paths), which only
+  ever names this page's current module; the in-document/resource-buffer scan is a
+  demoted fallback for the Framer editor preview only. The hardcoded
+  `KNOWN_CMS_MODULE_URLS` pin (`…C4v6sro0.mjs`) goes stale every republish and must
+  stay **last-resort**, below all live discovery, or it re-poisons the buffer. Never
+  reorder the buffer scan back above the current-route fetch. See
+  `index-component-instructions.md` §3.C.
 
 ---
 
@@ -132,8 +155,10 @@ delete casually.
 Do each as: migrate one → Publish → QA `/`, `/index`, `/play`, `/info`,
 `/case-studies`, one bespoke case study.
 
-- **M1 — merge media galleries.** Fold per-item fit/stroke from
-  `CaseStudyJustifiedMediaGrid` into `FixedHeightMediaRows`; repoint instances; retire the grid.
+- **M1 — media gallery consolidation.** `CaseStudyJustifiedMediaGrid` is the
+  canonical gallery. `FixedHeightMediaRows` has been reduced to a deprecated
+  bridge for any legacy mounted instances; delete it only after Framer XML
+  confirms no instances remain.
 - **M2 — merge responsive media.** `ResponsiveCaseStudyImage` is a subset of
   `ResponsiveCaseStudyVideo`; repoint instances to the video one (auto-handles images); retire the image one.
 - **C1 — shared CMS helper.** The resolve→import→scan boilerplate is triplicated in

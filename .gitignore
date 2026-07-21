@@ -7,3 +7,13 @@ case-study-assets/figma-export/**/Gaia Final Deck.pptx
 output/playwright/
 output/media-compression-audit-*/
 case-study-assets/optimized/
+
+# Raw design source trees + bundles — kept in Drive, too heavy for git.
+# Web-optimized derivatives (e.g. */optimized/*.webp) stay tracked.
+case-study-assets/**/source/
+output/**/source/
+*.zip
+
+# Ad-hoc media QA scratch + Framer runtime inspection dumps.
+output/wolff-media-check/
+.framer-inspect/

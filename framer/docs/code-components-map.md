@@ -54,8 +54,8 @@ Shared field IDs (All Projects, `yTHrQWMIY`): title `oeXZcmPna`, slug
 ### Case-study media
 | Component | id | What it does |
 |---|---|---|
-| `CaseStudyJustifiedMediaGrid` | `c0iPrbN` | Cargo-style justified rows, per-item contain/cover + stroke. Bespoke pages. |
-| `FixedHeightMediaRows` | `IthLMt_` | Near-duplicate justified gallery (gallery-height mode, singleton-merge). **Karuna.** |
+| `CaseStudyJustifiedMediaGrid` | `c0iPrbN` | Cargo-style justified rows, per-item contain/cover + stroke. Primary case-study gallery component. |
+| `FixedHeightMediaRows` | `IthLMt_` | Deprecated compatibility bridge only. Legacy instances now delegate into `CaseStudyJustifiedMediaGrid`; do not add new instances. |
 | `SimonSchusterGuidelinesCarousel` | `tYFZCey` | **Reusable `ImageCarousel`** (filename legacy). Fade carousel + GT Standard ‹ › arrows; slides open in the page lightbox. Reuse for any gallery. |
 | `ResponsiveCaseStudyVideo` | `bsTLKCt` | Responsive video/iframe block (YouTube/Vimeo/native + auto-detects images). |
 | `ResponsiveCaseStudyImage` | `vIFnGmg` | Responsive image block — **strict subset of the video one.** |
@@ -125,8 +125,10 @@ delete casually.
 Do each as: migrate one → Publish → QA `/`, `/index`, `/play`, `/info`,
 `/case-studies`, one bespoke case study.
 
-- **M1 — merge media galleries.** Fold per-item fit/stroke from
-  `CaseStudyJustifiedMediaGrid` into `FixedHeightMediaRows`; repoint instances; retire the grid.
+- **M1 — media gallery consolidation.** `CaseStudyJustifiedMediaGrid` is the
+  canonical gallery. `FixedHeightMediaRows` has been reduced to a deprecated
+  bridge for any legacy mounted instances; delete it only after Framer XML
+  confirms no instances remain.
 - **M2 — merge responsive media.** `ResponsiveCaseStudyImage` is a subset of
   `ResponsiveCaseStudyVideo`; repoint instances to the video one (auto-handles images); retire the image one.
 - **C1 — shared CMS helper.** The resolve→import→scan boilerplate is triplicated in

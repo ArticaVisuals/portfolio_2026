@@ -4,11 +4,11 @@
 **Component:** `/index` page — List/Grid toggle with taxonomy filters
 **Target:** Framer code component (React) injected into Jacob Turner template
 **Date:** May 2026
-**Last Framer structure audit:** June 18, 2026.
+**Last Framer structure audit:** July 20, 2026.
 
 > **Read first:** the live behavior of `/index` is fully described in `framer-current-state.md` §3. This file is the build/maintenance brief for the code component. When the two disagree, `framer-current-state.md` wins.
 
-**State summary (June 18, 2026):**
+**State summary (July 20, 2026):**
 
 - One `/index` page, `u2LOaBT5q`. The earlier duplicate `yKKOMVNs6` (Mono 13 default) has been deleted.
 - The old `/index-grid-preview` page was deleted. The Figma grid layout is now promoted to canonical `/index`.
@@ -21,7 +21,8 @@
 - Current `/index` XML mounts `IndexPageGridPreview.tsx` (`LgIzFjJ`) as the archive component, alongside the site `PageTransition` and hidden CMS bridge. Responsive/index styling, direct grid-media hover scale, line-draw timing, and index nav/list/grid appear motion are consolidated in the base component plus the wrapper's Figma-specific CSS overrides; do not split them back into hidden `/index` CSS helper components. Large year/title text uses the masked slide-in preset, while smaller mono nav/meta text fades in. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed from Framer on May 26 because they were not mounted in current `/index` XML. `IndexThumbnailVideoFallback.tsx` was deleted on June 8; do not recreate hardcoded per-project thumbnail helpers.
 - All index list/grid rules currently render in near-black `#141414` via `IndexPage.tsx` color property controls. Do not assume older `#233324` notes are current for `/index`.
 - **Taxonomy refined (May 22, 2026):** the visible order is `/ Year`, `/ Service`, `/ Industry`; each group has an `All` button that clears only that filter category. Service and Industry labels are sorted alphabetically; Year remains descending.
-- **Data source refined (June 1, 2026; revised June 8):** `IndexPage.tsx` can use the mounted `ProjectRegistrar` registry first, then fall back to a direct import/scan of the generated Framer CMS module for `All Projects` (`yTHrQWMIY`), then manual `projects`. In CMS mode it does **not** fall back to `DEFAULT_PROJECTS`. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke so incomplete bridge rows cannot override richer CMS media/stroke data.
+- **Data source refined (June 1, 2026; revised June 8; corrected July 20):** `IndexPage.tsx` waits for and uses only the generated Framer CMS module for `All Projects` (`yTHrQWMIY`) when `useCMS=true`. In CMS mode it does **not** fall back to manual `projects`, `DEFAULT_PROJECTS`, `ProjectRegistrar`/window registry rows, hardcoded media URLs, or project-specific media rules. If the CMS module has not produced rows yet, the index stays loading/empty instead of flashing non-CMS thumbnail media.
+- **Grid hover regression guard (July 20, 2026):** the Figma grid wrapper title row is 13px high with a 5px stacked-title gap, so the locked wrapper hover override must move `.idx-grid-title-stack` by `-18px`. Do not change it to `-13px`; that clips the hover state and leaves only part of `VIEW PROJECT` visible.
 - **Grid view rewritten (May 10, 2026; refined May 22):** the `https://framer.com/m/Case-Study-G9lec1.js` import was removed. Grid cards now render as native HTML inside `IndexPage.tsx` (uniform 16:9 media, 3/2/1 column responsive grid, media hover scale, title below image with the same hover-flip used in List view, and metadata below title). The thumbnails were rendering blank because the responsive-image format being passed to the Framer Case Study module didn't hydrate for code-component usage; rendering directly from `<img>` fixed this.
 - **Figma grid/card treatment promoted (June 18, 2026):** `IndexPageGridPreview.tsx` locks the active Grid layout to the Figma node direction: 3 columns on desktop, 2 columns below 1200px, and 1 column at 899px; cards stretch to the full content width with no max-width choke point; grid headings use the same 13px uppercase mono treatment as the homepage selected-work titles, with the order number above the thumbnail; CMS Category 1/2/3 tags render under thumbnails as 12px Light Gray mono pills.
 - **List/Grid responsive alignment (June 18, 2026):** the single-column grid and mobile list simplification now share the same 899px container breakpoint. At and below that point, List view hides the year indicator and service/industry/category columns, keeps titles left-aligned to the page margin, and stretches row/year/bottom rules full width.
@@ -40,7 +41,7 @@ The `/index` archive is maintained as a base Framer code component plus a mounte
 - Two A/B variants for List view (`Standard` vs `Mono 13` typography; `Flip` vs `Highlight` hover).
 - A trailing project-count footer.
 
-Project data flows in through three priority-ranked sources (described in §3). The component **does not** include the site nav, the `INDEX` heading at 110px (that's a sibling Framer text element), or any 3D/WorldGrid surface.
+Project data is CMS-only when `useCMS=true`, with manual `projects` accepted only when `useCMS=false` (described in §3). The component **does not** include the site nav, the `INDEX` heading at 110px (that's a sibling Framer text element), or any 3D/WorldGrid surface.
 
 **Important caveat:** the previous behavior where the unfiltered Grid view fell back to the native `Case Studies Filter` component has been removed. Grid view now renders project-driven cards as native HTML inline in `IndexPage.tsx` (no external Framer module). The native `Case Studies Filter` lives only on `/case-studies` now.
 
@@ -90,13 +91,14 @@ addPropertyControls(IndexPage, {
   useCMS: {
     type: ControlType.Boolean,
     title: "Use CMS",
-    defaultValue: false,
+    defaultValue: true,
     enabledTitle: "On",
     disabledTitle: "Off",
   },
   projects: {
     type: ControlType.Array,
     title: "Projects",
+    hidden: (props) => props.useCMS === true,
     control: {
       type: ControlType.Object,
       controls: {
@@ -135,24 +137,86 @@ addPropertyControls(IndexPage, {
 
 The live component also exposes color controls for `Text Primary`, `Text Secondary`, `Text Tertiary`, `Background`, `Divider Strong`, `Divider Subtle`, and `Surface Active`. Defaults should match `DEFAULT_TOKENS` unless Framer design tokens are intentionally rebound in the property panel.
 
-### 3.A Project data resolution — registrar first, CMS module fallback
+### 3.A Project data resolution — CMS-only in CMS mode
 
 The live component picks projects in this order (inside the `allProjects` `useMemo`):
 
-1. **Window-singleton registry** at `window.__articaIndexProjectsRegistry`, when `useCMS` is `true` and at least one item has been registered. The registry is populated by `ProjectRegistrar` instances inside the mounted CMS Collection List; `IndexPage` subscribes in a `useEffect` that runs only when `useCMS` is truthy.
-2. **Direct CMS module scan**, when `useCMS` is `true` and the generated `All Projects` module (`yTHrQWMIY`) can be discovered/imported from document resources or live scan paths. The loader calls Framer's lazy initializer when present and reads `collectionByLocaleId.default.scanItems()`. Current Framer CMS bundles may expose the collection under `r` rather than legacy `a`; do not reintroduce an `a`-only resolver.
-3. **`projects` prop** (manual array control), if non-empty.
-4. **`DEFAULT_PROJECTS`**, only when `useCMS=false`.
+1. **Direct CMS module scan**, when `useCMS` is `true` and the generated `All Projects` module (`yTHrQWMIY`) can be discovered/imported from document resources or live scan paths. The loader calls Framer's lazy initializer when present and reads `collectionByLocaleId.default.scanItems()`. Current Framer CMS bundles may expose the collection under `r` rather than legacy `a`; do not reintroduce an `a`-only resolver.
+2. **`projects` prop** (manual array control), only when `useCMS=false` and the array is explicitly supplied.
+3. **Empty/loading state**, when the CMS module has not loaded rows or explicit manual props are unavailable. Do not add a baked `DEFAULT_PROJECTS` snapshot or registry fallback.
 
-The legacy Framer-side wiring for the registry is:
+The legacy Framer-side registry wiring may still exist elsewhere for older canvas structures, but `/index` must not render from it in CMS mode:
 
 - A separate code component named `ProjectRegistrar` is placed inside a Framer **Collection List** bound to `All Projects`.
 - Each Registrar instance receives the bound CMS row's fields as Framer `ControlType` props and calls the registry's `register(id, data)` on mount, `unregister(id)` on unmount.
-- `IndexPage` (with `useCMS=true`) subscribes to the registry and re-renders when it changes.
+- `IndexPage` (with `useCMS=true`) does not subscribe to or render registry rows.
 
-June 1 canvas note: the CMS Collection List must stay mounted. On `/index`, `CmsLink` (`AwTGGhR7I`) is locked, `opacity="0"`, fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, and `overflow="hidden"`. Do not use the Framer hidden/eye toggle on this layer or any parent, because hidden layers unmount and the registry becomes empty.
+July 20 canvas note: keep the hidden `CmsLink` (`AwTGGhR7I`) Collection List mounted because it helps Framer expose the generated CMS module. It should stay locked, `opacity="0"`, fixed off-canvas at `left="-202px"`, `width="1px"`, `height="1px"`, and `overflow="hidden"`. Do not use this layer or `ProjectRegistrar` as a content/media fallback for `/index`.
 
-If you build the Registrar, mirror the Framer property control names exactly (`title`, `category1..3`, `industry`, `year`, `thumbnail`, `thumbnailVideoLink`, `slug`, `sortOrder`, `isHomepage`) and use the project's `slug` as the registry key.
+Do not rebuild or add a new Registrar to solve `/index` missing media. Fix the generated CMS module load, CMS field values, or the `Thumbnail` / `Thumbnail Video` fields instead.
+
+### 3.B Small-tweak regression guard
+
+After any `/index` tweak that touches data, media, grid card layout, wrapper CSS, or Framer code-file imports, run these checks before publishing:
+
+```bash
+rg -n 'DEFAULT_PROJECTS|fromRegistry|registeredProjects|__articaIndexProjectsRegistry|ProjectRegistrar|framerusercontent.com/(images|assets)/|translate3d\\(0, -13px' IndexPage.tsx IndexPageGridPreview.tsx
+rg -n 'const sourceProjects: Project\\[] = useCMS|projects=\\{useCMS \\? \\[\\] : projects\\}|translate3d\\(0, -18px' IndexPage.tsx IndexPageGridPreview.tsx
+```
+
+The first command should return no live `/index` source hits. The second should confirm:
+
+- `IndexPage.tsx` uses `useCMS ? (fromCMSModule ?? []) : (fromProps ?? [])`.
+- `IndexPageGridPreview.tsx` passes `projects={useCMS ? [] : projects}`.
+- The wrapper hover override remains `translate3d(0, -18px, 0)`.
+
+After Framer publish, verify production with a fresh query string in Playwright:
+
+- Wolff Olins and Independent Lens media `src` values match their CMS `Thumbnail` fields.
+- Projects with `Thumbnail Video` render a `<video>` first and use CMS `Thumbnail` only as `poster`/fallback.
+- Hovering a grid card changes `.idx-grid-title-stack` to `matrix(..., -18)` and fully shows `VIEW PROJECT`.
+
+### 3.C CMS module URL resolution — anchor to the current route (stale-thumbnail guard)
+
+**Symptom this prevents:** in Grid view the `/index` thumbnails sometimes showed
+old images that are no longer in the CMS, and a hard refresh "fixed" it. Root cause
+(diagnosed 2026-07-20): `/index` and Home (`HomeSelectedWorkGrid`) both read the
+same `All Projects` collection (`yTHrQWMIY`) and each resolves the collection's
+hashed JS module URL at runtime. Framer's client-side (SPA) navigation does **not**
+clear the browser's session resource buffer (`performance.getEntriesByType(
+"resource")` + DOM), so a module hash loaded by *another* route (e.g. Home, which
+could resolve its stale hardcoded pin `…C4v6sro0.mjs`) stays visible to `/index`.
+The old resolver took the **first** `yTHrQWMIY.*.mjs` it found in that shared
+buffer, so a home → `/index` client-nav could import a superseded module and render
+old thumbnails until a hard refresh cleared the buffer.
+
+**Invariant — do not regress:**
+
+1. `resolveCMSModuleUrl` must resolve from the **current route's freshly-served
+   HTML first** — `fetch(location.pathname, { cache: "no-store" })` plus the
+   `INDEX_CMS_LIVE_SCAN_PATHS`. That HTML only ever references *this* page's current
+   collection module, so it cannot be poisoned by another route's leftover module.
+2. The in-document / `performance` resource-buffer scan (`findCMSModuleUrlInDocument`)
+   is a **demoted fallback**, kept only so the Framer editor/canvas preview (where
+   those fetches are cross-origin/404) still resolves. Never move it back above the
+   current-route fetch.
+3. Any hardcoded module pin (`KNOWN_CMS_MODULE_URLS`, used in `HomeSelectedWorkGrid`)
+   goes stale on every republish and must rank **last**, below all live discovery —
+   otherwise it re-introduces the poison by loading an old hash and seeding it into
+   the shared buffer.
+4. A per-session `cmsModuleUrlCache` (module-level `Map`) keeps this to one fetch
+   per session.
+
+Regression grep before publishing an `/index` or Home CMS change:
+
+```bash
+rg -n 'cache: "no-store"|getCurrentDocumentPath|findCMSModuleUrlByFetchingPaths' IndexPage.tsx
+rg -n 'KNOWN_CMS_MODULE_URLS' HomeSelectedWorkGrid.tsx   # must be resolved AFTER live-scan
+```
+
+Verify (after publish): load the Home page first, then navigate **client-side** to
+`/index` (do not hard-refresh) — Grid thumbnails must match the current CMS
+`Thumbnail` fields. Previously this exact path surfaced the stale images.
 
 ### CMS schema and current Industry values
 
@@ -419,7 +483,8 @@ Canonical coded easing is intentionally narrow after the June 18 consolidation:
 - Grid title uses `.idx-mask-appear`; grid metadata uses `.idx-fade-appear`.
 - Grid thumbnails are wrapped in `GridMediaFrame`, which owns the `.idx-grid-card-media` fade-in state and uses `INDEX_MEDIA_FADE_PRESET` (620ms, 140ms base delay, 58ms item stagger, Snappy `cubic-bezier(0.16, 1, 0.3, 1)`) to match the smoother case-study media feel.
 - Media hover scale applies to `.idx-grid-card-img`, `.idx-grid-card-video`, and direct `.idx-grid-card-media > img/video` children at `scale(1.02)` on hover/focus. The direct-child selectors are required because `CaseStudyThumbnailStrokeStyles.tsx` can inject CMS videos such as Motion Connect after `IndexPage` renders. `IndexPage.tsx` owns those selectors and the index appear presets for nav, list rows, and grid media.
-- `/index` currently reads only `Thumbnail Video` (`SvOqFqdby`) via the `IndexPage` instance `Video Fields` prop when it is using CMS-module data. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. Registry rows are hydrated from the generated CMS module by slug/title for thumbnail, thumbnail video, and thumbnail stroke before rendering, so an incomplete `ProjectRegistrar` bridge row cannot erase CMS media/stroke values. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` is configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Publish/redeploy Framer after editing File-field thumbnail videos so the generated CMS module refreshes.
+- Figma-grid title hover depends on `.idx-grid-title-frame` clipping to 13px and `.idx-grid-title-stack` translating by exactly `-18px` (`13px` line height + `5px` stack gap). The visible hover text is `VIEW PROJECT`; do not add an arrow or change the wrapper override to `-13px`.
+- `/index` currently reads only `Thumbnail Video` (`SvOqFqdby`) via the `IndexPage` instance `Video Fields` prop when it is using CMS-module data. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. In CMS mode, render only from the generated CMS module; do not let `ProjectRegistrar`, manual props, baked defaults, hardcoded media URLs, or project-specific rules flash stale fallback thumbnails before the CMS module resolves. Do not add project-specific thumbnail/video allow-lists, deny-lists, or asset-ID rules; edit the CMS `Thumbnail` and `Thumbnail Video` fields instead. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. The existing `CaseStudyThumbnailStrokeStyles.tsx` instance on `/index` is configured with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Publish/redeploy Framer after editing code files or CMS File/image fields so the generated CMS module refreshes.
 - Reduced motion forces all index grid media back to `scale(1)` and removes transitions.
 - View switches remount the content so masked and faded text can reveal again; the flip-related JS on rows remains independent of the appear animation.
 
@@ -451,15 +516,11 @@ Keep both files single-file Framer code components. All styles should stay inlin
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { addPropertyControls, ControlType } from "framer"
 
-// Window-singleton registry that ProjectRegistrar instances write into.
-const REGISTRY_KEY = "__articaIndexProjectsRegistry"
-function getRegistry() { /* lazy-init { items, listeners, register, unregister, subscribe } */ }
+// CMS mode is generated-module only; do not add registry/default fallback rows.
 
 const tokens = { /* see §2 */ }
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
-
-const DEFAULT_PROJECTS = [ /* local fallback snapshot, simplified industry labels */ ]
 
 // Helpers: getDisciplines, normalizeProjectDisciplines, getDisciplineDisplay,
 // collectByProjectOrder, getDisciplineNavItems, getIndustryNavItems,
@@ -477,26 +538,30 @@ function ViewToggle({ activeView, onViewChange }) { /* inline taxonomy-footer to
 
 export default function IndexPage({
   projects: projectsProp,
-  useCMS = false,
+  useCMS = true,
   defaultView = "list",
   listTypographyVariant = "standard",
   listHoverVariant = "flip",
 }) {
-  const [registeredProjects, setRegisteredProjects] = useState(() => new Map())
+  const [cmsModuleProjects, setCMSModuleProjects] = useState([])
+  const [cmsModuleLoaded, setCMSModuleLoaded] = useState(false)
   useEffect(() => {
-    if (!useCMS) return
-    const reg = getRegistry()
-    return reg?.subscribe((items) => setRegisteredProjects(new Map(items)))
+    if (!useCMS) {
+      setCMSModuleProjects([])
+      setCMSModuleLoaded(false)
+      return
+    }
+    // loadCMSProjects(...) imports the generated All Projects CMS module.
   }, [useCMS])
 
   const allProjects = useMemo(() => {
-    const fromRegistry = useCMS && registeredProjects.size > 0
-      ? Array.from(registeredProjects.values()) : null
+    const fromCMSModule = useCMS && cmsModuleProjects.length > 0 ? cmsModuleProjects : null
+    const fromProps = projectsProp?.length ? projectsProp : null
     const source = useCMS
-      ? (fromRegistry ?? fromCMSModule ?? (projectsProp?.length ? projectsProp : []))
-      : (projectsProp?.length ? projectsProp : DEFAULT_PROJECTS)
+      ? (fromCMSModule ?? [])
+      : (fromProps ?? [])
     return source.map(normalizeProjectDisciplines)
-  }, [useCMS, registeredProjects, projectsProp])
+  }, [useCMS, cmsModuleProjects, projectsProp])
 
   const [activeView, setActiveView] = useState(defaultView === "grid" ? "grid" : "list")
   const [renderKey, setRenderKey]   = useState(0)
@@ -563,7 +628,7 @@ Before delivering:
 - [ ] Taxonomy filters work: click to toggle, AND across categories, OR within. Clear-filters button appears when any filter is active.
 - [ ] Taxonomy groups are labeled `/ Year`, `/ Service`, `/ Industry`; no `Origin` label returns.
 - [ ] Year / Service / Industry nav values come from the bound projects via `getDisciplineNavItems` / `getIndustryNavItems` / `getYearNavItems`, not from a hardcoded list.
-- [ ] If CMS-backed live data is needed, `useCMS=true` is set and the generated `yTHrQWMIY` CMS module loads; `ProjectRegistrar`/window registry is only a fallback.
+- [ ] If CMS-backed live data is needed, `useCMS=true` is set and the generated `yTHrQWMIY` CMS module loads; `ProjectRegistrar`/window registry is not a render fallback.
 - [ ] Three taxonomy groups stay horizontal at desktop and wide tablet; collapse to label/value pairs at ≤899px, with tighter column values at ≤809px and ≤520px.
 - [ ] Taxonomy and List year-group share `repeat(6, minmax(0, 1fr))` within `padding: 0 20px`.
 - [ ] List inner rows use `repeat(5, minmax(0, 1fr))`: title cols 1/span 2, service cols 3/span 2, industry col 5/span 1.
@@ -571,8 +636,8 @@ Before delivering:
 - [ ] Grid view renders cards as native HTML inside `IndexPage.tsx` (no `Case Study` module import, no `Case Studies Filter` fallback).
 - [ ] Grid uses a uniform CSS grid: 3 columns at ≥1200px, 2 columns at 900–1199px, 1 column at ≤899px. No weighted/featured pattern and no max-width choke point.
 - [ ] Each card thumbnail is locked to `aspect-ratio: 16 / 9` via `.idx-grid-card-media`. Card heights are not hardcoded.
-- [ ] Card title sits below the thumbnail and uses the same `HoverFlipText` helper as List view (`View Project →` on hover when slug exists).
-- [ ] Optional thumbnail video renders when a video URL exists, remains muted/looped/playsInline, uses the same hover/focus `scale(1.02)` as images, and respects reduced-motion behavior.
+- [ ] Card title sits below the thumbnail and flips to `VIEW PROJECT` on hover when a slug exists; in the Figma grid wrapper, `.idx-grid-title-stack` translates by `-18px`, not `-13px`.
+- [ ] Optional thumbnail video renders first when a CMS video URL exists, remains muted/looped/playsInline, uses the CMS thumbnail only as `poster`/fallback, shares the hover/focus `scale(1.02)` with images, and respects reduced-motion behavior.
 - [ ] Per-project strokes come from CMS field `OHdUYs6Mo` via `CaseStudyThumbnailStrokeStyles.tsx`, not from hardcoded fallback classes. On `/index`, `IndexPage.tsx` should render plain `.idx-grid-card-media`; the helper applies any visible stroke as a non-layout overlay. On native Framer `Case Study` cards, the helper toggles the real overlay frame inside `ImageWrapper` so canvas/editor can show the same status. Verify the helper can read the current generated CMS module export (`r.collectionByLocaleId.default.scanItems`) before publishing stroke-related changes.
 - [ ] Grid extends to the same 20px left/right margin as the nav/taxonomy section.
 - [ ] In Framer, the mounted `IndexPage` wrapper `View` control can preview both Grid and List; changing it remounts the base component so canvas state does not get stuck.
@@ -598,16 +663,19 @@ Before delivering:
 - Do NOT scatter hardcoded colors — always go through the centralized `tokens` object.
 - Do NOT reintroduce the `Case Studies Filter` fallback inside `IndexPage`. The native `Case Studies Filter` belongs to `/case-studies`.
 - Do NOT reimport `https://framer.com/m/Case-Study-G9lec1.js` for Grid view rendering. The thumbnails rendered blank when called from a code component (responsive-image format mismatch). Render with native `<img>`/`<video>` instead, as `GridProjectCard` does today.
+- Do NOT use `ProjectRegistrar`, `window.__articaIndexProjectsRegistry`, manual `projects`, old screenshots, or hardcoded URLs as a `/index` CMS-mode fallback. Missing media must be fixed in CMS or the generated CMS module loader.
+- Do NOT add project-specific media allow-lists/deny-lists or absolute rules for individual projects. `Thumbnail Video` wins when present; `Thumbnail` is only poster/loading/no-video fallback.
+- Do NOT change the Figma grid hover override to `translate3d(0, -13px, 0)`. The correct value is `translate3d(0, -18px, 0)` because the title stack is 13px high with a 5px gap.
 - Do NOT reintroduce weighted/featured Grid row patterns (`[2,1,1] [1,2,1] [1,1,2] [1,2,1]`) or the `weight` prop on `GridProjectCard`. The Grid is uniform — 3/2/1 columns by breakpoint.
 - Do NOT hardcode pixel heights for Grid cards (e.g., 325px / 220px). Card height derives from the 16:9 aspect ratio of the media wrapper plus the title row above it.
 - Do NOT revive `ImageMaskReveal` from old handoff notes unless there is a fresh design request. It is historical and not part of the current Framer inventory.
 - Do NOT hardcode `.idx-grid-card-media.with-stroke` as a permanent class in `IndexPage.tsx`. The May 15 stroke helper owns all visible stroke output from CMS so each project can be toggled individually and toggled back off.
 - Do NOT remove `CaseStudyThumbnailStrokeStyles` instance `szF9sZNWA` from `/index` unless you replace the stroke system with another CMS-aware implementation.
 - Do NOT reintroduce `DISCIPLINE_NAV_ITEMS` / `DISCIPLINE_ALIASES` / `INDUSTRY_NAV_ITEMS` as hardcoded constants inside `IndexPage` unless you explicitly want to lock the nav back to a fixed list. The current pattern is to derive the nav from the bound projects.
-- Do NOT push an older repo-side `IndexPage.tsx` back to Framer without merging in the mounted ProjectRegistrar registry path, direct CMS module fallback, simplified visible taxonomy, color controls, and current grid card structure.
+- Do NOT push an older repo-side `IndexPage.tsx` back to Framer without preserving the direct CMS module loader, CMS-only source priority, simplified visible taxonomy, color controls, and current grid card structure.
 - Do NOT lose the May 18 responsive promotion: canonical `/index` depends on the responsive CSS now consolidated directly inside `IndexPage.tsx`. Do not re-split breakpoint, toggle, appear-motion, line-draw, or direct grid-media hover CSS into hidden helper components.
 - Do NOT restore the old "Enter WorldGrid" button or `worldGridUrl` prop unless Micah explicitly asks.
-- Do NOT leave fallback data at 12 projects; the current CMS roster has 17 items. If `DEFAULT_PROJECTS` is refreshed, keep it intentionally labeled as fallback-only and do not let it render in CMS mode.
+- Do NOT add or restore `DEFAULT_PROJECTS` or any other baked project/media snapshot. `/index` should render CMS data in CMS mode and only explicit `projects` props in manual mode.
 - Do NOT use Next.js patterns (no `useRouter`, no `Link` component) — Framer handles routing.
 - Do NOT add `<html>`, `<head>`, or `<body>` tags — this is a component, not a page.
 - Do NOT assume fonts are loaded — use the fallback stack in the tokens object.

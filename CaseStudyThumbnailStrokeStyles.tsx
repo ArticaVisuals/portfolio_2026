@@ -51,6 +51,9 @@ const HOVER_BG_POSITION_VAR = "--case-study-thumbnail-hover-bg-position"
 const HOVER_BG_SIZE_VAR = "--case-study-thumbnail-hover-bg-size"
 const HOVER_BG_REPEAT_VAR = "--case-study-thumbnail-hover-bg-repeat"
 const INVALID_VIDEO_ATTR = "data-case-study-invalid-video"
+const STATIC_POSTER_HIDDEN_VIDEO_ATTR = "data-case-study-static-poster-hidden-video"
+const GENERATED_POSTER_ATTR = "data-framer-cms-thumbnail-poster"
+const GENERATED_POSTER_FRAME_ATTR = "data-framer-cms-thumbnail-poster-frame"
 const GENERATED_VIDEO_ATTR = "data-framer-cms-thumbnail-video"
 const GENERATED_VIDEO_FRAME_ATTR = "data-framer-cms-thumbnail-video-frame"
 const LEGACY_GENERATED_VIDEO_ATTR = "data-cms-thumbnail-video-sync"
@@ -69,9 +72,6 @@ const LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
     "/index",
-    "https://khaki-ship-257706.framer.app/",
-    "https://khaki-ship-257706.framer.app/case-studies",
-    "https://khaki-ship-257706.framer.app/index",
 ]
 const cmsModuleUrlCache = new Map<string, string>()
 
@@ -708,6 +708,26 @@ function removeGeneratedThumbnailVideo(media: HTMLElement) {
     media.removeAttribute(LEGACY_GENERATED_VIDEO_FRAME_ATTR)
 }
 
+function removeGeneratedThumbnailPoster(media: HTMLElement) {
+    media
+        .querySelectorAll<HTMLImageElement>(`img[${GENERATED_POSTER_ATTR}="true"]`)
+        .forEach((image) => image.remove())
+    media.removeAttribute(GENERATED_POSTER_FRAME_ATTR)
+}
+
+function restoreStaticPosterHiddenVideos(media: HTMLElement) {
+    media
+        .querySelectorAll<HTMLVideoElement>(`video[${STATIC_POSTER_HIDDEN_VIDEO_ATTR}="true"]`)
+        .forEach((video) => {
+            video.removeAttribute(STATIC_POSTER_HIDDEN_VIDEO_ATTR)
+            if (video.getAttribute(INVALID_VIDEO_ATTR) === "true") return
+            video.removeAttribute("aria-hidden")
+            video.style.removeProperty("display")
+            video.style.removeProperty("visibility")
+            video.style.removeProperty("pointer-events")
+        })
+}
+
 function getExistingThumbnailVideo(media: HTMLElement): HTMLVideoElement | null {
     return (
         Array.from(media.querySelectorAll<HTMLVideoElement>("video")).find(
@@ -745,14 +765,78 @@ function createGeneratedThumbnailVideo(media: HTMLElement): HTMLVideoElement {
     return video
 }
 
+function hideVideoBehindStaticPoster(video: HTMLVideoElement) {
+    try {
+        video.pause()
+    } catch {
+        // Pausing can fail on detached editor nodes.
+    }
+    video.autoplay = false
+    video.controls = false
+    video.removeAttribute("autoplay")
+    video.removeAttribute("controls")
+    video.setAttribute(STATIC_POSTER_HIDDEN_VIDEO_ATTR, "true")
+    video.setAttribute("aria-hidden", "true")
+    video.style.setProperty("display", "none", "important")
+    video.style.setProperty("visibility", "hidden", "important")
+    video.style.setProperty("pointer-events", "none", "important")
+}
+
+function createGeneratedThumbnailPoster(media: HTMLElement): HTMLImageElement {
+    const image = document.createElement("img")
+    image.setAttribute(GENERATED_POSTER_ATTR, "true")
+    image.setAttribute("data-framer-name", "CMS Thumbnail Poster")
+    image.setAttribute("aria-hidden", "true")
+    image.decoding = "async"
+    image.loading = "lazy"
+    Object.assign(image.style, {
+        position: "absolute",
+        inset: "0px",
+        width: "100%",
+        height: "100%",
+        display: "block",
+        objectFit: "cover",
+        objectPosition: "center center",
+        pointerEvents: "none",
+        zIndex: "1",
+    })
+
+    if (typeof window !== "undefined" && window.getComputedStyle(media).position === "static") {
+        media.style.position = "relative"
+    }
+
+    media.setAttribute(GENERATED_POSTER_FRAME_ATTR, "true")
+    media.appendChild(image)
+    return image
+}
+
+function syncGeneratedThumbnailPoster(media: HTMLElement, poster: string) {
+    const image =
+        media.querySelector<HTMLImageElement>(`img[${GENERATED_POSTER_ATTR}="true"]`) ||
+        createGeneratedThumbnailPoster(media)
+    if (image.getAttribute("src") !== poster) image.setAttribute("src", poster)
+}
+
 function syncCMSVideoForMedia(media: HTMLElement, record: StrokeRecord | undefined) {
     const source = normalizeMediaSource(record?.thumbnailVideoSrc)
     const poster = normalizeMediaSource(record?.posterSrc)
 
     if (!source) {
         removeGeneratedThumbnailVideo(media)
+        removeGeneratedThumbnailPoster(media)
+        restoreStaticPosterHiddenVideos(media)
         return
     }
+
+    if (poster) {
+        removeGeneratedThumbnailVideo(media)
+        media.querySelectorAll<HTMLVideoElement>("video").forEach(hideVideoBehindStaticPoster)
+        syncGeneratedThumbnailPoster(media, poster)
+        return
+    }
+
+    removeGeneratedThumbnailPoster(media)
+    restoreStaticPosterHiddenVideos(media)
 
     const existing = getExistingThumbnailVideo(media)
     if (existing) {
@@ -1099,6 +1183,18 @@ export default function CaseStudyThumbnailStrokeStyles({
                     clip-path: inset(0);
                     contain: paint;
                     isolation: isolate;
+                }
+
+                [${GENERATED_POSTER_ATTR}="true"] {
+                    display: block !important;
+                    height: 100% !important;
+                    inset: 0 !important;
+                    object-fit: cover !important;
+                    object-position: center center !important;
+                    pointer-events: none !important;
+                    position: absolute !important;
+                    width: 100% !important;
+                    z-index: 1 !important;
                 }
 
                 [${HOVER_CARD_ATTR}="true"] {

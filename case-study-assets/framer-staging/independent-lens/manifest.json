@@ -9,10 +9,10 @@
   "folderName": "independent-lens",
   "media": [
     {
-      "url": "https://framerusercontent.com/images/2l7fi2HvjNmusO8H6tXWKotl8.jpg",
+      "url": "https://framerusercontent.com/images/xgjosOS16LZVpd3huScx2lW1g.jpg",
       "kind": "image",
-      "originalName": "2l7fi2HvjNmusO8H6tXWKotl8.jpg",
-      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "originalName": "xgjosOS16LZVpd3huScx2lW1g.jpg",
+      "evidence": "CMS Thumbnail update from local optimized asset",
       "order": 1
     },
     {
@@ -40,14 +40,16 @@
   "externalEmbeds": [],
   "downloaded": [
     {
-      "url": "https://framerusercontent.com/images/2l7fi2HvjNmusO8H6tXWKotl8.jpg",
+      "url": "https://framerusercontent.com/images/xgjosOS16LZVpd3huScx2lW1g.jpg",
       "kind": "image",
-      "originalName": "2l7fi2HvjNmusO8H6tXWKotl8.jpg",
-      "evidence": "Framer rendered img-current; img-src; img-srcset; img-srcset; img-srcset; resource-img",
+      "originalName": "xgjosOS16LZVpd3huScx2lW1g.jpg",
+      "evidence": "CMS Thumbnail update from local optimized asset",
       "order": 1,
-      "file": "framer-staging/independent-lens/001-2l7fi2hvjnmuso8h6txwkotl8.jpg",
-      "bytes": 185829,
-      "status": "skipped-existing"
+      "file": "framer-staging/independent-lens/005-independent-lens-thumbnail-web.jpg",
+      "bytes": 139147,
+      "status": "generated-local",
+      "contentType": "image/jpeg",
+      "sourceFile": "framer-staging/independent-lens/source/runway-gemini-3-pro-portfolio-edits.png"
     },
     {
       "url": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",

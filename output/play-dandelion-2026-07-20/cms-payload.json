@@ -1,0 +1,39 @@
+{
+  "collectionId": "EySMRbI2N",
+  "slug": "dandelion",
+  "draft": false,
+  "fieldData": {
+    "XwW7XD5jI": {
+      "type": "string",
+      "value": "Dandelion"
+    },
+    "c2qQhVGwP": {
+      "type": "number",
+      "value": 46
+    },
+    "uqRtTdRM1": {
+      "type": "image",
+      "value": "https://framerusercontent.com/images/U74pJzb0EdR84mZ5ZM9twfIQdm4.jpg"
+    },
+    "KWCosE6Ef": {
+      "type": "file",
+      "value": "https://framerusercontent.com/assets/hjPaylncUvnvzh4F2jEPh6BSt5s.mp4"
+    },
+    "vq9I0excy": {
+      "type": "boolean",
+      "value": false
+    },
+    "uhNqEiZxv": {
+      "type": "string",
+      "value": "A motion test created in Cinema 4D and Redshift using simulation."
+    },
+    "VfgNuQyis": {
+      "type": "string",
+      "value": ""
+    },
+    "YTkltwLjJ": {
+      "type": "link",
+      "value": null
+    }
+  }
+}

@@ -4,6 +4,11 @@ import { addPropertyControls, ControlType } from "framer"
 import PageTransitionV712 from "https://framerusercontent.com/modules/kWINdCIvJNyHW4g36u2k/Witnbh97hqwtM7YLb8Op/PageTransition.js"
 
 const HOME_PATH = "/"
+const BOOT_ID = "__pt-boot"
+const BOOT_LABEL_ID = "__pt-boot-label"
+const BOOT_VIEWPORT_STYLE_ID = "mh-boot-viewport-guard"
+const BOOT_VIEWPORT_GLOBAL_KEY = "__mhBootViewportGuardInit"
+const BOOT_VIEWPORT_OVERSCAN_PX = 240
 const HOME_HEADER_BOTTOM_SELECTOR = '[data-framer-name="Header Bottom"]'
 const HOME_HEADER_BOTTOM_APPEAR_SELECTOR = `${HOME_HEADER_BOTTOM_SELECTOR} [data-framer-appear-id]`
 const HOME_HEADER_BOTTOM_STYLE_ID = "mh-home-header-bottom-appear-recovery"
@@ -11,6 +16,132 @@ const HOME_HEADER_BOTTOM_RECOVERY_MS = 5200
 const HOME_HEADER_BOTTOM_RECOVERY_INTERVAL_MS = 80
 const HISTORY_PATCH_KEY = "__mhHomeHeaderBottomHistoryPatched"
 let homeHeaderBottomRecoveryCleanup = null
+
+const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var OVERSCAN=${BOOT_VIEWPORT_OVERSCAN_PX};function viewportHeight(){var d=document.documentElement;var vv=window.visualViewport;return Math.ceil(Math.max(window.innerHeight||0,d&&d.clientHeight||0,vv&&vv.height||0,1));}function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100vw!important;height:var(--mh-boot-height,calc(100vh + "+OVERSCAN+"px))!important;min-height:var(--mh-boot-height,calc(100vh + "+OVERSCAN+"px))!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:var(--mh-boot-vvh,100vh)!important;min-height:var(--mh-boot-vvh,100vh)!important;}@supports (height: 100dvh){#"+BOOT_ID+"{height:var(--mh-boot-height,calc(100dvh + "+OVERSCAN+"px))!important;min-height:var(--mh-boot-height,calc(100dvh + "+OVERSCAN+"px))!important;}#"+LABEL_ID+"{height:var(--mh-boot-vvh,100dvh)!important;min-height:var(--mh-boot-vvh,100dvh)!important;}}";if(s.textContent!==css)s.textContent=css}function sync(){var visibleH=viewportHeight();var curtainH=visibleH+OVERSCAN;try{document.documentElement.style.setProperty("--mh-boot-vvh",visibleH+"px");document.documentElement.style.setProperty("--mh-boot-height",curtainH+"px")}catch(e){}ensureStyle();var boot=document.getElementById(BOOT_ID);if(boot){boot.style.setProperty("position","fixed","important");boot.style.setProperty("top","0","important");boot.style.setProperty("left","0","important");boot.style.setProperty("right","0","important");boot.style.setProperty("bottom","auto","important");boot.style.setProperty("width","100vw","important");boot.style.setProperty("height",curtainH+"px","important");boot.style.setProperty("min-height",curtainH+"px","important")}var label=document.getElementById(LABEL_ID);if(label){label.style.setProperty("top","0","important");label.style.setProperty("bottom","auto","important");label.style.setProperty("height",visibleH+"px","important");label.style.setProperty("min-height",visibleH+"px","important")}}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
+
+function viewportHeight() {
+    try {
+        const visualViewportHeight =
+            typeof window.visualViewport !== "undefined"
+                ? window.visualViewport.height
+                : 0
+        return Math.ceil(
+            Math.max(
+                window.innerHeight || 0,
+                document.documentElement?.clientHeight || 0,
+                visualViewportHeight || 0,
+                1
+            )
+        )
+    } catch (err) {
+        return 1
+    }
+}
+
+function ensureBootViewportStyle() {
+    try {
+        let style = document.getElementById(BOOT_VIEWPORT_STYLE_ID)
+        if (!style) {
+            const parent = document.head || document.documentElement
+            style = document.createElement("style")
+            style.id = BOOT_VIEWPORT_STYLE_ID
+            parent.appendChild(style)
+        }
+        const css = `#${BOOT_ID}{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100vw!important;height:var(--mh-boot-height,calc(100vh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;min-height:var(--mh-boot-height,calc(100vh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;}#${BOOT_LABEL_ID}{top:0!important;bottom:auto!important;height:var(--mh-boot-vvh,100vh)!important;min-height:var(--mh-boot-vvh,100vh)!important;}@supports (height: 100dvh){#${BOOT_ID}{height:var(--mh-boot-height,calc(100dvh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;min-height:var(--mh-boot-height,calc(100dvh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;}#${BOOT_LABEL_ID}{height:var(--mh-boot-vvh,100dvh)!important;min-height:var(--mh-boot-vvh,100dvh)!important;}}`
+        if (style.textContent !== css) style.textContent = css
+    } catch (err) {}
+}
+
+function syncBootViewport() {
+    if (typeof window === "undefined") return
+
+    const visibleHeight = viewportHeight()
+    const curtainHeight = visibleHeight + BOOT_VIEWPORT_OVERSCAN_PX
+    try {
+        document.documentElement.style.setProperty(
+            "--mh-boot-vvh",
+            `${visibleHeight}px`
+        )
+        document.documentElement.style.setProperty(
+            "--mh-boot-height",
+            `${curtainHeight}px`
+        )
+    } catch (err) {}
+
+    ensureBootViewportStyle()
+
+    try {
+        const boot = document.getElementById(BOOT_ID)
+        if (!boot) return
+        boot.style.setProperty("position", "fixed", "important")
+        boot.style.setProperty("top", "0", "important")
+        boot.style.setProperty("left", "0", "important")
+        boot.style.setProperty("right", "0", "important")
+        boot.style.setProperty("bottom", "auto", "important")
+        boot.style.setProperty("width", "100vw", "important")
+        boot.style.setProperty("height", `${curtainHeight}px`, "important")
+        boot.style.setProperty(
+            "min-height",
+            `${curtainHeight}px`,
+            "important"
+        )
+        const label = document.getElementById(BOOT_LABEL_ID)
+        if (label) {
+            label.style.setProperty("top", "0", "important")
+            label.style.setProperty("bottom", "auto", "important")
+            label.style.setProperty(
+                "height",
+                `${visibleHeight}px`,
+                "important"
+            )
+            label.style.setProperty(
+                "min-height",
+                `${visibleHeight}px`,
+                "important"
+            )
+        }
+    } catch (err) {}
+}
+
+function installBootViewportGuard() {
+    if (typeof window === "undefined") return
+    try {
+        if (window[BOOT_VIEWPORT_GLOBAL_KEY]) {
+            syncBootViewport()
+            return
+        }
+        window[BOOT_VIEWPORT_GLOBAL_KEY] = true
+
+        syncBootViewport()
+        window.requestAnimationFrame(syncBootViewport)
+        window.setTimeout(syncBootViewport, 50)
+        window.setTimeout(syncBootViewport, 250)
+        window.addEventListener("resize", syncBootViewport, { passive: true })
+        window.addEventListener("orientationchange", syncBootViewport, {
+            passive: true,
+        })
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener("resize", syncBootViewport, {
+                passive: true,
+            })
+            window.visualViewport.addEventListener("scroll", syncBootViewport, {
+                passive: true,
+            })
+        }
+        if (typeof MutationObserver !== "undefined") {
+            new MutationObserver(syncBootViewport).observe(
+                document.documentElement,
+                { childList: true, subtree: true }
+            )
+        }
+    } catch (err) {}
+}
+
+function useBootViewportGuard() {
+    React.useEffect(() => {
+        installBootViewportGuard()
+    }, [])
+}
 
 function isHomePath() {
     try {
@@ -763,10 +894,18 @@ function useHomeHeroRise(mode) {
  * @framerSupportedLayoutHeight fixed
  */
 export default function PageTransition(props) {
+    useBootViewportGuard()
     useHomeHeaderBottomReveal()
     useIndexHeadingRiseOnArrival()
     useHomeHeroRise(props.homeArrivalMode)
-    return <PageTransitionV712 {...props} />
+    return (
+        <>
+            <script
+                dangerouslySetInnerHTML={{ __html: BOOT_VIEWPORT_GUARD_JS }}
+            />
+            <PageTransitionV712 {...props} />
+        </>
+    )
 }
 
 addPropertyControls(PageTransition, {

@@ -32,16 +32,43 @@ const GRID_LOCK_CSS = `
     gap: 14px !important;
 }
 
-.idx-grid-preview-locked .idx-grid-card-heading {
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-heading,
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-title {
+    color: #141414 !important;
+    display: grid !important;
+    font-family: 'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace !important;
     font-size: 13px !important;
+    font-weight: 400 !important;
+    grid-template-columns: 24px 11px minmax(0, 1fr) !important;
+    letter-spacing: 0 !important;
     line-height: 13px !important;
+    margin: 0 !important;
     min-height: 13px !important;
+    overflow: hidden !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+}
+
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-heading *,
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-title * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit !important;
+    line-height: inherit !important;
+    text-transform: inherit !important;
 }
 
 .idx-grid-preview-locked .idx-grid-title-frame,
 .idx-grid-preview-locked .idx-grid-title-stack > span {
     height: 13px !important;
     line-height: 13px !important;
+}
+
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"]:hover .idx-grid-title-stack,
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"]:focus-visible .idx-grid-title-stack {
+    transform: translate3d(0, -18px, 0) !important;
 }
 
 .idx-grid-preview-locked .idx-grid-card-tag {
@@ -137,15 +164,23 @@ const GRID_LOCK_CSS = `
  * @framerSupportedLayoutHeight auto
  */
 export function IndexPage(props) {
-    const { view, advanced, ...baseProps } = props
+    const { view, advanced, projects, useCMS = true, ...baseProps } = props
     const selectedView = view === "list" ? "list" : "grid"
 
     return (
-        <div className="idx-grid-preview-locked" style={{ width: "100%" }}>
+        <div
+            className="idx-grid-preview-locked"
+            data-cms-source={useCMS ? "cms" : "manual"}
+            data-media-priority="video"
+            style={{ width: "100%" }}
+        >
             <style>{GRID_LOCK_CSS}</style>
             <BaseIndexPage
                 key={`index-${selectedView}`}
                 {...baseProps}
+                useCMS={useCMS}
+                // CMS mode must not receive hidden manual project rows from the canvas.
+                projects={useCMS ? [] : projects}
                 defaultView={selectedView}
                 gridLayoutVariant="figma"
                 advanced={{

@@ -25,10 +25,35 @@ the API and some already were:
   manifest; can be re-pointed at Framer-CDN copies later).
 - `ResponsiveCaseStudyVideo` (`bsTLKCt`) — has a `poster` prop (cellular-symphony
   hero already uses one).
-- `FixedHeightMediaRows` (`IthLMt_`) — check its itemsData format before relying
-  on a poster field.
+- `FixedHeightMediaRows` (`IthLMt_`) — deprecated bridge; legacy instances now
+  convert their old data format into `CaseStudyJustifiedMediaGrid`.
 
 The hosted poster URLs in the manifest are interim (catbox). For a permanent,
 fast home, re-host the chosen posters on Framer's CDN (drag into the editor, or
 ingest an image via the backgroundImage trick) — or they'll naturally be set when
 you re-upload the videos.
+
+## Motion Connect refresh — 2026-07-16
+
+Run `node tools/prepare-motion-connect-media.mjs` from the workspace root to
+rebuild the Motion Connect upload-ready package at
+`case-study-assets/optimized/motion-connect-2025/`.
+
+The package includes a complete `manifest.tsv`/`manifest.json`, JPG poster stills
+for every Motion Connect video/GIF source found in the current-site and Framer
+staging captures, a poster for the documented YouTube embed thumbnail, and
+optimized JPG derivatives for static page images. Poster stills are capped at
+1600px on the long edge; static image derivatives are capped at 1800px and keep
+the smaller original when conversion would increase file size.
+
+## Featured project runtime posters — 2026-07-16
+
+Run `node tools/prepare-featured-project-video-posters.mjs` from the workspace
+root to rebuild the poster package for the six featured case studies at
+`case-study-assets/optimized/featured-project-video-posters/`.
+
+The script crawls the published featured project pages, finds `<video>` tags that
+do not already have a `poster`, extracts JPG stills capped at 1600px on the long
+edge, and writes `manifest.tsv`/`manifest.json`. The current runtime patch lives
+in `CaseStudyControllers.tsx`: it fills only missing poster attributes and leaves
+native Framer poster slots intact.

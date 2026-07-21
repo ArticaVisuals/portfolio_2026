@@ -1,0 +1,39 @@
+{
+  "collectionId": "EySMRbI2N",
+  "slug": "the-windmill-project",
+  "draft": false,
+  "fieldData": {
+    "XwW7XD5jI": {
+      "type": "string",
+      "value": "The Windmill Project"
+    },
+    "c2qQhVGwP": {
+      "type": "number",
+      "value": 45
+    },
+    "uqRtTdRM1": {
+      "type": "image",
+      "value": "https://framerusercontent.com/images/DnK9dsOlnUXVXhUKmWKCmHjykA.jpg"
+    },
+    "KWCosE6Ef": {
+      "type": "file",
+      "value": "https://framerusercontent.com/assets/K3Po2LrjQUQbCBWNVmwC8ysoiwU.mp4"
+    },
+    "vq9I0excy": {
+      "type": "boolean",
+      "value": true
+    },
+    "uhNqEiZxv": {
+      "type": "string",
+      "value": "A hand-folded vellum pinwheel kit for stakeholder and education campaigns, pairing drawings by former child soldiers with rap lyrics by Emmanuel Jal as a symbol of hope and resilience."
+    },
+    "VfgNuQyis": {
+      "type": "string",
+      "value": "Read more"
+    },
+    "YTkltwLjJ": {
+      "type": "link",
+      "value": "/case-studies/weaponized-innocence"
+    }
+  }
+}

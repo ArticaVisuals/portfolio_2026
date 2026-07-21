@@ -8,58 +8,9 @@ import React, {
 } from "react"
 import { addPropertyControls, ControlType } from "framer"
 
-// Shared registry the ProjectRegistrar code component writes into. State is
-// shared via a window-level singleton (identified by REGISTRY_KEY) so the two
-// code files don't have to import from each other. ProjectRegistrar instances
-// live inside a Framer Collection List placed anywhere on the canvas. Keep that
-// list mounted, then move it visually out of sight; using Framer's hidden/eye
-// toggle unmounts it and stops registration. Each registrar calls register()
-// with one CMS row, and IndexPage subscribes when its Use CMS prop is on.
-const REGISTRY_KEY = "__articaIndexProjectsRegistry"
 const HIDDEN_CMS_LINK_SELECTOR = '[data-framer-name="CmsLink"], [name="CmsLink"]'
 const HIDDEN_CMS_INTERACTIVE_SELECTOR = 'a[href], [role="link"], [tabindex]'
 const HIDDEN_CMS_LINK_INERT_ATTR = "data-index-hidden-cms-link-inert"
-
-type RegistryShape = {
-    items: Map<string, Record<string, unknown>>
-    listeners: Set<(items: Map<string, Record<string, unknown>>) => void>
-    register: (id: string, data: Record<string, unknown>) => void
-    unregister: (id: string) => void
-    subscribe: (
-        fn: (items: Map<string, Record<string, unknown>>) => void
-    ) => () => void
-}
-
-function getRegistry(): RegistryShape | null {
-    if (typeof window === "undefined") return null
-    const w = window as unknown as Record<string, RegistryShape>
-    if (!w[REGISTRY_KEY]) {
-        const items = new Map<string, Record<string, unknown>>()
-        const listeners = new Set<
-            (items: Map<string, Record<string, unknown>>) => void
-        >()
-        w[REGISTRY_KEY] = {
-            items,
-            listeners,
-            register(id, data) {
-                items.set(id, data)
-                listeners.forEach((fn) => fn(items))
-            },
-            unregister(id) {
-                items.delete(id)
-                listeners.forEach((fn) => fn(items))
-            },
-            subscribe(fn) {
-                listeners.add(fn)
-                fn(items)
-                return () => {
-                    listeners.delete(fn)
-                }
-            },
-        }
-    }
-    return w[REGISTRY_KEY]
-}
 
 function preventHiddenCMSLinkClick(event: MouseEvent) {
     const target = event.target
@@ -279,9 +230,6 @@ const INDEX_CMS_LIVE_SCAN_PATHS = [
     "/",
     "/case-studies",
     "/index",
-    "https://khaki-ship-257706.framer.app/",
-    "https://khaki-ship-257706.framer.app/case-studies",
-    "https://khaki-ship-257706.framer.app/index",
 ]
 const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = INDEX_CMS_FIELD_IDS.thumbnailVideoLink
 const DEFAULT_ADVANCED_SETTINGS: AdvancedSettings = {
@@ -296,253 +244,6 @@ const DEFAULT_ADVANCED_SETTINGS: AdvancedSettings = {
     dividerSubtle: "#141414",
     surfaceActive: "#EAE8E3",
 }
-
-// Snapshot of the "All Projects" CMS collection. Used only when Use CMS is off.
-// In CMS mode, stale fallback rows should never appear as if they are live CMS.
-const DEFAULT_PROJECTS: Project[] = [
-    {
-        title: "Gaia",
-        category1: "Visual Identity",
-        category2: "UX/UI",
-        category3: "Strategy",
-        industry: "Nature",
-        year: "2026",
-        thumbnail:
-            "https://framerusercontent.com/images/3iHNvkSGZvQVJ7CTtlkZfzMmqmc.jpg",
-        thumbnailVideoLink: "",
-        thumbnailStroke: true,
-        slug: "gaia",
-        sortOrder: 1,
-        isHomepage: true,
-    },
-    {
-        title: "AirPods Pro 3",
-        category1: "Visual Identity",
-        category2: "2D Motion",
-        category3: "3D Motion",
-        industry: "Technology",
-        year: "2025",
-        thumbnail:
-            "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
-        thumbnailVideoLink:
-            "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
-        thumbnailStroke: true,
-        slug: "airpods",
-        sortOrder: 2,
-        isHomepage: true,
-    },
-    {
-        title: "Peak Energy",
-        category1: "2D Motion",
-        category2: "3D Motion",
-        category3: "Social Media",
-        industry: "Technology",
-        year: "2026",
-        thumbnail: "",
-        thumbnailVideoLink:
-            "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
-        slug: "peak-energy",
-        sortOrder: 3,
-        isHomepage: true,
-    },
-    {
-        title: "Simon & Schuster",
-        category1: "Strategy",
-        category2: "Visual Identity",
-        category3: "Editorial",
-        industry: "Literature",
-        year: "2025",
-        thumbnail:
-            "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
-        thumbnailVideoLink: "",
-        slug: "simon-schuster",
-        sortOrder: 4,
-        isHomepage: true,
-    },
-    {
-        title: "Motion Connect 2025",
-        category1: "Visual Identity",
-        category2: "2D Motion",
-        category3: "Social Media",
-        industry: "Education",
-        year: "2025",
-        thumbnail:
-            "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
-        thumbnailVideoLink:
-            "https://framerusercontent.com/assets/JBWmgoL4YXIgZfGWVzv7pCVDGw.mp4",
-        slug: "motion-connect-2025",
-        sortOrder: 5,
-        isHomepage: true,
-    },
-    {
-        title: "National Park Playing Cards",
-        category1: "Product",
-        category2: "Packaging",
-        category3: "",
-        industry: "Nature",
-        year: "2019",
-        thumbnail:
-            "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
-        thumbnailVideoLink: "",
-        slug: "national-park-cards",
-        sortOrder: 6,
-        isHomepage: true,
-    },
-    {
-        title: "Yomo",
-        category1: "Visual Identity",
-        category2: "UX/UI",
-        category3: "",
-        industry: "Health",
-        year: "2024",
-        thumbnail:
-            "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg",
-        thumbnailVideoLink: "",
-        slug: "yomo",
-        sortOrder: 7,
-        isHomepage: false,
-    },
-    {
-        title: "Karuna",
-        category1: "Visual Identity",
-        category2: "Packaging",
-        category3: "",
-        industry: "Nature",
-        year: "2025",
-        thumbnail:
-            "https://framerusercontent.com/images/Dj1KLsghEL5tCJkNgSjKFvuIMMU.png",
-        thumbnailVideoLink: "",
-        thumbnailStroke: true,
-        slug: "karuna",
-        sortOrder: 8,
-        isHomepage: false,
-    },
-    {
-        title: "Weaponized Innocence",
-        category1: "Editorial",
-        category2: "UX/UI",
-        category3: "Visual Identity",
-        industry: "Human Rights",
-        year: "2024",
-        thumbnail:
-            "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png",
-        thumbnailVideoLink: "",
-        slug: "weaponized-innocence",
-        sortOrder: 9,
-        isHomepage: false,
-    },
-    {
-        title: "Wolff Olins x ArtCenter",
-        category1: "Visual Identity",
-        category2: "2D Motion",
-        category3: "Social Media",
-        industry: "Education",
-        year: "2024",
-        thumbnail:
-            "https://framerusercontent.com/images/ELzZlQSqNMinwyzcolf0mLOAopM.jpg",
-        thumbnailVideoLink:
-            "https://framerusercontent.com/assets/lXsnrM9dSjihQRYzn3NtHtASwI.mp4",
-        slug: "wolff-olins-x-artcenter",
-        sortOrder: 10,
-        isHomepage: false,
-    },
-    {
-        title: "Cellular Symphony",
-        category1: "3D Motion",
-        category2: "",
-        category3: "",
-        industry: "Science",
-        year: "2024",
-        thumbnail:
-            "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
-        thumbnailVideoLink:
-            "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
-        slug: "cellular-symphony",
-        sortOrder: 11,
-        isHomepage: false,
-    },
-    {
-        title: "Seek Truth",
-        category1: "Editorial",
-        category2: "Visual Identity",
-        category3: "",
-        industry: "Human Rights",
-        year: "2024",
-        thumbnail:
-            "https://framerusercontent.com/images/ZZz0tz3CmTn9Zwf1r21GPbcqFNk.png",
-        thumbnailVideoLink: "",
-        slug: "seek-truth",
-        sortOrder: 12,
-        isHomepage: false,
-    },
-    {
-        title: "Independent Lens",
-        category1: "Editorial",
-        category2: "Visual Identity",
-        category3: "",
-        industry: "Human Rights",
-        year: "2023",
-        thumbnail:
-            "https://framerusercontent.com/images/2l7fi2HvjNmusO8H6tXWKotl8.jpg",
-        thumbnailVideoLink: "",
-        slug: "independent-lens",
-        sortOrder: 13,
-        isHomepage: false,
-    },
-    {
-        title: "TYPLDN",
-        category1: "Visual Identity",
-        category2: "",
-        category3: "",
-        industry: "Design",
-        year: "2023",
-        thumbnail:
-            "https://framerusercontent.com/images/jchJlOWt16iY8J0NEXEfm3G8cTE.png",
-        thumbnailVideoLink: "",
-        slug: "typldn",
-        sortOrder: 14,
-        isHomepage: false,
-    },
-    {
-        title: "Rejuve",
-        category1: "UX/UI",
-        category2: "Visual Identity",
-        category3: "",
-        industry: "Health",
-        year: "2025",
-        thumbnail: "",
-        thumbnailVideoLink: "",
-        slug: "rejuve",
-        sortOrder: 15,
-        isHomepage: false,
-    },
-    {
-        title: "Belly Bar",
-        category1: "UX/UI",
-        category2: "Visual Identity",
-        category3: "",
-        industry: "Health",
-        year: "2025",
-        thumbnail: "",
-        thumbnailVideoLink: "",
-        slug: "belly-bar",
-        sortOrder: 16,
-        isHomepage: false,
-    },
-    {
-        title: "WhatsApp",
-        category1: "2D Motion",
-        category2: "",
-        category3: "",
-        industry: "",
-        year: "",
-        thumbnail: "",
-        thumbnailVideoLink: "",
-        slug: "whatsapp",
-        sortOrder: 17,
-        isHomepage: true,
-    },
-]
 
 function getDisciplines(p: Project): string[] {
     const seen = new Set<string>()
@@ -632,72 +333,12 @@ function getCaseStudyUrl(p: Project): string {
 }
 
 function getThumbnailVideoLink(project: Project): string {
-    return normalizeMediaSource(project.thumbnailVideoLink)
+    return normalizeIndexMediaSource(project.thumbnailVideoLink)
 }
 
 function isLoopingImageMediaSource(source: string): boolean {
     const cleanSource = source.split(/[?#]/)[0]?.toLowerCase() || ""
     return /\.(gif|webp|apng)$/.test(cleanSource)
-}
-
-function getProjectLookupKey(project: Project): string {
-    const slug = String(project.slug ?? "")
-        .trim()
-        .replace(/^\/+|\/+$/g, "")
-        .toLowerCase()
-    if (slug) return `slug:${slug}`
-
-    const title = String(project.title ?? "")
-        .trim()
-        .replace(/\s+/g, " ")
-        .toLowerCase()
-    return title ? `title:${title}` : ""
-}
-
-function buildProjectLookup(projects: Project[]): Map<string, Project> {
-    const lookup = new Map<string, Project>()
-    projects.forEach((project) => {
-        const key = getProjectLookupKey(project)
-        if (key) lookup.set(key, project)
-    })
-    return lookup
-}
-
-function hydrateProjectFromCMSModule(
-    project: Project,
-    cmsLookup: Map<string, Project>
-): Project {
-    const key = getProjectLookupKey(project)
-    const cmsProject = key ? cmsLookup.get(key) : undefined
-    if (!cmsProject) {
-        return project.thumbnailStroke
-            ? { ...project, thumbnailStroke: false }
-            : project
-    }
-
-    const cmsVideo = cmsProject ? getThumbnailVideoLink(cmsProject) : ""
-    const cmsThumbnail = normalizeThumbnailUrl(cmsProject.thumbnail as unknown) || ""
-    const currentThumbnail = normalizeThumbnailUrl(project.thumbnail as unknown) || ""
-    const cmsStroke = Boolean(cmsProject.thumbnailStroke)
-    let changed = false
-    const nextProject: Project = { ...project }
-
-    if (cmsProject.thumbnail !== undefined && currentThumbnail !== cmsThumbnail) {
-        nextProject.thumbnail = cmsThumbnail
-        changed = true
-    }
-
-    if (!getThumbnailVideoLink(project) && cmsVideo) {
-        nextProject.thumbnailVideoLink = cmsVideo
-        changed = true
-    }
-
-    if (project.thumbnailStroke !== cmsStroke) {
-        nextProject.thumbnailStroke = cmsStroke
-        changed = true
-    }
-
-    return changed ? nextProject : project
 }
 
 function normalizeYear(raw: unknown): number {
@@ -757,6 +398,14 @@ function normalizeMediaSource(raw: unknown): string {
     return ""
 }
 
+function normalizeIndexMediaSource(raw: unknown): string {
+    return normalizeMediaSource(raw)
+}
+
+function normalizeIndexThumbnailUrl(raw: unknown): string {
+    return normalizeMediaSource(raw) || normalizeThumbnailUrl(raw) || ""
+}
+
 function splitFieldIds(value: string): string[] {
     return String(value || "")
         .split(/[\n,]/)
@@ -769,7 +418,7 @@ function readFirstCMSMediaField(
     fieldIds: string
 ): string {
     for (const fieldId of splitFieldIds(fieldIds)) {
-        const source = normalizeMediaSource(readCMSField(data, fieldId))
+        const source = normalizeIndexMediaSource(readCMSField(data, fieldId))
         if (source) return source
     }
     return ""
@@ -879,19 +528,27 @@ function findCMSModuleUrlInDocument(collectionId: string): string | undefined {
     return undefined
 }
 
-async function resolveCMSModuleUrl(
-    collectionId: string,
-    preferredModuleUrl?: string
-) {
-    const preferred = normalizeCMSText(preferredModuleUrl)
-    if (preferred) return preferred
+const cmsModuleUrlCache = new Map<string, string>()
 
-    const inDocument = findCMSModuleUrlInDocument(collectionId)
-    if (inDocument) return inDocument
+function getCurrentDocumentPath(): string {
+    if (typeof window === "undefined" || !window.location) return ""
+    return window.location.pathname || ""
+}
 
-    for (const path of INDEX_CMS_LIVE_SCAN_PATHS) {
+async function findCMSModuleUrlByFetchingPaths(
+    paths: string[],
+    collectionId: string
+): Promise<string | undefined> {
+    for (const path of paths) {
+        if (!path) continue
         try {
-            const response = await fetch(path, { credentials: "same-origin" })
+            // no-store: the current route's freshly-served HTML is the only source
+            // that names *this* page's own (current) collection-module version. A
+            // cached copy could still point at a superseded hash.
+            const response = await fetch(path, {
+                credentials: "same-origin",
+                cache: "no-store",
+            })
             if (!response.ok) continue
             const html = await response.text()
             const found = findCMSModuleUrlInMarkup(html, collectionId)
@@ -899,6 +556,44 @@ async function resolveCMSModuleUrl(
         } catch {
             // Framer canvas, preview, and published URLs can live on different origins.
         }
+    }
+    return undefined
+}
+
+async function resolveCMSModuleUrl(
+    collectionId: string,
+    preferredModuleUrl?: string
+) {
+    const preferred = normalizeCMSText(preferredModuleUrl)
+    if (preferred) return preferred
+
+    const cached = cmsModuleUrlCache.get(collectionId)
+    if (cached) return cached
+
+    // 1) Prefer the CURRENT route's freshly-served HTML. The session resource
+    //    buffer (performance entries + DOM) retains modules loaded by *other*
+    //    routes during a client-side navigation — e.g. the home selected-work
+    //    grid, which can resolve a different/older hash of this same collection.
+    //    Scanning it first (as this used to) lets that stale module win, so the
+    //    grid renders thumbnails from a version no longer in the CMS until a hard
+    //    refresh clears the buffer. The current route's own HTML only ever names
+    //    this page's current collection module, so it cannot be poisoned.
+    const fromLiveMarkup = await findCMSModuleUrlByFetchingPaths(
+        uniqueStrings([getCurrentDocumentPath(), ...INDEX_CMS_LIVE_SCAN_PATHS]),
+        collectionId
+    )
+    if (fromLiveMarkup) {
+        cmsModuleUrlCache.set(collectionId, fromLiveMarkup)
+        return fromLiveMarkup
+    }
+
+    // 2) Fallback for the Framer editor/canvas & preview, where the fetches above
+    //    are cross-origin or 404. There the in-document/resource scan is the only
+    //    resolver available, and there is no other route to be poisoned by.
+    const inDocument = findCMSModuleUrlInDocument(collectionId)
+    if (inDocument) {
+        cmsModuleUrlCache.set(collectionId, inDocument)
+        return inDocument
     }
 
     return undefined
@@ -958,8 +653,7 @@ function cmsItemToProject(item: CMSItem, thumbnailVideoFieldIds: string): Projec
         category3: normalizeCMSText(readCMSField(data, fields.category3)),
         industry: normalizeCMSText(readCMSField(data, fields.industry)),
         year: normalizeCMSText(readCMSField(data, fields.year)),
-        thumbnail:
-            normalizeThumbnailUrl(readCMSField(data, fields.thumbnail)) || "",
+        thumbnail: normalizeIndexThumbnailUrl(readCMSField(data, fields.thumbnail)),
         thumbnailVideoLink: readFirstCMSMediaField(data, thumbnailVideoFieldIds),
         thumbnailStroke: normalizeCMSBoolean(readCMSField(data, fields.thumbnailStroke)),
         isHomepage: Boolean(readCMSField(data, fields.isHomepage)),
@@ -1253,6 +947,25 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
 
 function buildGlobalCss(): string {
     return `
+  ${HIDDEN_CMS_LINK_SELECTOR} {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    max-width: 1px !important;
+    max-height: 1px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    clip-path: inset(50%) !important;
+  }
+
+  ${HIDDEN_CMS_LINK_SELECTOR} * {
+    pointer-events: none !important;
+  }
+
   .idx-fade-appear {
     display: inline-block;
     max-width: 100%;
@@ -2820,7 +2533,7 @@ function GridMediaFrame({
 }
 
 function GridProjectMedia({ project }: { project: Project }) {
-    const thumbSrc = normalizeThumbnailUrl(project.thumbnail as unknown)
+    const thumbSrc = normalizeIndexThumbnailUrl(project.thumbnail as unknown)
     const videoSrc = getThumbnailVideoLink(project)
     const usesLoopingImage = isLoopingImageMediaSource(videoSrc)
 
@@ -2841,7 +2554,7 @@ function GridProjectMedia({ project }: { project: Project }) {
             <video
                 className="idx-grid-card-video"
                 src={videoSrc}
-                poster={thumbSrc}
+                poster={thumbSrc || undefined}
                 muted
                 loop
                 playsInline
@@ -3113,7 +2826,7 @@ function ViewToggle({
 
 export default function IndexPage({
     projects: projectsProp,
-    useCMS = false,
+    useCMS = true,
     cmsModuleUrl = "",
     thumbnailVideoFieldIds = DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,
     defaultView = "list",
@@ -3184,25 +2897,8 @@ export default function IndexPage({
     )
     useHiddenCMSLinkInerting(useCMS)
 
-    // Mirror of the window registry. ProjectRegistrar instances placed inside
-    // a Framer Collection List anywhere on the page push CMS rows into the
-    // window-level registry; this state mirrors that so React re-renders.
-    const [registeredProjects, setRegisteredProjects] = useState<
-        Map<string, Project>
-    >(() => new Map())
     const [cmsModuleProjects, setCMSModuleProjects] = useState<Project[]>([])
     const [cmsModuleLoaded, setCMSModuleLoaded] = useState(false)
-
-    useEffect(() => {
-        if (!useCMS) return
-        const reg = getRegistry()
-        if (!reg) return
-        return reg.subscribe((items) => {
-            setRegisteredProjects(
-                new Map(items as Map<string, Project>)
-            )
-        })
-    }, [useCMS])
 
     useEffect(() => {
         if (!useCMS) {
@@ -3234,30 +2930,22 @@ export default function IndexPage({
     }, [useCMS, resolvedCmsModuleUrl, resolvedThumbnailVideoFieldIds])
 
     const allProjects = useMemo(() => {
-        // Priority when Use CMS is on: live ProjectRegistrar registry > direct
-        // generated CMS module > manual prop. The generated CMS module can
-        // still hydrate media fields omitted by the mounted registry bridge.
-        // Do not fall through to the baked snapshot in CMS mode; stale fallback
-        // data should never masquerade as current CMS content.
-        const cmsModuleLookup = buildProjectLookup(cmsModuleProjects)
-        const registryProjects = Array.from(
-            registeredProjects.values()
-        ) as Project[]
-        const fromRegistry =
-            useCMS && registryProjects.length > 0
-                ? registryProjects.map((project) =>
-                      hydrateProjectFromCMSModule(project, cmsModuleLookup)
-                  )
-                : null
+        // In CMS mode, render only the generated All Projects CMS module.
+        // If it has not loaded yet, stay empty/loading instead of flashing
+        // registry rows, manual props, or any local snapshot.
         const fromCMSModule =
             useCMS && cmsModuleProjects.length > 0 ? cmsModuleProjects : null
         const fromProps =
             projectsProp && projectsProp.length > 0 ? projectsProp : null
         const sourceProjects: Project[] = useCMS
-            ? (fromRegistry ?? fromCMSModule ?? fromProps ?? [])
-            : (fromProps ?? DEFAULT_PROJECTS)
+            ? (fromCMSModule ?? [])
+            : (fromProps ?? [])
         return sourceProjects.map(normalizeProjectDisciplines)
-    }, [useCMS, registeredProjects, cmsModuleProjects, projectsProp])
+    }, [
+        useCMS,
+        cmsModuleProjects,
+        projectsProp,
+    ])
     const initialView = resolvedDefaultView === "grid" ? "grid" : "list"
 
     const [activeView, setActiveView] = useState(initialView)
@@ -3366,10 +3054,7 @@ export default function IndexPage({
         filters.industries.length > 0 ||
         filters.years.length > 0
     const isCMSLoading =
-        useCMS &&
-        registeredProjects.size === 0 &&
-        cmsModuleProjects.length === 0 &&
-        !cmsModuleLoaded
+        useCMS && !cmsModuleLoaded
     const viewToggleRevealRow = Math.max(
         10,
         Math.max(
@@ -3386,6 +3071,7 @@ export default function IndexPage({
             <div
                 ref={indexContainerRef}
                 className="idx-container"
+                data-media-priority="video"
                 style={
                     {
                         width: "100%",
@@ -3477,7 +3163,7 @@ addPropertyControls(IndexPage, {
     useCMS: {
         type: ControlType.Boolean,
         title: "Use CMS",
-        defaultValue: false,
+        defaultValue: true,
         enabledTitle: "On",
         disabledTitle: "Off",
     },

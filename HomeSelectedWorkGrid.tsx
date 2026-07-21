@@ -379,15 +379,21 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
         return inLoadedScripts
     }
 
-    const knownModuleUrl = KNOWN_CMS_MODULE_URLS[collectionId]
-    if (knownModuleUrl) {
-        cmsModuleUrlCache.set(collectionId, knownModuleUrl)
-        return knownModuleUrl
-    }
-
-    for (const path of LIVE_SCAN_PATHS) {
+    const currentPath =
+        typeof window !== "undefined" && window.location
+            ? window.location.pathname || ""
+            : ""
+    const scanPaths = Array.from(
+        new Set([currentPath, ...LIVE_SCAN_PATHS].filter(Boolean))
+    )
+    for (const path of scanPaths) {
         try {
-            const response = await fetch(path, { credentials: "same-origin" })
+            // no-store: read the freshly-served HTML so we resolve the current
+            // published collection-module hash, not a superseded one from cache.
+            const response = await fetch(path, {
+                credentials: "same-origin",
+                cache: "no-store",
+            })
             if (!response.ok) continue
             const found = findCMSModuleUrlInMarkup(
                 await response.text(),
@@ -401,6 +407,17 @@ async function resolveCMSModuleUrl(collectionId: string, explicitUrl: string) {
         } catch {
             // Framer preview/canvas/public URLs can resolve from different origins.
         }
+    }
+
+    // Last-resort hardcoded pin. This is a *fixed* published hash that goes stale
+    // on every republish, so it must rank below every live-discovery path above.
+    // If it wins, the home grid loads an old collection version AND — because the
+    // module lands in the shared session resource buffer — poisons the /index
+    // resolver on a later client-side navigation.
+    const knownModuleUrl = KNOWN_CMS_MODULE_URLS[collectionId]
+    if (knownModuleUrl) {
+        cmsModuleUrlCache.set(collectionId, knownModuleUrl)
+        return knownModuleUrl
     }
 
     return undefined

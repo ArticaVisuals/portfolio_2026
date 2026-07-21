@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micah Hoang — Info (Draft 5 prototype)</title>
+<!--
+  INFO-DRAFT-5 — HTML prototype / build spec for Framer
+  Fonts here are stand-ins: Archivo ≈ GT Standard L, IBM Plex Mono ≈ GT Standard Mono.
+  In Framer, use your existing GT Standard + GT Standard Mono styles.
+  Tokens pulled from the live site:
+    cream #F7F5F0 · green #233324 · ink #141414 · muted #6E6E6E · hairline rgba(20,20,20,.35)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F5F0;
+    --green:#233324;
+    --ink:#141414;
+    --muted:#6E6E6E;
+    --hairline:rgba(20,20,20,.35);
+    --hairline-strong:rgba(20,20,20,.9);
+    --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;   /* → GT Standard L */
+    --mono:"IBM Plex Mono","SF Mono",Menlo,monospace;               /* → GT Standard Mono */
+    --pad:24px;
+    --nav-h:64px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:var(--mono)}
+
+  /* ───────── nav (matches site) ───────── */
+  nav{
+    position:sticky;top:0;z-index:10;background:var(--cream);
+    display:grid;grid-template-columns:1.1fr 1.2fr 1.5fr auto;gap:16px;
+    align-items:center;padding:22px var(--pad);
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  nav .links{display:flex;gap:36px;justify-content:flex-end}
+  nav .links a:hover{opacity:.55}
+  @media(max-width:640px){nav{grid-template-columns:1fr auto}nav .meta{display:none}}
+
+  /* ───────── page grid ───────── */
+  .page{padding:0 var(--pad) 48px}
+  .hero{padding:56px 0 64px;border-bottom:1px solid var(--hairline-strong)}
+  .hero h1{
+    font-weight:700;color:var(--green);
+    font-size:clamp(48px,7.2vw,84px);line-height:1.04;letter-spacing:-.01em;
+  }
+  .layout{
+    display:grid;grid-template-columns:minmax(270px,340px) 1fr;
+    gap:0 64px;align-items:start;padding-top:56px;
+  }
+  @media(max-width:760px){.layout{grid-template-columns:1fr}.layout > main{margin-top:80px}}
+
+  /* ───────── left rail (sticky) ───────── */
+  .rail{position:sticky;top:calc(var(--nav-h) + 24px)}
+  @media(max-width:760px){.rail{position:static}}
+  .rail img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:saturate(.96)}
+  .rail .caption{
+    display:flex;justify-content:space-between;
+    font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);
+    text-transform:uppercase;padding:10px 0 0;
+  }
+  .rail .bio{padding-top:28px;font-size:15px;line-height:1.55;color:var(--ink)}
+  .rail .bio p + p{margin-top:14px}
+  .rail .contact{margin-top:36px;border-top:1px solid var(--hairline-strong);padding-top:18px}
+  .rail .contact .label{margin-bottom:14px}
+  .rail .contact a{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    padding:10px 0;border-bottom:1px solid var(--hairline);
+  }
+  .rail .contact a span:last-child{color:var(--muted)}
+  .rail .contact a:hover{color:var(--green)}
+  .avail{
+    display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);
+  }
+  .avail::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+
+  /* ───────── right column ───────── */
+  .label{
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink);
+  }
+  section{padding-bottom:72px}
+  section .label{display:block;padding-bottom:14px;border-bottom:1px solid var(--hairline-strong)}
+
+  .row{
+    display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:4px 24px;
+    padding:16px 0 14px;border-bottom:1px solid var(--hairline);
+  }
+  .row .primary{font-size:17px;font-weight:500;letter-spacing:-.005em}
+  .row .year{font-family:var(--mono);font-size:10.5px;color:var(--ink);letter-spacing:.04em}
+  .row .secondary{
+    grid-column:1 / -1;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  /* quotes */
+  .quote{padding:26px 0 24px;border-bottom:1px solid var(--hairline)}
+  .quote p{font-size:17px;line-height:1.5;max-width:34em;letter-spacing:-.005em}
+  .quote cite{
+    display:block;margin-top:14px;font-style:normal;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  /* currently */
+  .cur .row .primary{font-weight:400;color:var(--muted);font-size:15px}
+  .cur .row .year{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase}
+
+  /* ───────── footer (matches site) ───────── */
+  footer{background:var(--green);color:var(--cream);padding:40px var(--pad) 28px}
+  footer .git{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:48px}
+  footer .big a{
+    display:block;font-weight:500;color:var(--cream);
+    font-size:clamp(56px,9vw,108px);line-height:.98;letter-spacing:-.015em;text-transform:uppercase;
+  }
+  footer .big a:hover{opacity:.7}
+  footer .big sup{font-family:var(--mono);font-size:12px;letter-spacing:.05em;vertical-align:super;margin-left:10px}
+  footer .base{
+    display:flex;justify-content:space-between;gap:24px;margin-top:96px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  @media(max-width:700px){footer .base{flex-direction:column}}
+
+  /* ───────── motion: progressive enhancement, never invisible at load ─────────
+     Base state is fully visible. JS hides ONLY below-fold elements (.pre),
+     then reveals them as they enter: rows rise 10px & fade, hairlines draw
+     left→right to 100% width. If JS never runs, the page is simply static. */
+  .fx{opacity:1;transition:opacity .5s ease,transform .6s cubic-bezier(.2,.6,.2,1)}
+  .fx.pre{opacity:0;transform:translateY(10px)}
+  .fx.pre.in{opacity:1;transform:none}
+  .line{position:relative}
+  .line.pre{border-bottom-color:transparent !important}
+  .line.pre::after{
+    content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;
+    background:currentColor;opacity:.35;transform:scaleX(0);transform-origin:left;
+    transition:transform .7s cubic-bezier(.2,.6,.2,1);
+  }
+  .line.strong.pre::after{opacity:.9}
+  .line.pre.in::after{transform:scaleX(1)}
+  @media (prefers-reduced-motion: reduce){
+    .fx.pre,.line.pre::after{transition:none;opacity:1;transform:none}
+    .line.pre{border-bottom-color:var(--hairline) !important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">MICAH HOANG</a>
+  <span class="meta">BRAND DESIGNER</span>
+  <span class="meta">LOS ANGELES, CALIFORNIA</span>
+  <span class="links"><a href="/">WORK</a><a href="/play">PLAY</a><a href="/index">INDEX</a><a href="/info">INFO</a></span>
+</nav>
+
+<div class="page">
+
+  <header class="hero line strong fx">
+    <h1>Hey, I'm Micah.</h1>
+  </header>
+
+  <div class="layout">
+
+    <!-- ══════ LEFT · sticky identity rail ══════ -->
+    <aside class="rail fx">
+      <img src="https://framerusercontent.com/images/geBwSsIC1HJB3whFBU4BH2joXW8.jpg" alt="Micah Hoang">
+      <div class="caption"><span>MICAH HOANG</span><span>PASADENA, 2026</span></div>
+      <div class="bio">
+        <p>I'm a brand designer in Los Angeles with a systems mind. I care about the strategic side of design, figuring out what a brand needs to say before deciding how it looks, and I like doing that work collaboratively, across disciplines.</p>
+        <p>I'm drawn to the spaces where technology, product, and culture overlap. Outdoor and lifestyle brands have always been close to me, but so has the challenge of making complex, technical products feel human. Outside of design, I'm usually training for a marathon, out on the trails, or on a rock wall somewhere.</p>
+      </div>
+      <div class="contact">
+        <span class="label">/ CONTACT</span>
+        <a href="mailto:micah.hoang@hey.com"><span>EMAIL</span><span>MICAH.HOANG@HEY.COM</span></a>
+        <a href="#"><span>LINKEDIN</span><span>CONNECT</span></a>
+        <a href="#"><span>RESUME</span><span>PDF</span></a>
+      </div>
+      <span class="avail">Available for work</span>
+    </aside>
+
+    <!-- ══════ RIGHT · scrolling evidence column ══════ -->
+    <main>
+
+      <section>
+        <span class="label line strong fx">/ EXPERIENCE</span>
+        <div class="row line fx"><span class="primary">Brand New School</span><span class="year">2026</span><span class="secondary">Design + Motion Intern</span></div>
+        <div class="row line fx"><span class="primary">Apple, Marcom</span><span class="year">2025</span><span class="secondary">Marcom Design Intern</span></div>
+        <div class="row line fx"><span class="primary">Skycar Creative</span><span class="year">2024</span><span class="secondary">Design + Motion Intern</span></div>
+        <div class="row line fx"><span class="primary">ArtCenter Graphic Design</span><span class="year">2023</span><span class="secondary">Events Coordinator + Designer</span></div>
+        <div class="row line fx"><span class="primary">AuditBoard</span><span class="year">2023</span><span class="secondary">Visual Designer</span></div>
+        <div class="row line fx"><span class="primary">National Park Playing Cards</span><span class="year">2019</span><span class="secondary">Founder</span></div>
+      </section>
+
+      <section>
+        <span class="label line strong fx">/ RECOGNITION</span>
+        <div class="row line fx"><span class="primary">Indigo Design Award, Gold</span><span class="year">2026</span><span class="secondary">Simon &amp; Schuster</span></div>
+        <div class="row line fx"><span class="primary">Fonts in Use, Feature</span><span class="year">2025</span><span class="secondary">Simon &amp; Schuster</span></div>
+        <div class="row line fx"><span class="primary">ADC Young Ones, Merit</span><span class="year">2024</span><span class="secondary">Seek Truth</span></div>
+        <div class="row line fx"><span class="primary">Fonts in Use, Feature</span><span class="year">2024</span><span class="secondary">Weaponized Innocence</span></div>
+        <div class="row line fx"><span class="primary">Graphis New Talent, Honorable Mention</span><span class="year">2024</span><span class="secondary">Independent Lens</span></div>
+        <div class="row line fx"><span class="primary">Hidden Characters, Podcast Feature</span><span class="year">2024</span><span class="secondary">Interview</span></div>
+      </section>
+
+      <section>
+        <span class="label line strong fx">/ WHAT PEOPLE SAY</span>
+        <div class="quote line fx">
+          <p>&ldquo;He went above and beyond his role, approaching problems with creativity and curiosity, and contributing massively to create high quality work.&rdquo;</p>
+          <cite>Nadia Shireen Husain &middot; Associate Creative Director, Apple</cite>
+        </div>
+        <div class="quote line fx">
+          <p>&ldquo;From day one, Micah approached our projects with a thoughtful mindset, consistently delivering beautiful and sometimes surprising results.&rdquo;</p>
+          <cite>Aaron Barry &middot; Co-Founder / ECD, Skycar Creative</cite>
+        </div>
+        <div class="quote line fx">
+          <p>&ldquo;He has a keen eye, eagerness to learn, and excellent communication skills that set him apart.&rdquo;</p>
+          <cite>Angela Wong &middot; Designer / Art Director, Skycar Creative</cite>
+        </div>
+      </section>
+
+      <section>
+        <span class="label line strong fx">/ EDUCATION</span>
+        <div class="row line fx"><span class="primary">ArtCenter College of Design</span><span class="year">2026</span><span class="secondary">BFA, Graphic Design</span></div>
+      </section>
+
+      <section class="cur" style="padding-bottom:24px">
+        <span class="label line strong fx">/ CURRENTLY</span>
+        <div class="row line fx"><span class="primary">Reading</span><span class="year">The Overstory</span></div>
+        <div class="row line fx"><span class="primary">Listening</span><span class="year">Bon Iver</span></div>
+        <div class="row line fx"><span class="primary">Exploring</span><span class="year">Trail Running, Eastern Sierra</span></div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="git">GET IN TOUCH</div>
+  <div class="big">
+    <a href="mailto:micah.hoang@hey.com">Micah.Hoang<sup>@HEY.COM</sup></a>
+    <a href="#">LinkedIn<sup>CONNECT</sup></a>
+    <a href="#">Cosmos<sup>INSPIRE</sup></a>
+  </div>
+  <div class="base">
+    <span>AVAILABLE FOR WORK</span>
+    <span>LINKEDIN, RESUME, COSMOS</span>
+    <span>&copy;2026</span>
+  </div>
+</footer>
+
+<script>
+  // Progressive enhancement: only elements BELOW the fold are hidden (.pre),
+  // then revealed on entry. Above-the-fold content is never touched, so the
+  // page is legible from first paint.
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -6% 0px',threshold:0});
+  document.querySelectorAll('.fx,.line').forEach((el)=>{
+    if(el.getBoundingClientRect().top > innerHeight){
+      el.classList.add('pre');
+      io.observe(el);
+    }
+  });
+</script>
+</body>
+</html>

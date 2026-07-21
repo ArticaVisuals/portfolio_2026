@@ -1,0 +1,39 @@
+{
+  "collectionId": "EySMRbI2N",
+  "slug": "rejuve-in-store",
+  "draft": false,
+  "fieldData": {
+    "XwW7XD5jI": {
+      "type": "string",
+      "value": "Rejuve In-Store"
+    },
+    "c2qQhVGwP": {
+      "type": "number",
+      "value": 44
+    },
+    "uqRtTdRM1": {
+      "type": "image",
+      "value": "https://framerusercontent.com/images/770GISzeEb7K49HWnwd8IUAoPk.gif"
+    },
+    "KWCosE6Ef": {
+      "type": "file",
+      "value": null
+    },
+    "vq9I0excy": {
+      "type": "boolean",
+      "value": true
+    },
+    "uhNqEiZxv": {
+      "type": "string",
+      "value": "An in-store concept experiment for Rejuve, a beauty and wellness clinic. We combined iPhone Gaussian splat capture with AI image generation to mock up and reimagine how a future Rejuve clinic could feel through new furniture, warmer lighting, fresh paint, and a spatial installation."
+    },
+    "VfgNuQyis": {
+      "type": "string",
+      "value": ""
+    },
+    "YTkltwLjJ": {
+      "type": "link",
+      "value": null
+    }
+  }
+}
