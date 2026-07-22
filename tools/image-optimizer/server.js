@@ -557,7 +557,7 @@ app.get("/api/presets", (_req, res) => {
 
 app.post("/api/scan", async (req, res) => {
   try {
-    const sourceDirInput = String(req.body.sourceDir || "case-study-assets/current-site")
+    const sourceDirInput = String(req.body.sourceDir || "assets/by-project")
     const sourceDir = safeJoin(workspaceRoot, sourceDirInput)
     const limit = Math.max(1, Math.min(1000, Number(req.body.limit || 500)))
     const files = await walkImages(sourceDir, limit)

@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename)
 const workspaceRoot = path.resolve(__dirname, "..")
 const outputDir = path.join(
   workspaceRoot,
-  "case-study-assets/optimized/featured-project-video-posters"
+  "assets/shared/optimized/featured-project-video-posters"
 )
 const posterDir = path.join(outputDir, "posters")
 const siteOrigin = "https://khaki-ship-257706.framer.app"

@@ -15,7 +15,7 @@ Open `http://localhost:4177`.
 
 ## Workflow
 
-- Scan `case-study-assets/current-site` or a narrower project folder.
+- Scan `assets/by-project` (all projects) or a narrower project folder such as `assets/by-project/<slug>`.
 - Choose a preset:
   - `Case` keeps case-study media under 1800px wide at quality 82.
   - `Thumb` keeps index/home thumbnails under 1600px wide at quality 82.

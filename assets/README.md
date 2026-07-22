@@ -1,4 +1,33 @@
-# Case Study Asset Scrape
+# Portfolio Assets
+
+This is the single home for all portfolio media, reorganized **by project** on
+2026-07-22.
+
+## Current layout (2026-07-22)
+
+- `by-project/<slug>/` — every project's media in one place. Provenance is kept
+  in subfolders: `framer-staging/` (Framer redesign scrape), `current-site/`
+  (older Cargo `micahhoang.info` scrape), plus project-specific sets like
+  `gaia/figma-export`, `gaia/selected`, `karuna/process`,
+  `seek-truth/main`, `whatsapp/brand-new-school`.
+- `shared/` — cross-project generated sets: `video-posters/` (poster stills +
+  manifest), `generated-posters/`, and `optimized/` (upload batches, gitignored).
+- `scrape-manifest.json`, `external-embeds.json`, `ARCHIVE_NOTES.md` — scrape
+  metadata (see the per-slug map in `ARCHIVE_NOTES.md`).
+- Retired Cargo-era and retired-route media moved to `../archive/` (`cargo-era/`,
+  `retired-framer-routes/`).
+
+Tooling note: the `tools/` scrapers (`scrape-case-study-assets.cjs`,
+`download-external-embeds.cjs`, `scrape-archive-playground-assets.cjs`) predate
+this reorg and still write the old flat `case-study-assets/{current-site,framer-staging}`
+layout. Re-run them only to intentionally regenerate a raw scrape, then re-sort.
+
+---
+
+_The sections below are the original 2026-05-16 scrape record. Folder paths in
+them describe the pre-2026-07-22 flat layout and are kept for historical counts._
+
+## Case Study Asset Scrape
 
 Generated: 2026-05-16T05:26:59.133Z
 

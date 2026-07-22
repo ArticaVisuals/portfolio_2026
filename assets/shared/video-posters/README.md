@@ -37,7 +37,7 @@ you re-upload the videos.
 
 Run `node tools/prepare-motion-connect-media.mjs` from the workspace root to
 rebuild the Motion Connect upload-ready package at
-`case-study-assets/optimized/motion-connect-2025/`.
+`assets/shared/optimized/motion-connect-2025/`.
 
 The package includes a complete `manifest.tsv`/`manifest.json`, JPG poster stills
 for every Motion Connect video/GIF source found in the current-site and Framer
@@ -50,7 +50,7 @@ the smaller original when conversion would increase file size.
 
 Run `node tools/prepare-featured-project-video-posters.mjs` from the workspace
 root to rebuild the poster package for the six featured case studies at
-`case-study-assets/optimized/featured-project-video-posters/`.
+`assets/shared/optimized/featured-project-video-posters/`.
 
 The script crawls the published featured project pages, finds `<video>` tags that
 do not already have a `poster`, extracts JPG stills capped at 1600px on the long

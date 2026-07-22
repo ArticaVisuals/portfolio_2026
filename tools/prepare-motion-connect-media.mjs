@@ -8,15 +8,15 @@ const __dirname = path.dirname(__filename)
 const workspaceRoot = path.resolve(__dirname, "..")
 const currentDir = path.join(
   workspaceRoot,
-  "case-study-assets/current-site/motion-connect-2025"
+  "assets/by-project/motion-connect-2025/current-site"
 )
 const stagingDir = path.join(
   workspaceRoot,
-  "case-study-assets/framer-staging/motion-connect-2025"
+  "assets/by-project/motion-connect-2025/framer-staging"
 )
 const outputDir = path.join(
   workspaceRoot,
-  "case-study-assets/optimized/motion-connect-2025"
+  "assets/shared/optimized/motion-connect-2025"
 )
 const posterDir = path.join(outputDir, "posters")
 const imageDir = path.join(outputDir, "images")

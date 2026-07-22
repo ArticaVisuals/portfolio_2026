@@ -1,10 +1,18 @@
 # Case Study Asset Archive Notes
 
-Prepared: 2026-06-15
+Prepared: 2026-06-15. **Updated 2026-07-22: assets reorganized by project.**
 
-This directory is a preservation and staging archive for portfolio media. It is
-not the live Framer runtime. Do not delete, rename, or move media folders just
-because a matching project is no longer active in Framer.
+> **2026-07-22 reorg:** media now lives under `assets/by-project/<slug>/` with
+> `framer-staging/` and `current-site/` provenance subfolders (see
+> `README.md`). The per-slug "local asset notes" in the table below have been
+> repointed to the new paths. Genuinely retired Cargo-era folders and
+> retired-route folders were moved to `../archive/cargo-era/` and
+> `../archive/retired-framer-routes/`. This file remains the authoritative
+> per-slug provenance map.
+
+This is a preservation and staging record for portfolio media. It is not the
+live Framer runtime. Do not delete media just because a matching project is no
+longer active in Framer.
 
 ## Current Active Framer/CMS Projects
 
@@ -108,7 +116,7 @@ Cargo-era or retired/reference-only folders:
 
 ## Path Stability Notes
 
-- `case-study-assets/manifest.json` records the original scrape folders and
+- `assets/scrape-manifest.json` records the original scrape folders and
   routes. Keep it stable unless regenerating the scrape manifest intentionally.
 - `current-site/simon-schuster/Book/` preserves the 011-072 book photo sequence
   that previously sat at the Simon & Schuster folder root. Update any direct
@@ -118,12 +126,13 @@ Cargo-era or retired/reference-only folders:
   optimized derivatives for the broader Simon & Schuster asset set. Prefer
   these for web transfer when the exact original-resolution files are not
   required.
-- `case-study-assets/external-embeds.json` documents private/blocked embeds from
+- `assets/external-embeds.json` documents private/blocked embeds from
   the scrape and should stay beside the scrape archive.
-- `tools/image-optimizer` defaults to scanning `case-study-assets/current-site`,
-  so do not move that folder without updating the tool README, UI default, and
-  server default.
-- `framer-global-media-controllers.md` references `case-study-assets/video-posters`.
+- `tools/image-optimizer` now defaults to scanning `assets/by-project` (was
+  `case-study-assets/current-site` before the 2026-07-22 reorg); narrow it to
+  `assets/by-project/<slug>` per project. Update the tool README, UI default,
+  and server default together if this changes.
+- `framer-global-media-controllers.md` references `assets/shared/video-posters`.
 
 ## Retirement Rule
 

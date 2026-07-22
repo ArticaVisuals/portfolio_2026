@@ -4,7 +4,7 @@ Generated July 20, 2026 for a new `micahhoang.com/play` Play Archive CMS row.
 
 ## Source Frames
 
-- Source folder: `case-study-assets/current-site/weaponized-innocence`
+- Source folder: `assets/by-project/weaponized-innocence/current-site`
 - Frames:
   - `019-_dsc9959.jpg`
   - `020-_dsc9996.jpg`

@@ -37,9 +37,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/F2709619893073297860162562020885/Untitled8.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/010-untitled8.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/010-untitled8.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/010-untitled8-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster16.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster16.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/010-untitled8-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/5g3uq4.jpg",
       "dimensions": {
@@ -105,9 +105,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/T2709612322123701640140968678933/Slide-2_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/011-slide-2_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/011-slide-2_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/011-slide-2_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster39.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster39.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/011-slide-2_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/8dlr1s.jpg",
       "dimensions": {
@@ -173,9 +173,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/A2709612322142148384214678230549/Slide-3_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/012-slide-3_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/012-slide-3_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/012-slide-3_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster08.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster08.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/012-slide-3_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/0ngooi.jpg",
       "dimensions": {
@@ -241,9 +241,9 @@
         "slotStatus": "blank-slot-inferred-from-cargo-order"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/P2709618310453336800325290677781/Untitled7.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/013-untitled7.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/013-untitled7.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/013-untitled7-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster32.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster32.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/013-untitled7-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/p9u0bp.jpg",
       "dimensions": {
@@ -309,9 +309,9 @@
         "slotStatus": "blank-slot-inferred-from-cargo-order"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/V2717868598736281181345024300565/Slide-5_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/014-slide-5_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/014-slide-5_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/014-slide-5_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster42.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster42.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/014-slide-5_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/8ubngm.jpg",
       "dimensions": {
@@ -377,7 +377,7 @@
         "slotStatus": "wired-framer-gif-image-convert-to-video-recommended"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/V2717875692745309375606160610837/Slide-6.0-GIF-from-ezgif-1.gif",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/015-slide-6.0-gif-from-ezgif-1.gif",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/015-slide-6.0-gif-from-ezgif-1.gif",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/015-slide-6-gif-converted-720sq-crf28-noaudio.mp4",
       "posterLocalFile": null,
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/015-slide-6-gif-poster-1280q78.jpg",
@@ -439,9 +439,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/B2709612322179041872362097333781/Slide-7_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/016-slide-7_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/016-slide-7_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/016-slide-7_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster09.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster09.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/016-slide-7_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/wfqfrj.jpg",
       "dimensions": {
@@ -507,9 +507,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/X2709615829845874232307046667797/Untitled4.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/017-untitled4.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/017-untitled4.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/017-untitled4-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster44.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster44.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/017-untitled4-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/itm4zc.jpg",
       "dimensions": {
@@ -575,9 +575,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/K2717876083281328160111077873173/Slide-9_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/018-slide-9_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/018-slide-9_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/018-slide-9_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster25.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster25.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/018-slide-9_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/56gz7n.jpg",
       "dimensions": {
@@ -643,9 +643,9 @@
         "slotStatus": "wired-cargo"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/M2717884687488400180825785882133/TrimmedSandman.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/019-trimmedsandman.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/019-trimmedsandman.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/019-trimmedsandman-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster30.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster30.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/019-trimmedsandman-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/ng9mfp.jpg",
       "dimensions": {
@@ -711,9 +711,9 @@
         "slotStatus": "blank-slot-inferred-from-cargo-order"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/B2709612322215935360509516437013/Slide-11_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/020-slide-11_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/020-slide-11_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/020-slide-11_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster10.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster10.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/020-slide-11_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/ccq9wx.jpg",
       "dimensions": {
@@ -779,9 +779,9 @@
         "slotStatus": "blank-slot-inferred-from-cargo-order"
       },
       "cargoUrl": "https://freight.cargo.site/t/original/i/Z2709612322234382104583225988629/Slide-12_2.mp4",
-      "originalLocalFile": "case-study-assets/current-site/motion-connect-2025/021-slide-12_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/021-slide-12_2.mp4",
       "optimizedVideoFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/optimized/021-slide-12_2-720sq-crf28-noaudio.mp4",
-      "posterLocalFile": "case-study-assets/video-posters/poster46.jpg",
+      "posterLocalFile": "assets/shared/video-posters/poster46.jpg",
       "optimizedPosterFile": "output/motion-connect-stack-XPejo4InG-assets-2026-06-25/posters/021-slide-12_2-poster-1280q78.jpg",
       "hostedPosterUrlFromOldManifest": "https://files.catbox.moe/o3sl5y.jpg",
       "dimensions": {
