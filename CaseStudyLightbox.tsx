@@ -2,8 +2,6 @@ import * as React from "react"
 // Framer's code-file type package can lag behind the published runtime.
 // @ts-ignore
 import { addPropertyControls, ControlType, RenderTarget, useRouter } from "framer"
-// @ts-ignore - Framer resolves versioned project module URLs at bundle time.
-import BaseCaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@Wd9cFUrIcpA2FcGDV0Ys"
 
 type Config = {
     enabled: boolean
@@ -46,7 +44,7 @@ type RouterMatch = {
 // Selectors that identify the site nav layers. Used purely for hit-testing in
 // the click guard now — we no longer mutate the nav's CSS (that broke the nav
 // hover/flip-text reset). Raising z-index / isolation never actually fixed the
-// click anyway: the base lightbox finds media UNDER the nav via
+// click anyway: the lightbox finds media UNDER the nav via
 // elementsFromPoint, so the only reliable fix is the event guard below.
 const CASE_STUDY_NAV_SELECTOR_LIST = [
     "nav",
@@ -92,6 +90,208 @@ const MEDIA_SKELETON_STATE_ATTR = "data-case-study-media-state"
 // Framer's native video layer is 16:9 until metadata arrives. Most case-study
 // social video rows are portrait, so this prevents first-boot row collapse.
 const MEDIA_SKELETON_VIDEO_FALLBACK_RATIO = 4 / 5
+const LIGHTBOX_EASE = "cubic-bezier(0.22, 1, 0.36, 1)"
+const LIGHTBOX_Z = 2147483000
+const LIGHTBOX_TRANSPARENT_BACKDROP = "rgba(255, 255, 255, 0)"
+const LIGHTBOX_GLYPH_FONT =
+    '"GT Standard L Regular", "GT Standard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+
+type LightboxMediaType = "image" | "video"
+type LightboxMediaElement = HTMLImageElement | HTMLVideoElement
+type LightboxCandidate = {
+    el: LightboxMediaElement
+    type: LightboxMediaType
+    src: string
+    hires: string
+    poster: string
+    ratio: number
+    alt: string
+}
+type LightboxRect = {
+    left: number
+    top: number
+    width: number
+    height: number
+}
+
+function setLightboxStyles(el: HTMLElement, styles: Record<string, string>) {
+    const style = el.style as CSSStyleDeclaration & Record<string, string>
+    for (const key in styles) style[key] = styles[key]
+}
+
+function lightboxPrefersReducedMotion(): boolean {
+    return (
+        typeof window !== "undefined" &&
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+}
+
+function largestLightboxSrcsetCandidate(srcset: string): string {
+    if (!srcset) return ""
+
+    let best = ""
+    let bestWidth = -1
+
+    for (const part of srcset.split(",")) {
+        const segment = part.trim().split(/\s+/)
+        const url = segment[0] || ""
+        const descriptor = segment[1] || ""
+        if (!url) continue
+
+        let width = 1
+        if (descriptor.endsWith("w")) width = Number.parseInt(descriptor, 10)
+        else if (descriptor.endsWith("x")) width = Number.parseFloat(descriptor) * 10000
+
+        if (width > bestWidth) {
+            bestWidth = width
+            best = url
+        }
+    }
+
+    return best
+}
+
+function buildLightboxCursorCSS(excludeSelector: string): string {
+    const rules = ["img,video{cursor:zoom-in!important}"]
+
+    excludeSelector
+        .split(",")
+        .map((part) => part.trim())
+        .filter(Boolean)
+        .forEach((selector) => {
+            const cursor = selector === "a" || selector === "button" ? "pointer" : "auto"
+            rules.push(`${selector}{cursor:${cursor}!important}`)
+            rules.push(`${selector} img,${selector} video{cursor:${cursor}!important}`)
+        })
+
+    rules.push("[data-cslb-overlay] img{cursor:zoom-out!important}")
+    rules.push("[data-cslb-overlay] video{cursor:auto!important}")
+    return rules.join("")
+}
+
+function lightboxCanAnimate(el: Element | null): boolean {
+    return Boolean(el && typeof (el as Element & { animate?: unknown }).animate === "function")
+}
+
+function clearLightboxAnimations(el: Element | null) {
+    const animated = el as (Element & { getAnimations?: () => Animation[] }) | null
+    if (!animated || typeof animated.getAnimations !== "function") return
+    animated.getAnimations().forEach((animation) => animation.cancel())
+}
+
+function getLightboxRect(rect: DOMRect): LightboxRect {
+    return {
+        left: rect.left,
+        top: rect.top,
+        width: Math.max(0, rect.width),
+        height: Math.max(0, rect.height),
+    }
+}
+
+function isUsableLightboxRect(rect: LightboxRect | null | undefined): rect is LightboxRect {
+    return Boolean(
+        rect &&
+            Number.isFinite(rect.left) &&
+            Number.isFinite(rect.top) &&
+            Number.isFinite(rect.width) &&
+            Number.isFinite(rect.height) &&
+            rect.width > 1 &&
+            rect.height > 1
+    )
+}
+
+function getLightboxViewportPadding(config: Config): number {
+    const maxPadding = Math.max(0, Number(config.viewportPadding) || 0)
+    if (maxPadding <= 20) return maxPadding
+    return Math.min(Math.max(20, window.innerWidth * 0.05), maxPadding)
+}
+
+function getLightboxTargetRect(ratio: number, config: Config): LightboxRect {
+    const safeRatio = Number.isFinite(ratio) && ratio > 0 ? ratio : 1
+    const padding = getLightboxViewportPadding(config)
+    const availableWidth = Math.max(1, window.innerWidth - padding * 2)
+    const availableHeight = Math.max(1, window.innerHeight - padding * 2)
+    let width = availableWidth
+    let height = width / safeRatio
+
+    if (height > availableHeight) {
+        height = availableHeight
+        width = height * safeRatio
+    }
+
+    return {
+        left: (window.innerWidth - width) / 2,
+        top: (window.innerHeight - height) / 2,
+        width,
+        height,
+    }
+}
+
+function getObjectPositionOffset(
+    value: string | undefined,
+    freeSpace: number,
+    startKeyword: string,
+    endKeyword: string
+): number {
+    const position = String(value || "50%").trim().toLowerCase()
+    if (position === startKeyword) return 0
+    if (position === endKeyword) return freeSpace
+    if (position === "center") return freeSpace / 2
+    if (position.endsWith("%")) {
+        const percent = Number.parseFloat(position)
+        if (Number.isFinite(percent)) return freeSpace * (percent / 100)
+    }
+    if (position.endsWith("px")) {
+        const px = Number.parseFloat(position)
+        if (Number.isFinite(px)) return Math.max(0, Math.min(freeSpace, px))
+    }
+    return freeSpace / 2
+}
+
+function getLightboxSourceRect(el: LightboxMediaElement, ratio: number): LightboxRect {
+    const rect = getLightboxRect(el.getBoundingClientRect())
+    if (!isUsableLightboxRect(rect)) return rect
+
+    const style = window.getComputedStyle(el)
+    const objectFit = style.objectFit || "fill"
+    const safeRatio = Number.isFinite(ratio) && ratio > 0 ? ratio : rect.width / rect.height
+
+    if ((objectFit === "contain" || objectFit === "scale-down") && safeRatio > 0) {
+        const boxRatio = rect.width / rect.height
+        let width = rect.width
+        let height = rect.height
+
+        if (boxRatio > safeRatio) width = rect.height * safeRatio
+        else height = rect.width / safeRatio
+
+        const parts = (style.objectPosition || "50% 50%").trim().split(/\s+/)
+        const xPart = parts[0] || "50%"
+        const yPart = parts[1] || "50%"
+
+        return {
+            left: rect.left + getObjectPositionOffset(xPart, rect.width - width, "left", "right"),
+            top: rect.top + getObjectPositionOffset(yPart, rect.height - height, "top", "bottom"),
+            width,
+            height,
+        }
+    }
+
+    return rect
+}
+
+function getLightboxTransform(from: LightboxRect, to: LightboxRect): string {
+    const scaleX = Math.max(0.02, from.width / Math.max(1, to.width))
+    const scaleY = Math.max(0.02, from.height / Math.max(1, to.height))
+    const fromCenterX = from.left + from.width / 2
+    const fromCenterY = from.top + from.height / 2
+    const toCenterX = to.left + to.width / 2
+    const toCenterY = to.top + to.height / 2
+    const translateX = fromCenterX - toCenterX
+    const translateY = fromCenterY - toCenterY
+
+    return `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
+}
 const MOBILE_FOOTER_STYLE = `
 @media (max-width: 809px) {
     [data-case-study-mobile-cta-section="true"] {
@@ -1048,7 +1248,7 @@ function useCaseStudyMediaSkeletons() {
 /**
  * Case-study nav click guard (no CSS).
  *
- * The nav physically overlays media at the top of case-study pages. The base
+ * The nav physically overlays media at the top of case-study pages. The
  * lightbox opens on click by finding the topmost <img>/<video> at the pointer
  * via elementsFromPoint — so clicking a nav item that sits over media used to
  * open the lightbox instead of navigating. We do NOT raise/isolate the nav in
@@ -1058,13 +1258,13 @@ function useCaseStudyMediaSkeletons() {
  * Instead, a single WINDOW-capture click listener — which fires before the base
  * lightbox's own document-capture listener — suppresses the lightbox whenever
  * the click lands on/over the nav (or any excluded region):
- *   • Internal links -> preventDefault only, so the base lightbox sees a
+ *   • Internal links -> preventDefault only, so the lightbox engine sees a
  *     handled event and bails, while Framer/custom React link handlers still
  *     receive the click. A short router fallback catches plain anchors.
  *   • Other native links -> stopImmediatePropagation only (lightbox never sees
  *     the click; the browser still performs the default navigation).
  *   • Other controls (buttons, scroll-to-top, etc.) -> preventDefault only, so
- *     the control's own React handler still runs while the base lightbox bails
+ *     the control's own React handler still runs while the lightbox engine bails
  *     on the default-prevented click.
  *   • Anything else excluded -> stopImmediatePropagation.
  */
@@ -1115,12 +1315,847 @@ function useCaseStudyNavClickGuard(excludeSelector: string, router: FramerRouter
     }, [excludeSelector, router])
 }
 
+function InternalCaseStudyLightboxEngine(props: Config) {
+    const configRef = React.useRef(props)
+    configRef.current = props
+
+    React.useEffect(() => {
+        if (RenderTarget.current() === RenderTarget.canvas) return
+        if (typeof document === "undefined" || typeof window === "undefined") return
+
+        const globalWindow = window as Window & { __cslbActive?: boolean }
+        if (globalWindow.__cslbActive) return
+        globalWindow.__cslbActive = true
+
+        let overlay: HTMLDivElement | null = null
+        let imgEl: HTMLImageElement | null = null
+        let videoEl: HTMLVideoElement | null = null
+        let prevBtn: HTMLButtonElement | null = null
+        let nextBtn: HTMLButtonElement | null = null
+        let closeBtn: HTMLButtonElement | null = null
+        let counterEl: HTMLDivElement | null = null
+        let list: LightboxCandidate[] = []
+        let index = -1
+        let isOpen = false
+        let token = 0
+        let prevBodyOverflow = ""
+        let hiddenEl: { el: LightboxMediaElement; visibility: string } | null = null
+        const warmImages = new Map<string, Promise<void>>()
+
+        const cfg = () => configRef.current
+
+        const cursorStyle = document.createElement("style")
+        cursorStyle.setAttribute("data-cslb-cursor", "")
+        cursorStyle.textContent = buildLightboxCursorCSS(cfg().excludeSelector)
+        document.head.appendChild(cursorStyle)
+
+        function imageWarmup(src: string): Promise<void> {
+            if (!src) return Promise.resolve()
+
+            const cached = warmImages.get(src)
+            if (cached) return cached
+
+            const promise = new Promise<void>((resolve) => {
+                const image = new window.Image()
+                let settled = false
+                const finish = () => {
+                    if (settled) return
+                    settled = true
+                    resolve()
+                }
+                const decode = () => {
+                    if (typeof image.decode === "function") {
+                        image.decode().catch(() => undefined).finally(finish)
+                    } else {
+                        finish()
+                    }
+                }
+
+                image.decoding = "async"
+                ;(image as HTMLImageElement & { fetchPriority?: string }).fetchPriority = "high"
+                image.onload = decode
+                image.onerror = finish
+                image.src = src
+                if (image.complete) decode()
+                window.setTimeout(finish, 3500)
+            })
+
+            warmImages.set(src, promise)
+            return promise
+        }
+
+        function warmCandidate(item: LightboxCandidate) {
+            if (item.type === "video") {
+                if (item.poster) void imageWarmup(item.poster)
+                return
+            }
+
+            void imageWarmup(item.src)
+            if (item.hires && item.hires !== item.src) void imageWarmup(item.hires)
+        }
+
+        function sourceOf(el: LightboxMediaElement, type: LightboxMediaType) {
+            if (type === "video") {
+                const video = el as HTMLVideoElement
+                const source =
+                    video.currentSrc ||
+                    video.src ||
+                    Array.from(video.querySelectorAll("source"))
+                        .map((child) => child.src || child.getAttribute("src") || "")
+                        .find(Boolean) ||
+                    ""
+                return { src: source, hires: source }
+            }
+
+            const image = el as HTMLImageElement
+            const largest = largestLightboxSrcsetCandidate(image.srcset || "")
+            const source = image.currentSrc || image.src || largest
+            return { src: source || largest, hires: largest || source }
+        }
+
+        function naturalMediaRatio(el: LightboxMediaElement, type: LightboxMediaType): number {
+            if (type === "video") {
+                const video = el as HTMLVideoElement
+                return (
+                    ratioFromDimensions(video.videoWidth, video.videoHeight) ||
+                    ratioFromDimensions(video.getAttribute("width"), video.getAttribute("height")) ||
+                    getUrlRatio(video.currentSrc || video.src || "")
+                )
+            }
+
+            const image = el as HTMLImageElement
+            return (
+                ratioFromDimensions(image.naturalWidth, image.naturalHeight) ||
+                ratioFromDimensions(image.getAttribute("width"), image.getAttribute("height")) ||
+                getUrlRatio(image.currentSrc || image.src || "")
+            )
+        }
+
+        function typeOf(el: Element | null): LightboxMediaType | null {
+            if (el instanceof HTMLImageElement) return "image"
+            if (el instanceof HTMLVideoElement) return "video"
+            return null
+        }
+
+        function isLightboxExcluded(el: Element): boolean {
+            if (el.closest("[data-no-lightbox]")) return true
+
+            const selector = cfg().excludeSelector.trim()
+            if (!selector) return false
+
+            try {
+                return Boolean(el.closest(selector))
+            } catch {
+                return false
+            }
+        }
+
+        function qualifies(el: Element | null): el is LightboxMediaElement {
+            if (!(el instanceof HTMLImageElement || el instanceof HTMLVideoElement)) return false
+            if (overlay?.contains(el)) return false
+
+            const type = typeOf(el)
+            if (!type) return false
+            if (type === "video" && !cfg().lightboxVideos) return false
+            if (isLightboxExcluded(el)) return false
+
+            const rect = el.getBoundingClientRect()
+            const minSize = cfg().minSize
+            if (rect.width < minSize || rect.height < minSize) return false
+
+            return Boolean(sourceOf(el, type).src)
+        }
+
+        function toCandidate(el: LightboxMediaElement): LightboxCandidate | null {
+            const type = typeOf(el)
+            if (!type) return null
+
+            const { src, hires } = sourceOf(el, type)
+            if (!src) return null
+
+            const rect = el.getBoundingClientRect()
+            const rectRatio = rect.height > 0 ? rect.width / rect.height : 1
+            const ratio = naturalMediaRatio(el, type) || rectRatio || 1
+
+            return {
+                el,
+                type,
+                src,
+                hires,
+                poster: type === "video" ? (el as HTMLVideoElement).poster || "" : "",
+                ratio,
+                alt: type === "image" ? (el as HTMLImageElement).alt || "" : "",
+            }
+        }
+
+        function collect(): LightboxCandidate[] {
+            const out: LightboxCandidate[] = []
+            const seen = new Set<Element>()
+
+            document.querySelectorAll("img, video").forEach((el) => {
+                if (seen.has(el) || !qualifies(el)) return
+
+                const candidate = toCandidate(el)
+                if (!candidate) return
+
+                seen.add(el)
+                out.push(candidate)
+            })
+
+            out.sort((a, b) => {
+                const position = a.el.compareDocumentPosition(b.el)
+                if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1
+                if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1
+                return 0
+            })
+
+            return out
+        }
+
+        function resolveTarget(event: MouseEvent | PointerEvent): LightboxMediaElement | null {
+            const direct = event.target instanceof Element ? event.target : null
+            const directMedia = direct ? direct.closest("img, video") : null
+            if (qualifies(directMedia)) return directMedia
+
+            if (typeof document.elementsFromPoint === "function") {
+                for (const node of document.elementsFromPoint(event.clientX, event.clientY)) {
+                    if (!(node instanceof Element)) continue
+                    if (overlay?.contains(node)) continue
+
+                    const media = node.closest("img, video")
+                    if (qualifies(media)) return media
+                }
+            }
+
+            return null
+        }
+
+        function glyphButton(glyph: string, label: string, nudgeX: number) {
+            const button = document.createElement("button")
+            button.type = "button"
+            button.setAttribute("aria-label", label)
+            setLightboxStyles(button, {
+                position: "fixed",
+                zIndex: String(LIGHTBOX_Z + 2),
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "40px",
+                height: "40px",
+                padding: "0",
+                margin: "0",
+                border: "none",
+                background: "transparent",
+                color: cfg().chromeColor,
+                cursor: "pointer",
+                opacity: "0",
+                transition: "opacity 200ms ease",
+                WebkitTapHighlightColor: "transparent",
+            })
+
+            const span = document.createElement("span")
+            span.textContent = glyph
+            span.setAttribute("aria-hidden", "true")
+            setLightboxStyles(span, {
+                fontFamily: LIGHTBOX_GLYPH_FONT,
+                fontSize: `${cfg().iconSize}px`,
+                lineHeight: "1",
+                fontWeight: String(cfg().iconWeight),
+                display: "block",
+                transform: `translate(${nudgeX}px, -1px)`,
+            })
+            button.appendChild(span)
+
+            return button
+        }
+
+        function build() {
+            overlay = document.createElement("div")
+            overlay.setAttribute("data-cslb-overlay", "")
+            overlay.setAttribute("role", "dialog")
+            overlay.setAttribute("aria-modal", "true")
+            overlay.setAttribute("aria-hidden", "true")
+            setLightboxStyles(overlay, {
+                position: "fixed",
+                inset: "0",
+                zIndex: String(LIGHTBOX_Z),
+                display: "none",
+                boxSizing: "border-box",
+                background: LIGHTBOX_TRANSPARENT_BACKDROP,
+                cursor: "zoom-out",
+                overflow: "hidden",
+                overscrollBehavior: "contain",
+                touchAction: "none",
+            })
+
+            const mediaStyles = {
+                position: "fixed",
+                zIndex: String(LIGHTBOX_Z + 1),
+                display: "none",
+                width: "0px",
+                height: "0px",
+                maxWidth: "none",
+                maxHeight: "none",
+                objectFit: "contain",
+                objectPosition: "center",
+                transform: "none",
+                transformOrigin: "center center",
+                willChange: "transform, opacity",
+                backfaceVisibility: "hidden",
+                userSelect: "none",
+                pointerEvents: "auto",
+                opacity: "1",
+                margin: "0",
+                padding: "0",
+                border: "0",
+                background: "transparent",
+            }
+
+            imgEl = document.createElement("img")
+            imgEl.decoding = "sync"
+            imgEl.loading = "eager"
+            imgEl.draggable = false
+            setLightboxStyles(imgEl, mediaStyles)
+
+            videoEl = document.createElement("video")
+            videoEl.setAttribute("playsinline", "")
+            videoEl.controls = false
+            videoEl.loop = true
+            videoEl.preload = "auto"
+            setLightboxStyles(videoEl, mediaStyles)
+
+            prevBtn = glyphButton("‹", "Previous", -1)
+            nextBtn = glyphButton("›", "Next", 1)
+            closeBtn = glyphButton("×", "Close", 0)
+            prevBtn.style.left = "16px"
+            prevBtn.style.top = "50%"
+            prevBtn.style.transform = "translateY(-50%)"
+            nextBtn.style.right = "16px"
+            nextBtn.style.top = "50%"
+            nextBtn.style.transform = "translateY(-50%)"
+            closeBtn.style.right = "18px"
+            closeBtn.style.top = "18px"
+
+            counterEl = document.createElement("div")
+            setLightboxStyles(counterEl, {
+                position: "fixed",
+                left: "50%",
+                bottom: "20px",
+                transform: "translateX(-50%)",
+                zIndex: String(LIGHTBOX_Z + 2),
+                fontFamily: LIGHTBOX_GLYPH_FONT,
+                fontSize: "13px",
+                lineHeight: "1",
+                letterSpacing: "0.04em",
+                color: cfg().chromeColor,
+                opacity: "0",
+                transition: "opacity 200ms ease",
+                pointerEvents: "none",
+            })
+
+            overlay.appendChild(imgEl)
+            overlay.appendChild(videoEl)
+            overlay.appendChild(prevBtn)
+            overlay.appendChild(nextBtn)
+            overlay.appendChild(closeBtn)
+            overlay.appendChild(counterEl)
+            document.body.appendChild(overlay)
+
+            overlay.addEventListener("click", () => close())
+            imgEl.addEventListener("click", (event) => {
+                event.stopPropagation()
+                if (cfg().clickImageAdvances) go(1)
+            })
+            videoEl.addEventListener("click", (event) => event.stopPropagation())
+            prevBtn.addEventListener("click", (event) => {
+                event.stopPropagation()
+                go(-1)
+            })
+            nextBtn.addEventListener("click", (event) => {
+                event.stopPropagation()
+                go(1)
+            })
+            closeBtn.addEventListener("click", (event) => {
+                event.stopPropagation()
+                close()
+            })
+
+            let downX = 0
+            let downY = 0
+            let tracking = false
+            imgEl.addEventListener(
+                "pointerdown",
+                (event) => {
+                    tracking = true
+                    downX = event.clientX
+                    downY = event.clientY
+                },
+                { passive: true }
+            )
+            imgEl.addEventListener("pointerup", (event) => {
+                if (!tracking) return
+                tracking = false
+
+                const dx = event.clientX - downX
+                const dy = event.clientY - downY
+                if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+                    event.stopPropagation()
+                    go(dx < 0 ? 1 : -1)
+                }
+            })
+        }
+
+        function activeMedia(): HTMLElement | null {
+            const item = list[index]
+            if (!item) return null
+            return item.type === "video" ? videoEl : imgEl
+        }
+
+        function syncChromeStyles() {
+            const buttons = [prevBtn, nextBtn, closeBtn].filter(Boolean) as HTMLButtonElement[]
+            buttons.forEach((button) => {
+                button.style.color = cfg().chromeColor
+                const span = button.firstElementChild as HTMLElement | null
+                if (!span) return
+                span.style.fontSize = `${cfg().iconSize}px`
+                span.style.fontWeight = String(cfg().iconWeight)
+            })
+
+            if (counterEl) counterEl.style.color = cfg().chromeColor
+        }
+
+        function setChromeVisible(visible: boolean) {
+            syncChromeStyles()
+            const config = cfg()
+            const opacity = visible ? "1" : "0"
+            if (prevBtn) prevBtn.style.opacity = config.showArrows && visible ? opacity : "0"
+            if (nextBtn) nextBtn.style.opacity = config.showArrows && visible ? opacity : "0"
+            if (closeBtn) closeBtn.style.opacity = config.showClose && visible ? opacity : "0"
+            if (counterEl) counterEl.style.opacity = config.showCounter && visible ? opacity : "0"
+        }
+
+        function updateChrome() {
+            const config = cfg()
+            const single = list.length <= 1
+
+            if (prevBtn) prevBtn.style.display = config.showArrows && !single ? "flex" : "none"
+            if (nextBtn) nextBtn.style.display = config.showArrows && !single ? "flex" : "none"
+            if (closeBtn) closeBtn.style.display = config.showClose ? "flex" : "none"
+            if (counterEl) {
+                counterEl.style.display = config.showCounter ? "block" : "none"
+                counterEl.textContent = `${index + 1} / ${list.length}`
+            }
+        }
+
+        function setMediaBox(media: HTMLElement, rect: LightboxRect) {
+            setLightboxStyles(media, {
+                left: `${rect.left}px`,
+                top: `${rect.top}px`,
+                width: `${rect.width}px`,
+                height: `${rect.height}px`,
+            })
+        }
+
+        function showOnly(item: LightboxCandidate): { media: HTMLElement; targetRect: LightboxRect } | null {
+            if (!imgEl || !videoEl) return null
+
+            clearLightboxAnimations(imgEl)
+            clearLightboxAnimations(videoEl)
+            imgEl.style.transform = "none"
+            videoEl.style.transform = "none"
+            imgEl.style.opacity = "1"
+            videoEl.style.opacity = "1"
+
+            const targetRect = getLightboxTargetRect(item.ratio, cfg())
+
+            if (item.type === "video") {
+                try {
+                    imgEl.removeAttribute("src")
+                } catch {}
+                imgEl.style.display = "none"
+
+                videoEl.style.display = "block"
+                videoEl.controls = cfg().videoControls
+                videoEl.muted = true
+                videoEl.preload = "auto"
+                if (videoEl.src !== item.src) videoEl.src = item.src
+                if (item.poster) videoEl.poster = item.poster
+                else videoEl.removeAttribute("poster")
+                setMediaBox(videoEl, targetRect)
+
+                const sourceVideo = item.el instanceof HTMLVideoElement ? item.el : null
+                try {
+                    videoEl.currentTime = sourceVideo?.currentTime || 0
+                } catch {}
+                const play = videoEl.play()
+                if (play && typeof play.catch === "function") play.catch(() => undefined)
+
+                return { media: videoEl, targetRect }
+            }
+
+            try {
+                videoEl.pause()
+                videoEl.removeAttribute("src")
+                videoEl.removeAttribute("poster")
+                videoEl.load()
+            } catch {}
+            videoEl.style.display = "none"
+
+            imgEl.style.display = "block"
+            imgEl.alt = item.alt
+            imgEl.removeAttribute("srcset")
+            imgEl.removeAttribute("sizes")
+            if (imgEl.src !== item.src) imgEl.src = item.src
+            setMediaBox(imgEl, targetRect)
+
+            return { media: imgEl, targetRect }
+        }
+
+        function hideUnderlying(el: LightboxMediaElement | null) {
+            if (hiddenEl && hiddenEl.el !== el) {
+                hiddenEl.el.style.visibility = hiddenEl.visibility
+                hiddenEl = null
+            }
+
+            if (!el) return
+            if (hiddenEl?.el === el) return
+
+            hiddenEl = { el, visibility: el.style.visibility }
+            el.style.visibility = "hidden"
+        }
+
+        function wrap(nextIndex: number) {
+            const count = list.length
+            if (count === 0) return 0
+            if (cfg().loopNavigation) return (nextIndex + count) % count
+            return Math.max(0, Math.min(count - 1, nextIndex))
+        }
+
+        function preloadNeighbors() {
+            if (list.length <= 1) return
+
+            ;[index - 1, index + 1].forEach((nextIndex) => {
+                const item = list[wrap(nextIndex)]
+                if (item) warmCandidate(item)
+            })
+        }
+
+        function upgradeHires(item: LightboxCandidate, openToken: number) {
+            if (item.type !== "image" || !imgEl || !item.hires || item.hires === item.src) return
+
+            imageWarmup(item.hires).then(() => {
+                if (openToken !== token || !isOpen || list[index] !== item || !imgEl) return
+                imgEl.src = item.hires
+            })
+        }
+
+        function animateBackdrop(from: string, to: string, duration: number, easing: string) {
+            if (!overlay) return
+            overlay.style.background = from
+
+            if (!lightboxCanAnimate(overlay) || duration <= 0) {
+                overlay.style.background = to
+                return
+            }
+
+            const animation = overlay.animate(
+                [{ backgroundColor: from }, { backgroundColor: to }],
+                { duration, easing, fill: "both" }
+            )
+            animation.onfinish = () => {
+                if (overlay) overlay.style.background = to
+            }
+        }
+
+        function open(start: LightboxMediaElement, sourceRect: LightboxRect) {
+            if (!overlay) build()
+            if (!overlay) return
+
+            token += 1
+            const openToken = token
+            clearLightboxAnimations(overlay)
+            clearLightboxAnimations(imgEl)
+            clearLightboxAnimations(videoEl)
+
+            list = collect()
+            index = list.findIndex((candidate) => candidate.el === start)
+            if (index < 0) {
+                const candidate = toCandidate(start)
+                if (!candidate) return
+                list.unshift(candidate)
+                index = 0
+            }
+
+            const item = list[index]
+            const shown = showOnly(item)
+            if (!shown) return
+
+            isOpen = true
+            prevBodyOverflow = document.body.style.overflow
+            document.body.style.overflow = "hidden"
+
+            const safeSourceRect = isUsableLightboxRect(sourceRect)
+                ? sourceRect
+                : getLightboxSourceRect(item.el, item.ratio)
+            const canZoom = isUsableLightboxRect(safeSourceRect)
+            const initialTransform = canZoom
+                ? getLightboxTransform(safeSourceRect, shown.targetRect)
+                : "translate(0px, 0px) scale(1, 1)"
+
+            shown.media.style.transform = initialTransform
+            shown.media.style.opacity = "1"
+            overlay.style.background = LIGHTBOX_TRANSPARENT_BACKDROP
+            overlay.style.display = "block"
+            overlay.removeAttribute("aria-hidden")
+
+            updateChrome()
+            setChromeVisible(false)
+            hideUnderlying(item.el)
+            warmCandidate(item)
+            preloadNeighbors()
+
+            const reduce = lightboxPrefersReducedMotion()
+            const duration = Math.max(0, cfg().duration)
+            window.requestAnimationFrame(() => {
+                if (openToken !== token || !isOpen || !overlay) return
+
+                animateBackdrop(
+                    LIGHTBOX_TRANSPARENT_BACKDROP,
+                    cfg().backgroundColor,
+                    Math.round(duration * 0.75),
+                    "ease-out"
+                )
+
+                if (reduce || !canZoom || !lightboxCanAnimate(shown.media) || duration <= 0) {
+                    shown.media.style.transform = "none"
+                    setChromeVisible(true)
+                    upgradeHires(item, openToken)
+                    return
+                }
+
+                const animation = shown.media.animate(
+                    [
+                        { transform: initialTransform, opacity: 1 },
+                        { transform: "translate(0px, 0px) scale(1, 1)", opacity: 1 },
+                    ],
+                    { duration, easing: LIGHTBOX_EASE, fill: "both" }
+                )
+
+                animation.onfinish = () => {
+                    if (openToken !== token || !isOpen) return
+                    shown.media.style.transform = "none"
+                    setChromeVisible(true)
+                }
+
+                window.setTimeout(() => {
+                    if (openToken === token && isOpen) setChromeVisible(true)
+                }, duration)
+                upgradeHires(item, openToken)
+            })
+        }
+
+        function go(direction: number) {
+            if (!isOpen || list.length <= 1) return
+
+            const next = wrap(index + direction)
+            if (next === index) return
+
+            index = next
+            const item = list[index]
+            const shown = showOnly(item)
+            if (!shown) return
+
+            updateChrome()
+            hideUnderlying(item.el)
+            warmCandidate(item)
+            preloadNeighbors()
+
+            if (lightboxCanAnimate(shown.media)) {
+                shown.media.animate([{ opacity: 0 }, { opacity: 1 }], {
+                    duration: 190,
+                    easing: "ease-out",
+                    fill: "none",
+                })
+            }
+
+            upgradeHires(item, token)
+        }
+
+        function close() {
+            if (!isOpen || !overlay) return
+
+            token += 1
+            const closeToken = token
+            const media = activeMedia()
+            const current = list[index]
+            isOpen = false
+            setChromeVisible(false)
+
+            const finish = () => {
+                if (closeToken !== token) return
+
+                if (videoEl) {
+                    try {
+                        videoEl.pause()
+                        videoEl.removeAttribute("src")
+                        videoEl.load()
+                    } catch {}
+                }
+                if (imgEl) {
+                    imgEl.style.transform = "none"
+                    imgEl.removeAttribute("src")
+                }
+                if (videoEl) videoEl.style.transform = "none"
+                if (overlay) {
+                    overlay.style.display = "none"
+                    overlay.style.background = LIGHTBOX_TRANSPARENT_BACKDROP
+                    overlay.setAttribute("aria-hidden", "true")
+                }
+                document.body.style.overflow = prevBodyOverflow
+                hideUnderlying(null)
+            }
+
+            const sourceRect = current ? getLightboxSourceRect(current.el, current.ratio) : null
+            const sourceInView =
+                sourceRect &&
+                sourceRect.top + sourceRect.height > 0 &&
+                sourceRect.top < window.innerHeight &&
+                sourceRect.left + sourceRect.width > 0 &&
+                sourceRect.left < window.innerWidth
+            const reduce = lightboxPrefersReducedMotion()
+            const duration = Math.max(0, cfg().duration)
+
+            clearLightboxAnimations(overlay)
+            clearLightboxAnimations(media)
+
+            if (
+                reduce ||
+                !media ||
+                !sourceInView ||
+                !isUsableLightboxRect(sourceRect) ||
+                !lightboxCanAnimate(media) ||
+                duration <= 0
+            ) {
+                if (lightboxCanAnimate(overlay)) {
+                    const fade = overlay.animate(
+                        [
+                            { backgroundColor: cfg().backgroundColor },
+                            { backgroundColor: LIGHTBOX_TRANSPARENT_BACKDROP },
+                        ],
+                        { duration: 200, easing: "linear", fill: "both" }
+                    )
+                    fade.onfinish = finish
+                } else {
+                    finish()
+                }
+                return
+            }
+
+            const fromRect = getLightboxRect(media.getBoundingClientRect())
+            const finalTransform = getLightboxTransform(sourceRect, fromRect)
+
+            animateBackdrop(
+                cfg().backgroundColor,
+                LIGHTBOX_TRANSPARENT_BACKDROP,
+                duration,
+                LIGHTBOX_EASE
+            )
+
+            const animation = media.animate(
+                [
+                    { transform: "translate(0px, 0px) scale(1, 1)", opacity: 1 },
+                    { transform: finalTransform, opacity: 1 },
+                ],
+                { duration, easing: LIGHTBOX_EASE, fill: "both" }
+            )
+            animation.onfinish = finish
+        }
+
+        function syncOpenLayout() {
+            if (!isOpen) return
+            const item = list[index]
+            const media = activeMedia()
+            if (!item || !media) return
+
+            clearLightboxAnimations(media)
+            setMediaBox(media, getLightboxTargetRect(item.ratio, cfg()))
+            media.style.transform = "none"
+        }
+
+        function onDocClick(event: MouseEvent) {
+            if (!cfg().enabled || isOpen) return
+            if (event.defaultPrevented || event.button !== 0) return
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+            if (overlay && event.target instanceof Node && overlay.contains(event.target)) return
+
+            const media = resolveTarget(event)
+            if (!media) return
+
+            const candidate = toCandidate(media)
+            const sourceRect = candidate
+                ? getLightboxSourceRect(media, candidate.ratio)
+                : getLightboxRect(media.getBoundingClientRect())
+
+            if (candidate) warmCandidate(candidate)
+            event.preventDefault()
+            event.stopPropagation()
+            open(media, sourceRect)
+        }
+
+        function onPointerWarm(event: PointerEvent) {
+            if (!cfg().enabled || isOpen) return
+
+            const media = resolveTarget(event)
+            if (!media) return
+
+            const candidate = toCandidate(media)
+            if (candidate) warmCandidate(candidate)
+        }
+
+        function onKey(event: KeyboardEvent) {
+            if (!isOpen) return
+
+            if (event.key === "Escape") {
+                event.preventDefault()
+                close()
+            } else if (event.key === "ArrowRight") {
+                event.preventDefault()
+                go(1)
+            } else if (event.key === "ArrowLeft") {
+                event.preventDefault()
+                go(-1)
+            }
+        }
+
+        document.addEventListener("pointerover", onPointerWarm, true)
+        document.addEventListener("pointerdown", onPointerWarm, true)
+        document.addEventListener("click", onDocClick, true)
+        window.addEventListener("keydown", onKey)
+        window.addEventListener("resize", syncOpenLayout)
+
+        return () => {
+            document.removeEventListener("pointerover", onPointerWarm, true)
+            document.removeEventListener("pointerdown", onPointerWarm, true)
+            document.removeEventListener("click", onDocClick, true)
+            window.removeEventListener("keydown", onKey)
+            window.removeEventListener("resize", syncOpenLayout)
+            if (cursorStyle.parentNode) cursorStyle.parentNode.removeChild(cursorStyle)
+            if (hiddenEl) hiddenEl.el.style.visibility = hiddenEl.visibility
+            if (isOpen) document.body.style.overflow = prevBodyOverflow
+            if (overlay?.parentNode) overlay.parentNode.removeChild(overlay)
+            delete globalWindow.__cslbActive
+        }
+    }, [])
+
+    return <span data-casestudy-lightbox="" style={{ display: "block", width: 1, height: 1, opacity: 0 }} />
+}
+
 /**
  * Case Study Lightbox wrapper.
- * Preserves the existing versioned lightbox implementation and adds tiny
- * case-study normalizers: the mobile footer layout and a nav click guard.
+ * Cargo-inspired shared-element media zoom plus tiny case-study normalizers:
+ * mobile footer layout, media skeletons, and the nav click guard.
  *
- * The Exclude selector passed to the base engine is always merged with the
+ * The Exclude selector passed to the engine is always merged with the
  * "always-on" rules (see ALWAYS_EXCLUDE_RULES) so that naming a frame
  * "No Lightbox" / "NoLightbox" - or tagging it [data-no-lightbox] - opts its
  * media out of the lightbox everywhere, with no per-instance configuration.
@@ -1130,6 +2165,10 @@ function useCaseStudyNavClickGuard(excludeSelector: string, router: FramerRouter
  * The click guard (useCaseStudyNavClickGuard) keeps nav links, buttons, the
  * scroll-to-top button, and the gallery working while suppressing the lightbox
  * on the nav and other excluded regions — with NO nav CSS mutation.
+ *
+ * The zoom follows Cargo's quick-view feel: the selected media is cloned into
+ * a fixed layer, starts transformed exactly over the source media, stays
+ * fully opaque during the zoom, and only the backdrop/chrome fade in behind it.
  *
  * @framerIntrinsicWidth 1
  * @framerIntrinsicHeight 1
@@ -1143,8 +2182,7 @@ export default function CaseStudyLightbox(props: Config) {
     const mergedExcludeSelector = getLightboxExcludeSelector(props.excludeSelector)
     useCaseStudyNavClickGuard(mergedExcludeSelector, router)
 
-    const Base = BaseCaseStudyLightbox as unknown as React.ComponentType<Config>
-    return <Base {...props} excludeSelector={mergedExcludeSelector} />
+    return <InternalCaseStudyLightboxEngine {...props} excludeSelector={mergedExcludeSelector} />
 }
 
 CaseStudyLightbox.defaultProps = {
@@ -1160,7 +2198,7 @@ CaseStudyLightbox.defaultProps = {
     showCounter: false,
     clickImageAdvances: true,
     loopNavigation: true,
-    duration: 360,
+    duration: 260,
     viewportPadding: 72,
     minSize: 100,
     excludeSelector:
@@ -1180,7 +2218,7 @@ addPropertyControls(CaseStudyLightbox, {
     showCounter: { type: ControlType.Boolean, title: "Counter", defaultValue: false, enabledTitle: "Show", disabledTitle: "Hide" },
     clickImageAdvances: { type: ControlType.Boolean, title: "Tap = Next", defaultValue: true, enabledTitle: "On", disabledTitle: "Off" },
     loopNavigation: { type: ControlType.Boolean, title: "Loop", defaultValue: true, enabledTitle: "On", disabledTitle: "Off" },
-    duration: { type: ControlType.Number, title: "Zoom ms", defaultValue: 360, min: 120, max: 800, step: 10, unit: "ms" },
+    duration: { type: ControlType.Number, title: "Zoom ms", defaultValue: 260, min: 120, max: 800, step: 10, unit: "ms" },
     viewportPadding: { type: ControlType.Number, title: "Padding", defaultValue: 72, min: 0, max: 160, step: 2, unit: "px" },
     minSize: { type: ControlType.Number, title: "Min Size", defaultValue: 100, min: 0, max: 400, step: 10, unit: "px" },
     excludeSelector: {

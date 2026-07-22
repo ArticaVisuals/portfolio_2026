@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T00:00:00-07:00",
+  "generatedAt": "2026-07-22T11:46:09-07:00",
   "projectUrl": "https://khaki-ship-257706.framer.app",
   "notes": [
     "Root active TSX files remain the editable working mirrors for current Framer code files.",
@@ -7,7 +7,7 @@
     "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output."
   ],
   "counts": {
-    "activeRootCodeComponents": 18,
+    "activeRootCodeComponents": 20,
     "mirroredCompiledCodeComponents": 22,
     "mirroredCodeOverrides": 5,
     "componentMirrorErrors": 0
@@ -28,8 +28,8 @@
       "role": "Consolidated controller wrapper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "CaseStudyControllers.tsx",
-      "bytes": 4746,
-      "sha256": "ec068b19afea8482ecdc9ba0a00d792290c469620909ce23ac5cc88d7f0a4254"
+      "bytes": 23211,
+      "sha256": "78e1959e7f48c597aa2bdf89f0d59a72d9b06309470eaa03576649ea6ee55752"
     },
     {
       "codeFileId": "c0iPrbN",
@@ -46,8 +46,8 @@
       "role": "Page-level case-study lightbox",
       "sourceKind": "active-root-working-tsx",
       "localPath": "CaseStudyLightbox.tsx",
-      "bytes": 25977,
-      "sha256": "3852e3f077ba6ae5e1e30447257878ed198c724ebc1701e778e27e6ec39847e8"
+      "bytes": 81304,
+      "sha256": "72c819150cea336e298d509b9bd549bdf3ffef24b224cef267ba4e590fb5fc3f"
     },
     {
       "codeFileId": "y6ny5x4",
@@ -145,8 +145,26 @@
       "role": "Site-wide page transition",
       "sourceKind": "active-root-working-tsx",
       "localPath": "PageTransition.tsx",
-      "bytes": 73894,
-      "sha256": "0d734d14bcb83af6dc998248bf1956e07d90eebad8c5013109f862f6ede4e119"
+      "bytes": 39601,
+      "sha256": "e28a1a890849ea7fbdcda047fb4c4f803836bd9dc28d36a4c0fb040b9db77f04"
+    },
+    {
+      "codeFileId": "EjvkJhv",
+      "path": "ParagraphPrettyWrap.tsx",
+      "role": "Site-wide paragraph pretty-wrap helper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "ParagraphPrettyWrap.tsx",
+      "bytes": 12766,
+      "sha256": "51b22cfdd21edec0da204e65833d3fe8e19091d90634528890aff5db5a1f1f25"
+    },
+    {
+      "codeFileId": "xDqfenf",
+      "path": "ResumeAssetHost.tsx",
+      "role": "Footer compatibility host and ParagraphPrettyWrap fallback",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "ResumeAssetHost.tsx",
+      "bytes": 10745,
+      "sha256": "6f8ca481c958389759afc6c05b861b307b5eaffb4a7a3b643856a22415df1da3"
     },
     {
       "codeFileId": "PN1RVOf",

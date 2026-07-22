@@ -2,6 +2,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 import PageTransitionV712 from "https://framerusercontent.com/modules/kWINdCIvJNyHW4g36u2k/Witnbh97hqwtM7YLb8Op/PageTransition.js"
+import ParagraphPrettyWrap from "https://framer.com/m/ParagraphPrettyWrap-bvfOg4.js"
 
 const HOME_PATH = "/"
 const BOOT_ID = "__pt-boot"
@@ -903,6 +904,7 @@ export default function PageTransition(props) {
             <script
                 dangerouslySetInnerHTML={{ __html: BOOT_VIEWPORT_GUARD_JS }}
             />
+            <ParagraphPrettyWrap enabled={true} maxFontSize={23} minWords={2} />
             <PageTransitionV712 {...props} />
         </>
     )

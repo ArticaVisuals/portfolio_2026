@@ -58,6 +58,8 @@ Framer path, codeFileId, and local path.
 | `Play.tsx` | `PN1RVOf` | Protected `/play` authoring wrapper |
 | `NavigationScrollGuard.tsx` | `Wnd19lx` | Native navigation scroll guard |
 | `PageTransition.tsx` | `gmalnRr` | Site-wide page transition |
+| `ParagraphPrettyWrap.tsx` | `EjvkJhv` | Site-wide paragraph pretty-wrap helper for text at 23px and under |
+| `ResumeAssetHost.tsx` | `xDqfenf` | Footer compatibility host and self-contained `ParagraphPrettyWrap` fallback |
 | `CaseStudyWorkInProgressGate.tsx` | `Vu82U8E` | WIP-gated case-study shell helper |
 
 ## Framer Code Files Missing Locally
@@ -71,7 +73,6 @@ Framer backup.
 - `ProfileTextRevealFix.tsx`
 - `FooterCopyrightYear.tsx`
 - `Test.tsx`
-- `ResumeAssetHost.tsx`
 - `PlaygroundNavPassthrough.tsx`
 - `PlaygroundRuleExitGuard.tsx`
 - `PlaygroundInstantExitSnapshot.tsx`
@@ -125,10 +126,10 @@ Suggested labels:
 - `case-study-assets/framer-staging/` - Framer staging scrape and staging media
   batches. Contains active project folders, `brand-new-school` working media for
   the `/case-studies/whatsapp` WIP shell, plus retired route folders.
-- `case-study-assets/optimized/` - optimized batches for upload/rehosting.
-- `case-study-assets/video-posters/` - poster stills and manifest for manual
+- `assets/shared/optimized/` - optimized batches for upload/rehosting.
+- `assets/shared/video-posters/` - poster stills and manifest for manual
   Framer video poster work.
-- `case-study-assets/figma-export/` and `case-study-assets/gaia-selected/` -
+- `assets/by-project/gaia/figma-export/` and `assets/by-project/gaia/selected/` -
   Gaia/Figma-derived working material.
 
 Current Framer/CMS active project slugs:
@@ -178,7 +179,7 @@ Phase 2, low-risk retirement: completed 2026-06-15
 
 Phase 3, asset labeling: completed 2026-06-15
 
-- Added `case-study-assets/ARCHIVE_NOTES.md` listing active CMS slugs, retired
+- Added `assets/ARCHIVE_NOTES.md` listing active CMS slugs, retired
   Framer route folders, Cargo-era-only folders, generated asset sets, and path
   stability notes.
 - Did not move media because manifests, docs, and upload workflows still

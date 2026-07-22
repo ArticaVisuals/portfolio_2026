@@ -19,6 +19,15 @@ media source of truth: `Thumbnail Video` (`SvOqFqdby`) renders as the preferred
 video layer, while `Thumbnail` (`Jy7hBJady`) stays underneath as the poster/image
 fallback. The selected-work number/title treatment is the original 13px mono
 style.
+2026-07-21 addition: **`ParagraphPrettyWrap`** (`EjvkJhv`) is an invisible
+helper for site-wide orphan reduction. It is mounted by `PageTransition`
+(`gmalnRr`) and by the Footer-hidden `ResumeAssetHost` (`xDqfenf`) fallback for
+routes that do not include PageTransition, such as `/info`. It scans rendered
+Framer text and applies `text-wrap: pretty` only to paragraph-size text at 23px
+and under, while excluding header/nav/footer/UI controls and opt-out nodes marked
+`data-mh-pretty-ignore`. As of 2026-07-22 it also emits parser-time preload
+style/script tags and scans mutations synchronously so eligible text is marked
+before the next paint instead of flashing from normal wrap to pretty wrap.
 
 ---
 
@@ -80,8 +89,8 @@ hover CSS.
 ### Case-study page controllers (invisible)
 | Component | id | What it does |
 |---|---|---|
-| `CaseStudyControllers` | `z13WRHS` | **Preferred** single mount that bundles the three below. Lightbox import is PINNED `@hash` — bump it when the lightbox is republished. Mounted on Motion Connect as `eHJ5dzLyY` after the June 24 cleanup. |
-| `CaseStudyLightbox` | `F2K4_SV` | Cargo-style zoom + nav-click guard. Opt out by naming a wrapper `No Lightbox`. |
+| `CaseStudyControllers` | `z13WRHS` | **Preferred** single mount that bundles the three below. Lightbox import is PINNED `@hash`; current push uses lightbox `@aAHiy1bZV8EEshPXW8Zh` and controller `@9M1RwgQDGqv6yHTFBuLl`. Mounted on Motion Connect as `eHJ5dzLyY` after the June 24 cleanup. |
+| `CaseStudyLightbox` | `F2K4_SV` | Cargo-style shared-element zoom + nav-click guard. Opens with an opaque cloned media layer over the source, fades only the backdrop/chrome, and warms image candidates to avoid white flashes. Opt out by naming a wrapper `No Lightbox`. |
 | `CaseStudyVideoManager` | `rGMwETR` | Pauses off-screen autoplay videos. |
 | `CaseStudyLinkRepair` | `y6ny5x4` | Repairs unresolved CMS card links + mobile CTA footer layout. (CMS scraper.) |
 | `CaseStudyMobileDescriptorLayout` | `W62Sy75` | Mobile descriptor column rhythm (DOM-patch). |
@@ -97,14 +106,15 @@ hover CSS.
 ### Site chrome
 | Component | id | What it does |
 |---|---|---|
-| `PageTransition` | `gmalnRr` | Thin wrapper over the compiled v7.12 runtime module. Adds: site-wide curtain transition + boot identity + Framer editorbar suppression (runtime), Home Header Bottom appear recovery, `/index` hero-title rise-on-arrival, and home hero rise-on-arrival (2026-06-26). Runtime source preserved in `framer/code-components/backups/PageTransition.runtime-backup.tsx`. See `framer-page-transition.md`. |
+| `PageTransition` | `gmalnRr` | Thin wrapper over the compiled v7.12 runtime module. Adds: site-wide curtain transition + boot identity + Framer editorbar suppression (runtime), Home Header Bottom appear recovery, `/index` hero-title rise-on-arrival, home hero rise-on-arrival (2026-06-26), and a `ParagraphPrettyWrap` mount (2026-07-21). Runtime source preserved in `framer/code-components/backups/PageTransition.runtime-backup.tsx`. See `framer-page-transition.md`. |
+| `ParagraphPrettyWrap` | `EjvkJhv` | Invisible singleton typography helper mounted by `PageTransition` and `ResumeAssetHost`. Applies native `text-wrap: pretty` to rendered paragraph-size text at 23px and under; emits pre-paint style/script tags; excludes nav/header/footer/UI and supports `data-mh-pretty-ignore` opt-out. |
 | `PageTransition_v7_12_Backup` | `Uv2k27l` | **Rollback wrapper** to the pre-v7.13 module. Retire candidate (keep frozen URL in a note). |
 | `NavigationScrollGuard` | `Wnd19lx` | Keeps native nav clickable when its scroll-hide transform gets stranded at top. Lives inside `Navigation`. |
 | `ScrollToTopButton` | `gh4ngZN` | Scroll-to-top mono button (Home, `/info`). Shares the flip-rail cadence of the `Scroll More` design component. |
 | `InfoScrollMoreColorOverride` | `AZDGWx7` | `/info` hero Scroll-More arrow color fix (DOM-patch). |
 | `LineAnimationBorder` | `j7WYIMf` | Nondestructive border-frame replacement for native `Line Animation`; keeps the same 0.2s delay, 2s duration, and `[0.25, 1, 0.5, 1]` draw easing, with a `Viewport Once` self-trigger for copy-page swaps. |
 | `FooterCopyrightYear` | `BF2H03E` | Auto current-year in footer. |
-| `ResumeAssetHost` | `xDqfenf` | **Archived no-op** stub kept so the Footer instance resolves. |
+| `ResumeAssetHost` | `xDqfenf` | Footer compatibility host. Preserves the `resumeFile` prop/invisible div that Footer expects, and carries the `ParagraphPrettyWrap` fallback for pages without PageTransition. |
 
 ### Effects / misc
 | Component | id | What it does |

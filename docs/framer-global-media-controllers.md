@@ -83,7 +83,7 @@ lightbox and the ‹ › arrows cycle the whole gallery. See `framer-current-sta
 **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED
 `@hash`. Bump that hash in `CaseStudyControllers.tsx` whenever this file is
 republished, or controller pages keep bundling the old lightbox. Current
-published lightbox: `CaseStudyLightbox-yOYpGN.js@Cphhu4ZJ1CxHLPy7kC6e`.
+published lightbox: `CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh`.
 
 ---
 
@@ -207,7 +207,7 @@ wolff-olins) are slow/at-risk. Decision: **posters now, user re-uploads the
 video files into Framer later** (Framer's API can't ingest video, only images).
 
 - 47 poster stills were generated (ffmpeg, 25%-seek frames) and committed to
-  `case-study-assets/video-posters/` (poster01–47.jpg + `manifest.tsv` + README).
+  `assets/shared/video-posters/` (poster01–47.jpg + `manifest.tsv` + README).
 - **API limitation:** native Framer `<Video>` nodes expose only `posterEnabled`
   (boolean) — no poster-image attribute — so the ~40 native VideoWrappers
   (incl. motion-connect's Hype-Reel blank tiles) can only be postered in the
