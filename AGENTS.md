@@ -66,15 +66,16 @@ constraints, CMS collections, component overrides, and design tokens.
 ## Documentation References
 
 When structural layout references are needed, use the main Framer page exports,
-local `.md` project documents, or the Framer MCP when available.
+the project `.md` documents in `docs/`, or the Framer MCP when available.
 
-Start with nearby project documentation such as:
+Agent-read project documentation lives in `docs/`. Human-only strategy and copy
+reference lives in `docs/reference/`. Start with:
 
-- `code-components-map.md` — at-a-glance map of every custom code component, the
-  two recurring patterns, Framer gotchas, and the consolidation backlog. Read this
-  first to orient on the custom TSX.
-- `framer-current-state.md`
-- `portfolio-framework.md`
-- `index-component-instructions.md`
-- `case-study-cms-workflow.md`
+- `docs/code-components-map.md` — at-a-glance map of every custom code component,
+  the two recurring patterns, Framer gotchas, and the consolidation backlog. Read
+  this first to orient on the custom TSX.
+- `docs/framer-current-state.md`
+- `docs/portfolio-framework.md`
+- `docs/index-component-instructions.md`
+- `docs/case-study-cms-workflow.md`
 - `micahhoang-tokens.json`
