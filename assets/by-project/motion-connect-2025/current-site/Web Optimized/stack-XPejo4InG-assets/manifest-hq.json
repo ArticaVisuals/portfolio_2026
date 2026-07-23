@@ -1,0 +1,778 @@
+{
+  "generatedAt": "2026-06-25T22:53:33.969Z",
+  "sourceFramerUrl": "https://framer.com/projects/Micah-Hoang-Portfolio--BvGjN2gCRDHG41LzAVYE-b78r3?node=XPejo4InG",
+  "scope": "Motion Connect 2025 Framer stack XPejo4InG, Cargo sequence orders 11-22",
+  "recommendation": "Use recommendedHqVideoFile values for upload unless you explicitly need the earlier ultra-light files.",
+  "optimization": "1080x1080 H.264 MP4, CRF 22, preset slow, yuv420p, no audio, +faststart. Animated GIF converted to MP4.",
+  "notes": [
+    "Square originals are 1920x1920; 1080x1080 is the recommended quality/performance compromise.",
+    "Earlier CRF 28 720-square files remain in optimized/ as a lightweight fallback."
+  ],
+  "totals": {
+    "originalBytes": 192123998,
+    "hqBytes": 14549257,
+    "lightBytes": 3595966,
+    "originalMB": 183.224,
+    "hqMB": 13.875,
+    "previousLightMB": 3.429,
+    "hqSavingsVsOriginalPercent": 92.4
+  },
+  "items": [
+    {
+      "label": "Untitled8",
+      "order": 11,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "ACbOPI7ew",
+        "mediaNodeId": "SBfZf52OW",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/F2709619893073297860162562020885/Untitled8.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/F2709619893073297860162562020885/Untitled8.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/010-untitled8.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/010-untitled8-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/010-untitled8-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/010-untitled8-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 10.838,
+          "bitRate": 15709263
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10.833,
+          "bitRate": 943400,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10.833,
+          "bitRate": 200369,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 21282452,
+          "mb": 20.297
+        },
+        "recommendedHqVideo": {
+          "bytes": 1277521,
+          "mb": 1.218
+        },
+        "previousLightVideo": {
+          "bytes": 271334,
+          "mb": 0.259
+        },
+        "hqSavingsVsOriginalPercent": 94
+      }
+    },
+    {
+      "label": "Slide-2_2",
+      "order": 12,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "nNvA7Qth_",
+        "mediaNodeId": "EfQ1t9Sx8",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/T2709612322123701640140968678933/Slide-2_2.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/T2709612322123701640140968678933/Slide-2_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/011-slide-2_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/011-slide-2_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/011-slide-2_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/011-slide-2_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 10.01,
+          "bitRate": 7291694
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 441503,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 97644,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 9123733,
+          "mb": 8.701
+        },
+        "recommendedHqVideo": {
+          "bytes": 551879,
+          "mb": 0.526
+        },
+        "previousLightVideo": {
+          "bytes": 122056,
+          "mb": 0.116
+        },
+        "hqSavingsVsOriginalPercent": 94
+      }
+    },
+    {
+      "label": "Slide-3_2",
+      "order": 13,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "wL1c2fGTh",
+        "mediaNodeId": "GHfgnu8Eb",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/A2709612322142148384214678230549/Slide-3_2.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/A2709612322142148384214678230549/Slide-3_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/012-slide-3_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/012-slide-3_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/012-slide-3_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/012-slide-3_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 10.01,
+          "bitRate": 15124658
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 433672,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 95992,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 18924729,
+          "mb": 18.048
+        },
+        "recommendedHqVideo": {
+          "bytes": 542090,
+          "mb": 0.517
+        },
+        "previousLightVideo": {
+          "bytes": 119991,
+          "mb": 0.114
+        },
+        "hqSavingsVsOriginalPercent": 97.1
+      }
+    },
+    {
+      "label": "Untitled7",
+      "order": 14,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "nWsS3_Hv3",
+        "mediaNodeId": "glI1u2idm",
+        "mediaNodeType": "Video",
+        "currentSrc": "",
+        "slotStatus": "blank-slot-inferred-from-cargo-order"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/P2709618310453336800325290677781/Untitled7.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/013-untitled7.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/013-untitled7-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/013-untitled7-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/013-untitled7-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "5610000/186839",
+          "pixFmt": "yuv420p",
+          "duration": 6.181,
+          "bitRate": 15330618
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 6.167,
+          "bitRate": 2313293,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 6.167,
+          "bitRate": 718536,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 11845586,
+          "mb": 11.297
+        },
+        "recommendedHqVideo": {
+          "bytes": 1783164,
+          "mb": 1.701
+        },
+        "previousLightVideo": {
+          "bytes": 553872,
+          "mb": 0.528
+        },
+        "hqSavingsVsOriginalPercent": 84.9
+      }
+    },
+    {
+      "label": "Slide-5_2",
+      "order": 15,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "GgJjdSkVw",
+        "mediaNodeId": "lfpKxMc6k",
+        "mediaNodeType": "Video",
+        "currentSrc": "",
+        "slotStatus": "blank-slot-inferred-from-cargo-order"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/V2717868598736281181345024300565/Slide-5_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/014-slide-5_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/014-slide-5_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/014-slide-5_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/014-slide-5_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 10.01,
+          "bitRate": 9201237
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 289487,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 71039,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 11513048,
+          "mb": 10.98
+        },
+        "recommendedHqVideo": {
+          "bytes": 361859,
+          "mb": 0.345
+        },
+        "previousLightVideo": {
+          "bytes": 88799,
+          "mb": 0.085
+        },
+        "hqSavingsVsOriginalPercent": 96.9
+      }
+    },
+    {
+      "label": "Slide-6 GIF",
+      "order": 16,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "KAbJVye7J",
+        "mediaNodeId": "k86MUVDF8",
+        "mediaNodeType": "Image",
+        "currentSrc": "https://framerusercontent.com/images/e9JlqMHD5aiPJhFvVMeYUg89Ew.gif",
+        "slotStatus": "wired-framer-gif-image-convert-to-video-recommended"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/V2717875692745309375606160610837/Slide-6.0-GIF-from-ezgif-1.gif",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/015-slide-6.0-gif-from-ezgif-1.gif",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/015-slide-6-gif-converted-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/015-slide-6-gif-converted-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/015-slide-6-gif-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "gif",
+          "width": 1280,
+          "height": 1280,
+          "fps": "100/3",
+          "pixFmt": "bgra",
+          "duration": 10,
+          "bitRate": 17822118
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 613343,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 190408,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 22277648,
+          "mb": 21.246
+        },
+        "recommendedHqVideo": {
+          "bytes": 766679,
+          "mb": 0.731
+        },
+        "previousLightVideo": {
+          "bytes": 238010,
+          "mb": 0.227
+        },
+        "hqSavingsVsOriginalPercent": 96.6
+      }
+    },
+    {
+      "label": "Slide-7_2",
+      "order": 17,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "xp9tijbcj",
+        "mediaNodeId": "KJhcTPPSr",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/B2709612322179041872362097333781/Slide-7_2.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/B2709612322179041872362097333781/Slide-7_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/016-slide-7_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/016-slide-7_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/016-slide-7_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/016-slide-7_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 10.01,
+          "bitRate": 5867924
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 201805,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 55394,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 7342240,
+          "mb": 7.002
+        },
+        "recommendedHqVideo": {
+          "bytes": 252257,
+          "mb": 0.241
+        },
+        "previousLightVideo": {
+          "bytes": 69243,
+          "mb": 0.066
+        },
+        "hqSavingsVsOriginalPercent": 96.6
+      }
+    },
+    {
+      "label": "Untitled4",
+      "order": 18,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "z2LrqRIvF",
+        "mediaNodeId": "aqKYKMX2q",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/X2709615829845874232307046667797/Untitled4.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/X2709615829845874232307046667797/Untitled4.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/017-untitled4.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/017-untitled4-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/017-untitled4-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/017-untitled4-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 14.763,
+          "bitRate": 12922911
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 14.767,
+          "bitRate": 1252180,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 14.767,
+          "bitRate": 329194,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 23847295,
+          "mb": 22.743
+        },
+        "recommendedHqVideo": {
+          "bytes": 2311317,
+          "mb": 2.204
+        },
+        "previousLightVideo": {
+          "bytes": 607639,
+          "mb": 0.579
+        },
+        "hqSavingsVsOriginalPercent": 90.3
+      }
+    },
+    {
+      "label": "Slide-9_2",
+      "order": 19,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "LNAxr32SY",
+        "mediaNodeId": "Lo7PbUzbi",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/K2717876083281328160111077873173/Slide-9_2.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/K2717876083281328160111077873173/Slide-9_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/018-slide-9_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/018-slide-9_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/018-slide-9_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/018-slide-9_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 10.01,
+          "bitRate": 3834221
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 138110,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 10,
+          "bitRate": 44784,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 4797570,
+          "mb": 4.575
+        },
+        "recommendedHqVideo": {
+          "bytes": 172638,
+          "mb": 0.165
+        },
+        "previousLightVideo": {
+          "bytes": 55981,
+          "mb": 0.053
+        },
+        "hqSavingsVsOriginalPercent": 96.4
+      }
+    },
+    {
+      "label": "TrimmedSandman",
+      "order": 20,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "POfyHOELd",
+        "mediaNodeId": "WmXoAwBfR",
+        "mediaNodeType": "Video",
+        "currentSrc": "https://freight.cargo.site/t/original/i/M2717884687488400180825785882133/TrimmedSandman.mp4",
+        "slotStatus": "wired-cargo"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/M2717884687488400180825785882133/TrimmedSandman.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/019-trimmedsandman.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/019-trimmedsandman-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/019-trimmedsandman-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/019-trimmedsandman-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 12.869,
+          "bitRate": 15685935
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 12.866,
+          "bitRate": 3560096,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 12.866,
+          "bitRate": 785667,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 25231873,
+          "mb": 24.063
+        },
+        "recommendedHqVideo": {
+          "bytes": 5725533,
+          "mb": 5.46
+        },
+        "previousLightVideo": {
+          "bytes": 1263551,
+          "mb": 1.205
+        },
+        "hqSavingsVsOriginalPercent": 77.3
+      }
+    },
+    {
+      "label": "Slide-11_2",
+      "order": 21,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "de1VkFlTO",
+        "mediaNodeId": "Y3yz8cpjA",
+        "mediaNodeType": "Video",
+        "currentSrc": "",
+        "slotStatus": "blank-slot-inferred-from-cargo-order"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/B2709612322215935360509516437013/Slide-11_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/020-slide-11_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/020-slide-11_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/020-slide-11_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/020-slide-11_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 20.02,
+          "bitRate": 8143222
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 20.033,
+          "bitRate": 187374,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 20.033,
+          "bitRate": 47383,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 20378414,
+          "mb": 19.434
+        },
+        "recommendedHqVideo": {
+          "bytes": 469216,
+          "mb": 0.447
+        },
+        "previousLightVideo": {
+          "bytes": 118655,
+          "mb": 0.113
+        },
+        "hqSavingsVsOriginalPercent": 97.7
+      }
+    },
+    {
+      "label": "Slide-12_2",
+      "order": 22,
+      "framer": {
+        "stackNodeId": "XPejo4InG",
+        "wrapperNodeId": "pZTtEqROJ",
+        "mediaNodeId": "lxgHewQiA",
+        "mediaNodeType": "Video",
+        "currentSrc": "",
+        "slotStatus": "blank-slot-inferred-from-cargo-order"
+      },
+      "cargoUrl": "https://freight.cargo.site/t/original/i/Z2709612322234382104583225988629/Slide-12_2.mp4",
+      "originalLocalFile": "assets/by-project/motion-connect-2025/current-site/021-slide-12_2.mp4",
+      "recommendedHqVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized-hq-1080p/021-slide-12_2-1080sq-crf22-noaudio.mp4",
+      "previousLightVideoFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/optimized/021-slide-12_2-720sq-crf28-noaudio.mp4",
+      "optimizedPosterFile": "assets/by-project/motion-connect-2025/current-site/Web Optimized/stack-XPejo4InG-assets/posters/021-slide-12_2-poster-1280q78.jpg",
+      "dimensions": {
+        "original": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1920,
+          "fps": "30000/1001",
+          "pixFmt": "yuv420p",
+          "duration": 20.02,
+          "bitRate": 6217546
+        },
+        "recommendedHqVideo": {
+          "codec": "h264",
+          "width": 1080,
+          "height": 1080,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 20.033,
+          "bitRate": 133818,
+          "audioStreams": 0
+        },
+        "previousLightVideo": {
+          "codec": "h264",
+          "width": 720,
+          "height": 720,
+          "fps": "30/1",
+          "pixFmt": "yuv420p",
+          "duration": 20.033,
+          "bitRate": 34676,
+          "audioStreams": 0
+        }
+      },
+      "sizes": {
+        "original": {
+          "bytes": 15559410,
+          "mb": 14.839
+        },
+        "recommendedHqVideo": {
+          "bytes": 335104,
+          "mb": 0.32
+        },
+        "previousLightVideo": {
+          "bytes": 86835,
+          "mb": 0.083
+        },
+        "hqSavingsVsOriginalPercent": 97.8
+      }
+    }
+  ]
+}

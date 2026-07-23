@@ -37,7 +37,7 @@ node code/tools/case-study-wip-gate-visual-qa.mjs
 The runner builds the actual TSX component into a local browser harness and
 captures artifacts in:
 
-`output/playwright/case-study-wip-gate-qa-2026-06-14/`
+`archive/generated-artifacts/browser-qa/case-study-wip-gate-qa-2026-06-14/`
 
 Current pass covers:
 

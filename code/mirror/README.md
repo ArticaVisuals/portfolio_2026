@@ -14,7 +14,7 @@ project docs and Framer workflows expect them there.
   from each missing code component's insert URL. These are reference snapshots,
   not editable TypeScript source.
 - `code-components/wrappers/` - small Framer wrapper modules from `framer.com/m`.
-- `code-overrides/source-tsx/` - override compatibility files saved as source
+- `code-overrides/` - override compatibility files saved as source
   from Framer MCP `readCodeFile`.
 
 Use root TSX files for active editing. Use this mirror when you need to inspect

@@ -487,7 +487,7 @@
       "codeFileId": "Cm9wqQM",
       "path": "Copyright.tsx",
       "sourceKind": "framer-override-source-readCodeFile",
-      "localPath": "code/mirror/code-overrides/source-tsx/Copyright.tsx",
+      "localPath": "code/mirror/code-overrides/Copyright.tsx",
       "bytes": 338,
       "sha256": "afe4a1377b5aa981acb8b3ca11c749d1f2173bd66298e44de783f32f4a7cf592",
       "exports": [
@@ -498,7 +498,7 @@
       "codeFileId": "cXkdXam",
       "path": "Copyright_year.tsx",
       "sourceKind": "framer-override-source-readCodeFile",
-      "localPath": "code/mirror/code-overrides/source-tsx/Copyright_year.tsx",
+      "localPath": "code/mirror/code-overrides/Copyright_year.tsx",
       "bytes": 338,
       "sha256": "afe4a1377b5aa981acb8b3ca11c749d1f2173bd66298e44de783f32f4a7cf592",
       "exports": [
@@ -509,7 +509,7 @@
       "codeFileId": "saw3Q19",
       "path": "Examples_1.tsx",
       "sourceKind": "framer-override-source-readCodeFile",
-      "localPath": "code/mirror/code-overrides/source-tsx/Examples_1.tsx",
+      "localPath": "code/mirror/code-overrides/Examples_1.tsx",
       "bytes": 586,
       "sha256": "4507ed24e2d54a78742ee7ece51ac16ae57f9f842c22dce6710ee232df5ae0e5",
       "exports": [
@@ -522,7 +522,7 @@
       "codeFileId": "WHpRmeH",
       "path": "External.tsx",
       "sourceKind": "framer-override-source-readCodeFile",
-      "localPath": "code/mirror/code-overrides/source-tsx/External.tsx",
+      "localPath": "code/mirror/code-overrides/External.tsx",
       "bytes": 865,
       "sha256": "36d55bd8adc74d62e4b63a0b2f2ca595ad3e8d540a1dcacf1e4644a149f7125f",
       "exports": [
@@ -537,7 +537,7 @@
       "codeFileId": "zB2BDA4",
       "path": "Weather.tsx",
       "sourceKind": "framer-override-source-readCodeFile",
-      "localPath": "code/mirror/code-overrides/source-tsx/Weather.tsx",
+      "localPath": "code/mirror/code-overrides/Weather.tsx",
       "bytes": 587,
       "sha256": "790349525176d4c84296a2d89efb6d2c48850819b13151332a782cf5c7d238fd",
       "exports": [

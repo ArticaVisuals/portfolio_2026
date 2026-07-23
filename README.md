@@ -1,7 +1,7 @@
 # Portfolio 2026 — Workspace Map
 
 Micah Hoang's portfolio (built in Framer). This root is intentionally small.
-Everything is sorted into four top-level folders. Start here to find anything.
+Everything durable is sorted into four top-level folders.
 
 ## Top-level layout
 
@@ -9,9 +9,8 @@ Everything is sorted into four top-level folders. Start here to find anything.
 |---|---|
 | **`code/`** | All code, in one place. `components/` (Framer code-component mirror `.tsx`), `mirror/` (compiled Framer snapshots + `manifest.json` mapping each component to its Framer `codeFileId`, plus `backups/`), `tools/` (scripts + the image-optimizer app), `tokens/` (design tokens). |
 | **`docs/`** | Project docs read by humans and AI agents. Start with `docs/code-components-map.md`, then `docs/framer-current-state.md`. `docs/reference/` holds human-only strategy/copy. |
-| **`assets/`** | All media, sorted **by project**. `by-project/<slug>/` (with `framer-staging/` + `current-site/` provenance subfolders), `shared/` (cross-project poster/optimized sets). See **`assets/INDEX.md`** to find any project's media at a glance. |
-| **`archive/`** | Retired material not on the published site: `cargo-era/` + `retired-framer-routes/` media, `info-page-backups/`, old page/backups, `misc/`. |
-| `output/`, `outputs/` | Generated QA / optimization / presentation batches (mostly gitignored scratch). |
+| **`assets/`** | All reusable media. Case-study assets are sorted under `by-project/<slug>/`; `/play` assets are sorted separately under `Play/<slug>/`. See **`assets/INDEX.md`**. |
+| **`archive/`** | Retired material, old routes/code/backups, handoffs, and preserved browser/media QA under `generated-artifacts/`. See **`archive/README.md`**. |
 
 Root files: `AGENTS.md` (agent entry point / Framer conventions), this `README.md`,
 `workspace-organization-plan.md` (reorg history), `package.json`.
@@ -20,6 +19,8 @@ Root files: `AGENTS.md` (agent entry point / Framer conventions), this `README.m
 
 - **AI agents / Codex:** read `AGENTS.md`, then the docs it points to in `docs/`.
 - **Finding a project's assets:** `assets/INDEX.md` → `assets/by-project/<slug>/`.
+- **Finding `/play` media:** `assets/INDEX.md` → `assets/Play/<slug>/`.
+- **Finding historical QA:** `archive/generated-artifacts/`.
 - **Which local `.tsx` maps to which Framer component:** `code/mirror/manifest.json`.
 - **Reorg history & rationale:** `workspace-organization-plan.md`.
 

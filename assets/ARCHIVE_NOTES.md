@@ -2,8 +2,9 @@
 
 Prepared: 2026-06-15. **Updated 2026-07-22: assets reorganized by project.**
 
-> **2026-07-22 reorg:** media now lives under `assets/by-project/<slug>/` with
-> `framer-staging/` and `current-site/` provenance subfolders (see
+> **2026-07-22 reorg:** case-study media now lives under
+> `assets/by-project/<slug>/` with `framer-staging/` and `current-site/`
+> provenance subfolders; `/play` media lives under `assets/Play/<slug>/` (see
 > `README.md`). The per-slug "local asset notes" in the table below have been
 > repointed to the new paths. Genuinely retired Cargo-era folders and
 > retired-route folders were moved to `../archive/cargo-era/` and
@@ -23,7 +24,7 @@ from the June 15 Framer MCP inventory:
 |---|---|---|
 | `gaia` | `/case-studies/gaia` | `framer-staging/gaia`, `figma-export/gaia`, `figma-export/gaia-final-deck`, `gaia-selected` |
 | `airpods` | `/case-studies/airpods` | `framer-staging/airpods-pro-3`, `current-site/airpods-pro-3` use the older descriptive folder name |
-| `peak-energy` | `/case-studies/peak-energy` | no obvious local asset folder yet |
+| `peak-energy` | `/case-studies/peak-energy` | `assets/by-project/peak-energy/` |
 | `simon-schuster` | `/case-studies/simon-schuster` | `framer-staging/simon-schuster`, `current-site/simon-schuster`; book photo sequence lives in `current-site/simon-schuster/Book/`, book derivatives in `current-site/simon-schuster/Book/Web Optimized/`, and other web-ready derivatives in `current-site/simon-schuster/Web Optimized/` |
 | `motion-connect-2025` | `/case-studies/motion-connect-2025` | `framer-staging/motion-connect-2025`, `current-site/motion-connect-2025` |
 | `national-park-cards` | `/case-studies/national-park-cards` | `framer-staging/national-park-cards`, `current-site/national-park-playing-cards` |
@@ -35,9 +36,15 @@ from the June 15 Framer MCP inventory:
 | `seek-truth` | `/case-studies/seek-truth` | `framer-staging/seek-truth`; no Cargo/current-site folder seen |
 | `independent-lens` | `/case-studies/independent-lens` | `framer-staging/independent-lens`, `current-site/independent-lens` |
 | `typldn` | `/case-studies/typldn` | `current-site/typldn`; no Framer staging folder seen |
-| `rejuve` | `/case-studies/rejuve` | WIP shell; no obvious local asset folder yet |
+| `rejuve` | `/case-studies/rejuve` | WIP shell; `/play` media and derivatives are in `assets/Play/rejuve/` |
 | `belly-bar` | `/case-studies/belly-bar` | WIP shell; no obvious local asset folder yet |
-| `whatsapp` | `/case-studies/whatsapp` | WIP shell; `framer-staging/brand-new-school` stores the current optimized video batch and posters |
+| `whatsapp` | `/case-studies/whatsapp` | WIP shell; Brand New School media and its poster are in `assets/by-project/whatsapp/` |
+
+Current `/play` works have their own folders under `assets/Play/` (for example
+`babel-short-film`, `dandelion`, `coin-experimental-music-poster`,
+`image-gen-creations`, and `root-growth`).
+Their former cross-project batch records are preserved under
+`archive/generated-artifacts/media-optimization/`.
 
 ## Folder Groups
 
@@ -132,7 +139,8 @@ Cargo-era or retired/reference-only folders:
   `case-study-assets/current-site` before the 2026-07-22 reorg); narrow it to
   `assets/by-project/<slug>` per project. Update the tool README, UI default,
   and server default together if this changes.
-- `framer-global-media-controllers.md` references `assets/shared/video-posters`.
+- `framer-global-media-controllers.md` references project-local
+  `video-posters/` folders and the archived cross-project URL map.
 
 ## Retirement Rule
 

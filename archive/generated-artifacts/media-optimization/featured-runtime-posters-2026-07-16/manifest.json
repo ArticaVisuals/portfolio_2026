@@ -1,0 +1,602 @@
+{
+  "generatedAt": "2026-07-16T19:49:28.194Z",
+  "source": "https://khaki-ship-257706.framer.app",
+  "pages": [
+    {
+      "slug": "gaia",
+      "path": "/case-studies/gaia"
+    },
+    {
+      "slug": "airpods",
+      "path": "/case-studies/airpods"
+    },
+    {
+      "slug": "peak-energy",
+      "path": "/case-studies/peak-energy"
+    },
+    {
+      "slug": "motion-connect-2025",
+      "path": "/case-studies/motion-connect-2025"
+    },
+    {
+      "slug": "simon-schuster",
+      "path": "/case-studies/simon-schuster"
+    },
+    {
+      "slug": "national-park-cards",
+      "path": "/case-studies/national-park-cards"
+    }
+  ],
+  "outputFolder": "assets/by-project/<slug>/video-posters",
+  "posterPolicy": "Published featured-project video tags without poster attributes get JPG stills capped at 1600px on the long edge, extracted around 25% of duration and never upscaled.",
+  "counts": {
+    "missingPosterVideoSources": 47,
+    "missingPosterVideoTags": 63
+  },
+  "rows": [
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/gaia/video-posters/01-gaia-ubkffonzrddwqdrf7n6r3cejeo-poster.jpg",
+      "outputBytes": 120759,
+      "outputBytesLabel": "118 KB",
+      "duration": 3.208333,
+      "posterTimestamp": 0.80208325
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/02-gaia-iyvjwra2w8xywbijlyzkocplcos-poster.jpg",
+      "outputBytes": 13773,
+      "outputBytesLabel": "13 KB",
+      "duration": 3,
+      "posterTimestamp": 0.75
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/BTL3ADwYE4N6rw7MvS4uh4Lz81g.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/03-gaia-btl3adwye4n6rw7mvs4uh4lz81g-poster.jpg",
+      "outputBytes": 136630,
+      "outputBytesLabel": "133 KB",
+      "duration": 4.062993,
+      "posterTimestamp": 1.01574825
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/yd1uleBFnnm2f9VC5nMYSxUNmpY.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/04-gaia-yd1ulebfnnm2f9vc5nmysxunmpy-poster.jpg",
+      "outputBytes": 332560,
+      "outputBytesLabel": "325 KB",
+      "duration": 16,
+      "posterTimestamp": 4
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/OAAidiFb2iiIPJ717ZpYgWubqQ.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/05-gaia-oaaidifb2iiipj717zpygwubqq-poster.jpg",
+      "outputBytes": 93399,
+      "outputBytesLabel": "91 KB",
+      "duration": 8.958333,
+      "posterTimestamp": 2.23958325
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/T9GPPyKBoYiR0uJ0qkpbCCyTQ.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/06-gaia-t9gppykboyir0uj0qkpbccytq-poster.jpg",
+      "outputBytes": 268486,
+      "outputBytesLabel": "262 KB",
+      "duration": 14.625,
+      "posterTimestamp": 3.65625
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/07-gaia-gfr7q15npc48qc7ap45jjg12riy-poster.jpg",
+      "outputBytes": 262224,
+      "outputBytesLabel": "256 KB",
+      "duration": 11.626,
+      "posterTimestamp": 2.9065
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/8wpcnCpwA1XpzCHePxtSgME1E.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/08-gaia-8wpcncpwa1xpzchepxtsgme1e-poster.jpg",
+      "outputBytes": 65901,
+      "outputBytesLabel": "64 KB",
+      "duration": 24.875,
+      "posterTimestamp": 6.21875
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/09-gaia-tnpc8c5ynncearpzc27ldvmu-poster.jpg",
+      "outputBytes": 81681,
+      "outputBytesLabel": "80 KB",
+      "duration": 29.029,
+      "posterTimestamp": 7.25725
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/10-gaia-dpqoptuyetcuew9tsvigbzulm-poster.jpg",
+      "outputBytes": 161853,
+      "outputBytesLabel": "158 KB",
+      "duration": 2.2,
+      "posterTimestamp": 0.55
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/11-gaia-eezjqzoe1d0nftlgsmsjir3ppe-poster.jpg",
+      "outputBytes": 119571,
+      "outputBytesLabel": "117 KB",
+      "duration": 8.109,
+      "posterTimestamp": 2.02725
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/gaia/video-posters/12-gaia-idwfq1kiqzomk9zea4e4e8tmjsy-poster.jpg",
+      "outputBytes": 149503,
+      "outputBytesLabel": "146 KB",
+      "duration": 2.523,
+      "posterTimestamp": 0.63075
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+      "pages": [
+        "gaia"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/gaia/video-posters/13-gaia-btloydlc22t6zdtexvcfrii1ssm-poster.jpg",
+      "outputBytes": 99430,
+      "outputBytesLabel": "97 KB",
+      "duration": 8.176333,
+      "posterTimestamp": 2.04408325
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/14-airpods-iedehtbqcl66mhv5mkpccljeb0-poster.jpg",
+      "outputBytes": 22700,
+      "outputBytesLabel": "22 KB",
+      "duration": 24.057,
+      "posterTimestamp": 6.01425
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/JmkOmLQq5rmvERShZfiFP7M.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/15-airpods-jmkomlqq5rmvershzfifp7m-poster.jpg",
+      "outputBytes": 41145,
+      "outputBytesLabel": "40 KB",
+      "duration": 10.543867,
+      "posterTimestamp": 2.63596675
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/HflTOYDNzce3QfCEbZ0bji7HCU.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/16-airpods-hfltoydnzce3qfcebz0bji7hcu-poster.jpg",
+      "outputBytes": 34257,
+      "outputBytesLabel": "33 KB",
+      "duration": 7.5,
+      "posterTimestamp": 1.875
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/17-airpods-ynobrp88otyxge9m0rfdnyidpm-poster.jpg",
+      "outputBytes": 18464,
+      "outputBytesLabel": "18 KB",
+      "duration": 9.7097,
+      "posterTimestamp": 2.427425
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/18-airpods-kwt4oi40orarfxzaiqujvjgxmk-poster.jpg",
+      "outputBytes": 33511,
+      "outputBytesLabel": "33 KB",
+      "duration": 12.746067,
+      "posterTimestamp": 3.18651675
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/19-airpods-7puys1apbggwixd227rduczcf00-poster.jpg",
+      "outputBytes": 24726,
+      "outputBytesLabel": "24 KB",
+      "duration": 7.424,
+      "posterTimestamp": 1.856
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/20-airpods-d6e9mqjzqxmfkiqwm3iyl2x9a-poster.jpg",
+      "outputBytes": 22348,
+      "outputBytesLabel": "22 KB",
+      "duration": 2.5,
+      "posterTimestamp": 0.625
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/21-airpods-ctvysnqbrzqd3hmzg5jd1jbxghs-poster.jpg",
+      "outputBytes": 20277,
+      "outputBytesLabel": "20 KB",
+      "duration": 2.44401,
+      "posterTimestamp": 0.6110025
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+      "pages": [
+        "airpods"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/airpods/video-posters/22-airpods-rmxyg0omltneujjr0gifdkaolu-poster.jpg",
+      "outputBytes": 22959,
+      "outputBytesLabel": "22 KB",
+      "duration": 47.933008,
+      "posterTimestamp": 11.983252
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/QAYMhu4B0xdHJxnySBuabHtks.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/23-peak-energy-qaymhu4b0xdhjxnysbuabhtks-poster.jpg",
+      "outputBytes": 22353,
+      "outputBytesLabel": "22 KB",
+      "duration": 2.546029,
+      "posterTimestamp": 0.63650725
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/ebURoH5YNfEa6FCrcr6l6QFS68Q.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/24-peak-energy-eburoh5ynfea6fcrcr6l6qfs68q-poster.jpg",
+      "outputBytes": 10347,
+      "outputBytesLabel": "10 KB",
+      "duration": 3,
+      "posterTimestamp": 0.75
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/HHTkUi7SKOAAtY1MmzC0Q1b54Q.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/peak-energy/25-peak-energy-hhtkui7skoaaty1mmzc0q1b54q-poster.jpg",
+      "outputBytes": 65458,
+      "outputBytesLabel": "64 KB",
+      "duration": 4.099023,
+      "posterTimestamp": 1.02475575
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/o0EK9YezE48hWm1UC3BcEme8ifY.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/peak-energy/26-peak-energy-o0ek9yeze48hwm1uc3bceme8ify-poster.jpg",
+      "outputBytes": 32682,
+      "outputBytesLabel": "32 KB",
+      "duration": 2,
+      "posterTimestamp": 0.5
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/9Z12PCxBfwmh6gJITSSks4qYGLM.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/27-peak-energy-9z12pcxbfwmh6gjitssks4qyglm-poster.jpg",
+      "outputBytes": 21569,
+      "outputBytesLabel": "21 KB",
+      "duration": 8,
+      "posterTimestamp": 2
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/7MFleSRgo8r2lOEcs94tDjD41TI.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/28-peak-energy-7mflesrgo8r2loecs94tdjd41ti-poster.jpg",
+      "outputBytes": 18279,
+      "outputBytesLabel": "18 KB",
+      "duration": 9,
+      "posterTimestamp": 2.25
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/YTha6qQtYqtUuIUE9g1ffdEVKc.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/29-peak-energy-ytha6qqtyqtuuiue9g1ffdevkc-poster.jpg",
+      "outputBytes": 63272,
+      "outputBytesLabel": "62 KB",
+      "duration": 5.5,
+      "posterTimestamp": 1.375
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/vkN4eGEAUSjfMw2lXOgnL5wcSo.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/30-peak-energy-vkn4egeausjfmw2lxognl5wcso-poster.jpg",
+      "outputBytes": 152316,
+      "outputBytesLabel": "149 KB",
+      "duration": 2,
+      "posterTimestamp": 0.5
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/qmBGS9TepzZYV60oqT58TCaPs.mp4",
+      "pages": [
+        "peak-energy"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/peak-energy/31-peak-energy-qmbgs9tepzzyv60oqt58tcaps-poster.jpg",
+      "outputBytes": 23848,
+      "outputBytesLabel": "23 KB",
+      "duration": 4,
+      "posterTimestamp": 1
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/dCRutmC1dwoz5Zq4iytCOHvrt8.mp4",
+      "pages": [
+        "motion-connect-2025"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/motion-connect-2025/video-posters/32-motion-connect-2025-dcrutmc1dwoz5zq4iytcohvrt8-poster.jpg",
+      "outputBytes": 171473,
+      "outputBytesLabel": "167 KB",
+      "duration": 13.077,
+      "posterTimestamp": 3.26925
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+      "pages": [
+        "motion-connect-2025"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/motion-connect-2025/video-posters/33-motion-connect-2025-fb1uokxrbc9y9v6p4jhe2sdvw-poster.jpg",
+      "outputBytes": 54415,
+      "outputBytesLabel": "53 KB",
+      "duration": 5,
+      "posterTimestamp": 1.25
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+      "pages": [
+        "motion-connect-2025"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/motion-connect-2025/video-posters/34-motion-connect-2025-bzziggcdr27kaso8g1l9aenulco-poster.jpg",
+      "outputBytes": 18764,
+      "outputBytesLabel": "18 KB",
+      "duration": 5.916667,
+      "posterTimestamp": 1.47916675
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/1C2aMBrHIm6dxQeXcdJcqDx0xs0.mp4",
+      "pages": [
+        "motion-connect-2025"
+      ],
+      "tagCount": 2,
+      "posterPath": "assets/by-project/motion-connect-2025/video-posters/35-motion-connect-2025-1c2ambrhim6dxqexcdjcqdx0xs0-poster.jpg",
+      "outputBytes": 99704,
+      "outputBytesLabel": "97 KB",
+      "duration": 6.016,
+      "posterTimestamp": 1.504
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/qCignb1pMHKPdwRrDTF57gpagSo.mp4",
+      "pages": [
+        "motion-connect-2025"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/motion-connect-2025/video-posters/36-motion-connect-2025-qcignb1pmhkpdwrrdtf57gpagso-poster.jpg",
+      "outputBytes": 20130,
+      "outputBytesLabel": "20 KB",
+      "duration": 8,
+      "posterTimestamp": 2
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/WBfSwlJMaWbkJMRpHfYzlbZPLl4.mp4",
+      "pages": [
+        "motion-connect-2025"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/motion-connect-2025/video-posters/37-motion-connect-2025-wbfswljmawbkjmrphfyzlbzpll4-poster.jpg",
+      "outputBytes": 128325,
+      "outputBytesLabel": "125 KB",
+      "duration": 9.041667,
+      "posterTimestamp": 2.26041675
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/K1752285800188626851517885044245/S-S-Logo-Animation-2.mp4",
+      "pages": [
+        "simon-schuster"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/simon-schuster/video-posters/38-simon-schuster-s-s-logo-animation-2-poster.jpg",
+      "outputBytes": 24715,
+      "outputBytesLabel": "24 KB",
+      "duration": 11,
+      "posterTimestamp": 2.75
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/npEWAtDub3QRSPyGSrWh42ns6H8.mp4",
+      "pages": [
+        "simon-schuster"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/simon-schuster/video-posters/39-simon-schuster-npewatdub3qrspygsrwh42ns6h8-poster.jpg",
+      "outputBytes": 29208,
+      "outputBytesLabel": "29 KB",
+      "duration": 5,
+      "posterTimestamp": 1.25
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/b9f0GkZjSgHCSTkQ6p5mSRBOFRo.mp4",
+      "pages": [
+        "simon-schuster"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/simon-schuster/video-posters/40-simon-schuster-b9f0gkzjsghcstkq6p5msrbofro-poster.jpg",
+      "outputBytes": 255634,
+      "outputBytesLabel": "250 KB",
+      "duration": 3.003,
+      "posterTimestamp": 0.75075
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/J1542517319778170274194483566101/All-Cards-Animation_1.mp4",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/41-national-park-cards-all-cards-animation-1-poster.jpg",
+      "outputBytes": 22537,
+      "outputBytesLabel": "22 KB",
+      "duration": 24.5245,
+      "posterTimestamp": 6.131125
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/J1543046243473909932978774201877/Joker-Animation-2.mp4",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/42-national-park-cards-joker-animation-2-poster.jpg",
+      "outputBytes": 22745,
+      "outputBytesLabel": "22 KB",
+      "duration": 2.002,
+      "posterTimestamp": 0.5005
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/G1540917371720490845266153559573/National-Park-Reel.mp4",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/43-national-park-cards-national-park-reel-poster.jpg",
+      "outputBytes": 24109,
+      "outputBytesLabel": "24 KB",
+      "duration": 9.633424,
+      "posterTimestamp": 2.408356
+    },
+    {
+      "sourceUrl": "https://framerusercontent.com/assets/bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/44-national-park-cards-bagmxoudbarz3iqbz7hg5zwlc4-poster.jpg",
+      "outputBytes": 69137,
+      "outputBytesLabel": "68 KB",
+      "duration": 48.766667,
+      "posterTimestamp": 12.19166675
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/L1543258461716816171227936970261/SnapTik_App_7063886141824683311-HD.mp4",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/45-national-park-cards-snaptik-app-7063886141824683311-hd-poster.jpg",
+      "outputBytes": 53031,
+      "outputBytesLabel": "52 KB",
+      "duration": 12.165011,
+      "posterTimestamp": 3.04125275
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/46-national-park-cards-img-1174-poster.jpg",
+      "outputBytes": 46998,
+      "outputBytesLabel": "46 KB",
+      "duration": 9.215,
+      "posterTimestamp": 2.30375
+    },
+    {
+      "sourceUrl": "https://freight.cargo.site/t/original/i/Z2116629357142052312463249233429/By-the-Numbers.mp4",
+      "pages": [
+        "national-park-cards"
+      ],
+      "tagCount": 1,
+      "posterPath": "assets/by-project/national-park-cards/video-posters/47-national-park-cards-by-the-numbers-poster.jpg",
+      "outputBytes": 18655,
+      "outputBytesLabel": "18 KB",
+      "duration": 3.003,
+      "posterTimestamp": 0.75075
+    }
+  ]
+}

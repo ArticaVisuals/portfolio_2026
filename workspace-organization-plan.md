@@ -4,12 +4,22 @@ Prepared: 2026-06-15.
 
 > **STATUS — 2026-07-22: full reorg complete.** The workspace was consolidated
 > into four top-level folders: **`code/`** (components, mirror, tools, tokens),
-> **`docs/`** (+ `docs/reference/`), **`assets/`** (`by-project/<slug>/` +
-> `shared/`), and **`archive/`**. The live workspace map is now **`README.md`**;
+> **`docs/`** (+ `docs/reference/`), **`assets/`** (`by-project/<slug>/` for
+> case studies and `Play/<slug>/` for `/play`), and
+> **`archive/`**. The live workspace map is now **`README.md`**;
 > per-project media is indexed in **`assets/INDEX.md`**. The sections below are
 > retained as the reorg's history and rationale — some describe the pre-2026-07-22
 > layout. Done in five reviewed commits (stale-doc cleanup → docs → assets →
 > code → framer/ dissolution).
+>
+> **OUTPUT/ARCHIVE FOLLOW-UP — 2026-07-22:** the former `output/` batches were
+> sorted into project folders and `archive/generated-artifacts/`. A final
+> project-ownership pass also distributed poster and optimization media from
+> `assets/shared/` into project folders, then separated `/play` media into
+> `assets/Play/<slug>/`. The former
+> `_archive/` tree was merged
+> into `archive/` without collisions. Verified upload-package and ZIP mirrors
+> were removed. The disposable `outputs/` deliverables tree was also removed.
 
 Purpose: make this folder easier for Micah and future AI agents to read without
 breaking Framer MCP, published-site QA, or active code-file mirrors.
@@ -104,17 +114,17 @@ Framer backup.
 These files were not listed in the current Framer code-component inventory and
 were moved during Phase 2 on 2026-06-15.
 
-- `_archive/local-only-drafts/IndexGridVideoHoverFix.tsx` - local helper;
+- `archive/local-only-drafts/IndexGridVideoHoverFix.tsx` - local helper;
   current docs say grid hover is consolidated into `IndexPage.tsx`.
-- `_archive/local-only-drafts/IndexPageBreakpointsDraft.tsx` - draft breakpoint
+- `archive/local-only-drafts/IndexPageBreakpointsDraft.tsx` - draft breakpoint
   helper, not a live Framer code file.
-- `_archive/bundled-framer-app/app.js` - bundled/minified Electron or Framer app
+- `archive/bundled-framer-app/app.js` - bundled/minified Electron or Framer app
   artifact, not project source.
-- `_archive/bundled-framer-app/main.js` - bundled/minified Electron or Framer
+- `archive/bundled-framer-app/main.js` - bundled/minified Electron or Framer
   app artifact, not project source.
-- `_archive/bundled-framer-app/preload.js` - bundled/minified Electron or Framer
+- `archive/bundled-framer-app/preload.js` - bundled/minified Electron or Framer
   app artifact, not project source.
-- `_archive/handoffs/claude-mcp-handoff-case-study-wip-gate.md` - one-off
+- `archive/handoffs/claude-mcp-handoff-case-study-wip-gate.md` - one-off
   handoff after the WIP gate work. Keep `case-study-wip-gate.md` active for now.
 
 ## Root Reference Artifacts
@@ -135,9 +145,10 @@ Suggested labels:
 - `case-study-assets/framer-staging/` - Framer staging scrape and staging media
   batches. Contains active project folders, `brand-new-school` working media for
   the `/case-studies/whatsapp` WIP shell, plus retired route folders.
-- `assets/shared/optimized/` - optimized batches for upload/rehosting.
-- `assets/shared/video-posters/` - poster stills and manifest for manual
-  Framer video poster work.
+- `assets/by-project/<slug>/optimized-media/` or `Web Optimized/` - generated
+  project media for upload/rehosting.
+- `assets/by-project/<slug>/video-posters/` - poster stills for manual Framer
+  video poster work.
 - `assets/by-project/gaia/figma-export/` and `assets/by-project/gaia/selected/` -
   Gaia/Figma-derived working material.
 
@@ -159,31 +170,36 @@ Archive/retired local asset folders include:
 
 ## Generated Output Folders
 
-- `output/` is mostly Playwright/browser QA and scraped frames.
-- `outputs/` includes generated presentation/deliverable artifacts.
+- Project-specific optimized media lives beside its source project under
+  `assets/by-project/<slug>/.../Web Optimized/`.
+- `/play` media is grouped by work under `assets/Play/<slug>/`, separate from
+  case-study media.
+- Cross-project optimization manifests and contact sheets live under
+  `archive/generated-artifacts/media-optimization/`.
+- Historical Playwright/browser QA and scraped frames live under
+  `archive/generated-artifacts/`.
+- The disposable `outputs/` presentation/deliverable tree was removed after the
+  output/archive cleanup.
 - `.playwright-cli/` is ignored already and can remain generated scratch.
 - `.framer-inspect/` is useful inspection cache; do not delete during active
   Framer parity work.
 
-Because docs reference many paths under `output/playwright/...`, move old output
-only in a deliberate archive pass or leave the paths stable and add README files.
-
 ## Recommended Reorganization
 
-Phase 1, safe documentation:
+Phase 1, safe documentation: completed and superseded by the 2026-07-22 cleanup
 
 - Keep active root docs and TSX mirrors at root.
 - Add this plan as the workspace map.
-- Add short READMEs to `output/`, `outputs/`, and possibly
-  `case-study-assets/` instead of moving referenced artifacts immediately.
+- Added durable READMEs and later moved the generated artifacts deliberately,
+  with their path references repaired in the same pass.
 
 Phase 2, low-risk retirement: completed 2026-06-15
 
-- Created `_archive/local-only-drafts/`.
+- Created `archive/local-only-drafts/`.
 - Moved `IndexGridVideoHoverFix.tsx` and `IndexPageBreakpointsDraft.tsx` there.
-- Created `_archive/bundled-framer-app/`.
+- Created `archive/bundled-framer-app/`.
 - Moved `app.js`, `main.js`, and `preload.js` there.
-- Created `_archive/handoffs/`.
+- Created `archive/handoffs/`.
 - Moved `claude-mcp-handoff-case-study-wip-gate.md` there.
 
 Phase 3, asset labeling: completed 2026-06-15
@@ -203,7 +219,7 @@ Phase 4, optional mirror completion: completed 2026-06-15
   snapshots under `code/mirror/code-components/compiled-js/`, with their
   `framer.com/m` wrappers under `code/mirror/code-components/wrappers/`.
 - Saved 5 Framer override compatibility files as source snapshots under
-  `code/mirror/code-overrides/source-tsx/`.
+  `code/mirror/code-overrides/`.
 - The mirror manifest records source kind, codeFileId, Framer path, local path,
   hashes, insert URLs, and any download errors.
 
@@ -220,7 +236,7 @@ Phase 4, optional mirror completion: completed 2026-06-15
 
 ## Phase 5, framework-audit code retirement (2026-06-18, in progress)
 
-Backup committed first at `_archive/retired-play-helpers-2026-06-18/` (10 compiled
+Backup committed first at `archive/retired-play-helpers-2026-06-18/` (10 compiled
 snapshots + editable `ArchivePlaygroundConsolidated.tsx` + README with rollback
 paths) and pushed to GitHub `main`.
 

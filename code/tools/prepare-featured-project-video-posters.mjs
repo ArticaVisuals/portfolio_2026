@@ -6,11 +6,17 @@ import { fileURLToPath } from "node:url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const workspaceRoot = path.resolve(__dirname, "../..")
-const outputDir = path.join(
+const manifestDir = path.join(
   workspaceRoot,
-  "assets/shared/optimized/featured-project-video-posters"
+  "archive/generated-artifacts/media-optimization/featured-runtime-posters-latest"
 )
-const posterDir = path.join(outputDir, "posters")
+const posterDirFor = (slug) =>
+  path.join(
+    workspaceRoot,
+    "assets/by-project",
+    slug,
+    slug === "peak-energy" ? "" : "video-posters"
+  )
 const siteOrigin = "https://khaki-ship-257706.framer.app"
 const pages = [
   { slug: "gaia", path: "/case-studies/gaia" },
@@ -175,8 +181,17 @@ function extractPoster(video, posterPath) {
 }
 
 async function main() {
-  fs.rmSync(outputDir, { recursive: true, force: true })
-  fs.mkdirSync(posterDir, { recursive: true })
+  fs.rmSync(manifestDir, { recursive: true, force: true })
+  fs.mkdirSync(manifestDir, { recursive: true })
+  for (const page of pages) {
+    const posterDir = posterDirFor(page.slug)
+    fs.mkdirSync(posterDir, { recursive: true })
+    for (const name of fs.readdirSync(posterDir)) {
+      if (new RegExp(`^\\d{2}-${page.slug}-.*-poster\\.jpg$`).test(name)) {
+        fs.rmSync(path.join(posterDir, name))
+      }
+    }
+  }
 
   const allMissing = []
   for (const page of pages) {
@@ -188,7 +203,7 @@ async function main() {
   const rows = []
 
   videos.forEach((video, index) => {
-    const posterPath = path.join(posterDir, safeName(video, index))
+    const posterPath = path.join(posterDirFor(video.slug), safeName(video, index))
     const { duration, timestamp } = extractPoster(video, posterPath)
     const stats = fs.statSync(posterPath)
     rows.push({
@@ -210,7 +225,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     source: siteOrigin,
     pages,
-    outputFolder: rel(outputDir),
+    outputFolder: "assets/by-project/<slug>/video-posters",
     posterPolicy:
       "Published featured-project video tags without poster attributes get JPG stills capped at 1600px on the long edge, extracted around 25% of duration and never upscaled.",
     counts: {
@@ -221,11 +236,11 @@ async function main() {
   }
 
   fs.writeFileSync(
-    path.join(outputDir, "manifest.json"),
+    path.join(manifestDir, "manifest.json"),
     `${JSON.stringify(manifest, null, 2)}\n`
   )
   fs.writeFileSync(
-    path.join(outputDir, "manifest.tsv"),
+    path.join(manifestDir, "manifest.tsv"),
     [
       "sourceUrl\tpages\ttagCount\tposterPath\toutputBytesLabel\tduration\tposterTimestamp",
       ...rows.map((row) =>
@@ -246,7 +261,7 @@ async function main() {
   console.log(`Prepared ${rows.length} featured-project video posters.`)
   console.log(`Missing poster video tags represented: ${allMissing.length}.`)
   console.log(`Poster bytes: ${(totalBytes / 1024 / 1024).toFixed(2)} MB.`)
-  console.log(`Manifest: ${rel(path.join(outputDir, "manifest.tsv"))}`)
+  console.log(`Manifest: ${rel(path.join(manifestDir, "manifest.tsv"))}`)
 }
 
 main().catch((error) => {

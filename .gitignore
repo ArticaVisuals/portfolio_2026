@@ -4,16 +4,18 @@
 assets/by-project/gaia/figma-export/**/Gaia Final Deck.pptx
 
 # Generated QA/media batches. Existing tracked artifacts remain tracked.
-output/playwright/
-output/media-compression-audit-*/
-assets/shared/optimized/
+archive/generated-artifacts/browser-qa/
+archive/generated-artifacts/media-compression-audit-*/
+assets/by-project/motion-connect-2025/optimized-media/
+assets/by-project/*/video-posters/[0-9][0-9]-*-poster.jpg
+assets/by-project/peak-energy/[0-9][0-9]-peak-energy-*-poster.jpg
+archive/generated-artifacts/media-optimization/featured-runtime-posters-latest/
 
 # Raw design source trees + bundles — kept in Drive, too heavy for git.
 # Web-optimized derivatives (e.g. */optimized/*.webp) stay tracked.
 assets/**/source/
-output/**/source/
 *.zip
 
 # Ad-hoc media QA scratch + Framer runtime inspection dumps.
-output/wolff-media-check/
+archive/generated-artifacts/media-qa/wolff-media-check/
 .framer-inspect/

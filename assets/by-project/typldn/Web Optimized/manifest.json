@@ -1,0 +1,52 @@
+[
+  {
+    "source_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/011-img_1503.jpg",
+    "optimized_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/Web Optimized/optimized/011-img_1503-2560q82.webp",
+    "original_dimensions": "4032x3024",
+    "optimized_dimensions": "2560x1920",
+    "original_bytes": 4704609,
+    "optimized_bytes": 379402,
+    "savings_percent": 91.9,
+    "settings": "WebP quality 82, max 2560px long edge, metadata stripped"
+  },
+  {
+    "source_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/012-img_1501.jpg",
+    "optimized_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/Web Optimized/optimized/012-img_1501-2560q82.webp",
+    "original_dimensions": "4032x3024",
+    "optimized_dimensions": "2560x1920",
+    "original_bytes": 2971969,
+    "optimized_bytes": 159856,
+    "savings_percent": 94.6,
+    "settings": "WebP quality 82, max 2560px long edge, metadata stripped"
+  },
+  {
+    "source_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/013-img_1500.jpg",
+    "optimized_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/Web Optimized/optimized/013-img_1500-2560q82.webp",
+    "original_dimensions": "4032x3024",
+    "optimized_dimensions": "2560x1920",
+    "original_bytes": 3822567,
+    "optimized_bytes": 327436,
+    "savings_percent": 91.4,
+    "settings": "WebP quality 82, max 2560px long edge, metadata stripped"
+  },
+  {
+    "source_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/014-img_1638.jpg",
+    "optimized_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/Web Optimized/optimized/014-img_1638-2560q82.webp",
+    "original_dimensions": "3024x4032",
+    "optimized_dimensions": "1920x2560",
+    "original_bytes": 4328806,
+    "optimized_bytes": 226076,
+    "savings_percent": 94.8,
+    "settings": "WebP quality 82, max 2560px long edge, metadata stripped"
+  },
+  {
+    "source_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/015-img_1630.jpg",
+    "optimized_path": "/Users/micahhoang/My Drive/Portfolio 2026/assets/by-project/typldn/Web Optimized/optimized/015-img_1630-2560q82.webp",
+    "original_dimensions": "3024x4032",
+    "optimized_dimensions": "1920x2560",
+    "original_bytes": 2484259,
+    "optimized_bytes": 217652,
+    "savings_percent": 91.2,
+    "settings": "WebP quality 82, max 2560px long edge, metadata stripped"
+  }
+]

@@ -17,7 +17,8 @@ Four top-level folders (see `README.md` for the full map):
   snapshots + `manifest.json` component↔`codeFileId` map + `backups/`),
   `tools/` (scripts + image-optimizer), `tokens/` (design tokens).
 - `docs/` — agent-read project docs (+ `docs/reference/` for human strategy/copy).
-- `assets/` — media sorted by project under `by-project/<slug>/`; see `assets/INDEX.md`.
+- `assets/` — case-study media under `by-project/<slug>/` and `/play` media
+  under `Play/<slug>/`; see `assets/INDEX.md`.
 - `archive/` — retired material not on the published site.
 
 The `.tsx` in `code/components/` are local mirrors of Framer code components

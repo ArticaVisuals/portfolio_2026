@@ -1,6 +1,6 @@
 async page => {
     const base = "https://khaki-ship-257706.framer.app"
-    const outDir = "output/playwright/visual-qa-2026-05-20"
+    const outDir = "archive/generated-artifacts/browser-qa/visual-qa-2026-05-20"
 
     const routes = [
         { path: "/", name: "home", scrolls: [0, 900, 1800] },

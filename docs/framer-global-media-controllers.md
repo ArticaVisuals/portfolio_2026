@@ -206,8 +206,10 @@ The `freight.cargo.site` videos (~42) plus 6 on expiring temp hosts (gaia,
 wolff-olins) are slow/at-risk. Decision: **posters now, user re-uploads the
 video files into Framer later** (Framer's API can't ingest video, only images).
 
-- 47 poster stills were generated (ffmpeg, 25%-seek frames) and committed to
-  `assets/shared/video-posters/` (poster01–47.jpg + `manifest.tsv` + README).
+- 47 poster stills were generated (ffmpeg, 25%-seek frames) and are now stored
+  in each project's `assets/by-project/<slug>/video-posters/` folder. The
+  cross-project URL map is preserved under
+  `archive/generated-artifacts/media-optimization/video-posters-2026-06-06/`.
 - **API limitation:** native Framer `<Video>` nodes expose only `posterEnabled`
   (boolean) — no poster-image attribute — so the ~40 native VideoWrappers
   (incl. motion-connect's Hype-Reel blank tiles) can only be postered in the

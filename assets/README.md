@@ -1,21 +1,31 @@
 # Portfolio Assets
 
-This is the single home for all portfolio media, reorganized **by project** on
-2026-07-22.
+This is the single home for all portfolio media, reorganized by site section
+and project on 2026-07-22.
 
 ## Current layout (2026-07-22)
 
-- `by-project/<slug>/` — every project's media in one place. Provenance is kept
+- `by-project/<slug>/` — case-study media, grouped by project. Provenance is kept
   in subfolders: `framer-staging/` (Framer redesign scrape), `current-site/`
   (older Cargo `micahhoang.info` scrape), plus project-specific sets like
   `gaia/figma-export`, `gaia/selected`, `karuna/process`,
-  `seek-truth/main`, `whatsapp/brand-new-school`.
-- `shared/` — cross-project generated sets: `video-posters/` (poster stills +
-  manifest), `generated-posters/`, and `optimized/` (upload batches, gitignored).
+  and `seek-truth/main`. Redundant single-child provenance wrappers were
+  flattened for Typldn and WhatsApp; their manifests retain the source details.
+  `Web Optimized/` folders sit beside their source media when a project has
+  generated web-ready derivatives.
+- `Play/<slug>/` — media shown on `/play`, separated from case-study media even
+  when the same project also has a case study. Each work keeps its `source/`,
+  `optimized/`, and `qc/` sets where applicable.
+- Project-specific generated media also stays with its project: poster stills
+  use `video-posters/`, and Motion Connect's combined optimization package uses
+  `optimized-media/`. Cross-project batch records live in
+  `../archive/generated-artifacts/media-optimization/`, not in `assets/`.
 - `scrape-manifest.json`, `external-embeds.json`, `ARCHIVE_NOTES.md` — scrape
   metadata (see the per-slug map in `ARCHIVE_NOTES.md`).
 - Retired Cargo-era and retired-route media moved to `../archive/` (`cargo-era/`,
   `retired-framer-routes/`).
+- Browser screenshots, contact sheets, and other QA evidence live in
+  `../archive/generated-artifacts/`; they are not reusable project media.
 
 Tooling note: the `tools/` scrapers (`scrape-case-study-assets.cjs`,
 `download-external-embeds.cjs`, `scrape-archive-playground-assets.cjs`) predate

@@ -16,7 +16,7 @@ const stagingDir = path.join(
 )
 const outputDir = path.join(
   workspaceRoot,
-  "assets/shared/optimized/motion-connect-2025"
+  "assets/by-project/motion-connect-2025/optimized-media"
 )
 const posterDir = path.join(outputDir, "posters")
 const imageDir = path.join(outputDir, "images")
