@@ -1,6 +1,15 @@
 # Portfolio 2026 Workspace Organization Plan
 
-Prepared: 2026-06-15
+Prepared: 2026-06-15.
+
+> **STATUS — 2026-07-22: full reorg complete.** The workspace was consolidated
+> into four top-level folders: **`code/`** (components, mirror, tools, tokens),
+> **`docs/`** (+ `docs/reference/`), **`assets/`** (`by-project/<slug>/` +
+> `shared/`), and **`archive/`**. The live workspace map is now **`README.md`**;
+> per-project media is indexed in **`assets/INDEX.md`**. The sections below are
+> retained as the reorg's history and rationale — some describe the pre-2026-07-22
+> layout. Done in five reviewed commits (stale-doc cleanup → docs → assets →
+> code → framer/ dissolution).
 
 Purpose: make this folder easier for Micah and future AI agents to read without
 breaking Framer MCP, published-site QA, or active code-file mirrors.

@@ -47,7 +47,10 @@
       "Bash(xargs -0 perl \"/private/tmp/claude-501/-Users-micahhoang-My-Drive-Portfolio-2026/0a5e9461-140a-4c91-82c6-c70114693b1d/scratchpad/phase4-refrewrite.pl\")",
       "Bash(node -e ' *)",
       "Bash(node --check code/tools/check-framer-meta.mjs)",
-      "Bash(node code/tools/check-thumbnail-stroke-resolver.mjs)"
+      "Bash(node code/tools/check-thumbnail-stroke-resolver.mjs)",
+      "Bash(git commit -q -m 'Consolidate all code under code/ \\(Phase 4\\) *)",
+      "Bash(node -e 'JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"code/mirror/manifest.json\",\"utf8\"\\)\\);console.log\\(\"manifest parses OK\"\\)')",
+      "Bash(git commit -q -m 'Dissolve redundant framer/ folder + finalize workspace map \\(Phase 5\\) *)"
     ]
   }
 }

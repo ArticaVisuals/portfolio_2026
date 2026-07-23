@@ -9,6 +9,20 @@ existing project system instead of defaulting to generic web app patterns.
 Prefer Framer-native concepts such as Stacks, Columns, responsive layout
 constraints, CMS collections, component overrides, and design tokens.
 
+## Workspace layout (2026-07-22)
+
+Four top-level folders (see `README.md` for the full map):
+
+- `code/` — all code: `components/` (Framer `.tsx` mirrors), `mirror/` (compiled
+  snapshots + `manifest.json` component↔`codeFileId` map + `backups/`),
+  `tools/` (scripts + image-optimizer), `tokens/` (design tokens).
+- `docs/` — agent-read project docs (+ `docs/reference/` for human strategy/copy).
+- `assets/` — media sorted by project under `by-project/<slug>/`; see `assets/INDEX.md`.
+- `archive/` — retired material not on the published site.
+
+The `.tsx` in `code/components/` are local mirrors of Framer code components
+(mounted by `codeFileId`); Framer is the runtime source of truth.
+
 ## Framer-To-Codex Conversion Rules
 
 - Layouts should use CSS Flexbox or Grid when translating Framer structure into

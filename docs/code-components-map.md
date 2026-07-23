@@ -4,7 +4,7 @@ Last updated: 2026-07-15 (Home selected-work video-first + About hover folded ba
 Framer **code component** so a new dev can orient fast. For chronological history
 and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
-`workspace-organization-plan.md` + `framer/mirror/manifest.json`.
+`workspace-organization-plan.md` + `code/mirror/manifest.json`.
 
 After the 2026-06-18 audit: **34 code components + 5 overrides** (down from 44).
 2026-06-23 additions: **`TestimonialLineReveal`** (`tpDdaaJ`, live) and
