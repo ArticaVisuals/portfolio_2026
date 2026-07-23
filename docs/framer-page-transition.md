@@ -1,6 +1,19 @@
 # Site-wide page transition (zitafernandez.com style)
 
-**Status:** current Framer draft code files are source of truth · 2026-07-21 · codeFile `gmalnRr` (`PageTransition.tsx`) insertUrl `https://framer.com/m/PageTransition-br4HFc.js@CfjKCbGzpEhsPGEoB5Gh` is a THIN WRAPPER that imports the compiled v7.12 runtime module, mounts `ParagraphPrettyWrap` (`EjvkJhv`) for paragraph `text-wrap: pretty` at 23px and under, and adds the Home Header Bottom recovery + the `/index` hero title rise-on-arrival + the home hero on-case-study-arrival controller (see the 2026-07-14 postmortem entry — the 2026-06-26 home-hero design was incorrect and has been replaced). `ResumeAssetHost` (`xDqfenf`) carries the Footer fallback for routes that do not load PageTransition. The full v7.12 runtime SOURCE that compiles to the imported module is preserved as `code/mirror/backups/PageTransition.runtime-backup.tsx`. · `/index` codeFile `rgAZFOv` (`IndexPage.tsx`) insertUrl `https://framer.com/m/IndexPage-msQHCf.js@TTjkvY4y86uWzgMbhCgf` · live QA verified on `micahhoang.com` 2026-07-14 (user-confirmed fixed)
+**Status:** current Framer draft code files are source of truth · 2026-07-23 · codeFile `gmalnRr` (`PageTransition.tsx`) is a THIN WRAPPER that imports the compiled v7.12 runtime module, mounts `ParagraphPrettyWrap` (`EjvkJhv`) for paragraph `text-wrap: pretty` at 23px and under, and adds the Home Header Bottom recovery + the `/index` hero title rise-on-arrival + the Home hero route-arrival controller. The current draft insert URL is `https://framer.com/m/PageTransition-br4HFc.js@vBEWVyn8AorEQTvqc6D4`. `ResumeAssetHost` (`xDqfenf`) carries the Footer fallback for routes that do not load PageTransition. The full v7.12 runtime SOURCE that compiles to the imported module is preserved as `code/mirror/backups/PageTransition.runtime-backup.tsx`.
+
+**2026-07-23 — Home hero delayed-arrival regression.** A live frame probe of
+`/play` → Home showed the Home DOM committed around 460ms after click, but the
+headline and descriptor stayed fully parked at `translateY(116px)` /
+`translateY(94px)` until roughly 1.3s after click. The persistent `Header
+Bottom` recovery was present and working immediately; the delayed surface was
+the main Home hero. Cause: the robust 2026-07-14 pre-paint/monotonic controller
+was scoped only to case-study → Home, leaving `/index`, `/play`, and `/info` →
+Home on the compiled v7.12 delayed replay path. The controller now covers every
+internal non-Home → Home arrival, while cold loads and Home → Home clicks remain
+excluded. It still cancels competing WAAPI animations and holds stylesheet
+authority until navigation away, so widening the source scope does not
+reintroduce the old double replay.
 
 **2026-07-16 — mobile first-boot curtain viewport guard.** The wrapper now injects a tiny pre-hydration guard for `#__pt-boot` so the first-load curtain uses the actual mobile viewport height (`visualViewport`/`100dvh` via `--mh-boot-vvh`) instead of relying on the compiled runtime's original `height:100vh`. It also adds a 240px bottom overscan (`--mh-boot-height`) while pinning `#__pt-boot-label` to the real viewport height, so iOS Safari's translucent bottom toolbar blurs Forest Green instead of the page underneath. This keeps the boot screen covering the full phone viewport when browser chrome changes during load, without changing the v7.12 runtime timing or Framer controls.
 

@@ -498,9 +498,12 @@ function useIndexHeadingRiseOnArrival() {
 // ---------------------------------------------------------------------------
 // Home hero on nav arrival — DOCUMENT-GLOBAL controller.
 //
-// SCOPE: acts ONLY on arrivals at "/" that came FROM a case-study page (the
-// curtain-skipped leg). All other routes into home use the v7.12 curtain +
-// holdAppear pipeline and must never be touched.
+// SCOPE: acts on every internal arrival at "/" that came from another route.
+// The compiled v7.12 pipeline still owns the sheet transition, but its Home
+// appear replay can leave the headline/descriptor parked for ~700-850ms after
+// /index, /play, or /info -> Home. This controller starts the existing Home
+// rise as soon as the destination DOM mounts. Cold loads and Home -> Home
+// clicks remain untouched.
 //
 // STYLESHEET AUTHORITY (2026-07-14): Framer's appear on high-refresh
 // machines is JS-driven inline style writes every rAF — an inline-style
@@ -537,7 +540,6 @@ const HOME_CUR_PATH_KEY = "__mhCurPath"
 const HOME_BUSY_EXPIRY_MS = 6000
 const HOME_ARRIVAL_FRESH_MS = 2500
 const HOME_PREPIN_TIMEOUT_MS = 4000
-const CASE_STUDY_SOURCE_RE = /^\/case-studies(\/|$)/
 let homeHeroRiseAt = 0
 let prePinObserver = null
 let prePinTimer = 0
@@ -722,8 +724,8 @@ function stopPrePin() {
     prePinTimer = 0
 }
 
-// Armed at click time (case-study page, link targeting home). Fires as a
-// microtask when the home DOM mounts — BEFORE the browser paints it — and
+// Armed at click time on any non-Home route whose link targets Home. Fires as
+// a microtask when the Home DOM mounts — BEFORE the browser paints it — and
 // pins the risers synchronously, so the settled hero can never flash.
 function armPrePaintPin() {
     if (typeof window === "undefined") return
@@ -754,8 +756,11 @@ function beginHomeHeroSettle() {
     if (typeof window === "undefined") return
     if (!isHomePath()) return
     const w = window as any
-    // ONLY the curtain-skipped path: arrivals coming from a case study.
-    if (!CASE_STUDY_SOURCE_RE.test(String(w[HOME_NAV_FROM_KEY] || ""))) return
+    // Internal route arrivals only. Cold loads have no source stamp, and a
+    // Home -> Home click must not replay the hero.
+    const sourcePath =
+        String(w[HOME_NAV_FROM_KEY] || "").replace(/\/+$/, "") || HOME_PATH
+    if (sourcePath === HOME_PATH) return
     // Only on a real arrival (a recent nav / nav intent), never a cold load.
     const navAt = Number(w[HOME_ARRIVAL_AT_KEY] || 0)
     if (!(navAt > 0 && Date.now() - navAt < HOME_ARRIVAL_FRESH_MS)) return
@@ -807,7 +812,9 @@ function initHomeHeroSettleController() {
 
     // Primary signal: an internal link click records the SOURCE path and
     // stamps nav intent BEFORE the router even processes the navigation.
-    // If the click leaves a case study for home, also arm the pre-paint pin.
+    // If the click leaves any other route for Home, arm the pre-paint pin so
+    // the hero starts with the destination mount instead of after v7.12's
+    // delayed replay release.
     try {
         document.addEventListener(
             "click",
@@ -828,9 +835,7 @@ function initHomeHeroSettleController() {
                         const destPath = (a.pathname || "").replace(/\/+$/, "") || "/"
                         if (
                             destPath === HOME_PATH &&
-                            CASE_STUDY_SOURCE_RE.test(
-                                window.location.pathname
-                            )
+                            !isHomePath()
                         ) {
                             armPrePaintPin()
                         }
@@ -886,10 +891,10 @@ function useHomeHeroRise(mode) {
  *
  * Active rollback to the exact PageTransition v7.12 module that was live before
  * the v7.13 pinned-nav experiment, plus a narrow Home Header Bottom recovery
- * and a document-global "home hero on case-study arrival" controller: pre-paint
+ * and a document-global "home hero on route arrival" controller: pre-paint
  * pin, monotonic (never-downward) choreography driven through a stylesheet
  * (beats Framer's inline writes on any refresh rate), hold-until-navigation
- * guard; case-study → home navigations only.
+ * guard; internal non-Home → Home navigations only.
  *
  * @framerSupportedLayoutWidth fixed
  * @framerSupportedLayoutHeight fixed
