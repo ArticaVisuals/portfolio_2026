@@ -35,7 +35,7 @@ you re-upload the videos.
 
 ## Motion Connect refresh — 2026-07-16
 
-Run `node tools/prepare-motion-connect-media.mjs` from the workspace root to
+Run `node code/tools/prepare-motion-connect-media.mjs` from the workspace root to
 rebuild the Motion Connect upload-ready package at
 `assets/shared/optimized/motion-connect-2025/`.
 
@@ -48,7 +48,7 @@ the smaller original when conversion would increase file size.
 
 ## Featured project runtime posters — 2026-07-16
 
-Run `node tools/prepare-featured-project-video-posters.mjs` from the workspace
+Run `node code/tools/prepare-featured-project-video-posters.mjs` from the workspace
 root to rebuild the poster package for the six featured case studies at
 `assets/shared/optimized/featured-project-video-posters/`.
 

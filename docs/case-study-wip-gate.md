@@ -31,7 +31,7 @@ reachable from the site but hidden behind a simple launch-safe placeholder.
 Run:
 
 ```bash
-node tools/case-study-wip-gate-visual-qa.mjs
+node code/tools/case-study-wip-gate-visual-qa.mjs
 ```
 
 The runner builds the actual TSX component into a local browser harness and

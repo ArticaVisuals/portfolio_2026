@@ -6,7 +6,7 @@ Framer, case-study manifests, or CDN re-hosting workflows.
 ## Run
 
 ```bash
-cd "tools/image-optimizer"
+cd "code/tools/image-optimizer"
 npm install
 npm start
 ```
@@ -25,7 +25,7 @@ Open `http://localhost:4177`.
 - Download the ZIP or use the local output folder:
 
 ```text
-tools/image-optimizer/output/{session}/optimized
+code/tools/image-optimizer/output/{session}/optimized
 ```
 
 Each run writes:

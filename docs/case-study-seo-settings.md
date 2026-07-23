@@ -67,7 +67,7 @@ Run a server-rendered metadata scrape after publishing. The important tags are:
 Suggested spot checks:
 
 ```sh
-node tools/check-framer-meta.mjs https://micahhoang.com/case-studies/airpods https://micahhoang.com/case-studies/gaia https://micahhoang.com/case-studies/simon-schuster
+node code/tools/check-framer-meta.mjs https://micahhoang.com/case-studies/airpods https://micahhoang.com/case-studies/gaia https://micahhoang.com/case-studies/simon-schuster
 ```
 
 If no helper exists, a one-off `curl`/Node scrape is enough; the key is checking

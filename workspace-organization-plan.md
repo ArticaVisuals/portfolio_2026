@@ -25,8 +25,8 @@ docs updated in the same change:
 - `portfolio-framework.md`
 - `case-study-cms-workflow.md`
 - `index-component-instructions.md`
-- `micahhoang-tokens.json`
-- `framer-active-text-styles.tokens.json`
+- `code/tokens/micahhoang-tokens.json`
+- `code/tokens/framer-active-text-styles.tokens.json`
 - Active Framer code-file mirrors listed below
 
 The project-local `AGENTS.md` points future agents to these nearby files by
@@ -187,14 +187,14 @@ Phase 3, asset labeling: completed 2026-06-15
 
 Phase 4, optional mirror completion: completed 2026-06-15
 
-- Added `framer-code-mirror/manifest.json` with all current Framer code
+- Added `code/mirror/manifest.json` with all current Framer code
   components and override files.
 - Kept active/editable root TSX files as the working set.
 - Mirrored 22 non-root Framer code components as compiled Framer module
-  snapshots under `framer-code-mirror/code-components/compiled-js/`, with their
-  `framer.com/m` wrappers under `framer-code-mirror/code-components/wrappers/`.
+  snapshots under `code/mirror/code-components/compiled-js/`, with their
+  `framer.com/m` wrappers under `code/mirror/code-components/wrappers/`.
 - Saved 5 Framer override compatibility files as source snapshots under
-  `framer-code-mirror/code-overrides/source-tsx/`.
+  `code/mirror/code-overrides/source-tsx/`.
 - The mirror manifest records source kind, codeFileId, Framer path, local path,
   hashes, insert URLs, and any download errors.
 
@@ -205,7 +205,7 @@ Phase 4, optional mirror completion: completed 2026-06-15
 - For TSX touched or moved: targeted `esbuild` bundle/type smoke check when
   appropriate
 - For Framer helper changes: run the relevant local guard, especially
-  `node tools/check-thumbnail-stroke-resolver.mjs` before thumbnail helper work
+  `node code/tools/check-thumbnail-stroke-resolver.mjs` before thumbnail helper work
 - For published parity after Framer publish: check `/`, `/index`, `/play`,
   `/info`, `/case-studies`, and at least one bespoke case-study route
 

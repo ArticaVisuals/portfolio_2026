@@ -128,7 +128,7 @@ Cargo-era or retired/reference-only folders:
   required.
 - `assets/external-embeds.json` documents private/blocked embeds from
   the scrape and should stay beside the scrape archive.
-- `tools/image-optimizer` now defaults to scanning `assets/by-project` (was
+- `code/tools/image-optimizer` now defaults to scanning `assets/by-project` (was
   `case-study-assets/current-site` before the 2026-07-22 reorg); narrow it to
   `assets/by-project/<slug>` per project. Update the tool README, UI default,
   and server default together if this changes.

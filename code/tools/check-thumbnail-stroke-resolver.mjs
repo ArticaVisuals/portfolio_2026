@@ -5,7 +5,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url))
-const helperPath = path.resolve(scriptDir, "../CaseStudyThumbnailStrokeStyles.tsx")
+const helperPath = path.resolve(scriptDir, "../components/CaseStudyThumbnailStrokeStyles.tsx")
 const source = fs.readFileSync(helperPath, "utf8")
 
 const requiredPatterns = [

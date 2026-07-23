@@ -78,4 +78,4 @@ reference lives in `docs/reference/`. Start with:
 - `docs/portfolio-framework.md`
 - `docs/index-component-instructions.md`
 - `docs/case-study-cms-workflow.md`
-- `micahhoang-tokens.json`
+- `code/tokens/micahhoang-tokens.json`

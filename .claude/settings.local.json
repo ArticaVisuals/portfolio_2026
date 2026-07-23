@@ -42,7 +42,12 @@
       "Bash(sed -i '' 's#case-study-assets/current-site#assets/by-project#g' tools/image-optimizer/public/index.html)",
       "Bash(grep -E \"\\\\.tsx$|CaseStudy|PageTransition|framer-code-mirror/manifest|settings.local|workspace-organization-plan|docs/framer-global-media|docs/code-components|docs/framer-current|docs/framer-page\")",
       "Bash(git commit -q -m 'Re-sort all assets by project into assets/by-project + assets/shared \\(Phase 3\\) *)",
-      "Bash(git commit -q -m 'Snapshot in-progress component work before code reorg *)"
+      "Bash(git commit -q -m 'Snapshot in-progress component work before code reorg *)",
+      "Bash(bash \"/private/tmp/claude-501/-Users-micahhoang-My-Drive-Portfolio-2026/0a5e9461-140a-4c91-82c6-c70114693b1d/scratchpad/phase4-move.sh\")",
+      "Bash(xargs -0 perl \"/private/tmp/claude-501/-Users-micahhoang-My-Drive-Portfolio-2026/0a5e9461-140a-4c91-82c6-c70114693b1d/scratchpad/phase4-refrewrite.pl\")",
+      "Bash(node -e ' *)",
+      "Bash(node --check code/tools/check-framer-meta.mjs)",
+      "Bash(node code/tools/check-thumbnail-stroke-resolver.mjs)"
     ]
   }
 }

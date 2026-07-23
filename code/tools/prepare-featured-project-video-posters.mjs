@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const workspaceRoot = path.resolve(__dirname, "..")
+const workspaceRoot = path.resolve(__dirname, "../..")
 const outputDir = path.join(
   workspaceRoot,
   "assets/shared/optimized/featured-project-video-posters"

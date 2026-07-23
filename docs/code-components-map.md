@@ -106,7 +106,7 @@ hover CSS.
 ### Site chrome
 | Component | id | What it does |
 |---|---|---|
-| `PageTransition` | `gmalnRr` | Thin wrapper over the compiled v7.12 runtime module. Adds: site-wide curtain transition + boot identity + Framer editorbar suppression (runtime), Home Header Bottom appear recovery, `/index` hero-title rise-on-arrival, home hero rise-on-arrival (2026-06-26), and a `ParagraphPrettyWrap` mount (2026-07-21). Runtime source preserved in `framer/code-components/backups/PageTransition.runtime-backup.tsx`. See `framer-page-transition.md`. |
+| `PageTransition` | `gmalnRr` | Thin wrapper over the compiled v7.12 runtime module. Adds: site-wide curtain transition + boot identity + Framer editorbar suppression (runtime), Home Header Bottom appear recovery, `/index` hero-title rise-on-arrival, home hero rise-on-arrival (2026-06-26), and a `ParagraphPrettyWrap` mount (2026-07-21). Runtime source preserved in `code/mirror/backups/PageTransition.runtime-backup.tsx`. See `framer-page-transition.md`. |
 | `ParagraphPrettyWrap` | `EjvkJhv` | Invisible singleton typography helper mounted by `PageTransition` and `ResumeAssetHost`. Applies native `text-wrap: pretty` to rendered paragraph-size text at 23px and under; emits pre-paint style/script tags; excludes nav/header/footer/UI and supports `data-mh-pretty-ignore` opt-out. |
 | `PageTransition_v7_12_Backup` | `Uv2k27l` | **Rollback wrapper** to the pre-v7.13 module. Retire candidate (keep frozen URL in a note). |
 | `NavigationScrollGuard` | `Wnd19lx` | Keeps native nav clickable when its scroll-hide transform gets stranded at top. Lives inside `Navigation`. |

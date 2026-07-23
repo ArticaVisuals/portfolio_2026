@@ -7,7 +7,7 @@ import { createRequire } from "node:module"
 import { extname, join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
-const ROOT = resolve(import.meta.dirname, "..")
+const ROOT = resolve(import.meta.dirname, "../..")
 const OUT_DIR = join(ROOT, "output", "playwright", "case-study-wip-gate-qa-2026-06-14")
 const COMPONENT_PATH = join(ROOT, "CaseStudyWorkInProgressGate.tsx")
 const BUNDLE_PATH = join(OUT_DIR, "CaseStudyWorkInProgressGate.bundle.mjs")

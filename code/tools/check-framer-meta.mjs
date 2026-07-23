@@ -3,7 +3,7 @@
 const urls = process.argv.slice(2)
 
 if (urls.length === 0) {
-  console.error("Usage: node tools/check-framer-meta.mjs <url> [url...]")
+  console.error("Usage: node code/tools/check-framer-meta.mjs <url> [url...]")
   process.exit(1)
 }
 
