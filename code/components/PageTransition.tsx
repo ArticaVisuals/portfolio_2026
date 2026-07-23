@@ -9,7 +9,7 @@ const BOOT_ID = "__pt-boot"
 const BOOT_LABEL_ID = "__pt-boot-label"
 const BOOT_VIEWPORT_STYLE_ID = "mh-boot-viewport-guard"
 const BOOT_VIEWPORT_GLOBAL_KEY = "__mhBootViewportGuardInit"
-const BOOT_VIEWPORT_OVERSCAN_PX = 240
+const PAGE_THEME_COLOR = "#F7F5F0"
 const HOME_HEADER_BOTTOM_SELECTOR = '[data-framer-name="Header Bottom"]'
 const HOME_HEADER_BOTTOM_APPEAR_SELECTOR = `${HOME_HEADER_BOTTOM_SELECTOR} [data-framer-appear-id]`
 const HOME_HEADER_BOTTOM_STYLE_ID = "mh-home-header-bottom-appear-recovery"
@@ -18,26 +18,31 @@ const HOME_HEADER_BOTTOM_RECOVERY_INTERVAL_MS = 80
 const HISTORY_PATCH_KEY = "__mhHomeHeaderBottomHistoryPatched"
 let homeHeaderBottomRecoveryCleanup = null
 
-const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var OVERSCAN=${BOOT_VIEWPORT_OVERSCAN_PX};function viewportHeight(){var d=document.documentElement;var vv=window.visualViewport;return Math.ceil(Math.max(window.innerHeight||0,d&&d.clientHeight||0,vv&&vv.height||0,1));}function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100vw!important;height:var(--mh-boot-height,calc(100vh + "+OVERSCAN+"px))!important;min-height:var(--mh-boot-height,calc(100vh + "+OVERSCAN+"px))!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:var(--mh-boot-vvh,100vh)!important;min-height:var(--mh-boot-vvh,100vh)!important;}@supports (height: 100dvh){#"+BOOT_ID+"{height:var(--mh-boot-height,calc(100dvh + "+OVERSCAN+"px))!important;min-height:var(--mh-boot-height,calc(100dvh + "+OVERSCAN+"px))!important;}#"+LABEL_ID+"{height:var(--mh-boot-vvh,100dvh)!important;min-height:var(--mh-boot-vvh,100dvh)!important;}}";if(s.textContent!==css)s.textContent=css}function sync(){var visibleH=viewportHeight();var curtainH=visibleH+OVERSCAN;try{document.documentElement.style.setProperty("--mh-boot-vvh",visibleH+"px");document.documentElement.style.setProperty("--mh-boot-height",curtainH+"px")}catch(e){}ensureStyle();var boot=document.getElementById(BOOT_ID);if(boot){boot.style.setProperty("position","fixed","important");boot.style.setProperty("top","0","important");boot.style.setProperty("left","0","important");boot.style.setProperty("right","0","important");boot.style.setProperty("bottom","auto","important");boot.style.setProperty("width","100vw","important");boot.style.setProperty("height",curtainH+"px","important");boot.style.setProperty("min-height",curtainH+"px","important")}var label=document.getElementById(LABEL_ID);if(label){label.style.setProperty("top","0","important");label.style.setProperty("bottom","auto","important");label.style.setProperty("height",visibleH+"px","important");label.style.setProperty("min-height",visibleH+"px","important")}}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
-
-function viewportHeight() {
-    try {
-        const visualViewportHeight =
-            typeof window.visualViewport !== "undefined"
-                ? window.visualViewport.height
-                : 0
-        return Math.ceil(
-            Math.max(
-                window.innerHeight || 0,
-                document.documentElement?.clientHeight || 0,
-                visualViewportHeight || 0,
-                1
-            )
-        )
-    } catch (err) {
-        return 1
-    }
-}
+// Boot curtain (#__pt-boot, created by the compiled module).
+//
+// SIZING — mirrors zitafernandez.com's loader EXACTLY, because that site has no
+// bottom gap on iOS:
+//     position: fixed; top:0; left:0; right:0; bottom:auto;
+//     width:100%; height:100dvh; min-height:100dvh;
+// The critical part is that the height is a CSS `dvh` unit, NOT a pixel value.
+// `dvh` is the dynamic viewport unit: the engine re-evaluates it continuously as
+// the iOS URL bar / toolbar animates, so the curtain always equals the visible
+// area. An earlier version of this guard computed a PIXEL height in JS from
+// window.innerHeight and wrote it inline — on iOS that is a snapshot taken while
+// the toolbar is in one state and goes stale as it animates (re-syncs are
+// event-driven and fire late), which is exactly what left the bottom gap.
+// Do NOT reintroduce JS pixel heights, insets, or overscan here; let CSS dvh do
+// it. `bottom:auto` is intentional (height alone defines the box).
+//
+// TINT: the bands behind Safari's status bar and bottom toolbar are browser
+// chrome, not the page (this site's viewport meta has no viewport-fit=cover), so
+// nothing can paint there. With no theme-color, Safari samples the page and tints
+// those bands green under the curtain, then re-tints back — and iOS ANIMATES that
+// tint change, so it visibly trails the curtain as a lingering green strip.
+// We therefore pin theme-color to the page colour permanently: the chrome is
+// never green, so there is nothing to linger. (Tinting it green while the curtain
+// is up looks more immersive but always drags that trailing re-tint behind it.)
+const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var PAGE_COLOR=${JSON.stringify(PAGE_THEME_COLOR)};function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#"+BOOT_ID+"{height:100dvh!important;min-height:100dvh!important;}#"+LABEL_ID+"{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}";if(s.textContent!==css)s.textContent=css}function themeSync(){try{var m=document.querySelector('meta[name="theme-color"]');if(!m){m=document.createElement("meta");m.setAttribute("name","theme-color");(document.head||document.documentElement).appendChild(m)}var c=PAGE_COLOR;if(document.body){var b=getComputedStyle(document.body).backgroundColor;if(b&&b.indexOf("rgba(0, 0, 0, 0)")<0)c=b}if(m.getAttribute("content")!==c)m.setAttribute("content",c)}catch(e){}}function sync(){ensureStyle();themeSync()}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
 
 function ensureBootViewportStyle() {
     try {
@@ -48,60 +53,36 @@ function ensureBootViewportStyle() {
             style.id = BOOT_VIEWPORT_STYLE_ID
             parent.appendChild(style)
         }
-        const css = `#${BOOT_ID}{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100vw!important;height:var(--mh-boot-height,calc(100vh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;min-height:var(--mh-boot-height,calc(100vh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;}#${BOOT_LABEL_ID}{top:0!important;bottom:auto!important;height:var(--mh-boot-vvh,100vh)!important;min-height:var(--mh-boot-vvh,100vh)!important;}@supports (height: 100dvh){#${BOOT_ID}{height:var(--mh-boot-height,calc(100dvh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;min-height:var(--mh-boot-height,calc(100dvh + ${BOOT_VIEWPORT_OVERSCAN_PX}px))!important;}#${BOOT_LABEL_ID}{height:var(--mh-boot-vvh,100dvh)!important;min-height:var(--mh-boot-vvh,100dvh)!important;}}`
+        const css = `#${BOOT_ID}{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#${BOOT_LABEL_ID}{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#${BOOT_ID}{height:100dvh!important;min-height:100dvh!important;}#${BOOT_LABEL_ID}{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}`
         if (style.textContent !== css) style.textContent = css
     } catch (err) {}
 }
 
+// Pin Safari's chrome tint to the page colour so it never flashes/lingers green.
+function syncBootThemeColor() {
+    try {
+        let meta = document.querySelector('meta[name="theme-color"]')
+        if (!meta) {
+            meta = document.createElement("meta")
+            meta.setAttribute("name", "theme-color")
+            ;(document.head || document.documentElement).appendChild(meta)
+        }
+        let color = PAGE_THEME_COLOR
+        if (document.body) {
+            const bodyColor = getComputedStyle(document.body).backgroundColor
+            if (bodyColor && bodyColor.indexOf("rgba(0, 0, 0, 0)") < 0)
+                color = bodyColor
+        }
+        if (meta.getAttribute("content") !== color)
+            meta.setAttribute("content", color)
+    } catch (err) {}
+}
+
+// CSS-only sizing: no pixel writes, nothing to go stale.
 function syncBootViewport() {
     if (typeof window === "undefined") return
-
-    const visibleHeight = viewportHeight()
-    const curtainHeight = visibleHeight + BOOT_VIEWPORT_OVERSCAN_PX
-    try {
-        document.documentElement.style.setProperty(
-            "--mh-boot-vvh",
-            `${visibleHeight}px`
-        )
-        document.documentElement.style.setProperty(
-            "--mh-boot-height",
-            `${curtainHeight}px`
-        )
-    } catch (err) {}
-
     ensureBootViewportStyle()
-
-    try {
-        const boot = document.getElementById(BOOT_ID)
-        if (!boot) return
-        boot.style.setProperty("position", "fixed", "important")
-        boot.style.setProperty("top", "0", "important")
-        boot.style.setProperty("left", "0", "important")
-        boot.style.setProperty("right", "0", "important")
-        boot.style.setProperty("bottom", "auto", "important")
-        boot.style.setProperty("width", "100vw", "important")
-        boot.style.setProperty("height", `${curtainHeight}px`, "important")
-        boot.style.setProperty(
-            "min-height",
-            `${curtainHeight}px`,
-            "important"
-        )
-        const label = document.getElementById(BOOT_LABEL_ID)
-        if (label) {
-            label.style.setProperty("top", "0", "important")
-            label.style.setProperty("bottom", "auto", "important")
-            label.style.setProperty(
-                "height",
-                `${visibleHeight}px`,
-                "important"
-            )
-            label.style.setProperty(
-                "min-height",
-                `${visibleHeight}px`,
-                "important"
-            )
-        }
-    } catch (err) {}
+    syncBootThemeColor()
 }
 
 function installBootViewportGuard() {
@@ -138,9 +119,118 @@ function installBootViewportGuard() {
     } catch (err) {}
 }
 
+const SELECTED_WORK_VIDEO_SELECTOR = "video.selected-work-video"
+const SELECTED_WORK_VIDEO_GLOBAL_KEY = "__mhSelectedWorkVideoAutoplayInit"
+
+// iOS blocks inline autoplay unless a video is provably muted + inline at play
+// time, and it paints a play-button glyph over any paused inline video. The
+// home thumbnail videos already carry the right React props and autoplay on
+// desktop, but on iOS the muted attribute / first play() can be missed, so they
+// sit paused with the glyph. Here we harden each selected-work video (muted +
+// playsinline attributes set imperatively) and kick play() whenever it is on
+// screen — on mount, on a short timer ladder, via an IntersectionObserver, and
+// on the first touch (covers strict / low-power policies). Off-screen videos
+// are left alone for HomeSelectedWorkGrid to pause.
+function installSelectedWorkVideoAutoplay() {
+    if (typeof window === "undefined" || typeof document === "undefined") return
+    try {
+        if (window[SELECTED_WORK_VIDEO_GLOBAL_KEY]) return
+        window[SELECTED_WORK_VIDEO_GLOBAL_KEY] = true
+
+        const inView = (el) => {
+            const r = el.getBoundingClientRect()
+            const h = window.innerHeight || document.documentElement.clientHeight
+            const w = window.innerWidth || document.documentElement.clientWidth
+            return r.bottom > 0 && r.right > 0 && r.top < h && r.left < w
+        }
+        const harden = (v) => {
+            try {
+                v.muted = true
+                v.defaultMuted = true
+                v.setAttribute("muted", "")
+                v.setAttribute("playsinline", "")
+                v.setAttribute("webkit-playsinline", "true")
+                if (!v.hasAttribute("preload")) v.setAttribute("preload", "auto")
+            } catch (err) {}
+        }
+        const play = (v) => {
+            try {
+                const p = v.play()
+                if (p && typeof p.catch === "function") p.catch(() => {})
+            } catch (err) {}
+        }
+        const kick = (v, force) => {
+            harden(v)
+            if (force || inView(v)) play(v)
+        }
+        const sweep = (force) => {
+            try {
+                document
+                    .querySelectorAll(SELECTED_WORK_VIDEO_SELECTOR)
+                    .forEach((v) => kick(v, force))
+            } catch (err) {}
+        }
+
+        let io = null
+        if (typeof IntersectionObserver !== "undefined") {
+            io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) kick(e.target, true)
+                    })
+                },
+                { threshold: 0.05 }
+            )
+        }
+        const observed = new WeakSet()
+        const observeAll = () => {
+            try {
+                document
+                    .querySelectorAll(SELECTED_WORK_VIDEO_SELECTOR)
+                    .forEach((v) => {
+                        harden(v)
+                        if (io && !observed.has(v)) {
+                            observed.add(v)
+                            io.observe(v)
+                        }
+                    })
+            } catch (err) {}
+        }
+
+        sweep(false)
+        observeAll()
+        window.requestAnimationFrame(() => {
+            sweep(false)
+            observeAll()
+        })
+        ;[250, 1000, 2500].forEach((ms) =>
+            window.setTimeout(() => {
+                sweep(false)
+                observeAll()
+            }, ms)
+        )
+
+        if (typeof MutationObserver !== "undefined") {
+            new MutationObserver(() => observeAll()).observe(document.body, {
+                childList: true,
+                subtree: true,
+            })
+        }
+
+        const onFirstTouch = () => {
+            sweep(false)
+            window.removeEventListener("touchstart", onFirstTouch)
+            window.removeEventListener("pointerdown", onFirstTouch)
+        }
+        window.addEventListener("touchstart", onFirstTouch, { passive: true })
+        window.addEventListener("pointerdown", onFirstTouch, { passive: true })
+    } catch (err) {}
+}
+
 function useBootViewportGuard() {
     React.useEffect(() => {
         installBootViewportGuard()
+        installSelectedWorkVideoAutoplay()
     }, [])
 }
 
