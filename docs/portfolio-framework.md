@@ -1,9 +1,12 @@
 # Portfolio Redesign — Strategic Framework & Information Architecture
 
 **For:** Micah Hoang
-**Version:** 1.14 - July 15 Home selected-work media policy reflected. CMS has 17 real projects and each CMS slug has a matching bespoke `/case-studies/{slug}` page. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`; the current CMS-limited set is Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. The Home grid has no baked fallback rows, prefers CMS `Thumbnail Video`, uses CMS `Thumbnail` only as poster/fallback, and keeps the original 13px selected-work number/title treatment. `/play` uses the `Play.tsx` production wrapper around `ArchivePlayground.tsx` with protected authorable `Archive Items` controls. Current Framer web routes are documented in `framer-current-state.md`.
+**Version:** 1.15 - July 23 Play/Safari runtime and hover-preview route reflected. CMS has 17 real projects and each CMS slug has a matching bespoke `/case-studies/{slug}` page. Home renders a six-item selected-work grid through `HomeSelectedWorkGrid.tsx`; the current CMS-limited set is Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. The Home grid has no baked fallback rows, prefers CMS `Thumbnail Video`, uses CMS `Thumbnail` only as poster/fallback, and keeps the original 13px selected-work number/title treatment. `/play` uses the `Play.tsx` production wrapper around `ArchivePlayground.tsx` with protected authorable `Archive Items` controls; `/play-hover-preview` is the Framer hover-only behavior test route and uses the renderer's generated-CMS-module fallback. Current Framer web routes are documented in `framer-current-state.md`.
 **Date:** May 2026
-**Last Framer structure audit:** July 15, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. `https://micahhoang.info` has historically served the Cargo site during recent audits, so treat the Framer URL as the current build surface until domain cutover. Current-state companion: `framer-current-state.md`.
+**Last Framer structure audit:** July 23, 2026. Production URL
+`https://micahhoang.com`; Framer staging URL
+`https://khaki-ship-257706.framer.app`. Current-state companion:
+`framer-current-state.md`.
 
 **Maintenance note, May 26, 2026:** The current Framer project no longer includes `/play-2`, `/playground-scroll-draft`, `/worldgrid-test`, `WorldGridTest.tsx`, `ImageMaskReveal.tsx`, `IndexRuleColorOverride.tsx`, `IndexListCursorPreview.tsx`, `IndexFilterNavDraftPage.tsx`, or `CaseStudyRevealTuner.tsx`. Those names may appear in older historical notes, but they are not active current inventory.
 
@@ -178,7 +181,7 @@ Current `/index` XML shows the footer using `AVAILABLE FOR WORK`, LinkedIn, Rés
 ### Top-level site map
 
 ```
-micahhoang.info
+micahhoang.com
 │
 ├── / (Home)
 │   ├── Hero — current Framer desktop is a 60vh cream hero with large name, discipline statement, bottom status/social/copyright row
@@ -237,6 +240,13 @@ micahhoang.info
 │   │   └── Not present in current Framer inventory; keep 3D/gallery experiments out of `/index` unless explicitly revived
 │   ├── Project source priority in CMS mode: direct CMS module scan > empty/loading state; no registry/manual/baked fallback
 │   └── Click through to case study pages at `/case-studies/{slug}`
+│
+├── /play — CMS-backed media playground, center-priority playback
+│   └── Bounded transform-only grid; see `play-cms-workflow.md` for the
+│       current Safari budgets, poster lifecycle, and drawer-blur contract
+│
+├── /play-hover-preview — behavior test route, not primary navigation
+│   └── All videos remain paused until hover/focus; resting media is ghosted
 │
 ├── /info
     ├── Current Framer desktop is a forest-green editorial profile page
@@ -348,7 +358,9 @@ These are resolved decisions and current implementation notes. Treat them as sou
 - ~~**Profile page layout.**~~ ✅ Current Framer state differs from older wireframe v2 notes. `/info` is now a forest-green editorial page with a `HEY, / I'M MICAH.` hero, sticky video, intro copy, selected experience list, `WHAT PEOPLE SAY` testimonials, recognition rows, and CTA links. Résumé/currently/colophon modules are not visible in the audited desktop XML.
 - ~~**Index page layout.**~~ ✅ Resolved (May 26 update; consolidated June 11). Canonical `/index` is `u2LOaBT5q`; the old duplicate `yKKOMVNs6` and temporary `/index-inline-toggle-test` route are gone. `/index` uses the original-template uppercase `GRID / LIST` control rendered directly by `IndexPage.tsx` after the taxonomy nav. `CLEAR FILTERS` stays as the original left-aligned `TaxonomySection` action; `IndexPage.tsx` applies the style-only matching and keeps a stable 12px/28px/24px action-row rhythm so filters can be selected/deselected without shifting content. The selected view is underlined, and there is no delegated fixed/floating or DOM-mutating toggle helper. List view (default): year-grouped projects with taxonomy filters and near-black `#141414` rules/dividers. Taxonomy follows Figma node `32:7531` at desktop/wide tablet with a flexible six-column grid: Year label/value cols 1/2, Service label/value cols 3/4, Industry label/value cols 5/6. At <=899px the taxonomy/index nav switches to SearchSystem-style label/value rows. The List year-group wrapper shares the 6-col grid; inside it, list rows use a 5-col inner grid on desktop. At <=1199px Standard list year/title type stays at the desktop 22px scale, Service metadata/tags disappear, and Industry stays visible/right-aligned with wrapping instead of truncation. `List Type` A/B: `Standard` keeps large year + 22px title; `Mono 13` makes all list typography 13px uppercase mono. `List Hover` A/B: `Flip` is default (title-only upward flip mirroring `ViewProject` reference `node=L21w7Xq1z`); `Highlight` preserves the older full-row hover. Grid view renders project-driven cards with media, title, and metadata; the unfiltered `Case Studies Filter` fallback was removed. Year / Service / Industry nav values are derived dynamically from the in-scope projects; the previous "eight canonical Discipline labels" lock is not enforced in code. Do not expose 3D mode in `/index` unless Micah explicitly asks. `IndexListCursorPreview.tsx` and `IndexFilterNavDraftPage.tsx` were removed on May 26 because they were not active in the current Framer page structure.
 - ~~**Index Figma grid promotion.**~~ ✅ Resolved (June 18). The real `/index` page now mounts `IndexPageGridPreview.tsx` (`LgIzFjJ`, exported as `IndexPage`) as a production wrapper around the CMS-backed `IndexPage.tsx` base file (`rgAZFOv`). The wrapper exists so Framer can preview Grid/List from the property panel while preserving the runtime inline toggle and CMS data path. Grid uses the Figma three/two/one-column behavior and stretches cards to the full content width; the one-column grid and simplified mobile List both activate at the shared 899px breakpoint. At that breakpoint List hides the year indicator and metadata columns, keeps project titles left-aligned to the page margin, and stretches rules full width.
-- ~~**Domain and URL.**~~ ✅ Resolved. Keep the portfolio oriented around `micahhoang.info`. Framer staging may appear as `khaki-ship-257706.framer.app`, but the public portfolio target is `micahhoang.info`.
+- ~~**Domain and URL.**~~ ✅ Resolved. The production portfolio is
+  `micahhoang.com`; Framer staging remains
+  `khaki-ship-257706.framer.app`.
 - ~~**CMS cleanup.**~~ ✅ Resolved. The Jacob Turner sample projects were permanently deleted from the `All Projects` CMS collection. The collection now contains 17 real Micah projects after the June 15 roster update.
 - ~~**Per-project thumbnail stroke.**~~ ✅ Resolved. `All Projects` has a `Thumbnail Stroke` Boolean (`OHdUYs6Mo`), currently on for Gaia, AirPods Pro 3, Karuna, and Seek Truth. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) owns the visible 1px Light Gray stroke from CMS in native/media contexts, while `HomeSelectedWorkGrid.tsx` mirrors that field for the Home selected-work cards. The native Framer `Case Study` component also has a real overlay frame inside `ImageWrapper` so the CMS-driven stroke can be visible in the editor canvas; no `CardStroke` variants should be reintroduced. June 1-15 note: the helper and Home grid handle Framer's current generated CMS module export shape (`r` instead of legacy `a`) and function-shaped exports.
 

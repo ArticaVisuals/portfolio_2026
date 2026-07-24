@@ -1,6 +1,6 @@
 # Play CMS Workflow
 
-Last updated: 2026-07-01
+Last updated: 2026-07-23
 
 `/play` is managed from the Framer CMS collection `Play Archive`
 (`EySMRbI2N`). Published content should be exactly the CMS content. If a value
@@ -28,9 +28,10 @@ not a seeded copy of old archive content.
 
 ## Required Bridge
 
-The `/play` page needs a hidden-but-mounted Framer Collection List bound to
-`Play Archive`. That list must stay visible in the layer panel and must not use
-Framer's hidden/eye toggle, because hidden layers unmount.
+The production `/play` page needs a hidden-but-mounted Framer Collection List
+bound to `Play Archive`. That list must stay visible in the layer panel and
+must not use Framer's hidden/eye toggle, because hidden layers unmount. The
+current bridge container node is `kV3Za9Pze`.
 
 Inside the Collection List item, mount `PlayArchiveRegistrar.tsx`
 (`jDwcdGN`, insert URL `https://framer.com/m/PlayArchiveRegistrar-uZVoh9.js`;
@@ -101,28 +102,71 @@ between the title/divider and the description/CTA group.
 The drawer defaults to a wider desktop panel near half the viewport and becomes
 full-width on small screens.
 
-## Published Grid Behavior
+## Current Runtime Behavior
 
-The July 1 `/play` renderer keeps the CMS media surface visually filled while
+The published `/play` renderer keeps the CMS media surface visually filled while
 preserving the performance pass:
 
-- Grid thumbnails request Framer image variants at `scale-down-to=720`.
+- Grid thumbnails request Framer image variants at `scale-down-to=600`.
 - Grid videos use `preload="none"` and only mount/decode when they are on-screen
   and within the current video budget.
-- The production `Play.tsx` wrapper starts with `8` concurrent videos and ramps
-  to `16` after `2400ms`; `ArchivePlayground.tsx` defaults to `16` when used
-  directly.
+- The production `Play.tsx` wrapper starts with `4` concurrent videos and ramps
+  to `10` after `2400ms` in non-WebKit desktop browsers. Desktop Safari stays at
+  `4`, iOS/iPadOS stays at `2`, small non-WebKit viewports cap at `8`, and hidden
+  pages drop to `0`. Eligible video cells are ranked by distance from the
+  viewport center with a small retention bias, so center-near videos keep their
+  slots without decoder churn while edge-near cells return to posters.
+- Preview route `/play-hover-preview` uses the same protected wrapper and CMS
+  data in hover-only mode. It intentionally has no second hand-maintained CMS
+  list: when the page registry is empty, `ArchivePlayground` resolves the
+  generated `EySMRbI2N` CMS module from the same-origin `/play` markup and scans
+  it directly. Videos remain paused/unmounted until hover or keyboard focus,
+  with `0.28` resting opacity and `0.12` saturation. Safari keeps the opacity
+  treatment but skips the full-grid saturation filter.
 - Grid cell spacing is capped at a `56px` row/column gap. With the default
   `190px` cell, published desktop rows/columns step at `246px`.
-- Wide-screen coverage renders up to `16` columns and `12` rows so large
+- Wide-screen coverage renders up to `20` columns and `12` rows so large
   desktop viewports do not show under-filled edges.
+- Continuous drift, parallax, drag, and inertia update one GPU-transformed world
+  layer. React only recycles cards after crossing a grid-cell boundary and only
+  changes video state when the center allocation changes.
+- The detail drawer freezes the obscured grid. Chrome retains the backdrop blur.
+  Safari/iOS avoid `backdrop-filter` and instead ease a `14px` blur directly on
+  the gallery over `560ms`. Closing still eases the blur back to `0px` over
+  `450ms`, but grid motion, interaction, and the bounded video allocator resume
+  as soon as Close is triggered, matching Chrome's immediate background return.
+  The outgoing detail video pauses and releases its source at that same moment,
+  so Safari never runs the drawer decoder on top of the resumed grid budget.
+  Both Play grain instances are static outside WebKit and completely disabled
+  on Safari/iOS.
 - Grid media wrappers stay visible immediately instead of waiting at
   `opacity: 0` for per-image/per-video load callbacks. The smooth fade remains
   for the detail drawer media only.
 - Images in or near the viewport load eagerly; offscreen buffer cells remain
   lazy.
+- At `1440×1000`, the bounded pool is `56` cards. A committed-window coverage
+  clamp keeps those cards covering every viewport edge during fast wheel/pan
+  bursts while React recycles the next cell window.
+- Poster images remain mounted beneath active videos. Video opacity is promoted
+  imperatively only after playback readiness, and deactivated videos pause,
+  clear their source, and release the decoder.
+- The world animation loop stops while the page is hidden and while the Safari
+  drawer is open. It restarts immediately when close begins, even though the
+  blur continues easing out. Duplicate viewport measurements and redundant
+  post-render media/grid reconciliations are suppressed.
+- WebKit is detected before runtime effects mount. Safari therefore receives
+  its video/effect caps immediately, and the disabled grain SVG plus its nav
+  measurement loop never mount.
 
 If random-looking blank holes reappear on the published page, first verify that
 the public `ArchivePlayground` module contains `mediaReady` / `DEFAULT_GRID_GAP`
 and then check the CMS row media values. The renderer should not intentionally
 hide a valid grid poster while it is waiting for a load event.
+
+The Safari coverage/blur version was published on July 23 and verified on the
+public `/play` route. The latest performance-only follow-up is synced in the
+Framer draft as `ArchivePlayground@ljLx3RPT8ZO2PxnHUl6X`,
+`Play@AEtiSt4JIdInX6LGx9Bk`, and `GrainOverlay@IU8jp598NHIsGsyeDMB5`; publish
+those three current modules together after review. The matching local
+`ArchivePlayground.tsx` snapshot is `131939` bytes with SHA-256
+`fe75094276cff8fe9d5aae93de93924ed8e12c062ae743fce18e1cc45fb7fc59`.

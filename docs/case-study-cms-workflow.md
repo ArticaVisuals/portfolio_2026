@@ -1,8 +1,9 @@
 # Case Study CMS Workflow
 
 **Project:** Micah Hoang Portfolio 2026
-**Last verified:** June 23, 2026
-**Framer URL:** `https://khaki-ship-257706.framer.app`
+**Last verified:** July 23, 2026
+**Production URL:** `https://micahhoang.com`
+**Framer staging URL:** `https://khaki-ship-257706.framer.app`
 **Current-state companion:** `framer-current-state.md`
 
 ---
@@ -26,13 +27,17 @@ Verified Framer structure:
 - `/case-studies/:slug` - dynamic case-study route, page ID `UlQco8cYi`
 - `/case-studies/airpods` - bespoke AirPods pilot page, page ID `LB7pYBD3k`
 - Additional bespoke case-study pages now exist for Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, TYPLDN, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Rejuve, Belly Bar, and WhatsApp. As of the June 15 CMS parity update, every `All Projects` CMS slug has a matching bespoke `/case-studies/{slug}` page. Neon Lights and Aspen Valley Landscaping were deleted from Framer because their slugs are no longer in CMS. See `framer-current-state.md` for page IDs.
-- `/info` - profile page, page ID `fxz_zRIyp`
+- `/info` - profile page, page ID `m8MBybo0d`
 - `/play` - archive media playground, page ID `KbgWr_0BN`
+- `/play-hover-preview` - hover-only Play behavior test route, page ID `uWONGgGEg`
 - `/404` - 404 page, page ID `koPvme2ig`
 
 June 10 cleanup note: the former public editorbar guard has been removed from Framer and the local mirror. It is no longer mounted on current inventory and should not be treated as part of the public page baseline.
 
-There is no current `/profile` web page; `/info` is the live profile route. There is also no current `/contact`, `/worldgrid-test`, `/play-2`, `/play-consolidation-draft`, or `/playground-scroll-draft` web page in the June 15 Framer project inventory.
+There is no current `/profile` web page; `/info` is the live profile route.
+There is also no current `/contact`, `/worldgrid-test`, `/play-2`,
+`/play-consolidation-draft`, or `/playground-scroll-draft` web page in the
+July 23 Framer project inventory.
 
 Verified CMS structure:
 
@@ -71,7 +76,14 @@ Earlier Framer staging checks returned HTTP 200 for:
 - `/play`
 - `/case-studies/airpods`
 
-`/contact`, `/play-2`, `/play-consolidation-draft`, and `/playground-scroll-draft` are no longer present in the June 15 Framer web-page inventory. Treat older references to them as historical drafts, not current route obligations. Create a fresh draft/design page before future Play experimentation rather than assuming `/play-consolidation-draft` still exists.
+`/contact`, `/play-2`, `/play-consolidation-draft`, and
+`/playground-scroll-draft` are not present in the July 23 Framer web-page
+inventory. Treat older references to them as historical drafts, not current
+route obligations. `/play-hover-preview` is the active test route for the
+hover-only paused/ghosted mode. It receives Play Archive rows through the
+renderer's generated-CMS-module fallback rather than a duplicate page-local
+registrar list; create a fresh draft/design page for unrelated future Play
+experiments.
 
 The dynamic `/case-studies/:slug` page currently handles individual project routes. When creating bespoke case-study pages, only create or move a page into a canonical `/case-studies/[slug]` path after confirming how Framer will resolve that path against the existing dynamic route. Ask Micah before deleting, renaming, or shadowing the dynamic page.
 

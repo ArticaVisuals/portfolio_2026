@@ -1,6 +1,6 @@
 # Custom Code Map — Portfolio 2026 (handoff reference)
 
-Last updated: 2026-07-15 (Home selected-work video-first + About hover folded back into HomeSelectedWorkGrid). Plain-English map of every custom
+Last updated: 2026-07-23 (Play/Safari performance and hover-preview release). Plain-English map of every custom
 Framer **code component** so a new dev can orient fast. For chronological history
 and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
@@ -27,7 +27,9 @@ Framer text and applies `text-wrap: pretty` only to paragraph-size text at 23px
 and under, while excluding header/nav/footer/UI controls and opt-out nodes marked
 `data-mh-pretty-ignore`. As of 2026-07-22 it also emits parser-time preload
 style/script tags and scans mutations synchronously so eligible text is marked
-before the next paint instead of flashing from normal wrap to pretty wrap.
+before the next paint instead of flashing from normal wrap to pretty wrap. As
+of 2026-07-23 those marks are sticky, so transient scroll/lazy-render states do
+not remove pretty wrapping and then re-add it.
 
 ---
 
@@ -66,9 +68,9 @@ hover CSS.
 |---|---|---|
 | `IndexPage` | `rgAZFOv` | Base CMS-backed `/index` List/Grid archive (taxonomy filters, rows, cards, count). Imported by the wrapper below. |
 | `IndexPageGridPreview` | `LgIzFjJ` | **Mounted** `/index` wrapper (exported as `IndexPage`). Adds the `View` control, Grid/List remount preview, Figma responsive overrides. |
-| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as an empty-by-default canvas/rollback surface, folds in viewport-fix/editor-guard/card-hover/reveal-replay, passes controls to the engine below. Current video budget ramps from `8` initial concurrent videos to `16` after `2400ms`. Do not strip the authoring surface or seed it with live content. |
-| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: live mode renders Play Archive CMS rows only (`PlayArchiveRegistrar` registry first, generated `EySMRbI2N` module second, otherwise empty). Owns grid + media smoothing + nav passthrough + close timing, and the detail drawer: **off-black** title, `/Text Gray` description, **divider directly under the title**, and a **Link-gated CTA** (renders only when CMS `Link` is set; label from `Link Title`, nav-mono `→` glyph + hover roll). On wide panels: title on top, a full-width divider under it (spanning both columns), then description+CTA in the right column below it (empty left column); collapses to a single left-aligned stack on the smallest breakpoint. Grid performance/no-gap behavior: `720px` Framer thumbnail requests, grid videos `preload="none"`, default/capped gap `56px` (`246px` step with `190px` cells), up to `16 × 12` rendered wide-screen coverage, and grid media wrappers stay visible immediately instead of waiting at `opacity:0` for load callbacks. |
-| `PlayArchiveRegistrar` | `jDwcdGN` | Invisible bridge mounted inside the hidden `Play Archive` Collection List. Registers Title/Order/Image/Video/Stroke/Content/**LinkTitle/Link** rows into `window.__articaPlayArchiveRegistry`. |
+| `Play` | `PN1RVOf` | **Mounted** `/play` wrapper. Keeps authorable `Archive Items` as an empty-by-default canvas/rollback surface, folds in viewport-fix/editor-guard/card-hover/reveal-replay, and passes controls to the engine below. The current runtime budget starts at `4`, ramps to `10` on non-WebKit desktop, caps desktop Safari at `4`, iOS/iPadOS at `2`, small non-WebKit viewports at `8`, and hidden pages at `0`. The production instance uses center-priority playback; `/play-hover-preview` uses hover-only playback with ghosted resting media. Its viewport observer reuses an unchanged ancestor chain instead of disconnecting/rebinding after every style correction. Current Framer draft module: `Play@AEtiSt4JIdInX6LGx9Bk`. Do not strip the authoring surface or seed it with live content. |
+| `ArchivePlayground` | `QNpkYp5` | `/play` archive renderer: live mode renders Play Archive CMS rows only (`PlayArchiveRegistrar` registry first, generated `EySMRbI2N` module second, otherwise empty). Owns grid + media smoothing + nav passthrough + close timing, and the detail drawer: **off-black** title, `/Text Gray` description, **divider directly under the title**, and a **Link-gated CTA** (renders only when CMS `Link` is set; label from `Link Title`, nav-mono `→` glyph + hover roll). On wide panels: title on top, a full-width divider under it (spanning both columns), then description+CTA in the right column below it (empty left column); collapses to a single left-aligned stack on the smallest breakpoint. Grid performance/no-gap behavior: `600px` Framer thumbnail requests, grid videos `preload="none"` plus explicit decoder release and persistent poster backing, center-distance allocation with hysteresis, optional hover-only playback + resting opacity/saturation (opacity-only on WebKit), default/capped gap `56px` (`246px` step with `190px` cells), up to `20 × 12` coverage and `56` cards at `1440×1000`, a transform-only world layer between cell-boundary React recycles, a committed-window coverage clamp for rapid pan bursts, readiness-driven video opacity without React state churn, and a direct-gallery Safari drawer blur (`14px`, `560ms` open, `450ms` close) whose background motion resumes immediately on close. Current Framer draft module: `ArchivePlayground@ljLx3RPT8ZO2PxnHUl6X`. |
+| `PlayArchiveRegistrar` | `jDwcdGN` | Invisible bridge mounted inside the hidden `/play` `Play Archive` Collection List (`kV3Za9Pze`). Registers Title/Order/Image/Video/Stroke/Content/**LinkTitle/Link** rows into `window.__articaPlayArchiveRegistry`. `/play-hover-preview` has no duplicate registrar list; its wrapper uses `ArchivePlayground`'s generated-CMS-module fallback, discovered from same-origin `/play` markup. |
 | `PlayLinkBlock` | `gPwlq_8` | Standalone, CMS-bindable nav-styled link block (linked title + muted description + optional CTA, `GT Standard Mono` hover-roll). Not wired into `/play`; for CMS-template/list contexts. Property controls. |
 | `Test` | `O9WTdUJ` | **Misnomer** — legacy `ProjectRegistrar` CMS bridge. Retained for canvas compatibility only; not a `/index` render fallback. (Rename file in UI.) |
 
@@ -107,7 +109,7 @@ hover CSS.
 | Component | id | What it does |
 |---|---|---|
 | `PageTransition` | `gmalnRr` | Thin wrapper over the compiled v7.12 runtime module. Adds: site-wide curtain transition + boot identity + Framer editorbar suppression (runtime), Home Header Bottom appear recovery, `/index` hero-title rise-on-arrival, the Home hero route-arrival recovery (all internal non-Home routes as of 2026-07-23), and a `ParagraphPrettyWrap` mount (2026-07-21). Runtime source preserved in `code/mirror/backups/PageTransition.runtime-backup.tsx`. See `framer-page-transition.md`. |
-| `ParagraphPrettyWrap` | `EjvkJhv` | Invisible singleton typography helper mounted by `PageTransition` and `ResumeAssetHost`. Applies native `text-wrap: pretty` to rendered paragraph-size text at 23px and under; emits pre-paint style/script tags; excludes nav/header/footer/UI and supports `data-mh-pretty-ignore` opt-out. |
+| `ParagraphPrettyWrap` | `EjvkJhv` | Invisible singleton typography helper mounted by `PageTransition` and `ResumeAssetHost`. Applies native `text-wrap: pretty` to rendered paragraph-size text at 23px and under; emits pre-paint style/script tags; keeps marks sticky during scroll/lazy rendering; excludes nav/header/footer/UI and supports `data-mh-pretty-ignore` opt-out. |
 | `PageTransition_v7_12_Backup` | `Uv2k27l` | **Rollback wrapper** to the pre-v7.13 module. Retire candidate (keep frozen URL in a note). |
 | `NavigationScrollGuard` | `Wnd19lx` | Keeps native nav clickable when its scroll-hide transform gets stranded at top. Lives inside `Navigation`. |
 | `ScrollToTopButton` | `gh4ngZN` | Scroll-to-top mono button (Home, `/info`). Shares the flip-rail cadence of the `Scroll More` design component. |
@@ -123,7 +125,7 @@ hover CSS.
 | `CaseStudyScrambleText` | `dHFQCIH` | **Misnomer — NOT a scramble.** Plain hover-color link; relabeled "Case Study Header Link" 2026-06-18. |
 | `ProfileTextRevealFix` | `LNjgKO2` | `/info` masked text reveal (DOM-patch). |
 | `Counter` | `hdPa_Gj` | `NumberCounter` — **live** project count on `/case-studies` (keep at 17). |
-| `GrainOverlay` | `MhR7Ukl` | Toggleable SVG `feTurbulence` film-grain overlay; portals a `position:fixed`, `pointer-events:none` layer to `<body>` (immune to transformed ancestors; mount-guarded for SSR). Tunable `grainOpacity`/blend/color/exposure/contrast/size/octaves + animated shimmer. **`clearNav`** (default on) starts the grain at the nav's LIVE bottom edge and tracks it (MutationObserver on body class → rAF burst) so the header stays clean AND there's no seam when the `/play` detail panel opens and the nav slides away. Default recipe = oxblood `#501d07`, multiply, 0.10, animated 16fps (locked in the local "grain lab"). **Placed on `/play`** Desktop (instance `JSrIX4EmY`). |
+| `GrainOverlay` | `MhR7Ukl` | Toggleable SVG `feTurbulence` film-grain overlay; portals a `position:fixed`, `pointer-events:none` layer to `<body>` (immune to transformed ancestors; mount-guarded for SSR). Tunable `grainOpacity`/blend/color/exposure/contrast/size/octaves + optional shimmer. **`clearNav`** (default on) tracks the nav boundary imperatively only while runtime grain is active, avoiding SVG-tree rerenders during nav motion. The `/play` (`JSrIX4EmY`) and `/play-hover-preview` (`Hy6BZjFFH`) instances are static outside WebKit and set `disableOnWebKit=true`, so Safari/iOS render no grain layer or nav-measurement loop. Current Framer draft module: `GrainOverlay@IU8jp598NHIsGsyeDMB5`. |
 
 ### Overrides (5) — all archived no-op pass-throughs
 `Examples_1`, `Weather`, `Copyright_year`, `Copyright`, `External`. Kept because

@@ -48,6 +48,7 @@ type Props = {
     octaves: number
     animated: boolean
     fps: number
+    disableOnWebKit: boolean
     topInset: number
     zIndex: number
     style?: CSSProperties
@@ -58,6 +59,18 @@ function hexToRGB01(hex: string): [number, number, number] {
     if (!m) return [1, 1, 1]
     const n = parseInt(m[1], 16)
     return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255]
+}
+
+function detectsWebKitRisk() {
+    if (typeof navigator === "undefined") return false
+    const ua = navigator.userAgent || ""
+    const iosLike =
+        /iP(?:ad|hone|od)/.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+    const desktopSafari =
+        /Safari\//.test(ua) &&
+        !/(?:Chrome|Chromium|CriOS|Edg|EdgiOS|OPR|FxiOS)\//.test(ua)
+    return iosLike || desktopSafari
 }
 
 /**
@@ -84,6 +97,7 @@ export default function GrainOverlay(props: Props) {
         octaves = 4,
         animated = true,
         fps = 16,
+        disableOnWebKit = true,
         topInset = 0,
         zIndex = 10,
         style,
@@ -92,10 +106,15 @@ export default function GrainOverlay(props: Props) {
     const isStatic = useIsStaticRenderer()
     const filterId = useId().replace(/:/g, "")
     const turbRef = useRef<SVGFETurbulenceElement>(null)
+    const grainLayerRef = useRef<HTMLDivElement>(null)
+    const navBottomRef = useRef(56)
     const [reducedMotion, setReducedMotion] = useState(false)
+    const webKitRisk = !isStatic && detectsWebKitRisk()
     // Only portal after mount so SSR and the first client render agree (null),
     // avoiding a hydration mismatch on the published site.
     const [mounted, setMounted] = useState(false)
+    const runtimeGrainEnabled =
+        enabled && (isStatic || !disableOnWebKit || !webKitRisk)
     useEffect(() => setMounted(true), [])
 
     // Keep the nav header clean by starting the grain at the nav's LIVE bottom
@@ -103,9 +122,14 @@ export default function GrainOverlay(props: Props) {
     // when the detail panel opens and the nav slides up & away, the boundary rides
     // with it down to 0 (full coverage) — no exposed seam where the grain ends.
     // Seeded with a fallback so the header is never grained on first paint.
-    const [navBottom, setNavBottom] = useState(56)
     useEffect(() => {
-        if (!clearNav || isStatic || typeof document === "undefined") return
+        if (
+            !runtimeGrainEnabled ||
+            !clearNav ||
+            isStatic ||
+            typeof document === "undefined"
+        )
+            return
         const nowMs = () =>
             typeof performance !== "undefined" ? performance.now() : Date.now()
         const measure = () => {
@@ -124,7 +148,13 @@ export default function GrainOverlay(props: Props) {
                 })
                 if (found) {
                     const next = Math.max(0, Math.round(bottom))
-                    setNavBottom((prev) => (prev === next ? prev : next))
+                    if (navBottomRef.current === next) return
+                    navBottomRef.current = next
+                    if (grainLayerRef.current) {
+                        grainLayerRef.current.style.top = `${
+                            next + Math.max(0, topInset)
+                        }px`
+                    }
                 }
             } catch (e) {}
         }
@@ -151,20 +181,39 @@ export default function GrainOverlay(props: Props) {
             mo.disconnect()
             if (raf) window.cancelAnimationFrame(raf)
         }
-    }, [clearNav, navSelector, isStatic])
+    }, [
+        clearNav,
+        navSelector,
+        isStatic,
+        runtimeGrainEnabled,
+        topInset,
+    ])
 
     useEffect(() => {
-        if (typeof window === "undefined" || !window.matchMedia) return
+        if (
+            !runtimeGrainEnabled ||
+            !animated ||
+            isStatic ||
+            typeof window === "undefined" ||
+            !window.matchMedia
+        )
+            return
         const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
         const update = () => setReducedMotion(mq.matches)
         update()
         mq.addEventListener?.("change", update)
         return () => mq.removeEventListener?.("change", update)
-    }, [])
+    }, [animated, isStatic, runtimeGrainEnabled])
 
     // Film-grain shimmer: re-seed the turbulence imperatively (no React re-render).
     useEffect(() => {
-        if (!enabled || !animated || isStatic || reducedMotion) return
+        if (
+            !runtimeGrainEnabled ||
+            !animated ||
+            isStatic ||
+            reducedMotion
+        )
+            return
         if (typeof window === "undefined") return
         let raf = 0
         let last = 0
@@ -178,13 +227,21 @@ export default function GrainOverlay(props: Props) {
         }
         raf = window.requestAnimationFrame(tick)
         return () => window.cancelAnimationFrame(raf)
-    }, [enabled, animated, isStatic, reducedMotion, fps])
+    }, [
+        runtimeGrainEnabled,
+        animated,
+        isStatic,
+        reducedMotion,
+        fps,
+    ])
 
-    if (!enabled) return null
+    if (!runtimeGrainEnabled) return null
 
     const [cr, cg, cb] = hexToRGB01(grainColor)
     // Grain starts below the nav (when clearNav) plus any extra manual inset.
-    const grainTop = (clearNav ? Math.max(0, navBottom) : 0) + Math.max(0, topInset)
+    const grainTop =
+        (clearNav ? Math.max(0, navBottomRef.current) : 0) +
+        Math.max(0, topInset)
 
     const grainSvg = (
         <svg
@@ -257,6 +314,7 @@ export default function GrainOverlay(props: Props) {
     // Runtime: full-viewport fixed layer portaled to <body>.
     return createPortal(
         <div
+            ref={grainLayerRef}
             aria-hidden="true"
             style={{
                 position: "fixed",
@@ -373,6 +431,13 @@ addPropertyControls(GrainOverlay, {
         defaultValue: true,
         enabledTitle: "On",
         disabledTitle: "Off",
+    },
+    disableOnWebKit: {
+        type: ControlType.Boolean,
+        title: "Safari Grain",
+        defaultValue: true,
+        enabledTitle: "Disable",
+        disabledTitle: "Keep",
     },
     fps: {
         type: ControlType.Number,

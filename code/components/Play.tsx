@@ -57,11 +57,17 @@ type Props = {
     edgeScrollEnabled?: boolean
     edgeScrollSpeed?: number
     edgeScrollZone?: number
+    edgeScrollEase?: number
     parallaxStrength?: number
     parallaxEase?: number
     parallaxWhileDragging?: boolean
     mediaFadeMs?: number
     maxConcurrentVideos?: number
+    safariMaxConcurrentVideos?: number
+    iosMaxConcurrentVideos?: number
+    videoPlaybackMode?: "center" | "hover"
+    restingMediaOpacity?: number
+    restingMediaSaturation?: number
     initialMaxConcurrentVideos?: number
     videoRampDelayMs?: number
     loadInDelayMs?: number
@@ -76,6 +82,9 @@ type Props = {
     editorControlGuard?: boolean
     ancestorDepth?: number
     navHideOffset?: number
+    gridGap?: number
+    surfaceColor?: string
+    labelStrokeColor?: string
     style?: React.CSSProperties
 }
 
@@ -94,8 +103,12 @@ const LOAD_IN_DELAY_MS = 70
 const LOAD_IN_FADE_MS = 1280
 const LOAD_IN_STAGGER_MS = 90
 const LOAD_IN_MAX_WAIT_MS = 2600
-const MAX_CONCURRENT_VIDEOS = 16
-const INITIAL_MAX_CONCURRENT_VIDEOS = 8
+// Keep Safari's decoder/GPU workload bounded without reducing encoded quality.
+// Remaining cards continue to show their crisp poster until a video slot opens.
+const MAX_CONCURRENT_VIDEOS = 10
+const INITIAL_MAX_CONCURRENT_VIDEOS = 4
+const SAFARI_MAX_CONCURRENT_VIDEOS = 4
+const IOS_MAX_CONCURRENT_VIDEOS = 2
 const VIDEO_RAMP_DELAY_MS = 2400
 const DEFAULT_CELL_SIZE = 190
 const DEFAULT_GRID_GAP = 56
@@ -105,6 +118,23 @@ const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 
 const canUseDOM = () => typeof window !== "undefined" && typeof document !== "undefined"
 const isCanvas = () => RenderTarget.current() === RenderTarget.canvas || RenderTarget.current() === RenderTarget.thumbnail
+const isIOSWebKit = () => {
+    if (!canUseDOM()) return false
+    const ua = navigator.userAgent || ""
+    return (
+        /iP(?:ad|hone|od)/.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+    )
+}
+const isDesktopSafari = () => {
+    if (!canUseDOM()) return false
+    const ua = navigator.userAgent || ""
+    return (
+        /Safari\//.test(ua) &&
+        !/(?:Chrome|Chromium|CriOS|Edg|EdgiOS|OPR|FxiOS)\//.test(ua) &&
+        !isIOSWebKit()
+    )
+}
 
 function imageSource(value: ImageValue) {
     if (!value) return ""
@@ -133,6 +163,9 @@ function useViewportFix(enabled: boolean, containerRef: React.RefObject<HTMLDivE
     React.useEffect(() => {
         if (!enabled || !canUseDOM() || isCanvas()) return
         let raf = 0
+        let scheduled = false
+        let rebindObserver = () => {}
+        let observedChain: HTMLElement[] = []
         const touched = new Map<HTMLElement, Snapshot>()
         const remember = (element: HTMLElement) => {
             if (touched.has(element)) return
@@ -153,33 +186,89 @@ function useViewportFix(enabled: boolean, containerRef: React.RefObject<HTMLDivE
             const root = containerRef.current?.querySelector<HTMLElement>(ROOT_SELECTOR)
             if (!root) return
             remember(root)
-            root.style.width = "100%"
-            root.style.height = "100%"
-            root.style.minHeight = "100vh"
+            if (root.style.width !== "100%") root.style.width = "100%"
+            if (root.style.height !== "100%") root.style.height = "100%"
+            if (root.style.minHeight !== "100vh") root.style.minHeight = "100vh"
             let element: HTMLElement | null = root.parentElement
             for (let index = 0; element && element !== document.body && index < ancestorDepth; index += 1) {
                 remember(element)
-                element.style.position = "fixed"
-                element.style.top = "0px"
-                element.style.right = "0px"
-                element.style.bottom = "0px"
-                element.style.left = "0px"
-                element.style.width = "100vw"
-                element.style.height = "100vh"
-                element.style.minHeight = "100vh"
-                element.style.transform = "none"
-                if (index === 0) element.style.zIndex = "0"
+                const values: Partial<CSSStyleDeclaration> = {
+                    position: "fixed",
+                    top: "0px",
+                    right: "0px",
+                    bottom: "0px",
+                    left: "0px",
+                    width: "100vw",
+                    height: "100vh",
+                    minHeight: "100vh",
+                    transform: "none",
+                }
+                if (index === 0) values.zIndex = "0"
+                Object.entries(values).forEach(([key, value]) => {
+                    if ((element!.style as any)[key] !== value)
+                        (element!.style as any)[key] = value
+                })
                 element = element.parentElement
             }
         }
-        const loop = () => {
-            forceViewport()
-            raf = window.requestAnimationFrame(loop)
+        const schedule = () => {
+            if (scheduled) return
+            scheduled = true
+            raf = window.requestAnimationFrame(() => {
+                scheduled = false
+                forceViewport()
+                rebindObserver()
+            })
         }
-        raf = window.requestAnimationFrame(loop)
         forceViewport()
+        const observer =
+            typeof MutationObserver !== "undefined"
+                ? new MutationObserver(schedule)
+                : null
+        rebindObserver = () => {
+            const nextChain: HTMLElement[] = []
+            let observedElement: HTMLElement | null =
+                containerRef.current?.querySelector<HTMLElement>(
+                    ROOT_SELECTOR
+                ) || null
+            for (
+                let index = 0;
+                observedElement &&
+                observedElement !== document.body &&
+                index <= ancestorDepth;
+                index += 1
+            ) {
+                nextChain.push(observedElement)
+                observedElement = observedElement.parentElement
+            }
+            const chainChanged =
+                nextChain.length !== observedChain.length ||
+                nextChain.some(
+                    (element, index) => element !== observedChain[index]
+                )
+            if (!chainChanged) return
+            observer?.disconnect()
+            nextChain.forEach((element) => {
+                observer?.observe(element, {
+                    attributes: true,
+                    attributeFilter: ["class", "style"],
+                    childList: true,
+                })
+            })
+            observedChain = nextChain
+        }
+        rebindObserver()
+        const timers = [50, 200, 500, 1000].map((delay) =>
+            window.setTimeout(schedule, delay)
+        )
+        window.addEventListener("resize", schedule, { passive: true })
+        window.addEventListener("pt:reveal", schedule)
         return () => {
             window.cancelAnimationFrame(raf)
+            timers.forEach((timer) => window.clearTimeout(timer))
+            observer?.disconnect()
+            window.removeEventListener("resize", schedule)
+            window.removeEventListener("pt:reveal", schedule)
             touched.forEach((style, element) => {
                 Object.entries(style).forEach(([key, value]) => {
                     ;(element.style as any)[key] = value || ""
@@ -290,6 +379,9 @@ export default function Play(props: Props) {
         navSelector = DEFAULT_NAV_SELECTOR,
         archiveItems,
         items,
+        gridGap,
+        surfaceColor,
+        labelStrokeColor,
         ...archiveProps
     } = props
     const containerRef = React.useRef<HTMLDivElement>(null)
@@ -301,28 +393,103 @@ export default function Play(props: Props) {
     const loadInStaggerMs = props.loadInStaggerMs ?? LOAD_IN_STAGGER_MS
     const loadInMaxWaitMs = props.loadInMaxWaitMs ?? LOAD_IN_MAX_WAIT_MS
     const maxConcurrentVideos = props.maxConcurrentVideos ?? MAX_CONCURRENT_VIDEOS
-    const initialMaxConcurrentVideos = Math.min(
+    const safariMaxConcurrentVideos =
+        props.safariMaxConcurrentVideos ?? SAFARI_MAX_CONCURRENT_VIDEOS
+    const iosMaxConcurrentVideos =
+        props.iosMaxConcurrentVideos ?? IOS_MAX_CONCURRENT_VIDEOS
+    const [pageVisible, setPageVisible] = React.useState(
+        () => !canUseDOM() || document.visibilityState !== "hidden"
+    )
+    const [runtimeMaxConcurrentVideos, setRuntimeMaxConcurrentVideos] =
+        React.useState(() => {
+            if (!active || !canUseDOM()) return maxConcurrentVideos
+            if (document.visibilityState === "hidden") return 0
+            const smallViewportBudget =
+                window.innerWidth <= 810 ? 8 : maxConcurrentVideos
+            const browserBudget = isIOSWebKit()
+                ? iosMaxConcurrentVideos
+                : isDesktopSafari()
+                  ? safariMaxConcurrentVideos
+                  : smallViewportBudget
+            return Math.min(maxConcurrentVideos, browserBudget)
+        })
+
+    React.useEffect(() => {
+        if (!active || !canUseDOM()) return
+        const updateVisibility = () =>
+            setPageVisible(document.visibilityState !== "hidden")
+        const hide = () => setPageVisible(false)
+        const show = () => setPageVisible(true)
+        updateVisibility()
+        document.addEventListener("visibilitychange", updateVisibility)
+        window.addEventListener("pagehide", hide)
+        window.addEventListener("pageshow", show)
+        return () => {
+            document.removeEventListener("visibilitychange", updateVisibility)
+            window.removeEventListener("pagehide", hide)
+            window.removeEventListener("pageshow", show)
+        }
+    }, [active])
+
+    React.useEffect(() => {
+        if (!active || !canUseDOM()) {
+            setRuntimeMaxConcurrentVideos(maxConcurrentVideos)
+            return
+        }
+        const updateBudget = () => {
+            if (!pageVisible) {
+                setRuntimeMaxConcurrentVideos(0)
+                return
+            }
+            const smallViewportBudget =
+                window.innerWidth <= 810 ? 8 : maxConcurrentVideos
+            const browserBudget = isIOSWebKit()
+                ? iosMaxConcurrentVideos
+                : isDesktopSafari()
+                  ? safariMaxConcurrentVideos
+                  : smallViewportBudget
+            setRuntimeMaxConcurrentVideos(
+                Math.min(maxConcurrentVideos, browserBudget)
+            )
+        }
+        updateBudget()
+        window.addEventListener("resize", updateBudget, { passive: true })
+        return () => window.removeEventListener("resize", updateBudget)
+    }, [
+        active,
+        iosMaxConcurrentVideos,
         maxConcurrentVideos,
+        pageVisible,
+        safariMaxConcurrentVideos,
+    ])
+
+    const initialMaxConcurrentVideos = Math.min(
+        runtimeMaxConcurrentVideos,
         props.initialMaxConcurrentVideos ?? INITIAL_MAX_CONCURRENT_VIDEOS
     )
     const videoRampDelayMs = props.videoRampDelayMs ?? VIDEO_RAMP_DELAY_MS
     const [currentMaxConcurrentVideos, setCurrentMaxConcurrentVideos] = React.useState(
-        active ? initialMaxConcurrentVideos : maxConcurrentVideos
+        active ? initialMaxConcurrentVideos : runtimeMaxConcurrentVideos
     )
 
     React.useEffect(() => {
         if (!active || !canUseDOM()) {
-            setCurrentMaxConcurrentVideos(maxConcurrentVideos)
+            setCurrentMaxConcurrentVideos(runtimeMaxConcurrentVideos)
             return
         }
         setCurrentMaxConcurrentVideos(initialMaxConcurrentVideos)
-        if (initialMaxConcurrentVideos >= maxConcurrentVideos) return
+        if (initialMaxConcurrentVideos >= runtimeMaxConcurrentVideos) return
         const timer = window.setTimeout(
-            () => setCurrentMaxConcurrentVideos(maxConcurrentVideos),
+            () => setCurrentMaxConcurrentVideos(runtimeMaxConcurrentVideos),
             Math.max(0, videoRampDelayMs)
         )
         return () => window.clearTimeout(timer)
-    }, [active, initialMaxConcurrentVideos, maxConcurrentVideos, videoRampDelayMs])
+    }, [
+        active,
+        initialMaxConcurrentVideos,
+        runtimeMaxConcurrentVideos,
+        videoRampDelayMs,
+    ])
 
     useViewportFix(active && viewportFixEnabled, containerRef, ancestorDepth)
     useCardStrokeHoverPatch(active)
@@ -334,6 +501,12 @@ export default function Play(props: Props) {
             <ArchivePlayground
                 {...archiveProps}
                 items={resolvedItems}
+                columnGap={props.columnGap ?? gridGap}
+                rowGap={props.rowGap ?? gridGap}
+                backgroundColor={props.backgroundColor ?? surfaceColor}
+                panelColor={props.panelColor ?? surfaceColor}
+                labelColor={props.labelColor ?? labelStrokeColor}
+                strokeColor={props.strokeColor ?? labelStrokeColor}
                 navSelector={navSelector}
                 navHideOffset={navHideOffset}
                 loadInDelayMs={loadInDelayMs}
@@ -341,6 +514,7 @@ export default function Play(props: Props) {
                 loadInStaggerMs={loadInStaggerMs}
                 loadInMaxWaitMs={loadInMaxWaitMs}
                 maxConcurrentVideos={currentMaxConcurrentVideos}
+                driftWhilePanelOpen={props.driftWhilePanelOpen ?? false}
             />
         </div>
     )
@@ -375,54 +549,218 @@ addPropertyControls<Props>(Play, {
             },
         },
     },
-    advancedControls: { type: ControlType.Boolean, title: "Advanced", defaultValue: false, enabledTitle: "Show", disabledTitle: "Hide" },
-    cellSize: { type: ControlType.Number, title: "Cell", defaultValue: DEFAULT_CELL_SIZE, min: 100, max: 360, step: 1, unit: "px", hidden: hideAdvanced },
-    columnGap: { type: ControlType.Number, title: "Column", defaultValue: DEFAULT_GRID_GAP, min: 0, max: 200, step: 1, unit: "px", hidden: hideAdvanced },
-    rowGap: { type: ControlType.Number, title: "Row", defaultValue: DEFAULT_GRID_GAP, min: 0, max: 220, step: 1, unit: "px", hidden: hideAdvanced },
-    hoverScale: { type: ControlType.Number, title: "Hover", defaultValue: 1.035, min: 1, max: 1.15, step: 0.005, hidden: hideAdvanced },
-    hoverImageZoom: { type: ControlType.Number, title: "Zoom", defaultValue: 4, min: 0, max: 12, step: 0.5, unit: "%", hidden: hideAdvanced },
-    panelWidth: { type: ControlType.Number, title: "Panel", defaultValue: DEFAULT_PANEL_WIDTH, min: 300, max: 1200, step: 1, unit: "px", hidden: hideAdvanced },
-    panelExitMs: { type: ControlType.Number, title: "Close", defaultValue: 950, min: 200, max: 1400, step: 10, unit: "ms", hidden: hideAdvanced },
-    driftSpeedX: { type: ControlType.Number, title: "Drift X", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    driftSpeedY: { type: ControlType.Number, title: "Drift Y", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    driftWhilePanelOpen: { type: ControlType.Boolean, title: "Panel Drift", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    panelDriftSpeedX: { type: ControlType.Number, title: "Panel X", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    panelDriftSpeedY: { type: ControlType.Number, title: "Panel Y", defaultValue: 0.5, min: -3, max: 3, step: 0.05, hidden: hideAdvanced },
-    inertiaEnabled: { type: ControlType.Boolean, title: "Inertia", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    throwFriction: { type: ControlType.Number, title: "Friction", defaultValue: 0.85, min: 0.4, max: 0.98, step: 0.01, hidden: hideAdvanced },
-    throwVelocityScale: { type: ControlType.Number, title: "Throw", defaultValue: 1.75, min: 0.2, max: 4, step: 0.05, hidden: hideAdvanced },
-    throwMinSpeed: { type: ControlType.Number, title: "Min V", defaultValue: 220, min: 0, max: 1200, step: 10, hidden: hideAdvanced },
-    throwMaxSpeed: { type: ControlType.Number, title: "Max V", defaultValue: 5200, min: 400, max: 9000, step: 50, hidden: hideAdvanced },
-    edgeScrollEnabled: { type: ControlType.Boolean, title: "Edges", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    edgeScrollSpeed: { type: ControlType.Number, title: "Edge V", defaultValue: 220, min: 0, max: 800, step: 10, hidden: hideAdvanced },
-    edgeScrollZone: { type: ControlType.Number, title: "Zone", defaultValue: 90, min: 30, max: 220, step: 1, unit: "px", hidden: hideAdvanced },
-    parallaxStrength: { type: ControlType.Number, title: "Parallax", defaultValue: 0.06, min: 0, max: 0.2, step: 0.005, hidden: hideAdvanced },
-    parallaxEase: { type: ControlType.Number, title: "Ease", defaultValue: 0.5, min: 0.05, max: 1, step: 0.05, hidden: hideAdvanced },
-    parallaxWhileDragging: { type: ControlType.Boolean, title: "Drag Para", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    mediaFadeMs: { type: ControlType.Number, title: "Fade", defaultValue: 700, min: 0, max: 1600, step: 10, unit: "ms", hidden: hideAdvanced },
-    maxConcurrentVideos: { type: ControlType.Number, title: "Max Videos", defaultValue: MAX_CONCURRENT_VIDEOS, min: 0, max: 30, step: 1, hidden: hideAdvanced },
-    initialMaxConcurrentVideos: { type: ControlType.Number, title: "Initial Videos", defaultValue: INITIAL_MAX_CONCURRENT_VIDEOS, min: 0, max: 30, step: 1, hidden: hideAdvanced },
-    videoRampDelayMs: { type: ControlType.Number, title: "Video Ramp", defaultValue: VIDEO_RAMP_DELAY_MS, min: 0, max: 6000, step: 50, unit: "ms", hidden: hideAdvanced },
-    loadInDelayMs: { type: ControlType.Number, title: "Load Hold", defaultValue: LOAD_IN_DELAY_MS, min: 0, max: 1000, step: 10, unit: "ms", hidden: hideAdvanced },
-    loadInFadeMs: { type: ControlType.Number, title: "Load Fade", defaultValue: LOAD_IN_FADE_MS, min: 0, max: 2600, step: 10, unit: "ms", hidden: hideAdvanced },
-    loadInStaggerMs: { type: ControlType.Number, title: "Load Stagger", defaultValue: LOAD_IN_STAGGER_MS, min: 0, max: 180, step: 1, unit: "ms", hidden: hideAdvanced },
-    loadInMaxWaitMs: { type: ControlType.Number, title: "Load Max", defaultValue: LOAD_IN_MAX_WAIT_MS, min: 400, max: 5500, step: 50, unit: "ms", hidden: hideAdvanced },
-    backgroundColor: { type: ControlType.Color, title: "BG", defaultValue: CREAM, hidden: hideAdvanced },
-    panelColor: { type: ControlType.Color, title: "Panel", defaultValue: CREAM, hidden: hideAdvanced },
-    textColor: { type: ControlType.Color, title: "Text", defaultValue: BLACK, hidden: hideAdvanced },
-    mutedTextColor: { type: ControlType.Color, title: "Muted", defaultValue: TEXT_GRAY, hidden: hideAdvanced },
-    labelColor: { type: ControlType.Color, title: "Label", defaultValue: LABEL, hidden: hideAdvanced },
-    ruleColor: { type: ControlType.Color, title: "Rule", defaultValue: RULE, hidden: hideAdvanced },
-    strokeColor: { type: ControlType.Color, title: "Stroke", defaultValue: LABEL, hidden: hideAdvanced },
-    strokeWidth: { type: ControlType.Number, title: "Stroke W", defaultValue: 0.5, min: 0, max: 4, step: 0.25, unit: "px", hidden: hideAdvanced },
-    hideFooter: { type: ControlType.Boolean, title: "Footer", defaultValue: true, enabledTitle: "Hide", disabledTitle: "Show", hidden: hideAdvanced },
-    navPassthrough: { type: ControlType.Boolean, title: "Nav Fix", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    navSelector: { type: ControlType.String, title: "Nav Sel", defaultValue: DEFAULT_NAV_SELECTOR, hidden: hideAdvanced },
-    patchEnabled: { type: ControlType.Boolean, title: "Replay", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    viewportFixEnabled: { type: ControlType.Boolean, title: "Viewport", defaultValue: true, enabledTitle: "On", disabledTitle: "Off", hidden: hideAdvanced },
-    editorControlGuard: { type: ControlType.Boolean, title: "Editor UI", defaultValue: true, enabledTitle: "Hide", disabledTitle: "Show", hidden: hideAdvanced },
-    ancestorDepth: { type: ControlType.Number, title: "Depth", defaultValue: 4, min: 1, max: 8, step: 1, hidden: hideAdvanced },
-    navHideOffset: { type: ControlType.Number, title: "Nav Hide", defaultValue: 120, min: 60, max: 240, step: 1, unit: "px", hidden: hideAdvanced },
+    advancedControls: {
+        type: ControlType.Boolean,
+        title: "Customize",
+        defaultValue: false,
+        enabledTitle: "Show",
+        disabledTitle: "Hide",
+    },
+    cellSize: {
+        type: ControlType.Number,
+        title: "Item Size",
+        defaultValue: DEFAULT_CELL_SIZE,
+        min: 100,
+        max: 360,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    gridGap: {
+        type: ControlType.Number,
+        title: "Item Gap",
+        description: "Sets both horizontal and vertical spacing.",
+        defaultValue: DEFAULT_GRID_GAP,
+        min: 0,
+        max: 56,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    hoverScale: {
+        type: ControlType.Number,
+        title: "Hover Size",
+        defaultValue: 1.035,
+        min: 1,
+        max: 1.15,
+        step: 0.005,
+        hidden: hideAdvanced,
+    },
+    videoPlaybackMode: {
+        type: ControlType.Enum,
+        title: "Video Playback",
+        options: ["center", "hover"],
+        optionTitles: ["Near Center", "Hover Only"],
+        defaultValue: "center",
+        hidden: hideAdvanced,
+    },
+    maxConcurrentVideos: {
+        type: ControlType.Number,
+        title: "Max Videos",
+        defaultValue: MAX_CONCURRENT_VIDEOS,
+        min: 0,
+        max: 30,
+        step: 1,
+        hidden: hideAdvanced,
+    },
+    initialMaxConcurrentVideos: {
+        type: ControlType.Number,
+        title: "Initial Videos",
+        defaultValue: INITIAL_MAX_CONCURRENT_VIDEOS,
+        min: 0,
+        max: 30,
+        step: 1,
+        hidden: hideAdvanced,
+    },
+    safariMaxConcurrentVideos: {
+        type: ControlType.Number,
+        title: "Safari Videos",
+        defaultValue: SAFARI_MAX_CONCURRENT_VIDEOS,
+        min: 0,
+        max: 12,
+        step: 1,
+        hidden: hideAdvanced,
+    },
+    iosMaxConcurrentVideos: {
+        type: ControlType.Number,
+        title: "iOS Videos",
+        defaultValue: IOS_MAX_CONCURRENT_VIDEOS,
+        min: 0,
+        max: 8,
+        step: 1,
+        hidden: hideAdvanced,
+    },
+    restingMediaOpacity: {
+        type: ControlType.Number,
+        title: "Resting Opacity",
+        defaultValue: 1,
+        min: 0.05,
+        max: 1,
+        step: 0.05,
+        hidden: (props) =>
+            hideAdvanced(props) || props.videoPlaybackMode !== "hover",
+    },
+    restingMediaSaturation: {
+        type: ControlType.Number,
+        title: "Resting Saturation",
+        defaultValue: 1,
+        min: 0,
+        max: 1,
+        step: 0.05,
+        hidden: (props) =>
+            hideAdvanced(props) || props.videoPlaybackMode !== "hover",
+    },
+    panelWidth: {
+        type: ControlType.Number,
+        title: "Panel Width",
+        defaultValue: DEFAULT_PANEL_WIDTH,
+        min: 300,
+        max: 1200,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    panelExitMs: {
+        type: ControlType.Number,
+        title: "Close Speed",
+        description: "How long the detail panel takes to close.",
+        defaultValue: 950,
+        min: 200,
+        max: 1400,
+        step: 10,
+        unit: "ms",
+        hidden: hideAdvanced,
+    },
+    inertiaEnabled: {
+        type: ControlType.Boolean,
+        title: "Drag Momentum",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    throwVelocityScale: {
+        type: ControlType.Number,
+        title: "Drag Throw",
+        description: "How far the grid carries after a drag.",
+        defaultValue: 1.75,
+        min: 0.2,
+        max: 4,
+        step: 0.05,
+        hidden: hideAdvanced,
+    },
+    edgeScrollEnabled: {
+        type: ControlType.Boolean,
+        title: "Mouse Move",
+        description: "Moves the grid when the pointer approaches an edge.",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
+        hidden: hideAdvanced,
+    },
+    edgeScrollSpeed: {
+        type: ControlType.Number,
+        title: "Mouse Speed",
+        description: "Maximum grid speed near page edges and corners.",
+        defaultValue: 220,
+        min: 0,
+        max: 800,
+        step: 10,
+        hidden: hideAdvanced,
+    },
+    edgeScrollZone: {
+        type: ControlType.Number,
+        title: "Mouse Area",
+        description: "Distance from an edge where mouse movement begins.",
+        defaultValue: 90,
+        min: 30,
+        max: 220,
+        step: 1,
+        unit: "px",
+        hidden: hideAdvanced,
+    },
+    edgeScrollEase: {
+        type: ControlType.Number,
+        title: "Mouse Accel",
+        description: "Lower values start slower and ramp up longer.",
+        defaultValue: 0.08,
+        min: 0.01,
+        max: 0.5,
+        step: 0.01,
+        hidden: hideAdvanced,
+    },
+    surfaceColor: {
+        type: ControlType.Color,
+        title: "Surface",
+        description: "Sets both the page and detail-panel background.",
+        defaultValue: CREAM,
+        hidden: hideAdvanced,
+    },
+    textColor: {
+        type: ControlType.Color,
+        title: "Text",
+        defaultValue: BLACK,
+        hidden: hideAdvanced,
+    },
+    mutedTextColor: {
+        type: ControlType.Color,
+        title: "Muted Text",
+        defaultValue: TEXT_GRAY,
+        hidden: hideAdvanced,
+    },
+    labelStrokeColor: {
+        type: ControlType.Color,
+        title: "Labels + Lines",
+        description: "Sets small labels and media outlines together.",
+        defaultValue: LABEL,
+        hidden: hideAdvanced,
+    },
+    ruleColor: {
+        type: ControlType.Color,
+        title: "Divider",
+        defaultValue: RULE,
+        hidden: hideAdvanced,
+    },
 })
 
 Play.displayName = "Play"

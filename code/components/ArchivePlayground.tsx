@@ -115,11 +115,15 @@ type Props = {
     edgeScrollEnabled?: boolean
     edgeScrollSpeed?: number
     edgeScrollZone?: number
+    edgeScrollEase?: number
     parallaxStrength?: number
     parallaxEase?: number
     parallaxWhileDragging?: boolean
     mediaFadeMs?: number
     maxConcurrentVideos?: number
+    videoPlaybackMode?: "center" | "hover"
+    restingMediaOpacity?: number
+    restingMediaSaturation?: number
     loadInDelayMs?: number
     loadInFadeMs?: number
     loadInStaggerMs?: number
@@ -133,14 +137,6 @@ type Props = {
     style?: React.CSSProperties
 }
 
-type Motion = {
-    x: number
-    y: number
-    mx: number
-    my: number
-    dragging: boolean
-}
-
 type InternalState = {
     x: number
     y: number
@@ -152,6 +148,8 @@ type InternalState = {
     targetMy: number
     edgeX: number
     edgeY: number
+    targetEdgeX: number
+    targetEdgeY: number
     inside: boolean
     down: boolean
     dragging: boolean
@@ -168,14 +166,48 @@ type InternalState = {
     lastFrameT: number
 }
 
+type GridWindow = {
+    startX: number
+    startY: number
+}
+
+type GridCellRuntime = {
+    key: string
+    col: number
+    row: number
+    hasVideo: boolean
+}
+
+type GridRuntime = {
+    cells: GridCellRuntime[]
+    cellX: number
+    cellY: number
+    cellSize: number
+    gridWidth: number
+    gridHeight: number
+    centerX: number
+    centerY: number
+    viewportW: number
+    viewportH: number
+    extra: number
+    videoBudget: number
+    videoPlaybackMode: "center" | "hover"
+    loadInReady: boolean
+    panelOpen: boolean
+    prefersReducedMotion: boolean
+}
+
 const CREAM = "rgb(247, 245, 240)"
 const BLACK = "rgb(20, 20, 20)"
 const LABEL = "rgb(151, 151, 151)"
 const RULE = "rgb(35, 51, 36)"
 const TEXT_GRAY = "rgb(110, 110, 110)"
-const MONO = "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace"
-const DISPLAY = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
-const PARAGRAPH_MEDIUM = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
+const MONO =
+    "'GT Standard Mono Trial Rg', 'GT Standard Mono Regular', 'Azeret Mono', 'SF Mono', monospace"
+const DISPLAY =
+    "'GT Standard Trial L Rg', 'GT Standard L Regular', 'Inter', system-ui, sans-serif"
+const PARAGRAPH_MEDIUM =
+    "'GT Standard Trial L Md', 'GT Standard Trial L Rg', 'Inter', system-ui, sans-serif"
 const PARAGRAPH_REGULAR =
     "'GT Standard L Regular', 'GT Standard', 'Inter', system-ui, sans-serif"
 const MODAL_Z = 2147483646
@@ -208,12 +240,12 @@ const LOAD_IN_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
 const LOAD_IN_MAX_WAIT_MS = 2600
-const GRID_MEDIA_WIDTH = 720
+const GRID_MEDIA_WIDTH = 600
 const CMS_FALLBACK_DELAY_MS = 350
 const DEFAULT_CELL_SIZE = 190
 const DEFAULT_GRID_GAP = 56
 const MAX_GRID_GAP = 56
-const MAX_VISIBLE_COLUMNS = 16
+const MAX_VISIBLE_COLUMNS = 20
 const MAX_VISIBLE_ROWS = 12
 const DEFAULT_PANEL_WIDTH = 960
 const PANEL_DESKTOP_RATIO = 0.5
@@ -1101,6 +1133,55 @@ function usePrefersReducedMotion() {
     return prefersReducedMotion
 }
 
+function usePageVisible() {
+    const [pageVisible, setPageVisible] = React.useState(
+        () => !canUseDOM() || document.visibilityState !== "hidden"
+    )
+
+    React.useEffect(() => {
+        if (!canUseDOM()) return
+        const update = () =>
+            setPageVisible(document.visibilityState !== "hidden")
+        const hide = () => setPageVisible(false)
+        const show = () => setPageVisible(true)
+        update()
+        document.addEventListener("visibilitychange", update)
+        window.addEventListener("pagehide", hide)
+        window.addEventListener("pageshow", show)
+        return () => {
+            document.removeEventListener("visibilitychange", update)
+            window.removeEventListener("pagehide", hide)
+            window.removeEventListener("pageshow", show)
+        }
+    }, [])
+
+    return pageVisible
+}
+
+function detectsWebKitRisk() {
+    if (!canUseDOM()) return false
+    const navigatorAny = navigator as Navigator & {
+        userAgent?: string
+        platform?: string
+        maxTouchPoints?: number
+    }
+    const userAgent = navigatorAny.userAgent || ""
+    const iOSLike =
+        /iP(?:ad|hone|od)/i.test(userAgent) ||
+        (navigatorAny.platform === "MacIntel" &&
+            (navigatorAny.maxTouchPoints || 0) > 1)
+    const desktopSafari =
+        /Safari/i.test(userAgent) &&
+        !/(?:Chrome|Chromium|CriOS|Edg|EdgiOS|OPR|FxiOS)/i.test(userAgent) &&
+        !iOSLike
+    return iOSLike || desktopSafari
+}
+
+function useWebKitRisk() {
+    const [webKitRisk] = React.useState(detectsWebKitRisk)
+    return webKitRisk
+}
+
 function reducedMotionNow() {
     try {
         return (
@@ -1222,6 +1303,8 @@ const MediaFrame = React.memo(function MediaFrame({
     active = true,
     eager = false,
     prefersReducedMotion,
+    restingOpacity = 1,
+    restingSaturation = 1,
 }: {
     item: Item
     detail?: boolean
@@ -1234,8 +1317,12 @@ const MediaFrame = React.memo(function MediaFrame({
     active?: boolean
     eager?: boolean
     prefersReducedMotion: boolean
+    restingOpacity?: number
+    restingSaturation?: number
 }) {
-    const [ready, setReady] = React.useState(false)
+    // Grid media is never gated by `ready`, so seed it as ready and avoid a
+    // redundant post-mount state update for every recycled card.
+    const [ready, setReady] = React.useState(() => !detail)
     const videoRef = React.useRef<HTMLVideoElement>(null)
     // Concurrent-video limiter: only mount a <video> (which decodes) when this
     // cell is active (on-screen + within the budget). Off-screen video cells
@@ -1265,10 +1352,7 @@ const MediaFrame = React.memo(function MediaFrame({
     )
 
     React.useEffect(() => {
-        if (!detail) {
-            setReady(true)
-            return
-        }
+        if (!detail) return
         setReady(false)
         if (!canUseDOM() || !showVideo) return
         const timer = window.setTimeout(() => setReady(true), 2500)
@@ -1277,11 +1361,16 @@ const MediaFrame = React.memo(function MediaFrame({
 
     React.useEffect(() => {
         const video = videoRef.current
+        if (video) video.style.opacity = "0"
+    }, [showVideo])
+
+    React.useEffect(() => {
+        const video = videoRef.current
         if (!video) return
         video.muted = true
         if (prefersReducedMotion) {
             video.pause()
-            setReady(true)
+            if (detail) setReady(true)
             return
         }
         if (!video.paused) return
@@ -1289,9 +1378,35 @@ const MediaFrame = React.memo(function MediaFrame({
         if (play && typeof play.catch === "function") play.catch(() => {})
     }, [source, prefersReducedMotion])
 
+    React.useEffect(() => {
+        if (!showVideo) return
+        const video = videoRef.current
+        return () => {
+            video?.pause()
+            video?.removeAttribute("src")
+            video?.load()
+        }
+    }, [showVideo, source])
+
     // Stroke + media fade in together. The stroke is a separate inset overlay
     // above the media so subpixel clipping at video/image edges cannot crop it.
     const revealMs = Math.max(1000, fadeMs)
+    const fadesAtRest = restingOpacity < 0.999
+    const desaturatesAtRest = restingSaturation < 0.999
+    const gridTransitions = [
+        fadesAtRest ? `opacity 320ms ${SNAPPY_EASE}` : "",
+        desaturatesAtRest ? `filter 420ms ${SNAPPY_EASE}` : "",
+        `transform 420ms ${SNAPPY_EASE}`,
+    ]
+        .filter(Boolean)
+        .join(", ")
+    const gridWillChange = [
+        fadesAtRest ? "opacity" : "",
+        desaturatesAtRest ? "filter" : "",
+        "transform",
+    ]
+        .filter(Boolean)
+        .join(", ")
     const innerStyle: React.CSSProperties = detail
         ? {
               position: "absolute",
@@ -1313,10 +1428,17 @@ const MediaFrame = React.memo(function MediaFrame({
               aspectRatio: `${item.width} / ${item.height}`,
               overflow: "hidden",
               boxSizing: "border-box",
-              opacity: 1,
+              ...(fadesAtRest
+                  ? { opacity: hot ? 1 : restingOpacity }
+                  : null),
+              ...(desaturatesAtRest
+                  ? {
+                        filter: `saturate(${hot ? 1 : restingSaturation})`,
+                    }
+                  : null),
               transform: `translate(-50%, -50%) scale(${hot ? 1 + zoom / 100 : 1})`,
-              transition: `transform 420ms ${SNAPPY_EASE}`,
-              willChange: hot ? "transform" : "auto",
+              transition: gridTransitions,
+              willChange: hot ? gridWillChange : "auto",
           }
 
     const mediaStyle: React.CSSProperties = {
@@ -1344,6 +1466,24 @@ const MediaFrame = React.memo(function MediaFrame({
 
     return (
         <div style={innerStyle}>
+            {imageSrc ? (
+                <img
+                    src={imageSrc}
+                    alt={detail ? item.accessibilityLabel : ""}
+                    draggable={false}
+                    loading={detail || eager ? "eager" : "lazy"}
+                    decoding="async"
+                    onLoad={(event) => {
+                        const im = event.currentTarget
+                        measure(im.naturalWidth, im.naturalHeight)
+                        if (detail) setReady(true)
+                    }}
+                    onError={() => {
+                        if (detail) setReady(true)
+                    }}
+                    style={mediaStyle}
+                />
+            ) : null}
             {showVideo ? (
                 <video
                     ref={videoRef}
@@ -1359,31 +1499,36 @@ const MediaFrame = React.memo(function MediaFrame({
                     aria-label={
                         detail ? `${item.accessibilityLabel}, video` : undefined
                     }
-                    onLoadedData={() => setReady(true)}
+                    onLoadedData={(event) => {
+                        if (detail) setReady(true)
+                        event.currentTarget.style.opacity = "1"
+                    }}
                     onLoadedMetadata={(event) => {
                         const v = event.currentTarget
                         measure(v.videoWidth, v.videoHeight)
-                        setReady(true)
+                        if (detail) setReady(true)
                     }}
-                    onCanPlay={() => setReady(true)}
-                    onStalled={() => setReady(true)}
-                    onError={() => setReady(true)}
-                    style={mediaStyle}
-                />
-            ) : imageSrc ? (
-                <img
-                    src={imageSrc}
-                    alt={detail ? item.accessibilityLabel : ""}
-                    draggable={false}
-                    loading={detail || eager ? "eager" : "lazy"}
-                    decoding="async"
-                    onLoad={(event) => {
-                        const im = event.currentTarget
-                        measure(im.naturalWidth, im.naturalHeight)
-                        setReady(true)
+                    onCanPlay={(event) => {
+                        if (detail) setReady(true)
+                        event.currentTarget.style.opacity = "1"
                     }}
-                    onError={() => setReady(true)}
-                    style={mediaStyle}
+                    onPlaying={(event) => {
+                        event.currentTarget.style.opacity = "1"
+                    }}
+                    onStalled={(event) => {
+                        if (detail) setReady(true)
+                        event.currentTarget.style.opacity = "0"
+                    }}
+                    onError={(event) => {
+                        if (detail) setReady(true)
+                        event.currentTarget.style.opacity = "0"
+                    }}
+                    style={{
+                        ...mediaStyle,
+                        zIndex: 1,
+                        opacity: 0,
+                        transition: `opacity 140ms ${LOAD_IN_EASE}`,
+                    }}
                 />
             ) : null}
             {strokeOverlay}
@@ -1409,7 +1554,9 @@ export default function ArchivePlayground(props: Props) {
         target === RenderTarget.canvas || target === RenderTarget.thumbnail
     const isInteractive = !isCanvas
     const rootRef = React.useRef<HTMLDivElement>(null)
+    const rootRectRef = React.useRef<DOMRect | null>(null)
     const galleryRef = React.useRef<HTMLDivElement>(null)
+    const worldLayerRef = React.useRef<HTMLDivElement>(null)
     const panelRef = React.useRef<HTMLDivElement>(null)
     const closeButtonRef = React.useRef<HTMLButtonElement>(null)
     const openerRef = React.useRef<HTMLElement | null>(null)
@@ -1479,18 +1626,20 @@ export default function ArchivePlayground(props: Props) {
     )
 
     const [viewport, setViewport] = React.useState({ w: 1200, h: 800 })
-    const [motion, setMotion] = React.useState<Motion>({
-        x: 0,
-        y: 0,
-        mx: 0,
-        my: 0,
-        dragging: false,
+    const [draggingUi, setDraggingUi] = React.useState(false)
+    const [gridWindow, setGridWindow] = React.useState<GridWindow>({
+        startX: -4,
+        startY: -3,
     })
+    const [activeVideoKeys, setActiveVideoKeys] = React.useState<Set<string>>(
+        () => new Set()
+    )
     const [hovered, setHovered] = React.useState("")
     const [selected, setSelected] = React.useState<Item | null>(null)
     const [panelItem, setPanelItem] = React.useState<Item | null>(null)
     const [closeHover, setCloseHover] = React.useState(false)
     const [ctaHover, setCtaHover] = React.useState(false)
+    const [webKitGalleryBlur, setWebKitGalleryBlur] = React.useState(false)
     const panelOpen = Boolean(selected)
     const panelVisible = Boolean(panelItem)
     const panelTitleId = React.useId()
@@ -1499,6 +1648,37 @@ export default function ArchivePlayground(props: Props) {
     const closeTimerRef = React.useRef<number | null>(null)
     const selectedRef = React.useRef<Item | null>(null)
     selectedRef.current = selected
+    const gridWindowCommittedRef = React.useRef<GridWindow>(gridWindow)
+    const gridWindowRequestedRef = React.useRef<GridWindow>(gridWindow)
+    const gridRuntimeRef = React.useRef<GridRuntime | null>(null)
+    const activeVideoKeysRef = React.useRef<Set<string>>(activeVideoKeys)
+    const lastGridReconcileRef = React.useRef(0)
+    const reconcileGridFrameRef = React.useRef<
+        ((time: number, force?: boolean) => void) | null
+    >(null)
+    const cardElementsRef = React.useRef(
+        new Map<string, HTMLButtonElement>()
+    )
+    const cardRefCallbacksRef = React.useRef(
+        new Map<
+            string,
+            (element: HTMLButtonElement | null) => void
+        >()
+    )
+    const getCardRef = React.useCallback((key: string) => {
+        let callback = cardRefCallbacksRef.current.get(key)
+        if (!callback) {
+            callback = (element: HTMLButtonElement | null) => {
+                if (element) cardElementsRef.current.set(key, element)
+                else {
+                    cardElementsRef.current.delete(key)
+                    cardRefCallbacksRef.current.delete(key)
+                }
+            }
+            cardRefCallbacksRef.current.set(key, callback)
+        }
+        return callback
+    }, [])
 
     const state = React.useRef<InternalState>({
         x: 0,
@@ -1511,6 +1691,8 @@ export default function ArchivePlayground(props: Props) {
         targetMy: 0,
         edgeX: 0,
         edgeY: 0,
+        targetEdgeX: 0,
+        targetEdgeY: 0,
         inside: false,
         down: false,
         dragging: false,
@@ -1530,6 +1712,7 @@ export default function ArchivePlayground(props: Props) {
     const backgroundColor = props.backgroundColor || CREAM
     const panelColor = props.panelColor || CREAM
     const textColor = props.textColor || BLACK
+    const mutedTextColor = props.mutedTextColor || TEXT_GRAY
     const labelColor = props.labelColor || LABEL
     const ruleColor = props.ruleColor || RULE
     const strokeColor = props.strokeColor || LABEL
@@ -1546,7 +1729,14 @@ export default function ArchivePlayground(props: Props) {
     const panelWidth = props.panelWidth ?? DEFAULT_PANEL_WIDTH
     const panelExitMs = props.panelExitMs ?? 950
     const mediaFadeMs = props.mediaFadeMs ?? 1100
-    const maxConcurrentVideos = props.maxConcurrentVideos ?? 16
+    const maxConcurrentVideos = props.maxConcurrentVideos ?? 10
+    const videoPlaybackMode = props.videoPlaybackMode ?? "center"
+    const restingMediaOpacity = clamp(props.restingMediaOpacity ?? 1, 0, 1)
+    const restingMediaSaturation = clamp(
+        props.restingMediaSaturation ?? 1,
+        0,
+        1
+    )
     const loadInDelayMs = props.loadInDelayMs ?? LOAD_IN_DELAY_MS
     const loadInFadeMs = props.loadInFadeMs ?? LOAD_IN_FADE_MS
     const loadInStaggerMs = props.loadInStaggerMs ?? LOAD_IN_STAGGER_MS
@@ -1559,6 +1749,16 @@ export default function ArchivePlayground(props: Props) {
         navHideOffset
     )
     const prefersReducedMotion = usePrefersReducedMotion()
+    const pageVisible = usePageVisible()
+    const webKitRisk = useWebKitRisk()
+    const webKitRiskRef = React.useRef(webKitRisk)
+    webKitRiskRef.current = webKitRisk
+    const effectiveRestingMediaOpacity =
+        videoPlaybackMode === "hover" ? restingMediaOpacity : 1
+    const effectiveRestingMediaSaturation =
+        videoPlaybackMode === "hover" && !webKitRisk
+            ? restingMediaSaturation
+            : 1
     const loadInReady = useTransitionAwareLoadIn(
         isInteractive,
         loadInDelayMs,
@@ -1629,9 +1829,12 @@ export default function ArchivePlayground(props: Props) {
         if (!element || !canUseDOM()) return
         const resize = () => {
             const rect = element.getBoundingClientRect()
-            setViewport({
-                w: Math.max(1, rect.width),
-                h: Math.max(1, rect.height),
+            rootRectRef.current = rect
+            const w = Math.max(1, rect.width)
+            const h = Math.max(1, rect.height)
+            setViewport((previous) => {
+                if (previous.w === w && previous.h === h) return previous
+                return { w, h }
             })
         }
         resize()
@@ -1642,6 +1845,7 @@ export default function ArchivePlayground(props: Props) {
         observer?.observe(element)
         window.addEventListener("resize", resize)
         return () => {
+            rootRectRef.current = null
             observer?.disconnect()
             window.removeEventListener("resize", resize)
         }
@@ -1733,6 +1937,7 @@ export default function ArchivePlayground(props: Props) {
             s.tapElement = null
             s.vx = 0
             s.vy = 0
+            setDraggingUi(false)
             setHovered("")
             setCloseHover(false)
             setPanelItem(item)
@@ -1799,7 +2004,8 @@ export default function ArchivePlayground(props: Props) {
         (clientX: number, clientY: number) => {
             const element = rootRef.current
             if (!element) return
-            const rect = element.getBoundingClientRect()
+            const rect =
+                rootRectRef.current || element.getBoundingClientRect()
             const x = clientX - rect.left
             const y = clientY - rect.top
             const s = state.current
@@ -1816,8 +2022,12 @@ export default function ArchivePlayground(props: Props) {
             const right = 1 - clamp((rect.width - x) / zone, 0, 1)
             const top = 1 - clamp(y / zone, 0, 1)
             const bottom = 1 - clamp((rect.height - y) / zone, 0, 1)
-            s.edgeX = (left - right) * edgeScrollSpeed * 0.016
-            s.edgeY = (top - bottom) * edgeScrollSpeed * 0.016
+            s.targetEdgeX = s.inside
+                ? (left - right) * edgeScrollSpeed * 0.016
+                : 0
+            s.targetEdgeY = s.inside
+                ? (top - bottom) * edgeScrollSpeed * 0.016
+                : 0
         },
         []
     )
@@ -1832,18 +2042,16 @@ export default function ArchivePlayground(props: Props) {
     }, [isInteractive, updatePointer])
 
     React.useEffect(() => {
-        const current = state.current
         if (!isInteractive || !canUseDOM()) {
-            setMotion({
-                x: current.x,
-                y: current.y,
-                mx: 0,
-                my: 0,
-                dragging: false,
-            })
+            reconcileGridFrameRef.current?.(now(), true)
+            return
+        }
+        if (!pageVisible || (webKitRisk && panelOpen)) {
+            state.current.lastFrameT = 0
             return
         }
 
+        state.current.lastFrameT = 0
         let raf = 0
         const tick = (time: number) => {
             const s = state.current
@@ -1854,7 +2062,13 @@ export default function ArchivePlayground(props: Props) {
             s.lastFrameT = time
 
             const panelOpen = Boolean(selectedRef.current)
-            if (!panelOpen || c.driftWhilePanelOpen !== false) {
+            const webKitModalOpen =
+                webKitRiskRef.current && Boolean(selectedRef.current)
+            const animateWorld =
+                (!panelOpen && !webKitModalOpen) ||
+                (!webKitRiskRef.current &&
+                    c.driftWhilePanelOpen === true)
+            if (animateWorld) {
                 if (!s.down) {
                     const speed = Math.hypot(s.vx, s.vy)
                     if ((c.inertiaEnabled ?? true) && speed > 1 && !panelOpen) {
@@ -1883,38 +2097,42 @@ export default function ArchivePlayground(props: Props) {
                             60
                     }
                 }
-                if (
+                const edgeActive =
                     (c.edgeScrollEnabled ?? true) &&
                     s.inside &&
                     !s.dragging &&
                     !panelOpen
-                ) {
-                    s.x += s.edgeX
-                    s.y += s.edgeY
+                const edgeEase = clamp(c.edgeScrollEase ?? 0.08, 0.01, 1)
+                const edgeAlpha =
+                    1 - Math.pow(1 - edgeEase, Math.max(0.001, dt * 60))
+                const desiredEdgeX = edgeActive ? s.targetEdgeX : 0
+                const desiredEdgeY = edgeActive ? s.targetEdgeY : 0
+                s.edgeX += (desiredEdgeX - s.edgeX) * edgeAlpha
+                s.edgeY += (desiredEdgeY - s.edgeY) * edgeAlpha
+                if (edgeActive) {
+                    s.x += s.edgeX * dt * 60
+                    s.y += s.edgeY * dt * 60
                 }
-            }
 
-            const ease = clamp(c.parallaxEase ?? 0.5, 0.01, 1)
-            if ((c.parallaxWhileDragging ?? true) || !s.dragging) {
-                s.mx += (s.targetMx - s.mx) * ease
-                s.my += (s.targetMy - s.my) * ease
-            } else {
-                s.mx += (0 - s.mx) * ease
-                s.my += (0 - s.my) * ease
-            }
+                const ease = clamp(c.parallaxEase ?? 0.5, 0.01, 1)
+                if ((c.parallaxWhileDragging ?? true) || !s.dragging) {
+                    s.mx += (s.targetMx - s.mx) * ease
+                    s.my += (s.targetMy - s.my) * ease
+                } else {
+                    s.mx += (0 - s.mx) * ease
+                    s.my += (0 - s.my) * ease
+                }
 
-            setMotion({
-                x: s.x,
-                y: s.y,
-                mx: s.mx,
-                my: s.my,
-                dragging: s.dragging,
-            })
+                reconcileGridFrameRef.current?.(time)
+            }
             raf = window.requestAnimationFrame(tick)
         }
         raf = window.requestAnimationFrame(tick)
-        return () => window.cancelAnimationFrame(raf)
-    }, [isInteractive])
+        return () => {
+            window.cancelAnimationFrame(raf)
+            state.current.lastFrameT = 0
+        }
+    }, [isInteractive, pageVisible, panelOpen, webKitRisk])
 
     const getCardIndexFromTarget = React.useCallback(
         (target: EventTarget | null) => {
@@ -1939,13 +2157,14 @@ export default function ArchivePlayground(props: Props) {
         []
     )
 
-    const onWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    const onWheel = React.useCallback((event: WheelEvent) => {
         if (!isInteractive || selectedRef.current) return
+        const rect = rootRectRef.current
         const deltaUnit =
             event.deltaMode === 1
                 ? 16
                 : event.deltaMode === 2
-                  ? Math.max(viewport.w, viewport.h)
+                  ? Math.max(rect?.width || 1, rect?.height || 1)
                   : 1
         const dx = event.deltaX * deltaUnit
         const dy = event.deltaY * deltaUnit
@@ -1957,8 +2176,8 @@ export default function ArchivePlayground(props: Props) {
         const dt = s.lastT
             ? Math.max(0.016, (currentTime - s.lastT) / 1000)
             : 0.016
-        const velocityScale = props.throwVelocityScale ?? 1.75
-        const maxSpeed = props.throwMaxSpeed ?? 5200
+        const velocityScale = cfgRef.current.throwVelocityScale ?? 1.75
+        const maxSpeed = cfgRef.current.throwMaxSpeed ?? 5200
 
         s.down = false
         s.dragging = false
@@ -1968,8 +2187,15 @@ export default function ArchivePlayground(props: Props) {
         s.vx = clamp((-dx / dt) * velocityScale, -maxSpeed, maxSpeed)
         s.vy = clamp((-dy / dt) * velocityScale, -maxSpeed, maxSpeed)
         s.lastT = currentTime
-        setMotion({ x: s.x, y: s.y, mx: s.mx, my: s.my, dragging: false })
-    }
+        setDraggingUi(false)
+    }, [isInteractive])
+
+    React.useEffect(() => {
+        const gallery = galleryRef.current
+        if (!gallery || !isInteractive || !canUseDOM()) return
+        gallery.addEventListener("wheel", onWheel, { passive: false })
+        return () => gallery.removeEventListener("wheel", onWheel)
+    }, [isInteractive, onWheel])
 
     const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
         if (
@@ -2028,11 +2254,11 @@ export default function ArchivePlayground(props: Props) {
             s.suppressClick = true
             s.tapIndex = -1
             s.tapElement = null
+            setDraggingUi(true)
         }
         if (s.dragging) {
             s.x = s.originX + dx
             s.y = s.originY + dy
-            setMotion({ x: s.x, y: s.y, mx: s.mx, my: s.my, dragging: true })
         }
     }
 
@@ -2066,11 +2292,14 @@ export default function ArchivePlayground(props: Props) {
         s.tapIndex = -1
         const opener = s.tapElement
         s.tapElement = null
-        setMotion({ x: s.x, y: s.y, mx: s.mx, my: s.my, dragging: false })
+        setDraggingUi(false)
         try {
             event.currentTarget.releasePointerCapture(event.pointerId)
         } catch (error) {}
-        if (itemToOpen) openItem(itemToOpen, opener)
+        if (itemToOpen) {
+            openItem(itemToOpen, opener)
+            state.current.suppressClick = true
+        }
         if (canUseDOM())
             window.setTimeout(() => {
                 s.suppressClick = false
@@ -2083,58 +2312,83 @@ export default function ArchivePlayground(props: Props) {
     const cellY = cellSize + rowGap
     const centerX = viewport.w / 2
     const centerY = viewport.h / 2
-    const extra = isCanvas ? 3 : 5
+    const extra = isCanvas ? 3 : 2
     const visibleCols = clamp(
         Math.ceil(viewport.w / Math.max(1, cellX)) + extra,
-        5,
+        4,
         isCanvas ? 9 : MAX_VISIBLE_COLUMNS
     )
     const visibleRows = clamp(
         Math.ceil(viewport.h / Math.max(1, cellY)) + extra,
-        5,
+        4,
         isCanvas ? 8 : MAX_VISIBLE_ROWS
     )
-    const startX =
-        Math.floor((-motion.x - centerX) / cellX) - Math.ceil(extra / 2)
-    const startY =
-        Math.floor((-motion.y - centerY) / cellY) - Math.ceil(extra / 2)
+    const gridWidth = (visibleCols - 1) * cellX + cellSize
+    const gridHeight = (visibleRows - 1) * cellY + cellSize
     const cells: React.ReactNode[] = []
-    let videoBudget = maxConcurrentVideos
+    const runtimeCells: GridCellRuntime[] = []
+    const browserVideoCap = webKitRisk
+        ? viewport.w > 0 && viewport.w <= 810
+            ? 2
+            : 4
+        : viewport.w > 0 && viewport.w <= 810
+          ? 8
+          : maxConcurrentVideos
+    const videoBudget = prefersReducedMotion || !pageVisible
+        ? 0
+        : Math.max(0, Math.min(maxConcurrentVideos, browserVideoCap))
+    const gridOccluded = panelOpen
+    const initialState = state.current
+    const initialLayerX =
+        initialState.x +
+        initialState.mx +
+        centerX +
+        gridWindow.startX * cellX
+    const initialLayerY =
+        initialState.y +
+        initialState.my +
+        centerY +
+        gridWindow.startY * cellY
 
     if (count > 0) {
         for (let row = 0; row < visibleRows; row++) {
-            const gy = startY + row
+            const gy = gridWindow.startY + row
             for (let col = 0; col < visibleCols; col++) {
-                const gx = startX + col
+                const gx = gridWindow.startX + col
                 const index = mod(gx * 5 + gy * 7, count)
                 const item = items[index]
-                const left = gx * cellX + motion.x + motion.mx + centerX
-                const top = gy * cellY + motion.y + motion.my + centerY
+                const left = col * cellX
+                const top = row * cellY
+                const screenLeft = left + initialLayerX
+                const screenTop = top + initialLayerY
                 const key = `${item.id}-${gx}-${gy}`
                 const isHot = hovered === key
-                // Concurrent-video limiter: a video cell only decodes when it's
-                // on-screen (with a cell of lookahead) AND within the budget.
                 const inView =
-                    left > -cellSize &&
-                    top > -cellSize &&
-                    left < viewport.w + cellSize &&
-                    top < viewport.h + cellSize
+                    screenLeft > -cellSize &&
+                    screenTop > -cellSize &&
+                    screenLeft < viewport.w + cellSize &&
+                    screenTop < viewport.h + cellSize
                 const activeVideo =
                     item.kind === "video" &&
                     !!item.videoUrl &&
                     inView &&
-                    videoBudget > 0
-                if (activeVideo) videoBudget--
+                    videoBudget > 0 &&
+                    loadInReady &&
+                    !gridOccluded &&
+                    !prefersReducedMotion &&
+                    (videoPlaybackMode === "hover"
+                        ? isHot
+                        : activeVideoKeys.has(key))
                 const needsGridMeasure =
                     !aspectMap[item.id] && (item.width <= 1 || item.height <= 1)
                 const cardIsKeyboardReachable =
                     loadInReady &&
                     isInteractive &&
                     !panelOpen &&
-                    left >= 0 &&
-                    top >= 0 &&
-                    left < viewport.w &&
-                    top < viewport.h
+                    screenLeft >= 0 &&
+                    screenTop >= 0 &&
+                    screenLeft < viewport.w &&
+                    screenTop < viewport.h
                 const introActive =
                     loadInReady && !loadInSettled && !prefersReducedMotion
                 // Ordered radial stagger: ripples out from the center of the visible
@@ -2158,17 +2412,25 @@ export default function ArchivePlayground(props: Props) {
                     Math.round(loadInFadeMs * 0.82)
                 )
                 const cardTransition =
-                    !loadInReady || prefersReducedMotion || motion.dragging
+                    !loadInReady || prefersReducedMotion || draggingUi
                         ? "none"
                         : introActive
                           ? `opacity ${loadInFadeMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms, transform ${introTransformMs}ms ${LOAD_IN_EASE} ${introDelayMs}ms`
                           : `transform 300ms ${SNAPPY_EASE}`
 
+                runtimeCells.push({
+                    key,
+                    col,
+                    row,
+                    hasVideo: item.kind === "video" && !!item.videoUrl,
+                })
                 cells.push(
                     <button
                         key={key}
+                        ref={getCardRef(key)}
                         type="button"
                         data-playground-card="true"
+                        data-playground-key={key}
                         data-playground-index={index}
                         aria-hidden={cardIsKeyboardReachable ? undefined : true}
                         aria-label={`Open ${item.accessibilityLabel} details`}
@@ -2207,41 +2469,250 @@ export default function ArchivePlayground(props: Props) {
                             boxShadow: "none",
                             overflow: "visible",
                             appearance: "none",
-                            cursor: motion.dragging ? "grabbing" : "pointer",
-                            opacity: loadInReady ? 1 : 0,
-                            transform: `translate3d(0, ${loadInReady ? 0 : LOAD_IN_LIFT_PX}px, 0) scale(${isHot ? hoverScale : 1})`,
-                            transition: cardTransition,
-                            willChange:
-                                introActive ||
-                                !loadInReady ||
-                                isHot ||
-                                motion.dragging
-                                    ? "opacity, transform"
-                                    : "auto",
+                            cursor: draggingUi ? "grabbing" : "pointer",
                             WebkitTapHighlightColor: "transparent",
                         }}
                     >
-                        <MediaFrame
-                            item={item}
-                            hot={isHot}
-                            active={loadInReady && activeVideo}
-                            eager={inView}
-                            zoom={hoverImageZoom}
-                            strokeColor={strokeColor}
-                            strokeWidth={strokeWidth}
-                            fadeMs={mediaFadeMs}
-                            prefersReducedMotion={prefersReducedMotion}
-                            onMeasure={
-                                needsGridMeasure
-                                    ? (w, h) => handleMeasure(item.id, w, h)
-                                    : undefined
-                            }
-                        />
+                        <span
+                            style={{
+                                position: "absolute",
+                                inset: 0,
+                                display: "block",
+                                opacity: loadInReady ? 1 : 0,
+                                transform: `translateY(${loadInReady ? 0 : LOAD_IN_LIFT_PX}px) scale(${isHot ? hoverScale : 1})`,
+                                transition: cardTransition,
+                                willChange:
+                                    introActive ||
+                                    !loadInReady ||
+                                    isHot
+                                        ? "opacity, transform"
+                                        : "auto",
+                            }}
+                        >
+                            <MediaFrame
+                                item={item}
+                                hot={isHot}
+                                active={activeVideo}
+                                eager={inView}
+                                zoom={hoverImageZoom}
+                                strokeColor={strokeColor}
+                                strokeWidth={strokeWidth}
+                                fadeMs={mediaFadeMs}
+                                prefersReducedMotion={prefersReducedMotion}
+                                restingOpacity={effectiveRestingMediaOpacity}
+                                restingSaturation={
+                                    effectiveRestingMediaSaturation
+                                }
+                                onMeasure={
+                                    needsGridMeasure
+                                        ? (w, h) =>
+                                              handleMeasure(item.id, w, h)
+                                        : undefined
+                                }
+                            />
+                        </span>
                     </button>
                 )
             }
         }
     }
+
+    const nextGridRuntime: GridRuntime = {
+        cells: runtimeCells,
+        cellX,
+        cellY,
+        cellSize,
+        gridWidth,
+        gridHeight,
+        centerX,
+        centerY,
+        viewportW: viewport.w,
+        viewportH: viewport.h,
+        extra,
+        videoBudget,
+        videoPlaybackMode,
+        loadInReady,
+        panelOpen: gridOccluded,
+        prefersReducedMotion,
+    }
+
+    const reconcileGridFrame = (time: number, force = false) => {
+        const runtime = gridRuntimeRef.current
+        const worldLayer = worldLayerRef.current
+        if (!runtime || !worldLayer) return
+
+        const s = state.current
+        const committedWindow = gridWindowCommittedRef.current
+        const rawLayerX =
+            s.x +
+            s.mx +
+            runtime.centerX +
+            committedWindow.startX * runtime.cellX
+        const rawLayerY =
+            s.y +
+            s.my +
+            runtime.centerY +
+            committedWindow.startY * runtime.cellY
+        // A wheel/pointer burst can move state several cells before React
+        // commits the requested virtual window. Keep the currently committed
+        // tile pool covering every viewport edge during that handoff so WebKit
+        // never exposes a blank strip.
+        const layerX = clamp(
+            rawLayerX,
+            Math.min(0, runtime.viewportW - runtime.gridWidth),
+            0
+        )
+        const layerY = clamp(
+            rawLayerY,
+            Math.min(0, runtime.viewportH - runtime.gridHeight),
+            0
+        )
+        worldLayer.style.transform = `translate3d(${layerX}px, ${layerY}px, 0)`
+
+        const desiredWindow = {
+            startX:
+                Math.floor((-s.x - runtime.centerX) / runtime.cellX) -
+                Math.ceil(runtime.extra / 2),
+            startY:
+                Math.floor((-s.y - runtime.centerY) / runtime.cellY) -
+                Math.ceil(runtime.extra / 2),
+        }
+        const requestedWindow = gridWindowRequestedRef.current
+        if (
+            desiredWindow.startX !== requestedWindow.startX ||
+            desiredWindow.startY !== requestedWindow.startY
+        ) {
+            gridWindowRequestedRef.current = desiredWindow
+            setGridWindow(desiredWindow)
+        }
+
+        if (!force && time - lastGridReconcileRef.current < 180) return
+        lastGridReconcileRef.current = time
+
+        const previousActiveVideoKeys = activeVideoKeysRef.current
+        const nextActiveVideoKeys = new Set<string>()
+        if (
+            runtime.videoPlaybackMode === "center" &&
+            runtime.videoBudget > 0 &&
+            runtime.loadInReady &&
+            !runtime.panelOpen &&
+            !runtime.prefersReducedMotion
+        ) {
+            const candidates: Array<{
+                key: string
+                distance: number
+                score: number
+            }> = []
+            runtime.cells.forEach((cell) => {
+                if (!cell.hasVideo) return
+                const left = cell.col * runtime.cellX + layerX
+                const top = cell.row * runtime.cellY + layerY
+                const inView =
+                    left > -runtime.cellSize &&
+                    top > -runtime.cellSize &&
+                    left < runtime.viewportW + runtime.cellSize &&
+                    top < runtime.viewportH + runtime.cellSize
+                if (!inView) return
+                const dx =
+                    left + runtime.cellSize / 2 - runtime.centerX
+                const dy =
+                    top + runtime.cellSize / 2 - runtime.centerY
+                candidates.push({
+                    key: cell.key,
+                    distance: dx * dx + dy * dy,
+                    // Keep a currently active center video until another card
+                    // is materially closer. This avoids rapid decoder churn
+                    // when two candidates hover around the budget cutoff.
+                    score:
+                        (dx * dx + dy * dy) *
+                        (previousActiveVideoKeys.has(cell.key) ? 0.82 : 1),
+                })
+            })
+            candidates
+                .sort(
+                    (a, b) =>
+                        a.score - b.score ||
+                        a.distance - b.distance ||
+                        a.key.localeCompare(b.key)
+                )
+                .slice(0, runtime.videoBudget)
+                .forEach(({ key }) => nextActiveVideoKeys.add(key))
+        }
+
+        const activeVideoKeysChanged =
+            previousActiveVideoKeys.size !== nextActiveVideoKeys.size ||
+            Array.from(nextActiveVideoKeys).some(
+                (key) => !previousActiveVideoKeys.has(key)
+            )
+        if (activeVideoKeysChanged) {
+            activeVideoKeysRef.current = nextActiveVideoKeys
+            setActiveVideoKeys(nextActiveVideoKeys)
+        }
+
+        runtime.cells.forEach((cell) => {
+            const element = cardElementsRef.current.get(cell.key)
+            if (!element) return
+            const left = cell.col * runtime.cellX + layerX
+            const top = cell.row * runtime.cellY + layerY
+            const reachable =
+                runtime.loadInReady &&
+                isInteractive &&
+                !runtime.panelOpen &&
+                left >= 0 &&
+                top >= 0 &&
+                left < runtime.viewportW &&
+                top < runtime.viewportH
+            const nextTabIndex = reachable ? 0 : -1
+            if (element.tabIndex !== nextTabIndex)
+                element.tabIndex = nextTabIndex
+            if (reachable) {
+                if (element.hasAttribute("aria-hidden"))
+                    element.removeAttribute("aria-hidden")
+            } else if (element.getAttribute("aria-hidden") !== "true") {
+                element.setAttribute("aria-hidden", "true")
+            }
+        })
+    }
+
+    const runtimeCellSignature = runtimeCells
+        .map((cell) => `${cell.key}:${cell.hasVideo ? 1 : 0}`)
+        .join("|")
+
+    React.useLayoutEffect(() => {
+        // Publish runtime geometry only after React commits the matching cards.
+        // This keeps the continuous RAF on the last committed DOM if React
+        // pauses or abandons an interruptible render.
+        gridRuntimeRef.current = nextGridRuntime
+        reconcileGridFrameRef.current = reconcileGridFrame
+        gridWindowCommittedRef.current = gridWindow
+        gridWindowRequestedRef.current = gridWindow
+    })
+
+    React.useLayoutEffect(() => {
+        reconcileGridFrameRef.current?.(now(), true)
+    }, [
+        cellSize,
+        cellX,
+        cellY,
+        gridOccluded,
+        gridWindow.startX,
+        gridWindow.startY,
+        loadInReady,
+        prefersReducedMotion,
+        runtimeCellSignature,
+        videoBudget,
+        videoPlaybackMode,
+        viewport.h,
+        viewport.w,
+    ])
+
+    React.useEffect(
+        () => () => {
+            reconcileGridFrameRef.current = null
+            gridRuntimeRef.current = null
+        },
+        []
+    )
 
     const closeTextRolled = closeHover || (panelVisible && !panelOpen)
     const modalPosition = isCanvas ? "absolute" : "fixed"
@@ -2260,6 +2731,34 @@ export default function ArchivePlayground(props: Props) {
     const panelCtaUrl = (panelItem?.link || "").trim()
     const panelCtaText = (panelItem?.linkTitle || "").trim() || panelCtaLabel
     const panelHasCta = Boolean(panelCtaUrl)
+
+    React.useEffect(() => {
+        if (
+            !webKitRisk ||
+            !panelOpen ||
+            renderedPanelWidth >= viewportWidth
+        ) {
+            setWebKitGalleryBlur(false)
+            return
+        }
+
+        let firstFrame = 0
+        let secondFrame = 0
+        firstFrame = window.requestAnimationFrame(() => {
+            secondFrame = window.requestAnimationFrame(() => {
+                setWebKitGalleryBlur(true)
+            })
+        })
+        return () => {
+            window.cancelAnimationFrame(firstFrame)
+            window.cancelAnimationFrame(secondFrame)
+        }
+    }, [
+        panelOpen,
+        renderedPanelWidth,
+        viewportWidth,
+        webKitRisk,
+    ])
 
     return (
         <div
@@ -2283,7 +2782,7 @@ export default function ArchivePlayground(props: Props) {
                 cursor:
                     !loadInReady || panelOpen
                         ? "default"
-                        : motion.dragging
+                        : draggingUi
                           ? "grabbing"
                           : "grab",
                 userSelect: "none",
@@ -2294,7 +2793,9 @@ export default function ArchivePlayground(props: Props) {
             <div
                 ref={galleryRef}
                 data-playground-gallery="true"
-                onWheel={onWheel}
+                data-playground-safari-blur={
+                    webKitGalleryBlur ? "active" : "idle"
+                }
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={(event) => finishPointer(event, true)}
@@ -2303,22 +2804,39 @@ export default function ArchivePlayground(props: Props) {
                     position: "absolute",
                     inset: 0,
                     overflow: "hidden",
-                    perspective: 1000,
-                    perspectiveOrigin: "50% 50%",
-                    transformStyle: "preserve-3d",
                     opacity: loadInReady ? 1 : 0,
-                    pointerEvents: loadInReady && !panelOpen ? "auto" : "none",
+                    pointerEvents:
+                        loadInReady && !gridOccluded ? "auto" : "none",
+                    filter: webKitGalleryBlur
+                        ? "blur(14px)"
+                        : webKitRisk
+                          ? "blur(0px)"
+                          : "none",
+                    transform: webKitGalleryBlur
+                        ? "scale(1.04)"
+                        : webKitRisk
+                          ? "scale(1)"
+                          : "none",
+                    transformOrigin: "50% 50%",
                     transition:
-                        loadInReady && !prefersReducedMotion
-                            ? `opacity 140ms ${LOAD_IN_EASE}`
-                            : "none",
+                        !loadInReady || prefersReducedMotion
+                            ? "none"
+                            : webKitRisk && panelVisible
+                              ? panelOpen
+                                  ? `opacity 140ms ${LOAD_IN_EASE}, filter 560ms ${SMOOTH_EASE}, transform 560ms ${SMOOTH_EASE}`
+                                  : `opacity 140ms ${LOAD_IN_EASE}, filter 450ms ${SMOOTH_EASE}, transform 450ms ${SMOOTH_EASE}`
+                              : `opacity 140ms ${LOAD_IN_EASE}`,
                 }}
             >
                 <div
+                    ref={worldLayerRef}
                     style={{
                         position: "absolute",
                         inset: 0,
-                        transformStyle: "preserve-3d",
+                        willChange:
+                            isInteractive && !(webKitRisk && panelOpen)
+                                ? "transform"
+                                : "auto",
                     }}
                 >
                     {cells}
@@ -2334,13 +2852,23 @@ export default function ArchivePlayground(props: Props) {
                     zIndex: MODAL_Z,
                     opacity: panelOpen ? 1 : 0,
                     pointerEvents: panelOpen ? "auto" : "none",
-                    WebkitBackdropFilter: panelOpen
-                        ? "blur(25px)"
-                        : "blur(0px)",
-                    backdropFilter: panelOpen ? "blur(25px)" : "blur(0px)",
-                    transition: panelOpen
-                        ? `opacity .8s ${SNAPPY_EASE}, backdrop-filter .8s ${SNAPPY_EASE}`
-                        : `opacity .45s ${SMOOTH_EASE}, backdrop-filter .45s ${SMOOTH_EASE}`,
+                    WebkitBackdropFilter: webKitRisk
+                        ? "none"
+                        : panelOpen
+                          ? "blur(25px)"
+                          : "blur(0px)",
+                    backdropFilter: webKitRisk
+                        ? "none"
+                        : panelOpen
+                          ? "blur(25px)"
+                          : "blur(0px)",
+                    transition: webKitRisk
+                        ? panelOpen
+                            ? `opacity .8s ${SNAPPY_EASE}`
+                            : `opacity .45s ${SMOOTH_EASE}`
+                        : panelOpen
+                          ? `opacity .8s ${SNAPPY_EASE}, backdrop-filter .8s ${SNAPPY_EASE}`
+                          : `opacity .45s ${SMOOTH_EASE}, backdrop-filter .45s ${SMOOTH_EASE}`,
                 }}
             >
                 <div
@@ -2507,6 +3035,7 @@ export default function ArchivePlayground(props: Props) {
                             <MediaFrame
                                 item={panelItem}
                                 detail
+                                active={pageVisible && panelOpen}
                                 zoom={0}
                                 strokeColor={strokeColor}
                                 strokeWidth={strokeWidth}
@@ -2615,7 +3144,7 @@ export default function ArchivePlayground(props: Props) {
                                                 lineHeight: "140%",
                                                 fontWeight: 400,
                                                 letterSpacing: 0,
-                                                color: TEXT_GRAY,
+                                                color: mutedTextColor,
                                                 overflowWrap: "break-word",
                                             }}
                                         >
@@ -2860,6 +3389,34 @@ addPropertyControls<Props>(ArchivePlayground, {
         unit: "%",
         hidden: hideAdvanced,
     },
+    videoPlaybackMode: {
+        type: ControlType.Enum,
+        title: "Video Playback",
+        options: ["center", "hover"],
+        optionTitles: ["Near Center", "Hover Only"],
+        defaultValue: "center",
+        hidden: hideAdvanced,
+    },
+    restingMediaOpacity: {
+        type: ControlType.Number,
+        title: "Resting Opacity",
+        defaultValue: 1,
+        min: 0.05,
+        max: 1,
+        step: 0.05,
+        hidden: (props) =>
+            hideAdvanced(props) || props.videoPlaybackMode !== "hover",
+    },
+    restingMediaSaturation: {
+        type: ControlType.Number,
+        title: "Resting Saturation",
+        defaultValue: 1,
+        min: 0,
+        max: 1,
+        step: 0.05,
+        hidden: (props) =>
+            hideAdvanced(props) || props.videoPlaybackMode !== "hover",
+    },
     panelWidth: {
         type: ControlType.Number,
         title: "Panel",
@@ -2901,7 +3458,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     driftWhilePanelOpen: {
         type: ControlType.Boolean,
         title: "Panel Drift",
-        defaultValue: true,
+        defaultValue: false,
         enabledTitle: "On",
         disabledTitle: "Off",
         hidden: hideAdvanced,
@@ -2995,6 +3552,15 @@ addPropertyControls<Props>(ArchivePlayground, {
         unit: "px",
         hidden: hideAdvanced,
     },
+    edgeScrollEase: {
+        type: ControlType.Number,
+        title: "Edge Accel",
+        defaultValue: 0.08,
+        min: 0.01,
+        max: 0.5,
+        step: 0.01,
+        hidden: hideAdvanced,
+    },
     parallaxStrength: {
         type: ControlType.Number,
         title: "Parallax",
@@ -3034,7 +3600,7 @@ addPropertyControls<Props>(ArchivePlayground, {
     maxConcurrentVideos: {
         type: ControlType.Number,
         title: "Max Videos",
-        defaultValue: 16,
+        defaultValue: 10,
         min: 0,
         max: 30,
         step: 1,

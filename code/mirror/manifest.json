@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T11:46:09-07:00",
+  "generatedAt": "2026-07-23T17:12:07-07:00",
   "projectUrl": "https://khaki-ship-257706.framer.app",
   "notes": [
     "Root active TSX files remain the editable working mirrors for current Framer code files.",
@@ -19,8 +19,8 @@
       "role": "/play archive renderer",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ArchivePlayground.tsx",
-      "bytes": 71763,
-      "sha256": "40a8ffdde783d986eb4956ff0bdd2c8ba2ddcaef84d946b12b2ff6e9fa28a62b"
+      "bytes": 131939,
+      "sha256": "fe75094276cff8fe9d5aae93de93924ed8e12c062ae743fce18e1cc45fb7fc59"
     },
     {
       "codeFileId": "z13WRHS",
@@ -172,8 +172,8 @@
       "role": "Protected /play authoring wrapper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/Play.tsx",
-      "bytes": 25902,
-      "sha256": "8d1ad6d8c17a65e0ba6a6cdffa964e58df4eb34bb1ebf989da26aef2c80773f7"
+      "bytes": 28272,
+      "sha256": "eddff69c6f968362c1db00dc81844feac8457a30fde97aa5e09bfc8dd0a3d78c"
     },
     {
       "codeFileId": "gh4ngZN",

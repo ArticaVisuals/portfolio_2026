@@ -1,13 +1,102 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** July 15, 2026, via Framer MCP, published Home selected-work browser QA, and local repo audit
-**Published/staging URL:** `https://khaki-ship-257706.framer.app`
-**Public-domain note:** `https://micahhoang.info` has historically served the Cargo site during recent audits. Treat the Framer URL above as the current redesign/build surface until domain cutover is explicitly confirmed.
+**Last audited:** July 23, 2026, via Framer MCP, published Peak Energy browser QA, and local repo audit
+**Production URL:** `https://micahhoang.com`
+**Framer staging URL:** `https://khaki-ship-257706.framer.app`
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
 
 ---
+
+## 2026-07-23 Update
+
+- **`/play` motion is now transform-only between grid-cell boundaries.** The
+  continuous animation loop imperatively updates one GPU-transformed world
+  layer instead of calling React state every frame. React now recycles the
+  bounded card pool only after a lattice boundary crossing. At `1440×1000` the
+  pool is `56` cards instead of the published build's roughly `90–110`.
+- **Safari video/effect budget tightened.** The current runtime starts with `4` videos and
+  ramps to `10` on non-WebKit desktop, while desktop Safari stays at `4`,
+  iOS/iPadOS stays at `2`, small non-WebKit viewports cap at `8`, reduced motion
+  and background pages use `0`, and inactive videos release their decoder
+  source. Center allocation includes hysteresis to avoid rapid source churn.
+  Grid images request `600px` variants; WebKit skips no-op/full-grid saturation
+  filters. The published Safari path replaces the animated drawer backdrop
+  filter with a `14px` blur of the frozen gallery, eased in over `560ms`.
+- **Hover-only `/play` exploration added.** Framer preview page
+  `/play-hover-preview` reuses the protected `Play.tsx` wrapper and the same CMS
+  renderer. With no page-local registrar rows, the renderer uses its generated
+  CMS-module fallback: it discovers the current `EySMRbI2N` module from
+  same-origin `/play` markup and scans the collection directly. All grid videos
+  are poster-only until hover/focus; resting media is shown at `0.28` opacity
+  and `0.12` saturation, then returns to full opacity/saturation with the
+  existing card scale + inner zoom while the hovered video plays. On Safari it
+  stays opacity-only to avoid the full-grid filter cost.
+- **Grain and drawer compositor work reduced.** Both Play page grain instances
+  are static outside WebKit and the overlay component returns `null` on
+  Safari/iOS; its nav measurement loop also stops when grain is suppressed. The
+  obscured grid freezes while the detail drawer is open. On WebKit, blur is
+  applied only after two animation frames (after grid videos unmount), eases in
+  over `560ms`, then eases back to `0px` over `450ms` as the sidebar closes.
+  The gallery resumes motion, interaction, and bounded video allocation as soon
+  as close begins—matching Chrome—while the blur continues its soft exit. Blur
+  is skipped when the mobile panel covers the viewport. The outgoing detail
+  video pauses and releases its source before the grid allocation returns, so
+  the Safari/iOS decoder cap is preserved during the transition.
+- **Safari rapid-pan coverage guard added after production QA.** Fast wheel
+  bursts could move the committed virtual-grid window beyond a viewport edge
+  before React committed the requested replacement cells. The renderer now
+  clamps the painted world layer to the coverage bounds of the committed tile
+  pool while the next window catches up. Persistent poster images remain under
+  active videos, videos fade in only after decode readiness, unused per-card 3D
+  layers were flattened, and wheel input uses an explicit non-passive listener.
+- **Published verification.** Local real-browser testing at `1440×1000` confirmed
+  `56` stable-position cards, one changing world transform, `4` center videos,
+  `0` center-mode filters, no duplicate dialog open, clean drag recycling, and
+  drawer freeze/close behavior. Hover mode confirmed `0` resting videos,
+  exactly `1` focused video, full visual restoration, and decoder cleanup on
+  blur. Emulated Safari confirmed `0` saturation filters/backdrop-filter usage
+  and the `4`/`2` desktop/mobile budgets. The Safari coverage/blur follow-up was
+  published on July 23; the public bundle contains the `560ms` open and `450ms`
+  close transitions. A real WebKit close sample measured `14px → 10.37px` at
+  `67ms`, `7.14px` at `133ms`, `3.9px` at `217ms`, `1.03px` at `333ms`, and
+  `0px` at `468ms`, while the world transform stayed fixed and video count
+  remained `0`.
+- **Final visually neutral performance follow-up.** Grid-only media readiness
+  no longer causes post-mount React renders; video reveal opacity is updated
+  directly by readiness events; equal viewport measurements are ignored; the
+  expensive grid allocation/accessibility reconciliation only force-runs when
+  runtime inputs change; and the world RAF stops while the page is hidden or a
+  Safari drawer transition intentionally freezes it. `GrainOverlay` detects
+  WebKit before mounting, never mounts the disabled Safari SVG/measurement
+  path, and tracks the nav inset imperatively. `Play` now keeps its ancestor
+  observer binding when the observed chain has not changed. Safari now resumes
+  grid motion as soon as close begins instead of waiting for the `450ms`
+  blur-out. These changes are synced in the Framer draft as
+  `ArchivePlayground@ljLx3RPT8ZO2PxnHUl6X`,
+  `Play@AEtiSt4JIdInX6LGx9Bk`, and
+  `GrainOverlay@IU8jp598NHIsGsyeDMB5`; they require one Publish after review.
+  The local Archive snapshot is `131939` bytes with SHA-256
+  `fe75094276cff8fe9d5aae93de93924ed8e12c062ae743fce18e1cc45fb7fc59`.
+- **Peak Energy Vimeo embeds restored.** The global case-study load skeleton in
+  `CaseStudyLightbox.tsx` now manages native `img` and `video` elements only.
+  Cross-origin `iframe` embeds own their loading UI, so a Vimeo player can no
+  longer remain hidden at `opacity: 0` when its parent-window `load` event races
+  the controller installation.
+- **Published versions.** Framer typecheck passed with no errors for both files.
+  `CaseStudyLightbox` is published as
+  `CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY`; the repinned wrapper is
+  `CaseStudyControllers-0q1sTD.js@qIsqrYC4NEAuXRTB6t7W`.
+- **Production QA.** On `/case-studies/peak-energy`, both Vimeo iframes render at
+  computed opacity `1` without skeleton attributes. The lower muted loop is
+  actively playing, the hero Play control starts playback, and the browser
+  console is clean.
+- **Rollback.** The prior immutable Framer versions remain available:
+  `CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh` and
+  `CaseStudyControllers-0q1sTD.js@9M1RwgQDGqv6yHTFBuLl`. The exact two-line
+  local reverse patch is stored in
+  `code/mirror/backups/case-study-vimeo-skeleton-rollback-2026-07-23.patch`.
 
 ## 2026-07-21 Update
 
@@ -42,6 +131,13 @@ This is the quick source of truth for the active Framer project and local handof
   mutation batches synchronously instead of waiting for `requestAnimationFrame`.
   This reduces visible reflow where paragraph text briefly appears with normal
   wrapping before `text-wrap: pretty` is applied.
+- **2026-07-23 sticky-mark update:** home mobile QA showed About/profile body
+  paragraphs could flicker while scrolling because Framer briefly changed the
+  rendered text/layout state and the helper removed then re-added the pretty
+  attribute. The helper and Footer fallback now keep an existing pretty mark
+  unless the element becomes hard-excluded (`nav`, `footer`, link/form controls,
+  or `data-mh-pretty-ignore`), preventing the rag from switching back and forth
+  during transient scroll/lazy-render states.
 
 ## 2026-07-15 Update
 
@@ -249,7 +345,8 @@ broken layouts, no missing `<img alt>`, `lang=en`, no console errors anywhere.
 - `/case-studies/whatsapp` - Bespoke WhatsApp WIP case-study page, page ID `UpcNhW2Dy`
 - `/index` - Canonical archive page, page ID `u2LOaBT5q`
 - `/play` - Archive media playground, page ID `KbgWr_0BN`
-- `/info` - Editorial profile/info page, page ID `fxz_zRIyp`
+- `/play-hover-preview` - Hover-only Play behavior test route, page ID `uWONGgGEg`
+- `/info` - Editorial profile/info page, page ID `m8MBybo0d`
 
 No current Framer web page is exposed for `/profile`, `/contact`, `/worldgrid-test`, `/play-2`, `/play-consolidation-draft`, `/playground`, or `/playground-scroll-draft`.
 
@@ -328,9 +425,9 @@ Framer code components relevant to this handoff include:
 | `SimonSchusterGuidelinesCarousel.tsx` | `tYFZCey` | **Reusable `ImageCarousel`** (default export renamed 2026-06-04; filename unchanged because MCP can't rename code files). General-purpose fade carousel + GT Standard `‹ ›` arrows — recycle for any case-study gallery. First used on Simon & Schuster. **As of June 10 it no longer ships its own lightbox** — gallery slides open in the page-level `CaseStudyLightbox` (see "Reusable Image Carousel" below). |
 | `HomeSelectedWorkGrid.tsx` | `FecepLS` | Home selected-work grid. Renders the six CMS selected projects with direct `/case-studies/{slug}` anchors, `Thumbnail Video` preferred over CMS poster images, CMS-driven thumbnail strokes, 13px number/title text, and Category 1/2/3 tag pills. No baked project fallback rows. Also carries the Home About portrait/read-more hover CSS. |
 | `CaseStudyLinkRepair.tsx` | `y6ny5x4` | Legacy route-repair helper. The Home instance `uxp3mYNsy` is disabled after `HomeSelectedWorkGrid.tsx` replaced the broken native Home selected-work grid; use `CaseStudyControllers.tsx` for new bespoke page controller mounts. |
-| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **July 21 update:** the remote base wrapper was replaced with a local Cargo-style shared-element engine. The clicked media is cloned into a fixed layer, starts transformed exactly over the source media, stays fully opaque while zooming, and only the white backdrop/chrome fade in behind it; pointer hover/down warms image candidates and high-res upgrades happen after the opening frame. Pushed to Framer as `CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh`, with `CaseStudyControllers` repinned to that hash. **June 10 updates still apply:** (1) opt media out by naming any wrapping frame `No Lightbox`/`NoLightbox`; (2) the lightbox-suppression logic is a single `window`-capture click listener — native links navigate, buttons/scroll-to-top keep their own React `onClick`, other excluded regions are suppressed; (3) gallery slides open in this lightbox; (4) nav-overlay clicks navigate instead of opening the lightbox, with no nav CSS mutation. **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED `@hash` — bump that hash whenever this file is republished, or controller pages keep loading the old lightbox. |
+| `CaseStudyLightbox.tsx` | `F2K4_SV` | Case-study lightbox subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. **July 23 update:** the global skeleton manages native `img`/`video` only; cross-origin iframes retain their own loading UI so Vimeo cannot get stuck hidden after a missed parent-window load event. Published as `CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY`. **July 21 update:** the remote base wrapper was replaced with a local Cargo-style shared-element engine. The clicked media is cloned into a fixed layer, starts transformed exactly over the source media, stays fully opaque while zooming, and only the white backdrop/chrome fade in behind it; pointer hover/down warms image candidates and high-res upgrades happen after the opening frame. **June 10 updates still apply:** (1) opt media out by naming any wrapping frame `No Lightbox`/`NoLightbox`; (2) the lightbox-suppression logic is a single `window`-capture click listener — native links navigate, buttons/scroll-to-top keep their own React `onClick`, other excluded regions are suppressed; (3) gallery slides open in this lightbox; (4) nav-overlay clicks navigate instead of opening the lightbox, with no nav CSS mutation. **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED `@hash` — bump that hash whenever this file is republished, or controller pages keep loading the old lightbox. |
 | `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study autoplay video subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. |
-| `CaseStudyControllers.tsx` | `z13WRHS` | Active hidden wrapper for the useful bespoke case-study controllers: lightbox, video manager, and link repair. Mounted on accessible bespoke pages where the three separate controller instances were consolidated. **July 21:** repinned the lightbox import to `CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh` and pushed the wrapper as `CaseStudyControllers-0q1sTD.js@9M1RwgQDGqv6yHTFBuLl`. |
+| `CaseStudyControllers.tsx` | `z13WRHS` | Active hidden wrapper for the useful bespoke case-study controllers: lightbox, video manager, and link repair. Mounted on accessible bespoke pages where the three separate controller instances were consolidated. **July 23:** repinned the lightbox import to `CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY` and pushed the wrapper as `CaseStudyControllers-0q1sTD.js@qIsqrYC4NEAuXRTB6t7W`. |
 | `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Case-study mobile descriptor layout helper. Mounted on bespoke case-study pages that need the compact descriptor rhythm, including the Peak Energy WIP shell. |
 | `NavigationScrollGuard.tsx` | `Wnd19lx` | Hidden child of the native `Navigation` component (`I0Wh3P9o8`). Keeps the nav visible/clickable at page top if Framer's scroll-hide transform gets stuck after scrolling down and returning to `scrollY=0`. |
 
@@ -352,9 +449,9 @@ June 10 nav scroll guard: reproduced a native Navigation bug on Home where scrol
 
 #### Play page consolidation — active as of June 8, 2026
 
-`/play` (`KbgWr_0BN`) currently uses the production wrapper `Play.tsx` (`PN1RVOf`) around `ArchivePlayground.tsx` (`QNpkYp5`). The promoted archive was copied from the working `/play-consolidation-draft` build and now owns the archive grid, detail drawer, rotating Close text, slide-down nav reveal after close, media fade/stroke behavior, footer hiding, nav passthrough behavior, and content editing controls.
+`/play` (`KbgWr_0BN`) currently uses the production wrapper `Play.tsx` (`PN1RVOf`) around `ArchivePlayground.tsx` (`QNpkYp5`). The renderer owns the archive grid, detail drawer, rotating Close text, slide-down nav reveal after close, media fade/stroke behavior, footer hiding, and nav passthrough behavior. Published content is CMS-only at runtime: `Play Archive` registry rows first, generated CMS module second, otherwise empty.
 
-The fallback/rollback authoring surface is non-negotiable. `Archive Items` must remain editable in Framer with upload, reorder, title, description, category, aspect, and stroke controls. Do not remove the `archiveItems` / `items` managed-item path, replace the archive with unrelated hardcoded-only media, hide these controls behind `Advanced`, or route future edits through detached static JSX/media layers. If the prop name changes, preserve legacy `items` as a runtime fallback and migrate the visible Framer control so existing page overrides cannot blank the archive.
+The fallback/rollback authoring surface is non-negotiable. `Archive Items` must remain editable in Framer with upload, reorder, title, description, category, aspect, and stroke controls, but it stays empty by default and is used only for canvas preview or emergency rollback. Do not remove the `archiveItems` / `items` managed-item path, replace the archive with unrelated hardcoded-only media, hide these controls behind `Advanced`, or route future edits through detached static JSX/media layers.
 
 June 11 Play load-in update: `ArchivePlayground.tsx` intentionally paints the root as blank Cream first, keeps the gallery inert/transparent while a browser View Transition is active, then releases the archive grid after a short Cream hold. `PageTransition.tsx` also sets `data-playground-force-blank` before navigating to `/play`, so the incoming snapshot stays blank even if the archive grid was already preloaded. The advanced controls `Load Hold`, `Load Fade`, and `Load Max` tune the archive intro timing; do not remove the hidden first frame unless the site-wide page transition model changes.
 
@@ -368,7 +465,9 @@ June 24 Play Archive CMS audit, superseded June 25 by CMS-only bridge work and J
 
 June 29, 2026 Play detail-drawer CTA + layout pass (`ArchivePlayground.tsx` `QNpkYp5`): added a CMS-driven drawer CTA gated on a new `Link` field (`YTkltwLjJ`) with its label from a new `Link Title` field (`VfgNuQyis`, falling back to the `panelCtaLabel` prop "View project"). CTA uses the nav-button treatment — `GT Standard Mono Trial` 13px uppercase, static `→` glyph, two-line hover roll (same as the CLOSE button). Title recolored to off-black (`textColor`); the divider is a full-width rule directly under the title, spanning both columns; on wider panels the description + CTA sit in the right column below the divider (empty left column), collapsing to a single left-aligned stack on the smallest breakpoint. `MediaFrame` guards against rendering an empty-`src` `<img>` so a genuinely missing `Image / Poster` does not show a broken-image icon, but valid grid posters should not be hidden by the renderer. `PlayArchiveRegistrar` (`jDwcdGN`) carries the new `linkTitle`/`link` props through the registry; both must be bound on the hidden Collection List instance. Standalone reusable `PlayLinkBlock.tsx` (`gPwlq_8`) was also created (nav-styled linked title + description + optional CTA) for CMS-template contexts; not wired into `/play`. Each `ArchivePlayground` edit is a full-file `updateCodeFile` (~110KB); Framer's formatter rewrites a literal non-breaking space in the `normalizeFormattedText` regex on save (cosmetic). See `play-cms-workflow.md`.
 
-The legacy helper instances (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) remain on the live `/play` canvas as rollback material, but each is set to `enabled=false`. The earlier `/play-consolidation-draft` web page is not present in the June 15 inventory; create a new draft/design page before future Play experiments.
+The earlier `/play-consolidation-draft` web page is retired. The current
+`/play-hover-preview` route is reserved for the hover-only playback experiment;
+create a separate draft/design page for unrelated future Play experiments.
 
 **June 18, 2026 framework-audit Phase 1 retirement:** the four unmounted Play draft/consolidation code files were deleted from the Framer code-file inventory — `ArchivePlaygroundConsolidated.tsx` (`D5YVims`), `ArchivePlaygroundConsolidatedDraft.tsx` (`aEyj7Rq`), `PlayAccessibilityDraftPatch.tsx` (`IPugK6y`), and `PlayDraftViewportFix.tsx` (`uO7AzzY`). The six `Playground*` Gen-1 helpers were ALSO deleted (`RBX6jsP`, `vdg69JZ`, `c2PU6kX`, `R3ZWYKl`, `iivBAHR`, `FFqrKyU`) — their previously-disabled `/play` instances were already gone (confirmed in the Framer UI on June 18), so the orphaned code files were removed. Faithful backups of all 10 (compiled snapshots + editable `ArchivePlaygroundConsolidated.tsx` + README with insert-URL/version-history rollback paths) are committed at `archive/retired-play-helpers-2026-06-18/`. **Publish Framer to apply;** if the optimizer ever throws `ssg-module-not-found`, a stray instance survived on a breakpoint — hunt it or restore from backup.
 
@@ -499,7 +598,7 @@ June 2 published fix: the Home hero line was corrected from `mind.Strategy` to `
 
 `IndexPage.tsx` owns taxonomy filters, list rows, grid cards, project count, view state, and the inline `GRID / LIST` control. `IndexPageGridPreview.tsx` is the Framer-facing production wrapper: it passes `defaultView` through from the wrapper `View` property control, remounts the base component when the selected view changes so the Framer canvas can preview Grid and List, and applies the Figma layout overrides without duplicating CMS/data logic. The visible taxonomy is `/ Year`, `/ Service`, `/ Industry`; each group has its own `All` clear action. Grid view renders native HTML cards inside the base component rather than calling the native Framer `Case Study` module.
 
-June 18, 2026 Figma grid promotion: canonical `/index` now uses the `IndexPageGridPreview.tsx` wrapper on the real page, not a separate preview page. The old `/index-grid-preview` page was deleted. The wrapper keeps `useCMS=true`, defaults the instance to Grid, and imports the same CMS-backed base component. It locks the Figma grid to 3 columns on desktop, 2 columns below 1200px, and 1 column at the same 899px container breakpoint where the index taxonomy/nav stacks. Cards stretch to the full content width with `max-width:none`, grid titles stay at the homepage-style 13px mono treatment above thumbnails, and CMS Category 1/2/3 tags render as Light Gray 12px uppercase mono pills under each thumbnail.
+June 18, 2026 Figma grid promotion, updated July 23, 2026 for the List-first archive direction: canonical `/index` now uses the `IndexPageGridPreview.tsx` wrapper on the real page, not a separate preview page. The old `/index-grid-preview` page was deleted. The wrapper keeps `useCMS=true`, defaults the instance to List, and imports the same CMS-backed base component. Grid remains available through the inline visitor toggle and locks to 3 columns on desktop, 2 columns below 1200px, and 1 column at the same 899px container breakpoint where the index taxonomy/nav stacks. Cards stretch to the full content width with `max-width:none`, grid titles stay at the homepage-style 13px mono treatment above thumbnails, and CMS Category 1/2/3 tags render as Light Gray 12px uppercase mono pills under each thumbnail.
 
 June 18, 2026 responsive alignment: list-view simplification now switches at the same 899px container breakpoint as the single-column grid. At and below that point, the list hides the left year indicator and service/industry/category columns, titles become left-aligned full-width rows, and year/row/bottom rules span the full content width. This keeps the List and Grid breakpoints visually connected with the index nav's single-column/tablet collapse.
 
@@ -593,14 +692,19 @@ No web pages, native Framer components, CMS records, text styles, color styles, 
 
 Safe to keep:
 
-- `/play` legacy helper files should remain for rollback context, but their live instances are disabled after the June 8 consolidation promotion.
+- `/play` rollback context lives under
+  `archive/retired-play-helpers-2026-06-18/`; the retired helper files and
+  instances are no longer active in Framer.
 - `ResumeAssetHost.tsx` should remain because the Footer expects its prop/control shape. It also carries `ParagraphPrettyWrap` for routes without `PageTransition`.
 - The five legacy override files should remain unless a Framer publish check proves they are fully unused.
 
 Good future cleanup candidates:
 
 - `CaseStudyThumbnailStrokeStyles.tsx` still has heavier CMS refresh/rescan behavior than ideal. It intentionally keeps a robust CMS export resolver for both legacy `a` and current `r` Framer module shapes. Optimize only after reading the live Framer file and confirming the canvas/editor stroke behavior remains identical.
-- Future `/play` changes should start on a fresh draft/design page, pass visual parity checks, then be promoted into `ArchivePlayground.tsx` (`QNpkYp5`).
+- Future `/play` changes should use `/play-hover-preview` only when evaluating
+  that route's hover-only mode. Unrelated experiments should start on a fresh
+  draft/design page, pass visual parity checks, then be promoted into
+  `ArchivePlayground.tsx` (`QNpkYp5`).
 - `/case-studies` still displays a `NumberCounter` configured by page props. As of the June 15 CMS sync, the prop needs to be updated to `17` or replaced with a dynamic count before publish.
 - Local TSX mirrors are partial. Framer is the source of truth for code files that exist only in the Framer project, especially `Counter.tsx` and any unmirrored rollback helpers.
 - No tracked local TSX or `code/tools/*` file met the "100% safe to remove" bar in the June 2 stale-code audit. Framer code files often have no local import graph because they are mounted by Framer code-file ID.
