@@ -29,10 +29,20 @@ let homeHeaderBottomRecoveryCleanup = null
 // hard-edged green bar across the bottom of the viewport that outlived the
 // swipe-away. It was never reproducible outside a real iPhone, so rather than
 // keep guessing we hide the curtain below BOOT_DISABLE_MAX_WIDTH_PX. Mobile
-// loads straight into the page; the module still runs its normal reveal
-// (__ptReplayAppear) so appear animations are unaffected. Desktop keeps the
-// full curtain, which is verified working. To restore it on mobile, delete the
-// `@media (max-width:...)` rule from BOTH css strings below.
+// loads straight into the page; desktop keeps the full curtain, which is
+// verified working. To restore it on mobile, delete the `@media (max-width:...)`
+// rule from BOTH css strings below.
+//
+// NO DOUBLE APPEAR ON MOBILE: the compiled module's boot sequence calls
+// window.__ptReplayAppear() to RESTART every appear animation ("restart all
+// appear effects while still fully covered, so the page is revealed
+// mid-animation"). With the curtain up that first pass is hidden, so you only
+// ever see the replay. With the curtain disabled on mobile you would see BOTH —
+// the hero visibly animating in twice. So below the same breakpoint we install a
+// no-op __ptReplayAppear (via a defineProperty getter/setter so the module's own
+// assignment is swallowed), leaving exactly one appear pass. Desktop is
+// untouched. If the hero ever fails to appear on mobile, this is the first thing
+// to suspect — remove the suppression and the replay comes back.
 //
 // SIZING (desktop) — mirrors zitafernandez.com's loader EXACTLY, because that
 // site has no bottom gap on iOS:
@@ -50,12 +60,8 @@ let homeHeaderBottomRecoveryCleanup = null
 //
 // TINT: the bands behind Safari's status bar and bottom toolbar are browser
 // chrome, not the page (this site's viewport meta has no viewport-fit=cover), so
-// nothing can paint there. With no theme-color, Safari samples the page and tints
-// those bands green under the curtain, then re-tints back — and iOS ANIMATES that
-// tint change, so it visibly trails the curtain as a lingering green strip.
-// We therefore pin theme-color to the page colour permanently: the chrome is
-// never green, so there is nothing to linger. (Tinting it green while the curtain
-// is up looks more immersive but always drags that trailing re-tint behind it.)
+// nothing can paint there. theme-color is pinned to the page colour so that
+// chrome never flashes or lingers green.
 const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;try{if((window.innerWidth||document.documentElement.clientWidth||0)<=${BOOT_DISABLE_MAX_WIDTH_PX}){var __ptNoReplay=function(){};Object.defineProperty(window,"__ptReplayAppear",{configurable:true,get:function(){return __ptNoReplay},set:function(){}})}}catch(e){}var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var PAGE_COLOR=${JSON.stringify(PAGE_THEME_COLOR)};function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="html{background:"+PAGE_COLOR+"!important;}html body{background:"+PAGE_COLOR+"!important;}#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#"+BOOT_ID+"{height:100dvh!important;min-height:100dvh!important;}#"+LABEL_ID+"{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}@media (max-width:${BOOT_DISABLE_MAX_WIDTH_PX}px){#"+BOOT_ID+",#"+LABEL_ID+"{display:none!important;}}";if(s.textContent!==css)s.textContent=css}function themeSync(){try{var m=document.querySelector('meta[name="theme-color"]');if(!m){m=document.createElement("meta");m.setAttribute("name","theme-color");(document.head||document.documentElement).appendChild(m)}if(m.getAttribute("content")!==PAGE_COLOR)m.setAttribute("content",PAGE_COLOR)}catch(e){}}function sync(){ensureStyle();themeSync()}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});window.addEventListener("pageshow",sync,{passive:true});window.addEventListener("popstate",sync,{passive:true});window.addEventListener("hashchange",sync,{passive:true});window.addEventListener("pt:reveal",sync);window.addEventListener("mh:locationchange",sync);if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
 
 // The shared Navigation layout is emitted before page code components in
@@ -67,6 +73,7 @@ const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL
 // unchanged. DOMContentLoaded is the fail-safe release if the boot runtime does
 // not run.
 const BOOT_FIRST_PAINT_GUARD_JS = `(function(){try{var COVER_ID=${JSON.stringify(BOOT_FIRST_PAINT_ID)};var BOOT_ID=${JSON.stringify(BOOT_ID)};var BOOT_COLOR=${JSON.stringify(DEFAULT_BOOT_COLOR)};var maxWidth=${BOOT_DISABLE_MAX_WIDTH_PX};var path=(location.pathname||"/").replace(/\\/+$/,"")||"/";var width=window.innerWidth||document.documentElement.clientWidth||0;var reduced=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);var nav=performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];var navType=nav?nav.type:"navigate";var fresh=navType==="reload";if(!fresh&&navType==="navigate"){var ref=document.referrer;fresh=!ref;try{if(ref)fresh=new URL(ref).origin!==location.origin}catch(e){fresh=true}}if(path!==${JSON.stringify(HOME_PATH)}||width<=maxWidth||reduced||!fresh)return;if(document.getElementById(COVER_ID))return;var cover=document.createElement("div");cover.id=COVER_ID;cover.setAttribute("aria-hidden","true");cover.style.cssText="position:fixed;top:0;right:0;bottom:auto;left:0;width:100%;height:100vh;min-height:100vh;background:"+BOOT_COLOR+";z-index:2147483599;pointer-events:none;";try{if(window.CSS&&CSS.supports("height","100dvh")){cover.style.height="100dvh";cover.style.minHeight="100dvh"}}catch(e){}document.documentElement.appendChild(cover);var observer=null;var released=false;function release(){if(released)return;released=true;try{if(observer)observer.disconnect()}catch(e){}try{if(cover.parentNode)cover.parentNode.removeChild(cover)}catch(e){}}function handoff(){if(document.getElementById(BOOT_ID)){release();return true}return false}if(typeof MutationObserver!=="undefined"){observer=new MutationObserver(handoff);observer.observe(document.documentElement,{childList:true,subtree:true})}handoff();document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){if(!handoff())release()},0)},{once:true})}catch(e){try{var stale=document.getElementById(${JSON.stringify(BOOT_FIRST_PAINT_ID)});if(stale&&stale.parentNode)stale.parentNode.removeChild(stale)}catch(ignore){}}})();`
+
 
 function ensureBootViewportStyle() {
     try {

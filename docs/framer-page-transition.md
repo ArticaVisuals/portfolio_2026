@@ -1,6 +1,6 @@
 # Site-wide page transition (zitafernandez.com style)
 
-**Status:** current Framer draft code files are source of truth · 2026-07-23 · codeFile `gmalnRr` (`PageTransition.tsx`) is a THIN WRAPPER that imports the compiled v7.12 runtime module, mounts `ParagraphPrettyWrap` (`EjvkJhv`) for paragraph `text-wrap: pretty` at 23px and under, and adds the Home Header Bottom recovery + the `/index` hero title rise-on-arrival + the Home hero route-arrival controller. The current draft insert URL is `https://framer.com/m/PageTransition-br4HFc.js@P1UuYbl3GETqp81nk2D8`. `ResumeAssetHost` (`xDqfenf`) carries the Footer fallback for routes that do not load PageTransition. The full v7.12 runtime SOURCE that compiles to the imported module is preserved as `code/mirror/backups/PageTransition.runtime-backup.tsx`.
+**Status:** current Framer draft code files are source of truth · 2026-07-27 · codeFile `gmalnRr` (`PageTransition.tsx`) is a THIN WRAPPER that imports the compiled v7.12 runtime module, mounts `ParagraphPrettyWrap` (`EjvkJhv`) for paragraph `text-wrap: pretty` at 23px and under, and adds the Home Header Bottom recovery + the `/index` hero title rise-on-arrival + the Home hero route-arrival controller. The current published insert URL is `https://framer.com/m/PageTransition-br4HFc.js@ELu2vuJ3sJNZaFzK8VIY`. `ResumeAssetHost` (`xDqfenf`, published insert URL `https://framer.com/m/ResumeAssetHost-oJ9Q3K.js@NLAahPAHiXdVntnv4N5v`) carries the Footer fallback for routes that do not load PageTransition. The full v7.12 runtime SOURCE that compiles to the imported module is preserved as `code/mirror/backups/PageTransition.runtime-backup.tsx`.
 
 **2026-07-23 — Home hero delayed-arrival regression.** A live frame probe of
 `/play` → Home showed the Home DOM committed around 460ms after click, but the
@@ -21,6 +21,21 @@ silently removing the all-route Home fix. The current wrapper merges that newer
 boot-curtain work with the all-route controller. Future PageTransition edits
 must start from the latest Framer code file and must not restore the
 case-study-only source gate.
+
+**2026-07-27 — repeat overwrite + `/info` hardening.** The Framer wrapper was
+again replaced by the stale case-study-only controller even though Git still
+contained the protected all-route implementation. An instrumented production
+probe reproduced `/index` → Home with the hero mounted at `translateY(116px)`
+and frozen for roughly 420ms before motion began; `mh-hero-rise-style` never
+mounted. The all-route guard was merged back into the newest Framer source
+without changing its newer mobile boot behavior. A second matrix exposed a
+separate fresh-document `/info` edge: `/info` does not mount `PageTransition`,
+so it could not stamp the source route before Home mounted. `ResumeAssetHost`
+now installs a singleton capture-phase Home-link listener that writes the same
+`__mhNavFromPath` / `__mhArrivalAt` intent consumed by the destination
+controller. Production probes now show the rise stylesheet present on the first
+Home hero sample from `/index`, `/play`, `/info`, and a case study, with zero
+downward or Header Bottom visibility violations.
 
 **2026-07-16 — mobile first-boot curtain viewport guard.** The wrapper now injects a tiny pre-hydration guard for `#__pt-boot` so the first-load curtain uses the actual mobile viewport height (`visualViewport`/`100dvh` via `--mh-boot-vvh`) instead of relying on the compiled runtime's original `height:100vh`. It also adds a 240px bottom overscan (`--mh-boot-height`) while pinning `#__pt-boot-label` to the real viewport height, so iOS Safari's translucent bottom toolbar blurs Forest Green instead of the page underneath. This keeps the boot screen covering the full phone viewport when browser chrome changes during load, without changing the v7.12 runtime timing or Framer controls.
 

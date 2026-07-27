@@ -8,6 +8,9 @@ const IGNORE_ATTR = "data-mh-pretty-ignore"
 const GLOBAL_KEY = "__mhParagraphPrettyWrap"
 const PRELOAD_KEY = "__mhParagraphPrettyWrapPreload"
 const HOME_PATH = "/"
+const HOME_NAV_FROM_KEY = "__mhNavFromPath"
+const HOME_ARRIVAL_AT_KEY = "__mhArrivalAt"
+const HOME_ARRIVAL_FALLBACK_KEY = "__mhHomeArrivalIntentFallback"
 const HOME_STATIC_PRESET_SELECTOR =
     'main [data-styles-preset="ZB3A5PLtS"]'
 const DEFAULT_EXCLUDE_SELECTOR = [
@@ -48,6 +51,67 @@ function isHomePath() {
         return (window.location.pathname.replace(/\/+$/, "") || "/") === HOME_PATH
     } catch (err) {
         return false
+    }
+}
+
+function normalizedPath(pathname: string) {
+    return String(pathname || HOME_PATH).replace(/\/+$/, "") || HOME_PATH
+}
+
+// `/info` does not mount PageTransition, so a fresh Info document previously
+// had no source-side listener to stamp the Home navigation intent. The Home
+// controller would mount after the route change without a source path and fall
+// back to Framer's delayed appear replay. Footer mounts this compatibility host
+// on those routes; keep one capture-phase listener here so the destination
+// PageTransition can start its all-route Home rise immediately.
+function installHomeArrivalIntentFallback() {
+    if (typeof window === "undefined" || typeof document === "undefined") {
+        return () => {}
+    }
+
+    const win = window as any
+    const state =
+        win[HOME_ARRIVAL_FALLBACK_KEY] ||
+        (win[HOME_ARRIVAL_FALLBACK_KEY] = {
+            refs: 0,
+            handler: null,
+        })
+
+    state.refs += 1
+    if (!state.handler) {
+        state.handler = (event: MouseEvent) => {
+            try {
+                const target = event.target as Element | null
+                const anchor = target?.closest?.("a[href]") as HTMLAnchorElement
+                if (!anchor) return
+
+                const href = anchor.getAttribute("href") || ""
+                if (/^(mailto:|tel:|#)/.test(href)) return
+
+                const destination = new URL(anchor.href, window.location.href)
+                if (destination.origin !== window.location.origin) return
+
+                const sourcePath = normalizedPath(window.location.pathname)
+                const destinationPath = normalizedPath(destination.pathname)
+                if (
+                    sourcePath === HOME_PATH ||
+                    destinationPath !== HOME_PATH
+                ) {
+                    return
+                }
+
+                win[HOME_NAV_FROM_KEY] = sourcePath
+                win[HOME_ARRIVAL_AT_KEY] = Date.now()
+            } catch (err) {}
+        }
+        document.addEventListener("click", state.handler, true)
+    }
+
+    return () => {
+        state.refs = Math.max(0, state.refs - 1)
+        if (state.refs > 0 || !state.handler) return
+        document.removeEventListener("click", state.handler, true)
+        state.handler = null
     }
 }
 
@@ -200,7 +264,8 @@ function installPrettyWrapFallback(maxFontSize = 23) {
  *
  * The original resume-link side effect is retired, but Footer still mounts this
  * invisible component. It now also carries the paragraph pretty-wrap fallback so
- * routes without PageTransition still get site-wide orphan reduction.
+ * routes without PageTransition still get site-wide orphan reduction, plus the
+ * Home-arrival intent stamp needed for immediate `/info` → Home motion.
  *
  * @framerIntrinsicWidth 1
  * @framerIntrinsicHeight 1
@@ -215,6 +280,7 @@ type ResumeAssetHostProps = {
 
 export default function ResumeAssetHost(props: ResumeAssetHostProps) {
     usePrePaintEffect(() => installPrettyWrapFallback(23), [])
+    usePrePaintEffect(() => installHomeArrivalIntentFallback(), [])
 
     return (
         <>
