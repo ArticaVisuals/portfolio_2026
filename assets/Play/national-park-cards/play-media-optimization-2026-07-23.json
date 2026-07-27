@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.125Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/national-park-cards",
+  "items": [
+    {
+      "slug": "play-027",
+      "title": "Utah Natural Wonders Playing Cards",
+      "order": 31,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/71dcYgQ5IK9DYgOwvHrRiH3CM.jpg?width=3648&height=2432",
+      "sourcePath": "assets/Play/national-park-cards/source/play-027-image-img-5149-edit-2.jpg",
+      "originalBytes": 1377281,
+      "originalWidth": 3648,
+      "originalHeight": 2432,
+      "outputPath": "assets/Play/national-park-cards/optimized/play-play-027-poster-71dcYgQ5IK9DYgOwvHrRiH3CM-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 139804,
+      "outputWidth": 1600,
+      "outputHeight": 1067,
+      "savingsBytes": 1237477,
+      "savingsPercent": 89.84927549280067
+    }
+  ]
+}

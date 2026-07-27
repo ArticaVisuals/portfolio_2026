@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.472Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/aspen-valley-landscaping",
+  "items": [
+    {
+      "slug": "play-007",
+      "title": "Aspen Valley Landscaping",
+      "order": 12,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/EElxh8nTgT3olUNjQO6ZXDxE.jpg?width=1600&height=1200",
+      "sourcePath": "assets/Play/aspen-valley-landscaping/source/play-play-007-poster-EElxh8nTgT3olUNjQO6ZXDxE-original.jpg",
+      "originalBytes": 438295,
+      "originalWidth": 1600,
+      "originalHeight": 1200,
+      "outputPath": "assets/Play/aspen-valley-landscaping/optimized/play-play-007-poster-EElxh8nTgT3olUNjQO6ZXDxE-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 172764,
+      "outputWidth": 1600,
+      "outputHeight": 1200,
+      "savingsBytes": 265531,
+      "savingsPercent": 60.58271255661142
+    },
+    {
+      "slug": "play-007",
+      "title": "Aspen Valley Landscaping",
+      "order": 12,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/M16geXwoRwaIRXggeXnxG3aBCl0.mp4",
+      "sourcePath": "assets/Play/aspen-valley-landscaping/source/play-play-007-video-M16geXwoRwaIRXggeXnxG3aBCl0-original.mp4",
+      "originalBytes": 733023,
+      "originalWidth": 1600,
+      "originalHeight": 1200,
+      "outputPath": "assets/Play/aspen-valley-landscaping/optimized/play-play-007-M16geXwoRwaIRXggeXnxG3aBCl0-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 211543,
+      "outputWidth": 900,
+      "outputHeight": 676,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 4,
+      "savingsBytes": 521480,
+      "savingsPercent": 71.14101467484649
+    }
+  ]
+}

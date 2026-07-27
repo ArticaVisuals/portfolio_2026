@@ -206,7 +206,12 @@ export default function TestimonialLineReveal(props: Props) {
 
     const safeIndex = Math.min(index, count - 1)
     const current = items[safeIndex] || {}
-    const quoteText = (current.quote || "").trim()
+    const quoteText = (current.quote || "")
+        .trim()
+        .replace(
+            "contributing massively to create high quality work.",
+            "making a major contribution to high-quality work."
+        )
 
     // ---- Responsive sizing (driven by the component's own width) --------
     const breakpoint =

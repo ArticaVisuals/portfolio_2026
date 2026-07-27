@@ -1,0 +1,40 @@
+{
+  "project": "Seek Truth",
+  "generated": "2026-07-23",
+  "encoding": {
+    "video": "H.264 MP4, libx264 slow preset, CRF 23, yuv420p, faststart, no audio",
+    "poster": "WebP quality 88, frame at 25% of source duration"
+  },
+  "verification": {
+    "ffprobe": "passed",
+    "faststart": "passed (moov atom precedes mdat)",
+    "visualContactSheet": "verification/seek-truth-related-card-6kI8ukCrbvBwM7zCO08wjY5pyo-source-vs-optimized.jpg"
+  },
+  "assets": [
+    {
+      "id": "6kI8ukCrbvBwM7zCO08wjY5pyo",
+      "role": "Seek Truth related-project card",
+      "sourceUrl": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+      "sourcePath": "../main/optimized/seek-truth-rotating-spreads-thumbnail.mp4",
+      "sourceRelation": "byte-identical to live Framer asset",
+      "source": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 10.2,
+        "bytes": 2034449
+      },
+      "videoPath": "videos/seek-truth-related-card-6kI8ukCrbvBwM7zCO08wjY5pyo-960x540-crf23.mp4",
+      "posterPath": "posters/seek-truth-related-card-6kI8ukCrbvBwM7zCO08wjY5pyo-960x540-q88.webp",
+      "output": {
+        "dimensions": "960x540",
+        "fps": 30,
+        "durationSeconds": 10.2,
+        "bytes": 1341282,
+        "savingsPercent": 34.07,
+        "ssim": 0.995126
+      },
+      "audio": "none in output; source is used as muted autoplay",
+      "visualRisk": "Very low. Page typography and red/black print details remain crisp in the reviewed frames."
+    }
+  ]
+}

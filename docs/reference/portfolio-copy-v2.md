@@ -81,7 +81,7 @@ A single rotating line below the About paragraph. Updated whenever you feel like
 
 ## 03 — Case Study Openings
 
-The strategic priority set has shifted with the current CMS. The CMS-backed Framer Home query shows six selected-work cards: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. WhatsApp is homepage-flagged but outside the six-item query because its sort order is 17. Yomo, Karuna, and Weaponized Innocence are currently off Home because their CMS `Is Homepage` flags are false. These paragraphs live at the top of each case study page, not on the homepage. The homepage shows only: project title, media, and the "View Project" card label.
+The strategic priority set has shifted with the current CMS. The CMS-backed Framer Home query shows six selected-work cards: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, and National Park Playing Cards. WhatsApp is homepage-flagged but outside the six-item query because its sort order is 17. Yomo, Highland Harvests, and Weaponized Innocence are currently off Home because their CMS `Is Homepage` flags are false. These paragraphs live at the top of each case study page, not on the homepage. The homepage shows only: project title, media, and the "View Project" card label.
 
 ---
 
@@ -109,7 +109,7 @@ The strategic priority set has shifted with the current CMS. The CMS-backed Fram
 **Tier:** Pending depth decision
 **Metadata line:** 2026, 2D Motion, 3D Motion, Social Media, Technology
 
-Peak Energy is now in `All Projects` with slug `peak-energy`, sort `3`, and `Is Homepage=true`. A bespoke WIP-gated page exists at `/case-studies/peak-energy` with the Peak Energy x GM handoff snapshot: hero brand film, 2D/3D motion role, 2026, Technology, and an explicit mutual-NDA note. Do not infer additional public copy from the title alone; final case-study story, studio attribution, distribution details, and responsibilities need NDA plus production-contract clearance before the page is switched from WIP to ready.
+Peak Energy is now in `All Projects` with slug `peak-energy`, sort `3`, and `Is Homepage=true`. A bespoke WIP-gated page exists at `/case-studies/peak-energy` with the Peak Energy & GM handoff snapshot: hero brand film, 2D/3D motion role, 2026, Technology, and an explicit mutual-NDA note. Do not infer additional public copy from the title alone; final case-study story, studio attribution, distribution details, and responsibilities need NDA plus production-contract clearance before the page is switched from WIP to ready.
 
 ---
 
@@ -178,12 +178,12 @@ Rejuve, Belly Bar, and WhatsApp are now in `All Projects` and each has a matchin
 
 ---
 
-### 7. Karuna — *Approved*
+### 7. Highland Harvests — *Approved*
 
 **Tier:** 2 — Visual showcase + context
 **Metadata line:** 2025 · Concept · Visual Identity, Packaging, Product
 
-> Highland Harvests is a product line for Karuna, a social enterprise in the highlands of Northern Vietnam working to empower indigenous Tai Dam communities through sustainable beekeeping.
+> Highland Harvests is a collection of bee-derived products by Karuna, a social enterprise in the highlands of northern Vietnam that supports Indigenous Tai Dam communities through ethical beekeeping.
 >
 > I designed the brand identity and packaging for a kit of three bee-derived products: Snow Honey, a hand-poured beeswax candle, and a biodegradable food wrap. The design needed to communicate both the craft of the products and the mission behind them, the relationship between the Tai Dam people, their land, and the biodiversity they protect.
 
@@ -286,5 +286,5 @@ Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of t
 **Remaining before build:**
 - Pick initial "currently into" items (reading, listening, exploring)
 - Resolve National Park Playing Cards store-count copy: older CMS/copy says 160 retail locations, while current `/info` says 220+ stores
-- Decide whether Karuna should return to Home or remain an off-Home Tier 2 showcase
+- Decide whether Highland Harvests should return to Home or remain an off-Home Tier 2 showcase
 - Decide whether Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp remain archive records or become dedicated visual showcases

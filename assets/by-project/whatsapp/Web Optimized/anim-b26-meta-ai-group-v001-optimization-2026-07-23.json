@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-07-23T20:57:46Z",
+  "project": "WhatsApp",
+  "source": {
+    "path": "/Users/micahhoang/My Drive/Brand New School/Whatsapp-from-Minsik/anim_B26_Meta AI Group_v001 (1).mp4",
+    "bytes": 47723269,
+    "sha256": "fad0a5980f34bb8cf49e99b1ddeae0952a7245d4f06ba0eed12b412039a5cba6",
+    "codec": "h264",
+    "width": 1080,
+    "height": 1352,
+    "fps": "24/1",
+    "durationSeconds": 37.041667,
+    "pixelFormat": "yuv420p",
+    "audioStreams": 0
+  },
+  "video": {
+    "path": "assets/by-project/whatsapp/Web Optimized/videos/anim-b26-meta-ai-group-v001-max900-crf22-noaudio.mp4",
+    "bytes": 2596701,
+    "sha256": "4061e24788beae6e881e4676586797d3123ebffae06eb1e30a8b15246cb49283",
+    "codec": "h264",
+    "width": 718,
+    "height": 900,
+    "fps": "24/1",
+    "durationSeconds": 37.041667,
+    "pixelFormat": "yuv420p",
+    "audioStreams": 0,
+    "settings": {
+      "encoder": "libx264",
+      "preset": "slow",
+      "crf": 22,
+      "profile": "high",
+      "level": "4.0",
+      "scale": "max 900px on either axis, Lanczos",
+      "fastStart": true,
+      "metadataRemoved": true
+    }
+  },
+  "poster": {
+    "path": "assets/by-project/whatsapp/Web Optimized/posters/anim-b26-meta-ai-group-v001-max900-poster-q90.webp",
+    "bytes": 149708,
+    "sha256": "f05308982c0c72b4c54f8a7669dd01404bfafae27625f570480d7b2ff48d094d",
+    "width": 718,
+    "height": 900,
+    "format": "webp",
+    "quality": 90
+  },
+  "verification": {
+    "videoReductionPercent": 94.56,
+    "videoAndPosterReductionPercent": 94.25,
+    "fullDecode": "pass",
+    "fastStartAtomOrder": "pass",
+    "ssimAll": 0.993713,
+    "visualReview": "pass",
+    "comparisonPath": "assets/by-project/whatsapp/Web Optimized/qc/anim-b26-meta-ai-group-v001-source-left-optimized-right-frame432.jpg"
+  }
+}

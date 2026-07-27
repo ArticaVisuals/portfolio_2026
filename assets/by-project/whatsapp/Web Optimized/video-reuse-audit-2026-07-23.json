@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-07-23",
+  "project": "WhatsApp / Brand New School",
+  "decision": "reuse_only",
+  "reason": "The UI-heavy clips are already H.264/yuv420p at appropriate 368-768px widths. Re-encoding would risk small text and control clarity.",
+  "totals": {
+    "liveItems": 8,
+    "knownSourceItems": 7,
+    "knownSourceBytes": 122155376,
+    "knownComparableOutputBytes": 15015333,
+    "knownSavedBytes": 107140043,
+    "knownSavingsPercent": 87.7,
+    "allEightLiveBytes": 18167844
+  },
+  "items": [
+    {
+      "id": "brand-new-school-01",
+      "liveUrl": "https://framerusercontent.com/assets/vdSPFOz2y9QvivDh2zbnwt30IL0.mp4",
+      "sourceFile": "A0EDA054-42C7-48C2-A911-36D2761793BE.GIF",
+      "sourceBytes": 16016244,
+      "outputPath": "assets/by-project/whatsapp/brand-new-school-01.mp4",
+      "outputDimensions": "560x700",
+      "durationSeconds": 7.944,
+      "outputBytes": 1459335,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-01-poster.jpg",
+      "status": "existing_local_derivative_matches_published_bytes"
+    },
+    {
+      "id": "brand-new-school-02",
+      "liveUrl": "https://framerusercontent.com/assets/LNhy5ez6tTKnQOYBWeQgNSDyJhI.mp4",
+      "sourceFile": "38547F84-9A4D-405A-B914-87A2902187F0.GIF",
+      "sourceBytes": 33072334,
+      "outputPath": "assets/by-project/whatsapp/brand-new-school-02.mp4",
+      "outputDimensions": "576x720",
+      "durationSeconds": 29.389,
+      "outputBytes": 3094957,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-02-poster.jpg",
+      "status": "existing_local_derivative_matches_published_bytes"
+    },
+    {
+      "id": "brand-new-school-03",
+      "liveUrl": "https://framerusercontent.com/assets/n2Vc9aSoBRZ41TP7zlEIqV4mMQ.mp4",
+      "alternateLiveUrl": "https://files.catbox.moe/dcmuwk.mp4",
+      "sourceFile": "7C3843AD-D980-4D70-A0E1-AF302D4A09EE.GIF",
+      "sourceBytes": 16511889,
+      "outputPath": "assets/by-project/whatsapp/brand-new-school-03.mp4",
+      "outputDimensions": "480x608",
+      "durationSeconds": 23.667,
+      "outputBytes": 1465837,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-03-poster.jpg",
+      "status": "existing_local_derivative_matches_published_bytes"
+    },
+    {
+      "id": "brand-new-school-04",
+      "liveUrl": "https://files.catbox.moe/xh4ax9.mp4",
+      "sourceFile": "ECE51F10-399C-4015-90BC-D8CCE119517D.GIF",
+      "sourceBytes": 25369982,
+      "outputPath": "assets/by-project/whatsapp/brand-new-school-04.mp4",
+      "outputDimensions": "560x700",
+      "durationSeconds": 24.444,
+      "outputBytes": 2994875,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-04-poster.jpg",
+      "status": "existing_local_derivative_matches_published_bytes"
+    },
+    {
+      "id": "brand-new-school-05",
+      "liveUrl": "https://framerusercontent.com/assets/rm6EY0gQ5MuGSR2MffYaOCdwtE.mp4",
+      "sourceFile": "085906A6-6969-48AE-916C-5CFC457ACDB1.GIF",
+      "sourceBytes": 15591506,
+      "outputPath": "assets/by-project/whatsapp/brand-new-school-05.mp4",
+      "outputDimensions": "680x850",
+      "durationSeconds": 14.0,
+      "outputBytes": 1140730,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-05-poster.jpg",
+      "status": "existing_local_derivative_matches_published_bytes"
+    },
+    {
+      "id": "brand-new-school-06",
+      "liveUrl": "https://framerusercontent.com/assets/kxLHzUDvsXhLfMF0ZCVumavJo.mp4",
+      "sourceFile": "ad9a3a9d-aa3f-4ff0-8f06-1a86a848861c.MP4",
+      "sourceBytes": 8265471,
+      "localCandidatePath": "assets/by-project/whatsapp/brand-new-school-06.mp4",
+      "localCandidateBytes": 4526712,
+      "outputPath": "https://framerusercontent.com/assets/kxLHzUDvsXhLfMF0ZCVumavJo.mp4",
+      "outputDimensions": "480x608",
+      "durationSeconds": 54.208,
+      "outputBytes": 2397296,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-06-poster.jpg",
+      "status": "reuse_smaller_published_derivative"
+    },
+    {
+      "id": "brand-new-school-07",
+      "liveUrl": "https://framerusercontent.com/assets/5sN0nogXiDssutZndcVxBckU0M.mp4",
+      "sourceFile": "7edded9c-85e4-4405-884b-56629c9abe56.MP4",
+      "sourceBytes": 7327950,
+      "localCandidatePath": "assets/by-project/whatsapp/brand-new-school-07.mp4",
+      "localCandidateBytes": 4560673,
+      "outputPath": "https://framerusercontent.com/assets/5sN0nogXiDssutZndcVxBckU0M.mp4",
+      "outputDimensions": "480x608",
+      "durationSeconds": 49.167,
+      "outputBytes": 2462303,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-07-poster.jpg",
+      "status": "reuse_smaller_published_derivative"
+    },
+    {
+      "id": "brand-new-school-09",
+      "liveUrl": "https://framerusercontent.com/assets/xYzecLfFRFlfVLmSOGTftcEqwo.mp4",
+      "sourceFile": null,
+      "sourceBytes": null,
+      "outputPath": "assets/by-project/whatsapp/brand-new-school-09.mp4",
+      "outputDimensions": "768x960",
+      "durationSeconds": 29.0,
+      "outputBytes": 3152511,
+      "posterPath": "assets/by-project/whatsapp/brand-new-school-09-poster.jpg",
+      "status": "existing_local_derivative_matches_published_bytes_no_source_baseline"
+    }
+  ],
+  "verification": "All local reused clips inspected with ffprobe are H.264/yuv420p. No files were re-encoded."
+}

@@ -1,0 +1,391 @@
+{
+  "target": "https://micahhoang.com/case-studies/motion-connect-2025",
+  "auditedAt": "2026-07-23T19:58:56.025Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/motion-connect-2025",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 13132,
+  "title": "Motion Connect 2025 Identity - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/motion-connect-2025",
+  "bodyTextLength": 2281,
+  "domNodes": 506,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 54.70000000298023,
+    "responseStartMs": 354.79999999701977,
+    "domContentLoadedMs": 793.0999999940395,
+    "loadMs": 7122.9000000059605,
+    "firstPaintMs": 436,
+    "fcpMs": 436,
+    "lcpMs": 1368,
+    "lcpUrl": "",
+    "cls": 1.4388480607096352,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 241,
+    "longTaskMaxMs": 241
+  },
+  "media": {
+    "images": {
+      "total": 9,
+      "withSource": 9,
+      "complete": 4,
+      "ready": 4,
+      "broken": 0,
+      "incomplete": 5,
+      "lazy": 5
+    },
+    "videos": {
+      "total": 27,
+      "withSource": 27,
+      "readyState0": 21,
+      "readyState1": 0,
+      "readyState2Plus": 6,
+      "playing": 1,
+      "autoplayTotal": 6,
+      "autoplayPlaying": 1,
+      "preloadNone": 21
+    },
+    "iframes": {
+      "total": 2,
+      "withSource": 2
+    }
+  },
+  "network": {
+    "requestCount": 113,
+    "failedRequestCount": 7,
+    "totalBytes": 106386332,
+    "totalsByType": {
+      "Document": {
+        "requests": 3,
+        "bytes": 32006,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 41,
+        "bytes": 433776,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132762,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 33,
+        "bytes": 15229410,
+        "failed": 6
+      },
+      "Media": {
+        "requests": 18,
+        "bytes": 90378728,
+        "failed": 1
+      },
+      "Fetch": {
+        "requests": 11,
+        "bytes": 177224,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 434,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1992,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/images/AssBcap80PiboGZcCTvZdBzxMI.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/png",
+        "bytes": 10872688,
+        "durationMs": 3272,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/WBfSwlJMaWbkJMRpHfYzlbZPLl4.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7741680,
+        "durationMs": 3283,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/WBfSwlJMaWbkJMRpHfYzlbZPLl4.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7741675,
+        "durationMs": 3138,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/dCRutmC1dwoz5Zq4iytCOHvrt8.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7652595,
+        "durationMs": 2740,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7093031,
+        "durationMs": 2461,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7092977,
+        "durationMs": 2604,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7092975,
+        "durationMs": 3048,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7092965,
+        "durationMs": 2804,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 6429177,
+        "durationMs": 2173,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 6429134,
+        "durationMs": 3166,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 6429128,
+        "durationMs": 2795,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 6429120,
+        "durationMs": 2483,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/1C2aMBrHIm6dxQeXcdJcqDx0xs0.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2337056,
+        "durationMs": 2674,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/1C2aMBrHIm6dxQeXcdJcqDx0xs0.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2337052,
+        "durationMs": 965,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/1C2aMBrHIm6dxQeXcdJcqDx0xs0.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2337049,
+        "durationMs": 980,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/1C2aMBrHIm6dxQeXcdJcqDx0xs0.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2337040,
+        "durationMs": 1410,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/qCignb1pMHKPdwRrDTF57gpagSo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1903045,
+        "durationMs": 1760,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/qCignb1pMHKPdwRrDTF57gpagSo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1903029,
+        "durationMs": 966,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/VfHl3PIrXYhc91cU5bjN2gONNLQ.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1451485,
+        "durationMs": 656,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/YGIzUnSLFmZOdV3aDjOfZIv86M.png?scale-down-to=2048&width=3377&height=4221",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 356568,
+        "durationMs": 487,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      }
+    ],
+    "consoleWarnings": [
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+      }
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/dCRutmC1dwoz5Zq4iytCOHvrt8.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://files.catbox.moe/lfhxki.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/y08ijz.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/dk1l9v.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/3cw8yw.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/v76dix.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/2sjcee.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      }
+    ]
+  },
+  "route": "/case-studies/motion-connect-2025",
+  "artifactSlug": "case-studies--motion-connect-2025"
+}

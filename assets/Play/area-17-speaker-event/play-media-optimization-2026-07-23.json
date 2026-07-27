@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.384Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/area-17-speaker-event",
+  "items": [
+    {
+      "slug": "area-17-speaker-event",
+      "title": "Area 17 Speaker Event",
+      "order": 40,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/MtBDLA1EaGAyi4rN1pERCSmaf8.jpg?width=1064&height=1080",
+      "sourcePath": "assets/Play/area-17-speaker-event/source/play-area-17-speaker-event-poster-MtBDLA1EaGAyi4rN1pERCSmaf8-original.jpg",
+      "originalBytes": 48040,
+      "originalWidth": 1064,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/area-17-speaker-event/optimized/play-area-17-speaker-event-poster-MtBDLA1EaGAyi4rN1pERCSmaf8-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 19898,
+      "outputWidth": 1064,
+      "outputHeight": 1080,
+      "savingsBytes": 28142,
+      "savingsPercent": 58.580349708576186
+    },
+    {
+      "slug": "area-17-speaker-event",
+      "title": "Area 17 Speaker Event",
+      "order": 40,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/9wgrOuxa3BIpM7r7zFu6tPwepw.mp4",
+      "sourcePath": "assets/Play/area-17-speaker-event/source/play-area-17-speaker-event-video-9wgrOuxa3BIpM7r7zFu6tPwepw-original.mp4",
+      "originalBytes": 560842,
+      "originalWidth": 1064,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/area-17-speaker-event/optimized/play-area-17-speaker-event-9wgrOuxa3BIpM7r7zFu6tPwepw-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 384702,
+      "outputWidth": 886,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 8.833333,
+      "savingsBytes": 176140,
+      "savingsPercent": 31.406349738429007
+    }
+  ]
+}

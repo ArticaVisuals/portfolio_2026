@@ -1,0 +1,316 @@
+{
+  "target": "https://micahhoang.com/case-studies/karuna",
+  "auditedAt": "2026-07-23T19:57:14.114Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 1500,
+  "finalUrl": "https://micahhoang.com/case-studies/karuna",
+  "status": 404,
+  "navigationError": "",
+  "wallClockMs": 2150,
+  "title": "Micah Hoang — Brand Designer",
+  "canonical": "https://micahhoang.com/404",
+  "bodyTextLength": 181,
+  "domNodes": 182,
+  "runtimeMarkers": {
+    "videoManager": 0,
+    "lightbox": 0,
+    "controllers": 0
+  },
+  "timing": {
+    "ttfbMs": 58.29999999701977,
+    "responseStartMs": 249.70000000298023,
+    "domContentLoadedMs": 365.40000000596046,
+    "loadMs": 644,
+    "firstPaintMs": 316,
+    "fcpMs": 316,
+    "lcpMs": 340,
+    "lcpUrl": "",
+    "cls": 0.005064314205970293,
+    "longTaskCount": 0,
+    "longTaskTotalMs": 0,
+    "longTaskMaxMs": 0
+  },
+  "media": {
+    "images": {
+      "total": 0,
+      "withSource": 0,
+      "complete": 0,
+      "ready": 0,
+      "broken": 0,
+      "incomplete": 0,
+      "lazy": 0
+    },
+    "videos": {
+      "total": 0,
+      "withSource": 0,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 0,
+      "playing": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 47,
+    "failedRequestCount": 0,
+    "totalBytes": 501990,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 23147,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 34,
+        "bytes": 383693,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 77634,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1987,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 431,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 4,
+        "bytes": 15098,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117190,
+        "durationMs": 242,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49794,
+        "durationMs": 263,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45435,
+        "durationMs": 197,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33805,
+        "durationMs": 330,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28177,
+        "durationMs": 38,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/case-studies/karuna",
+        "type": "Document",
+        "status": 404,
+        "mimeType": "text/html",
+        "bytes": 23147,
+        "durationMs": 294,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17852,
+        "durationMs": 38,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BNuLb-Xz.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17307,
+        "durationMs": 270,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.pCGkvBZ9.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 15099,
+        "durationMs": 267,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/6trw2KQ2xTQNxh4KB670Pal2GjW7zLL-Z5xfpDOvQzk.jyS90Rmz.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 12569,
+        "durationMs": 38,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/crhfNLaqXfVV61Bkd6ep2NhowE.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 12107,
+        "durationMs": 328,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/DNrckardB2jvGZnn0Iagvf20zY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 12065,
+        "durationMs": 324,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/azeretmono/v21/3XF5ErsiyJsY9O_Gepph-FvtTQgMQUdNekSfnPVR1byb.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 11252,
+        "durationMs": 249,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/leXkdpDxyWWNBvvQ2F5_ALc794EbXPE1QBPzZCcQxDk.DVGJH441.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 10024,
+        "durationMs": 36,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.8j6F6F6Q.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 9495,
+        "durationMs": 36,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/cms/Q5zVNoSlpFEeQkuMUimJ/NuOHxwpImyFXJUj0cIIJ/EySMRbI2N-chunk-default-0.framercms?range=4-39473",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "application/javascript",
+        "bytes": 9343,
+        "durationMs": 31,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/luh0tSUuNONHrsQU773tpNNzg1Y.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 8405,
+        "durationMs": 334,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://events.framer.com/script?v=2",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 8225,
+        "durationMs": 314,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/HomeSelectedWorkGrid.CooQyYFj.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 6876,
+        "durationMs": 38,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Copyright_year.CYlc7dtg.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 4630,
+        "durationMs": 244,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/case-studies/karuna",
+  "artifactSlug": "case-studies--karuna"
+}

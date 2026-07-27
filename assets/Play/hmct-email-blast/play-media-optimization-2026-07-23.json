@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.559Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/hmct-email-blast",
+  "items": [
+    {
+      "slug": "play-026",
+      "title": "HMCT Event",
+      "order": 30,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/Hxk7NCgNGMBxNQYLGwilMcX9wRI.webp?width=1800&height=1013",
+      "sourcePath": "assets/Play/hmct-email-blast/source/play-play-026-poster-Hxk7NCgNGMBxNQYLGwilMcX9wRI-original.webp",
+      "originalBytes": 568388,
+      "originalWidth": 1800,
+      "originalHeight": 1013,
+      "outputPath": "assets/Play/hmct-email-blast/optimized/play-play-026-poster-Hxk7NCgNGMBxNQYLGwilMcX9wRI-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 311562,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": 256826,
+      "savingsPercent": 45.18497927472079
+    },
+    {
+      "slug": "play-026",
+      "title": "HMCT Event",
+      "order": 30,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/FcYV1Eih8W7oCuIwrSlPfz3wE4.mp4",
+      "sourcePath": "assets/Play/hmct-email-blast/source/play-026-video-hmctemailblast-video.mp4",
+      "originalBytes": 917337,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "outputPath": "assets/Play/hmct-email-blast/optimized/play-play-026-FcYV1Eih8W7oCuIwrSlPfz3wE4-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 316560,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 1.1,
+      "savingsBytes": 600777,
+      "savingsPercent": 65.49141700378378
+    }
+  ]
+}

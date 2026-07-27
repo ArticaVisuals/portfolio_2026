@@ -1,0 +1,365 @@
+{
+  "target": "https://micahhoang.com/case-studies/simon-schuster",
+  "auditedAt": "2026-07-23T19:58:38.834Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/simon-schuster",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 13169,
+  "title": "Simon & Schuster Rebrand Concept - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/simon-schuster",
+  "bodyTextLength": 3475,
+  "domNodes": 644,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 51.30000001192093,
+    "responseStartMs": 339.30000001192093,
+    "domContentLoadedMs": 803.3000000119209,
+    "loadMs": 7140.70000000298,
+    "firstPaintMs": 424,
+    "fcpMs": 424,
+    "lcpMs": 948,
+    "lcpUrl": "https://framerusercontent.com/images/cU7LMrVPcRHUyfVPjlEbI5NJUFE.webp?scale-down-to=2048&width=2400&height=1601",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 244,
+    "longTaskMaxMs": 244
+  },
+  "media": {
+    "images": {
+      "total": 96,
+      "withSource": 96,
+      "complete": 21,
+      "ready": 21,
+      "broken": 0,
+      "incomplete": 75,
+      "lazy": 75
+    },
+    "videos": {
+      "total": 3,
+      "withSource": 3,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 3,
+      "playing": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 127,
+    "failedRequestCount": 6,
+    "totalBytes": 22072501,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 36860,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 43,
+        "bytes": 443701,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132766,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 62,
+        "bytes": 21282743,
+        "failed": 3
+      },
+      "Media": {
+        "requests": 3,
+        "bytes": 0,
+        "failed": 3
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174002,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 432,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1997,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/images/bcJChy8t259iDTbBLlhHmVm5pK0.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 4482904,
+        "durationMs": 574,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/aHd9nZhVueO9rn1KeZdt9O9rKc0.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1889365,
+        "durationMs": 513,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/Igm51uPiEdyEX3NV5PtmrfoZg.gif?width=950&height=633",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 699319,
+        "durationMs": 507,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/NC5SSScFrBzq6Z9Ldp1w0QNcOs.webp?width=1600&height=2400",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 644662,
+        "durationMs": 364,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/hZa9WCNJTOpka4RKtJVTZb1zFE.webp?width=1600&height=2400",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 519509,
+        "durationMs": 511,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/sDNH0E6NCWjuzCuF2pWKBeG3TM.png?scale-down-to=2048&width=3014&height=1924",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 474700,
+        "durationMs": 281,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/yr8MQBMyIhMU68zoeTDejvRRc0w.webp?scale-down-to=2048&width=2400&height=1600",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 466591,
+        "durationMs": 372,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/V1c5qgmhIqlzUt6seYmC9Xj0xs.png?scale-down-to=2048&width=3014&height=1924",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 381139,
+        "durationMs": 318,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/Vy7toSKKl1wksre7xnOirzI4.png?scale-down-to=2048&width=3014&height=1924",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 351207,
+        "durationMs": 281,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/rvXdfKRtAeN8ukBBeKE3jIcKYik.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 340150,
+        "durationMs": 301,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ZEwfFQWSVntPQ2tn740hF3bDe8.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 335814,
+        "durationMs": 313,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ra8utYOH3D9tJdioyr5Eq9hfpU.png?scale-down-to=2048&width=3014&height=1924",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 333923,
+        "durationMs": 318,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/bZqpAGRf3QeGOtnkVn0aOLsuo.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 333478,
+        "durationMs": 282,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/FKiFTvmqSwHHMqR1xIlLMFfI81Q.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 323343,
+        "durationMs": 319,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/LGCNo6eTuGFtcmO3lnp2Se1BFI4.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 312264,
+        "durationMs": 302,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/PaX3JwPnMRNC1cADLY9BKe8ydc.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 310912,
+        "durationMs": 300,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/eVTioZ878qzOc7XwIx1roDtnKJk.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 309325,
+        "durationMs": 73,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/WLQxwMoq3huc6B344gsm6vPlWms.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 305019,
+        "durationMs": 303,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/bPlLZQr0qe7FKmNVENGdY5BIR4.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 302930,
+        "durationMs": 303,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/btNr4fJYW6chU0H6nBHcTd0qw.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 298350,
+        "durationMs": 289,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/npEWAtDub3QRSPyGSrWh42ns6H8.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/b9f0GkZjSgHCSTkQ6p5mSRBOFRo.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/K1752285800188626851517885044245/S-S-Logo-Animation-2.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://files.catbox.moe/e2530s.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/dvr4eq.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/fwvx3b.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      }
+    ]
+  },
+  "route": "/case-studies/simon-schuster",
+  "artifactSlug": "case-studies--simon-schuster"
+}

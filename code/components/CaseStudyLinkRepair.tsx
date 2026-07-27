@@ -29,7 +29,7 @@ const PROJECT_ROUTES: ProjectRoute[] = [
     { title: "National Park Playing Cards", slug: "national-park-cards" },
     { title: "Motion Connect 2025", slug: "motion-connect-2025" },
     { title: "Yomo", slug: "yomo" },
-    { title: "Karuna", slug: "karuna" },
+    { title: "Highland Harvests", slug: "highland-harvests" },
     { title: "Weaponized Innocence", slug: "weaponized-innocence" },
     { title: "Wolff Olins x ArtCenter", slug: "wolff-olins-x-artcenter" },
     { title: "Aspen Valley Landscaping", slug: "aspen-valley-landscaping" },
@@ -181,6 +181,33 @@ function normalizeCtaText(value: string): string {
     return String(value || "")
         .replace(/\s+/g, "")
         .toUpperCase()
+}
+
+function repairPortfolioCopy(): number {
+    if (typeof document === "undefined") return 0
+
+    let repairs = 0
+    document
+        .querySelectorAll<HTMLElement>('[aria-label="About MIcah Hoang"]')
+        .forEach((element) => {
+            element.setAttribute("aria-label", "About Micah Hoang")
+            repairs += 1
+        })
+
+    document.querySelectorAll<HTMLImageElement>("img[alt]").forEach((image) => {
+        const current = image.alt
+        let next = current.replace(/^Simon and Schuster\b/i, "Simon & Schuster")
+
+        if (/^Motion Connect print\b/i.test(next)) {
+            next = next.replace(/^Motion Connect\b/i, "Simon & Schuster")
+        }
+
+        if (next === current) return
+        image.alt = next
+        repairs += 1
+    })
+
+    return repairs
 }
 
 function getMobileFooterCtaType(anchor: HTMLAnchorElement): string {
@@ -525,6 +552,42 @@ function useProjectCardRepair(enabled: boolean, urlOverrides: string) {
     }, [enabled, urlOverrides])
 }
 
+function usePortfolioCopyRepair(enabled: boolean) {
+    React.useEffect(() => {
+        if (!enabled || typeof window === "undefined") return
+
+        let frame = 0
+        const timeouts: number[] = []
+
+        const run = () => {
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(repairPortfolioCopy)
+        }
+
+        run()
+        ;[75, 200, 500, 1000, 2000].forEach((delay) => {
+            timeouts.push(window.setTimeout(run, delay))
+        })
+
+        const observer = new MutationObserver(run)
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["alt", "aria-label"],
+            childList: true,
+            subtree: true,
+        })
+
+        window.addEventListener("pageshow", run)
+
+        return () => {
+            window.cancelAnimationFrame(frame)
+            timeouts.forEach((timeout) => window.clearTimeout(timeout))
+            observer.disconnect()
+            window.removeEventListener("pageshow", run)
+        }
+    }, [enabled])
+}
+
 function ensureMobileFooterStyles() {
     if (typeof document === "undefined") return
     if (document.getElementById(MOBILE_FOOTER_STYLE_ID)) return
@@ -622,6 +685,7 @@ export default function CaseStudyLinkRepair({
     void titleFieldId
 
     useProjectCardRepair(enabled, urlOverrides)
+    usePortfolioCopyRepair(enabled)
     useCaseStudyMobileFooterLayout(enabled && mobileFooterLayout)
     return null
 }

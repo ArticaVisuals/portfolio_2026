@@ -332,7 +332,7 @@ broken layouts, no missing `<img alt>`, `lang=en`, no console errors anywhere.
 - `/case-studies/motion-connect-2025` - Bespoke Motion Connect page, page ID `ZYKsxrq7a`
 - `/case-studies/national-park-cards` - Bespoke National Park Playing Cards page, page ID `Bt_XoCbyE`
 - `/case-studies/yomo` - Bespoke Yomo page, page ID `FLIR8tPnz`
-- `/case-studies/karuna` - Bespoke Karuna page, page ID `vrGS_iCmo`
+- `/case-studies/highland-harvests` - Bespoke Highland Harvests page, page ID `vrGS_iCmo`
 - `/case-studies/gaia` - Bespoke Gaia page, page ID `AxmIWTuqB`
 - `/case-studies/weaponized-innocence` - Bespoke Weaponized Innocence page, page ID `t5ZqCVgXQ`
 - `/case-studies/typldn` - Bespoke TYPLDN page, page ID `uZgIX0d9O`
@@ -350,7 +350,7 @@ broken layouts, no missing `<img alt>`, `lang=en`, no console errors anywhere.
 
 No current Framer web page is exposed for `/profile`, `/contact`, `/worldgrid-test`, `/play-2`, `/play-consolidation-draft`, `/playground`, or `/playground-scroll-draft`.
 
-June 15 CMS parity update: the `All Projects` CMS roster has 17 items and each CMS slug now has a matching bespoke `/case-studies/{slug}` web page. `/case-studies/peak-energy` was created as a WIP case-study shell with the cleared Peak Energy x GM handoff details; `/case-studies/rejuve`, `/case-studies/belly-bar`, and `/case-studies/whatsapp` were added as CMS-metadata WIP shells. The non-CMS orphan routes `/case-studies/neon-lights` and `/case-studies/aspen-valley-landscaping` were deleted in the earlier June 15 parity pass. The dynamic `/case-studies/:slug` route remains as the generic CMS fallback/template route, not as an additional project.
+June 15 CMS parity update: the `All Projects` CMS roster has 17 items and each CMS slug now has a matching bespoke `/case-studies/{slug}` web page. `/case-studies/peak-energy` was created as a WIP case-study shell with the cleared Peak Energy & GM handoff details; `/case-studies/rejuve`, `/case-studies/belly-bar`, and `/case-studies/whatsapp` were added as CMS-metadata WIP shells. The non-CMS orphan routes `/case-studies/neon-lights` and `/case-studies/aspen-valley-landscaping` were deleted in the earlier June 15 parity pass. The dynamic `/case-studies/:slug` route remains as the generic CMS fallback/template route, not as an additional project.
 
 ### Design Pages
 
@@ -437,7 +437,7 @@ June 10 cleanup: the former public editorbar guard was removed from known mounte
 
 June 11 post-publish QA note: Framer's own `#__framer-editorbar-container` / `#__framer-editorbar-label` overlay still appeared on anonymous public routes after publishing the boot identity update. `PageTransition.tsx` now suppresses that Framer-injected editorbar in its globally installed CSS, instead of recreating the removed guard component.
 
-June 10/24 controller cleanup: the bespoke case-study pages AirPods, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, and TYPLDN now use one hidden `CaseStudyControllers.tsx` (`z13WRHS`) instance instead of separate `CaseStudyLinkRepair.tsx`, `CaseStudyLightbox.tsx`, and `CaseStudyVideoManager.tsx` mounts. Motion Connect's consolidated instance is `eHJ5dzLyY`; its old standalone helper layers and ready-only WIP gate were deleted on June 24. Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, and Independent Lens still need verification/migration if they should use the wrapper.
+June 10/24 controller cleanup: the bespoke case-study pages AirPods, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Highland Harvests, Gaia, Weaponized Innocence, and TYPLDN now use one hidden `CaseStudyControllers.tsx` (`z13WRHS`) instance instead of separate `CaseStudyLinkRepair.tsx`, `CaseStudyLightbox.tsx`, and `CaseStudyVideoManager.tsx` mounts. Motion Connect's consolidated instance is `eHJ5dzLyY`; its old standalone helper layers and ready-only WIP gate were deleted on June 24. Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, and Independent Lens still need verification/migration if they should use the wrapper.
 
 June 10 scroll-to-top fix: `ScrollToTopButton.tsx` (`gh4ngZN`) did nothing on published case-study pages because the old `CaseStudyLightbox` click guard (`document`-capture `stopImmediatePropagation` on every excluded element, `button` included) killed the button's own React `onClick` before it ran. Fixed by the guard rewrite noted above (window-capture + preventDefault for interactive controls). Verified live on Motion Connect 2025 (scrollY → 0). This applies to every case-study page that carries the lightbox/controllers instance, so the button can be rolled out site-wide without per-page work.
 
@@ -518,11 +518,11 @@ The `All Projects` CMS collection (`yTHrQWMIY`) contains 17 real project records
 | 5 | Motion Connect 2025 | `motion-connect-2025` | 2025 | true |
 | 6 | National Park Playing Cards | `national-park-cards` | 2019 | true |
 | 7 | Yomo | `yomo` | 2024 | false |
-| 8 | Karuna | `karuna` | 2025 | false |
+| 8 | Highland Harvests | `highland-harvests` | 2024 | false |
 | 9 | Weaponized Innocence | `weaponized-innocence` | 2024 | false |
 | 10 | Wolff Olins x ArtCenter | `wolff-olins-x-artcenter` | 2024 | false |
 | 11 | Cellular Symphony | `cellular-symphony` | 2024 | false |
-| 12 | Seek Truth | `seek-truth` | 2024 | false |
+| 12 | Seek Truth | `seek-truth` | 2023 | false |
 | 13 | Independent Lens | `independent-lens` | 2023 | false |
 | 14 | TYPLDN | `typldn` | 2023 | false |
 | 15 | Rejuve | `rejuve` | 2025 | false |
@@ -555,7 +555,7 @@ June 1-2, 2026 thumbnail stroke and Home link/media fix: the current generated `
 
 June 18, 2026 Home tag-pill update: `HomeSelectedWorkGrid.tsx` reads Category 1/2/3 from `kuvJcmOFr`, `VV1CggU2J`, and `E6OpH0hSs` by default, exposed through the Framer `Tag Fields` property control. The visible pills are enabled by `Show Tags`, use the `Tags` color control defaulting to the existing Light Gray value (`rgb(151, 151, 151)`), and render in the same uppercase GT Standard Mono pill treatment used by the list/grid taxonomy surfaces: 13px on desktop, 12px on tablet, and 11px on the mobile/single-column breakpoint. Blank or duplicate category values are skipped, so CMS edits to project categories automatically update the Home selected-work pills after the generated CMS bundle refreshes.
 
-July 15, 2026 Gaia CMS/Home verification: Framer/browser checks verified that Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, `Thumbnail=https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png`, and `Thumbnail Video=https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4`. AirPods Pro 3, Gaia, Karuna, and Seek Truth currently have `Thumbnail Stroke` enabled; Gaia and AirPods are in the first six homepage-visible projects, while Karuna and Seek Truth are not.
+July 15, 2026 Gaia CMS/Home verification: Framer/browser checks verified that Gaia item `Qw6kG4fCG` has slug `gaia`, `Is Homepage=true`, `Thumbnail Stroke=true`, `Thumbnail=https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png`, and `Thumbnail Video=https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4`. AirPods Pro 3, Gaia, Highland Harvests, and Seek Truth currently have `Thumbnail Stroke` enabled; Gaia and AirPods are in the first six homepage-visible projects, while Highland Harvests and Seek Truth are not.
 
 ---
 
@@ -572,7 +572,7 @@ Home is a native Framer page whose selected-work section is now rendered by `Hom
 5. Motion Connect 2025
 6. National Park Playing Cards
 
-WhatsApp is homepage-flagged but outside the first six by sort order. Yomo, Karuna, and Weaponized Innocence are off Home because their Home flags are false.
+WhatsApp is homepage-flagged but outside the first six by sort order. Yomo, Highland Harvests, and Weaponized Innocence are off Home because their Home flags are false.
 
 The old native `AllProjects` / `CaseStudy` Home grid lost reliable per-item bindings and showed AirPods data over every row after hydration. Do not restore that native Home grid unless the section is intentionally rebuilt in the Framer editor with verified CMS bindings. `HomeSelectedWorkGrid.tsx` owns direct anchors, video-first CMS media rendering, the hover label, the `Thumbnail Stroke` visual fallback, the original 13px selected-work number/title styling, and the CMS Category 1/2/3 tag-pill row for the selected-work section.
 
@@ -651,7 +651,7 @@ The current page is an editorial forest-green profile page with selected experie
 
 ### Bespoke Case Study Pages
 
-Bespoke pages currently exist for all 17 CMS projects: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp. Peak Energy, Rejuve, Belly Bar, and WhatsApp are currently WIP shells behind `CaseStudyWorkInProgressGate`; Peak carries the source-of-truth snapshot content from the June 15 handoff, while the three newer shells carry CMS metadata only. Neon Lights and Aspen Valley Landscaping were removed from Framer because they are no longer in CMS.
+Bespoke pages currently exist for all 17 CMS projects: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Highland Harvests, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp. Peak Energy, Rejuve, Belly Bar, and WhatsApp are currently WIP shells behind `CaseStudyWorkInProgressGate`; Peak carries the source-of-truth snapshot content from the June 15 handoff, while the three newer shells carry CMS metadata only. Neon Lights and Aspen Valley Landscaping were removed from Framer because they are no longer in CMS.
 
 Case-study media row rule (June 7, 2026): when a desktop case-study body row has one, two, or three media items, keep those items in a single row at tablet and phone breakpoints. Prefer native Framer layout controls: horizontal Stack/Grid, wrapping off, and no large mobile `minWidth` on the media wrappers. For existing media-grid code component instances that expose a stacking threshold, keep `forceSingleRow` enabled and lower `stackBelow` to the minimum allowed value (`240`) instead of creating a new component.
 
@@ -722,7 +722,7 @@ May 26 visual QA against `https://khaki-ship-257706.framer.app` checked `/`, `/c
 
 June 1 stroke audit: published Home loaded `CaseStudyThumbnailStrokeStyles.DLdW5YsD.mjs` and `yTHrQWMIY.DrLdZk2a.mjs`; browser inspection showed the AirPods thumbnail had no generated overlay because the published helper looked only for `module.a`. Direct browser import of the same CMS module returned keys `n`, `r`, `t`, with AirPods `{ slug: "airpods", title: "AirPods Pro 3", stroke: true }` under `module.r`. The June 2 publish corrected the resolver shape and the Home selected-work rendering path.
 
-June 2 final MCP/browser verification: Framer project inventory reports 23 web pages, 2 design pages, 23 native components, 29 code components, 5 override files, and 2 CMS collections. `All Projects` reports 16 records. Targeted page XML checks covered Home, `/case-studies`, `/index`, `/case-studies/airpods`, and `/case-studies/karuna`. Published browser QA against `https://khaki-ship-257706.framer.app/` confirmed Home renders six distinct selected-work hrefs (`airpods`, `simon-schuster`, `gaia`, `national-park-cards`, `motion-connect-2025`, `yomo`), thumbnail and text clicks land on the correct case-study pages, image-only thumbnails render as images, AirPods and Motion Connect render video, the Home profile image links to `/info`, and LinkedIn links externally.
+June 2 final MCP/browser verification: Framer project inventory reports 23 web pages, 2 design pages, 23 native components, 29 code components, 5 override files, and 2 CMS collections. `All Projects` reports 16 records. Targeted page XML checks covered Home, `/case-studies`, `/index`, `/case-studies/airpods`, and `/case-studies/highland-harvests`. Published browser QA against `https://khaki-ship-257706.framer.app/` confirmed Home renders six distinct selected-work hrefs (`airpods`, `simon-schuster`, `gaia`, `national-park-cards`, `motion-connect-2025`, `yomo`), thumbnail and text clicks land on the correct case-study pages, image-only thumbnails render as images, AirPods and Motion Connect render video, the Home profile image links to `/info`, and LinkedIn links externally.
 
 July 15 current Home selected-work verification: after publishing `HomeSelectedWorkGrid.tsx` (`FecepLS`) hash `@Isb9487LDsf04M4kk1Me`, browser QA against `https://khaki-ship-257706.framer.app/` confirmed the current six-card order is Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon & Schuster, and National Park Playing Cards. Gaia, AirPods Pro 3, Peak Energy, and Motion Connect 2025 render real video elements from `Thumbnail Video` with CMS `Thumbnail` poster images underneath; Simon & Schuster and National Park Playing Cards render image-only cards. The selected-work number/title style is back to 13px uppercase mono.
 

@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.230Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/mental-models-playing-cards",
+  "items": [
+    {
+      "slug": "play-004",
+      "title": "Mental Models Playing Cards",
+      "order": 10,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/3mCQXfhRs1JSWtqoNeLKVN1ubs.jpg?width=1600&height=1200",
+      "sourcePath": "assets/Play/mental-models-playing-cards/source/play-play-004-poster-3mCQXfhRs1JSWtqoNeLKVN1ubs-original.jpg",
+      "originalBytes": 278084,
+      "originalWidth": 1600,
+      "originalHeight": 1200,
+      "outputPath": "assets/Play/mental-models-playing-cards/optimized/play-play-004-poster-3mCQXfhRs1JSWtqoNeLKVN1ubs-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 104952,
+      "outputWidth": 1600,
+      "outputHeight": 1200,
+      "savingsBytes": 173132,
+      "savingsPercent": 62.258885804289356
+    },
+    {
+      "slug": "play-004",
+      "title": "Mental Models Playing Cards",
+      "order": 10,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/DWgAnT3HtT7CC6Yavk6CyGUPJI.mp4",
+      "sourcePath": "assets/Play/mental-models-playing-cards/source/play-play-004-video-DWgAnT3HtT7CC6Yavk6CyGUPJI-original.mp4",
+      "originalBytes": 1310627,
+      "originalWidth": 1600,
+      "originalHeight": 1200,
+      "outputPath": "assets/Play/mental-models-playing-cards/optimized/play-play-004-DWgAnT3HtT7CC6Yavk6CyGUPJI-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 405759,
+      "outputWidth": 900,
+      "outputHeight": 676,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 5,
+      "savingsBytes": 904868,
+      "savingsPercent": 69.0408483878327
+    }
+  ]
+}

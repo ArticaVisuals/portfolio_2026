@@ -1,0 +1,40 @@
+{
+  "project": "Cellular Symphony",
+  "generated": "2026-07-23",
+  "encoding": {
+    "video": "H.264 MP4, libx264 slow preset, CRF 23, yuv420p, faststart, no audio",
+    "poster": "WebP quality 88, frame at 25% of source duration"
+  },
+  "verification": {
+    "ffprobe": "passed",
+    "faststart": "passed (moov atom precedes mdat)",
+    "visualContactSheet": "verification/cellular-symphony-related-card-EFH57Xrk0gMJ5lTzBoOuGYJqifI-source-vs-optimized.jpg"
+  },
+  "assets": [
+    {
+      "id": "EFH57Xrk0gMJ5lTzBoOuGYJqifI",
+      "role": "Cellular Symphony related-project card",
+      "sourceUrl": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+      "sourcePath": "../framer-staging/004-cellular-symphony-apple-devices-hd-best-quality.m4v",
+      "sourceRelation": "byte-identical to live Framer asset",
+      "source": {
+        "dimensions": "1920x1080",
+        "fps": 60,
+        "durationSeconds": 6.966667,
+        "bytes": 12010831
+      },
+      "videoPath": "videos/cellular-symphony-related-card-EFH57Xrk0gMJ5lTzBoOuGYJqifI-960x540-crf23.mp4",
+      "posterPath": "posters/cellular-symphony-related-card-EFH57Xrk0gMJ5lTzBoOuGYJqifI-960x540-q88.webp",
+      "output": {
+        "dimensions": "960x540",
+        "fps": 60,
+        "durationSeconds": 6.966667,
+        "bytes": 941276,
+        "savingsPercent": 92.16,
+        "ssim": 0.989494
+      },
+      "audio": "removed because related cards are muted autoplay",
+      "visualRisk": "Low. Output remains about 2x the observed card width and preserves the source's 60 fps."
+    }
+  ]
+}

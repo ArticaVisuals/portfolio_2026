@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.067Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/dandelion",
+  "items": [
+    {
+      "slug": "dandelion",
+      "title": "Dandelion",
+      "order": 46,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/U74pJzb0EdR84mZ5ZM9twfIQdm4.jpg?width=1920&height=1080",
+      "sourcePath": "assets/Play/dandelion/optimized/dandelion-poster-1920x1080-q3.jpg",
+      "originalBytes": 98994,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/dandelion/optimized/play-dandelion-poster-U74pJzb0EdR84mZ5ZM9twfIQdm4-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 39836,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": 59158,
+      "savingsPercent": 59.75917732387821
+    },
+    {
+      "slug": "dandelion",
+      "title": "Dandelion",
+      "order": 46,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/hjPaylncUvnvzh4F2jEPh6BSt5s.mp4",
+      "sourcePath": "assets/Play/dandelion/optimized/dandelion-first-5s-1920x1080-crf23-noaudio.mp4",
+      "originalBytes": 2064584,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/dandelion/optimized/play-dandelion-hjPaylncUvnvzh4F2jEPh6BSt5s-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 352225,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 5,
+      "savingsBytes": 1712359,
+      "savingsPercent": 82.9396624210979
+    }
+  ]
+}

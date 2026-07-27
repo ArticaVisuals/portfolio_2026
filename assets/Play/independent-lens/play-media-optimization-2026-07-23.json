@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:56.927Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/independent-lens",
+  "items": [
+    {
+      "slug": "play-017",
+      "title": "Independent Lens Film Series",
+      "order": 22,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/8CNWzwV9yOzqVW8OjNDz3HEZY.png?width=3227&height=4760",
+      "sourcePath": "assets/Play/independent-lens/source/play-017-image-independent-lens-poster-mockup.png",
+      "originalBytes": 3758287,
+      "originalWidth": 3227,
+      "originalHeight": 4760,
+      "outputPath": "assets/Play/independent-lens/optimized/play-play-017-poster-8CNWzwV9yOzqVW8OjNDz3HEZY-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 99578,
+      "outputWidth": 1085,
+      "outputHeight": 1600,
+      "savingsBytes": 3658709,
+      "savingsPercent": 97.35044183693262
+    }
+  ]
+}

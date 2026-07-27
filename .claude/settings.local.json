@@ -50,7 +50,24 @@
       "Bash(node code/tools/check-thumbnail-stroke-resolver.mjs)",
       "Bash(git commit -q -m 'Consolidate all code under code/ \\(Phase 4\\) *)",
       "Bash(node -e 'JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"code/mirror/manifest.json\",\"utf8\"\\)\\);console.log\\(\"manifest parses OK\"\\)')",
-      "Bash(git commit -q -m 'Dissolve redundant framer/ folder + finalize workspace map \\(Phase 5\\) *)"
+      "Bash(git commit -q -m 'Dissolve redundant framer/ folder + finalize workspace map \\(Phase 5\\) *)",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude-in-chrome__browser_batch",
+      "mcp__claude-in-chrome__navigate",
+      "Bash(node /Users/micahhoang/.claude/plugins/cache/openai-codex/codex/1.0.5/scripts/codex-companion.mjs task --write --background '<task> *)",
+      "mcp__claude-in-chrome__javascript_tool",
+      "Bash(curl -s -L --max-time 25 -A \"Mozilla/5.0 \\(iPhone; CPU iPhone OS 17_0 like Mac OS X\\) AppleWebKit/605.1.15\" https://zitafernandez.com/ -o zita.html)",
+      "Bash(grep -oiE '\\(100lvh|100svh|100dvh|100vh|inset:[^;\\\\\"]{0,20}|position:fixed|height:100%\\)' zita.html)",
+      "Bash(grep -oE \"#\\(\\\\\\\\\\\\$\\\\{BOOT_ID\\\\}|\\\\\"\\\\+BOOT_ID\\\\+\\\\\"\\)\\\\{position:fixed[^}]*\\\\}\" PageTransition.tsx)",
+      "Bash(montage /private/tmp/claude-501/-Users-micahhoang-My-Drive-Portfolio-2026/8ff298ee-5280-4c86-85c4-ea50aa42e6db/scratchpad/frames/f_*.jpg -tile 7x2 -geometry +4+4 -background white /private/tmp/claude-501/-Users-micahhoang-My-Drive-Portfolio-2026/8ff298ee-5280-4c86-85c4-ea50aa42e6db/scratchpad/frames/montage.jpg)",
+      "Bash(grep -oE \"#\\(\\\\\\\\\\\\$\\\\{BOOT_ID\\\\}|\\\\\"\\\\+BOOT_ID\\\\+\\\\\"\\)\\\\{position:fixed![^}]*\\\\}\" PageTransition.tsx)",
+      "Bash(curl -s -L --max-time 25 \"https://micahhoang.com/?cb=verify5\" -o live.html)",
+      "Bash(grep -oE \"#\\\\\\\\\\\\$\\\\{BOOT_ID\\\\}\\\\{position:fixed![^}]*\\\\}\" code/components/PageTransition.tsx)",
+      "Bash(curl -s -L --max-time 25 -A \"Mozilla/5.0 \\(iPhone; CPU iPhone OS 17_0 like Mac OS X\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/17.0 Mobile/15E148 Safari/604.1\" https://zitafernandez.com/ -o zita2.html)",
+      "Bash(curl -s -L --max-time 30 \"https://cdn.prod.website-files.com/68f5e7e733480946aa936748/css/zita-fernandez-full.webflow.shared.a6339face.css\" -o z.css)",
+      "Bash(grep -o '.\\\\{0,20\\\\}loader_wrap.\\\\{0,220\\\\}' z.css)",
+      "Bash(awk '/^\\\\.loader_\\(wrap|bg|contain|bg_bar\\) *\\\\{/,/^\\\\}/' z.css)",
+      "Bash(curl -s -L --max-time 25 \"https://micahhoang.com/?cb=verify6\" -o live2.html)"
     ]
   }
 }

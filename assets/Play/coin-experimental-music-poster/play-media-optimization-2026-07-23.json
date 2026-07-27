@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.370Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/coin-experimental-music-poster",
+  "items": [
+    {
+      "slug": "coin-experimental-music-poster",
+      "title": "COIN Experimental Music Poster",
+      "order": 43,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/nD4G12U57zeyr6XY5bamHFWjU.jpg?width=1080&height=1620",
+      "sourcePath": "assets/Play/coin-experimental-music-poster/coin-experimental-music-poster-poster-1080x1620.jpg",
+      "originalBytes": 226913,
+      "originalWidth": 1080,
+      "originalHeight": 1620,
+      "outputPath": "assets/Play/coin-experimental-music-poster/optimized/play-coin-experimental-music-poster-poster-nD4G12U57zeyr6XY5bamHFWjU-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 102892,
+      "outputWidth": 1067,
+      "outputHeight": 1600,
+      "savingsBytes": 124021,
+      "savingsPercent": 54.65574911970668
+    },
+    {
+      "slug": "coin-experimental-music-poster",
+      "title": "COIN Experimental Music Poster",
+      "order": 43,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/4vzvZ9AO0FRErsIsC0APIBaGZs.mp4",
+      "sourcePath": "assets/Play/coin-experimental-music-poster/coin-experimental-music-poster-loop-1080x1620.mp4",
+      "originalBytes": 1157350,
+      "originalWidth": 1080,
+      "originalHeight": 1620,
+      "outputPath": "assets/Play/coin-experimental-music-poster/optimized/play-coin-experimental-music-poster-4vzvZ9AO0FRErsIsC0APIBaGZs-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 280448,
+      "outputWidth": 600,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 3,
+      "savingsBytes": 876902,
+      "savingsPercent": 75.76809089730851
+    }
+  ]
+}

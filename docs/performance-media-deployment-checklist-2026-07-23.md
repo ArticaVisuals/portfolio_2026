@@ -53,7 +53,7 @@ Implemented behavior:
 
 ## Step 2 — P0 media replacements, in this order
 
-### 1. Highland Harvests / Karuna
+### 1. Highland Harvests
 
 - [ ] Replace the two live MOV/M4V sources with the optimized H.264 MP4 files.
 - [ ] Attach the paired native WebP posters.

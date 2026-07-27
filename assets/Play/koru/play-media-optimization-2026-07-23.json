@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.175Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/koru",
+  "items": [
+    {
+      "slug": "play-016",
+      "title": "Kōru",
+      "order": 21,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/HmcBYmfsMX5xHJkiM9Xq3q5n78.png?width=1062&height=739",
+      "sourcePath": "assets/Play/koru/source/play-play-016-poster-HmcBYmfsMX5xHJkiM9Xq3q5n78-original.png",
+      "originalBytes": 271854,
+      "originalWidth": 1062,
+      "originalHeight": 739,
+      "outputPath": "assets/Play/koru/optimized/play-play-016-poster-HmcBYmfsMX5xHJkiM9Xq3q5n78-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 82630,
+      "outputWidth": 1062,
+      "outputHeight": 739,
+      "savingsBytes": 189224,
+      "savingsPercent": 69.60500857077696
+    },
+    {
+      "slug": "play-016",
+      "title": "Kōru",
+      "order": 21,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/eUl5VcVCKhrPG02z9KstmLZheA.mp4",
+      "sourcePath": "assets/Play/koru/source/play-play-016-video-eUl5VcVCKhrPG02z9KstmLZheA-original.mp4",
+      "originalBytes": 1283667,
+      "originalWidth": 1500,
+      "originalHeight": 1000,
+      "outputPath": "assets/Play/koru/optimized/play-play-016-eUl5VcVCKhrPG02z9KstmLZheA-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 374424,
+      "outputWidth": 900,
+      "outputHeight": 600,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 5,
+      "savingsBytes": 909243,
+      "savingsPercent": 70.831687657313
+    }
+  ]
+}

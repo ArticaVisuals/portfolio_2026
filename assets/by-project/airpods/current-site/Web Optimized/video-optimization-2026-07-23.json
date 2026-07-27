@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-07-23",
+  "project": "AirPods Pro 3",
+  "settings": {
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "preset": "slow",
+    "crf": "23-24",
+    "audio": "removed",
+    "faststart": true,
+    "frameRate": "preserved",
+    "posters": "reused existing project posters"
+  },
+  "totals": {
+    "items": 9,
+    "sourceBytes": 51084940,
+    "outputBytes": 14485420,
+    "savedBytes": 36599520,
+    "savingsPercent": 71.6
+  },
+  "items": [
+    {
+      "id": "001-reveal",
+      "liveUrl": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/001-airpods-pro-3-reveal-4k.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/001-airpods-pro-3-reveal-4k-1600-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/14-airpods-iedehtbqcl66mhv5mkpccljeb0-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1600x900",
+      "durationSeconds": 24.024,
+      "sourceBytes": 5777945,
+      "outputBytes": 4190683,
+      "savingsPercent": 27.5,
+      "status": "encoded"
+    },
+    {
+      "id": "002-introduction",
+      "liveUrl": "https://framerusercontent.com/assets/JmkOmLQq5rmvERShZfiFP7M.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/002-airpods-pro-3-introduction.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/002-airpods-pro-3-introduction-1400-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/15-airpods-jmkomlqq5rmvershzfifp7m-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 10.543867,
+      "sourceBytes": 8873825,
+      "outputBytes": 1086818,
+      "savingsPercent": 87.8,
+      "status": "encoded"
+    },
+    {
+      "id": "003-introduction-1",
+      "liveUrl": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/003-airpods-pro-3-introduction-1.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/003-airpods-pro-3-introduction-1-1600-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/17-airpods-ynobrp88otyxge9m0rfdnyidpm-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1600x900",
+      "durationSeconds": 9.7097,
+      "sourceBytes": 1722354,
+      "outputBytes": 340930,
+      "savingsPercent": 80.2,
+      "status": "encoded"
+    },
+    {
+      "id": "005-large-animation",
+      "liveUrl": "https://framerusercontent.com/assets/HflTOYDNzce3QfCEbZ0bji7HCU.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/005-airpods-pro-large-animation.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/005-airpods-pro-large-animation-1400-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/16-airpods-hfltoydnzce3qfcebz0bji7hcu-poster.jpg",
+      "sourceDimensions": "3600x2100",
+      "outputDimensions": "1400x816",
+      "durationSeconds": 7.5,
+      "sourceBytes": 9432075,
+      "outputBytes": 1478258,
+      "savingsPercent": 84.3,
+      "status": "encoded"
+    },
+    {
+      "id": "006-introduction-2",
+      "liveUrl": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/006-airpods-pro-3-introduction-2.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/006-airpods-pro-3-introduction-2-1400-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/18-airpods-kwt4oi40orarfxzaiqujvjgxmk-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 12.746067,
+      "sourceBytes": 7835043,
+      "outputBytes": 549632,
+      "savingsPercent": 93.0,
+      "status": "encoded"
+    },
+    {
+      "id": "007-budtip",
+      "liveUrl": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/007-budtip.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/007-budtip-1400-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/19-airpods-7puys1apbggwixd227rduczcf00-poster.jpg",
+      "sourceDimensions": "3840x2160",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 7.4074,
+      "sourceBytes": 1232016,
+      "outputBytes": 416703,
+      "savingsPercent": 66.2,
+      "status": "encoded"
+    },
+    {
+      "id": "009-animation-2",
+      "liveUrl": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/009-airpods-pro-animation_2.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/009-airpods-pro-animation-2-1400-crf24-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/20-airpods-d6e9mqjzqxmfkiqwm3iyl2x9a-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 2.5,
+      "sourceBytes": 4302847,
+      "outputBytes": 100284,
+      "savingsPercent": 97.7,
+      "status": "encoded"
+    },
+    {
+      "id": "010-logo-animation",
+      "liveUrl": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/010-logoanimation.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/010-logoanimation-1400-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/21-airpods-ctvysnqbrzqd3hmzg5jd1jbxghs-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 2.466667,
+      "sourceBytes": 348139,
+      "outputBytes": 322095,
+      "savingsPercent": 7.5,
+      "status": "encoded"
+    },
+    {
+      "id": "014-introducing-airpods",
+      "liveUrl": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+      "sourcePath": "assets/by-project/airpods/current-site/014-introducing-airpods-pro-3-apple.mp4",
+      "publishedSourcePath": "assets/by-project/airpods/current-site/015-live-rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+      "outputPath": "assets/by-project/airpods/current-site/Web Optimized/videos/014-introducing-airpods-pro-3-live-video-copy-noaudio-faststart.mp4",
+      "posterPath": "assets/by-project/airpods/video-posters/22-airpods-rmxyg0omltneujjr0gifdkaolu-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1920x1080",
+      "durationSeconds": 47.933008,
+      "sourceBytes": 11560696,
+      "publishedSourceBytes": 6568061,
+      "outputBytes": 6000017,
+      "savingsPercent": 48.1,
+      "status": "published_h264_video_stream_reused_audio_removed"
+    }
+  ],
+  "verification": {
+    "ffprobe": "all 9 outputs are H.264/yuv420p with zero audio streams",
+    "representativeFrameSsim": {
+      "001-reveal": 0.992501,
+      "005-large-animation": 0.990562
+    },
+    "qcFolder": "assets/by-project/airpods/current-site/Web Optimized/qc"
+  }
+}

@@ -85,7 +85,9 @@ const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout-v2"
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const MEDIA_SKELETON_STYLE_ID = "case-study-media-skeleton-v1"
 const MEDIA_SKELETON_COLOR = "rgba(255, 255, 255, 0.6)"
-const MEDIA_SKELETON_SELECTOR = "img, video, iframe"
+// Cross-origin embeds own their loading UI; a missed iframe load event must
+// never leave an otherwise-ready player hidden behind the global skeleton.
+const MEDIA_SKELETON_SELECTOR = "img, video"
 const MEDIA_SKELETON_STATE_ATTR = "data-case-study-media-state"
 // Framer's native video layer is 16:9 until metadata arrives. Most case-study
 // social video rows are portrait, so this prevents first-boot row collapse.

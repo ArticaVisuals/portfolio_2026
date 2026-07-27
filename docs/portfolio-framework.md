@@ -34,9 +34,9 @@ The site's job is to make this read effortless. The work itself is strong enough
 
 | Target | What they need to see | How the positioning serves them |
 |---|---|---|
-| **Apple Identity, Anthropic, Google** | High craft, systemic thinking, clear point of view | "Brand designer" is the right category; the AirPods work, Simon & Schuster, and Karuna prove the craft bar; Yomo and Gaia quietly show the technical range they care about |
+| **Apple Identity, Anthropic, Google** | High craft, systemic thinking, clear point of view | "Brand designer" is the right category; the AirPods work, Simon & Schuster, and Highland Harvests prove the craft bar; Yomo and Gaia quietly show the technical range they care about |
 | **High-craft, high-speed startups** | Range, velocity, AI fluency, shipping ability | Gaia + National Park Playing Cards + AI side projects demonstrate the ship-things-in-the-world sensibility; the site itself being AI-native built is a second proof |
-| **Studios (Mouthwash, Koto, Some Days, New Co.)** | Clear categorical fit, craft, taste | "Brand designer" is the hire box they staff for; Simon & Schuster, Karuna, Weaponized Innocence prove the editorial/craft sensibility |
+| **Studios (Mouthwash, Koto, Some Days, New Co.)** | Clear categorical fit, craft, taste | "Brand designer" is the hire box they staff for; Simon & Schuster, Highland Harvests, and Weaponized Innocence prove the editorial/craft sensibility |
 
 The portfolio prioritizes Target 1 in the curation order, because work that lands Target 1 also satisfies 2 and 3. The reverse isn't true.
 
@@ -73,14 +73,14 @@ The order is a deliberate argument. Each visible Home card earns its slot and re
 |---|---|---|---|
 | 1 | **Gaia** | Full-scope rebrand + product redesign, AI-native build. Signals where design is going. | 1, 2 |
 | 2 | **AirPods Pro 3** | Highest credential. Reframes everything below. | 1, 2 |
-| 3 | **Peak Energy** | Newly added homepage project. WIP-gated bespoke shell exists with NDA-safe Peak Energy x GM handoff details; final public story still needs clearance. | TBD |
+| 3 | **Peak Energy** | Newly added homepage project. WIP-gated bespoke shell exists with NDA-safe Peak Energy & GM handoff details; final public story still needs clearance. | TBD |
 | 4 | **Simon & Schuster** | Concept rebrand grounded in real strategic context. Proves brand craft and systemic thinking. Fonts in Use. | 1, 3 |
 | 5 | **Motion Connect 2025** | Event identity and motion system. Adds current ArtCenter/community signal and kinetic range. | 2, 3 |
 | 6 | **National Park Playing Cards** | Entrepreneurial, shipped, human. 20K copies, REI/National Park retail. Store-count copy needs final confirmation. | 2, 3 |
 
-**Home query nuance:** WhatsApp has `Is Homepage` set to `true`, but it is not visible in the first six Home cards because the query stops at the first six homepage-flagged records by sort order. Yomo, Karuna, and Weaponized Innocence are currently off Home because their `Is Homepage` flags are `false`. To change Home curation, update both the CMS flag and sort order, then verify the six-item query.
+**Home query nuance:** WhatsApp has `Is Homepage` set to `true`, but it is not visible in the first six Home cards because the query stops at the first six homepage-flagged records by sort order. Yomo, Highland Harvests, and Weaponized Innocence are currently off Home because their `Is Homepage` flags are `false`. To change Home curation, update both the CMS flag and sort order, then verify the six-item query.
 
-**Explicitly off the current Home grid:** Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp. Neon Lights, Aspen Valley Landscaping, and John Steinbeck are no longer in CMS; Neon/Aspen's old bespoke Framer routes were deleted during the June 15 parity pass. Current Home visibility is governed by the CMS/query state above.
+**Explicitly off the current Home grid:** Yomo, Highland Harvests, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp. Neon Lights, Aspen Valley Landscaping, and John Steinbeck are no longer in CMS; Neon/Aspen's old bespoke Framer routes were deleted during the June 15 parity pass. Current Home visibility is governed by the CMS/query state above.
 
 **Deleted from CMS:** all Jacob Turner sample/template records, including Vern Carter, Iris Wade, Orion Ventures, Echoes, Iconic, Adapting Literature, Genre Evolution, Digital Disruption, Connections, Capturing the Essence, Beyond the Frame, and Harmony in Motion.
 
@@ -91,7 +91,7 @@ Not every homepage project needs the same depth. A uniform depth requirement is 
 - **Tier 1 — Full case study pages** (3 projects): AirPods Pro 3, Simon & Schuster, Gaia.
   These earn the hire. Editorial scroll, process, decisions, specific contribution, outcome. 1500–2500 words per page, heavily image-led.
 
-- **Tier 2 — Visual showcase + context** (5 projects): National Park Playing Cards, Motion Connect 2025, Yomo, Karuna, Weaponized Innocence.
+- **Tier 2 — Visual showcase + context** (5 projects): National Park Playing Cards, Motion Connect 2025, Yomo, Highland Harvests, and Weaponized Innocence.
   One rich page, minimal copy, lots of imagery, a clear frame of the problem and outcome. The work carries the weight. Weaponized Innocence remains Tier 2 due to Fonts in Use recognition and editorial depth that serves Target 3 (studios).
 
 - **Archive/editorial records needing a final depth decision**: Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp.
@@ -134,7 +134,7 @@ As of the June 15 audit, the `All Projects` CMS collection contains 17 real proj
 - **Secondary CMS collection still present:** `Journal`, collection ID `SyZTxPxeY`. No visible Journal page exists in the current project structure; ignore it unless Micah explicitly asks to revive journal content.
 - **Visible on CMS-backed Home:** Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards
 - **Homepage-flagged but not visible because of the six-item query limit:** WhatsApp
-- **Strategic Tier 2 but currently off Home:** Yomo, Karuna, Weaponized Innocence
+- **Strategic Tier 2 but currently off Home:** Yomo, Highland Harvests, Weaponized Innocence
 - **Archive/off-Home:** Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar
 - **Removed from CMS and deleted from Framer bespoke routes:** Neon Lights, Aspen Valley Landscaping
 - **Live `/case-studies` route:** page ID `Rnw1WO1jS`, a case-study index rendered with the native Framer `Case Studies Filter` component. The `NumberCounter` prop should be updated to `17` before publishing the current CMS roster.
@@ -203,7 +203,7 @@ micahhoang.com
 │   ├── /case-studies/national-park-cards   [Tier 2 — visual showcase]
 │   ├── /case-studies/motion-connect-2025   [Tier 2 — visual showcase]
 │   ├── /case-studies/yomo                  [Tier 2 — visual showcase]
-│   ├── /case-studies/karuna                [Tier 2 — visual showcase]
+│   ├── /case-studies/highland-harvests     [Tier 2 — visual showcase]
 │   ├── /case-studies/weaponized-innocence  [Tier 2 — visual showcase]
 │   ├── /case-studies/seek-truth            [Archive/editorial pending depth decision]
 │   ├── /case-studies/independent-lens      [Archive/editorial pending depth decision]
@@ -362,7 +362,7 @@ These are resolved decisions and current implementation notes. Treat them as sou
   `micahhoang.com`; Framer staging remains
   `khaki-ship-257706.framer.app`.
 - ~~**CMS cleanup.**~~ ✅ Resolved. The Jacob Turner sample projects were permanently deleted from the `All Projects` CMS collection. The collection now contains 17 real Micah projects after the June 15 roster update.
-- ~~**Per-project thumbnail stroke.**~~ ✅ Resolved. `All Projects` has a `Thumbnail Stroke` Boolean (`OHdUYs6Mo`), currently on for Gaia, AirPods Pro 3, Karuna, and Seek Truth. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) owns the visible 1px Light Gray stroke from CMS in native/media contexts, while `HomeSelectedWorkGrid.tsx` mirrors that field for the Home selected-work cards. The native Framer `Case Study` component also has a real overlay frame inside `ImageWrapper` so the CMS-driven stroke can be visible in the editor canvas; no `CardStroke` variants should be reintroduced. June 1-15 note: the helper and Home grid handle Framer's current generated CMS module export shape (`r` instead of legacy `a`) and function-shaped exports.
+- ~~**Per-project thumbnail stroke.**~~ ✅ Resolved. `All Projects` has a `Thumbnail Stroke` Boolean (`OHdUYs6Mo`), currently on for Gaia, AirPods Pro 3, Highland Harvests, and Seek Truth. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) owns the visible 1px Light Gray stroke from CMS in native/media contexts, while `HomeSelectedWorkGrid.tsx` mirrors that field for the Home selected-work cards. The native Framer `Case Study` component also has a real overlay frame inside `ImageWrapper` so the CMS-driven stroke can be visible in the editor canvas; no `CardStroke` variants should be reintroduced. June 1-15 note: the helper and Home grid handle Framer's current generated CMS module export shape (`r` instead of legacy `a`) and function-shaped exports.
 
 ---
 

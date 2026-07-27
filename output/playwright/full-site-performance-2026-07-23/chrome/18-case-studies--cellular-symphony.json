@@ -1,0 +1,365 @@
+{
+  "target": "https://micahhoang.com/case-studies/cellular-symphony",
+  "auditedAt": "2026-07-23T19:56:18.270Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/cellular-symphony",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 7106,
+  "title": "Cellular Symphony 3D Motion - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/cellular-symphony",
+  "bodyTextLength": 1605,
+  "domNodes": 424,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 0
+  },
+  "timing": {
+    "ttfbMs": 48.5,
+    "responseStartMs": 246.90000000596046,
+    "domContentLoadedMs": 543.0999999940395,
+    "loadMs": 1095.7000000029802,
+    "firstPaintMs": 328,
+    "fcpMs": 328,
+    "lcpMs": 328,
+    "lcpUrl": "",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 123,
+    "longTaskMaxMs": 123
+  },
+  "media": {
+    "images": {
+      "total": 22,
+      "withSource": 22,
+      "complete": 9,
+      "ready": 9,
+      "broken": 0,
+      "incomplete": 13,
+      "lazy": 13
+    },
+    "videos": {
+      "total": 1,
+      "withSource": 1,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 1,
+      "playing": 0,
+      "autoplayTotal": 1,
+      "autoplayPlaying": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 2,
+      "withSource": 2
+    }
+  },
+  "network": {
+    "requestCount": 79,
+    "failedRequestCount": 0,
+    "totalBytes": 3115847,
+    "totalsByType": {
+      "Document": {
+        "requests": 3,
+        "bytes": 29687,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 422773,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 18,
+        "bytes": 316686,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132777,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 173976,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 1,
+        "bytes": 2037517,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1998,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2037517,
+        "durationMs": 139,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117189,
+        "durationMs": 74,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63586,
+        "durationMs": 240,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49793,
+        "durationMs": 58,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45439,
+        "durationMs": 51,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33802,
+        "durationMs": 207,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ZUrXNdcJocPWJF6jCmu0QBr2yEs.webp?width=1280&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 32165,
+        "durationMs": 33,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29723,
+        "durationMs": 49,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/case-studies/cellular-symphony",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29687,
+        "durationMs": 301,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29544,
+        "durationMs": 49,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28185,
+        "durationMs": 30,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27589,
+        "durationMs": 105,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27409,
+        "durationMs": 105,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/jNt2F4OJpuD7l5Zgep83qO21E.png?width=886&height=469",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 27320,
+        "durationMs": 40,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ZMN2baH0vA3jtsREKpmAU2ho.png?width=883&height=468",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 25781,
+        "durationMs": 35,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/case-studies",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 22388,
+        "durationMs": 50,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/case-studies",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 22186,
+        "durationMs": 55,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/h7K2I3Y5dmH5SMhRnKMCJ58yI.png?scale-down-to=512&width=829&height=461",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 21351,
+        "durationMs": 235,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/vuObjZqAieMwG4qnclV3mnfZO2I.png?width=883&height=468",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 20979,
+        "durationMs": 61,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/qOCbHnfhMoi1uQxnhELSzSlxko.png?scale-down-to=512&width=829&height=461",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 20824,
+        "durationMs": 242,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 ()"
+      },
+      {
+        "type": "error",
+        "text": "%c%d font-size:0;color:transparent NaN"
+      },
+      {
+        "type": "error",
+        "text": "%c%d font-size:0;color:transparent NaN"
+      }
+    ],
+    "consoleWarnings": [
+      {
+        "type": "warning",
+        "text": "Allow attribute will take precedence over 'allowfullscreen'."
+      },
+      {
+        "type": "warning",
+        "text": "[Cloudflare Turnstile] Turnstile has already been rendered in this container. The render attempt was rejected."
+      },
+      {
+        "type": "warning",
+        "text": "OTS parsing error: Size of decompressed WOFF 2.0 is less than compressed size"
+      },
+      {
+        "type": "warning",
+        "text": "%c%d font-size:0;color:transparent NaN"
+      },
+      {
+        "type": "warning",
+        "text": "%c%d font-size:0;color:transparent NaN"
+      },
+      {
+        "type": "warning",
+        "text": "[Cloudflare Turnstile] Error: 600010."
+      }
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://hagen.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a1fd3f404f243434/C0g.k5oYyQs05YkUVTyG6PIzDkH0lFygORGEu2J4dTY-1784836572-1.2.1.1-jWLrtioVdS7xlTDGqs2iji8t3TC66wF.ri04pwv40f1RvXPTLk_ted3Eb1izWbvm",
+        "resourceType": "fetch",
+        "error": "net::ERR_ABORTED"
+      }
+    ]
+  },
+  "route": "/case-studies/cellular-symphony",
+  "artifactSlug": "case-studies--cellular-symphony"
+}

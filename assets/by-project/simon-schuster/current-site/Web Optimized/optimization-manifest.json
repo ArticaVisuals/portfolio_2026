@@ -1,0 +1,167 @@
+{
+  "project": "Simon & Schuster",
+  "generatedAt": "2026-07-23T20:44:11Z",
+  "scope": "Reuse the existing 2400px derivatives for the two flagged high-resolution stills and add max-900 H.264/WebP replacements for the three live animated GIFs.",
+  "outputDirectory": "current-site/Web Optimized",
+  "settings": {
+    "video": {
+      "maxDimension": 900,
+      "codec": "H.264 High",
+      "crf": 22,
+      "preset": "slow",
+      "pixelFormat": "yuv420p",
+      "audio": "none",
+      "fastStart": true
+    },
+    "poster": {
+      "maxDimension": 900,
+      "format": "webp",
+      "quality": 88,
+      "kernel": "lanczos3"
+    }
+  },
+  "counts": {
+    "reusedStillDerivatives": 2,
+    "newVideoDerivatives": 3,
+    "newPosterDerivatives": 3
+  },
+  "totals": {
+    "reusedStills": {
+      "beforeBytes": 31303819,
+      "afterBytes": 1449615,
+      "savedBytes": 29854204,
+      "reductionPercent": 95.37
+    },
+    "gifToMp4": {
+      "beforeBytes": 11139613,
+      "afterBytes": 499404,
+      "savedBytes": 10640209,
+      "reductionPercent": 95.52
+    },
+    "newPostersBytes": 115570,
+    "auditedSetIncludingPosters": {
+      "beforeBytes": 42443432,
+      "afterBytes": 2064589,
+      "savedBytes": 40378843,
+      "reductionPercent": 95.13
+    }
+  },
+  "reusedStillDerivatives": [
+    {
+      "source": "093-voyager-imprint.png",
+      "output": "Web Optimized/093-voyager-imprint.webp",
+      "before": {
+        "width": 3111,
+        "height": 2333,
+        "bytes": 14806939,
+        "sha256": "958c5627c639bf032663392ec006b71a5ed39e5fe2b105b81c11219b577e0cae"
+      },
+      "after": {
+        "width": 2400,
+        "height": 1800,
+        "bytes": 888806,
+        "sha256": "73b71f55ebe3a4f0d7357ff1ae0383688a7f356ade6d3f034909d67076e8f9f8"
+      }
+    },
+    {
+      "source": "094-_dsc4434-2.jpg",
+      "output": "Web Optimized/094-_dsc4434-2.jpg",
+      "before": {
+        "width": 6000,
+        "height": 4000,
+        "bytes": 16496880,
+        "sha256": "5d107e2a0598e99033b7e1a8b6128454e16c5bcc3e831a31d36b3d32a169f270"
+      },
+      "after": {
+        "width": 2400,
+        "height": 1600,
+        "bytes": 560809,
+        "sha256": "939edd558b97ba857e3aef161bd2a016395d7190d77be54d699500920d3a3e6b"
+      }
+    }
+  ],
+  "animatedGifDerivatives": [
+    {
+      "source": "075-postcard-mockup.gif",
+      "before": {
+        "width": 1920,
+        "height": 1440,
+        "frames": 6,
+        "durationSeconds": 6,
+        "bytes": 2847890,
+        "sha256": "b1c047358b0c39ada75bf9484d327c2bd4830de149b14554543d3c30d5c20477"
+      },
+      "video": {
+        "output": "Web Optimized/075-postcard-mockup-max900-h264-crf22.mp4",
+        "width": 900,
+        "height": 676,
+        "frames": 6,
+        "durationSeconds": 6,
+        "bytes": 234029,
+        "sha256": "32529d007a6dca5eadc47ce8a4b5135069ae7a209f6c28f88ab34c9d7315b720"
+      },
+      "poster": {
+        "output": "Web Optimized/075-postcard-mockup-max900-poster-q88.webp",
+        "width": 900,
+        "height": 675,
+        "bytes": 19208,
+        "sha256": "01b6137e8f5e8a050b365e2a76a8ccae07051d1139fa1fee3a3ee5c9be1fa66a"
+      }
+    },
+    {
+      "source": "080-ezgif.com-animated-gif-maker.gif",
+      "before": {
+        "width": 1920,
+        "height": 1280,
+        "frames": 7,
+        "durationSeconds": 7,
+        "bytes": 7708303,
+        "sha256": "0841feb0361163433627c81676704d3a35480410b560d20dd57b45ca474c4926"
+      },
+      "video": {
+        "output": "Web Optimized/080-ezgif.com-animated-gif-maker-max900-h264-crf22.mp4",
+        "width": 900,
+        "height": 600,
+        "frames": 7,
+        "durationSeconds": 7,
+        "bytes": 237567,
+        "sha256": "d56d38922673a9e012c352d1c38afb91e0d3ae489390607fde513ea0af4fbd23"
+      },
+      "poster": {
+        "output": "Web Optimized/080-ezgif.com-animated-gif-maker-max900-poster-q88.webp",
+        "width": 900,
+        "height": 600,
+        "bytes": 82472,
+        "sha256": "35283984f2aab5a60133b9d39d152058670e2aa659d26eba776495344dd195b4"
+      }
+    },
+    {
+      "source": "084-ezgif.com-animated-gif-maker.gif",
+      "before": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 4,
+        "durationSeconds": 4,
+        "bytes": 583420,
+        "sha256": "9285701d4b358245bea4b6389c29113d9e038fb2a95773925ef097c42285b46d"
+      },
+      "video": {
+        "output": "Web Optimized/084-ezgif.com-animated-gif-maker-max900-h264-crf22.mp4",
+        "width": 900,
+        "height": 506,
+        "frames": 4,
+        "durationSeconds": 4,
+        "bytes": 27808,
+        "sha256": "e5b61b78826a0d4f26ab29597d395d57c2d88903d0c1e9f48df3e49b4c7695cd"
+      },
+      "poster": {
+        "output": "Web Optimized/084-ezgif.com-animated-gif-maker-max900-poster-q88.webp",
+        "width": 900,
+        "height": 506,
+        "bytes": 13890,
+        "sha256": "048a284e642347979a81c2d3d2b5d659ff704e3e89ebf55b83b0462e01c9f3d7"
+      }
+    }
+  ],
+  "sourcePolicy": "All source files and the pre-existing optimized derivatives were left untouched."
+}

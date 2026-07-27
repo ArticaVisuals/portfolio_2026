@@ -29,7 +29,7 @@
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/CaseStudyControllers.tsx",
       "bytes": 23211,
-      "sha256": "78e1959e7f48c597aa2bdf89f0d59a72d9b06309470eaa03576649ea6ee55752"
+      "sha256": "2fae3d736a6085ed8c0fe70630ea0a7e978ad57edad73c858ce27479945f7a44"
     },
     {
       "codeFileId": "c0iPrbN",
@@ -46,8 +46,8 @@
       "role": "Page-level case-study lightbox",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/CaseStudyLightbox.tsx",
-      "bytes": 81304,
-      "sha256": "72c819150cea336e298d509b9bd549bdf3ffef24b224cef267ba4e590fb5fc3f"
+      "bytes": 81449,
+      "sha256": "1eff8cc699d9e5e8d7e5b0d46f9aebf849a35fb38529995b267e88ed9ecd5bc1"
     },
     {
       "codeFileId": "y6ny5x4",
@@ -154,8 +154,8 @@
       "role": "Site-wide paragraph pretty-wrap helper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ParagraphPrettyWrap.tsx",
-      "bytes": 12766,
-      "sha256": "51b22cfdd21edec0da204e65833d3fe8e19091d90634528890aff5db5a1f1f25"
+      "bytes": 12984,
+      "sha256": "90094f9b162733fa9ac1b17ee09358f66d6ffbd9145c737409ab87fa3fa2e65c"
     },
     {
       "codeFileId": "xDqfenf",
@@ -163,8 +163,8 @@
       "role": "Footer compatibility host and ParagraphPrettyWrap fallback",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ResumeAssetHost.tsx",
-      "bytes": 10745,
-      "sha256": "6f8ca481c958389759afc6c05b861b307b5eaffb4a7a3b643856a22415df1da3"
+      "bytes": 11084,
+      "sha256": "85ee222db0e11b189074d6475d1a7d4589750896505c6d803814031b7ddc75b8"
     },
     {
       "codeFileId": "PN1RVOf",

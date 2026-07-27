@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-07-23",
+  "project": "National Park Playing Cards",
+  "settings": {
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "preset": "slow for re-encoded clips",
+    "crf": 23,
+    "audio": "removed",
+    "faststart": true,
+    "frameRate": "preserved",
+    "posters": "reused existing project posters"
+  },
+  "totals": {
+    "items": 7,
+    "sourceBytes": 23178824,
+    "outputBytes": 13987022,
+    "savedBytes": 9191802,
+    "savingsPercent": 39.7
+  },
+  "items": [
+    {
+      "id": "003-all-cards",
+      "liveUrl": "https://freight.cargo.site/t/original/i/J1542517319778170274194483566101/All-Cards-Animation_1.mp4",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/003-all-cards-animation_1.mp4",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/003-all-cards-animation-1400-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/41-national-park-cards-all-cards-animation-1-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 24.5245,
+      "sourceBytes": 3190383,
+      "outputBytes": 441402,
+      "savingsPercent": 86.2,
+      "status": "encoded"
+    },
+    {
+      "id": "006-joker",
+      "liveUrl": "https://freight.cargo.site/t/original/i/J1543046243473909932978774201877/Joker-Animation-2.mp4",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/006-joker-animation-2.mp4",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/006-joker-animation-2-1400-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/42-national-park-cards-joker-animation-2-poster.jpg",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1400x788",
+      "durationSeconds": 2.002,
+      "sourceBytes": 229511,
+      "outputBytes": 24279,
+      "savingsPercent": 89.4,
+      "status": "encoded"
+    },
+    {
+      "id": "013-reel",
+      "liveUrl": "https://freight.cargo.site/t/original/i/G1540917371720490845266153559573/National-Park-Reel.mp4",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/013-national-park-reel.mp4",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/013-national-park-reel-720x1280-video-copy-noaudio-faststart.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/43-national-park-cards-national-park-reel-poster.jpg",
+      "sourceDimensions": "720x1280",
+      "outputDimensions": "720x1280",
+      "durationSeconds": 9.466667,
+      "sourceBytes": 1494250,
+      "outputBytes": 1391957,
+      "savingsPercent": 6.8,
+      "status": "source_h264_video_stream_reused_audio_removed"
+    },
+    {
+      "id": "014-nppc-video",
+      "liveUrl": "https://framerusercontent.com/assets/bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/014-nppc-video.mov",
+      "publishedSourcePath": "assets/by-project/national-park-cards/current-site/035-live-bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/014-nppc-live-video-copy-noaudio-faststart.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/44-national-park-cards-bagmxoudbarz3iqbz7hg5zwlc4-poster.jpg",
+      "sourceDimensions": "720x1280",
+      "outputDimensions": "720x1280",
+      "durationSeconds": 48.766667,
+      "sourceBytes": 13516663,
+      "publishedSourceBytes": 8344021,
+      "outputBytes": 8293515,
+      "savingsPercent": 38.6,
+      "status": "published_h264_video_stream_reused_audio_removed"
+    },
+    {
+      "id": "015-snaptik",
+      "liveUrl": "https://freight.cargo.site/t/original/i/L1543258461716816171227936970261/SnapTik_App_7063886141824683311-HD.mp4",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/015-snaptik_app_7063886141824683311-hd.mp4",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/015-snaptik-576x1024-video-copy-noaudio-faststart.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/45-national-park-cards-snaptik-app-7063886141824683311-hd-poster.jpg",
+      "sourceDimensions": "576x1024",
+      "outputDimensions": "576x1024",
+      "durationSeconds": 12.145479,
+      "sourceBytes": 2007667,
+      "outputBytes": 1953179,
+      "savingsPercent": 2.7,
+      "status": "source_h264_video_stream_reused_audio_removed"
+    },
+    {
+      "id": "024-img-1174",
+      "liveUrl": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/024-img_1174.mov",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/024-img-1174-960x544-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/46-national-park-cards-img-1174-poster.jpg",
+      "sourceDimensions": "960x544",
+      "outputDimensions": "960x544",
+      "durationSeconds": 9.186441,
+      "sourceBytes": 2561529,
+      "outputBytes": 1859666,
+      "savingsPercent": 27.4,
+      "status": "mov_to_h264_mp4"
+    },
+    {
+      "id": "034-by-the-numbers",
+      "liveUrl": "https://freight.cargo.site/t/original/i/Z2116629357142052312463249233429/By-the-Numbers.mp4",
+      "sourcePath": "assets/by-project/national-park-cards/current-site/034-by-the-numbers.mp4",
+      "outputPath": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/034-by-the-numbers-1600-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/national-park-cards/video-posters/47-national-park-cards-by-the-numbers-poster.jpg",
+      "sourceDimensions": "2500x850",
+      "outputDimensions": "1600x544",
+      "durationSeconds": 3.003,
+      "sourceBytes": 178821,
+      "outputBytes": 23024,
+      "savingsPercent": 87.1,
+      "status": "encoded"
+    }
+  ],
+  "verification": {
+    "ffprobe": "all 7 outputs are H.264/yuv420p with zero audio streams",
+    "representativeFrameSsim": {
+      "003-all-cards": 0.999206,
+      "024-img-1174": 0.991092,
+      "034-by-the-numbers": 0.999608
+    },
+    "typographyReview": "Passed at original QC contact-sheet resolution; card labels, fine linework, and numeric typography remain crisp.",
+    "qcFolder": "assets/by-project/national-park-cards/current-site/Web Optimized/qc"
+  }
+}

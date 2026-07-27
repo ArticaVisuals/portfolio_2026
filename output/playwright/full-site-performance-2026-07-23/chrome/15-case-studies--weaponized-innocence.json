@@ -1,0 +1,332 @@
+{
+  "target": "https://micahhoang.com/case-studies/weaponized-innocence",
+  "auditedAt": "2026-07-23T19:55:47.847Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/weaponized-innocence",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 7090,
+  "title": "Weaponized Innocence Editorial - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/weaponized-innocence",
+  "bodyTextLength": 3260,
+  "domNodes": 519,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 59.400000005960464,
+    "responseStartMs": 255.20000000298023,
+    "domContentLoadedMs": 643.2999999970198,
+    "loadMs": 1083.8999999910593,
+    "firstPaintMs": 316,
+    "fcpMs": 316,
+    "lcpMs": 1044,
+    "lcpUrl": "https://framerusercontent.com/images/xEe4vtgiaWLSNPeIS79K6lQpWAw.png?width=1920&height=1080",
+    "cls": 0.0005272566053602431,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 194,
+    "longTaskMaxMs": 194
+  },
+  "media": {
+    "images": {
+      "total": 56,
+      "withSource": 56,
+      "complete": 15,
+      "ready": 15,
+      "broken": 0,
+      "incomplete": 41,
+      "lazy": 41
+    },
+    "videos": {
+      "total": 2,
+      "withSource": 2,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 2,
+      "playing": 0,
+      "autoplayTotal": 2,
+      "autoplayPlaying": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 92,
+    "failedRequestCount": 2,
+    "totalBytes": 16314886,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 32451,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 42,
+        "bytes": 440492,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132798,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 27,
+        "bytes": 13279862,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174006,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 432,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1990,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 4,
+        "bytes": 2252855,
+        "failed": 2
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/images/xVGE1hkxlIKXPEa3E9yoU0HBQU.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 2774540,
+        "durationMs": 560,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2037481,
+        "durationMs": 86,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/x7GQ6Nw9HTzLovMtpZsgqut9M.jpg",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1595758,
+        "durationMs": 542,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/XXBBNktrVRhV64Kmt2hXGluc6M.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1418941,
+        "durationMs": 529,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/7iOB7MTXS9EYCbIUTr8PltUIMeA.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 907798,
+        "durationMs": 331,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/xEe4vtgiaWLSNPeIS79K6lQpWAw.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 846335,
+        "durationMs": 439,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/RzG1czb5AZxAALYL5g0gyvYwta4.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 721233,
+        "durationMs": 485,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/CyRX7KsxOcEYYGqEs55ktPen3Xk.jpg?scale-down-to=2048&width=5730&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 704876,
+        "durationMs": 270,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/sbFIItfbOtO5ArjBSpwVa5WQ6Y.jpg?scale-down-to=4096&width=3173&height=4760",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 675346,
+        "durationMs": 290,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/7rPZpYuaXD5DmktawKUTYZKUINA.png?scale-down-to=2048&width=3328&height=1478",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 477720,
+        "durationMs": 504,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/wgcgg2tWzOyRZF0GjrQE7drx1Y.jpg?scale-down-to=2048&width=6000&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 407540,
+        "durationMs": 336,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/92WTs39arTloyozIxYk6CpMhaw4.jpg?scale-down-to=2048&width=6000&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 394227,
+        "durationMs": 258,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/rw1FSeU7A3djCt4M8zmakm8oY.jpg?scale-down-to=2048&width=6000&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 293366,
+        "durationMs": 258,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/f6CWwgCg8txo1NZiZrqdVR3ceA.jpg?scale-down-to=2048&width=6000&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 236851,
+        "durationMs": 255,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "application/octet-stream",
+        "bytes": 215374,
+        "durationMs": 103,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/LVelFBlHO9GtgQWp8mfGolihfA.jpg?scale-down-to=4096&width=3507&height=5260",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 191368,
+        "durationMs": 275,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/H7Z3yDpWSut4loA2y2NnxIzhDE.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 185291,
+        "durationMs": 308,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/LTVREW10Tio7OfesAhdVQeMwO0.jpg?scale-down-to=2048&width=6000&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 183734,
+        "durationMs": 256,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/OJDdhsyNnmecpE3snL7thmPI.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 179591,
+        "durationMs": 201,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/N47y5JogyuzPfBAMxzE3A34w.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 173361,
+        "durationMs": 258,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      }
+    ]
+  },
+  "route": "/case-studies/weaponized-innocence",
+  "artifactSlug": "case-studies--weaponized-innocence"
+}

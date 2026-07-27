@@ -1,0 +1,43 @@
+{
+  "project": "Motion Connect 2025",
+  "generated": "2026-07-23",
+  "encoding": {
+    "video": "H.264 MP4, libx264 slow preset, CRF 23, yuv420p, faststart, no audio",
+    "poster": "WebP quality 88, frame at 25% of source duration"
+  },
+  "verification": {
+    "ffprobe": "passed",
+    "faststart": "passed (moov atom precedes mdat)",
+    "liveAssetIdentityCheck": "The local 60 fps master and the current 30 fps Framer derivative are the same visual; 640x360 comparison SSIM was 0.986784.",
+    "visualContactSheet": "verification/motion-connect-related-card-MwQgxBbaiEE9PyqwTShCkltEUY-source-vs-optimized.jpg"
+  },
+  "assets": [
+    {
+      "id": "MwQgxBbaiEE9PyqwTShCkltEUY",
+      "role": "Motion Connect 2025 related-project card",
+      "sourceUrl": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+      "sourcePath": "../../../framer-staging/005-motion-connect_1.mp4",
+      "sourceRelation": "same visual high-quality master; live Framer file is an existing 30 fps derivative",
+      "source": {
+        "dimensions": "1920x1080",
+        "fps": 60,
+        "durationSeconds": 13.066667,
+        "masterBytes": 22035040,
+        "liveDerivativeBytes": 3948831
+      },
+      "videoPath": "videos/motion-connect-related-card-MwQgxBbaiEE9PyqwTShCkltEUY-960x540-crf23.mp4",
+      "posterPath": "posters/motion-connect-related-card-MwQgxBbaiEE9PyqwTShCkltEUY-960x540-q88.webp",
+      "output": {
+        "dimensions": "960x540",
+        "fps": 30,
+        "durationSeconds": 13.066016,
+        "bytes": 1316158,
+        "savingsVsLivePercent": 66.67,
+        "savingsVsMasterPercent": 94.03,
+        "ssimVsMasterAt30fps": 0.978206
+      },
+      "audio": "removed because related cards are muted autoplay",
+      "visualRisk": "Low. Output intentionally matches the current live derivative's 30 fps cadence; CRT texture and title edges remain clear."
+    }
+  ]
+}

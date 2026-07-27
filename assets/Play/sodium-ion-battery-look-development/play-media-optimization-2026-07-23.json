@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.232Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/sodium-ion-battery-look-development",
+  "items": [
+    {
+      "slug": "sodium-ion-battery-look-development",
+      "title": "Sodium-Ion Battery Look Development",
+      "order": 41,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/Cm8W3g10jrbP8GDgvwen9lbKOw.jpg?width=1376&height=768",
+      "sourcePath": "assets/Play/sodium-ion-battery-look-development/source/play-sodium-ion-battery-look-development-poster-Cm8W3g10jrbP8GDgvwen9lbKOw-original.jpg",
+      "originalBytes": 62743,
+      "originalWidth": 1376,
+      "originalHeight": 768,
+      "outputPath": "assets/Play/sodium-ion-battery-look-development/optimized/play-sodium-ion-battery-look-development-poster-Cm8W3g10jrbP8GDgvwen9lbKOw-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 22344,
+      "outputWidth": 1376,
+      "outputHeight": 768,
+      "savingsBytes": 40399,
+      "savingsPercent": 64.38805922573036
+    },
+    {
+      "slug": "sodium-ion-battery-look-development",
+      "title": "Sodium-Ion Battery Look Development",
+      "order": 41,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/XoxJX64OvkW4czujQfAeL7to6BI.mp4",
+      "sourcePath": "assets/Play/sodium-ion-battery-look-development/source/play-sodium-ion-battery-look-development-video-XoxJX64OvkW4czujQfAeL7to6BI-original.mp4",
+      "originalBytes": 314744,
+      "originalWidth": 1376,
+      "originalHeight": 768,
+      "outputPath": "assets/Play/sodium-ion-battery-look-development/optimized/play-sodium-ion-battery-look-development-XoxJX64OvkW4czujQfAeL7to6BI-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 107036,
+      "outputWidth": 900,
+      "outputHeight": 502,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 4.333333,
+      "savingsBytes": 207708,
+      "savingsPercent": 65.99267976514247
+    }
+  ]
+}

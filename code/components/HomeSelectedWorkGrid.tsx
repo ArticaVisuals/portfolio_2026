@@ -221,6 +221,61 @@ function normalizeBoolean(value: unknown): boolean {
     return text === "true" || text === "yes" || text === "1"
 }
 
+function addFramerImageCandidates(src: string, srcSet: string): string {
+    if (!srcSet) return srcSet
+
+    try {
+        const url = new URL(src)
+        if (
+            url.hostname !== "framerusercontent.com" ||
+            !url.pathname.startsWith("/images/")
+        ) {
+            return srcSet
+        }
+
+        const width = Number(url.searchParams.get("width"))
+        const height = Number(url.searchParams.get("height"))
+        const longestEdge = Math.max(width, height)
+        if (
+            !Number.isFinite(width) ||
+            !Number.isFinite(height) ||
+            width <= 0 ||
+            height <= 0
+        ) {
+            return srcSet
+        }
+
+        const descriptors = new Set(
+            srcSet
+                .split(",")
+                .map((candidate) => candidate.trim().split(/\s+/).pop())
+                .filter(Boolean)
+        )
+        const candidates: string[] = []
+
+        for (const maxEdge of [640, 672, 768, 1152, 1200]) {
+            if (maxEdge >= longestEdge) continue
+            const candidateWidth = Math.max(
+                1,
+                Math.round(width * (maxEdge / longestEdge))
+            )
+            const descriptor = `${candidateWidth}w`
+            if (descriptors.has(descriptor)) continue
+
+            const candidate = new URL(url.href)
+            candidate.searchParams.set("scale-down-to", String(maxEdge))
+            candidates.push(`${candidate.href} ${descriptor}`)
+            descriptors.add(descriptor)
+        }
+
+        return candidates.length > 0
+            ? `${srcSet}, ${candidates.join(", ")}`
+            : srcSet
+    } catch {
+        return srcSet
+    }
+}
+
 function normalizeImage(value: unknown): ImageValue | undefined {
     if (!value) return undefined
     if (typeof value === "string") return value ? { src: value } : undefined
@@ -228,9 +283,12 @@ function normalizeImage(value: unknown): ImageValue | undefined {
         const image = value as Record<string, unknown>
         const src = normalizeText(image.src || image.url)
         if (!src) return undefined
+        const srcSet = normalizeText(image.srcSet)
         return {
             src,
-            srcSet: normalizeText(image.srcSet) || undefined,
+            srcSet: srcSet
+                ? addFramerImageCandidates(src, srcSet)
+                : undefined,
             alt: normalizeText(image.alt) || undefined,
         }
     }
@@ -693,11 +751,14 @@ function useFramerRouter(): FramerRouter | undefined {
 function ProjectCard({
     project,
     showTags,
+    priority,
 }: {
     project: Project
     showTags: boolean
+    priority: boolean
 }) {
     const router = useFramerRouter()
+    const isCanvas = RenderTarget.current() === RenderTarget.canvas
     const href = getProjectHref(project)
     const videoSrc = getThumbnailVideoLink(project)
     const hasVideo = Boolean(videoSrc)
@@ -714,6 +775,11 @@ function ProjectCard({
     const [posterFailed, setPosterFailed] = React.useState(false)
     const [videoReady, setVideoReady] = React.useState(false)
     const [videoFailed, setVideoFailed] = React.useState(false)
+    const [isNearViewport, setIsNearViewport] = React.useState(isCanvas)
+    const [isVideoVisible, setIsVideoVisible] = React.useState(isCanvas)
+    const [shouldLoadVideo, setShouldLoadVideo] = React.useState(isCanvas)
+    const mediaRef = React.useRef<HTMLDivElement>(null)
+    const videoRef = React.useRef<HTMLVideoElement | null>(null)
     const mediaAlt = project.thumbnail?.alt || project.title
     const tags = showTags ? getProjectTags(project) : []
     const hasReadyMedia = (hasVideo && videoReady) || (hasImage && posterReady)
@@ -726,6 +792,64 @@ function ProjectCard({
         setVideoFailed(false)
     }, [mediaKey])
 
+    React.useEffect(() => {
+        if (!hasVideo || isCanvas) {
+            setIsNearViewport(isCanvas)
+            setIsVideoVisible(isCanvas)
+            setShouldLoadVideo(isCanvas)
+            return
+        }
+
+        const media = mediaRef.current
+        if (!media || typeof IntersectionObserver === "undefined") {
+            setIsNearViewport(true)
+            setIsVideoVisible(true)
+            setShouldLoadVideo(true)
+            return
+        }
+
+        const mountObserver = new IntersectionObserver(
+            ([entry]) => {
+                const near = Boolean(entry?.isIntersecting)
+                setIsNearViewport(near)
+                if (near) setShouldLoadVideo(true)
+            },
+            {
+                rootMargin: "50% 0px",
+                threshold: 0.01,
+            }
+        )
+        const visibilityObserver = new IntersectionObserver(
+            ([entry]) => {
+                setIsVideoVisible(Boolean(entry?.isIntersecting))
+            },
+            { threshold: 0.01 }
+        )
+
+        mountObserver.observe(media)
+        visibilityObserver.observe(media)
+        return () => {
+            mountObserver.disconnect()
+            visibilityObserver.disconnect()
+        }
+    }, [hasVideo, isCanvas, mediaKey])
+
+    React.useEffect(() => {
+        const video = videoRef.current
+        if (!video || !shouldLoadVideo) return
+
+        if (!isVideoVisible) {
+            video.pause()
+            return
+        }
+
+        video.muted = true
+        const play = video.play()
+        if (play && typeof play.catch === "function") {
+            play.catch(() => {})
+        }
+    }, [isVideoVisible, shouldLoadVideo])
+
     const handleImageRef = React.useCallback(
         (image: HTMLImageElement | null) => {
             if (image?.complete && image.naturalWidth > 0) setPosterReady(true)
@@ -733,9 +857,11 @@ function ProjectCard({
         []
     )
 
-    const handleVideoRef = React.useCallback((video: HTMLVideoElement | null) => {
-        if (video && video.readyState >= 2) setVideoReady(true)
-    }, [])
+    React.useEffect(() => {
+        if (videoRef.current?.readyState && videoRef.current.readyState >= 2) {
+            setVideoReady(true)
+        }
+    }, [mediaKey, shouldLoadVideo])
 
     const handleClick = React.useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -779,9 +905,13 @@ function ProjectCard({
                 </span>
             </div>
             <div
+                ref={mediaRef}
                 className="selected-work-media"
                 data-has-media={hasMedia ? "true" : undefined}
                 data-has-video={hasVideo ? "true" : undefined}
+                data-video-mounted={shouldLoadVideo ? "true" : undefined}
+                data-video-near={isNearViewport ? "true" : undefined}
+                data-video-visible={isVideoVisible ? "true" : undefined}
                 data-has-poster={hasImage ? "true" : undefined}
                 data-media-ready={hasReadyMedia ? "true" : undefined}
                 data-media-failed={hasFailedMedia ? "true" : undefined}
@@ -798,7 +928,9 @@ function ProjectCard({
                         srcSet={project.thumbnail?.srcSet}
                         alt={mediaAlt}
                         decoding="async"
-                        loading="lazy"
+                        loading={priority ? "eager" : "lazy"}
+                        fetchPriority={priority ? "high" : "auto"}
+                        sizes="(max-width: 809px) calc(100vw - 40px), calc(50vw - 30px)"
                         onError={() => setPosterFailed(true)}
                         onLoad={() => {
                             setPosterReady(true)
@@ -806,13 +938,12 @@ function ProjectCard({
                         }}
                     />
                 ) : null}
-                {hasVideo ? (
+                {hasVideo && shouldLoadVideo ? (
                     <video
-                        ref={handleVideoRef}
+                        ref={videoRef}
                         className="selected-work-video"
                         src={videoSrc}
-                        poster={imageSrc || undefined}
-                        autoPlay
+                        autoPlay={isVideoVisible}
                         muted
                         loop
                         onCanPlay={() => {
@@ -832,7 +963,7 @@ function ProjectCard({
                             setVideoFailed(false)
                         }}
                         playsInline
-                        preload="auto"
+                        preload="none"
                     />
                 ) : null}
             </div>
@@ -874,14 +1005,17 @@ export default function HomeSelectedWorkGrid({
     tagColor = "rgb(151, 151, 151)",
 }: Partial<Props>) {
     const [projects, setProjects] = React.useState<Project[]>([])
+    const [cmsSettled, setCmsSettled] = React.useState(!useCMS)
 
     React.useEffect(() => {
         if (!useCMS || typeof window === "undefined") {
             setProjects([])
+            setCmsSettled(true)
             return
         }
 
         let disposed = false
+        setCmsSettled(false)
         loadProjectsWithRetry(
             collectionId,
             collectionModuleUrl,
@@ -890,10 +1024,16 @@ export default function HomeSelectedWorkGrid({
             tagFieldIds
         )
             .then((loaded) => {
-                if (!disposed) setProjects(loaded)
+                if (!disposed) {
+                    setProjects(loaded)
+                    setCmsSettled(true)
+                }
             })
             .catch(() => {
-                if (!disposed) setProjects([])
+                if (!disposed) {
+                    setProjects([])
+                    setCmsSettled(true)
+                }
             })
 
         return () => {
@@ -908,14 +1048,18 @@ export default function HomeSelectedWorkGrid({
         tagFieldIds,
     ])
 
+    const itemLimit = Math.max(1, Math.floor(Number(maxItems) || 6))
     const visibleProjects = React.useMemo(
-        () => getVisibleProjects(projects, Math.max(1, Math.floor(Number(maxItems) || 6))),
-        [projects, maxItems]
+        () => getVisibleProjects(projects, itemLimit),
+        [projects, itemLimit]
     )
+    const reserveLoadingLayout =
+        Boolean(useCMS) && !cmsSettled && visibleProjects.length === 0
 
     return (
         <div
             className="selected-work-grid"
+            aria-busy={reserveLoadingLayout ? true : undefined}
             style={
                 {
                     "--selected-work-text": textColor,
@@ -924,11 +1068,35 @@ export default function HomeSelectedWorkGrid({
                 } as React.CSSProperties
             }
         >
-            {visibleProjects.map((project) => (
+            {reserveLoadingLayout
+                ? Array.from({ length: itemLimit }, (_, index) => (
+                      <div
+                          aria-hidden="true"
+                          className="selected-work-card selected-work-card-placeholder"
+                          key={`selected-work-placeholder-${index}`}
+                      >
+                          <div className="selected-work-card-meta">
+                              <span>00</span>
+                              <span>/</span>
+                              <span>Placeholder</span>
+                          </div>
+                          <div className="selected-work-media" />
+                          {showTags ? (
+                              <div className="selected-work-tags">
+                                  <span className="selected-work-tag">
+                                      Placeholder
+                                  </span>
+                              </div>
+                          ) : null}
+                      </div>
+                  ))
+                : null}
+            {visibleProjects.map((project, index) => (
                 <ProjectCard
                     key={project.slug}
                     project={project}
                     showTags={showTags}
+                    priority={index === 0}
                 />
             ))}
             <style suppressHydrationWarning>{`
@@ -946,6 +1114,12 @@ export default function HomeSelectedWorkGrid({
                     gap: 16px;
                     min-width: 0;
                     text-decoration: none;
+                }
+
+                .selected-work-card-placeholder {
+                    pointer-events: none;
+                    user-select: none;
+                    visibility: hidden;
                 }
 
                 .selected-work-card-meta {

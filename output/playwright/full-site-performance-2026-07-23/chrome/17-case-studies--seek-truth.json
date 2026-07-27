@@ -1,0 +1,321 @@
+{
+  "target": "https://micahhoang.com/case-studies/seek-truth",
+  "auditedAt": "2026-07-23T19:56:08.060Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/seek-truth",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 7646,
+  "title": "Seek Truth Editorial Design - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/seek-truth",
+  "bodyTextLength": 3354,
+  "domNodes": 659,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 48.70000000298023,
+    "responseStartMs": 326.59999999403954,
+    "domContentLoadedMs": 586.5999999940395,
+    "loadMs": 1639.0999999940395,
+    "firstPaintMs": 416,
+    "fcpMs": 416,
+    "lcpMs": 696,
+    "lcpUrl": "https://framerusercontent.com/images/14KQZGOnUoidRdGp5UJTZ688MHc.png?scale-down-to=2048&width=2600&height=1024",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 0,
+    "longTaskTotalMs": 0,
+    "longTaskMaxMs": 0
+  },
+  "media": {
+    "images": {
+      "total": 86,
+      "withSource": 86,
+      "complete": 43,
+      "ready": 43,
+      "broken": 0,
+      "incomplete": 43,
+      "lazy": 43
+    },
+    "videos": {
+      "total": 3,
+      "withSource": 3,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 3,
+      "playing": 0,
+      "autoplayTotal": 3,
+      "autoplayPlaying": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 129,
+    "failedRequestCount": 0,
+    "totalBytes": 46677813,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 33635,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 431425,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 62,
+        "bytes": 15973700,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 6,
+        "bytes": 198603,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 7,
+        "bytes": 29864053,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 173966,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1998,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/XDoK5oZ8u2z7XAaiilHvljfEHBE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 8843897,
+        "durationMs": 1645,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/XDoK5oZ8u2z7XAaiilHvljfEHBE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 8843889,
+        "durationMs": 1766,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/XDoK5oZ8u2z7XAaiilHvljfEHBE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 8843870,
+        "durationMs": 1751,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/BYzoct92y31kMYefxR3Qh1rZBa0.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 2025196,
+        "durationMs": 978,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/dlpeboRoRFqUdRmow024fH9Uz8.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1604198,
+        "durationMs": 1160,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/dlpeboRoRFqUdRmow024fH9Uz8.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1604190,
+        "durationMs": 1090,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/SpdO7L74zv55rxN6uA4Lx51OIg.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1578318,
+        "durationMs": 922,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/xC1hl2p3YP0sh5HOmoXssi5Kmk.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1386676,
+        "durationMs": 870,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/soqXJVDBBk3ER3OZSDwylpTjqg.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1358375,
+        "durationMs": 849,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/9cgS0AMT3cgr8gP7HXypJCa7tE.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1306070,
+        "durationMs": 846,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/mwPLkJQkZaDHBGUQxjVL57WR9I.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 1142871,
+        "durationMs": 849,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 896573,
+        "durationMs": 360,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/bfHyBGoJUXtkXOnTQeV82ghPb68.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 835045,
+        "durationMs": 860,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/r5w4l5ODbYqynt67tjX2aSaR9w.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 798753,
+        "durationMs": 786,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/TJd2N1iqxc3TIaScSdRGs0NpOY.webp?width=1200&height=1800",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 393873,
+        "durationMs": 864,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/7U2dlBvIj946RUiQKtSACPhNqNA.png",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 365059,
+        "durationMs": 565,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/1FuRrNaw7GQsfIOZZI1dkmTU.webp?width=1800&height=1200",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 290251,
+        "durationMs": 864,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/b8R8C2rOF645LhRiVZtxKVAkaYk.webp?width=1800&height=1200",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 289988,
+        "durationMs": 864,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/0YvMuFzV58L93I1rIsvejYQNpsI.png?width=1600&height=1200",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 272984,
+        "durationMs": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/q4AX1sTc1Qp4XK8pyrwM9WooWA.png?width=1600&height=1200",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 272420,
+        "durationMs": 503,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/case-studies/seek-truth",
+  "artifactSlug": "case-studies--seek-truth"
+}

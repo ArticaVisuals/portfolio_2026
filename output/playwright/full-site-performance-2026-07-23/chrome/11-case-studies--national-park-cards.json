@@ -1,0 +1,381 @@
+{
+  "target": "https://micahhoang.com/case-studies/national-park-cards",
+  "auditedAt": "2026-07-23T19:54:57.495Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/national-park-cards",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 13001,
+  "title": "National Park Playing Cards - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/national-park-cards",
+  "bodyTextLength": 3832,
+  "domNodes": 490,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 54.5,
+    "responseStartMs": 300.70000000298023,
+    "domContentLoadedMs": 704.8999999910593,
+    "loadMs": 6990.5999999940395,
+    "firstPaintMs": 376,
+    "fcpMs": 376,
+    "lcpMs": 892,
+    "lcpUrl": "https://framerusercontent.com/images/QH9ARIqw0nSWYiehoPx1dgERfA.png?scale-down-to=2048&width=4496&height=2529",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 212,
+    "longTaskMaxMs": 212
+  },
+  "media": {
+    "images": {
+      "total": 24,
+      "withSource": 24,
+      "complete": 14,
+      "ready": 14,
+      "broken": 0,
+      "incomplete": 10,
+      "lazy": 10
+    },
+    "videos": {
+      "total": 7,
+      "withSource": 7,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 7,
+      "playing": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 92,
+    "failedRequestCount": 10,
+    "totalBytes": 5218654,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 32514,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 429899,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132765,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 24,
+        "bytes": 4408180,
+        "failed": 2
+      },
+      "Media": {
+        "requests": 9,
+        "bytes": 38871,
+        "failed": 8
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174001,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 430,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1994,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/images/ta7fERrvxNPTWke9Q79WGYsTOM.jpg?scale-down-to=2048&width=6000&height=4000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 918143,
+        "durationMs": 352,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/XPl6MbZnhUC3IfIIVLWDfbpRUyM.jpg?scale-down-to=2048&width=3919&height=2615",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 882958,
+        "durationMs": 305,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/wtJxsIjpZyjaB1FBBSqT2uIBHl8.jpg?scale-down-to=2048&width=4496&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 370327,
+        "durationMs": 219,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/7H7hZxANjyF01YcZ270pdMnuc.jpg?scale-down-to=2048&width=4496&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 355741,
+        "durationMs": 346,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/YN44yoUqQ9oYXc3rs4fgHyR2y4M.png?scale-down-to=2048&width=2880&height=1920",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 260864,
+        "durationMs": 350,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ca4pTjSM7gBv66kLJZkEkgyBro.jpg?scale-down-to=2048&width=4496&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 189679,
+        "durationMs": 350,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/V4VEIdLBlMo8xqTEoxmN5LwF1C4.jpg?scale-down-to=1024&width=3307&height=2480",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 180581,
+        "durationMs": 350,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/nxigARuOowGYUODzR6KDWPJMaBQ.jpg?width=750&height=1001",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 156863,
+        "durationMs": 94,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/3Rn13Fmd7ZcgkAkvyNwLoCtx7o.jpg?scale-down-to=2048&width=4496&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 145254,
+        "durationMs": 305,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/CADx7TefYG2TTNDtnwKEzH2gYYU.jpg?width=818&height=460",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 137810,
+        "durationMs": 350,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/hImYJ29b0Mi6mAmchmPzSM1Ek.jpg?width=1080&height=1350",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 135927,
+        "durationMs": 91,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/QH9ARIqw0nSWYiehoPx1dgERfA.png?scale-down-to=2048&width=4496&height=2529",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 127699,
+        "durationMs": 295,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/YvUb3ZQSICvDjwRluITXiNkQWtU.jpg?width=1080&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 124848,
+        "durationMs": 80,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117189,
+        "durationMs": 83,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/cWbW4zqXpgZ7KxxbU0t2TjZE.jpg?scale-down-to=2048&width=4496&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 114040,
+        "durationMs": 305,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/cPppZRrD6D0MEyDFdVRYLVf6ws.jpg?width=720&height=1280",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 67402,
+        "durationMs": 296,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63583,
+        "durationMs": 253,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/Wfmukn52TJuchwiGVax036I6o.jpg?width=576&height=1024",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 53081,
+        "durationMs": 263,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49793,
+        "durationMs": 88,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/Kj2Cv3FOXHp52Mxzjew7otis.png?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 49722,
+        "durationMs": 223,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/J1543046243473909932978774201877/Joker-Animation-2.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/L1543258461716816171227936970261/SnapTik_App_7063886141824683311-HD.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/Z2116629357142052312463249233429/By-the-Numbers.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/J1542517319778170274194483566101/All-Cards-Animation_1.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/G1540917371720490845266153559573/National-Park-Reel.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://files.catbox.moe/d3cxx4.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/nxw2yy.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      }
+    ]
+  },
+  "route": "/case-studies/national-park-cards",
+  "artifactSlug": "case-studies--national-park-cards"
+}

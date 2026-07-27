@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-07-23",
+  "project": "Yomo",
+  "settings": {
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "preset": "slow",
+    "crf": 23,
+    "audio": "removed",
+    "faststart": true,
+    "frameRate": "preserved",
+    "poster": "WebP quality 88"
+  },
+  "totals": {
+    "items": 2,
+    "sourceBytes": 10519312,
+    "outputBytes": 1819208,
+    "savedBytes": 8700104,
+    "savingsPercent": 82.7,
+    "posterBytes": 113092
+  },
+  "items": [
+    {
+      "id": "004-desktop-interaction",
+      "liveUrl": "https://framerusercontent.com/assets/TlurcfF0hy7zDnCapZ0SuhkcM.mp4",
+      "sourcePath": "assets/by-project/yomo/current-site/004-desktop-interaction-1_1.mp4",
+      "outputPath": "assets/by-project/yomo/current-site/Web Optimized/videos/004-desktop-interaction-1920-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/yomo/current-site/Web Optimized/posters/004-desktop-interaction-poster-1600-q88.webp",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1920x1080",
+      "posterDimensions": "1600x900",
+      "durationSeconds": 5.171833,
+      "sourceBytes": 4661739,
+      "outputBytes": 1016001,
+      "posterBytes": 74976,
+      "savingsPercent": 78.2,
+      "status": "encoded_and_poster_generated"
+    },
+    {
+      "id": "014-comp-1",
+      "liveUrl": "https://framerusercontent.com/assets/zO2m4xJRbI4wZv6Ca3jOpuCTM.mp4",
+      "sourcePath": "assets/by-project/yomo/current-site/014-comp-1.mp4",
+      "outputPath": "assets/by-project/yomo/current-site/Web Optimized/videos/014-comp-1-1380-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/yomo/current-site/Web Optimized/posters/014-comp-1-poster-1600-q88.webp",
+      "sourceDimensions": "1390x1818",
+      "outputDimensions": "1380x1804",
+      "posterDimensions": "1224x1600",
+      "durationSeconds": 9.175833,
+      "sourceBytes": 5857573,
+      "outputBytes": 803207,
+      "posterBytes": 38116,
+      "savingsPercent": 86.3,
+      "status": "encoded_and_poster_generated"
+    }
+  ],
+  "verification": {
+    "ffprobe": "both outputs are H.264/yuv420p with zero audio streams",
+    "representativeFrameSsim": {
+      "004-desktop-interaction": 0.99664,
+      "014-comp-1": 0.99793
+    },
+    "uiReview": "Passed; navigation labels, filter controls, and red UI accents remain crisp without visible ringing.",
+    "qcFolder": "assets/by-project/yomo/current-site/Web Optimized/qc"
+  }
+}

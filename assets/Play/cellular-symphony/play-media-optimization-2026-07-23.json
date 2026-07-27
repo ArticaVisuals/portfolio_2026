@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.013Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/cellular-symphony",
+  "items": [
+    {
+      "slug": "cellular-symphony",
+      "title": "Cellular Symphony",
+      "order": 3,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/uoR8kBV4fEPtCRVzpAjZVYgsYI.jpg?width=1280&height=720",
+      "sourcePath": "assets/Play/cellular-symphony/source/play-cellular-symphony-poster-uoR8kBV4fEPtCRVzpAjZVYgsYI-original.jpg",
+      "originalBytes": 46138,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "outputPath": "assets/Play/cellular-symphony/optimized/play-cellular-symphony-poster-uoR8kBV4fEPtCRVzpAjZVYgsYI-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 28148,
+      "outputWidth": 1280,
+      "outputHeight": 720,
+      "savingsBytes": 17990,
+      "savingsPercent": 38.99172049070181
+    },
+    {
+      "slug": "cellular-symphony",
+      "title": "Cellular Symphony",
+      "order": 3,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/6nKMYFQBqPq1OKwmm41tdMMskw.mp4",
+      "sourcePath": "assets/Play/cellular-symphony/source/Cellular-Symphony-6nKMYFQBqPq1OKwmm41tdMMskw.mp4",
+      "originalBytes": 1101674,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "outputPath": "assets/Play/cellular-symphony/optimized/play-cellular-symphony-6nKMYFQBqPq1OKwmm41tdMMskw-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 596782,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 7.033333,
+      "savingsBytes": 504892,
+      "savingsPercent": 45.829528517510624
+    }
+  ]
+}

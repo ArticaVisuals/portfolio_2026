@@ -4,7 +4,7 @@ import { addPropertyControls, ControlType } from "framer"
 import BaseIndexPage from "https://framer.com/m/IndexPage-msQHCf.js"
 
 const PREVIEW_ADVANCED_DEFAULT = {
-    defaultView: "grid",
+    defaultView: "list",
     listHoverVariant: "flip",
     gridLayoutVariant: "figma",
     textPrimary: "#141414",
@@ -165,7 +165,7 @@ const GRID_LOCK_CSS = `
  */
 export function IndexPage(props) {
     const { view, advanced, projects, useCMS = true, ...baseProps } = props
-    const selectedView = view === "list" ? "list" : "grid"
+    const selectedView = view === "grid" ? "grid" : "list"
 
     return (
         <div
@@ -203,7 +203,7 @@ addPropertyControls(IndexPage, {
         title: "View",
         options: ["grid", "list"],
         optionTitles: ["Grid", "List"],
-        defaultValue: "grid",
+        defaultValue: "list",
         displaySegmentedControl: true,
     },
     useCMS: {

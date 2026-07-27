@@ -13,6 +13,13 @@ const DEFAULT_SELECTOR =
 const ROOT_CLASS = "mh-nav-at-page-top"
 const STYLE_ID = "mh-navigation-scroll-guard-style"
 const INFO_ROUTE = "/info"
+// Nav text links use a hover "roll": each link holds a visible label line plus
+// an identical duplicate line stacked one line-height below, inside a
+// one-line-tall overflow:hidden mask. On touch devices (no hover) the roll
+// never plays, yet the duplicate line's font content-area overshoots ~1px into
+// the mask and leaks a sliver. We tag the duplicate line(s) so CSS can hide
+// them where there is no hover. Desktop hover behavior is untouched.
+const ROLL_DUPE_ATTR = "data-mh-roll-dupe"
 
 function canUseDOM() {
     return typeof window !== "undefined" && typeof document !== "undefined"
@@ -37,6 +44,14 @@ function ensureStyle(selector: string) {
         document.head.appendChild(style)
     }
 
+    const navParts = selector
+        .split(",")
+        .map((part) => part.trim())
+        .filter(Boolean)
+    const dupeSelectors = navParts
+        .map((part) => `${part} [${ROLL_DUPE_ATTR}]`)
+        .join(",\n")
+
     style.textContent = `
 ${scoped.join(",\n")} {
     transform: translate3d(0, 0, 0) !important;
@@ -52,6 +67,12 @@ ${scoped
     )
     .join(",\n")} {
     pointer-events: auto !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+${dupeSelectors} {
+    visibility: hidden !important;
+}
 }
 `
 }
@@ -71,6 +92,26 @@ function normalizeInfoLinks(selector: string) {
             if (anchor.getAttribute("href") === INFO_ROUTE) return
 
             anchor.setAttribute("href", INFO_ROUTE)
+        })
+    })
+}
+
+function markNavRollDuplicates(selector: string) {
+    document.querySelectorAll(selector).forEach((root) => {
+        root.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor) => {
+            const lines = Array.from(anchor.children).filter(
+                (el) => (el.textContent || "").trim().length > 0
+            )
+            if (lines.length < 2) return
+            const first = (lines[0].textContent || "").trim()
+            const identical = lines.every(
+                (el) => (el.textContent || "").trim() === first
+            )
+            if (!identical) return
+            lines.slice(1).forEach((el) => {
+                if (!el.hasAttribute(ROLL_DUPE_ATTR))
+                    el.setAttribute(ROLL_DUPE_ATTR, "1")
+            })
         })
     })
 }
@@ -98,6 +139,7 @@ export default function NavigationScrollGuard({
 
         ensureStyle(selector)
         normalizeInfoLinks(selector)
+        markNavRollDuplicates(selector)
 
         let frame = 0
         let linkFrame = 0
@@ -118,6 +160,7 @@ export default function NavigationScrollGuard({
                 linkFrame = window.requestAnimationFrame(() => {
                     linkFrame = 0
                     normalizeInfoLinks(selector)
+                    markNavRollDuplicates(selector)
                 })
             }
         }

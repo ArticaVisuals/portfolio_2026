@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.318Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/root-growth",
+  "items": [
+    {
+      "slug": "play-002",
+      "title": "Root Growth",
+      "order": 8,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/SzlHeSZKCNT5magIroInR9DucY.jpg?width=1920&height=1080",
+      "sourcePath": "assets/Play/root-growth/source/play-play-002-poster-SzlHeSZKCNT5magIroInR9DucY-original.jpg",
+      "originalBytes": 17686,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/root-growth/optimized/play-play-002-poster-SzlHeSZKCNT5magIroInR9DucY-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 8304,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": 9382,
+      "savingsPercent": 53.0476082777338
+    },
+    {
+      "slug": "play-002",
+      "title": "Root Growth",
+      "order": 8,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/hDCmaWtdZPA68guMWqcRoRW58.mp4",
+      "sourcePath": "assets/Play/root-growth/source/Root-Growth-nuV5bQ9xGFCXYBrg3DX1Cx8R8E.mp4",
+      "originalBytes": 2052660,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "outputPath": "assets/Play/root-growth/optimized/play-play-002-hDCmaWtdZPA68guMWqcRoRW58-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 1049759,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 12.466016,
+      "savingsBytes": 1002901,
+      "savingsPercent": 48.85860298344587
+    }
+  ]
+}

@@ -9,7 +9,12 @@ const BOOT_ID = "__pt-boot"
 const BOOT_LABEL_ID = "__pt-boot-label"
 const BOOT_VIEWPORT_STYLE_ID = "mh-boot-viewport-guard"
 const BOOT_VIEWPORT_GLOBAL_KEY = "__mhBootViewportGuardInit"
+const BOOT_FIRST_PAINT_ID = "__pt-first-paint"
 const PAGE_THEME_COLOR = "#F7F5F0"
+const DEFAULT_BOOT_COLOR = "#233324"
+// Below this width the boot curtain is hidden entirely (Framer's Phone
+// breakpoint is < 810px). See BOOT DISABLED ON MOBILE note below.
+const BOOT_DISABLE_MAX_WIDTH_PX = 809
 const HOME_HEADER_BOTTOM_SELECTOR = '[data-framer-name="Header Bottom"]'
 const HOME_HEADER_BOTTOM_APPEAR_SELECTOR = `${HOME_HEADER_BOTTOM_SELECTOR} [data-framer-appear-id]`
 const HOME_HEADER_BOTTOM_STYLE_ID = "mh-home-header-bottom-appear-recovery"
@@ -20,8 +25,17 @@ let homeHeaderBottomRecoveryCleanup = null
 
 // Boot curtain (#__pt-boot, created by the compiled module).
 //
-// SIZING — mirrors zitafernandez.com's loader EXACTLY, because that site has no
-// bottom gap on iOS:
+// BOOT DISABLED ON MOBILE (2026-07-23): on iOS the curtain repeatedly left a
+// hard-edged green bar across the bottom of the viewport that outlived the
+// swipe-away. It was never reproducible outside a real iPhone, so rather than
+// keep guessing we hide the curtain below BOOT_DISABLE_MAX_WIDTH_PX. Mobile
+// loads straight into the page; the module still runs its normal reveal
+// (__ptReplayAppear) so appear animations are unaffected. Desktop keeps the
+// full curtain, which is verified working. To restore it on mobile, delete the
+// `@media (max-width:...)` rule from BOTH css strings below.
+//
+// SIZING (desktop) — mirrors zitafernandez.com's loader EXACTLY, because that
+// site has no bottom gap on iOS:
 //     position: fixed; top:0; left:0; right:0; bottom:auto;
 //     width:100%; height:100dvh; min-height:100dvh;
 // The critical part is that the height is a CSS `dvh` unit, NOT a pixel value.
@@ -42,7 +56,17 @@ let homeHeaderBottomRecoveryCleanup = null
 // We therefore pin theme-color to the page colour permanently: the chrome is
 // never green, so there is nothing to linger. (Tinting it green while the curtain
 // is up looks more immersive but always drags that trailing re-tint behind it.)
-const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var PAGE_COLOR=${JSON.stringify(PAGE_THEME_COLOR)};function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#"+BOOT_ID+"{height:100dvh!important;min-height:100dvh!important;}#"+LABEL_ID+"{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}";if(s.textContent!==css)s.textContent=css}function themeSync(){try{var m=document.querySelector('meta[name="theme-color"]');if(!m){m=document.createElement("meta");m.setAttribute("name","theme-color");(document.head||document.documentElement).appendChild(m)}var c=PAGE_COLOR;if(document.body){var b=getComputedStyle(document.body).backgroundColor;if(b&&b.indexOf("rgba(0, 0, 0, 0)")<0)c=b}if(m.getAttribute("content")!==c)m.setAttribute("content",c)}catch(e){}}function sync(){ensureStyle();themeSync()}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
+const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;try{if((window.innerWidth||document.documentElement.clientWidth||0)<=${BOOT_DISABLE_MAX_WIDTH_PX}){var __ptNoReplay=function(){};Object.defineProperty(window,"__ptReplayAppear",{configurable:true,get:function(){return __ptNoReplay},set:function(){}})}}catch(e){}var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var PAGE_COLOR=${JSON.stringify(PAGE_THEME_COLOR)};function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="html{background:"+PAGE_COLOR+"!important;}html body{background:"+PAGE_COLOR+"!important;}#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#"+BOOT_ID+"{height:100dvh!important;min-height:100dvh!important;}#"+LABEL_ID+"{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}@media (max-width:${BOOT_DISABLE_MAX_WIDTH_PX}px){#"+BOOT_ID+",#"+LABEL_ID+"{display:none!important;}}";if(s.textContent!==css)s.textContent=css}function themeSync(){try{var m=document.querySelector('meta[name="theme-color"]');if(!m){m=document.createElement("meta");m.setAttribute("name","theme-color");(document.head||document.documentElement).appendChild(m)}if(m.getAttribute("content")!==PAGE_COLOR)m.setAttribute("content",PAGE_COLOR)}catch(e){}}function sync(){ensureStyle();themeSync()}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});window.addEventListener("pageshow",sync,{passive:true});window.addEventListener("popstate",sync,{passive:true});window.addEventListener("hashchange",sync,{passive:true});window.addEventListener("pt:reveal",sync);window.addEventListener("mh:locationchange",sync);if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
+
+// The shared Navigation layout is emitted before page code components in
+// Framer's HTML. On a throttled cold load it can therefore reach first paint a
+// frame before the compiled boot runtime creates #__pt-boot. This parser-time
+// shield uses the same color, sits immediately below the real curtain, and is
+// removed in the same rendering turn that the real curtain is appended.
+// Mobile/reduced-motion behavior and the compiled curtain choreography stay
+// unchanged. DOMContentLoaded is the fail-safe release if the boot runtime does
+// not run.
+const BOOT_FIRST_PAINT_GUARD_JS = `(function(){try{var COVER_ID=${JSON.stringify(BOOT_FIRST_PAINT_ID)};var BOOT_ID=${JSON.stringify(BOOT_ID)};var BOOT_COLOR=${JSON.stringify(DEFAULT_BOOT_COLOR)};var maxWidth=${BOOT_DISABLE_MAX_WIDTH_PX};var path=(location.pathname||"/").replace(/\\/+$/,"")||"/";var width=window.innerWidth||document.documentElement.clientWidth||0;var reduced=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);var nav=performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];var navType=nav?nav.type:"navigate";var fresh=navType==="reload";if(!fresh&&navType==="navigate"){var ref=document.referrer;fresh=!ref;try{if(ref)fresh=new URL(ref).origin!==location.origin}catch(e){fresh=true}}if(path!==${JSON.stringify(HOME_PATH)}||width<=maxWidth||reduced||!fresh)return;if(document.getElementById(COVER_ID))return;var cover=document.createElement("div");cover.id=COVER_ID;cover.setAttribute("aria-hidden","true");cover.style.cssText="position:fixed;top:0;right:0;bottom:auto;left:0;width:100%;height:100vh;min-height:100vh;background:"+BOOT_COLOR+";z-index:2147483599;pointer-events:none;";try{if(window.CSS&&CSS.supports("height","100dvh")){cover.style.height="100dvh";cover.style.minHeight="100dvh"}}catch(e){}document.documentElement.appendChild(cover);var observer=null;var released=false;function release(){if(released)return;released=true;try{if(observer)observer.disconnect()}catch(e){}try{if(cover.parentNode)cover.parentNode.removeChild(cover)}catch(e){}}function handoff(){if(document.getElementById(BOOT_ID)){release();return true}return false}if(typeof MutationObserver!=="undefined"){observer=new MutationObserver(handoff);observer.observe(document.documentElement,{childList:true,subtree:true})}handoff();document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){if(!handoff())release()},0)},{once:true})}catch(e){try{var stale=document.getElementById(${JSON.stringify(BOOT_FIRST_PAINT_ID)});if(stale&&stale.parentNode)stale.parentNode.removeChild(stale)}catch(ignore){}}})();`
 
 function ensureBootViewportStyle() {
     try {
@@ -53,7 +77,7 @@ function ensureBootViewportStyle() {
             style.id = BOOT_VIEWPORT_STYLE_ID
             parent.appendChild(style)
         }
-        const css = `#${BOOT_ID}{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#${BOOT_LABEL_ID}{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#${BOOT_ID}{height:100dvh!important;min-height:100dvh!important;}#${BOOT_LABEL_ID}{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}`
+        const css = `html{background:${PAGE_THEME_COLOR}!important;}html body{background:${PAGE_THEME_COLOR}!important;}#${BOOT_ID}{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#${BOOT_LABEL_ID}{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#${BOOT_ID}{height:100dvh!important;min-height:100dvh!important;}#${BOOT_LABEL_ID}{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}@media (max-width:${BOOT_DISABLE_MAX_WIDTH_PX}px){#${BOOT_ID},#${BOOT_LABEL_ID}{display:none!important;}}`
         if (style.textContent !== css) style.textContent = css
     } catch (err) {}
 }
@@ -67,14 +91,8 @@ function syncBootThemeColor() {
             meta.setAttribute("name", "theme-color")
             ;(document.head || document.documentElement).appendChild(meta)
         }
-        let color = PAGE_THEME_COLOR
-        if (document.body) {
-            const bodyColor = getComputedStyle(document.body).backgroundColor
-            if (bodyColor && bodyColor.indexOf("rgba(0, 0, 0, 0)") < 0)
-                color = bodyColor
-        }
-        if (meta.getAttribute("content") !== color)
-            meta.setAttribute("content", color)
+        if (meta.getAttribute("content") !== PAGE_THEME_COLOR)
+            meta.setAttribute("content", PAGE_THEME_COLOR)
     } catch (err) {}
 }
 
@@ -102,6 +120,13 @@ function installBootViewportGuard() {
         window.addEventListener("orientationchange", syncBootViewport, {
             passive: true,
         })
+        window.addEventListener("pageshow", syncBootViewport, { passive: true })
+        window.addEventListener("popstate", syncBootViewport, { passive: true })
+        window.addEventListener("hashchange", syncBootViewport, {
+            passive: true,
+        })
+        window.addEventListener("pt:reveal", syncBootViewport)
+        window.addEventListener("mh:locationchange", syncBootViewport)
         if (window.visualViewport) {
             window.visualViewport.addEventListener("resize", syncBootViewport, {
                 passive: true,
@@ -997,10 +1022,15 @@ export default function PageTransition(props) {
     return (
         <>
             <script
+                dangerouslySetInnerHTML={{
+                    __html: BOOT_FIRST_PAINT_GUARD_JS,
+                }}
+            />
+            <script
                 dangerouslySetInnerHTML={{ __html: BOOT_VIEWPORT_GUARD_JS }}
             />
-            <ParagraphPrettyWrap enabled={true} maxFontSize={23} minWords={2} />
             <PageTransitionV712 {...props} />
+            <ParagraphPrettyWrap enabled={true} maxFontSize={23} minWords={2} />
         </>
     )
 }

@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.273Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/geometric-animals",
+  "items": [
+    {
+      "slug": "play-021",
+      "title": "Geometric Wildcat",
+      "order": 26,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/lQnoRTJFWvmA9IoTh6NipWn8oQ.jpg?width=1920&height=1080",
+      "sourcePath": "assets/Play/geometric-animals/source/play-play-021-poster-lQnoRTJFWvmA9IoTh6NipWn8oQ-original.jpg",
+      "originalBytes": 2126,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/geometric-animals/optimized/play-play-021-poster-lQnoRTJFWvmA9IoTh6NipWn8oQ-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 2678,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": -552,
+      "savingsPercent": -25.96425211665099
+    },
+    {
+      "slug": "play-021",
+      "title": "Geometric Wildcat",
+      "order": 26,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/injxMqGGnFEV37kRywgP4egJ1Pg.mp4",
+      "sourcePath": "assets/Play/geometric-animals/source/Geometric-Animals-injxMqGGnFEV37kRywgP4egJ1Pg.mp4",
+      "originalBytes": 1503426,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/geometric-animals/optimized/play-play-021-injxMqGGnFEV37kRywgP4egJ1Pg-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 146343,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 14.547867,
+      "savingsBytes": 1357083,
+      "savingsPercent": 90.26603238203941
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.101Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/ai-outfit-try-on-tool",
+  "items": [
+    {
+      "slug": "ai-outfit-try-on-tool",
+      "title": "AI Outfit Try-On Tool",
+      "order": 42,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/YatadAoO3JhC9h0VFC7fp15OaI.jpg?width=840&height=1248",
+      "sourcePath": "assets/Play/ai-outfit-try-on-tool/source/play-ai-outfit-try-on-tool-poster-YatadAoO3JhC9h0VFC7fp15OaI-original.jpg",
+      "originalBytes": 84218,
+      "originalWidth": 840,
+      "originalHeight": 1248,
+      "outputPath": "assets/Play/ai-outfit-try-on-tool/optimized/play-ai-outfit-try-on-tool-poster-YatadAoO3JhC9h0VFC7fp15OaI-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 32584,
+      "outputWidth": 840,
+      "outputHeight": 1248,
+      "savingsBytes": 51634,
+      "savingsPercent": 61.30993374338027
+    },
+    {
+      "slug": "ai-outfit-try-on-tool",
+      "title": "AI Outfit Try-On Tool",
+      "order": 42,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/0zqaFSRYhK2tqzrdzsVRzhymDg.mp4",
+      "sourcePath": "assets/Play/ai-outfit-try-on-tool/source/play-ai-outfit-try-on-tool-video-0zqaFSRYhK2tqzrdzsVRzhymDg-original.mp4",
+      "originalBytes": 723465,
+      "originalWidth": 840,
+      "originalHeight": 1248,
+      "outputPath": "assets/Play/ai-outfit-try-on-tool/optimized/play-ai-outfit-try-on-tool-0zqaFSRYhK2tqzrdzsVRzhymDg-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 338627,
+      "outputWidth": 606,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 4.3,
+      "savingsBytes": 384838,
+      "savingsPercent": 53.19372740906609
+    }
+  ]
+}

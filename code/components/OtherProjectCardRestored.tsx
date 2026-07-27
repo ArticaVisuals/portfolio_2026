@@ -1,4 +1,5 @@
 import * as React from "react"
+// @ts-expect-error Framer exposes useRouter at runtime but omits it from the editor typings.
 import { addPropertyControls, ControlType, RenderTarget, useRouter } from "framer"
 
 type LinkValue =
@@ -104,7 +105,7 @@ const KNOWN_PROJECT_LINKS: Record<string, string> = {
     "national park playing cards": "/case-studies/national-park-cards",
     "motion connect 2025": "/case-studies/motion-connect-2025",
     yomo: "/case-studies/yomo",
-    karuna: "/case-studies/karuna",
+    "highland harvests": "/case-studies/highland-harvests",
     "weaponized innocence": "/case-studies/weaponized-innocence",
     typldn: "/case-studies/typldn",
     "seek truth": "/case-studies/seek-truth",

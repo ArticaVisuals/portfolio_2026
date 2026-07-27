@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:56.926Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/seek-truth",
+  "items": [
+    {
+      "slug": "play-019",
+      "title": "Seek Truth",
+      "order": 24,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/0QdIz1Ts6Cmbrseq10aa5bvqU.webp?width=1200&height=1800",
+      "sourcePath": "assets/Play/seek-truth/source/play-play-019-poster-0QdIz1Ts6Cmbrseq10aa5bvqU-original.webp",
+      "originalBytes": 162696,
+      "originalWidth": 1200,
+      "originalHeight": 1800,
+      "outputPath": "assets/Play/seek-truth/optimized/play-play-019-poster-0QdIz1Ts6Cmbrseq10aa5bvqU-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 96288,
+      "outputWidth": 1067,
+      "outputHeight": 1600,
+      "savingsBytes": 66408,
+      "savingsPercent": 40.81722967989379
+    },
+    {
+      "slug": "play-019",
+      "title": "Seek Truth",
+      "order": 24,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/8GRM2s5IfVivi2g5nv10PXMQ8EA.mp4",
+      "sourcePath": "assets/by-project/seek-truth/main/source/D1559036843585192953673121256981__Seek-Truth-Promo-Video.mp4",
+      "originalBytes": 7720973,
+      "originalWidth": 1080,
+      "originalHeight": 1920,
+      "outputPath": "assets/Play/seek-truth/optimized/play-play-019-8GRM2s5IfVivi2g5nv10PXMQ8EA-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 2121497,
+      "outputWidth": 506,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 7.2072,
+      "savingsBytes": 5599476,
+      "savingsPercent": 72.52293201906029
+    }
+  ]
+}

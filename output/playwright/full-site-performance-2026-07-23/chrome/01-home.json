@@ -1,0 +1,314 @@
+{
+  "target": "https://micahhoang.com/",
+  "auditedAt": "2026-07-23T19:52:51.887Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 6758,
+  "title": "Micah Hoang — Brand Designer",
+  "canonical": "https://micahhoang.com/",
+  "bodyTextLength": 990,
+  "domNodes": 419,
+  "timing": {
+    "ttfbMs": 61.79999999701977,
+    "responseStartMs": 317.20000000298023,
+    "domContentLoadedMs": 640.8000000119209,
+    "loadMs": 748.6000000089407,
+    "firstPaintMs": 444,
+    "fcpMs": 444,
+    "lcpMs": 576,
+    "lcpUrl": "",
+    "cls": 0.2914342431640625,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 121,
+    "longTaskMaxMs": 121
+  },
+  "media": {
+    "images": {
+      "total": 7,
+      "withSource": 7,
+      "complete": 7,
+      "ready": 7,
+      "broken": 0,
+      "incomplete": 0,
+      "lazy": 7
+    },
+    "videos": {
+      "total": 4,
+      "withSource": 4,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 4,
+      "playing": 2,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 51,
+    "failedRequestCount": 0,
+    "totalBytes": 7859925,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 27885,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 25,
+        "bytes": 340216,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 6,
+        "bytes": 141183,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 8,
+        "bytes": 1152730,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 4,
+        "bytes": 31319,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1994,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 4,
+        "bytes": 6164165,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3954034,
+        "durationMs": 176,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1049233,
+        "durationMs": 133,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 731073,
+        "durationMs": 113,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 429825,
+        "durationMs": 64,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 288521,
+        "durationMs": 79,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 191653,
+        "durationMs": 104,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?scale-down-to=2048&width=3236&height=1810",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 168182,
+        "durationMs": 118,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/5SSyB10nNP8Fa1PU0ixS57P5RA.jpg?width=2000&height=2940",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 166925,
+        "durationMs": 187,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png?width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 156206,
+        "durationMs": 117,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117198,
+        "durationMs": 73,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png?width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 90231,
+        "durationMs": 119,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 83992,
+        "durationMs": 105,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63595,
+        "durationMs": 142,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49801,
+        "durationMs": 77,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45446,
+        "durationMs": 60,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33801,
+        "durationMs": 134,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28187,
+        "durationMs": 32,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27885,
+        "durationMs": 415,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BNuLb-Xz.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17316,
+        "durationMs": 71,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BNuLb-Xz.mjs",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17316,
+        "durationMs": 36,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/",
+  "artifactSlug": "home"
+}

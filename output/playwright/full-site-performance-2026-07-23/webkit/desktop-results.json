@@ -1,0 +1,5682 @@
+[
+  {
+    "requestedUrl": "https://micahhoang.com/",
+    "finalUrl": "https://micahhoang.com/",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 57,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 8,
+      "media": 0,
+      "font": 6,
+      "script": 29,
+      "xhr": 0,
+      "fetch": 2,
+      "iframe": 0,
+      "other": 10
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/",
+    "language": "en",
+    "textCharacters": 991,
+    "domNodes": 419,
+    "landmarks": {
+      "main": 1,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 1
+    },
+    "timings": {
+      "ttfb": 58,
+      "domContentLoaded": 365,
+      "load": 388,
+      "fcp": 289,
+      "lcp": 668,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 27685,
+      "encodedBodySize": 27385,
+      "decodedBodySize": 264498
+    },
+    "performanceResourceCount": 49,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 6,
+      "img": 8,
+      "link": 18,
+      "other": 1,
+      "fetch": 2,
+      "video": 8,
+      "iframe": 1
+    },
+    "images": {
+      "total": 7,
+      "ready": 7,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 4,
+      "metadataReady": 4,
+      "frameReady": 4,
+      "errors": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "poster": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "697x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "poster": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "697x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "697x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "697x388",
+          "error": null
+        }
+      ]
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836345045",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x3188",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1q9mgij-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/home-alt",
+    "finalUrl": "https://micahhoang.com/home-alt",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/home-alt",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 54,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 8,
+      "media": 0,
+      "font": 5,
+      "script": 27,
+      "xhr": 0,
+      "fetch": 2,
+      "iframe": 0,
+      "other": 10
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/home-alt",
+    "language": "en",
+    "textCharacters": 955,
+    "domNodes": 411,
+    "landmarks": {
+      "main": 1,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 65,
+      "domContentLoaded": 358,
+      "load": 378,
+      "fcp": 287,
+      "lcp": 620,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 27187,
+      "encodedBodySize": 26887,
+      "decodedBodySize": 255304
+    },
+    "performanceResourceCount": 46,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 8,
+      "link": 16,
+      "other": 1,
+      "fetch": 2,
+      "video": 8,
+      "iframe": 1
+    },
+    "images": {
+      "total": 7,
+      "ready": 7,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 4,
+      "metadataReady": 4,
+      "frameReady": 4,
+      "errors": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "poster": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "697x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "poster": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "697x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "697x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "697x388",
+          "error": null
+        }
+      ]
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836361753",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x3331",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-107mql-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/404",
+    "finalUrl": "https://micahhoang.com/404",
+    "status": 404,
+    "responseUrl": "https://micahhoang.com/404",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 31,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 0,
+      "media": 0,
+      "font": 5,
+      "script": 22,
+      "xhr": 0,
+      "fetch": 0,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [
+      {
+        "status": 404,
+        "url": "https://micahhoang.com/404"
+      }
+    ],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/404",
+    "language": "en",
+    "textCharacters": 181,
+    "domNodes": 182,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 73,
+      "domContentLoaded": 218,
+      "load": 236,
+      "fcp": 220,
+      "lcp": 220,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 22950,
+      "encodedBodySize": 22650,
+      "decodedBodySize": 180723
+    },
+    "performanceResourceCount": 23,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 5,
+      "link": 12,
+      "other": 1,
+      "iframe": 1
+    },
+    "images": {
+      "total": 0,
+      "ready": 0,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "details": []
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836372687",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1001",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies",
+    "finalUrl": "https://micahhoang.com/index",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 62,
+      "document": 3,
+      "stylesheet": 0,
+      "image": 1,
+      "media": 0,
+      "font": 10,
+      "script": 40,
+      "xhr": 0,
+      "fetch": 4,
+      "iframe": 0,
+      "other": 4
+    },
+    "requestFailures": [
+      {
+        "type": "fetch",
+        "url": "https://micahhoang.com/",
+        "error": "cancelled"
+      },
+      {
+        "type": "fetch",
+        "url": "https://micahhoang.com/",
+        "error": "cancelled"
+      },
+      {
+        "type": "beacon",
+        "url": "https://events.framer.com/anonymous",
+        "error": "cancelled"
+      },
+      {
+        "type": "beacon",
+        "url": "https://events.framer.com/anonymous",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \nstyle\ndiv\nht@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/o_wEyqmy9ePNbec5uhSFt4d-L9U6RLrveJTAKF6et-w.mpKINfgp.mjs:1:12141\npS@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs:897:713\nSuspense\nbl@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. null"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \nstyle\ndiv\nIndexPage@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs:807:19490\npS@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs:897:713\nSuspense\nbl@https://framerusercontent.com/sites/Qw9YlQnLg7ayt"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \nstyle\nNt@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs:807:12491\ndiv\nIndexPage@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs:807:19490\npS@https://frameruserc"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. null"
+      }
+    ],
+    "pageErrors": [
+      "/micahhoang.com/case-studies due to access control checks.",
+      "/micahhoang.com/case-studies due to access control checks.",
+      "/khaki-ship-257706.framer.app/ due to access control checks.",
+      "/khaki-ship-257706.framer.app/ due to access control checks.",
+      "/khaki-ship-257706.framer.app/case-studies due to access control checks.",
+      "/khaki-ship-257706.framer.app/case-studies due to access control checks."
+    ],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/index",
+    "language": "en",
+    "textCharacters": 1701,
+    "domNodes": 583,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 1
+    },
+    "timings": {
+      "ttfb": 0,
+      "domContentLoaded": 165,
+      "load": 188,
+      "fcp": 124,
+      "lcp": 170,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 0,
+      "encodedBodySize": 0,
+      "decodedBodySize": 0
+    },
+    "performanceResourceCount": 28,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 5,
+      "img": 1,
+      "link": 14,
+      "other": 1,
+      "fetch": 2,
+      "iframe": 1
+    },
+    "images": {
+      "total": 15,
+      "ready": 1,
+      "failed": 0,
+      "lazyPending": 14,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "details": []
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836382718",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1771",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-unwxb4",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "a.framer-wqb5zs.framer-11aflm3",
+          "left": -202,
+          "right": -107,
+          "width": 95
+        },
+        {
+          "element": "div.framer-1am7lwi",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "img",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div.framer-begyn5",
+          "left": -162,
+          "right": -117,
+          "width": 45
+        },
+        {
+          "element": "p.framer-text.framer-styles-preset-1dmv8xw",
+          "left": -162,
+          "right": -117,
+          "width": 45
+        },
+        {
+          "element": "div.framer-l2x7iy-container",
+          "left": -107,
+          "right": -107,
+          "width": 0
+        },
+        {
+          "element": "a.framer-wqb5zs.framer-11aflm3",
+          "left": -202,
+          "right": -24,
+          "width": 178
+        },
+        {
+          "element": "div.framer-1am7lwi",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "img",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div.framer-begyn5",
+          "left": -162,
+          "right": -34,
+          "width": 128
+        },
+        {
+          "element": "p.framer-text.framer-styles-preset-1dmv8xw",
+          "left": -162,
+          "right": -34,
+          "width": 128
+        },
+        {
+          "element": "div.framer-l2x7iy-container",
+          "left": -24,
+          "right": -24,
+          "width": 0
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/index",
+    "finalUrl": "https://micahhoang.com/index",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/index",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 35,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 1,
+      "media": 0,
+      "font": 4,
+      "script": 24,
+      "xhr": 0,
+      "fetch": 2,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \nstyle\ndiv\nIndexPage@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs:807:19490\npS@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs:897:713\nSuspense\nbl@https://framerusercontent.com/sites/Qw9YlQnLg7ayt"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \nstyle\nNt@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs:807:12491\ndiv\nIndexPage@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs:807:19490\npS@https://frameruserc"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. null"
+      }
+    ],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/index",
+    "language": "en",
+    "textCharacters": 1701,
+    "domNodes": 583,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 1
+    },
+    "timings": {
+      "ttfb": 127,
+      "domContentLoaded": 293,
+      "load": 311,
+      "fcp": 252,
+      "lcp": 295,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 29820,
+      "encodedBodySize": 29520,
+      "decodedBodySize": 239247
+    },
+    "performanceResourceCount": 27,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 4,
+      "img": 1,
+      "link": 14,
+      "other": 1,
+      "fetch": 2,
+      "iframe": 1
+    },
+    "images": {
+      "total": 15,
+      "ready": 1,
+      "failed": 0,
+      "lazyPending": 14,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "details": []
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836393597",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1771",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-unwxb4",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "a.framer-wqb5zs.framer-11aflm3",
+          "left": -202,
+          "right": -107,
+          "width": 95
+        },
+        {
+          "element": "div.framer-1am7lwi",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "img",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div.framer-begyn5",
+          "left": -162,
+          "right": -117,
+          "width": 45
+        },
+        {
+          "element": "p.framer-text.framer-styles-preset-1dmv8xw",
+          "left": -162,
+          "right": -117,
+          "width": 45
+        },
+        {
+          "element": "div.framer-l2x7iy-container",
+          "left": -107,
+          "right": -107,
+          "width": 0
+        },
+        {
+          "element": "a.framer-wqb5zs.framer-11aflm3",
+          "left": -202,
+          "right": -24,
+          "width": 178
+        },
+        {
+          "element": "div.framer-1am7lwi",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "img",
+          "left": -202,
+          "right": -172,
+          "width": 30
+        },
+        {
+          "element": "div.framer-begyn5",
+          "left": -162,
+          "right": -34,
+          "width": 128
+        },
+        {
+          "element": "p.framer-text.framer-styles-preset-1dmv8xw",
+          "left": -162,
+          "right": -34,
+          "width": 128
+        },
+        {
+          "element": "div.framer-l2x7iy-container",
+          "left": -24,
+          "right": -24,
+          "width": 0
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/play",
+    "finalUrl": "https://micahhoang.com/play",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/play",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 114,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 41,
+      "media": 0,
+      "font": 2,
+      "script": 21,
+      "xhr": 0,
+      "fetch": 0,
+      "iframe": 0,
+      "other": 48
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/play",
+    "language": "en",
+    "textCharacters": 102,
+    "domNodes": 598,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 55,
+      "domContentLoaded": 172,
+      "load": 190,
+      "fcp": 174,
+      "lcp": 2380,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 32190,
+      "encodedBodySize": 31890,
+      "decodedBodySize": 213327
+    },
+    "performanceResourceCount": 106,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 2,
+      "link": 11,
+      "other": 1,
+      "img": 41,
+      "video": 46,
+      "iframe": 1
+    },
+    "images": {
+      "total": 94,
+      "ready": 94,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 16,
+      "metadataReady": 16,
+      "frameReady": 16,
+      "errors": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/t1S2CPN4P17rRkZe1IkBuD9usys.mp4",
+          "poster": "https://framerusercontent.com/images/ntqNyMTnyHj6GNiwJZM9YsSlC80.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x900",
+          "rendered": "190x190",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/lJ0QsyPvYm9co7SExUGpFOpWzA.mp4",
+          "poster": "https://framerusercontent.com/images/He7SlmzDpJRwD29yJjCAbRblSg.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x506",
+          "rendered": "190x107",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/cgBZBZIIQlmRHtK3KVDbT3HesfY.mp4",
+          "poster": "https://framerusercontent.com/images/jM5tUOKZ7wjmPPnCzGyOcX7XhiA.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x676",
+          "rendered": "190x143",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/T2EtH0urWWNoTQqieKcmgRd0JME.mp4",
+          "poster": "https://framerusercontent.com/images/7Zp6Ii5ZD748gjTRtPfhm2FrlQM.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x506",
+          "rendered": "190x107",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/XoxJX64OvkW4czujQfAeL7to6BI.mp4",
+          "poster": "https://framerusercontent.com/images/Cm8W3g10jrbP8GDgvwen9lbKOw.jpg?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1376x768",
+          "rendered": "190x106",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/4SjlY5FrwzF88e1Umjjx3EkM.mp4",
+          "poster": "https://framerusercontent.com/images/DdHX9yatO0qeDx7Nrd9LYdA6k.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x506",
+          "rendered": "190x107",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/BKFVlCevalPznK0T4GUhLktGEiM.mp4",
+          "poster": "https://framerusercontent.com/images/sXiKrw7kZubNHNppjrLELkfwuRU.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x506",
+          "rendered": "190x107",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/TgHpuDsLE8qFRCs5hLHlQaIe5Kc.mp4",
+          "poster": "https://framerusercontent.com/images/G7X0qDQfwo8U0Dt4H1lm0eDbvA.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x506",
+          "rendered": "190x107",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/DZVwUL7YIkW41UvIcIoreeVtx0s.mp4",
+          "poster": "https://framerusercontent.com/images/gIoMjOu9b16cS9cbyUypROM2XU.jpg?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1200x900",
+          "rendered": "190x143",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/4qJQzg9TPvCPP0U4x10xdWvjL04.mp4",
+          "poster": "https://framerusercontent.com/images/euKunoBNRSjwqLs66ONG9XdQjw.jpg?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1024x1024",
+          "rendered": "190x190",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/2kSBdtqGiNneZjBLOHTPc1wCVFI.mp4",
+          "poster": "https://framerusercontent.com/images/Dyq8I0mbjDSmtf3ThS37OMO6k.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "600x900",
+          "rendered": "127x190",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/ROxwOetbqqC6dmTcbKo7UHpCVKU.mp4",
+          "poster": "https://framerusercontent.com/images/TpQ3PPVhcSdadWq2F9T9BLGBUI.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x900",
+          "rendered": "190x190",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/HUWlZTyUD1zQFmPSMdDRlFYRBGs.mp4",
+          "poster": "https://framerusercontent.com/images/vIjFd1urqeSHjb0lTq2FKFCix0.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "900x506",
+          "rendered": "190x107",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/epuF8wY7LX1RVMuuXVvGTwliE.mp4",
+          "poster": "https://framerusercontent.com/images/NnQ9RtX8e1TdkeyExuJMmo8.webp?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "720x900",
+          "rendered": "152x190",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/huKz7bwQqB9zw88vP6DheQaGjE.mp4",
+          "poster": "https://framerusercontent.com/images/Aj9cScyeATjrlbSABBqknznejhE.jpg?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1080x1080",
+          "rendered": "190x190",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/9wgrOuxa3BIpM7r7zFu6tPwepw.mp4",
+          "poster": "https://framerusercontent.com/images/MtBDLA1EaGAyi4rN1pERCSmaf8.jpg?scale-down-to=720&format=webp",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1064x1080",
+          "rendered": "187x190",
+          "error": null
+        }
+      ]
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836407955",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1000",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-i3to7g-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "button",
+          "left": -904,
+          "right": -714,
+          "width": 190
+        },
+        {
+          "element": "div",
+          "left": -904,
+          "right": -714,
+          "width": 190
+        },
+        {
+          "element": "img",
+          "left": -904,
+          "right": -714,
+          "width": 190
+        },
+        {
+          "element": "span",
+          "left": -904,
+          "right": -714,
+          "width": 190
+        },
+        {
+          "element": "button",
+          "left": -658,
+          "right": -468,
+          "width": 190
+        },
+        {
+          "element": "div",
+          "left": -658,
+          "right": -468,
+          "width": 190
+        },
+        {
+          "element": "img",
+          "left": -658,
+          "right": -468,
+          "width": 190
+        },
+        {
+          "element": "button",
+          "left": -412,
+          "right": -222,
+          "width": 190
+        },
+        {
+          "element": "div",
+          "left": -412,
+          "right": -222,
+          "width": 190
+        },
+        {
+          "element": "img",
+          "left": -412,
+          "right": -222,
+          "width": 190
+        },
+        {
+          "element": "span",
+          "left": -412,
+          "right": -222,
+          "width": 190
+        },
+        {
+          "element": "button",
+          "left": -166,
+          "right": 24,
+          "width": 190
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/info",
+    "finalUrl": "https://micahhoang.com/info",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/info",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 35,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 1,
+      "media": 0,
+      "font": 6,
+      "script": 24,
+      "xhr": 0,
+      "fetch": 0,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/info",
+    "language": "en",
+    "textCharacters": 1833,
+    "domNodes": 532,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 82,
+      "domContentLoaded": 336,
+      "load": 371,
+      "fcp": 156,
+      "lcp": 352,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 26018,
+      "encodedBodySize": 25718,
+      "decodedBodySize": 235828
+    },
+    "performanceResourceCount": 27,
+    "resourceInitiators": {
+      "script": 4,
+      "img": 1,
+      "css": 6,
+      "link": 14,
+      "other": 1,
+      "iframe": 1
+    },
+    "images": {
+      "total": 1,
+      "ready": 1,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "details": []
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836423691",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x2535",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/airpods",
+    "finalUrl": "https://micahhoang.com/case-studies/airpods",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/airpods",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 109,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 31,
+      "media": 0,
+      "font": 5,
+      "script": 32,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 32
+    },
+    "requestFailures": [
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/HflTOYDNzce3QfCEbZ0bji7HCU.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/JmkOmLQq5rmvERShZfiFP7M.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "AirPods Pro 3 Launch Identity - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/airpods",
+    "language": "en",
+    "textCharacters": 1551,
+    "domNodes": 449,
+    "landmarks": {
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 52,
+      "domContentLoaded": 617,
+      "load": 1625,
+      "fcp": 481,
+      "lcp": 832.0000000000001,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 29523,
+      "encodedBodySize": 29223,
+      "decodedBodySize": 263840
+    },
+    "performanceResourceCount": 79,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 9,
+      "video": 30,
+      "link": 21,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 8,
+      "ready": 8,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 11,
+      "metadataReady": 11,
+      "frameReady": 3,
+      "errors": 0,
+      "autoplayTotal": 3,
+      "autoplayPlaying": 1,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+          "poster": "https://files.catbox.moe/7qmv8t.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1440x810",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/JmkOmLQq5rmvERShZfiFP7M.mp4",
+          "poster": "https://files.catbox.moe/sa6pkl.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/HflTOYDNzce3QfCEbZ0bji7HCU.mp4",
+          "poster": "https://files.catbox.moe/10d33l.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1120",
+          "rendered": "690x1164",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+          "poster": "https://files.catbox.moe/fuo78s.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1400x787",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+          "poster": "https://files.catbox.moe/7rnbww.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+          "poster": "https://files.catbox.moe/dg9t8p.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "3840x2160",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+          "poster": "https://files.catbox.moe/29v8tp.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+          "poster": "https://files.catbox.moe/aii1k9.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+          "poster": "https://files.catbox.moe/kznvpv.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1400x787",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836479843",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x9216",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1t43hmu-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1wm0tle-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/simon-schuster",
+    "finalUrl": "https://micahhoang.com/case-studies/simon-schuster",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/simon-schuster",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 113,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 49,
+      "media": 0,
+      "font": 5,
+      "script": 42,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 8
+    },
+    "requestFailures": [
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/fwvx3b.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/dvr4eq.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/e2530s.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/b9f0GkZjSgHCSTkQ6p5mSRBOFRo.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://freight.cargo.site/t/original/i/K1752285800188626851517885044245/S-S-Logo-Animation-2.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/npEWAtDub3QRSPyGSrWh42ns6H8.mp4",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      }
+    ],
+    "pageErrors": [],
+    "title": "Simon & Schuster Rebrand Concept - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/simon-schuster",
+    "language": "en",
+    "textCharacters": 3475,
+    "domNodes": 644,
+    "landmarks": {
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 53,
+      "domContentLoaded": 641,
+      "load": 786,
+      "fcp": 487,
+      "lcp": 768,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 36660,
+      "encodedBodySize": 36360,
+      "decodedBodySize": 351112
+    },
+    "performanceResourceCount": 95,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 46,
+      "link": 27,
+      "other": 1,
+      "fetch": 7,
+      "video": 3,
+      "iframe": 1
+    },
+    "images": {
+      "total": 96,
+      "ready": 41,
+      "failed": 0,
+      "lazyPending": 55,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 3,
+      "metadataReady": 3,
+      "frameReady": 0,
+      "errors": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://freight.cargo.site/t/original/i/K1752285800188626851517885044245/S-S-Logo-Animation-2.mp4",
+          "poster": "https://files.catbox.moe/fwvx3b.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1400x788",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/npEWAtDub3QRSPyGSrWh42ns6H8.mp4",
+          "poster": "https://files.catbox.moe/dvr4eq.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1400x788",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/b9f0GkZjSgHCSTkQ6p5mSRBOFRo.mp4",
+          "poster": "https://files.catbox.moe/e2530s.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "3200x1900",
+          "rendered": "1400x831",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836494998",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x17494",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-g3xmeg-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-e4s4f6-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/motion-connect-2025",
+    "finalUrl": "https://micahhoang.com/case-studies/motion-connect-2025",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/motion-connect-2025",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 141,
+      "document": 3,
+      "stylesheet": 2,
+      "image": 41,
+      "media": 0,
+      "font": 5,
+      "script": 40,
+      "xhr": 7,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 36
+    },
+    "requestFailures": [
+      {
+        "type": "xhr",
+        "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+        "error": "cancelled"
+      },
+      {
+        "type": "xhr",
+        "url": "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=7-_Wxa9oSyJjij42&ver=2&cmt=0&fs=0&rt=4.82&euri=https%3A%2F%2Fmicahhoang.com%2F&lact=4835&cl=952264472&mos=0&volume=100&cbrand=apple&cbr=Safari&cbrver=26.5&c=WEB_EMBEDDED_PLAYER&cver=2.20260723.01.00&cplayer=UNIPLAYER&cos=Macintosh&cosver=10_15_7&cplatform=DESKTOP&epm=1&hl=en_US&cr=US&len=40&fexp=v1%2C24499534%2C26564109%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C68547%2C1248%2C30907%2C2878%2C12227%2C25059%2C4174%2C30447%2",
+        "error": "cancelled"
+      },
+      {
+        "type": "xhr",
+        "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+        "error": "cancelled"
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/lfhxki.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/2sjcee.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/v76dix.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/3cw8yw.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/dk1l9v.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/y08ijz.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/2sjcee.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/v76dix.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/3cw8yw.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \nstyle\ndiv\nDouble Stack Gallery Grid@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Tshhikd7mKMXSCZHdr8__vJIZYRPul997e_mQZAUywc.BfKCwWmz.mjs:1:3052\ndiv\n@https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs:890:26554\n@https://framerusercontent.com/sites/Qw9YlQn"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings. null"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      }
+    ],
+    "pageErrors": [],
+    "title": "Motion Connect 2025 Identity - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/motion-connect-2025",
+    "language": "en",
+    "textCharacters": 2282,
+    "domNodes": 506,
+    "landmarks": {
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 80,
+      "domContentLoaded": 665,
+      "load": 3434,
+      "fcp": 498,
+      "lcp": 1387,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 31808,
+      "encodedBodySize": 31508,
+      "decodedBodySize": 298775
+    },
+    "performanceResourceCount": 107,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "video": 54,
+      "img": 9,
+      "iframe": 2,
+      "link": 24,
+      "other": 1,
+      "fetch": 7
+    },
+    "images": {
+      "total": 9,
+      "ready": 9,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 27,
+      "metadataReady": 6,
+      "frameReady": 6,
+      "errors": 0,
+      "autoplayTotal": 6,
+      "autoplayPlaying": 1,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/dCRutmC1dwoz5Zq4iytCOHvrt8.mp4",
+          "poster": "https://files.catbox.moe/lfhxki.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1440x810",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/GGcVRlbftAw0hNbMBYLjrvfvWys.mp4",
+          "poster": "https://framerusercontent.com/images/EQq3E80E8VkwUpiRVZ0w44HtAI.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/BooHwPmFdZzaDuHv8nbfI9xjdtQ.mp4",
+          "poster": "https://framerusercontent.com/images/5ftrRFEOVt7QzktnOWAKeNHQ.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/YRNgtRGLiypNlDrdmqujQ3rVQM.mp4",
+          "poster": "https://framerusercontent.com/images/nApFDb8U4TlZ4JA006GzVHHc0n8.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/G9HKqWgaaBJSqDA4opMt4l7Mg.mp4",
+          "poster": "https://framerusercontent.com/images/6Q50NwYClaeFNd4UutgL38X6vQc.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MUBo4NUg9h0TfJLiZeRurJpSfRM.mp4",
+          "poster": "https://framerusercontent.com/images/MgfqnxhDUKi585z0euBKm0zaxI.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/vJHDjZwQuswz3dQ6bmJSVRzgGmg.mp4",
+          "poster": "https://framerusercontent.com/images/J2KkmYpgiWxXSIWnWLCSDPMEw.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/pRWPOFnQdEvvHXAqiKkHcG0nZw.mp4",
+          "poster": "https://framerusercontent.com/images/Q2uHl9wrT6aaE0ANinboio9zaII.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/YKby7PllFLfF04tfPrMxwe46WKQ.mp4",
+          "poster": "https://framerusercontent.com/images/1Si7qs6Hcu2ACmxoCSz4fU1QEEk.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/mxVLCW1f8gRxzoHxpP6LnoZTghU.mp4",
+          "poster": "https://framerusercontent.com/images/gDt4DTACXxMkNZcU4AGKJrAYSGo.jpg?width=1280&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "453x255",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/XK5ZSqhpv1vkfOHYBhp5xbUJkUs.mp4",
+          "poster": "https://framerusercontent.com/images/VzryGe9F0NxIWz27YGesSpAJFBM.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/9MUCKEON6m1zFwfIR89rHq01GBY.mp4",
+          "poster": "https://framerusercontent.com/images/ckMwGL4wJguJOObN97Ld2bp7c.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VMIfEJOf6GhNJVSK9YlmePkeNU.mp4",
+          "poster": "https://framerusercontent.com/images/fVddp8wwfZHpozmneNudqIbyFZA.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/AgT58DVg5HKAar6048Y06Wn2s.mp4",
+          "poster": "https://framerusercontent.com/images/4J2T5SteKu2M2RWO4lwKLSz2ztw.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/sicsuW5K3Kjh9xM14ErsrRVgk.mp4",
+          "poster": "https://framerusercontent.com/images/6g5UjKYooV9E2Q7dj1PZBiBGqg0.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/EGVFftYxs9PXOCWTZgOQPMLs03M.mp4",
+          "poster": "https://framerusercontent.com/images/m40BTGTDE15HkQD0jtFLGyugTng.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/YaWWIBrKvKC4X7pFhlRCCi2ZosQ.mp4",
+          "poster": "https://framerusercontent.com/images/MmxbZvYInq9jLbr6mLeu7Yyy4E.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/BcenVmrHAZ9jjNwQuW8osEeTYc.mp4",
+          "poster": "https://framerusercontent.com/images/R7GuLwvVPBLkGsX9VONXfwtSfU.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/I0rPChsYcbHmRItzAGCMaOE5sNk.mp4",
+          "poster": "https://framerusercontent.com/images/Y9k8EvKv0UMJGWtNdDjscvKuVsk.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/k6cRK3ELjZoyVUXgOBK2eOTmcaU.mp4",
+          "poster": "https://framerusercontent.com/images/3yrYAoXBMiybifsaEFfVtPQuPFc.jpg?width=1280&height=1280",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x335",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 2,
+      "visible": 1,
+      "details": [
+        {
+          "src": "https://www.youtube.com/embed/je6WMia3n5E?autoplay=0&controls=1&loop=0&playsinline=1&rel=0",
+          "title": "Motion Connect 2025 Hype Reel",
+          "visible": true,
+          "rendered": "1400x787"
+        },
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836509530",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x8745",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/national-park-cards",
+    "finalUrl": "https://micahhoang.com/case-studies/national-park-cards",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/national-park-cards",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 91,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 26,
+      "media": 0,
+      "font": 5,
+      "script": 34,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 17
+    },
+    "requestFailures": [
+      {
+        "type": "other",
+        "url": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "National Park Playing Cards - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/national-park-cards",
+    "language": "en",
+    "textCharacters": 3833,
+    "domNodes": 490,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 99,
+      "domContentLoaded": 608,
+      "load": 969,
+      "fcp": 478,
+      "lcp": 764,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 32316,
+      "encodedBodySize": 32016,
+      "decodedBodySize": 309723
+    },
+    "performanceResourceCount": 81,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 19,
+      "video": 20,
+      "link": 23,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 24,
+      "ready": 19,
+      "failed": 0,
+      "lazyPending": 5,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 7,
+      "metadataReady": 7,
+      "frameReady": 0,
+      "errors": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://freight.cargo.site/t/original/i/J1543046243473909932978774201877/Joker-Animation-2.mp4",
+          "poster": "https://files.catbox.moe/d3cxx4.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/J1542517319778170274194483566101/All-Cards-Animation_1.mp4",
+          "poster": "https://files.catbox.moe/nxw2yy.jpg",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "686x386",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/G1540917371720490845266153559573/National-Park-Reel.mp4",
+          "poster": "https://framerusercontent.com/images/hZey1BjHYXv4BPSLzMoUf7ezJh4.jpg?width=720&height=1280",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "720x1280",
+          "rendered": "453x806",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+          "poster": "https://framerusercontent.com/images/cPppZRrD6D0MEyDFdVRYLVf6ws.jpg?width=720&height=1280",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "720x1280",
+          "rendered": "453x806",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/L1543258461716816171227936970261/SnapTik_App_7063886141824683311-HD.mp4",
+          "poster": "https://framerusercontent.com/images/Wfmukn52TJuchwiGVax036I6o.jpg?width=576&height=1024",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "576x1024",
+          "rendered": "453x806",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+          "poster": "https://framerusercontent.com/images/8Q1CwF3LWOv2etizgAJ41sNnlPk.jpg?width=960&height=544",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "960x544",
+          "rendered": "686x389",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/Z2116629357142052312463249233429/By-the-Numbers.mp4",
+          "poster": "https://framerusercontent.com/images/6p1JClo5HFIiOnx0Ij3guQDKs.jpg?width=1600&height=544",
+          "readyState": 1,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "2500x850",
+          "rendered": "1400x476",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836528166",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x12942",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/yomo",
+    "finalUrl": "https://micahhoang.com/case-studies/yomo",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/yomo",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 76,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 26,
+      "media": 0,
+      "font": 5,
+      "script": 34,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Yomo Food Navigation UX/UI - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/yomo",
+    "language": "en",
+    "textCharacters": 4268,
+    "domNodes": 478,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 2
+    },
+    "timings": {
+      "ttfb": 50,
+      "domContentLoaded": 523,
+      "load": 648,
+      "fcp": 400,
+      "lcp": 652,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 31537,
+      "encodedBodySize": 31237,
+      "decodedBodySize": 298606
+    },
+    "performanceResourceCount": 68,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 26,
+      "link": 23,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 26,
+      "ready": 26,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 2,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/TlurcfF0hy7zDnCapZ0SuhkcM.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "1400x787",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/zO2m4xJRbI4wZv6Ca3jOpuCTM.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "690x863",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836542596",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x14163",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-9xj0by-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mdwo4o-container.hidden-1qfls9v",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/highland-harvests",
+    "finalUrl": "https://micahhoang.com/case-studies/highland-harvests",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/highland-harvests",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 176,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 28,
+      "media": 0,
+      "font": 5,
+      "script": 34,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 100
+    },
+    "requestFailures": [
+      {
+        "type": "image",
+        "url": "https://framerusercontent.com/images/lWhohMtqXt0QEjYQEPuEDbw.jpg?width=4284&height=5712",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/CuwjJC6XqPPJiccUNiIeQJWp9e8.mov",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/CuwjJC6XqPPJiccUNiIeQJWp9e8.mov",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Karuna Packaging Identity - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/highland-harvests",
+    "language": "en",
+    "textCharacters": 3921,
+    "domNodes": 504,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 3
+    },
+    "timings": {
+      "ttfb": 54,
+      "domContentLoaded": 570,
+      "load": 10716,
+      "fcp": 401,
+      "lcp": 744,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 31988,
+      "encodedBodySize": 31688,
+      "decodedBodySize": 313090
+    },
+    "performanceResourceCount": 161,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 28,
+      "video": 91,
+      "link": 23,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 25,
+      "ready": 25,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 3,
+      "metadataReady": 3,
+      "frameReady": 3,
+      "errors": 0,
+      "autoplayTotal": 3,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/CuwjJC6XqPPJiccUNiIeQJWp9e8.mov",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 2,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "2160x3840",
+          "rendered": "408x725",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "608x1080",
+          "rendered": "408x725",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+          "poster": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836558414",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x11911",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-t6emed-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/gaia",
+    "finalUrl": "https://micahhoang.com/case-studies/gaia",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/gaia",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 176,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 49,
+      "media": 0,
+      "font": 5,
+      "script": 34,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 79
+    },
+    "requestFailures": [
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/5rxz22.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/50xion.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/00tm9g.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/7iwwxa.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/aq8akp.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/n0n3jb.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/k7hoi0.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/5rxz22.jpg",
+        "error": "The network connection was lost."
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      }
+    ],
+    "pageErrors": [],
+    "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/gaia",
+    "language": "en",
+    "textCharacters": 2774,
+    "domNodes": 544,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 3
+    },
+    "timings": {
+      "ttfb": 50,
+      "domContentLoaded": 786,
+      "load": 3243,
+      "fcp": 603,
+      "lcp": 988,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 32378,
+      "encodedBodySize": 32078,
+      "decodedBodySize": 337586
+    },
+    "performanceResourceCount": 160,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 41,
+      "link": 23,
+      "video": 77,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 24,
+      "ready": 17,
+      "failed": 0,
+      "lazyPending": 7,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 16,
+      "metadataReady": 16,
+      "frameReady": 16,
+      "errors": 0,
+      "autoplayTotal": 16,
+      "autoplayPlaying": 1,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "poster": "https://files.catbox.moe/5rxz22.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "1440x810",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+          "poster": "https://files.catbox.moe/8acqhu.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1440x1080",
+          "rendered": "431x323",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1248x1664",
+          "rendered": "408x544",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x1920",
+          "rendered": "453x680",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x1920",
+          "rendered": "453x680",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x1920",
+          "rendered": "453x680",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+          "poster": "https://files.catbox.moe/50xion.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1920",
+          "rendered": "378x378",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1072",
+          "rendered": "677x378",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+          "poster": "https://files.catbox.moe/00tm9g.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "2000x2482",
+          "rendered": "305x378",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+          "poster": "https://files.catbox.moe/7iwwxa.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "3872x2160",
+          "rendered": "896x500",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+          "poster": "https://files.catbox.moe/aq8akp.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "2276x2038",
+          "rendered": "447x400",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+          "poster": "https://files.catbox.moe/n0n3jb.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1470x1348",
+          "rendered": "372x341",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+          "poster": "https://files.catbox.moe/k7hoi0.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "3454x2012",
+          "rendered": "586x341",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "poster": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836583492",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x12642",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-12s9ehz-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "span",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "span",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "span",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -101,
+          "width": 0
+        },
+        {
+          "element": "div.framer-e3xa07-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/weaponized-innocence",
+    "finalUrl": "https://micahhoang.com/case-studies/weaponized-innocence",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/weaponized-innocence",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 113,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 57,
+      "media": 0,
+      "font": 5,
+      "script": 35,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 7
+    },
+    "requestFailures": [
+      {
+        "type": "image",
+        "url": "https://framerusercontent.com/images/CyRX7KsxOcEYYGqEs55ktPen3Xk.jpg?width=5730&height=4000",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Weaponized Innocence Editorial - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/weaponized-innocence",
+    "language": "en",
+    "textCharacters": 3259,
+    "domNodes": 519,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 2
+    },
+    "timings": {
+      "ttfb": 52,
+      "domContentLoaded": 543,
+      "load": 11516,
+      "fcp": 415,
+      "lcp": 664,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 32251,
+      "encodedBodySize": 31951,
+      "decodedBodySize": 320240
+    },
+    "performanceResourceCount": 105,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 57,
+      "link": 24,
+      "other": 1,
+      "fetch": 7,
+      "video": 5,
+      "iframe": 1
+    },
+    "images": {
+      "total": 56,
+      "ready": 44,
+      "failed": 0,
+      "lazyPending": 12,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 2,
+      "metadataReady": 2,
+      "frameReady": 2,
+      "errors": 0,
+      "autoplayTotal": 2,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+          "poster": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+          "poster": "https://framerusercontent.com/images/ZUrXNdcJocPWJF6jCmu0QBr2yEs.webp?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836601587",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x11938",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-pd58hz-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/typldn",
+    "finalUrl": "https://micahhoang.com/case-studies/typldn",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/typldn",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 71,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 19,
+      "media": 0,
+      "font": 5,
+      "script": 32,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 6
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "TYPLDN Conference Identity - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/typldn",
+    "language": "en",
+    "textCharacters": 1002,
+    "domNodes": 387,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 2
+    },
+    "timings": {
+      "ttfb": 91,
+      "domContentLoaded": 269,
+      "load": 1246,
+      "fcp": 210,
+      "lcp": 352,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 26283,
+      "encodedBodySize": 25983,
+      "decodedBodySize": 252616
+    },
+    "performanceResourceCount": 63,
+    "resourceInitiators": {
+      "script": 5,
+      "img": 19,
+      "css": 5,
+      "link": 21,
+      "other": 1,
+      "fetch": 7,
+      "video": 4,
+      "iframe": 1
+    },
+    "images": {
+      "total": 14,
+      "ready": 9,
+      "failed": 0,
+      "lazyPending": 5,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 6,
+      "metadataReady": 2,
+      "frameReady": 2,
+      "errors": 0,
+      "autoplayTotal": 2,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://freight.cargo.site/t/original/i/I1536330345899837002649459480085/Typo-London-Logo-Animation.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "1400x1750",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/E1539767266959917077443847116309/f6aa8485-6f2d-41b1-90e0-32753836bd0e.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "1400x1750",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/W1537681897480517488239549077013/ID-Card-Option-Animation_1.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "690x863",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/C1538106533449420377832965789205/Typo-London-Logo-Variants_1.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "1400x1750",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "poster": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "poster": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836635833",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x12148",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/seek-truth",
+    "finalUrl": "https://micahhoang.com/case-studies/seek-truth",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/seek-truth",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 143,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 76,
+      "media": 0,
+      "font": 6,
+      "script": 35,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 17
+    },
+    "requestFailures": [
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/XDoK5oZ8u2z7XAaiilHvljfEHBE.mp4",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Seek Truth Editorial Design - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/seek-truth",
+    "language": "en",
+    "textCharacters": 3355,
+    "domNodes": 659,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 2
+    },
+    "timings": {
+      "ttfb": 107,
+      "domContentLoaded": 412,
+      "load": 1439,
+      "fcp": 190,
+      "lcp": 532,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 33436,
+      "encodedBodySize": 33136,
+      "decodedBodySize": 363492
+    },
+    "performanceResourceCount": 134,
+    "resourceInitiators": {
+      "script": 5,
+      "img": 76,
+      "css": 6,
+      "link": 24,
+      "video": 14,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 86,
+      "ready": 73,
+      "failed": 0,
+      "lazyPending": 13,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 3,
+      "metadataReady": 3,
+      "frameReady": 3,
+      "errors": 0,
+      "autoplayTotal": 3,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/XDoK5oZ8u2z7XAaiilHvljfEHBE.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1080x1920",
+          "rendered": "404x717",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/fTGHYFKsXdKRXXr9jI5KgTtjRc.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1080x1080",
+          "rendered": "591x591",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/dlpeboRoRFqUdRmow024fH9Uz8.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1440",
+          "rendered": "789x591",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836650615",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x10002",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-313yme-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/cellular-symphony",
+    "finalUrl": "https://micahhoang.com/case-studies/cellular-symphony",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/cellular-symphony",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 79,
+      "document": 3,
+      "stylesheet": 1,
+      "image": 22,
+      "media": 0,
+      "font": 5,
+      "script": 37,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 4
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Cellular Symphony 3D Motion - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/cellular-symphony",
+    "language": "en",
+    "textCharacters": 1605,
+    "domNodes": 424,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 2
+    },
+    "timings": {
+      "ttfb": 154,
+      "domContentLoaded": 397,
+      "load": 464,
+      "fcp": 225,
+      "lcp": 401,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 29488,
+      "encodedBodySize": 29188,
+      "decodedBodySize": 290049
+    },
+    "performanceResourceCount": 65,
+    "resourceInitiators": {
+      "script": 5,
+      "img": 19,
+      "css": 5,
+      "iframe": 2,
+      "link": 24,
+      "other": 1,
+      "fetch": 7,
+      "video": 2
+    },
+    "images": {
+      "total": 22,
+      "ready": 18,
+      "failed": 0,
+      "lazyPending": 4,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 1,
+      "metadataReady": 1,
+      "frameReady": 1,
+      "errors": 0,
+      "autoplayTotal": 1,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+          "poster": "https://framerusercontent.com/images/ZUrXNdcJocPWJF6jCmu0QBr2yEs.webp?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 0
+    },
+    "iframes": {
+      "total": 2,
+      "visible": 1,
+      "details": [
+        {
+          "src": "https://player.vimeo.com/video/947718033?controls=1&autoplay=0&muted=0&loop=0&dnt=1",
+          "title": "Cellular Symphony",
+          "visible": true,
+          "rendered": "1440x810"
+        },
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836663197",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x4922",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-kzjvik-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "span",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-nlea7n-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "span",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-iby38j-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+    "finalUrl": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 85,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 19,
+      "media": 0,
+      "font": 5,
+      "script": 31,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 21
+    },
+    "requestFailures": [
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Wolff Olins x ArtCenter Event Identity - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+    "language": "en",
+    "textCharacters": 1355,
+    "domNodes": 397,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 2
+    },
+    "timings": {
+      "ttfb": 54,
+      "domContentLoaded": 241,
+      "load": 3143,
+      "fcp": 181,
+      "lcp": 336,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 27398,
+      "encodedBodySize": 27098,
+      "decodedBodySize": 254588
+    },
+    "performanceResourceCount": 76,
+    "resourceInitiators": {
+      "script": 5,
+      "img": 19,
+      "css": 5,
+      "link": 20,
+      "other": 1,
+      "video": 18,
+      "fetch": 7,
+      "iframe": 1
+    },
+    "images": {
+      "total": 15,
+      "ready": 15,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 10,
+      "metadataReady": 5,
+      "frameReady": 5,
+      "errors": 0,
+      "autoplayTotal": 5,
+      "autoplayPlaying": 5,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/4tuZaGAUhNJZIEXrVeTrrAA.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "600x338",
+          "rendered": "797x449",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/8j7wANAawQ6dXUtXxsIDgvk2mU.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "600x338",
+          "rendered": "797x449",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/un93dDamgJ7RbfCsgUJl4O6lLXc.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x168",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/JxnYqkYdEgPkgfWh7uLdaWyCg.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x168",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/cLeiKdvWvT7q6cF9hB63a7Kujno.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x168",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/lGvPXEf8tPY1FrrYE4xFC42t3Q.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x168",
+          "error": null
+        },
+        {
+          "src": "https://freight.cargo.site/t/original/i/N1655931692761862119294608070165/Wolff-Olins-Slide-10.mp4",
+          "poster": "",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1080x1080",
+          "rendered": "335x335",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/WHGzHSJ01hL40WLrZlMfZSD7lY.mp4",
+          "poster": "",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "686x343",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+          "poster": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+          "poster": "https://framerusercontent.com/images/ZUrXNdcJocPWJF6jCmu0QBr2yEs.webp?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 0,
+      "lightbox": 0,
+      "controllers": 0
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836677364",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x5912",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/independent-lens",
+    "finalUrl": "https://micahhoang.com/case-studies/independent-lens",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/independent-lens",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 69,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 17,
+      "media": 0,
+      "font": 5,
+      "script": 34,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 4
+    },
+    "requestFailures": [],
+    "responseErrors": [],
+    "consoleMessages": [],
+    "pageErrors": [],
+    "title": "Independent Lens Editorial System - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/independent-lens",
+    "language": "en",
+    "textCharacters": 1953,
+    "domNodes": 422,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 3
+    },
+    "timings": {
+      "ttfb": 87,
+      "domContentLoaded": 563,
+      "load": 1165,
+      "fcp": 442,
+      "lcp": 732,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 29294,
+      "encodedBodySize": 28994,
+      "decodedBodySize": 276436
+    },
+    "performanceResourceCount": 61,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 17,
+      "link": 23,
+      "other": 1,
+      "fetch": 7,
+      "video": 2,
+      "iframe": 1
+    },
+    "images": {
+      "total": 17,
+      "ready": 17,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 1,
+      "metadataReady": 1,
+      "frameReady": 1,
+      "errors": 0,
+      "autoplayTotal": 1,
+      "autoplayPlaying": 0,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "poster": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836692265",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x5938",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-15cy5td-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/peak-energy",
+    "finalUrl": "https://micahhoang.com/case-studies/peak-energy",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/peak-energy",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 182,
+      "document": 4,
+      "stylesheet": 2,
+      "image": 56,
+      "media": 0,
+      "font": 5,
+      "script": 38,
+      "xhr": 11,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 59
+    },
+    "requestFailures": [
+      {
+        "type": "xhr",
+        "url": "https://vod-adaptive-ak.vimeocdn.com/exp=1784840301~acl=%2F7e4f0929-a8ef-4ecd-9598-6c62b162ca08%2Fpsid%3Da8072e903524717c4854b6c5a8741fd5dd8793101784836701%2F%2A~hmac=d4c41247902734c31dc01c3bf6db3b17f48f6ac19ac249c5a2ea875ee4d8f9b7/7e4f0929-a8ef-4ecd-9598-6c62b162ca08/psid=a8072e903524717c4854b6c5a8741fd5dd8793101784836701/v2/range/prot/cmFuZ2U9Njg2MjQyOS0xMTE2MDE3OA/avf/d1bf97ea-85df-4aed-aeb3-8d46cf6b8e3a.mp4?pathsig=8c953e4f~VYb5U3Unsyl3m3I9tzxpVspY61jnH-h7yM7N34ne4v4&r=dXMtd2VzdDE%3D&range=6",
+        "error": "cancelled"
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/evo0n9.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/g35zqa.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/j1fq56.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/e7rz0t.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/w1od7p.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/km22rw.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/d6r530.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/vpsbqe.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/cr7y9x.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/j1fq56.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "image",
+        "url": "https://files.catbox.moe/j1fq56.jpg",
+        "error": "The network connection was lost."
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/HHTkUi7SKOAAtY1MmzC0Q1b54Q.mp4",
+        "error": "cancelled"
+      },
+      {
+        "type": "other",
+        "url": "https://framerusercontent.com/assets/HHTkUi7SKOAAtY1MmzC0Q1b54Q.mp4",
+        "error": "cancelled"
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      }
+    ],
+    "pageErrors": [],
+    "title": "Peak Energy x GM Motion Design - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/peak-energy",
+    "language": "en",
+    "textCharacters": 2898,
+    "domNodes": 446,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 54,
+      "domContentLoaded": 574,
+      "load": 2302,
+      "fcp": 386,
+      "lcp": 578,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 29460,
+      "encodedBodySize": 29160,
+      "decodedBodySize": 274531
+    },
+    "performanceResourceCount": 111,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "img": 13,
+      "iframe": 3,
+      "link": 23,
+      "other": 1,
+      "video": 54,
+      "fetch": 7
+    },
+    "images": {
+      "total": 8,
+      "ready": 8,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 10,
+      "metadataReady": 10,
+      "frameReady": 10,
+      "errors": 0,
+      "autoplayTotal": 10,
+      "autoplayPlaying": 1,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/QAYMhu4B0xdHJxnySBuabHtks.mp4",
+          "poster": "https://files.catbox.moe/cr7y9x.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "748x421",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/ebURoH5YNfEa6FCrcr6l6QFS68Q.mp4",
+          "poster": "https://files.catbox.moe/evo0n9.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "1104x621",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/HHTkUi7SKOAAtY1MmzC0Q1b54Q.mp4",
+          "poster": "https://files.catbox.moe/g35zqa.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "739x416",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/o0EK9YezE48hWm1UC3BcEme8ifY.mp4",
+          "poster": "https://files.catbox.moe/j1fq56.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "748x421",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/9Z12PCxBfwmh6gJITSSks4qYGLM.mp4",
+          "poster": "https://files.catbox.moe/e7rz0t.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/7MFleSRgo8r2lOEcs94tDjD41TI.mp4",
+          "poster": "https://files.catbox.moe/w1od7p.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/YTha6qQtYqtUuIUE9g1ffdEVKc.mp4",
+          "poster": "https://files.catbox.moe/km22rw.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/vkN4eGEAUSjfMw2lXOgnL5wcSo.mp4",
+          "poster": "https://files.catbox.moe/d6r530.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "690x388",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/qmBGS9TepzZYV60oqT58TCaPs.mp4",
+          "poster": "https://files.catbox.moe/vpsbqe.jpg",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "769x432",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "readyState": 4,
+          "networkState": 2,
+          "paused": true,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 1,
+      "lightbox": 1,
+      "controllers": 1
+    },
+    "iframes": {
+      "total": 3,
+      "visible": 2,
+      "details": [
+        {
+          "src": "https://player.vimeo.com/video/1200258330?h=e612fdb6f1&controls=1&autoplay=0&muted=0&loop=0&dnt=1",
+          "title": "Peak Energy x GM Brand Film",
+          "visible": true,
+          "rendered": "1440x810"
+        },
+        {
+          "src": "https://player.vimeo.com/video/1200258330?h=e612fdb6f1&controls=0&autoplay=1&muted=1&loop=1&dnt=1",
+          "title": "Peak Energy x GM Brand Film",
+          "visible": true,
+          "rendered": "1400x787"
+        },
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836706858",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x8108",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-eafzy1-container",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -202,
+          "right": -201,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/whatsapp",
+    "finalUrl": "https://micahhoang.com/case-studies/whatsapp",
+    "status": 200,
+    "responseUrl": "https://micahhoang.com/case-studies/whatsapp",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 67,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 11,
+      "media": 0,
+      "font": 5,
+      "script": 27,
+      "xhr": 0,
+      "fetch": 7,
+      "iframe": 0,
+      "other": 15
+    },
+    "requestFailures": [
+      {
+        "type": "other",
+        "url": "https://files.catbox.moe/xh4ax9.mp4",
+        "error": "The network connection was lost."
+      }
+    ],
+    "responseErrors": [],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: The network connection was lost."
+      }
+    ],
+    "pageErrors": [],
+    "title": "WhatsApp In-App - Micah Hoang",
+    "canonical": "https://micahhoang.com/case-studies/whatsapp",
+    "language": "en",
+    "textCharacters": 1038,
+    "domNodes": 322,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 1
+    },
+    "timings": {
+      "ttfb": 132,
+      "domContentLoaded": 379,
+      "load": 410,
+      "fcp": 321,
+      "lcp": 468,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 26617,
+      "encodedBodySize": 26317,
+      "decodedBodySize": 238577
+    },
+    "performanceResourceCount": 58,
+    "resourceInitiators": {
+      "script": 5,
+      "css": 5,
+      "video": 20,
+      "link": 16,
+      "other": 1,
+      "fetch": 7,
+      "iframe": 1,
+      "img": 3
+    },
+    "images": {
+      "total": 3,
+      "ready": 3,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 11,
+      "metadataReady": 6,
+      "frameReady": 6,
+      "errors": 1,
+      "autoplayTotal": 7,
+      "autoplayPlaying": 6,
+      "details": [
+        {
+          "src": "https://framerusercontent.com/assets/vdSPFOz2y9QvivDh2zbnwt30IL0.mp4",
+          "poster": "https://framerusercontent.com/images/rRYV72aNti4eWf7Z6SCGk1YTeo.jpg?width=560&height=700",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "560x700",
+          "rendered": "335x419",
+          "error": null
+        },
+        {
+          "src": "https://files.catbox.moe/xh4ax9.mp4",
+          "poster": "https://framerusercontent.com/images/pSsKV3jhZWnq1u2ElqLJJYdl0.jpg?width=560&height=700",
+          "readyState": 0,
+          "networkState": 3,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x419",
+          "error": {
+            "code": 4,
+            "message": ""
+          }
+        },
+        {
+          "src": "https://framerusercontent.com/assets/xYzecLfFRFlfVLmSOGTftcEqwo.mp4",
+          "poster": "https://framerusercontent.com/images/b2jpJVWlyAazK09tbFAh1fQxA.jpg?width=768&height=960",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "768x960",
+          "rendered": "335x419",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/rm6EY0gQ5MuGSR2MffYaOCdwtE.mp4",
+          "poster": "https://framerusercontent.com/images/6TmWBGgsWUvgaQJKv4vqMrrYEfs.jpg?width=680&height=850",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "680x850",
+          "rendered": "335x419",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/LNhy5ez6tTKnQOYBWeQgNSDyJhI.mp4",
+          "poster": "https://framerusercontent.com/images/4vopzO4wJzIm4KdOFRVk4oDr6M.jpg?width=576&height=720",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x419",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/kxLHzUDvsXhLfMF0ZCVumavJo.mp4",
+          "poster": "https://framerusercontent.com/images/IdJkdck9IWKAXO5T2UTYdjm47I.jpg?width=480&height=608",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x424",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/n2Vc9aSoBRZ41TP7zlEIqV4mMQ.mp4",
+          "poster": "https://framerusercontent.com/images/oy2GLuPQhNnSjqFcMYey7HHi0.jpg?width=480&height=608",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x424",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/5sN0nogXiDssutZndcVxBckU0M.mp4",
+          "poster": "https://framerusercontent.com/images/QUwCOzleARsHAbRJn79axTdWMu0.jpg?width=480&height=608",
+          "readyState": 0,
+          "networkState": 1,
+          "paused": true,
+          "autoplay": false,
+          "muted": true,
+          "loop": true,
+          "dimensions": "0x0",
+          "rendered": "335x424",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "poster": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "poster": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1920x1080",
+          "rendered": "453x271",
+          "error": null
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+          "readyState": 4,
+          "networkState": 1,
+          "paused": false,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "dimensions": "1280x720",
+          "rendered": "453x271",
+          "error": null
+        }
+      ]
+    },
+    "mediaContracts": {
+      "videoManager": 0,
+      "lightbox": 0,
+      "controllers": 0
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836720273",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x2757",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-ehtbw4-container",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -303,
+          "right": -302,
+          "width": 1
+        },
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/karuna",
+    "finalUrl": "https://micahhoang.com/case-studies/karuna",
+    "status": 404,
+    "responseUrl": "https://micahhoang.com/case-studies/karuna",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 31,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 0,
+      "media": 0,
+      "font": 5,
+      "script": 22,
+      "xhr": 0,
+      "fetch": 0,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [
+      {
+        "status": 404,
+        "url": "https://micahhoang.com/case-studies/karuna"
+      }
+    ],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/404",
+    "language": "en",
+    "textCharacters": 181,
+    "domNodes": 182,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 50,
+      "domContentLoaded": 203,
+      "load": 222,
+      "fcp": 206,
+      "lcp": 206,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 22950,
+      "encodedBodySize": 22650,
+      "decodedBodySize": 180723
+    },
+    "performanceResourceCount": 23,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 5,
+      "link": 12,
+      "other": 1,
+      "iframe": 1
+    },
+    "images": {
+      "total": 0,
+      "ready": 0,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "details": []
+    },
+    "mediaContracts": {
+      "videoManager": 0,
+      "lightbox": 0,
+      "controllers": 0
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836741489",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1001",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/rejuve",
+    "finalUrl": "https://micahhoang.com/case-studies/rejuve",
+    "status": 404,
+    "responseUrl": "https://micahhoang.com/case-studies/rejuve",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 31,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 0,
+      "media": 0,
+      "font": 5,
+      "script": 22,
+      "xhr": 0,
+      "fetch": 0,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [
+      {
+        "status": 404,
+        "url": "https://micahhoang.com/case-studies/rejuve"
+      }
+    ],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/404",
+    "language": "en",
+    "textCharacters": 181,
+    "domNodes": 182,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 131,
+      "domContentLoaded": 271,
+      "load": 289,
+      "fcp": 273,
+      "lcp": 273,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 22950,
+      "encodedBodySize": 22650,
+      "decodedBodySize": 180723
+    },
+    "performanceResourceCount": 23,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 5,
+      "link": 12,
+      "other": 1,
+      "iframe": 1
+    },
+    "images": {
+      "total": 0,
+      "ready": 0,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "details": []
+    },
+    "mediaContracts": {
+      "videoManager": 0,
+      "lightbox": 0,
+      "controllers": 0
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836748457",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1001",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  },
+  {
+    "requestedUrl": "https://micahhoang.com/case-studies/belly-bar",
+    "finalUrl": "https://micahhoang.com/case-studies/belly-bar",
+    "status": 404,
+    "responseUrl": "https://micahhoang.com/case-studies/belly-bar",
+    "navigationError": null,
+    "requestCounts": {
+      "total": 31,
+      "document": 2,
+      "stylesheet": 0,
+      "image": 0,
+      "media": 0,
+      "font": 5,
+      "script": 22,
+      "xhr": 0,
+      "fetch": 0,
+      "iframe": 0,
+      "other": 2
+    },
+    "requestFailures": [],
+    "responseErrors": [
+      {
+        "status": 404,
+        "url": "https://micahhoang.com/case-studies/belly-bar"
+      }
+    ],
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "pageErrors": [],
+    "title": "Micah Hoang — Brand Designer",
+    "canonical": "https://micahhoang.com/404",
+    "language": "en",
+    "textCharacters": 181,
+    "domNodes": 182,
+    "landmarks": {
+      "main": 0,
+      "header": 0,
+      "nav": 1,
+      "footer": 1,
+      "h1": 0
+    },
+    "timings": {
+      "ttfb": 47,
+      "domContentLoaded": 264,
+      "load": 282,
+      "fcp": 266,
+      "lcp": 266,
+      "cls": 0
+    },
+    "observerErrors": [],
+    "navigationTransfer": {
+      "transferSize": 22950,
+      "encodedBodySize": 22650,
+      "decodedBodySize": 180723
+    },
+    "performanceResourceCount": 23,
+    "resourceInitiators": {
+      "script": 4,
+      "css": 5,
+      "link": 12,
+      "other": 1,
+      "iframe": 1
+    },
+    "images": {
+      "total": 0,
+      "ready": 0,
+      "failed": 0,
+      "lazyPending": 0,
+      "zeroSized": 0,
+      "failures": []
+    },
+    "videos": {
+      "total": 0,
+      "metadataReady": 0,
+      "frameReady": 0,
+      "errors": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "details": []
+    },
+    "mediaContracts": {
+      "videoManager": 0,
+      "lightbox": 0,
+      "controllers": 0
+    },
+    "iframes": {
+      "total": 1,
+      "visible": 0,
+      "details": [
+        {
+          "src": "https://framer.com/edit?framerSiteId=b9674cc46d321deae65dec2ccaeb45941b349b74aa33a1f25726142d5e3ee856&source=micahhoang.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Afalse%7D&loadStart=1784836755222",
+          "title": "",
+          "visible": false,
+          "rendered": "0x0"
+        }
+      ]
+    },
+    "layout": {
+      "viewport": "1440x1000",
+      "document": "1440x1001",
+      "horizontalOverflow": false,
+      "overflowAmount": 0,
+      "overflowElements": [
+        {
+          "element": "div.framer-1mhru1k-container",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        },
+        {
+          "element": "div",
+          "left": -101,
+          "right": -100,
+          "width": 1
+        }
+      ]
+    }
+  }
+]

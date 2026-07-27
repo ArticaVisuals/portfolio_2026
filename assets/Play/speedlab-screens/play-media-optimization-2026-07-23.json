@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.631Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/speedlab-screens",
+  "items": [
+    {
+      "slug": "play-012",
+      "title": "SpeedLab Screens",
+      "order": 17,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/xdsNcz2HOfuGgVgMvqEwMH54CtE.png?width=1024&height=1024",
+      "sourcePath": "assets/Play/speedlab-screens/source/play-play-012-poster-xdsNcz2HOfuGgVgMvqEwMH54CtE-original.png",
+      "originalBytes": 99818,
+      "originalWidth": 1024,
+      "originalHeight": 1024,
+      "outputPath": "assets/Play/speedlab-screens/optimized/play-play-012-poster-xdsNcz2HOfuGgVgMvqEwMH54CtE-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 47016,
+      "outputWidth": 1024,
+      "outputHeight": 1024,
+      "savingsBytes": 52802,
+      "savingsPercent": 52.89827486024564
+    }
+  ]
+}

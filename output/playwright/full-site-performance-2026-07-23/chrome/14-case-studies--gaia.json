@@ -1,0 +1,392 @@
+{
+  "target": "https://micahhoang.com/case-studies/gaia",
+  "auditedAt": "2026-07-23T19:55:37.559Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/gaia",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 13650,
+  "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/gaia",
+  "bodyTextLength": 2773,
+  "domNodes": 544,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 52.19999998807907,
+    "responseStartMs": 410.19999998807907,
+    "domContentLoadedMs": 989.5999999940395,
+    "loadMs": 7643.199999988079,
+    "firstPaintMs": 564,
+    "fcpMs": 564,
+    "lcpMs": 1240,
+    "lcpUrl": "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?width=1920&height=1080",
+    "cls": 1.4516605607096353,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 269,
+    "longTaskMaxMs": 269
+  },
+  "media": {
+    "images": {
+      "total": 24,
+      "withSource": 24,
+      "complete": 8,
+      "ready": 8,
+      "broken": 0,
+      "incomplete": 16,
+      "lazy": 19
+    },
+    "videos": {
+      "total": 16,
+      "withSource": 16,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 16,
+      "playing": 1,
+      "autoplayTotal": 16,
+      "autoplayPlaying": 1,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 129,
+    "failedRequestCount": 9,
+    "totalBytes": 82436327,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 32577,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 429899,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132808,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 32,
+        "bytes": 7408214,
+        "failed": 6
+      },
+      "Media": {
+        "requests": 37,
+        "bytes": 74253125,
+        "failed": 3
+      },
+      "Fetch": {
+        "requests": 11,
+        "bytes": 177275,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1996,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7481192,
+        "durationMs": 1978,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7481147,
+        "durationMs": 1753,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 7481140,
+        "durationMs": 1876,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 4131956,
+        "durationMs": 1431,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 4131948,
+        "durationMs": 1663,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 4131947,
+        "durationMs": 1436,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3954035,
+        "durationMs": 715,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3473531,
+        "durationMs": 1248,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3473501,
+        "durationMs": 1059,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3473501,
+        "durationMs": 1578,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2708003,
+        "durationMs": 841,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2708002,
+        "durationMs": 944,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2707996,
+        "durationMs": 1498,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1391359,
+        "durationMs": 1392,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1391354,
+        "durationMs": 884,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1391348,
+        "durationMs": 895,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1224186,
+        "durationMs": 1029,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1224184,
+        "durationMs": 1132,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1049232,
+        "durationMs": 500,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=2048&width=2140&height=1818",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 857013,
+        "durationMs": 1083,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://files.catbox.moe/5rxz22.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/00tm9g.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/50xion.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/8acqhu.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/7iwwxa.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/aq8akp.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      }
+    ]
+  },
+  "route": "/case-studies/gaia",
+  "artifactSlug": "case-studies--gaia"
+}

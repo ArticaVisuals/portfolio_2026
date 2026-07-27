@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.473Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/christmas-card-design",
+  "items": [
+    {
+      "slug": "play-009",
+      "title": "Christmas Card Design",
+      "order": 14,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/68dgbclBrZUIgaL0O7uWhPHdHU.png?width=2000&height=1333",
+      "sourcePath": "assets/Play/christmas-card-design/source/play-play-009-poster-68dgbclBrZUIgaL0O7uWhPHdHU-original.png",
+      "originalBytes": 734717,
+      "originalWidth": 2000,
+      "originalHeight": 1333,
+      "outputPath": "assets/Play/christmas-card-design/optimized/play-play-009-poster-68dgbclBrZUIgaL0O7uWhPHdHU-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 76802,
+      "outputWidth": 1600,
+      "outputHeight": 1066,
+      "savingsBytes": 657915,
+      "savingsPercent": 89.54672343228754
+    }
+  ]
+}

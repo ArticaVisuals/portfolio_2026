@@ -1,0 +1,332 @@
+{
+  "target": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+  "auditedAt": "2026-07-23T19:56:28.731Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 6857,
+  "title": "Wolff Olins x ArtCenter Event Identity - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+  "bodyTextLength": 1354,
+  "domNodes": 397,
+  "runtimeMarkers": {
+    "videoManager": 0,
+    "lightbox": 0,
+    "controllers": 0
+  },
+  "timing": {
+    "ttfbMs": 53.599999994039536,
+    "responseStartMs": 319.29999999701977,
+    "domContentLoadedMs": 475.1000000089407,
+    "loadMs": 848.5,
+    "firstPaintMs": 400,
+    "fcpMs": 400,
+    "lcpMs": 668,
+    "lcpUrl": "https://framerusercontent.com/images/8fV7L1MlzeOAlHSxXchHzUHO7c.jpg?width=1600&height=900",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 0,
+    "longTaskTotalMs": 0,
+    "longTaskMaxMs": 0
+  },
+  "media": {
+    "images": {
+      "total": 15,
+      "withSource": 15,
+      "complete": 5,
+      "ready": 5,
+      "broken": 0,
+      "incomplete": 10,
+      "lazy": 11
+    },
+    "videos": {
+      "total": 10,
+      "withSource": 10,
+      "readyState0": 5,
+      "readyState1": 0,
+      "readyState2Plus": 5,
+      "playing": 0,
+      "autoplayTotal": 5,
+      "autoplayPlaying": 0,
+      "preloadNone": 5
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 80,
+    "failedRequestCount": 2,
+    "totalBytes": 14078178,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 27596,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 38,
+        "bytes": 409272,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 13,
+        "bytes": 2936265,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132783,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 10,
+        "bytes": 10395877,
+        "failed": 2
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 173985,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 414,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1986,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://freight.cargo.site/t/original/i/N1655931692761862119294608070165/Wolff-Olins-Slide-10.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2690811,
+        "durationMs": 495,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://freight.cargo.site/t/original/i/N1655931692761862119294608070165/Wolff-Olins-Slide-10.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2690782,
+        "durationMs": 293,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 2037481,
+        "durationMs": 112,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/du9AUfEdgEcGS52KQrVF3cas.webp",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 1295071,
+        "durationMs": 356,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/8j7wANAawQ6dXUtXxsIDgvk2mU.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1199715,
+        "durationMs": 357,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/8j7wANAawQ6dXUtXxsIDgvk2mU.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1199715,
+        "durationMs": 191,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/8fV7L1MlzeOAlHSxXchHzUHO7c.jpg?width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 262587,
+        "durationMs": 192,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/UoNDlczjdqXDoiPYxEVv6K58K4E.jpg?scale-down-to=2048&width=4000&height=4462",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 260767,
+        "durationMs": 145,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/pgkecAqMBX86P15H20tORUJ4Muo.jpeg?width=1536&height=1536",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 221627,
+        "durationMs": 150,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "application/octet-stream",
+        "bytes": 215371,
+        "durationMs": 220,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/34USvTDIycBUM8QLZMsULOmFI.jpg?scale-down-to=2048&width=3688&height=5159",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 212114,
+        "durationMs": 156,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/vghD8qsgQJIlY4L19tl35MQrLo.jpg?scale-down-to=2048&width=5344&height=3848",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 200358,
+        "durationMs": 162,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/PiGmyk2PszMqAbp0KBbdUwwTYk.jpg?scale-down-to=2048&width=5336&height=3288",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 187327,
+        "durationMs": 152,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/4tuZaGAUhNJZIEXrVeTrrAA.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 181009,
+        "durationMs": 213,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/4tuZaGAUhNJZIEXrVeTrrAA.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 180993,
+        "durationMs": 171,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/OWjQJNuPBFrlmZj1lfaSLKQyI.webp?scale-down-to=2048&width=2560&height=1707",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 155274,
+        "durationMs": 141,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117189,
+        "durationMs": 100,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63593,
+        "durationMs": 188,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49794,
+        "durationMs": 61,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45434,
+        "durationMs": 83,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      }
+    ]
+  },
+  "route": "/case-studies/wolff-olins-x-artcenter",
+  "artifactSlug": "case-studies--wolff-olins-x-artcenter"
+}

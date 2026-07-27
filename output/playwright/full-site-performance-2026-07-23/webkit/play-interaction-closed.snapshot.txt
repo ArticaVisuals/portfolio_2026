@@ -1,0 +1,149 @@
+### Page
+- Page URL: https://micahhoang.com/play
+- Page Title: Micah Hoang — Brand Designer
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - navigation:
+    - generic:
+      - generic:
+        - generic:
+          - link [ref=e10]:
+            - /url: ./
+            - paragraph [ref=e12]: Micah Hoang
+          - generic:
+            - generic:
+              - paragraph: BRAND DESIGNER
+          - generic:
+            - generic:
+              - paragraph: LOS ANGELES, CALIFORNIA
+        - generic:
+          - link [ref=e23]:
+            - /url: ./
+            - paragraph [ref=e25]: Work
+            - paragraph [ref=e27]: Work
+          - link [ref=e30]:
+            - /url: ./play
+            - paragraph [ref=e32]: PLAY
+            - paragraph [ref=e34]: PLAY
+          - link [ref=e38]:
+            - /url: ./index
+            - paragraph [ref=e40]: INDEX
+            - paragraph [ref=e42]: INDEX
+          - link [ref=e46]:
+            - /url: ./info
+            - paragraph [ref=e48]: INFO
+            - paragraph [ref=e50]: INFO
+  - main "Play archive" [ref=e97]:
+    - generic [ref=e128]:
+      - button [ref=e564] [cursor=pointer]
+      - button [ref=e566] [cursor=pointer]
+      - button [ref=e568] [cursor=pointer]
+      - button [ref=e570] [cursor=pointer]
+      - button [ref=e572] [cursor=pointer]
+      - button [ref=e574] [cursor=pointer]
+      - button [ref=e576] [cursor=pointer]
+      - button [ref=e578] [cursor=pointer]
+      - button [ref=e580] [cursor=pointer]
+      - button [ref=e582] [cursor=pointer]
+      - button [ref=e584] [cursor=pointer]
+      - button [ref=e426] [cursor=pointer]
+      - button [ref=e428] [cursor=pointer]
+      - button [ref=e430] [cursor=pointer]
+      - button [ref=e432] [cursor=pointer]
+      - button [ref=e434] [cursor=pointer]
+      - button [ref=e436] [cursor=pointer]
+      - button [ref=e438] [cursor=pointer]
+      - button [ref=e440] [cursor=pointer]
+      - button [ref=e442] [cursor=pointer]
+      - button [ref=e444] [cursor=pointer]
+      - button [ref=e446] [cursor=pointer]
+      - button [ref=e448] [cursor=pointer]
+      - button [ref=e450] [cursor=pointer]
+      - button [ref=e452] [cursor=pointer]
+      - button [ref=e454] [cursor=pointer]
+      - button [ref=e456] [cursor=pointer]
+      - button [ref=e458] [cursor=pointer]
+      - button [ref=e460] [cursor=pointer]
+      - button [ref=e462] [cursor=pointer]
+      - button [ref=e464] [cursor=pointer]
+      - button [ref=e466] [cursor=pointer]
+      - button [ref=e468] [cursor=pointer]
+      - button [ref=e470] [cursor=pointer]
+      - button [ref=e472] [cursor=pointer]
+      - button [ref=e474] [cursor=pointer]
+      - button [ref=e476] [cursor=pointer]
+      - button [ref=e478] [cursor=pointer]
+      - button [ref=e480] [cursor=pointer]
+      - button [ref=e482] [cursor=pointer]
+      - button [ref=e484] [cursor=pointer]
+      - button [ref=e486] [cursor=pointer]
+      - button [ref=e488] [cursor=pointer]
+      - button [ref=e490] [cursor=pointer]
+      - button [ref=e492] [cursor=pointer]
+      - button [ref=e494] [cursor=pointer]
+      - button [ref=e496] [cursor=pointer]
+      - button [ref=e349] [cursor=pointer]
+      - button "Open The Windmill Project details" [ref=e586] [cursor=pointer]
+      - button "Open Babel Short Film details" [ref=e587] [cursor=pointer]
+      - button "Open Mental Models Playing Cards details" [ref=e588] [cursor=pointer]
+      - button "Open Skycar Creative details" [ref=e589] [cursor=pointer]
+      - button "Open Kōru details" [ref=e590] [cursor=pointer]
+      - button "Open DevWars Rank Badges details" [ref=e591] [cursor=pointer]
+      - button [ref=e363] [cursor=pointer]
+      - button [ref=e498] [cursor=pointer]
+      - button [ref=e500] [cursor=pointer]
+      - button [ref=e502] [cursor=pointer]
+      - button [ref=e371] [cursor=pointer]
+      - button "Open Babel Short Film details" [active] [ref=e504] [cursor=pointer]
+      - button "Open Aspen Valley Landscaping details" [ref=e505] [cursor=pointer]
+      - button "Open SpeedLab Screens details" [ref=e506] [cursor=pointer]
+      - button "Open Audit and Beyond details" [ref=e507] [cursor=pointer]
+      - button "Open HMCT Event details" [ref=e508] [cursor=pointer]
+      - button "Open Redwood Estates details" [ref=e509] [cursor=pointer]
+      - button [ref=e141] [cursor=pointer]
+      - button [ref=e510] [cursor=pointer]
+      - button [ref=e512] [cursor=pointer]
+      - button [ref=e514] [cursor=pointer]
+      - button [ref=e373] [cursor=pointer]
+      - button "Open Christmas Card Design details" [ref=e516] [cursor=pointer]
+      - button "Open Flower Growth details" [ref=e517] [cursor=pointer]
+      - button "Open Geometric Wildcat details" [ref=e518] [cursor=pointer]
+      - button "Open Photo Book details" [ref=e519] [cursor=pointer]
+      - button "Open Image Gen Creations details" [ref=e520] [cursor=pointer]
+      - button "Open COIN Experimental Music Poster details" [ref=e521] [cursor=pointer]
+      - button [ref=e163] [cursor=pointer]
+      - button [ref=e522] [cursor=pointer]
+      - button [ref=e524] [cursor=pointer]
+      - button [ref=e526] [cursor=pointer]
+      - button [ref=e375] [cursor=pointer]
+      - button "Open Independent Lens Film Series details" [ref=e528] [cursor=pointer]
+      - button "Open Kraftwerk details" [ref=e529] [cursor=pointer]
+      - button "Open ArtCenter MDes Micro-Identity details" [ref=e530] [cursor=pointer]
+      - button "Open Area 17 Speaker Event details" [ref=e531] [cursor=pointer]
+      - button "Open The Windmill Project details" [ref=e532] [cursor=pointer]
+      - button "Open Babel Short Film details" [ref=e533] [cursor=pointer]
+      - button [ref=e185] [cursor=pointer]
+      - button [ref=e534] [cursor=pointer]
+      - button [ref=e536] [cursor=pointer]
+      - button [ref=e538] [cursor=pointer]
+      - button [ref=e377] [cursor=pointer]
+      - button [ref=e592] [cursor=pointer]
+      - button [ref=e593] [cursor=pointer]
+      - button [ref=e594] [cursor=pointer]
+      - button [ref=e595] [cursor=pointer]
+      - button [ref=e596] [cursor=pointer]
+      - button [ref=e597] [cursor=pointer]
+      - button [ref=e543] [cursor=pointer]
+      - button [ref=e544] [cursor=pointer]
+      - button [ref=e546] [cursor=pointer]
+      - button [ref=e548] [cursor=pointer]
+      - button [ref=e385] [cursor=pointer]
+      - button [ref=e217] [cursor=pointer]
+      - button [ref=e219] [cursor=pointer]
+      - button [ref=e221] [cursor=pointer]
+      - button [ref=e550] [cursor=pointer]
+      - button [ref=e551] [cursor=pointer]
+      - button [ref=e552] [cursor=pointer]
+      - button [ref=e553] [cursor=pointer]
+```

@@ -10,7 +10,9 @@ import { addPropertyControls, ControlType } from "framer"
 
 const HIDDEN_CMS_LINK_SELECTOR = '[data-framer-name="CmsLink"], [name="CmsLink"]'
 const HIDDEN_CMS_INTERACTIVE_SELECTOR = 'a[href], [role="link"], [tabindex]'
+const HIDDEN_CMS_MEDIA_SELECTOR = "img, video, source"
 const HIDDEN_CMS_LINK_INERT_ATTR = "data-index-hidden-cms-link-inert"
+const HIDDEN_CMS_MEDIA_INERT_ATTR = "data-index-hidden-cms-media-inert"
 
 function preventHiddenCMSLinkClick(event: MouseEvent) {
     const target = event.target
@@ -28,6 +30,32 @@ function inertHiddenCMSLinks(): number {
     let count = 0
     document.querySelectorAll<HTMLElement>(HIDDEN_CMS_LINK_SELECTOR).forEach((container) => {
         container.setAttribute("aria-hidden", "true")
+
+        container
+            .querySelectorAll<HTMLElement>(HIDDEN_CMS_MEDIA_SELECTOR)
+            .forEach((element) => {
+                if (element instanceof HTMLVideoElement) {
+                    const hasAttachedSource =
+                        element.hasAttribute("src") ||
+                        element.hasAttribute("poster") ||
+                        Boolean(element.querySelector("source[src]"))
+                    if (hasAttachedSource) {
+                        element.pause()
+                        element.setAttribute("preload", "none")
+                        element.removeAttribute("src")
+                        element.removeAttribute("poster")
+                        element
+                            .querySelectorAll<HTMLSourceElement>("source")
+                            .forEach((source) => source.removeAttribute("src"))
+                        element.load()
+                    }
+                } else {
+                    element.removeAttribute("src")
+                    element.removeAttribute("srcset")
+                }
+
+                element.setAttribute(HIDDEN_CMS_MEDIA_INERT_ATTR, "true")
+            })
 
         container
             .querySelectorAll<HTMLElement>(HIDDEN_CMS_INTERACTIVE_SELECTOR)
@@ -65,7 +93,17 @@ function useHiddenCMSLinkInerting(enabled: boolean) {
         const observer = new MutationObserver(run)
         observer.observe(document.body, {
             attributes: true,
-            attributeFilter: ["href", "role", "tabindex", "data-framer-name", "name"],
+            attributeFilter: [
+                "href",
+                "role",
+                "tabindex",
+                "data-framer-name",
+                "name",
+                "poster",
+                "preload",
+                "src",
+                "srcset",
+            ],
             childList: true,
             subtree: true,
         })

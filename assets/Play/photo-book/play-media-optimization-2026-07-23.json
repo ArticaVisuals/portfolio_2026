@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.287Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/photo-book",
+  "items": [
+    {
+      "slug": "play-028",
+      "title": "Photo Book",
+      "order": 32,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/gIoMjOu9b16cS9cbyUypROM2XU.jpg?width=1200&height=900",
+      "sourcePath": "assets/Play/photo-book/source/play-play-028-poster-gIoMjOu9b16cS9cbyUypROM2XU-original.jpg",
+      "originalBytes": 90262,
+      "originalWidth": 1200,
+      "originalHeight": 900,
+      "outputPath": "assets/Play/photo-book/optimized/play-play-028-poster-gIoMjOu9b16cS9cbyUypROM2XU-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 41258,
+      "outputWidth": 1200,
+      "outputHeight": 900,
+      "savingsBytes": 49004,
+      "savingsPercent": 54.29084221488556
+    },
+    {
+      "slug": "play-028",
+      "title": "Photo Book",
+      "order": 32,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/DZVwUL7YIkW41UvIcIoreeVtx0s.mp4",
+      "sourcePath": "assets/Play/photo-book/source/play-play-028-video-DZVwUL7YIkW41UvIcIoreeVtx0s-original.mp4",
+      "originalBytes": 382290,
+      "originalWidth": 1200,
+      "originalHeight": 900,
+      "outputPath": "assets/Play/photo-book/optimized/play-play-028-DZVwUL7YIkW41UvIcIoreeVtx0s-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 169372,
+      "outputWidth": 900,
+      "outputHeight": 676,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 5,
+      "savingsBytes": 212918,
+      "savingsPercent": 55.695414475921424
+    }
+  ]
+}

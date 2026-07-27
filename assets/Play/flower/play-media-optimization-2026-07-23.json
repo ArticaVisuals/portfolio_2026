@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.051Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/flower",
+  "items": [
+    {
+      "slug": "play-014",
+      "title": "Flower Growth",
+      "order": 19,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/oCU8mDgqbkywm802Er2ZZLsWKVo.jpg?width=1920&height=1080",
+      "sourcePath": "assets/Play/flower/source/play-play-014-poster-oCU8mDgqbkywm802Er2ZZLsWKVo-original.jpg",
+      "originalBytes": 115980,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/flower/optimized/play-play-014-poster-oCU8mDgqbkywm802Er2ZZLsWKVo-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 8608,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": 107372,
+      "savingsPercent": 92.5780306949474
+    },
+    {
+      "slug": "play-014",
+      "title": "Flower Growth",
+      "order": 19,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/r2WCriMMdBXrgrHc5Xqd4ckiH8.mp4",
+      "sourcePath": "assets/Play/flower/source/play-014-video-flower-video.mp4",
+      "originalBytes": 634190,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "outputPath": "assets/Play/flower/optimized/play-play-014-r2WCriMMdBXrgrHc5Xqd4ckiH8-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 316855,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 6.033333,
+      "savingsBytes": 317335,
+      "savingsPercent": 50.03784354846339
+    }
+  ]
+}

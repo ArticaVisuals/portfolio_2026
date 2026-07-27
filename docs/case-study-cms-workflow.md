@@ -15,7 +15,7 @@ Use a hybrid model:
 - **CMS as registry:** `All Projects` owns project metadata, sorting, filters, thumbnails, homepage visibility, and archive/index browsing.
 - **Pages as storytelling:** individual case studies should be bespoke Framer pages when they need custom editorial pacing, layout, media modules, motion, or project-specific structure.
 
-This is intentional. The portfolio should not force AirPods, Gaia, Peak Energy, Simon & Schuster, National Park Playing Cards, Motion Connect 2025, Yomo, Karuna, Weaponized Innocence, TYPLDN, Seek Truth, Independent Lens, Rejuve, Belly Bar, WhatsApp, or the other archive projects into one generic CMS template. The CMS keeps navigation and browsing consistent; custom pages let each story breathe.
+This is intentional. The portfolio should not force AirPods, Gaia, Peak Energy, Simon & Schuster, National Park Playing Cards, Motion Connect 2025, Yomo, Highland Harvests, Weaponized Innocence, TYPLDN, Seek Truth, Independent Lens, Rejuve, Belly Bar, WhatsApp, or the other archive projects into one generic CMS template. The CMS keeps navigation and browsing consistent; custom pages let each story breathe.
 
 ## 2. Current Structure
 
@@ -26,7 +26,7 @@ Verified Framer structure:
 - `/case-studies` - Native Framer case-study index, page ID `Rnw1WO1jS`
 - `/case-studies/:slug` - dynamic case-study route, page ID `UlQco8cYi`
 - `/case-studies/airpods` - bespoke AirPods pilot page, page ID `LB7pYBD3k`
-- Additional bespoke case-study pages now exist for Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Gaia, Weaponized Innocence, TYPLDN, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Rejuve, Belly Bar, and WhatsApp. As of the June 15 CMS parity update, every `All Projects` CMS slug has a matching bespoke `/case-studies/{slug}` page. Neon Lights and Aspen Valley Landscaping were deleted from Framer because their slugs are no longer in CMS. See `framer-current-state.md` for page IDs.
+- Additional bespoke case-study pages now exist for Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Highland Harvests, Gaia, Weaponized Innocence, TYPLDN, Seek Truth, Cellular Symphony, Wolff Olins x ArtCenter, Independent Lens, Rejuve, Belly Bar, and WhatsApp. As of the June 15 CMS parity update, every `All Projects` CMS slug has a matching bespoke `/case-studies/{slug}` page. Neon Lights and Aspen Valley Landscaping were deleted from Framer because their slugs are no longer in CMS. See `framer-current-state.md` for page IDs.
 - `/info` - profile page, page ID `m8MBybo0d`
 - `/play` - archive media playground, page ID `KbgWr_0BN`
 - `/play-hover-preview` - hover-only Play behavior test route, page ID `uWONGgGEg`
@@ -162,7 +162,7 @@ Two parts:
    | motion-connect-2025 | `W592y16ERqrZ1qFuxRe3dcsv8I.jpg` |
    | national-park-cards | `YdGKidrUlzOXfODfaQNqfCx5dM.png` |
    | yomo | `PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg` |
-   | karuna | `Dj1KLsghEL5tCJkNgSjKFvuIMMU.png` |
+   | highland-harvests | `Dj1KLsghEL5tCJkNgSjKFvuIMMU.png` |
    | weaponized-innocence | `BRh73XzVlRBoYNh03pKXVIYYPw.png` |
    | wolff-olins-x-artcenter | `8fV7L1MlzeOAlHSxXchHzUHO7c.jpg` |
    | cellular-symphony | `j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg` |
@@ -193,7 +193,7 @@ Do not put all of this into CMS fields unless the page can genuinely share the s
 
 1. Choose the project and depth tier.
    - Tier 1 full case studies: AirPods Pro 3, Simon & Schuster, Gaia.
-   - Tier 2 visual showcases: National Park Playing Cards, Motion Connect 2025, Yomo, Karuna, Weaponized Innocence.
+   - Tier 2 visual showcases: National Park Playing Cards, Motion Connect 2025, Yomo, Highland Harvests, Weaponized Innocence.
    - Newly added or reshuffled records needing final depth decisions: Peak Energy, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp.
    - Peak Energy, Rejuve, Belly Bar, and WhatsApp currently have WIP bespoke shells; keep them gated until public copy, credit, asset, and production-contract review clears public content.
 
@@ -258,7 +258,7 @@ Home currently uses `HomeSelectedWorkGrid.tsx` (`FecepLS`) for the selected-work
 - Motion Connect 2025
 - National Park Playing Cards
 
-WhatsApp has `Is Homepage` true but is outside the first six because its sort order is 17. Yomo, Karuna, and Weaponized Innocence are currently off Home because their `Is Homepage` flags are false. Project cards link directly to `/case-studies/[slug]`; the Home selected-work `VIEW ALL` CTA links to `/index`.
+WhatsApp has `Is Homepage` true but is outside the first six because its sort order is 17. Yomo, Highland Harvests, and Weaponized Innocence are currently off Home because their `Is Homepage` flags are false. Project cards link directly to `/case-studies/[slug]`; the Home selected-work `VIEW ALL` CTA links to `/index`.
 
 Home selected-work tag pills are CMS-bound to the same Category 1/2/3 fields used by the archive taxonomy: `kuvJcmOFr`, `VV1CggU2J`, and `E6OpH0hSs`. `HomeSelectedWorkGrid.tsx` exposes those bindings as the `Tag Fields` control, with `Show Tags` for non-destructive visibility testing and `Tags` for the pill stroke/text color. Keep the default tag color aligned to the existing Light Gray style value (`rgb(151, 151, 151)`). The pill text stays 13px on desktop, steps to 12px on tablet, and steps to 11px at the mobile/single-column breakpoint. Do not hardcode per-card Home services or media in Framer layers; update the CMS category, Thumbnail, and Thumbnail Video values instead so Home and `/index` stay in sync.
 
@@ -270,7 +270,7 @@ Home About read-more maintenance note, updated July 15, 2026: keep the `/info` l
 
 Current index data note (June 15, 2026; corrected July 20): the live Framer `IndexPage.tsx` has a `useCMS` Boolean prop. In CMS mode it waits for the generated `All Projects` CMS module (`yTHrQWMIY`) and renders only that module; it intentionally does not use manual `projects`, baked defaults, `ProjectRegistrar`/window registry rows, hardcoded media URLs, or any local project snapshot in CMS mode. If the CMS module has not produced rows yet, `/index` stays loading/empty rather than flashing non-CMS media. Thumbnail media policy is: `Thumbnail Video` wins over `Thumbnail`; `Thumbnail` is poster/fallback. The `/index` instance reads only `Thumbnail Video` (`SvOqFqdby`) via `thumbnailVideoFieldIds="SvOqFqdby"`. The older `Thumbnail Video Link` text field (`WG62tRjG8`) is retired and should not be used for thumbnail-video wiring. Grid view renders native HTML cards inline (no `Case Study` module dependency, uniform 16:9 media, 3/2/1 column responsive grid, title and metadata below media with hover-flip CTA). `/index` also keeps the existing `CaseStudyThumbnailStrokeStyles.tsx` instance (`Z28JYvA`, node `szF9sZNWA`) with `syncThumbnailVideos=true`, `videoFieldId="SvOqFqdby"`, and `slugFieldId="pdXVG_fBO"` as a backup CMS video overlay path. Do not add project-specific thumbnail/video allow-lists, deny-lists, or asset-ID rules; edit CMS `Thumbnail` and `Thumbnail Video` fields instead. Publish/redeploy Framer after changing code files or CMS File/image fields so the generated CMS bundle refreshes. Direct-child grid media hover/focus scale is consolidated inside `IndexPage.tsx`, so do not add a hidden `/index` helper for it. `IndexThumbnailVideoFallback.tsx` was deleted from Framer and should not be recreated.
 
-Thumbnail stroke note (updated July 15, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke in native/media contexts on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). `HomeSelectedWorkGrid.tsx` mirrors the same CMS field for its Home cards. Current verified CMS state has Gaia, AirPods Pro 3, Karuna, and Seek Truth on; Gaia item `Qw6kG4fCG` uses slug `gaia`, thumbnail `https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png`, and thumbnail video `https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4`. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved links. The June 1 fix makes the helper resolve both legacy Framer CMS exports (`module.a`) and the current published shape (`module.r`, plus scanned object exports) before calling `collectionByLocaleId.default.scanItems()`. On June 2, the helper instances were updated to use Framer item slugs directly (`slugFieldId=""`). `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
+Thumbnail stroke note (updated July 15, 2026): `All Projects` has `Thumbnail Stroke` (`OHdUYs6Mo`) as an individual Boolean per project. `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) reads that field and applies a 1px Light Gray stroke in native/media contexts on Home, `/case-studies`, and `/index` through invisible helper instances (`VXt8C11M9`, `AfVjNDU23`, `szF9sZNWA`). `HomeSelectedWorkGrid.tsx` mirrors the same CMS field for its Home cards. Current verified CMS state has Gaia, AirPods Pro 3, Highland Harvests, and Seek Truth on; Gaia item `Qw6kG4fCG` uses slug `gaia`, thumbnail `https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png`, and thumbnail video `https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4`. The helper matches by slug when real routes resolve and by title containment when Framer preview/canvas exposes unresolved links. The June 1 fix makes the helper resolve both legacy Framer CMS exports (`module.a`) and the current published shape (`module.r`, plus scanned object exports) before calling `collectionByLocaleId.default.scanItems()`. On June 2, the helper instances were updated to use Framer item slugs directly (`slugFieldId=""`). `Case Study > Card > ImageWrapper` contains a real overlay frame (`sKJdcQrXY`) at opacity 0, which the helper toggles so the stroke can be visible directly in Framer canvas/editor. The older `/index` hardcoded `.with-stroke` class path has been removed, and the old Framer `Case Study` stroke variants (`CardStroke`, `CardStrokeHover`) were deleted so CMS is the only stroke source of truth.
 
 Related-project card note (updated June 10, 2026): bespoke case-study "Other Projects" sections use `OtherProjectCardRestored.tsx` (`vlwa5Cz`). The card now hydrates thumbnail, thumbnail video, and thumbnail stroke from the generated `All Projects` CMS module by slug/title, with manual `thumbnailSrc` and `thumbnailVideoSrc` props as fallbacks. This fixes the AirPods related Gaia card, which had been showing an older static JPG even though the CMS/Home/Index Gaia thumbnail was the `XBEu3UkNu8Hm5CPrgksq7wtmbw.gif` file. Publish the Framer site after code-file changes before checking the public staging URL.
 
@@ -289,7 +289,7 @@ Then build:
 2. National Park Playing Cards
 3. Motion Connect 2025
 4. Yomo
-5. Karuna
+5. Highland Harvests
 6. Weaponized Innocence
 7. Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp, if they graduate from archive entries into dedicated showcases
 
@@ -300,7 +300,7 @@ Use the pilot to settle the reusable module rhythm: hero, context, role, challen
 Current CMS sync verified June 15, 2026:
 
 - Framer MCP reports 24 web pages, 1 design page, 23 native components, 40 code components, 5 override files, and 2 CMS collections.
-- `All Projects` reports 17 records in this order: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Karuna, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp.
+- `All Projects` reports 17 records in this order: Gaia, AirPods Pro 3, Peak Energy, Simon & Schuster, Motion Connect 2025, National Park Playing Cards, Yomo, Highland Harvests, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular Symphony, Seek Truth, Independent Lens, TYPLDN, Rejuve, Belly Bar, and WhatsApp.
 - The Framer web-page inventory now has one bespoke case-study page for each CMS slug, plus the generic dynamic `/case-studies/:slug` fallback route.
 - Peak Energy is present in CMS with slug `peak-energy`, `Is Homepage=true`, sort `3`, year `2026`, services `2D Motion`, `3D Motion`, and `Social Media`, and industry `Technology`; its bespoke route is `/case-studies/peak-energy` and is intentionally WIP-gated.
 - Rejuve, Belly Bar, and WhatsApp are present in CMS and now have matching WIP-gated bespoke routes at `/case-studies/rejuve`, `/case-studies/belly-bar`, and `/case-studies/whatsapp`.

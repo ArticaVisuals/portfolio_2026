@@ -1,0 +1,857 @@
+{
+  "project": "seek-truth",
+  "generatedAt": "2026-07-23T20:26:54.208Z",
+  "scope": "Only missing critical quality-preserving derivatives. Existing upload manifest and main/optimized assets were not modified.",
+  "outputDirectory": "main/Web Optimized",
+  "counts": {
+    "regeneratedTypographySpreads": 22,
+    "regeneratedPromoVideos": 1,
+    "regeneratedPromoPosters": 1
+  },
+  "totals": {
+    "typographySpreads": {
+      "beforeBytes": 258397327,
+      "afterBytes": 67940652,
+      "savedBytes": 190456675,
+      "reductionPercent": 73.71
+    },
+    "promoVideoAndPoster": {
+      "beforeBytes": 24083705,
+      "afterBytes": 5845318,
+      "savedBytes": 18238387,
+      "reductionPercent": 75.73
+    },
+    "criticalSet": {
+      "beforeBytes": 282481032,
+      "afterBytes": 73785970,
+      "savedBytes": 208695062,
+      "reductionPercent": 73.88
+    }
+  },
+  "regenerated": {
+    "typographySpreads": [
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/A1556789805770820217683306599957__Inside-Cover-Page.png",
+        "previousDerivative": "optimized/A1556789805770820217683306599957__Inside-Cover-Page.webp",
+        "output": "Web Optimized/A1556789805770820217683306599957__Inside-Cover-Page.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 12057750,
+          "sha256": "480ab94674ddee679f4537584bb4077942ff761e00dca3f863f56df90be25977"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 160986
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2985114,
+          "sha256": "b70b75dfa003e55d2c4ff94269f1d9145ccf43e77f478d9e78e0f61ccf5d39b2"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/B1556789805420332080282825119253__Open-Pages---Portrait-5.png",
+        "previousDerivative": "optimized/B1556789805420332080282825119253__Open-Pages---Portrait-5.webp",
+        "output": "Web Optimized/B1556789805420332080282825119253__Open-Pages---Portrait-5.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 17591990,
+          "sha256": "a83ac0552c667186703b35b668c2868c6355177103c5e158fc7f141410165382"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 228260
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 4100374,
+          "sha256": "43644d61bd1404f63f96c370738882eb68cf8683bc10d89e17e8bfba4f292079"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/D1556789805586352776946211083797__Open-Pages---Portrait-14.png",
+        "previousDerivative": "optimized/D1556789805586352776946211083797__Open-Pages---Portrait-14.webp",
+        "output": "Web Optimized/D1556789805586352776946211083797__Open-Pages---Portrait-14.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 11366553,
+          "sha256": "041ec757480a8f36a8a4de85336c114c83d1d07e4317d8125cd6725c8d6b449b"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 322360
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 4419932,
+          "sha256": "fe4b1bd39b38ea4c6ff20640d6b6266ba21eba173760df122ebe40d0320bbb47"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/D1558959138760264532516118189589__Open-Pages---Portrait.png",
+        "previousDerivative": "optimized/D1558959138760264532516118189589__Open-Pages---Portrait.webp",
+        "output": "Web Optimized/D1558959138760264532516118189589__Open-Pages---Portrait.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 11450753,
+          "sha256": "201e1d9656d28c814e39e922280e4c1a0e79b0c822c2c1387261cff044a1c0e8"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 201668
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 3084894,
+          "sha256": "b07062cce9ec7f89e96f88c79cec430324985b0441c0f35424084483c5b263e2"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/D1558972721559094606701711840789__Open-Pages---Portrait-7.png",
+        "previousDerivative": "optimized/D1558972721559094606701711840789__Open-Pages---Portrait-7.webp",
+        "output": "Web Optimized/D1558972721559094606701711840789__Open-Pages---Portrait-7.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 10078333,
+          "sha256": "bc2393bf65378510156817baa85bd34326b50eef52a52ab4bf9672166518343a"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 208068
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2483182,
+          "sha256": "85fed98ed9e2b3f4a6be9c651e3ff5e875ad0b9d6ec4fa669f5755e924d65294"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/E1556789805641693009167339738645__Open-Pages---Portrait-17.png",
+        "previousDerivative": "optimized/E1556789805641693009167339738645__Open-Pages---Portrait-17.webp",
+        "output": "Web Optimized/E1556789805641693009167339738645__Open-Pages---Portrait-17.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 9092989,
+          "sha256": "154c281c51b3ef0f6620e9a7234544a67ec65d2f91b45984ea4a57d875019f87"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 192010
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2314654,
+          "sha256": "bbcf6bfae4736be58447e8a5c352a7d61dce25b7fb4ec3b3ccc765b6289cdbb8"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/E1558965353449896221190348068373__Open-Pages---Portrait-5.png",
+        "previousDerivative": "optimized/E1558965353449896221190348068373__Open-Pages---Portrait-5.webp",
+        "output": "Web Optimized/E1558965353449896221190348068373__Open-Pages---Portrait-5.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 8235053,
+          "sha256": "225599cc7ec8d6edb954a157122ed742e92568bf710084c1917991351d379ce0"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 137906
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2123844,
+          "sha256": "f0f71c35a7428e442286fc62cb042e258af6a3fcdc752ce55a11f78072ba0562"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/F1556789805457225568430244222485__Open-Pages---Portrait-7.png",
+        "previousDerivative": "optimized/F1556789805457225568430244222485__Open-Pages---Portrait-7.webp",
+        "output": "Web Optimized/F1556789805457225568430244222485__Open-Pages---Portrait-7.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 9687213,
+          "sha256": "93c09172d74dbcf9c03f45a1bd8b27dfddf457b1baa637398d01ce715c4b2d6c"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 254794
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2593108,
+          "sha256": "2ef282b230dff8b8fa555547a92303c647ee252ff75cc7bb6b6c55a931b33177"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/F1556789805623246265093630187029__Open-Pages---Portrait-16.png",
+        "previousDerivative": "optimized/F1556789805623246265093630187029__Open-Pages---Portrait-16.webp",
+        "output": "Web Optimized/F1556789805623246265093630187029__Open-Pages---Portrait-16.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 11456755,
+          "sha256": "29b3b88887d8ef4693f905ba4c29812d68014404615cba0fc31adeccd4669fd2"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 160478
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 3068818,
+          "sha256": "201ce6167ed3691011685ca0486286ad9c5301632bbb31a3463e9fb0a4ceb2bf"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/J1558962392839706111175861458453__Open-Pages---Portrait-3.png",
+        "previousDerivative": "optimized/J1558962392839706111175861458453__Open-Pages---Portrait-3.webp",
+        "output": "Web Optimized/J1558962392839706111175861458453__Open-Pages---Portrait-3.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 9264397,
+          "sha256": "a45d87010d7376349ddacf23072f706efbb7355520ae9a458f29b3e674565fa9"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 172484
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2703946,
+          "sha256": "41dd338ce09945e5abb9a5de0b86df950488d8a208b04e6f3eeddbd8ec7a9b80"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/M1556789805531012544725082428949__Open-Pages---Portrait-11.png",
+        "previousDerivative": "optimized/M1556789805531012544725082428949__Open-Pages---Portrait-11.webp",
+        "output": "Web Optimized/M1556789805531012544725082428949__Open-Pages---Portrait-11.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 7706741,
+          "sha256": "a702459a3ee050f4db7480feff7c436b8331f4813e8c56ea0c57dc8a54de71f5"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 172098
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 1918528,
+          "sha256": "e29cc2462b9b3b6716a6178c7e11c5f862584d69d23b224d8bf5bb4061518369"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/N1558976749387216357108597642773__Open-Pages---Portrait-9.png",
+        "previousDerivative": "optimized/N1558976749387216357108597642773__Open-Pages---Portrait-9.webp",
+        "output": "Web Optimized/N1558976749387216357108597642773__Open-Pages---Portrait-9.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 9390560,
+          "sha256": "71e19764d99912afa4da871c453581e264e4f6f23ef95a047c00669eb18fcb92"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 167852
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2439420,
+          "sha256": "def2f17d55458f06450cf41dc96e184bf7d5a668d72698d430747a3f38507385"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/P1556789805715479985462177945109__Open-Pages---Portrait-21.png",
+        "previousDerivative": "optimized/P1556789805715479985462177945109__Open-Pages---Portrait-21.webp",
+        "output": "Web Optimized/P1556789805715479985462177945109__Open-Pages---Portrait-21.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 8902898,
+          "sha256": "10b80152df661498f8008afa78fc2eb7503c3e17e8d7b29a31c6b0748a80ba84"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 181586
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2106032,
+          "sha256": "7222b9930320fbfdda6ef601bbec8b056494698e8dd7fa2c4269ba57b4595b3e"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/Q1556789805438778824356534670869__Open-Pages---Portrait-6.png",
+        "previousDerivative": "optimized/Q1556789805438778824356534670869__Open-Pages---Portrait-6.webp",
+        "output": "Web Optimized/Q1556789805438778824356534670869__Open-Pages---Portrait-6.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 9320050,
+          "sha256": "b74cdf19b8f3c6431c1b235b408907dfb10d2b99008a4d115086087ba254665c"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 168004
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2280502,
+          "sha256": "4c4f954ad94b6c213980a057e484c75eea4b5f41096c68b5fdde8d4d43d03896"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/U1556789805604799521019920635413__Open-Pages---Portrait-15.png",
+        "previousDerivative": "optimized/U1556789805604799521019920635413__Open-Pages---Portrait-15.webp",
+        "output": "Web Optimized/U1556789805604799521019920635413__Open-Pages---Portrait-15.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 10638050,
+          "sha256": "e474514229668501ed07f54ed45d167be939322a49ee4b84864b37c329baa650"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 177398
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2481168,
+          "sha256": "2660b9e101b583632cb96159b8126a7ef756cd54cffd20f9cdb803df7f43eef3"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/V1556789805549459288798791980565__Open-Pages---Portrait-12.png",
+        "previousDerivative": "optimized/V1556789805549459288798791980565__Open-Pages---Portrait-12.webp",
+        "output": "Web Optimized/V1556789805549459288798791980565__Open-Pages---Portrait-12.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 10733387,
+          "sha256": "cf97b47f077e2e7c79e0f80c3724c480765537f145bd4f1ad98dc39fff486aca"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 200266
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2697956,
+          "sha256": "cde0a5e5d50d0fd4d063d79219f97a2adbd59d725e4641f79c34edca82acf3dc"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/V1556789805567906032872501532181__Open-Pages---Portrait-13.png",
+        "previousDerivative": "optimized/V1556789805567906032872501532181__Open-Pages---Portrait-13.webp",
+        "output": "Web Optimized/V1556789805567906032872501532181__Open-Pages---Portrait-13.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 8218639,
+          "sha256": "83b50aaadaab2b1b68a387b48a61de32f09e5aec73eeff0644e60a2785bc0de3"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 148314
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 2025554,
+          "sha256": "a65c7d6b7b7252bcb00e369ae7b3819d7406d7653e70eb5d72db2e26d50af078"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/V1556789805660139753241049290261__Open-Pages---Portrait-18.png",
+        "previousDerivative": "optimized/V1556789805660139753241049290261__Open-Pages---Portrait-18.webp",
+        "output": "Web Optimized/V1556789805660139753241049290261__Open-Pages---Portrait-18.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 15974664,
+          "sha256": "46fe6c9407f33a1eee26101d37e2c2d7b21464317f51387d9396653f06b7e631"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 764012
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 5532810,
+          "sha256": "61061cb1edfc87cea52995e48efb6a44db9cab94f211be4172d2c9ce2ba03ea7"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/X1556789805733926729535887496725__Open-Pages---Portrait-22.png",
+        "previousDerivative": "optimized/X1556789805733926729535887496725__Open-Pages---Portrait-22.webp",
+        "output": "Web Optimized/X1556789805733926729535887496725__Open-Pages---Portrait-22.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 17396337,
+          "sha256": "a0bff7cc3c1587f2b4598f1702adccb7dec6b3f0e44bb83f9d77f4d56d5263c3"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 198878
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 4559480,
+          "sha256": "db41208b8a941700a4358d3126cfa3d495beead863c2d694f53ada289df7fedb"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/X1556789805789266961757016151573__Open-Pages---Portrait-2.png",
+        "previousDerivative": "optimized/X1556789805789266961757016151573__Open-Pages---Portrait-2.webp",
+        "output": "Web Optimized/X1556789805789266961757016151573__Open-Pages---Portrait-2.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 17754119,
+          "sha256": "56190bd6e64c33252585a414ee50db24e79c27b9c1a370a934125f3e67469300"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 165326
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 4655956,
+          "sha256": "479ad3e65513bef2737c5f7120be11b321f252dae1e38558f84f47d2a439f968"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/Y1556789805678586497314758841877__Open-Pages---Portrait-19.png",
+        "previousDerivative": "optimized/Y1556789805678586497314758841877__Open-Pages---Portrait-19.webp",
+        "output": "Web Optimized/Y1556789805678586497314758841877__Open-Pages---Portrait-19.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 16487850,
+          "sha256": "00be93971f1e252fddb432bcc1ceb7d8e82a6fbfa3305c30bb10d9f88efb3148"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 212776
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 3461232,
+          "sha256": "1d8d77a8cd51af2e91d735c266322dd5b2c3a523c35bc8588e08f76f223a022d"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      },
+      {
+        "role": "full-width typography/book spread",
+        "source": "source/Z1556789805401885336209115567637__Open-Pages---Portrait-4.png",
+        "previousDerivative": "optimized/Z1556789805401885336209115567637__Open-Pages---Portrait-4.webp",
+        "output": "Web Optimized/Z1556789805401885336209115567637__Open-Pages---Portrait-4.webp",
+        "reason": "Previous derivative stopped at 1800px long edge; regenerated for full-width/high-DPI typography.",
+        "before": {
+          "width": 4400,
+          "height": 3300,
+          "bytes": 15592246,
+          "sha256": "0ac626fda7f0811f2a2fc76507a73437aa00913fc77c11dd2c36eea625b4acbd"
+        },
+        "previous": {
+          "width": 1800,
+          "height": 1350,
+          "bytes": 111880
+        },
+        "after": {
+          "width": 3200,
+          "height": 2400,
+          "bytes": 3904148,
+          "sha256": "e611f07d27f54291608bc9dced0fd6676f8a917794bd82c10700643640b4c2fc"
+        },
+        "settings": {
+          "format": "webp",
+          "quality": 90,
+          "nearLossless": true,
+          "longEdge": 3200,
+          "kernel": "lanczos3"
+        }
+      }
+    ],
+    "promoPoster": {
+      "source": "source/Q1559036857438697753028994520597__Seek-Truth-Promo-Video.jpg",
+      "previousDerivative": "optimized/Q1559036857438697753028994520597__Seek-Truth-Promo-Video.webp",
+      "output": "Web Optimized/Q1559036857438697753028994520597__Seek-Truth-Promo-Video-max900-q90.webp",
+      "reason": "New max-900 Play/runtime poster paired with the promo video.",
+      "before": {
+        "width": 1080,
+        "height": 1920,
+        "bytes": 4539541,
+        "sha256": "195b081cef190c5b5925bf6ab656b061b6c52b6e813aaadb01323b6f63d58c79"
+      },
+      "previous": {
+        "width": 788,
+        "height": 1400,
+        "bytes": 373786
+      },
+      "after": {
+        "width": 506,
+        "height": 900,
+        "bytes": 482460,
+        "sha256": "38a78583c795ef8f7a81383209fe2599d96bc9c22430145af9fdf96d2a8cb122"
+      },
+      "settings": {
+        "format": "webp",
+        "quality": 90,
+        "nearLossless": true,
+        "longEdge": 900
+      }
+    },
+    "promoVideo": {
+      "source": "source/D1559036843585192953673121256981__Seek-Truth-Promo-Video.mp4",
+      "previousDerivative": "optimized/D1559036843585192953673121256981__Seek-Truth-Promo-Video.mp4",
+      "output": "Web Optimized/D1559036843585192953673121256981__Seek-Truth-Promo-Video-max900-crf22.mp4",
+      "reason": "New max-900 quality-preserving H.264 derivative without audio for muted autoplay, with fast-start metadata.",
+      "before": {
+        "bytes": 19544164,
+        "sha256": "eff24b7b277b56471fe027975d3b02d151828b9eb4f9890e8110e7f966096c1b",
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "profile": "Main",
+              "codec_type": "video",
+              "width": 1080,
+              "height": 1920,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "r_frame_rate": "30000/1001",
+              "duration": "7.207200"
+            },
+            {
+              "codec_name": "aac",
+              "profile": "LC",
+              "codec_type": "audio",
+              "r_frame_rate": "0/0",
+              "duration": "7.207208"
+            }
+          ],
+          "format": {
+            "duration": "7.207208",
+            "size": "19544164",
+            "bit_rate": "21694019"
+          }
+        }
+      },
+      "previous": {
+        "bytes": 8833382,
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "profile": "High",
+              "codec_type": "video",
+              "width": 1080,
+              "height": 1920,
+              "pix_fmt": "yuv420p",
+              "level": 40,
+              "r_frame_rate": "30000/1001",
+              "duration": "7.207200"
+            },
+            {
+              "codec_name": "aac",
+              "profile": "LC",
+              "codec_type": "audio",
+              "r_frame_rate": "0/0",
+              "duration": "7.210000"
+            }
+          ],
+          "format": {
+            "duration": "7.210000",
+            "size": "8833382",
+            "bit_rate": "9801256"
+          }
+        }
+      },
+      "after": {
+        "bytes": 5362858,
+        "sha256": "d96d917b33ce5b59d56676a2e3fd3de1b61a4c2642e035ed088afeba2ff584a1",
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "profile": "High",
+              "codec_type": "video",
+              "width": 506,
+              "height": 900,
+              "pix_fmt": "yuv420p",
+              "level": 40,
+              "r_frame_rate": "30000/1001",
+              "duration": "7.207200"
+            }
+          ],
+          "format": {
+            "duration": "7.207200",
+            "size": "5362858",
+            "bit_rate": "5952778"
+          }
+        }
+      },
+      "settings": {
+        "maxDimension": 900,
+        "codec": "H.264 High",
+        "crf": 22,
+        "preset": "slow",
+        "pixelFormat": "yuv420p",
+        "audio": "none (muted autoplay asset)",
+        "fastStart": true
+      }
+    }
+  },
+  "unchanged": [
+    "main/seek-truth-upload-manifest.csv",
+    "main/seek-truth-upload-manifest.json",
+    "main/optimized/*"
+  ]
+}

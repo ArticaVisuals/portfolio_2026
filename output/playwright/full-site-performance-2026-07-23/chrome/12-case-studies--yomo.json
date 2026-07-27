@@ -1,0 +1,316 @@
+{
+  "target": "https://micahhoang.com/case-studies/yomo",
+  "auditedAt": "2026-07-23T19:55:07.704Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/yomo",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 7090,
+  "title": "Yomo Food Navigation UX/UI - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/yomo",
+  "bodyTextLength": 4267,
+  "domNodes": 478,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 50.6000000089407,
+    "responseStartMs": 379.20000000298023,
+    "domContentLoadedMs": 744.7000000029802,
+    "loadMs": 1081.7000000029802,
+    "firstPaintMs": 448,
+    "fcpMs": 448,
+    "lcpMs": 1104,
+    "lcpUrl": "https://framerusercontent.com/images/WKTlPRUgqNZ5F1yQYdBfSqqw8rc.jpg?scale-down-to=2048&width=5165&height=2905",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 179,
+    "longTaskMaxMs": 179
+  },
+  "media": {
+    "images": {
+      "total": 26,
+      "withSource": 26,
+      "complete": 23,
+      "ready": 23,
+      "broken": 0,
+      "incomplete": 3,
+      "lazy": 3
+    },
+    "videos": {
+      "total": 2,
+      "withSource": 2,
+      "readyState0": 2,
+      "readyState1": 0,
+      "readyState2Plus": 0,
+      "playing": 0,
+      "autoplayTotal": 0,
+      "autoplayPlaying": 0,
+      "preloadNone": 2
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 82,
+    "failedRequestCount": 0,
+    "totalBytes": 4051971,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 31734,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 428555,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132791,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 23,
+        "bytes": 3282455,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174004,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1999,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/images/WKTlPRUgqNZ5F1yQYdBfSqqw8rc.jpg?scale-down-to=2048&width=5165&height=2905",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 654978,
+        "durationMs": 429,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/Q98CJdKlxE6q6GxPK29JHEWaqY.png?scale-down-to=2048&width=4000&height=4123",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 436271,
+        "durationMs": 449,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/vh6KV9T1YWUYJ75XwFZZtxkfFcA.png?scale-down-to=2048&width=5681&height=3196",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 306259,
+        "durationMs": 450,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/Nj3Ciy2gADVmKDgiA74nhMdIs.png?scale-down-to=2048&width=2780&height=3637",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 234004,
+        "durationMs": 449,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/FuhagBj7Bcy2JC01KqmPaigzgjg.png?scale-down-to=2048&width=3489&height=4400",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 222108,
+        "durationMs": 429,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/HSAJv5jXQ4RNNvKoAvN73yU.png?scale-down-to=2048&width=3840&height=2160",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 204050,
+        "durationMs": 429,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/a8ISTdkeJafZthvLPX3D06dnrqo.png?scale-down-to=2048&width=3840&height=2160",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 168190,
+        "durationMs": 394,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/WG5og7gmHbQ4IotFHes0ZiBa8bY.png?scale-down-to=2048&width=2000&height=2061",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 149448,
+        "durationMs": 429,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ExN03k68OXaUewAQAbbjYw5HX4.png?scale-down-to=2048&width=5834&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 142334,
+        "durationMs": 449,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/lkJIldM9HzOZOTi8dZA8tRha88.png?scale-down-to=2048&width=5331&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 117340,
+        "durationMs": 437,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/zoObm9a6tYu3N7fLMOG4shHLs8.png?scale-down-to=1024&width=5681&height=3196",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 117325,
+        "durationMs": 375,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117198,
+        "durationMs": 100,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/EKwawgyrh0snuluytnAX6fKlMo.png?width=1189&height=1500",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 78682,
+        "durationMs": 394,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/HQ5GVUK6Nagodo8oJaZOoqPHm2Y.png?scale-down-to=1024&width=5834&height=3000",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 78053,
+        "durationMs": 450,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/8aVLucYYmFu6neYkzE15sk5RZE.png?scale-down-to=1024&width=5681&height=3196",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 71358,
+        "durationMs": 371,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/DxSxfiDx69EdvXbpPbUWYpisc.jpg?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 68298,
+        "durationMs": 379,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63591,
+        "durationMs": 139,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49807,
+        "durationMs": 89,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45448,
+        "durationMs": 72,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/iH1IihuSdNTIhJdIG9kz7Ytb1U.png?scale-down-to=512&width=5681&height=3196",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 38974,
+        "durationMs": 436,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/case-studies/yomo",
+  "artifactSlug": "case-studies--yomo"
+}

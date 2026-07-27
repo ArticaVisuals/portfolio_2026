@@ -1,0 +1,321 @@
+{
+  "target": "https://micahhoang.com/case-studies/typldn",
+  "auditedAt": "2026-07-23T19:55:57.295Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/typldn",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 6701,
+  "title": "TYPLDN Conference Identity - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/typldn",
+  "bodyTextLength": 1001,
+  "domNodes": 387,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 50.29999999701977,
+    "responseStartMs": 261.29999999701977,
+    "domContentLoadedMs": 426.5,
+    "loadMs": 692.5999999940395,
+    "firstPaintMs": 376,
+    "fcpMs": 376,
+    "lcpMs": 716,
+    "lcpUrl": "https://framerusercontent.com/images/jchJlOWt16iY8J0NEXEfm3G8cTE.png?scale-down-to=2048&width=4438&height=2496",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 0,
+    "longTaskTotalMs": 0,
+    "longTaskMaxMs": 0
+  },
+  "media": {
+    "images": {
+      "total": 14,
+      "withSource": 14,
+      "complete": 6,
+      "ready": 6,
+      "broken": 0,
+      "incomplete": 8,
+      "lazy": 8
+    },
+    "videos": {
+      "total": 6,
+      "withSource": 6,
+      "readyState0": 4,
+      "readyState1": 0,
+      "readyState2Plus": 2,
+      "playing": 0,
+      "autoplayTotal": 2,
+      "autoplayPlaying": 0,
+      "preloadNone": 4
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 69,
+    "failedRequestCount": 0,
+    "totalBytes": 3554282,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 26480,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 425990,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 8,
+        "bytes": 1631698,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132782,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174002,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1992,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 432,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 2,
+        "bytes": 1160906,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 731083,
+        "durationMs": 85,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/mlN254QbAKP3nzDyT3YUA5ep20.png?scale-down-to=2048&width=5762&height=4616",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 509658,
+        "durationMs": 349,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/C2Wg1WOBFV8KWGEYMTEMko2A.png?scale-down-to=2048&width=3000&height=1688",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 439778,
+        "durationMs": 350,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 429823,
+        "durationMs": 77,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 288529,
+        "durationMs": 59,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/CDgYI85yMOva4HF8BTx16iThQZQ.png?scale-down-to=2048&width=6000&height=4500",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 124770,
+        "durationMs": 275,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117195,
+        "durationMs": 191,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/jchJlOWt16iY8J0NEXEfm3G8cTE.png?scale-down-to=2048&width=4438&height=2496",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 91355,
+        "durationMs": 253,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/zkjgj9ADgChvppQyUTYWe5F7g6c.png?scale-down-to=2048&width=5762&height=4616",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 87891,
+        "durationMs": 297,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/rp5PWkVi5KYzqOSmX5LSnqdeWc.png?scale-down-to=2048&width=11228&height=6316",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/webp",
+        "bytes": 82685,
+        "durationMs": 291,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63587,
+        "durationMs": 265,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49793,
+        "durationMs": 199,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45436,
+        "durationMs": 222,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33804,
+        "durationMs": 257,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29723,
+        "durationMs": 62,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29544,
+        "durationMs": 63,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28188,
+        "durationMs": 46,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27637,
+        "durationMs": 133,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27409,
+        "durationMs": 134,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/case-studies/typldn",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 26480,
+        "durationMs": 323,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/case-studies/typldn",
+  "artifactSlug": "case-studies--typldn"
+}

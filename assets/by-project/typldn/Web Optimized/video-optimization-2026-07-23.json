@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-07-23",
+  "project": "TYPLDN",
+  "settings": {
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "preset": "slow",
+    "crf": 23,
+    "audio": "removed",
+    "faststart": true,
+    "frameRate": "preserved",
+    "poster": "WebP quality 88"
+  },
+  "totals": {
+    "items": 4,
+    "sourceBytes": 4891002,
+    "outputBytes": 1691487,
+    "savedBytes": 3199515,
+    "savingsPercent": 65.4,
+    "posterBytes": 201686
+  },
+  "items": [
+    {
+      "id": "002-logo-animation",
+      "liveUrl": "https://freight.cargo.site/t/original/i/I1536330345899837002649459480085/Typo-London-Logo-Animation.mp4",
+      "sourcePath": "assets/by-project/typldn/002-typo-london-logo-animation.mp4",
+      "outputPath": "assets/by-project/typldn/Web Optimized/videos/002-typo-london-logo-animation-1600-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/typldn/Web Optimized/posters/002-typo-london-logo-animation-poster-1600-q88.webp",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1600x900",
+      "posterDimensions": "1600x900",
+      "durationSeconds": 5.005,
+      "sourceBytes": 320916,
+      "outputBytes": 28845,
+      "posterBytes": 3544,
+      "savingsPercent": 91.0,
+      "status": "encoded_and_poster_generated"
+    },
+    {
+      "id": "003-f6aa",
+      "liveUrl": "https://freight.cargo.site/t/original/i/E1539767266959917077443847116309/f6aa8485-6f2d-41b1-90e0-32753836bd0e.mp4",
+      "sourcePath": "assets/by-project/typldn/003-f6aa8485-6f2d-41b1-90e0-32753836bd0e.mp4",
+      "outputPath": "assets/by-project/typldn/Web Optimized/videos/003-f6aa8485-1920-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/typldn/Web Optimized/posters/003-f6aa8485-poster-1600-q88.webp",
+      "sourceDimensions": "2880x1920",
+      "outputDimensions": "1920x1280",
+      "posterDimensions": "1600x1066",
+      "durationSeconds": 10.01,
+      "sourceBytes": 2072581,
+      "outputBytes": 1488702,
+      "posterBytes": 180054,
+      "savingsPercent": 28.2,
+      "status": "encoded_and_poster_generated"
+    },
+    {
+      "id": "005-id-card",
+      "liveUrl": "https://freight.cargo.site/t/original/i/W1537681897480517488239549077013/ID-Card-Option-Animation_1.mp4",
+      "sourcePath": "assets/by-project/typldn/005-id-card-option-animation_1.mp4",
+      "outputPath": "assets/by-project/typldn/Web Optimized/videos/005-id-card-option-animation-1600-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/typldn/Web Optimized/posters/005-id-card-option-animation-poster-1600-q88.webp",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1600x900",
+      "posterDimensions": "1600x900",
+      "durationSeconds": 4.5045,
+      "sourceBytes": 467145,
+      "outputBytes": 82504,
+      "posterBytes": 13512,
+      "savingsPercent": 82.3,
+      "status": "encoded_and_poster_generated"
+    },
+    {
+      "id": "007-logo-variants",
+      "liveUrl": "https://freight.cargo.site/t/original/i/C1538106533449420377832965789205/Typo-London-Logo-Variants_1.mp4",
+      "sourcePath": "assets/by-project/typldn/007-typo-london-logo-variants_1.mp4",
+      "outputPath": "assets/by-project/typldn/Web Optimized/videos/007-typo-london-logo-variants-1600-crf23-noaudio.mp4",
+      "posterPath": "assets/by-project/typldn/Web Optimized/posters/007-typo-london-logo-variants-poster-1600-q88.webp",
+      "sourceDimensions": "1920x1080",
+      "outputDimensions": "1600x900",
+      "posterDimensions": "1600x900",
+      "durationSeconds": 10.01,
+      "sourceBytes": 2030360,
+      "outputBytes": 91436,
+      "posterBytes": 4576,
+      "savingsPercent": 95.5,
+      "status": "encoded_and_poster_generated"
+    }
+  ],
+  "verification": {
+    "ffprobe": "all 4 outputs are H.264/yuv420p with zero audio streams",
+    "representativeFrameSsim": {
+      "003-f6aa": 0.996416,
+      "007-logo-variants": 0.999787
+    },
+    "typographyReview": "Passed; fine poster typography, hard geometric edges, and monochrome tonal separation remain intact.",
+    "qcFolder": "assets/by-project/typldn/Web Optimized/qc"
+  }
+}

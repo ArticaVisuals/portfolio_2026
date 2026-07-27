@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:56.971Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/rejuve",
+  "items": [
+    {
+      "slug": "rejuve-in-store",
+      "title": "Rejuve In-Store",
+      "order": 44,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/7ZgIZ22biIwSM2wmPhrASkwOA.gif?width=1920&height=1080",
+      "sourcePath": "assets/Play/rejuve/source/play-rejuve-in-store-poster-7ZgIZ22biIwSM2wmPhrASkwOA-original.gif",
+      "originalBytes": 579096,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/rejuve/optimized/play-rejuve-in-store-poster-7ZgIZ22biIwSM2wmPhrASkwOA-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 78872,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": 500224,
+      "savingsPercent": 86.38015113210936
+    },
+    {
+      "slug": "rejuve-in-store",
+      "title": "Rejuve In-Store",
+      "order": 44,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/hQhH9qRSES9xFdXHDRvoM50PhtE.mp4",
+      "sourcePath": "assets/Play/rejuve/optimized/rejuve-in-store-1920x1080-1000ms-loop.gif",
+      "originalBytes": 1270132,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/rejuve/optimized/play-rejuve-in-store-hQhH9qRSES9xFdXHDRvoM50PhtE-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 190819,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 6,
+      "savingsBytes": 1079313,
+      "savingsPercent": 84.97644339328511
+    }
+  ]
+}

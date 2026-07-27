@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.337Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/pop-talks-google",
+  "items": [
+    {
+      "slug": "play-029",
+      "title": "POP Talks x Google",
+      "order": 33,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/cxkNy3oV0hyulOmWiAYj1slQZF4.jpg?width=1920&height=1920",
+      "sourcePath": "assets/Play/pop-talks-google/source/play-play-029-poster-cxkNy3oV0hyulOmWiAYj1slQZF4-original.jpg",
+      "originalBytes": 3737,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "outputPath": "assets/Play/pop-talks-google/optimized/play-play-029-poster-cxkNy3oV0hyulOmWiAYj1slQZF4-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 4624,
+      "outputWidth": 1600,
+      "outputHeight": 1600,
+      "savingsBytes": -887,
+      "savingsPercent": -23.735616804923733
+    },
+    {
+      "slug": "play-029",
+      "title": "POP Talks x Google",
+      "order": 33,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/m0r53FklqFdWbK7cbL1wFsqgU.mp4",
+      "sourcePath": "assets/Play/pop-talks-google/source/play-play-029-video-m0r53FklqFdWbK7cbL1wFsqgU-original.mp4",
+      "originalBytes": 170817,
+      "originalWidth": 1280,
+      "originalHeight": 1280,
+      "outputPath": "assets/Play/pop-talks-google/optimized/play-play-029-m0r53FklqFdWbK7cbL1wFsqgU-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 110698,
+      "outputWidth": 900,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 10,
+      "savingsBytes": 60119,
+      "savingsPercent": 35.19497473904822
+    }
+  ]
+}

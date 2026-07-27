@@ -1,0 +1,26 @@
+diff --git a/code/components/CaseStudyControllers.tsx b/code/components/CaseStudyControllers.tsx
+--- a/code/components/CaseStudyControllers.tsx
++++ b/code/components/CaseStudyControllers.tsx
+@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
+ // Framer resolves these module URLs to the project's other code components at
+ // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
+ // @ts-ignore
+-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY"
++import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh"
+ // @ts-ignore
+ import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
+ // @ts-ignore
+diff --git a/code/components/CaseStudyLightbox.tsx b/code/components/CaseStudyLightbox.tsx
+--- a/code/components/CaseStudyLightbox.tsx
++++ b/code/components/CaseStudyLightbox.tsx
+@@ -85,9 +85,7 @@ const MOBILE_FOOTER_STYLE_ID = "case-study-mobile-footer-layout-v2"
+ const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
+ const MEDIA_SKELETON_STYLE_ID = "case-study-media-skeleton-v1"
+ const MEDIA_SKELETON_COLOR = "rgba(255, 255, 255, 0.6)"
+-// Cross-origin embeds own their loading UI; a missed iframe load event must
+-// never leave an otherwise-ready player hidden behind the global skeleton.
+-const MEDIA_SKELETON_SELECTOR = "img, video"
++const MEDIA_SKELETON_SELECTOR = "img, video, iframe"
+ const MEDIA_SKELETON_STATE_ATTR = "data-case-study-media-state"
+ // Framer's native video layer is 16:9 until metadata arrives. Most case-study
+ // social video rows are portrait, so this prevents first-boot row collapse.

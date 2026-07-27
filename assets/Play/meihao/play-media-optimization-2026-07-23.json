@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.124Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/meihao",
+  "items": [
+    {
+      "slug": "play-001",
+      "title": "Meihao Drink Packaging",
+      "order": 7,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/qFtiO5xwy51sMflzxQajxyHZw.png?width=1219&height=1566",
+      "sourcePath": "assets/Play/meihao/source/meihao-current-poster.png",
+      "originalBytes": 1070831,
+      "originalWidth": 1219,
+      "originalHeight": 1566,
+      "outputPath": "assets/Play/meihao/optimized/play-play-001-poster-qFtiO5xwy51sMflzxQajxyHZw-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 301592,
+      "outputWidth": 1219,
+      "outputHeight": 1566,
+      "savingsBytes": 769239,
+      "savingsPercent": 71.8357051672953
+    },
+    {
+      "slug": "play-001",
+      "title": "Meihao Drink Packaging",
+      "order": 7,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/lBRT0UlFXfxADjTkxI0643mxaQ.mp4",
+      "sourcePath": "assets/Play/meihao/optimized/meihao-drink-packaging-flip-1220x1568-1000ms-bottom-preserved-crf25.mp4",
+      "originalBytes": 1047094,
+      "originalWidth": 1220,
+      "originalHeight": 1568,
+      "outputPath": "assets/Play/meihao/optimized/play-play-001-lBRT0UlFXfxADjTkxI0643mxaQ-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 344310,
+      "outputWidth": 700,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 3,
+      "savingsBytes": 702784,
+      "savingsPercent": 67.11756537617444
+    }
+  ]
+}

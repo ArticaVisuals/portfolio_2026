@@ -1,0 +1,322 @@
+{
+  "target": "https://micahhoang.com/index",
+  "auditedAt": "2026-07-23T19:53:27.591Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/index",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 6731,
+  "title": "Micah Hoang — Brand Designer",
+  "canonical": "https://micahhoang.com/index",
+  "bodyTextLength": 1701,
+  "domNodes": 583,
+  "timing": {
+    "ttfbMs": 94.70000000298023,
+    "responseStartMs": 337.29999999701977,
+    "domContentLoadedMs": 531.9000000059605,
+    "loadMs": 717.5999999940395,
+    "firstPaintMs": 416,
+    "fcpMs": 416,
+    "lcpMs": 492,
+    "lcpUrl": "",
+    "cls": 0.32738166824905957,
+    "longTaskCount": 2,
+    "longTaskTotalMs": 142,
+    "longTaskMaxMs": 73
+  },
+  "media": {
+    "images": {
+      "total": 15,
+      "withSource": 15,
+      "complete": 15,
+      "ready": 15,
+      "broken": 0,
+      "incomplete": 0,
+      "lazy": 15
+    },
+    "videos": {
+      "total": 0,
+      "withSource": 0,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 0,
+      "playing": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 60,
+    "failedRequestCount": 0,
+    "totalBytes": 1006112,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 30018,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 32,
+        "bytes": 378689,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 148957,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 15,
+        "bytes": 402479,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 4,
+        "bytes": 43558,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1996,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 415,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117190,
+        "durationMs": 58,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png?scale-down-to=512&width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 70614,
+        "durationMs": 163,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63603,
+        "durationMs": 114,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/8fV7L1MlzeOAlHSxXchHzUHO7c.jpg?scale-down-to=512&width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 57863,
+        "durationMs": 155,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49803,
+        "durationMs": 62,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45443,
+        "durationMs": 41,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?scale-down-to=512&width=3236&height=1810",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 37513,
+        "durationMs": 104,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg?scale-down-to=512&width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 34715,
+        "durationMs": 150,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/jJW0KifU2kfkhlHdh7akkmu0XU.jpg?scale-down-to=512&width=1600&height=893",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 34474,
+        "durationMs": 123,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33800,
+        "durationMs": 137,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png?scale-down-to=512&width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 32493,
+        "durationMs": 143,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 30018,
+        "durationMs": 382,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29544,
+        "durationMs": 180,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 28195,
+        "durationMs": 39,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28186,
+        "durationMs": 63,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?scale-down-to=512&width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 25671,
+        "durationMs": 140,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?scale-down-to=512&width=1280&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 23199,
+        "durationMs": 116,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png?scale-down-to=512&width=1600&height=900",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 22131,
+        "durationMs": 119,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/xgjosOS16LZVpd3huScx2lW1g.jpg?scale-down-to=512&width=1600&height=893",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 19172,
+        "durationMs": 180,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17856,
+        "durationMs": 32,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [],
+    "consoleWarnings": [
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+      },
+      {
+        "type": "warning",
+        "text": "Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n Error: Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnin"
+      }
+    ],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/index",
+  "artifactSlug": "index"
+}

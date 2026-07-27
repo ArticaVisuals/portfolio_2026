@@ -1,0 +1,234 @@
+{
+  "project": "Peak Energy",
+  "generated": "2026-07-23",
+  "encoding": {
+    "video": "H.264 MP4, libx264 slow preset, yuv420p, faststart, no audio",
+    "poster": "WebP quality 88, frame at 25% of source duration"
+  },
+  "sourceArchive": "../current-site/source/",
+  "verification": {
+    "ffprobe": "passed for all nine outputs",
+    "faststart": "passed for all nine outputs (moov atom precedes mdat)",
+    "visualContactSheets": "verification/",
+    "notes": "Remote-only originals were saved in the project source archive. Three representative frames at 20%, 50%, and 80% were compared side by side for every asset."
+  },
+  "assets": [
+    {
+      "id": "QAYMhu4B0xdHJxnySBuabHtks",
+      "sourceUrl": "https://framerusercontent.com/assets/QAYMhu4B0xdHJxnySBuabHtks.mp4",
+      "sourcePath": "../current-site/source/QAYMhu4B0xdHJxnySBuabHtks.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1280x720",
+        "fps": 29.853,
+        "durationSeconds": 2.546029,
+        "bytes": 269245
+      },
+      "videoPath": "videos/peak-energy-QAYMhu4B0xdHJxnySBuabHtks-1280x720-crf25.mp4",
+      "posterPath": "posters/peak-energy-QAYMhu4B0xdHJxnySBuabHtks-1280x720-q88.webp",
+      "output": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 2.566667,
+        "bytes": 218258,
+        "crf": 25,
+        "savingsPercent": 18.94,
+        "ssim": 0.99746
+      },
+      "visualRisk": "Very low. Variable source cadence was normalized to 30 fps, adding less than one frame of container duration."
+    },
+    {
+      "id": "ebURoH5YNfEa6FCrcr6l6QFS68Q",
+      "sourceUrl": "https://framerusercontent.com/assets/ebURoH5YNfEa6FCrcr6l6QFS68Q.mp4",
+      "sourcePath": "../current-site/source/ebURoH5YNfEa6FCrcr6l6QFS68Q.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 3,
+        "bytes": 132560
+      },
+      "videoPath": "videos/peak-energy-ebURoH5YNfEa6FCrcr6l6QFS68Q-1280x720-crf25.mp4",
+      "posterPath": "posters/peak-energy-ebURoH5YNfEa6FCrcr6l6QFS68Q-1280x720-q88.webp",
+      "output": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 3,
+        "bytes": 107483,
+        "crf": 25,
+        "savingsPercent": 18.92,
+        "ssim": 0.998733
+      },
+      "visualRisk": "Very low."
+    },
+    {
+      "id": "HHTkUi7SKOAAtY1MmzC0Q1b54Q",
+      "sourceUrl": "https://framerusercontent.com/assets/HHTkUi7SKOAAtY1MmzC0Q1b54Q.mp4",
+      "sourcePath": "../current-site/source/HHTkUi7SKOAAtY1MmzC0Q1b54Q.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1280x720",
+        "fps": 29.58,
+        "durationSeconds": 4.099023,
+        "bytes": 1905311
+      },
+      "videoPath": "videos/peak-energy-HHTkUi7SKOAAtY1MmzC0Q1b54Q-1280x720-crf24.mp4",
+      "posterPath": "posters/peak-energy-HHTkUi7SKOAAtY1MmzC0Q1b54Q-1280x720-q88.webp",
+      "output": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 4.1,
+        "bytes": 1608891,
+        "crf": 24,
+        "savingsPercent": 15.56,
+        "ssim": 0.993785
+      },
+      "visualRisk": "Very low. Variable source cadence was normalized to 30 fps."
+    },
+    {
+      "id": "o0EK9YezE48hWm1UC3BcEme8ifY",
+      "sourceUrl": "https://framerusercontent.com/assets/o0EK9YezE48hWm1UC3BcEme8ifY.mp4",
+      "sourcePath": "../current-site/source/o0EK9YezE48hWm1UC3BcEme8ifY.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 2,
+        "bytes": 383983
+      },
+      "videoPath": "videos/peak-energy-o0EK9YezE48hWm1UC3BcEme8ifY-1280x720-crf25.mp4",
+      "posterPath": "posters/peak-energy-o0EK9YezE48hWm1UC3BcEme8ifY-1280x720-q88.webp",
+      "output": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 2,
+        "bytes": 310074,
+        "crf": 25,
+        "savingsPercent": 19.25,
+        "ssim": 0.997129
+      },
+      "visualRisk": "Very low."
+    },
+    {
+      "id": "9Z12PCxBfwmh6gJITSSks4qYGLM",
+      "sourceUrl": "https://framerusercontent.com/assets/9Z12PCxBfwmh6gJITSSks4qYGLM.mp4",
+      "sourcePath": "../current-site/source/9Z12PCxBfwmh6gJITSSks4qYGLM.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1920x1080",
+        "fps": 24,
+        "durationSeconds": 8,
+        "bytes": 965147
+      },
+      "videoPath": "videos/peak-energy-9Z12PCxBfwmh6gJITSSks4qYGLM-1440x810-crf24.mp4",
+      "posterPath": "posters/peak-energy-9Z12PCxBfwmh6gJITSSks4qYGLM-1440x810-q88.webp",
+      "output": {
+        "dimensions": "1440x810",
+        "fps": 24,
+        "durationSeconds": 8,
+        "bytes": 347010,
+        "crf": 24,
+        "savingsPercent": 64.05,
+        "ssim": 0.999261
+      },
+      "visualRisk": "Very low. Intentional 24 fps cadence is preserved."
+    },
+    {
+      "id": "7MFleSRgo8r2lOEcs94tDjD41TI",
+      "sourceUrl": "https://framerusercontent.com/assets/7MFleSRgo8r2lOEcs94tDjD41TI.mp4",
+      "sourcePath": "../current-site/source/7MFleSRgo8r2lOEcs94tDjD41TI.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1920x1080",
+        "fps": 24,
+        "durationSeconds": 9,
+        "bytes": 1043132
+      },
+      "videoPath": "videos/peak-energy-7MFleSRgo8r2lOEcs94tDjD41TI-1440x810-crf24.mp4",
+      "posterPath": "posters/peak-energy-7MFleSRgo8r2lOEcs94tDjD41TI-1440x810-q88.webp",
+      "output": {
+        "dimensions": "1440x810",
+        "fps": 24,
+        "durationSeconds": 9,
+        "bytes": 403094,
+        "crf": 24,
+        "savingsPercent": 61.36,
+        "ssim": 0.99902
+      },
+      "visualRisk": "Very low. Intentional 24 fps cadence is preserved."
+    },
+    {
+      "id": "YTha6qQtYqtUuIUE9g1ffdEVKc",
+      "sourceUrl": "https://framerusercontent.com/assets/YTha6qQtYqtUuIUE9g1ffdEVKc.mp4",
+      "sourcePath": "../current-site/source/YTha6qQtYqtUuIUE9g1ffdEVKc.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1920x1080",
+        "fps": 30,
+        "durationSeconds": 5.5,
+        "bytes": 8942572
+      },
+      "videoPath": "videos/peak-energy-YTha6qQtYqtUuIUE9g1ffdEVKc-1440x810-crf23.mp4",
+      "posterPath": "posters/peak-energy-YTha6qQtYqtUuIUE9g1ffdEVKc-1440x810-q88.webp",
+      "output": {
+        "dimensions": "1440x810",
+        "fps": 30,
+        "durationSeconds": 5.5,
+        "bytes": 5309518,
+        "crf": 23,
+        "savingsPercent": 40.63,
+        "ssim": 0.98506
+      },
+      "visualRisk": "Low. This high-motion, detailed 3D sequence was kept at CRF 23; the reviewed frames remain visually equivalent."
+    },
+    {
+      "id": "vkN4eGEAUSjfMw2lXOgnL5wcSo",
+      "sourceUrl": "https://framerusercontent.com/assets/vkN4eGEAUSjfMw2lXOgnL5wcSo.mp4",
+      "sourcePath": "../current-site/source/vkN4eGEAUSjfMw2lXOgnL5wcSo.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 2,
+        "bytes": 970399
+      },
+      "videoPath": "videos/peak-energy-vkN4eGEAUSjfMw2lXOgnL5wcSo-1280x720-crf24.mp4",
+      "posterPath": "posters/peak-energy-vkN4eGEAUSjfMw2lXOgnL5wcSo-1280x720-q88.webp",
+      "output": {
+        "dimensions": "1280x720",
+        "fps": 30,
+        "durationSeconds": 2,
+        "bytes": 827273,
+        "crf": 24,
+        "savingsPercent": 14.75,
+        "ssim": 0.994452
+      },
+      "visualRisk": "Very low."
+    },
+    {
+      "id": "qmBGS9TepzZYV60oqT58TCaPs",
+      "sourceUrl": "https://framerusercontent.com/assets/qmBGS9TepzZYV60oqT58TCaPs.mp4",
+      "sourcePath": "../current-site/source/qmBGS9TepzZYV60oqT58TCaPs.mp4",
+      "sourceRelation": "downloaded live Framer original",
+      "source": {
+        "dimensions": "1920x1080",
+        "fps": 30,
+        "durationSeconds": 4,
+        "bytes": 1313344
+      },
+      "videoPath": "videos/peak-energy-qmBGS9TepzZYV60oqT58TCaPs-1600x900-crf24.mp4",
+      "posterPath": "posters/peak-energy-qmBGS9TepzZYV60oqT58TCaPs-1600x900-q88.webp",
+      "output": {
+        "dimensions": "1600x900",
+        "fps": 30,
+        "durationSeconds": 4,
+        "bytes": 237931,
+        "crf": 24,
+        "savingsPercent": 81.88,
+        "ssim": 0.995993
+      },
+      "audio": "AAC track removed because the live element is muted autoplay",
+      "visualRisk": "Very low."
+    }
+  ]
+}

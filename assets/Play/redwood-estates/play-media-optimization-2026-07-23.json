@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.339Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/redwood-estates",
+  "items": [
+    {
+      "slug": "play-033",
+      "title": "Redwood Estates",
+      "order": 36,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/iy1sObMg41oR8m9v2WvxmlEd4.jpg?width=1588&height=1196",
+      "sourcePath": "assets/Play/redwood-estates/source/play-play-033-poster-iy1sObMg41oR8m9v2WvxmlEd4-original.jpg",
+      "originalBytes": 528605,
+      "originalWidth": 1588,
+      "originalHeight": 1196,
+      "outputPath": "assets/Play/redwood-estates/optimized/play-play-033-poster-iy1sObMg41oR8m9v2WvxmlEd4-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 259146,
+      "outputWidth": 1588,
+      "outputHeight": 1196,
+      "savingsBytes": 269459,
+      "savingsPercent": 50.97549209712356
+    }
+  ]
+}

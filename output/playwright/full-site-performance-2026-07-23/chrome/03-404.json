@@ -1,0 +1,309 @@
+{
+  "target": "https://micahhoang.com/404",
+  "auditedAt": "2026-07-23T19:53:06.651Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 1500,
+  "finalUrl": "https://micahhoang.com/404",
+  "status": 404,
+  "navigationError": "",
+  "wallClockMs": 2246,
+  "title": "Micah Hoang — Brand Designer",
+  "canonical": "https://micahhoang.com/404",
+  "bodyTextLength": 181,
+  "domNodes": 182,
+  "timing": {
+    "ttfbMs": 55.79999999701977,
+    "responseStartMs": 304.5,
+    "domContentLoadedMs": 433.29999999701977,
+    "loadMs": 732.3999999910593,
+    "firstPaintMs": 408,
+    "fcpMs": 408,
+    "lcpMs": 408,
+    "lcpUrl": "",
+    "cls": 0.0034996809443721064,
+    "longTaskCount": 0,
+    "longTaskTotalMs": 0,
+    "longTaskMaxMs": 0
+  },
+  "media": {
+    "images": {
+      "total": 0,
+      "withSource": 0,
+      "complete": 0,
+      "ready": 0,
+      "broken": 0,
+      "incomplete": 0,
+      "lazy": 0
+    },
+    "videos": {
+      "total": 0,
+      "withSource": 0,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 0,
+      "playing": 0,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 47,
+    "failedRequestCount": 0,
+    "totalBytes": 502130,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 23148,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 34,
+        "bytes": 383810,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 77625,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1996,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      },
+      "Fetch": {
+        "requests": 4,
+        "bytes": 15118,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117188,
+        "durationMs": 180,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49803,
+        "durationMs": 147,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45447,
+        "durationMs": 198,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33805,
+        "durationMs": 247,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28189,
+        "durationMs": 39,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/404",
+        "type": "Document",
+        "status": 404,
+        "mimeType": "text/html",
+        "bytes": 23148,
+        "durationMs": 356,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/hG5J7TfkwC8bq-bmCv6UUdn_nPH9ws-yEU0Y538KY80.u0n3QthD.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17861,
+        "durationMs": 39,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BNuLb-Xz.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 17320,
+        "durationMs": 195,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.pCGkvBZ9.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 15113,
+        "durationMs": 190,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/6trw2KQ2xTQNxh4KB670Pal2GjW7zLL-Z5xfpDOvQzk.jyS90Rmz.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 12566,
+        "durationMs": 39,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/crhfNLaqXfVV61Bkd6ep2NhowE.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 12110,
+        "durationMs": 247,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/DNrckardB2jvGZnn0Iagvf20zY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 12062,
+        "durationMs": 245,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/azeretmono/v21/3XF5ErsiyJsY9O_Gepph-FvtTQgMQUdNekSfnPVR1byb.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 11252,
+        "durationMs": 289,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/leXkdpDxyWWNBvvQ2F5_ALc794EbXPE1QBPzZCcQxDk.DVGJH441.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 10031,
+        "durationMs": 48,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.8j6F6F6Q.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 9495,
+        "durationMs": 41,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/cms/Q5zVNoSlpFEeQkuMUimJ/NuOHxwpImyFXJUj0cIIJ/EySMRbI2N-chunk-default-0.framercms?range=4-39473",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "application/javascript",
+        "bytes": 9351,
+        "durationMs": 30,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/luh0tSUuNONHrsQU773tpNNzg1Y.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 8396,
+        "durationMs": 252,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://events.framer.com/script?v=2",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 8237,
+        "durationMs": 293,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/HomeSelectedWorkGrid.CooQyYFj.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 6876,
+        "durationMs": 39,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Copyright_year.CYlc7dtg.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 4630,
+        "durationMs": 116,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "route": "/404",
+  "artifactSlug": "404"
+}

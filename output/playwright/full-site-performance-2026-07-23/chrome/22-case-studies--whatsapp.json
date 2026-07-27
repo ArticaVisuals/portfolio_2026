@@ -1,0 +1,332 @@
+{
+  "target": "https://micahhoang.com/case-studies/whatsapp",
+  "auditedAt": "2026-07-23T19:57:09.036Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/whatsapp",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 10313,
+  "title": "WhatsApp In-App - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/whatsapp",
+  "bodyTextLength": 1038,
+  "domNodes": 322,
+  "runtimeMarkers": {
+    "videoManager": 0,
+    "lightbox": 0,
+    "controllers": 0
+  },
+  "timing": {
+    "ttfbMs": 136.70000000298023,
+    "responseStartMs": 718.0999999940395,
+    "domContentLoadedMs": 932,
+    "loadMs": 4306.29999999702,
+    "firstPaintMs": 804,
+    "fcpMs": 804,
+    "lcpMs": 1072,
+    "lcpUrl": "https://framerusercontent.com/images/rRYV72aNti4eWf7Z6SCGk1YTeo.jpg?width=560&height=700",
+    "cls": 0.07765413411458333,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 69,
+    "longTaskMaxMs": 69
+  },
+  "media": {
+    "images": {
+      "total": 3,
+      "withSource": 3,
+      "complete": 3,
+      "ready": 3,
+      "broken": 0,
+      "incomplete": 0,
+      "lazy": 3
+    },
+    "videos": {
+      "total": 11,
+      "withSource": 11,
+      "readyState0": 5,
+      "readyState1": 0,
+      "readyState2Plus": 6,
+      "playing": 3,
+      "autoplayTotal": 7,
+      "autoplayPlaying": 3,
+      "preloadNone": 4
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 73,
+    "failedRequestCount": 1,
+    "totalBytes": 9457241,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 26816,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 36,
+        "bytes": 399161,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132799,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 11,
+        "bytes": 750531,
+        "failed": 0
+      },
+      "Media": {
+        "requests": 7,
+        "bytes": 7971483,
+        "failed": 1
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174020,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 433,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1998,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/xYzecLfFRFlfVLmSOGTftcEqwo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3156839,
+        "durationMs": 190,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/vdSPFOz2y9QvivDh2zbnwt30IL0.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1461729,
+        "durationMs": 164,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/rm6EY0gQ5MuGSR2MffYaOCdwtE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1142767,
+        "durationMs": 170,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1049242,
+        "durationMs": 83,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 731083,
+        "durationMs": 73,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 429823,
+        "durationMs": 66,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 288528,
+        "durationMs": 81,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117199,
+        "durationMs": 85,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 84004,
+        "durationMs": 71,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63593,
+        "durationMs": 148,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/pSsKV3jhZWnq1u2ElqLJJYdl0.jpg?width=560&height=700",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 55814,
+        "durationMs": 151,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/6TmWBGgsWUvgaQJKv4vqMrrYEfs.jpg?width=680&height=850",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 54053,
+        "durationMs": 98,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/rRYV72aNti4eWf7Z6SCGk1YTeo.jpg?width=560&height=700",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 53895,
+        "durationMs": 127,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/4vopzO4wJzIm4KdOFRVk4oDr6M.jpg?width=576&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 52124,
+        "durationMs": 74,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49803,
+        "durationMs": 61,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45446,
+        "durationMs": 63,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/IdJkdck9IWKAXO5T2UTYdjm47I.jpg?width=480&height=608",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 40169,
+        "durationMs": 85,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/oy2GLuPQhNnSjqFcMYey7HHi0.jpg?width=480&height=608",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 39934,
+        "durationMs": 88,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/QUwCOzleARsHAbRJn79axTdWMu0.jpg?width=480&height=608",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 38025,
+        "durationMs": 98,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/b2jpJVWlyAazK09tbFAh1fQxA.jpg?width=768&height=960",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 36959,
+        "durationMs": 133,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://files.catbox.moe/xh4ax9.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_INVALID_HANDLE"
+      }
+    ]
+  },
+  "route": "/case-studies/whatsapp",
+  "artifactSlug": "case-studies--whatsapp"
+}

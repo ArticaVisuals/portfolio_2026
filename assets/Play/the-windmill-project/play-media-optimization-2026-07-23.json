@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.416Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/the-windmill-project",
+  "items": [
+    {
+      "slug": "the-windmill-project",
+      "title": "The Windmill Project",
+      "order": 45,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/DnK9dsOlnUXVXhUKmWKCmHjykA.jpg?width=1800&height=1200",
+      "sourcePath": "assets/Play/the-windmill-project/optimized/the-windmill-project-poster-1800x1200-q3.jpg",
+      "originalBytes": 148136,
+      "originalWidth": 1800,
+      "originalHeight": 1200,
+      "outputPath": "assets/Play/the-windmill-project/optimized/play-the-windmill-project-poster-DnK9dsOlnUXVXhUKmWKCmHjykA-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 45904,
+      "outputWidth": 1600,
+      "outputHeight": 1067,
+      "savingsBytes": 102232,
+      "savingsPercent": 69.01225900523843
+    },
+    {
+      "slug": "the-windmill-project",
+      "title": "The Windmill Project",
+      "order": 45,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/K3Po2LrjQUQbCBWNVmwC8ysoiwU.mp4",
+      "sourcePath": "assets/Play/the-windmill-project/optimized/the-windmill-project-1800x1200-1000ms-loop-crf23.mp4",
+      "originalBytes": 1196678,
+      "originalWidth": 1800,
+      "originalHeight": 1200,
+      "outputPath": "assets/Play/the-windmill-project/optimized/play-the-windmill-project-K3Po2LrjQUQbCBWNVmwC8ysoiwU-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 165085,
+      "outputWidth": 900,
+      "outputHeight": 600,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 3,
+      "savingsBytes": 1031593,
+      "savingsPercent": 86.20472675189149
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.632Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/audit-and-beyond",
+  "items": [
+    {
+      "slug": "play-018",
+      "title": "Audit and Beyond",
+      "order": 23,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/FYDP3hrSdwWFCWQwel65WsFEtz8.png?width=793&height=818",
+      "sourcePath": "assets/Play/audit-and-beyond/source/play-play-018-poster-FYDP3hrSdwWFCWQwel65WsFEtz8-original.png",
+      "originalBytes": 42044,
+      "originalWidth": 793,
+      "originalHeight": 818,
+      "outputPath": "assets/Play/audit-and-beyond/optimized/play-play-018-poster-FYDP3hrSdwWFCWQwel65WsFEtz8-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 16378,
+      "outputWidth": 793,
+      "outputHeight": 818,
+      "savingsBytes": 25666,
+      "savingsPercent": 61.045571306250594
+    }
+  ]
+}

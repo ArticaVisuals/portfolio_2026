@@ -1,0 +1,68 @@
+{
+  "project": "Highland Harvests / Karuna",
+  "generated": "2026-07-23",
+  "encoding": {
+    "video": "H.264 MP4, libx264 slow preset, yuv420p, faststart, no audio",
+    "poster": "WebP quality 88, frame at 25% of source duration"
+  },
+  "verification": {
+    "ffprobe": "passed",
+    "faststart": "passed (moov atom precedes mdat)",
+    "visualContactSheets": "verification/",
+    "notes": "Three representative frames at 20%, 50%, and 80% were compared side by side."
+  },
+  "assets": [
+    {
+      "id": "CuwjJC6XqPPJiccUNiIeQJWp9e8",
+      "role": "Highland Harvests main process video",
+      "sourceUrl": "https://framerusercontent.com/assets/CuwjJC6XqPPJiccUNiIeQJWp9e8.mov",
+      "sourcePath": "../current-site/030-img_0581.mov",
+      "sourceRelation": "byte-identical to live Framer asset",
+      "source": {
+        "dimensions": "2160x3840",
+        "fps": 30,
+        "durationSeconds": 7.366667,
+        "bytes": 24545086
+      },
+      "videoPath": "videos/karuna-highland-main-CuwjJC6XqPPJiccUNiIeQJWp9e8-1080x1920-crf23.mp4",
+      "posterPath": "posters/karuna-highland-main-CuwjJC6XqPPJiccUNiIeQJWp9e8-1080x1920-q88.webp",
+      "output": {
+        "dimensions": "1080x1920",
+        "fps": 30,
+        "durationSeconds": 7.366667,
+        "bytes": 3848133,
+        "crf": 23,
+        "savingsPercent": 84.32,
+        "ssim": 0.986692
+      },
+      "audio": "removed because the live element is muted autoplay",
+      "visualRisk": "Low. Resolution is halved in each dimension but remains about 2.6x the observed desktop render width; fine wood dust retains slightly less micro-detail."
+    },
+    {
+      "id": "N7B0pGK0GOo6vmomtmkS3tBriiU",
+      "role": "Highland Harvests device loop",
+      "sourceUrl": "https://framerusercontent.com/assets/N7B0pGK0GOo6vmomtmkS3tBriiU.m4v",
+      "sourcePath": "../current-site/031-img_0694-apple-devices-hd-best-quality.m4v",
+      "sourceRelation": "byte-identical to live Framer asset",
+      "source": {
+        "dimensions": "608x1080",
+        "fps": 60,
+        "durationSeconds": 5.816667,
+        "bytes": 5666993
+      },
+      "videoPath": "videos/karuna-device-loop-N7B0pGK0GOo6vmomtmkS3tBriiU-608x1080-crf24.mp4",
+      "posterPath": "posters/karuna-device-loop-N7B0pGK0GOo6vmomtmkS3tBriiU-608x1080-q88.webp",
+      "output": {
+        "dimensions": "608x1080",
+        "fps": 60,
+        "durationSeconds": 5.816667,
+        "bytes": 947101,
+        "crf": 24,
+        "savingsPercent": 83.29,
+        "ssim": 0.975678
+      },
+      "audio": "removed because the live element is muted autoplay",
+      "visualRisk": "Low. Native dimensions and 60 fps are preserved; the largest measurable change is compression in fast-moving gradients."
+    }
+  ]
+}

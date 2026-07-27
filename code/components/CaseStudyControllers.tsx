@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 // Framer resolves these module URLs to the project's other code components at
 // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
 // @ts-ignore
-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh"
+import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY"
 // @ts-ignore
 import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
 // @ts-ignore
@@ -202,6 +202,7 @@ type Props = {
     linkRepair: boolean
     lightboxVideos: boolean
     videoLookahead: number
+    videoUnloadFar: boolean
     linkCollectionId: string
     linkTitleFieldId: string
 }
@@ -474,7 +475,11 @@ export default function CaseStudyControllers(props: Props) {
         >
             {props.lightbox ? <Lightbox enabled lightboxVideos={props.lightboxVideos} /> : null}
             {props.videoManager ? (
-                <VideoManager enabled lookahead={props.videoLookahead} />
+                <VideoManager
+                    enabled
+                    lookahead={props.videoLookahead}
+                    unloadFarVideos={props.videoUnloadFar}
+                />
             ) : null}
             {props.linkRepair ? (
                 <LinkRepair
@@ -496,6 +501,7 @@ CaseStudyControllers.defaultProps = {
     linkRepair: true,
     lightboxVideos: true,
     videoLookahead: 100,
+    videoUnloadFar: true,
     linkCollectionId: "yTHrQWMIY",
     linkTitleFieldId: "oeXZcmPna",
 }
@@ -538,6 +544,14 @@ addPropertyControls(CaseStudyControllers, {
         max: 300,
         step: 10,
         unit: "%vh",
+        hidden: ({ videoManager }) => !videoManager,
+    },
+    videoUnloadFar: {
+        type: ControlType.Boolean,
+        title: "Unload Far",
+        defaultValue: true,
+        enabledTitle: "Yes",
+        disabledTitle: "No",
         hidden: ({ videoManager }) => !videoManager,
     },
     linkCollectionId: {

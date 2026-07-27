@@ -1,0 +1,446 @@
+{
+  "target": "https://micahhoang.com/case-studies/airpods",
+  "auditedAt": "2026-07-23T19:58:02.327Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "browser": "Google Chrome via Playwright CLI",
+  "cacheDisabled": true,
+  "settleMs": 6000,
+  "finalUrl": "https://micahhoang.com/case-studies/airpods",
+  "status": 200,
+  "navigationError": "",
+  "wallClockMs": 13288,
+  "title": "AirPods Pro 3 Launch Identity - Micah Hoang",
+  "canonical": "https://micahhoang.com/case-studies/airpods",
+  "bodyTextLength": 1550,
+  "domNodes": 449,
+  "runtimeMarkers": {
+    "videoManager": 1,
+    "lightbox": 1,
+    "controllers": 1
+  },
+  "timing": {
+    "ttfbMs": 54.099999994039536,
+    "responseStartMs": 298.79999999701977,
+    "domContentLoadedMs": 731.2999999970198,
+    "loadMs": 7278,
+    "firstPaintMs": 380,
+    "fcpMs": 380,
+    "lcpMs": 884,
+    "lcpUrl": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22126%22 height=%22126%22><pat",
+    "cls": 0.00009806070963541668,
+    "longTaskCount": 1,
+    "longTaskTotalMs": 253,
+    "longTaskMaxMs": 253
+  },
+  "media": {
+    "images": {
+      "total": 8,
+      "withSource": 8,
+      "complete": 5,
+      "ready": 5,
+      "broken": 0,
+      "incomplete": 3,
+      "lazy": 3
+    },
+    "videos": {
+      "total": 11,
+      "withSource": 11,
+      "readyState0": 0,
+      "readyState1": 0,
+      "readyState2Plus": 11,
+      "playing": 1,
+      "autoplayTotal": 3,
+      "autoplayPlaying": 1,
+      "preloadNone": 0
+    },
+    "iframes": {
+      "total": 1,
+      "withSource": 1
+    }
+  },
+  "network": {
+    "requestCount": 104,
+    "failedRequestCount": 19,
+    "totalBytes": 11841944,
+    "totalsByType": {
+      "Document": {
+        "requests": 2,
+        "bytes": 29722,
+        "failed": 0
+      },
+      "Script": {
+        "requests": 40,
+        "bytes": 430123,
+        "failed": 0
+      },
+      "Font": {
+        "requests": 5,
+        "bytes": 132779,
+        "failed": 0
+      },
+      "Image": {
+        "requests": 24,
+        "bytes": 819362,
+        "failed": 7
+      },
+      "Media": {
+        "requests": 21,
+        "bytes": 10253521,
+        "failed": 12
+      },
+      "Fetch": {
+        "requests": 10,
+        "bytes": 174009,
+        "failed": 0
+      },
+      "Ping": {
+        "requests": 1,
+        "bytes": 434,
+        "failed": 0
+      },
+      "Other": {
+        "requests": 1,
+        "bytes": 1994,
+        "failed": 0
+      }
+    },
+    "largestAssets": [
+      {
+        "url": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 5129041,
+        "durationMs": 200,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 3953991,
+        "durationMs": 112,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 1049230,
+        "durationMs": 51,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 191650,
+        "durationMs": 47,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/a7aWAa3XsqP6XraBK7oDOSsOYQ.jpg?width=1960&height=1102",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 170465,
+        "durationMs": 112,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/DnSw0Pm8SKz2lyuJAGB6FYyvHA.jpg?width=1960&height=1102",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 162412,
+        "durationMs": 117,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/APz6vj3MR1iGLnSUiKGkDVEOtwc.png?scale-down-to=2048&width=2061&height=1156",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 137442,
+        "durationMs": 121,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.D_BPjP5h.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 117196,
+        "durationMs": 101,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/avif",
+        "bytes": 83995,
+        "durationMs": 39,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 63587,
+        "durationMs": 220,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.CmokNaB2.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 49805,
+        "durationMs": 67,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 45443,
+        "durationMs": 90,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+        "type": "Media",
+        "status": 206,
+        "mimeType": "video/mp4",
+        "bytes": 37106,
+        "durationMs": 304,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+        "type": "Font",
+        "status": 200,
+        "mimeType": "font/woff2",
+        "bytes": 33801,
+        "durationMs": 118,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29723,
+        "durationMs": 49,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/case-studies/airpods",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29722,
+        "durationMs": 346,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/index",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 29544,
+        "durationMs": 55,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/AVRLapVTzO6_WFS-wW38m0RoF4wdKLQ9s-_zGJjuoTA.DgTqf8q-.mjs",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "bytes": 28190,
+        "durationMs": 37,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27613,
+        "durationMs": 229,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      },
+      {
+        "url": "https://micahhoang.com/",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "text/html",
+        "bytes": 27409,
+        "durationMs": 303,
+        "fromDiskCache": false,
+        "fromServiceWorker": false
+      }
+    ]
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_INVALID_HANDLE"
+      }
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/JmkOmLQq5rmvERShZfiFP7M.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/HflTOYDNzce3QfCEbZ0bji7HCU.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+        "resourceType": "media",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://files.catbox.moe/10d33l.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/7qmv8t.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/sa6pkl.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/fuo78s.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/7rnbww.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/dg9t8p.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      },
+      {
+        "url": "https://files.catbox.moe/29v8tp.jpg",
+        "resourceType": "image",
+        "error": "net::ERR_INVALID_HANDLE"
+      }
+    ]
+  },
+  "route": "/case-studies/airpods",
+  "artifactSlug": "case-studies--airpods"
+}

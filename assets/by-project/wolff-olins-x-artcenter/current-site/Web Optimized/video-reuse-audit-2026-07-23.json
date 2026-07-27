@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-07-23",
+  "project": "Wolff Olins x ArtCenter",
+  "decision": "reuse_existing_derivatives",
+  "totals": {
+    "comparableItems": 8,
+    "sourceBytes": 63329713,
+    "outputBytes": 3329474,
+    "savedBytes": 60000239,
+    "savingsPercent": 94.7,
+    "publishedThumbnailBytes": 321034
+  },
+  "items": [
+    {
+      "id": "003-gif-conversion",
+      "liveUrl": "https://framerusercontent.com/assets/8j7wANAawQ6dXUtXxsIDgvk2mU.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/003-img_2419-ezgif.com-optimize.gif",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/gifs-as-mp4/003-img_2419-ezgif.com-optimize-1920-crf25.mp4",
+      "sourceDimensions": "600x338",
+      "outputDimensions": "600x338",
+      "durationSeconds": 9.97,
+      "sourceBytes": 23853484,
+      "outputBytes": 1197609,
+      "status": "already_published_exact_derivative"
+    },
+    {
+      "id": "002-gif-conversion",
+      "liveUrl": "https://framerusercontent.com/assets/4tuZaGAUhNJZIEXrVeTrrAA.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/002-img_2418-ezgif.com-video-to-gif-converter.gif",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/gifs-as-mp4/002-img_2418-ezgif.com-video-to-gif-converter-1920-crf25.mp4",
+      "sourceDimensions": "600x338",
+      "outputDimensions": "600x338",
+      "durationSeconds": 2.515,
+      "sourceBytes": 9364482,
+      "outputBytes": 180037,
+      "status": "already_published_exact_derivative"
+    },
+    {
+      "id": "007-gif-conversion",
+      "liveUrl": "https://framerusercontent.com/assets/lGvPXEf8tPY1FrrYE4xFC42t3Q.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/007-wolffolinsslide4-ezgif.com-video-to-gif-converter.gif",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/gifs-as-mp4/007-wolffolinsslide4-ezgif.com-video-to-gif-converter-1920-crf25.mp4",
+      "sourceDimensions": "600x600",
+      "outputDimensions": "600x600",
+      "durationSeconds": 5.0,
+      "sourceBytes": 2274701,
+      "outputBytes": 174605,
+      "status": "already_published_exact_derivative"
+    },
+    {
+      "id": "006-gif-conversion",
+      "liveUrl": "https://framerusercontent.com/assets/cLeiKdvWvT7q6cF9hB63a7Kujno.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/006-wolffolinsslide3-ezgif.com-video-to-gif-converter.gif",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/gifs-as-mp4/006-wolffolinsslide3-ezgif.com-video-to-gif-converter-1920-crf25.mp4",
+      "sourceDimensions": "600x600",
+      "outputDimensions": "600x600",
+      "durationSeconds": 5.0,
+      "sourceBytes": 631028,
+      "outputBytes": 45378,
+      "status": "already_published_exact_derivative"
+    },
+    {
+      "id": "004-slide-1",
+      "liveUrl": "https://framerusercontent.com/assets/un93dDamgJ7RbfCsgUJl4O6lLXc.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/004-wolff-olins-slide-1.mp4",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/videos-mp4/004-wolff-olins-slide-1-1920-crf25.mp4",
+      "sourceDimensions": "1080x1080",
+      "outputDimensions": "1080x1080",
+      "durationSeconds": 5.005,
+      "sourceBytes": 5074264,
+      "outputBytes": 232869,
+      "status": "already_published_exact_derivative"
+    },
+    {
+      "id": "005-slide-2",
+      "liveUrl": "https://framerusercontent.com/assets/JxnYqkYdEgPkgfWh7uLdaWyCg.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/005-wolff-olins-slide-2.mp4",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/videos-mp4/005-wolff-olins-slide-2-1920-crf25.mp4",
+      "sourceDimensions": "1080x1080",
+      "outputDimensions": "1080x1080",
+      "durationSeconds": 5.005,
+      "sourceBytes": 9783331,
+      "outputBytes": 946913,
+      "status": "already_published_exact_derivative"
+    },
+    {
+      "id": "011-slide-10",
+      "liveUrl": "https://freight.cargo.site/t/original/i/N1655931692761862119294608070165/Wolff-Olins-Slide-10.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/011-wolff-olins-slide-10.mp4",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/videos-mp4/011-wolff-olins-slide-10-1920-crf25.mp4",
+      "sourceDimensions": "1080x1080",
+      "outputDimensions": "1080x1080",
+      "durationSeconds": 5.005,
+      "sourceBytes": 2687396,
+      "outputBytes": 141965,
+      "status": "existing_derivative_ready_to_replace_live_cargo_source"
+    },
+    {
+      "id": "012-email-blast",
+      "liveUrl": "https://freight.cargo.site/t/original/i/Q1655890241562869432477620098581/Wolf-Ollins-Email-Blast.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/current-site/012-wolf-ollins-email-blast.mp4",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/current-site/Web Optimized/optimized/videos-mp4/012-wolf-ollins-email-blast-1920-crf25.mp4",
+      "sourceDimensions": "1668x1080",
+      "outputDimensions": "1668x1080",
+      "durationSeconds": 5.005,
+      "sourceBytes": 9661027,
+      "outputBytes": 410098,
+      "status": "existing_derivative_ready_if_layer_is_reactivated"
+    },
+    {
+      "id": "project-thumbnail",
+      "liveUrl": "https://framerusercontent.com/assets/WHGzHSJ01hL40WLrZlMfZSD7lY.mp4",
+      "sourcePath": "assets/by-project/wolff-olins-x-artcenter/framer-staging/thumbnail-video/wolff-olins-thumbnail.mp4",
+      "outputPath": "assets/by-project/wolff-olins-x-artcenter/framer-staging/thumbnail-video/wolff-olins-thumbnail.mp4",
+      "sourceBytes": null,
+      "outputBytes": 321034,
+      "status": "already_published_exact_derivative_no_source_baseline"
+    }
+  ],
+  "verification": "All reusable local outputs are H.264/yuv420p and match the byte sizes of their corresponding published Framer assets where active. No files were re-encoded."
+}

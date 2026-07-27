@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.500Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/artcenter-mdes-micro-identity",
+  "items": [
+    {
+      "slug": "play-031",
+      "title": "ArtCenter MDes Micro-Identity",
+      "order": 35,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/Aj9cScyeATjrlbSABBqknznejhE.jpg?width=1080&height=1080",
+      "sourcePath": "assets/Play/artcenter-mdes-micro-identity/source/play-play-031-poster-Aj9cScyeATjrlbSABBqknznejhE-original.jpg",
+      "originalBytes": 1247,
+      "originalWidth": 1080,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/artcenter-mdes-micro-identity/source/play-play-031-poster-Aj9cScyeATjrlbSABBqknznejhE-original.jpg",
+      "action": "keep-current",
+      "outputBytes": 1247,
+      "outputWidth": 1080,
+      "outputHeight": 1080,
+      "savingsBytes": 0,
+      "savingsPercent": 0
+    },
+    {
+      "slug": "play-031",
+      "title": "ArtCenter MDes Micro-Identity",
+      "order": 35,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/huKz7bwQqB9zw88vP6DheQaGjE.mp4",
+      "sourcePath": "assets/Play/artcenter-mdes-micro-identity/source/play-play-031-video-huKz7bwQqB9zw88vP6DheQaGjE-original.mp4",
+      "originalBytes": 212220,
+      "originalWidth": 1080,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/artcenter-mdes-micro-identity/optimized/play-play-031-huKz7bwQqB9zw88vP6DheQaGjE-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 156270,
+      "outputWidth": 900,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 10.066667,
+      "savingsBytes": 55950,
+      "savingsPercent": 26.364150409951936
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.923Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/rotating-cube",
+  "items": [
+    {
+      "slug": "play-011",
+      "title": "Rotating Cube Test",
+      "order": 16,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/qN4yMb8tsMFQepqurhdS3v8oYS0.jpg?width=1920&height=1080",
+      "sourcePath": "assets/Play/rotating-cube/source/play-play-011-poster-qN4yMb8tsMFQepqurhdS3v8oYS0-original.jpg",
+      "originalBytes": 96646,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/rotating-cube/optimized/play-play-011-poster-qN4yMb8tsMFQepqurhdS3v8oYS0-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 21950,
+      "outputWidth": 1600,
+      "outputHeight": 900,
+      "savingsBytes": 74696,
+      "savingsPercent": 77.28824783229517
+    },
+    {
+      "slug": "play-011",
+      "title": "Rotating Cube Test",
+      "order": 16,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/1AwaCGog7Zgq3zZQ2sTzBO5Vr9M.mp4",
+      "sourcePath": "assets/Play/rotating-cube/source/Rotating-Cube-Test-1AwaCGog7Zgq3zZQ2sTzBO5Vr9M.mp4",
+      "originalBytes": 1118095,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "outputPath": "assets/Play/rotating-cube/optimized/play-play-011-1AwaCGog7Zgq3zZQ2sTzBO5Vr9M-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 543971,
+      "outputWidth": 900,
+      "outputHeight": 506,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 12.666667,
+      "savingsBytes": 574124,
+      "savingsPercent": 51.348409571637475
+    }
+  ]
+}

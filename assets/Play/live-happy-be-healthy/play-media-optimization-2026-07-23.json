@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.632Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/live-happy-be-healthy",
+  "items": [
+    {
+      "slug": "play-013",
+      "title": "Live Happy Be Healthy",
+      "order": 18,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/WZ5YpEyiFdiPyMEdAd1iOCP2Ws.jpg?width=794&height=529",
+      "sourcePath": "assets/Play/live-happy-be-healthy/source/play-play-013-poster-WZ5YpEyiFdiPyMEdAd1iOCP2Ws-original.jpg",
+      "originalBytes": 22177,
+      "originalWidth": 794,
+      "originalHeight": 529,
+      "outputPath": "assets/Play/live-happy-be-healthy/optimized/play-play-013-poster-WZ5YpEyiFdiPyMEdAd1iOCP2Ws-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 12388,
+      "outputWidth": 794,
+      "outputHeight": 529,
+      "savingsBytes": 9789,
+      "savingsPercent": 44.14032556251973
+    }
+  ]
+}

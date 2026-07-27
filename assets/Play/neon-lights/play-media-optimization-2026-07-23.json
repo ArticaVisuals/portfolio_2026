@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.021Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/neon-lights",
+  "items": [
+    {
+      "slug": "play-025",
+      "title": "Kraftwerk",
+      "order": 29,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/cUFXmLquiPf0Yt4Y8g1chWjtog.png?width=1598&height=2000",
+      "sourcePath": "assets/Play/neon-lights/source/play-play-025-poster-cUFXmLquiPf0Yt4Y8g1chWjtog-original.png",
+      "originalBytes": 1062924,
+      "originalWidth": 1598,
+      "originalHeight": 2000,
+      "outputPath": "assets/Play/neon-lights/optimized/play-play-025-poster-cUFXmLquiPf0Yt4Y8g1chWjtog-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 78042,
+      "outputWidth": 1278,
+      "outputHeight": 1600,
+      "savingsBytes": 984882,
+      "savingsPercent": 92.65780055770685
+    },
+    {
+      "slug": "play-025",
+      "title": "Kraftwerk",
+      "order": 29,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/rYCPzizkRsbRuWHp4BWH9k3oa3A.mp4",
+      "sourcePath": "assets/Play/neon-lights/source/Kraftwerk-rYCPzizkRsbRuWHp4BWH9k3oa3A.mp4",
+      "originalBytes": 1277427,
+      "originalWidth": 1080,
+      "originalHeight": 1350,
+      "outputPath": "assets/Play/neon-lights/optimized/play-play-025-rYCPzizkRsbRuWHp4BWH9k3oa3A-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 214081,
+      "outputWidth": 720,
+      "outputHeight": 900,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 2.5,
+      "savingsBytes": 1063346,
+      "savingsPercent": 83.24123413705831
+    }
+  ]
+}

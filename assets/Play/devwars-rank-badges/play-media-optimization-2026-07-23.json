@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.385Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/devwars-rank-badges",
+  "items": [
+    {
+      "slug": "play-022",
+      "title": "DevWars Rank Badges",
+      "order": 27,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/wDFIXECzI2jmZO4OFFYYPtYo8o.png?width=2400&height=1801",
+      "sourcePath": "assets/Play/devwars-rank-badges/source/play-play-022-poster-wDFIXECzI2jmZO4OFFYYPtYo8o-original.png",
+      "originalBytes": 44006,
+      "originalWidth": 2400,
+      "originalHeight": 1801,
+      "outputPath": "assets/Play/devwars-rank-badges/optimized/play-play-022-poster-wDFIXECzI2jmZO4OFFYYPtYo8o-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 36028,
+      "outputWidth": 1600,
+      "outputHeight": 1201,
+      "savingsBytes": 7978,
+      "savingsPercent": 18.129345998272964
+    }
+  ]
+}

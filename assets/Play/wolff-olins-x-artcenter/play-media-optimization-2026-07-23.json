@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-23T19:02:57.968Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/wolff-olins-x-artcenter",
+  "items": [
+    {
+      "slug": "play-008",
+      "title": "Wolff Olins x ArtCenter",
+      "order": 13,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/NR3TaThHIUT5eXLbhL3OPjY8B4.jpg?width=1668&height=1080",
+      "sourcePath": "assets/Play/wolff-olins-x-artcenter/source/play-play-008-poster-NR3TaThHIUT5eXLbhL3OPjY8B4-original.jpg",
+      "originalBytes": 238238,
+      "originalWidth": 1668,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/wolff-olins-x-artcenter/optimized/play-play-008-poster-NR3TaThHIUT5eXLbhL3OPjY8B4-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 85550,
+      "outputWidth": 1600,
+      "outputHeight": 1036,
+      "savingsBytes": 152688,
+      "savingsPercent": 64.09053131742208
+    },
+    {
+      "slug": "play-008",
+      "title": "Wolff Olins x ArtCenter",
+      "order": 13,
+      "kind": "video",
+      "sourceUrl": "https://framerusercontent.com/assets/nDEhgZQfNHo8iVNcVddYzdB4Q0.mp4",
+      "sourcePath": "assets/Play/wolff-olins-x-artcenter/source/play-play-008-video-nDEhgZQfNHo8iVNcVddYzdB4Q0-original.mp4",
+      "originalBytes": 501153,
+      "originalWidth": 1668,
+      "originalHeight": 1080,
+      "outputPath": "assets/Play/wolff-olins-x-artcenter/optimized/play-play-008-nDEhgZQfNHo8iVNcVddYzdB4Q0-max900-crf26-noaudio.mp4",
+      "action": "optimized",
+      "outputBytes": 191513,
+      "outputWidth": 900,
+      "outputHeight": 582,
+      "outputCodec": "h264",
+      "outputPixelFormat": "yuv420p",
+      "outputHasAudio": false,
+      "outputDuration": 5.005,
+      "savingsBytes": 309640,
+      "savingsPercent": 61.78552258491917
+    }
+  ]
+}

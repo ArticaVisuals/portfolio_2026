@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-23T19:02:58.055Z",
+  "source": "https://micahhoang.com/play",
+  "folder": "assets/Play/visual-communication-arts-speaker-series",
+  "items": [
+    {
+      "slug": "play-006",
+      "title": "VIsual & Communication Arts Lineup",
+      "order": 11,
+      "kind": "poster",
+      "sourceUrl": "https://framerusercontent.com/images/zjLY3DaV6fDdwLiubC8Fmbez0.webp?width=1707&height=2560",
+      "sourcePath": "assets/Play/visual-communication-arts-speaker-series/source/play-006-image-visart-com-fa24-poster-mockup.jpg",
+      "originalBytes": 397908,
+      "originalWidth": 1707,
+      "originalHeight": 2560,
+      "outputPath": "assets/Play/visual-communication-arts-speaker-series/optimized/play-play-006-poster-zjLY3DaV6fDdwLiubC8Fmbez0-max1600-q78.webp",
+      "action": "optimized",
+      "outputBytes": 158112,
+      "outputWidth": 1067,
+      "outputHeight": 1600,
+      "savingsBytes": 239796,
+      "savingsPercent": 60.26418167013481
+    }
+  ]
+}

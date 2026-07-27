@@ -1,6 +1,6 @@
 # Framer Global Media Controllers — Case Studies
 
-_Last updated: 2026-06-10_
+_Last updated: 2026-07-23_
 
 Two **invisible, page-level controller components** add Cargo-style media behavior
 to case-study pages without per-element wiring. Drop ONE instance of each on a
@@ -80,10 +80,19 @@ was removed.
 overlay — only its visible slide is hit-testable, so gallery slides open in THIS
 lightbox and the ‹ › arrows cycle the whole gallery. See `framer-current-state.md`.
 
+**Embed skeleton reliability (2026-07-23).** The global load skeleton now owns
+only native `img` and `video` elements. Cross-origin `iframe` embeds, including
+Vimeo, keep their own loading UI and are never forced to `opacity: 0` while
+waiting for a parent-window `load` event. This prevents an already-loaded Vimeo
+player from remaining permanently hidden when its event fires before the
+controller attaches.
+
 **Versioning gotcha:** `CaseStudyControllers` imports this lightbox at a PINNED
 `@hash`. Bump that hash in `CaseStudyControllers.tsx` whenever this file is
 republished, or controller pages keep bundling the old lightbox. Current
-published lightbox: `CaseStudyLightbox-yOYpGN.js@aAHiy1bZV8EEshPXW8Zh`.
+published lightbox: `CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY`.
+Current published controller wrapper:
+`CaseStudyControllers-0q1sTD.js@qIsqrYC4NEAuXRTB6t7W`.
 
 ---
 
@@ -156,7 +165,7 @@ collection/title field) are exposed; the rest use each sub-controller's
 defaults. Each sub-controller keeps its own singleton guard, so this is safe to
 run alongside leftover standalone instances during migration — only one of each
 ever activates. **Status (2026-06-24):** deployed on 9 pages — AirPods, Simon &
-Schuster, Motion Connect 2025, National Park Cards, Yomo, Karuna, Gaia,
+Schuster, Motion Connect 2025, National Park Cards, Yomo, Highland Harvests, Gaia,
 Weaponized Innocence, TYPLDN — which now use ONE `CaseStudyControllers`
 instance instead of three separate mounts. Seek Truth, Cellular Symphony, Wolff
 Olins x ArtCenter, and Independent Lens still need verification/migration if
@@ -172,7 +181,7 @@ Both `CaseStudyLightbox` and `CaseStudyVideoManager` were placed (one instance
 each, absolute 1×1 opacity-0) on the **Desktop root of the 15 bespoke
 case-study pages active at that time**, alongside the pre-existing
 `CaseStudyLinkRepair`:
-motion-connect-2025, simon-schuster, airpods, national-park-cards, yomo, karuna,
+motion-connect-2025, simon-schuster, airpods, national-park-cards, yomo, highland-harvests,
 gaia, weaponized-innocence, typldn, seek-truth, cellular-symphony,
 wolff-olins-x-artcenter, independent-lens, neon-lights, aspen-valley-landscaping.
 
