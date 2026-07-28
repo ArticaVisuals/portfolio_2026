@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** July 23, 2026, via Framer MCP, published Peak Energy browser QA, and local repo audit
+**Last audited:** July 27, 2026, via Framer MCP, published browser QA, and local repo audit
 **Production URL:** `https://micahhoang.com`
 **Framer staging URL:** `https://khaki-ship-257706.framer.app`
 
@@ -138,6 +138,13 @@ This is the quick source of truth for the active Framer project and local handof
   unless the element becomes hard-excluded (`nav`, `footer`, link/form controls,
   or `data-mh-pretty-ignore`), preventing the rag from switching back and forth
   during transient scroll/lazy-render states.
+- **2026-07-27 Play panning performance hotfix:** the hydrated and preload
+  observers in both `ParagraphPrettyWrap` and the `ResumeAssetHost` fallback now
+  ignore `style` mutations inside `[data-playground-root="true"]`. Play's
+  per-frame transform writes no longer trigger paragraph rescans; class, content,
+  and non-Play style mutations are unchanged. Framer accepted both files with
+  empty typecheck results, and the emitted modules contain the filter. After the
+  Framer update and publish, Arc panning was user-confirmed perfectly smooth.
 
 ## 2026-07-15 Update
 

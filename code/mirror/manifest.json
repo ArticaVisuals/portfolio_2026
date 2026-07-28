@@ -154,8 +154,8 @@
       "role": "Site-wide paragraph pretty-wrap helper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ParagraphPrettyWrap.tsx",
-      "bytes": 12984,
-      "sha256": "90094f9b162733fa9ac1b17ee09358f66d6ffbd9145c737409ab87fa3fa2e65c"
+      "bytes": 14499,
+      "sha256": "247b48320e1b87e5ccbe16d1b61ec10e0bae0b424a01846bad340365128431dd"
     },
     {
       "codeFileId": "xDqfenf",
@@ -163,8 +163,8 @@
       "role": "Footer compatibility host and ParagraphPrettyWrap fallback",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ResumeAssetHost.tsx",
-      "bytes": 11084,
-      "sha256": "85ee222db0e11b189074d6475d1a7d4589750896505c6d803814031b7ddc75b8"
+      "bytes": 15103,
+      "sha256": "4b5c10899cbf8ec4e3bc98e4bd9307388365811edbd27474adb6b7b3005520de"
     },
     {
       "codeFileId": "PN1RVOf",
