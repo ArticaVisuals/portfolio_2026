@@ -16,14 +16,17 @@ This is the quick source of truth for the active Framer project and local handof
   layer instead of calling React state every frame. React now recycles the
   bounded card pool only after a lattice boundary crossing. At `1440×1000` the
   pool is `56` cards instead of the published build's roughly `90–110`.
-- **Safari video/effect budget tightened.** The current runtime starts with `4` videos and
-  ramps to `10` on non-WebKit desktop, while desktop Safari stays at `4`,
+- **Browser video/effect budgets tightened.** The current runtime starts with
+  `4` videos. Desktop Chromium/Arc ramps to `6`; other non-WebKit desktop
+  browsers may use the general `10` ceiling. Desktop Safari stays at `4`,
   iOS/iPadOS stays at `2`, small non-WebKit viewports cap at `8`, reduced motion
   and background pages use `0`, and inactive videos release their decoder
-  source. Center allocation includes hysteresis to avoid rapid source churn.
-  Grid images request `600px` variants; WebKit skips no-op/full-grid saturation
-  filters. The published Safari path replaces the animated drawer backdrop
-  filter with a `14px` blur of the frozen gallery, eased in over `560ms`.
+  source. Center allocation retains active in-view slots and freezes during
+  drag, throw inertia, and edge scrolling, preventing decoder replacement work
+  inside the pan loop. Grid images request `600px` variants; WebKit skips
+  no-op/full-grid saturation filters. The published Safari path replaces the
+  animated drawer backdrop filter with a `14px` blur of the frozen gallery,
+  eased in over `560ms`.
 - **Hover-only `/play` exploration added.** Framer preview page
   `/play-hover-preview` reuses the protected `Play.tsx` wrapper and the same CMS
   renderer. With no page-local registrar rows, the renderer uses its generated
@@ -73,12 +76,12 @@ This is the quick source of truth for the active Framer project and local handof
   path, and tracks the nav inset imperatively. `Play` now keeps its ancestor
   observer binding when the observed chain has not changed. Safari now resumes
   grid motion as soon as close begins instead of waiting for the `450ms`
-  blur-out. These changes are synced in the Framer draft as
-  `ArchivePlayground@ljLx3RPT8ZO2PxnHUl6X`,
-  `Play@AEtiSt4JIdInX6LGx9Bk`, and
-  `GrainOverlay@IU8jp598NHIsGsyeDMB5`; they require one Publish after review.
-  The local Archive snapshot is `131939` bytes with SHA-256
-  `fe75094276cff8fe9d5aae93de93924ed8e12c062ae743fce18e1cc45fb7fc59`.
+  blur-out. The July 30 Arc/Chromium allocator follow-up is published as
+  `ArchivePlayground@RQxOdG36GiZaGiMevepS` and
+  `Play@n4IOpd8V71GwZw9ZvFrX`; production holds `6` Chromium videos and mounts
+  no replacement sources during an active drag. The local Archive snapshot is
+  `133085` bytes with SHA-256
+  `e507c940991389031df20b6f96c3b3ab3105cfb4cbf9328a248d1d896085c276`.
 - **Peak Energy Vimeo embeds restored.** The global case-study load skeleton in
   `CaseStudyLightbox.tsx` now manages native `img` and `video` elements only.
   Cross-origin `iframe` embeds own their loading UI, so a Vimeo player can no

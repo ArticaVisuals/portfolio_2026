@@ -213,6 +213,9 @@ const PARAGRAPH_REGULAR =
 const MODAL_Z = 2147483646
 const TAP_THRESHOLD = 18
 const NAV_REVEAL_MS = 560
+const VIDEO_RECONCILE_INTERVAL_MS = 180
+const VIDEO_MOTION_SPEED_THRESHOLD = 1
+const VIDEO_EDGE_SCROLL_THRESHOLD = 0.25
 const DEFAULT_NAV_SELECTOR =
     "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]"
 const INTERACTIVE_SELECTOR =
@@ -2586,22 +2589,40 @@ export default function ArchivePlayground(props: Props) {
             setGridWindow(desiredWindow)
         }
 
-        if (!force && time - lastGridReconcileRef.current < 180) return
+        if (
+            !force &&
+            time - lastGridReconcileRef.current <
+                VIDEO_RECONCILE_INTERVAL_MS
+        )
+            return
         lastGridReconcileRef.current = time
 
         const previousActiveVideoKeys = activeVideoKeysRef.current
-        const nextActiveVideoKeys = new Set<string>()
-        if (
+        const canAllocateCenterVideos =
             runtime.videoPlaybackMode === "center" &&
             runtime.videoBudget > 0 &&
             runtime.loadInReady &&
             !runtime.panelOpen &&
             !runtime.prefersReducedMotion
-        ) {
+        const userMotionActive =
+            s.down ||
+            s.dragging ||
+            Math.hypot(s.vx, s.vy) > VIDEO_MOTION_SPEED_THRESHOLD ||
+            Math.hypot(s.edgeX, s.edgeY) > VIDEO_EDGE_SCROLL_THRESHOLD
+        let nextActiveVideoKeys = previousActiveVideoKeys
+
+        // Mounting and releasing video decoders is substantially more expensive
+        // than moving the world layer. Keep the current pool frozen while the
+        // user is dragging, coasting, or edge-scrolling, then reconcile once the
+        // motion settles. Posters remain mounted beneath every video card.
+        if (!(canAllocateCenterVideos && userMotionActive)) {
+            nextActiveVideoKeys = new Set<string>()
+        }
+
+        if (canAllocateCenterVideos && !userMotionActive) {
             const candidates: Array<{
                 key: string
                 distance: number
-                score: number
             }> = []
             runtime.cells.forEach((cell) => {
                 if (!cell.hasVideo) return
@@ -2620,22 +2641,29 @@ export default function ArchivePlayground(props: Props) {
                 candidates.push({
                     key: cell.key,
                     distance: dx * dx + dy * dy,
-                    // Keep a currently active center video until another card
-                    // is materially closer. This avoids rapid decoder churn
-                    // when two candidates hover around the budget cutoff.
-                    score:
-                        (dx * dx + dy * dy) *
-                        (previousActiveVideoKeys.has(cell.key) ? 0.82 : 1),
                 })
             })
+
+            // Retain active videos for as long as their cards stay inside the
+            // buffered viewport. Only fill vacated slots by center distance.
+            // This avoids decoder churn from the archive's continuous drift.
+            candidates.sort(
+                (a, b) =>
+                    a.distance - b.distance || a.key.localeCompare(b.key)
+            )
             candidates
-                .sort(
-                    (a, b) =>
-                        a.score - b.score ||
-                        a.distance - b.distance ||
-                        a.key.localeCompare(b.key)
-                )
+                .filter(({ key }) => previousActiveVideoKeys.has(key))
                 .slice(0, runtime.videoBudget)
+                .forEach(({ key }) => nextActiveVideoKeys.add(key))
+            candidates
+                .filter(({ key }) => !nextActiveVideoKeys.has(key))
+                .slice(
+                    0,
+                    Math.max(
+                        0,
+                        runtime.videoBudget - nextActiveVideoKeys.size
+                    )
+                )
                 .forEach(({ key }) => nextActiveVideoKeys.add(key))
         }
 

@@ -45,11 +45,12 @@ Implemented behavior:
   visibility/page restoration, Framer remounts, rapid source updates, and
   detach/reinsert cycles.
 - Hidden Index CMS fallback media has `src`/`srcset` removed.
-- `/play` starts with `4` videos and can ramp to `10` on non-WebKit desktop.
-  Desktop Safari stays at `4`, iOS/iPadOS stays at `2`, small non-WebKit
-  viewports cap at `8`, and hidden/reduced-motion pages use `0`. The authorable
-  Framer `Archive Items` / `archiveItems` contract is preserved as an
-  empty-by-default canvas/rollback surface.
+- `/play` starts with `4` videos. Desktop Chromium/Arc ramps to `6`; other
+  non-WebKit desktop browsers may use the general `10` ceiling. Desktop Safari
+  stays at `4`, iOS/iPadOS stays at `2`, small non-WebKit viewports cap at `8`,
+  and hidden/reduced-motion pages use `0`. The authorable Framer `Archive Items`
+  / `archiveItems` contract is preserved as an empty-by-default canvas/rollback
+  surface.
 
 ## Step 2 — P0 media replacements, in this order
 
@@ -219,9 +220,10 @@ Links: [reuse audit](</Users/micahhoang/My Drive/Portfolio 2026/assets/by-projec
 - [ ] Keep title, `Content`, order, link fields, and stroke attached to the same
   CMS row. Do not move published media into `Archive Items`; that property
   remains empty except for canvas preview or emergency rollback.
-- [ ] Confirm the current budgets: `10` non-WebKit desktop after ramp, `4`
-  desktop Safari, `2` iOS/iPadOS, `8` small non-WebKit, and `0` while hidden or
-  under reduced motion. The initial batch is `4`.
+- [ ] Confirm the current budgets: `6` desktop Chromium/Arc after ramp, up to
+  `10` on other non-WebKit desktop browsers, `4` desktop Safari, `2`
+  iOS/iPadOS, `8` small non-WebKit, and `0` while hidden or under reduced
+  motion. The initial batch is `4`.
 
 Links: [complete Play results with every exact recommended path](</Users/micahhoang/My Drive/Portfolio 2026/assets/Play/optimization-results-2026-07-23.md>) ·
 [machine-readable results](</Users/micahhoang/My Drive/Portfolio 2026/assets/Play/optimization-results-2026-07-23.json>) ·
@@ -272,10 +274,11 @@ Play-specific Safari checks:
   over `450ms`. The world remains fixed while the drawer is open, then starts
   moving and reallocating its bounded videos as soon as close begins instead of
   waiting for the blur-out.
-- [ ] Publish and recheck the final neutral follow-up modules
-  `ArchivePlayground@ljLx3RPT8ZO2PxnHUl6X`,
-  `Play@AEtiSt4JIdInX6LGx9Bk`, and
-  `GrainOverlay@IU8jp598NHIsGsyeDMB5`.
+- [x] Publish and recheck the Arc/Chromium pool-stability modules
+  `ArchivePlayground@RQxOdG36GiZaGiMevepS` and
+  `Play@n4IOpd8V71GwZw9ZvFrX`. Chromium production holds `6` videos, mounts no
+  replacement sources during active dragging, and restores the full pool after
+  inertia settles.
 - [ ] After that publish, open `/play-hover-preview` in a fresh private window
   and confirm the generated-CMS-module fallback loads all Play Archive rows
   before testing hover playback.

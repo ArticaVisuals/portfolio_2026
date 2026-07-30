@@ -63,6 +63,7 @@ type Props = {
     parallaxWhileDragging?: boolean
     mediaFadeMs?: number
     maxConcurrentVideos?: number
+    chromiumMaxConcurrentVideos?: number
     safariMaxConcurrentVideos?: number
     iosMaxConcurrentVideos?: number
     videoPlaybackMode?: "center" | "hover"
@@ -106,6 +107,7 @@ const LOAD_IN_MAX_WAIT_MS = 2600
 // Keep Safari's decoder/GPU workload bounded without reducing encoded quality.
 // Remaining cards continue to show their crisp poster until a video slot opens.
 const MAX_CONCURRENT_VIDEOS = 10
+const CHROMIUM_MAX_CONCURRENT_VIDEOS = 6
 const INITIAL_MAX_CONCURRENT_VIDEOS = 4
 const SAFARI_MAX_CONCURRENT_VIDEOS = 4
 const IOS_MAX_CONCURRENT_VIDEOS = 2
@@ -133,6 +135,14 @@ const isDesktopSafari = () => {
         /Safari\//.test(ua) &&
         !/(?:Chrome|Chromium|CriOS|Edg|EdgiOS|OPR|FxiOS)\//.test(ua) &&
         !isIOSWebKit()
+    )
+}
+const isDesktopChromium = () => {
+    if (!canUseDOM()) return false
+    const ua = navigator.userAgent || ""
+    return (
+        /(?:Chrome|Chromium|Edg|OPR)\//.test(ua) &&
+        !/(?:Android|Mobile|CriOS|EdgiOS|OPiOS)/.test(ua)
     )
 }
 
@@ -393,6 +403,8 @@ export default function Play(props: Props) {
     const loadInStaggerMs = props.loadInStaggerMs ?? LOAD_IN_STAGGER_MS
     const loadInMaxWaitMs = props.loadInMaxWaitMs ?? LOAD_IN_MAX_WAIT_MS
     const maxConcurrentVideos = props.maxConcurrentVideos ?? MAX_CONCURRENT_VIDEOS
+    const chromiumMaxConcurrentVideos =
+        props.chromiumMaxConcurrentVideos ?? CHROMIUM_MAX_CONCURRENT_VIDEOS
     const safariMaxConcurrentVideos =
         props.safariMaxConcurrentVideos ?? SAFARI_MAX_CONCURRENT_VIDEOS
     const iosMaxConcurrentVideos =
@@ -410,6 +422,8 @@ export default function Play(props: Props) {
                 ? iosMaxConcurrentVideos
                 : isDesktopSafari()
                   ? safariMaxConcurrentVideos
+                  : isDesktopChromium()
+                    ? chromiumMaxConcurrentVideos
                   : smallViewportBudget
             return Math.min(maxConcurrentVideos, browserBudget)
         })
@@ -447,6 +461,8 @@ export default function Play(props: Props) {
                 ? iosMaxConcurrentVideos
                 : isDesktopSafari()
                   ? safariMaxConcurrentVideos
+                  : isDesktopChromium()
+                    ? chromiumMaxConcurrentVideos
                   : smallViewportBudget
             setRuntimeMaxConcurrentVideos(
                 Math.min(maxConcurrentVideos, browserBudget)
@@ -457,6 +473,7 @@ export default function Play(props: Props) {
         return () => window.removeEventListener("resize", updateBudget)
     }, [
         active,
+        chromiumMaxConcurrentVideos,
         iosMaxConcurrentVideos,
         maxConcurrentVideos,
         pageVisible,
@@ -600,6 +617,15 @@ addPropertyControls<Props>(Play, {
         defaultValue: MAX_CONCURRENT_VIDEOS,
         min: 0,
         max: 30,
+        step: 1,
+        hidden: hideAdvanced,
+    },
+    chromiumMaxConcurrentVideos: {
+        type: ControlType.Number,
+        title: "Chrome Videos",
+        defaultValue: CHROMIUM_MAX_CONCURRENT_VIDEOS,
+        min: 0,
+        max: 12,
         step: 1,
         hidden: hideAdvanced,
     },

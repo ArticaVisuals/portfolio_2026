@@ -1,6 +1,6 @@
 # Play CMS Workflow
 
-Last updated: 2026-07-23
+Last updated: 2026-07-30
 
 `/play` is managed from the Framer CMS collection `Play Archive`
 (`EySMRbI2N`). Published content should be exactly the CMS content. If a value
@@ -110,12 +110,16 @@ preserving the performance pass:
 - Grid thumbnails request Framer image variants at `scale-down-to=600`.
 - Grid videos use `preload="none"` and only mount/decode when they are on-screen
   and within the current video budget.
-- The production `Play.tsx` wrapper starts with `4` concurrent videos and ramps
-  to `10` after `2400ms` in non-WebKit desktop browsers. Desktop Safari stays at
-  `4`, iOS/iPadOS stays at `2`, small non-WebKit viewports cap at `8`, and hidden
-  pages drop to `0`. Eligible video cells are ranked by distance from the
-  viewport center with a small retention bias, so center-near videos keep their
-  slots without decoder churn while edge-near cells return to posters.
+- The production `Play.tsx` wrapper starts with `4` concurrent videos. Desktop
+  Chromium browsers, including Arc, ramp to a dedicated cap of `6` after
+  `2400ms`; other non-WebKit desktop browsers may use the general `10`-video
+  ceiling. Desktop Safari stays at `4`, iOS/iPadOS stays at `2`, small
+  non-WebKit viewports cap at `8`, and hidden pages drop to `0`.
+- Center-mode allocation retains already-active videos while their cards remain
+  inside the buffered viewport and fills only vacated slots by center distance.
+  The pool freezes during dragging, throw inertia, and edge scrolling, then
+  reconciles once motion settles. Posters remain mounted throughout, preventing
+  video decoder attach/release work from entering the pan loop.
 - Preview route `/play-hover-preview` uses the same protected wrapper and CMS
   data in hover-only mode. It intentionally has no second hand-maintained CMS
   list: when the page registry is empty, `ArchivePlayground` resolves the
@@ -128,8 +132,9 @@ preserving the performance pass:
 - Wide-screen coverage renders up to `20` columns and `12` rows so large
   desktop viewports do not show under-filled edges.
 - Continuous drift, parallax, drag, and inertia update one GPU-transformed world
-  layer. React only recycles cards after crossing a grid-cell boundary and only
-  changes video state when the center allocation changes.
+  layer. React only recycles cards after crossing a grid-cell boundary; video
+  state remains frozen during user-driven motion and stable visible slots are
+  retained during background drift.
 - The detail drawer freezes the obscured grid. Chrome retains the backdrop blur.
   Safari/iOS avoid `backdrop-filter` and instead ease a `14px` blur directly on
   the gallery over `560ms`. Closing still eases the blur back to `0px` over
@@ -163,10 +168,11 @@ the public `ArchivePlayground` module contains `mediaReady` / `DEFAULT_GRID_GAP`
 and then check the CMS row media values. The renderer should not intentionally
 hide a valid grid poster while it is waiting for a load event.
 
-The Safari coverage/blur version was published on July 23 and verified on the
-public `/play` route. The latest performance-only follow-up is synced in the
-Framer draft as `ArchivePlayground@ljLx3RPT8ZO2PxnHUl6X`,
-`Play@AEtiSt4JIdInX6LGx9Bk`, and `GrainOverlay@IU8jp598NHIsGsyeDMB5`; publish
-those three current modules together after review. The matching local
-`ArchivePlayground.tsx` snapshot is `131939` bytes with SHA-256
-`fe75094276cff8fe9d5aae93de93924ed8e12c062ae743fce18e1cc45fb7fc59`.
+The Safari coverage/blur version was published on July 23. The Arc/Chromium
+video-pool stabilization was published and browser-verified on July 30:
+`ArchivePlayground@RQxOdG36GiZaGiMevepS` and
+`Play@n4IOpd8V71GwZw9ZvFrX`. Production held the Chromium pool at `6`, mounted
+no new video sources during an active drag, restored the full pool after
+inertia settled, and emitted no warnings or errors. The matching local
+`ArchivePlayground.tsx` snapshot is `133085` bytes with SHA-256
+`e507c940991389031df20b6f96c3b3ab3105cfb4cbf9328a248d1d896085c276`.
