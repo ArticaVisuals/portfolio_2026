@@ -3104,7 +3104,9 @@ export default function IndexPage({
 
     return (
         <>
-            <style>{globalCss}</style>
+            <style data-index-global-css="true" suppressHydrationWarning>
+                {globalCss}
+            </style>
 
             <div
                 ref={indexContainerRef}

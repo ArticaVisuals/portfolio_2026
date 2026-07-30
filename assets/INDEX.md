@@ -1,6 +1,6 @@
 # Portfolio Assets — Index
 
-_Updated 2026-07-23. Case-study media and `/play` media are separated, then
+_Updated 2026-07-27. Case-study media and `/play` media are separated, then
 sorted by project/work slug._
 _Provenance subfolders include `framer-staging/` (Framer redesign scrape),
 `current-site/` (Cargo scrape), and project-specific sets. See
@@ -159,6 +159,9 @@ _Provenance subfolders include `framer-staging/` (Framer redesign scrape),
 
 ### the-windmill-project — 9 files + 3 source links, 2.3M
 `assets/Play/the-windmill-project/` → optimized media, QA, and source links to Weaponized Innocence originals
+
+### two-cries-in-the-dark — 6 files, 50M
+`assets/Play/two-cries-in-the-dark/` → original letterpress artwork exports, optimized MP4, and poster
 
 ### visual-communication-arts-speaker-series — 5 files, 3.1M
 `assets/Play/visual-communication-arts-speaker-series/` → source and optimized images

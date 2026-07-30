@@ -67,7 +67,19 @@
       "Bash(curl -s -L --max-time 30 \"https://cdn.prod.website-files.com/68f5e7e733480946aa936748/css/zita-fernandez-full.webflow.shared.a6339face.css\" -o z.css)",
       "Bash(grep -o '.\\\\{0,20\\\\}loader_wrap.\\\\{0,220\\\\}' z.css)",
       "Bash(awk '/^\\\\.loader_\\(wrap|bg|contain|bg_bar\\) *\\\\{/,/^\\\\}/' z.css)",
-      "Bash(curl -s -L --max-time 25 \"https://micahhoang.com/?cb=verify6\" -o live2.html)"
+      "Bash(curl -s -L --max-time 25 \"https://micahhoang.com/?cb=verify6\" -o live2.html)",
+      "Bash(ps aux *)",
+      "Bash(curl -s https://micahhoang.com/sitemap.xml)",
+      "Bash(curl -s https://micahhoang.com/ -o home.html)",
+      "Bash(grep -o 'data-mh-paragraph-pretty[^>]\\\\{0,80\\\\}' home.html)",
+      "Bash(curl -s \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fmicahhoang.com%2F&strategy=desktop&category=performance\" -o psi-desktop.json)",
+      "Bash(ls /Applications | grep -i -E \"chrome|chromium|edge\" ; ls ~/Library/Caches/ms-playwright 2>/dev/null | head)",
+      "Bash(CHROME_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx --no-install lighthouse \"https://micahhoang.com/\" --preset=desktop --only-categories=performance --output=json --output-path=./lh-home-desktop.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(CHROME_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx --no-install lighthouse \"https://micahhoang.com/\" --preset=desktop --only-categories=performance --throttling.cpuSlowdownMultiplier=4 --output=json --output-path=./lh-home-cpu4.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "Bash(CHROME_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx --no-install lighthouse \"https://micahhoang.com/info\" --preset=desktop --only-categories=performance --output=json --output-path=./lh-info.json --chrome-flags=\"--headless=new --no-sandbox\" --quiet)",
+      "mcp__framer__getNodeXml",
+      "mcp__framer__updateXmlForNode"
     ]
   }
 }

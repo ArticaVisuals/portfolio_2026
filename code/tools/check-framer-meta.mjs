@@ -15,6 +15,50 @@ function firstMatch(html, patterns) {
   return ""
 }
 
+function attributesFromTag(tag) {
+  const attributes = {}
+  const pattern = /([:@\w-]+)\s*=\s*(["'])([\s\S]*?)\2/g
+  let match
+
+  while ((match = pattern.exec(tag))) {
+    attributes[match[1].toLowerCase()] = decodeEntities(match[3].trim())
+  }
+
+  return attributes
+}
+
+function metaContent(html, attribute, value) {
+  const normalizedAttribute = attribute.toLowerCase()
+  const normalizedValue = value.toLowerCase()
+
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const attributes = attributesFromTag(match[0])
+    if (
+      attributes[normalizedAttribute]?.toLowerCase() === normalizedValue &&
+      attributes.content
+    ) {
+      return attributes.content
+    }
+  }
+
+  return ""
+}
+
+function canonicalHref(html) {
+  for (const match of html.matchAll(/<link\b[^>]*>/gi)) {
+    const attributes = attributesFromTag(match[0])
+    const relationships = (attributes.rel || "")
+      .toLowerCase()
+      .split(/\s+/)
+
+    if (relationships.includes("canonical") && attributes.href) {
+      return attributes.href
+    }
+  }
+
+  return ""
+}
+
 function decodeEntities(value) {
   return value
     .replace(/&amp;/g, "&")
@@ -22,23 +66,6 @@ function decodeEntities(value) {
     .replace(/&#x27;|&apos;/g, "'")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
-}
-
-function metaPatterns(attribute, value) {
-  return [
-    new RegExp(
-      `<meta\\s+${attribute}=["']${value}["']\\s+content=["']([^"']*)`,
-      "i"
-    ),
-    new RegExp(
-      `<meta\\s+content=["']([^"']*)["']\\s+${attribute}=["']${value}["']`,
-      "i"
-    ),
-    new RegExp(
-      `<meta(?=[^>]*${attribute}=["']${value}["'])(?=[^>]*content=["']([^"']*)["'])[^>]*>`,
-      "i"
-    ),
-  ]
 }
 
 for (const url of urls) {
@@ -57,17 +84,20 @@ for (const url of urls) {
     const html = await response.text()
     const result = {
       url,
+      status: response.status,
+      canonical: canonicalHref(html),
+      robots: metaContent(html, "name", "robots"),
       title: firstMatch(html, [/<title>([\s\S]*?)<\/title>/i]),
-      description: firstMatch(html, metaPatterns("name", "description")),
-      ogTitle: firstMatch(html, metaPatterns("property", "og:title")),
-      ogDescription: firstMatch(html, metaPatterns("property", "og:description")),
-      ogImage: firstMatch(html, metaPatterns("property", "og:image")),
-      twitterTitle: firstMatch(html, metaPatterns("name", "twitter:title")),
-      twitterDescription: firstMatch(
-        html,
-        metaPatterns("name", "twitter:description")
-      ),
-      twitterImage: firstMatch(html, metaPatterns("name", "twitter:image")),
+      description: metaContent(html, "name", "description"),
+      ogType: metaContent(html, "property", "og:type"),
+      ogUrl: metaContent(html, "property", "og:url"),
+      ogTitle: metaContent(html, "property", "og:title"),
+      ogDescription: metaContent(html, "property", "og:description"),
+      ogImage: metaContent(html, "property", "og:image"),
+      twitterCard: metaContent(html, "name", "twitter:card"),
+      twitterTitle: metaContent(html, "name", "twitter:title"),
+      twitterDescription: metaContent(html, "name", "twitter:description"),
+      twitterImage: metaContent(html, "name", "twitter:image"),
     }
 
     console.log(JSON.stringify(result, null, 2))

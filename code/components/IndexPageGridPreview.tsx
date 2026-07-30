@@ -174,7 +174,12 @@ export function IndexPage(props) {
             data-media-priority="video"
             style={{ width: "100%" }}
         >
-            <style>{GRID_LOCK_CSS}</style>
+            <style
+                data-index-grid-preview-css="true"
+                suppressHydrationWarning
+            >
+                {GRID_LOCK_CSS}
+            </style>
             <BaseIndexPage
                 key={`index-${selectedView}`}
                 {...baseProps}

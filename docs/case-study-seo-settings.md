@@ -1,20 +1,37 @@
 # Case Study SEO Settings
 
-Generated July 14, 2026 from Framer MCP page/CMS inspection and published HTML checks.
+Generated July 14, 2026 from Framer MCP page/CMS inspection and published HTML
+checks. Production implementation and verification updated July 30, 2026.
 
-## MCP Status
+## Production Status — July 30, 2026
 
-Framer MCP currently exposes page XML, code files, and CMS items, but not page-level
-SEO settings. The published staging pages currently share the same server-rendered
-title and meta description:
+- All 19 canonical public URLs return `200`, have self-referencing canonicals,
+  server-rendered titles/descriptions, Open Graph tags, Twitter cards, and
+  `max-image-preview:large`.
+- All 15 bespoke case studies use a unique project social image. The images
+  return `200` and match between Open Graph and Twitter metadata.
+- `/404`, `/case-studies`, and `/play-hover-preview` are excluded from Framer's
+  sitemap and site search. The global SEO guard adds `noindex, follow` to these
+  utility routes at runtime.
+- The About page has one semantic H1: `Hey, I'm Micah.`
+- The global Footer compatibility host publishes valid `Person`, `WebSite`,
+  `ProfilePage`, `CollectionPage`, `WebPage`, `CreativeWork`, and
+  `BreadcrumbList` JSON-LD as appropriate for each route.
+- Production browser QA passed on Home, About, Index, Play, Gaia, and WhatsApp:
+  no console errors/warnings, broken images, or horizontal overflow. The two
+  Index CSS style nodes use `suppressHydrationWarning` to prevent Framer's
+  deterministic server/client style warning.
+
+The July 14 baseline below is retained as the implementation record. At that
+time, the published pages shared the same metadata:
 
 - Title: `Micah Hoang - Brand Designer`
 - Description: `Micah Hoang is a brand designer based in Los Angeles, California, working across identity, product, motion, packaging, editorial systems, and digital experiences.`
 - OG image: `https://framerusercontent.com/images/i3WCgtnZfz9f8aLNVcZtzWHUM.png`
 
-Because Slack, iMessage, LinkedIn, and crawlers read server-rendered metadata, do
-not fix this with a client-side code component. Set these values in each Framer
-page's Settings panel, then publish and re-scrape.
+That shared-metadata issue is resolved. Titles, descriptions, canonicals, and
+social images remain owned by each page's Framer Settings so unfurl clients and
+crawlers receive them in the initial HTML response.
 
 ## Page Settings To Apply
 
@@ -38,7 +55,7 @@ Use the CMS `Thumbnail` image as the page thumbnail / social image where present
 | `/case-studies/typldn` | `TYPLDN Conference Identity - Micah Hoang` | `Conference identity for TYPLDN, using Wim Crouwel-inspired modular typography to build a flexible system across digital and physical touchpoints.` | `https://framerusercontent.com/images/jchJlOWt16iY8J0NEXEfm3G8cTE.png` |
 | `/case-studies/rejuve` | `Rejuve Health UX/UI - Micah Hoang` | `WIP health UX/UI and visual identity case-study shell for Rejuve; public narrative and project imagery are pending approved language.` | No CMS thumbnail yet. Use the site default or leave unset until approved project imagery exists. |
 | `/case-studies/belly-bar` | `Belly Bar Health UX/UI - Micah Hoang` | `WIP health UX/UI and visual identity case-study shell for Belly Bar; public narrative and project imagery are pending approved language.` | No CMS thumbnail yet. Use the site default or leave unset until approved project imagery exists. |
-| `/case-studies/whatsapp` | `WhatsApp Meta AI Motion - Micah Hoang` | `Motion design for WhatsApp Meta AI launch assets with Brand New School, translating product features into warm, everyday messaging scenes.` | No CMS thumbnail yet. Use the site default or leave unset until approved project imagery exists. |
+| `/case-studies/whatsapp` | `WhatsApp Meta AI Motion Design - Micah Hoang` | `Motion design for WhatsApp Meta AI launch assets with Brand New School, translating product features into warm, everyday messaging scenes.` | `https://framerusercontent.com/assets/mkLySgu9nIi7dlpTac2Q3InIU.png` |
 
 ## Optional Index Settings
 
@@ -47,8 +64,10 @@ site title forever.
 
 | Page | SEO title | Meta description | Page thumbnail / social image |
 |---|---|---|---|
-| `/case-studies` | `Case Studies - Micah Hoang` | `Selected brand, product, motion, packaging, editorial, and UX/UI case studies by Los Angeles-based brand designer Micah Hoang.` | Site default, or a curated collage image. |
-| `/index` | `Project Index - Micah Hoang` | `A full index of Micah Hoang's brand identity, product, motion, packaging, editorial, and digital experience work.` | Site default, or a curated collage image. |
+| `/case-studies` | Utility route; excluded from search | Redirect/archive shell retained outside the sitemap. Canonical discovery should use `/index`. | Site default. |
+| `/index` | `Project Index — Brand, Motion & Product Design \| Micah Hoang` | `Explore Micah Hoang's complete project index spanning brand identity, strategy, motion, product, packaging, editorial, and UX/UI design.` | Site default. |
+| `/play` | `Play — Motion & Visual Experiments \| Micah Hoang` | `An interactive archive of Micah Hoang's motion studies, visual experiments, image-making, and creative explorations beyond finished case studies.` | Site default. |
+| `/info` | `About Micah Hoang — Brand Designer` | `Meet Micah Hoang, a Los Angeles brand designer working across strategy, visual identity, motion, product, packaging, editorial, and UX/UI.` | Site default. |
 | `/case-studies/:slug` | `Case Study - Micah Hoang` | `A brand, product, motion, editorial, or UX/UI case study by Micah Hoang.` | Bind to CMS `Thumbnail` only if this dynamic template is used for non-bespoke slugs. |
 
 ## Verification After Publish

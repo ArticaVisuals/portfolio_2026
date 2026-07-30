@@ -36,6 +36,123 @@ const DEFAULT_EXCLUDE_SELECTOR = [
 const TEXT_SELECTOR = "p, span, div, li, figcaption, blockquote"
 const usePrePaintEffect =
     typeof window === "undefined" ? React.useEffect : React.useLayoutEffect
+const SEO_SCRIPT_ID = "mh-portfolio-structured-data"
+const SEO_RUNTIME_KEY = "__mhPortfolioSeo"
+const SEO_ORIGIN = "https://micahhoang.com"
+const SEO_PERSON_ID = `${SEO_ORIGIN}/#person`
+const SEO_WEBSITE_ID = `${SEO_ORIGIN}/#website`
+const SEO_NOINDEX_PATHS = ["/404", "/case-studies", "/play-hover-preview"]
+const SEO_PERSON = {
+    "@type": "Person",
+    "@id": SEO_PERSON_ID,
+    name: "Micah Hoang",
+    url: `${SEO_ORIGIN}/`,
+    jobTitle: "Brand Designer",
+    description:
+        "Los Angeles-based brand designer working across strategy, visual identity, motion, product, packaging, editorial systems, and digital experiences.",
+    email: "mailto:micah.hoang@hey.com",
+    sameAs: [
+        "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "https://www.cosmos.so/articavisuals",
+    ],
+    alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "ArtCenter College of Design",
+    },
+    knowsAbout: [
+        "Brand strategy",
+        "Visual identity",
+        "Motion design",
+        "Product design",
+        "Packaging design",
+        "Editorial design",
+        "UX/UI design",
+    ],
+}
+const SEO_WEBSITE = {
+    "@type": "WebSite",
+    "@id": SEO_WEBSITE_ID,
+    url: `${SEO_ORIGIN}/`,
+    name: "Micah Hoang",
+    alternateName: "Micah Hoang — Brand Designer",
+    inLanguage: "en-US",
+    publisher: { "@id": SEO_PERSON_ID },
+}
+
+// Framer's project settings remain the source of truth for server-rendered
+// titles, descriptions, canonicals, and social cards. This lightweight global
+// runtime adds the structured data Framer does not generate, keeps it current
+// across client-side route changes, and provides a defensive noindex for
+// utility/redirect routes that should also be disabled in Page Settings.
+function seoInstallScript() {
+    return `(function(){try{
+var KEY=${JSON.stringify(SEO_RUNTIME_KEY)};
+var SCRIPT_ID=${JSON.stringify(SEO_SCRIPT_ID)};
+var ORIGIN=${JSON.stringify(SEO_ORIGIN)};
+var PERSON_ID=${JSON.stringify(SEO_PERSON_ID)};
+var WEBSITE_ID=${JSON.stringify(SEO_WEBSITE_ID)};
+var NOINDEX=${JSON.stringify(SEO_NOINDEX_PATHS)};
+var PERSON=${JSON.stringify(SEO_PERSON)};
+var WEBSITE=${JSON.stringify(SEO_WEBSITE)};
+var existing=window[KEY];
+if(existing&&existing.sync){existing.sync();return;}
+function normalizedPath(){return String(location.pathname||"/").replace(/\\/+$/,"")||"/"}
+function meta(selector){var node=document.querySelector(selector);return node?String(node.getAttribute("content")||"").trim():""}
+function canonical(){var node=document.querySelector('link[rel="canonical"]');return node&&node.href?node.href:(ORIGIN+normalizedPath())}
+function cleanTitle(){return String(document.title||"Micah Hoang — Brand Designer").replace(/\\s+[-—]\\s+Micah Hoang$/i,"").trim()}
+function addIf(target,key,value){if(value)target[key]=value}
+function syncNoindex(path){
+var owned=document.querySelector('meta[name="robots"][data-mh-seo-owned="true"]');
+if(NOINDEX.indexOf(path)>-1){
+if(!owned){owned=document.createElement("meta");owned.setAttribute("name","robots");owned.setAttribute("data-mh-seo-owned","true");(document.head||document.documentElement).appendChild(owned)}
+owned.setAttribute("content","noindex, follow");
+}else if(owned&&owned.parentNode){owned.parentNode.removeChild(owned)}
+}
+function sync(){
+var path=normalizedPath();
+syncNoindex(path);
+var script=document.getElementById(SCRIPT_ID);
+if(NOINDEX.indexOf(path)>-1){if(script&&script.parentNode)script.parentNode.removeChild(script);return}
+var url=canonical();
+var title=cleanTitle();
+var description=meta('meta[name="description"]');
+var image=meta('meta[property="og:image"]');
+var graph=[WEBSITE,PERSON];
+var page={"@type":"WebPage","@id":url+"#webpage",url:url,name:title,isPartOf:{"@id":WEBSITE_ID},about:{"@id":PERSON_ID},inLanguage:"en-US"};
+addIf(page,"description",description);
+addIf(page,"primaryImageOfPage",image);
+if(path==="/"){
+page.mainEntity={"@id":PERSON_ID};
+}else if(path==="/info"){
+page["@type"]="ProfilePage";
+page.name="About Micah Hoang — Brand Designer";
+page.mainEntity={"@id":PERSON_ID};
+}else if(path==="/index"||path==="/play"){
+page["@type"]="CollectionPage";
+}else if(path.indexOf("/case-studies/")===0){
+var workId=url+"#creative-work";
+page.mainEntity={"@id":workId};
+var work={"@type":"CreativeWork","@id":workId,url:url,name:title,creator:{"@id":PERSON_ID},mainEntityOfPage:{"@id":page["@id"]}};
+addIf(work,"description",description);
+addIf(work,"image",image);
+graph.push(work);
+graph.push({"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":ORIGIN+"/"},
+{"@type":"ListItem","position":2,"name":"Project Index","item":ORIGIN+"/index"},
+{"@type":"ListItem","position":3,"name":title,"item":url}
+]});
+}
+graph.push(page);
+var value=JSON.stringify({"@context":"https://schema.org","@graph":graph});
+if(!script){script=document.createElement("script");script.id=SCRIPT_ID;script.type="application/ld+json";script.setAttribute("data-mh-seo","true");(document.head||document.documentElement).appendChild(script)}
+if(script.textContent!==value)script.textContent=value;
+}
+var state=window[KEY]={sync:sync,observer:null};
+sync();
+["DOMContentLoaded","load","pageshow","popstate","hashchange","mh:locationchange","framer:pageLoad"].forEach(function(name){window.addEventListener(name,sync,{passive:true})});
+if(typeof MutationObserver!=="undefined"&&document.head){state.observer=new MutationObserver(function(){sync()});state.observer.observe(document.head,{attributes:true,attributeFilter:["content","href"],childList:true,subtree:true})}
+}catch(e){}})();`
+}
 
 function cssText(attributeName: string) {
     return `@supports (text-wrap: pretty) {
@@ -277,7 +394,8 @@ function installPrettyWrapFallback(maxFontSize = 23) {
  * The original resume-link side effect is retired, but Footer still mounts this
  * invisible component. It now also carries the paragraph pretty-wrap fallback so
  * routes without PageTransition still get site-wide orphan reduction, plus the
- * Home-arrival intent stamp needed for immediate `/info` → Home motion.
+ * Home-arrival intent stamp needed for immediate `/info` → Home motion and the
+ * site-wide structured-data/noindex guard used by published SEO.
  *
  * @framerIntrinsicWidth 1
  * @framerIntrinsicHeight 1
@@ -303,6 +421,10 @@ export default function ResumeAssetHost(props: ResumeAssetHostProps) {
             <script
                 data-mh-paragraph-pretty-preload="true"
                 dangerouslySetInnerHTML={{ __html: preloadScript(23) }}
+            />
+            <script
+                data-mh-seo-bootstrap="true"
+                dangerouslySetInnerHTML={{ __html: seoInstallScript() }}
             />
             <div
                 aria-hidden="true"
