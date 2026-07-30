@@ -78,6 +78,20 @@ The `.tsx` in `code/components/` are local mirrors of Framer code components
   verify the Framer inspector still exposes the media controls, then run
   published visual QA after Framer publish.
 
+## Protected Play Performance Contracts
+
+- Keep `ParagraphPrettyWrap` and the `ResumeAssetHost` fallback from reacting to
+  `style` mutations inside `[data-playground-root="true"]`; the Play world layer
+  writes its transform continuously.
+- Keep the center video pool frozen during drag, throw inertia, and edge
+  scrolling. Retain already-active video slots while their cards remain inside
+  the buffered viewport, and fill only vacated slots after motion settles.
+- Keep desktop Chromium/Arc capped at `6` concurrent videos unless a published
+  browser profile demonstrates that a different budget is safe.
+- Run `npm test` after changing `Play.tsx`, `ArchivePlayground.tsx`,
+  `ParagraphPrettyWrap.tsx`, or `ResumeAssetHost.tsx`. The Play performance
+  guard is also required in CI for changes to these files.
+
 ## Documentation References
 
 When structural layout references are needed, use the main Framer page exports,

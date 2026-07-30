@@ -4,7 +4,8 @@
   "description": "This root is intentionally small. Use these folders first:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check:play-performance": "node code/tools/check-play-pan-performance.mjs",
+    "test": "npm run check:play-performance"
   },
   "repository": {
     "type": "git",

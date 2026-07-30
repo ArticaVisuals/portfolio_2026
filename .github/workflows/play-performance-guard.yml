@@ -1,0 +1,41 @@
+name: Play performance guard
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/play-performance-guard.yml"
+      - "code/components/ArchivePlayground.tsx"
+      - "code/components/ParagraphPrettyWrap.tsx"
+      - "code/components/Play.tsx"
+      - "code/components/ResumeAssetHost.tsx"
+      - "code/tools/check-play-pan-performance.mjs"
+      - "package.json"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/play-performance-guard.yml"
+      - "code/components/ArchivePlayground.tsx"
+      - "code/components/ParagraphPrettyWrap.tsx"
+      - "code/components/Play.tsx"
+      - "code/components/ResumeAssetHost.tsx"
+      - "code/tools/check-play-pan-performance.mjs"
+      - "package.json"
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify Play performance contracts
+        run: npm test
