@@ -2557,19 +2557,24 @@ export default function ArchivePlayground(props: Props) {
             runtime.centerY +
             committedWindow.startY * runtime.cellY
         // A wheel/pointer burst can move state several cells before React
-        // commits the requested virtual window. Keep the currently committed
-        // tile pool covering every viewport edge during that handoff so WebKit
-        // never exposes a blank strip.
-        const layerX = clamp(
-            rawLayerX,
-            Math.min(0, runtime.viewportW - runtime.gridWidth),
-            0
-        )
-        const layerY = clamp(
-            rawLayerY,
-            Math.min(0, runtime.viewportH - runtime.gridHeight),
-            0
-        )
+        // commits the requested virtual window. WebKit needs the committed
+        // tile pool clamped to viewport coverage during that handoff. On
+        // Chromium/Arc the clamp visibly pauses a fast throw at the coverage
+        // boundary, so keep the raw compositor transform continuous there.
+        const layerX = webKitRiskRef.current
+            ? clamp(
+                  rawLayerX,
+                  Math.min(0, runtime.viewportW - runtime.gridWidth),
+                  0
+              )
+            : rawLayerX
+        const layerY = webKitRiskRef.current
+            ? clamp(
+                  rawLayerY,
+                  Math.min(0, runtime.viewportH - runtime.gridHeight),
+                  0
+              )
+            : rawLayerY
         worldLayer.style.transform = `translate3d(${layerX}px, ${layerY}px, 0)`
 
         const desiredWindow = {

@@ -107,6 +107,16 @@ requirePattern(
     "keeps panning on the direct world-layer transform",
     /worldLayer\.style\.transform\s*=\s*`translate3d\(/
 )
+requirePattern(
+    archivePath,
+    "limits horizontal coverage clamping to WebKit and keeps Chromium raw",
+    /const\s+layerX\s*=\s*webKitRiskRef\.current\s*\?\s*clamp\([\s\S]*?\)\s*:\s*rawLayerX/
+)
+requirePattern(
+    archivePath,
+    "limits vertical coverage clamping to WebKit and keeps Chromium raw",
+    /const\s+layerY\s*=\s*webKitRiskRef\.current\s*\?\s*clamp\([\s\S]*?\)\s*:\s*rawLayerY/
+)
 requireCount(
     archivePath,
     "does not introduce another active-video state write path",

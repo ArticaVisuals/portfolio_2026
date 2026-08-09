@@ -86,6 +86,9 @@ The `.tsx` in `code/components/` are local mirrors of Framer code components
 - Keep the center video pool frozen during drag, throw inertia, and edge
   scrolling. Retain already-active video slots while their cards remain inside
   the buffered viewport, and fill only vacated slots after motion settles.
+- Keep the committed-window coverage clamp WebKit-only. Chromium/Arc must use
+  the raw world-layer transform during fast throws so the grid cannot pause and
+  jump while React commits a recycled card window.
 - Keep desktop Chromium/Arc capped at `6` concurrent videos unless a published
   browser profile demonstrates that a different budget is safe.
 - Run `npm test` after changing `Play.tsx`, `ArchivePlayground.tsx`,
