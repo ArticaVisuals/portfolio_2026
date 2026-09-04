@@ -85,7 +85,9 @@ The `.tsx` in `code/components/` are local mirrors of Framer code components
   writes its transform continuously.
 - Keep the center video pool frozen during drag, throw inertia, and edge
   scrolling. Retain already-active video slots while their cards remain inside
-  the buffered viewport, and fill only vacated slots after motion settles.
+  the buffered viewport after center-priority slots are satisfied, and fill
+  only vacated slots after motion settles. Center-zone videos must claim from
+  the existing browser playback budget; do not increase the concurrency cap.
 - Keep the committed-window coverage clamp WebKit-only. Chromium/Arc must use
   the raw world-layer transform during fast throws so the grid cannot pause and
   jump while React commits a recycled card window.

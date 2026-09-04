@@ -94,13 +94,28 @@ requirePattern(
 )
 requirePattern(
     archivePath,
-    "retains already-active videos while their cells remain buffered",
-    /\.filter\(\(\{\s*key\s*\}\)\s*=>\s*previousActiveVideoKeys\.has\(key\)\)/
+    "gives settled center-zone videos the existing playback slots first",
+    /\.filter\(\(\{\s*centerPriority\s*\}\)\s*=>\s*centerPriority\)[\s\S]*?\.slice\(0,\s*runtime\.videoBudget\)[\s\S]*?nextActiveVideoKeys\.add\(key\)/
+)
+requirePattern(
+    archivePath,
+    "retains already-active videos only after center priority is satisfied",
+    /previousActiveVideoKeys\.has\(key\)\s*&&\s*!nextActiveVideoKeys\.has\(key\)/
 )
 requirePattern(
     archivePath,
     "fills only the video slots left vacant after retention",
     /runtime\.videoBudget\s*-\s*nextActiveVideoKeys\.size/
+)
+requirePattern(
+    archivePath,
+    "retries autoplay when an active video has loaded enough data",
+    /onLoadedData=\{\(event\)\s*=>\s*\{[\s\S]*?requestVideoPlayback\(event\.currentTarget\)/
+)
+requirePattern(
+    archivePath,
+    "retries autoplay when an active video can play",
+    /onCanPlay=\{\(event\)\s*=>\s*\{[\s\S]*?requestVideoPlayback\(event\.currentTarget\)/
 )
 requirePattern(
     archivePath,

@@ -216,6 +216,8 @@ const NAV_REVEAL_MS = 560
 const VIDEO_RECONCILE_INTERVAL_MS = 180
 const VIDEO_MOTION_SPEED_THRESHOLD = 1
 const VIDEO_EDGE_SCROLL_THRESHOLD = 0.25
+const VIDEO_CENTER_PRIORITY_HALF_WIDTH_RATIO = 0.25
+const VIDEO_CENTER_PRIORITY_HALF_HEIGHT_RATIO = 0.25
 const DEFAULT_NAV_SELECTOR =
     "header, nav, [data-framer-name*='Navigation' i], [data-framer-name*='Nav' i]"
 const INTERACTIVE_SELECTOR =
@@ -1354,6 +1356,23 @@ const MediaFrame = React.memo(function MediaFrame({
         [onMeasure]
     )
 
+    const requestVideoPlayback = React.useCallback(
+        (video: HTMLVideoElement) => {
+            video.muted = true
+            if (prefersReducedMotion) {
+                video.pause()
+                if (detail) setReady(true)
+                return
+            }
+            if (!video.paused) return
+            const request = video.play()
+            if (request && typeof request.catch === "function") {
+                request.catch(() => {})
+            }
+        },
+        [detail, prefersReducedMotion]
+    )
+
     React.useEffect(() => {
         if (!detail) return
         setReady(false)
@@ -1370,16 +1389,8 @@ const MediaFrame = React.memo(function MediaFrame({
     React.useEffect(() => {
         const video = videoRef.current
         if (!video) return
-        video.muted = true
-        if (prefersReducedMotion) {
-            video.pause()
-            if (detail) setReady(true)
-            return
-        }
-        if (!video.paused) return
-        const play = video.play()
-        if (play && typeof play.catch === "function") play.catch(() => {})
-    }, [source, prefersReducedMotion])
+        requestVideoPlayback(video)
+    }, [requestVideoPlayback, showVideo, source])
 
     React.useEffect(() => {
         if (!showVideo) return
@@ -1504,7 +1515,7 @@ const MediaFrame = React.memo(function MediaFrame({
                     }
                     onLoadedData={(event) => {
                         if (detail) setReady(true)
-                        event.currentTarget.style.opacity = "1"
+                        requestVideoPlayback(event.currentTarget)
                     }}
                     onLoadedMetadata={(event) => {
                         const v = event.currentTarget
@@ -1513,7 +1524,7 @@ const MediaFrame = React.memo(function MediaFrame({
                     }}
                     onCanPlay={(event) => {
                         if (detail) setReady(true)
-                        event.currentTarget.style.opacity = "1"
+                        requestVideoPlayback(event.currentTarget)
                     }}
                     onPlaying={(event) => {
                         event.currentTarget.style.opacity = "1"
@@ -2628,7 +2639,12 @@ export default function ArchivePlayground(props: Props) {
             const candidates: Array<{
                 key: string
                 distance: number
+                centerPriority: boolean
             }> = []
+            const centerHalfWidth =
+                runtime.viewportW * VIDEO_CENTER_PRIORITY_HALF_WIDTH_RATIO
+            const centerHalfHeight =
+                runtime.viewportH * VIDEO_CENTER_PRIORITY_HALF_HEIGHT_RATIO
             runtime.cells.forEach((cell) => {
                 if (!cell.hasVideo) return
                 const left = cell.col * runtime.cellX + layerX
@@ -2646,19 +2662,38 @@ export default function ArchivePlayground(props: Props) {
                 candidates.push({
                     key: cell.key,
                     distance: dx * dx + dy * dy,
+                    centerPriority:
+                        Math.abs(dx) <= centerHalfWidth &&
+                        Math.abs(dy) <= centerHalfHeight,
                 })
             })
 
-            // Retain active videos for as long as their cards stay inside the
-            // buffered viewport. Only fill vacated slots by center distance.
-            // This avoids decoder churn from the archive's continuous drift.
+            // Center-zone videos claim slots first once motion settles. Then
+            // retain the remaining active videos while they stay buffered and
+            // fill any vacancies by center distance. This keeps the existing
+            // decoder budget unchanged while preventing a centered card from
+            // remaining a poster behind a pool of farther retained videos.
             candidates.sort(
                 (a, b) =>
                     a.distance - b.distance || a.key.localeCompare(b.key)
             )
             candidates
-                .filter(({ key }) => previousActiveVideoKeys.has(key))
+                .filter(({ centerPriority }) => centerPriority)
                 .slice(0, runtime.videoBudget)
+                .forEach(({ key }) => nextActiveVideoKeys.add(key))
+            candidates
+                .filter(
+                    ({ key }) =>
+                        previousActiveVideoKeys.has(key) &&
+                        !nextActiveVideoKeys.has(key)
+                )
+                .slice(
+                    0,
+                    Math.max(
+                        0,
+                        runtime.videoBudget - nextActiveVideoKeys.size
+                    )
+                )
                 .forEach(({ key }) => nextActiveVideoKeys.add(key))
             candidates
                 .filter(({ key }) => !nextActiveVideoKeys.has(key))
