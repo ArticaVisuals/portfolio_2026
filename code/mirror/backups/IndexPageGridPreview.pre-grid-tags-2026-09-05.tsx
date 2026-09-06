@@ -66,8 +66,8 @@ const GRID_LOCK_CSS = `
     line-height: 13px !important;
 }
 
-.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-link:hover .idx-grid-title-stack,
-.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-link:focus-visible .idx-grid-title-stack {
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"]:hover .idx-grid-title-stack,
+.idx-grid-preview-locked .idx-grid-card[data-grid-layout="figma"]:focus-visible .idx-grid-title-stack {
     transform: translate3d(0, -18px, 0) !important;
 }
 

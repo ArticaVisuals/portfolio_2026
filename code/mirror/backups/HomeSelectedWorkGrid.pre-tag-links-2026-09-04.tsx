@@ -14,7 +14,6 @@ type Props = {
     textColor: string
     strokeColor: string
     tagColor: string
-    tagHoverColor: string
 }
 
 type CMSFieldValue = { value?: unknown }
@@ -622,14 +621,6 @@ function getProjectTags(project: Project): string[] {
     return tags
 }
 
-function slugifyTaxonomyValue(value: unknown): string {
-    return String(value ?? "")
-        .trim()
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "")
-}
-
 function isCanvasTarget(): boolean {
     try {
         return RenderTarget.current() === RenderTarget.canvas
@@ -894,138 +885,101 @@ function ProjectCard({
         preloadFramerRoute(router, href)
     }, [href, router])
 
-    const handleTagClick = React.useCallback(
-        (event: React.MouseEvent<HTMLAnchorElement>) => {
-            event.stopPropagation()
-
-            const tagHref = event.currentTarget.getAttribute("href") || ""
-            if (!shouldHandleRouteClick(event, tagHref)) return
-
-            const match = getFramerRouteMatch(router, tagHref)
-            if (!match) return
-
-            event.preventDefault()
-
-            if (!navigateFramerRoute(router, match)) {
-                const url = getSameOriginUrl(tagHref)
-                if (url) window.location.assign(url.href)
-            }
-        },
-        [router]
-    )
-
-    const handleTagWarmRoute = React.useCallback(() => {
-        preloadFramerRoute(router, "/index")
-    }, [router])
-
     return (
-        <div className="selected-work-card">
-            <a
-                className="selected-work-card-link"
-                href={href}
-                onClick={handleClick}
-                onFocus={handleWarmRoute}
-                onMouseEnter={handleWarmRoute}
-                aria-label={`${project.title} case study`}
-            >
-                <div className="selected-work-card-meta">
-                    <span className="selected-work-card-number">{project.number}</span>
-                    <span aria-hidden="true">/</span>
-                    <span className="selected-work-title-frame">
-                        <span className="selected-work-title-stack">
-                            <span>{project.title}</span>
-                            <span aria-hidden="true">VIEW PROJECT</span>
-                        </span>
+        <a
+            className="selected-work-card"
+            href={href}
+            onClick={handleClick}
+            onFocus={handleWarmRoute}
+            onMouseEnter={handleWarmRoute}
+            aria-label={`${project.title} case study`}
+        >
+            <div className="selected-work-card-meta">
+                <span className="selected-work-card-number">{project.number}</span>
+                <span aria-hidden="true">/</span>
+                <span className="selected-work-title-frame">
+                    <span className="selected-work-title-stack">
+                        <span>{project.title}</span>
+                        <span aria-hidden="true">VIEW PROJECT</span>
                     </span>
-                </div>
-                <div
-                    ref={mediaRef}
-                    className="selected-work-media"
-                    data-has-media={hasMedia ? "true" : undefined}
-                    data-has-video={hasVideo ? "true" : undefined}
-                    data-video-mounted={shouldLoadVideo ? "true" : undefined}
-                    data-video-near={isNearViewport ? "true" : undefined}
-                    data-video-visible={isVideoVisible ? "true" : undefined}
-                    data-has-poster={hasImage ? "true" : undefined}
-                    data-media-ready={hasReadyMedia ? "true" : undefined}
-                    data-media-failed={hasFailedMedia ? "true" : undefined}
-                    data-video-ready={videoReady ? "true" : undefined}
-                    data-video-failed={videoFailed ? "true" : undefined}
-                    data-poster-ready={posterReady ? "true" : undefined}
-                    data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
-                >
-                    {imageSrc ? (
-                        <img
-                            ref={handleImageRef}
-                            className="selected-work-poster"
-                            src={imageSrc}
-                            srcSet={project.thumbnail?.srcSet}
-                            alt={mediaAlt}
-                            decoding="async"
-                            loading={priority ? "eager" : "lazy"}
-                            fetchPriority={priority ? "high" : "auto"}
-                            sizes="(max-width: 809px) calc(100vw - 40px), calc(50vw - 30px)"
-                            onError={() => setPosterFailed(true)}
-                            onLoad={() => {
-                                setPosterReady(true)
-                                setPosterFailed(false)
-                            }}
-                        />
-                    ) : null}
-                    {hasVideo && shouldLoadVideo ? (
-                        <video
-                            ref={videoRef}
-                            className="selected-work-video"
-                            src={videoSrc}
-                            autoPlay={isVideoVisible}
-                            muted
-                            loop
-                            onCanPlay={() => {
-                                setVideoReady(true)
-                                setVideoFailed(false)
-                            }}
-                            onPlaying={() => {
-                                setVideoReady(true)
-                                setVideoFailed(false)
-                            }}
-                            onError={() => {
-                                setVideoReady(false)
-                                setVideoFailed(true)
-                            }}
-                            onLoadedData={() => {
-                                setVideoReady(true)
-                                setVideoFailed(false)
-                            }}
-                            playsInline
-                            preload="none"
-                        />
-                    ) : null}
-                </div>
-            </a>
+                </span>
+            </div>
+            <div
+                ref={mediaRef}
+                className="selected-work-media"
+                data-has-media={hasMedia ? "true" : undefined}
+                data-has-video={hasVideo ? "true" : undefined}
+                data-video-mounted={shouldLoadVideo ? "true" : undefined}
+                data-video-near={isNearViewport ? "true" : undefined}
+                data-video-visible={isVideoVisible ? "true" : undefined}
+                data-has-poster={hasImage ? "true" : undefined}
+                data-media-ready={hasReadyMedia ? "true" : undefined}
+                data-media-failed={hasFailedMedia ? "true" : undefined}
+                data-video-ready={videoReady ? "true" : undefined}
+                data-video-failed={videoFailed ? "true" : undefined}
+                data-poster-ready={posterReady ? "true" : undefined}
+                data-thumbnail-stroke={project.thumbnailStroke ? "true" : undefined}
+            >
+                {imageSrc ? (
+                    <img
+                        ref={handleImageRef}
+                        className="selected-work-poster"
+                        src={imageSrc}
+                        srcSet={project.thumbnail?.srcSet}
+                        alt={mediaAlt}
+                        decoding="async"
+                        loading={priority ? "eager" : "lazy"}
+                        fetchPriority={priority ? "high" : "auto"}
+                        sizes="(max-width: 809px) calc(100vw - 40px), calc(50vw - 30px)"
+                        onError={() => setPosterFailed(true)}
+                        onLoad={() => {
+                            setPosterReady(true)
+                            setPosterFailed(false)
+                        }}
+                    />
+                ) : null}
+                {hasVideo && shouldLoadVideo ? (
+                    <video
+                        ref={videoRef}
+                        className="selected-work-video"
+                        src={videoSrc}
+                        autoPlay={isVideoVisible}
+                        muted
+                        loop
+                        onCanPlay={() => {
+                            setVideoReady(true)
+                            setVideoFailed(false)
+                        }}
+                        onPlaying={() => {
+                            setVideoReady(true)
+                            setVideoFailed(false)
+                        }}
+                        onError={() => {
+                            setVideoReady(false)
+                            setVideoFailed(true)
+                        }}
+                        onLoadedData={() => {
+                            setVideoReady(true)
+                            setVideoFailed(false)
+                        }}
+                        playsInline
+                        preload="none"
+                    />
+                ) : null}
+            </div>
             {tags.length > 0 ? (
                 <div
                     className="selected-work-tags"
                     aria-label={`${project.title} services`}
                 >
-                    {tags.map((tag) => {
-                        const tagHref = `/index#service=${slugifyTaxonomyValue(tag)}`
-
-                        return (
-                            <a
-                                className="selected-work-tag"
-                                key={tag}
-                                href={tagHref}
-                                onClick={handleTagClick}
-                                onMouseEnter={handleTagWarmRoute}
-                                onFocus={handleTagWarmRoute}
-                            >
-                                <span className="selected-work-tag-text">{tag}</span>
-                            </a>
-                        )
-                    })}
+                    {tags.map((tag) => (
+                        <span className="selected-work-tag" key={tag}>
+                            <span className="selected-work-tag-text">{tag}</span>
+                        </span>
+                    ))}
                 </div>
             ) : null}
-        </div>
+        </a>
     )
 }
 
@@ -1049,7 +1003,6 @@ export default function HomeSelectedWorkGrid({
     textColor = "rgb(35, 51, 36)",
     strokeColor = "rgb(151, 151, 151)",
     tagColor = "rgb(151, 151, 151)",
-    tagHoverColor = "#25593a",
 }: Partial<Props>) {
     const [projects, setProjects] = React.useState<Project[]>([])
     const [cmsSettled, setCmsSettled] = React.useState(!useCMS)
@@ -1112,7 +1065,6 @@ export default function HomeSelectedWorkGrid({
                     "--selected-work-text": textColor,
                     "--selected-work-stroke": strokeColor,
                     "--selected-work-tag": tagColor || strokeColor,
-                    "--selected-work-tag-hover": tagHoverColor,
                 } as React.CSSProperties
             }
         >
@@ -1123,14 +1075,12 @@ export default function HomeSelectedWorkGrid({
                           className="selected-work-card selected-work-card-placeholder"
                           key={`selected-work-placeholder-${index}`}
                       >
-                          <div className="selected-work-card-link">
-                              <div className="selected-work-card-meta">
-                                  <span>00</span>
-                                  <span>/</span>
-                                  <span>Placeholder</span>
-                              </div>
-                              <div className="selected-work-media" />
+                          <div className="selected-work-card-meta">
+                              <span>00</span>
+                              <span>/</span>
+                              <span>Placeholder</span>
                           </div>
+                          <div className="selected-work-media" />
                           {showTags ? (
                               <div className="selected-work-tags">
                                   <span className="selected-work-tag">
@@ -1159,14 +1109,6 @@ export default function HomeSelectedWorkGrid({
 
                 .selected-work-card {
                     color: var(--selected-work-text);
-                    display: flex;
-                    flex-direction: column;
-                    gap: 16px;
-                    min-width: 0;
-                }
-
-                .selected-work-card-link {
-                    color: inherit;
                     display: flex;
                     flex-direction: column;
                     gap: 16px;
@@ -1212,8 +1154,8 @@ export default function HomeSelectedWorkGrid({
                     transition: transform 420ms ${SNAPPY_EASE};
                 }
 
-                .selected-work-card-link:hover .selected-work-title-stack,
-                .selected-work-card-link:focus-visible .selected-work-title-stack {
+                .selected-work-card:hover .selected-work-title-stack,
+                .selected-work-card:focus-visible .selected-work-title-stack {
                     transform: translateY(-18px);
                 }
 
@@ -1302,10 +1244,10 @@ export default function HomeSelectedWorkGrid({
                     opacity: 0;
                 }
 
-                .selected-work-card-link:hover .selected-work-media img,
-                .selected-work-card-link:focus-visible .selected-work-media img,
-                .selected-work-card-link:hover .selected-work-media video,
-                .selected-work-card-link:focus-visible .selected-work-media video {
+                .selected-work-card:hover .selected-work-media img,
+                .selected-work-card:focus-visible .selected-work-media img,
+                .selected-work-card:hover .selected-work-media video,
+                .selected-work-card:focus-visible .selected-work-media video {
                     transform: translateX(-50%) scale(1.02);
                 }
 
@@ -1325,7 +1267,6 @@ export default function HomeSelectedWorkGrid({
                     border-radius: 250px;
                     box-sizing: border-box;
                     color: var(--selected-work-tag);
-                    cursor: pointer;
                     display: inline-flex;
                     flex: 0 1 auto;
                     font-family: "GT Standard Mono Trial", "GT Standard Mono", "Azeret Mono", monospace;
@@ -1338,23 +1279,7 @@ export default function HomeSelectedWorkGrid({
                     min-height: 24px;
                     min-width: 0;
                     padding: 5px 10px 6px;
-                    text-decoration: none;
                     text-transform: uppercase;
-                    transition:
-                        color 250ms ${SNAPPY_EASE},
-                        border-color 250ms ${SNAPPY_EASE};
-                }
-
-                @media (hover: hover) {
-                    .selected-work-tag:hover {
-                        border-color: var(--selected-work-tag-hover);
-                        color: var(--selected-work-tag-hover);
-                    }
-                }
-
-                .selected-work-tag:focus-visible {
-                    outline: 1px solid var(--selected-work-tag-hover);
-                    outline-offset: 3px;
                 }
 
                 .selected-work-tag-text {
@@ -1462,14 +1387,13 @@ export default function HomeSelectedWorkGrid({
                     }
 
                     .selected-work-tag {
-                        font-size: 12px;
-                        min-height: 25px;
-                        padding: 7px 10px;
+                        font-size: 11px;
+                        min-height: 21px;
+                        padding: 4px 8px 5px;
                     }
                 }
 
                 @media (prefers-reduced-motion: reduce) {
-                    .selected-work-tag,
                     .selected-work-title-stack,
                     .selected-work-media[data-has-media="true"]::before,
                     .selected-work-media img,
@@ -1482,15 +1406,15 @@ export default function HomeSelectedWorkGrid({
                         transition: none;
                     }
 
-                    .selected-work-card-link:hover .selected-work-title-stack,
-                    .selected-work-card-link:focus-visible .selected-work-title-stack {
+                    .selected-work-card:hover .selected-work-title-stack,
+                    .selected-work-card:focus-visible .selected-work-title-stack {
                         transform: translateY(0);
                     }
 
-                    .selected-work-card-link:hover .selected-work-media img,
-                    .selected-work-card-link:focus-visible .selected-work-media img,
-                    .selected-work-card-link:hover .selected-work-media video,
-                    .selected-work-card-link:focus-visible .selected-work-media video {
+                    .selected-work-card:hover .selected-work-media img,
+                    .selected-work-card:focus-visible .selected-work-media img,
+                    .selected-work-card:hover .selected-work-media video,
+                    .selected-work-card:focus-visible .selected-work-media video {
                         transform: translateX(-50%) scale(1);
                     }
 
@@ -1610,10 +1534,5 @@ addPropertyControls(HomeSelectedWorkGrid, {
         type: ControlType.Color,
         title: "Tags",
         defaultValue: "rgb(151, 151, 151)",
-    },
-    tagHoverColor: {
-        type: ControlType.Color,
-        title: "Tags Hover",
-        defaultValue: "#25593a",
     },
 })

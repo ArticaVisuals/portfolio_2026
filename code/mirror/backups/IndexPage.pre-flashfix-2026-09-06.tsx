@@ -3266,7 +3266,6 @@ export default function IndexPage({
         projectsProp,
     ])
     const initialView = resolvedDefaultView === "grid" ? "grid" : "list"
-    const progressivelyMountContent = shouldProgressivelyMountIndexContent()
 
     const [activeView, setActiveView] = useState(initialView)
     const [renderKey, setRenderKey] = useState(0)
@@ -3275,12 +3274,6 @@ export default function IndexPage({
         view: string
         count: number
     }>({ projects: null, view: initialView, count: 0 })
-    const hasCompletedInitialProgressiveMountRef = useRef(
-        !progressivelyMountContent
-    )
-    if (!progressivelyMountContent) {
-        hasCompletedInitialProgressiveMountRef.current = true
-    }
     const [filters, setFilters] = useState<Filters>({
         disciplines: [],
         industries: [],
@@ -3461,6 +3454,7 @@ export default function IndexPage({
         filters.industries.length > 0 ||
         filters.years.length > 0
     const isCMSLoading = useCMS && !cmsModuleLoaded
+    const progressivelyMountContent = shouldProgressivelyMountIndexContent()
     const projectsForActiveView = useMemo(
         () =>
             activeView === "list"
@@ -3468,23 +3462,12 @@ export default function IndexPage({
                 : filteredProjects,
         [activeView, filteredProjects]
     )
-    if (
-        !hasCompletedInitialProgressiveMountRef.current &&
-        progressiveMountState.projects !== null &&
-        (progressiveMountState.projects !== projectsForActiveView ||
-            progressiveMountState.view !== activeView)
-    ) {
-        hasCompletedInitialProgressiveMountRef.current = true
-    }
-    const isInitialProgressiveMountActive =
-        progressivelyMountContent &&
-        !hasCompletedInitialProgressiveMountRef.current
     const mountedProjectCount =
-        isInitialProgressiveMountActive &&
+        progressivelyMountContent &&
         progressiveMountState.projects === projectsForActiveView &&
         progressiveMountState.view === activeView
             ? progressiveMountState.count
-            : isInitialProgressiveMountActive
+            : progressivelyMountContent
               ? 0
               : projectsForActiveView.length
     const mountedProjects =
@@ -3492,14 +3475,12 @@ export default function IndexPage({
             ? projectsForActiveView
             : projectsForActiveView.slice(0, mountedProjectCount)
     const isFirstContentBatchPending =
-        isInitialProgressiveMountActive &&
         !isCMSLoading &&
         filteredProjects.length > 0 &&
         mountedProjects.length === 0
 
     useEffect(() => {
         if (
-            hasCompletedInitialProgressiveMountRef.current ||
             !progressivelyMountContent ||
             isCMSLoading ||
             filteredProjects.length === 0 ||
@@ -3525,9 +3506,6 @@ export default function IndexPage({
                     ? INDEX_INITIAL_MOUNT_COUNT
                     : nextCount + INDEX_MOUNT_BATCH_SIZE
             )
-            if (nextCount >= totalProjects) {
-                hasCompletedInitialProgressiveMountRef.current = true
-            }
             setProgressiveMountState({
                 projects: batchProjects,
                 view: batchView,

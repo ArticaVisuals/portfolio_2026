@@ -1049,7 +1049,7 @@ export default function HomeSelectedWorkGrid({
     textColor = "rgb(35, 51, 36)",
     strokeColor = "rgb(151, 151, 151)",
     tagColor = "rgb(151, 151, 151)",
-    tagHoverColor = "#25593a",
+    tagHoverColor = "rgb(35,51,36)",
 }: Partial<Props>) {
     const [projects, setProjects] = React.useState<Project[]>([])
     const [cmsSettled, setCmsSettled] = React.useState(!useCMS)
@@ -1350,6 +1350,10 @@ export default function HomeSelectedWorkGrid({
                         border-color: var(--selected-work-tag-hover);
                         color: var(--selected-work-tag-hover);
                     }
+
+                    .selected-work-tag:hover:active {
+                        transform: scale(0.985);
+                    }
                 }
 
                 .selected-work-tag:focus-visible {
@@ -1614,6 +1618,6 @@ addPropertyControls(HomeSelectedWorkGrid, {
     tagHoverColor: {
         type: ControlType.Color,
         title: "Tags Hover",
-        defaultValue: "#25593a",
+        defaultValue: "rgb(35,51,36)",
     },
 })

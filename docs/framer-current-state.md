@@ -1,13 +1,138 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** July 27, 2026, via Framer MCP, published browser QA, and local repo audit
+**Last audited:** July 30, 2026, via Framer MCP, published browser QA, and local repo audit
 **Production URL:** `https://micahhoang.com`
-**Framer staging URL:** `https://khaki-ship-257706.framer.app`
+**Framer default domain:** `https://khaki-ship-257706.framer.app`
+
+> ⚠️ The `.framer.app` URL is **not a staging environment.** It and `micahhoang.com` are served
+> from the same build by the same Publish action — verified 2026-09-05 (byte-identical `/index`
+> HTML, same chunk hash, same Framer site id). There is no promotion step and no pre-production
+> buffer. Land risky changes behind an in-code kill switch instead of assuming you can stage them.
+> (This line previously read "Framer staging URL", which caused a 2026-09-04 plan to be built
+> around a staged rollout that does not exist.)
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
 
 ---
+
+## 2026-09-04 → 09-06 Update — clickable category tags + /index arrival
+
+**Feature: category tags are now filter links.** Mouthwash-style. Home selected-work cards and the
+`/index` grid cards both expose their CMS Category 1/2/3 values as interactive pills.
+
+- **`HomeSelectedWorkGrid` (`FecepLS`)** — card restructured. The card is now
+  `<div.selected-work-card>` wrapping `<a.selected-work-card-link>` (meta + media), with the tag row
+  as a **sibling** holding real `<a>` elements pointing at `/index#service=<slug>`. Tags could not
+  stay inside the card anchor: nested `<a>` is invalid HTML and Framer statically renders this, so
+  the parser would force-close the outer anchor and break hydration.
+- **`IndexPage` (`rgAZFOv`)** — `FigmaGridProjectCard` got the same restructure, but its tags are
+  `<button type="button">` that toggle the discipline filter **in place** (no navigation), wired
+  through a new `IndexFilterContext`. Active tags carry `data-active="true"` + `aria-pressed`.
+- **Hover state** — `#25593a` (the `accent` forest green from `code/tokens/micahhoang-tokens.json`)
+  on **both** text and border, 250ms, inside `@media (hover: hover)`. No press/scale affordance —
+  an earlier `transform: scale(0.985)` was removed at the user's request.
+- **Card-hover suppression** — every `.selected-work-card:hover` / `.idx-grid-card:hover` selector
+  was re-keyed to the inner `…-card-link`, so hovering a tag does **not** fire the card's media zoom
+  or title flip. Deliberate, and the opposite of Mouthwash. `IndexPageGridPreview` (`LgIzFjJ`) has a
+  duplicate rule that must be re-keyed in lockstep or it silently overrides the engine.
+
+**Feature: `/index` filter deep-linking.** `/index` filters were previously in-memory only.
+
+- Transport is the **hash** (`/index#service=visual-identity`) because Framer's router carries a
+  hash but has nowhere to put a query string (`router.navigate(routeId, hash, pathVariables)`).
+- On arrival the URL is normalized via `replaceState` to the readable `?service=visual-identity`,
+  which is also what a cold load or pasted link parses. Every filter toggle now updates the URL, so
+  filtered views are shareable — they were not before.
+- Slugs resolve against the **live CMS taxonomy** at runtime, not a hardcoded map, so new categories
+  work with no code change. `UX/UI` ↔ `ux-ui` round-trips; unknown or stale slugs are dropped and
+  the index renders unfiltered rather than erroring.
+- Kill switch: `ENABLE_URL_FILTER_SYNC` in `IndexPage.tsx`.
+
+**Fix: "Clear filters" no longer shoves the layout.** It was conditionally mounted
+(`{hasActive && <button>}`), so filtering inserted an element and pushed the grid down. It is now
+always rendered, toggling `visibility` / `pointer-events` / `aria-hidden` / `tabIndex` (0 ↔ -1).
+The compensating hack `.idx-container:has(.idx-tax-value[aria-pressed="true"]) .idx-view-toggle
+{ margin-top: -28px }` **had to be deleted in the same change**, or the reserved space would cause a
+new jump in the opposite direction. Measured: first card sits at 1131px before, during and after
+filtering — 0px movement.
+
+**Fix: `/index` arrival felt like it stuck after the "Index" title.** Content was gated by a binary
+switch (`isCMSLoading || !deferHeavyContentReady`) that mounted the entire index in one large commit
+after two rAFs. Replaced with **progressive mounting**: 6 projects on the first frame, then +12 per
+frame via `requestIdleCallback` (rAF fallback), for both grid and list; everything mounts at once on
+the Framer canvas. `INDEX_CONTENT_REVEAL_PRESET.maxRowIndex` was also capped 34 → 16 (the last row
+previously waited `130 + 64×34 = 2306ms` in pure delay). Measured on production: hero title 159ms →
+content 331ms (**172ms gap**), all nodes visible with ~0ms spread.
+
+**Regression found and fixed (2026-09-06).** Progressive mounting keyed its state on the identity of
+the filtered project list, so **any filter toggle** reset it to zero-mounted and rendered `null` for
+one frame — the page collapsed from 5730px to 1319px and the "Index" hero flashed. Fixed with
+`hasCompletedInitialProgressiveMountRef`: batching now applies **only to initial arrival**, and
+after that every filter/view change mounts the full list in one commit. Measured: 0 zero-card
+frames, minimum page height 3984px, single-commit 16→10 and 10→16 transitions.
+
+### Process notes — read these before the next Framer session
+- **The Framer MCP bridge only works while the MCP plugin panel is open in Framer** (⌘K → "MCP").
+  When it is closed, `readCodeFile` on a large component just times out at 30s with no explanation,
+  which reads like a size problem and invites wrong fixes. Sanity-check with `getProjectWebsiteUrl`
+  first. Hours were lost to this on 2026-09-05.
+- **`updateCodeFile` response often times out even when the write landed.** Never treat a timeout as
+  failure — verify with a follow-up `readCodeFile` + `diff`.
+- **The MCP transport trims the trailing newline**, so a synced file is 1 byte short. Benign; verify
+  as "remote content + `\n` hashes to expected" rather than re-emitting 120KB to chase it.
+- **`readCodeFile` output auto-spills to a JSON file on disk.** Extract `.content` and diff in Bash
+  so a 120KB component never passes through model context.
+- **Pushing ≠ publishing.** A Publish only ships what is already in Framer. On 2026-09-05/06 three
+  publishes shipped nothing because the local edits had not been pushed yet.
+- **When handing a file to a human to paste, re-copy it immediately before naming the destination.**
+  Copying `IndexPage.tsx` and then naming `IndexPageGridPreview` as the target is how the wrapper
+  got overwritten with the engine on 2026-09-05, which broke both `/index` views (the wrapper is
+  what supplies `gridLayoutVariant="figma"`, so the grid silently fell back to the pill-less
+  `classic` layout).
+- **Do not profile `/index` with the Claude browser pane collapsed.** A hidden pane pauses
+  `requestAnimationFrame`, and `IndexPage` gates its content behind rAF — so content never renders
+  and the page looks broken when it is fine. Two wrong diagnoses on 2026-09-05 traced to this.
+
+---
+
+## 2026-07-30 Update
+
+- **Case-study scroll jumps fixed at the shared media layer.** Gaia's hero
+  wrapper had no geometry once `CaseStudyVideoManager` released its offscreen
+  source, so it changed from `1280×720` to the browser's `1280×150` video
+  fallback. Simon & Schuster exposed the related ready-state failure: its first
+  video changed `1400×150 → 1400×788 → 1400×150` during source
+  restore/unload, moving document height by `637px`; its two non-autoplay
+  videos could remain collapsed even with valid metadata.
+- **Geometry is now lifecycle-independent.** `CaseStudyControllers.tsx`
+  persistently stores the intrinsic aspect ratio on simple, single-video
+  skeleton hosts even after they become ready. Exact pre-metadata overrides
+  cover Gaia's two early body clips (`4:3`, `3:4`), Simon & Schuster (`16:9`,
+  `16:9`, `32:19`), AirPods Pro 3's three affected landscape clips (`16:9`),
+  and TYPLDN (`16:9`, `3:2`, `16:9`, `16:9`). Gaia's controller instance
+  additionally exposes and uses a desktop/tablet `Hero Ratio` of `16:9`.
+- **Offscreen source unloading now preserves layout synchronously.**
+  `CaseStudyVideoManager.tsx` locks only a rendered video's nearest
+  single-video skeleton host, prefers intrinsic dimensions over its current
+  rectangle, and keeps the lock until restored metadata and the persistent
+  controller ratio are available. Multi-video/outer layout hosts are excluded.
+- **Published verification.** Framer typecheck returned no errors for both code
+  files. The published exports are
+  `CaseStudyVideoManager-L3xgEc.js@YMQafOCVR6qdseRBaNUJ` and
+  `CaseStudyControllers-0q1sTD.js@Y8LUzhrg4iFiBF5hwOVG`. Browser scroll cycles
+  held Simon's video hosts at
+  `1240×697.5`, `1240×697.5`, and `1240×736.25` with document height fixed at
+  `15,620px`, including first-video unload/restore. TYPLDN stayed at
+  `697.5px`, `826.66px`, `343.125px`, and `697.5px` through repeated scroll
+  and source-unload passes with document height fixed at `8,054px`. AirPods'
+  affected clips stayed `610×343.125`; Gaia's hero stayed `1280×720` with no
+  more than a one-pixel document-height rounding change.
+- **Cross-page audit.** The remaining published CMS case studies were sampled
+  through their opening scroll ranges. No equivalent layout jump was found on
+  Peak Energy, Motion Connect 2025, National Park Playing Cards, Yomo,
+  Highland Harvests, Weaponized Innocence, Wolff Olins x ArtCenter, Cellular
+  Symphony, Seek Truth, Independent Lens, or WhatsApp.
 
 ## 2026-07-23 Update
 
@@ -423,7 +548,7 @@ Framer code components relevant to this handoff include:
 | `PlaygroundNavExitHold.tsx` | `iivBAHR` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundMediaLoadSmoother.tsx` | `FFqrKyU` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `ScrollToTopButton.tsx` | `gh4ngZN` | Scroll-to-top helper used on Home and `/info`. |
-| `InfoScrollMoreColorOverride.tsx` | `AZDGWx7` | `/info` Scroll More color override. |
+| `InfoScrollMoreColorOverride.tsx` | `AZDGWx7` | `/info` Scroll More color override plus tablet Recognition-column alignment. |
 | `LineAnimationBorder.tsx` | `j7WYIMf` | Nondestructive border-frame replacement for native `Line Animation`; preserves the existing line draw timing (`0.2s` delay, `2s`, `[0.25, 1, 0.5, 1]`) and can self-trigger once in viewport for copied `/info` page swaps. |
 | `ResponsiveCaseStudyVideo.tsx` | `bsTLKCt` | Case-study media helper for responsive video blocks. |
 | `ResponsiveCaseStudyImage.tsx` | `vIFnGmg` | Case-study media helper for responsive image blocks. |
@@ -658,6 +783,11 @@ Active code files:
 - `ScrollToTopButton.tsx`
 
 The current page is an editorial forest-green profile page with selected experience, testimonials, recognition rows, and CTA sections.
+
+August 5, 2026 tablet correction: `InfoScrollMoreColorOverride.tsx` now tags
+the nested multi-award Recognition rows and maps them to the same `4 / 4 / 1`
+column geometry as the flat single-award rows between `810px` and `1199.98px`.
+Desktop and mobile layouts are unchanged.
 
 ### Bespoke Case Study Pages
 

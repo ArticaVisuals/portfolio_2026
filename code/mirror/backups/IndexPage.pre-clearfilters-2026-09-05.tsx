@@ -118,8 +118,6 @@ function useHiddenCMSLinkInerting(enabled: boolean) {
 
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
-const INDEX_INITIAL_MOUNT_COUNT = 6
-const INDEX_MOUNT_BATCH_SIZE = 12
 const VIEW_TOGGLE_OPTIONS = ["grid", "list"] as const
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
@@ -973,15 +971,6 @@ function urlFilterSyncEnabled(): boolean {
     }
 }
 
-function shouldProgressivelyMountIndexContent(): boolean {
-    if (typeof window === "undefined") return true
-    try {
-        return RenderTarget.current() !== RenderTarget.canvas
-    } catch {
-        return true
-    }
-}
-
 
 function prefersReducedIndexMotion(): boolean {
     if (typeof window === "undefined") return false
@@ -1351,6 +1340,10 @@ function buildGlobalCss(): string {
     display: block;
     margin-top: 12px !important;
     line-height: 28px !important;
+  }
+
+  .idx-container:has(.idx-tax-value[aria-pressed="true"]) .idx-view-toggle {
+    margin-top: -28px !important;
   }
 
   .idx-view-toggle-option {
@@ -2417,36 +2410,34 @@ function TaxonomySection({
                 </div>
             </div>
 
-            <button
-                type="button"
-                className="idx-tax-item idx-clear-filters"
-                onClick={onClearFilters}
-                aria-hidden={hasActive ? undefined : "true"}
-                tabIndex={hasActive ? undefined : -1}
-                style={{
-                    marginTop: 4,
-                    padding: 0,
-                    border: "none",
-                    background: "transparent",
-                    fontFamily: tokens.fontMono,
-                    fontSize: 13,
-                    lineHeight: "28px",
-                    textTransform: "uppercase",
-                    color: tokens.textSecondary,
-                    letterSpacing: 0,
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "3px",
-                    appearance: "none",
-                    WebkitAppearance: "none",
-                    visibility: hasActive ? "visible" : "hidden",
-                    pointerEvents: hasActive ? "auto" : "none",
-                }}
-            >
-                <FadeInText {...navFadeProps(clearFiltersRow, 0)}>
-                    Clear filters
-                </FadeInText>
-            </button>
+            {hasActive && (
+                <button
+                    type="button"
+                    className="idx-tax-item idx-clear-filters"
+                    onClick={onClearFilters}
+                    style={{
+                        marginTop: 4,
+                        padding: 0,
+                        border: "none",
+                        background: "transparent",
+                        fontFamily: tokens.fontMono,
+                        fontSize: 13,
+                        lineHeight: "28px",
+                        textTransform: "uppercase",
+                        color: tokens.textSecondary,
+                        letterSpacing: 0,
+                        cursor: "pointer",
+                        textDecoration: "underline",
+                        textUnderlineOffset: "3px",
+                        appearance: "none",
+                        WebkitAppearance: "none",
+                    }}
+                >
+                    <FadeInText {...navFadeProps(clearFiltersRow, 0)}>
+                        Clear filters
+                    </FadeInText>
+                </button>
+            )}
         </div>
     )
 }
@@ -2484,11 +2475,9 @@ function HoverFlipText({
 function ListView({
     projects,
     hoverVariant = "flip",
-    progressiveMounting = false,
 }: {
     projects: Project[]
     hoverVariant?: ListHoverVariant
-    progressiveMounting?: boolean
 }) {
     const groups = useMemo(() => groupByYear(projects), [projects])
     const metaTextStyle: React.CSSProperties = {
@@ -2538,11 +2527,8 @@ function ListView({
         (count, group) => count + 1 + group.items.length,
         0
     )
-    const closingRuleDelay = progressiveMounting
-        ? 0
-        : getIndexContentRevealDelayMs(totalRevealRows, 0)
+    const closingRuleDelay = getIndexContentRevealDelayMs(totalRevealRows, 0)
     let rowRevealIndex = 0
-    let projectRevealIndex = 0
 
     return (
         <div
@@ -2550,12 +2536,6 @@ function ListView({
         >
             {groups.map(({ year, items }) => {
                 const yearRevealRow = rowRevealIndex++
-                const skipYearRevealDelay =
-                    progressiveMounting &&
-                    projectRevealIndex >= INDEX_INITIAL_MOUNT_COUNT
-                const yearRevealDelay = skipYearRevealDelay
-                    ? 0
-                    : getIndexContentRevealDelayMs(yearRevealRow, 0)
 
                 return (
                     <div
@@ -2565,7 +2545,10 @@ function ListView({
                     >
                     <IndexRule
                         className="idx-year-rule"
-                        delayMs={yearRevealDelay}
+                        delayMs={getIndexContentRevealDelayMs(
+                            yearRevealRow,
+                            0
+                        )}
                         style={{
                             gridColumn: "1 / -1",
                             height: 1,
@@ -2587,7 +2570,10 @@ function ListView({
                         >
                             <MaskedSlideText
                                 index={yearRevealRow}
-                                delayMs={yearRevealDelay}
+                                delayMs={getIndexContentRevealDelayMs(
+                                    yearRevealRow,
+                                    0
+                                )}
                                 block
                             >
                                 {year > 0 ? year : "—"}
@@ -2604,19 +2590,12 @@ function ListView({
                             const disciplineText = getDisciplineDisplay(p)
                             const useFlipHover = hoverVariant === "flip"
                             const itemRevealRow = rowRevealIndex++
-                            const projectMountIndex = projectRevealIndex++
-                            const skipItemRevealDelay =
-                                progressiveMounting &&
-                                projectMountIndex >= INDEX_INITIAL_MOUNT_COUNT
-                            const titleRevealDelay = skipItemRevealDelay
-                                ? 0
-                                : getIndexContentRevealDelayMs(itemRevealRow, 0)
-                            const disciplineRevealDelay = skipItemRevealDelay
-                                ? 0
-                                : getIndexContentRevealDelayMs(itemRevealRow, 1)
-                            const industryRevealDelay = skipItemRevealDelay
-                                ? 0
-                                : getIndexContentRevealDelayMs(itemRevealRow, 2)
+                            const titleRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 0)
+                            const disciplineRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 1)
+                            const industryRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 2)
 
                             return (
                                 <div key={p.slug || p.title}>
@@ -2722,9 +2701,10 @@ function ListView({
                                         <IndexRule
                                             className="idx-row-divider"
 	                                            delayMs={
-	                                                progressiveMounting
-	                                                    ? 0
-	                                                    : titleRevealDelay
+	                                                getIndexContentRevealDelayMs(
+	                                                    itemRevealRow,
+	                                                    0
+	                                                )
 	                                            }
                                             style={{
                                                 height: 1,
@@ -2756,12 +2736,10 @@ function ListView({
 function GridMediaFrame({
     children,
     index,
-    delayMs,
     thumbnailStroke,
 }: {
     children: React.ReactNode
     index: number
-    delayMs?: number
     thumbnailStroke?: boolean
 }) {
     const { ref, appeared } = useIndexAppearTrigger<HTMLDivElement>()
@@ -2785,7 +2763,7 @@ function GridMediaFrame({
         element.style.opacity = "0"
         const animation = element.animate([{ opacity: 0 }, { opacity: 1 }], {
             duration: INDEX_MEDIA_FADE_PRESET.durationMs,
-            delay: delayMs ?? getIndexMediaFadeDelayMs(index),
+            delay: getIndexMediaFadeDelayMs(index),
             easing: INDEX_MEDIA_FADE_PRESET.easing,
             fill: "both",
         })
@@ -2793,7 +2771,7 @@ function GridMediaFrame({
         return () => {
             animation.cancel()
         }
-    }, [appeared, delayMs, index])
+    }, [appeared, index])
 
     return (
         <div
@@ -2865,11 +2843,9 @@ function getGridProjectOrder(project: Project, index: number): string {
 function ClassicGridProjectCard({
     project,
     index,
-    skipRevealDelay = false,
 }: {
     project: Project
     index: number
-    skipRevealDelay?: boolean
 }) {
     const href = getCaseStudyUrl(project)
     const serviceText = getDisciplineDisplay(project)
@@ -2902,17 +2878,12 @@ function ClassicGridProjectCard({
         >
             <GridMediaFrame
                 index={index}
-                delayMs={skipRevealDelay ? 0 : undefined}
                 thumbnailStroke={project.thumbnailStroke}
             >
                 <GridProjectMedia project={project} />
             </GridMediaFrame>
             <div className="idx-grid-card-title">
-                <MaskedSlideText
-                    index={index}
-                    delayMs={skipRevealDelay ? 0 : undefined}
-                    block
-                >
+                <MaskedSlideText index={index} block>
                     <HoverFlipText
                         text={project.title}
                         activeText={href ? "View Project →" : project.title}
@@ -2923,11 +2894,7 @@ function ClassicGridProjectCard({
                 </MaskedSlideText>
             </div>
             <div className="idx-grid-card-meta">
-                <FadeInText
-                    index={index + 1}
-                    delayMs={skipRevealDelay ? 0 : undefined}
-                    block
-                >
+                <FadeInText index={index + 1} block>
                     {serviceText}
                     {serviceText && metaLineTwo ? <br /> : null}
                     {metaLineTwo}
@@ -2940,11 +2907,9 @@ function ClassicGridProjectCard({
 function FigmaGridProjectCard({
     project,
     index,
-    skipRevealDelay = false,
 }: {
     project: Project
     index: number
-    skipRevealDelay?: boolean
 }) {
     const href = getCaseStudyUrl(project)
     const tags = getDisciplines(project).slice(0, 3)
@@ -2970,7 +2935,6 @@ function FigmaGridProjectCard({
                 </div>
                 <GridMediaFrame
                     index={index}
-                    delayMs={skipRevealDelay ? 0 : undefined}
                     thumbnailStroke={project.thumbnailStroke}
                 >
                     <GridProjectMedia project={project} />
@@ -3013,11 +2977,9 @@ function FigmaGridProjectCard({
 function GridView({
     projects,
     layoutVariant = "classic",
-    progressiveMounting = false,
 }: {
     projects: Project[]
     layoutVariant?: GridLayoutVariant
-    progressiveMounting?: boolean
 }) {
     if (projects.length === 0) {
         return (
@@ -3063,20 +3025,12 @@ function GridView({
                             key={project.slug || project.title}
                             project={project}
                             index={index}
-                            skipRevealDelay={
-                                progressiveMounting &&
-                                index >= INDEX_INITIAL_MOUNT_COUNT
-                            }
                         />
                     ) : (
                         <ClassicGridProjectCard
                             key={project.slug || project.title}
                             project={project}
                             index={index}
-                            skipRevealDelay={
-                                progressiveMounting &&
-                                index >= INDEX_INITIAL_MOUNT_COUNT
-                            }
                         />
                     )
                 )}
@@ -3266,21 +3220,27 @@ export default function IndexPage({
         projectsProp,
     ])
     const initialView = resolvedDefaultView === "grid" ? "grid" : "list"
-    const progressivelyMountContent = shouldProgressivelyMountIndexContent()
 
     const [activeView, setActiveView] = useState(initialView)
     const [renderKey, setRenderKey] = useState(0)
-    const [progressiveMountState, setProgressiveMountState] = useState<{
-        projects: Project[] | null
-        view: string
-        count: number
-    }>({ projects: null, view: initialView, count: 0 })
-    const hasCompletedInitialProgressiveMountRef = useRef(
-        !progressivelyMountContent
-    )
-    if (!progressivelyMountContent) {
-        hasCompletedInitialProgressiveMountRef.current = true
-    }
+    // Defer the heavy grid/list (200+ media elements) by a couple of frames so
+    // the hero "Index" title + page chrome commit FIRST. Otherwise React renders
+    // the entire index in one ~2s commit, and the title only appears after the
+    // page-transition slide is already over (reads as "Index comes in late").
+    const [deferHeavyContentReady, setDeferHeavyContentReady] = useState(false)
+    useEffect(() => {
+        let raf1 = 0
+        let raf2 = 0
+        raf1 = requestAnimationFrame(() => {
+            raf2 = requestAnimationFrame(() =>
+                setDeferHeavyContentReady(true)
+            )
+        })
+        return () => {
+            cancelAnimationFrame(raf1)
+            cancelAnimationFrame(raf2)
+        }
+    }, [])
     const [filters, setFilters] = useState<Filters>({
         disciplines: [],
         industries: [],
@@ -3303,7 +3263,7 @@ export default function IndexPage({
     const [urlFilterReady, setUrlFilterReady] = useState(false)
 
     // Mount + hashchange: capture what the URL is asking for. This runs before
-    // the first progressive content batch, so the grid's first paint is already
+    // the two-rAF heavy-content gate, so the grid's first paint is already
     // filtered rather than flashing the full set.
     useEffect(() => {
         if (!urlFilterSyncEnabled()) return
@@ -3460,128 +3420,8 @@ export default function IndexPage({
         filters.disciplines.length > 0 ||
         filters.industries.length > 0 ||
         filters.years.length > 0
-    const isCMSLoading = useCMS && !cmsModuleLoaded
-    const projectsForActiveView = useMemo(
-        () =>
-            activeView === "list"
-                ? groupByYear(filteredProjects).flatMap((group) => group.items)
-                : filteredProjects,
-        [activeView, filteredProjects]
-    )
-    if (
-        !hasCompletedInitialProgressiveMountRef.current &&
-        progressiveMountState.projects !== null &&
-        (progressiveMountState.projects !== projectsForActiveView ||
-            progressiveMountState.view !== activeView)
-    ) {
-        hasCompletedInitialProgressiveMountRef.current = true
-    }
-    const isInitialProgressiveMountActive =
-        progressivelyMountContent &&
-        !hasCompletedInitialProgressiveMountRef.current
-    const mountedProjectCount =
-        isInitialProgressiveMountActive &&
-        progressiveMountState.projects === projectsForActiveView &&
-        progressiveMountState.view === activeView
-            ? progressiveMountState.count
-            : isInitialProgressiveMountActive
-              ? 0
-              : projectsForActiveView.length
-    const mountedProjects =
-        mountedProjectCount >= projectsForActiveView.length
-            ? projectsForActiveView
-            : projectsForActiveView.slice(0, mountedProjectCount)
-    const isFirstContentBatchPending =
-        isInitialProgressiveMountActive &&
-        !isCMSLoading &&
-        filteredProjects.length > 0 &&
-        mountedProjects.length === 0
-
-    useEffect(() => {
-        if (
-            hasCompletedInitialProgressiveMountRef.current ||
-            !progressivelyMountContent ||
-            isCMSLoading ||
-            filteredProjects.length === 0 ||
-            typeof window === "undefined"
-        ) {
-            return
-        }
-
-        const batchProjects = projectsForActiveView
-        const batchView = activeView
-        const totalProjects = batchProjects.length
-        let cancelled = false
-        let frameId = 0
-        let idleId = 0
-        let nextCount = 0
-
-        const commitNextBatch = () => {
-            if (cancelled) return
-
-            nextCount = Math.min(
-                totalProjects,
-                nextCount === 0
-                    ? INDEX_INITIAL_MOUNT_COUNT
-                    : nextCount + INDEX_MOUNT_BATCH_SIZE
-            )
-            if (nextCount >= totalProjects) {
-                hasCompletedInitialProgressiveMountRef.current = true
-            }
-            setProgressiveMountState({
-                projects: batchProjects,
-                view: batchView,
-                count: nextCount,
-            })
-
-            if (nextCount < totalProjects) scheduleNextBatch()
-        }
-
-        const scheduleNextBatch = () => {
-            frameId = window.requestAnimationFrame(() => {
-                frameId = 0
-                if (cancelled) return
-
-                if (
-                    typeof (window as any).requestIdleCallback === "function"
-                ) {
-                    idleId = (window as any).requestIdleCallback(
-                        () => {
-                            idleId = 0
-                            commitNextBatch()
-                        },
-                        { timeout: 100 }
-                    )
-                    return
-                }
-
-                commitNextBatch()
-            })
-        }
-
-        // Let the hero and page chrome paint first, then commit a small useful
-        // slice instead of one monolithic grid/list render.
-        frameId = window.requestAnimationFrame(() => {
-            frameId = 0
-            commitNextBatch()
-        })
-
-        return () => {
-            cancelled = true
-            if (frameId) window.cancelAnimationFrame(frameId)
-            if (
-                idleId &&
-                typeof (window as any).cancelIdleCallback === "function"
-            ) {
-                ;(window as any).cancelIdleCallback(idleId)
-            }
-        }
-    }, [
-        activeView,
-        isCMSLoading,
-        projectsForActiveView,
-        progressivelyMountContent,
-    ])
+    const isCMSLoading =
+        useCMS && !cmsModuleLoaded
     const viewToggleRevealRow = Math.max(
         10,
         Math.max(
@@ -3642,7 +3482,7 @@ export default function IndexPage({
                 </div>
 
                 <div key={renderKey}>
-                    {isCMSLoading ? (
+                    {isCMSLoading || !deferHeavyContentReady ? (
                         <div
                             style={{
                                 padding: "64px 0",
@@ -3656,17 +3496,15 @@ export default function IndexPage({
                         >
                             Loading work...
                         </div>
-                    ) : isFirstContentBatchPending ? null : activeView === "grid" ? (
+                    ) : activeView === "grid" ? (
                         <GridView
-                            projects={mountedProjects}
+                            projects={filteredProjects}
                             layoutVariant={resolvedGridLayoutVariant}
-                            progressiveMounting={progressivelyMountContent}
                         />
                     ) : (
                         <ListView
-                            projects={mountedProjects}
+                            projects={filteredProjects}
                             hoverVariant={resolvedListHoverVariant}
-                            progressiveMounting={progressivelyMountContent}
                         />
                     )}
                 </div>

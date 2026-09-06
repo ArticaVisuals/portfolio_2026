@@ -6,7 +6,7 @@ import React, {
     useRef,
     useState,
 } from "react"
-import { addPropertyControls, ControlType, RenderTarget } from "framer"
+import { addPropertyControls, ControlType } from "framer"
 
 const HIDDEN_CMS_LINK_SELECTOR = '[data-framer-name="CmsLink"], [name="CmsLink"]'
 const HIDDEN_CMS_INTERACTIVE_SELECTOR = 'a[href], [role="link"], [tabindex]'
@@ -118,8 +118,6 @@ function useHiddenCMSLinkInerting(enabled: boolean) {
 
 const INDEX_GRID_GAP = "var(--idx-grid-gap, 20px)"
 const INDEX_GRID_TEMPLATE = "repeat(6, minmax(0, 1fr))"
-const INDEX_INITIAL_MOUNT_COUNT = 6
-const INDEX_MOUNT_BATCH_SIZE = 12
 const VIEW_TOGGLE_OPTIONS = ["grid", "list"] as const
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
@@ -145,12 +143,7 @@ const INDEX_CONTENT_REVEAL_PRESET = {
     baseDelayMs: 130,
     rowStaggerMs: 64,
     columnStaggerMs: 24,
-    // Caps the cumulative arrival stagger. At 34 the last row waited
-    // 130 + 64*34 = 2306ms before it even started animating, which read as a
-    // dead gap between the hero title and the content on client-side
-    // navigation (the DOM lands at ~1155ms; the rest was pure delay).
-    // 16 keeps the cascade but halves the tail to 130 + 64*16 = 1154ms.
-    maxRowIndex: 16,
+    maxRowIndex: 34,
 } as const
 const INDEX_MEDIA_FADE_PRESET = {
     durationMs: 620,
@@ -239,11 +232,6 @@ type Filters = {
 }
 
 type FilterType = "disciplines" | "industries" | "years"
-
-const IndexFilterContext = React.createContext<{
-    disciplines: string[]
-    onToggleDiscipline: (value: string) => void
-} | null>(null)
 
 type ListHoverVariant = "flip" | "highlight"
 type GridLayoutVariant = "classic" | "figma"
@@ -801,188 +789,6 @@ function toggleFilterValue<T>(items: T[], value: T): T[] {
         : [...items, value]
 }
 
-/* ------------------------------------------------------------------ *
- * URL filter sync (added 2026-09-04)
- *
- * Lets /index be deep-linked to a taxonomy filter, so Home project tags
- * can jump straight into a filtered index.
- *
- * Transport is the HASH (`/index#service=visual-identity`) because Framer's
- * router carries a hash but has nowhere to put a query string. On arrival we
- * rewrite to the readable `?service=visual-identity` form, which is what a
- * cold load / pasted link reads back.
- *
- * KILL SWITCH: set ENABLE_URL_FILTER_SYNC to false. Everything below then
- * no-ops and /index behaves exactly as it did before this block existed.
- * FULL REVERT: code/mirror/backups/IndexPage.pre-url-filters-2026-09-04.tsx
- * ------------------------------------------------------------------ */
-
-const ENABLE_URL_FILTER_SYNC = true
-
-const URL_FILTER_KEYS: Record<FilterType, string> = {
-    disciplines: "service",
-    industries: "industry",
-    years: "year",
-}
-
-type UrlFilterSelection = {
-    disciplines: string[]
-    industries: string[]
-    years: string[]
-}
-
-/** "UX/UI" -> "ux-ui", "2D Motion" -> "2d-motion". */
-function slugifyTaxonomyValue(value: unknown): string {
-    return String(value ?? "")
-        .trim()
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "")
-}
-
-function readUrlFilterParams(): URLSearchParams | null {
-    try {
-        if (typeof window === "undefined") return null
-        const hash = String(window.location.hash || "").replace(/^#/, "")
-        // A hash only counts as a filter payload if it looks like key=value;
-        // a plain "#section" anchor is left alone for normal scroll behavior.
-        const raw = hash.includes("=")
-            ? hash
-            : String(window.location.search || "").replace(/^\?/, "")
-        if (!raw) return null
-        return new URLSearchParams(raw)
-    } catch {
-        return null
-    }
-}
-
-function parseUrlFilterSelection(): UrlFilterSelection | null {
-    try {
-        const params = readUrlFilterParams()
-        if (!params) return null
-
-        const readKey = (key: string): string[] =>
-            String(params.get(key) ?? "")
-                .split(",")
-                .map((part) => part.trim())
-                .filter(Boolean)
-
-        const selection: UrlFilterSelection = {
-            disciplines: readKey(URL_FILTER_KEYS.disciplines),
-            industries: readKey(URL_FILTER_KEYS.industries),
-            years: readKey(URL_FILTER_KEYS.years),
-        }
-
-        if (
-            selection.disciplines.length === 0 &&
-            selection.industries.length === 0 &&
-            selection.years.length === 0
-        ) {
-            return null
-        }
-
-        return selection
-    } catch {
-        return null
-    }
-}
-
-/**
- * Map URL slugs back onto the real CMS labels. Derived from the live taxonomy
- * rather than a hardcoded table, so new categories work with no code change.
- * Unknown slugs are dropped silently (the index just renders unfiltered).
- */
-function resolveTaxonomySlugs(slugs: string[], labels: string[]): string[] {
-    const bySlug = new Map<string, string>()
-    for (const label of labels) {
-        const slug = slugifyTaxonomyValue(label)
-        if (slug && !bySlug.has(slug)) bySlug.set(slug, label)
-    }
-
-    const resolved: string[] = []
-    for (const raw of slugs) {
-        const label = bySlug.get(slugifyTaxonomyValue(raw))
-        if (label && !resolved.includes(label)) resolved.push(label)
-    }
-    return resolved
-}
-
-function resolveTaxonomyYears(slugs: string[], years: number[]): number[] {
-    const available = new Set(years)
-    const resolved: number[] = []
-    for (const raw of slugs) {
-        const year = Number.parseInt(String(raw).trim(), 10)
-        if (!Number.isFinite(year)) continue
-        if (!available.has(year) || resolved.includes(year)) continue
-        resolved.push(year)
-    }
-    return resolved
-}
-
-function serializeFiltersToQuery(filters: Filters): string {
-    const parts: string[] = []
-
-    const pushValues = (key: string, values: string[]) => {
-        if (values.length === 0) return
-        parts.push(`${key}=${values.join(",")}`)
-    }
-
-    pushValues(
-        URL_FILTER_KEYS.disciplines,
-        filters.disciplines.map(slugifyTaxonomyValue).filter(Boolean)
-    )
-    pushValues(
-        URL_FILTER_KEYS.industries,
-        filters.industries.map(slugifyTaxonomyValue).filter(Boolean)
-    )
-    pushValues(
-        URL_FILTER_KEYS.years,
-        filters.years.map((year) => String(year)).filter(Boolean)
-    )
-
-    return parts.join("&")
-}
-
-/**
- * Rewrite the address bar to match current filters. replaceState only, so the
- * back button still means "the page before /index" rather than stepping back
- * through every filter toggle.
- */
-function writeFiltersToUrl(filters: Filters) {
-    try {
-        if (typeof window === "undefined") return
-        if (typeof window.history?.replaceState !== "function") return
-
-        const query = serializeFiltersToQuery(filters)
-        const next = `${window.location.pathname}${query ? `?${query}` : ""}`
-        const current = `${window.location.pathname}${window.location.search}`
-        if (next === current && !window.location.hash) return
-
-        window.history.replaceState(window.history.state, "", next)
-    } catch {
-        // Address-bar cosmetics only; never let this break filtering.
-    }
-}
-
-function urlFilterSyncEnabled(): boolean {
-    if (!ENABLE_URL_FILTER_SYNC) return false
-    try {
-        return RenderTarget.current() !== RenderTarget.canvas
-    } catch {
-        return true
-    }
-}
-
-function shouldProgressivelyMountIndexContent(): boolean {
-    if (typeof window === "undefined") return true
-    try {
-        return RenderTarget.current() !== RenderTarget.canvas
-    } catch {
-        return true
-    }
-}
-
-
 function prefersReducedIndexMotion(): boolean {
     if (typeof window === "undefined") return false
     return (
@@ -1353,6 +1159,10 @@ function buildGlobalCss(): string {
     line-height: 28px !important;
   }
 
+  .idx-container:has(.idx-tax-value[aria-pressed="true"]) .idx-view-toggle {
+    margin-top: -28px !important;
+  }
+
   .idx-view-toggle-option {
     margin: 0;
     padding: 0;
@@ -1454,21 +1264,12 @@ function buildGlobalCss(): string {
     gap: 12px;
     text-decoration: none;
     color: inherit;
-  }
-  .idx-grid-card-link {
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    text-decoration: none;
-    color: inherit;
     cursor: pointer;
   }
-  .idx-grid-card[data-grid-layout="figma"],
-  .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-link {
+  .idx-grid-card[data-grid-layout="figma"] {
     gap: 14px;
   }
-  .idx-grid-card-link:focus-visible {
+  .idx-grid-card:focus-visible {
     outline: 1px solid ${tokens.textPrimary};
     outline-offset: 4px;
   }
@@ -1563,48 +1364,25 @@ function buildGlobalCss(): string {
     width: 100%;
   }
   .idx-grid-card-tag {
-    appearance: none;
-    -webkit-appearance: none;
     align-items: center;
-    background: transparent;
     border: 1px solid ${tokens.textTertiary};
     border-radius: 999px;
     box-sizing: border-box;
     color: ${tokens.textTertiary};
-    cursor: pointer;
     display: inline-flex;
-    font: inherit;
     font-family: ${tokens.fontMono};
     font-size: 12px;
     font-weight: 400;
     justify-content: center;
     letter-spacing: 0;
     line-height: 1;
-    margin: 0;
     max-width: 100%;
     min-height: 23px;
     overflow: hidden;
     padding: 5px 10px 6px;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    transition:
-      color 250ms ${SMOOTH_EASE},
-      border-color 250ms ${SMOOTH_EASE};
     white-space: nowrap;
-  }
-  @media (hover: hover) {
-    .idx-grid-card-tag:hover {
-      color: #25593a;
-      border-color: #25593a;
-    }
-  }
-  .idx-grid-card-tag[data-active="true"] {
-    color: #25593a;
-    border-color: #25593a;
-  }
-  .idx-grid-card-tag:focus-visible {
-    outline: 1px solid #25593a;
-    outline-offset: 3px;
   }
   .idx-grid-card-img,
   .idx-grid-card-video,
@@ -1628,27 +1406,27 @@ function buildGlobalCss(): string {
     pointer-events: none;
   }
   @media (prefers-reduced-motion: no-preference) {
-    .idx-grid-card-link:hover .idx-grid-card-img,
-    .idx-grid-card-link:focus-visible .idx-grid-card-img,
-    .idx-grid-card-link:focus-within .idx-grid-card-img,
-    .idx-grid-card-link:hover .idx-grid-card-video,
-    .idx-grid-card-link:focus-visible .idx-grid-card-video,
-    .idx-grid-card-link:focus-within .idx-grid-card-video,
-    .idx-grid-card-link:hover .idx-grid-card-media > img,
-    .idx-grid-card-link:focus-visible .idx-grid-card-media > img,
-    .idx-grid-card-link:focus-within .idx-grid-card-media > img,
-    .idx-grid-card-link:hover .idx-grid-card-media > video,
-    .idx-grid-card-link:focus-visible .idx-grid-card-media > video,
-    .idx-grid-card-link:focus-within .idx-grid-card-media > video {
+    .idx-grid-card:hover .idx-grid-card-img,
+    .idx-grid-card:focus-visible .idx-grid-card-img,
+    .idx-grid-card:focus-within .idx-grid-card-img,
+    .idx-grid-card:hover .idx-grid-card-video,
+    .idx-grid-card:focus-visible .idx-grid-card-video,
+    .idx-grid-card:focus-within .idx-grid-card-video,
+    .idx-grid-card:hover .idx-grid-card-media > img,
+    .idx-grid-card:focus-visible .idx-grid-card-media > img,
+    .idx-grid-card:focus-within .idx-grid-card-media > img,
+    .idx-grid-card:hover .idx-grid-card-media > video,
+    .idx-grid-card:focus-visible .idx-grid-card-media > video,
+    .idx-grid-card:focus-within .idx-grid-card-media > video {
       transform: scale(1.02) !important;
     }
   }
-  .idx-grid-card-link:hover .idx-flip-track,
-  .idx-grid-card-link:focus-visible .idx-flip-track {
+  .idx-grid-card:hover .idx-flip-track,
+  .idx-grid-card:focus-visible .idx-flip-track {
     transform: translateY(calc((var(--idx-flip-height) + 5px) * -1));
   }
-  .idx-grid-card-link:hover .idx-grid-title-stack,
-  .idx-grid-card-link:focus-visible .idx-grid-title-stack {
+  .idx-grid-card:hover .idx-grid-title-stack,
+  .idx-grid-card:focus-visible .idx-grid-title-stack {
     transform: translateY(-18px);
   }
 
@@ -1682,10 +1460,10 @@ function buildGlobalCss(): string {
       grid-template-columns: 1fr !important;
       row-gap: 52px !important;
     }
-    .idx-grid-card-link:hover .idx-flip-track,
-    .idx-grid-card-link:focus-visible .idx-flip-track,
-    .idx-grid-card-link:hover .idx-grid-title-stack,
-    .idx-grid-card-link:focus-visible .idx-grid-title-stack {
+    .idx-grid-card:hover .idx-flip-track,
+    .idx-grid-card:focus-visible .idx-flip-track,
+    .idx-grid-card:hover .idx-grid-title-stack,
+    .idx-grid-card:focus-visible .idx-grid-title-stack {
       transform: none !important;
     }
   }
@@ -2417,36 +2195,34 @@ function TaxonomySection({
                 </div>
             </div>
 
-            <button
-                type="button"
-                className="idx-tax-item idx-clear-filters"
-                onClick={onClearFilters}
-                aria-hidden={hasActive ? undefined : "true"}
-                tabIndex={hasActive ? undefined : -1}
-                style={{
-                    marginTop: 4,
-                    padding: 0,
-                    border: "none",
-                    background: "transparent",
-                    fontFamily: tokens.fontMono,
-                    fontSize: 13,
-                    lineHeight: "28px",
-                    textTransform: "uppercase",
-                    color: tokens.textSecondary,
-                    letterSpacing: 0,
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                    textUnderlineOffset: "3px",
-                    appearance: "none",
-                    WebkitAppearance: "none",
-                    visibility: hasActive ? "visible" : "hidden",
-                    pointerEvents: hasActive ? "auto" : "none",
-                }}
-            >
-                <FadeInText {...navFadeProps(clearFiltersRow, 0)}>
-                    Clear filters
-                </FadeInText>
-            </button>
+            {hasActive && (
+                <button
+                    type="button"
+                    className="idx-tax-item idx-clear-filters"
+                    onClick={onClearFilters}
+                    style={{
+                        marginTop: 4,
+                        padding: 0,
+                        border: "none",
+                        background: "transparent",
+                        fontFamily: tokens.fontMono,
+                        fontSize: 13,
+                        lineHeight: "28px",
+                        textTransform: "uppercase",
+                        color: tokens.textSecondary,
+                        letterSpacing: 0,
+                        cursor: "pointer",
+                        textDecoration: "underline",
+                        textUnderlineOffset: "3px",
+                        appearance: "none",
+                        WebkitAppearance: "none",
+                    }}
+                >
+                    <FadeInText {...navFadeProps(clearFiltersRow, 0)}>
+                        Clear filters
+                    </FadeInText>
+                </button>
+            )}
         </div>
     )
 }
@@ -2484,11 +2260,9 @@ function HoverFlipText({
 function ListView({
     projects,
     hoverVariant = "flip",
-    progressiveMounting = false,
 }: {
     projects: Project[]
     hoverVariant?: ListHoverVariant
-    progressiveMounting?: boolean
 }) {
     const groups = useMemo(() => groupByYear(projects), [projects])
     const metaTextStyle: React.CSSProperties = {
@@ -2538,11 +2312,8 @@ function ListView({
         (count, group) => count + 1 + group.items.length,
         0
     )
-    const closingRuleDelay = progressiveMounting
-        ? 0
-        : getIndexContentRevealDelayMs(totalRevealRows, 0)
+    const closingRuleDelay = getIndexContentRevealDelayMs(totalRevealRows, 0)
     let rowRevealIndex = 0
-    let projectRevealIndex = 0
 
     return (
         <div
@@ -2550,12 +2321,6 @@ function ListView({
         >
             {groups.map(({ year, items }) => {
                 const yearRevealRow = rowRevealIndex++
-                const skipYearRevealDelay =
-                    progressiveMounting &&
-                    projectRevealIndex >= INDEX_INITIAL_MOUNT_COUNT
-                const yearRevealDelay = skipYearRevealDelay
-                    ? 0
-                    : getIndexContentRevealDelayMs(yearRevealRow, 0)
 
                 return (
                     <div
@@ -2565,7 +2330,10 @@ function ListView({
                     >
                     <IndexRule
                         className="idx-year-rule"
-                        delayMs={yearRevealDelay}
+                        delayMs={getIndexContentRevealDelayMs(
+                            yearRevealRow,
+                            0
+                        )}
                         style={{
                             gridColumn: "1 / -1",
                             height: 1,
@@ -2587,7 +2355,10 @@ function ListView({
                         >
                             <MaskedSlideText
                                 index={yearRevealRow}
-                                delayMs={yearRevealDelay}
+                                delayMs={getIndexContentRevealDelayMs(
+                                    yearRevealRow,
+                                    0
+                                )}
                                 block
                             >
                                 {year > 0 ? year : "—"}
@@ -2604,19 +2375,12 @@ function ListView({
                             const disciplineText = getDisciplineDisplay(p)
                             const useFlipHover = hoverVariant === "flip"
                             const itemRevealRow = rowRevealIndex++
-                            const projectMountIndex = projectRevealIndex++
-                            const skipItemRevealDelay =
-                                progressiveMounting &&
-                                projectMountIndex >= INDEX_INITIAL_MOUNT_COUNT
-                            const titleRevealDelay = skipItemRevealDelay
-                                ? 0
-                                : getIndexContentRevealDelayMs(itemRevealRow, 0)
-                            const disciplineRevealDelay = skipItemRevealDelay
-                                ? 0
-                                : getIndexContentRevealDelayMs(itemRevealRow, 1)
-                            const industryRevealDelay = skipItemRevealDelay
-                                ? 0
-                                : getIndexContentRevealDelayMs(itemRevealRow, 2)
+                            const titleRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 0)
+                            const disciplineRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 1)
+                            const industryRevealDelay =
+                                getIndexContentRevealDelayMs(itemRevealRow, 2)
 
                             return (
                                 <div key={p.slug || p.title}>
@@ -2722,9 +2486,10 @@ function ListView({
                                         <IndexRule
                                             className="idx-row-divider"
 	                                            delayMs={
-	                                                progressiveMounting
-	                                                    ? 0
-	                                                    : titleRevealDelay
+	                                                getIndexContentRevealDelayMs(
+	                                                    itemRevealRow,
+	                                                    0
+	                                                )
 	                                            }
                                             style={{
                                                 height: 1,
@@ -2756,12 +2521,10 @@ function ListView({
 function GridMediaFrame({
     children,
     index,
-    delayMs,
     thumbnailStroke,
 }: {
     children: React.ReactNode
     index: number
-    delayMs?: number
     thumbnailStroke?: boolean
 }) {
     const { ref, appeared } = useIndexAppearTrigger<HTMLDivElement>()
@@ -2785,7 +2548,7 @@ function GridMediaFrame({
         element.style.opacity = "0"
         const animation = element.animate([{ opacity: 0 }, { opacity: 1 }], {
             duration: INDEX_MEDIA_FADE_PRESET.durationMs,
-            delay: delayMs ?? getIndexMediaFadeDelayMs(index),
+            delay: getIndexMediaFadeDelayMs(index),
             easing: INDEX_MEDIA_FADE_PRESET.easing,
             fill: "both",
         })
@@ -2793,7 +2556,7 @@ function GridMediaFrame({
         return () => {
             animation.cancel()
         }
-    }, [appeared, delayMs, index])
+    }, [appeared, index])
 
     return (
         <div
@@ -2865,11 +2628,9 @@ function getGridProjectOrder(project: Project, index: number): string {
 function ClassicGridProjectCard({
     project,
     index,
-    skipRevealDelay = false,
 }: {
     project: Project
     index: number
-    skipRevealDelay?: boolean
 }) {
     const href = getCaseStudyUrl(project)
     const serviceText = getDisciplineDisplay(project)
@@ -2902,17 +2663,12 @@ function ClassicGridProjectCard({
         >
             <GridMediaFrame
                 index={index}
-                delayMs={skipRevealDelay ? 0 : undefined}
                 thumbnailStroke={project.thumbnailStroke}
             >
                 <GridProjectMedia project={project} />
             </GridMediaFrame>
             <div className="idx-grid-card-title">
-                <MaskedSlideText
-                    index={index}
-                    delayMs={skipRevealDelay ? 0 : undefined}
-                    block
-                >
+                <MaskedSlideText index={index} block>
                     <HoverFlipText
                         text={project.title}
                         activeText={href ? "View Project →" : project.title}
@@ -2923,11 +2679,7 @@ function ClassicGridProjectCard({
                 </MaskedSlideText>
             </div>
             <div className="idx-grid-card-meta">
-                <FadeInText
-                    index={index + 1}
-                    delayMs={skipRevealDelay ? 0 : undefined}
-                    block
-                >
+                <FadeInText index={index + 1} block>
                     {serviceText}
                     {serviceText && metaLineTwo ? <br /> : null}
                     {metaLineTwo}
@@ -2940,84 +2692,59 @@ function ClassicGridProjectCard({
 function FigmaGridProjectCard({
     project,
     index,
-    skipRevealDelay = false,
 }: {
     project: Project
     index: number
-    skipRevealDelay?: boolean
 }) {
     const href = getCaseStudyUrl(project)
     const tags = getDisciplines(project).slice(0, 3)
     const order = getGridProjectOrder(project, index)
-    const filterContext = React.useContext(IndexFilterContext)
 
     return (
-        <div className="idx-grid-card" data-grid-layout="figma">
-            <a
-                className="idx-grid-card-link"
-                href={href || undefined}
-                aria-label={project.title}
-            >
-                <div className="idx-grid-card-heading" aria-label={`${order} / ${project.title}`}>
-                    <span className="idx-grid-card-order">{order}</span>
-                    <span aria-hidden="true">/</span>
-                    <span className="idx-grid-title-frame">
-                        <span className="idx-grid-title-stack" aria-hidden="true">
-                            <span>{project.title}</span>
-                            <span>VIEW PROJECT</span>
-                        </span>
+        <a
+            className="idx-grid-card"
+            data-grid-layout="figma"
+            href={href || undefined}
+            aria-label={project.title}
+        >
+            <div className="idx-grid-card-heading" aria-label={`${order} / ${project.title}`}>
+                <span className="idx-grid-card-order">{order}</span>
+                <span aria-hidden="true">/</span>
+                <span className="idx-grid-title-frame">
+                    <span className="idx-grid-title-stack" aria-hidden="true">
+                        <span>{project.title}</span>
+                        <span>VIEW PROJECT</span>
                     </span>
-                </div>
-                <GridMediaFrame
-                    index={index}
-                    delayMs={skipRevealDelay ? 0 : undefined}
-                    thumbnailStroke={project.thumbnailStroke}
-                >
-                    <GridProjectMedia project={project} />
-                </GridMediaFrame>
-            </a>
+                </span>
+            </div>
+            <GridMediaFrame
+                index={index}
+                thumbnailStroke={project.thumbnailStroke}
+            >
+                <GridProjectMedia project={project} />
+            </GridMediaFrame>
             {tags.length > 0 && (
                 <div
                     className="idx-grid-card-tags"
                     aria-label={`${project.title} services`}
                 >
-                    {tags.map((tag) => {
-                        if (!filterContext) {
-                            return (
-                                <span className="idx-grid-card-tag" key={tag}>
-                                    {tag}
-                                </span>
-                            )
-                        }
-
-                        const active = filterContext.disciplines.includes(tag)
-                        return (
-                            <button
-                                type="button"
-                                className="idx-grid-card-tag"
-                                key={tag}
-                                data-active={active ? "true" : undefined}
-                                aria-pressed={active}
-                                onClick={() => filterContext.onToggleDiscipline(tag)}
-                            >
-                                {tag}
-                            </button>
-                        )
-                    })}
+                    {tags.map((tag) => (
+                        <span className="idx-grid-card-tag" key={tag}>
+                            {tag}
+                        </span>
+                    ))}
                 </div>
             )}
-        </div>
+        </a>
     )
 }
 
 function GridView({
     projects,
     layoutVariant = "classic",
-    progressiveMounting = false,
 }: {
     projects: Project[]
     layoutVariant?: GridLayoutVariant
-    progressiveMounting?: boolean
 }) {
     if (projects.length === 0) {
         return (
@@ -3063,20 +2790,12 @@ function GridView({
                             key={project.slug || project.title}
                             project={project}
                             index={index}
-                            skipRevealDelay={
-                                progressiveMounting &&
-                                index >= INDEX_INITIAL_MOUNT_COUNT
-                            }
                         />
                     ) : (
                         <ClassicGridProjectCard
                             key={project.slug || project.title}
                             project={project}
                             index={index}
-                            skipRevealDelay={
-                                progressiveMounting &&
-                                index >= INDEX_INITIAL_MOUNT_COUNT
-                            }
                         />
                     )
                 )}
@@ -3266,21 +2985,27 @@ export default function IndexPage({
         projectsProp,
     ])
     const initialView = resolvedDefaultView === "grid" ? "grid" : "list"
-    const progressivelyMountContent = shouldProgressivelyMountIndexContent()
 
     const [activeView, setActiveView] = useState(initialView)
     const [renderKey, setRenderKey] = useState(0)
-    const [progressiveMountState, setProgressiveMountState] = useState<{
-        projects: Project[] | null
-        view: string
-        count: number
-    }>({ projects: null, view: initialView, count: 0 })
-    const hasCompletedInitialProgressiveMountRef = useRef(
-        !progressivelyMountContent
-    )
-    if (!progressivelyMountContent) {
-        hasCompletedInitialProgressiveMountRef.current = true
-    }
+    // Defer the heavy grid/list (200+ media elements) by a couple of frames so
+    // the hero "Index" title + page chrome commit FIRST. Otherwise React renders
+    // the entire index in one ~2s commit, and the title only appears after the
+    // page-transition slide is already over (reads as "Index comes in late").
+    const [deferHeavyContentReady, setDeferHeavyContentReady] = useState(false)
+    useEffect(() => {
+        let raf1 = 0
+        let raf2 = 0
+        raf1 = requestAnimationFrame(() => {
+            raf2 = requestAnimationFrame(() =>
+                setDeferHeavyContentReady(true)
+            )
+        })
+        return () => {
+            cancelAnimationFrame(raf1)
+            cancelAnimationFrame(raf2)
+        }
+    }, [])
     const [filters, setFilters] = useState<Filters>({
         disciplines: [],
         industries: [],
@@ -3291,91 +3016,6 @@ export default function IndexPage({
         () => getTaxonomyNavItems(allProjects),
         [allProjects]
     )
-
-    /* --- URL filter sync (2026-09-04). See ENABLE_URL_FILTER_SYNC above. --- */
-    // Raw slugs lifted off the URL, held until the CMS taxonomy arrives and we
-    // can map them onto real labels.
-    const pendingUrlFiltersRef = useRef<UrlFilterSelection | null>(null)
-    // Bumped on mount and on every hashchange, to re-run resolution.
-    const [urlFilterTick, setUrlFilterTick] = useState(0)
-    // Gate on the write-back effect so the very first render can't blank a URL
-    // we haven't read yet.
-    const [urlFilterReady, setUrlFilterReady] = useState(false)
-
-    // Mount + hashchange: capture what the URL is asking for. This runs before
-    // the first progressive content batch, so the grid's first paint is already
-    // filtered rather than flashing the full set.
-    useEffect(() => {
-        if (!urlFilterSyncEnabled()) return
-
-        const captureFromUrl = () => {
-            setUrlFilterReady(false)
-            pendingUrlFiltersRef.current = parseUrlFilterSelection()
-            setUrlFilterTick((tick) => tick + 1)
-        }
-
-        captureFromUrl()
-
-        // Covers home -> index -> back -> a different tag, where Framer's
-        // client-side router swaps only the hash.
-        window.addEventListener("hashchange", captureFromUrl)
-        return () => window.removeEventListener("hashchange", captureFromUrl)
-    }, [])
-
-    // Apply once the taxonomy is populated, since slug -> label resolution
-    // needs the CMS labels to compare against.
-    useEffect(() => {
-        if (!urlFilterSyncEnabled() || urlFilterTick === 0) return
-
-        const pending = pendingUrlFiltersRef.current
-        if (!pending) {
-            setUrlFilterReady(true)
-            return
-        }
-
-        const hasTaxonomy =
-            taxonomyNavItems.disciplines.length > 0 ||
-            taxonomyNavItems.industries.length > 0 ||
-            taxonomyNavItems.years.length > 0
-        if (!hasTaxonomy) return // CMS still loading; try again when it lands.
-
-        pendingUrlFiltersRef.current = null
-        setUrlFilterReady(true)
-
-        const resolved: Filters = {
-            disciplines: resolveTaxonomySlugs(
-                pending.disciplines,
-                taxonomyNavItems.disciplines
-            ),
-            industries: resolveTaxonomySlugs(
-                pending.industries,
-                taxonomyNavItems.industries
-            ),
-            years: resolveTaxonomyYears(
-                pending.years,
-                taxonomyNavItems.years
-            ),
-        }
-
-        if (
-            resolved.disciplines.length === 0 &&
-            resolved.industries.length === 0 &&
-            resolved.years.length === 0
-        ) {
-            // Nothing in the URL matched the live taxonomy (stale or typo'd
-            // link) — leave the index unfiltered rather than showing an error.
-            return
-        }
-
-        setFilters(resolved)
-    }, [urlFilterTick, taxonomyNavItems])
-
-    // Keep the address bar in step with the filters, so any filtered view is
-    // shareable and the arriving #hash gets normalized to a readable ?query.
-    useEffect(() => {
-        if (!urlFilterSyncEnabled() || !urlFilterReady) return
-        writeFiltersToUrl(filters)
-    }, [filters, urlFilterTick, urlFilterReady])
 
     const handleViewChange = useCallback(
         (v: string) => {
@@ -3421,15 +3061,6 @@ export default function IndexPage({
         []
     )
 
-    const indexFilterContextValue = useMemo(
-        () => ({
-            disciplines: filters.disciplines,
-            onToggleDiscipline: (value: string) =>
-                handleFilterToggle("disciplines", value),
-        }),
-        [filters.disciplines, handleFilterToggle]
-    )
-
     const handleFilterClear = useCallback((type: FilterType) => {
         setFilters((prev) => {
             if (prev[type].length === 0) return prev
@@ -3460,128 +3091,8 @@ export default function IndexPage({
         filters.disciplines.length > 0 ||
         filters.industries.length > 0 ||
         filters.years.length > 0
-    const isCMSLoading = useCMS && !cmsModuleLoaded
-    const projectsForActiveView = useMemo(
-        () =>
-            activeView === "list"
-                ? groupByYear(filteredProjects).flatMap((group) => group.items)
-                : filteredProjects,
-        [activeView, filteredProjects]
-    )
-    if (
-        !hasCompletedInitialProgressiveMountRef.current &&
-        progressiveMountState.projects !== null &&
-        (progressiveMountState.projects !== projectsForActiveView ||
-            progressiveMountState.view !== activeView)
-    ) {
-        hasCompletedInitialProgressiveMountRef.current = true
-    }
-    const isInitialProgressiveMountActive =
-        progressivelyMountContent &&
-        !hasCompletedInitialProgressiveMountRef.current
-    const mountedProjectCount =
-        isInitialProgressiveMountActive &&
-        progressiveMountState.projects === projectsForActiveView &&
-        progressiveMountState.view === activeView
-            ? progressiveMountState.count
-            : isInitialProgressiveMountActive
-              ? 0
-              : projectsForActiveView.length
-    const mountedProjects =
-        mountedProjectCount >= projectsForActiveView.length
-            ? projectsForActiveView
-            : projectsForActiveView.slice(0, mountedProjectCount)
-    const isFirstContentBatchPending =
-        isInitialProgressiveMountActive &&
-        !isCMSLoading &&
-        filteredProjects.length > 0 &&
-        mountedProjects.length === 0
-
-    useEffect(() => {
-        if (
-            hasCompletedInitialProgressiveMountRef.current ||
-            !progressivelyMountContent ||
-            isCMSLoading ||
-            filteredProjects.length === 0 ||
-            typeof window === "undefined"
-        ) {
-            return
-        }
-
-        const batchProjects = projectsForActiveView
-        const batchView = activeView
-        const totalProjects = batchProjects.length
-        let cancelled = false
-        let frameId = 0
-        let idleId = 0
-        let nextCount = 0
-
-        const commitNextBatch = () => {
-            if (cancelled) return
-
-            nextCount = Math.min(
-                totalProjects,
-                nextCount === 0
-                    ? INDEX_INITIAL_MOUNT_COUNT
-                    : nextCount + INDEX_MOUNT_BATCH_SIZE
-            )
-            if (nextCount >= totalProjects) {
-                hasCompletedInitialProgressiveMountRef.current = true
-            }
-            setProgressiveMountState({
-                projects: batchProjects,
-                view: batchView,
-                count: nextCount,
-            })
-
-            if (nextCount < totalProjects) scheduleNextBatch()
-        }
-
-        const scheduleNextBatch = () => {
-            frameId = window.requestAnimationFrame(() => {
-                frameId = 0
-                if (cancelled) return
-
-                if (
-                    typeof (window as any).requestIdleCallback === "function"
-                ) {
-                    idleId = (window as any).requestIdleCallback(
-                        () => {
-                            idleId = 0
-                            commitNextBatch()
-                        },
-                        { timeout: 100 }
-                    )
-                    return
-                }
-
-                commitNextBatch()
-            })
-        }
-
-        // Let the hero and page chrome paint first, then commit a small useful
-        // slice instead of one monolithic grid/list render.
-        frameId = window.requestAnimationFrame(() => {
-            frameId = 0
-            commitNextBatch()
-        })
-
-        return () => {
-            cancelled = true
-            if (frameId) window.cancelAnimationFrame(frameId)
-            if (
-                idleId &&
-                typeof (window as any).cancelIdleCallback === "function"
-            ) {
-                ;(window as any).cancelIdleCallback(idleId)
-            }
-        }
-    }, [
-        activeView,
-        isCMSLoading,
-        projectsForActiveView,
-        progressivelyMountContent,
-    ])
+    const isCMSLoading =
+        useCMS && !cmsModuleLoaded
     const viewToggleRevealRow = Math.max(
         10,
         Math.max(
@@ -3592,7 +3103,7 @@ export default function IndexPage({
     )
 
     return (
-        <IndexFilterContext.Provider value={indexFilterContextValue}>
+        <>
             <style data-index-global-css="true" suppressHydrationWarning>
                 {globalCss}
             </style>
@@ -3642,7 +3153,7 @@ export default function IndexPage({
                 </div>
 
                 <div key={renderKey}>
-                    {isCMSLoading ? (
+                    {isCMSLoading || !deferHeavyContentReady ? (
                         <div
                             style={{
                                 padding: "64px 0",
@@ -3656,17 +3167,15 @@ export default function IndexPage({
                         >
                             Loading work...
                         </div>
-                    ) : isFirstContentBatchPending ? null : activeView === "grid" ? (
+                    ) : activeView === "grid" ? (
                         <GridView
-                            projects={mountedProjects}
+                            projects={filteredProjects}
                             layoutVariant={resolvedGridLayoutVariant}
-                            progressiveMounting={progressivelyMountContent}
                         />
                     ) : (
                         <ListView
-                            projects={mountedProjects}
+                            projects={filteredProjects}
                             hoverVariant={resolvedListHoverVariant}
-                            progressiveMounting={progressivelyMountContent}
                         />
                     )}
                 </div>
@@ -3686,7 +3195,7 @@ export default function IndexPage({
                     {filteredProjects.length === 1 ? "Project" : "Projects"}
                 </div>
             </div>
-        </IndexFilterContext.Provider>
+        </>
     )
 }
 
