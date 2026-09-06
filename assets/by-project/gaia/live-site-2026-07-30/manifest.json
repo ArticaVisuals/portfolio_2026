@@ -1,0 +1,1248 @@
+{
+  "source": "canonical-published-site",
+  "pageUrl": "https://micahhoang.com/case-studies/gaia",
+  "capturedAt": "2026-07-31T01:20:18.823Z",
+  "snapshotDate": "2026-07-30",
+  "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+  "scope": {
+    "included": "Gaia case-study images, videos, video posters, responsive media sources, and the page-specific social-share image.",
+    "excluded": "Global fonts, JavaScript, site icons, resume PDF, search indexes, and media linked to the Other Projects cards."
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1200,
+      "height": 900,
+      "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+      "url": "https://micahhoang.com/case-studies/gaia"
+    },
+    {
+      "name": "tablet",
+      "width": 810,
+      "height": 900,
+      "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+      "url": "https://micahhoang.com/case-studies/gaia"
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+      "url": "https://micahhoang.com/case-studies/gaia"
+    }
+  ],
+  "pageHtml": "page.html",
+  "counts": {
+    "total": 47,
+    "bytes": 56095709,
+    "image": 21,
+    "video": 14,
+    "poster": 11,
+    "metadata": 1
+  },
+  "assets": [
+    {
+      "order": 1,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "caring for the living world.",
+        "for the living world."
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?scale-down-to=1024&width=1920&height=1080",
+        "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?scale-down-to=512&width=1920&height=1080",
+        "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?width=1920&height=1080"
+      ],
+      "file": "images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg",
+      "bytes": 326472,
+      "sha256": "8859149f90e9336635f154b47ec283d0b4caaf38a7e57dfb39ae362cdfef37ad",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 2,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "caring for the living world.",
+        "for the living world."
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4"
+      ],
+      "file": "videos/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+      "bytes": 729500,
+      "sha256": "41eb6be184ef62af57ed2b4cb21066f60ce55a02cd4fbc9dd5c77e583b26e59f",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 3,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "caring for the living world.",
+        "for the living world."
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/5rxz22.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/5rxz22.jpg"
+      ],
+      "file": "posters/5rxz22.jpg",
+      "bytes": 120759,
+      "sha256": "aa3b880c625e4ef568d544836dd2b5601656c947ac6952ce8cde0540641fdb26",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "The Insight"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?scale-down-to=1024&width=1995&height=1827",
+        "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?scale-down-to=512&width=1995&height=1827",
+        "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?width=1995&height=1827"
+      ],
+      "file": "images/DcicrFmUxqgU5jGTpUKyIWKwCA.png",
+      "bytes": 1143102,
+      "sha256": "308b73dc1a49272905b5f266927bab1e0c1e136cac10aeb722d364d3faf42dce",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "The Insight"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=1024&width=6806&height=2322",
+        "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=2048&width=6806&height=2322",
+        "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=4096&width=6806&height=2322",
+        "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=512&width=6806&height=2322",
+        "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?width=6806&height=2322"
+      ],
+      "file": "images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png",
+      "bytes": 2490787,
+      "sha256": "e617c8ef815ae00d51b107d7c90fed7de470f7970ed540a42d75a6042451b2fc",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Strategy"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?scale-down-to=1024&width=2560&height=566",
+        "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?scale-down-to=2048&width=2560&height=566",
+        "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?scale-down-to=512&width=2560&height=566",
+        "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?width=2560&height=566"
+      ],
+      "file": "images/pxlGB0XdAkcu30nxixqoivDsn8.webp",
+      "bytes": 19294,
+      "sha256": "63e2715bfeda60c573d0e61c2245e7093964db7594599dfcb4f791ab3ffb7b64",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Strategy"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=1024&width=6806&height=2322",
+        "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=2048&width=6806&height=2322",
+        "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=4096&width=6806&height=2322",
+        "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=512&width=6806&height=2322",
+        "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?width=6806&height=2322"
+      ],
+      "file": "images/PQwqOy9SjY9BJEFmykGLzjKewg.png",
+      "bytes": 1609418,
+      "sha256": "8d88fe7e21af83b8b25394f35c2a633c8cac94ece2ce54fab5cba13d617d292c",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 8,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Strategy"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4"
+      ],
+      "file": "videos/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+      "bytes": 164009,
+      "sha256": "d40ca2da25c694681e3c541282c0006e530994d0da637a9f4fdf2b8d02555bcd",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 9,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Strategy"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/8acqhu.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/8acqhu.jpg"
+      ],
+      "file": "posters/8acqhu.jpg",
+      "bytes": 13773,
+      "sha256": "9fde2b307cc49c283d9fbb32e8242cf30a1e556a7366d895642d5cbbd8ceb312",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Visual Identity"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?scale-down-to=1024&width=2560&height=1517",
+        "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?scale-down-to=2048&width=2560&height=1517",
+        "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?scale-down-to=512&width=2560&height=1517",
+        "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?width=2560&height=1517"
+      ],
+      "file": "images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp",
+      "bytes": 174214,
+      "sha256": "562a3ce4ff3e7139badfc6c81bc0b6b2db7a3e96239ee3c633f59cbd1976b3b8",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Visual Identity"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=1024&width=2560&height=1429",
+        "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=2048&width=2560&height=1429",
+        "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=512&width=2560&height=1429",
+        "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?width=2560&height=1429"
+      ],
+      "file": "images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp",
+      "bytes": 366160,
+      "sha256": "c65619bb3c973c0ca0f8670258d7d1d548da895d2b71e8505df9eb83acde793a",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 12,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Visual Identity"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4"
+      ],
+      "file": "videos/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+      "bytes": 703292,
+      "sha256": "42cd0ce7562e5aead0ee15e65bbaadd6fd1caec1bc6ad09aacaf6d32f6a3eb0b",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Brand in the World"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=1024&width=2560&height=1429",
+        "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=2048&width=2560&height=1429",
+        "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=512&width=2560&height=1429",
+        "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?width=2560&height=1429"
+      ],
+      "file": "images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp",
+      "bytes": 438980,
+      "sha256": "86b8ba907e903a337d6078ab789a6ed3a5f29d39af99b77e5f28b80fa461549b",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Brand in the World"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=1024&width=2560&height=1668",
+        "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=2048&width=2560&height=1668",
+        "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=512&width=2560&height=1668",
+        "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?width=2560&height=1668"
+      ],
+      "file": "images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp",
+      "bytes": 739942,
+      "sha256": "a1bc3ab44ce574ab3011228a0bede81a70088941d432c7fb188ed7d0b6f1b73a",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 15,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Brand in the World"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=1024&width=2560&height=1429",
+        "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=2048&width=2560&height=1429",
+        "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=512&width=2560&height=1429",
+        "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?width=2560&height=1429"
+      ],
+      "file": "images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp",
+      "bytes": 213472,
+      "sha256": "4fbd3716d6413e01c3cede4eb2aa98177263de5084192da74e8a6da26beccc0e",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Brand in the World"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/97oN9qNRaIpyjF2KfRZHDC6K6A.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/97oN9qNRaIpyjF2KfRZHDC6K6A.jpg?scale-down-to=1024&width=3299&height=4096",
+        "https://framerusercontent.com/images/97oN9qNRaIpyjF2KfRZHDC6K6A.jpg?scale-down-to=2048&width=3299&height=4096",
+        "https://framerusercontent.com/images/97oN9qNRaIpyjF2KfRZHDC6K6A.jpg?width=3299&height=4096"
+      ],
+      "file": "images/97oN9qNRaIpyjF2KfRZHDC6K6A.jpg",
+      "bytes": 2009984,
+      "sha256": "16fe1c13b72b27730b2b759648e37b574d98047f8da37458460853865ca811a8",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Brand in the World"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=1024&width=3072&height=1713",
+        "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=2048&width=3072&height=1713",
+        "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512&width=3072&height=1713",
+        "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?width=3072&height=1713"
+      ],
+      "file": "images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+      "bytes": 1557346,
+      "sha256": "7afea62f3a08af786b18fbcab6c941c1fc9f9e7583f488684043b2f2056c569d",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Brand in the World"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=1024&width=2447&height=1726",
+        "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=2048&width=2447&height=1726",
+        "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=512&width=2447&height=1726",
+        "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?width=2447&height=1726"
+      ],
+      "file": "images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg",
+      "bytes": 863435,
+      "sha256": "941f44dbae3bc5ea0727b69a62b1e856e297d99822eedc3d129cd4d60f0cb37d",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=1024&width=2560&height=1396",
+        "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=2048&width=2560&height=1396",
+        "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=512&width=2560&height=1396",
+        "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?width=2560&height=1396"
+      ],
+      "file": "images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp",
+      "bytes": 225894,
+      "sha256": "f02a4aaaef90730c410bef730cad7f3633c2dd903bf2395fbe9fbaf96c198ec9",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 20,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=1024&width=2160&height=2160",
+        "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=2048&width=2160&height=2160",
+        "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=512&width=2160&height=2160",
+        "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?width=2160&height=2160"
+      ],
+      "file": "images/jnO3X6kihC9RS4UIQjowcI3dPY.gif",
+      "bytes": 691039,
+      "sha256": "37ded8bfd99de6968c9cf37ef4a6682753d0d86410ca4cf360795648743b7dd9",
+      "contentType": "image/gif",
+      "status": "downloaded"
+    },
+    {
+      "order": 21,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4"
+      ],
+      "file": "videos/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+      "bytes": 2704249,
+      "sha256": "ee52de3e8a59e3e98d5e5ef261b1ed21c98b55eeacae55a489fde68701a88f1b",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 22,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&height=1600"
+      ],
+      "file": "posters/gtKcBanSRA6PXcpDAXZrNRJCE.jpg",
+      "bytes": 332560,
+      "sha256": "e5726c4138c4f58e8fdc2a834598af4fe4eeb12ad7b34549b08eeb67a72bd413",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 23,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4"
+      ],
+      "file": "videos/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+      "bytes": 801039,
+      "sha256": "8ee486be877fd2a8d7e16be25ec31a5f656281b2a3087f83a70d79293cee5569",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 24,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&height=1600"
+      ],
+      "file": "posters/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg",
+      "bytes": 93399,
+      "sha256": "5af6a9b3c88c7637ea37d96b607eef77dade834f11c5b68f4137720a57320430",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 25,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4"
+      ],
+      "file": "videos/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+      "bytes": 3468919,
+      "sha256": "57056515183229281b52e31df179cbfbc3f55b301e76aa9de6bf77bade59870e",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 26,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&height=1600"
+      ],
+      "file": "posters/zYY346QdJ6zsHBvmvaXmo9M2E.jpg",
+      "bytes": 268486,
+      "sha256": "af2c07d6dc27115f8103c4f11fcd6f54d40d267fe1166a86e36b0a16b7a86af3",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 27,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4"
+      ],
+      "file": "videos/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+      "bytes": 7472154,
+      "sha256": "b2ddb923961bd9d9d79143db3d193ebc6ec3a87c7671f11fd8b9c9c0362c5a27",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 28,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/50xion.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/50xion.jpg"
+      ],
+      "file": "posters/50xion.jpg",
+      "bytes": 262224,
+      "sha256": "3af84cb0dc7413d1eac6338f195a306befb6520499d75b4735abc804dba2cc09",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 29,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4"
+      ],
+      "file": "videos/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+      "bytes": 1389050,
+      "sha256": "14f18a6adcafb4a1e5e46db0cfedb56189f7f915578279fcba7a47d107029ea6",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 30,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4"
+      ],
+      "file": "videos/TNpc8c5YNncEarPZc27ldVMU.mp4",
+      "bytes": 8929084,
+      "sha256": "3ea1ea3fe4325d2dea305cf29ea203d085fe837849a8b1de68c04ad7d8cc73ce",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 31,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/00tm9g.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/00tm9g.jpg"
+      ],
+      "file": "posters/00tm9g.jpg",
+      "bytes": 81681,
+      "sha256": "b32849c21f577e26a5d46a0d48632b4ec1be53f476861134cae8288505c339d5",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 32,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=1024&width=1567&height=1619",
+        "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?width=1567&height=1619"
+      ],
+      "file": "images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+      "bytes": 199856,
+      "sha256": "9a0ffd5e9f1e9eba2b9247c518e688359e922fe96b8769fc31b2cef489bbcd91",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 33,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4"
+      ],
+      "file": "videos/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+      "bytes": 4126634,
+      "sha256": "112343e141de6bebeb92ccfb0366fa8ea2c9103350bfe5ea0236be162d8def58",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 34,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/7iwwxa.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/7iwwxa.jpg"
+      ],
+      "file": "posters/7iwwxa.jpg",
+      "bytes": 161853,
+      "sha256": "56dbe4330a08b8dbcc75fb38623bc79e53aa48cd9a02ae31346475f8acfc7ce0",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 35,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Interface"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?scale-down-to=1024&width=7208&height=3841",
+        "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?scale-down-to=2048&width=7208&height=3841",
+        "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?scale-down-to=4096&width=7208&height=3841",
+        "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?scale-down-to=512&width=7208&height=3841",
+        "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?width=7208&height=3841"
+      ],
+      "file": "images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg",
+      "bytes": 3102810,
+      "sha256": "12c42ee3cc23aafc6e9c4697ec5b975ac606fbd4a9de5c331454c6ac8c571199",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 36,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=1024&width=2642&height=1882",
+        "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=2048&width=2642&height=1882",
+        "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=512&width=2642&height=1882",
+        "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?width=2642&height=1882"
+      ],
+      "file": "images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png",
+      "bytes": 166236,
+      "sha256": "d7c63935ec93c3068de6f8fb4a3060f97bf5c642b447885f6d28df4d2379329a",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 37,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4"
+      ],
+      "file": "videos/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+      "bytes": 808839,
+      "sha256": "ac0710086563cb6a5fc60bb29d70a743ab217e9a8d689540931b9239cd002d61",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 38,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/aq8akp.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/aq8akp.jpg"
+      ],
+      "file": "posters/aq8akp.jpg",
+      "bytes": 119571,
+      "sha256": "c8c5af657f324ab2edb8cffd1f9b903fc8e59901f46e56f2e1c156c23cb7a390",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 39,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?scale-down-to=1024&width=1628&height=1860",
+        "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?width=1628&height=1860"
+      ],
+      "file": "images/A6DvwXGXMEFZPWt9xOnVZAJow.png",
+      "bytes": 264250,
+      "sha256": "140983376cbb8ddfacb0827ca54ab9a77ada77e268aded3f2b373c9d35eb0bd8",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 40,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=1024&width=2140&height=1818",
+        "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=2048&width=2140&height=1818",
+        "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=512&width=2140&height=1818",
+        "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?width=2140&height=1818"
+      ],
+      "file": "images/53KFBdZp49V7ToYem3gagSK9tbE.png",
+      "bytes": 1738957,
+      "sha256": "5498c94977d02afa1fcd5b438e79d570cf94b630f6a113a163df2f220cf0c745",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 41,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4"
+      ],
+      "file": "videos/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+      "bytes": 632158,
+      "sha256": "7f54c4b984d2e2200d8d721d1cdd29a305e87b98063a4dcc7fc9bad5d539d1bb",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 42,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet"
+      ],
+      "sourceUrl": "https://files.catbox.moe/n0n3jb.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/n0n3jb.jpg"
+      ],
+      "file": "posters/n0n3jb.jpg",
+      "bytes": 99430,
+      "sha256": "ce307d9d61856d44a0bb203973948fb36454571ae58510ff1f55907bb220fe94",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    },
+    {
+      "order": 43,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4"
+      ],
+      "file": "videos/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+      "bytes": 294332,
+      "sha256": "f1e7ed1cd4ed5ee283a0c23e2042bf0c1a23fc0f72e2edf387a6af462eea9189",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 44,
+      "kind": "image",
+      "roles": [
+        "image",
+        "responsive-source"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp",
+      "renderedUrls": [
+        "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?scale-down-to=1024&width=2560&height=1429",
+        "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?scale-down-to=2048&width=2560&height=1429",
+        "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?scale-down-to=512&width=2560&height=1429",
+        "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?width=2560&height=1429"
+      ],
+      "file": "images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp",
+      "bytes": 501720,
+      "sha256": "13fca1f5255b28e09ffe3fb6f512036249fb750a4a3cca6ac40e4a59a36e9da8",
+      "contentType": "image/webp",
+      "status": "downloaded"
+    },
+    {
+      "order": 45,
+      "kind": "metadata",
+      "roles": [
+        "social-image"
+      ],
+      "sections": [
+        "og:image",
+        "twitter:image"
+      ],
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/C0rpB1L7H9zOiWqo4gFV7bPBBFA.png",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/C0rpB1L7H9zOiWqo4gFV7bPBBFA.png"
+      ],
+      "file": "metadata/C0rpB1L7H9zOiWqo4gFV7bPBBFA.png",
+      "bytes": 2103783,
+      "sha256": "a86fa4cf39b1fb6db259938be3e48c697ad6cfc410875961c44dfb87f18837f7",
+      "contentType": "image/png",
+      "status": "downloaded"
+    },
+    {
+      "order": 46,
+      "kind": "video",
+      "roles": [
+        "video"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "mobile"
+      ],
+      "sourceUrl": "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+      "renderedUrls": [
+        "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4"
+      ],
+      "file": "videos/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+      "bytes": 1222060,
+      "sha256": "ea0512c0cb2cbc97fb877f5bc22dce0839c4e11a679eb23e79761b597805f666",
+      "contentType": "video/mp4",
+      "status": "downloaded"
+    },
+    {
+      "order": 47,
+      "kind": "poster",
+      "roles": [
+        "poster"
+      ],
+      "sections": [
+        "Designed to Ship"
+      ],
+      "viewports": [
+        "mobile"
+      ],
+      "sourceUrl": "https://files.catbox.moe/k7hoi0.jpg",
+      "renderedUrls": [
+        "https://files.catbox.moe/k7hoi0.jpg"
+      ],
+      "file": "posters/k7hoi0.jpg",
+      "bytes": 149503,
+      "sha256": "8b6457eec47f0204d00a3a91f6407596d6d8927cc579fd5b86ae5570559cc1a8",
+      "contentType": "image/jpeg",
+      "status": "downloaded"
+    }
+  ]
+}

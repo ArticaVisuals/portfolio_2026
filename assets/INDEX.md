@@ -1,6 +1,6 @@
 # Portfolio Assets — Index
 
-_Updated 2026-07-27. Case-study media and `/play` media are separated, then
+_Updated 2026-07-30. Case-study media and `/play` media are separated, then
 sorted by project/work slug._
 _Provenance subfolders include `framer-staging/` (Framer redesign scrape),
 `current-site/` (Cargo scrape), and project-specific sets. See
@@ -14,8 +14,8 @@ _Provenance subfolders include `framer-staging/` (Framer redesign scrape),
 ### cellular-symphony — 27 files, 26M
 `assets/by-project/cellular-symphony/` → current-site, framer-staging, video-posters
 
-### gaia — 811 files, 395M
-`assets/by-project/gaia/` → figma-export, framer-staging, selected, video-posters
+### gaia — 865 files, 455M
+`assets/by-project/gaia/` → figma-export, framer-staging, live-site-2026-07-30, selected, video-posters
 
 ### independent-lens — 39 files, 172M
 `assets/by-project/independent-lens/` → current-site, framer-staging
@@ -159,6 +159,9 @@ _Provenance subfolders include `framer-staging/` (Framer redesign scrape),
 
 ### the-windmill-project — 9 files + 3 source links, 2.3M
 `assets/Play/the-windmill-project/` → optimized media, QA, and source links to Weaponized Innocence originals
+
+### type-design-x-ray — 7 files, 2.1M
+`assets/Play/type-design-x-ray/` → source video, optimized Play video, exact-first-frame poster, CMS payload, and QA
 
 ### two-cries-in-the-dark — 6 files, 50M
 `assets/Play/two-cries-in-the-dark/` → original letterpress artwork exports, optimized MP4, and poster

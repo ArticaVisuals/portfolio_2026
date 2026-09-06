@@ -12,6 +12,9 @@ const PLAYGROUND_ROOT_SELECTOR = "[data-playground-root='true']"
 const HOME_NAV_FROM_KEY = "__mhNavFromPath"
 const HOME_ARRIVAL_AT_KEY = "__mhArrivalAt"
 const HOME_ARRIVAL_FALLBACK_KEY = "__mhHomeArrivalIntentFallback"
+const RESUME_LINK_FALLBACK_KEY = "__mhResumeLinkFallback"
+const LEGACY_RESUME_ASSET_PATTERN =
+    /\/assets\/(?:j0eYAPD44l2J9eaM1ZNfafxGPI|ul1LJQLVJ04sAZOwRIkbwFd2kGE)\.pdf(?:$|[?#])/i
 const HOME_STATIC_PRESET_SELECTOR =
     'main [data-styles-preset="ZB3A5PLtS"]'
 const DEFAULT_EXCLUDE_SELECTOR = [
@@ -233,6 +236,111 @@ function installHomeArrivalIntentFallback() {
     }
 }
 
+// Framer layout templates can retain nested link overrides even after the
+// source Footer component changes. Keep the visible Resume links synchronized
+// with the PDF selected on this compatibility host across initial hydration and
+// client-side route changes. This observer intentionally ignores style changes,
+// including the continuously written transforms in `/play`.
+function installResumeLinkFallback(resumeFile?: string) {
+    if (
+        typeof window === "undefined" ||
+        typeof document === "undefined" ||
+        !resumeFile ||
+        RenderTarget.current() === RenderTarget.thumbnail
+    ) {
+        return () => {}
+    }
+
+    const win = window as any
+    const state =
+        win[RESUME_LINK_FALLBACK_KEY] ||
+        (win[RESUME_LINK_FALLBACK_KEY] = {
+            refs: 0,
+            url: "",
+            observer: null,
+            timers: [],
+            run: null,
+            eventRun: null,
+            eventNames: [
+                "DOMContentLoaded",
+                "load",
+                "pageshow",
+                "popstate",
+                "hashchange",
+                "mh:locationchange",
+                "framer:pageLoad",
+            ],
+        })
+
+    state.refs += 1
+    state.url = resumeFile
+
+    const isResumeAnchor = (anchor: HTMLAnchorElement) => {
+        const label = normalizeText(
+            anchor.getAttribute("aria-label") || anchor.textContent || ""
+        ).replace(/\s*,\s*$/, "")
+        const layerName = normalizeText(
+            anchor.getAttribute("data-framer-name") || ""
+        )
+        const href = anchor.getAttribute("href") || ""
+        return (
+            /^resume$/i.test(label) ||
+            /^resume$/i.test(layerName) ||
+            LEGACY_RESUME_ASSET_PATTERN.test(href)
+        )
+    }
+
+    const run = () => {
+        const nextUrl = state.url
+        if (!nextUrl) return
+        document.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((anchor) => {
+            if (!isResumeAnchor(anchor)) return
+            if (anchor.getAttribute("href") !== nextUrl) {
+                anchor.setAttribute("href", nextUrl)
+            }
+        })
+    }
+    state.run = run
+    run()
+
+    ;[0, 80, 240, 700, 1600].forEach((delay) =>
+        state.timers.push(window.setTimeout(run, delay))
+    )
+
+    if (!state.observer) {
+        state.observer = new MutationObserver(() => {
+            if (state.run) state.run()
+        })
+        state.observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["href", "aria-label", "data-framer-name"],
+            childList: true,
+            subtree: true,
+            characterData: true,
+        })
+        state.eventRun = run
+        state.eventNames.forEach((name: string) =>
+            window.addEventListener(name, state.eventRun, { passive: true })
+        )
+    }
+
+    return () => {
+        state.refs = Math.max(0, state.refs - 1)
+        if (state.refs > 0) return
+        state.timers.forEach((timer: number) => window.clearTimeout(timer))
+        state.timers = []
+        if (state.observer) state.observer.disconnect()
+        state.observer = null
+        if (state.eventRun) {
+            state.eventNames.forEach((name: string) =>
+                window.removeEventListener(name, state.eventRun)
+            )
+        }
+        state.eventRun = null
+        state.run = null
+    }
+}
+
 function preloadScript(maxFontSize = 23) {
     const resolvedMaxFontSize = Math.max(maxFontSize, 23)
 
@@ -391,11 +499,10 @@ function installPrettyWrapFallback(maxFontSize = 23) {
 /**
  * Footer compatibility host.
  *
- * The original resume-link side effect is retired, but Footer still mounts this
- * invisible component. It now also carries the paragraph pretty-wrap fallback so
- * routes without PageTransition still get site-wide orphan reduction, plus the
- * Home-arrival intent stamp needed for immediate `/info` → Home motion and the
- * site-wide structured-data/noindex guard used by published SEO.
+ * Footer mounts this invisible component to keep its Resume links synchronized
+ * with the selected PDF, carry the paragraph pretty-wrap fallback on routes
+ * without PageTransition, stamp immediate `/info` → Home navigation intent, and
+ * install the site-wide structured-data/noindex guard used by published SEO.
  *
  * @framerIntrinsicWidth 1
  * @framerIntrinsicHeight 1
@@ -411,6 +518,10 @@ type ResumeAssetHostProps = {
 export default function ResumeAssetHost(props: ResumeAssetHostProps) {
     usePrePaintEffect(() => installPrettyWrapFallback(23), [])
     usePrePaintEffect(() => installHomeArrivalIntentFallback(), [])
+    usePrePaintEffect(
+        () => installResumeLinkFallback(props.resumeFile),
+        [props.resumeFile]
+    )
 
     return (
         <>

@@ -41,6 +41,9 @@ type StoredVideoSource = {
     src: string | null
     preload: string | null
     sources: Array<{ element: HTMLSourceElement; src: string | null }>
+    layoutHost: HTMLElement | null
+    layoutAspectRatio: string
+    layoutAspectRatioPriority: string
 }
 
 export default function CaseStudyVideoManager(props: Config) {
@@ -113,6 +116,111 @@ export default function CaseStudyVideoManager(props: Config) {
             return true
         }
 
+        function preserveVideoLayout(
+            video: HTMLVideoElement,
+            stored: StoredVideoSource
+        ) {
+            const candidate = video.closest(
+                "[data-case-study-media-skeleton='true']"
+            )
+            if (!(candidate instanceof HTMLElement)) return
+
+            const localVideos = Array.from(
+                candidate.querySelectorAll<HTMLVideoElement>("video")
+            ).filter(
+                (localVideo) =>
+                    localVideo.closest(
+                        "[data-case-study-media-skeleton='true']"
+                    ) === candidate
+            )
+            const videoRect = video.getBoundingClientRect()
+            if (
+                localVideos.length !== 1 ||
+                localVideos[0] !== video ||
+                videoRect.width < 4 ||
+                videoRect.height < 4
+            ) {
+                return
+            }
+
+            stored.layoutHost = candidate
+            stored.layoutAspectRatio =
+                candidate.style.getPropertyValue("aspect-ratio")
+            stored.layoutAspectRatioPriority =
+                candidate.style.getPropertyPriority("aspect-ratio")
+            const ratio =
+                video.videoWidth > 0 && video.videoHeight > 0
+                    ? `${video.videoWidth} / ${video.videoHeight}`
+                    : `${videoRect.width} / ${videoRect.height}`
+            candidate.style.setProperty("aspect-ratio", ratio, "important")
+            candidate.setAttribute(
+                "data-case-study-media-layout-locked",
+                "true"
+            )
+        }
+
+        function releaseVideoLayoutWhenReady(
+            video: HTMLVideoElement,
+            stored: StoredVideoSource
+        ) {
+            const release = () => {
+                if (video.hasAttribute("data-video-source-deferred")) return
+                const host = stored.layoutHost
+                if (!host?.isConnected) return
+
+                window.requestAnimationFrame(() => {
+                    if (video.hasAttribute("data-video-source-deferred")) return
+                    const hasPersistentRatio =
+                        host.getAttribute(
+                            "data-case-study-media-stable-video-ratio"
+                        ) === "true" &&
+                        Boolean(
+                            host.style.getPropertyValue(
+                                "--case-study-media-stable-video-aspect-ratio"
+                                )
+                        )
+                    const hasStableHeroRatio =
+                        host.getAttribute("data-framer-name") ===
+                            "Hero image" &&
+                        Boolean(
+                            document.querySelector(
+                                "[data-case-study-stable-hero-ratio]"
+                            )
+                        )
+                    if (!hasPersistentRatio && !hasStableHeroRatio) {
+                        if (video.videoWidth > 0 && video.videoHeight > 0) {
+                            host.style.setProperty(
+                                "aspect-ratio",
+                                `${video.videoWidth} / ${video.videoHeight}`,
+                                "important"
+                            )
+                        }
+                        return
+                    }
+
+                    if (stored.layoutAspectRatio) {
+                        host.style.setProperty(
+                            "aspect-ratio",
+                            stored.layoutAspectRatio,
+                            stored.layoutAspectRatioPriority
+                        )
+                    } else {
+                        host.style.removeProperty("aspect-ratio")
+                    }
+                    host.removeAttribute(
+                        "data-case-study-media-layout-locked"
+                    )
+                })
+            }
+
+            if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
+                release()
+                return
+            }
+
+            video.addEventListener("loadedmetadata", release, { once: true })
+        }
+
         function unloadSource(video: HTMLVideoElement) {
             if (unloadedVideos.has(video)) return
 
@@ -126,6 +234,9 @@ export default function CaseStudyVideoManager(props: Config) {
                     element,
                     src: element.getAttribute("src"),
                 })),
+                layoutHost: null,
+                layoutAspectRatio: "",
+                layoutAspectRatioPriority: "",
             }
             const hasSource =
                 Boolean(stored.src) || stored.sources.some(({ src }) => Boolean(src))
@@ -133,6 +244,7 @@ export default function CaseStudyVideoManager(props: Config) {
 
             storedSources.set(video, stored)
             unloadedVideos.add(video)
+            preserveVideoLayout(video, stored)
             video.pause()
             setAttributeWithoutRecapture(video, "preload", "none")
             removeAttributeWithoutRecapture(video, "src")
@@ -171,6 +283,7 @@ export default function CaseStudyVideoManager(props: Config) {
             storedSources.delete(video)
             video.removeAttribute("data-video-source-deferred")
             video.load()
+            releaseVideoLayoutWhenReady(video, stored)
         }
 
         function captureDeferredSourceMutation(

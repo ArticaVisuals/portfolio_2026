@@ -11,6 +11,41 @@ import CaseStudyLinkRepair from "https://framer.com/m/CaseStudyLinkRepair-xbwFmJ
 
 const SKELETON_RATIO_STYLE_ID = "case-study-media-skeleton-ratio-v1"
 const VIDEO_FALLBACK_RATIO = 4 / 5
+const STABLE_HERO_RATIO_MIN_WIDTH = 810
+const VIDEO_SKELETON_RATIO_OVERRIDES: Record<string, number> = {
+    // Gaia's early portrait/landscape clips can begin loading while the user is
+    // still in the opening section.
+    "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4":
+        4 / 3,
+    "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4":
+        3 / 4,
+    // AirPods Pro 3 landscape clips that otherwise fall back to 4:5 before
+    // metadata is available.
+    "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4":
+        16 / 9,
+    "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4":
+        16 / 9,
+    "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4":
+        16 / 9,
+    // TYPLDN Cargo videos are outside Framer's metadata pipeline, so their
+    // aspect ratios need to be known before they approach the viewport.
+    "https://freight.cargo.site/t/original/i/I1536330345899837002649459480085/Typo-London-Logo-Animation.mp4":
+        16 / 9,
+    "https://freight.cargo.site/t/original/i/E1539767266959917077443847116309/f6aa8485-6f2d-41b1-90e0-32753836bd0e.mp4":
+        3 / 2,
+    "https://freight.cargo.site/t/original/i/W1537681897480517488239549077013/ID-Card-Option-Animation_1.mp4":
+        16 / 9,
+    "https://freight.cargo.site/t/original/i/C1538106533449420377832965789205/Typo-London-Logo-Variants_1.mp4":
+        16 / 9,
+    // Simon & Schuster videos also load outside the initial viewport. Reserve
+    // their published dimensions so metadata arrival cannot resize the page.
+    "https://freight.cargo.site/t/original/i/K1752285800188626851517885044245/S-S-Logo-Animation-2.mp4":
+        16 / 9,
+    "https://framerusercontent.com/assets/npEWAtDub3QRSPyGSrWh42ns6H8.mp4":
+        16 / 9,
+    "https://framerusercontent.com/assets/b9f0GkZjSgHCSTkQ6p5mSRBOFRo.mp4":
+        3200 / 1900,
+}
 const MOTION_CONNECT_PATH = "/case-studies/motion-connect-2025"
 const FEATURED_PROJECT_PATHS = new Set([
     "/case-studies/gaia",
@@ -166,6 +201,9 @@ const FEATURED_PROJECT_VIDEO_POSTERS: Record<string, string> = {
         "https://files.catbox.moe/rotdax.jpg",
 }
 const SKELETON_RATIO_STYLE = `
+[data-case-study-media-stable-video-ratio="true"] {
+    aspect-ratio: var(--case-study-media-stable-video-aspect-ratio) !important;
+}
 [data-case-study-media-skeleton-ratio="true"]:not([data-case-study-media-ready="true"]) {
     aspect-ratio: var(--case-study-media-skeleton-aspect-ratio) !important;
 }
@@ -203,8 +241,16 @@ type Props = {
     lightboxVideos: boolean
     videoLookahead: number
     videoUnloadFar: boolean
+    stableHeroRatio: number
     linkCollectionId: string
     linkTitleFieldId: string
+}
+
+function getStableHeroRatioStyle(ratio: number): string {
+    const safeRatio = Number(ratio)
+    if (!Number.isFinite(safeRatio) || safeRatio <= 0) return ""
+
+    return `@media (min-width:${STABLE_HERO_RATIO_MIN_WIDTH}px){html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;}}`
 }
 
 function isCaseStudyDetailPage(): boolean {
@@ -325,13 +371,44 @@ function getUrlRatio(src: string): number {
     }
 }
 
-function getVideoSkeletonRatio(video: HTMLVideoElement): number {
+function getKnownVideoRatio(video: HTMLVideoElement): number {
+    const signature =
+        video.getAttribute("data-case-study-media-skeleton-signature") ||
+        video
+            .closest<HTMLElement>("[data-case-study-media-skeleton='true']")
+            ?.getAttribute("data-case-study-media-skeleton-signature") ||
+        ""
+    const sources = [
+        video.currentSrc,
+        video.src,
+        video.getAttribute("src") || "",
+        ...Array.from(video.querySelectorAll("source")).map(
+            (source) => source.src || source.getAttribute("src") || ""
+        ),
+    ]
+    const override =
+        sources.reduce(
+            (ratio, source) =>
+                ratio ||
+                VIDEO_SKELETON_RATIO_OVERRIDES[normalizeMediaUrl(source)] ||
+                0,
+            0
+        ) ||
+        Object.entries(VIDEO_SKELETON_RATIO_OVERRIDES).find(([source]) =>
+            signature.includes(source)
+        )?.[1] ||
+        0
+
     return (
         ratioFromDimensions(video.videoWidth, video.videoHeight) ||
+        override ||
         ratioFromDimensions(video.getAttribute("width"), video.getAttribute("height")) ||
-        getUrlRatio(video.currentSrc || video.src || "") ||
-        VIDEO_FALLBACK_RATIO
+        getUrlRatio(video.currentSrc || video.src || "")
     )
+}
+
+function getVideoSkeletonRatio(video: HTMLVideoElement): number {
+    return getKnownVideoRatio(video) || VIDEO_FALLBACK_RATIO
 }
 
 function ensureSkeletonRatioStyle() {
@@ -390,16 +467,56 @@ function syncSkeletonAspectRatios() {
     ensureSkeletonRatioStyle()
 
     document.querySelectorAll<HTMLElement>("[data-case-study-media-skeleton='true']").forEach((host) => {
-        if (host.getAttribute("data-case-study-media-ready") === "true") {
+        const localVideos = Array.from(host.querySelectorAll("video")).filter(
+            (video) =>
+                video.closest("[data-case-study-media-skeleton='true']") ===
+                host
+        )
+        const video = localVideos[0]
+        if (
+            localVideos.length !== 1 ||
+            !(video instanceof HTMLVideoElement) ||
+            isLayoutMediaSkeletonHost(host, video)
+        ) {
+            host.removeAttribute("data-case-study-media-stable-video-ratio")
+            host.style.removeProperty(
+                "--case-study-media-stable-video-aspect-ratio"
+            )
             host.removeAttribute("data-case-study-media-skeleton-ratio")
             host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
             return
         }
 
-        const unresolvedVideo = Array.from(host.querySelectorAll("video")).find(
-            (video) => video.getAttribute("data-case-study-media-state") !== "ready"
-        )
-        if (!(unresolvedVideo instanceof HTMLVideoElement) || isLayoutMediaSkeletonHost(host, unresolvedVideo)) {
+        const knownRatio = getKnownVideoRatio(video)
+        if (knownRatio) {
+            host.setAttribute(
+                "data-case-study-media-stable-video-ratio",
+                "true"
+            )
+            host.style.setProperty(
+                "--case-study-media-stable-video-aspect-ratio",
+                `${knownRatio}`
+            )
+            host.removeAttribute("data-case-study-media-skeleton-ratio")
+            host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+            return
+        }
+
+        // Keep a previously captured intrinsic ratio if a lazy loader removes
+        // the source and the browser temporarily forgets the video dimensions.
+        if (
+            host.getAttribute("data-case-study-media-stable-video-ratio") ===
+            "true"
+        ) {
+            host.removeAttribute("data-case-study-media-skeleton-ratio")
+            host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
+            return
+        }
+
+        if (
+            host.getAttribute("data-case-study-media-ready") === "true" ||
+            video.getAttribute("data-case-study-media-state") === "ready"
+        ) {
             host.removeAttribute("data-case-study-media-skeleton-ratio")
             host.style.removeProperty("--case-study-media-skeleton-aspect-ratio")
             return
@@ -408,7 +525,7 @@ function syncSkeletonAspectRatios() {
         host.setAttribute("data-case-study-media-skeleton-ratio", "true")
         host.style.setProperty(
             "--case-study-media-skeleton-aspect-ratio",
-            `${getVideoSkeletonRatio(unresolvedVideo)}`
+            `${getVideoSkeletonRatio(video)}`
         )
     })
 }
@@ -430,6 +547,7 @@ function useCaseStudySkeletonAspectGuard() {
             frame = window.requestAnimationFrame(syncCaseStudySkeletonGuards)
         }
 
+        syncCaseStudySkeletonGuards()
         schedule()
         ;[75, 200, 500, 1000, 2000, 3500].forEach((delay) => {
             timeouts.push(window.setTimeout(schedule, delay))
@@ -451,6 +569,7 @@ function useCaseStudySkeletonAspectGuard() {
 
         window.addEventListener("pageshow", schedule)
         window.addEventListener("resize", schedule)
+        document.addEventListener("loadedmetadata", schedule, true)
 
         return () => {
             window.cancelAnimationFrame(frame)
@@ -458,6 +577,7 @@ function useCaseStudySkeletonAspectGuard() {
             observer.disconnect()
             window.removeEventListener("pageshow", schedule)
             window.removeEventListener("resize", schedule)
+            document.removeEventListener("loadedmetadata", schedule, true)
         }
     }, [])
 }
@@ -465,6 +585,7 @@ function useCaseStudySkeletonAspectGuard() {
 export default function CaseStudyControllers(props: Props) {
     useCaseStudySkeletonAspectGuard()
     useFeaturedProjectPosterPatch()
+    const stableHeroRatioStyle = getStableHeroRatioStyle(props.stableHeroRatio)
     const Lightbox = CaseStudyLightbox as unknown as React.ComponentType<Record<string, unknown>>
     const VideoManager = CaseStudyVideoManager as unknown as React.ComponentType<Record<string, unknown>>
     const LinkRepair = CaseStudyLinkRepair as unknown as React.ComponentType<Record<string, unknown>>
@@ -473,6 +594,12 @@ export default function CaseStudyControllers(props: Props) {
             data-casestudy-controllers=""
             style={{ display: "block", width: 1, height: 1, opacity: 0 }}
         >
+            {stableHeroRatioStyle ? (
+                <style
+                    data-case-study-stable-hero-ratio=""
+                    dangerouslySetInnerHTML={{ __html: stableHeroRatioStyle }}
+                />
+            ) : null}
             {props.lightbox ? <Lightbox enabled lightboxVideos={props.lightboxVideos} /> : null}
             {props.videoManager ? (
                 <VideoManager
@@ -502,6 +629,7 @@ CaseStudyControllers.defaultProps = {
     lightboxVideos: true,
     videoLookahead: 100,
     videoUnloadFar: true,
+    stableHeroRatio: 0,
     linkCollectionId: "yTHrQWMIY",
     linkTitleFieldId: "oeXZcmPna",
 }
@@ -553,6 +681,14 @@ addPropertyControls(CaseStudyControllers, {
         enabledTitle: "Yes",
         disabledTitle: "No",
         hidden: ({ videoManager }) => !videoManager,
+    },
+    stableHeroRatio: {
+        type: ControlType.Number,
+        title: "Hero Ratio",
+        defaultValue: 0,
+        min: 0,
+        max: 4,
+        step: 0.01,
     },
     linkCollectionId: {
         type: ControlType.String,

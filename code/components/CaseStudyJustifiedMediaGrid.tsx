@@ -64,7 +64,7 @@ type JustifiedRow = {
 }
 
 const STROKE_COLOR = "rgb(151, 151, 151)"
-const STROKE_WIDTH = 0.5
+const STROKE_WIDTH = 1
 const COMPACT_GAP_BREAKPOINT = 810
 
 function getRatio(item: Pick<MediaItem, "ratio">) {

@@ -87,7 +87,7 @@ const LIVE_SCAN_PATHS = [
     "https://khaki-ship-257706.framer.app/case-studies",
     "https://khaki-ship-257706.framer.app/index",
 ]
-const THUMBNAIL_ASPECT_RATIO = "1.674 / 1"
+const THUMBNAIL_ASPECT_RATIO = "16 / 9"
 const TITLE_LINE_HEIGHT = 13
 const HOVER_DURATION = 420
 const HOVER_EASING = "cubic-bezier(0.16, 1, 0.3, 1)"

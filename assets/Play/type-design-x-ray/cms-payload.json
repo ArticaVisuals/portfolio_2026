@@ -1,0 +1,39 @@
+{
+  "collectionId": "EySMRbI2N",
+  "slug": "type-design-x-ray",
+  "draft": false,
+  "fieldData": {
+    "XwW7XD5jI": {
+      "type": "string",
+      "value": "Type Design X-Ray"
+    },
+    "c2qQhVGwP": {
+      "type": "number",
+      "value": 48
+    },
+    "uqRtTdRM1": {
+      "type": "image",
+      "value": "https://framerusercontent.com/images/uO1u8cGHbbm0jM7lrFlzGT21c.webp"
+    },
+    "KWCosE6Ef": {
+      "type": "file",
+      "value": "https://framerusercontent.com/assets/l65Blii6iyk3ld7750jGWWshkSk.mp4"
+    },
+    "vq9I0excy": {
+      "type": "boolean",
+      "value": false
+    },
+    "uhNqEiZxv": {
+      "type": "string",
+      "value": "A tool that reads Glyphs files directly and exports letterforms as vectors with every Bézier node and control point, preserving marked nodes, smooth vs. corner types, real kerning, and every drawn layer."
+    },
+    "VfgNuQyis": {
+      "type": "string",
+      "value": "GET THE TOOL"
+    },
+    "YTkltwLjJ": {
+      "type": "link",
+      "value": "https://github.com/ArticaVisuals/type-design-xray"
+    }
+  }
+}
