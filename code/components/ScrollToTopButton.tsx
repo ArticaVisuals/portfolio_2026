@@ -66,6 +66,18 @@ export default function ScrollToTopButton({
         }
 
         const duration = Math.max(250, scrollDuration)
+        const lenis = (window as any).__mhLenis
+
+        if (lenis && typeof lenis.scrollTo === "function") {
+            lenis.scrollTo(0, {
+                duration: duration / 1000,
+                easing: easeOutQuart,
+                force: true,
+            })
+            frameRef.current = null
+            return
+        }
+
         const startTime = window.performance.now()
 
         const tick = (now: number) => {

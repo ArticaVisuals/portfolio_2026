@@ -1,6 +1,7 @@
 // @ts-nocheck
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
+import NavigationScrollGuard from "https://framer.com/m/NavigationScrollGuard-yDp6tN.js"
 
 const STYLE_ID = "mh-paragraph-pretty-wrap-style"
 const ATTR = "data-mh-paragraph-pretty"
@@ -525,6 +526,7 @@ export default function ResumeAssetHost(props: ResumeAssetHostProps) {
 
     return (
         <>
+            <NavigationScrollGuard />
             <style
                 data-mh-paragraph-pretty-preload="true"
                 dangerouslySetInnerHTML={{ __html: cssText(ATTR) }}

@@ -1,7 +1,7 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** July 30, 2026, via Framer MCP, published browser QA, and local repo audit
+**Last audited:** September 17, 2026, via Framer MCP, draft preview QA, and local repo audit
 **Production URL:** `https://micahhoang.com`
 **Framer default domain:** `https://khaki-ship-257706.framer.app`
 
@@ -13,6 +13,38 @@
 > around a staged rollout that does not exist.)
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
+
+---
+
+## 2026-09-17 Update — global Lenis smooth scrolling (published)
+
+- **Global seam:** `NavigationScrollGuard.tsx` (`Wnd19lx`) owns one shared Lenis `1.3.26`
+  instance. The current Navigation master no longer mounts that helper, so the first publish
+  omitted its module entirely. The corrective draft now mounts `NavigationScrollGuard` from
+  `ResumeAssetHost.tsx` (`xDqfenf`), the Footer compatibility host verified present on every public
+  route. Defaults are
+  `lerp=0.12`, `smoothWheel=true`, `syncTouch=false`, `autoRaf`, `autoResize`, `autoToggle`,
+  `stopInertiaOnNavigate`, and `respectReducedMotion`. The Navigation inspector exposes `Smooth`
+  and `Scroll feel` controls.
+- **Interaction boundaries:** Lenis is destroyed on `/play` and `/play-hover-preview`, preserving
+  the archive's custom two-axis wheel/drag/inertia engine and playback allocator. Events inside
+  lightboxes, WIP overlays, dialogs, and explicit `data-lenis-prevent` regions stay outside Lenis.
+  Touch remains native. The `/index#service=...` transport is not treated as an anchor; only real
+  same-page element hashes are smoothed.
+- **Scroll-to-top:** `ScrollToTopButton.tsx` (`gh4ngZN`) delegates to the shared Lenis instance so
+  two animation loops cannot compete, with the existing native rAF animation retained as fallback.
+- **Verification:** the first production publish was correctly diagnosed as inactive: `/`, `/info`,
+  `/index`, and a case study had no `window.__mhLenis`, root class, stylesheet, or module resource,
+  while the updated Scroll-to-Top bundle had shipped. After the Footer-host correction and second
+  publish, production `/`, `/info`, `/index`, and case-study routes all report `window.__mhLenis`,
+  `html.lenis`, and the intended options. An 800px wheel settles at 800px over ~1.05s; normal
+  Scroll-to-Top calls Lenis and completes in ~0.9s, while reduced motion remains effectively
+  instant and bypasses Lenis. `/play` and `/play-hover-preview` have no Lenis instance and retain
+  working custom wheel/pan transforms. The Gaia lightbox keeps background scrolling locked and
+  restores Lenis after close. Mobile checks at 390px and 320px showed no horizontal overflow.
+  `npm test` continues to pass all 27 Play performance-contract checks.
+- **Release status:** live on `micahhoang.com` and the `.framer.app` domain; production browser QA
+  passed on 2026-09-17 with no Lenis-related console errors or warnings.
 
 ---
 
@@ -535,7 +567,7 @@ Framer code components relevant to this handoff include:
 | `FooterCopyrightYear.tsx` | `BF2H03E` | Footer year helper. |
 | `Test.tsx` | `O9WTdUJ` | Misleading filename; exports the legacy `ProjectRegistrar` CMS registry bridge. Retained for canvas compatibility only; not a `/index` render fallback. |
 | `CaseStudyThumbnailStrokeStyles.tsx` | `Z28JYvA` | CMS-driven thumbnail stroke helper on Home, `/case-studies`, and `/index`. |
-| `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. As of July 21 it also carries the singleton `ParagraphPrettyWrap` fallback for pages that do not include `PageTransition`. |
+| `ResumeAssetHost.tsx` | `xDqfenf` | Footer/resume compatibility utility; keep because Footer still references the expected prop shape. It carries the singleton `ParagraphPrettyWrap` fallback for pages without `PageTransition` and, as of September 17, mounts `NavigationScrollGuard` from the shared Footer seam so global Lenis reaches every public route. |
 | `Play.tsx` | `PN1RVOf` | Active `/play` production wrapper. Keeps protected Framer authoring controls through `Archive Items` / `archiveItems` as fallback/rollback, and passes managed media plus load-in timing to `ArchivePlayground.tsx`. Do not remove this authoring surface or replace it with unrelated static media. |
 | `ArchivePlayground.tsx` | `QNpkYp5` | Underlying `/play` archive renderer as of June 8. Consolidated grid, drawer, media smoothing, footer hiding, nav passthrough, close timing, attempted Play Archive CMS loading, fallback panel items, and baked snapshot rendering live here. Must continue accepting authorable item arrays from the production wrapper. |
 | `ArchivePlaygroundConsolidated.tsx` | `D5YVims` | Unmounted earlier consolidation attempt. Keep only as rollback/historical material unless intentionally revived. |
@@ -547,7 +579,7 @@ Framer code components relevant to this handoff include:
 | `PlaygroundSidebarColumnGuard.tsx` | `R3ZWYKl` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundNavExitHold.tsx` | `iivBAHR` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
 | `PlaygroundMediaLoadSmoother.tsx` | `FFqrKyU` | Legacy `/play` helper. Instance remains on the live `/play` canvas with `enabled=false` after the June 8 promotion. |
-| `ScrollToTopButton.tsx` | `gh4ngZN` | Scroll-to-top helper used on Home and `/info`. |
+| `ScrollToTopButton.tsx` | `gh4ngZN` | Scroll-to-top helper used on Home and `/info`; delegates to the global Lenis instance when available and retains the native rAF fallback. |
 | `InfoScrollMoreColorOverride.tsx` | `AZDGWx7` | `/info` Scroll More color override plus tablet Recognition-column alignment. |
 | `LineAnimationBorder.tsx` | `j7WYIMf` | Nondestructive border-frame replacement for native `Line Animation`; preserves the existing line draw timing (`0.2s` delay, `2s`, `[0.25, 1, 0.5, 1]`) and can self-trigger once in viewport for copied `/info` page swaps. |
 | `ResponsiveCaseStudyVideo.tsx` | `bsTLKCt` | Case-study media helper for responsive video blocks. |
@@ -564,7 +596,7 @@ Framer code components relevant to this handoff include:
 | `CaseStudyVideoManager.tsx` | `rGMwETR` | Case-study autoplay video subcontroller. Prefer the consolidated `CaseStudyControllers.tsx` wrapper for page-level mounts. |
 | `CaseStudyControllers.tsx` | `z13WRHS` | Active hidden wrapper for the useful bespoke case-study controllers: lightbox, video manager, and link repair. Mounted on accessible bespoke pages where the three separate controller instances were consolidated. **July 23:** repinned the lightbox import to `CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY` and pushed the wrapper as `CaseStudyControllers-0q1sTD.js@qIsqrYC4NEAuXRTB6t7W`. |
 | `CaseStudyMobileDescriptorLayout.tsx` | `W62Sy75` | Case-study mobile descriptor layout helper. Mounted on bespoke case-study pages that need the compact descriptor rhythm, including the Peak Energy WIP shell. |
-| `NavigationScrollGuard.tsx` | `Wnd19lx` | Hidden child of the native `Navigation` component (`I0Wh3P9o8`). Keeps the nav visible/clickable at page top if Framer's scroll-hide transform gets stuck after scrolling down and returning to `scrollY=0`. |
+| `NavigationScrollGuard.tsx` | `Wnd19lx` | Nav recovery helper and owner of the global Lenis singleton. The current Navigation master does not mount it; `ResumeAssetHost` mounts it through the shared Footer seam. Keeps the nav visible/clickable at page top, excludes `/play` and `/play-hover-preview`, and preserves native touch and reduced-motion behavior. |
 
 June 8 cleanup: `CaseStudyThumbnailVideoSync.tsx` (`qONpo1v`) was removed from Home, `/case-studies`, `/index`, and `/case-studies/aspen-valley-landscaping`, then deleted from Framer after its mounted behavior was consolidated into the existing page/component thumbnail video paths. `RelatedProjectHoverZoom.tsx` was also removed from the local repo; it was a historical mirror and is not present in the current Framer MCP code-component inventory.
 
@@ -580,7 +612,7 @@ June 10 build-error resolution: a leftover orphaned instance of the deleted edit
 
 June 10 related-project thumbnail fix: the AirPods "Other Projects" Gaia card was rendering the static `thumbnailSrc` prop (`1a1LDlRx4V2kNoG7kX7hvWygUCg.jpg`) while the CMS/Home/Index source of truth had Gaia's thumbnail as `XBEu3UkNu8Hm5CPrgksq7wtmbw.gif`. `OtherProjectCardRestored.tsx` now resolves the generated `All Projects` CMS module (`yTHrQWMIY`) and replaces card media/stroke from CMS when a matching slug/title exists; manual props remain fallback values. Publish the Framer site after this code-file update before expecting `khaki-ship-257706.framer.app` to reflect the new component bundle.
 
-June 10 nav scroll guard: reproduced a native Navigation bug on Home where scrolling down and back to the top left the fixed nav inline-styled as `transform: perspective(1200px) translateY(-64px)` even at `scrollY=0`, making the visible header links unhoverable/unclickable. `NavigationScrollGuard.tsx` is mounted inside the reusable `Navigation` component and only forces the nav transform back to `translate3d(0,0,0)` while the document is within 4px of the top. It intentionally skips `/play`'s temporary `playground-nav-exit-hidden` close animation class so the archive drawer reveal can still run.
+June 10 nav scroll guard, superseded September 17 for mounting: reproduced a native Navigation bug on Home where scrolling down and back to the top left the fixed nav inline-styled as `transform: perspective(1200px) translateY(-64px)` even at `scrollY=0`, making the visible header links unhoverable/unclickable. The helper originally lived inside the reusable `Navigation` component, but the current Navigation master no longer mounts it; `ResumeAssetHost` now supplies it globally through the shared Footer seam. It forces the nav transform back to `translate3d(0,0,0)` only while the document is within 4px of the top and skips `/play`'s temporary `playground-nav-exit-hidden` close animation class so the archive drawer reveal can still run. The September 17 update also makes this helper the global Lenis owner, with `/play` and `/play-hover-preview` excluded.
 
 #### Play page consolidation — active as of June 8, 2026
 
@@ -835,7 +867,7 @@ Safe to keep:
 - `/play` rollback context lives under
   `archive/retired-play-helpers-2026-06-18/`; the retired helper files and
   instances are no longer active in Framer.
-- `ResumeAssetHost.tsx` should remain because the Footer expects its prop/control shape. It also carries `ParagraphPrettyWrap` for routes without `PageTransition`.
+- `ResumeAssetHost.tsx` should remain because the Footer expects its prop/control shape. It also carries `ParagraphPrettyWrap` for routes without `PageTransition` and mounts `NavigationScrollGuard` as the shared global Lenis seam.
 - The five legacy override files should remain unless a Framer publish check proves they are fully unused.
 
 Good future cleanup candidates:

@@ -124,11 +124,11 @@
     {
       "codeFileId": "Wnd19lx",
       "path": "NavigationScrollGuard.tsx",
-      "role": "Native navigation scroll guard",
+      "role": "Native navigation scroll guard and global Lenis host",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/NavigationScrollGuard.tsx",
-      "bytes": 4310,
-      "sha256": "39db2f709d1e5e22385e5921025b83bff25ac48bfaf40b6fac373f74d75eec40"
+      "bytes": 16828,
+      "sha256": "866ea39552c63f4afb5942ef3179cee4d1dab7c63b02c13137dc3ee9d0b354ef"
     },
     {
       "codeFileId": "vlwa5Cz",
@@ -160,11 +160,11 @@
     {
       "codeFileId": "xDqfenf",
       "path": "ResumeAssetHost.tsx",
-      "role": "Footer compatibility host and ParagraphPrettyWrap fallback",
+      "role": "Footer compatibility host, ParagraphPrettyWrap fallback, and global Lenis mount",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ResumeAssetHost.tsx",
-      "bytes": 15103,
-      "sha256": "4b5c10899cbf8ec4e3bc98e4bd9307388365811edbd27474adb6b7b3005520de"
+      "bytes": 24677,
+      "sha256": "3f59386a07b9ccc365922e255058110d9e2e0a027bb22fa98e863a3fd710175d"
     },
     {
       "codeFileId": "PN1RVOf",
@@ -178,11 +178,11 @@
     {
       "codeFileId": "gh4ngZN",
       "path": "ScrollToTopButton.tsx",
-      "role": "Scroll-to-top helper",
+      "role": "Scroll-to-top helper with global Lenis delegation",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ScrollToTopButton.tsx",
-      "bytes": 8186,
-      "sha256": "e1b764f7a2b19b7196e152d72f8a4d4b3d57b18bfb1243ae01fdfefb5d46017e"
+      "bytes": 8518,
+      "sha256": "eeae0ceb8748f9235f3abb9b69810d9a79eee995577e45d4d665ccc25abba5ca"
     },
     {
       "codeFileId": "tYFZCey",
