@@ -1,6 +1,48 @@
 # Site-wide page transition (zitafernandez.com style)
 
-**Status:** current Framer draft code files are source of truth · 2026-07-27 · codeFile `gmalnRr` (`PageTransition.tsx`) is a THIN WRAPPER that imports the compiled v7.12 runtime module, mounts `ParagraphPrettyWrap` (`EjvkJhv`) for paragraph `text-wrap: pretty` at 23px and under, and adds the Home Header Bottom recovery + the `/index` hero title rise-on-arrival + the Home hero route-arrival controller. The current published insert URL is `https://framer.com/m/PageTransition-br4HFc.js@ELu2vuJ3sJNZaFzK8VIY`. `ResumeAssetHost` (`xDqfenf`, published insert URL `https://framer.com/m/ResumeAssetHost-oJ9Q3K.js@NLAahPAHiXdVntnv4N5v`) carries the Footer fallback for routes that do not load PageTransition. The full v7.12 runtime SOURCE that compiles to the imported module is preserved as `code/mirror/backups/PageTransition.runtime-backup.tsx`.
+**2026-09-17 — first-load identity and curtain cadence repair (published).**
+`PageTransition.tsx` (`gmalnRr`, insert version `LpxZNM4x6qeeEQmi4b9G`) now
+shares its first-paint script with Framer's **Preloaders** custom-code entry
+(Start of `<head>`, All pages, Once). The early green cover contains the same
+centered identity as the runtime curtain. Both use a 2.4 KB inline subset of
+the existing GT Standard L Regular font, avoiding the previously measured
+8.16px font-swap width shift. Regenerate the head entry after edits with
+`node code/tools/sync-boot-head.mjs`, then sync
+`code/mirror/custom-code/Preloaders.html` to Framer; changing the component
+alone cannot fix the earliest head paint.
+
+The foreground cadence issue was isolated to the two selected-work videos
+playing behind the curtain: baseline ~33ms frame intervals became ~8.3ms
+when those videos were paused, hidden, or blocked. Disabling Lenis, native
+appear replay, or CSS animations did not solve it. The head guard now holds
+only `video.selected-work-video` playback while the actual desktop Home boot
+curtain exists. It captures native autoplay events; the existing autoplay
+helper honors the same hold, then resumes visible cards after removal.
+Hidden-tab release waits for visibility/pageshow before resuming. Mobile,
+reduced-motion, non-Home routes, and internal Home arrivals retain their
+existing boot eligibility. No Play media behavior or playback budget changed.
+
+The lift retains Zita's original `cubic-bezier(0.65, 0.01, 0.05, 0.99)` and
+1200ms duration (confirmed against the current reference site's loader).
+Home Header Bottom recovery also avoids redundant style/stylesheet writes and
+coalesces mutation work, while preserving late-animation cancellation and the
+all-route Home controller. Published cold-load QA: 143 samples during the
+1200ms lift, median 8.4ms / maximum 9.6ms interval, zero >20ms intervals or
+long tasks; zero playing videos during the sweep and two resumed afterward.
+Identity width stayed 277.742px; recovery stylesheet writes fell from 520 to 1.
+Measurements describe the tested foreground Chromium/120Hz environment, not a
+frame-rate guarantee on every device. Diagnostic artifacts are under
+`output/playwright/curtain-*-2026-09-17*`.
+Follow-up QA passed at 1440px and 810px; mobile (390px) and reduced motion
+skipped the curtain/hold. Home → Index → Home retained its hero controller and
+resumed only visible videos. A controlled hidden/visible lifecycle test held
+playback at zero while hidden and resumed two visible cards on return. With
+all external WOFF2 requests blocked, the identity was font-ready and correctly
+sized at every sample after first contentful paint. Framer typecheck was empty,
+the head entry matched the generated source exactly, and `npm test` passed
+all 27 existing guards.
+
+**Status:** current Framer draft code files are source of truth · 2026-09-17 · codeFile `gmalnRr` (`PageTransition.tsx`) is a THIN WRAPPER that imports the compiled v7.12 runtime module, mounts `ParagraphPrettyWrap` (`EjvkJhv`) for paragraph `text-wrap: pretty` at 23px and under, and adds the Home Header Bottom recovery + the `/index` hero title rise-on-arrival + the Home hero route-arrival controller. The current published insert URL is `https://framer.com/m/PageTransition-br4HFc.js@LpxZNM4x6qeeEQmi4b9G`. `ResumeAssetHost` (`xDqfenf`, published insert URL `https://framer.com/m/ResumeAssetHost-oJ9Q3K.js@NLAahPAHiXdVntnv4N5v`) carries the Footer fallback for routes that do not load PageTransition. The full v7.12 runtime SOURCE that compiles to the imported module is preserved as `code/mirror/backups/PageTransition.runtime-backup.tsx`.
 
 **2026-07-23 — Home hero delayed-arrival regression.** A live frame probe of
 `/play` → Home showed the Home DOM committed around 460ms after click, but the

@@ -64,15 +64,123 @@ let homeHeaderBottomRecoveryCleanup = null
 // chrome never flashes or lingers green.
 const BOOT_VIEWPORT_GUARD_JS = `(function(){try{if(window.${BOOT_VIEWPORT_GLOBAL_KEY})return;window.${BOOT_VIEWPORT_GLOBAL_KEY}=true;try{if((window.innerWidth||document.documentElement.clientWidth||0)<=${BOOT_DISABLE_MAX_WIDTH_PX}){var __ptNoReplay=function(){};Object.defineProperty(window,"__ptReplayAppear",{configurable:true,get:function(){return __ptNoReplay},set:function(){}})}}catch(e){}var BOOT_ID=${JSON.stringify(BOOT_ID)};var LABEL_ID=${JSON.stringify(BOOT_LABEL_ID)};var STYLE_ID=${JSON.stringify(BOOT_VIEWPORT_STYLE_ID)};var PAGE_COLOR=${JSON.stringify(PAGE_THEME_COLOR)};function ensureStyle(){var s=document.getElementById(STYLE_ID);if(!s){s=document.createElement("style");s.id=STYLE_ID;(document.head||document.documentElement).appendChild(s)}var css="html{background:"+PAGE_COLOR+"!important;}html body{background:"+PAGE_COLOR+"!important;}#"+BOOT_ID+"{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;width:100%!important;height:100vh!important;min-height:100vh!important;}#"+LABEL_ID+"{top:0!important;bottom:auto!important;height:100vh!important;min-height:100vh!important;}@supports (height:100dvh){#"+BOOT_ID+"{height:100dvh!important;min-height:100dvh!important;}#"+LABEL_ID+"{height:100dvh!important;min-height:100dvh!important;}}@media (hover: none),(pointer: coarse){nav a[href]>*:nth-child(n+2){visibility:hidden!important;}}@media (max-width:${BOOT_DISABLE_MAX_WIDTH_PX}px){#"+BOOT_ID+",#"+LABEL_ID+"{display:none!important;}}";if(s.textContent!==css)s.textContent=css}function themeSync(){try{var m=document.querySelector('meta[name="theme-color"]');if(!m){m=document.createElement("meta");m.setAttribute("name","theme-color");(document.head||document.documentElement).appendChild(m)}if(m.getAttribute("content")!==PAGE_COLOR)m.setAttribute("content",PAGE_COLOR)}catch(e){}}function sync(){ensureStyle();themeSync()}sync();requestAnimationFrame(sync);setTimeout(sync,50);setTimeout(sync,250);window.addEventListener("resize",sync,{passive:true});window.addEventListener("orientationchange",sync,{passive:true});window.addEventListener("pageshow",sync,{passive:true});window.addEventListener("popstate",sync,{passive:true});window.addEventListener("hashchange",sync,{passive:true});window.addEventListener("pt:reveal",sync);window.addEventListener("mh:locationchange",sync);if(window.visualViewport){window.visualViewport.addEventListener("resize",sync,{passive:true});window.visualViewport.addEventListener("scroll",sync,{passive:true})}if(typeof MutationObserver!=="undefined"){new MutationObserver(sync).observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();`
 
-// The shared Navigation layout is emitted before page code components in
-// Framer's HTML. On a throttled cold load it can therefore reach first paint a
-// frame before the compiled boot runtime creates #__pt-boot. This parser-time
-// shield uses the same color, sits immediately below the real curtain, and is
-// removed in the same rendering turn that the real curtain is appended.
-// Mobile/reduced-motion behavior and the compiled curtain choreography stay
-// unchanged. DOMContentLoaded is the fail-safe release if the boot runtime does
-// not run.
-const BOOT_FIRST_PAINT_GUARD_JS = `(function(){try{var COVER_ID=${JSON.stringify(BOOT_FIRST_PAINT_ID)};var BOOT_ID=${JSON.stringify(BOOT_ID)};var BOOT_COLOR=${JSON.stringify(DEFAULT_BOOT_COLOR)};var maxWidth=${BOOT_DISABLE_MAX_WIDTH_PX};var path=(location.pathname||"/").replace(/\\/+$/,"")||"/";var width=window.innerWidth||document.documentElement.clientWidth||0;var reduced=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);var nav=performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];var navType=nav?nav.type:"navigate";var fresh=navType==="reload";if(!fresh&&navType==="navigate"){var ref=document.referrer;fresh=!ref;try{if(ref)fresh=new URL(ref).origin!==location.origin}catch(e){fresh=true}}if(path!==${JSON.stringify(HOME_PATH)}||width<=maxWidth||reduced||!fresh)return;if(document.getElementById(COVER_ID))return;var cover=document.createElement("div");cover.id=COVER_ID;cover.setAttribute("aria-hidden","true");cover.style.cssText="position:fixed;top:0;right:0;bottom:auto;left:0;width:100%;height:100vh;min-height:100vh;background:"+BOOT_COLOR+";z-index:2147483599;pointer-events:none;";try{if(window.CSS&&CSS.supports("height","100dvh")){cover.style.height="100dvh";cover.style.minHeight="100dvh"}}catch(e){}document.documentElement.appendChild(cover);var observer=null;var released=false;function release(){if(released)return;released=true;try{if(observer)observer.disconnect()}catch(e){}try{if(cover.parentNode)cover.parentNode.removeChild(cover)}catch(e){}}function handoff(){if(document.getElementById(BOOT_ID)){release();return true}return false}if(typeof MutationObserver!=="undefined"){observer=new MutationObserver(handoff);observer.observe(document.documentElement,{childList:true,subtree:true})}handoff();document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){if(!handoff())release()},0)},{once:true})}catch(e){try{var stale=document.getElementById(${JSON.stringify(BOOT_FIRST_PAINT_ID)});if(stale&&stale.parentNode)stale.parentNode.removeChild(stale)}catch(ignore){}}})();`
+// The head preloader and this parser-time fallback use identical text/font
+// styling. The tiny inline font subset removes the network-dependent font swap.
+// Regenerate code/mirror/custom-code/Preloaders.html after edits with
+// `node code/tools/sync-boot-head.mjs` and copy that entry into Framer > Code.
+const BOOT_PRESENTATION_CSS = `
+@font-face{font-family:"MH Boot Identity";src:url("data:font/woff2;base64,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") format("woff2");font-style:normal;font-weight:400;font-display:block;}
+html #${BOOT_LABEL_ID}{font-family:"MH Boot Identity",sans-serif!important;font-synthesis:none!important;}
+`
+const BOOT_FIRST_PAINT_CSS = `
+html::before{content:"Micah Hoang ©2026";position:fixed;top:0;right:0;bottom:auto;left:0;width:100%;height:100vh;min-height:100vh;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:32px;background:${DEFAULT_BOOT_COLOR};color:${PAGE_THEME_COLOR};font-family:"MH Boot Identity",sans-serif;font-size:30px;font-style:normal;font-weight:400;line-height:120%;letter-spacing:-0.01em;font-synthesis:none;text-align:center;white-space:normal;z-index:2147483599;pointer-events:none;}
+@supports(height:100dvh){html::before{height:100dvh;min-height:100dvh;}}
+@media(max-width:1199px){html::before{font-size:24px;}}
+@media(max-width:${BOOT_DISABLE_MAX_WIDTH_PX}px),(prefers-reduced-motion:reduce){html::before{display:none;}}
+`
+const BOOT_FIRST_PAINT_GUARD_JS = `(function () {
+  try {
+    var path = (location.pathname || "/").replace(/\\/+$/, "") || "/";
+    var width = window.innerWidth || document.documentElement.clientWidth || 0;
+    var reduced = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var navType = nav ? nav.type : "navigate";
+    var fresh = navType === "reload";
+    if (!fresh && navType === "navigate") {
+      var ref = document.referrer;
+      fresh = !ref;
+      try { if (ref) fresh = new URL(ref).origin !== location.origin; } catch (_) { fresh = true; }
+    }
+    if (path !== "/" || width <= ${BOOT_DISABLE_MAX_WIDTH_PX} || reduced || !fresh || document.prerendering) return;
+
+    var parent = document.head || document.documentElement;
+    var presentationId = "mh-boot-presentation";
+    if (!document.getElementById(presentationId)) {
+      var presentation = document.createElement("style");
+      presentation.id = presentationId;
+      presentation.textContent = ${JSON.stringify(BOOT_PRESENTATION_CSS)};
+      parent.appendChild(presentation);
+    }
+    var coverId = ${JSON.stringify(BOOT_FIRST_PAINT_ID)};
+    var bootId = ${JSON.stringify(BOOT_ID)};
+    var existingBoot = document.getElementById(bootId);
+    if (existingBoot) { holdBootVideos(existingBoot); return; }
+    if (document.getElementById(coverId)) return;
+    var cover = document.createElement("style");
+    cover.id = coverId;
+    cover.textContent = ${JSON.stringify(BOOT_FIRST_PAINT_CSS)};
+    parent.appendChild(cover);
+
+    var observer = null;
+    var released = false;
+    var fallbackTimer = 0;
+    function holdBootVideos(boot) {
+      if (typeof window.__mhBootVideoHold === "boolean") return;
+      window.__mhBootVideoHold = true;
+      var videoObserver = null;
+      var videoTimer = 0;
+      var videoSelector = "video.selected-work-video";
+      function pauseVideo(event) {
+        var video = event.target;
+        if (video && video.matches && video.matches(videoSelector)) video.pause();
+      }
+      function resumeVideos() {
+        if (!window.__mhBootVideoHold) return;
+        window.__mhBootVideoHold = false;
+        document.removeEventListener("play", pauseVideo, true);
+        document.removeEventListener("playing", pauseVideo, true);
+        window.removeEventListener("resize", onResize);
+        window.removeEventListener("pagehide", resumeVideos);
+        if (videoObserver) videoObserver.disconnect();
+        clearTimeout(videoTimer);
+        window.dispatchEvent(new Event("mh:boot-complete"));
+      }
+      function onResize() {
+        if (window.innerWidth <= ${BOOT_DISABLE_MAX_WIDTH_PX}) resumeVideos();
+      }
+      // Native autoplay bypasses play() helpers. Hold its events too, so video
+      // compositing cannot pull the curtain down to the media's 30fps cadence.
+      document.addEventListener("play", pauseVideo, true);
+      document.addEventListener("playing", pauseVideo, true);
+      document.querySelectorAll(videoSelector).forEach(function (video) { video.pause(); });
+      window.addEventListener("resize", onResize, {passive:true});
+      window.addEventListener("pagehide", resumeVideos, {once:true});
+      videoObserver = new MutationObserver(function () {
+        if (!boot.isConnected) resumeVideos();
+      });
+      videoObserver.observe(document.documentElement, {childList:true});
+      videoTimer = setTimeout(resumeVideos, 12000);
+    }
+    function release() {
+      if (released) return;
+      released = true;
+      if (observer) observer.disconnect();
+      document.removeEventListener("DOMContentLoaded", releaseAfterReady);
+      clearTimeout(fallbackTimer);
+      if (cover.parentNode) cover.parentNode.removeChild(cover);
+    }
+    function handoff() {
+      var boot = document.getElementById(bootId);
+      if (!boot) return false;
+      holdBootVideos(boot);
+      release();
+      return true;
+    }
+    function releaseAfterReady() {
+      fallbackTimer = setTimeout(function () { if (!handoff()) release(); }, 0);
+    }
+    if (typeof MutationObserver !== "undefined") {
+      observer = new MutationObserver(handoff);
+      observer.observe(document.documentElement, {childList:true, subtree:true});
+    }
+    if (handoff()) return;
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", releaseAfterReady, {once:true});
+    else releaseAfterReady();
+  } catch (_) {
+    var stale = document.getElementById(${JSON.stringify(BOOT_FIRST_PAINT_ID)});
+    if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+  }
+})();`
 
 
 function ensureBootViewportStyle() {
@@ -186,6 +294,7 @@ function installSelectedWorkVideoAutoplay() {
             } catch (err) {}
         }
         const play = (v) => {
+            if (window.__mhBootVideoHold) return
             try {
                 const p = v.play()
                 if (p && typeof p.catch === "function") p.catch(() => {})
@@ -202,6 +311,18 @@ function installSelectedWorkVideoAutoplay() {
                     .forEach((v) => kick(v, force))
             } catch (err) {}
         }
+        window.addEventListener("mh:boot-complete", () => {
+            const resumeWhenVisible = () => {
+                if (document.visibilityState === "hidden") return
+                document.removeEventListener("visibilitychange", resumeWhenVisible)
+                window.removeEventListener("pageshow", resumeWhenVisible)
+                if (isHomePath()) sweep(false)
+            }
+            if (document.visibilityState === "hidden") {
+                document.addEventListener("visibilitychange", resumeWhenVisible)
+                window.addEventListener("pageshow", resumeWhenVisible)
+            } else resumeWhenVisible()
+        }, { once: true })
 
         let io = null
         if (typeof IntersectionObserver !== "undefined") {
@@ -299,13 +420,19 @@ function ensureHomeHeaderBottomRecoveryStyle() {
             parent.appendChild(style)
         }
 
-        style.textContent = `${HOME_HEADER_BOTTOM_APPEAR_SELECTOR}{opacity:1!important;transform:none!important;visibility:visible!important;}`
+        const css = `${HOME_HEADER_BOTTOM_APPEAR_SELECTOR}{opacity:1!important;transform:none!important;visibility:visible!important;}`
+        if (style.textContent !== css) style.textContent = css
     } catch (err) {}
 }
 
-function getHomeHeaderBottomAppearEls() {
+function getHomeHeaderBottomAppearEls(roots = null) {
     if (!isHomePath()) return []
     try {
+        if (roots) {
+            return roots.flatMap((root) =>
+                Array.from(root.querySelectorAll("[data-framer-appear-id]"))
+            )
+        }
         return Array.from(
             document.querySelectorAll(HOME_HEADER_BOTTOM_APPEAR_SELECTOR)
         )
@@ -323,7 +450,7 @@ function isViewTransitionAnimation(animation) {
     }
 }
 
-function revealHomeHeaderBottomAppearEls() {
+function revealHomeHeaderBottomAppearEls(els = getHomeHeaderBottomAppearEls()) {
     if (!isHomePath()) {
         removeHomeHeaderBottomRecoveryStyle()
         return
@@ -331,7 +458,6 @@ function revealHomeHeaderBottomAppearEls() {
 
     ensureHomeHeaderBottomRecoveryStyle()
 
-    const els = getHomeHeaderBottomAppearEls()
     if (!els.length) return
     els.forEach((el) => {
         try {
@@ -343,9 +469,18 @@ function revealHomeHeaderBottomAppearEls() {
             })
         } catch (err) {}
         try {
-            el.style.setProperty("opacity", "1", "important")
-            el.style.setProperty("transform", "none", "important")
-            el.style.setProperty("visibility", "visible", "important")
+            ;[
+                ["opacity", "1"],
+                ["transform", "none"],
+                ["visibility", "visible"],
+            ].forEach(([property, value]) => {
+                if (
+                    el.style.getPropertyValue(property) !== value ||
+                    el.style.getPropertyPriority(property) !== "important"
+                ) {
+                    el.style.setProperty(property, value, "important")
+                }
+            })
         } catch (err) {}
     })
 }
@@ -366,7 +501,11 @@ function startHomeHeaderBottomRecovery() {
     let stopped = false
     let raf = 0
     let interval = 0
-    let observer = null
+    let discoveryObserver = null
+    let headerObserver = null
+    let roots = []
+    let appearEls = []
+    let targetsDirty = true
     const startedAt = Date.now()
 
     const stop = () => {
@@ -375,14 +514,40 @@ function startHomeHeaderBottomRecovery() {
         if (raf) window.cancelAnimationFrame(raf)
         if (interval) window.clearInterval(interval)
         try {
-            if (observer) observer.disconnect()
+            if (discoveryObserver) discoveryObserver.disconnect()
+            if (headerObserver) headerObserver.disconnect()
         } catch (err) {}
         if (homeHeaderBottomRecoveryCleanup === stop) {
             homeHeaderBottomRecoveryCleanup = null
         }
     }
 
+    const refreshTargets = () => {
+        const nextRoots = Array.from(
+            document.querySelectorAll(HOME_HEADER_BOTTOM_SELECTOR)
+        )
+        if (
+            headerObserver &&
+            (nextRoots.length !== roots.length ||
+                nextRoots.some((root, index) => root !== roots[index]))
+        ) {
+            headerObserver.disconnect()
+            nextRoots.forEach((root) =>
+                headerObserver.observe(root, {
+                    subtree: true,
+                    childList: true,
+                    attributes: true,
+                    attributeFilter: ["style", "class", "data-framer-appear-id"],
+                })
+            )
+        }
+        roots = nextRoots
+        appearEls = getHomeHeaderBottomAppearEls(roots)
+        targetsDirty = false
+    }
+
     const tick = () => {
+        raf = 0
         if (stopped) return
         if (!isHomePath()) {
             stop()
@@ -390,45 +555,69 @@ function startHomeHeaderBottomRecovery() {
             return
         }
 
-        revealHomeHeaderBottomAppearEls()
-
-        if (Date.now() - startedAt < HOME_HEADER_BOTTOM_RECOVERY_MS) {
-            raf = window.requestAnimationFrame(tick)
-        }
+        if (targetsDirty) refreshTargets()
+        revealHomeHeaderBottomAppearEls(appearEls)
     }
 
-    const observe = () => {
-        try {
+    const schedule = () => {
+        if (!stopped && !raf) raf = window.requestAnimationFrame(tick)
+    }
+
+    try {
+        if (typeof MutationObserver !== "undefined") {
+            headerObserver = new MutationObserver((records) => {
+                if (stopped) return
+                if (
+                    records.some(
+                        (record) =>
+                            record.type === "childList" ||
+                            record.attributeName === "data-framer-appear-id"
+                    )
+                ) {
+                    targetsDirty = true
+                }
+                schedule()
+            })
             const root = document.body || document.documentElement
-            if (!root || typeof MutationObserver === "undefined") return
-            let pending = false
-            observer = new MutationObserver(() => {
-                if (pending || stopped) return
-                pending = true
-                window.requestAnimationFrame(() => {
-                    pending = false
-                    revealHomeHeaderBottomAppearEls()
+            if (root) {
+                // Discover replaced/mounted headers without observing animated
+                // style attributes across the entire page during the curtain.
+                discoveryObserver = new MutationObserver((records) => {
+                    if (stopped) return
+                    const containsHeader = (node) =>
+                        node.nodeType === 1 &&
+                        (node.matches(HOME_HEADER_BOTTOM_SELECTOR) ||
+                            node.querySelector(HOME_HEADER_BOTTOM_SELECTOR))
+                    if (
+                        records.some((record) =>
+                            [...record.addedNodes, ...record.removedNodes].some(
+                                containsHeader
+                            )
+                        )
+                    ) {
+                        targetsDirty = true
+                        schedule()
+                    }
                 })
-            })
-            observer.observe(root, {
-                subtree: true,
-                childList: true,
-                attributes: true,
-                attributeFilter: ["style", "class"],
-            })
-        } catch (err) {}
-    }
+                discoveryObserver.observe(root, {
+                    subtree: true,
+                    childList: true,
+                })
+            }
+        }
+    } catch (err) {}
 
-    revealHomeHeaderBottomAppearEls()
-    raf = window.requestAnimationFrame(tick)
+    tick()
+    // Late WAAPI appear effects need a bounded check because starting an
+    // animation need not mutate the DOM. All recovery work shares one frame.
     interval = window.setInterval(() => {
         if (Date.now() - startedAt > HOME_HEADER_BOTTOM_RECOVERY_MS) {
             stop()
             return
         }
-        revealHomeHeaderBottomAppearEls()
+        if (!headerObserver || !roots.length) targetsDirty = true
+        schedule()
     }, HOME_HEADER_BOTTOM_RECOVERY_INTERVAL_MS)
-    observe()
 
     homeHeaderBottomRecoveryCleanup = stop
 }
