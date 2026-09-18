@@ -1335,7 +1335,7 @@ function buildGlobalCss(): string {
     align-items: baseline;
     gap: 8px;
     width: 100%;
-    margin: 12px 0 24px;
+    margin: -46px 0 24px;
     font-family: ${tokens.fontMono};
     font-size: 13px;
     font-weight: 400;

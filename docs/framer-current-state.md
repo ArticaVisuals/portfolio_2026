@@ -98,6 +98,13 @@ The compensating hack `.idx-container:has(.idx-tax-value[aria-pressed="true"]) .
 new jump in the opposite direction. Measured: first card sits at 1131px before, during and after
 filtering — 0px movement.
 
+**September 17 alignment follow-up:** the always-mounted Clear row and the following view-toggle row
+were still separated by exactly 46px (28px line plus the 18px collapsed sibling gap). The view toggle
+now uses `margin: -46px 0 24px` unconditionally, placing `CLEAR FILTERS` and `GRID / LIST` on the same
+baseline at desktop, tablet, and mobile widths. This is intentionally different from the removed
+conditional `:has(...)` hack: because the reserved Clear row always exists, the fixed offset produces
+no geometry change when filters activate or clear.
+
 **Fix: `/index` arrival felt like it stuck after the "Index" title.** Content was gated by a binary
 switch (`isCMSLoading || !deferHeavyContentReady`) that mounted the entire index in one large commit
 after two rAFs. Replaced with **progressive mounting**: 6 projects on the first frame, then +12 per

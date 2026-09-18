@@ -28,7 +28,7 @@
 - **List/Grid responsive alignment (June 18, 2026):** the single-column grid and mobile list simplification now share the same 899px container breakpoint. At and below that point, List view hides the year indicator and service/industry/category columns, keeps titles left-aligned to the page margin, and stretches row/year/bottom rules full width.
 - **ImageMaskReveal is archived:** old notes about disabled/enabled `ImageMaskReveal` instances are historical. The reveal component is stub-archived and not part of the current `/index` behavior.
 - **Thumbnail stroke helper added (May 15, 2026; cleaned up May 16; canvas update May 19; CMS export fix June 1; instance prop cleanup June 2):** `CaseStudyThumbnailStrokeStyles.tsx` (`Z28JYvA`) controls per-project thumbnail strokes from the CMS Boolean `Thumbnail Stroke` (`OHdUYs6Mo`). The `/index` helper instance is `szF9sZNWA`; Home and `/case-studies` also have instances. The helper toggles a real Light Gray overlay frame in the Framer `Case Study` media wrapper when available, and falls back to a generated DOM overlay for custom HTML cards such as `/index`. It must resolve both legacy `module.a` and current `module.r` Framer CMS export shapes before scanning records. As of June 2, the helper instances use Framer item slugs directly (`slugFieldId=""`). The old `Case Study` stroke variants and the old `/index` hardcoded `with-stroke` class path have been removed.
-- **Inline toggle promoted and integrated (May 16, 2026; style-aligned May 19; consolidated June 11):** `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav and styles the toggle to match `CLEAR FILTERS` (13px uppercase mono, 28px line-height, weight 400, secondary text color, hover opacity, active underline). `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`. The action row uses a stable 12px top gap, 28px line, and 24px bottom gap so selecting/deselecting filters does not shift content. The former `IndexInlineToggleProxy.tsx` code file (`TexpcmJ`) and `/index` instance (`HM1pZPonP`) were deleted after this behavior moved into `IndexPage`.
+- **Inline toggle promoted and integrated (May 16, 2026; vertically aligned September 17):** `IndexPage.tsx` renders uppercase `GRID / LIST` after the taxonomy nav and styles the toggle to match `CLEAR FILTERS` (13px uppercase mono, 28px line-height, weight 400, secondary text color, hover opacity, active underline). `CLEAR FILTERS` remains the original left-aligned button inside `TaxonomySection`. The always-mounted Clear row reserves stable space; the toggle uses an unconditional `-46px` top margin to occupy that same row on the right, followed by the existing 24px bottom gap. Selecting or clearing filters therefore does not shift content. The former `IndexInlineToggleProxy.tsx` code file (`TexpcmJ`) and `/index` instance (`HM1pZPonP`) were deleted after this behavior moved into `IndexPage`.
 
 ---
 
@@ -388,7 +388,7 @@ Not exposed on `/index`. The visible inline toggle is Grid/List only. Earlier in
 
 ### Position and behavior
 
-The fixed/floating toggle path has been removed. `IndexPage.tsx` renders the visible inline `GRID / LIST` control after the taxonomy nav and applies the style-only alignment override when filters are active. `CLEAR FILTERS` remains the original left-aligned `TaxonomySection` action.
+The fixed/floating toggle path has been removed. `IndexPage.tsx` renders the visible inline `GRID / LIST` control after the taxonomy nav. `CLEAR FILTERS` remains the original left-aligned `TaxonomySection` action and is always mounted, with visibility toggled by filter state. The toggle's fixed negative top margin places it on that reserved Clear row without a filter-state layout jump.
 
 ### Visual specs
 
@@ -402,8 +402,7 @@ The fixed/floating toggle path has been removed. `IndexPage.tsx` renders the vis
   line-height: 28px;
   text-transform: uppercase;
   color: #141414;
-  margin-top: 12px;
-  margin-bottom: 24px;
+  margin: -46px 0 24px;
 }
 
 .idx-taxonomy-shell + .idx-tax-item {
@@ -412,14 +411,11 @@ The fixed/floating toggle path has been removed. `IndexPage.tsx` renders the vis
   line-height: 28px;
 }
 
-.idx-container:has(.idx-tax-value[aria-pressed="true"]) .idx-view-toggle {
-  margin-top: -28px;
-}
 ```
 
 ### Inline buttons: GRID / LIST
 
-The visible toggle is rendered by `IndexPage.tsx` as uppercase `GRID / LIST` after the taxonomy nav. It uses the same action style as `CLEAR FILTERS`: 13px uppercase mono, 28px line-height, weight 400, current color `#141414`, and a 1px underline on the active view. The clear/toggle action row must keep equal total height whether filters are active or inactive. Per-group `All` buttons are not real active filters and should not trigger the negative toggle offset. Do not move `CLEAR FILTERS` out of `TaxonomySection`, and do not add `3D` back to the toggle unless Micah explicitly asks.
+The visible toggle is rendered by `IndexPage.tsx` as uppercase `GRID / LIST` after the taxonomy nav. It uses the same action style as `CLEAR FILTERS`: 13px uppercase mono, 28px line-height, weight 400, current color `#141414`, and a 1px underline on the active view. The `-46px` offset is unconditional because the Clear row remains mounted even while hidden; making the offset conditional would reintroduce a filter-state jump. Do not move `CLEAR FILTERS` out of `TaxonomySection`, and do not add `3D` back to the toggle unless Micah explicitly asks.
 
 ---
 
