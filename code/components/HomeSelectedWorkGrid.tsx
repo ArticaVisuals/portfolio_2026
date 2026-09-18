@@ -95,6 +95,8 @@ const LIVE_SCAN_PATHS = [
     "/case-studies",
 ]
 const cmsModuleUrlCache = new Map<string, string>()
+// Keep live CMS rows across route remounts; each arrival still revalidates them.
+const cmsProjectsCache = new Map<string, Project[]>()
 const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS = FIELD_IDS.thumbnailVideoLink
 const DEFAULT_TAG_FIELD_IDS = [
     FIELD_IDS.category1,
@@ -786,20 +788,13 @@ function ProjectCard({
     const [videoFailed, setVideoFailed] = React.useState(false)
     const [isNearViewport, setIsNearViewport] = React.useState(isCanvas)
     const [isVideoVisible, setIsVideoVisible] = React.useState(isCanvas)
-    const [shouldLoadVideo, setShouldLoadVideo] = React.useState(isCanvas)
+    const [shouldLoadVideo, setShouldLoadVideo] = React.useState(isCanvas || priority)
     const mediaRef = React.useRef<HTMLDivElement>(null)
     const videoRef = React.useRef<HTMLVideoElement | null>(null)
     const mediaAlt = project.thumbnail?.alt || project.title
     const tags = showTags ? getProjectTags(project) : []
     const hasReadyMedia = (hasVideo && videoReady) || (hasImage && posterReady)
     const hasFailedMedia = (!hasVideo || videoFailed) && (!hasImage || posterFailed)
-
-    React.useEffect(() => {
-        setPosterReady(false)
-        setPosterFailed(false)
-        setVideoReady(false)
-        setVideoFailed(false)
-    }, [mediaKey])
 
     React.useEffect(() => {
         if (!hasVideo || isCanvas) {
@@ -847,7 +842,8 @@ function ProjectCard({
         const video = videoRef.current
         if (!video || !shouldLoadVideo) return
 
-        if (!isVideoVisible) {
+        const bootHeld = (window as Window & { __mhBootVideoHold?: boolean }).__mhBootVideoHold
+        if (!isVideoVisible || bootHeld) {
             video.pause()
             return
         }
@@ -997,7 +993,7 @@ function ProjectCard({
                                 setVideoFailed(false)
                             }}
                             playsInline
-                            preload="none"
+                            preload={priority ? "auto" : "none"}
                         />
                     ) : null}
                 </div>
@@ -1051,8 +1047,19 @@ export default function HomeSelectedWorkGrid({
     tagColor = "rgb(151, 151, 151)",
     tagHoverColor = "#25593a",
 }: Partial<Props>) {
-    const [projects, setProjects] = React.useState<Project[]>([])
-    const [cmsSettled, setCmsSettled] = React.useState(!useCMS)
+    const cacheKey = JSON.stringify([
+        collectionId,
+        collectionModuleUrl,
+        sortFieldIds,
+        thumbnailVideoFieldIds,
+        tagFieldIds,
+    ])
+    const [projects, setProjects] = React.useState<Project[]>(
+        () => (useCMS && cmsProjectsCache.get(cacheKey)) || []
+    )
+    const [cmsSettled, setCmsSettled] = React.useState(
+        () => !useCMS || cmsProjectsCache.has(cacheKey)
+    )
 
     React.useEffect(() => {
         if (!useCMS || typeof window === "undefined") {
@@ -1062,7 +1069,9 @@ export default function HomeSelectedWorkGrid({
         }
 
         let disposed = false
-        setCmsSettled(false)
+        const cached = cmsProjectsCache.get(cacheKey)
+        setProjects(cached || [])
+        setCmsSettled(Boolean(cached))
         loadProjectsWithRetry(
             collectionId,
             collectionModuleUrl,
@@ -1071,6 +1080,7 @@ export default function HomeSelectedWorkGrid({
             tagFieldIds
         )
             .then((loaded) => {
+                cmsProjectsCache.set(cacheKey, loaded)
                 if (!disposed) {
                     setProjects(loaded)
                     setCmsSettled(true)
@@ -1078,7 +1088,7 @@ export default function HomeSelectedWorkGrid({
             })
             .catch(() => {
                 if (!disposed) {
-                    setProjects([])
+                    setProjects(cached || [])
                     setCmsSettled(true)
                 }
             })
@@ -1093,6 +1103,7 @@ export default function HomeSelectedWorkGrid({
         sortFieldIds,
         thumbnailVideoFieldIds,
         tagFieldIds,
+        cacheKey,
     ])
 
     const itemLimit = Math.max(1, Math.floor(Number(maxItems) || 6))
@@ -1143,10 +1154,10 @@ export default function HomeSelectedWorkGrid({
                 : null}
             {visibleProjects.map((project, index) => (
                 <ProjectCard
-                    key={project.slug}
+                    key={JSON.stringify([project.slug, project.thumbnail, project.thumbnailVideoLink])}
                     project={project}
                     showTags={showTags}
-                    priority={index === 0}
+                    priority={index < 2}
                 />
             ))}
             <style suppressHydrationWarning>{`
@@ -1265,13 +1276,13 @@ export default function HomeSelectedWorkGrid({
                     position: absolute;
                     top: 0;
                     transform: translateX(-50%) scale(1);
-                    transition:
-                        opacity 420ms ${SNAPPY_EASE},
-                        transform 420ms ${SNAPPY_EASE};
+                    transition: transform 420ms ${SNAPPY_EASE};
                     width: 101%;
                 }
 
                 .selected-work-media img {
+                    /* Keep the poster painted beneath the video, including route returns. */
+                    opacity: 1;
                     z-index: 1;
                 }
 
@@ -1284,7 +1295,6 @@ export default function HomeSelectedWorkGrid({
                     opacity: 1;
                 }
 
-                .selected-work-media[data-has-video="true"][data-video-ready="true"] img,
                 .selected-work-media[data-media-failed="true"] img {
                     opacity: 0;
                 }

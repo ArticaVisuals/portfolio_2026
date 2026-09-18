@@ -16,6 +16,31 @@ This is the quick source of truth for the active Framer project and local handof
 
 ---
 
+## 2026-09-18 Update — Home thumbnail return flash (published)
+
+- **Cause:** `HomeSelectedWorkGrid` remounted with empty CMS rows, then reset even
+  cached poster readiness and ran a 420ms opacity fade. Poster fade-out and video
+  fade-in could also expose the background. A Gaia → Home frame probe measured
+  roughly 508ms from the first Home sample to fully opaque first-row media.
+- **Fix:** `HomeSelectedWorkGrid.tsx` (`FecepLS`, insert version
+  `ld1pjb3HJlY3xbtefUGD`) reuses live CMS rows by collection/field configuration and
+  revalidates on arrival. Posters paint immediately and remain opaque beneath
+  ready videos. Media-source keys reset card state only when the CMS media changes.
+  Both first-row videos mount immediately with `preload="auto"`; lower videos keep
+  their existing lazy mounting. Hover transforms, viewport playback, and the desktop
+  boot-curtain playback hold remain intact. No persistent media elements or decoder
+  pool were added.
+- **Verification:** published Chromium at 1200px and a 390px mobile viewport showed
+  zero blank media frames or loading-placeholder frames on ordinary logo returns
+  and browser Back. First-row posters were complete and opaque on the first grid
+  sample; video followed without a transparent handoff. A 700ms video-delay probe
+  retained opaque posters once loaded (network interception also caused an initial
+  18–24ms poster reload). No page errors; desktop boot hold allowed zero playing
+  videos. Framer typecheck was empty; `npm test` passed all 35 performance guards.
+  Evidence: `output/playwright/home-thumbnail-return-2026-09-18/`.
+
+---
+
 ## 2026-09-17 Update — global Lenis smooth scrolling (published)
 
 - **Global seam:** `NavigationScrollGuard.tsx` (`Wnd19lx`) owns one shared Lenis `1.3.26`

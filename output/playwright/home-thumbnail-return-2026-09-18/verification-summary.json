@@ -1,0 +1,74 @@
+[
+  {
+    "mode": "desktop",
+    "method": "logo",
+    "cardFrames": 77,
+    "blankFrames": 0,
+    "busyFrames": 0,
+    "firstCards": 40,
+    "firstPoster": 40,
+    "firstVideos": 90,
+    "playingWhileHeld": 0,
+    "errors": []
+  },
+  {
+    "mode": "desktop",
+    "method": "back",
+    "cardFrames": 117,
+    "blankFrames": 0,
+    "busyFrames": 0,
+    "firstCards": 10,
+    "firstPoster": 10,
+    "firstVideos": 459,
+    "playingWhileHeld": 0,
+    "errors": []
+  },
+  {
+    "mode": "desktop",
+    "method": "slow-video",
+    "cardFrames": 129,
+    "blankFrames": 2,
+    "busyFrames": 0,
+    "firstCards": 39,
+    "firstPoster": 57,
+    "firstVideos": 815,
+    "playingWhileHeld": 0,
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "method": "logo",
+    "cardFrames": 77,
+    "blankFrames": 0,
+    "busyFrames": 0,
+    "firstCards": 36,
+    "firstPoster": 36,
+    "firstVideos": 128,
+    "playingWhileHeld": 0,
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "method": "back",
+    "cardFrames": 81,
+    "blankFrames": 0,
+    "busyFrames": 0,
+    "firstCards": 11,
+    "firstPoster": 11,
+    "firstVideos": 219,
+    "playingWhileHeld": 0,
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "method": "slow-video",
+    "cardFrames": 129,
+    "blankFrames": 3,
+    "busyFrames": 0,
+    "firstCards": 43,
+    "firstPoster": 67,
+    "firstVideos": 810,
+    "playingWhileHeld": 0,
+    "errors": []
+  }
+]
