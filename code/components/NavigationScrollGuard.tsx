@@ -82,6 +82,7 @@ type GlobalLenisState = {
     cleanupTimer: number
     resizeFrame: number
     resizeFrame2: number
+    anchorListening: boolean
     syncRoute: () => void
     onAnchorClick: (event: MouseEvent) => void
     destroy: () => void
@@ -113,6 +114,11 @@ function ensureLenisStyle() {
         ;(document.head || document.documentElement).appendChild(style)
     }
     if (style.textContent !== LENIS_CSS) style.textContent = LENIS_CSS
+}
+
+function removeLenisStyle() {
+    const style = document.getElementById(LENIS_STYLE_ID)
+    if (style?.parentNode) style.parentNode.removeChild(style)
 }
 
 function useGlobalSmoothScroll(enabled: boolean, lerp: number) {
@@ -151,15 +157,25 @@ function useGlobalSmoothScroll(enabled: boolean, lerp: number) {
                 if (!state) return
                 state.lenis = instance
                 win[LENIS_PUBLIC_KEY] = instance
+                if (!state.anchorListening) {
+                    window.addEventListener("click", onAnchorClick, true)
+                    state.anchorListening = true
+                }
             }
 
             const destroyLenis = () => {
-                if (!state?.lenis) return
-                try {
-                    state.lenis.destroy()
-                } catch (error) {}
-                state.lenis = null
+                if (state?.lenis) {
+                    try {
+                        state.lenis.destroy()
+                    } catch (error) {}
+                    state.lenis = null
+                }
+                if (state?.anchorListening) {
+                    window.removeEventListener("click", onAnchorClick, true)
+                    state.anchorListening = false
+                }
                 if (win[LENIS_PUBLIC_KEY]) delete win[LENIS_PUBLIC_KEY]
+                removeLenisStyle()
             }
 
             const scheduleResize = () => {
@@ -244,9 +260,6 @@ function useGlobalSmoothScroll(enabled: boolean, lerp: number) {
                 LENIS_ROUTE_EVENTS.forEach((name) =>
                     window.removeEventListener(name, syncRoute)
                 )
-                window.removeEventListener("click", onAnchorClick, true)
-                const style = document.getElementById(LENIS_STYLE_ID)
-                if (style?.parentNode) style.parentNode.removeChild(style)
                 if (win[LENIS_STATE_KEY] === state) delete win[LENIS_STATE_KEY]
             }
 
@@ -257,6 +270,7 @@ function useGlobalSmoothScroll(enabled: boolean, lerp: number) {
                 cleanupTimer: 0,
                 resizeFrame: 0,
                 resizeFrame2: 0,
+                anchorListening: false,
                 syncRoute,
                 onAnchorClick,
                 destroy,
@@ -265,7 +279,6 @@ function useGlobalSmoothScroll(enabled: boolean, lerp: number) {
             LENIS_ROUTE_EVENTS.forEach((name) =>
                 window.addEventListener(name, syncRoute, { passive: true })
             )
-            window.addEventListener("click", onAnchorClick, true)
         }
 
         window.clearTimeout(state.cleanupTimer)

@@ -31,6 +31,15 @@ This is the quick source of truth for the active Framer project and local handof
   lightboxes, WIP overlays, dialogs, and explicit `data-lenis-prevent` regions stay outside Lenis.
   Touch remains native. The `/index#service=...` transport is not treated as an anchor; only real
   same-page element hashes are smoothed.
+- **Follow-up lifecycle and observer hardening (current snapshot):** destroying Lenis on an
+  excluded route now also removes its injected stylesheet and same-page-anchor click listener;
+  both are restored only when Lenis is recreated on an allowed route. `ParagraphPrettyWrap.tsx`
+  and the matching `ResumeAssetHost`
+  fallback fully cancel the pre-paint observer/timers once the hydrated singleton takes ownership,
+  share one startup scan ladder across both mounts, scan only mutation-affected subtrees during
+  normal DOM churn, and coalesce explicit route/reveal rescans. Full-document rescans remain for
+  the single startup ladder and resize/orientation changes. The existing `/play` transform-style
+  mutation exclusion remains intact.
 - **Scroll-to-top:** `ScrollToTopButton.tsx` (`gh4ngZN`) delegates to the shared Lenis instance so
   two animation loops cannot compete, with the existing native rAF animation retained as fallback.
 - **Verification:** the first production publish was correctly diagnosed as inactive: `/`, `/info`,

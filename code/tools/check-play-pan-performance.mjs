@@ -163,6 +163,26 @@ for (const relativePath of [
         "short-circuits batches containing only ignored Play style mutations",
         /mutations\.every\(isIgnoredPlayStyleMutation\)/
     )
+    requirePattern(
+        relativePath,
+        "limits hydrated mutation work to affected subtrees",
+        /new\s+MutationObserver\(\(mutations\)\s*=>\s*\{[\s\S]*?mutationScanRoots\(mutations\)\.forEach/
+    )
+    requirePattern(
+        relativePath,
+        "fully cancels the preload observer and delayed scan ladder at hydration",
+        /function\s+disconnectPreloadObserver\(\)[\s\S]*?preloadState\.observer\?\.disconnect\(\)[\s\S]*?preloadState\.timers[\s\S]*?clearTimeout\(timer\)[\s\S]*?removeEventListener\("DOMContentLoaded"[\s\S]*?removeEventListener\("load"/
+    )
+    requirePattern(
+        relativePath,
+        "keeps the hydrated startup scan ladder inside singleton ownership",
+        /if\s*\(!state\.observer\)\s*\{[\s\S]*?state\.run\s*=\s*run[\s\S]*?state\.timers\.push[\s\S]*?state\.observer\s*=\s*new\s+MutationObserver/
+    )
+    requirePattern(
+        relativePath,
+        "coalesces route-event rescans through a cancellable timer",
+        /state\.routeRun\s*=\s*\(\)\s*=>\s*\{[\s\S]*?clearTimeout\(state\.routeTimer\)[\s\S]*?state\.routeTimer\s*=\s*window\.setTimeout\([\s\S]*?ROUTE_SCAN_DEBOUNCE_MS/
+    )
 }
 
 if (failures.length > 0) {

@@ -38,6 +38,15 @@ const DEFAULT_EXCLUDE_SELECTOR = [
     "[contenteditable='true']",
 ].join(", ")
 const TEXT_SELECTOR = "p, span, div, li, figcaption, blockquote"
+const PRETTY_ROUTE_EVENTS = [
+    "pageshow",
+    "popstate",
+    "hashchange",
+    "mh:locationchange",
+    "framer:pageLoad",
+    "pt:reveal",
+]
+const PRETTY_ROUTE_SCAN_DEBOUNCE_MS = 32
 const usePrePaintEffect =
     typeof window === "undefined" ? React.useEffect : React.useLayoutEffect
 const SEO_SCRIPT_ID = "mh-portfolio-structured-data"
@@ -345,7 +354,7 @@ function installResumeLinkFallback(resumeFile?: string) {
 function preloadScript(maxFontSize = 23) {
     const resolvedMaxFontSize = Math.max(maxFontSize, 23)
 
-    return `(function(){try{var path=(location.pathname||"/").replace(/\\/+$/,"")||"/";if(path==="/")return;var KEY=${JSON.stringify(PRELOAD_KEY)};var ATTR=${JSON.stringify(ATTR)};var IGNORE=${JSON.stringify(IGNORE_ATTR)};var PLAY=${JSON.stringify(PLAYGROUND_ROOT_SELECTOR)};var STYLE_ID=${JSON.stringify(STYLE_ID)};var SELECTOR=${JSON.stringify(TEXT_SELECTOR)};var EXCLUDE=${JSON.stringify(DEFAULT_EXCLUDE_SELECTOR)};var MAX=${resolvedMaxFontSize};var MIN=2;var existing=window[KEY];if(existing){existing.max=Math.max(existing.max||0,MAX);existing.min=Math.min(existing.min||MIN,MIN);if(existing.run)existing.run(document.body||document.documentElement);return;}function normalize(value){return String(value||"").replace(/\\s+/g," ").trim()}function parsePx(value){var parsed=parseFloat(value);return isFinite(parsed)?parsed:0}function hardExcluded(el){return !(el instanceof HTMLElement)||(el.dataset&&el.dataset.mhPrettyIgnore==="true")||(EXCLUDE&&el.closest&&el.closest(EXCLUDE))}function ignoredPlayStyle(mutation){var target=mutation.target;return mutation.type==="attributes"&&mutation.attributeName==="style"&&target&&target.nodeType===1&&target.closest&&target.closest(PLAY)}function hasOwnText(el){for(var i=0;i<el.childNodes.length;i++){var node=el.childNodes[i];if(node.nodeType===3&&normalize(node.textContent))return true}return el.matches&&el.matches("p, span")}function hasBlockChild(el){for(var i=0;i<el.children.length;i++){var child=el.children[i];if(child instanceof HTMLElement&&/^(block|flex|grid|table|list-item)/.test(getComputedStyle(child).display))return true}return false}function candidate(el,state){if(hardExcluded(el))return false;var text=normalize(el.textContent);if(!text||text.split(/\\s+/).length<(state.min||MIN))return false;if(!hasOwnText(el)||hasBlockChild(el))return false;var style=getComputedStyle(el);if(style.display==="none"||style.visibility==="hidden")return false;if(style.whiteSpace.indexOf("nowrap")>-1||style.whiteSpace==="pre")return false;var fontSize=parsePx(style.fontSize);return fontSize>0&&fontSize<=(state.max||MAX)}function ensureStyle(){var parent=document.head||document.documentElement;var style=document.getElementById(STYLE_ID);if(!style&&parent){style=document.createElement("style");style.id=STYLE_ID;parent.appendChild(style)}if(style){var css='@supports (text-wrap: pretty) {[${ATTR}="true"]{text-wrap: pretty !important;text-wrap-style: pretty !important;}}';if(style.textContent!==css)style.textContent=css}}function scan(root){var state=window[KEY];if(!state)return;ensureStyle();var base=root&&root.nodeType===1?root:(document.body||document.documentElement);if(!base)return;var nodes=[];if(base.matches&&base.matches(SELECTOR))nodes.push(base);if(base.querySelectorAll)nodes=nodes.concat(Array.prototype.slice.call(base.querySelectorAll(SELECTOR)));for(var i=0;i<nodes.length;i++){var el=nodes[i];try{if(hardExcluded(el)){if(el.getAttribute&&el.getAttribute(ATTR)==="true")el.removeAttribute(ATTR);continue}if(el.getAttribute(ATTR)==="true")continue;if(candidate(el,state))el.setAttribute(ATTR,"true")}catch(e){}}}var state=window[KEY]={max:MAX,min:MIN,run:scan};ensureStyle();scan(document.body||document.documentElement);var observer=new MutationObserver(function(mutations){for(var i=0;i<mutations.length;i++){var mutation=mutations[i];if(ignoredPlayStyle(mutation))continue;if(mutation.type==="childList"){scan(mutation.target);for(var j=0;j<mutation.addedNodes.length;j++)scan(mutation.addedNodes[j])}else{scan(mutation.target)}}});state.observer=observer;try{observer.observe(document.documentElement,{attributes:true,attributeFilter:["style","class","data-framer-name",IGNORE],childList:true,subtree:true,characterData:true})}catch(e){}window.addEventListener("DOMContentLoaded",function(){scan(document.body||document.documentElement)},{once:true});window.addEventListener("load",function(){scan(document.body||document.documentElement)},{once:true});[0,80,240,700,1600].forEach(function(delay){setTimeout(function(){scan(document.body||document.documentElement)},delay)});}catch(e){}})();`
+    return `(function(){try{var path=(location.pathname||"/").replace(/\\/+$/,"")||"/";if(path==="/")return;var KEY=${JSON.stringify(PRELOAD_KEY)};var ATTR=${JSON.stringify(ATTR)};var IGNORE=${JSON.stringify(IGNORE_ATTR)};var PLAY=${JSON.stringify(PLAYGROUND_ROOT_SELECTOR)};var STYLE_ID=${JSON.stringify(STYLE_ID)};var SELECTOR=${JSON.stringify(TEXT_SELECTOR)};var EXCLUDE=${JSON.stringify(DEFAULT_EXCLUDE_SELECTOR)};var MAX=${resolvedMaxFontSize};var MIN=2;var existing=window[KEY];if(existing){existing.max=Math.max(existing.max||0,MAX);existing.min=Math.min(existing.min||MIN,MIN);if(existing.run)existing.run(document.body||document.documentElement);return;}function normalize(value){return String(value||"").replace(/\\s+/g," ").trim()}function parsePx(value){var parsed=parseFloat(value);return isFinite(parsed)?parsed:0}function hardExcluded(el){return !(el instanceof HTMLElement)||(el.dataset&&el.dataset.mhPrettyIgnore==="true")||(EXCLUDE&&el.closest&&el.closest(EXCLUDE))}function ignoredPlayStyle(mutation){var target=mutation.target;return mutation.type==="attributes"&&mutation.attributeName==="style"&&target&&target.nodeType===1&&target.closest&&target.closest(PLAY)}function hasOwnText(el){for(var i=0;i<el.childNodes.length;i++){var node=el.childNodes[i];if(node.nodeType===3&&normalize(node.textContent))return true}return el.matches&&el.matches("p, span")}function hasBlockChild(el){for(var i=0;i<el.children.length;i++){var child=el.children[i];if(child instanceof HTMLElement&&/^(block|flex|grid|table|list-item)/.test(getComputedStyle(child).display))return true}return false}function candidate(el,state){if(hardExcluded(el))return false;var text=normalize(el.textContent);if(!text||text.split(/\\s+/).length<(state.min||MIN))return false;if(!hasOwnText(el)||hasBlockChild(el))return false;var style=getComputedStyle(el);if(style.display==="none"||style.visibility==="hidden")return false;if(style.whiteSpace.indexOf("nowrap")>-1||style.whiteSpace==="pre")return false;var fontSize=parsePx(style.fontSize);return fontSize>0&&fontSize<=(state.max||MAX)}function ensureStyle(){var parent=document.head||document.documentElement;var style=document.getElementById(STYLE_ID);if(!style&&parent){style=document.createElement("style");style.id=STYLE_ID;parent.appendChild(style)}if(style){var css='@supports (text-wrap: pretty) {[${ATTR}="true"]{text-wrap: pretty !important;text-wrap-style: pretty !important;}}';if(style.textContent!==css)style.textContent=css}}function scan(root){var state=window[KEY];if(!state)return;ensureStyle();var base=root&&root.nodeType===1?root:(document.body||document.documentElement);if(!base)return;var nodes=[];if(base.matches&&base.matches(SELECTOR))nodes.push(base);if(base.querySelectorAll)nodes=nodes.concat(Array.prototype.slice.call(base.querySelectorAll(SELECTOR)));for(var i=0;i<nodes.length;i++){var el=nodes[i];try{if(hardExcluded(el)){if(el.getAttribute&&el.getAttribute(ATTR)==="true")el.removeAttribute(ATTR);continue}if(el.getAttribute(ATTR)==="true")continue;if(candidate(el,state))el.setAttribute(ATTR,"true")}catch(e){}}}var state=window[KEY]={max:MAX,min:MIN,run:scan,observer:null,timers:[],onDomReady:null,onLoad:null};ensureStyle();scan(document.body||document.documentElement);var observer=new MutationObserver(function(mutations){for(var i=0;i<mutations.length;i++){var mutation=mutations[i];if(ignoredPlayStyle(mutation))continue;if(mutation.type==="childList"){scan(mutation.target);for(var j=0;j<mutation.addedNodes.length;j++)scan(mutation.addedNodes[j])}else{scan(mutation.target)}}});state.observer=observer;try{observer.observe(document.documentElement,{attributes:true,attributeFilter:["style","class","data-framer-name",IGNORE],childList:true,subtree:true,characterData:true})}catch(e){}function onDomReady(){scan(document.body||document.documentElement)}function onLoad(){scan(document.body||document.documentElement)}state.onDomReady=onDomReady;state.onLoad=onLoad;window.addEventListener("DOMContentLoaded",state.onDomReady,{once:true});window.addEventListener("load",state.onLoad,{once:true});[0,80,240,700,1600].forEach(function(delay){state.timers.push(setTimeout(function(){scan(document.body||document.documentElement)},delay))});}catch(e){}})();`
 }
 
 function normalizeText(value: string) {
@@ -397,6 +406,74 @@ function isCandidate(element: HTMLElement, maxFontSize: number) {
     return fontSize > 0 && fontSize <= maxFontSize
 }
 
+function scanPrettyRoot(root: Element, maxFontSize: number) {
+    const elements: HTMLElement[] = []
+    if (root instanceof HTMLElement && root.matches(TEXT_SELECTOR)) {
+        elements.push(root)
+    }
+    root.querySelectorAll(TEXT_SELECTOR).forEach((element) => {
+        if (element instanceof HTMLElement) elements.push(element)
+    })
+
+    elements.forEach((element) => {
+        if (isHardExcluded(element)) {
+            if (element.getAttribute(ATTR) === "true") element.removeAttribute(ATTR)
+        } else if (element.getAttribute(ATTR) === "true") {
+            return
+        } else if (isCandidate(element, maxFontSize)) {
+            element.setAttribute(ATTR, "true")
+        }
+    })
+}
+
+function mutationScanRoots(mutations: MutationRecord[]) {
+    const roots: Element[] = []
+    const addRoot = (node: Node | null) => {
+        const element =
+            node instanceof Element
+                ? node
+                : node?.parentElement instanceof Element
+                  ? node.parentElement
+                  : null
+        if (!element) return
+        if (roots.some((root) => root === element || root.contains(element))) return
+
+        for (let index = roots.length - 1; index >= 0; index -= 1) {
+            if (element.contains(roots[index])) roots.splice(index, 1)
+        }
+        roots.push(element)
+    }
+
+    mutations.forEach((mutation) => {
+        if (isIgnoredPlayStyleMutation(mutation)) return
+        addRoot(mutation.target)
+        if (mutation.type === "childList") {
+            mutation.addedNodes.forEach(addRoot)
+        }
+    })
+
+    return roots
+}
+
+function disconnectPreloadObserver() {
+    const preloadState = (window as any)[PRELOAD_KEY]
+    if (!preloadState) return
+    try {
+        preloadState.observer?.disconnect()
+    } catch (err) {}
+    preloadState.observer = null
+    ;(preloadState.timers || []).forEach((timer: number) => window.clearTimeout(timer))
+    preloadState.timers = []
+    if (preloadState.onDomReady) {
+        window.removeEventListener("DOMContentLoaded", preloadState.onDomReady)
+    }
+    if (preloadState.onLoad) {
+        window.removeEventListener("load", preloadState.onLoad)
+    }
+    preloadState.onDomReady = null
+    preloadState.onLoad = null
+}
+
 function installPrettyWrapFallback(maxFontSize = 23) {
     if (
         typeof window === "undefined" ||
@@ -419,15 +496,32 @@ function installPrettyWrapFallback(maxFontSize = 23) {
             frame: 0,
             observer: null,
             timers: [],
-            config: { maxFontSize },
+            config: {
+                maxFontSize,
+                minWords: 2,
+                excludeSelector: DEFAULT_EXCLUDE_SELECTOR,
+            },
             run: null,
             resizeRun: null,
+            routeRun: null,
+            routeTimer: 0,
+            cleanupTimer: 0,
         })
 
+    window.clearTimeout(state.cleanupTimer)
+    state.cleanupTimer = 0
     state.refs += 1
+    disconnectPreloadObserver()
+    const previousMaxFontSize = state.config?.maxFontSize
+    const resolvedMaxFontSize = Math.max(
+        maxFontSize,
+        previousMaxFontSize || 0,
+        23
+    )
+    const configChanged = previousMaxFontSize !== resolvedMaxFontSize
     state.config = {
         ...state.config,
-        maxFontSize: Math.max(maxFontSize, state.config?.maxFontSize || 0, 23),
+        maxFontSize: resolvedMaxFontSize,
     }
 
     let style = document.getElementById(STYLE_ID)
@@ -443,30 +537,30 @@ function installPrettyWrapFallback(maxFontSize = 23) {
 }
 }`
 
-    const run = () => {
-        if (state.frame) window.cancelAnimationFrame(state.frame)
-        state.frame = 0
-        const limit = state.config?.maxFontSize || 23
-        document.body.querySelectorAll(TEXT_SELECTOR).forEach((element) => {
-            if (!(element instanceof HTMLElement)) return
-            if (isHardExcluded(element)) {
-                if (element.getAttribute(ATTR) === "true") element.removeAttribute(ATTR)
-            } else if (element.getAttribute(ATTR) === "true") {
-                return
-            } else if (isCandidate(element, limit)) {
-                element.setAttribute(ATTR, "true")
-            }
-        })
-    }
-    state.run = run
-    run()
-
-    ;[0, 80, 240, 700, 1600].forEach((delay) => state.timers.push(window.setTimeout(run, delay)))
-
     if (!state.observer) {
+        const run = () => {
+            if (state.frame) window.cancelAnimationFrame(state.frame)
+            state.frame = 0
+            const limit = state.config?.maxFontSize || 23
+            scanPrettyRoot(document.body, limit)
+        }
+        state.run = run
+        run()
+
+        ;[0, 80, 240, 700, 1600].forEach((delay) =>
+            state.timers.push(
+                window.setTimeout(() => {
+                    if (state.refs > 0) state.run?.()
+                }, delay)
+            )
+        )
+
         state.observer = new MutationObserver((mutations) => {
             if (mutations.every(isIgnoredPlayStyleMutation)) return
-            if (state.run) state.run()
+            const limit = state.config?.maxFontSize || 23
+            mutationScanRoots(mutations).forEach((root) => {
+                scanPrettyRoot(root, limit)
+            })
         })
         state.observer.observe(document.body, {
             attributes: true,
@@ -478,22 +572,48 @@ function installPrettyWrapFallback(maxFontSize = 23) {
         state.resizeRun = run
         window.addEventListener("resize", state.resizeRun, { passive: true })
         window.addEventListener("orientationchange", state.resizeRun, { passive: true })
+        state.routeRun = () => {
+            window.clearTimeout(state.routeTimer)
+            state.routeTimer = window.setTimeout(() => {
+                state.routeTimer = 0
+                if (state.refs > 0) state.run?.()
+            }, PRETTY_ROUTE_SCAN_DEBOUNCE_MS)
+        }
+        PRETTY_ROUTE_EVENTS.forEach((name) =>
+            window.addEventListener(name, state.routeRun, { passive: true })
+        )
+    } else if (configChanged) {
+        state.run?.()
     }
 
     return () => {
         state.refs = Math.max(0, state.refs - 1)
         if (state.refs > 0) return
-        if (state.frame) window.cancelAnimationFrame(state.frame)
-        state.frame = 0
-        state.timers.forEach((timer) => window.clearTimeout(timer))
-        state.timers = []
-        if (state.observer) state.observer.disconnect()
-        state.observer = null
-        if (state.resizeRun) {
-            window.removeEventListener("resize", state.resizeRun)
-            window.removeEventListener("orientationchange", state.resizeRun)
-        }
-        state.resizeRun = null
+        window.clearTimeout(state.cleanupTimer)
+        state.cleanupTimer = window.setTimeout(() => {
+            state.cleanupTimer = 0
+            if (state.refs > 0) return
+            if (state.frame) window.cancelAnimationFrame(state.frame)
+            state.frame = 0
+            state.timers.forEach((timer) => window.clearTimeout(timer))
+            state.timers = []
+            if (state.observer) state.observer.disconnect()
+            state.observer = null
+            if (state.resizeRun) {
+                window.removeEventListener("resize", state.resizeRun)
+                window.removeEventListener("orientationchange", state.resizeRun)
+            }
+            state.resizeRun = null
+            if (state.routeRun) {
+                PRETTY_ROUTE_EVENTS.forEach((name) =>
+                    window.removeEventListener(name, state.routeRun)
+                )
+            }
+            state.routeRun = null
+            window.clearTimeout(state.routeTimer)
+            state.routeTimer = 0
+            state.run = null
+        }, 0)
     }
 }
 

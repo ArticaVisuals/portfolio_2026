@@ -127,8 +127,8 @@
       "role": "Native navigation scroll guard and global Lenis host",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/NavigationScrollGuard.tsx",
-      "bytes": 16828,
-      "sha256": "866ea39552c63f4afb5942ef3179cee4d1dab7c63b02c13137dc3ee9d0b354ef"
+      "bytes": 17208,
+      "sha256": "4014c59d53cacc3a14f329d8140a00a842d354b27ac678a536154f5d8bf88dbc"
     },
     {
       "codeFileId": "vlwa5Cz",
@@ -154,8 +154,8 @@
       "role": "Site-wide paragraph pretty-wrap helper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ParagraphPrettyWrap.tsx",
-      "bytes": 14499,
-      "sha256": "247b48320e1b87e5ccbe16d1b61ec10e0bae0b424a01846bad340365128431dd"
+      "bytes": 18765,
+      "sha256": "0e3d11a27856b3a3d5a0dfea170b2331f70d5cf69115c073502822683a7e3b68"
     },
     {
       "codeFileId": "xDqfenf",
@@ -163,8 +163,8 @@
       "role": "Footer compatibility host, ParagraphPrettyWrap fallback, and global Lenis mount",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ResumeAssetHost.tsx",
-      "bytes": 24677,
-      "sha256": "3f59386a07b9ccc365922e255058110d9e2e0a027bb22fa98e863a3fd710175d"
+      "bytes": 28685,
+      "sha256": "333b45038b432c622f9984922271eecb374d9e03ab22fd8cc7c046b44dcb66a9"
     },
     {
       "codeFileId": "PN1RVOf",
