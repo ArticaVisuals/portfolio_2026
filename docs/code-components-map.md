@@ -116,7 +116,7 @@ hover CSS.
 | `InfoScrollMoreColorOverride` | `AZDGWx7` | `/info` hero Scroll-More arrow color fix plus tablet Recognition-column alignment for nested multi-award rows (DOM-patch). |
 | `LineAnimationBorder` | `j7WYIMf` | Nondestructive border-frame replacement for native `Line Animation`; keeps the same 0.2s delay, 2s duration, and `[0.25, 1, 0.5, 1]` draw easing, with a `Viewport Once` self-trigger for copy-page swaps. |
 | `FooterCopyrightYear` | `BF2H03E` | Auto current-year in footer. |
-| `ResumeAssetHost` | `xDqfenf` | Footer compatibility host mounted across published routes. Preserves the `resumeFile` prop/invisible div that Footer expects, carries the `ParagraphPrettyWrap` fallback for pages without PageTransition (including the same preload-observer handoff, subtree mutation scans, and route-event rescans), and mounts `NavigationScrollGuard` as the guaranteed global Lenis host. |
+| `ResumeAssetHost` | `xDqfenf` | Footer compatibility host mounted across published routes. Preserves the `resumeFile` prop/invisible div that Footer expects, mounts the shared `ParagraphPrettyWrap` component for pages without PageTransition, and mounts `NavigationScrollGuard` as the guaranteed global Lenis host. |
 
 ### Effects / misc
 | Component | id | What it does |

@@ -160,11 +160,11 @@
     {
       "codeFileId": "xDqfenf",
       "path": "ResumeAssetHost.tsx",
-      "role": "Footer compatibility host, ParagraphPrettyWrap fallback, and global Lenis mount",
+      "role": "Footer compatibility host, shared ParagraphPrettyWrap mount, and global Lenis mount",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ResumeAssetHost.tsx",
-      "bytes": 28685,
-      "sha256": "333b45038b432c622f9984922271eecb374d9e03ab22fd8cc7c046b44dcb66a9"
+      "bytes": 28467,
+      "sha256": "d73ac00b3a299b311f451bc2d09cf273b0271f18993f6f63e3f0c08409307f97"
     },
     {
       "codeFileId": "PN1RVOf",

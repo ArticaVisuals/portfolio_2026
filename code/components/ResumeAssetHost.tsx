@@ -2,6 +2,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 import NavigationScrollGuard from "https://framer.com/m/NavigationScrollGuard-yDp6tN.js"
+import ParagraphPrettyWrap from "https://framer.com/m/ParagraphPrettyWrap-bvfOg4.js"
 
 const STYLE_ID = "mh-paragraph-pretty-wrap-style"
 const ATTR = "data-mh-paragraph-pretty"
@@ -637,7 +638,6 @@ type ResumeAssetHostProps = {
 }
 
 export default function ResumeAssetHost(props: ResumeAssetHostProps) {
-    usePrePaintEffect(() => installPrettyWrapFallback(23), [])
     usePrePaintEffect(() => installHomeArrivalIntentFallback(), [])
     usePrePaintEffect(
         () => installResumeLinkFallback(props.resumeFile),
@@ -647,14 +647,7 @@ export default function ResumeAssetHost(props: ResumeAssetHostProps) {
     return (
         <>
             <NavigationScrollGuard />
-            <style
-                data-mh-paragraph-pretty-preload="true"
-                dangerouslySetInnerHTML={{ __html: cssText(ATTR) }}
-            />
-            <script
-                data-mh-paragraph-pretty-preload="true"
-                dangerouslySetInnerHTML={{ __html: preloadScript(23) }}
-            />
+            <ParagraphPrettyWrap enabled={true} maxFontSize={23} minWords={2} />
             <script
                 data-mh-seo-bootstrap="true"
                 dangerouslySetInnerHTML={{ __html: seoInstallScript() }}
