@@ -1,5 +1,21 @@
 # Site-wide page transition (zitafernandez.com style)
 
+**2026-09-19 — Play empty-nav strip repair (Framer draft; publish pending).**
+`GrainOverlay.tsx` (`MhR7Ukl`, version `ptTqhah7cDBxIznwLZpp`) now extends
+grain to the configured top inset while `:root:active-view-transition` matches.
+Previously, its DOM-based nav clearance left a 53px untextured cream strip
+visible while the separate `__pt-nav` snapshot waited above the viewport.
+The CSS override applies only to runtime grain layers with `clearNav` enabled;
+the measured inline top resumes automatically after the transition. Drawer
+tracking, the WebKit guard, and page/nav animation timing remain unchanged.
+Framer typecheck returned `[]`, source readback matches the local mirror, and
+all 35 Play performance guards pass. A browser-only response replacement using
+the Framer-compiled draft confirmed `top: 0px` during Home → Play, `53px` after
+arrival, and correct detail open/close clearance. This is pre-publish validation;
+production still requires Framer Publish. Evidence is in
+`output/playwright/play-nav-fixed-compiled-check-2026-09-19.txt` and the matching
+screenshots.
+
 **2026-09-18 — Info heading exit + Index arrival timing (published).**
 The Info headline was still named `Index`, so the Index click-time heading hold
 hid “Hey, I'm Micah.” before the browser captured the outgoing page. Renamed the

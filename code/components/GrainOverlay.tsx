@@ -316,6 +316,7 @@ export default function GrainOverlay(props: Props) {
         <div
             ref={grainLayerRef}
             aria-hidden="true"
+            data-mh-grain-clear-nav={clearNav ? "true" : undefined}
             style={{
                 position: "fixed",
                 left: 0,
@@ -327,8 +328,18 @@ export default function GrainOverlay(props: Props) {
                 mixBlendMode: blendMode as CSSProperties["mixBlendMode"],
                 zIndex,
                 overflow: "hidden",
-            }}
+                "--mh-grain-top-inset": `${Math.max(0, topInset)}px`,
+            } as CSSProperties}
         >
+            {/* The nav snapshot moves separately from its DOM bounds. Fill
+                that space until the transition ends, then resume clearance. */}
+            {clearNav && (
+                <style>{`
+                    :root:active-view-transition [data-mh-grain-clear-nav="true"] {
+                        top: var(--mh-grain-top-inset, 0px) !important;
+                    }
+                `}</style>
+            )}
             {grainSvg}
         </div>,
         document.body
