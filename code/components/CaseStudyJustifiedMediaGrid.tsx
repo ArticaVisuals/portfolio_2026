@@ -422,14 +422,16 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                 )
                 const totalGap = Math.max(0, row.items.length - 1) * activeGap
                 const availableWidth = Math.max(1, containerWidth - totalGap)
+                const hasMeasuredWidth = containerWidth > 0
                 const rowHeight = Math.max(1, row.height)
+                const frameHeight = hasMeasuredWidth ? rowHeight : "auto"
 
                 return (
                     <div
                         key={rowIndex}
                         style={{
                             width: "100%",
-                            height: rowHeight,
+                            height: frameHeight,
                             display: "flex",
                             alignItems: "flex-start",
                             justifyContent: "flex-start",
@@ -482,7 +484,10 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                 alignItems: "center",
                                 justifyContent: "center",
                                 width: itemWidth,
-                                height: rowHeight,
+                                height: frameHeight,
+                                // Preserve the authored ratio in Framer's server render.
+                                // ResizeObserver replaces this with the measured row height.
+                                aspectRatio: hasMeasuredWidth ? undefined : ratio,
                                 position: "relative",
                                 flex: "0 0 auto",
                                 boxSizing: "border-box",

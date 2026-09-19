@@ -1,5 +1,38 @@
 # Site-wide page transition (zitafernandez.com style)
 
+**2026-09-18 — Info heading exit + Index arrival timing (published).**
+The Info headline was still named `Index`, so the Index click-time heading hold
+hid “Hey, I'm Micah.” before the browser captured the outgoing page. Renamed the
+primary Info text node `HhA0wJbp7` to `Info Heading`; Tablet and Phone inherit it.
+The copy, text style, and native appear effect are unchanged.
+
+The incoming runtime mount could claim `sdHoldActive` with an untimed fallback
+before the same-document click handler installed its mid-slide release. That
+held Index content until the entire transition (including nav) finished, after
+the title had settled. The fallback now yields to an active same-document
+Index transition: `active && !(onIndexPath && sdActive)`.
+
+`PageTransitionRuntime.tsx` (`rdTIUkW`, version `nBkdxEuAmy8SV9MpeZjc`) preserves
+the **exact source from the pinned `Witnbh97hqwtM7YLb8Op/PageTransition.map`**,
+with only that ownership guard changed. `PageTransition.tsx` (`gmalnRr`) imports
+this pinned editable runtime. Do not rebuild it from
+`code/mirror/backups/PageTransition.runtime-backup.tsx`: that historical backup
+differs from the pinned runtime in other behavior. The rollback component and
+first-load head code remain unchanged. This adds no canvas instances.
+
+Browser A/B checks of the published page with the patched module show Index
+content starting about 0.8s earlier and overlapping the title rise from Home,
+Info, and Play. Framer accepted both files with empty typecheck results;
+`npm test` passed all 35 performance guards. Evidence and the pre-edit wrapper
+are in `output/playwright/index-arrival-2026-09-18/`. The user published at
+2026-09-18 18:15:53 PDT. Production HTML contains `Info Heading`, and
+`PageTransition.B5XQ0_ih.mjs` contains the scoped ownership guard.
+Fresh production browser checks (without response interception) confirm the
+Info heading stays at `translateY(0)` and opacity 1 until the route changes.
+The first Index content fades begin at 737ms from Info, 785ms from Home, and
+769ms from Play, with the title still about 20px from its final position and
+the page transition still active. See `published-verification.json`.
+
 **2026-09-17 — first-load identity and curtain cadence repair (published).**
 `PageTransition.tsx` (`gmalnRr`, insert version `LpxZNM4x6qeeEQmi4b9G`) now
 shares its first-paint script with Framer's **Preloaders** custom-code entry

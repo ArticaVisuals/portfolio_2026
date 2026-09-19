@@ -1,0 +1,3583 @@
+{
+  "verifiedAt": "2026-09-19T01:17:55.657454+00:00",
+  "url": "https://micahhoang.com",
+  "browser": "Playwright Chromium dedicated clean session index-published",
+  "responseInterception": false,
+  "codeInjection": "Observational sampling and startViewTransition timestamp wrapper only; no behavior or DOM mutation.",
+  "runtimeResource": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.B5XQ0_ih.mjs",
+  "infoHeadingLayerName": "Info Heading",
+  "method": "16ms computed-style sampling around actual nav clicks. Times relative to probe start immediately before Playwright click. Kept full first-content samples, decimated continuous samples.",
+  "summary": {
+    "info": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "revealMs": 577,
+      "firstContentFadeMs": 736.5,
+      "headingRemainingYAtContentStartPx": 19.73,
+      "viewTransitionActiveAtContentStart": true,
+      "viewTransitionFinishedMs": 1410.8,
+      "outgoingHeadingSampleCount": 8,
+      "outgoingHeadingYValues": [
+        0
+      ],
+      "outgoingHeadingOpacityValues": [
+        1
+      ]
+    },
+    "home": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "revealMs": 627.9,
+      "firstContentFadeMs": 784.9,
+      "headingRemainingYAtContentStartPx": 20.52,
+      "viewTransitionActiveAtContentStart": true,
+      "viewTransitionFinishedMs": 1454.9
+    },
+    "play": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "revealMs": 625.1,
+      "firstContentFadeMs": 769.4,
+      "headingRemainingYAtContentStartPx": 20.52,
+      "viewTransitionActiveAtContentStart": true,
+      "viewTransitionFinishedMs": 1453.7
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        900
+      ],
+      "revealMs": 613.1,
+      "firstContentFadeMs": 768.1,
+      "headingRemainingYAtContentStartPx": 20.52,
+      "viewTransitionActiveAtContentStart": true,
+      "viewTransitionFinishedMs": 1453.1
+    }
+  },
+  "reducedMotion": {
+    "path": "/index",
+    "viewport": [
+      390,
+      900
+    ],
+    "reduced": true,
+    "vt": false,
+    "headingY": 0,
+    "fade": 1,
+    "mask": "none",
+    "rows": 16,
+    "hold": false
+  },
+  "console": {
+    "errors": [],
+    "warnings": []
+  },
+  "measurements": {
+    "info": {
+      "events": [
+        577
+      ],
+      "vt": [
+        {
+          "phase": "start",
+          "time": 20.100000023841858
+        },
+        {
+          "phase": "update",
+          "time": 29.600000023841858
+        },
+        {
+          "phase": "updateDone",
+          "time": 290.39999997615814
+        },
+        {
+          "phase": "ready",
+          "time": 291.10000002384186
+        },
+        {
+          "phase": "finished",
+          "time": 1410.7999999523163
+        }
+      ],
+      "infoSamples": [
+        {
+          "at": 17.100000023841858,
+          "path": "/info",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 33.299999952316284,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 49.10000002384186,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 65.19999992847443,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 81.10000002384186,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 97.19999992847443,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 113.39999997615814,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 129.19999992847443,
+          "path": "/info",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        }
+      ],
+      "firstIndex": {
+        "at": 173.79999995231628,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 93,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0,
+          "anims": []
+        },
+        "mask": null
+      },
+      "firstFade": {
+        "at": 736.5,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 19.7321,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.0379254,
+          "anims": [
+            {
+              "time": 125.03300006762075,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 115,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 125.03300006762075,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "titleSettled": {
+        "at": 816.6000000238419,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 0.504,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.485661,
+          "anims": [
+            {
+              "time": 200.03300006762004,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 77.2438,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 200.03300006762004,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "samples": [
+        {
+          "at": 17.100000023841858,
+          "path": "/info",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Hey, I'm Micah.",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 193.29999995231628,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 128.424,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": null
+        },
+        {
+          "at": 433.10000002384186,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 39.528,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 595.2999999523163,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 38.6625,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": [
+              {
+                "time": 0,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 0,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 753,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 18.2216,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.156465,
+            "anims": [
+              {
+                "time": 141.63300006762114,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 107.524,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 141.63300006762114,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 912.8999999761581,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 8.6664,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.784049,
+            "anims": [
+              {
+                "time": 300.03300006762146,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 39.8355,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 300.03300006762146,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1072.5,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 4.0326,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.945061,
+            "anims": [
+              {
+                "time": 458.33300006762204,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 12.1398,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 458.33300006762204,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1233.3999999761581,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 1.73817,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.988552,
+            "anims": [
+              {
+                "time": 616.433000067623,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 3.13871,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 616.433000067623,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1393.6000000238419,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.615435,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.999045,
+            "anims": [
+              {
+                "time": 783.3330000676212,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0.478891,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 783.3330000676212,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1552.7999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.172229,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0.0165596,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 941.6330000676219,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1714,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.0229722,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1873.1999999284744,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.00012330000000000002,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2033.8999999761581,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2192.899999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2352.399999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2513.100000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2672.5,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2833.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2992.5,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3152.600000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3313.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3473.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "home": {
+      "events": [
+        627.8999999761581
+      ],
+      "vt": [
+        {
+          "phase": "start",
+          "time": 54.89999997615814
+        },
+        {
+          "phase": "update",
+          "time": 90.69999992847443
+        },
+        {
+          "phase": "updateDone",
+          "time": 348.5
+        },
+        {
+          "phase": "ready",
+          "time": 349.1999999284744
+        },
+        {
+          "phase": "finished",
+          "time": 1454.8999999761581
+        }
+      ],
+      "infoSamples": [],
+      "firstIndex": {
+        "at": 214.79999995231628,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 93,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0,
+          "anims": []
+        },
+        "mask": null
+      },
+      "firstFade": {
+        "at": 784.8999999761581,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 20.5177,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.03762,
+          "anims": [
+            {
+              "time": 124.99200005810707,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 115,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 124.99200005810707,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "titleSettled": {
+        "at": 1378.0999999046326,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 0.957274,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.997272,
+          "anims": [
+            {
+              "time": 724.9920000581085,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 1.0093,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 724.9920000581085,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "samples": [
+        {
+          "at": 17,
+          "path": "/",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Micah Hoang",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 193.39999997615814,
+          "path": "/",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Micah Hoang",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 357.6999999284744,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 79.356,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 513.0999999046326,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 72.2267,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 672.5,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 34.146,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": [
+              {
+                "time": 16.692000058107226,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 16.692000058107226,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 833.0999999046326,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 16.2308,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.359289,
+            "anims": [
+              {
+                "time": 174.59200005810516,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 89.7463,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 174.59200005810516,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 992.7999999523163,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 7.69693,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.837553,
+            "anims": [
+              {
+                "time": 333.29200005810833,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 31.3758,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 333.29200005810833,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1153.3999999761581,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 3.41175,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.962454,
+            "anims": [
+              {
+                "time": 499.99200005810707,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 8.68129,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 499.99200005810707,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1312.0999999046326,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 1.43194,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.993054,
+            "anims": [
+              {
+                "time": 658.2920000581041,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 2.08562,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 658.2920000581041,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1472.6999999284744,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.515724,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.999557,
+            "anims": [
+              {
+                "time": 816.4920000581048,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0.292634,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 816.4920000581048,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1633.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.134322,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0.00367215,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 975.0920000581048,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1794.0999999046326,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.0134499,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1953,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2112.5,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2273.0999999046326,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2432.5999999046326,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2593.0999999046326,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2752.1999999284744,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2912.899999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3072.7999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3233.0999999046326,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3394,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "play": {
+      "events": [
+        625.1000000238419
+      ],
+      "vt": [
+        {
+          "phase": "start",
+          "time": 55.60000002384186
+        },
+        {
+          "phase": "update",
+          "time": 90.70000004768372
+        },
+        {
+          "phase": "updateDone",
+          "time": 337.7000000476837
+        },
+        {
+          "phase": "ready",
+          "time": 338.7000000476837
+        },
+        {
+          "phase": "finished",
+          "time": 1453.7000000476837
+        }
+      ],
+      "infoSamples": [],
+      "firstIndex": {
+        "at": 220,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 93,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0,
+          "anims": []
+        },
+        "mask": null
+      },
+      "firstFade": {
+        "at": 769.3999999761581,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 20.5177,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.0378732,
+          "anims": [
+            {
+              "time": 125.02600004766151,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 115,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 125.02600004766151,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "titleSettled": {
+        "at": 1376.5,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 0.957274,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.997274,
+          "anims": [
+            {
+              "time": 725.0260000476629,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 1.00889,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 725.0260000476629,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "samples": [
+        {
+          "at": 17.399999976158142,
+          "path": "/play",
+          "vt": false,
+          "hold": false,
+          "title": null,
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 193.29999995231628,
+          "path": "/play",
+          "vt": true,
+          "hold": true,
+          "title": null,
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 353.7000000476837,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 93,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 512.6000000238419,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 69.3872,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 673,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 32.904,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": [
+              {
+                "time": 24.826000047660557,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 115,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 24.826000047660557,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 833.5,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 15.6425,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.402998,
+            "anims": [
+              {
+                "time": 182.8260000476618,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 85.576,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 182.8260000476618,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 994.7000000476837,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 7.11708,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.859195,
+            "anims": [
+              {
+                "time": 350.02600004766293,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 27.7571,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 350.02600004766293,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1152.6000000238419,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 3.26354,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.965147,
+            "anims": [
+              {
+                "time": 507.92600004766086,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 8.13315,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 507.92600004766086,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1312.7999999523163,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 1.36554,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.993762,
+            "anims": [
+              {
+                "time": 666.7260000476602,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 1.91343,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 666.7260000476602,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1473.1000000238419,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.486421,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.999647,
+            "anims": [
+              {
+                "time": 825.0260000476644,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0.255046,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 825.0260000476644,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1633.7000000476837,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.124146,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0.00227317,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 982.8260000476589,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1793.1000000238419,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.0134499,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1952.7999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2113.100000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2273.5,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2433.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2592.899999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2752.100000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2912.600000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3073,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3232.899999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3393.5,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "mobile": {
+      "events": [
+        613.1000000238419
+      ],
+      "vt": [
+        {
+          "phase": "start",
+          "time": 53.60000002384186
+        },
+        {
+          "phase": "update",
+          "time": 89.5
+        },
+        {
+          "phase": "updateDone",
+          "time": 333.2999999523163
+        },
+        {
+          "phase": "ready",
+          "time": 334.2000000476837
+        },
+        {
+          "phase": "finished",
+          "time": 1453.1000000238419
+        }
+      ],
+      "infoSamples": [],
+      "firstIndex": {
+        "at": 216.79999995231628,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 93,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0,
+          "anims": []
+        },
+        "mask": null
+      },
+      "firstFade": {
+        "at": 768.1000000238419,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 20.5177,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.099084,
+          "anims": [
+            {
+              "time": 133.41600005142595,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 0,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 133.41600005142595,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "titleSettled": {
+        "at": 1376.3999999761581,
+        "path": "/index",
+        "vt": true,
+        "hold": false,
+        "title": {
+          "text": "Index",
+          "y": 0.912855,
+          "opacity": 1,
+          "anims": []
+        },
+        "fade": {
+          "text": "/ Year",
+          "y": 0,
+          "opacity": 0.997922,
+          "anims": [
+            {
+              "time": 741.7160000514258,
+              "state": "running",
+              "delay": 120
+            }
+          ]
+        },
+        "mask": {
+          "text": "2026",
+          "y": 0,
+          "opacity": 1,
+          "anims": [
+            {
+              "time": 741.7160000514258,
+              "state": "running",
+              "delay": 128.57142857142856
+            }
+          ]
+        }
+      },
+      "samples": [
+        {
+          "at": 17.399999976158142,
+          "path": "/",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Micah Hoang",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 192.39999997615814,
+          "path": "/",
+          "vt": true,
+          "hold": true,
+          "title": {
+            "text": "Micah Hoang",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": null,
+          "mask": null
+        },
+        {
+          "at": 356.2000000476837,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 53.7694,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 512.8999999761581,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 69.724,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": []
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          }
+        },
+        {
+          "at": 673,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 32.904,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0,
+            "anims": [
+              {
+                "time": 33.31600005142832,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 33.31600005142832,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 833,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 15.6425,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.445702,
+            "anims": [
+              {
+                "time": 191.41600005141868,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 191.41600005141868,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 993,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 7.11708,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.868828,
+            "anims": [
+              {
+                "time": 358.31600005141695,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 358.31600005141695,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1152.8999999761581,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 3.26354,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.967934,
+            "anims": [
+              {
+                "time": 516.7160000514173,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 516.7160000514173,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1312.3999999761581,
+          "path": "/index",
+          "vt": true,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 1.36554,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.994402,
+            "anims": [
+              {
+                "time": 675.0160000514285,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 675.0160000514285,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1473.2000000476837,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.486421,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 0.999722,
+            "anims": [
+              {
+                "time": 833.3160000514255,
+                "state": "running",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 833.3160000514255,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1634.6000000238419,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.11294,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1000.0160000514171,
+                "state": "running",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1792.7000000476837,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0.011321200000000002,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 1952.7000000476837,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2112.899999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2272.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2433.100000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2592.399999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2753.100000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 2913.2999999523163,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3073.600000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3233.899999976158,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        },
+        {
+          "at": 3393.100000023842,
+          "path": "/index",
+          "vt": false,
+          "hold": false,
+          "title": {
+            "text": "Index",
+            "y": 0,
+            "opacity": 1,
+            "anims": []
+          },
+          "fade": {
+            "text": "/ Year",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 940,
+                "state": "finished",
+                "delay": 120
+              }
+            ]
+          },
+          "mask": {
+            "text": "2026",
+            "y": 0,
+            "opacity": 1,
+            "anims": [
+              {
+                "time": 1028.5714285714284,
+                "state": "finished",
+                "delay": 128.57142857142856
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

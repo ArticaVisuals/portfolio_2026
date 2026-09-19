@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
-import PageTransitionV712 from "https://framer.com/m/PageTransitionRuntime-0yRcqO.js@nBkdxEuAmy8SV9MpeZjc"
+import PageTransitionV712 from "https://framerusercontent.com/modules/kWINdCIvJNyHW4g36u2k/Witnbh97hqwtM7YLb8Op/PageTransition.js"
 import ParagraphPrettyWrap from "https://framer.com/m/ParagraphPrettyWrap-bvfOg4.js"
 
 const HOME_PATH = "/"
@@ -1212,8 +1212,8 @@ function useHomeHeroRise(mode) {
 /**
  * PageTransition
  *
- * Uses the preserved v7.12 runtime with the Index arrival hold ownership fix,
- * plus a narrow Home Header Bottom recovery
+ * Active rollback to the exact PageTransition v7.12 module that was live before
+ * the v7.13 pinned-nav experiment, plus a narrow Home Header Bottom recovery
  * and a document-global "home hero on route arrival" controller: pre-paint
  * pin, monotonic (never-downward) choreography driven through a stylesheet
  * (beats Framer's inline writes on any refresh rate), hold-until-navigation

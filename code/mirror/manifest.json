@@ -4,10 +4,11 @@
   "notes": [
     "Root active TSX files remain the editable working mirrors for current Framer code files.",
     "Files under code-components/compiled-js are downloaded compiled Framer module snapshots from insert URLs, not original editable TypeScript source.",
-    "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output."
+    "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output.",
+    "2026-09-18: refreshed working-source hashes for CaseStudyJustifiedMediaGrid, IndexPage, and PageTransition; added PageTransitionRuntime (rdTIUkW). Compiled snapshots retain their original generation date."
   ],
   "counts": {
-    "activeRootCodeComponents": 20,
+    "activeRootCodeComponents": 21,
     "mirroredCompiledCodeComponents": 22,
     "mirroredCodeOverrides": 5,
     "componentMirrorErrors": 0
@@ -37,8 +38,8 @@
       "role": "Case-study media grid",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/CaseStudyJustifiedMediaGrid.tsx",
-      "bytes": 26218,
-      "sha256": "5e434273c35b77d2cc165c72b79c37e204f0c2c0a68ac71d2c87ed7b019de71a"
+      "bytes": 26621,
+      "sha256": "ea57c33f1536947572b0e14fcd8a1fe0635c56ebecbb781860a90834e11112f2"
     },
     {
       "codeFileId": "F2K4_SV",
@@ -109,8 +110,8 @@
       "role": "/index archive component",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/IndexPage.tsx",
-      "bytes": 105143,
-      "sha256": "cc6baa048e8cddd8f16f63b98fbbf86f5d71635d11c216ca8d278c0cb33ad0d9"
+      "bytes": 123193,
+      "sha256": "3e57b77fafa834063bea0a79d99019b20a2f29e66b6bf281bf9324004883a852"
     },
     {
       "codeFileId": "AZDGWx7",
@@ -145,8 +146,17 @@
       "role": "Site-wide page transition",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/PageTransition.tsx",
-      "bytes": 39601,
-      "sha256": "e28a1a890849ea7fbdcda047fb4c4f803836bd9dc28d36a4c0fb040b9db77f04"
+      "bytes": 58746,
+      "sha256": "343317c99049842b0edeb427284f67094ddb6b18a84949ed9b52c720cb2748eb"
+    },
+    {
+      "codeFileId": "rdTIUkW",
+      "path": "PageTransitionRuntime.tsx",
+      "role": "Editable pinned v7.12 page-transition runtime",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "code/components/PageTransitionRuntime.tsx",
+      "bytes": 74300,
+      "sha256": "c287621633a0a9e699dc4eb079b1aaab2a0ce2e928d6ca26368280acf334472b"
     },
     {
       "codeFileId": "EjvkJhv",

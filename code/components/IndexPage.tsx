@@ -1139,7 +1139,17 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
             if (revealed) return
             window.clearTimeout(pageRevealTimer)
             observer?.disconnect()
-            reveal() // no VT-gate — page-arrival reveal fires during the curtain
+            reveal() // trusted: pt:reveal is emitted when the appear hold releases
+        }
+
+        const revealForPageFallback = () => {
+            if (revealed) return
+            observer?.disconnect()
+            if (indexViewTransitionActive()) {
+                waitForTransitionThenReveal(false)
+                return
+            }
+            reveal()
         }
 
         observer = new IntersectionObserver(
@@ -1155,12 +1165,19 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
 
         observer.observe(element)
         window.addEventListener("pt:reveal", revealForPageTransition)
-        pageRevealTimer = window.setTimeout(revealForPageTransition, 220)
+        pageRevealTimer = window.setTimeout(revealForPageFallback, 220)
 
         // Catch a pt:reveal that already fired before this effect mounted
         // (home→index race) so we still reveal at curtain-lift, not 220ms later.
         const recentPageRevealAt = Number((window as any).__ptRevealedAt || 0)
-        if (recentPageRevealAt > 0 && Date.now() - recentPageRevealAt < 2000) {
+        const recentPageRevealPath = String(
+            (window as any).__ptRevealedPath || ""
+        )
+        if (
+            recentPageRevealPath === window.location.pathname &&
+            recentPageRevealAt > 0 &&
+            Date.now() - recentPageRevealAt < 2000
+        ) {
             revealForPageTransition()
         }
 

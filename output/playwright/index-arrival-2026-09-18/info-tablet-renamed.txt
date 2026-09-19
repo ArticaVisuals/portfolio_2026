@@ -1,0 +1,20 @@
+WARNING: One of the selected nodes is a replica (variant). It's recommended to update the original component instead.
+
+Selected nodes XML:
+<Tablet nodeId="yVjrXDXKc">
+  <Grid nodeId="yVjrXDXKcptCWG2Axm">
+    <Stack nodeId="yVjrXDXKcc4bmldgX6">
+      <HeadingRowWrapper nodeId="yVjrXDXKcn7BB1pIOl">
+        <InfoHeading
+            nodeId="yVjrXDXKcHhA0wJbp7"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Heading 2 Bold"
+        >
+          Hey, I&apos;m Micah.
+        </InfoHeading>
+      </HeadingRowWrapper>
+    </Stack>
+  </Grid>
+</Tablet>

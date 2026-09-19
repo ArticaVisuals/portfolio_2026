@@ -1,0 +1,20 @@
+--- exact pinned runtime source map
++++ new editable runtime
+@@ -1,3 +1,5 @@
++// Editable copy of the exact v7.12 dependency (Witnbh97hqwtM7YLb8Op).
++// Only the Index same-document fallback ownership differs from that release.
+ // @ts-nocheck
+ import * as React from "react"
+ import { addPropertyControls, ControlType, RenderTarget } from "framer"
+@@ -1676,7 +1678,10 @@
+             )
+         }
+         if (enabled && holdAppear && !skipCurrentCaseStudy) {
+-            if (active)
++            // The same-document click handler owns Index's timed release.
++            // Arming this fallback first would hold the content until the nav
++            // finishes, well after the Index title has already settled.
++            if (active && !(onIndexPath && sdActive))
+                 holdAppearAnimations(null, undefined, {
+                     quickHomeReentry: onHomePath,
+                     normalizeTypeReveals: true,
