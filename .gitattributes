@@ -1,0 +1,6 @@
+# Preserve the exact published response bytes and keep generated bundles out of
+# GitHub language statistics and expanded diffs by default. Upstream whitespace
+# (including CRLF) is retained as part of the byte-for-byte snapshot.
+code/mirror/published/pages/** -text -whitespace linguist-generated=true
+code/mirror/published/runtime/** -text -whitespace linguist-generated=true
+code/mirror/published/sitemap.xml -text -whitespace linguist-generated=true

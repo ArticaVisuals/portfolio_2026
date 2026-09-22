@@ -1,0 +1,144 @@
+{
+  "verifiedAt": "2026-09-22T15:16:54.863122+00:00",
+  "source": "Published site only; no Framer editor access",
+  "browser": "Chromium via Playwright CLI",
+  "about": {
+    "desktop": {
+      "url": "https://micahhoang.com/about",
+      "title": "About Micah Hoang — Brand Designer",
+      "description": "Meet Micah Hoang, a Los Angeles brand designer working across strategy, visual identity, motion, product, packaging, editorial, and UX/UI.",
+      "viewport": {
+        "width": 1200,
+        "height": 900
+      },
+      "scrollWidth": 1200,
+      "navigation": [
+        {
+          "text": "MICAH HOANG",
+          "href": "./"
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "./"
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "./play"
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "./index"
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "./about"
+        }
+      ],
+      "colors": [
+        {
+          "text": "I’m a brand designer with a systems mind. I treat design as problem-solving: start with what the brand needs to do, then build the whole system that gets it there.",
+          "color": "rgb(35, 51, 36)",
+          "fontSize": "18px"
+        },
+        {
+          "text": "“He went above and beyond his role, approaching problems with creativity and curiosity, and contributing massively to create high quality work.”",
+          "color": "rgb(35, 51, 36)",
+          "fontSize": "18px"
+        },
+        {
+          "text": "NADIA SHIREEN HUSAIN, ASSOCIATE CREATIVE DIRECTOR, APPLE",
+          "color": "rgb(82, 82, 82)",
+          "fontSize": "13px"
+        }
+      ],
+      "brokenImages": [],
+      "resumeLinks": [
+        "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+      ]
+    },
+    "tablet": {
+      "title": "About Micah Hoang — Brand Designer",
+      "viewport": {
+        "width": 810,
+        "height": 1080
+      },
+      "scrollWidth": 810,
+      "navigation": [
+        {
+          "text": "MICAH HOANG",
+          "href": "./"
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "./"
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "./play"
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "./index"
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "./about"
+        }
+      ],
+      "brokenImages": []
+    },
+    "mobile": {
+      "title": "About Micah Hoang — Brand Designer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scrollWidth": 390,
+      "navigation": [
+        {
+          "text": "MICAH HOANG",
+          "href": "./"
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "./"
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "./play"
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "./index"
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "./about"
+        }
+      ],
+      "brokenImages": []
+    }
+  },
+  "navigationFlow": [
+    "At 390px, clicked Work in About navigation and reached https://micahhoang.com/.",
+    "Clicked About in home navigation and reached https://micahhoang.com/about."
+  ],
+  "legacyInfo": {
+    "url": "https://micahhoang.com/info",
+    "status": 404,
+    "redirected": false,
+    "visibleResult": "Page Not Found"
+  },
+  "console": {
+    "aboutErrors": 0,
+    "aboutWarnings": 0,
+    "other": "Expected Framer on-page editing unavailable on custom domain / no-auth log."
+  },
+  "captureNotes": [
+    "Full-page About screenshots captured after scrolling through the page to reveal Framer entrance animations; original site styles were preserved.",
+    "Home screenshot is a mobile viewport capture.",
+    "Responsive check covers Chromium viewport widths of 1200, 810, and 390 pixels; native Safari and device hardware were not tested.",
+    "A desktop capture immediately after mobile client navigation plus a resize temporarily omitted the portrait block; a fresh desktop page load rendered it correctly. Retained desktop evidence is from the fresh load."
+  ]
+}

@@ -1,0 +1,1429 @@
+{
+  "capturedAt": "2026-09-22T15:17:38.919589+00:00",
+  "completedAt": "2026-09-22T15:17:53.622906+00:00",
+  "baseUrl": "https://micahhoang.com",
+  "source": "published-site-only",
+  "scope": {
+    "included": "Every sitemap route's exact HTML, sitemap, referenced Framer JS/CSS module graph, and /info HTTP response",
+    "excluded": "Unpublished editor state, original TSX, source maps, third-party runtime services, and media/font binaries",
+    "media": "Published URLs remain in the captured HTML/modules; reusable media is tracked separately under assets/",
+    "restoration": "Reference snapshot, not a standalone offline build or a Framer project export"
+  },
+  "sitemap": {
+    "url": "https://micahhoang.com/sitemap.xml",
+    "finalUrl": "https://micahhoang.com/sitemap.xml",
+    "status": 200,
+    "contentType": "text/xml",
+    "etag": "\"7dbb8a94862fd648bf56a9bd7944959e\"",
+    "localPath": "code/mirror/published/sitemap.xml",
+    "bytes": 1453,
+    "sha256": "2f88c9c71bfeffdb8894b1e9ab0a7ae0485400a083b2a2e02509cae4538e6de0"
+  },
+  "pages": [
+    {
+      "url": "https://micahhoang.com/",
+      "finalUrl": "https://micahhoang.com/",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"ee6c6575eff567878027a8ec43826919\"",
+      "title": "Micah Hoang \u2014 Brand Designer",
+      "metadata": {
+        "canonical": "https://micahhoang.com/",
+        "og:url": "https://micahhoang.com/",
+        "description": "Micah Hoang is a brand designer based in Los Angeles, California, working across identity, product, motion, packaging, editorial systems, and digital experiences.",
+        "og:title": "Micah Hoang \u2014 Brand Designer",
+        "og:description": "Micah Hoang is a brand designer based in Los Angeles, California, working across identity, product, motion, packaging, editorial systems, and digital experiences."
+      },
+      "localPath": "code/mirror/published/pages/home.html",
+      "bytes": 292755,
+      "sha256": "001dfd8ffbb0dfdc835992f1a08892ccd7c9677f4982e9f6f0c18249e21cf760"
+    },
+    {
+      "url": "https://micahhoang.com/about",
+      "finalUrl": "https://micahhoang.com/about",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"f601e96c461a0480359d8824aedc14e8\"",
+      "title": "About Micah Hoang \u2014 Brand Designer",
+      "metadata": {
+        "canonical": "https://micahhoang.com/about",
+        "og:url": "https://micahhoang.com/about",
+        "description": "Meet Micah Hoang, a Los Angeles brand designer working across strategy, visual identity, motion, product, packaging, editorial, and UX/UI.",
+        "og:title": "About Micah Hoang \u2014 Brand Designer",
+        "og:description": "Meet Micah Hoang, a Los Angeles brand designer working across strategy, visual identity, motion, product, packaging, editorial, and UX/UI."
+      },
+      "localPath": "code/mirror/published/pages/about.html",
+      "bytes": 257507,
+      "sha256": "aa7a845c174e7bf206b8bda4265818cebf04ea31c82a9635f224a2f002d33ac9"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/airpods",
+      "finalUrl": "https://micahhoang.com/case-studies/airpods",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"5f3194d2319c8963e7ebd0ccf17d938c\"",
+      "title": "AirPods Pro 3 Launch Identity - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/airpods",
+        "og:url": "https://micahhoang.com/case-studies/airpods",
+        "description": "Launch identity work for AirPods Pro 3 across keynote, Apple Retail, web, and partner channels, centered on product lockups and feature motion.",
+        "og:title": "AirPods Pro 3 Launch Identity - Micah Hoang",
+        "og:description": "Launch identity work for AirPods Pro 3 across keynote, Apple Retail, web, and partner channels, centered on product lockups and feature motion."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/airpods.html",
+      "bytes": 296633,
+      "sha256": "63879efbb54b62bc10c0e6c1e463e835cce861b95b0095cb97218124f73dd3eb"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/caliper",
+      "finalUrl": "https://micahhoang.com/case-studies/caliper",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"579ed19202bdfb0d8b98cdf828c883b8\"",
+      "title": "Caliper Sans - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/caliper",
+        "og:url": "https://micahhoang.com/case-studies/caliper",
+        "description": "Caliper Sans is an original text typeface tuned between warm and technical, released with a tabloid specimen and a custom glyph X-ray tool.",
+        "og:title": "Caliper Sans - Micah Hoang",
+        "og:description": "Caliper Sans is an original text typeface tuned between warm and technical, released with a tabloid specimen and a custom glyph X-ray tool."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/caliper.html",
+      "bytes": 302622,
+      "sha256": "92a177d2f83221ea2b9657bc5c0f7271c97f7dd0ff257a649353f33ab9e4be20"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/cellular-symphony",
+      "finalUrl": "https://micahhoang.com/case-studies/cellular-symphony",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"63d717c2c93dd7913401896ccf6c2429\"",
+      "title": "Cellular Symphony 3D Motion - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/cellular-symphony",
+        "og:url": "https://micahhoang.com/case-studies/cellular-symphony",
+        "description": "A 3D motion study visualizing organelles as a colorful cellular ecosystem, using biological harmony as a metaphor for diversity and resilience.",
+        "og:title": "Cellular Symphony 3D Motion - Micah Hoang",
+        "og:description": "A 3D motion study visualizing organelles as a colorful cellular ecosystem, using biological harmony as a metaphor for diversity and resilience."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/cellular-symphony.html",
+      "bytes": 304444,
+      "sha256": "e31807cf817698e25a4c31c9bb6f79cb6f01308df67beb751699334120b8c625"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/gaia",
+      "finalUrl": "https://micahhoang.com/case-studies/gaia",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"9dc7bf3a0518de9bbe41200670a6f427\"",
+      "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/gaia",
+        "og:url": "https://micahhoang.com/case-studies/gaia",
+        "description": "A self-initiated rebrand and UX/UI redesign of iNaturalist, turning biodiversity observations into a more welcoming system for citizen science and conservation.",
+        "og:title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+        "og:description": "A self-initiated rebrand and UX/UI redesign of iNaturalist, turning biodiversity observations into a more welcoming system for citizen science and conservation."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/gaia.html",
+      "bytes": 366052,
+      "sha256": "e88c8e4af62f8ffd8dcef4f38421c7669b895dad045a1a6588dbd2df3133ea25"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/highland-harvests",
+      "finalUrl": "https://micahhoang.com/case-studies/highland-harvests",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"131c0282b97315d27aa3ed0c259755c4\"",
+      "title": "Highland Harvests Packaging & Identity - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/highland-harvests",
+        "og:url": "https://micahhoang.com/case-studies/highland-harvests",
+        "description": "Packaging and brand identity for Highland Harvests\u2019 ethical bee-derived product collection, translating sustainable Tai Dam beekeeping into a warm product experience.",
+        "og:title": "Highland Harvests Packaging & Identity - Micah Hoang",
+        "og:description": "Packaging and brand identity for Highland Harvests\u2019 ethical bee-derived product collection, translating sustainable Tai Dam beekeeping into a warm product experience."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/highland-harvests.html",
+      "bytes": 339213,
+      "sha256": "87ff8cdb6bdae54e39ded6997482e47c9abe19ae130cd0039ebede43e349e279"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/independent-lens",
+      "finalUrl": "https://micahhoang.com/case-studies/independent-lens",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"14aeb55918f8ef0839a338e7c7370b9d\"",
+      "title": "Independent Lens Editorial System - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/independent-lens",
+        "og:url": "https://micahhoang.com/case-studies/independent-lens",
+        "description": "Poster and French-fold brochure system for PBS Independent Lens, organizing documentary screenings through layered bitmap imagery and typography.",
+        "og:title": "Independent Lens Editorial System - Micah Hoang",
+        "og:description": "Poster and French-fold brochure system for PBS Independent Lens, organizing documentary screenings through layered bitmap imagery and typography."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/independent-lens.html",
+      "bytes": 307126,
+      "sha256": "8e1478fc7e414f7dd6506ed70ab0555f467478dfd27b3eca016cc09ebaf965b1"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/motion-connect-2025",
+      "finalUrl": "https://micahhoang.com/case-studies/motion-connect-2025",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"195a571e0f8254efe1fdb73a26f617e8\"",
+      "title": "Motion Connect 2025 Identity - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/motion-connect-2025",
+        "og:url": "https://micahhoang.com/case-studies/motion-connect-2025",
+        "description": "A kinetic identity system for ArtCenter's Motion Connect 2025 event series, spanning hype reels, speaker graphics, print, and social assets.",
+        "og:title": "Motion Connect 2025 Identity - Micah Hoang",
+        "og:description": "A kinetic identity system for ArtCenter's Motion Connect 2025 event series, spanning hype reels, speaker graphics, print, and social assets."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/motion-connect-2025.html",
+      "bytes": 329841,
+      "sha256": "3a3b73fe385819f8df5948cae998e1caaa5623eb2e2cac7a5422bba0a0db3706"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/national-park-cards",
+      "finalUrl": "https://micahhoang.com/case-studies/national-park-cards",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"aea779d50fa550c9410d9ca33695c0e5\"",
+      "title": "National Park Playing Cards - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/national-park-cards",
+        "og:url": "https://micahhoang.com/case-studies/national-park-cards",
+        "description": "A self-initiated playing-card deck celebrating 52 U.S. National Parks, from illustration and packaging to Kickstarter launch and retail distribution.",
+        "og:title": "National Park Playing Cards - Micah Hoang",
+        "og:description": "A self-initiated playing-card deck celebrating 52 U.S. National Parks, from illustration and packaging to Kickstarter launch and retail distribution."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/national-park-cards.html",
+      "bytes": 332952,
+      "sha256": "2a770c283d2bbc7d229d4dec631066b5c8727eb3446e62eaac1fc2e9e1469d6c"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/peak-energy",
+      "finalUrl": "https://micahhoang.com/case-studies/peak-energy",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"5e443052dd7ae58ce9f89cb811492beb\"",
+      "title": "Peak Energy & GM Motion Design - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/peak-energy",
+        "og:url": "https://micahhoang.com/case-studies/peak-energy",
+        "description": "Motion design for Peak Energy's General Motors partnership announcement, visualizing sodium-ion batteries as a new era of domestic energy storage.",
+        "og:title": "Peak Energy & GM Motion Design - Micah Hoang",
+        "og:description": "Motion design for Peak Energy's General Motors partnership announcement, visualizing sodium-ion batteries as a new era of domestic energy storage."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/peak-energy.html",
+      "bytes": 302032,
+      "sha256": "59e6fd26ca90457608787a4ceb60412cedf5f5480d135748924ae181f4b35d96"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/seek-truth",
+      "finalUrl": "https://micahhoang.com/case-studies/seek-truth",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"d46847238d5f26547d61894099dbee72\"",
+      "title": "Seek Truth Editorial Design - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/seek-truth",
+        "og:url": "https://micahhoang.com/case-studies/seek-truth",
+        "description": "Editorial design and visual identity for a book on Chinese censorship, surveillance, and artists who risk their safety to reveal truth.",
+        "og:title": "Seek Truth Editorial Design - Micah Hoang",
+        "og:description": "Editorial design and visual identity for a book on Chinese censorship, surveillance, and artists who risk their safety to reveal truth."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/seek-truth.html",
+      "bytes": 389903,
+      "sha256": "38f59c64f62fc51c41c0b319531973177bdfc479ebfb2d3a67b08dbf649569b0"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/simon-schuster",
+      "finalUrl": "https://micahhoang.com/case-studies/simon-schuster",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"e61387456c2cc2f054f159a2ee9cecf2\"",
+      "title": "Simon & Schuster Rebrand Concept - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/simon-schuster",
+        "og:url": "https://micahhoang.com/case-studies/simon-schuster",
+        "description": "A self-initiated Simon & Schuster rebrand concept that turns independence into a strategic asset across identity, editorial, storefront, and campaign work.",
+        "og:title": "Simon & Schuster Rebrand Concept - Micah Hoang",
+        "og:description": "A self-initiated Simon & Schuster rebrand concept that turns independence into a strategic asset across identity, editorial, storefront, and campaign work."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/simon-schuster.html",
+      "bytes": 385197,
+      "sha256": "6946bc827cc16cd6d1f8a2ba338638c6fed253cd0fb979c127d4aefad585d748"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/typldn",
+      "finalUrl": "https://micahhoang.com/case-studies/typldn",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"bc0147148c0172a8efa3889e8455a7c1\"",
+      "title": "TYPLDN Conference Identity - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/typldn",
+        "og:url": "https://micahhoang.com/case-studies/typldn",
+        "description": "Conference identity for TYPLDN, using Wim Crouwel-inspired modular typography to build a flexible system across digital and physical touchpoints.",
+        "og:title": "TYPLDN Conference Identity - Micah Hoang",
+        "og:description": "Conference identity for TYPLDN, using Wim Crouwel-inspired modular typography to build a flexible system across digital and physical touchpoints."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/typldn.html",
+      "bytes": 275067,
+      "sha256": "cdcc4e62962b10a999a965ee8ccfaa441f600fdff9c3b69d39914dd42a69e26c"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/weaponized-innocence",
+      "finalUrl": "https://micahhoang.com/case-studies/weaponized-innocence",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"daa4021ff41a21cce156ee75d6db4a62\"",
+      "title": "Weaponized Innocence Editorial - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/weaponized-innocence",
+        "og:url": "https://micahhoang.com/case-studies/weaponized-innocence",
+        "description": "Editorial and advocacy design for a UNICEF-focused publication on child soldiering, paired with an interactive pinwheel kit for awareness campaigns.",
+        "og:title": "Weaponized Innocence Editorial - Micah Hoang",
+        "og:description": "Editorial and advocacy design for a UNICEF-focused publication on child soldiering, paired with an interactive pinwheel kit for awareness campaigns."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/weaponized-innocence.html",
+      "bytes": 336542,
+      "sha256": "7bbca52f622daf4191d486dcb21b8b143e12b439435ea66b29da0d5f7feebb09"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/whatsapp",
+      "finalUrl": "https://micahhoang.com/case-studies/whatsapp",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"e46a3d2ed9f9537b7bc04a36500027cd\"",
+      "title": "WhatsApp Meta AI Motion Design - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/whatsapp",
+        "og:url": "https://micahhoang.com/case-studies/whatsapp",
+        "description": "Motion design for WhatsApp Meta AI launch assets with Brand New School, translating product features into warm, everyday messaging scenes.",
+        "og:title": "WhatsApp Meta AI Motion Design - Micah Hoang",
+        "og:description": "Motion design for WhatsApp Meta AI launch assets with Brand New School, translating product features into warm, everyday messaging scenes."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/whatsapp.html",
+      "bytes": 272084,
+      "sha256": "798f5bed1a438a5758fe4d8f62847177cd2b15b245f3d79f595ad1d4df58ae62"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+      "finalUrl": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"c39398a7e31466fd4d4fd9f092935eee\"",
+      "title": "Wolff Olins x ArtCenter Event Identity - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+        "og:url": "https://micahhoang.com/case-studies/wolff-olins-x-artcenter",
+        "description": "Event identity and promotional system for Wolff Olins x ArtCenter, using vivid risograph-inspired graphics for talks and portfolio reviews.",
+        "og:title": "Wolff Olins x ArtCenter Event Identity - Micah Hoang",
+        "og:description": "Event identity and promotional system for Wolff Olins x ArtCenter, using vivid risograph-inspired graphics for talks and portfolio reviews."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/wolff-olins-x-artcenter.html",
+      "bytes": 276997,
+      "sha256": "b7c8a6d7b3c26c0040f3c93cd5de555593943b679904d1fa1645458305ce8ceb"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/yomo",
+      "finalUrl": "https://micahhoang.com/case-studies/yomo",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"af7433c14faf68b4893595b2e5d2c7a1\"",
+      "title": "Yomo Food Navigation UX/UI - Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/case-studies/yomo",
+        "og:url": "https://micahhoang.com/case-studies/yomo",
+        "description": "UX/UI and visual identity for a personalized food navigation platform spanning recipes, restaurants, groceries, and smart-glasses experiences.",
+        "og:title": "Yomo Food Navigation UX/UI - Micah Hoang",
+        "og:description": "UX/UI and visual identity for a personalized food navigation platform spanning recipes, restaurants, groceries, and smart-glasses experiences."
+      },
+      "localPath": "code/mirror/published/pages/case-studies/yomo.html",
+      "bytes": 329736,
+      "sha256": "70e5c56a54fc465d35a80559aae320905905f78b3b81e3f8dfd745ac171a40b0"
+    },
+    {
+      "url": "https://micahhoang.com/index",
+      "finalUrl": "https://micahhoang.com/index",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"703fb0d21f082a277b6a96588490ed68\"",
+      "title": "Project Index \u2014 Brand, Motion & Product Design | Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/index",
+        "og:url": "https://micahhoang.com/index",
+        "description": "Explore Micah Hoang's complete project index spanning brand identity, strategy, motion, product, packaging, editorial, and UX/UI design.",
+        "og:title": "Project Index \u2014 Brand, Motion & Product Design | Micah Hoang",
+        "og:description": "Explore Micah Hoang's complete project index spanning brand identity, strategy, motion, product, packaging, editorial, and UX/UI design."
+      },
+      "localPath": "code/mirror/published/pages/index.html",
+      "bytes": 268683,
+      "sha256": "3bc60516b8f7584b51f290b63b7767a99783adc597e349404665050be68f971c"
+    },
+    {
+      "url": "https://micahhoang.com/play",
+      "finalUrl": "https://micahhoang.com/play",
+      "status": 200,
+      "contentType": "text/html",
+      "etag": "\"b28bc30bb2598ffee0484facada9887d\"",
+      "title": "Play \u2014 Motion & Visual Experiments | Micah Hoang",
+      "metadata": {
+        "canonical": "https://micahhoang.com/play",
+        "og:url": "https://micahhoang.com/play",
+        "description": "An interactive archive of Micah Hoang's motion studies, visual experiments, image-making, and creative explorations beyond finished case studies.",
+        "og:title": "Play \u2014 Motion & Visual Experiments | Micah Hoang",
+        "og:description": "An interactive archive of Micah Hoang's motion studies, visual experiments, image-making, and creative explorations beyond finished case studies."
+      },
+      "localPath": "code/mirror/published/pages/play.html",
+      "bytes": 242797,
+      "sha256": "27a021af6a4722ff26e1f32d1f9e5c3a7eb2a5d9047a18ac24731c6415bc72d2"
+    }
+  ],
+  "runtime": [
+    {
+      "url": "https://framerusercontent.com/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N-0.js",
+      "finalUrl": "https://framerusercontent.com/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N-0.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N-0.js",
+      "bytes": 30466,
+      "sha256": "14a0205a82f12674cdfdb4b0be479f823ea1e302825606c97f80f75680ca7320"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N-1.js",
+      "finalUrl": "https://framerusercontent.com/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N-1.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N-1.js",
+      "bytes": 2189,
+      "sha256": "09678aeffc2c3de7217b9f35edea4946c0ee0ef9016ef58a6b8e583e23ad0db7"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N.js",
+      "finalUrl": "https://framerusercontent.com/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/Q5zVNoSlpFEeQkuMUimJ/Wpg82VcdUzBX4I6pnChy/EySMRbI2N.js",
+      "bytes": 6164,
+      "sha256": "2482f3ec428fc4cc957db9bc2d300d44f9b2a52e2bc1e6a5789198dfaa016c15"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY-0.js",
+      "finalUrl": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY-0.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY-0.js",
+      "bytes": 28375,
+      "sha256": "48493ed66ebe3cbcd4f679838cdb1b31c7b6a3ddae329f61571f50ce267b6acb"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY-1.js",
+      "finalUrl": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY-1.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY-1.js",
+      "bytes": 2189,
+      "sha256": "09678aeffc2c3de7217b9f35edea4946c0ee0ef9016ef58a6b8e583e23ad0db7"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY.js",
+      "finalUrl": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/v2WSqRmVTq3B4ixUX8A8/nKi5rDjCLPvOeJW0iewO/yTHrQWMIY.js",
+      "bytes": 7705,
+      "sha256": "115c8976ceb72a21e2763fc8be7a0c71e1871835230cd7318e75e40ead90e36d"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY-0.js",
+      "finalUrl": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY-0.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY-0.js",
+      "bytes": 28033,
+      "sha256": "9db35f628c45b2ccc2c8fb712ed808357ea80d06a2fbd64c14f8905575e98ff0"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY-1.js",
+      "finalUrl": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY-1.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY-1.js",
+      "bytes": 2189,
+      "sha256": "09678aeffc2c3de7217b9f35edea4946c0ee0ef9016ef58a6b8e583e23ad0db7"
+    },
+    {
+      "url": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY.js",
+      "finalUrl": "https://framerusercontent.com/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY.js",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8",
+      "etag": null,
+      "localPath": "code/mirror/published/runtime/modules/v2WSqRmVTq3B4ixUX8A8/tJoqEWxQlBgjbMp4Em1Z/yTHrQWMIY.js",
+      "bytes": 7705,
+      "sha256": "5a8fc417379caf735a1a93704a363b1439a214eb921f7302e450b7ce58af6ee1"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/-1RWxHfFYPg1OVbfKCQ-bIhjcFB_eDapqtw-C9K2mQ8.HZhkqaiF.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/-1RWxHfFYPg1OVbfKCQ-bIhjcFB_eDapqtw-C9K2mQ8.HZhkqaiF.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"4b17f6441bdcc6965c71bfc772239d38\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/-1RWxHfFYPg1OVbfKCQ-bIhjcFB_eDapqtw-C9K2mQ8.HZhkqaiF.mjs",
+      "bytes": 991,
+      "sha256": "6ac51177df7d69bcc588dd555717ed83052fa90d4a0f00fcc354654bcdbfee53"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/4jo3EcmhJFr0WTP2diTUhHeA8UmUtzL8z1MVRWcHGpQ.CZxhPHnX.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/4jo3EcmhJFr0WTP2diTUhHeA8UmUtzL8z1MVRWcHGpQ.CZxhPHnX.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"5430adb73e231e415d827b1892cd8999\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/4jo3EcmhJFr0WTP2diTUhHeA8UmUtzL8z1MVRWcHGpQ.CZxhPHnX.mjs",
+      "bytes": 105718,
+      "sha256": "c45cfe1f20f2fe5d235028adecbb5f1c125a76971c031887d3815e4b86d50e40"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/7UkqQQwo0XirTqgnE5mbbkeuC-qBD5job2HXRin_NpY.DTLFlPgA.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/7UkqQQwo0XirTqgnE5mbbkeuC-qBD5job2HXRin_NpY.DTLFlPgA.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"8595a058b2957d0f40f3db43517ce331\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/7UkqQQwo0XirTqgnE5mbbkeuC-qBD5job2HXRin_NpY.DTLFlPgA.mjs",
+      "bytes": 1120,
+      "sha256": "e88aedd99489a95741fbeb40393ce23e4410da393a45b26eee1f0254b9963a98"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/BYu4L1-FwwbWHbx5L_YiOg95EadCKCO6cFqWd1QBiaw.JrPy5ucr.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/BYu4L1-FwwbWHbx5L_YiOg95EadCKCO6cFqWd1QBiaw.JrPy5ucr.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"6fe855171917d99805867467e1d8b9ed\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/BYu4L1-FwwbWHbx5L_YiOg95EadCKCO6cFqWd1QBiaw.JrPy5ucr.mjs",
+      "bytes": 76361,
+      "sha256": "341f5d5edca3ed66a972992b148e26855a6053c868a546cdf4694d291c72ab40"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CKAXHxDqW.D7BOgmZz.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CKAXHxDqW.D7BOgmZz.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"145de9bd7118d225a7c0d0bae2bb7a03\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CKAXHxDqW.D7BOgmZz.mjs",
+      "bytes": 5453,
+      "sha256": "ad5337f8448140f23caa890f087ce26f8ccd7abb2997a0c618d3f9d4f46ce4f2"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CUIY3dcgx.BdHsOsU8.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CUIY3dcgx.BdHsOsU8.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"ced21933a155cc0663fef0b4a0abf759\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CUIY3dcgx.BdHsOsU8.mjs",
+      "bytes": 5240,
+      "sha256": "4bb0b9f6792dc52ac6f292a6cbe23eff767dfad97c13d3805dab007fc269f358"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyControllers.BOzwiElL.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyControllers.BOzwiElL.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"0eb7248b8d444abad52fa195073b324e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyControllers.BOzwiElL.mjs",
+      "bytes": 17689,
+      "sha256": "353511eced4aa51d5c26e86af6a7ae90fac0fe38d999d1c61b45fbfb1e7992c9"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyJustifiedMediaGrid.D0oXejNC.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyJustifiedMediaGrid.D0oXejNC.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"2a4b65e9e36f514e8153c4cfdf437ea1\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyJustifiedMediaGrid.D0oXejNC.mjs",
+      "bytes": 7914,
+      "sha256": "bd9e0ca543ad40707b93b9c5dda797b915f3175213a630da6f28708c76831186"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyLinkRepair.DrNJ_pvP.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyLinkRepair.DrNJ_pvP.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"be0c3ab016b959282f2edd9dfc3a8fe5\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyLinkRepair.DrNJ_pvP.mjs",
+      "bytes": 15616,
+      "sha256": "47f63b33875c27762b4a97579f337e57711f9a5c060e2b9919b659b3a7d4768f"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyVideoManager.r4lu1zXW.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyVideoManager.r4lu1zXW.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"59155dc7e73f2577f3443e3e0d288c0f\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyVideoManager.r4lu1zXW.mjs",
+      "bytes": 42286,
+      "sha256": "e8140fde88fb678ad705d62a90d4ba09a4363f069d953a10104bd2ac7c612153"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyWorkInProgressGate.HdWb6_R4.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyWorkInProgressGate.HdWb6_R4.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"6cf905f840f06552d54fa27606c200b3\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CaseStudyWorkInProgressGate.HdWb6_R4.mjs",
+      "bytes": 5212,
+      "sha256": "512a2e7bfb612e33c5cd306635782bd11de9e7effecbec12e79b6ea319558c31"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Copyright_year.CHjA3-Y3.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Copyright_year.CHjA3-Y3.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"c067d5314167b46098b326ee57ad0ef6\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/Copyright_year.CHjA3-Y3.mjs",
+      "bytes": 16700,
+      "sha256": "7d51b2188ef3f4acf3d75d9e44ed669017253efdf60afadf624d3ad3c6f7c0d7"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CyZvEVnxW.CbSk6lQ4.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/CyZvEVnxW.CbSk6lQ4.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"750f6dfeed85d59eafdedf34f718b8d7\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/CyZvEVnxW.CbSk6lQ4.mjs",
+      "bytes": 677,
+      "sha256": "d29b9293fd7e2080c7d3d5d7a8f3f2372aa4e3e72e58961c104fc542c632f4f8"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/D3oItHJMPBWbPNn3tKVtcaX_2SVxlIzcDaWUoq6cEOc.C8Mt6BiI.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/D3oItHJMPBWbPNn3tKVtcaX_2SVxlIzcDaWUoq6cEOc.C8Mt6BiI.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"d502c0b2cff0bf4a0875f54785a9848e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/D3oItHJMPBWbPNn3tKVtcaX_2SVxlIzcDaWUoq6cEOc.C8Mt6BiI.mjs",
+      "bytes": 69761,
+      "sha256": "20b8e2dfad27869c1b4a8b0a14b51ae2b211312cf74f9b4b7924ee48143b1b21"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/E69uxn8jeQo3-B0aK1MqDEV16AAtC6SlvvathpoldPI.BoDBlodF.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/E69uxn8jeQo3-B0aK1MqDEV16AAtC6SlvvathpoldPI.BoDBlodF.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"e21ff212c55a3e0fc8e997a45d57e339\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/E69uxn8jeQo3-B0aK1MqDEV16AAtC6SlvvathpoldPI.BoDBlodF.mjs",
+      "bytes": 106594,
+      "sha256": "08e3290c2458447d9a8ffce0fc7f955e8414bfb4829f6c6c0de3d6a8ebfbc214"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/EJK0Or42xMg_7ZTgF_E3RqxDf4cY74-G3XiLiaHmzA0.FHhS0UFf.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/EJK0Or42xMg_7ZTgF_E3RqxDf4cY74-G3XiLiaHmzA0.FHhS0UFf.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"f47d356da5123fb72338a6ae3e180a9e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/EJK0Or42xMg_7ZTgF_E3RqxDf4cY74-G3XiLiaHmzA0.FHhS0UFf.mjs",
+      "bytes": 971,
+      "sha256": "4827c439deb0d3d3cc3c1693c17019e86c3fdbeb3ccc986d241939c6ac1d58fe"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/EoCREtojJ.5TsvxLtd.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/EoCREtojJ.5TsvxLtd.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"8110d02823ee7cba41a69c62f157a585\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/EoCREtojJ.5TsvxLtd.mjs",
+      "bytes": 3861,
+      "sha256": "e94845f7d4849a50b86a864c554cdd56d352358e1ed2cb4ce5a8894c0e1f3a3e"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/FEQbtS-p5C2AnGN82WJC4-fvqsj7oXoj3mQ9JJVTRk8.CDPOlchD.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/FEQbtS-p5C2AnGN82WJC4-fvqsj7oXoj3mQ9JJVTRk8.CDPOlchD.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"f004070b1c76975e3033894a99418a49\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/FEQbtS-p5C2AnGN82WJC4-fvqsj7oXoj3mQ9JJVTRk8.CDPOlchD.mjs",
+      "bytes": 1122,
+      "sha256": "697bd17b84924d7d9295bc4603573646b6df589f6d79b5fb3f4b6e7660c4afbc"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/FixedHeightMediaRows.Dc0rdAiQ.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/FixedHeightMediaRows.Dc0rdAiQ.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"920e0f61cb624cbaa05f64ad64944bab\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/FixedHeightMediaRows.Dc0rdAiQ.mjs",
+      "bytes": 5093,
+      "sha256": "ba7e1766e5f8dbd842bb129d06b40499270683c3032c6a31faf02b346cb3683c"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/FoPGvUTrwFBF2mV8UdoRzNUFlN7kxn7Pf8qdqbv36vo.C7K15TSs.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/FoPGvUTrwFBF2mV8UdoRzNUFlN7kxn7Pf8qdqbv36vo.C7K15TSs.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"f555782b79f9e0123a4e89534d9ddb68\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/FoPGvUTrwFBF2mV8UdoRzNUFlN7kxn7Pf8qdqbv36vo.C7K15TSs.mjs",
+      "bytes": 49736,
+      "sha256": "c8f2f799d8d28ea277f596de6abfebe79640f9b00af25711f1f4f45b46dabec5"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/HtH51XDY1d8jyELAsxz7HaUeqbZ1WwcAVicn1JLaY9U.DrRypNkF.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/HtH51XDY1d8jyELAsxz7HaUeqbZ1WwcAVicn1JLaY9U.DrRypNkF.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"63d086852c3e4ed3c802373115c1ba99\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/HtH51XDY1d8jyELAsxz7HaUeqbZ1WwcAVicn1JLaY9U.DrRypNkF.mjs",
+      "bytes": 7489,
+      "sha256": "dda45aad816dde4cb65b7f98b8f2e2af65aa4a901ab9dbf8646103bb5d9af97c"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/IuTXO0M_Q3joGqpkmxzJs6-6DV6EPG8UECgTZn2TZ7Q.BjII2lD8.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/IuTXO0M_Q3joGqpkmxzJs6-6DV6EPG8UECgTZn2TZ7Q.BjII2lD8.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"d4ba05dcaad2ea1f95040acc2e1238c6\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/IuTXO0M_Q3joGqpkmxzJs6-6DV6EPG8UECgTZn2TZ7Q.BjII2lD8.mjs",
+      "bytes": 1086,
+      "sha256": "03845f7622a4310e683a463268f9c600115482b786a85933b67b4b1e75c1bdaa"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Le6Hyi9vsBdOTEH6LrQFcNGIiA1Z2UklTeQOuUMt3c4.BgE8UFti.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Le6Hyi9vsBdOTEH6LrQFcNGIiA1Z2UklTeQOuUMt3c4.BgE8UFti.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"e47e7482c5b42848f1bf2ea1a0f1b2c1\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/Le6Hyi9vsBdOTEH6LrQFcNGIiA1Z2UklTeQOuUMt3c4.BgE8UFti.mjs",
+      "bytes": 1139,
+      "sha256": "f21dea6243a8c6cf439c52fd89dc26ea6aaf9ac5533df7bba41730cbc766b0e3"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NextProjectsSection.CW3MpeNJ.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NextProjectsSection.CW3MpeNJ.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"2d4822ca7e8cc8e8d0cd727c7e1995b2\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/NextProjectsSection.CW3MpeNJ.mjs",
+      "bytes": 22818,
+      "sha256": "1828e259465afbe184d37e135cbb6252f3049875e3e14fc94ec1e3559c70a8e8"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NlT_c5yfW6zdEoiOE0GuOdyfXj94vT3d_CO2xugz6hg.BnDFMvKc.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NlT_c5yfW6zdEoiOE0GuOdyfXj94vT3d_CO2xugz6hg.BnDFMvKc.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"33bd36faba49f992484c2e1ec92879c7\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/NlT_c5yfW6zdEoiOE0GuOdyfXj94vT3d_CO2xugz6hg.BnDFMvKc.mjs",
+      "bytes": 880,
+      "sha256": "25a1135553aeba42c981450b4c409711f28d250d3b36126e33a6863ef2df0706"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NmQrlYeSOarwhL02kbzzrEzPnxJByfVB7DQ0yDCtLqg.BEUNcKCr.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NmQrlYeSOarwhL02kbzzrEzPnxJByfVB7DQ0yDCtLqg.BEUNcKCr.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"3aae48564d34157c6c86c43ce085be53\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/NmQrlYeSOarwhL02kbzzrEzPnxJByfVB7DQ0yDCtLqg.BEUNcKCr.mjs",
+      "bytes": 872,
+      "sha256": "2132fc8418c31fc6af39be2d39479839a17990211e0d11b46f49c0401e8a4f8a"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NtQwY8Yquz_kIB0LdkmO_e1PYwYgQlCTMl6AXyNVU9c.X1B8WQcl.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/NtQwY8Yquz_kIB0LdkmO_e1PYwYgQlCTMl6AXyNVU9c.X1B8WQcl.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"e0fed1e0c5724eb03e6e923c78fde51a\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/NtQwY8Yquz_kIB0LdkmO_e1PYwYgQlCTMl6AXyNVU9c.X1B8WQcl.mjs",
+      "bytes": 60324,
+      "sha256": "e256b7dad5948507b94c36964d119acd5aa837c5c5862a22a8427c4d4d0487f6"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Ou01yDlGhq_T-phuja_VqmhpVvA5mUtrU3ELw_Fbf5o.DDPK_k-z.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Ou01yDlGhq_T-phuja_VqmhpVvA5mUtrU3ELw_Fbf5o.DDPK_k-z.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"97a2e9ee5cfe45ed5a1ba145d6573dcd\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/Ou01yDlGhq_T-phuja_VqmhpVvA5mUtrU3ELw_Fbf5o.DDPK_k-z.mjs",
+      "bytes": 99620,
+      "sha256": "e55ff73a0eec5d89f1f799b68557ba412e85f05cd4e2426eb32f3b2f83e47425"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.B5XQ0_ih.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.B5XQ0_ih.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"2db8fe5851426878b23ea0226067177c\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.B5XQ0_ih.mjs",
+      "bytes": 51894,
+      "sha256": "ad9988480eec14b12cc1d99e380d7c0ff1cdfbd350cb5ac5694681c7ea7984b7"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ParagraphPrettyWrap-bvfOg4.BOvlCg3q.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ParagraphPrettyWrap-bvfOg4.BOvlCg3q.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"28447d45fe02f9ff9fc5aef8f080c591\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ParagraphPrettyWrap-bvfOg4.BOvlCg3q.mjs",
+      "bytes": 10481,
+      "sha256": "748d923dad8815d4272e20f600b745c1c1b5746502eb1f6751e16d71c65a64f7"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Q114QCsCPo_Ja3YFz6IfqJM3in-TYvb3DT6I7uh_G7Y.CMw18iFK.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Q114QCsCPo_Ja3YFz6IfqJM3in-TYvb3DT6I7uh_G7Y.CMw18iFK.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"13f833d28fa0a1884e404119c368455a\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/Q114QCsCPo_Ja3YFz6IfqJM3in-TYvb3DT6I7uh_G7Y.CMw18iFK.mjs",
+      "bytes": 1152,
+      "sha256": "7641678b4ef45b959acf0ba9090c90af938eaf3ec194071e4624547bd61dfb5a"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/QbFkaet30.Cx494kyL.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/QbFkaet30.Cx494kyL.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"0b44d21dac4ec8005d7e0fad22653e03\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/QbFkaet30.Cx494kyL.mjs",
+      "bytes": 4147,
+      "sha256": "4da1ec57f7128295861dc32d48ca8f647751cd0799c3a8ec9e98747445e3ad18"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/QkwYqwG0naltLSDnrcyY_uGSGaqNDCeN_uwN8djmMD8.stErpsK6.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/QkwYqwG0naltLSDnrcyY_uGSGaqNDCeN_uwN8djmMD8.stErpsK6.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"772491f483bc056e3cf4502b5fb63e31\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/QkwYqwG0naltLSDnrcyY_uGSGaqNDCeN_uwN8djmMD8.stErpsK6.mjs",
+      "bytes": 1135,
+      "sha256": "49892b2c30ad7c2c6c02cae6e44d2e07c432847c39ee2765522b1ee7c8658a16"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ResponsiveCaseStudyVideo.CwmZMYpF.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ResponsiveCaseStudyVideo.CwmZMYpF.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"58b4f7a6c19033b916c8856397d98cdf\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ResponsiveCaseStudyVideo.CwmZMYpF.mjs",
+      "bytes": 3651,
+      "sha256": "adcc303b56198eceb6a82f72b64069d48d1124faf48ae890397712307ca40455"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/S7UkM64S0cN4QkD5A1BEKiAweMtdxS1x09k8U606a-U.QghuOY1j.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/S7UkM64S0cN4QkD5A1BEKiAweMtdxS1x09k8U606a-U.QghuOY1j.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"bb164c4065f75f6ef5c026e9b2db65c6\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/S7UkM64S0cN4QkD5A1BEKiAweMtdxS1x09k8U606a-U.QghuOY1j.mjs",
+      "bytes": 92113,
+      "sha256": "c72d4523d4b340442fadc4744d35e1f212c30f0fd96d02614577f4359257df6f"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/SMupz0ytz9rkZkKjq5fdKKTJ0JCNum6lnITpnstgsOg.CDx3kyd2.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/SMupz0ytz9rkZkKjq5fdKKTJ0JCNum6lnITpnstgsOg.CDx3kyd2.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"653d46ef83153652889fb0c5298a661c\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/SMupz0ytz9rkZkKjq5fdKKTJ0JCNum6lnITpnstgsOg.CDx3kyd2.mjs",
+      "bytes": 728,
+      "sha256": "7e35dd2cb6472df75f9d1f45d942f77ef478783eed8fe148236a9c8398c00264"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/SQZ7_Bu23XRKYZckMWSPOuye0BXuLTc6b_zFsmBMf3Q.CxEVJC2X.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/SQZ7_Bu23XRKYZckMWSPOuye0BXuLTc6b_zFsmBMf3Q.CxEVJC2X.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"82b7c75ed43b0d1235b9c6db813119e5\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/SQZ7_Bu23XRKYZckMWSPOuye0BXuLTc6b_zFsmBMf3Q.CxEVJC2X.mjs",
+      "bytes": 1107,
+      "sha256": "e546112abb9c06beaf79bb4b5d482f30af77d10007b163478827da2214e84e17"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ScrollToTopButton.DXPa9UGa.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ScrollToTopButton.DXPa9UGa.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"d0f898719cdf02b6d8090ecf50ca94d2\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ScrollToTopButton.DXPa9UGa.mjs",
+      "bytes": 5870,
+      "sha256": "caa3ae4295683bb68e902ef3403ca6c5d3228955738f277a4e3a2a5badc536de"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/SimonSchusterGuidelinesCarousel.D5FHzMPu.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/SimonSchusterGuidelinesCarousel.D5FHzMPu.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"ce09b8f85f270c7d799321b242ede09e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/SimonSchusterGuidelinesCarousel.D5FHzMPu.mjs",
+      "bytes": 8338,
+      "sha256": "8248ba422eb9a837fee022ababfb7591e97cd334cfa5b76df91f3e2e797fa2bd"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/UaMCz__8blur0AgI3Lgq2dmPtJT2yk6ugZV55KdcjlM.2Ygual9e.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/UaMCz__8blur0AgI3Lgq2dmPtJT2yk6ugZV55KdcjlM.2Ygual9e.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"9e1e1cbf640ba30009932643086d4838\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/UaMCz__8blur0AgI3Lgq2dmPtJT2yk6ugZV55KdcjlM.2Ygual9e.mjs",
+      "bytes": 135236,
+      "sha256": "f69a972ade5c0a9cc8b33bc17173fb5dc730901ac758ab4d0d154fa3aeee9008"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Video.BtEro0bg.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Video.BtEro0bg.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"20d18c928db40635060391a3c1dcd6fb\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/Video.BtEro0bg.mjs",
+      "bytes": 6926,
+      "sha256": "c751252994d38477796155b57e969aa1cce8ec6f7a7276b3b9be94b76f445516"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/VimeoPrivateEmbed.vvnw1RfU.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/VimeoPrivateEmbed.vvnw1RfU.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"3ab31c16af116e863a3c8f2e01d90cc3\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/VimeoPrivateEmbed.vvnw1RfU.mjs",
+      "bytes": 2289,
+      "sha256": "aaccbcf5686ab2ddced3aafb76a99078719fbd7443efc24212fbd35bb564165a"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ZB3A5PLtS.C4Yco8En.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ZB3A5PLtS.C4Yco8En.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"68f26e8aac957127f8e15b3a6d2a5b01\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ZB3A5PLtS.C4Yco8En.mjs",
+      "bytes": 3628,
+      "sha256": "16a270c1d495936199fd2d78040cc231243404abfab3cab3630a5d0205179eb5"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Zg1wvIHSv22l142SsfOU7DfhgU3jVxQbiMycSmEY1A4.CGTV621K.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/Zg1wvIHSv22l142SsfOU7DfhgU3jVxQbiMycSmEY1A4.CGTV621K.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"104b6a61cae47f34694e639f5cc8ad73\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/Zg1wvIHSv22l142SsfOU7DfhgU3jVxQbiMycSmEY1A4.CGTV621K.mjs",
+      "bytes": 77819,
+      "sha256": "4aa144a65ba3420064e1caf578b68ed5be974a7d4465820dab5d89385b81f3c2"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ZjWPuF9l5JMNpujWKyRrzxYxI6g_jhM9rBUKnnBTnwU.D26V-5K4.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ZjWPuF9l5JMNpujWKyRrzxYxI6g_jhM9rBUKnnBTnwU.D26V-5K4.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"6efc971591d28106400c18dc8444904a\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ZjWPuF9l5JMNpujWKyRrzxYxI6g_jhM9rBUKnnBTnwU.D26V-5K4.mjs",
+      "bytes": 69610,
+      "sha256": "dab6a8b8ba99cf3c1f127706dbf7a77b724014e4e8596f7b6d6dc572c9b580c2"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/_3F6hjqLRwfe5n8tb8fcpwESpMT1cIb_hRZnF6aTTcs.BvruxU3L.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/_3F6hjqLRwfe5n8tb8fcpwESpMT1cIb_hRZnF6aTTcs.BvruxU3L.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"81b0aa77bce4d20f99611931f80858be\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/_3F6hjqLRwfe5n8tb8fcpwESpMT1cIb_hRZnF6aTTcs.BvruxU3L.mjs",
+      "bytes": 1124,
+      "sha256": "1318ccf9001f12d735ff705596bf1026d683d19959eba27c180180333e03222d"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/_KJmwgRxrlgdjgY_EVsLopE4_TYrUdOD2Zd5TBCoWDw.DTiQ-JZ1.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/_KJmwgRxrlgdjgY_EVsLopE4_TYrUdOD2Zd5TBCoWDw.DTiQ-JZ1.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"300145c8b09fdfd5a8d17996ef1ae3ca\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/_KJmwgRxrlgdjgY_EVsLopE4_TYrUdOD2Zd5TBCoWDw.DTiQ-JZ1.mjs",
+      "bytes": 96013,
+      "sha256": "ec3c248b1aabfbfdd8ff14b3cdf8b7b98e59f3d5c16453fed138fafdb5d8be9e"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/_s4j_Os7K5HNCQvX-JBz5qZmnYDSjO9TWbBPxu5wbwU.DpEnrkto.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/_s4j_Os7K5HNCQvX-JBz5qZmnYDSjO9TWbBPxu5wbwU.DpEnrkto.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"2c08c86a657313fd680e0ad2f3061b11\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/_s4j_Os7K5HNCQvX-JBz5qZmnYDSjO9TWbBPxu5wbwU.DpEnrkto.mjs",
+      "bytes": 107296,
+      "sha256": "dd0e87a5e011a752438f661ed1d73de516d807cf9cc54ae103b1ed50f1061307"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/c28OF-MNdEOXSHPW0Z6LZwdzMMQA-yv74jqBELWOYc0.BQmKExNI.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/c28OF-MNdEOXSHPW0Z6LZwdzMMQA-yv74jqBELWOYc0.BQmKExNI.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"da537734bed408f3e93d3a4ff65c997e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/c28OF-MNdEOXSHPW0Z6LZwdzMMQA-yv74jqBELWOYc0.BQmKExNI.mjs",
+      "bytes": 993,
+      "sha256": "bcf0dd92b724ee8a6bac636760b7f19ff1f53f471e75ec6cd57de6aeb4989823"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/cLHire9wcl2un_6D3brYEvCdZR_TfRyHN46EU7EJNqw.DenTXTlj.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/cLHire9wcl2un_6D3brYEvCdZR_TfRyHN46EU7EJNqw.DenTXTlj.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"6b14f572e9f5affc614fb51806d455fd\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/cLHire9wcl2un_6D3brYEvCdZR_TfRyHN46EU7EJNqw.DenTXTlj.mjs",
+      "bytes": 25810,
+      "sha256": "47f34b9bf942d4520788cec8243a14939cdc397bec3d87c4fb37af271550b189"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/cjk0fUH1D-1EwKSHNCdfRl22FAOAit1eyMXyg5LMwbo.CnS67xt7.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/cjk0fUH1D-1EwKSHNCdfRl22FAOAit1eyMXyg5LMwbo.CnS67xt7.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"59f3158308254bd4102a571ba960bba3\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/cjk0fUH1D-1EwKSHNCdfRl22FAOAit1eyMXyg5LMwbo.CnS67xt7.mjs",
+      "bytes": 101602,
+      "sha256": "41f7b7884f416fdae7fad8335474ad46855afe38fe6cd18a49cac22cef7046a8"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/cxLS4itsr.DrbdE3-m.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/cxLS4itsr.DrbdE3-m.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"db3da316f031b821c8ed991bd7e41259\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/cxLS4itsr.DrbdE3-m.mjs",
+      "bytes": 5259,
+      "sha256": "4c6eee493813c711de94ae04a9d8865407561f0266346cdacda3d6d2daaa6f5f"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/enY10qQUGFURfoPnDPocVdx1kkeNiWvDzo6t0XOhFps.XejRiHSr.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/enY10qQUGFURfoPnDPocVdx1kkeNiWvDzo6t0XOhFps.XejRiHSr.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"2b0d95d0041348329197988fb7b2b25e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/enY10qQUGFURfoPnDPocVdx1kkeNiWvDzo6t0XOhFps.XejRiHSr.mjs",
+      "bytes": 1116,
+      "sha256": "3d9c30a9e780206fdff4691d6858a3d72fc119298a8b7b967f8a494dbd575678"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fPxpbyP1C.D8cimC9v.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fPxpbyP1C.D8cimC9v.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"f22c22f98cbfcfe0c89f491650c0db74\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fPxpbyP1C.D8cimC9v.mjs",
+      "bytes": 3629,
+      "sha256": "2d8af1b61c7d5ea68129657f45dc088e00844f63bcb0decdb6f1f5314333c15e"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-HGQXVJG5.mSZuRa4Q.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-HGQXVJG5.mSZuRa4Q.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"84ced5596a83b85771a11c11a6dc8155\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-HGQXVJG5.mSZuRa4Q.mjs",
+      "bytes": 8032,
+      "sha256": "d41599b9638570db5a9f61c7ec33c775a0301be520ef10d2a6d0a867d47493d0"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-IUGQ52HX.Y3c9QYBj.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-IUGQ52HX.Y3c9QYBj.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"bff7255d48ac9d91b6ecdddfbc5ebecb\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-IUGQ52HX.Y3c9QYBj.mjs",
+      "bytes": 2085,
+      "sha256": "06ba10f5ffb8390158b89b9d59d89adef17057375f0f93e5567186985772a330"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-PZLWRK4B.CuFl42Lb.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-PZLWRK4B.CuFl42Lb.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"f71ed15082dfbb1f8474281547bdba81\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-PZLWRK4B.CuFl42Lb.mjs",
+      "bytes": 107795,
+      "sha256": "79e5daa0be02a48dfcd24e94d18d38dee60b611d9b3c7c8800b0002613840a05"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-SXU5BGFE.DwUZJPwH.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-SXU5BGFE.DwUZJPwH.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"b4964d8fc1a42dd480afd7e0c917e643\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-SXU5BGFE.DwUZJPwH.mjs",
+      "bytes": 7985,
+      "sha256": "ca9346eabccd7e454371f9c38c14c66ff1e657ccdc0a7cdd848bd7c241ef40a7"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-TIA7QUPT.CjCmvCKY.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-TIA7QUPT.CjCmvCKY.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"837b78460b1335c70291431c9c600397\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-TIA7QUPT.CjCmvCKY.mjs",
+      "bytes": 2038,
+      "sha256": "0008e6039b3b148765bef59ceb3200ab3c318cf24e601f912ca7e1c033392c7b"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-W3A7DJCR.BaQiqt5F.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-W3A7DJCR.BaQiqt5F.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"03b6df177ff3a053c9f5c6d07d67ce8c\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/fontshare-W3A7DJCR.BaQiqt5F.mjs",
+      "bytes": 107842,
+      "sha256": "3129d6d0c962e6fae93cc3bb1f8c82a121f86c7e293e9c97fb594b7d93aa30e7"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer-font-OKYJFYGY.CUNMp-SH.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer-font-OKYJFYGY.CUNMp-SH.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"9d1cf84b59199ba96f557bafe7bcca3c\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/framer-font-OKYJFYGY.CUNMp-SH.mjs",
+      "bytes": 27928,
+      "sha256": "6a90dd57bec9ffc923db77dc6e7b3c4ffcc0f58af87d8535cb4d013271df6543"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer-font-RD2SUPQH.BV4yRwNx.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer-font-RD2SUPQH.BV4yRwNx.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"e9edc84d0cfa61f7cc706ceb7b9ca747\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/framer-font-RD2SUPQH.BV4yRwNx.mjs",
+      "bytes": 27881,
+      "sha256": "26da3c83eb26363a8e13bc4b688485670ef80f6d0191099f22a1cf3096dbe249"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dxmm4ztR.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dxmm4ztR.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"638e9244ee85518f91a132b369a4ba0e\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dxmm4ztR.mjs",
+      "bytes": 452915,
+      "sha256": "5b75472d141e6c9c477f7ef7aaa7ea685c714e875cd5fabd68dd7ffcdb9af3fd"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.LvxvZELN.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.LvxvZELN.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"4d588e5d122accfe8b279d2902ff47ee\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/framer.LvxvZELN.mjs",
+      "bytes": 439467,
+      "sha256": "0db5a10d17257c4bd576d5df64ab1d1a66f28dc5e5d42cffdb85666675099377"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/gUkCk1ir6ttsuKBsulcdQGMRpyZCit2wWOjkzCpvxGk.Crs_urvq.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/gUkCk1ir6ttsuKBsulcdQGMRpyZCit2wWOjkzCpvxGk.Crs_urvq.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"499a48a3f9af492c2bb00de7a3d6bd75\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/gUkCk1ir6ttsuKBsulcdQGMRpyZCit2wWOjkzCpvxGk.Crs_urvq.mjs",
+      "bytes": 1121,
+      "sha256": "fb88d1f283b05f60ca4a281d3f4aef9f2beddf379634a5aba82dd9d2d7688acd"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-EGNT223R.4Zga1324.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-EGNT223R.4Zga1324.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"d0bea77c6181b33f4655e4d49caa3961\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/google-EGNT223R.4Zga1324.mjs",
+      "bytes": 70695,
+      "sha256": "1f60f67b175239d44eef7c760298ff6d7ef6a59fcc3220d98fbab45ce770add8"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-H6SFY4F5.5HW9yzMR.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-H6SFY4F5.5HW9yzMR.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"36afc9ba66281f816bb4650977b7c9b5\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/google-H6SFY4F5.5HW9yzMR.mjs",
+      "bytes": 2605471,
+      "sha256": "57b1c39c0769ee5d0b5c159b9c534c6827b1f20d1338d023113c9a093fea0c04"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-K5SKTAAF.DwSrUi3w.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-K5SKTAAF.DwSrUi3w.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"ed0eed36c5e189eb69ca9ff7105824ab\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/google-K5SKTAAF.DwSrUi3w.mjs",
+      "bytes": 34209,
+      "sha256": "42d90b9f8c06f779845cf65bea68ed33f6d991e9aba623f70c3e6884f7f96723"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-KLGLJHZI.CKaaK6tD.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-KLGLJHZI.CKaaK6tD.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"75de21caa9fbd2c6a9c6712a7aef9836\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/google-KLGLJHZI.CKaaK6tD.mjs",
+      "bytes": 69827,
+      "sha256": "d06c36514a5c18256be721c62d83d78927a2e78802391e77bcca3dc3f6594f5e"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-VWNPUY4E.DXxDIjNb.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-VWNPUY4E.DXxDIjNb.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"68978f520d17910d04007d7a385c888c\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/google-VWNPUY4E.DXxDIjNb.mjs",
+      "bytes": 2583011,
+      "sha256": "8c2ef811f46c7e78d9d73bbc6219a7bf30782c2e3e59b9497030b9ebac986584"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-YSYBFRE6.BZ57zP5h.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/google-YSYBFRE6.BZ57zP5h.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"00aa99f19bcf11f09a6a9894dbdf6849\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/google-YSYBFRE6.BZ57zP5h.mjs",
+      "bytes": 34414,
+      "sha256": "1aecbc09c5985813cad64af4a4afbeeca134538e42db05da001a7805e5908a6d"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/jHjiBPwVLShCnom3_IT-spdVbCCZa8wIzhf7nVSkb2I.VSBobd6p.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/jHjiBPwVLShCnom3_IT-spdVbCCZa8wIzhf7nVSkb2I.VSBobd6p.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"8818a8f1f977d0e967974bedc8aed1c4\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/jHjiBPwVLShCnom3_IT-spdVbCCZa8wIzhf7nVSkb2I.VSBobd6p.mjs",
+      "bytes": 1060,
+      "sha256": "612cc41369e39b0a7103f327764b1496b36b6213210aa7c90940e71726ded34c"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/m-IgFnJPoG1M6A-o2Z9HkuKY0IGF9r1_DnjmbsC56T0.tDSeKMM4.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/m-IgFnJPoG1M6A-o2Z9HkuKY0IGF9r1_DnjmbsC56T0.tDSeKMM4.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"b0a56f844883374b5a87c40667c537a6\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/m-IgFnJPoG1M6A-o2Z9HkuKY0IGF9r1_DnjmbsC56T0.tDSeKMM4.mjs",
+      "bytes": 97792,
+      "sha256": "59b9ccdd8630bf76f24ea4e271fe3ddd5dc8a261b9b9e4c264732f52854ccd4f"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/magtext.B2_LG-hU.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/magtext.B2_LG-hU.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"d144f8e2dc46374eef7ccff9f703b731\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/magtext.B2_LG-hU.mjs",
+      "bytes": 1505,
+      "sha256": "b40a9920ada35aca23f03187f07eb5ade8c142bbfa9d2255620e2f6886e59b6b"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.B8G4AenI.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.B8G4AenI.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"846823ca1d1e7febe668daabdf9b51cc\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/motion.B8G4AenI.mjs",
+      "bytes": 150553,
+      "sha256": "b01168cb5782c6980cdedfee9d28cc47d5901a891eac062eb70da8121f8edef9"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.BXeQGXz9.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.BXeQGXz9.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"7aab46053bc9f71197db0a5f5ff1a86f\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/motion.BXeQGXz9.mjs",
+      "bytes": 151099,
+      "sha256": "a05dccfd6a03604b365546da0e3dded562c104ad339208d771eb56d7cbbeac99"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ngPzaVWSI.vqEg8YhF.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ngPzaVWSI.vqEg8YhF.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"d3666d15d9530f41859f90bc6b485144\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ngPzaVWSI.vqEg8YhF.mjs",
+      "bytes": 3632,
+      "sha256": "a9edb303493d52f592ad5654193950dc39b23fbf0803751dbd0681dd5d7b8176"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWwijNx_WCjbyvCjB6vbdBzu8faq5PmTu5oqZXX-QRU.CtyEofDj.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pWwijNx_WCjbyvCjB6vbdBzu8faq5PmTu5oqZXX-QRU.CtyEofDj.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"073c20bd9a92543aa7679034d2f347ad\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/pWwijNx_WCjbyvCjB6vbdBzu8faq5PmTu5oqZXX-QRU.CtyEofDj.mjs",
+      "bytes": 1069,
+      "sha256": "04382f979b08fbfbbc5fabf600cab7b203d132f64ee4291aae17443663788295"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pe1pRXPQP2OXQGeCljnUC0HDH1IUS_98i3YCdxKCSww.BC3VgUVX.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pe1pRXPQP2OXQGeCljnUC0HDH1IUS_98i3YCdxKCSww.BC3VgUVX.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"25290d81cc6203190ea169ebfdf4683b\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/pe1pRXPQP2OXQGeCljnUC0HDH1IUS_98i3YCdxKCSww.BC3VgUVX.mjs",
+      "bytes": 98326,
+      "sha256": "209a5703d36013979184aa4b6cb106056f80aaccf9d34ab2af4114883737ca39"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pjomyrLkdDzSCIDUQ4vC81ghllmHwj1limGNKTGcH5k.BHfFwCvR.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/pjomyrLkdDzSCIDUQ4vC81ghllmHwj1limGNKTGcH5k.BHfFwCvR.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"72bf4770e821c081edb9504b7ccdca9a\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/pjomyrLkdDzSCIDUQ4vC81ghllmHwj1limGNKTGcH5k.BHfFwCvR.mjs",
+      "bytes": 1114,
+      "sha256": "3194b19d7eb3765af74649f0c72dbdbea72a27be86f56dd21b5aea98fc4005f0"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/qNm4xSWr4aTNYZMgixr6QQpNovdzME_GGti0TqwQJdU.DNV2CjP5.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/qNm4xSWr4aTNYZMgixr6QQpNovdzME_GGti0TqwQJdU.DNV2CjP5.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"12dc61c8cdafb0dbe211c6f5c3437300\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/qNm4xSWr4aTNYZMgixr6QQpNovdzME_GGti0TqwQJdU.DNV2CjP5.mjs",
+      "bytes": 85762,
+      "sha256": "cb09480a0c011bdee79caa4fb1d6ff643807c9432ba853d3f70afec7b7efe877"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"a8eba0584f2636365eb0b7821a61abbd\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/react.BpKPsBQp.mjs",
+      "bytes": 144630,
+      "sha256": "f3d975cf1034c5af341e49fc0ac3f3f8f4231d042543d5682cb489d1ef14a9b5"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/rolldown-runtime.Dh6celcD.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/rolldown-runtime.Dh6celcD.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"0bde225a919bc7a9ccf507f7742e9483\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/rolldown-runtime.Dh6celcD.mjs",
+      "bytes": 629,
+      "sha256": "4cf74e844dce3bc61a15b3687b05aceff75f4da99181156d04f8ef181283f429"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/s2E_U6VIxdUtUpVyC9KfTYBkc3mFOClshonA2IaB860.Cf_LGI_w.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/s2E_U6VIxdUtUpVyC9KfTYBkc3mFOClshonA2IaB860.Cf_LGI_w.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"53b68837a7c86c3c479c36be084e107f\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/s2E_U6VIxdUtUpVyC9KfTYBkc3mFOClshonA2IaB860.Cf_LGI_w.mjs",
+      "bytes": 1021,
+      "sha256": "ccf8b2c44295ad664f9ae348103f5da7259928120e301ca33f86ce3f5eb0504d"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/sPySD_ndwanA_7HxHQZf_f6VN_zKhMl3IHObSrSa0kA.BpNNiWdP.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/sPySD_ndwanA_7HxHQZf_f6VN_zKhMl3IHObSrSa0kA.BpNNiWdP.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"b27da7b3e6ee7ccf1986c69169060a3d\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/sPySD_ndwanA_7HxHQZf_f6VN_zKhMl3IHObSrSa0kA.BpNNiWdP.mjs",
+      "bytes": 1099,
+      "sha256": "6c961f8e4c2a3f086997f0a2647c827f28778e3a7e741c96f95f93c972f80e51"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BJCB_OmA.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BJCB_OmA.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"155babc89bbb27daa755f52a37470635\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/script_main.BJCB_OmA.mjs",
+      "bytes": 113726,
+      "sha256": "fa8ed8dad772bf3f2c9e55653584a689575a37be72177a1eb74f492a6bb3fdf9"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/siteMetadata.BUg4dFEY.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/siteMetadata.BUg4dFEY.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"714fcd65836fe468b6572ff8b63df32b\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/siteMetadata.BUg4dFEY.mjs",
+      "bytes": 495,
+      "sha256": "54210840816957be1d6b3ebebfaa94ea3504e892c5951a2ca9f2a12d1fab896c"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ucnpP0dIU5c7jPDQ9Hq2XYFSIOeD6zLGh10yyUgIQ2s.CnrGsETz.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/ucnpP0dIU5c7jPDQ9Hq2XYFSIOeD6zLGh10yyUgIQ2s.CnrGsETz.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"fda33608500fe2c0839acb0ef96cc877\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/ucnpP0dIU5c7jPDQ9Hq2XYFSIOeD6zLGh10yyUgIQ2s.CnrGsETz.mjs",
+      "bytes": 72795,
+      "sha256": "f00f81afb7ad51ce992f083510e0e94cdcb9bba06c1bacd1a5907501964e97ba"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/vPJsxPio2x_DWZNLI0iI18-8vMwuglCkJ-7DsIop4Fc.BUXC_kxl.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/vPJsxPio2x_DWZNLI0iI18-8vMwuglCkJ-7DsIop4Fc.BUXC_kxl.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"e5da05f340554b9fde8f674ee12ac01a\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/vPJsxPio2x_DWZNLI0iI18-8vMwuglCkJ-7DsIop4Fc.BUXC_kxl.mjs",
+      "bytes": 134318,
+      "sha256": "58b14ff7822aa14afbfc8ea257a7a115f1465a7927e746b6e10144f8d2e0feac"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/xBDoZhd2m0sKDffEAMX3N299U8l2REhN4pbDGYL3Hmc.CvhPOxhl.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/xBDoZhd2m0sKDffEAMX3N299U8l2REhN4pbDGYL3Hmc.CvhPOxhl.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"1fe696ce5346d9f461ef1e5fa7ec68f0\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/xBDoZhd2m0sKDffEAMX3N299U8l2REhN4pbDGYL3Hmc.CvhPOxhl.mjs",
+      "bytes": 1115,
+      "sha256": "b9d38cf4b965154204858627e028e90503a77f576c2112a96781cc32ee0a2b00"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/y41pGlniPthbyAF6ascdRFlCREaWY8PRc36MHRgk_vU.CH_7xhKU.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/y41pGlniPthbyAF6ascdRFlCREaWY8PRc36MHRgk_vU.CH_7xhKU.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"3c318413c17c06f9b2de922570ee0387\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/y41pGlniPthbyAF6ascdRFlCREaWY8PRc36MHRgk_vU.CH_7xhKU.mjs",
+      "bytes": 81781,
+      "sha256": "349400c5631e47e22fea14ba6c946743df68d000417694dec8e52b0ab5db9921"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/y5RXDH_Go5zucuGipaFHkyPp5VwcFOOz1nuzkOj7rFw.B73pI3QS.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/y5RXDH_Go5zucuGipaFHkyPp5VwcFOOz1nuzkOj7rFw.B73pI3QS.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"02666848747b97d42feaceaf4773a6a2\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/y5RXDH_Go5zucuGipaFHkyPp5VwcFOOz1nuzkOj7rFw.B73pI3QS.mjs",
+      "bytes": 1123,
+      "sha256": "3e373bf2d892341bbcf43fc46508e4a3a0e2b74ce26cbdeee2ac985543087723"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.BSv3m1Wm.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.BSv3m1Wm.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"83fa763adc5ca67b3fd639865fea65ba\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.BSv3m1Wm.mjs",
+      "bytes": 33940,
+      "sha256": "4437bdb2068056fc97324c2a866ac02988159e2f0a4ec918a129b28a206ff403"
+    },
+    {
+      "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.C4v6sro0.mjs",
+      "finalUrl": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.C4v6sro0.mjs",
+      "status": 200,
+      "contentType": "text/javascript",
+      "etag": "\"afb1478a8ad7c99fce9346882313d2b3\"",
+      "localPath": "code/mirror/published/runtime/sites/Qw9YlQnLg7aytImZPPgM1/yTHrQWMIY.C4v6sro0.mjs",
+      "bytes": 33954,
+      "sha256": "5fb9b58cc905e71ad9308ae500e605d5c247740ea98da96517ac9349943f812c"
+    }
+  ],
+  "externalScripts": [
+    "https://events.framer.com/script?v=2"
+  ],
+  "legacyInfoResponse": {
+    "url": "https://micahhoang.com/info",
+    "finalUrl": "https://micahhoang.com/info",
+    "status": 404,
+    "contentType": "text/html",
+    "etag": "\"1ef38eea7a8f048adb16a7b69584b4f9\"",
+    "localPath": "code/mirror/published/pages/legacy-info-response.html",
+    "bytes": 201433,
+    "sha256": "4383afd0979c7c7d27ad8d70bfa13fb47345dcddfd5959586af66930318b87f0"
+  }
+}

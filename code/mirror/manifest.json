@@ -2,7 +2,7 @@
   "generatedAt": "2026-07-23T17:12:07-07:00",
   "projectUrl": "https://khaki-ship-257706.framer.app",
   "notes": [
-    "Root active TSX files remain the editable working mirrors for current Framer code files.",
+    "Editable TSX mirrors live under code/components/. Their recorded hashes reflect per-file mirror updates, not an automatic sync with the published site.",
     "Files under code-components/compiled-js are downloaded compiled Framer module snapshots from insert URLs, not original editable TypeScript source.",
     "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output.",
     "2026-09-18: refreshed working-source hashes for CaseStudyJustifiedMediaGrid, IndexPage, and PageTransition; added PageTransitionRuntime (rdTIUkW). Compiled snapshots retain their original generation date."
@@ -556,5 +556,11 @@
         "withWeatherIcon"
       ]
     }
-  ]
+  ],
+  "publishedSnapshot": {
+    "manifestPath": "code/mirror/published/manifest.json",
+    "sourceKind": "published-site-only",
+    "capturedDate": "2026-09-22",
+    "note": "Latest public HTML/runtime snapshot. Does not refresh original TSX or legacy compiled-module provenance."
+  }
 }

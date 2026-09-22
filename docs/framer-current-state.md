@@ -2,6 +2,7 @@
 
 **Project:** Micah Hoang Portfolio 2026
 **Last audited:** September 17, 2026, via Framer MCP, draft preview QA, and local repo audit
+**Latest published snapshot:** September 22, 2026, public site only; see [snapshot and provenance](../code/mirror/published/README.md)
 **Production URL:** `https://micahhoang.com`
 **Framer default domain:** `https://khaki-ship-257706.framer.app`
 
@@ -13,6 +14,24 @@
 > around a staged rollout that does not exist.)
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
+
+---
+
+## 2026-09-22 Update — About page and navigation snapshot
+
+- **Current route:** the former `/info` page is now `/about`. Shared navigation
+  reads **ABOUT** and targets `/about`. The published page title is **About Micah
+  Hoang — Brand Designer**, with the updated description and canonical URL saved
+  in the snapshot manifest. `/info` currently returns HTTP 404 without a redirect.
+- **Capture:** all 20 production sitemap pages and 103 referenced Framer runtime
+  files are preserved under `code/mirror/published/`, with exact response bytes,
+  URLs, timestamps, sizes, and SHA-256 hashes. This reflects the published site;
+  no original TSX or unpublished Framer editor state was refreshed.
+- **Public strategy:** the repository overview now foregrounds the portfolio
+  [ICP](reference/README.md), with direct PDF/Word links and an audience summary.
+  All original files in `docs/reference/` remain tracked and unchanged.
+- **Historical references:** `/info` in earlier audit entries describes the route
+  at that time. Use `/about` for current navigation and browser verification.
 
 ---
 
@@ -530,6 +549,9 @@ broken layouts, no missing `<img alt>`, `lang=en`, no console errors anywhere.
 
 ### Web Pages
 
+The editor inventory below comes from earlier MCP audits. For the September 22
+published route inventory, use the [captured sitemap](../code/mirror/published/sitemap.xml).
+
 - `/` - Home, page ID `R6_F7xjGZ`
 - `/404` - 404, page ID `koPvme2ig`
 - `/case-studies` - Native case-study index, page ID `Rnw1WO1jS`
@@ -554,7 +576,7 @@ broken layouts, no missing `<img alt>`, `lang=en`, no console errors anywhere.
 - `/index` - Canonical archive page, page ID `u2LOaBT5q`
 - `/play` - Archive media playground, page ID `KbgWr_0BN`
 - `/play-hover-preview` - Hover-only Play behavior test route, page ID `uWONGgGEg`
-- `/info` - Editorial profile/info page, page ID `m8MBybo0d`
+- `/about` - Editorial About page (formerly `/info`, historical page ID `m8MBybo0d`); renamed route verified on the published site September 22.
 
 No current Framer web page is exposed for `/profile`, `/contact`, `/worldgrid-test`, `/play-2`, `/play-consolidation-draft`, `/playground`, or `/playground-scroll-draft`.
 
