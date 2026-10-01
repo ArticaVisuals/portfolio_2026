@@ -56,8 +56,8 @@ tokens: [type.label, type.body-lg, layout.split-gap, space.9, space.5]
 | Class | Element | Notes |
 | --- | --- | --- |
 | `mh-meta-grid` | `div` | Two columns, 30px gap; stacks below 810px |
-| `mh-meta-grid__col` | `dl` | 40px between items |
-| `mh-meta-grid__item` | `div` | `dt` label + `dd` value, 16px gap |
+| `mh-meta-grid__col` | `dl` | 40px between items (36px mobile) |
+| `mh-meta-grid__item` | `div` | `dt` label (`/Small Mono`) + `dd` value (`/Body L`: 22 / 18 / 15px), 15px gap |
 
 ## Data model (CMS)
 

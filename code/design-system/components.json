@@ -319,7 +319,7 @@
       "title": "Hero",
       "slug": "hero",
       "section": "Components",
-      "description": "The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.",
+      "description": "The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.",
       "status": "live",
       "doc": "content/components/hero.md",
       "classes": [

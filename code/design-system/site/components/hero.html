@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hero – Micah Hoang Design System</title>
-<meta name="description" content="The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.">
+<meta name="description" content="The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.">
 <link rel="alternate" type="text/markdown" href="../../content/components/hero.md">
 <link rel="stylesheet" href="../../css/fonts.css">
 <link rel="stylesheet" href="../../tokens/tokens.css">
@@ -74,7 +74,7 @@
         <h1 class="mh-text-display-m">Hero</h1>
         <a class="mh-action" data-variant="pill" href="../../content/components/hero.md" title="This page as markdown, for agents">Markdown</a>
       </div>
-      <p class="ds-lede mh-text-heading">The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.</p>
+      <p class="ds-lede mh-text-heading">The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.</p>
       <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: Home "Header" section (Heading 1 + Heading 3); case-study hero (Heading 2b, two colors)</span></div>
       <hr class="mh-rule">
     </header>
@@ -128,14 +128,14 @@
   &lt;/h1&gt;
 &lt;/header&gt;</code></pre></details></figure>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<div class="ds-table"><table><thead><tr><th>Variant</th><th>Title</th><th>Supporting text</th><th>Where</th></tr></thead><tbody><tr><td>Home</td><td>Display XL, bold, the name</td><td>Heading, two lines, Forest Green</td><td><code>/</code> only</td></tr><tr><td>Case study</td><td>Display L, bold, project name</td><td>Same size and weight, continues in Light Gray</td><td><code>/case-studies/*</code></td></tr></tbody></table></div>
-<ul><li><strong>Home</strong>: the name, a two-line descriptor, then a base bar (link list left, ©2026 right) closed by a 1px rule. The Selected work section follows.</li><li><strong>Case study</strong>: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the <a href="meta-grid.html">Meta Grid</a> follow.</li><li>Hero copy rises in with the type reveal (900ms, 90ms stagger).</li></ul>
+<div class="ds-table"><table><thead><tr><th>Variant</th><th>Title</th><th>Supporting text</th><th>Where</th></tr></thead><tbody><tr><td>Home</td><td>Display XL, bold, the name</td><td>Heading, two lines, Forest Green</td><td><code>/</code> only</td></tr><tr><td>Case study</td><td>Display L, bold, project name</td><td>Same size and weight, continues in Stroke Gray</td><td><code>/case-studies/*</code></td></tr></tbody></table></div>
+<ul><li><strong>Home</strong>: the name's line box 90px from the top (97 mobile) under the fixed nav, with a 6px optical overhang to the left (5 tablet, 3 mobile); the descriptor 220 / 186 / 162px from the top, a two-line descriptor at a fixed width (382 / 218 / 181px), then the link row pinned 10px from the bottom of the 100px bottom padding, on the 20px nav gutter. There is no rule here: the rule that follows belongs to the Selected work <a href="section-header.html">Section Header</a>.</li><li><strong>Case study</strong>: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the <a href="meta-grid.html">Meta Grid</a> follow.</li><li>Hero copy rises in with the type reveal (900ms, 90ms stagger).</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class / attribute</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-hero</code></td><td>Column stack, 144px top padding</td></tr><tr><td><code>data-variant="case-study"</code></td><td>Applies Display L to <code>.mh-hero__name</code></td></tr><tr><td><code>mh-hero__name</code></td><td>The <code>h1</code>. Add <code>mh-text-display-xl</code> for Home</td></tr><tr><td><code>mh-hero__descriptor</code></td><td>Heading style, <code>max-width: 11em</code> to force the two-line break</td></tr><tr><td><code>mh-hero__continuation</code></td><td>Muted continuation inside the case-study <code>h1</code></td></tr><tr><td><code>mh-hero__bar</code></td><td>Base row with bottom rule</td></tr></tbody></table></div>
 <h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
 <ul><li>One <code>h1</code> per page: the name on Home, the project name + continuation on case studies (read as one sentence).</li><li>Reveal spans don't change reading order.</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
-<ul><li>Home: text styles <strong>Heading 1</strong> (name) and <strong>Heading 3</strong> (descriptor). Appear effects: name <code>translateY 110px → 0</code>, descriptor <code>90px → 0</code>, Snappy; replays are coordinated by <code>PageTransition</code> (<code>gmalnRr</code>).</li><li>Case study: <strong>Heading 2b</strong> in two text layers (<code>/Forest Green</code> then <code>Light Gray</code>) or one rich-text layer with a color span.</li></ul>
+<ul><li>Home: text styles <strong>Heading 1</strong> (name) and <strong>Heading 3</strong> (descriptor). Appear effects: name <code>translateY 110px → 0</code>, descriptor <code>90px → 0</code>, Snappy; replays are coordinated by <code>PageTransition</code> (<code>gmalnRr</code>).</li><li>Case study: <strong>Heading 2b</strong> in two text layers (<code>/Forest Green</code> then <code>/Stroke Gray</code>) or one rich-text layer with a color span.</li></ul>
 <h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
 <ul><li>Don't add a hero image to Home; the selected-work grid is the imagery.</li><li>Don't put a subtitle under a case-study title. The continuation is the subtitle.</li></ul></article>
     <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/components/hero.md</span><span class="mh-label mh-text-muted">©2026</span></footer>

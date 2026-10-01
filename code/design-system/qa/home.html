@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA fixture: Home</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../css/type.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  /* Fixture only: the live nav is fixed over the hero. */
+  .mh-nav { position: fixed; inset: 0 0 auto 0; }
+  .qa-section { padding-bottom: var(--mh-section-padding-y); }
+  .qa-view-all { display: flex; justify-content: flex-end; margin-top: var(--mh-card-grid-to-action); }
+</style>
+</head>
+<!-- Full-width rebuild of micahhoang.com Home from design-system components,
+     used by qa/compare.js to check geometry against the live page. -->
+<body data-surface="cream">
+<nav class="mh-nav" aria-label="Primary" data-qa="nav">
+  <a class="mh-nav__name mh-link mh-label" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Micah Hoang</span><span aria-hidden="true">Micah Hoang</span></span></span></a>
+  <p class="mh-nav__role mh-label" data-qa="nav-role">Brand designer</p>
+  <p class="mh-nav__location mh-label" data-qa="nav-location">Los Angeles, California</p>
+  <ul class="mh-nav__links mh-label" data-qa="nav-links">
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Work</span><span aria-hidden="true">Work</span></span></span></a></li>
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Play</span><span aria-hidden="true">Play</span></span></span></a></li>
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span></a></li>
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span></a></li>
+  </ul>
+</nav>
+<main>
+  <div class="mh-container">
+    <header class="mh-hero" data-qa="hero">
+      <h1 class="mh-hero__name mh-text-display-xl" data-qa="hero-name">Micah Hoang</h1>
+      <p class="mh-hero__descriptor mh-text-heading" data-qa="hero-descriptor">Brand designer with a systems mind.</p>
+      <div class="mh-hero__bar">
+        <ul class="mh-link-list mh-label" data-qa="hero-links"><li><a class="mh-link" href="#">LinkedIn</a></li><li><a class="mh-link" href="#">Resume</a></li><li><a class="mh-link" href="#">Email</a></li><li><a class="mh-link" href="#">Cosmos</a></li></ul>
+        <span class="mh-label" data-qa="hero-year">©2026</span>
+      </div>
+    </header>
+    <section class="qa-section">
+      <header class="mh-section-header">
+        <hr class="mh-rule" data-qa="work-rule">
+        <h2 class="mh-section-header__title" data-qa="work-title"><span>Selected</span><span data-qa="work-title-2">work</span></h2>
+      </header>
+      <ul class="mh-project-grid" data-qa="work-grid">
+        <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li><li class="mh-tag">Strategy</li></ul></li>
+        <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li><li class="mh-tag">Social media</li></ul></li>
+      </ul>
+    </section>
+  </div>
+  <footer class="mh-footer" data-surface="green" data-qa="footer">
+    <p class="mh-label mh-footer__eyebrow" data-qa="footer-eyebrow">Get in touch</p>
+    <ul class="mh-footer__contacts">
+      <li><a class="mh-footer__contact" href="#" data-qa="footer-row-1">micah.hoang<sup>@hey.com</sup></a></li>
+      <li><a class="mh-footer__contact" href="#" data-qa="footer-row-2">LinkedIn<sup>Connect</sup></a></li>
+      <li><a class="mh-footer__contact" href="#">Cosmos<sup>Inspire</sup></a></li>
+    </ul>
+    <div class="mh-footer__bar">
+      <p class="mh-label">Available for work</p>
+      <ul class="mh-link-list mh-label" data-qa="footer-links"><li><a class="mh-link" href="#">LinkedIn</a></li><li><a class="mh-link" href="#">Resume</a></li><li><a class="mh-link" href="#">Cosmos</a></li></ul>
+      <p class="mh-label" data-qa="footer-year">©2026</p>
+    </div>
+  </footer>
+</main>
+</body>
+</html>

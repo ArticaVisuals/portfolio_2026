@@ -18,7 +18,7 @@ Show the work in context and say exactly what Micah did. The media carries the s
 | # | Section | Components | Notes |
 | --- | --- | --- | --- |
 | 1 | Nav | [Navigation](../components/navigation.md) | |
-| 2 | Title | [Hero](../components/hero.md) (case-study) | Bold project name + Light Gray continuation, Display L |
+| 2 | Title | [Hero](../components/hero.md) (case-study) | Bold project name + Stroke Gray continuation, Display L |
 | 3 | Hero media | [Media Frame](../components/media-frame.md) | Full bleed (edge to edge, no gutter), 16:9 or wider, video preferred |
 | 4 | Fact sheet | [Meta Grid](../components/meta-grid.md) | About, Industry / Scope, Credits, Year |
 | 5…n | Chapters | Heading (35px, near-black) + galleries + Body (18px, Graphite, ≤620px) | e.g. The Insight, Strategy, Visual Identity, Brand in the World, Interface, Designed to Ship |
@@ -32,7 +32,7 @@ Every image on the page is [Lightbox](../components/lightbox.md)-enabled.
 
 ```html example bleed
 <article>
-  <header class="mh-hero mh-container" data-variant="case-study" style="padding-top:72px;padding-bottom:72px">
+  <header class="mh-hero mh-container" data-variant="case-study" style="padding-bottom:72px">
     <h1 class="mh-hero__name">Gaia <span class="mh-hero__continuation">Turning noticing into a way of caring for the living world.</span></h1>
   </header>
   <div class="mh-media" data-ratio="16:9" data-mh-lightbox><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>

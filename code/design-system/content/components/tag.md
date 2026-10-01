@@ -41,7 +41,7 @@ tokens: [type.label, type.label-sm, radius.pill, color.*.border.stroke, color.*.
 
 - Tags list a project's **disciplines** (Strategy, Visual identity, UX/UI, 2D motion, Packaging...). Industry goes in the index row, not a tag.
 - Up to three per card, in CMS order.
-- At rest a tag is Light Gray text with a Light Gray outline. Interactive tags (links or toggle buttons) turn Accent Green on hover; a pressed toggle stays green.
+- At rest a tag is Stroke Gray text with a Stroke Gray outline. Interactive tags (links or toggle buttons) turn Accent Green on hover; a pressed toggle stays green.
 - On the live site, clicking a grid tag on `/index` toggles that discipline filter in place.
 
 ## API
