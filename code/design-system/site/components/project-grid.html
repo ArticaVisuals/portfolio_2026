@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Grid – Micah Hoang Design System</title>
+<meta name="description" content="The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.">
+<link rel="alternate" type="text/markdown" href="../../content/components/project-grid.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link is-current" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Components</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Project Grid</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/components/project-grid.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.</p>
+      <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: HomeSelectedWorkGrid (FecepLS); IndexPageGridPreview (LgIzFjJ)</span></div>
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="examples"><a class="ds-anchor" href="#examples">Examples</a></h2>
+<h3 id="two-columns-selected-work"><a class="ds-anchor" href="#two-columns-selected-work">Two columns (Selected work)</a></h3>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><ul class="mh-project-grid">
+  <li class="mh-project-card">
+    <a class="mh-project-card__link" href="#">
+      <div class="mh-project-card__meta mh-label"><span>5</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Simon &amp; Schuster</span><span aria-hidden="true">Simon &amp; Schuster</span></span></span></div>
+      <div class="mh-media"><img src="../../assets/samples/simon-schuster.jpg" alt="Uncover Forbidden Stories poster on a city building"></div>
+    </a>
+    <ul class="mh-tags"><li class="mh-tag">Strategy</li><li class="mh-tag">Visual identity</li><li class="mh-tag">Editorial</li></ul>
+  </li>
+  <li class="mh-project-card">
+    <a class="mh-project-card__link" href="#">
+      <div class="mh-project-card__meta mh-label"><span>6</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>National Park Playing Cards</span><span aria-hidden="true">National Park Playing Cards</span></span></span></div>
+      <div class="mh-media"><img src="../../assets/samples/national-park-cards.jpg" alt="Hands dealing National Park playing cards on a wooden table"></div>
+    </a>
+    <ul class="mh-tags"><li class="mh-tag">Product</li><li class="mh-tag">Packaging</li></ul>
+  </li>
+</ul></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;ul class="mh-project-grid"&gt;
+  &lt;li class="mh-project-card"&gt;
+    &lt;a class="mh-project-card__link" href="#"&gt;
+      &lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;5&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Simon &amp;amp; Schuster&lt;/span&gt;&lt;span aria-hidden="true"&gt;Simon &amp;amp; Schuster&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/simon-schuster.jpg" alt="Uncover Forbidden Stories poster on a city building"&gt;&lt;/div&gt;
+    &lt;/a&gt;
+    &lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;Strategy&lt;/li&gt;&lt;li class="mh-tag"&gt;Visual identity&lt;/li&gt;&lt;li class="mh-tag"&gt;Editorial&lt;/li&gt;&lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="mh-project-card"&gt;
+    &lt;a class="mh-project-card__link" href="#"&gt;
+      &lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;6&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;National Park Playing Cards&lt;/span&gt;&lt;span aria-hidden="true"&gt;National Park Playing Cards&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/national-park-cards.jpg" alt="Hands dealing National Park playing cards on a wooden table"&gt;&lt;/div&gt;
+    &lt;/a&gt;
+    &lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;Product&lt;/li&gt;&lt;li class="mh-tag"&gt;Packaging&lt;/li&gt;&lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre></details></figure>
+<h3 id="three-columns-other-projects"><a class="ds-anchor" href="#three-columns-other-projects">Three columns (Other projects)</a></h3>
+<figure class="ds-example" id="ex-2"><div class="ds-example__bar"><span>Example 2</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><ul class="mh-project-grid" data-columns="3">
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>3</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></div><div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>4</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
+</ul></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;ul class="mh-project-grid" data-columns="3"&gt;
+  &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;AirPods Pro 3&lt;/span&gt;&lt;span aria-hidden="true"&gt;AirPods Pro 3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media" data-stroke&gt;&lt;img src="../../assets/samples/airpods.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;3&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Peak Energy&lt;/span&gt;&lt;span aria-hidden="true"&gt;Peak Energy&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/peak-energy.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;4&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Gaia&lt;/span&gt;&lt;span aria-hidden="true"&gt;Gaia&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/gaia.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></details></figure>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<div class="ds-table"><table><thead><tr><th>Columns</th><th>Desktop</th><th>Tablet</th><th>Mobile</th><th>Where</th></tr></thead><tbody><tr><td>2 (default)</td><td>2</td><td>2</td><td>1</td><td>Home selected work</td></tr><tr><td><code>data-columns="3"</code></td><td>3</td><td>2</td><td>1</td><td>Case-study "Other projects", <code>/index</code> grid view</td></tr></tbody></table></div>
+<ul><li>Gaps: 20px between columns, 50px between rows.</li><li>Home shows exactly six projects (three rows of two), followed by a right-aligned "View all" action.</li><li>"Other projects" shows three and drops tags.</li></ul>
+<h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
+<div class="ds-table"><table><thead><tr><th>Attribute</th><th>Effect</th></tr></thead><tbody><tr><td><code>class="mh-project-grid"</code></td><td>2-column grid, use on <code>ul</code>/<code>div</code></td></tr><tr><td><code>data-columns="3"</code></td><td>3 columns on desktop</td></tr></tbody></table></div>
+<h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
+<ul><li>Home: <code>HomeSelectedWorkGrid</code> (<code>FecepLS</code>) renders the grid itself (<code>gap: 50px 20px</code>).</li><li><code>/index</code> grid view: <code>IndexPage</code> (<code>rgAZFOv</code>) with the <code>figma</code> layout variant supplied by <code>IndexPageGridPreview</code> (<code>LgIzFjJ</code>): 3 columns, 56px row gap, 20px column gap.</li><li>In native Framer layouts, use a Grid with <code>1fr</code> columns and the gap tokens; set column count on the tablet and phone breakpoints.</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't use masonry or mixed card sizes in these grids. Galleries inside case studies have their own components.</li><li>Don't paginate; use the Index for the full list.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/components/project-grid.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#examples">Examples</a><a href="#usage">Usage</a><a href="#api">API</a><a href="#framer-mapping">Framer mapping</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

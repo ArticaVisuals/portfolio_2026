@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typography – Micah Hoang Design System</title>
+<meta name="description" content="GT Standard for display and reading, GT Standard Mono for every label, and a scale with a huge top and a small bottom.">
+<link rel="alternate" type="text/markdown" href="../../content/foundations/typography.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link is-current" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Foundations</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Typography</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/foundations/typography.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">GT Standard for display and reading, GT Standard Mono for every label, and a scale with a huge top and a small bottom.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="overview"><a class="ds-anchor" href="#overview">Overview</a></h2>
+<p>Two families do everything. <strong>GT Standard</strong> (L width) sets display type, headings and body. <strong>GT Standard Mono</strong> sets every label, nav item, tag and action, always uppercase at 12–13px. The scale is deliberately polarized: display sizes are huge and tight, everything else is small. There is almost nothing in between.</p>
+<div class="ds-table"><table><thead><tr><th>Family</th><th>CSS variable</th><th>Weights</th><th>Framer font names</th></tr></thead><tbody><tr><td>GT Standard</td><td><code>--mh-font-sans</code></td><td>400, 500, 700</td><td>GT Standard L Regular, GT Standard Trial L Md, GT Standard Trial L Bd</td></tr><tr><td>GT Standard Mono</td><td><code>--mh-font-mono</code></td><td>400</td><td>GT Standard Mono Regular, GT Standard Mono Trial Rg</td></tr></tbody></table></div>
+<p><code>css/fonts.css</code> loads the same Framer-hosted files the live site uses and folds them into the families <code>"MH GT Standard"</code> and <code>"MH GT Standard Mono"</code>, so <code>font-weight</code> works normally.</p>
+<h2 id="scale"><a class="ds-anchor" href="#scale">Scale</a></h2>
+<p>Each style is one utility class, <code>.mh-text-&lt;name&gt;</code>, generated from <code>tokens.json</code>. Sizes are desktop / tablet / mobile.</p>
+<div class="ds-specimens"><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">display-xl</span><span class="mh-label mh-text-muted">120px / 94px / 58px · 700</span></div><div class="mh-text-display-xl ds-specimen__sample">Micah Hoang</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">display-l</span><span class="mh-label mh-text-muted">70px / 53px / 42px · 700</span></div><div class="mh-text-display-l ds-specimen__sample">Micah Hoang</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">display-m</span><span class="mh-label mh-text-muted">70px / 53px / 42px · 400</span></div><div class="mh-text-display-m ds-specimen__sample">Micah Hoang</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">display-footer</span><span class="mh-label mh-text-muted">80px / 64px / 40px · 400</span></div><div class="mh-text-display-footer ds-specimen__sample">Micah Hoang</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">heading</span><span class="mh-label mh-text-muted">35px / 24px / 20px · 400</span></div><div class="mh-text-heading ds-specimen__sample">Brand designer with a systems mind.</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">title</span><span class="mh-label mh-text-muted">22px / 22px / 22px · 400</span></div><div class="mh-text-title ds-specimen__sample">AirPods Pro 3</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">body-lg</span><span class="mh-label mh-text-muted">22px / 22px / 18px · 400</span></div><div class="mh-text-body-lg ds-specimen__sample">A photograph becomes a data point. A data point becomes a record.</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">body</span><span class="mh-label mh-text-muted">18px / 18px / 16px · 400</span></div><div class="mh-text-body ds-specimen__sample">A photograph becomes a data point. A data point becomes a record.</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">body-sm</span><span class="mh-label mh-text-muted">16px · 400</span></div><div class="mh-text-body-sm ds-specimen__sample">A photograph becomes a data point. A data point becomes a record.</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">label</span><span class="mh-label mh-text-muted">13px · 400</span></div><div class="mh-text-label ds-specimen__sample">Selected work / 2026</div></div><div class="ds-specimen"><div class="ds-specimen__meta"><span class="mh-label">label-sm</span><span class="mh-label mh-text-muted">12px · 400</span></div><div class="mh-text-label-sm ds-specimen__sample">Selected work / 2026</div></div></div>
+<div class="ds-table"><table><thead><tr><th>Style</th><th>Class</th><th>Size</th><th>Weight</th><th>Leading</th><th>Tracking</th><th>Framer text style</th><th>Use</th></tr></thead><tbody><tr><td>Display XL</td><td><code>mh-text-display-xl</code></td><td>120 / 94 / 58</td><td>700</td><td>100%</td><td>-1%</td><td>Heading 1</td><td>Home hero name. Once per site.</td></tr><tr><td>Display L</td><td><code>mh-text-display-l</code></td><td>70 / 53 / 42</td><td>700</td><td>100%</td><td>-1%</td><td>Heading 2b</td><td>Case-study title + muted continuation</td></tr><tr><td>Display M</td><td><code>mh-text-display-m</code></td><td>70 / 53 / 42</td><td>400</td><td>100%</td><td>-1%</td><td>Heading 2</td><td>Section headers: "Selected work", "About Micah"</td></tr><tr><td>Display Footer</td><td><code>mh-text-display-footer</code></td><td>80 / 64 / 40</td><td>400</td><td>100%</td><td>-2%</td><td>(footer)</td><td>Uppercase footer contact links</td></tr><tr><td>Heading</td><td><code>mh-text-heading</code></td><td>35 / 24 / 20</td><td>400</td><td>110%</td><td>-1%</td><td>Heading 3</td><td>Hero descriptor, case-study section titles</td></tr><tr><td>Title</td><td><code>mh-text-title</code></td><td>22</td><td>400</td><td>120%</td><td>0</td><td>Index Title</td><td>Index rows, uppercase</td></tr><tr><td>Body L</td><td><code>mh-text-body-lg</code></td><td>22 / 22 / 18</td><td>400</td><td>120%</td><td>+1%</td><td>Body</td><td>Lead paragraphs, About, meta values</td></tr><tr><td>Body</td><td><code>mh-text-body</code></td><td>18 / 18 / 16</td><td>400</td><td>140%</td><td>0</td><td>Paragraph Regular (18)</td><td>Case-study long-form</td></tr><tr><td>Body S</td><td><code>mh-text-body-sm</code></td><td>16</td><td>400</td><td>140%</td><td>0</td><td>Paragraph Regular</td><td>Captions, small notes</td></tr><tr><td>Label</td><td><code>mh-text-label</code> / <code>mh-label</code></td><td>13</td><td>400 mono</td><td>100%</td><td>0</td><td>Heading 5, Body - 100%</td><td>Nav, meta, actions, eyebrows</td></tr><tr><td>Label S</td><td><code>mh-text-label-sm</code></td><td>12</td><td>400 mono</td><td>100%</td><td>0</td><td>(component)</td><td>Tags below 1200px, dense meta</td></tr></tbody></table></div>
+<h2 id="pairings"><a class="ds-anchor" href="#pairings">Pairings</a></h2>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-stack">
+  <div>
+    <p class="mh-label" style="margin-bottom:16px">/ About the project</p>
+    <p class="mh-text-body-lg mh-text-strong" style="margin:0;max-width:28em">A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care.</p>
+  </div>
+  <hr class="mh-rule">
+  <div>
+    <h3 class="mh-text-heading mh-text-strong" style="margin:0 0 24px">The Insight</h3>
+    <p class="mh-text-body mh-text-body" style="margin:0;max-width:620px">iNaturalist lets people photograph an organism, record where they found it, and share it with a community of naturalists who help identify it.</p>
+  </div>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-stack"&gt;
+  &lt;div&gt;
+    &lt;p class="mh-label" style="margin-bottom:16px"&gt;/ About the project&lt;/p&gt;
+    &lt;p class="mh-text-body-lg mh-text-strong" style="margin:0;max-width:28em"&gt;A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;hr class="mh-rule"&gt;
+  &lt;div&gt;
+    &lt;h3 class="mh-text-heading mh-text-strong" style="margin:0 0 24px"&gt;The Insight&lt;/h3&gt;
+    &lt;p class="mh-text-body mh-text-body" style="margin:0;max-width:620px"&gt;iNaturalist lets people photograph an organism, record where they found it, and share it with a community of naturalists who help identify it.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<ul><li><strong>One display moment per view.</strong> A page gets one Display XL or Display L; sections get Display M; everything else is Heading or smaller.</li><li><strong>Display type is tight</strong>: 100% leading and slight negative tracking. Don't loosen it.</li><li><strong>Mono is always uppercase</strong>, always 12–13px, never for sentences longer than a line.</li><li><strong>Two-tone headlines.</strong> A case-study title can continue its sentence in <code>--mh-text-muted</code> at the same size and weight ("Gaia" + "Turning noticing into a way of caring for the living world.").</li><li><strong>Body color follows weight of content</strong>: lead copy is <code>--mh-text-strong</code>, long-form is <code>--mh-text-body</code>.</li><li><strong>Measure</strong>: long-form body caps at <code>--mh-measure</code> (620px).</li><li><strong>Pretty wrapping</strong>: the live site applies <code>text-wrap: pretty</code> to paragraph-size text ≤23px (<code>ParagraphPrettyWrap</code>, <code>EjvkJhv</code>). Use <code>text-wrap: balance</code> for display lines if needed.</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't use bold (700) below Display L. Weight contrast comes from size.</li><li>Don't set body copy in mono, or labels in sentence case.</li><li>Don't add a third typeface (the old Manrope / Diatype set is retired).</li><li>Don't use letter-spaced uppercase sans as a label substitute; use mono.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/typography.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#scale">Scale</a><a href="#pairings">Pairings</a><a href="#usage">Usage</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

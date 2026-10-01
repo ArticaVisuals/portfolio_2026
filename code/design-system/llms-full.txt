@@ -1,0 +1,2871 @@
+# Micah Hoang Design System: for agents
+
+The brand foundations, components and page patterns behind micahhoang.com, the portfolio of brand designer Micah Hoang. Everything here is plain markdown, so you never need to render the HTML site to read it.
+
+## How to read this system
+
+| What you want | Where it is |
+| --- | --- |
+| This guide | `agents.md` |
+| Index of every page, one line each | `llms.txt` |
+| The whole system in one file (pages + tokens) | `llms-full.txt` |
+| One page | `content/<section>/<slug>.md` |
+| Machine-readable component list (classes, tokens, Framer ids) | `components.json` |
+| Token source of truth | `tokens/tokens.json` (W3C DTCG format) |
+| Tokens as CSS custom properties | `tokens/tokens.css` (generated) |
+| Component styles / behavior | `css/components.css`, `js/components.js` |
+| The rendered docs site | `site/index.html` (open in a browser) |
+
+Every page opens with YAML front matter: `title`, `section`, `description`, and, for components, `status`, `classes`, `tokens`, `framer` and `codeFileId`. Each component page has the same sections in the same order: examples (fenced ```` ```html example ```` blocks you can copy verbatim), usage, API, accessibility, Framer mapping, don'ts.
+
+## The brand in ten lines
+
+1. Two surfaces only: **Cream** `#F7F5F0` (default) and **Forest Green** `#233324` (footer, loader, inverted blocks).
+2. Two typefaces only: **GT Standard** (display + body) and **GT Standard Mono** (labels, always uppercase, 12-13px).
+3. Display type is huge and tight (120px hero, 70px sections, 100% leading, -1% tracking). Everything else is small.
+4. Flat. No shadows, no gradients, no rounded cards. Media is square-cornered. The only radius is the tag pill.
+5. Structure comes from **1px rules** in near-black `#141414` and from space, never from boxes.
+6. There is no filled button. Actions are mono text with a **flip-rail hover**, or an outlined pill.
+7. Interactive green `#25593A` is for hover/active states only, never a fill.
+8. Motion is quiet, decelerating and interruptible: Snappy `cubic-bezier(0.16, 1, 0.3, 1)` for nearly everything (420ms hovers, 900ms type reveals); critically damped springs only for new things the user can grab.
+9. A subtle umber film grain sits over the page (10% multiply).
+10. Voice: considered, quiet, alive, specific, shipped. "I did X", not "we did Y".
+
+## Rules
+
+- **Use what exists.** If a page here documents it, reuse it. The live site is Framer; most components already exist there as code components. Read the "Framer mapping" section and use the named `codeFileId` or Framer style before building anything new (see the repo's `AGENTS.md`).
+- **Tokens, never raw values.** Use `var(--mh-…)` from `tokens/tokens.css`, or the token path from `tokens.json` in Framer. If a value is missing, add it to `tokens.json` and run `node build.mjs`; don't inline a hex.
+- **Semantic color roles, not primitives.** Write `var(--mh-text-muted)`, not `var(--mh-color-light-gray)`. Roles re-map on `data-surface="green"`; primitives don't.
+- **Respect the breakpoints**: desktop ≥1200px, tablet 810–1199px, mobile <810px (Framer frames: 1200 / 810 / 390).
+- **Don't invent brand.** No new colors, fonts, radii, shadows, gradients, emoji or icon sets. If a design feels too plain, the answer is better type scale, more space, or real project media, not decoration.
+- **Mono is always uppercase** and never used for paragraphs.
+- **One H1 per page.** Display XL is reserved for the home hero name.
+- **Don't change live behavior.** `content/foundations/interaction.md` applies Apple's interface principles. Each rule is labeled **Already true** (preserve it), **For new work** (follow it only when building something new) or **Departure** (the brand wins; don't "fix" it). Changing how micahhoang.com looks or behaves needs Micah's explicit approval and a Framer publish.
+- **Hover and reveal motion use the bezier tokens; only grab-able UI uses springs** (`motion.spring.*`, see `content/foundations/gesture.md`).
+- **`/play` is protected.** Its drag, inertia and video-pool behavior are performance contracts in the repo `AGENTS.md`; they override anything here.
+
+## Quick start (HTML)
+
+```html
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="css/type.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<body data-surface="cream">
+  …
+  <script src="js/components.js"></script>
+</body>
+```
+
+## Quick start (Framer)
+
+- Colors: use the project color styles `/Cream`, `/Forest Green`, `Light Gray`; others are listed on the Colors page with their tokens.
+- Type: use the Framer text styles named on the Typography page (`Heading 1`, `Heading 2`, `Heading 3`, `Heading 5`, `Body`, ...).
+- Layout: Stacks and Grids with the gutter and gap tokens; desktop-first with tablet and phone breakpoint overrides.
+- Code components: look up the `codeFileId` in `components.json` and the repo's `code/mirror/manifest.json`.
+
+## Maintaining this system
+
+- Edit `tokens/tokens.json` or `content/**/*.md`, then run `node code/design-system/build.mjs`. It regenerates `tokens.css`, `css/type.css`, the HTML site, `llms.txt`, `llms-full.txt` and `components.json`.
+- Hand-written files: `css/fonts.css`, `css/base.css`, `css/components.css`, `js/components.js`, `site/assets/docs.*`, this file.
+- Values were measured from the published site on 2026-10-01. Framer is the runtime source of truth; if the live site and this system disagree, check the site and update the token here.
+- `code/tokens/micahhoang-tokens.json` (Manrope, `#027aff`) is a stale pre-2026 token set. Do not use it.
+
+
+---
+
+<!-- content/index.md -->
+
+---
+title: Introduction
+section: Overview
+description: The visual foundations, components and page patterns behind micahhoang.com.
+---
+
+# Introduction
+
+This is the design system behind micahhoang.com: the foundations every page is built on, the components the site is made of, and the page patterns that put them together. It describes what is live today, measured from the published site, and maps each piece back to its Framer style or code component.
+
+**Foundations** define the tokens for color, type, layout, motion, texture and identity. **Components** go from small pieces like the Mono Label and Tag up to the Project Card, Index List and Footer. **Patterns** show how the Home, Case Study and Index pages are put together. Each component page has live examples, usage rules, the class API and its Framer mapping.
+
+Pick a page from the sidebar, or press ⌘K to search. Every page also exists as markdown for agents: use the **Markdown** link in its header, or start from [agents.md](../agents.md).
+
+## The system at a glance
+
+```html example
+<div class="ds-demo-stack">
+  <p class="mh-label">Micah Hoang / Brand designer / Los Angeles, California</p>
+  <p class="mh-text-display-xl" style="margin:0">Micah Hoang</p>
+  <p class="mh-text-heading" style="margin:0;max-width:11em">Brand designer with a systems mind.</p>
+  <hr class="mh-rule">
+  <ul class="mh-tags"><li class="mh-tag">Strategy</li><li class="mh-tag">Visual identity</li><li class="mh-tag">Editorial</li></ul>
+</div>
+```
+
+## Principles
+
+Five words to go back to whenever a decision is unclear: **Considered. Quiet. Alive. Specific. Shipped.** Read [Principles](foundations/principles.md) before designing anything new.
+
+## Start here
+
+- [Colors](foundations/colors.md): two surfaces (Cream and Forest Green) and semantic roles.
+- [Typography](foundations/typography.md): GT Standard for display and body, GT Standard Mono for labels.
+- [Layout](foundations/layout.md): gutters, grids, breakpoints, rules instead of boxes.
+- [Motion](foundations/motion.md): the Snappy ease, flip rails and type reveals.
+- [Project Card](components/project-card.md): the main way work appears on the site.
+- [Case Study pattern](patterns/case-study.md): the template every project page follows.
+
+## Files
+
+| File | What it is |
+| --- | --- |
+| `tokens/tokens.json` | Token source of truth (DTCG) |
+| `tokens/tokens.css` | CSS custom properties, generated |
+| `css/components.css` | Component styles |
+| `js/components.js` | Optional behavior (lightbox, filters, loader, reveals) |
+| `components.json` | Machine-readable component manifest |
+| `llms.txt` / `llms-full.txt` | Agent index / everything in one file |
+
+---
+
+<!-- content/foundations/principles.md -->
+
+---
+title: Principles
+section: Foundations
+order: 1
+description: Five words that settle design decisions, and the voice the site writes in.
+---
+
+# Principles
+
+The portfolio presents a brand designer who thinks in systems, with range as the proof. Its main reader is a senior brand or design lead with a high craft bar. The site's job is to make the work easy to read without diluting or over-explaining it.
+
+## Five words
+
+| Principle | Means | In practice |
+| --- | --- | --- |
+| **Considered** | Every element earns its place. | No feature because it's cool. If a component isn't on this site, don't add it. |
+| **Quiet** | The work is loud enough. The site doesn't need to be. | Cream ground, one green, small mono labels, no decoration. Media carries the color. |
+| **Alive** | Small, intentional moments of motion and response. | Flip-rail hovers, type that rises in, a faint moving grain. Never motion for its own sake. |
+| **Specific** | "I did X", not "we did Y". Credit is precise. | Meta grids name the client, role and scope. Copy names real outcomes. |
+| **Shipped** | Work that exists in the world outweighs work that lives in Figma. | Lead with launched work; show it in context (product, retail, motion). |
+
+Apple's eight design principles map onto these five words. See [Interaction Principles](interaction.md) for that mapping and for the fluid-interface rules, each labeled as already true, for new work, or a deliberate departure.
+
+## What the site is not
+
+- Not an archive. The [Index](../patterns/index-archive.md) holds everything; Home shows six projects.
+- Not a UX deep-dive site. Process lives inside individual case studies.
+- Not a template. Nothing should read as a stock portfolio theme.
+
+## Voice and copy
+
+- **Plain, first person, present tense.** "I'm a brand designer with a systems mind."
+- **Short declaratives.** Case-study intros chain cause and effect: "A photograph becomes a data point. A data point becomes a record."
+- **Title Case only for project names**; headings are sentence case ("Selected work", "About Micah").
+- **Mono labels are nouns, not sentences**: `/ INDUSTRY`, `/ SCOPE`, `VIEW ALL`, `AVAILABLE FOR WORK`.
+- **The slash is structural.** Meta labels start with `/ ` and numbered titles read `1 / GAIA`.
+- **Credits are exact**: "Client: Self-Initiated Proposal", "Designer: Micah Hoang".
+- No exclamation marks, no emoji, no "passionate", "innovative", "pixel-perfect".
+
+## Decision checklist for agents
+
+1. Does an existing component or pattern already cover this? Use it.
+2. Does every color, size and duration resolve to a token?
+3. Is there one clear display moment per view, with everything else small?
+4. Would removing this element lose anything? If not, remove it.
+5. Does it work at 390px?
+
+---
+
+<!-- content/foundations/interaction.md -->
+
+---
+title: Interaction Principles
+section: Foundations
+order: 1.5
+description: Apple's fluid-interface and design principles from its WWDC talks, applied to this brand. Each rule is labeled as already true, for new work, or a deliberate departure.
+---
+
+# Interaction Principles
+
+## How to read this page
+
+This page applies Apple's interface guidance (WWDC *Designing Fluid Interfaces*, *The Details of UI Typography*, *Principles of Great Design*) to micahhoang.com. It is a **lens, not a redesign**. Every rule carries one of three labels:
+
+| Label | Meaning | What an agent may do |
+| --- | --- | --- |
+| **Already true** | The live site already behaves this way. | Preserve it. Use it as the reason the behavior exists. |
+| **For new work** | Applies to components and pages that don't exist yet. | Follow it when building something new. **Don't retrofit live components.** |
+| **Departure** | The brand deliberately does something else. | Follow the brand. Don't "fix" it toward Apple's guidance. |
+
+**Changing a live behavior is out of scope for this page.** Any change to how micahhoang.com looks or behaves needs Micah's explicit approval and a Framer publish. See [Changing the live site](#changing-the-live-site). The protected `/play` performance contracts in the repo's `AGENTS.md` always take precedence.
+
+## Eight principles, five words
+
+Apple's eight design principles line up with the site's own five words ([Principles](principles.md)). Use the site's words in copy and reviews; the Apple names are there to clarify the reasoning.
+
+| Apple principle | Site word | How it shows up here |
+| --- | --- | --- |
+| Purpose | Considered | Six projects on Home, not all of them. Every element earns its place. |
+| Simplicity (not minimalism) | Quiet | Cream, one green, small labels. Hierarchy from order, size and space. The Index adds context instead of hiding it. |
+| Craft | Considered | Every spacing, timing and color is a token you can defend. |
+| Familiarity | Specific | Nav labels name their contents (Work, Play, Index, About). Same component, same behavior, same place on every page. |
+| Agency | Specific | Filters are reversible ("Clear filters"); nothing traps the visitor; no confirmation dialogs because nothing is destructive. |
+| Flexibility | Shipped | Three breakpoints, touch and pointer both supported, reduced motion respected. |
+| Responsibility | Specific | Credits are exact; testimonials are real; no tracking-for-its-own-sake. |
+| Delight | Alive | The result of the other seven: flip rails, rising type, a moving grain. Never confetti. |
+
+## Motion and response
+
+| Rule | Label | Here |
+| --- | --- | --- |
+| Animations are interruptible and reverse from the current on-screen value | **Already true** | Flip rails, media scale and tag color are CSS transitions; leaving mid-hover reverses from the live position. |
+| Enter and exit along the same path | **Already true** | Flip rail goes up and comes back down; lightbox zooms from and back to the clicked thumbnail; the boot curtain lifts up and off. |
+| Anchor overlays to their source | **Already true** | `CaseStudyLightbox` zooms out of the thumbnail rather than the screen center. |
+| Default motion doesn't overshoot | **Already true** | The Snappy curve is a deceleration with no overshoot. No bounce anywhere in the UI. |
+| Reduced motion means gentler, not none | **Already true** | Transitions collapse, reveals render in place, the grain stops shimmering, scroll-to-top jumps. Color and opacity feedback stays. |
+| Respond on pointer-down, not release | **For new work** | New controls show their pressed state on `:active` / `pointerdown`. Live components keep their hover-led feedback. |
+| Use springs for anything the user can grab | **For new work** | Use `motion.spring.*` tokens (damping 1.0, response 0.3–0.4s). Bounce (damping 0.8) only after a flick. See [Gesture](gesture.md). |
+| Hand release velocity to the animation; project momentum | **For new work** | See [Gesture](gesture.md). |
+| Rubber-band at edges instead of hard stops | **For new work** | For any new bounded drag. (`/play` wraps infinitely, so it has no edges.) |
+| Fixed-duration, CSS-only motion for hover and reveal | **Departure, kept** | Hovers and reveals aren't gestures, so the bezier canon (Snappy / Smooth / Springy) stays. Springs are for grab-able things only. |
+
+## Gesture
+
+| Rule | Label | Here |
+| --- | --- | --- |
+| 1:1 tracking with pointer capture, respecting the grab offset | **Already true** | `/play` captures the pointer and moves the world from its origin plus the pointer delta. |
+| Movement threshold before committing to a drag | **Already true** | `/play` uses 18px before a press becomes a drag; below that, it's a tap that opens the item. |
+| Decompose 2D motion into independent X and Y | **Already true** | `/play` tracks `vx` and `vy` separately with exponential decay. |
+| Momentum continues after release | **Already true** | `/play` throws with friction 0.85 per frame (≈0.990/ms, Apple's "snappy" deceleration). |
+
+## Typography
+
+| Rule | Label | Here |
+| --- | --- | --- |
+| Tracking is size-specific: tighter as type grows | **Already true** | Display -1% (footer -2%), body 0 to +1%, mono 0. Keep new styles on this curve. |
+| Leading is inverse to size | **Already true** | Display 100%, Heading 110%, Body L 120%, Body 140%. |
+| Hierarchy from size, weight and leading together | **Already true** | Bold is reserved for the two display titles; everything else is Regular. |
+| Default to the system font | **Departure** | GT Standard is the brand. Never substitute `system-ui` except as a fallback in the stack. |
+| Scale with the user's text-size setting (`rem`) | **For new work** | New body-size text should survive 200% browser zoom without overlap. Display sizes stay in px, matching Framer. |
+
+## Materials and depth
+
+| Rule | Label | Here |
+| --- | --- | --- |
+| Translucent, blurred bars with content scrolling underneath | **Departure** | The brand is flat. The nav sits on the opaque page surface; no `backdrop-filter`. |
+| Scroll-edge fades instead of 1px dividers | **Departure** | 1px near-black rules are core to the identity. Keep them. |
+| Shadows that thicken with surface size | **Departure** | No shadows. Depth comes from surface (Cream vs Forest Green), scale and order. |
+| Dim to focus for modal tasks | **Departure (adapted)** | The lightbox replaces the page with a white surface instead of dimming it; it is the only modal. |
+| `prefers-reduced-transparency` | n/a | There is no translucency to reduce. |
+
+## Feedback and wayfinding
+
+| Rule | Label | Here |
+| --- | --- | --- |
+| Four feedback kinds: status, completion, warning, error | **For new work** | The site has no forms today. A new form validates inline, in mono labels, using `--mh-text-strong`. Don't add a red; ask first. |
+| Where am I / where can I go / how do I get out | **Already true (partly)** | Persistent nav on every page; logo link home; lightbox closes with Esc. The nav has no visible current-page state; that's a live decision, not something to add. |
+| Proximity implies relationship | **Already true** | Tags sit under their card; the view toggle shares a line with the list it controls. |
+| Multimodal feedback (sound, haptics) | **Departure** | None. A portfolio isn't the place for it. |
+
+## Accessibility notes
+
+- Light Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Light Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
+- Forest Green on Cream ≈ 12:1; near-black on Cream ≈ 17:1; Cream on Forest Green ≈ 12:1.
+
+## Changing the live site
+
+Nothing on this page asks for a change to micahhoang.com. If a future task wants to move a live behavior toward one of these principles (for example a press state on touch, a current-page nav marker, or darker muted text):
+
+1. Write it up as a proposal: what changes, which Framer component or style (`codeFileId`), and the visual difference.
+2. Get Micah's explicit approval.
+3. Make the change in Framer behind a kill switch where possible, publish, then run published QA. `npm test` too if any Play-related file changes.
+4. Update the relevant page here, and move the rule's label to **Already true**.
+
+**Proposed live-site changes:** none currently open.
+
+---
+
+<!-- content/foundations/colors.md -->
+
+---
+title: Colors
+section: Foundations
+order: 2
+description: Two surfaces, Cream and Forest Green, and the semantic roles that re-map between them.
+tokens: [color.primitive.*, color.cream.*, color.green.*]
+---
+
+# Colors
+
+## Overview
+
+The palette is deliberately small: a warm Cream ground, one Forest Green for brand and inversion, and a few neutrals for hierarchy. Project media supplies the rest of the color. Always write **semantic roles** (`--mh-text-muted`), never primitives (`--mh-color-light-gray`). Roles re-map automatically inside `data-surface="green"`.
+
+## Primitives
+
+| Token | Value | Framer style | Role |
+| --- | --- | --- | --- |
+| `--mh-color-cream` | `#F7F5F0` | `/Cream` | Page background; text on Forest Green |
+| `--mh-color-forest-green` | `#233324` | `/Forest Green` | Brand: display type, nav, labels; inverse surface |
+| `--mh-color-accent-green` | `#25593A` | (code-component default) | Hover / active for tags, filters, toggles |
+| `--mh-color-near-black` | `#141414` | (token, unnamed) | Rules, index list, lightbox chrome, strong body |
+| `--mh-color-graphite` | `#525252` | (token, unnamed) | Long-form case-study body |
+| `--mh-color-light-gray` | `#979797` | `Light Gray` | Muted text, tags, media stroke |
+| `--mh-color-white` | `#FFFFFF` | `White` | Lightbox backdrop, media placeholder |
+| `--mh-color-white-60` | `#FFFFFF99` | (token, unnamed) | Muted text on Forest Green |
+| `--mh-color-grain-umber` | `#501D07` | (GrainOverlay control) | Grain tint only |
+
+## Surfaces
+
+Add `data-surface="cream"` (default) or `data-surface="green"` to any container. It paints `--mh-bg-page` and re-maps every role below for its children.
+
+```html example
+<div class="ds-demo-row">
+  <div data-surface="cream" style="padding:24px;flex:1">
+    <p class="mh-label">Cream surface</p>
+    <p class="mh-text-heading" style="margin:16px 0 8px">Brand designer with a systems mind.</p>
+    <p class="mh-text-body-sm mh-text-muted" style="margin:0">Muted supporting line.</p>
+  </div>
+  <div data-surface="green" style="padding:24px;flex:1">
+    <p class="mh-label">Green surface</p>
+    <p class="mh-text-heading" style="margin:16px 0 8px">Brand designer with a systems mind.</p>
+    <p class="mh-text-body-sm mh-text-muted" style="margin:0">Muted supporting line.</p>
+  </div>
+</div>
+```
+
+## Semantic roles
+
+| CSS variable | Cream | Green | Use for |
+| --- | --- | --- | --- |
+| `--mh-bg-page` | Cream | Forest Green | Surface background |
+| `--mh-bg-inverse` | Forest Green | Cream | A block that inverts its parent |
+| `--mh-bg-media` | White | White | Placeholder behind loading media, lightbox |
+| `--mh-bg-hover` | near-black 4% | cream 8% | Row hover wash, code background |
+| `--mh-text-brand` | Forest Green | Cream | Display type, nav, labels, section headers |
+| `--mh-text-strong` | Near Black | Cream | Lead body, meta values, index rows, H3 |
+| `--mh-text-body` | Graphite | White 60% | Long-form paragraphs |
+| `--mh-text-muted` | Light Gray | White 60% | Headline continuation, tags, tertiary meta |
+| `--mh-text-interactive` | Accent Green | White | Hover / active state |
+| `--mh-border-rule` | Near Black | Cream | 1px rules and dividers |
+| `--mh-border-stroke` | Light Gray | White 60% | Tag outlines, media stroke |
+
+## Usage
+
+- **Forest Green is the brand color, not an accent.** It sets display type and labels on Cream and becomes the whole surface for the footer and boot loader.
+- **Hierarchy comes from shifting neutrals**: brand → strong → body → muted. Don't add colors to make something stand out; change its size or position.
+- **Interactive green appears only on hover/active.** A resting tag is Light Gray; it turns Accent Green under the pointer or when selected.
+- **Rules are near-black at full opacity**, not a soft gray. The site's crispness depends on this.
+- **Media placeholders are white**, so a loading thumbnail reads as a paper card, not a gray hole.
+
+## Don't
+
+- Don't use raw hex values; use roles.
+- Don't put Accent Green on large areas or as a button fill.
+- Don't introduce a third surface (no gray cards, no dark mode beyond Forest Green).
+- Don't use `code/tokens/micahhoang-tokens.json`: its `#027aff` CTA blue and Manrope type are pre-2026 and not on the live site.
+
+---
+
+<!-- content/foundations/typography.md -->
+
+---
+title: Typography
+section: Foundations
+order: 3
+description: GT Standard for display and reading, GT Standard Mono for every label, and a scale with a huge top and a small bottom.
+tokens: [font.*, type.*]
+---
+
+# Typography
+
+## Overview
+
+Two families do everything. **GT Standard** (L width) sets display type, headings and body. **GT Standard Mono** sets every label, nav item, tag and action, always uppercase at 12–13px. The scale is deliberately polarized: display sizes are huge and tight, everything else is small. There is almost nothing in between.
+
+| Family | CSS variable | Weights | Framer font names |
+| --- | --- | --- | --- |
+| GT Standard | `--mh-font-sans` | 400, 500, 700 | GT Standard L Regular, GT Standard Trial L Md, GT Standard Trial L Bd |
+| GT Standard Mono | `--mh-font-mono` | 400 | GT Standard Mono Regular, GT Standard Mono Trial Rg |
+
+`css/fonts.css` loads the same Framer-hosted files the live site uses and folds them into the families `"MH GT Standard"` and `"MH GT Standard Mono"`, so `font-weight` works normally.
+
+## Scale
+
+Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`. Sizes are desktop / tablet / mobile.
+
+| Style | Class | Size | Weight | Leading | Tracking | Framer text style | Use |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% | -1% | Heading 1 | Home hero name. Once per site. |
+| Display L | `mh-text-display-l` | 70 / 53 / 42 | 700 | 100% | -1% | Heading 2b | Case-study title + muted continuation |
+| Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | Heading 2 | Section headers: "Selected work", "About Micah" |
+| Display Footer | `mh-text-display-footer` | 80 / 64 / 40 | 400 | 100% | -2% | (footer) | Uppercase footer contact links |
+| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | Heading 3 | Hero descriptor, case-study section titles |
+| Title | `mh-text-title` | 22 | 400 | 120% | 0 | Index Title | Index rows, uppercase |
+| Body L | `mh-text-body-lg` | 22 / 22 / 18 | 400 | 120% | +1% | Body | Lead paragraphs, About, meta values |
+| Body | `mh-text-body` | 18 / 18 / 16 | 400 | 140% | 0 | Paragraph Regular (18) | Case-study long-form |
+| Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | Paragraph Regular | Captions, small notes |
+| Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | Heading 5, Body - 100% | Nav, meta, actions, eyebrows |
+| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px, dense meta |
+
+## Pairings
+
+```html example
+<div class="ds-demo-stack">
+  <div>
+    <p class="mh-label" style="margin-bottom:16px">/ About the project</p>
+    <p class="mh-text-body-lg mh-text-strong" style="margin:0;max-width:28em">A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care.</p>
+  </div>
+  <hr class="mh-rule">
+  <div>
+    <h3 class="mh-text-heading mh-text-strong" style="margin:0 0 24px">The Insight</h3>
+    <p class="mh-text-body mh-text-body" style="margin:0;max-width:620px">iNaturalist lets people photograph an organism, record where they found it, and share it with a community of naturalists who help identify it.</p>
+  </div>
+</div>
+```
+
+## Usage
+
+- **One display moment per view.** A page gets one Display XL or Display L; sections get Display M; everything else is Heading or smaller.
+- **Display type is tight**: 100% leading and slight negative tracking. Don't loosen it.
+- **Mono is always uppercase**, always 12–13px, never for sentences longer than a line.
+- **Two-tone headlines.** A case-study title can continue its sentence in `--mh-text-muted` at the same size and weight ("Gaia" + "Turning noticing into a way of caring for the living world.").
+- **Body color follows weight of content**: lead copy is `--mh-text-strong`, long-form is `--mh-text-body`.
+- **Measure**: long-form body caps at `--mh-measure` (620px).
+- **Pretty wrapping**: the live site applies `text-wrap: pretty` to paragraph-size text ≤23px (`ParagraphPrettyWrap`, `EjvkJhv`). Use `text-wrap: balance` for display lines if needed.
+
+## Don't
+
+- Don't use bold (700) below Display L. Weight contrast comes from size.
+- Don't set body copy in mono, or labels in sentence case.
+- Don't add a third typeface (the old Manrope / Diatype set is retired).
+- Don't use letter-spaced uppercase sans as a label substitute; use mono.
+
+---
+
+<!-- content/foundations/layout.md -->
+
+---
+title: Layout
+section: Foundations
+order: 4
+description: Edge-to-edge content inside a 20px gutter, two- and three-column grids, rules instead of boxes, three breakpoints.
+tokens: [space.*, layout.*, radius.*, border.*, elevation.*]
+---
+
+# Layout
+
+## Overview
+
+Pages run edge to edge inside a small gutter, with no max-width container. Structure comes from a few grids, 1px rules and a lot of vertical space, never from cards or boxes. The system is flat: no shadows, and the only radius is the pill.
+
+## Breakpoints
+
+Desktop-first, matching the Framer frames.
+
+| Name | Range | Framer frame | Media query |
+| --- | --- | --- | --- |
+| Desktop | ≥ 1200px | 1200 | (default) |
+| Tablet | 810–1199px | 810 | `@media (max-width: 1199px)` |
+| Mobile | < 810px | 390 | `@media (max-width: 809px)` |
+
+## Gutter and grids
+
+| Token | Desktop | Tablet | Mobile | Use |
+| --- | --- | --- | --- | --- |
+| `--mh-gutter` | 20px | 20px | 15px | Page side padding (`.mh-container`) |
+| `--mh-column-gap` | 20px | 20px | 20px | Card grids, index columns |
+| `--mh-split-gap` | 30px | 30px | n/a (stacks) | Two-column text splits (`.mh-split`, meta grid) |
+| `--mh-card-row-gap` | 50px | 50px | 50px | Between project-card rows |
+| `--mh-measure` | 620px | 620px | 100% | Long-form body |
+| `--mh-nav-height` | 53px | 53px | 53px | Sticky nav; grain starts below it |
+
+Grids in use on the live site:
+
+| Grid | Desktop | Tablet | Mobile |
+| --- | --- | --- | --- |
+| Selected work | 2 columns | 2 columns | 1 column |
+| Other projects / index grid | 3 columns | 2 columns | 1 column |
+| Case-study meta / split | 2 columns | 2 columns | 1 column |
+| Index list | year + 5fr content | year + content | stacked |
+| Navigation | 4 zones (name, role, location, links) | 4 zones | name + links |
+
+```html example
+<div class="mh-split">
+  <div style="background:var(--mh-bg-hover);height:120px"></div>
+  <div style="background:var(--mh-bg-hover);height:120px"></div>
+</div>
+```
+
+## Space scale
+
+| Token | Value | Typical use |
+| --- | --- | --- |
+| `--mh-space-1` | 4px | Optical nudges |
+| `--mh-space-2` | 6px | Tag gap |
+| `--mh-space-3` | 8px | Inline groups |
+| `--mh-space-4` | 12px | Row padding |
+| `--mh-space-5` | 16px | Card internal stack (meta → media → tags) |
+| `--mh-space-6` | 20px | Gutter, small blocks |
+| `--mh-space-7` | 24px | Section-header rule to title |
+| `--mh-space-8` | 30px | Nav link gap, split gap |
+| `--mh-space-9` | 40px | Between meta items |
+| `--mh-space-10` | 50px | Card row gap |
+| `--mh-space-11` | 72px | Inside sections; lightbox padding |
+| `--mh-space-12` | 96px | Between major blocks |
+| `--mh-space-13` | 144px | Between page sections; hero top |
+
+## Shape and elevation
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `--mh-radius-none` | 0 | Everything by default: media, sections, surfaces |
+| `--mh-radius-hairline` | 2px | Index row hover wash only |
+| `--mh-radius-pill` | 250px | Tags, pill actions |
+| `--mh-border-hairline` | 1px | The only border width |
+| `--mh-elevation-none` | none | The brand is flat |
+
+## Usage
+
+- **Rules, not boxes.** Separate sections with a full-width [Rule](../components/rule.md); separate rows with rules; never wrap content in a bordered or shadowed card.
+- **Space is the main tool.** When a layout feels busy, add vertical space between sections before anything else.
+- **Align to the gutter.** Every left edge on a page (nav, hero, headings, grid) sits on `--mh-gutter`.
+- **Framer**: build with Stacks (vertical, gap = space token) and Grids (`1fr` columns, gap = column-gap token); set tablet and phone overrides on the breakpoint frames rather than using fixed pixel widths.
+
+## Don't
+
+- Don't cap content with a centered max-width container.
+- Don't add drop shadows, rounded media or card backgrounds.
+- Don't use borders other than 1px.
+
+---
+
+<!-- content/foundations/motion.md -->
+
+---
+title: Motion
+section: Foundations
+order: 5
+description: Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.
+tokens: [motion.*]
+---
+
+# Motion
+
+## Overview
+
+Motion should feel like the site is alive, not performing. It decelerates into place, moves only a few pixels, and respects `prefers-reduced-motion`. There are three easing curves, and the first one handles almost everything.
+
+## Easing
+
+| Token | Curve | Use |
+| --- | --- | --- |
+| `--mh-ease-snappy` | `cubic-bezier(0.16, 1, 0.3, 1)` | **Default.** Reveals, hover transforms, media scale, fades, page transitions. |
+| `--mh-ease-smooth` | `cubic-bezier(0.12, 0.23, 0.5, 1)` | Symmetric changes: row hover wash, filter color, loader bar. |
+| `--mh-ease-springy` | `cubic-bezier(0.25, 1, 0.5, 1)` | Gesture-like only: rule line draw, cursor trails. Never UI state. |
+
+## Durations
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `--mh-duration-instant` | 150ms | Row hover wash |
+| `--mh-duration-fast` | 250ms | Color changes (tag hover) |
+| `--mh-duration-zoom` | 260ms | Lightbox open / close |
+| `--mh-duration-base` | 420ms | Hover transforms: flip rail, media scale |
+| `--mh-duration-slow` | 620ms | Index flip rail, media fade-in |
+| `--mh-duration-reveal` | 900ms | Type reveal; scroll-to-top travel |
+| `--mh-duration-page` | 1200ms | Boot curtain lift, page transition |
+| `--mh-duration-draw` | 2000ms | Rule line draw (200ms delay) |
+| `--mh-stagger-reveal` | 90ms | Between lines in a type reveal |
+| `--mh-stagger-media` | 58ms | Between thumbnails fading in |
+
+## Springs
+
+Hovers and reveals use the curves above. Anything the visitor can **grab** (drag, swipe, sheets) uses spring tokens instead: critically damped by default, bounce only after a throw. See [Gesture](gesture.md) and [Interaction Principles](interaction.md).
+
+| Token | Damping | Response |
+| --- | --- | --- |
+| `motion.spring.default` | 1.0 | 0.4s |
+| `motion.spring.quick` | 1.0 | 0.3s |
+| `motion.spring.momentum` | 0.8 | 0.4s |
+
+## Flip rail
+
+The site's main hover. A label is stacked over a copy of itself in a one-line window; on hover the stack slides up by one line plus `--mh-distance-flip-gap` (5px). Used on nav links, project titles, index rows and text actions. It works with CSS alone.
+
+```html example
+<div class="ds-demo-row">
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Work</span><span aria-hidden="true">Work</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span>
+  </a>
+</div>
+```
+
+## Type reveal
+
+Display lines rise into a clipping mask: start at `translateY(115%)`, end at 0, 900ms Snappy, 90ms between lines. Add `.mh-reveal` per line and set `--i` for the order; `components.js` adds `.is-in` when it enters the viewport.
+
+```html example
+<h2 class="mh-text-display-m" style="margin:0">
+  <span class="mh-reveal" style="--i:0"><span>Selected</span></span>
+  <span class="mh-reveal" style="--i:1"><span>work</span></span>
+</h2>
+```
+
+## Hover scale
+
+Media inside a link scales to `--mh-scale-hover` (1.02) over 420ms Snappy. The frame doesn't move; only the image does, clipped by the frame. See [Media Frame](../components/media-frame.md).
+
+## Usage
+
+- Default to Snappy + 420ms. Reach for anything else only if the table above says so.
+- Move things a few pixels or one line. Don't fly elements in from off-screen.
+- Animate `transform` and `opacity` only.
+- Under `prefers-reduced-motion: reduce`, transitions collapse to 1ms and reveals render in place (`css/base.css`).
+- **Framer**: use the same curves in Appear/Hover effects (Framer "Custom bezier"). Page transitions and the boot curtain belong to `PageTransition` (`gmalnRr`); don't build a second transition system.
+
+## Don't
+
+- No bounce, elastic or overshoot curves on UI (the `momentum` spring is only for thrown gestures).
+- No parallax, scroll-jacking or auto-playing carousels.
+- No looping attention animations on UI (the grain shimmer is the only ambient motion).
+
+---
+
+<!-- content/foundations/gesture.md -->
+
+---
+title: Gesture
+section: Foundations
+order: 5.5
+description: How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.
+tokens: [motion.spring.*, motion.gesture.*]
+---
+
+# Gesture
+
+## Overview
+
+Most of the site is hover and scroll. The exception is `/play`, an endless two-axis archive you drag, throw and wheel through. This page describes its physics, so new gesture UI feels like the same material, and it defines spring tokens for that new work. See [Interaction Principles](interaction.md) for the reasoning.
+
+> **`/play` is protected.** Its drag, inertia, video pool and WebKit clamp are performance contracts (repo `AGENTS.md`). This page describes them. It does not ask anyone to retune them. Run `npm test` after any change to `Play.tsx` or `ArchivePlayground.tsx`.
+
+## What /play does (already true)
+
+| Behavior | Value | Source |
+| --- | --- | --- |
+| Pointer capture on press | `setPointerCapture` | `ArchivePlayground.tsx` (`QNpkYp5`) |
+| Grab offset respected | World moves by pointer delta from its origin, never re-centers | same |
+| Tap vs drag threshold | 18px (`--mh-gesture-tap-threshold`) | `TAP_THRESHOLD` |
+| Velocity | Per-axis `vx`, `vy` from the last move sample × 1.75 | `throwVelocityScale` |
+| Throw range | Ignored below 220 px/s, clamped at 5200 px/s | `throwMinSpeed`, `throwMaxSpeed` |
+| Deceleration | Velocity × 0.85 per 60fps frame (exponential decay, ≈0.990/ms) | `throwFriction` |
+| Boundaries | None. The grid wraps infinitely, so no rubber-band is needed | n/a |
+| Edge scrolling | Pointer within 90px of an edge drifts the world at up to 220 px/s | `edgeScrollZone`, `edgeScrollSpeed` |
+| Smooth scroll | Lenis is destroyed on `/play`; the archive owns wheel input | `NavigationScrollGuard` (`Wnd19lx`) |
+| Video during motion | The center video pool freezes during drag, throw and edge scroll and refills after settling; max 6 concurrent in Chromium/Arc | `Play.tsx` (`PN1RVOf`) |
+
+## Springs for new work
+
+When you build something new that the visitor can grab, such as a sheet, a swipeable gallery or a draggable comparison slider, animate it with a spring, not a fixed-duration curve. A spring starts from the current on-screen value and carries velocity, so it can be grabbed and reversed mid-flight.
+
+| Token | Damping | Response | Use |
+| --- | --- | --- | --- |
+| `motion.spring.default` | 1.0 | 0.4s | Settling, snapping, repositioning. The default. |
+| `motion.spring.quick` | 1.0 | 0.3s | Short moves: thumbs, toggles, small slides. |
+| `motion.spring.momentum` | 0.8 | 0.4s | Only when a flick or throw preceded it. |
+
+CSS variables: `--mh-spring-default-damping`, `--mh-spring-default-response`, and so on.
+
+```js
+// Motion / Framer Motion. bounce = 1 - damping, duration = response
+import { animate } from "motion"
+
+const s = getComputedStyle(document.documentElement)
+const spring = (name, velocity = 0) => ({
+  type: "spring",
+  bounce: 1 - parseFloat(s.getPropertyValue(`--mh-spring-${name}-damping`)),
+  duration: parseFloat(s.getPropertyValue(`--mh-spring-${name}-response`)),
+  velocity,
+})
+
+animate(sheet, { y: 0 }, spring("default"))
+animate(card, { x: target }, spring("momentum", releaseVelocity)) // after a flick only
+```
+
+## Rules for new gesture UI
+
+1. **Feedback on pointer-down.** Show the pressed state immediately; commit on release.
+2. **Track 1:1** with pointer capture, from the grab offset.
+3. **Threshold first.** Wait for 18px of movement before committing to a drag direction; below that it's a tap.
+4. **Hand off velocity.** Pass the release velocity into the spring (`velocity` option).
+5. **Project, then snap.** Choose the snap target from where the throw would land, not where the finger lifted:
+   ```js
+   const project = (v, d = 0.99) => (v / 1000) * d / (1 - d) // d = 0.99 matches /play's feel
+   const target = nearestSnap(current + project(velocity))
+   ```
+6. **Decide by velocity sign**, not position, when choosing open vs close.
+7. **Rubber-band** past bounds instead of stopping hard:
+   ```js
+   const rubberband = (over, dim, c = 0.55) => (over * dim * c) / (dim + c * Math.abs(over))
+   ```
+8. **Same path in and out.** A sheet that rises from the bottom dismisses to the bottom.
+9. **Reduced motion:** swap slides and springs for a 200ms opacity cross-fade; keep the state change.
+10. **Animate only `transform` and `opacity`.**
+
+## Don't
+
+- Don't use springs for hover, reveal or color changes. The bezier canon covers those.
+- Don't add bounce to anything that wasn't thrown.
+- Don't touch `/play`'s physics to "match" these springs. They're already consistent.
+
+---
+
+<!-- content/foundations/texture.md -->
+
+---
+title: Texture
+section: Foundations
+order: 6
+description: The umber film grain that sits over every page, and how to keep it out of the way.
+tokens: [texture.grain.*, color.primitive.grain-umber]
+---
+
+# Texture
+
+## Overview
+
+A faint, slowly shimmering film grain sits over the page. It warms the Cream ground and keeps large flat areas from looking like a screen. It's an SVG `feTurbulence` noise, desaturated, tinted umber, and multiplied at 10% opacity. It starts **below the navigation bar** so the nav stays crisp.
+
+| Token | Value | Framer control (GrainOverlay) |
+| --- | --- | --- |
+| `--mh-grain-opacity` | 0.1 | Grain Opacity |
+| `--mh-grain-blend` | multiply | Blend |
+| `--mh-grain-color` | `#501D07` | Color |
+| `--mh-grain-base-frequency` | 1.14 | Grain Size |
+| `--mh-grain-octaves` | 4 | Detail |
+| `--mh-grain-exposure` | -0.58 | Exposure |
+| `--mh-grain-contrast` | 2.35 | Contrast |
+| `--mh-grain-shimmer-fps` | 16 | Shimmer FPS |
+
+## Example
+
+Here the grain is shown at full strength on the left and at the brand's 10% on the right.
+
+```html example bleed
+<div class="ds-demo-row" style="gap:0">
+  <div class="ds-demo-frame" style="flex:1;height:200px">
+    <div class="mh-grain" data-contained style="opacity:1">
+      <svg aria-hidden="true"><filter id="grain-demo-a" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="1.14" numOctaves="4" stitchTiles="stitch" seed="7"/><feComponentTransfer><feFuncR type="linear" slope="2.35" intercept="-0.58"/><feFuncG type="linear" slope="2.35" intercept="-0.58"/><feFuncB type="linear" slope="2.35" intercept="-0.58"/></feComponentTransfer><feColorMatrix type="saturate" values="0"/><feColorMatrix type="matrix" values="0.314 0 0 0 0 0.114 0 0 0 0 0.027 0 0 0 0 0 0 0 0 1"/></filter><rect width="100%" height="100%" filter="url(#grain-demo-a)"/></svg>
+    </div>
+  </div>
+  <div class="ds-demo-frame" style="flex:1;height:200px">
+    <div class="mh-grain" data-contained>
+      <svg aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain-demo-a)"/></svg>
+    </div>
+  </div>
+</div>
+```
+
+The full snippet lives on the [Grain Overlay](../components/grain-overlay.md) page.
+
+## Usage
+
+- One grain layer per page, fixed to the viewport, `pointer-events: none`.
+- Keep the nav clear: the layer starts at `--mh-nav-height`.
+- The shimmer re-seeds the noise 16 times a second. It turns off under reduced motion, and the live site disables it on WebKit `/play` for performance.
+- Don't put grain inside components or on media. It's a single page-level layer.
+
+## Don't
+
+- Don't raise opacity above 0.1 or switch the blend away from multiply; it starts reading as dirt.
+- Don't add other textures (paper, noise PNGs, gradients).
+
+---
+
+<!-- content/foundations/identity.md -->
+
+---
+title: Identity
+section: Foundations
+order: 7
+description: The name as wordmark, the ©2026 signature, and where each appears.
+---
+
+# Identity
+
+## Overview
+
+There is no logo. The identity is the name set in type, plus a few repeated signatures. Consistency is what makes it work: the same words, set the same way, in the same places.
+
+## Marks
+
+| Mark | Setting | Where |
+| --- | --- | --- |
+| **Micah Hoang** (display) | Display XL, GT Standard Bold, Forest Green | Home hero, once |
+| **MICAH HOANG** (label) | Mono label, uppercase | Nav, top left, every page; links home |
+| **Micah Hoang ©2026** | Heading style, GT Standard Regular, Cream on Forest Green, centered | Boot loader identity |
+| **©2026** | Mono label | Right end of the hero link row and the footer bar |
+| **MICAH.HOANG @HEY.COM** | Display Footer + mono superscript | Footer contact |
+
+```html example
+<div class="ds-demo-stack">
+  <p class="mh-text-display-xl" style="margin:0">Micah Hoang</p>
+  <div class="ds-demo-row" style="justify-content:space-between">
+    <span class="mh-label">Micah Hoang</span>
+    <span class="mh-label">Brand designer</span>
+    <span class="mh-label">©2026</span>
+  </div>
+</div>
+```
+
+```html example surface=green
+<p class="mh-loader__identity" style="color:var(--mh-text-brand)">Micah Hoang ©2026</p>
+```
+
+## Descriptor
+
+The positioning line sits under the hero name in the Heading style, broken over two lines:
+
+> Brand designer with
+> a systems mind.
+
+The nav repeats it in short form: `BRAND DESIGNER` and `LOS ANGELES, CALIFORNIA`.
+
+## Usage
+
+- Write the name exactly "Micah Hoang"; uppercase only through mono labels.
+- The copyright year comes from `FooterCopyrightYear` (`BF2H03E`) in Framer; don't hard-code a different year.
+- Don't add a monogram, logo or favicon glyph that isn't the name.
+
+---
+
+<!-- content/components/label.md -->
+
+---
+title: Mono Label
+section: Components
+order: 1
+description: The uppercase 13px mono line that carries every piece of metadata, navigation and UI text on the site.
+status: live
+framer: Text styles "Heading 5", "Body - 100%", "On Green Label", "Footer Mono White/Dark"
+classes: [mh-label]
+tokens: [type.label, type.label-sm, color.*.text.brand, color.*.text.muted]
+---
+
+# Mono Label
+
+## Examples
+
+```html example
+<div class="ds-demo-stack">
+  <p class="mh-label">Los Angeles, California</p>
+  <p class="mh-label" data-tone="muted">2D motion</p>
+  <p class="mh-label" data-leading="relaxed">/ About the project</p>
+  <p class="mh-label" data-size="sm">Available for work</p>
+</div>
+```
+
+```html example surface=green
+<p class="mh-label">Get in touch</p>
+```
+
+## Usage
+
+The Mono Label is the site's second voice. Display type makes the statement; labels carry everything else: nav, meta, eyebrows, counts, years, actions.
+
+- **Always uppercase.** The class sets `text-transform`, so write the source in natural case ("Los Angeles, California") and let CSS uppercase it. Screen readers then read words, not letters.
+- **One line.** If it wraps into a sentence, it should be body text.
+- **The slash is a structural mark.** Meta headings start with `/ ` (`/ Scope`), and numbered titles read `1 / Gaia`.
+- **Tone follows role.** Brand (default) for nav and headings, `muted` for tertiary meta, `strong` for list data.
+
+## API
+
+| Attribute | Values | Effect |
+| --- | --- | --- |
+| `class="mh-label"` | n/a | 13px GT Standard Mono, 100% leading, uppercase |
+| `data-size` | `sm` | 12px |
+| `data-tone` | `muted`, `strong` | `--mh-text-muted` / `--mh-text-strong` |
+| `data-leading` | `relaxed` | 130% leading for labels stacked over values |
+
+Or use the plain utility `mh-text-label` / `mh-text-label-sm` on any element.
+
+## Accessibility
+
+- Use real elements: `<p>` for standalone labels, `<dt>` in meta lists, `<span>` inline.
+- Don't type the text in capitals; let CSS do it.
+
+## Framer mapping
+
+- Text styles: **Heading 5** (13px, 100%, -1%, uppercase) for general labels; **On Green Label** / **Nav On Green Label** on Forest Green; **Footer Mono White / Dark** in the footer.
+- Font: GT Standard Mono Regular (falls back to GT Standard Mono Trial Rg).
+
+## Don't
+
+- Don't use mono for paragraphs or headings.
+- Don't letter-space it; tracking is 0.
+- Don't bold it.
+
+---
+
+<!-- content/components/text-link.md -->
+
+---
+title: Text Link
+section: Components
+order: 2
+description: Mono links with the flip-rail hover, inline underlined links for running text, and comma-joined link lists.
+status: live
+framer: Native Link + "Text Link Black" hover variants; Case Study Header Link (dHFQCIH)
+codeFileId: dHFQCIH
+classes: [mh-link, mh-flip, mh-flip__track, mh-link-list]
+tokens: [type.label, motion.duration.base, motion.ease.snappy, motion.distance.flip-gap]
+---
+
+# Text Link
+
+## Examples
+
+### Flip link (nav, actions)
+
+```html example
+<div class="ds-demo-row">
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Work</span><span aria-hidden="true">Work</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Play</span><span aria-hidden="true">Play</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span>
+  </a>
+</div>
+```
+
+### Link list
+
+```html example
+<ul class="mh-link-list mh-label">
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>LinkedIn</span><span aria-hidden="true">LinkedIn</span></span></span></a></li>
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Resume</span><span aria-hidden="true">Resume</span></span></span></a></li>
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Email</span><span aria-hidden="true">Email</span></span></span></a></li>
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Cosmos</span><span aria-hidden="true">Cosmos</span></span></span></a></li>
+</ul>
+```
+
+### Inline link
+
+```html example
+<p class="mh-text-body-lg mh-text-strong" style="margin:0;max-width:30em">I'm a brand designer with a systems mind. Read the <a class="mh-link" data-variant="inline" href="#">full story</a> or see the <a class="mh-link" data-variant="inline" href="#">index</a>.</p>
+```
+
+## Usage
+
+| Variant | Use for |
+| --- | --- |
+| Flip link | Navigation, standalone actions ("View all", "Scroll to top"), social links |
+| Link list | Social and document links in the hero and footer: "LinkedIn, Resume, Email, Cosmos" |
+| Inline link | Links inside body copy |
+
+- The flip copy must match the label exactly; the motion is the feedback, not a text change.
+- Inline links inherit color, underline at 1px, and turn interactive green on hover.
+
+## API
+
+| Class / attribute | Effect |
+| --- | --- |
+| `mh-link` | Resets link color/underline, inherits text |
+| `mh-link` + `data-variant="inline"` | 1px underline, 0.18em offset, green on hover |
+| `mh-flip` › `mh-flip__track` › two `span`s | One-line window; slides up on hover/focus of the parent `a` or `button` |
+| `--mh-flip-h` (custom property on `.mh-flip`) | Window height; default `1em`. Set to the line height for larger text, e.g. `1.2em` |
+| `mh-link-list` | Comma-joined horizontal list (commas added by CSS) |
+
+## Accessibility
+
+- The duplicate span carries `aria-hidden="true"` so the label is read once.
+- Hover and focus both trigger the flip; focus also shows a 1px outline at 3px offset.
+- External links: add `target="_blank" rel="noopener"` and let the label say where it goes (e.g. "LinkedIn").
+
+## Framer mapping
+
+- Nav and footer links on the live site are native Framer components with a two-text "flip" variant (two stacked text layers in a clipped frame, hover variant offsets them by 18px, 420ms Snappy).
+- The Home about-section link uses the "Text Link Black" layer; its flip is driven from `HomeSelectedWorkGrid` (`FecepLS`).
+- `CaseStudyScrambleText` (`dHFQCIH`) is a plain hover-color link (the name is misleading; it does not scramble).
+- `TextEncryptionEffect` (`p7tSTaD`) is the real scramble on Home social labels. Use it only where it's already used.
+
+## Don't
+
+- Don't underline mono links.
+- Don't change the text on hover (no "View all →" turning into "Go").
+- Don't add arrow icons from an icon set; if direction is needed, type the character (↗, ↑, →) in the label.
+
+---
+
+<!-- content/components/action.md -->
+
+---
+title: Action
+section: Components
+order: 3
+description: The brand's button. Mono text with a flip rail, or an outlined pill. There is no filled button.
+status: live
+framer: Native text/pill components; ScrollToTopButton (gh4ngZN) for the text action pattern
+classes: [mh-action]
+tokens: [type.label, radius.pill, border.hairline, color.*.text.interactive]
+---
+
+# Action
+
+## Examples
+
+```html example
+<div class="ds-demo-row">
+  <a class="mh-action" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span>
+  </a>
+  <button class="mh-action" type="button">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Read more</span><span aria-hidden="true">Read more</span></span></span>
+  </button>
+  <a class="mh-action" data-variant="pill" href="#">Resume ↗</a>
+  <button class="mh-action" data-variant="pill" type="button" disabled>Unavailable</button>
+</div>
+```
+
+```html example surface=green
+<div class="ds-demo-row">
+  <a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Get in touch</span><span aria-hidden="true">Get in touch</span></span></span></a>
+  <a class="mh-action" data-variant="pill" href="#">Email</a>
+</div>
+```
+
+## Usage
+
+The site never uses a filled, colored button. A call to action is either a mono text action (the default) or, when it needs a visible hit area, an outlined pill. Both are quiet on purpose: the work, not the UI, should pull the eye.
+
+| Variant | Use it for |
+| --- | --- |
+| Text (default) | "View all", "Read more", "Scroll to top", "Clear filters", dialog controls |
+| `pill` | A standalone action that needs a visible boundary: Resume, Email, the docs "Markdown" button |
+
+- **Write the variant explicitly** when it's a pill; the default is text.
+- At most one pill per view. If everything is a pill, nothing is.
+- Direction characters (↗ external, ↑ top, → next) go at the end of the label as text.
+
+## API
+
+| Attribute | Values | Effect |
+| --- | --- | --- |
+| `class="mh-action"` | n/a | Mono label, uppercase, inline-flex, no chrome |
+| `data-variant` | `pill` | 1px currentColor outline, pill radius, 24px min height, green on hover |
+| `disabled` / `aria-disabled="true"` | n/a | 40% opacity, no pointer events |
+
+Use `<a>` for navigation and `<button type="button">` for in-page actions.
+
+## Accessibility
+
+- Focus ring: 1px currentColor, 3px offset.
+- Pill hit area is 24px tall; on touch layouts keep at least 8px of space around it, or wrap it in a larger tap target.
+- Icon-only actions (lightbox ← → ×) need `aria-label`.
+
+## Framer mapping
+
+- Text actions: the native "View All" and "Read More" components (two-layer flip variant).
+- Scroll to top: `ScrollToTopButton` (`gh4ngZN`). Label `scroll to top`, color `#233324`, 900ms Snappy scroll, delegates to the global Lenis instance.
+
+## Don't
+
+- Don't fill a button with Forest Green, Accent Green or the retired `#027aff`.
+- Don't add drop shadows or rounded-rectangle buttons.
+- Don't use sentence-case sans for button labels.
+
+---
+
+<!-- content/components/tag.md -->
+
+---
+title: Tag
+section: Components
+order: 4
+description: Outlined mono pills that name a project's disciplines and double as filters.
+status: live
+framer: Rendered by HomeSelectedWorkGrid (FecepLS) and IndexPage (rgAZFOv) from CMS discipline fields
+codeFileId: FecepLS
+classes: [mh-tags, mh-tag]
+tokens: [type.label, type.label-sm, radius.pill, color.*.border.stroke, color.*.text.muted, color.*.text.interactive, motion.duration.fast]
+---
+
+# Tag
+
+## Examples
+
+```html example
+<ul class="mh-tags">
+  <li class="mh-tag">Strategy</li>
+  <li class="mh-tag">Visual identity</li>
+  <li class="mh-tag">Editorial</li>
+</ul>
+```
+
+### Interactive (links or filter toggles)
+
+```html example
+<div class="mh-tags">
+  <a class="mh-tag" href="#">2D motion</a>
+  <a class="mh-tag" href="#">3D motion</a>
+  <button class="mh-tag" type="button" aria-pressed="true">Social media</button>
+  <button class="mh-tag" type="button" aria-pressed="false">Packaging</button>
+</div>
+```
+
+```html example surface=green
+<ul class="mh-tags"><li class="mh-tag">Product</li><li class="mh-tag">Packaging</li></ul>
+```
+
+## Usage
+
+- Tags list a project's **disciplines** (Strategy, Visual identity, UX/UI, 2D motion, Packaging...). Industry goes in the index row, not a tag.
+- Up to three per card, in CMS order.
+- At rest a tag is Light Gray text with a Light Gray outline. Interactive tags (links or toggle buttons) turn Accent Green on hover; a pressed toggle stays green.
+- On the live site, clicking a grid tag on `/index` toggles that discipline filter in place.
+
+## API
+
+| Class / attribute | Effect |
+| --- | --- |
+| `mh-tags` | Wrapping flex row, 6px gap (5px below 1200px); use on `ul` or `div` |
+| `mh-tag` | 13px mono pill, 24px min height, `5px 10px 6px` padding |
+| `a.mh-tag` / `button.mh-tag` | Hover → `--mh-text-interactive`, 250ms Snappy |
+| `aria-pressed="true"` | Selected state (green), for filter toggles |
+| `data-size="sm"` | 12px, 23px height (applied automatically below 1200px) |
+
+## Accessibility
+
+- Static tags: `li` elements in a `ul`.
+- Filter tags: `<button type="button" aria-pressed>`; `components.js` toggles the state.
+- Long labels truncate with an ellipsis; keep labels to two words.
+
+## Framer mapping
+
+- Home cards: `HomeSelectedWorkGrid` (`FecepLS`). Tag color comes from a property control (default `#25593a` for hover); Show Tags toggle.
+- `/index` grid: `IndexPage` (`rgAZFOv`) via `IndexPageGridPreview` (`LgIzFjJ`). Tags are `<button>`s that toggle disciplines through `IndexFilterContext`.
+- Values come from CMS `All Projects` (`yTHrQWMIY`) category fields; never hard-code tag lists.
+
+## Don't
+
+- Don't fill tags with color or use them as status badges.
+- Don't mix tag sizes in one row.
+- Don't use tags as primary navigation.
+
+---
+
+<!-- content/components/rule.md -->
+
+---
+title: Rule
+section: Components
+order: 5
+description: The 1px near-black line that does the work boxes and cards do elsewhere, with an optional draw-in.
+status: live
+framer: 1px Frame (fill /Near Black) or native "Line Animation"; LineAnimationBorder (j7WYIMf)
+codeFileId: j7WYIMf
+classes: [mh-rule]
+tokens: [border.hairline, color.*.border.rule, motion.duration.draw, motion.ease.springy]
+---
+
+# Rule
+
+## Examples
+
+```html example
+<div class="ds-demo-stack">
+  <hr class="mh-rule">
+  <div class="ds-demo-row" style="justify-content:space-between">
+    <span class="mh-label">LinkedIn, Resume, Email, Cosmos</span>
+    <span class="mh-label">©2026</span>
+  </div>
+  <hr class="mh-rule">
+</div>
+```
+
+### Line draw
+
+Scroll it into view (or reload) to see it draw from the left.
+
+```html example
+<hr class="mh-rule" data-draw>
+```
+
+## Usage
+
+- A full-width rule separates **sections** (above a Section Header), **groups** (index year groups) and **rows** (index rows).
+- Rules are always 1px, full opacity, `--mh-border-rule`. On Forest Green they turn Cream.
+- Rules span the content width (gutter to gutter), never a fraction of it.
+- Line draw is for the first appearance of a major rule (hero base, section starts). Don't animate row dividers.
+
+## API
+
+| Attribute | Effect |
+| --- | --- |
+| `<hr class="mh-rule">` | 1px full-width rule |
+| `data-draw` | Starts at `scaleX(0)`; draws over 2000ms Springy with a 200ms delay once `components.js` adds `.is-in` |
+
+## Accessibility
+
+- Use `<hr>` when the rule marks a thematic break; use a CSS border (`border-top: var(--mh-border-hairline) solid var(--mh-border-rule)`) when it's purely visual, as in index rows.
+
+## Framer mapping
+
+- Static: a 1px-tall Frame filled with near-black `#141414`.
+- Animated: native **Line Animation** (0.2s delay, 2s, `[0.25, 1, 0.5, 1]`) or `LineAnimationBorder` (`j7WYIMf`) for a non-destructive border frame with a `Viewport Once` trigger.
+- Index dividers are controlled by `IndexPage` (`rgAZFOv`) `dividerSubtle` and stay full-opacity `#141414`.
+
+## Don't
+
+- Don't use gray or semi-transparent rules.
+- Don't use 2px or dashed rules.
+- Don't box content with four rules; a rule only ever runs horizontally.
+
+---
+
+<!-- content/components/section-header.md -->
+
+---
+title: Section Header
+section: Components
+order: 6
+description: A full-width rule followed by a Display M title. This is how every major section on the site starts.
+status: live
+framer: Rule frame + text style "Heading 2"
+classes: [mh-section-header, mh-section-header__title]
+tokens: [type.display-m, border.hairline, space.7]
+---
+
+# Section Header
+
+## Examples
+
+```html example
+<header class="mh-section-header">
+  <hr class="mh-rule">
+  <h2 class="mh-section-header__title">Selected work</h2>
+</header>
+```
+
+### With an action
+
+```html example
+<header class="mh-section-header">
+  <hr class="mh-rule">
+  <h2 class="mh-section-header__title">Other projects</h2>
+  <a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a>
+</header>
+```
+
+### With reveal
+
+```html example
+<header class="mh-section-header">
+  <hr class="mh-rule" data-draw>
+  <h2 class="mh-section-header__title">
+    <span class="mh-reveal" style="--i:0"><span>About Micah</span></span>
+  </h2>
+</header>
+```
+
+## Usage
+
+- Use for top-level page sections: Selected work, About Micah, Other projects, Index.
+- Titles are sentence case, two or three words. They label the section; they aren't headlines.
+- Leave at least `--mh-space-12` (96px) above a section header and `--mh-space-11` (72px) below before content starts.
+- An optional action (View all) sits on the title's baseline at the right edge.
+
+## API
+
+| Class | Element | Notes |
+| --- | --- | --- |
+| `mh-section-header` | `header` | Grid: title left, optional action right |
+| `mh-rule` | `hr` | First child; spans both columns |
+| `mh-section-header__title` | `h2` | Display M (70 / 53 / 42px, regular, Forest Green) |
+
+## Framer mapping
+
+- Text style **Heading 2** (GT Standard L Regular). The live site renders the title at 70px with -1% tracking.
+- The rule is a 1px frame or Line Animation above the title in a vertical Stack (gap 24px).
+- The reveal is Framer's native Appear effect, normalized by `PageTransition` (`gmalnRr`) to 900ms / 90ms stagger / Snappy / 115% start.
+
+## Don't
+
+- Don't use bold for section titles; bold is reserved for the hero and case-study titles.
+- Don't add eyebrows or numbers ("01 / Work") above section titles.
+
+---
+
+<!-- content/components/navigation.md -->
+
+---
+title: Navigation
+section: Components
+order: 7
+description: The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.
+status: live
+framer: Native "Navigation" component; NavigationScrollGuard (Wnd19lx) for scroll/Lenis
+codeFileId: Wnd19lx
+classes: [mh-nav, mh-nav__name, mh-nav__role, mh-nav__location, mh-nav__links]
+tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
+---
+
+# Navigation
+
+## Examples
+
+```html example bleed
+<nav class="mh-nav" aria-label="Primary" style="position:relative">
+  <a class="mh-nav__name mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Micah Hoang</span><span aria-hidden="true">Micah Hoang</span></span></span>
+  </a>
+  <p class="mh-nav__role mh-label">Brand designer</p>
+  <p class="mh-nav__location mh-label">Los Angeles, California</p>
+  <ul class="mh-nav__links mh-label">
+    <li><a class="mh-link" href="#" aria-current="page"><span class="mh-flip"><span class="mh-flip__track"><span>Work</span><span aria-hidden="true">Work</span></span></span></a></li>
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Play</span><span aria-hidden="true">Play</span></span></span></a></li>
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span></a></li>
+    <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span></a></li>
+  </ul>
+</nav>
+```
+
+## Anatomy
+
+| Zone | Content | Below 810px |
+| --- | --- | --- |
+| Name | "Micah Hoang", links to `/` | Kept |
+| Role | "Brand designer" | Hidden |
+| Location | "Los Angeles, California" | Hidden |
+| Links | Work, Play, Index, About | Kept, 24px gap |
+
+## Usage
+
+- Same bar, same copy, on every page. Only the links change state.
+- Routes: Work → `/`, Play → `/play`, Index → `/index`, About → `/about`.
+- The bar sits on the page surface, 20px from the top and sides, 53px tall. It hides on scroll down and returns on scroll up.
+- Grain starts below the nav, so the bar always stays crisp.
+- The live site doesn't style the current link. Mark it with `aria-current="page"` for assistive tech only.
+
+## API
+
+| Class | Element | Notes |
+| --- | --- | --- |
+| `mh-nav` | `nav` | Sticky, 4-column grid `1fr 1.3fr 1.6fr auto` |
+| `mh-nav__name` | `a` | Flip link |
+| `mh-nav__role`, `mh-nav__location` | `p` | Static labels, hidden on mobile |
+| `mh-nav__links` | `ul` | Flip links, 30px gap |
+
+## Accessibility
+
+- `<nav aria-label="Primary">`, links in a list.
+- Add a "Skip to content" link before the nav in real pages.
+- Keep visible focus on every link (the flip triggers on focus too).
+
+## Framer mapping
+
+- The live bar is the native **Navigation** component, with the flip implemented as hover variants.
+- Scroll behavior and global smooth scroll: `NavigationScrollGuard` (`Wnd19lx`), mounted through `ResumeAssetHost` (`xDqfenf`). It owns the single Lenis 1.3.26 instance (`lerp 0.12`, native touch) and is destroyed on `/play`.
+- Exposed controls: `Smooth`, `Scroll feel`.
+
+## Don't
+
+- Don't add a logo, hamburger icon or CTA button to the bar.
+- Don't put a background color or blur behind it.
+- Don't change the order of the four zones.
+
+---
+
+<!-- content/components/footer.md -->
+
+---
+title: Footer
+section: Components
+order: 8
+description: A Forest Green block with oversized uppercase contact links and a mono base bar.
+status: live
+framer: Native "Footer" (FooterWhiteDesktop variants); FooterCopyrightYear (BF2H03E); TextEncryptionEffect (p7tSTaD); ResumeAssetHost (xDqfenf)
+codeFileId: BF2H03E
+classes: [mh-footer, mh-footer__contacts, mh-footer__contact, mh-footer__bar]
+tokens: [type.display-footer, type.label, color.green.*, space.13]
+---
+
+# Footer
+
+## Examples
+
+```html example bleed surface=green
+<footer class="mh-footer" data-surface="green">
+  <p class="mh-label" data-leading="relaxed">Get in touch</p>
+  <ul class="mh-footer__contacts">
+    <li><a class="mh-footer__contact" href="#">micah.hoang<sup>@hey.com</sup></a></li>
+    <li><a class="mh-footer__contact" href="#">LinkedIn<sup>Connect</sup></a></li>
+    <li><a class="mh-footer__contact" href="#">Cosmos<sup>Inspire</sup></a></li>
+  </ul>
+  <div class="mh-footer__bar">
+    <p class="mh-label">Available for work</p>
+    <ul class="mh-link-list mh-label">
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>LinkedIn</span><span aria-hidden="true">LinkedIn</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Resume</span><span aria-hidden="true">Resume</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Cosmos</span><span aria-hidden="true">Cosmos</span></span></span></a></li>
+    </ul>
+    <p class="mh-label">©2026</p>
+  </div>
+</footer>
+```
+
+## Anatomy
+
+1. **Eyebrow**: "Get in touch", mono.
+2. **Contacts**: three Display Footer links (80 / 64 / 40px, uppercase, -2%), each with a mono superscript saying what it is for: `@HEY.COM`, `CONNECT`, `INSPIRE`.
+3. **Base bar**: availability, link list (LinkedIn, Resume, Cosmos), ©year, laid out across a 3-column grid.
+
+## Usage
+
+- The footer is the only large Forest Green block outside the boot loader. Always `data-surface="green"`.
+- The email reads as `MICAH.HOANG` with `@HEY.COM` as its superscript, so the display line stays one word.
+- Keep exactly three contact lines. Availability text reflects real status; change it when it changes.
+
+## API
+
+| Class | Element | Notes |
+| --- | --- | --- |
+| `mh-footer` | `footer` | Add `data-surface="green"`; 144px top padding |
+| `mh-footer__contacts` | `ul` | Vertical list |
+| `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag |
+| `mh-footer__bar` | `div` | 3 columns; the link list moves to its own row on mobile |
+
+## Accessibility
+
+- The `sup` text is part of the link name ("micah.hoang @hey.com"). Make sure the `href` matches (`mailto:`).
+- Cream on Forest Green is about 12:1 contrast, fine at every size.
+
+## Framer mapping
+
+- Native **Footer** component with desktop/tablet/phone variants (`FooterWhiteDesktop`, ...).
+- The display links use `TextEncryptionEffect` (`p7tSTaD`) for the per-letter scramble on hover. Keep it on these three links only.
+- Year: `FooterCopyrightYear` (`BF2H03E`).
+- `ResumeAssetHost` (`xDqfenf`) is mounted invisibly inside the footer. It supplies the resume file and hosts the global helpers (`ParagraphPrettyWrap`, `NavigationScrollGuard`). **Never remove it from the footer.**
+
+## Don't
+
+- Don't add a sitemap, newsletter form or social icons.
+- Don't put the footer on Cream.
+
+---
+
+<!-- content/components/hero.md -->
+
+---
+title: Hero
+section: Components
+order: 9
+description: The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.
+status: live
+framer: Home "Header" section (Heading 1 + Heading 3); case-study hero (Heading 2b, two colors)
+classes: [mh-hero, mh-hero__name, mh-hero__descriptor, mh-hero__bar, mh-hero__continuation]
+tokens: [type.display-xl, type.display-l, type.heading, space.13]
+---
+
+# Hero
+
+## Examples
+
+### Home
+
+```html example
+<header class="mh-hero">
+  <h1 class="mh-hero__name mh-text-display-xl">
+    <span class="mh-reveal" style="--i:0"><span>Micah Hoang</span></span>
+  </h1>
+  <p class="mh-hero__descriptor mh-text-heading">
+    <span class="mh-reveal" style="--i:1"><span>Brand designer with</span></span>
+    <span class="mh-reveal" style="--i:2"><span>a systems mind.</span></span>
+  </p>
+  <div class="mh-hero__bar">
+    <ul class="mh-link-list mh-label">
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>LinkedIn</span><span aria-hidden="true">LinkedIn</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Resume</span><span aria-hidden="true">Resume</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Email</span><span aria-hidden="true">Email</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Cosmos</span><span aria-hidden="true">Cosmos</span></span></span></a></li>
+    </ul>
+    <span class="mh-label">©2026</span>
+  </div>
+</header>
+```
+
+### Case study
+
+```html example
+<header class="mh-hero" data-variant="case-study">
+  <h1 class="mh-hero__name">
+    Gaia
+    <span class="mh-hero__continuation">Turning noticing into a way of caring for the living world.</span>
+  </h1>
+</header>
+```
+
+## Usage
+
+| Variant | Title | Supporting text | Where |
+| --- | --- | --- | --- |
+| Home | Display XL, bold, the name | Heading, two lines, Forest Green | `/` only |
+| Case study | Display L, bold, project name | Same size and weight, continues in Light Gray | `/case-studies/*` |
+
+- **Home**: the name, a two-line descriptor, then a base bar (link list left, ©2026 right) closed by a 1px rule. The Selected work section follows.
+- **Case study**: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the [Meta Grid](meta-grid.md) follow.
+- Hero copy rises in with the type reveal (900ms, 90ms stagger).
+
+## API
+
+| Class / attribute | Notes |
+| --- | --- |
+| `mh-hero` | Column stack, 144px top padding |
+| `data-variant="case-study"` | Applies Display L to `.mh-hero__name` |
+| `mh-hero__name` | The `h1`. Add `mh-text-display-xl` for Home |
+| `mh-hero__descriptor` | Heading style, `max-width: 11em` to force the two-line break |
+| `mh-hero__continuation` | Muted continuation inside the case-study `h1` |
+| `mh-hero__bar` | Base row with bottom rule |
+
+## Accessibility
+
+- One `h1` per page: the name on Home, the project name + continuation on case studies (read as one sentence).
+- Reveal spans don't change reading order.
+
+## Framer mapping
+
+- Home: text styles **Heading 1** (name) and **Heading 3** (descriptor). Appear effects: name `translateY 110px → 0`, descriptor `90px → 0`, Snappy; replays are coordinated by `PageTransition` (`gmalnRr`).
+- Case study: **Heading 2b** in two text layers (`/Forest Green` then `Light Gray`) or one rich-text layer with a color span.
+
+## Don't
+
+- Don't add a hero image to Home; the selected-work grid is the imagery.
+- Don't put a subtitle under a case-study title. The continuation is the subtitle.
+
+---
+
+<!-- content/components/media-frame.md -->
+
+---
+title: Media Frame
+section: Components
+order: 10
+description: An aspect-locked, square-cornered frame for images and video, with a poster-under-video stack and an optional 1px stroke.
+status: live
+framer: ResponsiveCaseStudyImage (vIFnGmg), ResponsiveCaseStudyVideo (bsTLKCt), CaseStudyThumbnailStrokeStyles (Z28JYvA), CaseStudyVideoManager (rGMwETR)
+codeFileId: vIFnGmg
+classes: [mh-media]
+tokens: [color.*.bg.media, color.*.border.stroke, motion.scale.hover, motion.duration.base]
+---
+
+# Media Frame
+
+## Examples
+
+```html example
+<div class="mh-split">
+  <a class="mh-media" href="#"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></a>
+  <a class="mh-media" data-stroke href="#"><img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"></a>
+</div>
+```
+
+### Ratios
+
+```html example
+<div class="ds-demo-row" style="align-items:flex-start;flex-wrap:nowrap">
+  <div class="mh-media" style="flex:1.6"><img src="../../assets/samples/peak-energy.jpg" alt=""></div>
+  <div class="mh-media" data-ratio="4:5" style="flex:1"><img src="../../assets/samples/gaia-portrait.jpg" alt=""></div>
+  <div class="mh-media" data-ratio="1:1" style="flex:1"><img src="../../assets/samples/national-park-cards.jpg" alt=""></div>
+</div>
+```
+
+### Video with poster
+
+```html
+<div class="mh-media">
+  <img src="poster.jpg" alt="">
+  <video src="clip.mp4" poster="poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+</div>
+```
+
+## Usage
+
+- **Square corners, always.** No radius, no shadow.
+- **16:9 is the default** for thumbnails and hero media. Use 4:5 / 1:1 / 3:2 in case-study galleries when the asset calls for it, and `auto` to keep an asset's own ratio.
+- **Stroke** (`data-stroke`): a 1px Light Gray inset outline, for media on white or near-cream backgrounds (product shots, UI) that would otherwise bleed into the page. It's a per-project CMS field (`Thumbnail Stroke`).
+- **Hover**: when the frame is in a link, the image scales to 1.02 over 420ms Snappy. The frame stays still.
+- **Video**: the poster image stays painted under the video, and the video fades in once it can play. Never leave a blank frame between them.
+- Placeholder color is white (`--mh-bg-media`).
+
+## API
+
+| Attribute | Values | Effect |
+| --- | --- | --- |
+| `class="mh-media"` | n/a | `position: relative`, `overflow: hidden`, 16:9, children cover |
+| `data-ratio` | `4:3`, `3:2`, `1:1`, `4:5`, `auto` | Aspect ratio |
+| `data-stroke` | n/a | 1px inset `--mh-border-stroke` outline |
+
+## Accessibility
+
+- Every meaningful image needs `alt` that describes it ("AirPods Pro 3 earbuds on a white background"). Decorative duplicates (posters under video) get `alt=""`.
+- Autoplay video must be `muted` and `playsinline`, and must pause under reduced motion or offscreen.
+
+## Framer mapping
+
+- Case-study media: `ResponsiveCaseStudyImage` (`vIFnGmg`) and `ResponsiveCaseStudyVideo` (`bsTLKCt`); galleries: `CaseStudyJustifiedMediaGrid` (`c0iPrbN`), `DoubleStackGalleryGrid`, `MatchedStackMediaPair`.
+- Stroke: `CaseStudyThumbnailStrokeStyles` (`Z28JYvA`) reads the CMS `Thumbnail Stroke` field (`OHdUYs6Mo`) and paints `#979797`.
+- Playback budget and offscreen pausing: `CaseStudyVideoManager` (`rGMwETR`). Don't add a second video controller.
+- Optimize media with `code/tools/` image-optimizer before upload (see `docs/performance-media-deployment-checklist-2026-07-23.md`).
+
+## Don't
+
+- Don't round corners or add captions inside the frame.
+- Don't letterbox with colored bars; crop with `object-fit: cover`.
+- Don't scale the frame on hover; scale the image inside it.
+
+---
+
+<!-- content/components/project-card.md -->
+
+---
+title: Project Card
+section: Components
+order: 11
+description: The main way work appears on the site. A numbered mono title that flips on hover, a 16:9 media frame, and discipline tags.
+status: live
+framer: HomeSelectedWorkGrid (FecepLS); OtherProjectCardRestored (vlwa5Cz); IndexPage grid (rgAZFOv)
+codeFileId: FecepLS
+classes: [mh-project-card, mh-project-card__link, mh-project-card__meta]
+tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
+---
+
+# Project Card
+
+## Examples
+
+```html example
+<div class="mh-project-grid">
+  <article class="mh-project-card">
+    <a class="mh-project-card__link" href="#">
+      <div class="mh-project-card__meta mh-label">
+        <span>1</span><span>/</span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span>
+      </div>
+      <div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>
+    </a>
+    <ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li><li class="mh-tag">Strategy</li></ul>
+  </article>
+  <article class="mh-project-card">
+    <a class="mh-project-card__link" href="#">
+      <div class="mh-project-card__meta mh-label">
+        <span>2</span><span>/</span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span>
+      </div>
+      <div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"></div>
+    </a>
+    <ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li><li class="mh-tag">Social media</li></ul>
+  </article>
+</div>
+```
+
+## Anatomy
+
+1. **Meta row**: mono label in a `24px 11px 1fr` grid: number, slash, title. The title is a flip rail.
+2. **Media**: [Media Frame](media-frame.md), 16:9, optional stroke.
+3. **Tags**: up to three [Tags](tag.md), outside the link.
+
+The meta row and media share one link; tags sit outside it so they can be their own links or filters.
+
+## Usage
+
+- Number cards in display order starting at 1, without zero padding.
+- The title is the CMS project title, set by CSS in uppercase mono.
+- Hover/focus on the link triggers two moves together: the title flips (18px, 420ms Snappy) and the image scales to 1.02.
+- Use a poster image under a thumbnail video, so a returning visitor never sees an empty frame.
+
+## API
+
+| Class | Element | Notes |
+| --- | --- | --- |
+| `mh-project-card` | `article` | Column, 16px gap |
+| `mh-project-card__link` | `a` | Wraps meta + media; hover host |
+| `mh-project-card__meta` | `div` + `mh-label` | `24px 11px 1fr` grid; flip window is 13px |
+| `mh-media` | `div` | See Media Frame |
+| `mh-tags` | `ul` | Optional |
+
+## Data model (CMS)
+
+Map cards to the Framer CMS `All Projects` collection (`yTHrQWMIY`):
+
+| Card field | CMS field | Field id |
+| --- | --- | --- |
+| Title | Title | `oeXZcmPna` |
+| href | `/case-studies/{slug}` | `pdXVG_fBO` |
+| Poster image | Thumbnail | `Jy7hBJady` |
+| Video | Thumbnail Video | `SvOqFqdby` |
+| `data-stroke` | Thumbnail Stroke | `OHdUYs6Mo` |
+| Tags | Category 1–3 | (discipline fields) |
+
+```json
+{ "title": "Gaia", "slug": "gaia", "thumbnail": "…/gaia.jpg", "thumbnailVideo": "…/gaia.mp4", "thumbnailStroke": false, "tags": ["Visual identity", "UX/UI", "Strategy"] }
+```
+
+## Accessibility
+
+- The link's accessible name is "1 / Gaia" (the duplicate flip span is `aria-hidden`).
+- Card media `alt` describes the image, not the project name.
+
+## Framer mapping
+
+- Home: `HomeSelectedWorkGrid` (`FecepLS`). Six CMS-limited items, 2 columns, `Thumbnail Video` preferred with `Thumbnail` as poster, first-row videos `preload="auto"`, live CMS row reuse on return navigation. Read `docs/framer-current-state.md` before editing it.
+- Case-study "Other projects": `OtherProjectCardRestored` (`vlwa5Cz`), 3 columns.
+- `/index` grid: `IndexPage` (`rgAZFOv`) through `IndexPageGridPreview` (`LgIzFjJ`), which supplies `gridLayoutVariant="figma"`. Never overwrite the wrapper.
+- Never add baked fallback rows or hard-coded media URLs; cards come from the CMS only.
+
+## Don't
+
+- Don't put the description or year on the card.
+- Don't add a background, border or shadow around the card.
+- Don't truncate titles with "..." inside the meta row; let the grid ellipsis handle overflow.
+
+---
+
+<!-- content/components/project-grid.md -->
+
+---
+title: Project Grid
+section: Components
+order: 12
+description: The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.
+status: live
+framer: HomeSelectedWorkGrid (FecepLS); IndexPageGridPreview (LgIzFjJ)
+codeFileId: LgIzFjJ
+classes: [mh-project-grid]
+tokens: [layout.column-gap, layout.card-row-gap]
+---
+
+# Project Grid
+
+## Examples
+
+### Two columns (Selected work)
+
+```html example
+<ul class="mh-project-grid">
+  <li class="mh-project-card">
+    <a class="mh-project-card__link" href="#">
+      <div class="mh-project-card__meta mh-label"><span>5</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Simon &amp; Schuster</span><span aria-hidden="true">Simon &amp; Schuster</span></span></span></div>
+      <div class="mh-media"><img src="../../assets/samples/simon-schuster.jpg" alt="Uncover Forbidden Stories poster on a city building"></div>
+    </a>
+    <ul class="mh-tags"><li class="mh-tag">Strategy</li><li class="mh-tag">Visual identity</li><li class="mh-tag">Editorial</li></ul>
+  </li>
+  <li class="mh-project-card">
+    <a class="mh-project-card__link" href="#">
+      <div class="mh-project-card__meta mh-label"><span>6</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>National Park Playing Cards</span><span aria-hidden="true">National Park Playing Cards</span></span></span></div>
+      <div class="mh-media"><img src="../../assets/samples/national-park-cards.jpg" alt="Hands dealing National Park playing cards on a wooden table"></div>
+    </a>
+    <ul class="mh-tags"><li class="mh-tag">Product</li><li class="mh-tag">Packaging</li></ul>
+  </li>
+</ul>
+```
+
+### Three columns (Other projects)
+
+```html example
+<ul class="mh-project-grid" data-columns="3">
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>3</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></div><div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>4</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
+</ul>
+```
+
+## Usage
+
+| Columns | Desktop | Tablet | Mobile | Where |
+| --- | --- | --- | --- | --- |
+| 2 (default) | 2 | 2 | 1 | Home selected work |
+| `data-columns="3"` | 3 | 2 | 1 | Case-study "Other projects", `/index` grid view |
+
+- Gaps: 20px between columns, 50px between rows.
+- Home shows exactly six projects (three rows of two), followed by a right-aligned "View all" action.
+- "Other projects" shows three and drops tags.
+
+## API
+
+| Attribute | Effect |
+| --- | --- |
+| `class="mh-project-grid"` | 2-column grid, use on `ul`/`div` |
+| `data-columns="3"` | 3 columns on desktop |
+
+## Framer mapping
+
+- Home: `HomeSelectedWorkGrid` (`FecepLS`) renders the grid itself (`gap: 50px 20px`).
+- `/index` grid view: `IndexPage` (`rgAZFOv`) with the `figma` layout variant supplied by `IndexPageGridPreview` (`LgIzFjJ`): 3 columns, 56px row gap, 20px column gap.
+- In native Framer layouts, use a Grid with `1fr` columns and the gap tokens; set column count on the tablet and phone breakpoints.
+
+## Don't
+
+- Don't use masonry or mixed card sizes in these grids. Galleries inside case studies have their own components.
+- Don't paginate; use the Index for the full list.
+
+---
+
+<!-- content/components/index-list.md -->
+
+---
+title: Index List
+section: Components
+order: 13
+description: The complete archive as a ruled table. Year groups, uppercase titles, discipline and industry columns, with a hover wash and a flip.
+status: live
+framer: IndexPage (rgAZFOv) via IndexPageGridPreview (LgIzFjJ)
+codeFileId: rgAZFOv
+classes: [mh-index, mh-index__group, mh-index__year, mh-index__rows, mh-index__row, mh-index__title, mh-index__discipline, mh-index__industry]
+tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color.*.bg.hover, motion.duration.slow]
+---
+
+# Index List
+
+## Examples
+
+```html example
+<ol class="mh-index" reversed>
+  <li class="mh-index__group">
+    <h3 class="mh-index__year">2026</h3>
+    <ul class="mh-index__rows">
+      <li><a class="mh-index__row" href="#">
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Caliper Sans</span><span aria-hidden="true">Caliper Sans</span></span></span></span>
+        <span class="mh-index__discipline mh-label">Type design</span>
+        <span class="mh-index__industry mh-label">Technology</span>
+      </a></li>
+      <li><a class="mh-index__row" href="#">
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></span>
+        <span class="mh-index__discipline mh-label">Visual identity, UX/UI</span>
+        <span class="mh-index__industry mh-label">Nature</span>
+      </a></li>
+      <li><a class="mh-index__row" href="#">
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></span>
+        <span class="mh-index__discipline mh-label">Visual identity</span>
+        <span class="mh-index__industry mh-label">Technology</span>
+      </a></li>
+    </ul>
+  </li>
+  <li class="mh-index__group">
+    <h3 class="mh-index__year">2025</h3>
+    <ul class="mh-index__rows">
+      <li><a class="mh-index__row" href="#">
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></span>
+        <span class="mh-index__discipline mh-label">2D motion, 3D motion</span>
+        <span class="mh-index__industry mh-label">Technology</span>
+      </a></li>
+      <li><a class="mh-index__row" href="#">
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Motion Connect 2025</span><span aria-hidden="true">Motion Connect 2025</span></span></span></span>
+        <span class="mh-index__discipline mh-label">Event identity</span>
+        <span class="mh-index__industry mh-label">Education</span>
+      </a></li>
+    </ul>
+  </li>
+</ol>
+```
+
+## Anatomy
+
+| Column | Content | Type | Below 1200px | Below 810px |
+| --- | --- | --- | --- | --- |
+| Year | Group label, first column, once per group | Title, 22px | Kept | Stacked above rows |
+| Title | Project name, uppercase, flips on hover | Title, 22px | Kept | 16px |
+| Discipline | Comma-joined disciplines | Mono label | Hidden | Hidden |
+| Industry | One industry | Mono label, right-aligned | Kept | Kept |
+
+## Usage
+
+- Groups are years, newest first. A full-width rule opens each group; rules separate rows inside it; a final rule closes the list.
+- Text is near-black (`--mh-text-strong`), not Forest Green. This is the one dense, data-like surface on the site.
+- Row hover: a 4% near-black wash (150ms Smooth) plus the title flip (620ms Snappy).
+- The list sits under the [Filter Group](filter-group.md) and the [View Toggle](view-toggle.md); filtering hides rows and empty groups without moving the filters.
+
+## API
+
+| Class | Element | Notes |
+| --- | --- | --- |
+| `mh-index` | `ol` | Wrapper; `reversed` if numbering matters |
+| `mh-index__group` | `li` | Grid `1fr 5fr`, top rule |
+| `mh-index__year` | `h3` | Year label |
+| `mh-index__rows` | `ul` | Rows, divided by rules |
+| `mh-index__row` | `a` | Grid `2fr 2fr 1fr`; hover wash, 2px radius |
+| `mh-index__title` | `span` | Holds a flip rail (`--mh-flip-h: 1.2em`) |
+| `mh-index__discipline`, `mh-index__industry` | `span.mh-label` | Ellipsis on overflow |
+
+## Data model (CMS)
+
+```json
+{ "title": "Gaia", "slug": "gaia", "year": 2026, "category1": "Visual identity", "category2": "UX/UI", "category3": "Strategy", "industry": "Nature", "sortOrder": 2 }
+```
+
+Fields map to `All Projects` (`yTHrQWMIY`). Years come from the CMS; never hard-code groups.
+
+## Accessibility
+
+- Year headings make the groups navigable by heading.
+- Each row is a single link whose name is the project title (duplicate flip span is hidden).
+
+## Framer mapping
+
+- `IndexPage` (`rgAZFOv`), mounted through `IndexPageGridPreview` (`LgIzFjJ`). Text and dividers render `#141414` through color property controls.
+- Content arrives progressively on first load (6 rows, then +12 per frame); filter toggles never unmount the list.
+- Read `docs/index-component-instructions.md` before editing. The CMS mode is generated-module only; there are no manual rows or `DEFAULT_PROJECTS`.
+
+## Don't
+
+- Don't add thumbnails to list rows (grid view exists for that).
+- Don't color rows by discipline or industry.
+- Don't use zebra striping.
+
+---
+
+<!-- content/components/filter-group.md -->
+
+---
+title: Filter Group
+section: Components
+order: 14
+description: Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.
+status: live
+framer: IndexPage (rgAZFOv), IndexFilterContext + URL sync
+codeFileId: rgAZFOv
+classes: [mh-filter, mh-filter__group, mh-filter__heading, mh-filter__item, mh-filter__clear]
+tokens: [type.label, color.*.text.interactive, motion.duration.fast]
+---
+
+# Filter Group
+
+## Examples
+
+```html example
+<div class="mh-filter" aria-label="Filter projects">
+  <fieldset class="mh-filter__group">
+    <legend class="mh-filter__heading mh-label">Year</legend>
+    <button class="mh-filter__item" type="button" aria-pressed="false" value="2026">2026</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false" value="2025">2025</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false" value="2024">2024</button>
+  </fieldset>
+  <fieldset class="mh-filter__group">
+    <legend class="mh-filter__heading mh-label">Discipline</legend>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Packaging</button>
+    <button class="mh-filter__item" type="button" aria-pressed="true">Product</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Strategy</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Visual identity</button>
+  </fieldset>
+  <fieldset class="mh-filter__group">
+    <legend class="mh-filter__heading mh-label">Industry</legend>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Literature</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Nature</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Technology</button>
+  </fieldset>
+  <button class="mh-filter__clear mh-action" type="button">Clear filters</button>
+</div>
+```
+
+Click the items to toggle. "Clear filters" appears as soon as one is active.
+
+## Usage
+
+- Three taxonomies, in this order: **Year**, **Discipline**, **Industry**. Values come from the CMS.
+- Multiple selections combine as OR within a group and AND across groups.
+- Selected items turn Accent Green and get a leading dot. Hover previews the same color.
+- **Clear filters** is always rendered and only toggles `visibility`, so activating a filter never shifts the layout.
+- Filter state syncs to the URL: `#service=packaging` in, `?service=` out.
+
+## API
+
+| Class / attribute | Element | Notes |
+| --- | --- | --- |
+| `mh-filter` | `div` | Grid `1fr 2fr 2fr 1fr` (2 columns on mobile). Gets `data-active` while any item is pressed |
+| `mh-filter__group` | `fieldset` | One taxonomy |
+| `mh-filter__heading` | `legend` | Muted mono heading |
+| `mh-filter__item` | `button[aria-pressed]` | 13px mono, 28px line height |
+| `mh-filter__clear` | `button` | Visible only with `data-active` |
+| `mh:filter` event | n/a | Fired by `components.js` on change with `detail.values` |
+
+## Accessibility
+
+- Toggles are `<button aria-pressed>`, so state is announced.
+- Group with `fieldset`/`legend` so each item is read with its taxonomy.
+
+## Framer mapping
+
+- `IndexPage` (`rgAZFOv`): taxonomy follows Figma node `32:7531`; hover/active color `#25593a`; URL sync has a kill switch (`ENABLE_URL_FILTER_SYNC`); grid tags toggle the same filters through `IndexFilterContext`.
+- The nav fades in row by row on arrival (`INDEX_NAV_FADE_PRESET`).
+
+## Don't
+
+- Don't use checkboxes, dropdowns or a search field for these filters.
+- Don't show result counts next to every item.
+
+---
+
+<!-- content/components/view-toggle.md -->
+
+---
+title: View Toggle
+section: Components
+order: 15
+description: A mono "GRID / LIST" switch that changes how the Index renders, with an underline on the active view.
+status: live
+framer: IndexPageGridPreview (LgIzFjJ) "View" control
+codeFileId: LgIzFjJ
+classes: [mh-view-toggle]
+tokens: [type.label, color.*.text.strong]
+---
+
+# View Toggle
+
+## Examples
+
+```html example
+<div class="mh-view-toggle" role="group" aria-label="View" data-target="#index-demo">
+  <button type="button" value="grid" aria-pressed="false">Grid</button>
+  <span aria-hidden="true">/</span>
+  <button type="button" value="list" aria-pressed="true">List</button>
+</div>
+```
+
+## Usage
+
+- Right-aligned on the line above the list or grid it controls.
+- Two options only. The active one is underlined (1px, 3px offset); there's no pill or background.
+- Changing views keeps the filters and scroll position.
+
+## API
+
+| Class / attribute | Notes |
+| --- | --- |
+| `mh-view-toggle` | `div role="group"`; mono label with 28px line height |
+| `data-target` | Selector of the element whose `data-view` is set to the pressed button's `value` |
+| `button[aria-pressed]` | One pressed at a time (`components.js`) |
+
+## Framer mapping
+
+- The live toggle sits inside `IndexPage` (`rgAZFOv`, `.idx-view-toggle`) with a -46px offset so it shares a line with the filters; `IndexPageGridPreview` (`LgIzFjJ`) exposes the default **View** control.
+
+## Don't
+
+- Don't use icons (grid/list glyphs) for this toggle.
+- Don't add a third view.
+
+---
+
+<!-- content/components/meta-grid.md -->
+
+---
+title: Meta Grid
+section: Components
+order: 16
+description: The case-study fact sheet. "/ LABEL" mono headings over Body L values, in two columns.
+status: live
+framer: Case-study "Descriptor" section; CaseStudyMobileDescriptorLayout (W62Sy75)
+codeFileId: W62Sy75
+classes: [mh-meta-grid, mh-meta-grid__col, mh-meta-grid__item]
+tokens: [type.label, type.body-lg, layout.split-gap, space.9, space.5]
+---
+
+# Meta Grid
+
+## Examples
+
+```html example
+<div class="mh-meta-grid">
+  <dl class="mh-meta-grid__col">
+    <div class="mh-meta-grid__item">
+      <dt class="mh-label" data-leading="relaxed">/ About the project</dt>
+      <dd class="mh-text-body-lg">A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care. Gaia is a rebrand and redesign of iNaturalist, turning the world's largest biodiversity platform from a tool for experts into an open invitation to notice and protect the living world.</dd>
+    </div>
+    <div class="mh-meta-grid__item">
+      <dt class="mh-label" data-leading="relaxed">/ Industry</dt>
+      <dd class="mh-text-body-lg">Nature</dd>
+    </div>
+  </dl>
+  <dl class="mh-meta-grid__col">
+    <div class="mh-meta-grid__item">
+      <dt class="mh-label" data-leading="relaxed">/ Scope</dt>
+      <dd class="mh-text-body-lg">Visual Identity, UX/UI, Strategy</dd>
+    </div>
+    <div class="mh-meta-grid__item">
+      <dt class="mh-label" data-leading="relaxed">/ Credits</dt>
+      <dd class="mh-text-body-lg">Client: Self-Initiated Proposal<br>Designer: Micah Hoang</dd>
+    </div>
+    <div class="mh-meta-grid__item">
+      <dt class="mh-label" data-leading="relaxed">/ Year</dt>
+      <dd class="mh-text-body-lg">2026</dd>
+    </div>
+  </dl>
+</div>
+```
+
+## Usage
+
+- Sits directly under the case-study hero media.
+- **Left column**: About the project (the lead paragraph), then Industry.
+- **Right column**: Scope, Credits, Year.
+- Labels start with `/ `. Values are Body L in near-black.
+- Credits are exact and one per line: `Role: Name`. Name collaborators; say "Designer: Micah Hoang" only if that's true.
+
+## API
+
+| Class | Element | Notes |
+| --- | --- | --- |
+| `mh-meta-grid` | `div` | Two columns, 30px gap; stacks below 810px |
+| `mh-meta-grid__col` | `dl` | 40px between items |
+| `mh-meta-grid__item` | `div` | `dt` label + `dd` value, 16px gap |
+
+## Data model (CMS)
+
+```json
+{ "about": "A photograph becomes a data point…", "industry": "Nature", "scope": ["Visual Identity", "UX/UI", "Strategy"], "credits": [{ "role": "Client", "name": "Self-Initiated Proposal" }, { "role": "Designer", "name": "Micah Hoang" }], "year": 2026 }
+```
+
+## Framer mapping
+
+- Native case-study "Descriptor" section on each bespoke `/case-studies/{slug}` page.
+- On mobile, `CaseStudyMobileDescriptorLayout` (`W62Sy75`) reorders the descriptor columns. Keep the same DOM order (About, Industry, Scope, Credits, Year) so it works.
+
+## Don't
+
+- Don't render the meta as a table with borders.
+- Don't add icons or pills to values.
+
+---
+
+<!-- content/components/lightbox.md -->
+
+---
+title: Lightbox
+section: Components
+order: 17
+description: A white full-screen viewer for case-study media, with thin near-black arrows and a quick zoom.
+status: live
+framer: CaseStudyLightbox (F2K4_SV) via CaseStudyControllers (z13WRHS)
+codeFileId: F2K4_SV
+classes: [mh-lightbox, mh-lightbox__media, mh-lightbox__btn]
+tokens: [color.*.bg.media, color.primitive.near-black, motion.duration.zoom, space.11, z.overlay]
+---
+
+# Lightbox
+
+## Examples
+
+Click any image to open the viewer. Use ← → to step through and Esc to close.
+
+```html example
+<div class="mh-split" data-mh-lightbox>
+  <div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone in a field of daisies"></div>
+  <div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt="Peak Energy battery modules, line illustration"></div>
+</div>
+```
+
+## Usage
+
+- Opt in a gallery or section by adding `data-mh-lightbox` to its container; every `img` inside becomes openable and steppable.
+- Backdrop is white, chrome is near-black at weight 300, 24px. No counter by default.
+- Zoom is 260ms Snappy and starts **from the clicked thumbnail**: the live component clones the media over its source rect, keeps it opaque, and zooms it to full size while the white backdrop fades in. The `components.js` version here is a simplified center scale (0.96 → 1); match the live behavior, not the demo.
+- Tapping the image advances; navigation loops.
+- 72px padding around the media on desktop, 16px on mobile.
+
+## API
+
+| Hook | Notes |
+| --- | --- |
+| `data-mh-lightbox` (container) | Images inside open the lightbox (`components.js`) |
+| `.mh-lightbox[data-open]` | Generated overlay; `role="dialog"` `aria-modal="true"` |
+| `.mh-lightbox__btn[data-dir]` | `prev`, `next`, `close` |
+
+## Accessibility
+
+- Focus moves to Close on open and returns to the clicked image on close.
+- Esc closes; arrow keys step. Page scroll is locked while open.
+- Buttons have `aria-label`s; the image keeps its `alt`.
+
+## Framer mapping
+
+- `CaseStudyLightbox` (`F2K4_SV`), loaded by `CaseStudyControllers` (`z13WRHS`) at a pinned module hash. If you republish the lightbox, bump the pinned hash in the controller.
+- Controls (defaults): Background `rgb(255,255,255)`, Arrows/X `rgb(20,20,20)`, Icon Weight 300, Icon Size 24px, Zoom 260ms, Padding 72px, Tap = Next on, Loop on, Counter off, Videos on.
+- The lightbox sits outside Lenis smooth scrolling (`data-lenis-prevent`).
+
+## Don't
+
+- Don't darken the backdrop; the viewer is white like a light table.
+- Don't add captions, thumbnails strips or share buttons.
+
+---
+
+<!-- content/components/testimonial.md -->
+
+---
+title: Testimonial
+section: Components
+order: 18
+description: A large quote with name and role, stepped with typed arrows. Used inside case studies.
+status: live
+framer: TestimonialLineReveal (tpDdaaJ)
+codeFileId: tpDdaaJ
+classes: [mh-testimonial, mh-testimonial__quote, mh-testimonial__cite, mh-testimonial__name, mh-testimonial__role, mh-testimonial__controls]
+tokens: [font.family.sans, type.label, color.*.text.muted, motion.duration.base]
+---
+
+# Testimonial
+
+## Examples
+
+```html example
+<figure class="mh-testimonial" data-items='[{"quote":"Micah turned a loose brief into a system the whole team could build on.","name":"Client Name","role":"Creative Director, Studio"},{"quote":"Every decision came with a reason, and every reason held up.","name":"Second Client","role":"Head of Brand, Company"}]'>
+  <p class="mh-label">What our clients say:</p>
+  <blockquote class="mh-testimonial__quote">Micah turned a loose brief into a system the whole team could build on.</blockquote>
+  <figcaption class="mh-testimonial__cite">
+    <span class="mh-testimonial__name">Client Name</span>
+    <span class="mh-testimonial__role">Creative Director, Studio</span>
+  </figcaption>
+  <div class="mh-testimonial__controls mh-label">
+    <button class="mh-action" type="button" data-dir="prev" aria-label="Previous testimonial">←</button>
+    <button class="mh-action" type="button" data-dir="next" aria-label="Next testimonial">→</button>
+  </div>
+</figure>
+```
+
+The quotes above are placeholders. Use only real, attributed quotes.
+
+## Usage
+
+- Quote in GT Standard Regular, 48px with 1.12 leading (×0.8 on tablet, ×0.62 on mobile), max 820px wide.
+- Name 20px, role 16px muted. Label 13px mono above.
+- Arrows are typed characters (← →) in mono, not icons. Autoplay is off.
+- On mobile the live component clamps long quotes to 6 lines with a "Read more".
+- Lines reveal one by one (mask rise) when the quote changes.
+
+## API
+
+| Class / attribute | Notes |
+| --- | --- |
+| `mh-testimonial` | `figure`; `data-items` JSON array of `{quote, name, role}` enables stepping |
+| `mh-testimonial__quote` | `blockquote` |
+| `mh-testimonial__cite` | `figcaption` with `__name` and `__role` |
+| `[data-dir="prev" \| "next"]` | Step buttons |
+
+## Framer mapping
+
+- `TestimonialLineReveal` (`tpDdaaJ`). Controls: Label ("What our clients say:"), Arrows (← →), Autoplay off / 5s, Align left, Mobile Read More on, Clamp Lines 6, Max Width 820, Quote Size 48, Tablet Scale 0.8, Mobile Scale 0.62, Quote Leading 1.12, Name Size 20, Role Size 16, Label Size 13.
+
+## Don't
+
+- Don't use quotation-mark graphics, avatars or star ratings.
+- Don't invent or paraphrase testimonials.
+
+---
+
+<!-- content/components/scroll-to-top.md -->
+
+---
+title: Scroll to Top
+section: Components
+order: 19
+description: A mono text action at the end of long pages that glides back to the top in 900ms.
+status: live
+framer: ScrollToTopButton (gh4ngZN)
+codeFileId: gh4ngZN
+classes: [mh-scroll-top, mh-action]
+tokens: [type.label, motion.duration.reveal, motion.ease.snappy]
+---
+
+# Scroll to Top
+
+## Examples
+
+```html example
+<button class="mh-action mh-scroll-top" type="button">
+  <span class="mh-flip"><span class="mh-flip__track"><span>Scroll to top ↑</span><span aria-hidden="true">Scroll to top ↑</span></span></span>
+</button>
+```
+
+## Usage
+
+- Place it at the end of long pages (Home, About), right-aligned above the footer.
+- 900ms with a Snappy-like curve. Jumps instantly under reduced motion.
+- Uses the same flip rail as every other text action.
+
+## API
+
+| Class / attribute | Notes |
+| --- | --- |
+| `mh-action mh-scroll-top` | Text action; `components.js` handles the scroll |
+| `data-target` | Optional selector of a scroll container (default: the document) |
+
+## Framer mapping
+
+- `ScrollToTopButton` (`gh4ngZN`). Defaults: label `scroll to top`, color `#233324`, duration 900ms, easing `cubic-bezier(0.16, 1, 0.3, 1)`. It hands off to the global Lenis instance when available and falls back to its own rAF loop.
+
+## Don't
+
+- Don't make it a floating circular button.
+- Don't show it on short pages.
+
+---
+
+<!-- content/components/page-loader.md -->
+
+---
+title: Page Loader
+section: Components
+order: 20
+description: The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.
+status: live
+framer: PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)
+codeFileId: gmalnRr
+classes: [mh-loader, mh-loader__bar, mh-loader__identity]
+tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.page, z.loader]
+---
+
+# Page Loader
+
+## Examples
+
+```html example bleed
+<div class="ds-demo-frame">
+  <div class="mh-loader" data-contained>
+    <span class="mh-loader__bar"></span>
+    <p class="mh-loader__identity">Micah Hoang ©2026</p>
+  </div>
+  <button class="mh-action" data-variant="pill" type="button" data-play-loader style="position:absolute;right:16px;bottom:16px;color:var(--mh-text-brand)">Replay</button>
+</div>
+```
+
+Press **Replay** to run the sequence.
+
+## Sequence
+
+| Step | What happens | Timing |
+| --- | --- | --- |
+| 1. Boot | Forest Green covers the viewport; "Micah Hoang ©2026" centered in Cream | Painted at parse time, before the app hydrates |
+| 2. Progress | An 8px Cream bar fills from the left along the top edge | ≥ 1200ms (`bootMinMs`), Smooth |
+| 3. Identity out | The name fades | 420ms, during bar completion |
+| 4. Lift | The curtain slides up and off | 1200ms, Snappy |
+
+## Usage
+
+- **Home only, first visit only** (direct entries and reloads of `/`). Never on internal navigations, case studies or mobile ≤ the boot-disable width.
+- The identity uses the Heading style: 30 / 24 / 19px, 120% leading, -1% tracking.
+- `theme-color` and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.
+- Videos behind the curtain hold until it lifts.
+
+## API
+
+| Class / attribute | Notes |
+| --- | --- |
+| `mh-loader` | Fixed full-viewport curtain. `data-contained` makes it `position:absolute` for previews |
+| `mh-loader__bar` | 8px progress bar (scaleX) |
+| `mh-loader__identity` | Centered name |
+| `data-state` | `idle` → `loading` → `done` → `lifted` |
+| `data-autoplay` / `window.mhPlayLoader(el)` | Run the sequence (`components.js`) |
+
+## Framer mapping
+
+- `PageTransition` (`gmalnRr`) owns the boot loader and every route transition (view-transition curtain, prerender speculation rules, appear replay). Controls: `Boot` Show/Off, `Boot mode` Auto/Always, `Boot color` `#233324`, `Bar color` `#F7F5F0`, `Bar height` 8px, `bootMinMs` 1200.
+- Read `docs/framer-page-transition.md` before changing anything here. **Don't build a second loader or transition layer.**
+
+## Don't
+
+- Don't show percentages, spinners or a logo animation.
+- Don't run the loader on every navigation.
+
+---
+
+<!-- content/components/grain-overlay.md -->
+
+---
+title: Grain Overlay
+section: Components
+order: 21
+description: The page-level SVG film grain, fixed under the nav, multiplied at 10%, with an optional 16fps shimmer.
+status: live
+framer: GrainOverlay (MhR7Ukl)
+codeFileId: MhR7Ukl
+classes: [mh-grain]
+tokens: [texture.grain.*, layout.nav-height, z.grain]
+---
+
+# Grain Overlay
+
+## Examples
+
+The preview below boosts opacity to 0.35 so the grain is visible; the brand value is 0.1.
+
+```html example bleed
+<div class="ds-demo-frame" style="height:220px">
+  <div style="padding:40px"><p class="mh-text-display-m" style="margin:0">Selected work</p></div>
+  <div class="mh-grain" data-contained data-animate style="opacity:.35">
+    <svg aria-hidden="true">
+      <filter id="mh-grain-filter" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="1.14" numOctaves="4" stitchTiles="stitch" seed="7"/>
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="2.35" intercept="-0.58"/>
+          <feFuncG type="linear" slope="2.35" intercept="-0.58"/>
+          <feFuncB type="linear" slope="2.35" intercept="-0.58"/>
+        </feComponentTransfer>
+        <feColorMatrix type="saturate" values="0"/>
+        <feColorMatrix type="matrix" values="0.314 0 0 0 0  0.114 0 0 0 0  0.027 0 0 0 0  0 0 0 0 1"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#mh-grain-filter)"/>
+    </svg>
+  </div>
+</div>
+```
+
+## Page snippet
+
+Place once, as the last child of `body`:
+
+```html
+<div class="mh-grain" data-animate aria-hidden="true">
+  <svg><filter id="mh-grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="1.14" numOctaves="4" stitchTiles="stitch" seed="7"/>
+    <feComponentTransfer><feFuncR type="linear" slope="2.35" intercept="-0.58"/><feFuncG type="linear" slope="2.35" intercept="-0.58"/><feFuncB type="linear" slope="2.35" intercept="-0.58"/></feComponentTransfer>
+    <feColorMatrix type="saturate" values="0"/>
+    <feColorMatrix type="matrix" values="0.314 0 0 0 0  0.114 0 0 0 0  0.027 0 0 0 0  0 0 0 0 1"/>
+  </filter><rect width="100%" height="100%" filter="url(#mh-grain)"/></svg>
+</div>
+```
+
+The last matrix multiplies the grey noise by the umber `#501D07` (80/255, 29/255, 7/255).
+
+## Usage
+
+- One per page. Fixed, `pointer-events: none`, starting at `--mh-nav-height` so the nav stays clean.
+- `data-animate` re-seeds the noise at 16fps; it stops under reduced motion.
+- During page transitions the live site runs the grain full height so no blank strip shows before the nav arrives.
+
+## API
+
+| Attribute | Notes |
+| --- | --- |
+| `class="mh-grain"` | Fixed layer: opacity 0.1, multiply, `z-index: var(--mh-z-grain)` |
+| `data-contained` | Absolute inside a positioned parent (previews) |
+| `data-animate` | 16fps shimmer (`components.js`) |
+
+## Framer mapping
+
+- `GrainOverlay` (`MhR7Ukl`) portals a fixed layer to `<body>`. Controls: Grain on, Clear Nav on, Grain Opacity 0.1, Blend multiply, Color `#501d07`, Exposure -0.58, Contrast 2.35, Grain Size 1.14, Detail 4, Animate on, Shimmer FPS 16, Z-Index 10.
+- On `/play` and `/play-hover-preview` the instance is static outside WebKit and `disableOnWebKit=true`. Keep it that way (Play performance contract).
+
+## Don't
+
+- Don't add grain to individual components or images.
+- Don't use a PNG noise texture instead.
+
+---
+
+<!-- content/patterns/home.md -->
+
+---
+title: Home
+section: Patterns
+order: 1
+description: Name, descriptor, six selected projects, a short About, then the footer. The ten-second read.
+status: live
+framer: Page "/" (Home)
+---
+
+# Home
+
+## Goal
+
+A senior design lead should get the read in ten seconds: **brand designer, systems thinker, high craft, real shipped work.** Home shows six projects, not all of them.
+
+## Structure
+
+| # | Section | Components | Notes |
+| --- | --- | --- | --- |
+| 0 | Boot (first visit) | [Page Loader](../components/page-loader.md) | Home only |
+| 1 | Nav | [Navigation](../components/navigation.md) | Same as every page |
+| 2 | Hero | [Hero](../components/hero.md) (home) | Name, two-line descriptor, link list + ©2026, rule |
+| 3 | Selected work | [Section Header](../components/section-header.md), [Project Grid](../components/project-grid.md) | 6 projects, 2 columns, "View all" right-aligned below |
+| 4 | About Micah | Section Header, portrait [Media Frame](../components/media-frame.md), Body L, [Action](../components/action.md) "Read more" | Portrait left, copy right. Hovering the image or the link triggers both (image scale + link flip) |
+| 5 | Scroll to top | [Scroll to Top](../components/scroll-to-top.md) | Right-aligned |
+| 6 | Footer | [Footer](../components/footer.md) | Forest Green |
+| n/a | Texture | [Grain Overlay](../components/grain-overlay.md) | Page-level |
+
+## Example (condensed)
+
+```html example bleed
+<div class="mh-container" style="padding-block:20px 72px">
+  <header class="mh-hero" style="padding-top:72px">
+    <h1 class="mh-hero__name mh-text-display-xl">Micah Hoang</h1>
+    <p class="mh-hero__descriptor mh-text-heading">Brand designer with a systems mind.</p>
+    <div class="mh-hero__bar">
+      <ul class="mh-link-list mh-label"><li><a class="mh-link" href="#">LinkedIn</a></li><li><a class="mh-link" href="#">Resume</a></li><li><a class="mh-link" href="#">Email</a></li><li><a class="mh-link" href="#">Cosmos</a></li></ul>
+      <span class="mh-label">©2026</span>
+    </div>
+  </header>
+  <section style="margin-top:72px">
+    <h2 class="mh-text-display-m" style="margin:0 0 72px">Selected work</h2>
+    <ul class="mh-project-grid">
+      <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
+      <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
+    </ul>
+    <div style="display:flex;justify-content:flex-end;margin-top:40px"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
+  </section>
+</div>
+```
+
+## Rules
+
+- **Selected-work order** is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon & Schuster, National Park Playing Cards). It comes from the CMS, not code.
+- Six projects, never more. Everything else lives in the Index.
+- No hero image. The first image a visitor sees is project 1.
+- Vertical rhythm: about 144px from hero to Selected work, 72px from section title to grid, 144px before About.
+
+## Framer mapping
+
+- Selected work: `HomeSelectedWorkGrid` (`FecepLS`), which also owns the About portrait/link linked hover.
+- Boot and transitions: `PageTransition` (`gmalnRr`).
+- Home social labels: `TextEncryptionEffect` (`p7tSTaD`).
+
+---
+
+<!-- content/patterns/case-study.md -->
+
+---
+title: Case Study
+section: Patterns
+order: 2
+description: The template every project page follows. Two-tone title, full-bleed media, fact sheet, then titled chapters of media and short text.
+status: live
+framer: Bespoke pages /case-studies/{slug} (one per CMS item)
+---
+
+# Case Study
+
+## Goal
+
+Show the work in context and say exactly what Micah did. The media carries the story; text is short, specific and in the first person.
+
+## Structure
+
+| # | Section | Components | Notes |
+| --- | --- | --- | --- |
+| 1 | Nav | [Navigation](../components/navigation.md) | |
+| 2 | Title | [Hero](../components/hero.md) (case-study) | Bold project name + Light Gray continuation, Display L |
+| 3 | Hero media | [Media Frame](../components/media-frame.md) | Full bleed (edge to edge, no gutter), 16:9 or wider, video preferred |
+| 4 | Fact sheet | [Meta Grid](../components/meta-grid.md) | About, Industry / Scope, Credits, Year |
+| 5…n | Chapters | Heading (35px, near-black) + galleries + Body (18px, Graphite, ≤620px) | e.g. The Insight, Strategy, Visual Identity, Brand in the World, Interface, Designed to Ship |
+| | Testimonial | [Testimonial](../components/testimonial.md) | Optional, real quotes only |
+| n+1 | Other projects | [Section Header](../components/section-header.md), [Project Grid](../components/project-grid.md) `data-columns="3"` | Three projects, no tags |
+| n+2 | Footer | [Footer](../components/footer.md) | |
+
+Every image on the page is [Lightbox](../components/lightbox.md)-enabled.
+
+## Example (condensed)
+
+```html example bleed
+<article>
+  <header class="mh-hero mh-container" data-variant="case-study" style="padding-top:72px;padding-bottom:72px">
+    <h1 class="mh-hero__name">Gaia <span class="mh-hero__continuation">Turning noticing into a way of caring for the living world.</span></h1>
+  </header>
+  <div class="mh-media" data-ratio="16:9" data-mh-lightbox><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>
+  <div class="mh-container" style="padding-block:40px 72px">
+    <div class="mh-meta-grid">
+      <dl class="mh-meta-grid__col"><div class="mh-meta-grid__item"><dt class="mh-label" data-leading="relaxed">/ About the project</dt><dd class="mh-text-body-lg">A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care.</dd></div></dl>
+      <dl class="mh-meta-grid__col"><div class="mh-meta-grid__item"><dt class="mh-label" data-leading="relaxed">/ Scope</dt><dd class="mh-text-body-lg">Visual Identity, UX/UI, Strategy</dd></div><div class="mh-meta-grid__item"><dt class="mh-label" data-leading="relaxed">/ Year</dt><dd class="mh-text-body-lg">2026</dd></div></dl>
+    </div>
+    <section style="margin-top:96px">
+      <h2 class="mh-text-heading mh-text-strong" style="margin:0 0 40px">The Insight</h2>
+      <p class="mh-text-body mh-text-body mh-measure" style="margin:0">iNaturalist lets people photograph an organism, record where they found it, and share it with a community that helps identify it.</p>
+    </section>
+  </div>
+</article>
+```
+
+## Rules
+
+- **Title**: the project name plus one line of what it does for people, in the visitor's terms. Under about 12 words in the continuation.
+- **Chapters**: 4–7 chapters, each a Heading (sentence or Title Case as on the live pages), one gallery, and 1–3 short paragraphs. Paragraphs sit beside or under media, max 620px.
+- **Text color**: chapter headings near-black (`--mh-text-strong`), body Graphite (`--mh-text-body`), meta values near-black.
+- **Media first**: lead each chapter with media. Galleries use the case-study gallery components (justified grid, double stack, matched pair); don't invent new layouts.
+- **Credits**: name collaborators and agencies precisely.
+- **Work in progress**: unfinished case studies are gated by `CaseStudyWorkInProgressGate` (`Vu82U8E`); see `docs/case-study-wip-gate.md`.
+
+## Framer mapping
+
+- Each case study is a bespoke page per CMS item (`All Projects`, `yTHrQWMIY`); see `docs/case-study-cms-workflow.md` and `docs/case-study-seo-settings.md`.
+- Page-wide controllers: `CaseStudyControllers` (`z13WRHS`, lightbox + link repair), `CaseStudyVideoManager` (`rGMwETR`), `CaseStudyMobileDescriptorLayout` (`W62Sy75`).
+- Galleries: `CaseStudyJustifiedMediaGrid` (`c0iPrbN`), `DoubleStackGalleryGrid`, `MatchedStackMediaPair`, `FixedHeightMediaRows` (`IthLMt_`).
+- Other projects: `OtherProjectCardRestored` (`vlwa5Cz`).
+
+---
+
+<!-- content/patterns/index-archive.md -->
+
+---
+title: Index
+section: Patterns
+order: 3
+description: The complete archive. Filters across the top, a grid/list toggle, and a ruled year-by-year list.
+status: live
+framer: Page "/index"; IndexPageGridPreview (LgIzFjJ) wrapping IndexPage (rgAZFOv)
+---
+
+# Index
+
+## Goal
+
+Everything Micah has made, scannable in seconds and filterable by year, discipline and industry. Home curates; the Index is the full record.
+
+## Structure
+
+| # | Section | Components | Notes |
+| --- | --- | --- | --- |
+| 1 | Nav | [Navigation](../components/navigation.md) | |
+| 2 | Title | Display M "Index" | Rises in on arrival |
+| 3 | Filters | [Filter Group](../components/filter-group.md) | Year / Discipline / Industry; "Clear filters" reserved space |
+| 4 | View | [View Toggle](../components/view-toggle.md) | Right-aligned: GRID / LIST |
+| 5a | List view | [Index List](../components/index-list.md) | Year groups, ruled rows |
+| 5b | Grid view | [Project Grid](../components/project-grid.md) `data-columns="3"` | Cards with tags; tags toggle filters |
+| 6 | Footer | [Footer](../components/footer.md) | |
+
+## Example (condensed)
+
+```html example bleed
+<div class="mh-container" style="padding-block:40px 72px">
+  <h1 class="mh-text-display-m" style="margin:0 0 72px">Index</h1>
+  <div class="mh-filter" style="margin-bottom:40px">
+    <fieldset class="mh-filter__group"><legend class="mh-filter__heading mh-label">Year</legend><button class="mh-filter__item" type="button" aria-pressed="false">2026</button><button class="mh-filter__item" type="button" aria-pressed="false">2025</button></fieldset>
+    <fieldset class="mh-filter__group"><legend class="mh-filter__heading mh-label">Discipline</legend><button class="mh-filter__item" type="button" aria-pressed="false">Visual identity</button><button class="mh-filter__item" type="button" aria-pressed="false">2D motion</button></fieldset>
+    <fieldset class="mh-filter__group"><legend class="mh-filter__heading mh-label">Industry</legend><button class="mh-filter__item" type="button" aria-pressed="false">Nature</button><button class="mh-filter__item" type="button" aria-pressed="false">Technology</button></fieldset>
+    <button class="mh-filter__clear mh-action" type="button">Clear filters</button>
+  </div>
+  <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+    <div class="mh-view-toggle" role="group" aria-label="View"><button type="button" value="grid" aria-pressed="false">Grid</button><span aria-hidden="true">/</span><button type="button" value="list" aria-pressed="true">List</button></div>
+  </div>
+  <ol class="mh-index" reversed>
+    <li class="mh-index__group"><h2 class="mh-index__year">2026</h2><ul class="mh-index__rows">
+      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity, UX/UI</span><span class="mh-index__industry mh-label">Nature</span></a></li>
+      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity</span><span class="mh-index__industry mh-label">Technology</span></a></li>
+    </ul></li>
+  </ol>
+</div>
+```
+
+## Rules
+
+- List is the default view; Grid is one click away. Both read from the same CMS rows.
+- Filters never move the layout: "Clear filters" is always rendered and only toggles visibility; the list doesn't remount on filter changes.
+- Filter state lives in the URL (`#service=…` in, `?service=…` out) so filtered views can be shared.
+- First arrival reveals content progressively (6 rows, then +12 per frame); later filter changes are instant.
+- Every project in the CMS appears here, including ones not on Home.
+
+## Framer mapping
+
+- `IndexPageGridPreview` (`LgIzFjJ`) is the mounted wrapper and supplies `gridLayoutVariant="figma"`. Overwriting it silently breaks the grid. It wraps `IndexPage` (`rgAZFOv`).
+- Read `docs/index-component-instructions.md` before any change. CMS mode is generated-module only; no `ProjectRegistrar`, manual `projects`, `DEFAULT_PROJECTS` or hard-coded media.
+
+---
+
+<!-- tokens/tokens.json -->
+
+```json
+{
+  "$description": "Micah Hoang design tokens. Source of truth for code/design-system. Format: W3C Design Tokens (DTCG) with $value/$type. Values were measured from the published micahhoang.com and the Framer text/color styles on 2026-10-01. Edit here, then run `node build.mjs` to regenerate tokens.css. Supersedes code/tokens/micahhoang-tokens.json (Manrope era, stale).",
+  "color": {
+    "$type": "color",
+    "primitive": {
+      "cream": { "$value": "#F7F5F0", "$description": "Framer style /Cream. Page background, text on Forest Green." },
+      "forest-green": { "$value": "#233324", "$description": "Framer style /Forest Green. Brand color: headings, nav, mono labels; inverse surface for footer and boot loader." },
+      "accent-green": { "$value": "#25593A", "$description": "Interactive green. Hover/active for tags, filters and index controls. Never a fill." },
+      "near-black": { "$value": "#141414", "$description": "Rules, dividers, index list text, lightbox chrome, emphasized body." },
+      "graphite": { "$value": "#525252", "$description": "Long-form body copy on case studies." },
+      "light-gray": { "$value": "#979797", "$description": "Framer style Light Gray. Secondary headline line, tag text, thumbnail stroke." },
+      "white": { "$value": "#FFFFFF", "$description": "Lightbox backdrop, media placeholder." },
+      "white-60": { "$value": "#FFFFFF99", "$description": "Muted text on Forest Green." },
+      "grain-umber": { "$value": "#501D07", "$description": "Grain overlay tint. Used only in the texture layer." }
+    },
+    "cream": {
+      "$description": "Semantic roles on the default Cream surface (data-surface=\"cream\").",
+      "bg": {
+        "page": { "$value": "{color.primitive.cream}", "$description": "Body and page background." },
+        "inverse": { "$value": "{color.primitive.forest-green}", "$description": "Footer, boot loader, any inverted block." },
+        "media": { "$value": "{color.primitive.white}", "$description": "Placeholder behind media before it loads; lightbox backdrop." },
+        "hover": { "$value": "#1414140A", "$description": "Row hover wash (near-black at ~3.5%)." }
+      },
+      "text": {
+        "brand": { "$value": "{color.primitive.forest-green}", "$description": "Display type, nav, mono labels, section headers." },
+        "strong": { "$value": "{color.primitive.near-black}", "$description": "Lead body, metadata values, index rows, H3." },
+        "body": { "$value": "{color.primitive.graphite}", "$description": "Long-form paragraphs." },
+        "muted": { "$value": "{color.primitive.light-gray}", "$description": "Second headline line, tags, tertiary meta." },
+        "interactive": { "$value": "{color.primitive.accent-green}", "$description": "Hover and active state for tags, filters, toggles." }
+      },
+      "border": {
+        "rule": { "$value": "{color.primitive.near-black}", "$description": "1px full-width rules and dividers." },
+        "stroke": { "$value": "{color.primitive.light-gray}", "$description": "Tag outline, optional 1px media stroke." }
+      }
+    },
+    "green": {
+      "$description": "Semantic roles on the Forest Green surface (data-surface=\"green\").",
+      "bg": {
+        "page": { "$value": "{color.primitive.forest-green}" },
+        "inverse": { "$value": "{color.primitive.cream}" },
+        "media": { "$value": "{color.primitive.white}" },
+        "hover": { "$value": "#F7F5F014" }
+      },
+      "text": {
+        "brand": { "$value": "{color.primitive.cream}" },
+        "strong": { "$value": "{color.primitive.cream}" },
+        "body": { "$value": "{color.primitive.white-60}" },
+        "muted": { "$value": "{color.primitive.white-60}" },
+        "interactive": { "$value": "{color.primitive.white}" }
+      },
+      "border": {
+        "rule": { "$value": "{color.primitive.cream}" },
+        "stroke": { "$value": "{color.primitive.white-60}" }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": { "$value": ["MH GT Standard", "GT Standard L Regular", "GT Standard Trial L Rg", "Helvetica Neue", "Arial", "sans-serif"], "$description": "GT Standard L. 400 Regular, 500 Medium (Trial L Md), 700 Bold (Trial L Bd)." },
+      "mono": { "$value": ["MH GT Standard Mono", "GT Standard Mono Regular", "GT Standard Mono Trial Rg", "Azeret Mono", "SF Mono", "ui-monospace", "monospace"], "$description": "GT Standard Mono. Always uppercase, 12-13px." }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "bold": { "$value": 700 }
+    }
+  },
+  "type": {
+    "$description": "Composite text styles. size/leading/tracking per breakpoint: desktop (>=1200), tablet (810-1199), mobile (<810). Tracking is in em.",
+    "display-xl": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 700, "fontSize": { "desktop": "120px", "tablet": "94px", "mobile": "58px" }, "lineHeight": { "desktop": "100%", "tablet": "114%", "mobile": "114%" }, "letterSpacing": "-0.01em", "textTransform": "capitalize" }, "$description": "Home hero name only. Framer: Heading 1. One per site." },
+    "display-l": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 700, "fontSize": { "desktop": "70px", "tablet": "53px", "mobile": "42px" }, "lineHeight": "100%", "letterSpacing": "-0.01em" }, "$description": "Case-study title plus muted continuation line. Framer: Heading 2b." },
+    "display-m": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "70px", "tablet": "53px", "mobile": "42px" }, "lineHeight": "100%", "letterSpacing": "-0.01em" }, "$description": "Section header (Selected work, About Micah, Index). Framer: Heading 2." },
+    "display-footer": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "80px", "tablet": "64px", "mobile": "40px" }, "lineHeight": "100%", "letterSpacing": "-0.02em", "textTransform": "uppercase" }, "$description": "Footer contact links on Forest Green." },
+    "heading": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "35px", "tablet": "24px", "mobile": "20px" }, "lineHeight": "110%", "letterSpacing": "-0.01em" }, "$description": "Hero descriptor and case-study section titles. Framer: Heading 3." },
+    "title": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "22px", "tablet": "22px", "mobile": "22px" }, "lineHeight": "120%", "letterSpacing": "0", "textTransform": "uppercase" }, "$description": "Index row project titles (uppercase GT Standard). Framer: Index Title (scaled)." },
+    "body-lg": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "22px", "tablet": "22px", "mobile": "18px" }, "lineHeight": "120%", "letterSpacing": "0.01em" }, "$description": "Lead paragraphs, About copy, metadata values. Framer: Body." },
+    "body": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "18px", "tablet": "18px", "mobile": "16px" }, "lineHeight": "140%", "letterSpacing": "0" }, "$description": "Case-study long-form body. Color text.body. Max ~620px measure." },
+    "body-sm": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "140%", "letterSpacing": "0" }, "$description": "Small paragraphs, captions. Framer: Paragraph Regular." },
+    "label": { "$type": "typography", "$value": { "fontFamily": "{font.family.mono}", "fontWeight": 400, "fontSize": "13px", "lineHeight": "100%", "letterSpacing": "0", "textTransform": "uppercase" }, "$description": "Mono label: nav, meta, eyebrows, actions. Framer: Heading 5 / Body - 100%." },
+    "label-sm": { "$type": "typography", "$value": { "fontFamily": "{font.family.mono}", "fontWeight": 400, "fontSize": "12px", "lineHeight": "100%", "letterSpacing": "0", "textTransform": "uppercase" }, "$description": "Tags below 1200px, dense meta." }
+  },
+  "space": {
+    "$type": "dimension",
+    "1": { "$value": "4px" },
+    "2": { "$value": "6px" },
+    "3": { "$value": "8px" },
+    "4": { "$value": "12px" },
+    "5": { "$value": "16px" },
+    "6": { "$value": "20px" },
+    "7": { "$value": "24px" },
+    "8": { "$value": "30px" },
+    "9": { "$value": "40px" },
+    "10": { "$value": "50px" },
+    "11": { "$value": "72px" },
+    "12": { "$value": "96px" },
+    "13": { "$value": "144px" }
+  },
+  "layout": {
+    "$type": "dimension",
+    "gutter": { "$value": { "desktop": "20px", "tablet": "20px", "mobile": "15px" }, "$description": "Page side padding. Content spans edge to edge inside it." },
+    "column-gap": { "$value": "20px", "$description": "Card grids (selected work, index grid)." },
+    "split-gap": { "$value": "30px", "$description": "Two-column text splits (case-study meta grid)." },
+    "card-row-gap": { "$value": "50px", "$description": "Vertical gap between project cards." },
+    "nav-height": { "$value": "53px" },
+    "measure": { "$value": "620px", "$description": "Max width for long-form body." },
+    "breakpoint-tablet": { "$value": "810px" },
+    "breakpoint-desktop": { "$value": "1200px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "none": { "$value": "0px", "$description": "Default. Media, sections and surfaces are square." },
+    "hairline": { "$value": "2px", "$description": "Index row hover wash only." },
+    "pill": { "$value": "250px", "$description": "Tags and pill actions." }
+  },
+  "border": {
+    "$type": "dimension",
+    "hairline": { "$value": "1px", "$description": "The only border width in the system." }
+  },
+  "motion": {
+    "ease": {
+      "$type": "cubicBezier",
+      "snappy": { "$value": [0.16, 1, 0.3, 1], "$description": "Default. Decelerating ease-out for reveals, hover transforms, media scale, fades." },
+      "smooth": { "$value": [0.12, 0.23, 0.5, 1], "$description": "Symmetric: line/rule draws, small UI state changes, row hover wash." },
+      "springy": { "$value": [0.25, 1, 0.5, 1], "$description": "Gesture-only (cursor trails, Line Animation draw). Do not use for UI state." }
+    },
+    "duration": {
+      "$type": "duration",
+      "instant": { "$value": "150ms", "$description": "Row hover wash." },
+      "fast": { "$value": "250ms", "$description": "Color changes (tag hover)." },
+      "zoom": { "$value": "260ms", "$description": "Lightbox zoom." },
+      "base": { "$value": "420ms", "$description": "Hover transforms: flip rail, media scale." },
+      "slow": { "$value": "620ms", "$description": "Index flip rail, media fade-in." },
+      "reveal": { "$value": "900ms", "$description": "Type mask reveal; also scroll-to-top travel." },
+      "page": { "$value": "1200ms", "$description": "Boot curtain lift / page transition." },
+      "draw": { "$value": "2000ms", "$description": "Rule line draw (200ms delay)." }
+    },
+    "stagger": { "$type": "duration", "reveal": { "$value": "90ms" }, "media": { "$value": "58ms" } },
+    "distance": {
+      "$type": "dimension",
+      "reveal": { "$value": "115%", "$description": "Type mask hidden start (translateY)." },
+      "flip-gap": { "$value": "5px", "$description": "Gap between stacked copies in the flip rail." }
+    },
+    "scale": { "$type": "number", "hover": { "$value": 1.02, "$description": "Media scale on card hover." } },
+    "spring": {
+      "$description": "For NEW gesture-driven UI only (drag, swipe, sheets, anything the user can grab mid-flight). Existing live components keep their bezier curves. Apple's damping ratio + response model; in Motion/Framer Motion use { type: 'spring', bounce: 1 - damping, duration: response }.",
+      "default": { "$type": "spring", "$value": { "damping": 1.0, "response": 0.4 }, "$description": "Critically damped, no overshoot. Repositioning, settling, snapping." },
+      "quick": { "$type": "spring", "$value": { "damping": 1.0, "response": 0.3 }, "$description": "Small, close-range moves: toggles, thumbs, short slides." },
+      "momentum": { "$type": "spring", "$value": { "damping": 0.8, "response": 0.4 }, "$description": "Only after a flick or throw carried velocity. Never for UI that just appeared." }
+    },
+    "gesture": {
+      "$description": "Values the live /play archive already ships (ArchivePlayground.tsx). Reuse for new gesture UI; do not retune /play.",
+      "tap-threshold": { "$type": "dimension", "$value": "18px", "$description": "Movement before a press becomes a drag." },
+      "throw-friction": { "$type": "number", "$value": 0.85, "$description": "Velocity multiplier per 60fps frame (exponential decay, ~0.990 per ms, Apple's 'snappy' rate)." },
+      "throw-min-speed": { "$type": "number", "$value": 220, "$description": "px/s below which a release does not throw." },
+      "throw-max-speed": { "$type": "number", "$value": 5200, "$description": "px/s clamp." },
+      "throw-velocity-scale": { "$type": "number", "$value": 1.75, "$description": "Release velocity multiplier." }
+    }
+  },
+  "texture": {
+    "grain": {
+      "opacity": { "$type": "number", "$value": 0.1 },
+      "blend": { "$type": "string", "$value": "multiply" },
+      "color": { "$type": "color", "$value": "{color.primitive.grain-umber}" },
+      "base-frequency": { "$type": "number", "$value": 1.14, "$description": "feTurbulence baseFrequency (Framer control: Grain Size)." },
+      "octaves": { "$type": "number", "$value": 4, "$description": "Framer control: Detail." },
+      "exposure": { "$type": "number", "$value": -0.58, "$description": "feFuncRGB intercept." },
+      "contrast": { "$type": "number", "$value": 2.35, "$description": "feFuncRGB slope." },
+      "shimmer-fps": { "$type": "number", "$value": 16, "$description": "Seed re-roll rate when animated." }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "none": { "$value": "none", "$description": "The brand is flat. Separate layers with rules, surfaces and space, never shadows." }
+  },
+  "z": {
+    "$type": "number",
+    "grain": { "$value": 10, "$description": "Grain starts below the nav (Clear Nav), so it never needs to sit above it." },
+    "nav": { "$value": 11 },
+    "overlay": { "$value": 1000 },
+    "loader": { "$value": 2000 }
+  }
+}
+```

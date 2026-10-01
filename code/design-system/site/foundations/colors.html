@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colors – Micah Hoang Design System</title>
+<meta name="description" content="Two surfaces, Cream and Forest Green, and the semantic roles that re-map between them.">
+<link rel="alternate" type="text/markdown" href="../../content/foundations/colors.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link is-current" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Foundations</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Colors</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/foundations/colors.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">Two surfaces, Cream and Forest Green, and the semantic roles that re-map between them.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="overview"><a class="ds-anchor" href="#overview">Overview</a></h2>
+<p>The palette is deliberately small: a warm Cream ground, one Forest Green for brand and inversion, and a few neutrals for hierarchy. Project media supplies the rest of the color. Always write <strong>semantic roles</strong> (<code>--mh-text-muted</code>), never primitives (<code>--mh-color-light-gray</code>). Roles re-map automatically inside <code>data-surface="green"</code>.</p>
+<h2 id="primitives"><a class="ds-anchor" href="#primitives">Primitives</a></h2>
+<div class="ds-swatches"><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-cream)"></div><div class="ds-swatch__meta"><span class="mh-label">cream</span><code>#F7F5F0</code><code>--mh-color-cream</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-forest-green)"></div><div class="ds-swatch__meta"><span class="mh-label">forest green</span><code>#233324</code><code>--mh-color-forest-green</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-accent-green)"></div><div class="ds-swatch__meta"><span class="mh-label">accent green</span><code>#25593A</code><code>--mh-color-accent-green</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-near-black)"></div><div class="ds-swatch__meta"><span class="mh-label">near black</span><code>#141414</code><code>--mh-color-near-black</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-graphite)"></div><div class="ds-swatch__meta"><span class="mh-label">graphite</span><code>#525252</code><code>--mh-color-graphite</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-light-gray)"></div><div class="ds-swatch__meta"><span class="mh-label">light gray</span><code>#979797</code><code>--mh-color-light-gray</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-white)"></div><div class="ds-swatch__meta"><span class="mh-label">white</span><code>#FFFFFF</code><code>--mh-color-white</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-white-60)"></div><div class="ds-swatch__meta"><span class="mh-label">white 60</span><code>#FFFFFF99</code><code>--mh-color-white-60</code></div></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--mh-color-grain-umber)"></div><div class="ds-swatch__meta"><span class="mh-label">grain umber</span><code>#501D07</code><code>--mh-color-grain-umber</code></div></div></div>
+<div class="ds-table"><table><thead><tr><th>Token</th><th>Value</th><th>Framer style</th><th>Role</th></tr></thead><tbody><tr><td><code>--mh-color-cream</code></td><td><code>#F7F5F0</code></td><td><code>/Cream</code></td><td>Page background; text on Forest Green</td></tr><tr><td><code>--mh-color-forest-green</code></td><td><code>#233324</code></td><td><code>/Forest Green</code></td><td>Brand: display type, nav, labels; inverse surface</td></tr><tr><td><code>--mh-color-accent-green</code></td><td><code>#25593A</code></td><td>(code-component default)</td><td>Hover / active for tags, filters, toggles</td></tr><tr><td><code>--mh-color-near-black</code></td><td><code>#141414</code></td><td>(token, unnamed)</td><td>Rules, index list, lightbox chrome, strong body</td></tr><tr><td><code>--mh-color-graphite</code></td><td><code>#525252</code></td><td>(token, unnamed)</td><td>Long-form case-study body</td></tr><tr><td><code>--mh-color-light-gray</code></td><td><code>#979797</code></td><td><code>Light Gray</code></td><td>Muted text, tags, media stroke</td></tr><tr><td><code>--mh-color-white</code></td><td><code>#FFFFFF</code></td><td><code>White</code></td><td>Lightbox backdrop, media placeholder</td></tr><tr><td><code>--mh-color-white-60</code></td><td><code>#FFFFFF99</code></td><td>(token, unnamed)</td><td>Muted text on Forest Green</td></tr><tr><td><code>--mh-color-grain-umber</code></td><td><code>#501D07</code></td><td>(GrainOverlay control)</td><td>Grain tint only</td></tr></tbody></table></div>
+<h2 id="surfaces"><a class="ds-anchor" href="#surfaces">Surfaces</a></h2>
+<p>Add <code>data-surface="cream"</code> (default) or <code>data-surface="green"</code> to any container. It paints <code>--mh-bg-page</code> and re-maps every role below for its children.</p>
+<div class="ds-roles-wrap"><div class="ds-roles" data-surface="cream"><span class="mh-label ds-roles__title">cream surface</span><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-page)"></div><code>--mh-bg-page</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-inverse)"></div><code>--mh-bg-inverse</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-media)"></div><code>--mh-bg-media</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-hover)"></div><code>--mh-bg-hover</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-brand)"></div><code>--mh-text-brand</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-strong)"></div><code>--mh-text-strong</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-body)"></div><code>--mh-text-body</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-muted)"></div><code>--mh-text-muted</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-interactive)"></div><code>--mh-text-interactive</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-border-rule)"></div><code>--mh-border-rule</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-border-stroke)"></div><code>--mh-border-stroke</code></div></div><div class="ds-roles" data-surface="green"><span class="mh-label ds-roles__title">green surface</span><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-page)"></div><code>--mh-bg-page</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-inverse)"></div><code>--mh-bg-inverse</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-media)"></div><code>--mh-bg-media</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-bg-hover)"></div><code>--mh-bg-hover</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-brand)"></div><code>--mh-text-brand</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-strong)"></div><code>--mh-text-strong</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-body)"></div><code>--mh-text-body</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-muted)"></div><code>--mh-text-muted</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-text-interactive)"></div><code>--mh-text-interactive</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-border-rule)"></div><code>--mh-border-rule</code></div><div class="ds-role"><div class="ds-role__chip" style="background:var(--mh-border-stroke)"></div><code>--mh-border-stroke</code></div></div></div>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-row">
+  <div data-surface="cream" style="padding:24px;flex:1">
+    <p class="mh-label">Cream surface</p>
+    <p class="mh-text-heading" style="margin:16px 0 8px">Brand designer with a systems mind.</p>
+    <p class="mh-text-body-sm mh-text-muted" style="margin:0">Muted supporting line.</p>
+  </div>
+  <div data-surface="green" style="padding:24px;flex:1">
+    <p class="mh-label">Green surface</p>
+    <p class="mh-text-heading" style="margin:16px 0 8px">Brand designer with a systems mind.</p>
+    <p class="mh-text-body-sm mh-text-muted" style="margin:0">Muted supporting line.</p>
+  </div>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-row"&gt;
+  &lt;div data-surface="cream" style="padding:24px;flex:1"&gt;
+    &lt;p class="mh-label"&gt;Cream surface&lt;/p&gt;
+    &lt;p class="mh-text-heading" style="margin:16px 0 8px"&gt;Brand designer with a systems mind.&lt;/p&gt;
+    &lt;p class="mh-text-body-sm mh-text-muted" style="margin:0"&gt;Muted supporting line.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div data-surface="green" style="padding:24px;flex:1"&gt;
+    &lt;p class="mh-label"&gt;Green surface&lt;/p&gt;
+    &lt;p class="mh-text-heading" style="margin:16px 0 8px"&gt;Brand designer with a systems mind.&lt;/p&gt;
+    &lt;p class="mh-text-body-sm mh-text-muted" style="margin:0"&gt;Muted supporting line.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h2 id="semantic-roles"><a class="ds-anchor" href="#semantic-roles">Semantic roles</a></h2>
+<div class="ds-table"><table><thead><tr><th>CSS variable</th><th>Cream</th><th>Green</th><th>Use for</th></tr></thead><tbody><tr><td><code>--mh-bg-page</code></td><td>Cream</td><td>Forest Green</td><td>Surface background</td></tr><tr><td><code>--mh-bg-inverse</code></td><td>Forest Green</td><td>Cream</td><td>A block that inverts its parent</td></tr><tr><td><code>--mh-bg-media</code></td><td>White</td><td>White</td><td>Placeholder behind loading media, lightbox</td></tr><tr><td><code>--mh-bg-hover</code></td><td>near-black 4%</td><td>cream 8%</td><td>Row hover wash, code background</td></tr><tr><td><code>--mh-text-brand</code></td><td>Forest Green</td><td>Cream</td><td>Display type, nav, labels, section headers</td></tr><tr><td><code>--mh-text-strong</code></td><td>Near Black</td><td>Cream</td><td>Lead body, meta values, index rows, H3</td></tr><tr><td><code>--mh-text-body</code></td><td>Graphite</td><td>White 60%</td><td>Long-form paragraphs</td></tr><tr><td><code>--mh-text-muted</code></td><td>Light Gray</td><td>White 60%</td><td>Headline continuation, tags, tertiary meta</td></tr><tr><td><code>--mh-text-interactive</code></td><td>Accent Green</td><td>White</td><td>Hover / active state</td></tr><tr><td><code>--mh-border-rule</code></td><td>Near Black</td><td>Cream</td><td>1px rules and dividers</td></tr><tr><td><code>--mh-border-stroke</code></td><td>Light Gray</td><td>White 60%</td><td>Tag outlines, media stroke</td></tr></tbody></table></div>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<ul><li><strong>Forest Green is the brand color, not an accent.</strong> It sets display type and labels on Cream and becomes the whole surface for the footer and boot loader.</li><li><strong>Hierarchy comes from shifting neutrals</strong>: brand → strong → body → muted. Don't add colors to make something stand out; change its size or position.</li><li><strong>Interactive green appears only on hover/active.</strong> A resting tag is Light Gray; it turns Accent Green under the pointer or when selected.</li><li><strong>Rules are near-black at full opacity</strong>, not a soft gray. The site's crispness depends on this.</li><li><strong>Media placeholders are white</strong>, so a loading thumbnail reads as a paper card, not a gray hole.</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't use raw hex values; use roles.</li><li>Don't put Accent Green on large areas or as a button fill.</li><li>Don't introduce a third surface (no gray cards, no dark mode beyond Forest Green).</li><li>Don't use <code>code/tokens/micahhoang-tokens.json</code>: its <code>#027aff</code> CTA blue and Manrope type are pre-2026 and not on the live site.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/colors.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#primitives">Primitives</a><a href="#surfaces">Surfaces</a><a href="#semantic-roles">Semantic roles</a><a href="#usage">Usage</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

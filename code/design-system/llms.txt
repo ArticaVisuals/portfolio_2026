@@ -1,0 +1,51 @@
+# Micah Hoang Design System
+
+> The brand foundations, components and page patterns behind micahhoang.com: a brand designer's portfolio built in Framer. Cream and Forest Green, GT Standard and GT Standard Mono, flat surfaces, 1px rules, quiet motion.
+
+Every page is plain markdown under `content/`. Read `agents.md` first. Tokens live in `tokens/tokens.json` (CSS: `tokens/tokens.css`). A machine-readable component manifest is in `components.json`. The whole system in one file: `llms-full.txt`.
+
+## Overview
+
+- [Introduction](content/index.md): The visual foundations, components and page patterns behind micahhoang.com.
+
+## Foundations
+
+- [Principles](content/foundations/principles.md): Five words that settle design decisions, and the voice the site writes in.
+- [Interaction Principles](content/foundations/interaction.md): Apple's fluid-interface and design principles from its WWDC talks, applied to this brand. Each rule is labeled as already true, for new work, or a deliberate departure.
+- [Colors](content/foundations/colors.md): Two surfaces, Cream and Forest Green, and the semantic roles that re-map between them.
+- [Typography](content/foundations/typography.md): GT Standard for display and reading, GT Standard Mono for every label, and a scale with a huge top and a small bottom.
+- [Layout](content/foundations/layout.md): Edge-to-edge content inside a 20px gutter, two- and three-column grids, rules instead of boxes, three breakpoints.
+- [Motion](content/foundations/motion.md): Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.
+- [Gesture](content/foundations/gesture.md): How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.
+- [Texture](content/foundations/texture.md): The umber film grain that sits over every page, and how to keep it out of the way.
+- [Identity](content/foundations/identity.md): The name as wordmark, the ©2026 signature, and where each appears.
+
+## Components
+
+- [Mono Label](content/components/label.md): The uppercase 13px mono line that carries every piece of metadata, navigation and UI text on the site.
+- [Text Link](content/components/text-link.md): Mono links with the flip-rail hover, inline underlined links for running text, and comma-joined link lists.
+- [Action](content/components/action.md): The brand's button. Mono text with a flip rail, or an outlined pill. There is no filled button.
+- [Tag](content/components/tag.md): Outlined mono pills that name a project's disciplines and double as filters.
+- [Rule](content/components/rule.md): The 1px near-black line that does the work boxes and cards do elsewhere, with an optional draw-in.
+- [Section Header](content/components/section-header.md): A full-width rule followed by a Display M title. This is how every major section on the site starts.
+- [Navigation](content/components/navigation.md): The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.
+- [Footer](content/components/footer.md): A Forest Green block with oversized uppercase contact links and a mono base bar.
+- [Hero](content/components/hero.md): The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.
+- [Media Frame](content/components/media-frame.md): An aspect-locked, square-cornered frame for images and video, with a poster-under-video stack and an optional 1px stroke.
+- [Project Card](content/components/project-card.md): The main way work appears on the site. A numbered mono title that flips on hover, a 16:9 media frame, and discipline tags.
+- [Project Grid](content/components/project-grid.md): The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.
+- [Index List](content/components/index-list.md): The complete archive as a ruled table. Year groups, uppercase titles, discipline and industry columns, with a hover wash and a flip.
+- [Filter Group](content/components/filter-group.md): Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.
+- [View Toggle](content/components/view-toggle.md): A mono "GRID / LIST" switch that changes how the Index renders, with an underline on the active view.
+- [Meta Grid](content/components/meta-grid.md): The case-study fact sheet. "/ LABEL" mono headings over Body L values, in two columns.
+- [Lightbox](content/components/lightbox.md): A white full-screen viewer for case-study media, with thin near-black arrows and a quick zoom.
+- [Testimonial](content/components/testimonial.md): A large quote with name and role, stepped with typed arrows. Used inside case studies.
+- [Scroll to Top](content/components/scroll-to-top.md): A mono text action at the end of long pages that glides back to the top in 900ms.
+- [Page Loader](content/components/page-loader.md): The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.
+- [Grain Overlay](content/components/grain-overlay.md): The page-level SVG film grain, fixed under the nav, multiplied at 10%, with an optional 16fps shimmer.
+
+## Patterns
+
+- [Home](content/patterns/home.md): Name, descriptor, six selected projects, a short About, then the footer. The ten-second read.
+- [Case Study](content/patterns/case-study.md): The template every project page follows. Two-tone title, full-bleed media, fact sheet, then titled chapters of media and short text.
+- [Index](content/patterns/index-archive.md): The complete archive. Filters across the top, a grid/list toggle, and a ruled year-by-year list.

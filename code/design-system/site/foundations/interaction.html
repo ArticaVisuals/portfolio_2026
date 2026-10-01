@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interaction Principles – Micah Hoang Design System</title>
+<meta name="description" content="Apple's fluid-interface and design principles from its WWDC talks, applied to this brand. Each rule is labeled as already true, for new work, or a deliberate departure.">
+<link rel="alternate" type="text/markdown" href="../../content/foundations/interaction.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link is-current" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Foundations</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Interaction Principles</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/foundations/interaction.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">Apple's fluid-interface and design principles from its WWDC talks, applied to this brand. Each rule is labeled as already true, for new work, or a deliberate departure.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="how-to-read-this-page"><a class="ds-anchor" href="#how-to-read-this-page">How to read this page</a></h2>
+<p>This page applies Apple's interface guidance (WWDC <em>Designing Fluid Interfaces</em>, <em>The Details of UI Typography</em>, <em>Principles of Great Design</em>) to micahhoang.com. It is a <strong>lens, not a redesign</strong>. Every rule carries one of three labels:</p>
+<div class="ds-table"><table><thead><tr><th>Label</th><th>Meaning</th><th>What an agent may do</th></tr></thead><tbody><tr><td><strong>Already true</strong></td><td>The live site already behaves this way.</td><td>Preserve it. Use it as the reason the behavior exists.</td></tr><tr><td><strong>For new work</strong></td><td>Applies to components and pages that don't exist yet.</td><td>Follow it when building something new. <strong>Don't retrofit live components.</strong></td></tr><tr><td><strong>Departure</strong></td><td>The brand deliberately does something else.</td><td>Follow the brand. Don't "fix" it toward Apple's guidance.</td></tr></tbody></table></div>
+<p><strong>Changing a live behavior is out of scope for this page.</strong> Any change to how micahhoang.com looks or behaves needs Micah's explicit approval and a Framer publish. See <a href="#changing-the-live-site">Changing the live site</a>. The protected <code>/play</code> performance contracts in the repo's <code>AGENTS.md</code> always take precedence.</p>
+<h2 id="eight-principles-five-words"><a class="ds-anchor" href="#eight-principles-five-words">Eight principles, five words</a></h2>
+<p>Apple's eight design principles line up with the site's own five words (<a href="principles.html">Principles</a>). Use the site's words in copy and reviews; the Apple names are there to clarify the reasoning.</p>
+<div class="ds-table"><table><thead><tr><th>Apple principle</th><th>Site word</th><th>How it shows up here</th></tr></thead><tbody><tr><td>Purpose</td><td>Considered</td><td>Six projects on Home, not all of them. Every element earns its place.</td></tr><tr><td>Simplicity (not minimalism)</td><td>Quiet</td><td>Cream, one green, small labels. Hierarchy from order, size and space. The Index adds context instead of hiding it.</td></tr><tr><td>Craft</td><td>Considered</td><td>Every spacing, timing and color is a token you can defend.</td></tr><tr><td>Familiarity</td><td>Specific</td><td>Nav labels name their contents (Work, Play, Index, About). Same component, same behavior, same place on every page.</td></tr><tr><td>Agency</td><td>Specific</td><td>Filters are reversible ("Clear filters"); nothing traps the visitor; no confirmation dialogs because nothing is destructive.</td></tr><tr><td>Flexibility</td><td>Shipped</td><td>Three breakpoints, touch and pointer both supported, reduced motion respected.</td></tr><tr><td>Responsibility</td><td>Specific</td><td>Credits are exact; testimonials are real; no tracking-for-its-own-sake.</td></tr><tr><td>Delight</td><td>Alive</td><td>The result of the other seven: flip rails, rising type, a moving grain. Never confetti.</td></tr></tbody></table></div>
+<h2 id="motion-and-response"><a class="ds-anchor" href="#motion-and-response">Motion and response</a></h2>
+<div class="ds-table"><table><thead><tr><th>Rule</th><th>Label</th><th>Here</th></tr></thead><tbody><tr><td>Animations are interruptible and reverse from the current on-screen value</td><td><strong>Already true</strong></td><td>Flip rails, media scale and tag color are CSS transitions; leaving mid-hover reverses from the live position.</td></tr><tr><td>Enter and exit along the same path</td><td><strong>Already true</strong></td><td>Flip rail goes up and comes back down; lightbox zooms from and back to the clicked thumbnail; the boot curtain lifts up and off.</td></tr><tr><td>Anchor overlays to their source</td><td><strong>Already true</strong></td><td><code>CaseStudyLightbox</code> zooms out of the thumbnail rather than the screen center.</td></tr><tr><td>Default motion doesn't overshoot</td><td><strong>Already true</strong></td><td>The Snappy curve is a deceleration with no overshoot. No bounce anywhere in the UI.</td></tr><tr><td>Reduced motion means gentler, not none</td><td><strong>Already true</strong></td><td>Transitions collapse, reveals render in place, the grain stops shimmering, scroll-to-top jumps. Color and opacity feedback stays.</td></tr><tr><td>Respond on pointer-down, not release</td><td><strong>For new work</strong></td><td>New controls show their pressed state on <code>:active</code> / <code>pointerdown</code>. Live components keep their hover-led feedback.</td></tr><tr><td>Use springs for anything the user can grab</td><td><strong>For new work</strong></td><td>Use <code>motion.spring.*</code> tokens (damping 1.0, response 0.3–0.4s). Bounce (damping 0.8) only after a flick. See <a href="gesture.html">Gesture</a>.</td></tr><tr><td>Hand release velocity to the animation; project momentum</td><td><strong>For new work</strong></td><td>See <a href="gesture.html">Gesture</a>.</td></tr><tr><td>Rubber-band at edges instead of hard stops</td><td><strong>For new work</strong></td><td>For any new bounded drag. (<code>/play</code> wraps infinitely, so it has no edges.)</td></tr><tr><td>Fixed-duration, CSS-only motion for hover and reveal</td><td><strong>Departure, kept</strong></td><td>Hovers and reveals aren't gestures, so the bezier canon (Snappy / Smooth / Springy) stays. Springs are for grab-able things only.</td></tr></tbody></table></div>
+<h2 id="gesture"><a class="ds-anchor" href="#gesture">Gesture</a></h2>
+<div class="ds-table"><table><thead><tr><th>Rule</th><th>Label</th><th>Here</th></tr></thead><tbody><tr><td>1:1 tracking with pointer capture, respecting the grab offset</td><td><strong>Already true</strong></td><td><code>/play</code> captures the pointer and moves the world from its origin plus the pointer delta.</td></tr><tr><td>Movement threshold before committing to a drag</td><td><strong>Already true</strong></td><td><code>/play</code> uses 18px before a press becomes a drag; below that, it's a tap that opens the item.</td></tr><tr><td>Decompose 2D motion into independent X and Y</td><td><strong>Already true</strong></td><td><code>/play</code> tracks <code>vx</code> and <code>vy</code> separately with exponential decay.</td></tr><tr><td>Momentum continues after release</td><td><strong>Already true</strong></td><td><code>/play</code> throws with friction 0.85 per frame (≈0.990/ms, Apple's "snappy" deceleration).</td></tr></tbody></table></div>
+<h2 id="typography"><a class="ds-anchor" href="#typography">Typography</a></h2>
+<div class="ds-table"><table><thead><tr><th>Rule</th><th>Label</th><th>Here</th></tr></thead><tbody><tr><td>Tracking is size-specific: tighter as type grows</td><td><strong>Already true</strong></td><td>Display -1% (footer -2%), body 0 to +1%, mono 0. Keep new styles on this curve.</td></tr><tr><td>Leading is inverse to size</td><td><strong>Already true</strong></td><td>Display 100%, Heading 110%, Body L 120%, Body 140%.</td></tr><tr><td>Hierarchy from size, weight and leading together</td><td><strong>Already true</strong></td><td>Bold is reserved for the two display titles; everything else is Regular.</td></tr><tr><td>Default to the system font</td><td><strong>Departure</strong></td><td>GT Standard is the brand. Never substitute <code>system-ui</code> except as a fallback in the stack.</td></tr><tr><td>Scale with the user's text-size setting (<code>rem</code>)</td><td><strong>For new work</strong></td><td>New body-size text should survive 200% browser zoom without overlap. Display sizes stay in px, matching Framer.</td></tr></tbody></table></div>
+<h2 id="materials-and-depth"><a class="ds-anchor" href="#materials-and-depth">Materials and depth</a></h2>
+<div class="ds-table"><table><thead><tr><th>Rule</th><th>Label</th><th>Here</th></tr></thead><tbody><tr><td>Translucent, blurred bars with content scrolling underneath</td><td><strong>Departure</strong></td><td>The brand is flat. The nav sits on the opaque page surface; no <code>backdrop-filter</code>.</td></tr><tr><td>Scroll-edge fades instead of 1px dividers</td><td><strong>Departure</strong></td><td>1px near-black rules are core to the identity. Keep them.</td></tr><tr><td>Shadows that thicken with surface size</td><td><strong>Departure</strong></td><td>No shadows. Depth comes from surface (Cream vs Forest Green), scale and order.</td></tr><tr><td>Dim to focus for modal tasks</td><td><strong>Departure (adapted)</strong></td><td>The lightbox replaces the page with a white surface instead of dimming it; it is the only modal.</td></tr><tr><td><code>prefers-reduced-transparency</code></td><td>n/a</td><td>There is no translucency to reduce.</td></tr></tbody></table></div>
+<h2 id="feedback-and-wayfinding"><a class="ds-anchor" href="#feedback-and-wayfinding">Feedback and wayfinding</a></h2>
+<div class="ds-table"><table><thead><tr><th>Rule</th><th>Label</th><th>Here</th></tr></thead><tbody><tr><td>Four feedback kinds: status, completion, warning, error</td><td><strong>For new work</strong></td><td>The site has no forms today. A new form validates inline, in mono labels, using <code>--mh-text-strong</code>. Don't add a red; ask first.</td></tr><tr><td>Where am I / where can I go / how do I get out</td><td><strong>Already true (partly)</strong></td><td>Persistent nav on every page; logo link home; lightbox closes with Esc. The nav has no visible current-page state; that's a live decision, not something to add.</td></tr><tr><td>Proximity implies relationship</td><td><strong>Already true</strong></td><td>Tags sit under their card; the view toggle shares a line with the list it controls.</td></tr><tr><td>Multimodal feedback (sound, haptics)</td><td><strong>Departure</strong></td><td>None. A portfolio isn't the place for it.</td></tr></tbody></table></div>
+<h2 id="accessibility-notes"><a class="ds-anchor" href="#accessibility-notes">Accessibility notes</a></h2>
+<ul><li>Light Gray <code>#979797</code> on Cream measures about <strong>2.7:1</strong>. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Light Gray for anything new that a visitor must read to understand the page; use <code>--mh-text-body</code> (Graphite, ~7.2:1) or stronger.</li><li>Forest Green on Cream ≈ 12:1; near-black on Cream ≈ 17:1; Cream on Forest Green ≈ 12:1.</li></ul>
+<h2 id="changing-the-live-site"><a class="ds-anchor" href="#changing-the-live-site">Changing the live site</a></h2>
+<p>Nothing on this page asks for a change to micahhoang.com. If a future task wants to move a live behavior toward one of these principles (for example a press state on touch, a current-page nav marker, or darker muted text):</p>
+<ol><li>Write it up as a proposal: what changes, which Framer component or style (<code>codeFileId</code>), and the visual difference.</li><li>Get Micah's explicit approval.</li><li>Make the change in Framer behind a kill switch where possible, publish, then run published QA. <code>npm test</code> too if any Play-related file changes.</li><li>Update the relevant page here, and move the rule's label to <strong>Already true</strong>.</li></ol>
+<p><strong>Proposed live-site changes:</strong> none currently open.</p></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/interaction.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#how-to-read-this-page">How to read this page</a><a href="#eight-principles-five-words">Eight principles, five words</a><a href="#motion-and-response">Motion and response</a><a href="#gesture">Gesture</a><a href="#typography">Typography</a><a href="#materials-and-depth">Materials and depth</a><a href="#feedback-and-wayfinding">Feedback and wayfinding</a><a href="#accessibility-notes">Accessibility notes</a><a href="#changing-the-live-site">Changing the live site</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

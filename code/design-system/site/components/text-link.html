@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text Link – Micah Hoang Design System</title>
+<meta name="description" content="Mono links with the flip-rail hover, inline underlined links for running text, and comma-joined link lists.">
+<link rel="alternate" type="text/markdown" href="../../content/components/text-link.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link is-current" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Components</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Text Link</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/components/text-link.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">Mono links with the flip-rail hover, inline underlined links for running text, and comma-joined link lists.</p>
+      <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: Native Link + "Text Link Black" hover variants; Case Study Header Link (dHFQCIH)</span></div>
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="examples"><a class="ds-anchor" href="#examples">Examples</a></h2>
+<h3 id="flip-link-nav-actions"><a class="ds-anchor" href="#flip-link-nav-actions">Flip link (nav, actions)</a></h3>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-row">
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Work</span><span aria-hidden="true">Work</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Play</span><span aria-hidden="true">Play</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span>
+  </a>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-row"&gt;
+  &lt;a class="mh-link mh-label" href="#"&gt;
+    &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Work&lt;/span&gt;&lt;span aria-hidden="true"&gt;Work&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class="mh-link mh-label" href="#"&gt;
+    &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Play&lt;/span&gt;&lt;span aria-hidden="true"&gt;Play&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class="mh-link mh-label" href="#"&gt;
+    &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Index&lt;/span&gt;&lt;span aria-hidden="true"&gt;Index&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class="mh-link mh-label" href="#"&gt;
+    &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;About&lt;/span&gt;&lt;span aria-hidden="true"&gt;About&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h3 id="link-list"><a class="ds-anchor" href="#link-list">Link list</a></h3>
+<figure class="ds-example" id="ex-2"><div class="ds-example__bar"><span>Example 2</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><ul class="mh-link-list mh-label">
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>LinkedIn</span><span aria-hidden="true">LinkedIn</span></span></span></a></li>
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Resume</span><span aria-hidden="true">Resume</span></span></span></a></li>
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Email</span><span aria-hidden="true">Email</span></span></span></a></li>
+  <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Cosmos</span><span aria-hidden="true">Cosmos</span></span></span></a></li>
+</ul></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;ul class="mh-link-list mh-label"&gt;
+  &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;LinkedIn&lt;/span&gt;&lt;span aria-hidden="true"&gt;LinkedIn&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Resume&lt;/span&gt;&lt;span aria-hidden="true"&gt;Resume&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Email&lt;/span&gt;&lt;span aria-hidden="true"&gt;Email&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Cosmos&lt;/span&gt;&lt;span aria-hidden="true"&gt;Cosmos&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></details></figure>
+<h3 id="inline-link"><a class="ds-anchor" href="#inline-link">Inline link</a></h3>
+<figure class="ds-example" id="ex-3"><div class="ds-example__bar"><span>Example 3</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><p class="mh-text-body-lg mh-text-strong" style="margin:0;max-width:30em">I'm a brand designer with a systems mind. Read the <a class="mh-link" data-variant="inline" href="#">full story</a> or see the <a class="mh-link" data-variant="inline" href="#">index</a>.</p></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;p class="mh-text-body-lg mh-text-strong" style="margin:0;max-width:30em"&gt;I'm a brand designer with a systems mind. Read the &lt;a class="mh-link" data-variant="inline" href="#"&gt;full story&lt;/a&gt; or see the &lt;a class="mh-link" data-variant="inline" href="#"&gt;index&lt;/a&gt;.&lt;/p&gt;</code></pre></details></figure>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<div class="ds-table"><table><thead><tr><th>Variant</th><th>Use for</th></tr></thead><tbody><tr><td>Flip link</td><td>Navigation, standalone actions ("View all", "Scroll to top"), social links</td></tr><tr><td>Link list</td><td>Social and document links in the hero and footer: "LinkedIn, Resume, Email, Cosmos"</td></tr><tr><td>Inline link</td><td>Links inside body copy</td></tr></tbody></table></div>
+<ul><li>The flip copy must match the label exactly; the motion is the feedback, not a text change.</li><li>Inline links inherit color, underline at 1px, and turn interactive green on hover.</li></ul>
+<h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
+<div class="ds-table"><table><thead><tr><th>Class / attribute</th><th>Effect</th></tr></thead><tbody><tr><td><code>mh-link</code></td><td>Resets link color/underline, inherits text</td></tr><tr><td><code>mh-link</code> + <code>data-variant="inline"</code></td><td>1px underline, 0.18em offset, green on hover</td></tr><tr><td><code>mh-flip</code> › <code>mh-flip__track</code> › two <code>span</code>s</td><td>One-line window; slides up on hover/focus of the parent <code>a</code> or <code>button</code></td></tr><tr><td><code>--mh-flip-h</code> (custom property on <code>.mh-flip</code>)</td><td>Window height; default <code>1em</code>. Set to the line height for larger text, e.g. <code>1.2em</code></td></tr><tr><td><code>mh-link-list</code></td><td>Comma-joined horizontal list (commas added by CSS)</td></tr></tbody></table></div>
+<h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
+<ul><li>The duplicate span carries <code>aria-hidden="true"</code> so the label is read once.</li><li>Hover and focus both trigger the flip; focus also shows a 1px outline at 3px offset.</li><li>External links: add <code>target="_blank" rel="noopener"</code> and let the label say where it goes (e.g. "LinkedIn").</li></ul>
+<h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
+<ul><li>Nav and footer links on the live site are native Framer components with a two-text "flip" variant (two stacked text layers in a clipped frame, hover variant offsets them by 18px, 420ms Snappy).</li><li>The Home about-section link uses the "Text Link Black" layer; its flip is driven from <code>HomeSelectedWorkGrid</code> (<code>FecepLS</code>).</li><li><code>CaseStudyScrambleText</code> (<code>dHFQCIH</code>) is a plain hover-color link (the name is misleading; it does not scramble).</li><li><code>TextEncryptionEffect</code> (<code>p7tSTaD</code>) is the real scramble on Home social labels. Use it only where it's already used.</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't underline mono links.</li><li>Don't change the text on hover (no "View all →" turning into "Go").</li><li>Don't add arrow icons from an icon set; if direction is needed, type the character (↗, ↑, →) in the label.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/components/text-link.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#examples">Examples</a><a href="#usage">Usage</a><a href="#api">API</a><a href="#accessibility">Accessibility</a><a href="#framer-mapping">Framer mapping</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

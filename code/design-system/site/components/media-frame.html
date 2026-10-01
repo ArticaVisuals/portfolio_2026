@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Frame – Micah Hoang Design System</title>
+<meta name="description" content="An aspect-locked, square-cornered frame for images and video, with a poster-under-video stack and an optional 1px stroke.">
+<link rel="alternate" type="text/markdown" href="../../content/components/media-frame.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link is-current" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Components</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Media Frame</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/components/media-frame.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">An aspect-locked, square-cornered frame for images and video, with a poster-under-video stack and an optional 1px stroke.</p>
+      <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: ResponsiveCaseStudyImage (vIFnGmg), ResponsiveCaseStudyVideo (bsTLKCt), CaseStudyThumbnailStrokeStyles (Z28JYvA), CaseStudyVideoManager (rGMwETR)</span></div>
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="examples"><a class="ds-anchor" href="#examples">Examples</a></h2>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="mh-split">
+  <a class="mh-media" href="#"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></a>
+  <a class="mh-media" data-stroke href="#"><img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"></a>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="mh-split"&gt;
+  &lt;a class="mh-media" href="#"&gt;&lt;img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"&gt;&lt;/a&gt;
+  &lt;a class="mh-media" data-stroke href="#"&gt;&lt;img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h3 id="ratios"><a class="ds-anchor" href="#ratios">Ratios</a></h3>
+<figure class="ds-example" id="ex-2"><div class="ds-example__bar"><span>Example 2</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-row" style="align-items:flex-start;flex-wrap:nowrap">
+  <div class="mh-media" style="flex:1.6"><img src="../../assets/samples/peak-energy.jpg" alt=""></div>
+  <div class="mh-media" data-ratio="4:5" style="flex:1"><img src="../../assets/samples/gaia-portrait.jpg" alt=""></div>
+  <div class="mh-media" data-ratio="1:1" style="flex:1"><img src="../../assets/samples/national-park-cards.jpg" alt=""></div>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-row" style="align-items:flex-start;flex-wrap:nowrap"&gt;
+  &lt;div class="mh-media" style="flex:1.6"&gt;&lt;img src="../../assets/samples/peak-energy.jpg" alt=""&gt;&lt;/div&gt;
+  &lt;div class="mh-media" data-ratio="4:5" style="flex:1"&gt;&lt;img src="../../assets/samples/gaia-portrait.jpg" alt=""&gt;&lt;/div&gt;
+  &lt;div class="mh-media" data-ratio="1:1" style="flex:1"&gt;&lt;img src="../../assets/samples/national-park-cards.jpg" alt=""&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h3 id="video-with-poster"><a class="ds-anchor" href="#video-with-poster">Video with poster</a></h3>
+<div class="ds-codeblock"><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="mh-media"&gt;
+  &lt;img src="poster.jpg" alt=""&gt;
+  &lt;video src="clip.mp4" poster="poster.jpg" muted loop playsinline autoplay preload="metadata"&gt;&lt;/video&gt;
+&lt;/div&gt;</code></pre></div>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<ul><li><strong>Square corners, always.</strong> No radius, no shadow.</li><li><strong>16:9 is the default</strong> for thumbnails and hero media. Use 4:5 / 1:1 / 3:2 in case-study galleries when the asset calls for it, and <code>auto</code> to keep an asset's own ratio.</li><li><strong>Stroke</strong> (<code>data-stroke</code>): a 1px Light Gray inset outline, for media on white or near-cream backgrounds (product shots, UI) that would otherwise bleed into the page. It's a per-project CMS field (<code>Thumbnail Stroke</code>).</li><li><strong>Hover</strong>: when the frame is in a link, the image scales to 1.02 over 420ms Snappy. The frame stays still.</li><li><strong>Video</strong>: the poster image stays painted under the video, and the video fades in once it can play. Never leave a blank frame between them.</li><li>Placeholder color is white (<code>--mh-bg-media</code>).</li></ul>
+<h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
+<div class="ds-table"><table><thead><tr><th>Attribute</th><th>Values</th><th>Effect</th></tr></thead><tbody><tr><td><code>class="mh-media"</code></td><td>n/a</td><td><code>position: relative</code>, <code>overflow: hidden</code>, 16:9, children cover</td></tr><tr><td><code>data-ratio</code></td><td><code>4:3</code>, <code>3:2</code>, <code>1:1</code>, <code>4:5</code>, <code>auto</code></td><td>Aspect ratio</td></tr><tr><td><code>data-stroke</code></td><td>n/a</td><td>1px inset <code>--mh-border-stroke</code> outline</td></tr></tbody></table></div>
+<h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
+<ul><li>Every meaningful image needs <code>alt</code> that describes it ("AirPods Pro 3 earbuds on a white background"). Decorative duplicates (posters under video) get <code>alt=""</code>.</li><li>Autoplay video must be <code>muted</code> and <code>playsinline</code>, and must pause under reduced motion or offscreen.</li></ul>
+<h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
+<ul><li>Case-study media: <code>ResponsiveCaseStudyImage</code> (<code>vIFnGmg</code>) and <code>ResponsiveCaseStudyVideo</code> (<code>bsTLKCt</code>); galleries: <code>CaseStudyJustifiedMediaGrid</code> (<code>c0iPrbN</code>), <code>DoubleStackGalleryGrid</code>, <code>MatchedStackMediaPair</code>.</li><li>Stroke: <code>CaseStudyThumbnailStrokeStyles</code> (<code>Z28JYvA</code>) reads the CMS <code>Thumbnail Stroke</code> field (<code>OHdUYs6Mo</code>) and paints <code>#979797</code>.</li><li>Playback budget and offscreen pausing: <code>CaseStudyVideoManager</code> (<code>rGMwETR</code>). Don't add a second video controller.</li><li>Optimize media with <code>code/tools/</code> image-optimizer before upload (see <code>docs/performance-media-deployment-checklist-2026-07-23.md</code>).</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't round corners or add captions inside the frame.</li><li>Don't letterbox with colored bars; crop with <code>object-fit: cover</code>.</li><li>Don't scale the frame on hover; scale the image inside it.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/components/media-frame.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#examples">Examples</a><a href="#usage">Usage</a><a href="#api">API</a><a href="#accessibility">Accessibility</a><a href="#framer-mapping">Framer mapping</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/*
+ * Base layer: surfaces, color utilities, layout primitives, reveal motion.
+ * Load order: fonts.css → tokens/tokens.css → type.css → base.css → components.css
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Any element with data-surface paints its own background and default text. */
+[data-surface] {
+    background-color: var(--mh-bg-page);
+    color: var(--mh-text-brand);
+}
+
+body {
+    margin: 0;
+    font-family: var(--mh-font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* ---- Color roles as utilities ---------------------------------------- */
+
+.mh-text-brand { color: var(--mh-text-brand); }
+.mh-text-strong { color: var(--mh-text-strong); }
+.mh-text-body { color: var(--mh-text-body); }
+.mh-text-muted { color: var(--mh-text-muted); }
+
+/* ---- Layout ----------------------------------------------------------- */
+
+/* Edge-to-edge content inside the page gutter. The site has no max-width cap. */
+.mh-container {
+    width: 100%;
+    padding-inline: var(--mh-gutter);
+}
+
+/* Two equal columns that stack on mobile. Case-study meta and intro splits. */
+.mh-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--mh-space-9) var(--mh-split-gap);
+}
+
+/* Long-form text measure. */
+.mh-measure {
+    max-width: var(--mh-measure);
+}
+
+/* Vertical rhythm helper: children separated by --mh-stack-gap. */
+.mh-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mh-stack-gap, var(--mh-space-5));
+}
+
+@media (max-width: 809px) {
+    .mh-split {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ---- Type reveal -------------------------------------------------------
+ * The site-wide entrance for display type: each line rises from 115% inside
+ * a clipping mask, 900ms, 90ms stagger, Snappy ease. Wrap each line:
+ *   <span class="mh-reveal" style="--i:0"><span>Line one</span></span>
+ * components.js adds .is-in when the element enters the viewport.
+ */
+.mh-reveal {
+    display: block;
+    overflow: clip;
+    overflow-clip-margin: 0.15em;
+}
+
+.mh-reveal > * {
+    display: block;
+    transform: translateY(var(--mh-distance-reveal));
+    transition: transform var(--mh-duration-reveal) var(--mh-ease-snappy);
+    transition-delay: calc(var(--mh-stagger-reveal) * (var(--i, 0) + 1));
+}
+
+.mh-reveal.is-in > * {
+    transform: translateY(0);
+}
+
+.ds-no-js .mh-reveal > * {
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .mh-reveal > * {
+        transform: none;
+    }
+}
