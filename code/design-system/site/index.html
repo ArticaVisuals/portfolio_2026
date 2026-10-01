@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduction – Micah Hoang Design System</title>
+<meta name="description" content="The visual foundations, components and page patterns behind micahhoang.com.">
+<link rel="alternate" type="text/markdown" href="../content/index.md">
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../css/type.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link is-current" href="index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="components/action.html">Action</a>
+<a class="ds-nav__link" href="components/tag.html">Tag</a>
+<a class="ds-nav__link" href="components/rule.html">Rule</a>
+<a class="ds-nav__link" href="components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="components/footer.html">Footer</a>
+<a class="ds-nav__link" href="components/hero.html">Hero</a>
+<a class="ds-nav__link" href="components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="patterns/home.html">Home</a>
+<a class="ds-nav__link" href="patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Micah Hoang</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Introduction</h1>
+        <a class="mh-action" data-variant="pill" href="../content/index.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">The visual foundations, components and page patterns behind micahhoang.com.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><p>This is the design system behind micahhoang.com: the foundations every page is built on, the components the site is made of, and the page patterns that put them together. It describes what is live today, measured from the published site, and maps each piece back to its Framer style or code component.</p>
+<p><strong>Foundations</strong> define the tokens for color, type, layout, motion, texture and identity. <strong>Components</strong> go from small pieces like the Mono Label and Tag up to the Project Card, Index List and Footer. <strong>Patterns</strong> show how the Home, Case Study and Index pages are put together. Each component page has live examples, usage rules, the class API and its Framer mapping.</p>
+<p>Pick a page from the sidebar, or press ⌘K to search. Every page also exists as markdown for agents: use the <strong>Markdown</strong> link in its header, or start from <a href="../agents.md">agents.md</a>.</p>
+<h2 id="the-system-at-a-glance"><a class="ds-anchor" href="#the-system-at-a-glance">The system at a glance</a></h2>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-stack">
+  <p class="mh-label">Micah Hoang / Brand designer / Los Angeles, California</p>
+  <p class="mh-text-display-xl" style="margin:0">Micah Hoang</p>
+  <p class="mh-text-heading" style="margin:0;max-width:11em">Brand designer with a systems mind.</p>
+  <hr class="mh-rule">
+  <ul class="mh-tags"><li class="mh-tag">Strategy</li><li class="mh-tag">Visual identity</li><li class="mh-tag">Editorial</li></ul>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-stack"&gt;
+  &lt;p class="mh-label"&gt;Micah Hoang / Brand designer / Los Angeles, California&lt;/p&gt;
+  &lt;p class="mh-text-display-xl" style="margin:0"&gt;Micah Hoang&lt;/p&gt;
+  &lt;p class="mh-text-heading" style="margin:0;max-width:11em"&gt;Brand designer with a systems mind.&lt;/p&gt;
+  &lt;hr class="mh-rule"&gt;
+  &lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;Strategy&lt;/li&gt;&lt;li class="mh-tag"&gt;Visual identity&lt;/li&gt;&lt;li class="mh-tag"&gt;Editorial&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h2 id="principles"><a class="ds-anchor" href="#principles">Principles</a></h2>
+<p>Five words to go back to whenever a decision is unclear: <strong>Considered. Quiet. Alive. Specific. Shipped.</strong> Read <a href="foundations/principles.html">Principles</a> before designing anything new.</p>
+<h2 id="start-here"><a class="ds-anchor" href="#start-here">Start here</a></h2>
+<ul><li><a href="foundations/colors.html">Colors</a>: two surfaces (Cream and Forest Green) and semantic roles.</li><li><a href="foundations/typography.html">Typography</a>: GT Standard for display and body, GT Standard Mono for labels.</li><li><a href="foundations/layout.html">Layout</a>: gutters, grids, breakpoints, rules instead of boxes.</li><li><a href="foundations/motion.html">Motion</a>: the Snappy ease, flip rails and type reveals.</li><li><a href="components/project-card.html">Project Card</a>: the main way work appears on the site.</li><li><a href="patterns/case-study.html">Case Study pattern</a>: the template every project page follows.</li></ul>
+<h2 id="files"><a class="ds-anchor" href="#files">Files</a></h2>
+<div class="ds-table"><table><thead><tr><th>File</th><th>What it is</th></tr></thead><tbody><tr><td><code>tokens/tokens.json</code></td><td>Token source of truth (DTCG)</td></tr><tr><td><code>tokens/tokens.css</code></td><td>CSS custom properties, generated</td></tr><tr><td><code>css/components.css</code></td><td>Component styles</td></tr><tr><td><code>js/components.js</code></td><td>Optional behavior (lightbox, filters, loader, reveals)</td></tr><tr><td><code>components.json</code></td><td>Machine-readable component manifest</td></tr><tr><td><code>llms.txt</code> / <code>llms-full.txt</code></td><td>Agent index / everything in one file</td></tr></tbody></table></div></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/index.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#the-system-at-a-glance">The system at a glance</a><a href="#principles">Principles</a><a href="#start-here">Start here</a><a href="#files">Files</a></nav>
+</div>
+<script src="assets/search-index.js"></script>
+<script src="../js/components.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

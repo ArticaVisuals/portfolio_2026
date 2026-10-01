@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Texture – Micah Hoang Design System</title>
+<meta name="description" content="The umber film grain that sits over every page, and how to keep it out of the way.">
+<link rel="alternate" type="text/markdown" href="../../content/foundations/texture.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link is-current" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Foundations</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Texture</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/foundations/texture.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">The umber film grain that sits over every page, and how to keep it out of the way.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="overview"><a class="ds-anchor" href="#overview">Overview</a></h2>
+<p>A faint, slowly shimmering film grain sits over the page. It warms the Cream ground and keeps large flat areas from looking like a screen. It's an SVG <code>feTurbulence</code> noise, desaturated, tinted umber, and multiplied at 10% opacity. It starts <strong>below the navigation bar</strong> so the nav stays crisp.</p>
+<div class="ds-table"><table><thead><tr><th>Token</th><th>Value</th><th>Framer control (GrainOverlay)</th></tr></thead><tbody><tr><td><code>--mh-grain-opacity</code></td><td>0.1</td><td>Grain Opacity</td></tr><tr><td><code>--mh-grain-blend</code></td><td>multiply</td><td>Blend</td></tr><tr><td><code>--mh-grain-color</code></td><td><code>#501D07</code></td><td>Color</td></tr><tr><td><code>--mh-grain-base-frequency</code></td><td>1.14</td><td>Grain Size</td></tr><tr><td><code>--mh-grain-octaves</code></td><td>4</td><td>Detail</td></tr><tr><td><code>--mh-grain-exposure</code></td><td>-0.58</td><td>Exposure</td></tr><tr><td><code>--mh-grain-contrast</code></td><td>2.35</td><td>Contrast</td></tr><tr><td><code>--mh-grain-shimmer-fps</code></td><td>16</td><td>Shimmer FPS</td></tr></tbody></table></div>
+<h2 id="example"><a class="ds-anchor" href="#example">Example</a></h2>
+<p>Here the grain is shown at full strength on the left and at the brand's 10% on the right.</p>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview ds-preview--bleed" data-surface="cream"><div class="ds-demo-row" style="gap:0">
+  <div class="ds-demo-frame" style="flex:1;height:200px">
+    <div class="mh-grain" data-contained style="opacity:1">
+      <svg aria-hidden="true"><filter id="grain-demo-a" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="1.14" numOctaves="4" stitchTiles="stitch" seed="7"/><feComponentTransfer><feFuncR type="linear" slope="2.35" intercept="-0.58"/><feFuncG type="linear" slope="2.35" intercept="-0.58"/><feFuncB type="linear" slope="2.35" intercept="-0.58"/></feComponentTransfer><feColorMatrix type="saturate" values="0"/><feColorMatrix type="matrix" values="0.314 0 0 0 0 0.114 0 0 0 0 0.027 0 0 0 0 0 0 0 0 1"/></filter><rect width="100%" height="100%" filter="url(#grain-demo-a)"/></svg>
+    </div>
+  </div>
+  <div class="ds-demo-frame" style="flex:1;height:200px">
+    <div class="mh-grain" data-contained>
+      <svg aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain-demo-a)"/></svg>
+    </div>
+  </div>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-row" style="gap:0"&gt;
+  &lt;div class="ds-demo-frame" style="flex:1;height:200px"&gt;
+    &lt;div class="mh-grain" data-contained style="opacity:1"&gt;
+      &lt;svg aria-hidden="true"&gt;&lt;filter id="grain-demo-a" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"&gt;&lt;feTurbulence type="fractalNoise" baseFrequency="1.14" numOctaves="4" stitchTiles="stitch" seed="7"/&gt;&lt;feComponentTransfer&gt;&lt;feFuncR type="linear" slope="2.35" intercept="-0.58"/&gt;&lt;feFuncG type="linear" slope="2.35" intercept="-0.58"/&gt;&lt;feFuncB type="linear" slope="2.35" intercept="-0.58"/&gt;&lt;/feComponentTransfer&gt;&lt;feColorMatrix type="saturate" values="0"/&gt;&lt;feColorMatrix type="matrix" values="0.314 0 0 0 0 0.114 0 0 0 0 0.027 0 0 0 0 0 0 0 0 1"/&gt;&lt;/filter&gt;&lt;rect width="100%" height="100%" filter="url(#grain-demo-a)"/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ds-demo-frame" style="flex:1;height:200px"&gt;
+    &lt;div class="mh-grain" data-contained&gt;
+      &lt;svg aria-hidden="true"&gt;&lt;rect width="100%" height="100%" filter="url(#grain-demo-a)"/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<p>The full snippet lives on the <a href="../components/grain-overlay.html">Grain Overlay</a> page.</p>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<ul><li>One grain layer per page, fixed to the viewport, <code>pointer-events: none</code>.</li><li>Keep the nav clear: the layer starts at <code>--mh-nav-height</code>.</li><li>The shimmer re-seeds the noise 16 times a second. It turns off under reduced motion, and the live site disables it on WebKit <code>/play</code> for performance.</li><li>Don't put grain inside components or on media. It's a single page-level layer.</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't raise opacity above 0.1 or switch the blend away from multiply; it starts reading as dirt.</li><li>Don't add other textures (paper, noise PNGs, gradients).</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/texture.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#example">Example</a><a href="#usage">Usage</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

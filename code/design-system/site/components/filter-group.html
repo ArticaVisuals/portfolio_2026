@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filter Group – Micah Hoang Design System</title>
+<meta name="description" content="Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.">
+<link rel="alternate" type="text/markdown" href="../../content/components/filter-group.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link is-current" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Components</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Filter Group</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/components/filter-group.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.</p>
+      <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: IndexPage (rgAZFOv), IndexFilterContext + URL sync</span></div>
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="examples"><a class="ds-anchor" href="#examples">Examples</a></h2>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="mh-filter" aria-label="Filter projects">
+  <fieldset class="mh-filter__group">
+    <legend class="mh-filter__heading mh-label">Year</legend>
+    <button class="mh-filter__item" type="button" aria-pressed="false" value="2026">2026</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false" value="2025">2025</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false" value="2024">2024</button>
+  </fieldset>
+  <fieldset class="mh-filter__group">
+    <legend class="mh-filter__heading mh-label">Discipline</legend>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Packaging</button>
+    <button class="mh-filter__item" type="button" aria-pressed="true">Product</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Strategy</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Visual identity</button>
+  </fieldset>
+  <fieldset class="mh-filter__group">
+    <legend class="mh-filter__heading mh-label">Industry</legend>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Literature</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Nature</button>
+    <button class="mh-filter__item" type="button" aria-pressed="false">Technology</button>
+  </fieldset>
+  <button class="mh-filter__clear mh-action" type="button">Clear filters</button>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="mh-filter" aria-label="Filter projects"&gt;
+  &lt;fieldset class="mh-filter__group"&gt;
+    &lt;legend class="mh-filter__heading mh-label"&gt;Year&lt;/legend&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false" value="2026"&gt;2026&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false" value="2025"&gt;2025&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false" value="2024"&gt;2024&lt;/button&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset class="mh-filter__group"&gt;
+    &lt;legend class="mh-filter__heading mh-label"&gt;Discipline&lt;/legend&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false"&gt;Packaging&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="true"&gt;Product&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false"&gt;Strategy&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false"&gt;Visual identity&lt;/button&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset class="mh-filter__group"&gt;
+    &lt;legend class="mh-filter__heading mh-label"&gt;Industry&lt;/legend&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false"&gt;Literature&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false"&gt;Nature&lt;/button&gt;
+    &lt;button class="mh-filter__item" type="button" aria-pressed="false"&gt;Technology&lt;/button&gt;
+  &lt;/fieldset&gt;
+  &lt;button class="mh-filter__clear mh-action" type="button"&gt;Clear filters&lt;/button&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<p>Click the items to toggle. "Clear filters" appears as soon as one is active.</p>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<ul><li>Three taxonomies, in this order: <strong>Year</strong>, <strong>Discipline</strong>, <strong>Industry</strong>. Values come from the CMS.</li><li>Multiple selections combine as OR within a group and AND across groups.</li><li>Selected items turn Accent Green and get a leading dot. Hover previews the same color.</li><li><strong>Clear filters</strong> is always rendered and only toggles <code>visibility</code>, so activating a filter never shifts the layout.</li><li>Filter state syncs to the URL: <code>#service=packaging</code> in, <code>?service=</code> out.</li></ul>
+<h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
+<div class="ds-table"><table><thead><tr><th>Class / attribute</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-filter</code></td><td><code>div</code></td><td>Grid <code>1fr 2fr 2fr 1fr</code> (2 columns on mobile). Gets <code>data-active</code> while any item is pressed</td></tr><tr><td><code>mh-filter__group</code></td><td><code>fieldset</code></td><td>One taxonomy</td></tr><tr><td><code>mh-filter__heading</code></td><td><code>legend</code></td><td>Muted mono heading</td></tr><tr><td><code>mh-filter__item</code></td><td><code>button[aria-pressed]</code></td><td>13px mono, 28px line height</td></tr><tr><td><code>mh-filter__clear</code></td><td><code>button</code></td><td>Visible only with <code>data-active</code></td></tr><tr><td><code>mh:filter</code> event</td><td>n/a</td><td>Fired by <code>components.js</code> on change with <code>detail.values</code></td></tr></tbody></table></div>
+<h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
+<ul><li>Toggles are <code>&lt;button aria-pressed&gt;</code>, so state is announced.</li><li>Group with <code>fieldset</code>/<code>legend</code> so each item is read with its taxonomy.</li></ul>
+<h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
+<ul><li><code>IndexPage</code> (<code>rgAZFOv</code>): taxonomy follows Figma node <code>32:7531</code>; hover/active color <code>#25593a</code>; URL sync has a kill switch (<code>ENABLE_URL_FILTER_SYNC</code>); grid tags toggle the same filters through <code>IndexFilterContext</code>.</li><li>The nav fades in row by row on arrival (<code>INDEX_NAV_FADE_PRESET</code>).</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't use checkboxes, dropdowns or a search field for these filters.</li><li>Don't show result counts next to every item.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/components/filter-group.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#examples">Examples</a><a href="#usage">Usage</a><a href="#api">API</a><a href="#accessibility">Accessibility</a><a href="#framer-mapping">Framer mapping</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>
