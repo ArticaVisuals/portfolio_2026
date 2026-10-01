@@ -273,7 +273,11 @@
     margin-top: var(--mh-space-5);
 }
 
-/* ---- Prose ------------------------------------------------------------ */
+/* ---- Prose ------------------------------------------------------------
+ * Every rule targets direct children of the article (the markdown output),
+ * never descendants, so nothing leaks into .ds-preview examples. Components
+ * inside a preview must render exactly as they would on a real page.
+ */
 
 .ds-prose {
     max-width: 880px;
@@ -286,7 +290,7 @@
     margin-top: var(--mh-space-5);
 }
 
-.ds-prose h2 {
+.ds-prose > h2 {
     margin-top: var(--mh-space-11);
     margin-bottom: var(--mh-space-5);
     color: var(--mh-text-brand);
@@ -297,7 +301,7 @@
     letter-spacing: -0.01em;
 }
 
-.ds-prose h3 {
+.ds-prose > h3 {
     margin-top: var(--mh-space-9);
     margin-bottom: var(--mh-space-3);
     color: var(--mh-text-brand);
@@ -308,7 +312,7 @@
     text-transform: uppercase;
 }
 
-.ds-prose h4 {
+.ds-prose > h4 {
     margin-top: var(--mh-space-7);
     font-weight: 500;
     font-size: 17px;
@@ -319,32 +323,31 @@
     text-decoration: none;
 }
 
-.ds-prose p,
-.ds-prose li {
+.ds-prose > p,
+.ds-prose > :is(ul, ol) > li {
     max-width: 68ch;
 }
 
-.ds-prose a:not([class]) {
+:is(.ds-prose > p, .ds-prose > :is(ul, ol) > li, .ds-prose > blockquote, .ds-table td) a:not([class]) {
     color: inherit;
     text-decoration: underline;
     text-decoration-thickness: var(--mh-border-hairline);
     text-underline-offset: 0.18em;
 }
 
-.ds-prose a:not([class]):hover {
+:is(.ds-prose > p, .ds-prose > :is(ul, ol) > li, .ds-prose > blockquote, .ds-table td) a:not([class]):hover {
     color: var(--mh-text-interactive);
 }
 
-.ds-prose ul,
-.ds-prose ol {
+.ds-prose > :is(ul, ol) {
     padding-left: 1.2em;
 }
 
-.ds-prose li + li {
+.ds-prose > :is(ul, ol) > li + li {
     margin-top: var(--mh-space-2);
 }
 
-.ds-prose code {
+:is(.ds-prose > p, .ds-prose > :is(ul, ol) > li, .ds-prose > blockquote, .ds-table, .ds-page-foot) code {
     font-family: var(--mh-font-mono);
     font-size: 0.82em;
     padding: 1px 5px;
@@ -352,15 +355,28 @@
     border-radius: var(--mh-radius-hairline);
 }
 
-.ds-prose blockquote {
+.ds-prose > blockquote {
     margin-left: 0;
     padding-left: var(--mh-space-5);
     border-left: var(--mh-border-hairline) solid var(--mh-border-rule);
     color: var(--mh-text-brand);
 }
 
-.ds-prose hr.mh-rule {
+.ds-prose > hr.mh-rule {
     margin-block: var(--mh-space-9);
+}
+
+/* Token visuals (swatches, spacing, easing) set code in mono too. */
+:is(.ds-swatches, .ds-roles-wrap, .ds-space, .ds-ease) code {
+    font-family: var(--mh-font-mono);
+}
+
+/* Previews start from the page defaults, not the article's. */
+.ds-preview {
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
 }
 
 /* ---- Tables ----------------------------------------------------------- */
@@ -490,17 +506,11 @@
     position: relative;
     padding: var(--mh-space-9);
     overflow: hidden;
-    font-size: initial;
-    line-height: normal;
     color: var(--mh-text-brand);
 }
 
 .ds-preview--bleed {
     padding: 0;
-}
-
-.ds-preview p {
-    max-width: none;
 }
 
 .ds-code summary {
