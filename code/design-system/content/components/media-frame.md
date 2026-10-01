@@ -44,7 +44,7 @@ tokens: [color.*.bg.media, color.*.border.stroke, motion.scale.hover, motion.dur
 
 - **Square corners, always.** No radius, no shadow.
 - **16:9 is the default** for thumbnails and hero media. Use 4:5 / 1:1 / 3:2 in case-study galleries when the asset calls for it, and `auto` to keep an asset's own ratio.
-- **Stroke** (`data-stroke`): a 1px Light Gray inset outline, for media on white or near-cream backgrounds (product shots, UI) that would otherwise bleed into the page. It's a per-project CMS field (`Thumbnail Stroke`).
+- **Stroke** (`data-stroke`): a 1px Stroke Gray inset outline, for media on white or near-cream backgrounds (product shots, UI) that would otherwise bleed into the page. It's a per-project CMS field (`Thumbnail Stroke`).
 - **Hover**: when the frame is in a link, the image scales to 1.02 over 420ms Snappy. The frame stays still.
 - **Video**: the poster image stays painted under the video, and the video fades in once it can play. Never leave a blank frame between them.
 - Placeholder color is white (`--mh-bg-media`).

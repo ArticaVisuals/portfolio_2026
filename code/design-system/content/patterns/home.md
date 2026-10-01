@@ -29,8 +29,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 ## Example (condensed)
 
 ```html example bleed
-<div class="mh-container" style="padding-block:20px 72px">
-  <header class="mh-hero" style="padding-top:72px">
+<div class="mh-container" style="padding-bottom:var(--mh-section-padding-y)">
+  <header class="mh-hero">
     <h1 class="mh-hero__name mh-text-display-xl">Micah Hoang</h1>
     <p class="mh-hero__descriptor mh-text-heading">Brand designer with a systems mind.</p>
     <div class="mh-hero__bar">
@@ -38,13 +38,16 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
       <span class="mh-label">©2026</span>
     </div>
   </header>
-  <section style="margin-top:72px">
-    <h2 class="mh-text-display-m" style="margin:0 0 72px">Selected work</h2>
+  <section>
+    <header class="mh-section-header">
+      <hr class="mh-rule">
+      <h2 class="mh-section-header__title"><span>Selected</span><span>work</span></h2>
+    </header>
     <ul class="mh-project-grid">
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
     </ul>
-    <div style="display:flex;justify-content:flex-end;margin-top:40px"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
   </section>
 </div>
 ```
@@ -54,7 +57,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 - **Selected-work order** is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon & Schuster, National Park Playing Cards). It comes from the CMS, not code.
 - Six projects, never more. Everything else lives in the Index.
 - No hero image. The first image a visitor sees is project 1.
-- Vertical rhythm: about 144px from hero to Selected work, 72px from section title to grid, 144px before About.
+- Vertical rhythm (from the Framer page): hero padding 100px top (75 mobile) and 100px bottom; section rule → title 20px; title → grid 70px (50 mobile); grid → View all 30px (20 mobile); 100px section bottom padding before About; About title → content 30px (20 mobile); content → Scroll to top 60px.
+- About: 175px portrait (170 tablet/mobile), 20px gap, copy max 600px in Body L, 40px to Read more (30 tablet/mobile). On mobile the portrait stacks above the copy.
 
 ## Framer mapping
 

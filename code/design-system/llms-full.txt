@@ -60,8 +60,8 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 
 ## Quick start (Framer)
 
-- Colors: use the project color styles `/Cream`, `/Forest Green`, `Light Gray`; others are listed on the Colors page with their tokens.
-- Type: use the Framer text styles named on the Typography page (`Heading 1`, `Heading 2`, `Heading 3`, `Heading 5`, `Body`, ...).
+- Colors: use the project color styles `/Cream`, `/Forest Green`, `/Off-Black`, `/Text Gray`, `/Stroke Gray`, `/White`. Accent green `#25593A` is not a style; it's set per component instance.
+- Type: use the Framer text styles `/Heading 1`, `/Heading 2`, `/Heading 2 Bold`, `/Heading 3`, `/Heading 4`, `/Body XL`, `/Body L`, `/Body M`, `/Small Mono`, `/Small Mono Footers` (see the Typography page).
 - Layout: Stacks and Grids with the gutter and gap tokens; desktop-first with tablet and phone breakpoint overrides.
 - Code components: look up the `codeFileId` in `components.json` and the repo's `code/mirror/manifest.json`.
 
@@ -69,7 +69,7 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 
 - Edit `tokens/tokens.json` or `content/**/*.md`, then run `node code/design-system/build.mjs`. It regenerates `tokens.css`, `css/type.css`, the HTML site, `llms.txt`, `llms-full.txt` and `components.json`.
 - Hand-written files: `css/fonts.css`, `css/base.css`, `css/components.css`, `js/components.js`, `site/assets/docs.*`, this file.
-- Values were measured from the published site on 2026-10-01. Framer is the runtime source of truth; if the live site and this system disagree, check the site and update the token here.
+- Desktop values come from the Framer project via the Framer MCP; tablet and mobile values were measured on the published site (2026-10-01), since the MCP can't read breakpoint overrides. Framer is the runtime source of truth; if the live site and this system disagree, check the site and update the token here.
 - `code/tokens/micahhoang-tokens.json` (Manrope, `#027aff`) is a stale pre-2026 token set. Do not use it.
 
 
@@ -273,7 +273,7 @@ Apple's eight design principles line up with the site's own five words ([Princip
 
 ## Accessibility notes
 
-- Light Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Light Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
+- Stroke Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Stroke Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
 - Forest Green on Cream ≈ 12:1; near-black on Cream ≈ 17:1; Cream on Forest Green ≈ 12:1.
 
 ## Changing the live site
@@ -311,12 +311,12 @@ The palette is deliberately small: a warm Cream ground, one Forest Green for bra
 | --- | --- | --- | --- |
 | `--mh-color-cream` | `#F7F5F0` | `/Cream` | Page background; text on Forest Green |
 | `--mh-color-forest-green` | `#233324` | `/Forest Green` | Brand: display type, nav, labels; inverse surface |
-| `--mh-color-accent-green` | `#25593A` | (code-component default) | Hover / active for tags, filters, toggles |
-| `--mh-color-near-black` | `#141414` | (token, unnamed) | Rules, index list, lightbox chrome, strong body |
-| `--mh-color-graphite` | `#525252` | (token, unnamed) | Long-form case-study body |
-| `--mh-color-light-gray` | `#979797` | `Light Gray` | Muted text, tags, media stroke |
-| `--mh-color-white` | `#FFFFFF` | `White` | Lightbox backdrop, media placeholder |
-| `--mh-color-white-60` | `#FFFFFF99` | (token, unnamed) | Muted text on Forest Green |
+| `--mh-color-accent-green` | `#25593A` | none: set per instance (`tagHoverColor`, IndexPage hover) | Hover / active for tags, filters, toggles |
+| `--mh-color-near-black` | `#141414` | `/Off-Black` | Rules, index list, lightbox chrome, strong body |
+| `--mh-color-graphite` | `#525252` | `/Text Gray` | Long-form case-study body |
+| `--mh-color-light-gray` | `#979797` | `/Stroke Gray` | Muted text, tags, media stroke |
+| `--mh-color-white` | `#FFFFFF` | `/White` | Lightbox backdrop, media placeholder |
+| `--mh-color-white-60` | `#FFFFFF99` | none (published CSS token) | Muted text on Forest Green |
 | `--mh-color-grain-umber` | `#501D07` | (GrainOverlay control) | Grain tint only |
 
 ## Surfaces
@@ -349,16 +349,16 @@ Add `data-surface="cream"` (default) or `data-surface="green"` to any container.
 | `--mh-text-brand` | Forest Green | Cream | Display type, nav, labels, section headers |
 | `--mh-text-strong` | Near Black | Cream | Lead body, meta values, index rows, H3 |
 | `--mh-text-body` | Graphite | White 60% | Long-form paragraphs |
-| `--mh-text-muted` | Light Gray | White 60% | Headline continuation, tags, tertiary meta |
+| `--mh-text-muted` | Stroke Gray | White 60% | Headline continuation, tags, tertiary meta |
 | `--mh-text-interactive` | Accent Green | White | Hover / active state |
 | `--mh-border-rule` | Near Black | Cream | 1px rules and dividers |
-| `--mh-border-stroke` | Light Gray | White 60% | Tag outlines, media stroke |
+| `--mh-border-stroke` | Stroke Gray | White 60% | Tag outlines, media stroke |
 
 ## Usage
 
 - **Forest Green is the brand color, not an accent.** It sets display type and labels on Cream and becomes the whole surface for the footer and boot loader.
 - **Hierarchy comes from shifting neutrals**: brand → strong → body → muted. Don't add colors to make something stand out; change its size or position.
-- **Interactive green appears only on hover/active.** A resting tag is Light Gray; it turns Accent Green under the pointer or when selected.
+- **Interactive green appears only on hover/active.** A resting tag is Stroke Gray; it turns Accent Green under the pointer or when selected.
 - **Rules are near-black at full opacity**, not a soft gray. The site's crispness depends on this.
 - **Media placeholders are white**, so a loading thumbnail reads as a paper card, not a gray hole.
 
@@ -398,19 +398,22 @@ Two families do everything. **GT Standard** (L width) sets display type, heading
 
 Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`. Sizes are desktop / tablet / mobile.
 
-| Style | Class | Size | Weight | Leading | Tracking | Framer text style | Use |
+| Style | Class | Size (D / T / M) | Weight | Leading | Tracking | Framer text style | Use |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% | -1% | Heading 1 | Home hero name. Once per site. |
-| Display L | `mh-text-display-l` | 70 / 53 / 42 | 700 | 100% | -1% | Heading 2b | Case-study title + muted continuation |
-| Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | Heading 2 | Section headers: "Selected work", "About Micah" |
-| Display Footer | `mh-text-display-footer` | 80 / 64 / 40 | 400 | 100% | -2% | (footer) | Uppercase footer contact links |
-| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | Heading 3 | Hero descriptor, case-study section titles |
-| Title | `mh-text-title` | 22 | 400 | 120% | 0 | Index Title | Index rows, uppercase |
-| Body L | `mh-text-body-lg` | 22 / 22 / 18 | 400 | 120% | +1% | Body | Lead paragraphs, About, meta values |
-| Body | `mh-text-body` | 18 / 18 / 16 | 400 | 140% | 0 | Paragraph Regular (18) | Case-study long-form |
-| Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | Paragraph Regular | Captions, small notes |
-| Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | Heading 5, Body - 100% | Nav, meta, actions, eyebrows |
-| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px, dense meta |
+| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% / 114% / 114% | -1% | /Heading 1 | Home hero name. Once per site. |
+| Display L | `mh-text-display-l` | 70 / 52 / 38 | 700 | 100% | -1% (-2% mobile) | /Heading 2 Bold | Case-study title + muted continuation |
+| Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | /Heading 2 | Section headers: "Selected work", "About Micah" |
+| Display Footer | `mh-text-display-footer` | 80 / 70 / 40 | 400 | 100% | -2% | (MagText) | Uppercase footer contact rows |
+| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | /Heading 3 | Hero descriptor, case-study section titles |
+| Heading S | `mh-text-heading-sm` | 20 | 700 | 140% | 0 | /Heading 4 | Small bold heading |
+| Title | `mh-text-title` | 22 | 400 | 120% | 0 | (IndexPage) | Index rows, uppercase |
+| Body XL | `mh-text-body-xl` | 22 | 500 | 110% | -1% | /Body XL | Medium-weight lead line |
+| Body L | `mh-text-body-lg` | 22 / 18 / 15 | 400 | 120% / 120% / 130% | +1% | /Body L | Lead paragraphs, About, meta values |
+| Body | `mh-text-body` | 18 / 16 / 14 | 400 | 140% | 0 | /Body M | Case-study long-form (580px measure) |
+| Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | (none) | Captions, small notes |
+| Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | /Small Mono Footers | Nav, links, ©year, Read more, actions |
+| Label relaxed | `mh-text-label-relaxed` / `mh-label[data-leading=relaxed]` | 13 | 400 mono | 130% (140% mobile) | -1% | /Small Mono | GET IN TOUCH, "/ About the project" |
+| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px |
 
 ## Pairings
 
@@ -428,6 +431,10 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 </div>
 ```
 
+## Source
+
+Desktop values come from the Framer project's text styles (read through the Framer MCP on 2026-10-01). Tablet and mobile values were measured on the published site, because Framer's breakpoint overrides aren't readable through the MCP. `code/tokens/framer-active-text-styles.tokens.json` is an older export: its Heading 1 (110px), Index Title and Paragraph styles no longer match the project.
+
 ## Usage
 
 - **One display moment per view.** A page gets one Display XL or Display L; sections get Display M; everything else is Heading or smaller.
@@ -435,7 +442,7 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 - **Mono is always uppercase**, always 12–13px, never for sentences longer than a line.
 - **Two-tone headlines.** A case-study title can continue its sentence in `--mh-text-muted` at the same size and weight ("Gaia" + "Turning noticing into a way of caring for the living world.").
 - **Body color follows weight of content**: lead copy is `--mh-text-strong`, long-form is `--mh-text-body`.
-- **Measure**: long-form body caps at `--mh-measure` (620px).
+- **Measure**: long-form body caps at `--mh-measure` (580px).
 - **Pretty wrapping**: the live site applies `text-wrap: pretty` to paragraph-size text ≤23px (`ParagraphPrettyWrap`, `EjvkJhv`). Use `text-wrap: balance` for display lines if needed.
 
 ## Don't
@@ -481,7 +488,13 @@ Desktop-first, matching the Framer frames.
 | `--mh-column-gap` | 20px | 20px | 20px | Card grids, index columns |
 | `--mh-split-gap` | 30px | 30px | n/a (stacks) | Two-column text splits (`.mh-split`, meta grid) |
 | `--mh-card-row-gap` | 50px | 50px | 50px | Between project-card rows |
-| `--mh-measure` | 620px | 620px | 100% | Long-form body |
+| `--mh-measure` | 580px | 580px | 100% | Long-form body |
+| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row (doesn't drop to 15 on mobile) |
+| `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
+| `--mh-hero-name-top` | 90px | 90px | 97px | Hero top → name line box (nav overlays it) |
+| `--mh-hero-descriptor-top` | 220px | 186px | 162px | Hero top → descriptor |
+| `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
+| `--mh-footer-min-height` | 50vh | 40vh | 50vh | Home CTA/footer block |
 | `--mh-nav-height` | 53px | 53px | 53px | Sticky nav; grain starts below it |
 
 Grids in use on the live site:
@@ -511,13 +524,13 @@ Grids in use on the live site:
 | `--mh-space-4` | 12px | Row padding |
 | `--mh-space-5` | 16px | Card internal stack (meta → media → tags) |
 | `--mh-space-6` | 20px | Gutter, small blocks |
-| `--mh-space-7` | 24px | Section-header rule to title |
+| `--mh-space-7` | 24px | Small blocks |
 | `--mh-space-8` | 30px | Nav link gap, split gap |
 | `--mh-space-9` | 40px | Between meta items |
 | `--mh-space-10` | 50px | Card row gap |
 | `--mh-space-11` | 72px | Inside sections; lightbox padding |
-| `--mh-space-12` | 96px | Between major blocks |
-| `--mh-space-13` | 144px | Between page sections; hero top |
+| `--mh-space-12` | 100px | Section padding (Framer) |
+| `--mh-space-13` | 144px | Extra-large breaks (docs only) |
 
 ## Shape and elevation
 
@@ -528,6 +541,10 @@ Grids in use on the live site:
 | `--mh-radius-pill` | 250px | Tags, pill actions |
 | `--mh-border-hairline` | 1px | The only border width |
 | `--mh-elevation-none` | none | The brand is flat |
+
+## Where these numbers come from
+
+Desktop values are read from the Framer project (Home page layers via the Framer MCP): section padding `100px 20px`, rule → title `20px`, title → grid `60px` + `10px` stack gap, grid → View all `30px`, About title → content `30px`, content → Scroll to top `60px`. Tablet and mobile values were measured on micahhoang.com at 810px and 390px, because the MCP can't open breakpoint frames. Re-check them after any Framer layout change.
 
 ## Usage
 
@@ -1135,7 +1152,7 @@ tokens: [type.label, type.label-sm, radius.pill, color.*.border.stroke, color.*.
 
 - Tags list a project's **disciplines** (Strategy, Visual identity, UX/UI, 2D motion, Packaging...). Industry goes in the index row, not a tag.
 - Up to three per card, in CMS order.
-- At rest a tag is Light Gray text with a Light Gray outline. Interactive tags (links or toggle buttons) turn Accent Green on hover; a pressed toggle stays green.
+- At rest a tag is Stroke Gray text with a Stroke Gray outline. Interactive tags (links or toggle buttons) turn Accent Green on hover; a pressed toggle stays green.
 - On the live site, clicking a grid tag on `/index` toggles that discipline filter in place.
 
 ## API
@@ -1286,7 +1303,8 @@ tokens: [type.display-m, border.hairline, space.7]
 
 - Use for top-level page sections: Selected work, About Micah, Other projects, Index.
 - Titles are sentence case, two or three words. They label the section; they aren't headlines.
-- Leave at least `--mh-space-12` (96px) above a section header and `--mh-space-11` (72px) below before content starts.
+- Spacing (Framer): the previous section ends with 100px bottom padding; rule → title 20px; title → content 70px (50px mobile) via the header's own bottom padding. Use `data-spacing="compact"` for About (30px, 20px mobile).
+- Multi-word titles reveal word by word: wrap each word in a `span`; words sit 15px apart (8px mobile).
 - An optional action (View all) sits on the title's baseline at the right edge.
 
 ## API
@@ -1295,12 +1313,13 @@ tokens: [type.display-m, border.hairline, space.7]
 | --- | --- | --- |
 | `mh-section-header` | `header` | Grid: title left, optional action right |
 | `mh-rule` | `hr` | First child; spans both columns |
-| `mh-section-header__title` | `h2` | Display M (70 / 53 / 42px, regular, Forest Green) |
+| `mh-section-header__title` | `h2` | Display M (70 / 53 / 42px, regular, Forest Green); word spans 15px apart |
+| `data-spacing="compact"` | `header` | 30px (20px mobile) below instead of 70px |
 
 ## Framer mapping
 
 - Text style **Heading 2** (GT Standard L Regular). The live site renders the title at 70px with -1% tracking.
-- The rule is a 1px frame or Line Animation above the title in a vertical Stack (gap 24px).
+- The rule is a 1px frame or Line Animation above the title in a vertical Stack; the title row has 20px top padding.
 - The reveal is Framer's native Appear effect, normalized by `PageTransition` (`gmalnRr`) to 900ms / 90ms stagger / Snappy / 115% start.
 
 ## Don't
@@ -1351,7 +1370,9 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
 | Name | "Micah Hoang", links to `/` | Kept |
 | Role | "Brand designer" | Hidden |
 | Location | "Los Angeles, California" | Hidden |
-| Links | Work, Play, Index, About | Kept, 24px gap |
+| Links | Work, Play, Index, About | Kept |
+
+Desktop columns are fixed: name 258px, role 340px, location fills, links hug the right edge (measured identical at 1200 and 1280). Tablet uses fixed 123px / 145px columns. Links sit 31px apart. The nav gutter is 20px at every breakpoint.
 
 ## Usage
 
@@ -1365,10 +1386,10 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
 
 | Class | Element | Notes |
 | --- | --- | --- |
-| `mh-nav` | `nav` | Sticky, 4-column grid `1fr 1.3fr 1.6fr auto` |
+| `mh-nav` | `nav` | Sticky; grid `258px 340px 1fr auto` (tablet `123px 145px 1fr auto`), 53px tall |
 | `mh-nav__name` | `a` | Flip link |
 | `mh-nav__role`, `mh-nav__location` | `p` | Static labels, hidden on mobile |
-| `mh-nav__links` | `ul` | Flip links, 30px gap |
+| `mh-nav__links` | `ul` | Flip links, 31px gap |
 
 ## Accessibility
 
@@ -1410,7 +1431,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 ```html example bleed surface=green
 <footer class="mh-footer" data-surface="green">
-  <p class="mh-label" data-leading="relaxed">Get in touch</p>
+  <p class="mh-label mh-footer__eyebrow">Get in touch</p>
   <ul class="mh-footer__contacts">
     <li><a class="mh-footer__contact" href="#">micah.hoang<sup>@hey.com</sup></a></li>
     <li><a class="mh-footer__contact" href="#">LinkedIn<sup>Connect</sup></a></li>
@@ -1430,9 +1451,11 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 ## Anatomy
 
-1. **Eyebrow**: "Get in touch", mono.
-2. **Contacts**: three Display Footer links (80 / 64 / 40px, uppercase, -2%), each with a mono superscript saying what it is for: `@HEY.COM`, `CONNECT`, `INSPIRE`.
-3. **Base bar**: availability, link list (LinkedIn, Resume, Cosmos), ©year, laid out across a 3-column grid.
+1. **Eyebrow** (`mh-footer__eyebrow`): "Get in touch", `/Small Mono` 20px from the top. Its leading drops from 130% to 100% below 1200px.
+2. **Contacts**: 30px below the eyebrow (10px mobile). Three Display Footer rows (80 / 70 / 40px, uppercase, -2%), 10px apart, each with a `/Small Mono Footers` superscript 10px to its right and 2px down: `@HEY.COM`, `CONNECT`, `INSPIRE`.
+3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
+
+The whole block is 50vh tall on desktop and mobile, 40vh on tablet.
 
 ## Usage
 
@@ -1444,10 +1467,11 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 | Class | Element | Notes |
 | --- | --- | --- |
-| `mh-footer` | `footer` | Add `data-surface="green"`; 144px top padding |
-| `mh-footer__contacts` | `ul` | Vertical list |
+| `mh-footer` | `footer` | Add `data-surface="green"`; `min-height: var(--mh-footer-min-height)` |
+| `mh-footer__eyebrow` | `p.mh-label` | 130% leading on desktop, 100% below |
+| `mh-footer__contacts` | `ul` | Vertical list, 10px apart |
 | `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag |
-| `mh-footer__bar` | `div` | 3 columns; the link list moves to its own row on mobile |
+| `mh-footer__bar` | `div` | 2 equal columns, 40px gap; children: availability, link list, ©year |
 
 ## Accessibility
 
@@ -1455,6 +1479,8 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 - Cream on Forest Green is about 12:1 contrast, fine at every size.
 
 ## Framer mapping
+
+- Home renders this as the page section `SectionCta` plus the `FooterWhite*` bar; case studies use the **Footer** component, whose contact rows measure 80 / 80 / 42px. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Home desktop treatment.
 
 - Native **Footer** component with desktop/tablet/phone variants (`FooterWhiteDesktop`, ...).
 - The display links use `TextEncryptionEffect` (`p7tSTaD`) for the per-letter scramble on hover. Keep it on these three links only.
@@ -1474,7 +1500,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 title: Hero
 section: Components
 order: 9
-description: The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.
+description: The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.
 status: live
 framer: Home "Header" section (Heading 1 + Heading 3); case-study hero (Heading 2b, two colors)
 classes: [mh-hero, mh-hero__name, mh-hero__descriptor, mh-hero__bar, mh-hero__continuation]
@@ -1524,9 +1550,9 @@ tokens: [type.display-xl, type.display-l, type.heading, space.13]
 | Variant | Title | Supporting text | Where |
 | --- | --- | --- | --- |
 | Home | Display XL, bold, the name | Heading, two lines, Forest Green | `/` only |
-| Case study | Display L, bold, project name | Same size and weight, continues in Light Gray | `/case-studies/*` |
+| Case study | Display L, bold, project name | Same size and weight, continues in Stroke Gray | `/case-studies/*` |
 
-- **Home**: the name, a two-line descriptor, then a base bar (link list left, ©2026 right) closed by a 1px rule. The Selected work section follows.
+- **Home**: the name's line box 90px from the top (97 mobile) under the fixed nav, with a 6px optical overhang to the left (5 tablet, 3 mobile); the descriptor 220 / 186 / 162px from the top, a two-line descriptor at a fixed width (382 / 218 / 181px), then the link row pinned 10px from the bottom of the 100px bottom padding, on the 20px nav gutter. There is no rule here: the rule that follows belongs to the Selected work [Section Header](section-header.md).
 - **Case study**: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the [Meta Grid](meta-grid.md) follow.
 - Hero copy rises in with the type reveal (900ms, 90ms stagger).
 
@@ -1549,7 +1575,7 @@ tokens: [type.display-xl, type.display-l, type.heading, space.13]
 ## Framer mapping
 
 - Home: text styles **Heading 1** (name) and **Heading 3** (descriptor). Appear effects: name `translateY 110px → 0`, descriptor `90px → 0`, Snappy; replays are coordinated by `PageTransition` (`gmalnRr`).
-- Case study: **Heading 2b** in two text layers (`/Forest Green` then `Light Gray`) or one rich-text layer with a color span.
+- Case study: **Heading 2b** in two text layers (`/Forest Green` then `/Stroke Gray`) or one rich-text layer with a color span.
 
 ## Don't
 
@@ -1606,7 +1632,7 @@ tokens: [color.*.bg.media, color.*.border.stroke, motion.scale.hover, motion.dur
 
 - **Square corners, always.** No radius, no shadow.
 - **16:9 is the default** for thumbnails and hero media. Use 4:5 / 1:1 / 3:2 in case-study galleries when the asset calls for it, and `auto` to keep an asset's own ratio.
-- **Stroke** (`data-stroke`): a 1px Light Gray inset outline, for media on white or near-cream backgrounds (product shots, UI) that would otherwise bleed into the page. It's a per-project CMS field (`Thumbnail Stroke`).
+- **Stroke** (`data-stroke`): a 1px Stroke Gray inset outline, for media on white or near-cream backgrounds (product shots, UI) that would otherwise bleed into the page. It's a per-project CMS field (`Thumbnail Stroke`).
 - **Hover**: when the frame is in a link, the image scales to 1.02 over 420ms Snappy. The frame stays still.
 - **Video**: the poster image stays painted under the video, and the video fades in once it can play. Never leave a blank frame between them.
 - Placeholder color is white (`--mh-bg-media`).
@@ -2129,8 +2155,8 @@ tokens: [type.label, type.body-lg, layout.split-gap, space.9, space.5]
 | Class | Element | Notes |
 | --- | --- | --- |
 | `mh-meta-grid` | `div` | Two columns, 30px gap; stacks below 810px |
-| `mh-meta-grid__col` | `dl` | 40px between items |
-| `mh-meta-grid__item` | `div` | `dt` label + `dd` value, 16px gap |
+| `mh-meta-grid__col` | `dl` | 40px between items (36px mobile) |
+| `mh-meta-grid__item` | `div` | `dt` label (`/Small Mono`) + `dd` value (`/Body L`: 22 / 18 / 15px), 15px gap |
 
 ## Data model (CMS)
 
@@ -2508,8 +2534,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 ## Example (condensed)
 
 ```html example bleed
-<div class="mh-container" style="padding-block:20px 72px">
-  <header class="mh-hero" style="padding-top:72px">
+<div class="mh-container" style="padding-bottom:var(--mh-section-padding-y)">
+  <header class="mh-hero">
     <h1 class="mh-hero__name mh-text-display-xl">Micah Hoang</h1>
     <p class="mh-hero__descriptor mh-text-heading">Brand designer with a systems mind.</p>
     <div class="mh-hero__bar">
@@ -2517,13 +2543,16 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
       <span class="mh-label">©2026</span>
     </div>
   </header>
-  <section style="margin-top:72px">
-    <h2 class="mh-text-display-m" style="margin:0 0 72px">Selected work</h2>
+  <section>
+    <header class="mh-section-header">
+      <hr class="mh-rule">
+      <h2 class="mh-section-header__title"><span>Selected</span><span>work</span></h2>
+    </header>
     <ul class="mh-project-grid">
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
     </ul>
-    <div style="display:flex;justify-content:flex-end;margin-top:40px"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
   </section>
 </div>
 ```
@@ -2533,7 +2562,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 - **Selected-work order** is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon & Schuster, National Park Playing Cards). It comes from the CMS, not code.
 - Six projects, never more. Everything else lives in the Index.
 - No hero image. The first image a visitor sees is project 1.
-- Vertical rhythm: about 144px from hero to Selected work, 72px from section title to grid, 144px before About.
+- Vertical rhythm (from the Framer page): hero padding 100px top (75 mobile) and 100px bottom; section rule → title 20px; title → grid 70px (50 mobile); grid → View all 30px (20 mobile); 100px section bottom padding before About; About title → content 30px (20 mobile); content → Scroll to top 60px.
+- About: 175px portrait (170 tablet/mobile), 20px gap, copy max 600px in Body L, 40px to Read more (30 tablet/mobile). On mobile the portrait stacks above the copy.
 
 ## Framer mapping
 
@@ -2565,7 +2595,7 @@ Show the work in context and say exactly what Micah did. The media carries the s
 | # | Section | Components | Notes |
 | --- | --- | --- | --- |
 | 1 | Nav | [Navigation](../components/navigation.md) | |
-| 2 | Title | [Hero](../components/hero.md) (case-study) | Bold project name + Light Gray continuation, Display L |
+| 2 | Title | [Hero](../components/hero.md) (case-study) | Bold project name + Stroke Gray continuation, Display L |
 | 3 | Hero media | [Media Frame](../components/media-frame.md) | Full bleed (edge to edge, no gutter), 16:9 or wider, video preferred |
 | 4 | Fact sheet | [Meta Grid](../components/meta-grid.md) | About, Industry / Scope, Credits, Year |
 | 5…n | Chapters | Heading (35px, near-black) + galleries + Body (18px, Graphite, ≤620px) | e.g. The Insight, Strategy, Visual Identity, Brand in the World, Interface, Designed to Ship |
@@ -2579,7 +2609,7 @@ Every image on the page is [Lightbox](../components/lightbox.md)-enabled.
 
 ```html example bleed
 <article>
-  <header class="mh-hero mh-container" data-variant="case-study" style="padding-top:72px;padding-bottom:72px">
+  <header class="mh-hero mh-container" data-variant="case-study" style="padding-bottom:72px">
     <h1 class="mh-hero__name">Gaia <span class="mh-hero__continuation">Turning noticing into a way of caring for the living world.</span></h1>
   </header>
   <div class="mh-media" data-ratio="16:9" data-mh-lightbox><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>
@@ -2689,183 +2719,851 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
   "color": {
     "$type": "color",
     "primitive": {
-      "cream": { "$value": "#F7F5F0", "$description": "Framer style /Cream. Page background, text on Forest Green." },
-      "forest-green": { "$value": "#233324", "$description": "Framer style /Forest Green. Brand color: headings, nav, mono labels; inverse surface for footer and boot loader." },
-      "accent-green": { "$value": "#25593A", "$description": "Interactive green. Hover/active for tags, filters and index controls. Never a fill." },
-      "near-black": { "$value": "#141414", "$description": "Rules, dividers, index list text, lightbox chrome, emphasized body." },
-      "graphite": { "$value": "#525252", "$description": "Long-form body copy on case studies." },
-      "light-gray": { "$value": "#979797", "$description": "Framer style Light Gray. Secondary headline line, tag text, thumbnail stroke." },
-      "white": { "$value": "#FFFFFF", "$description": "Lightbox backdrop, media placeholder." },
-      "white-60": { "$value": "#FFFFFF99", "$description": "Muted text on Forest Green." },
-      "grain-umber": { "$value": "#501D07", "$description": "Grain overlay tint. Used only in the texture layer." }
+      "cream": {
+        "$value": "#F7F5F0",
+        "$description": "Framer style /Cream. Page background, text on Forest Green."
+      },
+      "forest-green": {
+        "$value": "#233324",
+        "$description": "Framer style /Forest Green. Brand color: headings, nav, mono labels; inverse surface for footer and boot loader."
+      },
+      "accent-green": {
+        "$value": "#25593A",
+        "$description": "Not a Framer color style: set per instance as HomeSelectedWorkGrid tagHoverColor and IndexPage hover/active (rgb(37, 89, 58)). Hover/active only, never a fill."
+      },
+      "near-black": {
+        "$value": "#141414",
+        "$description": "Framer style /Off-Black. Rules, dividers, index list text, lightbox chrome, strong body."
+      },
+      "graphite": {
+        "$value": "#525252",
+        "$description": "Framer style /Text Gray. Long-form body copy on case studies."
+      },
+      "light-gray": {
+        "$value": "#979797",
+        "$description": "Framer style /Stroke Gray. Secondary headline line, tag text, thumbnail stroke."
+      },
+      "white": {
+        "$value": "#FFFFFF",
+        "$description": "Framer style /White. Lightbox backdrop, media placeholder."
+      },
+      "white-60": {
+        "$value": "#FFFFFF99",
+        "$description": "Muted text on Forest Green."
+      },
+      "grain-umber": {
+        "$value": "#501D07",
+        "$description": "Grain overlay tint. Used only in the texture layer."
+      }
     },
     "cream": {
       "$description": "Semantic roles on the default Cream surface (data-surface=\"cream\").",
       "bg": {
-        "page": { "$value": "{color.primitive.cream}", "$description": "Body and page background." },
-        "inverse": { "$value": "{color.primitive.forest-green}", "$description": "Footer, boot loader, any inverted block." },
-        "media": { "$value": "{color.primitive.white}", "$description": "Placeholder behind media before it loads; lightbox backdrop." },
-        "hover": { "$value": "#1414140A", "$description": "Row hover wash (near-black at ~3.5%)." }
+        "page": {
+          "$value": "{color.primitive.cream}",
+          "$description": "Body and page background."
+        },
+        "inverse": {
+          "$value": "{color.primitive.forest-green}",
+          "$description": "Footer, boot loader, any inverted block."
+        },
+        "media": {
+          "$value": "{color.primitive.white}",
+          "$description": "Placeholder behind media before it loads; lightbox backdrop."
+        },
+        "hover": {
+          "$value": "#1414140A",
+          "$description": "Row hover wash (near-black at ~3.5%)."
+        }
       },
       "text": {
-        "brand": { "$value": "{color.primitive.forest-green}", "$description": "Display type, nav, mono labels, section headers." },
-        "strong": { "$value": "{color.primitive.near-black}", "$description": "Lead body, metadata values, index rows, H3." },
-        "body": { "$value": "{color.primitive.graphite}", "$description": "Long-form paragraphs." },
-        "muted": { "$value": "{color.primitive.light-gray}", "$description": "Second headline line, tags, tertiary meta." },
-        "interactive": { "$value": "{color.primitive.accent-green}", "$description": "Hover and active state for tags, filters, toggles." }
+        "brand": {
+          "$value": "{color.primitive.forest-green}",
+          "$description": "Display type, nav, mono labels, section headers."
+        },
+        "strong": {
+          "$value": "{color.primitive.near-black}",
+          "$description": "Lead body, metadata values, index rows, H3."
+        },
+        "body": {
+          "$value": "{color.primitive.graphite}",
+          "$description": "Long-form paragraphs."
+        },
+        "muted": {
+          "$value": "{color.primitive.light-gray}",
+          "$description": "Second headline line, tags, tertiary meta."
+        },
+        "interactive": {
+          "$value": "{color.primitive.accent-green}",
+          "$description": "Hover and active state for tags, filters, toggles."
+        }
       },
       "border": {
-        "rule": { "$value": "{color.primitive.near-black}", "$description": "1px full-width rules and dividers." },
-        "stroke": { "$value": "{color.primitive.light-gray}", "$description": "Tag outline, optional 1px media stroke." }
+        "rule": {
+          "$value": "{color.primitive.near-black}",
+          "$description": "1px full-width rules and dividers."
+        },
+        "stroke": {
+          "$value": "{color.primitive.light-gray}",
+          "$description": "Tag outline, optional 1px media stroke."
+        }
       }
     },
     "green": {
       "$description": "Semantic roles on the Forest Green surface (data-surface=\"green\").",
       "bg": {
-        "page": { "$value": "{color.primitive.forest-green}" },
-        "inverse": { "$value": "{color.primitive.cream}" },
-        "media": { "$value": "{color.primitive.white}" },
-        "hover": { "$value": "#F7F5F014" }
+        "page": {
+          "$value": "{color.primitive.forest-green}"
+        },
+        "inverse": {
+          "$value": "{color.primitive.cream}"
+        },
+        "media": {
+          "$value": "{color.primitive.white}"
+        },
+        "hover": {
+          "$value": "#F7F5F014"
+        }
       },
       "text": {
-        "brand": { "$value": "{color.primitive.cream}" },
-        "strong": { "$value": "{color.primitive.cream}" },
-        "body": { "$value": "{color.primitive.white-60}" },
-        "muted": { "$value": "{color.primitive.white-60}" },
-        "interactive": { "$value": "{color.primitive.white}" }
+        "brand": {
+          "$value": "{color.primitive.cream}"
+        },
+        "strong": {
+          "$value": "{color.primitive.cream}"
+        },
+        "body": {
+          "$value": "{color.primitive.white-60}"
+        },
+        "muted": {
+          "$value": "{color.primitive.white-60}"
+        },
+        "interactive": {
+          "$value": "{color.primitive.white}"
+        }
       },
       "border": {
-        "rule": { "$value": "{color.primitive.cream}" },
-        "stroke": { "$value": "{color.primitive.white-60}" }
+        "rule": {
+          "$value": "{color.primitive.cream}"
+        },
+        "stroke": {
+          "$value": "{color.primitive.white-60}"
+        }
       }
     }
   },
   "font": {
     "family": {
       "$type": "fontFamily",
-      "sans": { "$value": ["MH GT Standard", "GT Standard L Regular", "GT Standard Trial L Rg", "Helvetica Neue", "Arial", "sans-serif"], "$description": "GT Standard L. 400 Regular, 500 Medium (Trial L Md), 700 Bold (Trial L Bd)." },
-      "mono": { "$value": ["MH GT Standard Mono", "GT Standard Mono Regular", "GT Standard Mono Trial Rg", "Azeret Mono", "SF Mono", "ui-monospace", "monospace"], "$description": "GT Standard Mono. Always uppercase, 12-13px." }
+      "sans": {
+        "$value": [
+          "MH GT Standard",
+          "GT Standard L Regular",
+          "GT Standard Trial L Rg",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ],
+        "$description": "GT Standard L. 400 Regular, 500 Medium (Trial L Md), 700 Bold (Trial L Bd)."
+      },
+      "mono": {
+        "$value": [
+          "MH GT Standard Mono",
+          "GT Standard Mono Regular",
+          "GT Standard Mono Trial Rg",
+          "Azeret Mono",
+          "SF Mono",
+          "ui-monospace",
+          "monospace"
+        ],
+        "$description": "GT Standard Mono. Always uppercase, 12-13px."
+      }
     },
     "weight": {
       "$type": "fontWeight",
-      "regular": { "$value": 400 },
-      "medium": { "$value": 500 },
-      "bold": { "$value": 700 }
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "bold": {
+        "$value": 700
+      }
     }
   },
   "type": {
     "$description": "Composite text styles. size/leading/tracking per breakpoint: desktop (>=1200), tablet (810-1199), mobile (<810). Tracking is in em.",
-    "display-xl": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 700, "fontSize": { "desktop": "120px", "tablet": "94px", "mobile": "58px" }, "lineHeight": { "desktop": "100%", "tablet": "114%", "mobile": "114%" }, "letterSpacing": "-0.01em", "textTransform": "capitalize" }, "$description": "Home hero name only. Framer: Heading 1. One per site." },
-    "display-l": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 700, "fontSize": { "desktop": "70px", "tablet": "53px", "mobile": "42px" }, "lineHeight": "100%", "letterSpacing": "-0.01em" }, "$description": "Case-study title plus muted continuation line. Framer: Heading 2b." },
-    "display-m": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "70px", "tablet": "53px", "mobile": "42px" }, "lineHeight": "100%", "letterSpacing": "-0.01em" }, "$description": "Section header (Selected work, About Micah, Index). Framer: Heading 2." },
-    "display-footer": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "80px", "tablet": "64px", "mobile": "40px" }, "lineHeight": "100%", "letterSpacing": "-0.02em", "textTransform": "uppercase" }, "$description": "Footer contact links on Forest Green." },
-    "heading": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "35px", "tablet": "24px", "mobile": "20px" }, "lineHeight": "110%", "letterSpacing": "-0.01em" }, "$description": "Hero descriptor and case-study section titles. Framer: Heading 3." },
-    "title": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "22px", "tablet": "22px", "mobile": "22px" }, "lineHeight": "120%", "letterSpacing": "0", "textTransform": "uppercase" }, "$description": "Index row project titles (uppercase GT Standard). Framer: Index Title (scaled)." },
-    "body-lg": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "22px", "tablet": "22px", "mobile": "18px" }, "lineHeight": "120%", "letterSpacing": "0.01em" }, "$description": "Lead paragraphs, About copy, metadata values. Framer: Body." },
-    "body": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": { "desktop": "18px", "tablet": "18px", "mobile": "16px" }, "lineHeight": "140%", "letterSpacing": "0" }, "$description": "Case-study long-form body. Color text.body. Max ~620px measure." },
-    "body-sm": { "$type": "typography", "$value": { "fontFamily": "{font.family.sans}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "140%", "letterSpacing": "0" }, "$description": "Small paragraphs, captions. Framer: Paragraph Regular." },
-    "label": { "$type": "typography", "$value": { "fontFamily": "{font.family.mono}", "fontWeight": 400, "fontSize": "13px", "lineHeight": "100%", "letterSpacing": "0", "textTransform": "uppercase" }, "$description": "Mono label: nav, meta, eyebrows, actions. Framer: Heading 5 / Body - 100%." },
-    "label-sm": { "$type": "typography", "$value": { "fontFamily": "{font.family.mono}", "fontWeight": 400, "fontSize": "12px", "lineHeight": "100%", "letterSpacing": "0", "textTransform": "uppercase" }, "$description": "Tags below 1200px, dense meta." }
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 700,
+        "fontSize": {
+          "desktop": "120px",
+          "tablet": "94px",
+          "mobile": "58px"
+        },
+        "lineHeight": {
+          "desktop": "100%",
+          "tablet": "114%",
+          "mobile": "114%"
+        },
+        "letterSpacing": "-0.01em",
+        "textTransform": "capitalize"
+      },
+      "$description": "Home hero name only. Framer: /Heading 1 (120px, GT Standard Trial L Bd). One per site."
+    },
+    "display-l": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 700,
+        "fontSize": {
+          "desktop": "70px",
+          "tablet": "52px",
+          "mobile": "38px"
+        },
+        "lineHeight": "100%",
+        "letterSpacing": {
+          "desktop": "-0.01em",
+          "tablet": "-0.01em",
+          "mobile": "-0.02em"
+        }
+      },
+      "$description": "Case-study title plus muted continuation line. Framer: /Heading 2 Bold."
+    },
+    "display-m": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": {
+          "desktop": "70px",
+          "tablet": "53px",
+          "mobile": "42px"
+        },
+        "lineHeight": "100%",
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "Section header (Selected work, About Micah, Index). Framer: /Heading 2."
+    },
+    "display-footer": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": {
+          "desktop": "80px",
+          "tablet": "70px",
+          "mobile": "40px"
+        },
+        "lineHeight": "100%",
+        "letterSpacing": "-0.02em",
+        "textTransform": "uppercase"
+      },
+      "$description": "Footer contact links on Forest Green (Home CTA). Measured; the case-study Footer component renders 80 / 80 / 42px."
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": {
+          "desktop": "35px",
+          "tablet": "24px",
+          "mobile": "20px"
+        },
+        "lineHeight": "110%",
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "Hero descriptor and case-study section titles. Framer: /Heading 3 (1.1em leading)."
+    },
+    "heading-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 700,
+        "fontSize": "20px",
+        "lineHeight": "140%",
+        "letterSpacing": "0"
+      },
+      "$description": "Small bold heading. Framer: /Heading 4."
+    },
+    "title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": {
+          "desktop": "22px",
+          "tablet": "22px",
+          "mobile": "22px"
+        },
+        "lineHeight": "120%",
+        "letterSpacing": "0",
+        "textTransform": "uppercase"
+      },
+      "$description": "Index row project titles (uppercase GT Standard). Framer: Index Title (scaled)."
+    },
+    "body-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": {
+          "desktop": "22px",
+          "tablet": "18px",
+          "mobile": "15px"
+        },
+        "lineHeight": {
+          "desktop": "120%",
+          "tablet": "120%",
+          "mobile": "130%"
+        },
+        "letterSpacing": "0.01em"
+      },
+      "$description": "Lead paragraphs, About copy, metadata values. Framer: /Body L (paragraph spacing 15)."
+    },
+    "body-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 500,
+        "fontSize": "22px",
+        "lineHeight": "110%",
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "Medium-weight lead line. Framer: /Body XL (GT Standard Trial L Md)."
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": {
+          "desktop": "18px",
+          "tablet": "16px",
+          "mobile": "14px"
+        },
+        "lineHeight": "140%",
+        "letterSpacing": "0"
+      },
+      "$description": "Case-study long-form body. Framer: /Body M (paragraph spacing 20). Color text.body (/Text Gray). Max ~620px measure."
+    },
+    "body-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontWeight": 400,
+        "fontSize": "16px",
+        "lineHeight": "140%",
+        "letterSpacing": "0"
+      },
+      "$description": "Small paragraphs, captions. Framer: Paragraph Regular."
+    },
+    "label": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": 400,
+        "fontSize": "13px",
+        "lineHeight": "100%",
+        "letterSpacing": "0",
+        "textTransform": "uppercase"
+      },
+      "$description": "Mono label: nav, links, ©year, Read more. Framer: /Small Mono Footers (13px, 100%, 0 tracking)."
+    },
+    "label-relaxed": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": 400,
+        "fontSize": "13px",
+        "lineHeight": {
+          "desktop": "130%",
+          "tablet": "130%",
+          "mobile": "140%"
+        },
+        "letterSpacing": "-0.01em",
+        "textTransform": "uppercase"
+      },
+      "$description": "Mono label stacked over content: GET IN TOUCH, / About the project. Framer: /Small Mono (13px, 130%, -1%)."
+    },
+    "label-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontWeight": 400,
+        "fontSize": "12px",
+        "lineHeight": "100%",
+        "letterSpacing": "0",
+        "textTransform": "uppercase"
+      },
+      "$description": "Tags below 1200px, dense meta."
+    }
   },
   "space": {
     "$type": "dimension",
-    "1": { "$value": "4px" },
-    "2": { "$value": "6px" },
-    "3": { "$value": "8px" },
-    "4": { "$value": "12px" },
-    "5": { "$value": "16px" },
-    "6": { "$value": "20px" },
-    "7": { "$value": "24px" },
-    "8": { "$value": "30px" },
-    "9": { "$value": "40px" },
-    "10": { "$value": "50px" },
-    "11": { "$value": "72px" },
-    "12": { "$value": "96px" },
-    "13": { "$value": "144px" }
+    "1": {
+      "$value": "4px"
+    },
+    "2": {
+      "$value": "6px"
+    },
+    "3": {
+      "$value": "8px"
+    },
+    "4": {
+      "$value": "12px"
+    },
+    "5": {
+      "$value": "16px"
+    },
+    "6": {
+      "$value": "20px"
+    },
+    "7": {
+      "$value": "24px"
+    },
+    "8": {
+      "$value": "30px"
+    },
+    "9": {
+      "$value": "40px"
+    },
+    "10": {
+      "$value": "50px"
+    },
+    "11": {
+      "$value": "72px"
+    },
+    "12": {
+      "$value": "100px",
+      "$description": "Framer section padding (hero top/bottom, section bottom)."
+    },
+    "13": {
+      "$value": "144px"
+    }
   },
   "layout": {
     "$type": "dimension",
-    "gutter": { "$value": { "desktop": "20px", "tablet": "20px", "mobile": "15px" }, "$description": "Page side padding. Content spans edge to edge inside it." },
-    "column-gap": { "$value": "20px", "$description": "Card grids (selected work, index grid)." },
-    "split-gap": { "$value": "30px", "$description": "Two-column text splits (case-study meta grid)." },
-    "card-row-gap": { "$value": "50px", "$description": "Vertical gap between project cards." },
-    "nav-height": { "$value": "53px" },
-    "measure": { "$value": "620px", "$description": "Max width for long-form body." },
-    "breakpoint-tablet": { "$value": "810px" },
-    "breakpoint-desktop": { "$value": "1200px" }
+    "gutter": {
+      "$value": {
+        "desktop": "20px",
+        "tablet": "20px",
+        "mobile": "15px"
+      },
+      "$description": "Page side padding. Content spans edge to edge inside it."
+    },
+    "column-gap": {
+      "$value": "20px",
+      "$description": "Card grids (selected work, index grid)."
+    },
+    "split-gap": {
+      "$value": "30px",
+      "$description": "Two-column text splits (case-study meta grid)."
+    },
+    "card-row-gap": {
+      "$value": "50px",
+      "$description": "Vertical gap between project cards."
+    },
+    "nav-height": {
+      "$value": "53px"
+    },
+    "measure": {
+      "$value": "580px",
+      "$description": "Long-form body width on case studies (measured 580px at 1200)."
+    },
+    "breakpoint-tablet": {
+      "$value": "810px"
+    },
+    "breakpoint-desktop": {
+      "$value": "1200px"
+    },
+    "section-padding-y": {
+      "$value": "100px",
+      "$description": "Home SectionHero top/bottom and SectionSelectedWorks bottom padding."
+    },
+    "section-header-title-gap": {
+      "$value": "20px",
+      "$description": "Rule (Line Animation) to section title: Heading padding-top."
+    },
+    "section-header-after": {
+      "$value": {
+        "desktop": "70px",
+        "tablet": "70px",
+        "mobile": "50px"
+      },
+      "$description": "Section title to its content (HeadingWrapper bottom padding + stack gap). About uses the compact value."
+    },
+    "heading-word-gap": {
+      "$value": {
+        "desktop": "15px",
+        "tablet": "15px",
+        "mobile": "8px"
+      },
+      "$description": "Gap between separately revealed words of a Display M title (Selected / work). About uses 20 / 12 / 12."
+    },
+    "link-list-gap": {
+      "$value": "10px",
+      "$description": "Gap between comma-joined mono links (SocialWrapper)."
+    },
+    "card-grid-to-action": {
+      "$value": {
+        "desktop": "30px",
+        "tablet": "30px",
+        "mobile": "20px"
+      },
+      "$description": "Selected-work grid to the View all row."
+    },
+    "hero-descriptor-width": {
+      "$value": {
+        "desktop": "382px",
+        "tablet": "218px",
+        "mobile": "181px"
+      },
+      "$description": "Fixed width that breaks the hero descriptor over two lines."
+    },
+    "about-image-width": {
+      "$value": {
+        "desktop": "175px",
+        "tablet": "170px",
+        "mobile": "170px"
+      },
+      "$description": "Home About portrait width."
+    },
+    "about-copy-width": {
+      "$value": "600px",
+      "$description": "Home About paragraph max width."
+    },
+    "cta-row-gap": {
+      "$value": "10px",
+      "$description": "Footer CTA display word to its mono superscript."
+    },
+    "nav-gutter": {
+      "$value": "20px",
+      "$description": "Nav and hero link-row side padding. Stays 20px at every breakpoint (the page gutter drops to 15px on mobile)."
+    },
+    "section-header-after-compact": {
+      "$value": {
+        "desktop": "30px",
+        "tablet": "30px",
+        "mobile": "20px"
+      },
+      "$description": "About Micah: title to content."
+    },
+    "footer-min-height": {
+      "$value": {
+        "desktop": "50vh",
+        "tablet": "40vh",
+        "mobile": "50vh"
+      },
+      "$description": "Home CTA/footer block height."
+    },
+    "footer-gap": {
+      "$value": {
+        "desktop": "30px",
+        "tablet": "30px",
+        "mobile": "10px"
+      },
+      "$description": "GET IN TOUCH to the contact rows."
+    },
+    "footer-bar-column-gap": {
+      "$value": "40px",
+      "$description": "Footer base bar: two equal columns, so the link list starts at the page midpoint + 20px."
+    },
+    "meta-label-gap": {
+      "$value": "15px",
+      "$description": "Meta grid: / LABEL to value."
+    },
+    "meta-item-gap": {
+      "$value": {
+        "desktop": "40px",
+        "tablet": "40px",
+        "mobile": "36px"
+      },
+      "$description": "Meta grid: between items."
+    },
+    "hero-name-top": {
+      "$value": {
+        "desktop": "90px",
+        "tablet": "90px",
+        "mobile": "97px"
+      },
+      "$description": "Hero top edge to the name's line box. Framer: 100px section padding + 13px wrapper padding, name absolutely positioned at top -10px (mobile 75 + 32 + -10)."
+    },
+    "hero-descriptor-top": {
+      "$value": {
+        "desktop": "220px",
+        "tablet": "186px",
+        "mobile": "162px"
+      },
+      "$description": "Hero top edge to the descriptor."
+    },
+    "hero-name-indent": {
+      "$value": {
+        "desktop": "-6px",
+        "tablet": "-5px",
+        "mobile": "-3px"
+      },
+      "$description": "Optical overhang of the bold display caps past the gutter (Framer left: -6px)."
+    },
+    "hero-padding-bottom": {
+      "$value": {
+        "desktop": "100px",
+        "tablet": "100px",
+        "mobile": "131px"
+      },
+      "$description": "Descriptor block to the hero's bottom edge; the link row sits 10px above that edge."
+    },
+    "section-header-before": {
+      "$value": {
+        "desktop": "11px",
+        "tablet": "11px",
+        "mobile": "1px"
+      },
+      "$description": "Section top to its rule: a hidden 1px LineAnimationActive layer + the section's 10px stack gap (0 on mobile)."
+    },
+    "nav-link-gap": {
+      "$value": "31px",
+      "$description": "Gap between nav links (measured: Work 948, Play 1010, Index 1072, About 1142 at 1200px)."
+    }
   },
   "radius": {
     "$type": "dimension",
-    "none": { "$value": "0px", "$description": "Default. Media, sections and surfaces are square." },
-    "hairline": { "$value": "2px", "$description": "Index row hover wash only." },
-    "pill": { "$value": "250px", "$description": "Tags and pill actions." }
+    "none": {
+      "$value": "0px",
+      "$description": "Default. Media, sections and surfaces are square."
+    },
+    "hairline": {
+      "$value": "2px",
+      "$description": "Index row hover wash only."
+    },
+    "pill": {
+      "$value": "250px",
+      "$description": "Tags and pill actions."
+    }
   },
   "border": {
     "$type": "dimension",
-    "hairline": { "$value": "1px", "$description": "The only border width in the system." }
+    "hairline": {
+      "$value": "1px",
+      "$description": "The only border width in the system."
+    }
   },
   "motion": {
     "ease": {
       "$type": "cubicBezier",
-      "snappy": { "$value": [0.16, 1, 0.3, 1], "$description": "Default. Decelerating ease-out for reveals, hover transforms, media scale, fades." },
-      "smooth": { "$value": [0.12, 0.23, 0.5, 1], "$description": "Symmetric: line/rule draws, small UI state changes, row hover wash." },
-      "springy": { "$value": [0.25, 1, 0.5, 1], "$description": "Gesture-only (cursor trails, Line Animation draw). Do not use for UI state." }
+      "snappy": {
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ],
+        "$description": "Default. Decelerating ease-out for reveals, hover transforms, media scale, fades."
+      },
+      "smooth": {
+        "$value": [
+          0.12,
+          0.23,
+          0.5,
+          1
+        ],
+        "$description": "Symmetric: line/rule draws, small UI state changes, row hover wash."
+      },
+      "springy": {
+        "$value": [
+          0.25,
+          1,
+          0.5,
+          1
+        ],
+        "$description": "Gesture-only (cursor trails, Line Animation draw). Do not use for UI state."
+      }
     },
     "duration": {
       "$type": "duration",
-      "instant": { "$value": "150ms", "$description": "Row hover wash." },
-      "fast": { "$value": "250ms", "$description": "Color changes (tag hover)." },
-      "zoom": { "$value": "260ms", "$description": "Lightbox zoom." },
-      "base": { "$value": "420ms", "$description": "Hover transforms: flip rail, media scale." },
-      "slow": { "$value": "620ms", "$description": "Index flip rail, media fade-in." },
-      "reveal": { "$value": "900ms", "$description": "Type mask reveal; also scroll-to-top travel." },
-      "page": { "$value": "1200ms", "$description": "Boot curtain lift / page transition." },
-      "draw": { "$value": "2000ms", "$description": "Rule line draw (200ms delay)." }
+      "instant": {
+        "$value": "150ms",
+        "$description": "Row hover wash."
+      },
+      "fast": {
+        "$value": "250ms",
+        "$description": "Color changes (tag hover)."
+      },
+      "zoom": {
+        "$value": "260ms",
+        "$description": "Lightbox zoom."
+      },
+      "base": {
+        "$value": "420ms",
+        "$description": "Hover transforms: flip rail, media scale."
+      },
+      "slow": {
+        "$value": "620ms",
+        "$description": "Index flip rail, media fade-in."
+      },
+      "reveal": {
+        "$value": "900ms",
+        "$description": "Type mask reveal; also scroll-to-top travel."
+      },
+      "page": {
+        "$value": "1200ms",
+        "$description": "Boot curtain lift / page transition."
+      },
+      "draw": {
+        "$value": "2000ms",
+        "$description": "Rule line draw (200ms delay)."
+      }
     },
-    "stagger": { "$type": "duration", "reveal": { "$value": "90ms" }, "media": { "$value": "58ms" } },
+    "stagger": {
+      "$type": "duration",
+      "reveal": {
+        "$value": "90ms"
+      },
+      "media": {
+        "$value": "58ms"
+      }
+    },
     "distance": {
       "$type": "dimension",
-      "reveal": { "$value": "115%", "$description": "Type mask hidden start (translateY)." },
-      "flip-gap": { "$value": "5px", "$description": "Gap between stacked copies in the flip rail." }
+      "reveal": {
+        "$value": "115%",
+        "$description": "Type mask hidden start (translateY)."
+      },
+      "flip-gap": {
+        "$value": "5px",
+        "$description": "Gap between stacked copies in the flip rail."
+      }
     },
-    "scale": { "$type": "number", "hover": { "$value": 1.02, "$description": "Media scale on card hover." } },
+    "scale": {
+      "$type": "number",
+      "hover": {
+        "$value": 1.02,
+        "$description": "Media scale on card hover."
+      }
+    },
     "spring": {
       "$description": "For NEW gesture-driven UI only (drag, swipe, sheets, anything the user can grab mid-flight). Existing live components keep their bezier curves. Apple's damping ratio + response model; in Motion/Framer Motion use { type: 'spring', bounce: 1 - damping, duration: response }.",
-      "default": { "$type": "spring", "$value": { "damping": 1.0, "response": 0.4 }, "$description": "Critically damped, no overshoot. Repositioning, settling, snapping." },
-      "quick": { "$type": "spring", "$value": { "damping": 1.0, "response": 0.3 }, "$description": "Small, close-range moves: toggles, thumbs, short slides." },
-      "momentum": { "$type": "spring", "$value": { "damping": 0.8, "response": 0.4 }, "$description": "Only after a flick or throw carried velocity. Never for UI that just appeared." }
+      "default": {
+        "$type": "spring",
+        "$value": {
+          "damping": 1.0,
+          "response": 0.4
+        },
+        "$description": "Critically damped, no overshoot. Repositioning, settling, snapping."
+      },
+      "quick": {
+        "$type": "spring",
+        "$value": {
+          "damping": 1.0,
+          "response": 0.3
+        },
+        "$description": "Small, close-range moves: toggles, thumbs, short slides."
+      },
+      "momentum": {
+        "$type": "spring",
+        "$value": {
+          "damping": 0.8,
+          "response": 0.4
+        },
+        "$description": "Only after a flick or throw carried velocity. Never for UI that just appeared."
+      }
     },
     "gesture": {
       "$description": "Values the live /play archive already ships (ArchivePlayground.tsx). Reuse for new gesture UI; do not retune /play.",
-      "tap-threshold": { "$type": "dimension", "$value": "18px", "$description": "Movement before a press becomes a drag." },
-      "throw-friction": { "$type": "number", "$value": 0.85, "$description": "Velocity multiplier per 60fps frame (exponential decay, ~0.990 per ms, Apple's 'snappy' rate)." },
-      "throw-min-speed": { "$type": "number", "$value": 220, "$description": "px/s below which a release does not throw." },
-      "throw-max-speed": { "$type": "number", "$value": 5200, "$description": "px/s clamp." },
-      "throw-velocity-scale": { "$type": "number", "$value": 1.75, "$description": "Release velocity multiplier." }
+      "tap-threshold": {
+        "$type": "dimension",
+        "$value": "18px",
+        "$description": "Movement before a press becomes a drag."
+      },
+      "throw-friction": {
+        "$type": "number",
+        "$value": 0.85,
+        "$description": "Velocity multiplier per 60fps frame (exponential decay, ~0.990 per ms, Apple's 'snappy' rate)."
+      },
+      "throw-min-speed": {
+        "$type": "number",
+        "$value": 220,
+        "$description": "px/s below which a release does not throw."
+      },
+      "throw-max-speed": {
+        "$type": "number",
+        "$value": 5200,
+        "$description": "px/s clamp."
+      },
+      "throw-velocity-scale": {
+        "$type": "number",
+        "$value": 1.75,
+        "$description": "Release velocity multiplier."
+      }
     }
   },
   "texture": {
     "grain": {
-      "opacity": { "$type": "number", "$value": 0.1 },
-      "blend": { "$type": "string", "$value": "multiply" },
-      "color": { "$type": "color", "$value": "{color.primitive.grain-umber}" },
-      "base-frequency": { "$type": "number", "$value": 1.14, "$description": "feTurbulence baseFrequency (Framer control: Grain Size)." },
-      "octaves": { "$type": "number", "$value": 4, "$description": "Framer control: Detail." },
-      "exposure": { "$type": "number", "$value": -0.58, "$description": "feFuncRGB intercept." },
-      "contrast": { "$type": "number", "$value": 2.35, "$description": "feFuncRGB slope." },
-      "shimmer-fps": { "$type": "number", "$value": 16, "$description": "Seed re-roll rate when animated." }
+      "opacity": {
+        "$type": "number",
+        "$value": 0.1
+      },
+      "blend": {
+        "$type": "string",
+        "$value": "multiply"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.primitive.grain-umber}"
+      },
+      "base-frequency": {
+        "$type": "number",
+        "$value": 1.14,
+        "$description": "feTurbulence baseFrequency (Framer control: Grain Size)."
+      },
+      "octaves": {
+        "$type": "number",
+        "$value": 4,
+        "$description": "Framer control: Detail."
+      },
+      "exposure": {
+        "$type": "number",
+        "$value": -0.58,
+        "$description": "feFuncRGB intercept."
+      },
+      "contrast": {
+        "$type": "number",
+        "$value": 2.35,
+        "$description": "feFuncRGB slope."
+      },
+      "shimmer-fps": {
+        "$type": "number",
+        "$value": 16,
+        "$description": "Seed re-roll rate when animated."
+      }
     }
   },
   "elevation": {
     "$type": "shadow",
-    "none": { "$value": "none", "$description": "The brand is flat. Separate layers with rules, surfaces and space, never shadows." }
+    "none": {
+      "$value": "none",
+      "$description": "The brand is flat. Separate layers with rules, surfaces and space, never shadows."
+    }
   },
   "z": {
     "$type": "number",
-    "grain": { "$value": 10, "$description": "Grain starts below the nav (Clear Nav), so it never needs to sit above it." },
-    "nav": { "$value": 11 },
-    "overlay": { "$value": 1000 },
-    "loader": { "$value": 2000 }
+    "grain": {
+      "$value": 10,
+      "$description": "Grain starts below the nav (Clear Nav), so it never needs to sit above it."
+    },
+    "nav": {
+      "$value": 11
+    },
+    "overlay": {
+      "$value": 1000
+    },
+    "loader": {
+      "$value": 2000
+    }
   }
 }
 ```

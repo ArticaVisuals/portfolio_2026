@@ -26,9 +26,10 @@
 .mh-label[data-tone="muted"] { color: var(--mh-text-muted); }
 .mh-label[data-tone="strong"] { color: var(--mh-text-strong); }
 
-/* Relaxed leading for labels stacked above values (meta grid, footer). */
+/* /Small Mono: labels stacked above content (GET IN TOUCH, / About the project). */
 .mh-label[data-leading="relaxed"] {
-    line-height: 130%;
+    line-height: var(--mh-type-label-relaxed-leading);
+    letter-spacing: var(--mh-type-label-relaxed-tracking);
 }
 
 /* ======================================================================
@@ -102,7 +103,7 @@
 .mh-link-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 0.6em;
+    gap: 0 var(--mh-link-list-gap);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -264,14 +265,20 @@
 }
 
 /* ======================================================================
-   Section header: rule, then a Display M title
+   Section header: rule, 20px, Display M title, then the section's content
    ====================================================================== */
 
 .mh-section-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
-    row-gap: var(--mh-space-7);
+    row-gap: var(--mh-section-header-title-gap);
+    padding-top: var(--mh-section-header-before);
+    padding-bottom: var(--mh-section-header-after);
+}
+
+.mh-section-header[data-spacing="compact"] {
+    padding-bottom: var(--mh-section-header-after-compact);
 }
 
 .mh-section-header > .mh-rule {
@@ -279,6 +286,9 @@
 }
 
 .mh-section-header__title {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--mh-heading-word-gap);
     margin: 0;
     color: var(--mh-text-brand);
     font-family: var(--mh-type-display-m-family);
@@ -290,6 +300,8 @@
 
 /* ======================================================================
    Navigation bar
+   Column widths are measured from the published site: desktop 258/340px
+   (identical at 1200 and 1280), tablet 123/145px. Mobile keeps name + links.
    ====================================================================== */
 
 .mh-nav {
@@ -297,10 +309,10 @@
     top: 0;
     z-index: var(--mh-z-nav);
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1.6fr) auto;
+    grid-template-columns: 258px 340px minmax(0, 1fr) auto;
     align-items: start;
     min-height: var(--mh-nav-height);
-    padding: var(--mh-gutter) var(--mh-gutter) 0;
+    padding: var(--mh-nav-gutter) var(--mh-nav-gutter) 0;
     color: var(--mh-text-brand);
     background-color: var(--mh-bg-page);
 }
@@ -311,7 +323,7 @@
 
 .mh-nav__links {
     display: flex;
-    gap: var(--mh-space-8);
+    gap: 0 var(--mh-nav-link-gap);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -320,6 +332,12 @@
 .mh-nav__links a {
     color: inherit;
     text-decoration: none;
+}
+
+@media (max-width: 1199px) {
+    .mh-nav {
+        grid-template-columns: 123px 145px minmax(0, 1fr) auto;
+    }
 }
 
 @media (max-width: 809px) {
@@ -331,29 +349,42 @@
     .mh-nav__location {
         display: none;
     }
-
-    .mh-nav__links {
-        gap: var(--mh-space-7);
-    }
 }
 
 /* ======================================================================
-   Footer: Forest Green, display contact links, mono base bar
+   Footer: the Home CTA block. Forest Green, display contact rows, base bar
+   pinned to the bottom.
    ====================================================================== */
 
 .mh-footer {
     display: flex;
     flex-direction: column;
-    gap: var(--mh-space-9);
-    padding: var(--mh-space-13) var(--mh-gutter) var(--mh-gutter);
+    gap: var(--mh-footer-gap);
+    min-height: var(--mh-footer-min-height);
+    padding: var(--mh-space-6) var(--mh-gutter);
     color: var(--mh-text-brand);
     background-color: var(--mh-bg-page);
+}
+
+.mh-footer__eyebrow {
+    line-height: var(--mh-type-label-relaxed-leading);
+    letter-spacing: var(--mh-type-label-relaxed-tracking);
+}
+
+@media (max-width: 1199px) {
+    .mh-footer__eyebrow {
+        line-height: var(--mh-type-label-leading);
+    }
 }
 
 .mh-footer__contacts {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: var(--mh-cta-row-gap);
     margin: 0;
+    /* Optical: the display caps overhang their sidebearing by ~3px. */
+    margin-left: -3px;
     padding: 0;
     list-style: none;
 }
@@ -361,7 +392,7 @@
 .mh-footer__contact {
     display: inline-flex;
     align-items: flex-start;
-    gap: var(--mh-space-3);
+    gap: var(--mh-cta-row-gap);
     color: inherit;
     text-decoration: none;
     font-family: var(--mh-type-display-footer-family);
@@ -370,35 +401,50 @@
     line-height: var(--mh-type-display-footer-leading);
     letter-spacing: var(--mh-type-display-footer-tracking);
     text-transform: uppercase;
-    padding-block: var(--mh-space-1);
 }
 
 .mh-footer__contact sup {
+    padding-top: 2px;
     font-family: var(--mh-type-label-family);
     font-size: var(--mh-type-label-size);
-    line-height: 130%;
-    letter-spacing: -0.01em;
+    line-height: var(--mh-type-label-leading);
+    letter-spacing: var(--mh-type-label-tracking);
     text-transform: uppercase;
     vertical-align: top;
-    padding-top: 0.6em;
 }
 
 .mh-footer__bar {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--mh-footer-bar-column-gap);
     align-items: start;
-    padding-top: var(--mh-space-12);
+    margin-top: auto;
+    /* The live bar's 17px row sets its 13px text 2px off each edge. */
+    padding-bottom: 2px;
+}
+
+/* Link list and ©year share the second column: list left, year right. */
+.mh-footer__bar > :nth-child(2),
+.mh-footer__bar > :nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.mh-footer__bar > :nth-child(3) {
+    justify-self: end;
 }
 
 @media (max-width: 809px) {
     .mh-footer__bar {
         grid-template-columns: minmax(0, 1fr) auto;
-        row-gap: var(--mh-space-5);
+    }
+
+    .mh-footer__bar > :first-child {
+        display: none;
     }
 
     .mh-footer__bar > :nth-child(2) {
-        grid-column: 1 / -1;
-        grid-row: 2;
+        grid-column: 1;
     }
 }
 
@@ -736,20 +782,21 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 .mh-meta-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--mh-space-9) var(--mh-split-gap);
+    gap: var(--mh-meta-item-gap) var(--mh-split-gap);
     margin: 0;
 }
 
 .mh-meta-grid__col {
     display: flex;
     flex-direction: column;
-    gap: var(--mh-space-9);
+    gap: var(--mh-meta-item-gap);
+    margin: 0;
 }
 
 .mh-meta-grid__item {
     display: flex;
     flex-direction: column;
-    gap: var(--mh-space-5);
+    gap: var(--mh-meta-label-gap);
     margin: 0;
 }
 
@@ -770,38 +817,58 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 
 /* ======================================================================
    Hero
+   Home: positions measured from Framer + the live site (tokens hero-*).
+   The link row sits 10px off the bottom edge on the nav gutter. No rule:
+   the rule below belongs to the next Section Header.
    ====================================================================== */
 
 .mh-hero {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--mh-space-6);
-    padding-top: var(--mh-space-13);
+    padding-top: var(--mh-hero-name-top);
+    padding-bottom: var(--mh-hero-padding-bottom);
 }
 
+/* The live name is absolutely positioned, so its line box doesn't push the
+   descriptor. Fixing the block height reproduces the measured positions. */
 .mh-hero__name {
-    margin: 0;
+    height: calc(var(--mh-hero-descriptor-top) - var(--mh-hero-name-top));
+    margin: 0 0 0 var(--mh-hero-name-indent);
+    overflow: visible;
     color: var(--mh-text-brand);
 }
 
 .mh-hero__descriptor {
     margin: 0;
-    max-width: 11em;
+    width: var(--mh-hero-descriptor-width);
+    max-width: 100%;
+    padding-bottom: 10px;
     color: var(--mh-text-brand);
 }
 
 .mh-hero__bar {
+    /* The live row sits on the nav gutter (20px), which is 5px outside the
+       15px page gutter on mobile. Assumes the hero sits inside .mh-container. */
+    position: absolute;
+    left: calc(var(--mh-nav-gutter) - var(--mh-gutter));
+    right: calc(var(--mh-nav-gutter) - var(--mh-gutter));
+    bottom: 0;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    gap: var(--mh-space-5);
-    margin-top: var(--mh-space-11);
-    padding-bottom: var(--mh-space-6);
-    border-bottom: var(--mh-border-hairline) solid var(--mh-border-rule);
+    align-items: center;
+    gap: var(--mh-space-6);
+    padding-bottom: 10px;
 }
 
-/* Case-study variant: bold title, sentence continues in Light Gray. */
+/* Case-study variant: bold title, sentence continues in Stroke Gray. */
+.mh-hero[data-variant="case-study"] {
+    padding-bottom: 0;
+}
+
 .mh-hero[data-variant="case-study"] .mh-hero__name {
+    height: auto;
+    margin-left: 0;
     font-family: var(--mh-type-display-l-family);
     font-weight: var(--mh-type-display-l-weight);
     font-size: var(--mh-type-display-l-size);

@@ -45,7 +45,8 @@ tokens: [type.display-m, border.hairline, space.7]
 
 - Use for top-level page sections: Selected work, About Micah, Other projects, Index.
 - Titles are sentence case, two or three words. They label the section; they aren't headlines.
-- Leave at least `--mh-space-12` (96px) above a section header and `--mh-space-11` (72px) below before content starts.
+- Spacing (Framer): the previous section ends with 100px bottom padding; rule → title 20px; title → content 70px (50px mobile) via the header's own bottom padding. Use `data-spacing="compact"` for About (30px, 20px mobile).
+- Multi-word titles reveal word by word: wrap each word in a `span`; words sit 15px apart (8px mobile).
 - An optional action (View all) sits on the title's baseline at the right edge.
 
 ## API
@@ -54,12 +55,13 @@ tokens: [type.display-m, border.hairline, space.7]
 | --- | --- | --- |
 | `mh-section-header` | `header` | Grid: title left, optional action right |
 | `mh-rule` | `hr` | First child; spans both columns |
-| `mh-section-header__title` | `h2` | Display M (70 / 53 / 42px, regular, Forest Green) |
+| `mh-section-header__title` | `h2` | Display M (70 / 53 / 42px, regular, Forest Green); word spans 15px apart |
+| `data-spacing="compact"` | `header` | 30px (20px mobile) below instead of 70px |
 
 ## Framer mapping
 
 - Text style **Heading 2** (GT Standard L Regular). The live site renders the title at 70px with -1% tracking.
-- The rule is a 1px frame or Line Animation above the title in a vertical Stack (gap 24px).
+- The rule is a 1px frame or Line Animation above the title in a vertical Stack; the title row has 20px top padding.
 - The reveal is Framer's native Appear effect, normalized by `PageTransition` (`gmalnRr`) to 900ms / 90ms stagger / Snappy / 115% start.
 
 ## Don't

@@ -45,6 +45,15 @@
     text-transform: var(--mh-type-heading-case);
 }
 
+.mh-text-heading-sm {
+    font-family: var(--mh-type-heading-sm-family);
+    font-weight: var(--mh-type-heading-sm-weight);
+    font-size: var(--mh-type-heading-sm-size);
+    line-height: var(--mh-type-heading-sm-leading);
+    letter-spacing: var(--mh-type-heading-sm-tracking);
+    text-transform: var(--mh-type-heading-sm-case);
+}
+
 .mh-text-title {
     font-family: var(--mh-type-title-family);
     font-weight: var(--mh-type-title-weight);
@@ -61,6 +70,15 @@
     line-height: var(--mh-type-body-lg-leading);
     letter-spacing: var(--mh-type-body-lg-tracking);
     text-transform: var(--mh-type-body-lg-case);
+}
+
+.mh-text-body-xl {
+    font-family: var(--mh-type-body-xl-family);
+    font-weight: var(--mh-type-body-xl-weight);
+    font-size: var(--mh-type-body-xl-size);
+    line-height: var(--mh-type-body-xl-leading);
+    letter-spacing: var(--mh-type-body-xl-tracking);
+    text-transform: var(--mh-type-body-xl-case);
 }
 
 .mh-text-body {
@@ -88,6 +106,15 @@
     line-height: var(--mh-type-label-leading);
     letter-spacing: var(--mh-type-label-tracking);
     text-transform: var(--mh-type-label-case);
+}
+
+.mh-text-label-relaxed {
+    font-family: var(--mh-type-label-relaxed-family);
+    font-weight: var(--mh-type-label-relaxed-weight);
+    font-size: var(--mh-type-label-relaxed-size);
+    line-height: var(--mh-type-label-relaxed-leading);
+    letter-spacing: var(--mh-type-label-relaxed-tracking);
+    text-transform: var(--mh-type-label-relaxed-case);
 }
 
 .mh-text-label-sm {

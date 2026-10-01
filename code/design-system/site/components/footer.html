@@ -80,7 +80,7 @@
     </header>
     <article class="ds-prose"><h2 id="examples"><a class="ds-anchor" href="#examples">Examples</a></h2>
 <figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="false">Cream</button><button type="button" data-set-surface="green" aria-pressed="true">Green</button></div></div><div class="ds-preview ds-preview--bleed" data-surface="green"><footer class="mh-footer" data-surface="green">
-  <p class="mh-label" data-leading="relaxed">Get in touch</p>
+  <p class="mh-label mh-footer__eyebrow">Get in touch</p>
   <ul class="mh-footer__contacts">
     <li><a class="mh-footer__contact" href="#">micah.hoang<sup>@hey.com</sup></a></li>
     <li><a class="mh-footer__contact" href="#">LinkedIn<sup>Connect</sup></a></li>
@@ -96,7 +96,7 @@
     <p class="mh-label">©2026</p>
   </div>
 </footer></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;footer class="mh-footer" data-surface="green"&gt;
-  &lt;p class="mh-label" data-leading="relaxed"&gt;Get in touch&lt;/p&gt;
+  &lt;p class="mh-label mh-footer__eyebrow"&gt;Get in touch&lt;/p&gt;
   &lt;ul class="mh-footer__contacts"&gt;
     &lt;li&gt;&lt;a class="mh-footer__contact" href="#"&gt;micah.hoang&lt;sup&gt;@hey.com&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="mh-footer__contact" href="#"&gt;LinkedIn&lt;sup&gt;Connect&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
@@ -113,14 +113,16 @@
   &lt;/div&gt;
 &lt;/footer&gt;</code></pre></details></figure>
 <h2 id="anatomy"><a class="ds-anchor" href="#anatomy">Anatomy</a></h2>
-<ol><li><strong>Eyebrow</strong>: "Get in touch", mono.</li><li><strong>Contacts</strong>: three Display Footer links (80 / 64 / 40px, uppercase, -2%), each with a mono superscript saying what it is for: <code>@HEY.COM</code>, <code>CONNECT</code>, <code>INSPIRE</code>.</li><li><strong>Base bar</strong>: availability, link list (LinkedIn, Resume, Cosmos), ©year, laid out across a 3-column grid.</li></ol>
+<ol><li><strong>Eyebrow</strong> (<code>mh-footer__eyebrow</code>): "Get in touch", <code>/Small Mono</code> 20px from the top. Its leading drops from 130% to 100% below 1200px.</li><li><strong>Contacts</strong>: 30px below the eyebrow (10px mobile). Three Display Footer rows (80 / 70 / 40px, uppercase, -2%), 10px apart, each with a <code>/Small Mono Footers</code> superscript 10px to its right and 2px down: <code>@HEY.COM</code>, <code>CONNECT</code>, <code>INSPIRE</code>.</li><li><strong>Base bar</strong>: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.</li></ol>
+<p>The whole block is 50vh tall on desktop and mobile, 40vh on tablet.</p>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
 <ul><li>The footer is the only large Forest Green block outside the boot loader. Always <code>data-surface="green"</code>.</li><li>The email reads as <code>MICAH.HOANG</code> with <code>@HEY.COM</code> as its superscript, so the display line stays one word.</li><li>Keep exactly three contact lines. Availability text reflects real status; change it when it changes.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
-<div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-footer</code></td><td><code>footer</code></td><td>Add <code>data-surface="green"</code>; 144px top padding</td></tr><tr><td><code>mh-footer__contacts</code></td><td><code>ul</code></td><td>Vertical list</td></tr><tr><td><code>mh-footer__contact</code></td><td><code>a</code></td><td>Display Footer type; <code>sup</code> child is the mono tag</td></tr><tr><td><code>mh-footer__bar</code></td><td><code>div</code></td><td>3 columns; the link list moves to its own row on mobile</td></tr></tbody></table></div>
+<div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-footer</code></td><td><code>footer</code></td><td>Add <code>data-surface="green"</code>; <code>min-height: var(--mh-footer-min-height)</code></td></tr><tr><td><code>mh-footer__eyebrow</code></td><td><code>p.mh-label</code></td><td>130% leading on desktop, 100% below</td></tr><tr><td><code>mh-footer__contacts</code></td><td><code>ul</code></td><td>Vertical list, 10px apart</td></tr><tr><td><code>mh-footer__contact</code></td><td><code>a</code></td><td>Display Footer type; <code>sup</code> child is the mono tag</td></tr><tr><td><code>mh-footer__bar</code></td><td><code>div</code></td><td>2 equal columns, 40px gap; children: availability, link list, ©year</td></tr></tbody></table></div>
 <h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
 <ul><li>The <code>sup</code> text is part of the link name ("micah.hoang @hey.com"). Make sure the <code>href</code> matches (<code>mailto:</code>).</li><li>Cream on Forest Green is about 12:1 contrast, fine at every size.</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
+<ul><li>Home renders this as the page section <code>SectionCta</code> plus the <code>FooterWhite*</code> bar; case studies use the <strong>Footer</strong> component, whose contact rows measure 80 / 80 / 42px. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Home desktop treatment.</li></ul>
 <ul><li>Native <strong>Footer</strong> component with desktop/tablet/phone variants (<code>FooterWhiteDesktop</code>, ...).</li><li>The display links use <code>TextEncryptionEffect</code> (<code>p7tSTaD</code>) for the per-letter scramble on hover. Keep it on these three links only.</li><li>Year: <code>FooterCopyrightYear</code> (<code>BF2H03E</code>).</li><li><code>ResumeAssetHost</code> (<code>xDqfenf</code>) is mounted invisibly inside the footer. It supplies the resume file and hosts the global helpers (<code>ParagraphPrettyWrap</code>, <code>NavigationScrollGuard</code>). <strong>Never remove it from the footer.</strong></li></ul>
 <h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
 <ul><li>Don't add a sitemap, newsletter form or social icons.</li><li>Don't put the footer on Cream.</li></ul></article>

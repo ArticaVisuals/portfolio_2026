@@ -25,19 +25,22 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 
 <!-- ds:type-specimens -->
 
-| Style | Class | Size | Weight | Leading | Tracking | Framer text style | Use |
+| Style | Class | Size (D / T / M) | Weight | Leading | Tracking | Framer text style | Use |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% | -1% | Heading 1 | Home hero name. Once per site. |
-| Display L | `mh-text-display-l` | 70 / 53 / 42 | 700 | 100% | -1% | Heading 2b | Case-study title + muted continuation |
-| Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | Heading 2 | Section headers: "Selected work", "About Micah" |
-| Display Footer | `mh-text-display-footer` | 80 / 64 / 40 | 400 | 100% | -2% | (footer) | Uppercase footer contact links |
-| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | Heading 3 | Hero descriptor, case-study section titles |
-| Title | `mh-text-title` | 22 | 400 | 120% | 0 | Index Title | Index rows, uppercase |
-| Body L | `mh-text-body-lg` | 22 / 22 / 18 | 400 | 120% | +1% | Body | Lead paragraphs, About, meta values |
-| Body | `mh-text-body` | 18 / 18 / 16 | 400 | 140% | 0 | Paragraph Regular (18) | Case-study long-form |
-| Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | Paragraph Regular | Captions, small notes |
-| Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | Heading 5, Body - 100% | Nav, meta, actions, eyebrows |
-| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px, dense meta |
+| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% / 114% / 114% | -1% | /Heading 1 | Home hero name. Once per site. |
+| Display L | `mh-text-display-l` | 70 / 52 / 38 | 700 | 100% | -1% (-2% mobile) | /Heading 2 Bold | Case-study title + muted continuation |
+| Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | /Heading 2 | Section headers: "Selected work", "About Micah" |
+| Display Footer | `mh-text-display-footer` | 80 / 70 / 40 | 400 | 100% | -2% | (MagText) | Uppercase footer contact rows |
+| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | /Heading 3 | Hero descriptor, case-study section titles |
+| Heading S | `mh-text-heading-sm` | 20 | 700 | 140% | 0 | /Heading 4 | Small bold heading |
+| Title | `mh-text-title` | 22 | 400 | 120% | 0 | (IndexPage) | Index rows, uppercase |
+| Body XL | `mh-text-body-xl` | 22 | 500 | 110% | -1% | /Body XL | Medium-weight lead line |
+| Body L | `mh-text-body-lg` | 22 / 18 / 15 | 400 | 120% / 120% / 130% | +1% | /Body L | Lead paragraphs, About, meta values |
+| Body | `mh-text-body` | 18 / 16 / 14 | 400 | 140% | 0 | /Body M | Case-study long-form (580px measure) |
+| Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | (none) | Captions, small notes |
+| Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | /Small Mono Footers | Nav, links, ©year, Read more, actions |
+| Label relaxed | `mh-text-label-relaxed` / `mh-label[data-leading=relaxed]` | 13 | 400 mono | 130% (140% mobile) | -1% | /Small Mono | GET IN TOUCH, "/ About the project" |
+| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px |
 
 ## Pairings
 
@@ -55,6 +58,10 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 </div>
 ```
 
+## Source
+
+Desktop values come from the Framer project's text styles (read through the Framer MCP on 2026-10-01). Tablet and mobile values were measured on the published site, because Framer's breakpoint overrides aren't readable through the MCP. `code/tokens/framer-active-text-styles.tokens.json` is an older export: its Heading 1 (110px), Index Title and Paragraph styles no longer match the project.
+
 ## Usage
 
 - **One display moment per view.** A page gets one Display XL or Display L; sections get Display M; everything else is Heading or smaller.
@@ -62,7 +69,7 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 - **Mono is always uppercase**, always 12–13px, never for sentences longer than a line.
 - **Two-tone headlines.** A case-study title can continue its sentence in `--mh-text-muted` at the same size and weight ("Gaia" + "Turning noticing into a way of caring for the living world.").
 - **Body color follows weight of content**: lead copy is `--mh-text-strong`, long-form is `--mh-text-body`.
-- **Measure**: long-form body caps at `--mh-measure` (620px).
+- **Measure**: long-form body caps at `--mh-measure` (580px).
 - **Pretty wrapping**: the live site applies `text-wrap: pretty` to paragraph-size text ≤23px (`ParagraphPrettyWrap`, `EjvkJhv`). Use `text-wrap: balance` for display lines if needed.
 
 ## Don't

@@ -30,7 +30,7 @@ Every page is plain markdown under `content/`. Read `agents.md` first. Tokens li
 - [Section Header](content/components/section-header.md): A full-width rule followed by a Display M title. This is how every major section on the site starts.
 - [Navigation](content/components/navigation.md): The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.
 - [Footer](content/components/footer.md): A Forest Green block with oversized uppercase contact links and a mono base bar.
-- [Hero](content/components/hero.md): The opening of a page. A huge name and descriptor on Home; a bold title continuing in Light Gray on case studies.
+- [Hero](content/components/hero.md): The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.
 - [Media Frame](content/components/media-frame.md): An aspect-locked, square-cornered frame for images and video, with a poster-under-video stack and an optional 1px stroke.
 - [Project Card](content/components/project-card.md): The main way work appears on the site. A numbered mono title that flips on hover, a 16:9 media frame, and discipline tags.
 - [Project Grid](content/components/project-grid.md): The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.

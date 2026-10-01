@@ -16,7 +16,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 ```html example bleed surface=green
 <footer class="mh-footer" data-surface="green">
-  <p class="mh-label" data-leading="relaxed">Get in touch</p>
+  <p class="mh-label mh-footer__eyebrow">Get in touch</p>
   <ul class="mh-footer__contacts">
     <li><a class="mh-footer__contact" href="#">micah.hoang<sup>@hey.com</sup></a></li>
     <li><a class="mh-footer__contact" href="#">LinkedIn<sup>Connect</sup></a></li>
@@ -36,9 +36,11 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 ## Anatomy
 
-1. **Eyebrow**: "Get in touch", mono.
-2. **Contacts**: three Display Footer links (80 / 64 / 40px, uppercase, -2%), each with a mono superscript saying what it is for: `@HEY.COM`, `CONNECT`, `INSPIRE`.
-3. **Base bar**: availability, link list (LinkedIn, Resume, Cosmos), ©year, laid out across a 3-column grid.
+1. **Eyebrow** (`mh-footer__eyebrow`): "Get in touch", `/Small Mono` 20px from the top. Its leading drops from 130% to 100% below 1200px.
+2. **Contacts**: 30px below the eyebrow (10px mobile). Three Display Footer rows (80 / 70 / 40px, uppercase, -2%), 10px apart, each with a `/Small Mono Footers` superscript 10px to its right and 2px down: `@HEY.COM`, `CONNECT`, `INSPIRE`.
+3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
+
+The whole block is 50vh tall on desktop and mobile, 40vh on tablet.
 
 ## Usage
 
@@ -50,10 +52,11 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 | Class | Element | Notes |
 | --- | --- | --- |
-| `mh-footer` | `footer` | Add `data-surface="green"`; 144px top padding |
-| `mh-footer__contacts` | `ul` | Vertical list |
+| `mh-footer` | `footer` | Add `data-surface="green"`; `min-height: var(--mh-footer-min-height)` |
+| `mh-footer__eyebrow` | `p.mh-label` | 130% leading on desktop, 100% below |
+| `mh-footer__contacts` | `ul` | Vertical list, 10px apart |
 | `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag |
-| `mh-footer__bar` | `div` | 3 columns; the link list moves to its own row on mobile |
+| `mh-footer__bar` | `div` | 2 equal columns, 40px gap; children: availability, link list, ©year |
 
 ## Accessibility
 
@@ -61,6 +64,8 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 - Cream on Forest Green is about 12:1 contrast, fine at every size.
 
 ## Framer mapping
+
+- Home renders this as the page section `SectionCta` plus the `FooterWhite*` bar; case studies use the **Footer** component, whose contact rows measure 80 / 80 / 42px. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Home desktop treatment.
 
 - Native **Footer** component with desktop/tablet/phone variants (`FooterWhiteDesktop`, ...).
 - The display links use `TextEncryptionEffect` (`p7tSTaD`) for the per-letter scramble on hover. Keep it on these three links only.

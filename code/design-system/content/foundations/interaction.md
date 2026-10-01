@@ -89,7 +89,7 @@ Apple's eight design principles line up with the site's own five words ([Princip
 
 ## Accessibility notes
 
-- Light Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Light Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
+- Stroke Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Stroke Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
 - Forest Green on Cream ≈ 12:1; near-black on Cream ≈ 17:1; Cream on Forest Green ≈ 12:1.
 
 ## Changing the live site

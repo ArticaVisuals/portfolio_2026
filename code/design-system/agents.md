@@ -60,8 +60,8 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 
 ## Quick start (Framer)
 
-- Colors: use the project color styles `/Cream`, `/Forest Green`, `Light Gray`; others are listed on the Colors page with their tokens.
-- Type: use the Framer text styles named on the Typography page (`Heading 1`, `Heading 2`, `Heading 3`, `Heading 5`, `Body`, ...).
+- Colors: use the project color styles `/Cream`, `/Forest Green`, `/Off-Black`, `/Text Gray`, `/Stroke Gray`, `/White`. Accent green `#25593A` is not a style; it's set per component instance.
+- Type: use the Framer text styles `/Heading 1`, `/Heading 2`, `/Heading 2 Bold`, `/Heading 3`, `/Heading 4`, `/Body XL`, `/Body L`, `/Body M`, `/Small Mono`, `/Small Mono Footers` (see the Typography page).
 - Layout: Stacks and Grids with the gutter and gap tokens; desktop-first with tablet and phone breakpoint overrides.
 - Code components: look up the `codeFileId` in `components.json` and the repo's `code/mirror/manifest.json`.
 
@@ -69,5 +69,5 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 
 - Edit `tokens/tokens.json` or `content/**/*.md`, then run `node code/design-system/build.mjs`. It regenerates `tokens.css`, `css/type.css`, the HTML site, `llms.txt`, `llms-full.txt` and `components.json`.
 - Hand-written files: `css/fonts.css`, `css/base.css`, `css/components.css`, `js/components.js`, `site/assets/docs.*`, this file.
-- Values were measured from the published site on 2026-10-01. Framer is the runtime source of truth; if the live site and this system disagree, check the site and update the token here.
+- Desktop values come from the Framer project via the Framer MCP; tablet and mobile values were measured on the published site (2026-10-01), since the MCP can't read breakpoint overrides. Framer is the runtime source of truth; if the live site and this system disagree, check the site and update the token here.
 - `code/tokens/micahhoang-tokens.json` (Manrope, `#027aff`) is a stale pre-2026 token set. Do not use it.

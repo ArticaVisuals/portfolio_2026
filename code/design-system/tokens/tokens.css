@@ -50,6 +50,12 @@
   --mh-type-heading-leading: 110%;
   --mh-type-heading-tracking: -0.01em;
   --mh-type-heading-case: none;
+  --mh-type-heading-sm-family: var(--mh-font-sans);
+  --mh-type-heading-sm-weight: 700;
+  --mh-type-heading-sm-size: 20px;
+  --mh-type-heading-sm-leading: 140%;
+  --mh-type-heading-sm-tracking: 0;
+  --mh-type-heading-sm-case: none;
   --mh-type-title-family: var(--mh-font-sans);
   --mh-type-title-weight: 400;
   --mh-type-title-size: 22px;
@@ -62,6 +68,12 @@
   --mh-type-body-lg-leading: 120%;
   --mh-type-body-lg-tracking: 0.01em;
   --mh-type-body-lg-case: none;
+  --mh-type-body-xl-family: var(--mh-font-sans);
+  --mh-type-body-xl-weight: 500;
+  --mh-type-body-xl-size: 22px;
+  --mh-type-body-xl-leading: 110%;
+  --mh-type-body-xl-tracking: -0.01em;
+  --mh-type-body-xl-case: none;
   --mh-type-body-family: var(--mh-font-sans);
   --mh-type-body-weight: 400;
   --mh-type-body-size: 18px;
@@ -80,6 +92,12 @@
   --mh-type-label-leading: 100%;
   --mh-type-label-tracking: 0;
   --mh-type-label-case: uppercase;
+  --mh-type-label-relaxed-family: var(--mh-font-mono);
+  --mh-type-label-relaxed-weight: 400;
+  --mh-type-label-relaxed-size: 13px;
+  --mh-type-label-relaxed-leading: 130%;
+  --mh-type-label-relaxed-tracking: -0.01em;
+  --mh-type-label-relaxed-case: uppercase;
   --mh-type-label-sm-family: var(--mh-font-mono);
   --mh-type-label-sm-weight: 400;
   --mh-type-label-sm-size: 12px;
@@ -99,7 +117,7 @@
   --mh-space-9: 40px;
   --mh-space-10: 50px;
   --mh-space-11: 72px;
-  --mh-space-12: 96px;
+  --mh-space-12: 100px;
   --mh-space-13: 144px;
 
   /* Layout */
@@ -108,9 +126,32 @@
   --mh-split-gap: 30px;
   --mh-card-row-gap: 50px;
   --mh-nav-height: 53px;
-  --mh-measure: 620px;
+  --mh-measure: 580px;
   --mh-breakpoint-tablet: 810px;
   --mh-breakpoint-desktop: 1200px;
+  --mh-section-padding-y: 100px;
+  --mh-section-header-title-gap: 20px;
+  --mh-section-header-after: 70px;
+  --mh-heading-word-gap: 15px;
+  --mh-link-list-gap: 10px;
+  --mh-card-grid-to-action: 30px;
+  --mh-hero-descriptor-width: 382px;
+  --mh-about-image-width: 175px;
+  --mh-about-copy-width: 600px;
+  --mh-cta-row-gap: 10px;
+  --mh-nav-gutter: 20px;
+  --mh-section-header-after-compact: 30px;
+  --mh-footer-min-height: 50vh;
+  --mh-footer-gap: 30px;
+  --mh-footer-bar-column-gap: 40px;
+  --mh-meta-label-gap: 15px;
+  --mh-meta-item-gap: 40px;
+  --mh-hero-name-top: 90px;
+  --mh-hero-descriptor-top: 220px;
+  --mh-hero-name-indent: -6px;
+  --mh-hero-padding-bottom: 100px;
+  --mh-section-header-before: 11px;
+  --mh-nav-link-gap: 31px;
 
   /* Shape */
   --mh-radius-none: 0px;
@@ -201,22 +242,45 @@
   :root {
     --mh-type-display-xl-size: 94px;
     --mh-type-display-xl-leading: 114%;
-    --mh-type-display-l-size: 53px;
+    --mh-type-display-l-size: 52px;
     --mh-type-display-m-size: 53px;
-    --mh-type-display-footer-size: 64px;
+    --mh-type-display-footer-size: 70px;
     --mh-type-heading-size: 24px;
+    --mh-type-body-lg-size: 18px;
+    --mh-type-body-size: 16px;
+    --mh-hero-descriptor-width: 218px;
+    --mh-about-image-width: 170px;
+    --mh-footer-min-height: 40vh;
+    --mh-hero-descriptor-top: 186px;
+    --mh-hero-name-indent: -5px;
   }
 }
 
 @media (max-width: 809px) {
   :root {
     --mh-type-display-xl-size: 58px;
-    --mh-type-display-l-size: 42px;
+    --mh-type-display-l-size: 38px;
+    --mh-type-display-l-tracking: -0.02em;
     --mh-type-display-m-size: 42px;
     --mh-type-display-footer-size: 40px;
     --mh-type-heading-size: 20px;
-    --mh-type-body-lg-size: 18px;
-    --mh-type-body-size: 16px;
+    --mh-type-body-lg-size: 15px;
+    --mh-type-body-lg-leading: 130%;
+    --mh-type-body-size: 14px;
+    --mh-type-label-relaxed-leading: 140%;
     --mh-gutter: 15px;
+    --mh-section-header-after: 50px;
+    --mh-heading-word-gap: 8px;
+    --mh-card-grid-to-action: 20px;
+    --mh-hero-descriptor-width: 181px;
+    --mh-section-header-after-compact: 20px;
+    --mh-footer-min-height: 50vh;
+    --mh-footer-gap: 10px;
+    --mh-meta-item-gap: 36px;
+    --mh-hero-name-top: 97px;
+    --mh-hero-descriptor-top: 162px;
+    --mh-hero-name-indent: -3px;
+    --mh-hero-padding-bottom: 131px;
+    --mh-section-header-before: 1px;
   }
 }

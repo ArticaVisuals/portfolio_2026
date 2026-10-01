@@ -37,7 +37,9 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
 | Name | "Micah Hoang", links to `/` | Kept |
 | Role | "Brand designer" | Hidden |
 | Location | "Los Angeles, California" | Hidden |
-| Links | Work, Play, Index, About | Kept, 24px gap |
+| Links | Work, Play, Index, About | Kept |
+
+Desktop columns are fixed: name 258px, role 340px, location fills, links hug the right edge (measured identical at 1200 and 1280). Tablet uses fixed 123px / 145px columns. Links sit 31px apart. The nav gutter is 20px at every breakpoint.
 
 ## Usage
 
@@ -51,10 +53,10 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
 
 | Class | Element | Notes |
 | --- | --- | --- |
-| `mh-nav` | `nav` | Sticky, 4-column grid `1fr 1.3fr 1.6fr auto` |
+| `mh-nav` | `nav` | Sticky; grid `258px 340px 1fr auto` (tablet `123px 145px 1fr auto`), 53px tall |
 | `mh-nav__name` | `a` | Flip link |
 | `mh-nav__role`, `mh-nav__location` | `p` | Static labels, hidden on mobile |
-| `mh-nav__links` | `ul` | Flip links, 30px gap |
+| `mh-nav__links` | `ul` | Flip links, 31px gap |
 
 ## Accessibility
 

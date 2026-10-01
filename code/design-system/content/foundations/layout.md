@@ -30,7 +30,13 @@ Desktop-first, matching the Framer frames.
 | `--mh-column-gap` | 20px | 20px | 20px | Card grids, index columns |
 | `--mh-split-gap` | 30px | 30px | n/a (stacks) | Two-column text splits (`.mh-split`, meta grid) |
 | `--mh-card-row-gap` | 50px | 50px | 50px | Between project-card rows |
-| `--mh-measure` | 620px | 620px | 100% | Long-form body |
+| `--mh-measure` | 580px | 580px | 100% | Long-form body |
+| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row (doesn't drop to 15 on mobile) |
+| `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
+| `--mh-hero-name-top` | 90px | 90px | 97px | Hero top → name line box (nav overlays it) |
+| `--mh-hero-descriptor-top` | 220px | 186px | 162px | Hero top → descriptor |
+| `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
+| `--mh-footer-min-height` | 50vh | 40vh | 50vh | Home CTA/footer block |
 | `--mh-nav-height` | 53px | 53px | 53px | Sticky nav; grain starts below it |
 
 Grids in use on the live site:
@@ -62,13 +68,13 @@ Grids in use on the live site:
 | `--mh-space-4` | 12px | Row padding |
 | `--mh-space-5` | 16px | Card internal stack (meta → media → tags) |
 | `--mh-space-6` | 20px | Gutter, small blocks |
-| `--mh-space-7` | 24px | Section-header rule to title |
+| `--mh-space-7` | 24px | Small blocks |
 | `--mh-space-8` | 30px | Nav link gap, split gap |
 | `--mh-space-9` | 40px | Between meta items |
 | `--mh-space-10` | 50px | Card row gap |
 | `--mh-space-11` | 72px | Inside sections; lightbox padding |
-| `--mh-space-12` | 96px | Between major blocks |
-| `--mh-space-13` | 144px | Between page sections; hero top |
+| `--mh-space-12` | 100px | Section padding (Framer) |
+| `--mh-space-13` | 144px | Extra-large breaks (docs only) |
 
 ## Shape and elevation
 
@@ -79,6 +85,10 @@ Grids in use on the live site:
 | `--mh-radius-pill` | 250px | Tags, pill actions |
 | `--mh-border-hairline` | 1px | The only border width |
 | `--mh-elevation-none` | none | The brand is flat |
+
+## Where these numbers come from
+
+Desktop values are read from the Framer project (Home page layers via the Framer MCP): section padding `100px 20px`, rule → title `20px`, title → grid `60px` + `10px` stack gap, grid → View all `30px`, About title → content `30px`, content → Scroll to top `60px`. Tablet and mobile values were measured on micahhoang.com at 810px and 390px, because the MCP can't open breakpoint frames. Re-check them after any Framer layout change.
 
 ## Usage
 

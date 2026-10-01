@@ -20,12 +20,12 @@ The palette is deliberately small: a warm Cream ground, one Forest Green for bra
 | --- | --- | --- | --- |
 | `--mh-color-cream` | `#F7F5F0` | `/Cream` | Page background; text on Forest Green |
 | `--mh-color-forest-green` | `#233324` | `/Forest Green` | Brand: display type, nav, labels; inverse surface |
-| `--mh-color-accent-green` | `#25593A` | (code-component default) | Hover / active for tags, filters, toggles |
-| `--mh-color-near-black` | `#141414` | (token, unnamed) | Rules, index list, lightbox chrome, strong body |
-| `--mh-color-graphite` | `#525252` | (token, unnamed) | Long-form case-study body |
-| `--mh-color-light-gray` | `#979797` | `Light Gray` | Muted text, tags, media stroke |
-| `--mh-color-white` | `#FFFFFF` | `White` | Lightbox backdrop, media placeholder |
-| `--mh-color-white-60` | `#FFFFFF99` | (token, unnamed) | Muted text on Forest Green |
+| `--mh-color-accent-green` | `#25593A` | none: set per instance (`tagHoverColor`, IndexPage hover) | Hover / active for tags, filters, toggles |
+| `--mh-color-near-black` | `#141414` | `/Off-Black` | Rules, index list, lightbox chrome, strong body |
+| `--mh-color-graphite` | `#525252` | `/Text Gray` | Long-form case-study body |
+| `--mh-color-light-gray` | `#979797` | `/Stroke Gray` | Muted text, tags, media stroke |
+| `--mh-color-white` | `#FFFFFF` | `/White` | Lightbox backdrop, media placeholder |
+| `--mh-color-white-60` | `#FFFFFF99` | none (published CSS token) | Muted text on Forest Green |
 | `--mh-color-grain-umber` | `#501D07` | (GrainOverlay control) | Grain tint only |
 
 ## Surfaces
@@ -60,16 +60,16 @@ Add `data-surface="cream"` (default) or `data-surface="green"` to any container.
 | `--mh-text-brand` | Forest Green | Cream | Display type, nav, labels, section headers |
 | `--mh-text-strong` | Near Black | Cream | Lead body, meta values, index rows, H3 |
 | `--mh-text-body` | Graphite | White 60% | Long-form paragraphs |
-| `--mh-text-muted` | Light Gray | White 60% | Headline continuation, tags, tertiary meta |
+| `--mh-text-muted` | Stroke Gray | White 60% | Headline continuation, tags, tertiary meta |
 | `--mh-text-interactive` | Accent Green | White | Hover / active state |
 | `--mh-border-rule` | Near Black | Cream | 1px rules and dividers |
-| `--mh-border-stroke` | Light Gray | White 60% | Tag outlines, media stroke |
+| `--mh-border-stroke` | Stroke Gray | White 60% | Tag outlines, media stroke |
 
 ## Usage
 
 - **Forest Green is the brand color, not an accent.** It sets display type and labels on Cream and becomes the whole surface for the footer and boot loader.
 - **Hierarchy comes from shifting neutrals**: brand → strong → body → muted. Don't add colors to make something stand out; change its size or position.
-- **Interactive green appears only on hover/active.** A resting tag is Light Gray; it turns Accent Green under the pointer or when selected.
+- **Interactive green appears only on hover/active.** A resting tag is Stroke Gray; it turns Accent Green under the pointer or when selected.
 - **Rules are near-black at full opacity**, not a soft gray. The site's crispness depends on this.
 - **Media placeholders are white**, so a loading thumbnail reads as a paper card, not a gray hole.
 

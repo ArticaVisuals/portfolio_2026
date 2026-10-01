@@ -83,8 +83,8 @@
 <h2 id="structure"><a class="ds-anchor" href="#structure">Structure</a></h2>
 <div class="ds-table"><table><thead><tr><th>#</th><th>Section</th><th>Components</th><th>Notes</th></tr></thead><tbody><tr><td>0</td><td>Boot (first visit)</td><td><a href="../components/page-loader.html">Page Loader</a></td><td>Home only</td></tr><tr><td>1</td><td>Nav</td><td><a href="../components/navigation.html">Navigation</a></td><td>Same as every page</td></tr><tr><td>2</td><td>Hero</td><td><a href="../components/hero.html">Hero</a> (home)</td><td>Name, two-line descriptor, link list + ©2026, rule</td></tr><tr><td>3</td><td>Selected work</td><td><a href="../components/section-header.html">Section Header</a>, <a href="../components/project-grid.html">Project Grid</a></td><td>6 projects, 2 columns, "View all" right-aligned below</td></tr><tr><td>4</td><td>About Micah</td><td>Section Header, portrait <a href="../components/media-frame.html">Media Frame</a>, Body L, <a href="../components/action.html">Action</a> "Read more"</td><td>Portrait left, copy right. Hovering the image or the link triggers both (image scale + link flip)</td></tr><tr><td>5</td><td>Scroll to top</td><td><a href="../components/scroll-to-top.html">Scroll to Top</a></td><td>Right-aligned</td></tr><tr><td>6</td><td>Footer</td><td><a href="../components/footer.html">Footer</a></td><td>Forest Green</td></tr><tr><td>n/a</td><td>Texture</td><td><a href="../components/grain-overlay.html">Grain Overlay</a></td><td>Page-level</td></tr></tbody></table></div>
 <h2 id="example-condensed"><a class="ds-anchor" href="#example-condensed">Example (condensed)</a></h2>
-<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview ds-preview--bleed" data-surface="cream"><div class="mh-container" style="padding-block:20px 72px">
-  <header class="mh-hero" style="padding-top:72px">
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview ds-preview--bleed" data-surface="cream"><div class="mh-container" style="padding-bottom:var(--mh-section-padding-y)">
+  <header class="mh-hero">
     <h1 class="mh-hero__name mh-text-display-xl">Micah Hoang</h1>
     <p class="mh-hero__descriptor mh-text-heading">Brand designer with a systems mind.</p>
     <div class="mh-hero__bar">
@@ -92,16 +92,19 @@
       <span class="mh-label">©2026</span>
     </div>
   </header>
-  <section style="margin-top:72px">
-    <h2 class="mh-text-display-m" style="margin:0 0 72px">Selected work</h2>
+  <section>
+    <header class="mh-section-header">
+      <hr class="mh-rule">
+      <h2 class="mh-section-header__title"><span>Selected</span><span>work</span></h2>
+    </header>
     <ul class="mh-project-grid">
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
     </ul>
-    <div style="display:flex;justify-content:flex-end;margin-top:40px"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
   </section>
-</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="mh-container" style="padding-block:20px 72px"&gt;
-  &lt;header class="mh-hero" style="padding-top:72px"&gt;
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="mh-container" style="padding-bottom:var(--mh-section-padding-y)"&gt;
+  &lt;header class="mh-hero"&gt;
     &lt;h1 class="mh-hero__name mh-text-display-xl"&gt;Micah Hoang&lt;/h1&gt;
     &lt;p class="mh-hero__descriptor mh-text-heading"&gt;Brand designer with a systems mind.&lt;/p&gt;
     &lt;div class="mh-hero__bar"&gt;
@@ -109,17 +112,20 @@
       &lt;span class="mh-label"&gt;©2026&lt;/span&gt;
     &lt;/div&gt;
   &lt;/header&gt;
-  &lt;section style="margin-top:72px"&gt;
-    &lt;h2 class="mh-text-display-m" style="margin:0 0 72px"&gt;Selected work&lt;/h2&gt;
+  &lt;section&gt;
+    &lt;header class="mh-section-header"&gt;
+      &lt;hr class="mh-rule"&gt;
+      &lt;h2 class="mh-section-header__title"&gt;&lt;span&gt;Selected&lt;/span&gt;&lt;span&gt;work&lt;/span&gt;&lt;/h2&gt;
+    &lt;/header&gt;
     &lt;ul class="mh-project-grid"&gt;
       &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Gaia&lt;/span&gt;&lt;span aria-hidden="true"&gt;Gaia&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/gaia.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;Visual identity&lt;/li&gt;&lt;li class="mh-tag"&gt;UX/UI&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
       &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;AirPods Pro 3&lt;/span&gt;&lt;span aria-hidden="true"&gt;AirPods Pro 3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media" data-stroke&gt;&lt;img src="../../assets/samples/airpods.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;2D motion&lt;/li&gt;&lt;li class="mh-tag"&gt;3D motion&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;div style="display:flex;justify-content:flex-end;margin-top:40px"&gt;&lt;a class="mh-action" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;View all&lt;/span&gt;&lt;span aria-hidden="true"&gt;View all&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"&gt;&lt;a class="mh-action" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;View all&lt;/span&gt;&lt;span aria-hidden="true"&gt;View all&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre></details></figure>
 <h2 id="rules"><a class="ds-anchor" href="#rules">Rules</a></h2>
-<ul><li><strong>Selected-work order</strong> is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon &amp; Schuster, National Park Playing Cards). It comes from the CMS, not code.</li><li>Six projects, never more. Everything else lives in the Index.</li><li>No hero image. The first image a visitor sees is project 1.</li><li>Vertical rhythm: about 144px from hero to Selected work, 72px from section title to grid, 144px before About.</li></ul>
+<ul><li><strong>Selected-work order</strong> is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon &amp; Schuster, National Park Playing Cards). It comes from the CMS, not code.</li><li>Six projects, never more. Everything else lives in the Index.</li><li>No hero image. The first image a visitor sees is project 1.</li><li>Vertical rhythm (from the Framer page): hero padding 100px top (75 mobile) and 100px bottom; section rule → title 20px; title → grid 70px (50 mobile); grid → View all 30px (20 mobile); 100px section bottom padding before About; About title → content 30px (20 mobile); content → Scroll to top 60px.</li><li>About: 175px portrait (170 tablet/mobile), 20px gap, copy max 600px in Body L, 40px to Read more (30 tablet/mobile). On mobile the portrait stacks above the copy.</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
 <ul><li>Selected work: <code>HomeSelectedWorkGrid</code> (<code>FecepLS</code>), which also owns the About portrait/link linked hover.</li><li>Boot and transitions: <code>PageTransition</code> (<code>gmalnRr</code>).</li><li>Home social labels: <code>TextEncryptionEffect</code> (<code>p7tSTaD</code>).</li></ul></article>
     <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/patterns/home.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
