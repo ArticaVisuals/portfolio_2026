@@ -1,0 +1,456 @@
+Node xml:
+<Desktop nodeId="ehrlMBjP3">
+  <Main nodeId="Hktj6FsoA">
+    <SectionImages
+        nodeId="Dy5x2Ew0Z"
+        width="1fr"
+        height="fit-content"
+        overflow="visible"
+        layout="stack"
+        gap="40px"
+        padding="0px 20px 160px 20px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="start"
+    >
+      <Design
+          nodeId="W1AV_RZef"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          gap="20px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Design
+            nodeId="HDSt11MqZ"
+            width="1fr"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Heading 3"
+        >
+          Design
+        </Design>
+        <Video
+            nodeId="HueKSiyIp"
+            width="1fr"
+            height="fit-content"
+            srcType="Upload"
+            srcUrl="https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4"
+            srcFile="https://framerusercontent.com/assets/7wccD82ku4uk19EOTHMFvj830kQ.mp4"
+            loop="true"
+            posterEnabled="true"
+            poster="https://framerusercontent.com/images/JCtHaQw95ZZaKv4Q84aaUrc3R8.webp"
+            controls="false"
+            muted="true"
+            objectFit="contain"
+            playing="true"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0, 0, 0, 0)"
+            startTime="0"
+            volume="25"
+         />
+        <Image
+            nodeId="oCWgZw2Qk"
+            width="1fr"
+            height="fit-image"
+            minWidth="280px"
+            borderRadius="0px"
+            <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+            backgroundImage="https://framerusercontent.com/images/rr6fnaOX4c5cMK62w9uYeduSq8w.png"
+         />
+        <CaseStudyJustifiedMediaGrid
+            nodeId="JFeti7ryP"
+            width="1fr"
+            height="fit-content"
+            <!-- the component id this instance uses -->
+            componentId="c0iPrbN"
+            items="[{"id":"C1yxxjota","kind":"image","image":{"id":"ggUypW6Z7y2X4Da00aIvkj5XpI.png","url":"https://framerusercontent.com/images/ggUypW6Z7y2X4Da00aIvkj5XpI.png","thumbnailUrl":"https://framerusercontent.com/images/ggUypW6Z7y2X4Da00aIvkj5XpI.png?scale-down-to=512","resolution":"auto"},"src":"https://framerusercontent.com/images/VfHl3PIrXYhc91cU5bjN2gONNLQ.png","ratio":0.6665,"fit":"contain","alt":"Motion Connect vertical print asset","stroke":false},{"id":"uYLfpb2ah","kind":"video","video":{"id":"Nu5qLYyAxEtwmk9JwPyuPusuXk.mp4","url":"https://framerusercontent.com/assets/Nu5qLYyAxEtwmk9JwPyuPusuXk.mp4","extension":"mp4"},"src":"https://framerusercontent.com/images/AssBcap80PiboGZcCTvZdBzxMI.png","ratio":1.5,"fit":"contain","alt":"Motion Connect print asset","stroke":false}]"
+            showLegacyData="true"
+            itemsData=""
+            forceSingleRow="true"
+            targetRowHeight="520"
+            minRowHeight="220"
+            maxRowHeight="620"
+            gap="20"
+            mobileGap="10"
+            stackBelow="240"
+            autoplay="true"
+            loop="true"
+            muted="true"
+            controls="false"
+         />
+        <Image
+            nodeId="xSt67IZuK"
+            width="1fr"
+            height="fit-image"
+            minWidth="280px"
+            borderRadius="0px"
+            <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+            backgroundImage="https://framerusercontent.com/images/GkJGa5sKO2ohBM532DWbY5yqAk.jpeg"
+         />
+        <Stack
+            nodeId="o1_5CaIx8"
+            width="1fr"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+            stackWrap="true"
+        >
+          <Image
+              nodeId="Huj4RQjHT"
+              width="1fr"
+              height="fit-image"
+              minWidth="280px"
+              borderRadius="0px"
+              <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+              backgroundImage="https://framerusercontent.com/images/OdErQM3mENwEht00KQOjZzkXA8.png"
+           />
+        </Stack>
+        <Stack
+            nodeId="U56g_aCpi"
+            width="1fr"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+            stackWrap="true"
+        >
+          <Image
+              nodeId="Y3OuYDVLs"
+              width="1fr"
+              height="fit-image"
+              minWidth="280px"
+              borderRadius="0px"
+              <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+              backgroundImage="https://framerusercontent.com/images/tp2269euaTPLQzqAo5VKIzRWfsw.png"
+           />
+          <Image
+              nodeId="N9HyX3B4g"
+              width="1fr"
+              height="fit-image"
+              minWidth="280px"
+              borderRadius="0px"
+              <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+              backgroundImage="https://framerusercontent.com/images/uKh2vYE9yTkv527chpcUjZO9xs.png"
+           />
+        </Stack>
+        <Image
+            nodeId="fT4fZxYnr"
+            width="1fr"
+            height="fit-image"
+            minWidth="280px"
+            borderRadius="0px"
+            <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+            backgroundImage="https://framerusercontent.com/images/KF3hnRMkUdJh4iKcO4r6pFIHpBw.png"
+         />
+      </Design>
+      <Stack
+          nodeId="BtRcKgqxx"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          gap="20px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Process
+            nodeId="GGjlauElW"
+            width="124px"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Heading 3"
+        >
+          Process
+        </Process>
+        <CaseStudyJustifiedMediaGrid
+            nodeId="USoUpbGOw"
+            width="1fr"
+            height="fit-content"
+            <!-- the component id this instance uses -->
+            componentId="c0iPrbN"
+            items="[{"id":"FsccGlmQh","kind":"video","image":{"id":"ggUypW6Z7y2X4Da00aIvkj5XpI.png","url":"https://framerusercontent.com/images/ggUypW6Z7y2X4Da00aIvkj5XpI.png","thumbnailUrl":"https://framerusercontent.com/images/ggUypW6Z7y2X4Da00aIvkj5XpI.png?scale-down-to=512","resolution":"auto"},"video":{"id":"45pD654qcbqwLnpkew0KeZOEHGI.mp4","url":"https://framerusercontent.com/assets/45pD654qcbqwLnpkew0KeZOEHGI.mp4","extension":"mp4"},"poster":{"id":"ldGIJlExafcVawe9RKEb9tGxZw.webp","url":"https://framerusercontent.com/images/ldGIJlExafcVawe9RKEb9tGxZw.webp","thumbnailUrl":"https://framerusercontent.com/images/ldGIJlExafcVawe9RKEb9tGxZw.webp?scale-down-to=512","resolution":"auto"},"src":"https://framerusercontent.com/images/VfHl3PIrXYhc91cU5bjN2gONNLQ.png","ratio":0.6665,"fit":"contain","alt":"Motion Connect vertical print asset","stroke":true},{"id":"g8EbomfNt","kind":"video","video":{"id":"YdkTfJ5vs7V2a9P6GZZZBrZpQ6Y.mp4","url":"https://framerusercontent.com/assets/YdkTfJ5vs7V2a9P6GZZZBrZpQ6Y.mp4","extension":"mp4"},"poster":{"id":"xfMZKjBe83qvY2O5vAsqBMDCisQ.webp","url":"https://framerusercontent.com/images/xfMZKjBe83qvY2O5vAsqBMDCisQ.webp","thumbnailUrl":"https://framerusercontent.com/images/xfMZKjBe83qvY2O5vAsqBMDCisQ.webp?scale-down-to=512","resolution":"auto"},"src":"https://framerusercontent.com/images/AssBcap80PiboGZcCTvZdBzxMI.png","ratio":1.5,"fit":"contain","alt":"Motion Connect print asset","stroke":false}]"
+            showLegacyData="true"
+            itemsData=""
+            forceSingleRow="true"
+            targetRowHeight="520"
+            minRowHeight="220"
+            maxRowHeight="620"
+            gap="20"
+            mobileGap="10"
+            stackBelow="560"
+            autoplay="true"
+            loop="true"
+            muted="true"
+            controls="false"
+         />
+        <ImageRow
+            nodeId="oWoYPxtmK"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+            stackWrap="true"
+        >
+          <Video
+              nodeId="CMM2VT588"
+              width="1fr"
+              height="fit-content"
+              srcType="Upload"
+              srcUrl="https://freight.cargo.site/t/original/i/K2732700628673220824093023262229/Clip1.mp4"
+              srcFile="https://framerusercontent.com/assets/R8YS5njtYujWCRclEboIc16Dw.mp4"
+              playing="true"
+              posterEnabled="true"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0, 0, 0, 0)"
+              startTime="0"
+              loop="true"
+              objectFit="contain"
+              controls="false"
+              muted="true"
+              volume="0"
+           />
+          <Video
+              nodeId="RlN89rgU2"
+              width="1fr"
+              height="fit-content"
+              srcType="Upload"
+              srcUrl="https://freight.cargo.site/t/original/i/K2732700628673220824093023262229/Clip1.mp4"
+              srcFile="https://framerusercontent.com/assets/lWLw46No3unGhfJcsSamCiz9Y.mp4"
+              playing="true"
+              posterEnabled="true"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0, 0, 0, 0)"
+              startTime="0"
+              loop="true"
+              objectFit="contain"
+              controls="false"
+              muted="true"
+              volume="0"
+           />
+          <Video
+              nodeId="buTZT83im"
+              width="1fr"
+              height="fit-content"
+              srcType="Upload"
+              srcUrl="https://freight.cargo.site/t/original/i/I2732696893392013338645916538389/Clip2.mp4"
+              srcFile="https://framerusercontent.com/assets/yTv78CLGzXBEU3DeSiE8yADGkY.mp4"
+              playing="true"
+              posterEnabled="true"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0, 0, 0, 0)"
+              startTime="0"
+              loop="true"
+              objectFit="contain"
+              controls="false"
+              muted="true"
+              volume="0"
+           />
+          <Video
+              nodeId="a48RRDZ5J"
+              width="1fr"
+              height="fit-content"
+              srcType="Upload"
+              srcUrl="https://freight.cargo.site/t/original/i/Z2732698972764345559407703348757/Clip3.mp4"
+              srcFile="https://framerusercontent.com/assets/KOeleiX8T7ZVUsUXUIeXjVHeFQg.mp4"
+              playing="true"
+              posterEnabled="true"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0, 0, 0, 0)"
+              startTime="0"
+              loop="true"
+              objectFit="contain"
+              controls="false"
+              muted="true"
+              volume="0"
+           />
+        </ImageRow>
+      </Stack>
+      <Stack
+          nodeId="evsqAlVAy"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          gap="20px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Tooling
+            nodeId="mdyRBJH8q"
+            width="124px"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Heading 3"
+        >
+          Tooling
+        </Tooling>
+        <ImageRow
+            nodeId="d1wMiQXdO"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            stackDirection="vertical"
+            stackDistribution="start"
+            stackAlignment="start"
+            stackWrap="true"
+        >
+          <Stack
+              nodeId="T7iyoykaY"
+              width="1fr"
+              height="fit-content"
+              overflow="clip"
+              layout="stack"
+              gap="20px"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <VideoWrapper
+                nodeId="xIO0XeKld"
+                width="1fr"
+                height="fit-content"
+                minWidth="280px"
+                overflow="hidden"
+                layout="stack"
+                gap="10px"
+                stackDirection="horizontal"
+                stackDistribution="center"
+                stackAlignment="center"
+            >
+              <Video
+                  nodeId="OCipvhhQ9"
+                  width="100%"
+                  height="fit-content"
+                  srcType="Upload"
+                  srcUrl="https://freight.cargo.site/t/original/i/I2732696893392013338645916538389/Clip2.mp4"
+                  srcFile="https://framerusercontent.com/assets/jrR8PT6Sv6XI4d8tvnyam8CBs4.mp4"
+                  playing="true"
+                  posterEnabled="true"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0, 0, 0, 0)"
+                  startTime="0"
+                  loop="true"
+                  objectFit="contain"
+                  controls="false"
+                  muted="true"
+                  volume="0"
+               />
+            </VideoWrapper>
+            <VideoWrapper
+                nodeId="bIeA57nCc"
+                width="1fr"
+                height="fit-content"
+                minWidth="280px"
+                overflow="hidden"
+                layout="stack"
+                gap="10px"
+                stackDirection="horizontal"
+                stackDistribution="center"
+                stackAlignment="center"
+            >
+              <Video
+                  nodeId="cnYHDLSPA"
+                  width="100%"
+                  height="fit-content"
+                  srcType="Upload"
+                  srcUrl="https://freight.cargo.site/t/original/i/K2732700628673220824093023262229/Clip1.mp4"
+                  srcFile="https://framerusercontent.com/assets/3X7cIvkjeocU6GoS1NuGmJ2U0.mp4"
+                  playing="true"
+                  posterEnabled="true"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0, 0, 0, 0)"
+                  startTime="0"
+                  loop="true"
+                  objectFit="contain"
+                  controls="false"
+                  muted="true"
+                  volume="0"
+               />
+            </VideoWrapper>
+            <VideoWrapper
+                nodeId="coj77mZJ1"
+                width="1fr"
+                height="fit-content"
+                minWidth="280px"
+                overflow="hidden"
+                layout="stack"
+                gap="10px"
+                stackDirection="horizontal"
+                stackDistribution="center"
+                stackAlignment="center"
+            >
+              <Video
+                  nodeId="l0vQC4Byg"
+                  width="100%"
+                  height="fit-content"
+                  srcType="Upload"
+                  srcUrl="https://freight.cargo.site/t/original/i/Z2732698972764345559407703348757/Clip3.mp4"
+                  srcFile="https://framerusercontent.com/assets/H6a8YIARh6MaUkzzyBcnywbf9A4.mp4"
+                  playing="true"
+                  posterEnabled="true"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0, 0, 0, 0)"
+                  startTime="0"
+                  loop="true"
+                  objectFit="contain"
+                  controls="false"
+                  muted="true"
+                  volume="0"
+               />
+            </VideoWrapper>
+          </Stack>
+        </ImageRow>
+      </Stack>
+      <ScrollToTop
+          nodeId="BL5ie7edv"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(255, 255, 255, 0)"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          padding="0px 0px 0px 0px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="center"
+      >
+        <ScrollToTopButton
+            nodeId="Z9hGwMywq"
+            width="fit-content"
+            height="16px"
+            <!-- the component id this instance uses -->
+            componentId="gh4ngZN"
+            label="scroll to top"
+            color="rgb(35, 51, 36)"
+            scrollDuration="900"
+            animationDuration="1.35"
+            easing="cubic-bezier(0.16, 1, 0.3, 1)"
+         />
+      </ScrollToTop>
+    </SectionImages>
+  </Main>
+</Desktop>
