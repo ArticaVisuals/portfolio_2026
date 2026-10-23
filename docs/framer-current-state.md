@@ -1,8 +1,8 @@
 # Framer Current State Audit
 
 **Project:** Micah Hoang Portfolio 2026
-**Last audited:** September 17, 2026, via Framer MCP, draft preview QA, and local repo audit
-**Latest published snapshot:** September 22, 2026, public site only; see [snapshot and provenance](../code/mirror/published/README.md)
+**Last audited:** October 23, 2026, for Play via Framer MCP, native Safari, published source, and local regression tests
+**Latest full-site published snapshot:** September 22, 2026, public site only; see [snapshot and provenance](../code/mirror/published/README.md)
 **Production URL:** `https://micahhoang.com`
 **Framer default domain:** `https://khaki-ship-257706.framer.app`
 
@@ -14,6 +14,59 @@
 > around a staged rollout that does not exist.)
 
 This is the quick source of truth for the active Framer project and local handoff repo. Old one-off handoff/audit docs were deleted on June 2 so future agents do not follow stale repair paths. When docs disagree, this file wins.
+
+---
+
+## 2026-10-23 Update — Play drawer and Safari idle drift (published)
+
+- **Published:** approved changes published October 23 at 10:31 a.m. Pacific.
+  The live `/play` build contains the updated motion and keyboard behavior.
+  `ArchivePlayground.tsx` (`QNpkYp5`) is compiled as `Od3cfnky2uFWSan1tnFC`;
+  `Play.tsx` (`PN1RVOf`, `IChXXDGnoDSKpNgvj957`) explicitly imports that engine
+  version. Framer's update response returned the previous module URL before compilation finished; reread
+  the code file exports and verify compiled contents before pinning. Future
+  engine updates must also update this import. Refresh the whole Framer browser
+  tab when testing a second editor session.
+- **Drawer:** 500ms open / 400ms close using the existing Smooth curve
+  `cubic-bezier(0.12, 0.23, 0.5, 1)`. Transition completion releases the drawer,
+  with an interrupt-safe fallback timer. Reduced motion skips the transitions.
+- **Keyboard and labels:** Enter/Space activation, Escape, and keyboard Close
+  bypass the drawer, backdrop, gallery-blur, divider, and navigation movement;
+  immediate exits release the panel without waiting for a transition event.
+  Keyboard-opened panels skip ambient drift. Close/link rolls use CSS hover
+  only under `(hover: hover) and (pointer: fine)` with no reduced-motion
+  preference, and remain static in keyboard mode. Focus no longer triggers a
+  roll. Safari verified Enter, Space, Escape, keyboard Close, and focus return;
+  reduced-motion and pointer media gates were checked in source and compiled
+  output. Pointer timing remains 500/400ms.
+- **Background:** desktop Chromium allows slow panel drift with videos paused
+  and parallax frozen. Safari freezes the world and uses one small settling
+  translation of the blurred gallery. Mobile and reduced motion skip this drift.
+  The wrapper exposes `Panel Drift`; `Archive Items` remains intact.
+- **Idle jump:** Safari's fixed one-cell recycling buffer exceeded the actual
+  spare coverage at some viewport widths. Its coverage clamp held the gallery,
+  then released it on recycle: the old calculation produced a 26px step at
+  1200px width, also observed in native Safari screenshots. WebKit now centers
+  the recycle interval within the available coverage and includes parallax.
+  Card counts, video budgets, Safari's fast-pan clamp, and Chromium's raw
+  transform path remain unchanged.
+- **Regression:** `npm test` includes 35 performance guards plus 56 continuity
+  scenarios across seven viewport sizes, both drift directions, parallax
+  offsets, and delayed commits. It also checks Safari burst coverage and raw
+  Chromium transforms. The old engine fails the continuity test. Framer reports
+  no typecheck errors for either updated component.
+- **Draft Safari continuity check:** a stationary-pointer 20-second capture at 1200×888
+  contained 132 screenshots spanning multiple cell boundaries. Image alignment
+  measured 2–8px between samples (122–241ms apart), with no recurrence of the
+  old 26–30px horizontal snaps. Drawer open/Escape-close also passed. This is a
+  targeted continuity check, not a frame-rate or zero-lag guarantee.
+- **Published verification:** native Safari passed pointer open/close, Enter
+  activation, Escape, keyboard Close, focus return, and a full drawer layout
+  check. The public runtime chunk is
+  `4jo3EcmhJFr0WTP2diTUhHeA8UmUtzL8z1MVRWcHGpQ.DgeTs7zg.mjs`
+  (SHA-256 `f8de69b812f8fbbeb4f0fd2c5c2d0c598018da2476e4db6a6b0a419875806d2a`).
+  Its source confirms the 500/400ms timing, Smooth curve, keyboard motion
+  bypass, and fine-pointer/reduced-motion hover gates.
 
 ---
 

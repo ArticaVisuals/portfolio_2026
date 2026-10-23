@@ -135,23 +135,32 @@ preserving the performance pass:
   layer. React only recycles cards after crossing a grid-cell boundary; video
   state remains frozen during user-driven motion and stable visible slots are
   retained during background drift.
-- The detail drawer freezes the obscured grid. Chrome retains the backdrop blur.
-  Safari/iOS avoid `backdrop-filter` and instead ease a `14px` blur directly on
-  the gallery over `560ms`. Closing still eases the blur back to `0px` over
-  `450ms`, but grid motion, interaction, and the bounded video allocator resume
+- The detail drawer uses `500ms` open / `400ms` close with the Smooth curve
+  `cubic-bezier(0.12, 0.23, 0.5, 1)`. Desktop Chromium allows slow background
+  drift with videos paused and parallax frozen; the fixed-radius backdrop blur
+  fades through opacity. Safari/iOS avoid `backdrop-filter` and ease a `14px`
+  blur directly on the gallery over `500ms`. Desktop Safari freezes the world
+  and moves its blurred wrapper once by at most `10px × 6px` over six seconds.
+  Mobile, keyboard-opened panels, and reduced motion skip this ambient movement.
+  Closing eases the blur back to `0px` over `400ms`; grid motion, interaction,
+  and the bounded video allocator resume
   as soon as Close is triggered, matching Chrome's immediate background return.
   The outgoing detail video pauses and releases its source at that same moment,
   so Safari never runs the drawer decoder on top of the resumed grid budget.
   Both Play grain instances are static outside WebKit and completely disabled
-  on Safari/iOS.
+  on Safari/iOS. Keyboard/reduced-motion drawer actions bypass movement; Close
+  and CTA label rolls only run for fine-pointer hover without reduced motion.
+  Drawer cleanup follows transition completion with an interrupt-safe fallback.
 - Grid media wrappers stay visible immediately instead of waiting at
   `opacity: 0` for per-image/per-video load callbacks. The smooth fade remains
   for the detail drawer media only.
 - Images in or near the viewport load eagerly; offscreen buffer cells remain
   lazy.
-- At `1440×1000`, the bounded pool is `56` cards. A committed-window coverage
-  clamp keeps those cards covering every viewport edge during fast wheel/pan
-  bursts while React recycles the next cell window.
+- At `1440×1000`, the bounded pool is `56` cards. A WebKit-only committed-window
+  coverage clamp protects viewport edges during fast wheel/pan bursts while
+  React recycles the next cell window. WebKit centers its recycling interval
+  inside actual spare coverage, including parallax, to prevent idle clamp/release
+  jumps. Chromium/Arc always uses the raw world transform.
 - Poster images remain mounted beneath active videos. Video opacity is promoted
   imperatively only after playback readiness, and deactivated videos pause,
   clear their source, and release the decoder.
@@ -176,3 +185,9 @@ no new video sources during an active drag, restored the full pool after
 inertia settled, and emitted no warnings or errors. The matching local
 `ArchivePlayground.tsx` snapshot is `133085` bytes with SHA-256
 `e507c940991389031df20b6f96c3b3ab3105cfb4cbf9328a248d1d896085c276`.
+
+The October 23 motion/accessibility and Safari idle-continuity update is published
+as `ArchivePlayground@Od3cfnky2uFWSan1tnFC` and
+`Play@IChXXDGnoDSKpNgvj957`. The wrapper pins that engine version. See
+[Framer current state](framer-current-state.md#2026-10-23-update--play-drawer-and-safari-idle-drift-published)
+for verification and public runtime provenance.
