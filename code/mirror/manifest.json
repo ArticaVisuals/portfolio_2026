@@ -8,7 +8,7 @@
     "2026-09-18: refreshed working-source hashes for CaseStudyJustifiedMediaGrid, IndexPage, and PageTransition; added PageTransitionRuntime (rdTIUkW). Compiled snapshots retain their original generation date."
   ],
   "counts": {
-    "activeRootCodeComponents": 21,
+    "activeRootCodeComponents": 22,
     "mirroredCompiledCodeComponents": 22,
     "mirroredCodeOverrides": 5,
     "componentMirrorErrors": 0
@@ -202,6 +202,15 @@
       "localPath": "code/components/SimonSchusterGuidelinesCarousel.tsx",
       "bytes": 22643,
       "sha256": "454e74927b71123b96d2d34b6656e44d1e4cbe9013025ff81959a72ed2cd456d"
+    },
+    {
+      "codeFileId": "avtpt1Q",
+      "path": "CaliperTypeTester.tsx",
+      "role": "Caliper Sans interactive type specimen; published on /case-studies/caliper",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "code/components/CaliperTypeTester.tsx",
+      "bytes": 27436,
+      "sha256": "2678d3006cf55b5343c1cd7a5d4d98ede28d30726f3bbcf9b051421e13c1401a"
     }
   ],
   "mirroredCompiledCodeComponents": [

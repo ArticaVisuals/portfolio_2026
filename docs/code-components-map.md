@@ -181,3 +181,21 @@ Do each as: migrate one → Publish → QA `/`, `/index`, `/play`, `/info`,
 - **N1 — UI renames** (safe, componentId-bound): `Test`→`ProjectRegistrar`,
   `CaseStudyScrambleText`→`CaseStudyHeaderLink`, carousel→`ImageCarousel`.
 - **N2 — retire** `PageTransition_v7_12_Backup` once the frozen module URL is noted elsewhere.
+
+
+### Caliper type specimen (published 2026-10-23)
+
+`CaliperTypeTester.tsx` (`avtpt1Q`) embeds Caliper Sans 1.003 and provides
+native typing, auto fitting, a dimmed idle typing demo, and mirrored metric
+values (740, 510, 0, -230) that disappear before crowding. The 800 guide is omitted. Paper (`NhCmBtZpq`) is the selected
+variant; the user moved it inside Design (`W1AV_RZef`) on
+`/case-studies/caliper`. Preserve that placement when updating the source.
+Paper uses #EEEEEE with #191919 specimen ink, a shared muted gray for all
+detail rules/marks/values, 1px rule and registration strokes, and monochrome
+text selection. The original navy comparison remains available through the
+same color props and local preview. There are no visitor controls or corner
+copy. See `caliper-type-tester.md` for behavior, references, and verification.
+The published typing area retains its monochrome selection. Site-wide green
+selection is managed in Framer Settings > Code by `Text Selection`, mirrored at
+`code/mirror/custom-code/TextSelection.html`. Keep its selector at `body ::selection`
+so the component's more specific `.caliper-tester ::selection` style wins.

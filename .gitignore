@@ -19,3 +19,8 @@ assets/**/source/
 # Ad-hoc media QA scratch + Framer runtime inspection dumps.
 archive/generated-artifacts/media-qa/wolff-media-check/
 .framer-inspect/
+
+# Local preview dependencies, generated bundle, and temporary work.
+node_modules/
+tmp/
+output/playwright/caliper-sans-preview/bundle.js

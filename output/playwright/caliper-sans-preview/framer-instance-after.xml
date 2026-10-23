@@ -1,0 +1,20 @@
+Node xml:
+<Desktop nodeId="ehrlMBjP3">
+  <Main nodeId="Hktj6FsoA">
+    <SectionImages nodeId="Dy5x2Ew0Z">
+      <CaliperTypeTester
+          nodeId="SE0xVgA7j"
+          width="1fr"
+          height="fit-content"
+          <!-- the component id this instance uses -->
+          componentId="avtpt1Q"
+          initialText="Caliper Sans"
+          maxSize="320"
+          guides="true"
+          samples="["Caliper Sans","Measured, not estimated.","Torque to 9 N·m","Tolerance ±0.05","Hamburgefontsiv","0123456789"]"
+          background="rgb(28, 36, 64)"
+          foreground="rgb(238, 238, 238)"
+       />
+    </SectionImages>
+  </Main>
+</Desktop>
