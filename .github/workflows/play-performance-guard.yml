@@ -11,6 +11,7 @@ on:
       - "code/components/Play.tsx"
       - "code/components/ResumeAssetHost.tsx"
       - "code/tools/check-play-pan-performance.mjs"
+      - "code/tools/test-play-grid-continuity.mjs"
       - "package.json"
   pull_request:
     branches:
@@ -22,6 +23,7 @@ on:
       - "code/components/Play.tsx"
       - "code/components/ResumeAssetHost.tsx"
       - "code/tools/check-play-pan-performance.mjs"
+      - "code/tools/test-play-grid-continuity.mjs"
       - "package.json"
 
 permissions:

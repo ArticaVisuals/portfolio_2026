@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "check:play-performance": "node code/tools/check-play-pan-performance.mjs",
-    "test": "npm run check:play-performance"
+    "test": "npm run check:play-performance && node code/tools/test-play-grid-continuity.mjs"
   },
   "repository": {
     "type": "git",

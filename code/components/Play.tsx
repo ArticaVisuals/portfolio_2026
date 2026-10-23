@@ -2,7 +2,7 @@ import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 // @ts-ignore Framer code files can import project code components by module URL.
-import ArchivePlayground from "https://framer.com/m/ArchivePlayground-hjPIIx.js"
+import ArchivePlayground from "https://framer.com/m/ArchivePlayground-hjPIIx.js@Od3cfnky2uFWSan1tnFC"
 
 type Kind = "image" | "video" | "gif"
 type ImageValue = { src?: string; srcSet?: string; alt?: string } | string | null | undefined
@@ -531,7 +531,9 @@ export default function Play(props: Props) {
                 loadInStaggerMs={loadInStaggerMs}
                 loadInMaxWaitMs={loadInMaxWaitMs}
                 maxConcurrentVideos={currentMaxConcurrentVideos}
-                driftWhilePanelOpen={props.driftWhilePanelOpen ?? false}
+                driftWhilePanelOpen={props.driftWhilePanelOpen ?? true}
+                panelDriftSpeedX={props.panelDriftSpeedX ?? 0.15}
+                panelDriftSpeedY={props.panelDriftSpeedY ?? 0.1}
             />
         </div>
     )
@@ -695,6 +697,15 @@ addPropertyControls<Props>(Play, {
         max: 1400,
         step: 10,
         unit: "ms",
+        hidden: hideAdvanced,
+    },
+    driftWhilePanelOpen: {
+        type: ControlType.Boolean,
+        title: "Panel Drift",
+        description: "Slow drift behind the drawer. Safari uses a short settling glide; background videos stay paused.",
+        defaultValue: true,
+        enabledTitle: "On",
+        disabledTitle: "Off",
         hidden: hideAdvanced,
     },
     inertiaEnabled: {

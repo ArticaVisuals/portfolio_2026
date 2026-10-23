@@ -5,7 +5,8 @@
     "Editable TSX mirrors live under code/components/. Their recorded hashes reflect per-file mirror updates, not an automatic sync with the published site.",
     "Files under code-components/compiled-js are downloaded compiled Framer module snapshots from insert URLs, not original editable TypeScript source.",
     "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output.",
-    "2026-09-18: refreshed working-source hashes for CaseStudyJustifiedMediaGrid, IndexPage, and PageTransition; added PageTransitionRuntime (rdTIUkW). Compiled snapshots retain their original generation date."
+    "2026-09-18: refreshed working-source hashes for CaseStudyJustifiedMediaGrid, IndexPage, and PageTransition; added PageTransitionRuntime (rdTIUkW). Compiled snapshots retain their original generation date.",
+    "2026-10-23: refreshed Play and ArchivePlayground working-source hashes to match the approved published Framer modules; legacy compiled snapshots retain their original generation date."
   ],
   "counts": {
     "activeRootCodeComponents": 21,
@@ -20,8 +21,10 @@
       "role": "/play archive renderer",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/ArchivePlayground.tsx",
-      "bytes": 131939,
-      "sha256": "fe75094276cff8fe9d5aae93de93924ed8e12c062ae743fce18e1cc45fb7fc59"
+      "bytes": 138656,
+      "sha256": "f961d7e832fe51d09d32194e8ef42ddbf0732418cc71a82896c2a9624b55c59f",
+      "framerInsertUrl": "https://framer.com/m/ArchivePlayground-hjPIIx.js@Od3cfnky2uFWSan1tnFC",
+      "publishedDate": "2026-10-23"
     },
     {
       "codeFileId": "z13WRHS",
@@ -182,8 +185,10 @@
       "role": "Protected /play authoring wrapper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/Play.tsx",
-      "bytes": 28272,
-      "sha256": "eddff69c6f968362c1db00dc81844feac8457a30fde97aa5e09bfc8dd0a3d78c"
+      "bytes": 29657,
+      "sha256": "38beb2cc8018db613856e21b5f68a6d2d886383f8a9dd2edd6a91802780a6a1d",
+      "framerInsertUrl": "https://framer.com/m/Play-CAlh74.js@IChXXDGnoDSKpNgvj957",
+      "publishedDate": "2026-10-23"
     },
     {
       "codeFileId": "gh4ngZN",

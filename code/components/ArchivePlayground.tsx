@@ -232,6 +232,7 @@ const FOCUSABLE_SELECTOR = [
 ].join(", ")
 const NAV_EXIT_MANAGED_CLASS = "playground-nav-exit-managed"
 const NAV_EXIT_HIDDEN_CLASS = "playground-nav-exit-hidden"
+const NAV_EXIT_INSTANT_CLASS = "playground-nav-exit-instant"
 const NAV_EXIT_STYLE_ID = "playground-nav-exit-reveal-style"
 const DRAFT_ANIMATION_STYLE_ID = "playground-animation-style"
 const LOAD_IN_DELAY_MS = 70
@@ -253,6 +254,8 @@ const MAX_GRID_GAP = 56
 const MAX_VISIBLE_COLUMNS = 20
 const MAX_VISIBLE_ROWS = 12
 const DEFAULT_PANEL_WIDTH = 960
+const PANEL_OPEN_MS = 500
+const PANEL_CLOSE_MS = 400
 const PANEL_DESKTOP_RATIO = 0.5
 const PANEL_FULL_WIDTH_BREAKPOINT = 700
 const PANEL_TEXT_STACK_WIDTH = 520
@@ -1030,8 +1033,24 @@ function useDraftAnimationStyles(enabled: boolean) {
             styleEl.id = DRAFT_ANIMATION_STYLE_ID
             document.head.appendChild(styleEl)
         }
-        styleEl.textContent =
-            "@keyframes playgroundRuleDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
+        styleEl.textContent = `
+            @keyframes playgroundRuleDraw {
+                from { transform: scaleX(0); }
+                to { transform: scaleX(1); }
+            }
+            [data-playground-label-roll] {
+                transform: translateY(0);
+                transition: none;
+            }
+            @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+                [data-playground-panel-motion="smooth"] [data-playground-label-roll] {
+                    transition: transform 360ms ${SNAPPY_EASE};
+                }
+                [data-playground-panel-motion="smooth"] [data-playground-label-trigger]:hover [data-playground-label-roll] {
+                    transform: translateY(-13px);
+                }
+            }
+        `
 
         return () => {
             if (styleEl?.parentNode) styleEl.parentNode.removeChild(styleEl)
@@ -1055,17 +1074,22 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
         clearTimers()
         document.body.classList.remove(
             NAV_EXIT_MANAGED_CLASS,
-            NAV_EXIT_HIDDEN_CLASS
+            NAV_EXIT_HIDDEN_CLASS,
+            NAV_EXIT_INSTANT_CLASS
         )
     }, [clearTimers])
 
-    const reveal = React.useCallback(() => {
+    const reveal = React.useCallback((instant = false) => {
         if (!canUseDOM()) return
         clearTimers()
+        document.body.classList.toggle(NAV_EXIT_INSTANT_CLASS, instant)
         document.body.classList.add(NAV_EXIT_MANAGED_CLASS)
         document.body.classList.remove(NAV_EXIT_HIDDEN_CLASS)
         timersRef.current.cleanup = window.setTimeout(() => {
-            document.body.classList.remove(NAV_EXIT_MANAGED_CLASS)
+            document.body.classList.remove(
+                NAV_EXIT_MANAGED_CLASS,
+                NAV_EXIT_INSTANT_CLASS
+            )
             timersRef.current.cleanup = 0
         }, NAV_REVEAL_MS + 120)
     }, [clearTimers])
@@ -1074,6 +1098,7 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
         if (!enabled || !canUseDOM()) return
         const managed = scopedSelectors(selector, NAV_EXIT_MANAGED_CLASS)
         const hidden = scopedSelectors(selector, NAV_EXIT_HIDDEN_CLASS)
+        const instant = scopedSelectors(selector, NAV_EXIT_INSTANT_CLASS)
         if (!managed.length || !hidden.length) return
 
         let styleEl = document.getElementById(
@@ -1089,6 +1114,10 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
                 transition: transform ${NAV_REVEAL_MS}ms ${SNAPPY_EASE} !important;
                 will-change: transform !important;
             }
+            ${instant.join(",\n")} { transition: none !important; }
+            @media (prefers-reduced-motion: reduce) {
+                ${managed.join(",\n")} { transition: none !important; }
+            }
             ${hidden.join(",\n")} {
                 transform: translate3d(0, -${Math.max(0, Math.round(offset))}px, 0) !important;
                 pointer-events: none !important;
@@ -1102,9 +1131,10 @@ function useNavExitReveal(enabled: boolean, selector: string, offset: number) {
         }
     }, [enabled, offset, selector, reset])
 
-    const start = React.useCallback(() => {
+    const start = React.useCallback((instant = false) => {
         if (!enabled || !canUseDOM()) return
         clearTimers()
+        document.body.classList.toggle(NAV_EXIT_INSTANT_CLASS, instant)
         document.body.classList.add(
             NAV_EXIT_MANAGED_CLASS,
             NAV_EXIT_HIDDEN_CLASS
@@ -1651,8 +1681,7 @@ export default function ArchivePlayground(props: Props) {
     const [hovered, setHovered] = React.useState("")
     const [selected, setSelected] = React.useState<Item | null>(null)
     const [panelItem, setPanelItem] = React.useState<Item | null>(null)
-    const [closeHover, setCloseHover] = React.useState(false)
-    const [ctaHover, setCtaHover] = React.useState(false)
+    const [panelKeyboardAction, setPanelKeyboardAction] = React.useState(false)
     const [webKitGalleryBlur, setWebKitGalleryBlur] = React.useState(false)
     const panelOpen = Boolean(selected)
     const panelVisible = Boolean(panelItem)
@@ -1763,6 +1792,11 @@ export default function ArchivePlayground(props: Props) {
         navHideOffset
     )
     const prefersReducedMotion = usePrefersReducedMotion()
+    const panelInstant = prefersReducedMotion || panelKeyboardAction
+    const panelAllowsDrift =
+        props.driftWhilePanelOpen === true &&
+        !panelInstant &&
+        viewport.w >= PANEL_FULL_WIDTH_BREAKPOINT
     const pageVisible = usePageVisible()
     const webKitRisk = useWebKitRisk()
     const webKitRiskRef = React.useRef(webKitRisk)
@@ -1826,10 +1860,6 @@ export default function ArchivePlayground(props: Props) {
             }
         }
     }, [])
-
-    React.useEffect(() => {
-        if (!panelItem) setCloseHover(false)
-    }, [panelItem])
 
     React.useEffect(() => {
         if (selected && !items.some((item) => item.id === selected.id)) {
@@ -1905,8 +1935,20 @@ export default function ArchivePlayground(props: Props) {
         }, 0)
     }, [])
 
-    const closePanel = React.useCallback(() => {
-        navExitReveal.cancel()
+    const finishPanelClose = React.useCallback(() => {
+        // A new selection can interrupt an exit before its transition ends.
+        if (selectedRef.current) return
+        if (closeTimerRef.current !== null && canUseDOM()) {
+            window.clearTimeout(closeTimerRef.current)
+            closeTimerRef.current = null
+        }
+        setPanelItem(null)
+    }, [])
+
+    const closePanel = React.useCallback((keyboard = false) => {
+        const instant = prefersReducedMotion || keyboard
+        setPanelKeyboardAction(keyboard)
+        navExitReveal.cancel(instant)
         if (closeTimerRef.current !== null && canUseDOM()) {
             window.clearTimeout(closeTimerRef.current)
             closeTimerRef.current = null
@@ -1914,19 +1956,21 @@ export default function ArchivePlayground(props: Props) {
         const shouldReturnFocus = Boolean(selectedRef.current)
         setSelected(null)
         if (shouldReturnFocus) queueFocusReturn()
-        if (canUseDOM()) {
+        if (canUseDOM() && !instant) {
             closeTimerRef.current = window.setTimeout(() => {
                 closeTimerRef.current = null
                 if (!selectedRef.current) setPanelItem(null)
-            }, panelExitMs)
+            }, Math.max(PANEL_CLOSE_MS, panelExitMs))
         } else {
+            setWebKitGalleryBlur(false)
             setPanelItem(null)
         }
-    }, [navExitReveal, panelExitMs, queueFocusReturn])
+    }, [navExitReveal, panelExitMs, prefersReducedMotion, queueFocusReturn])
 
     const openItem = React.useCallback(
-        (item: Item, opener?: HTMLElement | null) => {
-            navExitReveal.start()
+        (item: Item, opener?: HTMLElement | null, keyboard = false) => {
+            setPanelKeyboardAction(keyboard)
+            navExitReveal.start(prefersReducedMotion || keyboard)
             if (closeTimerRef.current !== null && canUseDOM()) {
                 window.clearTimeout(closeTimerRef.current)
                 closeTimerRef.current = null
@@ -1953,11 +1997,10 @@ export default function ArchivePlayground(props: Props) {
             s.vy = 0
             setDraggingUi(false)
             setHovered("")
-            setCloseHover(false)
             setPanelItem(item)
             setSelected(item)
         },
-        [navExitReveal]
+        [navExitReveal, prefersReducedMotion]
     )
 
     React.useEffect(() => {
@@ -1974,7 +2017,7 @@ export default function ArchivePlayground(props: Props) {
             if (event.key === "Escape") {
                 event.preventDefault()
                 event.stopPropagation()
-                closePanel()
+                closePanel(true)
                 return
             }
             if (event.key !== "Tab") return
@@ -2060,7 +2103,10 @@ export default function ArchivePlayground(props: Props) {
             reconcileGridFrameRef.current?.(now(), true)
             return
         }
-        if (!pageVisible || (webKitRisk && panelOpen)) {
+        if (
+            !pageVisible ||
+            (panelOpen && (webKitRisk || !panelAllowsDrift))
+        ) {
             state.current.lastFrameT = 0
             return
         }
@@ -2079,9 +2125,7 @@ export default function ArchivePlayground(props: Props) {
             const webKitModalOpen =
                 webKitRiskRef.current && Boolean(selectedRef.current)
             const animateWorld =
-                (!panelOpen && !webKitModalOpen) ||
-                (!webKitRiskRef.current &&
-                    c.driftWhilePanelOpen === true)
+                !panelOpen || (!webKitModalOpen && panelAllowsDrift)
             if (animateWorld) {
                 if (!s.down) {
                     const speed = Math.hypot(s.vx, s.vy)
@@ -2129,12 +2173,14 @@ export default function ArchivePlayground(props: Props) {
                 }
 
                 const ease = clamp(c.parallaxEase ?? 0.5, 0.01, 1)
-                if ((c.parallaxWhileDragging ?? true) || !s.dragging) {
-                    s.mx += (s.targetMx - s.mx) * ease
-                    s.my += (s.targetMy - s.my) * ease
-                } else {
-                    s.mx += (0 - s.mx) * ease
-                    s.my += (0 - s.my) * ease
+                if (!panelOpen) {
+                    if ((c.parallaxWhileDragging ?? true) || !s.dragging) {
+                        s.mx += (s.targetMx - s.mx) * ease
+                        s.my += (s.targetMy - s.my) * ease
+                    } else {
+                        s.mx += (0 - s.mx) * ease
+                        s.my += (0 - s.my) * ease
+                    }
                 }
 
                 reconcileGridFrameRef.current?.(time)
@@ -2146,7 +2192,7 @@ export default function ArchivePlayground(props: Props) {
             window.cancelAnimationFrame(raf)
             state.current.lastFrameT = 0
         }
-    }, [isInteractive, pageVisible, panelOpen, webKitRisk])
+    }, [isInteractive, pageVisible, panelOpen, webKitRisk, panelAllowsDrift])
 
     const getCardIndexFromTarget = React.useCallback(
         (target: EventTarget | null) => {
@@ -2456,7 +2502,7 @@ export default function ArchivePlayground(props: Props) {
                         onKeyDown={(event) => {
                             if (event.key === "Enter" || event.key === " ") {
                                 event.preventDefault()
-                                openItem(item, event.currentTarget)
+                                openItem(item, event.currentTarget, true)
                             }
                         }}
                         onClick={(event) => {
@@ -2468,7 +2514,7 @@ export default function ArchivePlayground(props: Props) {
                                 state.current.dragging
                             )
                                 return
-                            openItem(item, event.currentTarget)
+                            openItem(item, event.currentTarget, event.detail === 0)
                         }}
                         style={{
                             position: "absolute",
@@ -2588,13 +2634,35 @@ export default function ArchivePlayground(props: Props) {
             : rawLayerY
         worldLayer.style.transform = `translate3d(${layerX}px, ${layerY}px, 0)`
 
+        // Center WebKit's recycle interval inside the actual spare coverage.
+        // A fixed one-cell buffer can exceed that coverage by the trailing
+        // gutter, making the clamp hold and then jump even during idle drift.
+        // Include parallax because it moves the painted window too.
+        const coverageBufferX = Math.max(
+            0,
+            (runtime.gridWidth - runtime.viewportW - runtime.cellX) / 2
+        )
+        const coverageBufferY = Math.max(
+            0,
+            (runtime.gridHeight - runtime.viewportH - runtime.cellY) / 2
+        )
         const desiredWindow = {
             startX:
-                Math.floor((-s.x - runtime.centerX) / runtime.cellX) -
-                Math.ceil(runtime.extra / 2),
+                webKitRiskRef.current
+                    ? Math.floor(
+                          (-s.x - s.mx - runtime.centerX - coverageBufferX) /
+                              runtime.cellX
+                      )
+                    : Math.floor((-s.x - runtime.centerX) / runtime.cellX) -
+                      Math.ceil(runtime.extra / 2),
             startY:
-                Math.floor((-s.y - runtime.centerY) / runtime.cellY) -
-                Math.ceil(runtime.extra / 2),
+                webKitRiskRef.current
+                    ? Math.floor(
+                          (-s.y - s.my - runtime.centerY - coverageBufferY) /
+                              runtime.cellY
+                      )
+                    : Math.floor((-s.y - runtime.centerY) / runtime.cellY) -
+                      Math.ceil(runtime.extra / 2),
         }
         const requestedWindow = gridWindowRequestedRef.current
         if (
@@ -2782,7 +2850,6 @@ export default function ArchivePlayground(props: Props) {
         []
     )
 
-    const closeTextRolled = closeHover || (panelVisible && !panelOpen)
     const modalPosition = isCanvas ? "absolute" : "fixed"
     const panelPadding = "clamp(22px, 2.8vw, 40px)"
     const viewportWidth = viewport.w || DEFAULT_PANEL_WIDTH
@@ -2795,6 +2862,11 @@ export default function ArchivePlayground(props: Props) {
             ? "100vw"
             : `min(${panelWidth}px, ${PANEL_DESKTOP_RATIO * 100}vw)`
     const stackPanelText = renderedPanelWidth < PANEL_TEXT_STACK_WIDTH
+    const safariGalleryBlur = panelInstant
+        ? webKitRisk && panelOpen && renderedPanelWidth < viewportWidth
+        : webKitGalleryBlur
+    const safariPanelGlide =
+        safariGalleryBlur && panelAllowsDrift && pageVisible
     const panelHasDescription = Boolean(panelItem?.description)
     const panelCtaUrl = (panelItem?.link || "").trim()
     const panelCtaText = (panelItem?.linkTitle || "").trim() || panelCtaLabel
@@ -2859,84 +2931,97 @@ export default function ArchivePlayground(props: Props) {
             }}
         >
             <div
-                ref={galleryRef}
-                data-playground-gallery="true"
-                data-playground-safari-blur={
-                    webKitGalleryBlur ? "active" : "idle"
-                }
-                onPointerDown={onPointerDown}
-                onPointerMove={onPointerMove}
-                onPointerUp={(event) => finishPointer(event, true)}
-                onPointerCancel={(event) => finishPointer(event, false)}
+                data-playground-backdrop-drift={safariPanelGlide ? "settling" : "idle"}
                 style={{
                     position: "absolute",
                     inset: 0,
-                    overflow: "hidden",
-                    opacity: loadInReady ? 1 : 0,
-                    pointerEvents:
-                        loadInReady && !gridOccluded ? "auto" : "none",
-                    filter: webKitGalleryBlur
-                        ? "blur(14px)"
-                        : webKitRisk
-                          ? "blur(0px)"
-                          : "none",
-                    transform: webKitGalleryBlur
-                        ? "scale(1.04)"
-                        : webKitRisk
-                          ? "scale(1)"
-                          : "none",
-                    transformOrigin: "50% 50%",
-                    transition:
-                        !loadInReady || prefersReducedMotion
-                            ? "none"
-                            : webKitRisk && panelVisible
-                              ? panelOpen
-                                  ? `opacity 140ms ${LOAD_IN_EASE}, filter 560ms ${SMOOTH_EASE}, transform 560ms ${SMOOTH_EASE}`
-                                  : `opacity 140ms ${LOAD_IN_EASE}, filter 450ms ${SMOOTH_EASE}, transform 450ms ${SMOOTH_EASE}`
-                              : `opacity 140ms ${LOAD_IN_EASE}`,
+                    // Move the frozen, filtered gallery as one layer on Safari.
+                    // Stay inside its 2% scale overscan and stop after one glide.
+                    transform: safariPanelGlide
+                        ? `translate3d(${Math.min(10, viewport.w * 0.01)}px, ${Math.min(6, viewport.h * 0.01)}px, 0)`
+                        : "translate3d(0, 0, 0)",
+                    transition: panelInstant || !webKitRisk
+                        ? "none"
+                        : safariPanelGlide
+                          ? `transform 6000ms ${SMOOTH_EASE} ${PANEL_OPEN_MS}ms`
+                          : `transform ${PANEL_CLOSE_MS}ms ${SMOOTH_EASE}`,
+                    willChange: webKitRisk && panelVisible ? "transform" : "auto",
                 }}
             >
                 <div
-                    ref={worldLayerRef}
+                    ref={galleryRef}
+                    data-playground-gallery="true"
+                    data-playground-safari-blur={
+                        safariGalleryBlur ? "active" : "idle"
+                    }
+                    onPointerDown={onPointerDown}
+                    onPointerMove={onPointerMove}
+                    onPointerUp={(event) => finishPointer(event, true)}
+                    onPointerCancel={(event) => finishPointer(event, false)}
                     style={{
                         position: "absolute",
                         inset: 0,
-                        willChange:
-                            isInteractive && !(webKitRisk && panelOpen)
-                                ? "transform"
-                                : "auto",
+                        overflow: "hidden",
+                        opacity: loadInReady ? 1 : 0,
+                        pointerEvents:
+                            loadInReady && !gridOccluded ? "auto" : "none",
+                        filter: safariGalleryBlur
+                            ? "blur(14px)"
+                            : webKitRisk
+                              ? "blur(0px)"
+                              : "none",
+                        transform: safariGalleryBlur
+                            ? "scale(1.04)"
+                            : webKitRisk
+                              ? "scale(1)"
+                              : "none",
+                        transformOrigin: "50% 50%",
+                        transition:
+                            !loadInReady || panelInstant
+                                ? "none"
+                                : webKitRisk && panelVisible
+                                  ? panelOpen
+                                      ? `opacity 140ms ${LOAD_IN_EASE}, filter ${PANEL_OPEN_MS}ms ${SMOOTH_EASE}, transform ${PANEL_OPEN_MS}ms ${SMOOTH_EASE}`
+                                      : `opacity 140ms ${LOAD_IN_EASE}, filter ${PANEL_CLOSE_MS}ms ${SMOOTH_EASE}, transform ${PANEL_CLOSE_MS}ms ${SMOOTH_EASE}`
+                                  : `opacity 140ms ${LOAD_IN_EASE}`,
                     }}
                 >
-                    {cells}
+                    <div
+                        ref={worldLayerRef}
+                        style={{
+                            position: "absolute",
+                            inset: 0,
+                            willChange:
+                                isInteractive && !(webKitRisk && panelOpen)
+                                    ? "transform"
+                                    : "auto",
+                        }}
+                    >
+                        {cells}
+                    </div>
                 </div>
             </div>
 
             <div
                 aria-hidden="true"
-                onPointerDown={closePanel}
+                onPointerDown={() => closePanel()}
                 style={{
                     position: modalPosition,
                     inset: 0,
                     zIndex: MODAL_Z,
                     opacity: panelOpen ? 1 : 0,
                     pointerEvents: panelOpen ? "auto" : "none",
-                    WebkitBackdropFilter: webKitRisk
+                    // Fade the fixed blur instead of recalculating its radius
+                    // on every animation frame. Release it once the exit ends.
+                    WebkitBackdropFilter:
+                        webKitRisk || !panelVisible ? "none" : "blur(25px)",
+                    backdropFilter:
+                        webKitRisk || !panelVisible ? "none" : "blur(25px)",
+                    transition: panelInstant
                         ? "none"
                         : panelOpen
-                          ? "blur(25px)"
-                          : "blur(0px)",
-                    backdropFilter: webKitRisk
-                        ? "none"
-                        : panelOpen
-                          ? "blur(25px)"
-                          : "blur(0px)",
-                    transition: webKitRisk
-                        ? panelOpen
-                            ? `opacity .8s ${SNAPPY_EASE}`
-                            : `opacity .45s ${SMOOTH_EASE}`
-                        : panelOpen
-                          ? `opacity .8s ${SNAPPY_EASE}, backdrop-filter .8s ${SNAPPY_EASE}`
-                          : `opacity .45s ${SMOOTH_EASE}, backdrop-filter .45s ${SMOOTH_EASE}`,
+                          ? `opacity ${PANEL_OPEN_MS}ms ${SMOOTH_EASE}`
+                          : `opacity ${PANEL_CLOSE_MS}ms ${SMOOTH_EASE}`,
                 }}
             >
                 <div
@@ -2960,6 +3045,7 @@ export default function ArchivePlayground(props: Props) {
             <div
                 ref={panelRef}
                 data-playground-panel="true"
+                data-playground-panel-motion={panelInstant ? "instant" : "smooth"}
                 role={panelOpen ? "dialog" : undefined}
                 aria-modal={panelOpen ? true : undefined}
                 aria-labelledby={panelOpen ? panelTitleId : undefined}
@@ -2971,6 +3057,14 @@ export default function ArchivePlayground(props: Props) {
                 aria-hidden={panelOpen ? undefined : true}
                 tabIndex={-1}
                 onPointerDown={(event) => event.stopPropagation()}
+                onTransitionEnd={(event) => {
+                    if (
+                        event.target === event.currentTarget &&
+                        event.propertyName === "transform"
+                    ) {
+                        finishPanelClose()
+                    }
+                }}
                 style={{
                     position: modalPosition,
                     top: 0,
@@ -2983,9 +3077,12 @@ export default function ArchivePlayground(props: Props) {
                     color: textColor,
                     overflow: "hidden",
                     transform: panelOpen ? "translateX(0)" : "translateX(100%)",
-                    transition: panelOpen
-                        ? `transform 1s ${SNAPPY_EASE}`
-                        : `transform .8s ${SMOOTH_EASE}`,
+                    transition: panelInstant
+                        ? "none"
+                        : panelOpen
+                          ? `transform ${PANEL_OPEN_MS}ms ${SMOOTH_EASE}`
+                          : `transform ${PANEL_CLOSE_MS}ms ${SMOOTH_EASE}`,
+                    willChange: panelVisible ? "transform" : "auto",
                     pointerEvents: panelOpen ? "auto" : "none",
                     boxSizing: "border-box",
                 }}
@@ -3002,15 +3099,9 @@ export default function ArchivePlayground(props: Props) {
                             ref={closeButtonRef}
                             type="button"
                             aria-label="Close detail"
+                            data-playground-label-trigger="true"
                             tabIndex={panelOpen ? 0 : -1}
-                            onClick={() => {
-                                setCloseHover(true)
-                                closePanel()
-                            }}
-                            onMouseEnter={() => setCloseHover(true)}
-                            onMouseLeave={() => setCloseHover(false)}
-                            onFocus={() => setCloseHover(true)}
-                            onBlur={() => setCloseHover(false)}
+                            onClick={(event) => closePanel(event.detail === 0)}
                             style={{
                                 position: "absolute",
                                 top: "calc(env(safe-area-inset-top, 0px) + clamp(34px, 5vh, 48px))",
@@ -3057,15 +3148,11 @@ export default function ArchivePlayground(props: Props) {
                                 }}
                             >
                                 <span
+                                    data-playground-label-roll="true"
                                     style={{
                                         display: "flex",
                                         flexDirection: "column",
                                         alignItems: "flex-end",
-                                        transform: closeTextRolled
-                                            ? "translateY(-13px)"
-                                            : "translateY(0)",
-                                        transition: `transform 360ms ${SNAPPY_EASE}`,
-                                        willChange: "transform",
                                     }}
                                 >
                                     <span
@@ -3171,7 +3258,7 @@ export default function ArchivePlayground(props: Props) {
                                 background: ruleColor,
                                 marginTop: "clamp(12px, 1.5vw, 18px)",
                                 transformOrigin: "left center",
-                                animation: panelOpen
+                                animation: panelOpen && !panelInstant
                                     ? `playgroundRuleDraw 700ms ${SMOOTH_EASE} both`
                                     : undefined,
                             }}
@@ -3233,13 +3320,8 @@ export default function ArchivePlayground(props: Props) {
                                                     : undefined
                                             }
                                             aria-label={panelCtaText}
+                                            data-playground-label-trigger="true"
                                             tabIndex={panelOpen ? 0 : -1}
-                                            onMouseEnter={() => setCtaHover(true)}
-                                            onMouseLeave={() =>
-                                                setCtaHover(false)
-                                            }
-                                            onFocus={() => setCtaHover(true)}
-                                            onBlur={() => setCtaHover(false)}
                                             style={{
                                                 display: "inline-flex",
                                                 alignItems: "flex-start",
@@ -3280,14 +3362,10 @@ export default function ArchivePlayground(props: Props) {
                                                 }}
                                             >
                                                 <span
+                                                    data-playground-label-roll="true"
                                                     style={{
                                                         display: "flex",
                                                         flexDirection: "column",
-                                                        transform: ctaHover
-                                                            ? "translateY(-13px)"
-                                                            : "translateY(0)",
-                                                        transition: `transform 360ms ${SNAPPY_EASE}`,
-                                                        willChange: "transform",
                                                     }}
                                                 >
                                                     <span
