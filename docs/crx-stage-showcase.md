@@ -12,7 +12,7 @@ The standalone Vite viewer source is in [code/tools/crx-stage-showcase](../code/
 
 The gentle bounded orbit advances its phase at 0.12 radians per second, with a 0.08-radian angle amplitude. After interaction, it resumes from the current view after 1.8 seconds idle and eases in over 1.5 seconds. The viewer coordinates readiness, visibility, motion preference, and inline scrolling through origin- and source-checked `postMessage` events. Rendering and all four video decoders pause when the viewer is offscreen or the document is hidden. It supports drag orbit, pan, keyboard controls, reduced motion, Space to pause/play motion, loading failure, and retry. Production previs editing remains separate from the audience viewer.
 
-Configured host: `https://micahhoang-crx-stage.netlify.app/viewer.html`. Netlify site id: `647d3838-a62b-41cf-9917-9716095ff035`; deployment id: `6adc5e1704457493689645e1`. The public `/viewer.html` endpoint returned HTTP 200. The Netlify HUD badge is disabled (`hud_enabled=false`, `built_with_badge_enabled=false`).
+Configured host: `https://micahhoang-crx-stage.netlify.app/viewer.html`. Netlify site id: `647d3838-a62b-41cf-9917-9716095ff035`; deployment id: `6adc5fe4f727f85e26d11b71`. The public `/viewer.html` endpoint returned HTTP 200. The Netlify HUD badge is disabled (`hud_enabled=false`, `built_with_badge_enabled=false`).
 
 The center screen continues to play the existing 306-second Countdown video, and all four Vanish panels continue to share the existing 14-second Blue pixel-ramp video. These center and Vanish selections are unchanged. New native side loops show Homecoming Elastic on left screen S01 and Radial Pulse on right screen S03; each is a 24-second, 30 fps, 1040×640 web encode from a 2080×1280 master. All four video sources are muted, retain still fallbacks, and pause offscreen. Exact side-master paths and media mapping are listed in the [media README](../assets/by-project/optro-crx/stage-showcase/media/README.md).
 
@@ -29,3 +29,5 @@ npm ci && npm run build && npx netlify deploy --prod --dir=dist --site 647d3838-
 ```
 
 The Framer source is saved and the hosted viewer is deployed. The case-study page currently uses `/case-studies/optro` with the same page and component node IDs. The Framer page remains unpublished.
+
+Screen color fidelity: video samplers decode sRGB to linear before the output conversion, while still textures retain hardware decoding. This removes the lifted gray video blacks without altering the center artwork. Vanish intensity is 0.22 in linear light with mesh gain 1, for a restrained deep-blue appearance. Keyboard-only focus uses a thin neutral gray line instead of neon.

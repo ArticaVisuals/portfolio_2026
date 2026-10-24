@@ -62,3 +62,5 @@ The viewer offers no seat selection or user-adjustable house lighting. Keep prod
 ### Don't:
 - **Don't** add construction controls, scene settings, or competing interface chrome.
 - **Don't** crop the poster artwork or distort the stage screens.
+
+Screen color fidelity: video samplers decode sRGB to linear before the output conversion, while still textures retain hardware decoding. This removes the lifted gray video blacks without altering the center artwork. Vanish intensity is 0.22 in linear light with mesh gain 1, for a restrained deep-blue appearance. Keyboard-only focus uses a thin neutral gray line instead of neon.

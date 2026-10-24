@@ -25,6 +25,7 @@ void main() {
 const frag = /* glsl */`
 uniform sampler2D map;
 uniform float hasMap;
+uniform bool decodeVideo;
 uniform vec4 uvXform;
 uniform float brightness;
 uniform float isMesh;
@@ -34,6 +35,7 @@ uniform float highlight;
 uniform float ovOn;
 uniform sampler2D ovMap;
 uniform float ovHas;
+uniform bool ovDecodeVideo;
 uniform vec4 ovRect;
 uniform vec4 ovXform;
 uniform vec2 ovBorder;
@@ -57,6 +59,8 @@ void main() {
   vec2 mc = vUv * uvXform.xy + uvXform.zw;                        // continuous, for filtering
   vec2 m = uv * uvXform.xy + uvXform.zw;
   vec4 t = textureGrad(map, m, dFdx(mc), dFdy(mc));
+  // Video uploads stay sRGB-encoded in WebGL; image textures decode in hardware.
+  if (decodeVideo) t = sRGBTransferEOTF(t);
   vec3 c = (hasMap > 0.5 && in01(m)) ? t.rgb * t.a : vec3(0.0);   // transparent areas read as black
   vec2 q = (vUv - ovRect.xy) / ovRect.zw;
   vec2 mo = q * ovXform.xy + ovXform.zw;
@@ -65,6 +69,7 @@ void main() {
     vec2 lo = ovRect.xy - ovBorder, hi = ovRect.xy + ovRect.zw + ovBorder;
     if (vUv.x >= lo.x && vUv.x <= hi.x && vUv.y >= lo.y && vUv.y <= hi.y) {
       vec4 to = textureGrad(ovMap, mo, mdx, mdy);
+      if (ovDecodeVideo) to = sRGBTransferEOTF(to);
       if (in01(q)) c = (ovHas > 0.5 && in01(mo)) ? to.rgb * to.a : vec3(0.0);
       else c = ovBorderColor;
     }
@@ -102,20 +107,22 @@ export function makeScreen(def) {
     uniforms: {
       map: { value: null },
       hasMap: { value: 0 },
+      decodeVideo: { value: false },
       uvXform: { value: new THREE.Vector4(1, 1, 0, 0) },
-      brightness: { value: 1 },
+      brightness: { value: def.kind === 'mesh' ? 0.22 : 1 },
       isMesh: { value: def.kind === 'mesh' ? 1 : 0 },
       highlight: { value: 0 },
       ovOn: { value: 0 },
       ovMap: { value: null },
       ovHas: { value: 0 },
+      ovDecodeVideo: { value: false },
       ovRect: { value: new THREE.Vector4(0, 0, 1, 1) },
       ovXform: { value: new THREE.Vector4(1, 1, 0, 0) },
       ovBorder: { value: new THREE.Vector2(0, 0) },
       ovBorderColor: { value: new THREE.Color(0, 0, 0) },
       sizeMM: { value: new THREE.Vector2(def.size[0] * 1000, def.size[1] * 1000) },
       pxCount: { value: new THREE.Vector2(def.pixels[0], def.pixels[1]) },
-      meshGain: { value: 1.35 },
+      meshGain: { value: 1 },
       meshDetail: { value: 0.6 },
     },
     toneMapped: false,
@@ -168,6 +175,7 @@ export function applyMedia(mesh, texture, mediaSize, fit, canvas, panel = { x: 0
   const u = mesh.material.uniforms;
   u.map.value = texture || null;
   u.hasMap.value = texture ? 1 : 0;
+  u.decodeVideo.value = !!texture?.isVideoTexture && texture.colorSpace === THREE.SRGBColorSpace;
   const r = fitRect(canvas[0], canvas[1], mediaSize?.[0], mediaSize?.[1], fit);
   u.uvXform.value.set(panel.w / r.sx, panel.h / r.sy, (panel.x - r.ox) / r.sx, (panel.y - r.oy) / r.sy);
 }
@@ -184,6 +192,7 @@ export function applyOverlay(mesh, o) {
   u.ovBorder.value.set(o.borderPx / cw, o.borderPx / ch);
   u.ovMap.value = o.texture || null;
   u.ovHas.value = o.texture ? 1 : 0;
+  u.ovDecodeVideo.value = !!o.texture?.isVideoTexture && o.texture.colorSpace === THREE.SRGBColorSpace;
   const r = fitRect(w, h, o.mediaSize?.[0], o.mediaSize?.[1], o.fit);
   u.ovXform.value.set(1 / r.sx, 1 / r.sy, -r.ox / r.sx, -r.oy / r.sy);
 }
