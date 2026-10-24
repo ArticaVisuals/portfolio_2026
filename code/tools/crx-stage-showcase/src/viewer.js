@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { createAudienceControls } from './audience.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { makeScreen, applyMedia, VANISH_CANVAS } from './screens.js';
 
@@ -12,7 +13,7 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const inline = new URLSearchParams(location.search).has('inline');
 const abort = new AbortController();
 const videos = [], textures = new Set();
-let renderer, scene, camera, controls, observer, frameID = 0, disposed = false;
+let renderer, scene, camera, controls, observer, audience, frameID = 0, disposed = false;
 let ready = false, parentVisible = true, playing = !reduceMotion;
 let orbiting = !reduceMotion, orbitPhase = 0, orbitCenter = 0, lastOrbitTime = 0;
 let orbitResumeTimer, orbitRamp = 1.5, interacting = false;
@@ -47,17 +48,22 @@ function invalidate() {
 function render(time) {
   frameID = 0;
   if (!visible()) return;
-  if (orbiting && playing) {
+  const movingToSeat = audience?.update(time) ?? false;
+  if (orbiting && playing && !movingToSeat) {
     const delta = lastOrbitTime ? Math.min((time-lastOrbitTime)/1000,.05) : 0;
     lastOrbitTime = time;
     orbitRamp = Math.min(1.5, orbitRamp + delta);
     const ramp = orbitRamp / 1.5;
     orbitPhase += delta * .075 * ramp * ramp * (3 - 2 * ramp);
-    const offset = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target));
-    offset.theta = orbitCenter + .08 * Math.sin(orbitPhase);
-    camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(offset));
+    const angle = orbitCenter + .08 * Math.sin(orbitPhase);
+    if (audience?.isSeated) audience.setAngle(angle);
+    else {
+      const offset = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target));
+      offset.theta = angle;
+      camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(offset));
+    }
   }
-  controls.update();
+  if (!audience?.isSeated) controls.update();
   const start = performance.now();
   renderer.render(scene, camera);
   const cost = performance.now() - start;
@@ -67,7 +73,7 @@ function render(time) {
   } else if (cost < 16) slowFrames = Math.max(0, slowFrames - 1);
   if (diagnostics) { diagnostics.value = `Frames: ${++renderCount} · Draws: ${renderer.info.render.calls} · Triangles: ${renderer.info.render.triangles.toLocaleString()} · Playing: ${videos.filter(v=>!v.el.paused).length} · DPR: ${quality}`; }
   // Fallback for browsers without video-frame callbacks; stops completely on pause/hidden.
-  if ((orbiting && playing) || videos.some(v => !v.el.paused && !v.el.requestVideoFrameCallback)) invalidate();
+  if (movingToSeat || (orbiting && playing) || videos.some(v => !v.el.paused && !v.el.requestVideoFrameCallback)) invalidate();
 }
 function resize() {
   if (!renderer || disposed) return;
@@ -82,14 +88,15 @@ function takeControl() {
 }
 function resumeOrbit() {
   if (!playing || disposed || interacting) return;
-  orbitCenter=THREE.MathUtils.clamp(controls.getAzimuthalAngle(),-.67,.67);
+  const angle = audience?.isSeated ? audience.getAngle() : controls.getAzimuthalAngle();
+  orbitCenter=audience?.isSeated ? angle : THREE.MathUtils.clamp(angle,-.67,.67);
   // Preserve the angle, target, elevation and zoom left by the visitor.
-  orbitPhase=Math.asin(THREE.MathUtils.clamp((controls.getAzimuthalAngle()-orbitCenter)/.08,-1,1));
+  orbitPhase=Math.asin(THREE.MathUtils.clamp((angle-orbitCenter)/.08,-1,1));
   orbitRamp=0; lastOrbitTime=0; orbiting=true; invalidate();
 }
 function scheduleOrbitResume() {
   clearTimeout(orbitResumeTimer);
-  if (playing && !interacting) orbitResumeTimer=setTimeout(resumeOrbit,1800);
+  if (playing && !interacting && !disposed) orbitResumeTimer=setTimeout(resumeOrbit,1800);
 }
 function setMotion(value) {
   clearTimeout(orbitResumeTimer);
@@ -142,6 +149,7 @@ function attachVideo(path, apply) {
   el.src = publicURL(path); el.load();
 }
 function initialView() {
+  audience?.reset();
   const narrow = camera.aspect < 1;
   camera.fov = narrow ? 58 : 42;
   controls.target.set(0,3.6,-3);
@@ -172,7 +180,8 @@ async function boot() {
   controls.addEventListener('change',invalidate);
   controls.addEventListener('start', () => { interacting=true; takeControl(); });
   controls.addEventListener('end', () => { interacting=false; scheduleOrbitResume(); invalidate(); });
-  scene.add(new THREE.HemisphereLight(0xb9c8d8,0x16191e,1.1));
+  const houseFill = new THREE.HemisphereLight(0xb9c8d8,0x16191e,1.1);
+  scene.add(houseFill);
   const overhead = new THREE.DirectionalLight(0xffc893,2.1); overhead.position.set(-8,15,10); scene.add(overhead);
   const stageFill = new THREE.DirectionalLight(0x93c1d2,1.3); stageFill.position.set(0,7,-8); scene.add(stageFill);
   const [data, buffer, config] = await Promise.all([
@@ -212,6 +221,20 @@ async function boot() {
   if(disposed)return;
   media.forEach(([kind,image])=>assign(kind,image));
   resize();initialView();ready=true;
+  if (!inline) {
+    audience=createAudienceControls({camera,controls,data,canvas,invalidate,reduceMotion,
+      onInteractionStart:()=>{interacting=true;takeControl();},
+      onInteractionEnd:()=>{interacting=false;scheduleOrbitResume();},
+      onOverview:initialView,
+      onHouseChange:level=>{
+        // Lightweight venue fill; fixed emissive screen artwork is unaffected.
+        houseFill.intensity=.08+level*2.92;
+        overhead.intensity=.2+level*5.43;
+        invalidate();
+      },
+    });
+    document.querySelector('#view-controls').hidden=false;
+  }
   loading.hidden=true;hint.hidden=true;
   observer=new ResizeObserver(resize);observer.observe(canvas);
   renderer.render(scene,camera);post('crx-stage:ready');post('crx-stage:motion',{playing});
@@ -221,6 +244,7 @@ async function boot() {
   if(!reduceMotion)startVideos();
   canvas.addEventListener('keydown',e=>{
     if(e.altKey||e.ctrlKey||e.metaKey)return;
+    if(audience?.isSeated && e.key!==' ' && e.key!=='Home')return;
     if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','Home',' '].includes(e.key)){
       e.preventDefault();takeControl();
       if(e.key==='Home')initialView();
@@ -234,7 +258,8 @@ async function boot() {
         if(e.key==='ArrowLeft')s.theta-=.035;if(e.key==='ArrowRight')s.theta+=.035;if(e.key==='ArrowUp')s.phi-=.025;if(e.key==='ArrowDown')s.phi+=.025;
         s.theta=THREE.MathUtils.clamp(s.theta,controls.minAzimuthAngle,controls.maxAzimuthAngle);s.phi=THREE.MathUtils.clamp(s.phi,controls.minPolarAngle,controls.maxPolarAngle);camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(s));
       }
-      controls.update();invalidate();
+      if(!audience?.isSeated)controls.update();
+      invalidate();
       if(e.key!==' ' && e.key!=='Home')scheduleOrbitResume();
     }
   },{signal:abort.signal});
@@ -247,7 +272,7 @@ function disposeObject(root){
 }
 function dispose(){
   if(disposed)return;disposed=true;abort.abort();cancelAnimationFrame(frameID);clearTimeout(hintTimer);clearTimeout(orbitResumeTimer);
-  observer?.disconnect();controls?.dispose();
+  observer?.disconnect();audience?.dispose();controls?.dispose();
   for(const v of videos){if(v.callback)v.el.cancelVideoFrameCallback?.(v.callback);v.el.pause();v.el.removeAttribute('src');v.el.load();}
   textures.forEach(t=>t.dispose());if(scene)disposeObject(scene);renderer?.dispose();renderer?.forceContextLoss();
 }

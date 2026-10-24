@@ -19,7 +19,7 @@ components:
 
 **Creative North Star: The venue is the interface.** Keep the real stage geometry and its fixed CRX screen content as the focus, with the case study's restrained page design around it.
 
-The stage appears as an interactive inline viewport, with a poster while loading. A gentle bounded orbit runs by default and yields immediately to dragging. Clicking opens a larger native dialog; only one viewer is mounted at a time. There are no visible inline controls or drag captions. After interaction, slow orbit resumes from the current view after 1.8 seconds idle, with a 1.5-second easing ramp.
+The stage appears as an interactive inline viewport, with a poster while loading. The inline viewer has no audience control bar. A gentle bounded orbit runs by default and yields immediately to dragging. Clicking opens a larger native dialog; only one viewer is mounted at a time. In the expanded viewer, a compact control bar provides overview and audience-seat views plus house-light adjustment. After interaction, slow orbit resumes from the current view after 1.8 seconds idle, with a 1.5-second easing ramp.
 
 **Key Characteristics:** geometry-led, dark and atmospheric in the viewer, sparse controls, responsive camera framing.
 
@@ -37,7 +37,7 @@ The poster fills a 16:9 frame. On desktop, the initial view keeps the broad stag
 
 ## Elevation & Depth
 
-The venue's actual 3D geometry supplies depth. The viewer uses a dark backdrop and soft stage lighting; the dialog darkens the page behind it. Avoid extra cards or decorative shadows around the scene.
+The venue's actual 3D geometry supplies depth. The viewer uses a dark backdrop and soft stage lighting; the dialog darkens the page behind it. The expanded viewer's House lights slider adjusts lightweight venue fill from 0–100% (default 35%); fixed screen media does not change. Avoid extra cards or decorative shadows around the scene.
 
 ## Shapes
 
@@ -47,11 +47,11 @@ Keep the stage frame and dialog square-cornered. Controls use clear, generously 
 
 ### Poster action
 
-The stage itself opens the lightbox on click or Enter. A drag stays inline. Space pauses motion within the viewer. The image has no overlaid controls or caption controls. Hover scales only the clipped media contents to 1.02 over 420ms with cubic-bezier(0.16, 1, 0.3, 1), exactly matching HomeSelectedWorkGrid.tsx (Framer FecepLS). Use this for fine-pointer hover and disable it under reduced motion.
+The stage itself opens the lightbox on click or Enter. A drag stays inline. Space pauses motion within the viewer. Keep audience controls out of the inline viewport. Hover scales only the clipped media contents to 1.02 over 420ms with cubic-bezier(0.16, 1, 0.3, 1), exactly matching HomeSelectedWorkGrid.tsx (Framer FecepLS). Use this for fine-pointer hover and disable it under reduced motion.
 
 ### Viewer dialog
 
-Use a single close affordance and a restrained loading or retry state. The viewer supports orbit, pan, zoom, keyboard controls, and reduced-motion behavior. Do not add visitor-facing editing controls.
+Use a single close affordance and a restrained loading or retry state. The overview supports orbit, pan, zoom, keyboard controls, and reduced-motion behavior. The expanded viewer's compact audience controls offer Stage overview and Front row, Middle rows, Back row, Audience left, and Audience right presets, plus a Choose a seat picker. The picker shows the actual 1,504-seat map; keyboard arrows move through adjacent seats and Enter selects. A seated camera stays fixed at the chosen seat while drag changes the look direction and wheel adjusts field of view. The House lights slider adjusts venue fill while keeping finished screen media fixed. Keep production editing and stage setup out of the audience viewer.
 
 ## Do's and Don'ts
 
