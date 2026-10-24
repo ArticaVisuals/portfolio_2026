@@ -28,7 +28,7 @@ From `code/tools/crx-stage-showcase/`, redeploy with:
 npm ci && npm run build && npx netlify deploy --prod --dir=dist --site 647d3838-a62b-41cf-9917-9716095ff035
 ```
 
-The Framer source is saved and the hosted viewer is deployed. The case-study page currently uses `/case-studies/optro` with the same page and component node IDs. The Framer page remains unpublished.
+The Framer source is saved and the hosted viewer is deployed. The case-study page currently uses `/case-studies/optro` with the same page and component node IDs. The Framer page is published at https://micahhoang.com/case-studies/optro.
 
 Screen color fidelity: video samplers decode sRGB to linear before the output conversion, while still textures retain hardware decoding. This removes the lifted gray video blacks without altering the center artwork. Vanish intensity is 0.22 in linear light with mesh gain 1, for a restrained deep-blue appearance. Keyboard-only focus uses a thin neutral gray line instead of neon.
 
@@ -39,3 +39,5 @@ Automatic orbit rendering is capped at 30 fps to match the video sources; draggi
 On this Mac, the diagnostic viewer measured roughly 70 fps before and 30 fps after during automatic orbit, with the same 27 draw calls and 661,530 rendered triangles. This measures render frequency, not total CPU/GPU savings. The Purple Ribbons encode saves 594,583 bytes (13.6%) at the same resolution, frame rate, and duration; sampled VMAF changed by less than one point. Full media payload is about 10.03 MB, loaded only when needed. Physical-phone performance has not been measured.
 
 Verification: production build passed with the existing isolated Three.js chunk-size warning. The visibility harness held its render counter at 526 across repeated offscreen observations with zero playing videos. Framer Preview displayed the deployed scene and synchronized Purple Ribbons. The hosted MP4 returned HTTP 200 and Content-Length 3,787,000. Browser error/warning log was empty.
+
+Publication: Framer Update completed on 2026-10-24. The live custom-domain case study displayed the optimized stage, playing Countdown and synchronized Purple Ribbons, with no browser warnings or errors.
