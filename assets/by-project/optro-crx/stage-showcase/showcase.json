@@ -1,0 +1,19 @@
+{
+  "media": {
+    "center": {
+      "image": "media/center.jpg",
+      "video": "media/countdown.mp4"
+    },
+    "side": {
+      "image": "media/side.jpg"
+    },
+    "vanish": {
+      "image": "media/vanish.jpg",
+      "video": "media/vanish.mp4"
+    },
+    "sideScreens": {
+      "image": "media/side-purple-ribbons.jpg",
+      "video": "media/side-purple-ribbons.mp4"
+    }
+  }
+}

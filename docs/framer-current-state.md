@@ -17,6 +17,20 @@ This is the quick source of truth for the active Framer project and local handof
 
 ---
 
+## 2026-10-23 Deployment Record — CRX stage showcase (Framer Preview verified; public viewer deployed)
+
+### 2026-10-24 Behavior Update
+
+- **Framer placement:** `StageShowcase` (`fJ_6hJp`) was inserted into `/case-studies/optro` (`MxrZKvEvR`) under “Seeing the work in the room” (`GH29eMWaq`), with component node `drDJAwOsS`. The former placeholder `teTeobSBk` is hidden. The component insert URL is `https://framer.com/m/StageShowcase-9ierrL.js`.
+- **Standalone viewer:** source is in `code/tools/crx-stage-showcase/`; fixed media is in `assets/by-project/optro-crx/stage-showcase/`. The configured host is `https://micahhoang-crx-stage.netlify.app/viewer.html` (Netlify site `647d3838-a62b-41cf-9917-9716095ff035`, deployment `6adc6310508043cd39471f92`). Public `/viewer.html` returned HTTP 200; the Netlify HUD badge is disabled (`hud_enabled=false`, `built_with_badge_enabled=false`).
+- **Interactions (latest source behavior):** the stage stays inline, with drag, pan, and keyboard camera controls. There is no bottom bar, seat picker, house-light adjustment, lightbox expansion, or hover scaling. The gentle bounded orbit phase advances at `0.12` radians per second with a `0.08`-radian angle amplitude; it resumes after 1.8 seconds idle and eases in over 1.5 seconds. The inline scroll bridge remains. Space pauses/plays motion; reduced motion starts with ambient motion disabled.
+- **Lighting and media:** the original measured plot supplies 104 fixtures in four rings of 26, colored `#8ebdff`, with audience level `0.7` and backstage level `0.35`; generic ambient and directional fill lights are absent. The current center Countdown and Blue Vanish videos are unchanged. Both side screens S01 and S03 show Purple Ribbons in sync: a shared 24-second, 30 fps, 1040×640 center-cropped web encode of the selected center-screen master. Three video decoder sources pause offscreen and while the document is hidden.
+- **Status:** published on 2026-10-24 and visually verified at https://micahhoang.com/case-studies/optro with the optimized stage and final videos. Browser physical-phone performance has not been measured.
+- **Validated locally:** Vite `8.3.5` build and audit completed with zero vulnerabilities. Earlier audience-control version checks covered seat and house-light controls at 1070px and 390px; those controls were removed from the current viewer. Earlier lightbox/hover checks apply only to the retired modal version. The latest source production build passes.
+- **Mirror and deploy:** source bytes and SHA-256 plus the insert URL are recorded in `code/mirror/manifest.json`. From `code/tools/crx-stage-showcase/`, deploy with `npm ci && npm run build && npx netlify deploy --prod --dir=dist --site 647d3838-a62b-41cf-9917-9716095ff035`.
+
+---
+
 ## 2026-10-23 Update — Play drawer and Safari idle drift (published)
 
 - **Published:** approved changes published October 23 at 10:31 a.m. Pacific.

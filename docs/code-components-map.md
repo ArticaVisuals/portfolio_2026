@@ -77,6 +77,7 @@ hover CSS.
 ### Case-study media
 | Component | id | What it does |
 |---|---|---|
+| `StageShowcase` | `fJ_6hJp` | CRX case study inline 3D stage with a viewport-triggered iframe preview, poster fallback, drag/pan/keyboard camera control, readiness/error/retry state, motion control, and exact-origin messaging. No bottom bar, seat or house-light controls, lightbox expansion, or hover scaling. Local standalone viewer source lives in `code/tools/crx-stage-showcase/`; media is under `assets/by-project/optro-crx/stage-showcase/`. Insert module `StageShowcase-9ierrL.js` (compiled version `SuC1g3DKNaN8GNnGrM0D`); the portfolio page remains unpublished. See [CRX stage showcase](crx-stage-showcase.md). |
 | `CaseStudyJustifiedMediaGrid` | `c0iPrbN` | Cargo-style justified rows, per-item contain/cover + stroke. Primary case-study gallery component. |
 | `FixedHeightMediaRows` | `IthLMt_` | Deprecated compatibility bridge only. Legacy instances now delegate into `CaseStudyJustifiedMediaGrid`; do not add new instances. |
 | `SimonSchusterGuidelinesCarousel` | `tYFZCey` | **Reusable `ImageCarousel`** (filename legacy). Fade carousel + GT Standard ‹ › arrows; slides open in the page lightbox. Reuse for any gallery. |
