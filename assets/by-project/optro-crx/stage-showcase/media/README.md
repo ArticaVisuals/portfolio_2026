@@ -1,8 +1,11 @@
-# Showcase media (first pass)
+# Stage showcase media
 
-These are first-pass selections for the stage viewer. They have not been confirmed by the user.
+Current selections follow the requested final Countdown center video and final Blue Vanish screens. All web videos are muted H.264/yuv420p with fast start; the source production masters remain untouched.
 
-- `vanish.mp4` — Encoded the full 70-second original-colorway Vanish master at 1568×560, 30 fps, H.264/yuv420p, CRF 25, with fast start and no audio. Source: `/Users/micahhoang/Desktop/Optro/CRX_Widescreen_Test/_RENDERS/CRX_Vanish_Original_Colorway_20pct_1568x560_v04_MASTER.mov`. The CRX Widescreen Test README identifies this root-level file as the current original-colorway master.
-- `vanish.jpg` — One frame extracted at 10 seconds from `vanish.mp4` for the still fallback (1568×560).
-- `center.jpg` — A 1840×640 resize of `side_source.jpg` used as a still center-screen fallback. The full 1800×626 CRX 2026 hero artwork is retained with no cropping. A suitable resident finished 3680×1280 loop was not available: the current Countdown master and Keynote Backplates loop were cloud-only, and the locally resident Countdown review was a non-looping opening/ending compilation with construction guides. The viewer manifest should disable center video until a suitable final motion asset is available.
-- `side.jpg` — A 1040×640 still made from `side_source.jpg`. The full 1800×626 hero artwork is scaled to 1040×362 and centered vertically over its Midnight background color (#0F2230); the CRX 2026 logo is not cropped. `side_source.jpg` was downloaded from the provided verified hero asset: https://framerusercontent.com/images/YVYRaESfisWWvTu8cJZSv2fAY.jpg.
+- `countdown.mp4` — Full 306-second, 9,180-frame final Countdown, resized to 1840×640 at 30 fps, CRF 25. Source: `/Users/micahhoang/Desktop/Optro/CRX_Countdown/_RENDERS/CRX_Countdown_RollUp_3680x1280_MASTER_ProRes.mov` (3680×1280). The Countdown README names it as the current delivery; this replaces the prior center still-only presentation.
+- `center.jpg` — Frame extracted from the countdown at 10 seconds for loading, autoplay-blocked, and reduced-motion fallback.
+- `vanish.mp4` — Full 14-second final Blue pixel ramp, 1568×560 at 30 fps, CRF 25. Source: `/Users/micahhoang/Desktop/Optro/CRX_Vanish/_RENDERS/OUTPUT 08 - Vanish - Pixel ramp - Blue_1.mov`. The current CRX Vanish delivery README names this output. Its entire canvas is shared across Vanish V1–V4 with the original column mapping. This replaces the earlier original-colorway v04 clip.
+- `vanish.jpg` — Frame extracted at 4 seconds from the Blue video for still fallback.
+- `side.jpg` — Existing CRX hero artwork remains on the separate side LED screens and confidence monitors. It retains the complete logo at 1040×640 with a Midnight background. `side_source.jpg` is the source hero asset: https://framerusercontent.com/images/YVYRaESfisWWvTu8cJZSv2fAY.jpg.
+
+The countdown repeats after its complete end sequence. One decoder serves the center screen and a second shared decoder serves all four Vanish panels. Both pause when the stage is outside the viewport or the document is hidden.

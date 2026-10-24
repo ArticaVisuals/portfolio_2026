@@ -33,7 +33,7 @@ export function createAudienceControls({ camera, controls, data, canvas, invalid
     ctx.fillStyle='#697780';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('STAGE',rect.width/2,12);
     ctx.fillStyle='#41515a';ctx.fillRect(rect.width/2-22,17,44,3);
     for(let i=0;i<seats.length;i++){
-      const s=seats[i],r=selected===i?3.2:2;
+      const s=seats[i],r=selected===i?3.2:Math.min(2,.22*scale);
       ctx.beginPath();ctx.arc(sx(s[0]),sy(s[2]),r,0,Math.PI*2);
       ctx.fillStyle=i===selected?'#e5fe52':i===hover?'#b9d56a':'#71838d';ctx.fill();
     }

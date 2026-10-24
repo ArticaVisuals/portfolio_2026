@@ -21,3 +21,4 @@
 #seat-map-status{display:block;margin-top:8px;font-variant-numeric:tabular-nums}
 ::selection{background:#e5fe52;color:#080d12}
 @media(max-width:700px){#view-controls{align-items:stretch;flex-direction:column;gap:4px;padding:8px 12px}.control-group{justify-content:space-between;gap:8px}#view-controls select{flex:1;max-width:none;min-width:0}#house-light{flex:1;width:auto}#seat-picker{left:12px;width:calc(100% - 24px);bottom:120px;max-height:calc(100% - 132px);overflow:auto}#seat-map{height:210px}}
+@media(max-height:480px){#seat-picker{padding:10px}#seat-map{height:120px}#seat-picker p{display:none}}

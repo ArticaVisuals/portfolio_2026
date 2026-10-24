@@ -54,7 +54,7 @@ function render(time) {
     lastOrbitTime = time;
     orbitRamp = Math.min(1.5, orbitRamp + delta);
     const ramp = orbitRamp / 1.5;
-    orbitPhase += delta * .075 * ramp * ramp * (3 - 2 * ramp);
+    orbitPhase += delta * .12 * ramp * ramp * (3 - 2 * ramp);
     const angle = orbitCenter + .08 * Math.sin(orbitPhase);
     if (audience?.isSeated) audience.setAngle(angle);
     else {
@@ -221,7 +221,7 @@ async function boot() {
   if(disposed)return;
   media.forEach(([kind,image])=>assign(kind,image));
   resize();initialView();ready=true;
-  if (!inline) {
+  if (!inline || new URLSearchParams(location.search).has('audience')) {
     audience=createAudienceControls({camera,controls,data,canvas,invalidate,reduceMotion,
       onInteractionStart:()=>{interacting=true;takeControl();},
       onInteractionEnd:()=>{interacting=false;scheduleOrbitResume();},
@@ -278,32 +278,13 @@ function dispose(){
 }
 document.addEventListener('visibilitychange',updatePlayback,{signal:abort.signal});
 window.addEventListener('message',e=>{if(!embedded||e.source!==parent||!parentOrigin||e.origin!==parentOrigin)return;if(e.data?.type==='crx-stage:visibility'){parentVisible=e.data.visible===true;updatePlayback();}if(ready&&e.data?.type==='crx-stage:motion'&&typeof e.data.playing==='boolean')setMotion(e.data.playing);},{signal:abort.signal});
-window.addEventListener('keydown',e=>{if(e.key==='Escape')post('crx-stage:close');},{signal:abort.signal});
 window.addEventListener('pagehide',dispose,{once:true});
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();dispose();loading.hidden=true;failure.hidden=false;},{signal:abort.signal});
 document.querySelector('#retry').addEventListener('click',()=>location.reload());
 if(inline){
-  let clickCandidate = null;
-  const pointers = new Set();
-  canvas.addEventListener('pointerdown',e=>{
-    pointers.add(e.pointerId);
-    clickCandidate = pointers.size===1 && e.button===0
-      ? {id:e.pointerId,x:e.clientX,y:e.clientY,time:performance.now()}
-      : null;
-  },{signal:abort.signal});
-  canvas.addEventListener('pointermove',e=>{
-    if(clickCandidate && Math.hypot(e.clientX-clickCandidate.x,e.clientY-clickCandidate.y)>8)clickCandidate=null;
-  },{signal:abort.signal});
-  canvas.addEventListener('pointerup',e=>{
-    if(clickCandidate?.id===e.pointerId && performance.now()-clickCandidate.time<700)post('crx-stage:expand');
-    pointers.delete(e.pointerId);clickCandidate=null;
-  },{signal:abort.signal});
-  canvas.addEventListener('pointercancel',e=>{pointers.delete(e.pointerId);clickCandidate=null;},{signal:abort.signal});
-  canvas.addEventListener('keydown',e=>{
-    if(e.key==='Enter'){e.preventDefault();post('crx-stage:expand');}
-  },{signal:abort.signal});
   // Let trackpad/wheel movement scroll the case study; pinch remains available.
   canvas.addEventListener('wheel',e=>{
+    if(e.ctrlKey)return;
     e.preventDefault();e.stopImmediatePropagation();
     const scale=e.deltaMode===1?16:e.deltaMode===2?innerHeight:1;
     post('crx-stage:scroll',{deltaX:e.deltaX*scale,deltaY:e.deltaY*scale});

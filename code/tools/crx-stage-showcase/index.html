@@ -3,15 +3,11 @@
 <body class="case-study"><main>
   <header><a href="#stage">CRX 2026</a><span>Interactive stage preview</span></header>
   <section id="stage" aria-labelledby="title"><div class="intro"><h1 id="title">Seeing the work<br>in the room.</h1><p>Explore the CRX mainstage.<br>The motion, at the scale it was made for.</p></div>
-  <div id="inline-stage" class="stage-poster" data-no-lightbox role="button" tabindex="0" aria-label="Interactive stage. Click to expand, or drag to explore." aria-haspopup="dialog">
+  <div id="inline-stage" class="stage-poster" data-no-lightbox role="region" aria-label="Interactive stage. Drag to explore.">
     <img src="./poster.jpg" alt="CRX 2026 stage with finished graphics across the LED screens" width="1600" height="900" fetchpriority="high">
     <div id="inline-host" class="viewer-host"></div>
     <div id="inline-status" class="viewer-status" role="status" aria-live="polite" hidden></div>
   </div>
 </section>
 </main>
-<dialog id="stage-dialog" aria-label="Interactive CRX stage" data-no-lightbox>
-  <div id="frame-host"></div><div id="stage-status" role="status" aria-live="polite">Opening the stage…</div>
-
-  <button id="close-stage" class="close" aria-label="Close stage preview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
-</dialog><script type="module" src="/src/lightbox.js"></script></body></html>
+<script type="module" src="/src/lightbox.js"></script></body></html>

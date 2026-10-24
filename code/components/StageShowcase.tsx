@@ -1,19 +1,5 @@
-import {
-    addPropertyControls,
-    ControlType,
-    RenderTarget,
-} from "framer"
-import {
-    useCallback,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-    useId,
-    type CSSProperties,
-    type SyntheticEvent,
-} from "react"
-import { createPortal } from "react-dom"
+import { addPropertyControls, ControlType, RenderTarget } from "framer"
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
 
 type ResponsiveImage = {
     src?: string
@@ -35,17 +21,19 @@ type ViewerMessage = {
     playing?: unknown
     deltaX?: unknown
     deltaY?: unknown
-    playing?: unknown
+}
+
+type StageCSSProperties = CSSProperties & {
+    "--crx-stage-ratio"?: string
 }
 
 const READY_TIMEOUT_MS = 20_000
 
 /**
- * A poster-backed inline stage that loads near the viewport and expands into
- * an accessible native dialog on request.
+ * An inline interactive stage that loads shortly before it enters the viewport.
  *
  * @framerIntrinsicWidth 1600
- * @framerIntrinsicHeight 900
+ * @framerIntrinsicHeight 969
  * @framerSupportedLayoutWidth any-prefer-fixed
  * @framerSupportedLayoutHeight any-prefer-fixed
  */
@@ -69,18 +57,15 @@ export default function StageShowcase(props: StageShowcaseProps) {
             return null
         }
     }, [viewerUrl])
-    const canOpen = Boolean(normalizedViewerUrl) && !isCanvas
-    const [isOpen, setIsOpen] = useState(false)
+    const canRender = Boolean(normalizedViewerUrl) && !isCanvas
     const [attempt, setAttempt] = useState(0)
     const [viewerState, setViewerState] = useState<"loading" | "ready" | "error">("loading")
     const [hasEnteredViewport, setHasEnteredViewport] = useState(false)
     const [isInViewport, setIsInViewport] = useState(false)
     const viewportRef = useRef<HTMLDivElement>(null)
-    const dialogRef = useRef<HTMLDialogElement>(null)
     const iframeRef = useRef<HTMLIFrameElement>(null)
-    const didOpenRef = useRef(false)
+    const frameReadyRef = useRef(false)
     const priorViewerUrlRef = useRef(viewerUrl)
-    const dialogTitleId = useId()
 
     const viewerOrigin = useMemo(() => {
         if (!normalizedViewerUrl) return null
@@ -96,6 +81,7 @@ export default function StageShowcase(props: StageShowcaseProps) {
         try {
             const url = new URL(normalizedViewerUrl)
             url.searchParams.set("inline", "1")
+            url.searchParams.set("audience", "1")
             return url.href
         } catch {
             return null
@@ -103,13 +89,12 @@ export default function StageShowcase(props: StageShowcaseProps) {
     }, [normalizedViewerUrl])
 
     const shouldRenderInline = Boolean(
-        canOpen && inlineViewerUrl && hasEnteredViewport && !isOpen && viewerState !== "error",
+        canRender && inlineViewerUrl && hasEnteredViewport && viewerState !== "error",
     )
-    const activeFrameMode = isOpen ? "modal" : shouldRenderInline ? "inline" : null
 
     useEffect(() => {
         const node = viewportRef.current
-        if (!node || !canOpen) return
+        if (!node || !canRender) return
 
         if (typeof IntersectionObserver === "undefined") {
             setHasEnteredViewport(true)
@@ -134,26 +119,13 @@ export default function StageShowcase(props: StageShowcaseProps) {
             nearObserver.disconnect()
             viewportObserver.disconnect()
         }
-    }, [canOpen])
-
-    const closeViewer = useCallback(() => setIsOpen(false), [])
-    const openViewer = useCallback(() => {
-        if (!canOpen) return
-        setViewerState("loading")
-        setIsOpen(true)
-    }, [canOpen])
-    const frameReadyRef = useRef(false)
-    const motionPreferenceRef = useRef<boolean | null>(null)
-
-    const sendMotion = useCallback((playing: boolean) => {
-        const frame = iframeRef.current
-        if (!frame?.contentWindow || !viewerOrigin) return
-        frame.contentWindow.postMessage({ type: "crx-stage:motion", playing }, viewerOrigin)
-    }, [viewerOrigin])
+    }, [canRender])
 
     const sendVisibility = useCallback(() => {
         const frame = iframeRef.current
-        if (!frame?.contentWindow || !viewerOrigin) return
+        const origin = viewerOrigin
+        if (!frame?.contentWindow || !origin) return
+
         const bounds = viewportRef.current?.getBoundingClientRect()
         const intersectsViewport = Boolean(
             bounds &&
@@ -165,96 +137,36 @@ export default function StageShowcase(props: StageShowcaseProps) {
         frame.contentWindow.postMessage(
             {
                 type: "crx-stage:visibility",
-                visible: document.visibilityState === "visible" && (isOpen || intersectsViewport),
+                visible: document.visibilityState === "visible" && intersectsViewport,
             },
-            viewerOrigin,
+            origin,
         )
-    }, [isInViewport, isOpen, viewerOrigin])
-
-    const sendFrameState = useCallback(() => {
-        sendVisibility()
-    }, [sendVisibility])
+    }, [viewerOrigin])
 
     useEffect(() => {
-        if (!isOpen) {
-            if (didOpenRef.current) {
-                const frame = window.requestAnimationFrame(() => {
-                    viewportRef.current?.focus({ preventScroll: true })
-                })
-                return () => window.cancelAnimationFrame(frame)
-            }
-            return
-        }
-
-        const dialog = dialogRef.current
-        if (!dialog) return
-
-        try {
-            if (!dialog.open) dialog.showModal()
-        } catch {
-            setIsOpen(false)
-            return
-        }
-
-        didOpenRef.current = true
-
-        const body = document.body
-        const previousOverflow = body.style.overflow
-        const previousPaddingRight = body.style.paddingRight
-        const scrollbarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth)
-        body.style.overflow = "hidden"
-        if (scrollbarWidth > 0) {
-            const currentPadding = Number.parseFloat(getComputedStyle(body).paddingRight) || 0
-            body.style.paddingRight = `${currentPadding + scrollbarWidth}px`
-        }
-
-        return () => {
-            if (dialog.open) dialog.close()
-            body.style.overflow = previousOverflow
-            body.style.paddingRight = previousPaddingRight
-        }
-    }, [isOpen])
-
-    useEffect(() => {
-        if (!activeFrameMode) return
+        if (!shouldRenderInline) return
         frameReadyRef.current = false
         setViewerState("loading")
-        setAttempt((current) => current + 1)
-    }, [activeFrameMode])
+    }, [shouldRenderInline])
 
     useEffect(() => {
-        if (!activeFrameMode) return
+        if (!shouldRenderInline) return
         const timeout = window.setTimeout(() => {
             setViewerState((current) => current === "ready" ? current : "error")
         }, READY_TIMEOUT_MS)
         return () => window.clearTimeout(timeout)
-    }, [activeFrameMode, attempt, normalizedViewerUrl])
+    }, [attempt, normalizedViewerUrl, shouldRenderInline])
 
     useEffect(() => {
         if (priorViewerUrlRef.current === viewerUrl) return
         priorViewerUrlRef.current = viewerUrl
-        if (!activeFrameMode && !(hasEnteredViewport && !isOpen)) return
+        if (!hasEnteredViewport) return
         setViewerState(normalizedViewerUrl ? "loading" : "error")
         setAttempt((current) => current + 1)
-    }, [activeFrameMode, hasEnteredViewport, isOpen, normalizedViewerUrl, viewerUrl])
+    }, [hasEnteredViewport, normalizedViewerUrl, viewerUrl])
 
     useEffect(() => {
-        if (!activeFrameMode) return
-        const onVisibilityChange = () => sendVisibility()
-        document.addEventListener("visibilitychange", onVisibilityChange)
-        const needsScrollFallback = typeof IntersectionObserver === "undefined"
-        if (needsScrollFallback) window.addEventListener("scroll", onVisibilityChange, { passive: true })
-        window.addEventListener("resize", onVisibilityChange)
-        sendVisibility()
-        return () => {
-            document.removeEventListener("visibilitychange", onVisibilityChange)
-            if (needsScrollFallback) window.removeEventListener("scroll", onVisibilityChange)
-            window.removeEventListener("resize", onVisibilityChange)
-        }
-    }, [activeFrameMode, isInViewport, isOpen, sendVisibility])
-
-    useEffect(() => {
-        if (!activeFrameMode || !viewerOrigin) return
+        if (!shouldRenderInline || !viewerOrigin) return
 
         const onMessage = (event: MessageEvent<ViewerMessage>) => {
             if (event.source !== iframeRef.current?.contentWindow) return
@@ -264,17 +176,8 @@ export default function StageShowcase(props: StageShowcaseProps) {
             if (event.data.type === "crx-stage:ready") {
                 frameReadyRef.current = true
                 sendVisibility()
-                if (motionPreferenceRef.current !== null) {
-                    sendMotion(motionPreferenceRef.current)
-                }
                 setViewerState("ready")
-            } else if (event.data.type === "crx-stage:close") {
-                closeViewer()
-            } else if (event.data.type === "crx-stage:motion" && typeof event.data.playing === "boolean") {
-                if (frameReadyRef.current) motionPreferenceRef.current = event.data.playing
-            } else if (event.data.type === "crx-stage:expand" && activeFrameMode === "inline") {
-                openViewer()
-            } else if (event.data.type === "crx-stage:scroll" && activeFrameMode === "inline") {
+            } else if (event.data.type === "crx-stage:scroll") {
                 const deltaX = typeof event.data.deltaX === "number" && Number.isFinite(event.data.deltaX)
                     ? Math.max(-1200, Math.min(1200, event.data.deltaX))
                     : 0
@@ -287,137 +190,90 @@ export default function StageShowcase(props: StageShowcaseProps) {
 
         window.addEventListener("message", onMessage)
         return () => window.removeEventListener("message", onMessage)
-    }, [activeFrameMode, closeViewer, openViewer, sendMotion, sendVisibility, viewerOrigin])
+    }, [sendVisibility, shouldRenderInline, viewerOrigin])
+
+    useEffect(() => {
+        if (!shouldRenderInline) return
+
+        const onVisibilityChange = () => sendVisibility()
+        document.addEventListener("visibilitychange", onVisibilityChange)
+        window.addEventListener("resize", onVisibilityChange)
+        const needsScrollFallback = typeof IntersectionObserver === "undefined"
+        if (needsScrollFallback) window.addEventListener("scroll", onVisibilityChange, { passive: true })
+        sendVisibility()
+
+        return () => {
+            document.removeEventListener("visibilitychange", onVisibilityChange)
+            window.removeEventListener("resize", onVisibilityChange)
+            if (needsScrollFallback) window.removeEventListener("scroll", onVisibilityChange)
+        }
+    }, [isInViewport, sendVisibility, shouldRenderInline])
 
     const retryViewer = () => {
         if (!normalizedViewerUrl) return
         setViewerState("loading")
-        if (isOpen) setAttempt((current) => current + 1)
+        setAttempt((current) => current + 1)
     }
 
-    const handleDialogClick = (event: SyntheticEvent<HTMLDialogElement>) => {
-        if (event.target === event.currentTarget) closeViewer()
-    }
-
-    const posterAlt = poster?.alt ?? ""
-    const cardStyle: CSSProperties = {
+    const ratio = Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : 16 / 9
+    const cardStyle: StageCSSProperties = {
         ...style,
         position: "relative",
         width: style?.width ?? "100%",
-        height: style?.height ?? "auto",
+        height: "auto",
         background: "transparent",
         color: style?.color ?? "#233324",
         isolation: "isolate",
+        containerType: "inline-size",
+        containerName: "crx-stage-showcase",
+        "--crx-stage-ratio": String(ratio),
     }
 
-    const posterContent = (
-        <>
-            {poster?.src ? <img src={poster.src} srcSet={poster.srcSet} sizes="100vw" alt={posterAlt} loading="lazy" draggable={false} style={posterImageStyle} /> : null}
-        </>
-    )
-
-    const dialog = isOpen && typeof document !== "undefined"
-        ? createPortal(
-            <dialog
-                ref={dialogRef}
-                data-no-lightbox
-                aria-labelledby={dialogTitleId}
-                onCancel={(event) => {
-                    event.preventDefault()
-                    closeViewer()
-                }}
-                onClose={closeViewer}
-                onClick={handleDialogClick}
-                style={dialogStyle}
-            >
-                <div style={viewerShellStyle}>
-                    <h2 id={dialogTitleId} style={visuallyHiddenStyle}>{title}</h2>
-                    <div style={modalViewportStyle}>
-                        {viewerState !== "error" && normalizedViewerUrl ? (
-                            <iframe
-                                key={`${normalizedViewerUrl}:modal`}
-                                ref={iframeRef}
-                                src={normalizedViewerUrl}
-                                title={`${title} interactive stage`}
-                                allow="autoplay; fullscreen"
-                                allowFullScreen
-                                onLoad={sendFrameState}
-                                onError={() => setViewerState("error")}
-                                style={{
-                                    ...iframeStyle,
-                                    opacity: viewerState === "ready" ? 1 : 0,
-                                    pointerEvents: viewerState === "ready" ? "auto" : "none",
-                                }}
-                            />
-                        ) : null}
-                    </div>
-                    <div style={modalCaptionStyle}>
-                        {viewerState !== "ready" ? (
-                            <span role={viewerState === "error" ? "alert" : "status"} aria-live="polite">
-                                {viewerState === "error" ? "The stage could not load." : "Loading stage…"}
-                            </span>
-                        ) : null}
-                        {viewerState === "error" && normalizedViewerUrl ? (
-                            <button type="button" onClick={retryViewer} style={textControlStyle}>Try again</button>
-                        ) : null}
-                        <button type="button" aria-label="Close interactive stage" onClick={closeViewer} style={textControlStyle}>Close</button>
-                    </div>
-                </div>
-            </dialog>,
-            document.body,
-        )
-        : null
-
     return (
-        <div data-no-lightbox style={cardStyle}>
+        <div data-no-lightbox data-crx-stage-container style={cardStyle}>
             <div
                 ref={viewportRef}
                 data-crx-stage-viewport
-                role={canOpen ? "button" : undefined}
-                tabIndex={canOpen ? 0 : undefined}
-                aria-label={`${title}. Click to expand. Drag to explore. Space pauses motion within the viewer.`}
-                onClick={openViewer}
-                onKeyDown={(event) => {
-                    if (event.key === "Enter") {
-                        event.preventDefault()
-                        openViewer()
-                    }
-                }}
-                style={{
-                    ...viewportStyle,
-                    background,
-                    aspectRatio: String(Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : 16 / 9),
-                }}
+                role="region"
+                aria-label={title}
+                style={{ ...viewportStyle, background }}
             >
-                <div data-crx-stage-media style={mediaStyle}>
-                    {posterContent}
-                    {shouldRenderInline && inlineViewerUrl ? (
-                        <iframe
-                            key={`${inlineViewerUrl}:inline`}
-                            ref={iframeRef}
-                            src={inlineViewerUrl}
-                            title={`${title} interactive stage preview`}
-                            allow="autoplay; fullscreen"
-                            allowFullScreen
-                            onLoad={sendFrameState}
-                            onError={() => setViewerState("error")}
-                            style={{
-                                ...inlineIframeStyle,
-                                opacity: viewerState === "ready" ? 1 : 0,
-                                pointerEvents: viewerState === "ready" ? "auto" : "none",
-                            }}
-                        />
-                    ) : null}
-                </div>
+                {poster?.src ? (
+                    <img
+                        src={poster.src}
+                        srcSet={poster.srcSet}
+                        sizes="100vw"
+                        alt={shouldRenderInline && viewerState === "ready" ? "" : poster.alt ?? ""}
+                        loading="lazy"
+                        draggable={false}
+                        style={posterImageStyle}
+                    />
+                ) : null}
+                {shouldRenderInline && inlineViewerUrl ? (
+                    <iframe
+                        key={`${inlineViewerUrl}:${attempt}`}
+                        ref={iframeRef}
+                        src={inlineViewerUrl}
+                        title={title}
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                        onLoad={sendVisibility}
+                        onError={() => setViewerState("error")}
+                        style={{
+                            ...iframeStyle,
+                            opacity: viewerState === "ready" ? 1 : 0,
+                            pointerEvents: viewerState === "ready" ? "auto" : "none",
+                        }}
+                    />
+                ) : null}
             </div>
-            {hasEnteredViewport && !isOpen && canOpen && viewerState === "error" ? (
+            {hasEnteredViewport && viewerState === "error" ? (
                 <div style={errorRowStyle} role="alert">
                     <span>The stage could not load.</span>
-                    <button type="button" onClick={retryViewer} style={textControlStyle}>Try again</button>
+                    <button type="button" onClick={retryViewer} style={retryButtonStyle}>Try again</button>
                 </div>
             ) : null}
-            {dialog}
-            <style>{hoverAndReducedMotionStyles}</style>
+            <style>{reducedMotionStyles}</style>
         </div>
     )
 }
@@ -426,15 +282,7 @@ const viewportStyle: CSSProperties = {
     position: "relative",
     width: "100%",
     overflow: "hidden",
-    background: "#080d12",
     borderRadius: 0,
-}
-
-const mediaStyle: CSSProperties = {
-    position: "absolute",
-    inset: 0,
-    transformOrigin: "center",
-    transition: "transform 420ms cubic-bezier(0.16, 1, 0.3, 1)",
 }
 
 const posterImageStyle: CSSProperties = {
@@ -446,7 +294,7 @@ const posterImageStyle: CSSProperties = {
     display: "block",
 }
 
-const inlineIframeStyle: CSSProperties = {
+const iframeStyle: CSSProperties = {
     position: "absolute",
     inset: 0,
     zIndex: 1,
@@ -469,8 +317,8 @@ const errorRowStyle: CSSProperties = {
     lineHeight: 1.4,
 }
 
-const textControlStyle: CSSProperties = {
-    minHeight: 32,
+const retryButtonStyle: CSSProperties = {
+    minHeight: 36,
     padding: "4px 0",
     border: 0,
     color: "inherit",
@@ -482,83 +330,15 @@ const textControlStyle: CSSProperties = {
     textUnderlineOffset: 3,
 }
 
-const dialogStyle: CSSProperties = {
-    position: "fixed",
-    inset: 0,
-    width: "100vw",
-    height: "100dvh",
-    maxWidth: "none",
-    maxHeight: "none",
-    margin: 0,
-    padding: 0,
-    border: 0,
-    background: "#080d12",
-    color: "#f5f7fa",
-    overflow: "hidden",
-}
-
-const viewerShellStyle: CSSProperties = {
-    position: "relative",
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: 10,
-    padding: "12px 20px max(12px, env(safe-area-inset-bottom))",
-    boxSizing: "border-box",
-    background: "#080d12",
-}
-
-const modalViewportStyle: CSSProperties = {
-    position: "relative",
-    flex: "1 1 auto",
-    minHeight: 0,
-    width: "100%",
-    overflow: "hidden",
-    background: "#080d12",
-}
-
-const modalCaptionStyle: CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    gap: 18,
-    minHeight: 36,
-    color: "rgba(245,247,250,.74)",
-    fontSize: 12,
-}
-
-const iframeStyle: CSSProperties = {
-    position: "absolute",
-    inset: 0,
-    width: "100%",
-    height: "100%",
-    border: 0,
-    background: "#080d12",
-    transition: "opacity 180ms ease-out",
-}
-
-const visuallyHiddenStyle: CSSProperties = {
-    position: "absolute",
-    width: 1,
-    height: 1,
-    padding: 0,
-    margin: -1,
-    overflow: "hidden",
-    clip: "rect(0, 0, 0, 0)",
-    whiteSpace: "nowrap",
-    border: 0,
-}
-
-const hoverAndReducedMotionStyles = `
-    [data-crx-stage-media] { transform: scale(1); }
-    @media (hover: hover) and (pointer: fine) {
-        [data-crx-stage-viewport] [data-crx-stage-media]:hover {
-            transform: scale(1.02);
+const reducedMotionStyles = `
+    [data-crx-stage-viewport] { height: calc(100cqw / var(--crx-stage-ratio, 1.7778) + 69px); }
+    @container crx-stage-showcase (max-width: 700px) {
+        [data-crx-stage-viewport] {
+            height: max(360px, calc(100cqw / var(--crx-stage-ratio, 1.7778) + 113px));
         }
     }
     @media (prefers-reduced-motion: reduce) {
-        [data-crx-stage-media] { transition: none !important; transform: none !important; }
-        [data-no-lightbox] iframe { transition: none !important; }
+        [data-crx-stage-viewport] iframe { transition: none !important; }
     }
 `
 

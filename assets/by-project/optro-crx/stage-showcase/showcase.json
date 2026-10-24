@@ -1,7 +1,15 @@
 {
   "media": {
-    "center": { "image": "media/center.jpg" },
-    "side": { "image": "media/side.jpg" },
-    "vanish": { "image": "media/vanish.jpg", "video": "media/vanish.mp4" }
+    "center": {
+      "image": "media/center.jpg",
+      "video": "media/countdown.mp4"
+    },
+    "side": {
+      "image": "media/side.jpg"
+    },
+    "vanish": {
+      "image": "media/vanish.jpg",
+      "video": "media/vanish.mp4"
+    }
   }
 }
