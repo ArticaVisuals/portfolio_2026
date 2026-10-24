@@ -6,10 +6,12 @@
     "Files under code-components/compiled-js are downloaded compiled Framer module snapshots from insert URLs, not original editable TypeScript source.",
     "Code overrides are saved as TypeScript source snapshots from Framer readCodeFile output.",
     "2026-09-18: refreshed working-source hashes for CaseStudyJustifiedMediaGrid, IndexPage, and PageTransition; added PageTransitionRuntime (rdTIUkW). Compiled snapshots retain their original generation date.",
-    "2026-10-23: refreshed Play and ArchivePlayground working-source hashes to match the approved published Framer modules; legacy compiled snapshots retain their original generation date."
+    "2026-10-23: refreshed Play and ArchivePlayground working-source hashes to match the approved published Framer modules; legacy compiled snapshots retain their original generation date.",
+    "2026-10-23: added StageShowcase (fJ_6hJp) working-source mirror and Framer module pin for the CRX case study; Framer published-runtime verification remains pending.",
+    "2026-10-23: added StageShowcase (fJ_6hJp) working-source mirror for the CRX case study, saved in Framer and verified in Preview; portfolio site remains unpublished."
   ],
   "counts": {
-    "activeRootCodeComponents": 21,
+    "activeRootCodeComponents": 22,
     "mirroredCompiledCodeComponents": 22,
     "mirroredCodeOverrides": 5,
     "componentMirrorErrors": 0
@@ -207,6 +209,17 @@
       "localPath": "code/components/SimonSchusterGuidelinesCarousel.tsx",
       "bytes": 22643,
       "sha256": "454e74927b71123b96d2d34b6656e44d1e4cbe9013025ff81959a72ed2cd456d"
+    },
+    {
+      "codeFileId": "fJ_6hJp",
+      "path": "StageShowcase.tsx",
+      "role": "CRX case-study interactive 3D stage showcase",
+      "sourceKind": "active-root-working-tsx",
+      "localPath": "code/components/StageShowcase.tsx",
+      "bytes": 19960,
+      "sha256": "1a13d8e0c720bb32e30eb7d652771e9617d0c0bacedfc231f671d9b9004a7ccf",
+      "framerInsertUrl": "https://framer.com/m/StageShowcase-9ierrL.js",
+      "compiledModuleUrl": "https://framerusercontent.com/modules/l3Hd34mYxpmM1elE3fin/cojSJjyD0NsXWFCWq3Jd/StageShowcase.js"
     }
   ],
   "mirroredCompiledCodeComponents": [

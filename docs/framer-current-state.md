@@ -17,6 +17,17 @@ This is the quick source of truth for the active Framer project and local handof
 
 ---
 
+## 2026-10-23 Update — CRX stage showcase (Framer Preview verified; public viewer deployed)
+
+- **Framer placement:** `StageShowcase` (`fJ_6hJp`) was inserted into `/case-studies/optro-crx` (`MxrZKvEvR`) under “Seeing the work in the room” (`GH29eMWaq`), with component node `drDJAwOsS`. The former placeholder `teTeobSBk` is hidden. The component insert URL is `https://framer.com/m/StageShowcase-9ierrL.js`.
+- **Standalone viewer:** source is in `code/tools/crx-stage-showcase/`; fixed media is in `assets/by-project/optro-crx/stage-showcase/`. The configured host is `https://micahhoang-crx-stage.netlify.app/viewer.html` (Netlify site `647d3838-a62b-41cf-9917-9716095ff035`, deployment `6adc22acd4213f5f85e1d6e5`). Public `/viewer.html` returned HTTP 200; the Netlify HUD badge is disabled (`hud_enabled=false`, `built_with_badge_enabled=false`).
+- **Interactions:** click opens the lightbox; drag continues to orbit inline. The viewer recognizes a click below 8px movement and 700ms, then requests expansion. Idle orbit waits 1.8 seconds after interaction and ramps in over 1.5 seconds from the current camera angle. Space pauses/plays motion inside the viewer; reduced motion starts with ambient motion disabled. There are no visible inline caption, Pause, or Expand controls.
+- **Status:** public viewer HTTP 200 is verified. The current source is saved in Framer; Preview verified the badge-free view, dragging, click-to-expand, and Escape focus restoration. The portfolio has not been published. Browser physical-phone performance has not been measured.
+- **Validated locally:** Vite `8.3.5` build and audit completed with zero vulnerabilities. Prior local QA passed drag, wheel-to-page-scroll, lightbox open/close and Escape, plus the exact `1.02` hover scale over `420ms` with `cubic-bezier(0.16, 1, 0.3, 1)`.
+- **Mirror and deploy:** source bytes and SHA-256 plus the insert URL are recorded in `code/mirror/manifest.json`. From `code/tools/crx-stage-showcase/`, deploy with `npm ci && npm run build && npx netlify deploy --prod --dir=dist --site 647d3838-a62b-41cf-9917-9716095ff035`.
+
+---
+
 ## 2026-10-23 Update — Play drawer and Safari idle drift (published)
 
 - **Published:** approved changes published October 23 at 10:31 a.m. Pacific.

@@ -1,0 +1,7 @@
+{
+  "media": {
+    "center": { "image": "media/center.jpg" },
+    "side": { "image": "media/side.jpg" },
+    "vanish": { "image": "media/vanish.jpg", "video": "media/vanish.mp4" }
+  }
+}

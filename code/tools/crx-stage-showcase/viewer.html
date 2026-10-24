@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>CRX stage viewer</title><link rel="stylesheet" href="/src/viewer.css"></head><body>
+<main id="viewer" aria-label="CRX 2026 interactive stage">
+  <canvas id="stage-canvas" tabindex="0" aria-label="Explore the stage" aria-describedby="keyboard-help"></canvas>
+  <p id="keyboard-help" class="sr-only">Drag to orbit. Right drag or two fingers to pan. Scroll or pinch to zoom. Arrow keys orbit, Shift and arrows pan, plus and minus zoom, Home resets the view. Space pauses or plays the camera and screen motion. Inline mouse scrolling moves the page. Escape closes the preview.</p>
+  <div id="loading" role="status" aria-live="polite"><span>Opening the stage</span><div class="loading-track"><i></i></div></div>
+  <div id="failure" hidden role="alert"><p>The stage couldn’t load.</p><button id="retry">Try again</button></div>
+  <p id="hint" hidden>Drag to explore <span>·</span> Scroll or pinch to zoom</p>
+</main><script type="module" src="/src/viewer.js"></script></body></html>
