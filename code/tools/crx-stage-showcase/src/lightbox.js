@@ -2,6 +2,7 @@ const inline=document.querySelector('#inline-stage');
 const host=document.querySelector('#inline-host');
 const status=document.querySelector('#inline-status');
 const viewerURL=new URL('./viewer.html?inline=1',location.href);
+if(import.meta.env.DEV && new URLSearchParams(location.search).has('inspect'))viewerURL.searchParams.set('inspect','');
 let frame,timeout,inView=false,loaded=false;
 function visibility(){frame?.contentWindow?.postMessage({type:'crx-stage:visibility',visible:!document.hidden&&inView},viewerURL.origin);}
 function load(){

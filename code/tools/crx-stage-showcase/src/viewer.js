@@ -13,12 +13,13 @@ const inline = new URLSearchParams(location.search).has('inline');
 const abort = new AbortController();
 const videos = [], textures = new Set();
 let renderer, scene, camera, controls, observer, fixtureLighting, frameID = 0, disposed = false;
-let ready = false, parentVisible = true, playing = !reduceMotion;
+let ready = false, parentVisible = parent === window, playing = !reduceMotion;
 let orbiting = !reduceMotion, orbitPhase = 0, orbitCenter = 0, lastOrbitTime = 0;
 let orbitResumeTimer, orbitRamp = 1.5, interacting = false;
 let startVideos = () => {};
 let quality = Math.min(devicePixelRatio, innerWidth < 700 ? 1.25 : 1.5);
-let slowFrames = 0;
+let slowFrames = 0, lastPaint = 0, smoothUntil = 0;
+const orbitOffset = new THREE.Vector3(), orbitSpherical = new THREE.Spherical();
 let parentOrigin = null;
 try { parentOrigin = document.referrer ? new URL(document.referrer).origin : null; } catch {}
 const embedded = parent !== window;
@@ -26,7 +27,7 @@ const post = (type, data = {}) => { if (embedded) parent.postMessage({type,...da
 const visible = () => !disposed && !document.hidden && parentVisible;
 // Vite's output bundles move directories; public files are relative to the HTML entry.
 const publicURL = path => new URL(path, document.baseURI).href;
-let diagnostics, renderCount = 0;
+let diagnostics, renderCount = 0, metricStart = 0, metricFrames = 0, metricFPS = 0;
 if (import.meta.env.DEV && new URLSearchParams(location.search).has('inspect')) {
   const panel = document.createElement('div');
   panel.style.cssText = 'position:absolute;top:12px;left:12px;padding:12px;background:#080d12;color:white;font:12px sans-serif;z-index:2';
@@ -46,6 +47,11 @@ function invalidate() {
 function render(time) {
   frameID = 0;
   if (!visible()) return;
+  // Match the 30 fps screen content at rest; direct manipulation stays at 60 fps.
+  const interval = 1000 / (interacting || time < smoothUntil ? 60 : 30);
+  const elapsed = time - lastPaint;
+  if (lastPaint && elapsed < interval) { invalidate(); return; }
+  lastPaint = time - (elapsed % interval);
   if (orbiting && playing) {
     const delta = lastOrbitTime ? Math.min((time-lastOrbitTime)/1000,.05) : 0;
     lastOrbitTime = time;
@@ -53,11 +59,9 @@ function render(time) {
     const ramp = orbitRamp / 1.5;
     orbitPhase += delta * .12 * ramp * ramp * (3 - 2 * ramp);
     const angle = orbitCenter + .08 * Math.sin(orbitPhase);
-    {
-      const offset = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target));
-      offset.theta = angle;
-      camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(offset));
-    }
+    orbitSpherical.setFromVector3(orbitOffset.copy(camera.position).sub(controls.target));
+    orbitSpherical.theta = angle;
+    camera.position.copy(controls.target).add(orbitOffset.setFromSpherical(orbitSpherical));
   }
   controls.update();
   const start = performance.now();
@@ -68,7 +72,10 @@ function render(time) {
   if (cost > 22 && ++slowFrames > 12 && quality > 1) {
     quality = 1; renderer.setPixelRatio(quality); resize(); slowFrames = 0;
   } else if (cost < 16) slowFrames = Math.max(0, slowFrames - 1);
-  if (diagnostics) { diagnostics.value = `Frames: ${++renderCount} · Draws: ${renderer.info.render.calls} · Triangles: ${renderer.info.render.triangles.toLocaleString()} · Playing: ${videos.filter(v=>!v.el.paused).length} · DPR: ${quality}`; }
+  if (diagnostics) {
+    metricFrames++;
+    if (time-metricStart>=1000) { metricFPS=Math.round(metricFrames*1000/(time-metricStart)); metricStart=time; metricFrames=0; }
+    diagnostics.value = `Frames: ${++renderCount} · FPS: ${metricFPS} · Submit: ${cost.toFixed(1)}ms · Draws: ${renderer.info.render.calls} · Triangles: ${renderer.info.render.triangles.toLocaleString()} · Playing: ${videos.filter(v=>!v.el.paused).length} · DPR: ${quality}`; }
   // Fallback for browsers without video-frame callbacks; stops completely on pause/hidden.
   if ((orbiting && playing) || videos.some(v => !v.el.paused && !v.el.requestVideoFrameCallback)) invalidate();
 }
@@ -80,6 +87,7 @@ function resize() {
 }
 function takeControl() {
   clearTimeout(orbitResumeTimer);
+  smoothUntil=performance.now()+700;
   orbiting=false; lastOrbitTime=0;
 }
 function resumeOrbit() {
@@ -101,12 +109,14 @@ function setMotion(value) {
   updatePlayback(); post('crx-stage:motion',{playing});
 }
 function updatePlayback() {
+  if (ready && visible() && playing) startVideos();
   for (const v of videos) {
     if (visible() && playing) v.el.play().catch(() => { /* Static poster stays visible when autoplay is blocked. */ });
     else v.el.pause();
   }
-  if (!visible()) { cancelAnimationFrame(frameID); frameID = 0; lastOrbitTime=0; }
+  if (!visible()) { cancelAnimationFrame(frameID); frameID = 0; lastOrbitTime=0; lastPaint=0; }
   else invalidate();
+  if (diagnostics) { diagnostics.dataset.visible=String(visible()); diagnostics.dataset.playing=String(videos.filter(v=>!v.el.paused).length); }
 }
 function makeImage(path) {
   return new Promise((resolve, reject) => {
@@ -126,7 +136,7 @@ function makeImage(path) {
 }
 function attachVideo(path, apply) {
   const el = document.createElement('video');
-  el.muted = true; el.loop = true; el.playsInline = true; el.preload = 'auto'; el.crossOrigin = 'anonymous';
+  el.muted = true; el.loop = true; el.playsInline = true; el.preload = 'metadata'; el.crossOrigin = 'anonymous';
   const record = {el,texture:null,callback:0}; videos.push(record);
   el.addEventListener('loadeddata', () => {
     if (disposed) return;
@@ -174,7 +184,7 @@ async function boot() {
   controls.cursor.set(0,3.6,-3); controls.maxTargetRadius = 7;
   controls.addEventListener('change',invalidate);
   controls.addEventListener('start', () => { interacting=true; takeControl(); });
-  controls.addEventListener('end', () => { interacting=false; scheduleOrbitResume(); invalidate(); });
+  controls.addEventListener('end', () => { interacting=false; smoothUntil=performance.now()+700; scheduleOrbitResume(); invalidate(); });
   const [data, buffer, config] = await Promise.all([
     fetch(publicURL('scene.json'),{signal:abort.signal}).then(r=>{if(!r.ok)throw new Error('Scene unavailable');return r.json();}),
     fetch(publicURL('stage.glb'),{signal:abort.signal}).then(async r=>{
@@ -219,8 +229,8 @@ async function boot() {
   fixtureLighting.update(camera);renderer.render(scene,camera);post('crx-stage:ready');post('crx-stage:motion',{playing});
   // One decoder per source: both side screens share a video, as do all four Vanish panels.
   let videosStarted=false;
-  startVideos=()=>{if(videosStarted)return;videosStarted=true;for(const [kind,media] of Object.entries(config.media)){if(media.video)attachVideo(media.video,v=>assign(kind,v));}};
-  if(!reduceMotion)startVideos();
+  startVideos=()=>{if(videosStarted||!visible()||!playing)return;videosStarted=true;for(const [kind,media] of Object.entries(config.media)){if(media.video)attachVideo(media.video,v=>assign(kind,v));}};
+  updatePlayback();
   canvas.addEventListener('keydown',e=>{
     if(e.altKey||e.ctrlKey||e.metaKey)return;
     if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','Home',' '].includes(e.key)){
