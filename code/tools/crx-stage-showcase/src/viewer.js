@@ -205,7 +205,7 @@ async function boot() {
   const screens = data.screens.map(def=>{const mesh=makeScreen(def);scene.add(mesh);return {def,mesh};});
   const assign = (kind, media) => {
     for(const {def,mesh} of screens){
-      if((kind==='center'&&def.id==='S02')||(kind==='side'&&def.kind==='tv')||(kind==='sideLeft'&&def.id==='S01')||(kind==='sideRight'&&def.id==='S03')){applyMedia(mesh,media.texture,media.size,'stretch',def.pixels);}
+      if((kind==='center'&&def.id==='S02')||(kind==='side'&&def.kind==='tv')||(kind==='sideScreens'&&(def.id==='S01'||def.id==='S03'))){applyMedia(mesh,media.texture,media.size,'stretch',def.pixels);}
       if(kind==='vanish'&&def.kind==='mesh'){applyMedia(mesh,media.texture,media.size,'stretch',VANISH_CANVAS,{x:def.canvasColumn/VANISH_CANVAS[0],y:0,w:def.pixels[0]/VANISH_CANVAS[0],h:1});}
     }
     invalidate();
@@ -217,7 +217,7 @@ async function boot() {
   loading.hidden=true;
   observer=new ResizeObserver(resize);observer.observe(canvas);
   fixtureLighting.update(camera);renderer.render(scene,camera);post('crx-stage:ready');post('crx-stage:motion',{playing});
-  // One decoder per source: all four Vanish panels share the full-canvas video.
+  // One decoder per source: both side screens share a video, as do all four Vanish panels.
   let videosStarted=false;
   startVideos=()=>{if(videosStarted)return;videosStarted=true;for(const [kind,media] of Object.entries(config.media)){if(media.video)attachVideo(media.video,v=>assign(kind,v));}};
   if(!reduceMotion)startVideos();

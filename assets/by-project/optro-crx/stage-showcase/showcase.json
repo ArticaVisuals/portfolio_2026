@@ -11,13 +11,9 @@
       "image": "media/vanish.jpg",
       "video": "media/vanish.mp4"
     },
-    "sideLeft": {
-      "image": "media/side-elastic.jpg",
-      "video": "media/side-elastic.mp4"
-    },
-    "sideRight": {
-      "image": "media/side-radial.jpg",
-      "video": "media/side-radial.mp4"
+    "sideScreens": {
+      "image": "media/side-purple-ribbons.jpg",
+      "video": "media/side-purple-ribbons.mp4"
     }
   }
 }
