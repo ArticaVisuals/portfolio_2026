@@ -216,10 +216,10 @@
       "role": "CRX case-study interactive 3D stage showcase",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/StageShowcase.tsx",
-      "bytes": 12253,
-      "sha256": "d4d3526876c9b60cb8890f05376c7d4aefd3b73c8e118ad75cf95cad2b9cf213",
+      "bytes": 12002,
+      "sha256": "665c204996eee0a705fc4d222d6204c4fb4ff1e1f91fd7e3658b912f817a4a1b",
       "framerInsertUrl": "https://framer.com/m/StageShowcase-9ierrL.js",
-      "compiledModuleUrl": "https://framerusercontent.com/modules/l3Hd34mYxpmM1elE3fin/SuC1g3DKNaN8GNnGrM0D/StageShowcase.js"
+      "compiledModuleUrl": "https://framerusercontent.com/modules/l3Hd34mYxpmM1elE3fin/ZzILikIdZhfsK0pFxIeA/StageShowcase.js"
     }
   ],
   "mirroredCompiledCodeComponents": [

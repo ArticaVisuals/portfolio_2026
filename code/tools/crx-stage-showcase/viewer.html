@@ -1,18 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>CRX stage viewer</title><link rel="stylesheet" href="/src/viewer.css"></head><body>
 <main id="viewer" aria-label="CRX 2026 interactive stage">
   <canvas id="stage-canvas" tabindex="0" aria-label="Explore the stage" aria-describedby="keyboard-help"></canvas>
-  <p id="keyboard-help" class="sr-only">Drag to orbit. Right drag or two fingers to pan. Scroll or pinch to zoom. In overview, arrow keys orbit, Shift and arrows pan, plus and minus zoom. From a seat, drag to look around and use arrow keys to change seats. Home returns to overview. Space pauses or plays the camera and screen motion. Inline mouse scrolling moves the page; Control and scroll zooms the view. Escape closes the seat map.</p>
+  <p id="keyboard-help" class="sr-only">Drag to orbit. Right drag or two fingers to pan. Scroll or pinch to zoom. Arrow keys orbit, Shift and arrows pan, plus and minus zoom. Home returns to overview. Space pauses or plays the camera and screen motion. Inline mouse scrolling moves the page; Control and scroll zooms the view.</p>
   <div id="loading" role="status" aria-live="polite"><span>Opening the stage</span><div class="loading-track"><i></i></div></div>
   <div id="failure" hidden role="alert"><p>The stage couldn’t load.</p><button id="retry">Try again</button></div>
-  <p id="hint" hidden>Drag to explore <span>·</span> Scroll or pinch to zoom</p>
-  <section id="seat-picker" aria-labelledby="seat-picker-title" hidden>
-    <div class="seat-picker-heading"><h2 id="seat-picker-title">Choose your seat</h2><button id="seat-picker-close" type="button" aria-label="Close seat map">Done</button></div>
-    <canvas id="seat-map" tabindex="0" role="img" aria-label="Venue seat map. Use arrow keys to choose a seat, then Enter to sit." aria-describedby="seat-map-status"></canvas>
-    <output id="seat-map-status" aria-live="polite">Select a seat to see its view.</output>
-    <p>Click a seat, or use the arrow keys and Enter.</p>
-  </section>
-  <div id="view-controls" role="group" aria-label="Stage viewing controls" hidden>
-    <div class="control-group"><label for="view-position">View</label><select id="view-position"><option value="overview">Stage overview</option><option value="front">Front row</option><option value="mid">Middle rows</option><option value="back">Back row</option><option value="left">Audience left</option><option value="right">Audience right</option><option value="custom" disabled>Selected seat</option></select><button id="choose-seat" type="button" aria-expanded="false" aria-controls="seat-picker">Choose a seat</button></div>
-    <div class="control-group"><label for="house-light">House lights</label><input id="house-light" type="range" min="0" max="100" step="1" value="35"><output id="house-level" for="house-light">35%</output></div>
-  </div>
 </main><script type="module" src="/src/viewer.js"></script></body></html>

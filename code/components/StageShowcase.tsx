@@ -81,7 +81,6 @@ export default function StageShowcase(props: StageShowcaseProps) {
         try {
             const url = new URL(normalizedViewerUrl)
             url.searchParams.set("inline", "1")
-            url.searchParams.set("audience", "1")
             return url.href
         } catch {
             return null
@@ -331,12 +330,7 @@ const retryButtonStyle: CSSProperties = {
 }
 
 const reducedMotionStyles = `
-    [data-crx-stage-viewport] { height: calc(100cqw / var(--crx-stage-ratio, 1.7778) + 69px); }
-    @container crx-stage-showcase (max-width: 700px) {
-        [data-crx-stage-viewport] {
-            height: max(360px, calc(100cqw / var(--crx-stage-ratio, 1.7778) + 113px));
-        }
-    }
+    [data-crx-stage-viewport] { height: calc(100cqw / var(--crx-stage-ratio, 1.7778)); }
     @media (prefers-reduced-motion: reduce) {
         [data-crx-stage-viewport] iframe { transition: none !important; }
     }

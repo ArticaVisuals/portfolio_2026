@@ -2,4 +2,4 @@
 
 .stage-poster{cursor:default}.stage-poster>img{pointer-events:none}.viewer-host,.viewer-host iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}.explore{border:0;color:inherit;font-family:inherit;cursor:pointer;min-height:44px;z-index:2}.motion{position:absolute;left:16px;bottom:16px;z-index:2;display:grid;place-items:center;width:44px;height:44px;border:0;background:#080d12d9;color:#f7f5f0;cursor:pointer}.motion svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6}.motion:hover,.explore:hover{background:#253039}.viewer-status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:16px;background:#080d12;color:#f7f5f0;font-size:14px}.viewer-status[hidden]{display:none}.viewer-status button{padding:12px;color:inherit;background:transparent;border:1px solid #71777a;cursor:pointer;font:inherit}
 
-.stage-poster{min-height:360px}.stage-poster>img{transition:none}
+.stage-poster>img{transition:none}

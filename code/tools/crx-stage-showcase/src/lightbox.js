@@ -1,7 +1,7 @@
 const inline=document.querySelector('#inline-stage');
 const host=document.querySelector('#inline-host');
 const status=document.querySelector('#inline-status');
-const viewerURL=new URL('./viewer.html?inline=1&audience=1',location.href);
+const viewerURL=new URL('./viewer.html?inline=1',location.href);
 let frame,timeout,inView=false,loaded=false;
 function visibility(){frame?.contentWindow?.postMessage({type:'crx-stage:visibility',visible:!document.hidden&&inView},viewerURL.origin);}
 function load(){
