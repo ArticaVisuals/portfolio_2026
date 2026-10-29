@@ -1,0 +1,210 @@
+{
+  "mode": "desktop",
+  "stops": [
+    {
+      "label": "Home",
+      "url": "https://micahhoang.com/",
+      "overflow": 0,
+      "h1": [
+        "Micah Hoang"
+      ],
+      "nav": [
+        {
+          "text": "MICAH HOANG",
+          "w": 248,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 0
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        }
+      ],
+      "nested": 0
+    },
+    {
+      "label": "AirPods",
+      "url": "https://micahhoang.com/case-studies/airpods",
+      "overflow": 0,
+      "h1": [
+        "AirPods Pro 3,"
+      ],
+      "nav": [
+        {
+          "text": "MICAH HOANG",
+          "w": 248,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 0
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        }
+      ],
+      "nested": 0
+    },
+    {
+      "label": "Gaia",
+      "url": "https://micahhoang.com/case-studies/gaia",
+      "overflow": 0,
+      "h1": [
+        "Gaia"
+      ],
+      "nav": [
+        {
+          "text": "MICAH HOANG",
+          "w": 248,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 0
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        }
+      ],
+      "nested": 0
+    },
+    {
+      "label": "About via nav",
+      "url": "https://micahhoang.com/about",
+      "overflow": 0,
+      "h1": [
+        "Hey, I'm Micah."
+      ],
+      "nav": [
+        {
+          "text": "MICAH HOANG",
+          "w": 248,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 0
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "w": 31.203125,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "w": 39,
+          "h": 13,
+          "edgeHit": true,
+          "dupes": 1
+        }
+      ],
+      "nested": 0
+    }
+  ],
+  "errors": [],
+  "back": "https://micahhoang.com/",
+  "readMore": "https://micahhoang.com/about",
+  "resume": {
+    "height": 13,
+    "status": 200,
+    "type": "application/pdf"
+  },
+  "hover": {
+    "href": "./about",
+    "box": {
+      "x": 1381,
+      "y": 20.17283821105957,
+      "width": 39,
+      "height": 13.000001907348633
+    }
+  },
+  "focus": {
+    "outline": "none",
+    "focused": true
+  }
+}

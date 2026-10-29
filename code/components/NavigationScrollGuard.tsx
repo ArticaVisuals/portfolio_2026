@@ -372,7 +372,13 @@ function normalizeInfoLinks(selector: string) {
 function markNavRollDuplicates(selector: string) {
     document.querySelectorAll(selector).forEach((root) => {
         root.querySelectorAll<HTMLAnchorElement>("a").forEach((anchor) => {
-            const lines = Array.from(anchor.children).filter(
+            // The link lives on the outer hit area; its one-line roll mask
+            // may be the sole child. Retain support for older inner links.
+            const labelContainer =
+                anchor.children.length === 1
+                    ? anchor.firstElementChild!
+                    : anchor
+            const lines = Array.from(labelContainer.children).filter(
                 (el) => (el.textContent || "").trim().length > 0
             )
             if (lines.length < 2) return
