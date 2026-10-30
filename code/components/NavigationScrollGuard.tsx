@@ -153,11 +153,17 @@ const MOBILE_NAV_CSS = `
     [data-framer-name="FooterBlackPhone"], [data-framer-name="FooterWhitePhone"] {
         padding-inline: 20px !important;
     }
-    /* The existing case-study footer scale, shared by every route and all four links.
-       Override older per-link patches before hydration, including the omitted GitHub row. */
+    /* Keep the four mobile contacts compact without shrinking their 44px hit areas.
+       Scale toward the existing 38px mobile heading size; the 20px page gutters
+       and fluid fallback leave room for the email suffix on narrow phones. */
+    html body [data-framer-name="Section CTA"] *:has(> :is([data-framer-name="CTA Row"], a[data-framer-name="Row"])) {
+        --mh-footer-label-size: clamp(27px, calc((100vw - 40px) / 10), 38px);
+        row-gap: 0px !important;
+    }
     html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) {
         align-items: flex-start !important;
-        flex-wrap: wrap !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
         justify-content: flex-start !important;
         width: 100% !important;
         gap: 10px !important;
@@ -168,10 +174,10 @@ const MOBILE_NAV_CSS = `
     }
     html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :first-child,
     html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :first-child * {
-        font-size: 32px !important;
+        font-size: var(--mh-footer-label-size) !important;
         line-height: 1em !important;
         letter-spacing: -0.01em !important;
-        height: 32px !important;
+        height: var(--mh-footer-label-size) !important;
         min-height: 0 !important;
         max-width: 100% !important;
     }

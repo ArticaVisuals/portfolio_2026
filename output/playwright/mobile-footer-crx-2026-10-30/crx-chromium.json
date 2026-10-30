@@ -1,0 +1,1790 @@
+[
+  {
+    "width": 320,
+    "reducedMotion": "no-preference",
+    "overflow": false,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 177.4609375,
+          "height": 38,
+          "top": 100,
+          "right": 197.4609375,
+          "bottom": 138,
+          "left": 20
+        },
+        "mask": "framer-f2ldhf",
+        "maskRect": {
+          "x": 20,
+          "y": 100,
+          "width": 280,
+          "height": 44,
+          "top": 100,
+          "right": 300,
+          "bottom": 144,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 144,
+          "width": 237.921875,
+          "height": 38,
+          "top": 144,
+          "right": 257.921875,
+          "bottom": 182,
+          "left": 20
+        },
+        "mask": "framer-mezyu4",
+        "maskRect": {
+          "x": 20,
+          "y": 144,
+          "width": 280,
+          "height": 44,
+          "top": 144,
+          "right": 300,
+          "bottom": 188,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1ywcn4p": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1g8wew3": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 188,
+          "width": 272.3515625,
+          "height": 38,
+          "top": 188,
+          "right": 292.3515625,
+          "bottom": 226,
+          "left": 20
+        },
+        "mask": "framer-fzurkg hidden-1iktv9s hidden-1ywcn4p",
+        "maskRect": {
+          "x": 20,
+          "y": 188,
+          "width": 280,
+          "height": 44,
+          "top": 188,
+          "right": 300,
+          "bottom": 232,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ],
+    "samples": 282,
+    "reducedBadSamples": [],
+    "firstSample": [
+      {
+        "text": "CRX 2026",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      },
+      {
+        "text": "Transform risk",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      },
+      {
+        "text": "into opportunity.",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "overflow": false,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 177.4609375,
+          "height": 38,
+          "top": 100,
+          "right": 197.4609375,
+          "bottom": 138,
+          "left": 20
+        },
+        "mask": "framer-f2ldhf",
+        "maskRect": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 44,
+          "top": 100,
+          "right": 370,
+          "bottom": 144,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 144,
+          "width": 237.921875,
+          "height": 38,
+          "top": 144,
+          "right": 257.921875,
+          "bottom": 182,
+          "left": 20
+        },
+        "mask": "framer-mezyu4",
+        "maskRect": {
+          "x": 20,
+          "y": 144,
+          "width": 350,
+          "height": 44,
+          "top": 144,
+          "right": 370,
+          "bottom": 188,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1ywcn4p": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1g8wew3": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 188,
+          "width": 272.3515625,
+          "height": 38,
+          "top": 188,
+          "right": 292.3515625,
+          "bottom": 226,
+          "left": 20
+        },
+        "mask": "framer-fzurkg hidden-1iktv9s hidden-1ywcn4p",
+        "maskRect": {
+          "x": 20,
+          "y": 188,
+          "width": 350,
+          "height": 44,
+          "top": 188,
+          "right": 370,
+          "bottom": 232,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ],
+    "samples": 292,
+    "reducedBadSamples": [],
+    "firstSample": [
+      {
+        "text": "CRX 2026",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      },
+      {
+        "text": "Transform risk",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      },
+      {
+        "text": "into opportunity.",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "reducedMotion": "no-preference",
+    "overflow": false,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 177.4609375,
+          "height": 38,
+          "top": 100,
+          "right": 197.4609375,
+          "bottom": 138,
+          "left": 20
+        },
+        "mask": "framer-f2ldhf",
+        "maskRect": {
+          "x": 20,
+          "y": 100,
+          "width": 390,
+          "height": 44,
+          "top": 100,
+          "right": 410,
+          "bottom": 144,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 144,
+          "width": 237.921875,
+          "height": 38,
+          "top": 144,
+          "right": 257.921875,
+          "bottom": 182,
+          "left": 20
+        },
+        "mask": "framer-mezyu4",
+        "maskRect": {
+          "x": 20,
+          "y": 144,
+          "width": 390,
+          "height": 44,
+          "top": 144,
+          "right": 410,
+          "bottom": 188,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1ywcn4p": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1g8wew3": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 188,
+          "width": 272.3515625,
+          "height": 38,
+          "top": 188,
+          "right": 292.3515625,
+          "bottom": 226,
+          "left": 20
+        },
+        "mask": "framer-fzurkg hidden-1iktv9s hidden-1ywcn4p",
+        "maskRect": {
+          "x": 20,
+          "y": 188,
+          "width": 390,
+          "height": 44,
+          "top": 188,
+          "right": 410,
+          "bottom": 232,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ],
+    "samples": 300,
+    "reducedBadSamples": [],
+    "firstSample": [
+      {
+        "text": "CRX 2026",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      },
+      {
+        "text": "Transform risk",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      },
+      {
+        "text": "into opportunity.",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "opacity": "1"
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "reducedMotion": "reduce",
+    "overflow": false,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 177.4609375,
+          "height": 38,
+          "top": 100,
+          "right": 197.4609375,
+          "bottom": 138,
+          "left": 20
+        },
+        "mask": "framer-f2ldhf",
+        "maskRect": {
+          "x": 20,
+          "y": 100,
+          "width": 280,
+          "height": 44,
+          "top": 100,
+          "right": 300,
+          "bottom": 144,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 144,
+          "width": 237.921875,
+          "height": 38,
+          "top": 144,
+          "right": 257.921875,
+          "bottom": 182,
+          "left": 20
+        },
+        "mask": "framer-mezyu4",
+        "maskRect": {
+          "x": 20,
+          "y": 144,
+          "width": 280,
+          "height": 44,
+          "top": 144,
+          "right": 300,
+          "bottom": 188,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1ywcn4p": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1g8wew3": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 188,
+          "width": 272.3515625,
+          "height": 38,
+          "top": 188,
+          "right": 292.3515625,
+          "bottom": 226,
+          "left": 20
+        },
+        "mask": "framer-fzurkg hidden-1iktv9s hidden-1ywcn4p",
+        "maskRect": {
+          "x": 20,
+          "y": 188,
+          "width": 280,
+          "height": 44,
+          "top": 188,
+          "right": 300,
+          "bottom": 232,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ],
+    "samples": 300,
+    "reducedBadSamples": [],
+    "firstSample": [
+      {
+        "text": "CRX 2026",
+        "transform": "none",
+        "opacity": "1"
+      },
+      {
+        "text": "Transform risk",
+        "transform": "none",
+        "opacity": "1"
+      },
+      {
+        "text": "into opportunity.",
+        "transform": "none",
+        "opacity": "1"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "reducedMotion": "reduce",
+    "overflow": false,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 177.4609375,
+          "height": 38,
+          "top": 100,
+          "right": 197.4609375,
+          "bottom": 138,
+          "left": 20
+        },
+        "mask": "framer-f2ldhf",
+        "maskRect": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 44,
+          "top": 100,
+          "right": 370,
+          "bottom": 144,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 144,
+          "width": 237.921875,
+          "height": 38,
+          "top": 144,
+          "right": 257.921875,
+          "bottom": 182,
+          "left": 20
+        },
+        "mask": "framer-mezyu4",
+        "maskRect": {
+          "x": 20,
+          "y": 144,
+          "width": 350,
+          "height": 44,
+          "top": 144,
+          "right": 370,
+          "bottom": 188,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1ywcn4p": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1g8wew3": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 188,
+          "width": 272.3515625,
+          "height": 38,
+          "top": 188,
+          "right": 292.3515625,
+          "bottom": 226,
+          "left": 20
+        },
+        "mask": "framer-fzurkg hidden-1iktv9s hidden-1ywcn4p",
+        "maskRect": {
+          "x": 20,
+          "y": 188,
+          "width": 350,
+          "height": 44,
+          "top": 188,
+          "right": 370,
+          "bottom": 232,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ],
+    "samples": 279,
+    "reducedBadSamples": [],
+    "firstSample": [
+      {
+        "text": "CRX 2026",
+        "transform": "none",
+        "opacity": "1"
+      },
+      {
+        "text": "Transform risk",
+        "transform": "none",
+        "opacity": "1"
+      },
+      {
+        "text": "into opportunity.",
+        "transform": "none",
+        "opacity": "1"
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "reducedMotion": "reduce",
+    "overflow": false,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 177.4609375,
+          "height": 38,
+          "top": 100,
+          "right": 197.4609375,
+          "bottom": 138,
+          "left": 20
+        },
+        "mask": "framer-f2ldhf",
+        "maskRect": {
+          "x": 20,
+          "y": 100,
+          "width": 390,
+          "height": 44,
+          "top": 100,
+          "right": 410,
+          "bottom": 144,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 144,
+          "width": 237.921875,
+          "height": 38,
+          "top": 144,
+          "right": 257.921875,
+          "bottom": 182,
+          "left": 20
+        },
+        "mask": "framer-mezyu4",
+        "maskRect": {
+          "x": 20,
+          "y": 144,
+          "width": 390,
+          "height": 44,
+          "top": 144,
+          "right": 410,
+          "bottom": 188,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1ywcn4p": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "1g8wew3": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "rect": {
+          "x": 20,
+          "y": 188,
+          "width": 272.3515625,
+          "height": 38,
+          "top": 188,
+          "right": 292.3515625,
+          "bottom": 226,
+          "left": 20
+        },
+        "mask": "framer-fzurkg hidden-1iktv9s hidden-1ywcn4p",
+        "maskRect": {
+          "x": 20,
+          "y": 188,
+          "width": 390,
+          "height": 44,
+          "top": 188,
+          "right": 410,
+          "bottom": 232,
+          "left": 20
+        },
+        "overflow": "hidden",
+        "within": true,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 120
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ],
+    "samples": 299,
+    "reducedBadSamples": [],
+    "firstSample": [
+      {
+        "text": "CRX 2026",
+        "transform": "none",
+        "opacity": "1"
+      },
+      {
+        "text": "Transform risk",
+        "transform": "none",
+        "opacity": "1"
+      },
+      {
+        "text": "into opportunity.",
+        "transform": "none",
+        "opacity": "1"
+      }
+    ]
+  }
+]
