@@ -1,0 +1,728 @@
+[
+  {
+    "width": 320,
+    "image": {
+      "x": 20,
+      "y": 60,
+      "width": 231,
+      "height": 339.5625,
+      "top": 60,
+      "right": 251,
+      "bottom": 399.5625,
+      "left": 20
+    },
+    "links": [
+      {
+        "label": "LINKEDIN",
+        "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "rect": {
+          "x": 269,
+          "y": 223.5625,
+          "width": 62.40625,
+          "height": 44,
+          "top": 223.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 254.5625,
+          "width": 62.40625,
+          "height": 13,
+          "top": 254.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "RESUME",
+        "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "rect": {
+          "x": 269,
+          "y": 267.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 267.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 298.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 298.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "COSMOS",
+        "href": "https://www.cosmos.so/articavisuals",
+        "rect": {
+          "x": 269,
+          "y": 311.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 311.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 342.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 342.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "GITHUB",
+        "href": "https://github.com/ArticaVisuals",
+        "rect": {
+          "x": 269,
+          "y": 355.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 355.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 386.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 386.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      }
+    ],
+    "overflow": false,
+    "baselineDifference": 0,
+    "touchTargetsPass": true,
+    "baselineApplicable": true,
+    "baselinePass": true,
+    "layout": "Portrait with social column alongside"
+  },
+  {
+    "width": 390,
+    "image": {
+      "x": 20,
+      "y": 60,
+      "width": 231,
+      "height": 339.5625,
+      "top": 60,
+      "right": 251,
+      "bottom": 399.5625,
+      "left": 20
+    },
+    "links": [
+      {
+        "label": "LINKEDIN",
+        "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "rect": {
+          "x": 269,
+          "y": 223.5625,
+          "width": 62.40625,
+          "height": 44,
+          "top": 223.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 254.5625,
+          "width": 62.40625,
+          "height": 13,
+          "top": 254.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "RESUME",
+        "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "rect": {
+          "x": 269,
+          "y": 267.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 267.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 298.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 298.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "COSMOS",
+        "href": "https://www.cosmos.so/articavisuals",
+        "rect": {
+          "x": 269,
+          "y": 311.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 311.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 342.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 342.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "GITHUB",
+        "href": "https://github.com/ArticaVisuals",
+        "rect": {
+          "x": 269,
+          "y": 355.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 355.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 386.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 386.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      }
+    ],
+    "overflow": false,
+    "baselineDifference": 0,
+    "touchTargetsPass": true,
+    "baselineApplicable": true,
+    "baselinePass": true,
+    "layout": "Portrait with social column alongside"
+  },
+  {
+    "width": 430,
+    "image": {
+      "x": 20,
+      "y": 60,
+      "width": 231,
+      "height": 339.5625,
+      "top": 60,
+      "right": 251,
+      "bottom": 399.5625,
+      "left": 20
+    },
+    "links": [
+      {
+        "label": "LINKEDIN",
+        "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "rect": {
+          "x": 269,
+          "y": 223.5625,
+          "width": 62.40625,
+          "height": 44,
+          "top": 223.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 254.5625,
+          "width": 62.40625,
+          "height": 13,
+          "top": 254.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "RESUME",
+        "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "rect": {
+          "x": 269,
+          "y": 267.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 267.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 298.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 298.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "COSMOS",
+        "href": "https://www.cosmos.so/articavisuals",
+        "rect": {
+          "x": 269,
+          "y": 311.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 311.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 342.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 342.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "GITHUB",
+        "href": "https://github.com/ArticaVisuals",
+        "rect": {
+          "x": 269,
+          "y": 355.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 355.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 386.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 386.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      }
+    ],
+    "overflow": false,
+    "baselineDifference": 0,
+    "touchTargetsPass": true,
+    "baselineApplicable": true,
+    "baselinePass": true,
+    "layout": "Portrait with social column alongside"
+  },
+  {
+    "width": 699,
+    "image": {
+      "x": 20,
+      "y": 60,
+      "width": 231,
+      "height": 339.5625,
+      "top": 60,
+      "right": 251,
+      "bottom": 399.5625,
+      "left": 20
+    },
+    "links": [
+      {
+        "label": "LINKEDIN",
+        "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "rect": {
+          "x": 269,
+          "y": 223.5625,
+          "width": 62.40625,
+          "height": 44,
+          "top": 223.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 254.5625,
+          "width": 62.40625,
+          "height": 13,
+          "top": 254.5625,
+          "right": 331.40625,
+          "bottom": 267.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "RESUME",
+        "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "rect": {
+          "x": 269,
+          "y": 267.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 267.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 298.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 298.5625,
+          "right": 315.8046875,
+          "bottom": 311.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "COSMOS",
+        "href": "https://www.cosmos.so/articavisuals",
+        "rect": {
+          "x": 269,
+          "y": 311.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 311.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 342.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 342.5625,
+          "right": 315.8046875,
+          "bottom": 355.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "GITHUB",
+        "href": "https://github.com/ArticaVisuals",
+        "rect": {
+          "x": 269,
+          "y": 355.5625,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 355.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "text": {
+          "x": 269,
+          "y": 386.5625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 386.5625,
+          "right": 315.8046875,
+          "bottom": 399.5625,
+          "left": 269
+        },
+        "align": "flex-end"
+      }
+    ],
+    "overflow": false,
+    "baselineDifference": 0,
+    "touchTargetsPass": true,
+    "baselineApplicable": true,
+    "baselinePass": true,
+    "layout": "Portrait with social column alongside"
+  },
+  {
+    "width": 810,
+    "image": {
+      "x": 20,
+      "y": 96,
+      "width": 207,
+      "height": 304.2890625,
+      "top": 96,
+      "right": 227,
+      "bottom": 400.2890625,
+      "left": 20
+    },
+    "links": [
+      {
+        "label": "LINKEDIN",
+        "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "rect": {
+          "x": 20,
+          "y": 430.2890625,
+          "width": 62.40625,
+          "height": 13,
+          "top": 430.2890625,
+          "right": 82.40625,
+          "bottom": 443.2890625,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 430.2890625,
+          "width": 62.40625,
+          "height": 13,
+          "top": 430.2890625,
+          "right": 82.40625,
+          "bottom": 443.2890625,
+          "left": 20
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "RESUME",
+        "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "rect": {
+          "x": 20,
+          "y": 453.2890625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 453.2890625,
+          "right": 66.8046875,
+          "bottom": 466.2890625,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 453.2890625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 453.2890625,
+          "right": 66.8046875,
+          "bottom": 466.2890625,
+          "left": 20
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "COSMOS",
+        "href": "https://www.cosmos.so/articavisuals",
+        "rect": {
+          "x": 20,
+          "y": 476.2890625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 476.2890625,
+          "right": 66.8046875,
+          "bottom": 489.2890625,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 476.2890625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 476.2890625,
+          "right": 66.8046875,
+          "bottom": 489.2890625,
+          "left": 20
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "GITHUB",
+        "href": "https://github.com/ArticaVisuals",
+        "rect": {
+          "x": 20,
+          "y": 499.2890625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 499.2890625,
+          "right": 66.8046875,
+          "bottom": 512.2890625,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 499.2890625,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 499.2890625,
+          "right": 66.8046875,
+          "bottom": 512.2890625,
+          "left": 20
+        },
+        "align": "flex-end"
+      }
+    ],
+    "overflow": false,
+    "baselineDifference": -112,
+    "touchTargetsPass": true,
+    "baselineApplicable": false,
+    "baselinePass": null,
+    "layout": "Existing social column below portrait"
+  },
+  {
+    "width": 1440,
+    "image": {
+      "x": 20,
+      "y": 106,
+      "width": 396,
+      "height": 582.1171875,
+      "top": 106,
+      "right": 416,
+      "bottom": 688.1171875,
+      "left": 20
+    },
+    "links": [
+      {
+        "label": "LINKEDIN",
+        "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+        "rect": {
+          "x": 20,
+          "y": 708.1171875,
+          "width": 62.40625,
+          "height": 13,
+          "top": 708.1171875,
+          "right": 82.40625,
+          "bottom": 721.1171875,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 708.1171875,
+          "width": 62.40625,
+          "height": 13,
+          "top": 708.1171875,
+          "right": 82.40625,
+          "bottom": 721.1171875,
+          "left": 20
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "RESUME",
+        "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+        "rect": {
+          "x": 20,
+          "y": 731.1171875,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 731.1171875,
+          "right": 66.8046875,
+          "bottom": 744.1171875,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 731.1171875,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 731.1171875,
+          "right": 66.8046875,
+          "bottom": 744.1171875,
+          "left": 20
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "COSMOS",
+        "href": "https://www.cosmos.so/articavisuals",
+        "rect": {
+          "x": 20,
+          "y": 754.1171875,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 754.1171875,
+          "right": 66.8046875,
+          "bottom": 767.1171875,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 754.1171875,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 754.1171875,
+          "right": 66.8046875,
+          "bottom": 767.1171875,
+          "left": 20
+        },
+        "align": "flex-end"
+      },
+      {
+        "label": "GITHUB",
+        "href": "https://github.com/ArticaVisuals",
+        "rect": {
+          "x": 20,
+          "y": 777.1171875,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 777.1171875,
+          "right": 66.8046875,
+          "bottom": 790.1171875,
+          "left": 20
+        },
+        "text": {
+          "x": 20,
+          "y": 777.1171875,
+          "width": 46.8046875,
+          "height": 13,
+          "top": 777.1171875,
+          "right": 66.8046875,
+          "bottom": 790.1171875,
+          "left": 20
+        },
+        "align": "flex-end"
+      }
+    ],
+    "overflow": false,
+    "baselineDifference": -102,
+    "touchTargetsPass": true,
+    "baselineApplicable": false,
+    "baselinePass": null,
+    "layout": "Existing social column below portrait"
+  }
+]
