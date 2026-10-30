@@ -2120,6 +2120,7 @@ function buildGlobalCss(): string {
     .idx-mobile-view { display: flex; align-items: center; gap: 8px; margin-left: auto; }
     .idx-mobile-clear:disabled { visibility: hidden; pointer-events: none; }
     .idx-mobile-filter-status { min-height: 48px; }
+    .idx-mobile-filter-status[data-view="grid"] { border-bottom: 1px solid ${tokens.dividerSubtle}; }
     .idx-mobile-filter-status > :last-child { text-align: right; }
     .idx-grid-preview-locked .idx-list-view .idx-list-row-grid {
       grid-template-columns: minmax(0, 1fr) auto !important;
@@ -2444,7 +2445,7 @@ function MobileTaxonomyControls({
                     <button type="button" aria-pressed={activeView === "list"} onClick={() => { setOpen(null); onViewChange("list") }}>List</button>
                 </div>
             </div>
-            <div className="idx-mobile-filter-status" role="status" aria-live="polite" aria-atomic="true">
+            <div className="idx-mobile-filter-status" data-view={activeView} role="status" aria-live="polite" aria-atomic="true">
                 <span>{resultCount} {resultCount === 1 ? "project" : "projects"}</span>
                 <span>{activeCount ? `${activeCount} active ${activeCount === 1 ? "filter" : "filters"}` : ""}</span>
             </div>
