@@ -31,13 +31,27 @@ const MOBILE_NAV_CSS = `
         min-height: 44px !important;
         min-width: 44px !important;
     }
-    .idx-tax-item, .idx-view-toggle-option, .selected-work-tag {
+    .idx-tax-item, .idx-view-toggle-option, .selected-work-tag, html body .idx-grid-preview-locked .idx-grid-card-tag {
         min-height: 44px !important;
         min-width: 44px !important;
         box-sizing: border-box !important;
     }
-    .selected-work-tag {
-        padding-inline: 20px !important;
+    .selected-work-tags, .idx-grid-card-tags {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none;
+        min-width: 0;
+    }
+    .selected-work-tags::-webkit-scrollbar,
+    .idx-grid-card-tags::-webkit-scrollbar {
+        display: none;
+    }
+    .selected-work-tag, html body .idx-grid-preview-locked .idx-grid-card-tag {
+        padding-inline: 24px !important;
+        flex: 0 0 auto !important;
+        max-width: none !important;
+        white-space: nowrap !important;
     }
     /* Keep the rolling text's existing mask; enlarge only its outer link. */
     a[data-framer-name^="Text Link"] {
