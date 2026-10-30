@@ -91,7 +91,8 @@ const MOBILE_NAV_CSS = `
         min-width: 44px !important;
         box-sizing: content-box !important;
     }
-    a[data-framer-name^="Text Link"] > [data-nested-link] {
+    /* Target the mask itself, independent of Framer’s nested-link repair markup. */
+    a[data-framer-name^="Text Link"] > :first-child {
         pointer-events: none !important;
         overflow: hidden !important;
         transform: none !important;
