@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
-import NavigationScrollGuard from "https://framer.com/m/NavigationScrollGuard-yDp6tN.js@GGvGrjkVajvAhNIaNc6T"
+import NavigationScrollGuard from "https://framer.com/m/NavigationScrollGuard-yDp6tN.js@9aBhproytxLWMVh3IyVp"
 import ParagraphPrettyWrap from "https://framer.com/m/ParagraphPrettyWrap-bvfOg4.js"
 
 const STYLE_ID = "mh-paragraph-pretty-wrap-style"
