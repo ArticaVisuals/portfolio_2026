@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "seek-truth",
+    "mobile": {
+      "matches": true,
+      "overflow": false,
+      "sampleCount": 100,
+      "movingOrHiddenRowCount": 0,
+      "firstSample": {
+        "at": 139.70000000298023,
+        "rows": [
+          {
+            "text": "Seek Truth",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "The visual art of",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "protest.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "lastSample": {
+        "at": 1893.7000000029802,
+        "rows": [
+          {
+            "text": "Seek Truth",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "The visual art of",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "protest.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "unexpectedSamples": []
+    },
+    "normalRule": {
+      "willChange": "transform"
+    },
+    "desktopRule": {
+      "willChange": "transform",
+      "ruleApplies": false
+    }
+  }
+]

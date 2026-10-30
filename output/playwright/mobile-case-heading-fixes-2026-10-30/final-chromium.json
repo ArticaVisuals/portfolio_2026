@@ -1,0 +1,1616 @@
+{
+  "normal": [
+    [
+      {
+        "slug": "weaponized-innocence",
+        "w": 390,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Weaponized",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 139.203125,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-1f7k16i",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "18kvq5z"
+          },
+          {
+            "text": "Innocence",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 180.203125,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-o2tw6m hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1vwzvhg"
+          },
+          {
+            "text": "Some",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 221.203125,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1c3oe3",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "17olm6c"
+          },
+          {
+            "text": "childhoods are",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 262.203125,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1cbbsnk hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1tcoc8a"
+          },
+          {
+            "text": "taken.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 303.203125,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hq5sfz hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "rb5qrh"
+          }
+        ],
+        "animations": {
+          "18kvq5z": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1vwzvhg": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "17olm6c": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1tcoc8a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "rb5qrh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  ],
+  "reduced": [
+    {
+      "slug": "seek-truth",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 47,
+        "movingOrHiddenRowCount": 141,
+        "firstSample": {
+          "at": 1607.0999999940395,
+          "rows": [
+            {
+              "text": "Seek Truth",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 40, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "The visual art of",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "protest.",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 2820.0999999940395,
+          "rows": [
+            {
+              "text": "Seek Truth",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0.761532, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "The visual art of",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.64625, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "protest.",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.41414, 0, 1)",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": [
+          {
+            "at": 1607.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 40, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1623.2000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 40, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1665,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 40, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1755.5999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 40, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1768.2000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 34.1644, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1794.2000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 32.8287, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1805.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 30.0682, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1826.4000000059605,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 28.8569, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1848,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 26.8334, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1877.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 24.932, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1888.4000000059605,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 22.5039, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1908.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 21.6412, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1964.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 20.1523, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 38.8782, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1970.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 16.4943, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 32.438, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 1994.5999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 16.1439, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 31.7946, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2003.2000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 14.7631, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 29.2166, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2011.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 14.3471, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 28.4271, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2044.5999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 13.8934, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 27.5596, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2066.4000000059605,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 12.3521, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 24.5663, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2074.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 11.464, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 22.8134, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2086.7999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 11.1433, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 22.176, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2113.7999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 10.6416, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 21.1754, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 39, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2125.5999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 9.67287, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 19.232, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 38.1524, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2164.2999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 9.27192, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 18.4246, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 36.7254, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2188.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 8.1112, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 16.082, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 32.438, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2195.7999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 7.4557, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 14.7587, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 29.9216, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2237.7000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 7.24938, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 14.3427, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 29.117, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2336.7000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 6.25717, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 12.3471, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 25.1767, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2372.7999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 4.42146, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 8.69641, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 17.7136, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2378.7000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.89435, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 7.6623, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 15.5722, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2395.7999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.8126, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 7.50257, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 15.2415, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2404.7999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.58978, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 7.06815, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 14.3427, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2455,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.47689, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 6.84858, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 13.8889, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2484,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.90833, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 5.74806, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 11.6227, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2524.2000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.61966, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 5.19266, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 10.4864, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2536.5999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.25639, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 4.49674, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 9.07206, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2550.4000000059605,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.15912, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 4.31092, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 8.69641, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2559.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.05805, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 4.11803, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 8.30744, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2585.5999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.98323, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.97536, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 8.02038, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2629.2999999970198,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.79997, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.62631, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 7.3205, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2658.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.52971, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.11226, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 6.29614, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2666.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.36824, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.80522, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 5.68797, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2689.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.32639, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.72564, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 5.53077, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2782.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.20744, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 2.49926, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 5.08457, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2795.7000000029802,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0.83179, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.78146, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.67803, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2803.5,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0.78438, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.69027, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.50003, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "at": 2820.0999999940395,
+            "rows": [
+              {
+                "text": "Seek Truth",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0.761532, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "The visual art of",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 1.64625, 0, 1)",
+                "opacity": "1"
+              },
+              {
+                "text": "protest.",
+                "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 3.41414, 0, 1)",
+                "opacity": "1"
+              }
+            ]
+          }
+        ]
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "weaponized-innocence",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 846.9000000059605,
+          "rows": [
+            {
+              "text": "Weaponized",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Innocence",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Some",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "childhoods are",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "taken.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 2433.6000000089407,
+          "rows": [
+            {
+              "text": "Weaponized",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Innocence",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Some",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "childhoods are",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "taken.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "cellular-symphony",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 222.5,
+          "rows": [
+            {
+              "text": "Cellular",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Symphony",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Organelles in",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "concert.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 1974.7000000029802,
+          "rows": [
+            {
+              "text": "Cellular",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Symphony",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Organelles in",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "concert.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "wolff-olins-x-artcenter",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 290.1000000089407,
+          "rows": [
+            {
+              "text": "Wolff Olins",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "x ArtCenter",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "A studio walks",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "into a school.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 1720.9000000059605,
+          "rows": [
+            {
+              "text": "Wolff Olins",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "x ArtCenter",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "A studio walks",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "into a school.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "independent-lens",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 757.1000000089407,
+          "rows": [
+            {
+              "text": "Independent",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Lens",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "The issues,",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "through",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "the people",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "living them.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 2415.4000000059605,
+          "rows": [
+            {
+              "text": "Independent",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Lens",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "The issues,",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "through",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "the people",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "living them.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    }
+  ]
+}

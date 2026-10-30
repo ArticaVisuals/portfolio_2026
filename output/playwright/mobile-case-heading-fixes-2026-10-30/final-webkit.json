@@ -1,0 +1,4125 @@
+{
+  "normal": [
+    [
+      {
+        "slug": "weaponized-innocence",
+        "w": 320,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Weaponized",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 139.1875,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-1f7k16i",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "18kvq5z"
+          },
+          {
+            "text": "Innocence",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 180.1875,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-o2tw6m hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1vwzvhg"
+          },
+          {
+            "text": "Some",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 221.1875,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1c3oe3",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "17olm6c"
+          },
+          {
+            "text": "childhoods are",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 262.1875,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1cbbsnk hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1tcoc8a"
+          },
+          {
+            "text": "taken.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 303.1875,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hq5sfz hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "rb5qrh"
+          }
+        ],
+        "animations": {
+          "18kvq5z": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1vwzvhg": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "17olm6c": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1tcoc8a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "rb5qrh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "weaponized-innocence",
+        "w": 390,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Weaponized",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 139.1875,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-1f7k16i",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "18kvq5z"
+          },
+          {
+            "text": "Innocence",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 180.1875,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-o2tw6m hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1vwzvhg"
+          },
+          {
+            "text": "Some",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 221.1875,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1c3oe3",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "17olm6c"
+          },
+          {
+            "text": "childhoods are",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 262.1875,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1cbbsnk hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1tcoc8a"
+          },
+          {
+            "text": "taken.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 303.1875,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hq5sfz hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "rb5qrh"
+          }
+        ],
+        "animations": {
+          "18kvq5z": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1vwzvhg": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "17olm6c": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1tcoc8a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "rb5qrh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "weaponized-innocence",
+        "w": 430,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Weaponized",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 139.1875,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-1f7k16i",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "18kvq5z"
+          },
+          {
+            "text": "Innocence",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 180.1875,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(20, 20, 20)",
+            "mask": "framer-o2tw6m hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1vwzvhg"
+          },
+          {
+            "text": "Some",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 221.1875,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1c3oe3",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "17olm6c"
+          },
+          {
+            "text": "childhoods are",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 262.1875,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1cbbsnk hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1tcoc8a"
+          },
+          {
+            "text": "taken.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 303.1875,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hq5sfz hidden-1iqcbgk hidden-8c93bk",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "rb5qrh"
+          }
+        ],
+        "animations": {
+          "18kvq5z": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1vwzvhg": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "17olm6c": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "8c93bk": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "xwulf8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1tcoc8a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "rb5qrh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    [
+      {
+        "slug": "cellular-symphony",
+        "w": 320,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Cellular",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 100,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-1fbpup1",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "14cg7k1"
+          },
+          {
+            "text": "Symphony",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 141,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-1g3i4u8 hidden-yyb6e9 hidden-1okl2g6",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1eqd5lm"
+          },
+          {
+            "text": "Organelles in",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-fkaq7d",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1p1duj8"
+          },
+          {
+            "text": "concert.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 223,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-14kmn52 hidden-yyb6e9 hidden-1okl2g6",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1jlccd8"
+          }
+        ],
+        "animations": {
+          "14cg7k1": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1okl2g6": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "i8fql": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1eqd5lm": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1p1duj8": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1okl2g6": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "i8fql": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1jlccd8": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "cellular-symphony",
+        "w": 390,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Cellular",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 100,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-1fbpup1",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "14cg7k1"
+          },
+          {
+            "text": "Symphony",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 141,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-1g3i4u8 hidden-yyb6e9 hidden-1okl2g6",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1eqd5lm"
+          },
+          {
+            "text": "Organelles in",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-fkaq7d",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1p1duj8"
+          },
+          {
+            "text": "concert.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 223,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-14kmn52 hidden-yyb6e9 hidden-1okl2g6",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1jlccd8"
+          }
+        ],
+        "animations": {
+          "14cg7k1": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1okl2g6": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "i8fql": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1eqd5lm": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1p1duj8": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1okl2g6": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "i8fql": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1jlccd8": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "cellular-symphony",
+        "w": 430,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Cellular",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 100,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-1fbpup1",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "14cg7k1"
+          },
+          {
+            "text": "Symphony",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 141,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-1g3i4u8 hidden-yyb6e9 hidden-1okl2g6",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1eqd5lm"
+          },
+          {
+            "text": "Organelles in",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-fkaq7d",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1p1duj8"
+          },
+          {
+            "text": "concert.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 223,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-14kmn52 hidden-yyb6e9 hidden-1okl2g6",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1jlccd8"
+          }
+        ],
+        "animations": {
+          "14cg7k1": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1okl2g6": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "i8fql": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1eqd5lm": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1p1duj8": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1okl2g6": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "i8fql": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1jlccd8": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    [
+      {
+        "slug": "wolff-olins-x-artcenter",
+        "w": 320,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Wolff Olins",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 100,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-13gs8ly",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "j9cpqt"
+          },
+          {
+            "text": "x ArtCenter",
+            "tag": "H1",
+            "rect": {
+              "x": 20,
+              "y": 141,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-60akj6 hidden-1xzvsu hidden-1ngcmwf",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1eyru6a"
+          },
+          {
+            "text": "A studio walks",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-16ynbl7",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1whnvkh"
+          },
+          {
+            "text": "into a school.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 223,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hp8whv hidden-1xzvsu hidden-1ngcmwf",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "12s9cpf"
+          }
+        ],
+        "animations": {
+          "j9cpqt": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1ngcmwf": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "frgrj8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1eyru6a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1whnvkh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1ngcmwf": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "frgrj8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "12s9cpf": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "wolff-olins-x-artcenter",
+        "w": 390,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Wolff Olins",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 100,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-13gs8ly",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "j9cpqt"
+          },
+          {
+            "text": "x ArtCenter",
+            "tag": "H1",
+            "rect": {
+              "x": 20,
+              "y": 141,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-60akj6 hidden-1xzvsu hidden-1ngcmwf",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1eyru6a"
+          },
+          {
+            "text": "A studio walks",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-16ynbl7",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1whnvkh"
+          },
+          {
+            "text": "into a school.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 223,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hp8whv hidden-1xzvsu hidden-1ngcmwf",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "12s9cpf"
+          }
+        ],
+        "animations": {
+          "j9cpqt": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1ngcmwf": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "frgrj8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1eyru6a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1whnvkh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1ngcmwf": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "frgrj8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "12s9cpf": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "wolff-olins-x-artcenter",
+        "w": 430,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Wolff Olins",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 100,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-13gs8ly",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "j9cpqt"
+          },
+          {
+            "text": "x ArtCenter",
+            "tag": "H1",
+            "rect": {
+              "x": 20,
+              "y": 141,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-60akj6 hidden-1xzvsu hidden-1ngcmwf",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1eyru6a"
+          },
+          {
+            "text": "A studio walks",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-16ynbl7",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "1whnvkh"
+          },
+          {
+            "text": "into a school.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 223,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-hp8whv hidden-1xzvsu hidden-1ngcmwf",
+            "maskHeight": 41,
+            "padding": "3px",
+            "appear": "12s9cpf"
+          }
+        ],
+        "animations": {
+          "j9cpqt": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1ngcmwf": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "frgrj8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1eyru6a": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1whnvkh": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "1ngcmwf": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "frgrj8": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "12s9cpf": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    [
+      {
+        "slug": "independent-lens",
+        "w": 320,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Independent",
+            "tag": "H1",
+            "rect": {
+              "x": 20,
+              "y": 101,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-10wxyk5",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1gbaw2r"
+          },
+          {
+            "text": "Lens",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 145,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-xbeasg hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "bj16jb"
+          },
+          {
+            "text": "The issues,",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 189,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1wgbmvw",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1k1ifg6"
+          },
+          {
+            "text": "through",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 233,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-jrz2lp hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "kqq9d5"
+          },
+          {
+            "text": "the people",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 277,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-18vwq06",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1whdama"
+          },
+          {
+            "text": "living them.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 321,
+              "width": 280,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1bwvzuo hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1ow791o"
+          }
+        ],
+        "animations": {
+          "1gbaw2r": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "bj16jb": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1k1ifg6": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "kqq9d5": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1whdama": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1ow791o": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 1.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "independent-lens",
+        "w": 390,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Independent",
+            "tag": "H1",
+            "rect": {
+              "x": 20,
+              "y": 101,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-10wxyk5",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1gbaw2r"
+          },
+          {
+            "text": "Lens",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 145,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-xbeasg hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "bj16jb"
+          },
+          {
+            "text": "The issues,",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 189,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1wgbmvw",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1k1ifg6"
+          },
+          {
+            "text": "through",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 233,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-jrz2lp hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "kqq9d5"
+          },
+          {
+            "text": "the people",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 277,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-18vwq06",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1whdama"
+          },
+          {
+            "text": "living them.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 321,
+              "width": 350,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1bwvzuo hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1ow791o"
+          }
+        ],
+        "animations": {
+          "1gbaw2r": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "bj16jb": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1k1ifg6": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "kqq9d5": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1whdama": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1ow791o": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 1.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "slug": "independent-lens",
+        "w": 430,
+        "overflow": false,
+        "reduceCSS": false,
+        "rows": [
+          {
+            "text": "Independent",
+            "tag": "H1",
+            "rect": {
+              "x": 20,
+              "y": 101,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-10wxyk5",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1gbaw2r"
+          },
+          {
+            "text": "Lens",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 145,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(35, 51, 36)",
+            "mask": "framer-xbeasg hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "bj16jb"
+          },
+          {
+            "text": "The issues,",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 189,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1wgbmvw",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1k1ifg6"
+          },
+          {
+            "text": "through",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 233,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-jrz2lp hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "kqq9d5"
+          },
+          {
+            "text": "the people",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 277,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-18vwq06",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1whdama"
+          },
+          {
+            "text": "living them.",
+            "tag": "H2",
+            "rect": {
+              "x": 20,
+              "y": 321,
+              "width": 390,
+              "height": 38
+            },
+            "font": "38px",
+            "line": "38px",
+            "color": "rgb(132, 132, 132)",
+            "mask": "framer-1bwvzuo hidden-1muu5jf hidden-5psz7j",
+            "maskHeight": 44,
+            "padding": "6px",
+            "appear": "1ow791o"
+          }
+        ],
+        "animations": {
+          "1gbaw2r": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "bj16jb": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1k1ifg6": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.3,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "kqq9d5": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.7,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1whdama": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "5psz7j": {
+              "initial": {
+                "x": 0,
+                "y": 69,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.5,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            },
+            "16e00g0": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 0.9,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          },
+          "1ow791o": {
+            "default": {
+              "initial": {
+                "x": 0,
+                "y": 40,
+                "opacity": 1
+              },
+              "animate": {
+                "x": 0,
+                "y": 0,
+                "opacity": 1,
+                "transition": {
+                  "delay": 1.1,
+                  "duration": 2,
+                  "ease": [
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                  ],
+                  "type": "tween"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  ],
+  "reduced": [
+    {
+      "slug": "seek-truth",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 126,
+          "rows": [
+            {
+              "text": "Seek Truth",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "The visual art of",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "protest.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 4965,
+          "rows": [
+            {
+              "text": "Seek Truth",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "The visual art of",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "protest.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "weaponized-innocence",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 1119,
+          "rows": [
+            {
+              "text": "Weaponized",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Innocence",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Some",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "childhoods are",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "taken.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 5464,
+          "rows": [
+            {
+              "text": "Weaponized",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Innocence",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Some",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "childhoods are",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "taken.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "cellular-symphony",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 135,
+          "rows": [
+            {
+              "text": "Cellular",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Symphony",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Organelles in",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "concert.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 5697,
+          "rows": [
+            {
+              "text": "Cellular",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Symphony",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Organelles in",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "concert.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "wolff-olins-x-artcenter",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 168,
+          "rows": [
+            {
+              "text": "Wolff Olins",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "x ArtCenter",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "A studio walks",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "into a school.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 4363,
+          "rows": [
+            {
+              "text": "Wolff Olins",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "x ArtCenter",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "A studio walks",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "into a school.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    },
+    {
+      "slug": "independent-lens",
+      "mobile": {
+        "matches": true,
+        "overflow": false,
+        "sampleCount": 100,
+        "movingOrHiddenRowCount": 0,
+        "firstSample": {
+          "at": 914,
+          "rows": [
+            {
+              "text": "Independent",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Lens",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "The issues,",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "through",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "the people",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "living them.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "lastSample": {
+          "at": 5164,
+          "rows": [
+            {
+              "text": "Independent",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "Lens",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "The issues,",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "through",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "the people",
+              "transform": "none",
+              "opacity": "1"
+            },
+            {
+              "text": "living them.",
+              "transform": "none",
+              "opacity": "1"
+            }
+          ]
+        },
+        "unexpectedSamples": []
+      },
+      "normalRule": {
+        "willChange": "transform"
+      },
+      "desktopRule": {
+        "willChange": "transform",
+        "ruleApplies": false
+      }
+    }
+  ]
+}

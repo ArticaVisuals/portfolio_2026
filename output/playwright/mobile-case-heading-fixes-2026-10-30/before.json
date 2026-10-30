@@ -1,0 +1,2674 @@
+[
+  {
+    "slug": "weaponized-innocence",
+    "w": 1200,
+    "rows": [
+      {
+        "text": "Weaponized Innocence",
+        "rect": {
+          "x": 20,
+          "y": 137.8984375,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(20, 20, 20)",
+        "mask": "framer-1f7k16i",
+        "padding": "5px",
+        "appear": "18kvq5z"
+      },
+      {
+        "text": "Some childhoods are taken.",
+        "rect": {
+          "x": 20,
+          "y": 212.8991241455078,
+          "width": 1160,
+          "height": 70.00001525878906
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1c3oe3",
+        "padding": "5px",
+        "appear": "17olm6c"
+      }
+    ],
+    "animations": {
+      "18kvq5z": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "17olm6c": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "weaponized-innocence",
+    "w": 810,
+    "rows": [
+      {
+        "text": "Weaponized Innocence",
+        "rect": {
+          "x": 20,
+          "y": 137.8984375,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(20, 20, 20)",
+        "mask": "framer-1f7k16i",
+        "padding": "5px",
+        "appear": "18kvq5z"
+      },
+      {
+        "text": "Some childhoods are taken.",
+        "rect": {
+          "x": 20,
+          "y": 194.8992462158203,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1c3oe3",
+        "padding": "5px",
+        "appear": "17olm6c"
+      }
+    ],
+    "animations": {
+      "18kvq5z": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "17olm6c": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "weaponized-innocence",
+    "w": 390,
+    "rows": [
+      {
+        "text": "Weaponized Innocence",
+        "rect": {
+          "x": 20,
+          "y": 139.203125,
+          "width": 350,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(20, 20, 20)",
+        "mask": "framer-1f7k16i",
+        "padding": "3px",
+        "appear": "18kvq5z"
+      },
+      {
+        "text": "Some childhoods are taken.",
+        "rect": {
+          "x": 20,
+          "y": 218.20352172851562,
+          "width": 350,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1c3oe3",
+        "padding": "3px",
+        "appear": "17olm6c"
+      }
+    ],
+    "animations": {
+      "18kvq5z": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "17olm6c": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "weaponized-innocence",
+    "w": 320,
+    "rows": [
+      {
+        "text": "Weaponized Innocence",
+        "rect": {
+          "x": 20,
+          "y": 139.203125,
+          "width": 280,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(20, 20, 20)",
+        "mask": "framer-1f7k16i",
+        "padding": "3px",
+        "appear": "18kvq5z"
+      },
+      {
+        "text": "Some childhoods are taken.",
+        "rect": {
+          "x": 20,
+          "y": 218.20352172851562,
+          "width": 280,
+          "height": 114
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1c3oe3",
+        "padding": "3px",
+        "appear": "17olm6c"
+      }
+    ],
+    "animations": {
+      "18kvq5z": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "17olm6c": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "8c93bk": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "xwulf8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "cellular-symphony",
+    "w": 1200,
+    "rows": [
+      {
+        "text": "Cellular Symphony",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-1fbpup1",
+        "padding": "5px",
+        "appear": "14cg7k1"
+      },
+      {
+        "text": "Organelles in concert.",
+        "rect": {
+          "x": 20,
+          "y": 175.00086975097656,
+          "width": 1160,
+          "height": 69.99998474121094
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-fkaq7d",
+        "padding": "5px",
+        "appear": "1p1duj8"
+      }
+    ],
+    "animations": {
+      "14cg7k1": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1p1duj8": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "cellular-symphony",
+    "w": 810,
+    "rows": [
+      {
+        "text": "Cellular Symphony",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-1fbpup1",
+        "padding": "5px",
+        "appear": "14cg7k1"
+      },
+      {
+        "text": "Organelles in concert.",
+        "rect": {
+          "x": 20,
+          "y": 157.00074768066406,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-fkaq7d",
+        "padding": "5px",
+        "appear": "1p1duj8"
+      }
+    ],
+    "animations": {
+      "14cg7k1": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1p1duj8": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "cellular-symphony",
+    "w": 390,
+    "rows": [
+      {
+        "text": "Cellular Symphony",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-1fbpup1",
+        "padding": "3px",
+        "appear": "14cg7k1"
+      },
+      {
+        "text": "Organelles in concert.",
+        "rect": {
+          "x": 20,
+          "y": 141.0003662109375,
+          "width": 350,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-fkaq7d",
+        "padding": "3px",
+        "appear": "1p1duj8"
+      }
+    ],
+    "animations": {
+      "14cg7k1": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1p1duj8": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "cellular-symphony",
+    "w": 320,
+    "rows": [
+      {
+        "text": "Cellular Symphony",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 280,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-1fbpup1",
+        "padding": "3px",
+        "appear": "14cg7k1"
+      },
+      {
+        "text": "Organelles in concert.",
+        "rect": {
+          "x": 20,
+          "y": 179.00048828125,
+          "width": 280,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-fkaq7d",
+        "padding": "3px",
+        "appear": "1p1duj8"
+      }
+    ],
+    "animations": {
+      "14cg7k1": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1p1duj8": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1okl2g6": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "i8fql": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "wolff-olins-x-artcenter",
+    "w": 1200,
+    "rows": [
+      {
+        "text": "Wolff Olins x ArtCenter",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-13gs8ly",
+        "padding": "5px",
+        "appear": "j9cpqt"
+      },
+      {
+        "text": "A studio walks into a school.",
+        "rect": {
+          "x": 20,
+          "y": 175.00083923339844,
+          "width": 1160,
+          "height": 69.99998474121094
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-16ynbl7",
+        "padding": "5px",
+        "appear": "1whnvkh"
+      }
+    ],
+    "animations": {
+      "j9cpqt": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whnvkh": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "wolff-olins-x-artcenter",
+    "w": 810,
+    "rows": [
+      {
+        "text": "Wolff Olins x ArtCenter",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-13gs8ly",
+        "padding": "5px",
+        "appear": "j9cpqt"
+      },
+      {
+        "text": "A studio walks into a school.",
+        "rect": {
+          "x": 20,
+          "y": 157.0010223388672,
+          "width": 770,
+          "height": 51.99998474121094
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-16ynbl7",
+        "padding": "5px",
+        "appear": "1whnvkh"
+      }
+    ],
+    "animations": {
+      "j9cpqt": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whnvkh": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "wolff-olins-x-artcenter",
+    "w": 390,
+    "rows": [
+      {
+        "text": "Wolff Olins x ArtCenter",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-13gs8ly",
+        "padding": "3px",
+        "appear": "j9cpqt"
+      },
+      {
+        "text": "A studio walks into a school.",
+        "rect": {
+          "x": 20,
+          "y": 179.0006103515625,
+          "width": 350,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-16ynbl7",
+        "padding": "3px",
+        "appear": "1whnvkh"
+      }
+    ],
+    "animations": {
+      "j9cpqt": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whnvkh": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "wolff-olins-x-artcenter",
+    "w": 320,
+    "rows": [
+      {
+        "text": "Wolff Olins x ArtCenter",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 280,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-13gs8ly",
+        "padding": "3px",
+        "appear": "j9cpqt"
+      },
+      {
+        "text": "A studio walks into a school.",
+        "rect": {
+          "x": 20,
+          "y": 179.0005340576172,
+          "width": 280,
+          "height": 76.00001525878906
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-16ynbl7",
+        "padding": "3px",
+        "appear": "1whnvkh"
+      }
+    ],
+    "animations": {
+      "j9cpqt": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 40,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whnvkh": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "1ngcmwf": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        },
+        "frgrj8": {
+          "initial": {
+            "x": 0,
+            "y": 39,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "independent-lens",
+    "w": 1200,
+    "rows": [
+      {
+        "text": "Independent Lens",
+        "rect": {
+          "x": 20,
+          "y": 101,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-10wxyk5",
+        "padding": "6px",
+        "appear": "1gbaw2r"
+      },
+      {
+        "text": "The issues, through",
+        "rect": {
+          "x": 20,
+          "y": 177.00059509277344,
+          "width": 1160,
+          "height": 69.99998474121094
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1wgbmvw",
+        "padding": "6px",
+        "appear": "1k1ifg6"
+      },
+      {
+        "text": "the people living them.",
+        "rect": {
+          "x": 20,
+          "y": 253.02549743652344,
+          "width": 1160,
+          "height": 69.99998474121094
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-18vwq06",
+        "padding": "6px",
+        "appear": "1whdama"
+      }
+    ],
+    "animations": {
+      "1gbaw2r": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1k1ifg6": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whdama": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.5,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "independent-lens",
+    "w": 810,
+    "rows": [
+      {
+        "text": "Independent Lens",
+        "rect": {
+          "x": 20,
+          "y": 101,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-10wxyk5",
+        "padding": "6px",
+        "appear": "1gbaw2r"
+      },
+      {
+        "text": "The issues, through",
+        "rect": {
+          "x": 20,
+          "y": 159.000244140625,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1wgbmvw",
+        "padding": "6px",
+        "appear": "1k1ifg6"
+      },
+      {
+        "text": "the people living them.",
+        "rect": {
+          "x": 20,
+          "y": 217.01998901367188,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-18vwq06",
+        "padding": "6px",
+        "appear": "1whdama"
+      }
+    ],
+    "animations": {
+      "1gbaw2r": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1k1ifg6": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whdama": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.5,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "independent-lens",
+    "w": 390,
+    "rows": [
+      {
+        "text": "Independent Lens",
+        "rect": {
+          "x": 20,
+          "y": 101,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-10wxyk5",
+        "padding": "6px",
+        "appear": "1gbaw2r"
+      },
+      {
+        "text": "The issues, through",
+        "rect": {
+          "x": 20,
+          "y": 145.00099182128906,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1wgbmvw",
+        "padding": "6px",
+        "appear": "1k1ifg6"
+      },
+      {
+        "text": "the people living them.",
+        "rect": {
+          "x": 20,
+          "y": 189.0302276611328,
+          "width": 350,
+          "height": 75.99998474121094
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-18vwq06",
+        "padding": "6px",
+        "appear": "1whdama"
+      }
+    ],
+    "animations": {
+      "1gbaw2r": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1k1ifg6": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whdama": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.5,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "slug": "independent-lens",
+    "w": 320,
+    "rows": [
+      {
+        "text": "Independent Lens",
+        "rect": {
+          "x": 20,
+          "y": 101,
+          "width": 280,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "mask": "framer-10wxyk5",
+        "padding": "6px",
+        "appear": "1gbaw2r"
+      },
+      {
+        "text": "The issues, through",
+        "rect": {
+          "x": 20,
+          "y": 183.00079345703125,
+          "width": 280,
+          "height": 76
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-1wgbmvw",
+        "padding": "6px",
+        "appear": "1k1ifg6"
+      },
+      {
+        "text": "the people living them.",
+        "rect": {
+          "x": 20,
+          "y": 265.0280456542969,
+          "width": 280,
+          "height": 76.00003051757812
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "mask": "framer-18vwq06",
+        "padding": "6px",
+        "appear": "1whdama"
+      }
+    ],
+    "animations": {
+      "1gbaw2r": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.1,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1k1ifg6": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.3,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      },
+      "1whdama": {
+        "default": {
+          "initial": {
+            "x": 0,
+            "y": 69,
+            "opacity": 1
+          },
+          "animate": {
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "transition": {
+              "delay": 0.5,
+              "duration": 2,
+              "ease": [
+                0.16,
+                1,
+                0.3,
+                1
+              ],
+              "type": "tween"
+            }
+          }
+        }
+      }
+    }
+  }
+]

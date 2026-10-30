@@ -1,0 +1,120 @@
+{
+  "webkitLayout": [
+    {
+      "slug": "weaponized-innocence",
+      "width": 320,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 5
+    },
+    {
+      "slug": "weaponized-innocence",
+      "width": 390,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 5
+    },
+    {
+      "slug": "weaponized-innocence",
+      "width": 430,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 5
+    },
+    {
+      "slug": "cellular-symphony",
+      "width": 320,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 4
+    },
+    {
+      "slug": "cellular-symphony",
+      "width": 390,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 4
+    },
+    {
+      "slug": "cellular-symphony",
+      "width": 430,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 4
+    },
+    {
+      "slug": "wolff-olins-x-artcenter",
+      "width": 320,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 4
+    },
+    {
+      "slug": "wolff-olins-x-artcenter",
+      "width": 390,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 4
+    },
+    {
+      "slug": "wolff-olins-x-artcenter",
+      "width": 430,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 4
+    },
+    {
+      "slug": "independent-lens",
+      "width": 320,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 6
+    },
+    {
+      "slug": "independent-lens",
+      "width": 390,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 6
+    },
+    {
+      "slug": "independent-lens",
+      "width": 430,
+      "overflow": false,
+      "singleLineRows": true,
+      "rowCount": 6
+    }
+  ],
+  "webkitReducedMotion": [
+    {
+      "slug": "seek-truth",
+      "sampleCount": 100,
+      "movingOrHiddenRows": 0,
+      "desktopRuleApplies": false
+    },
+    {
+      "slug": "weaponized-innocence",
+      "sampleCount": 100,
+      "movingOrHiddenRows": 0,
+      "desktopRuleApplies": false
+    },
+    {
+      "slug": "cellular-symphony",
+      "sampleCount": 100,
+      "movingOrHiddenRows": 0,
+      "desktopRuleApplies": false
+    },
+    {
+      "slug": "wolff-olins-x-artcenter",
+      "sampleCount": 100,
+      "movingOrHiddenRows": 0,
+      "desktopRuleApplies": false
+    },
+    {
+      "slug": "independent-lens",
+      "sampleCount": 100,
+      "movingOrHiddenRows": 0,
+      "desktopRuleApplies": false
+    }
+  ]
+}
