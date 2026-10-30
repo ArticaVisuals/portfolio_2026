@@ -1,0 +1,424 @@
+[
+  {
+    "slug": "seek-truth",
+    "mobile": {
+      "matches": true,
+      "overflow": false,
+      "sampleCount": 100,
+      "movingOrHiddenRowCount": 6,
+      "firstSample": {
+        "at": 2249,
+        "rows": [
+          {
+            "text": "Seek Truth",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+            "opacity": "1"
+          },
+          {
+            "text": "The visual art of",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 39, 0, 1)",
+            "opacity": "1"
+          },
+          {
+            "text": "protest.",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 39, 0, 1)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "lastSample": {
+        "at": 5901,
+        "rows": [
+          {
+            "text": "Seek Truth",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "The visual art of",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "protest.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "unexpectedSamples": [
+        {
+          "at": 2249,
+          "rows": [
+            {
+              "text": "Seek Truth",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "The visual art of",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 39, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "protest.",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 39, 0, 1)",
+              "opacity": "1"
+            }
+          ]
+        },
+        {
+          "at": 2311,
+          "rows": [
+            {
+              "text": "Seek Truth",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "The visual art of",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 39, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "protest.",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 39, 0, 1)",
+              "opacity": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "normalRule": {
+      "willChange": "transform"
+    },
+    "desktopRule": {
+      "willChange": "transform",
+      "ruleApplies": false
+    }
+  },
+  {
+    "slug": "weaponized-innocence",
+    "mobile": {
+      "matches": true,
+      "overflow": false,
+      "sampleCount": 100,
+      "movingOrHiddenRowCount": 0,
+      "firstSample": {
+        "at": 2026,
+        "rows": [
+          {
+            "text": "Weaponized",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Innocence",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Some",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "childhoods are",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "taken.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "lastSample": {
+        "at": 6052,
+        "rows": [
+          {
+            "text": "Weaponized",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Innocence",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Some",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "childhoods are",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "taken.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "unexpectedSamples": []
+    },
+    "normalRule": {
+      "willChange": "transform"
+    },
+    "desktopRule": {
+      "willChange": "transform",
+      "ruleApplies": false
+    }
+  },
+  {
+    "slug": "cellular-symphony",
+    "mobile": {
+      "matches": true,
+      "overflow": false,
+      "sampleCount": 100,
+      "movingOrHiddenRowCount": 4,
+      "firstSample": {
+        "at": 631,
+        "rows": [
+          {
+            "text": "Cellular",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+            "opacity": "1"
+          },
+          {
+            "text": "Symphony",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+            "opacity": "1"
+          },
+          {
+            "text": "Organelles in",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+            "opacity": "1"
+          },
+          {
+            "text": "concert.",
+            "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "lastSample": {
+        "at": 5467,
+        "rows": [
+          {
+            "text": "Cellular",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Symphony",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Organelles in",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "concert.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "unexpectedSamples": [
+        {
+          "at": 631,
+          "rows": [
+            {
+              "text": "Cellular",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "Symphony",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "Organelles in",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+              "opacity": "1"
+            },
+            {
+              "text": "concert.",
+              "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833, 0, 40, 0, 1)",
+              "opacity": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "normalRule": {
+      "willChange": "transform"
+    },
+    "desktopRule": {
+      "willChange": "transform",
+      "ruleApplies": false
+    }
+  },
+  {
+    "slug": "wolff-olins-x-artcenter",
+    "mobile": {
+      "matches": true,
+      "overflow": false,
+      "sampleCount": 100,
+      "movingOrHiddenRowCount": 0,
+      "firstSample": {
+        "at": 633,
+        "rows": [
+          {
+            "text": "Wolff Olins",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "x ArtCenter",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "A studio walks",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "into a school.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "lastSample": {
+        "at": 5104,
+        "rows": [
+          {
+            "text": "Wolff Olins",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "x ArtCenter",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "A studio walks",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "into a school.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "unexpectedSamples": []
+    },
+    "normalRule": {
+      "willChange": "transform"
+    },
+    "desktopRule": {
+      "willChange": "transform",
+      "ruleApplies": false
+    }
+  },
+  {
+    "slug": "independent-lens",
+    "mobile": {
+      "matches": true,
+      "overflow": false,
+      "sampleCount": 100,
+      "movingOrHiddenRowCount": 0,
+      "firstSample": {
+        "at": 2889,
+        "rows": [
+          {
+            "text": "Independent",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Lens",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "The issues,",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "through",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "the people",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "living them.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "lastSample": {
+        "at": 6150,
+        "rows": [
+          {
+            "text": "Independent",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "Lens",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "The issues,",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "through",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "the people",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "text": "living them.",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      },
+      "unexpectedSamples": []
+    },
+    "normalRule": {
+      "willChange": "transform"
+    },
+    "desktopRule": {
+      "willChange": "transform",
+      "ruleApplies": false
+    }
+  }
+]
