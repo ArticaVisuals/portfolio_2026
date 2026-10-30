@@ -36,8 +36,25 @@ const MOBILE_NAV_CSS = `
         transform: none !important;
         transition: none !important;
     }
-    [data-mh-mobile-menu-slot] > :not(.mh-mobile-menu-button) {
-        display: none !important;
+    nav[data-framer-name="Navigation"] [data-framer-name="Open"] {
+        height: 100vh !important;
+        height: 100dvh !important;
+        max-height: 100dvh;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+    }
+    nav[data-framer-name="Navigation"] [data-framer-name="Menu Button"] {
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    nav[data-framer-name="Navigation"] [data-framer-name="Social Links"] {
+        padding-bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    }
+    nav[data-framer-name="Navigation"] [data-framer-name="Menu Button"]:focus-visible,
+    nav[data-framer-name="Navigation"] a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
     }
     /* Mobile has no boot curtain: show these headings once, in place.
        The desktop appear/replay choreography keeps its existing ownership. */
@@ -51,252 +68,136 @@ const MOBILE_NAV_CSS = `
         transition: none !important;
     }
 }
-.mh-mobile-menu-button, .mh-mobile-menu-dialog {
-    --mh-menu-cream: var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));
-    --mh-menu-green: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36));
-    --mh-menu-mono: "GT Standard Mono Regular", "GT Standard Mono Trial Rg", monospace;
-}
 html.mh-mobile-menu-open body { overflow: hidden !important; }
-.mh-mobile-menu-button {
-    appearance: none;
-    border: 0;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
-    width: 60px;
-    min-width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: var(--mh-menu-green);
-    font: 400 13px/1 var(--mh-menu-mono);
-    letter-spacing: 0;
-    cursor: pointer;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-.mh-mobile-menu-dialog {
-    position: fixed;
-    inset: 0;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: none;
-    height: 100vh;
-    height: 100dvh;
-    max-height: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: var(--mh-menu-green);
-    color: var(--mh-menu-cream);
-    overflow: auto;
-    overscroll-behavior: contain;
-}
-.mh-mobile-menu-dialog[open] {
-    display: flex;
-    flex-direction: column;
-}
-.mh-mobile-menu-dialog::backdrop { background: var(--mh-menu-green); }
-.mh-mobile-menu-dialog a {
-    color: inherit;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-}
-.mh-mobile-menu-top {
-    display: flex;
-    flex: 0 0 53px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-.mh-mobile-menu-name {
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-    font: 400 13px/1 var(--mh-menu-mono);
-    text-transform: uppercase;
-}
-.mh-mobile-menu-dialog .mh-mobile-menu-button { color: inherit; }
-.mh-mobile-menu-routes {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 40px 20px;
-}
-.mh-mobile-menu-routes ul { list-style: none; margin: 0; padding: 0; width: 100%; }
-.mh-mobile-menu-routes a {
-    display: block;
-    width: fit-content;
-    min-height: 44px;
-    padding: 6px 0;
-    font: 400 42px/1 "GT Standard L Regular", "GT Standard Trial L Rg", sans-serif;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-}
-.mh-mobile-menu-socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px max(12px, env(safe-area-inset-bottom));
-    font: 400 13px/1 var(--mh-menu-mono);
-}
-.mh-mobile-menu-socials a { display: flex; align-items: center; min-height: 44px; }
-.mh-mobile-menu-button:focus-visible,
-.mh-mobile-menu-dialog a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 `
 
+// Layout, labels, links, and click variants belong to the native Mobile
+// Navigation component. This helper only supplies modal keyboard/scroll behavior.
 function installMobileNavigation() {
     const media = window.matchMedia(MOBILE_NAV_QUERY)
-    let dialog: HTMLDialogElement | null = null
-    let button: HTMLButtonElement | null = null
-    let slot: HTMLElement | null = null
     let header: HTMLElement | null = null
+    let root: HTMLElement | null = null
+    let button: HTMLElement | null = null
     let previousTransitionExclusion: string | null = null
-    let locked = false
+    let expanded = false
     let frame = 0
     let currentPath = window.location.pathname
+    const inertSiblings = new Map<HTMLElement, boolean>()
 
-    const restoreScroll = () => {
-        if (!locked) return
+    const restoreBackground = () => {
         document.documentElement.classList.remove("mh-mobile-menu-open")
-        locked = false
+        inertSiblings.forEach((value, element) => { element.inert = value })
+        inertSiblings.clear()
+    }
+    const lockBackground = () => {
+        document.documentElement.classList.add("mh-mobile-menu-open")
+        // Inert siblings at each ancestor level, retaining any pre-existing lock.
+        for (let branch: HTMLElement | null = header; branch?.parentElement; branch = branch.parentElement) {
+            for (const sibling of Array.from(branch.parentElement.children)) {
+                if (!(sibling instanceof HTMLElement) || sibling === branch || /^(SCRIPT|STYLE|LINK)$/.test(sibling.tagName)) continue
+                if (!inertSiblings.has(sibling)) inertSiblings.set(sibling, sibling.inert)
+                sibling.inert = true
+            }
+            if (branch.parentElement === document.body) break
+        }
+    }
+    const activateToggle = () => {
+        // Native Framer interactions listen for pointer taps, not HTMLElement.click().
+        for (const type of ["pointerdown", "pointerup"]) {
+            button?.dispatchEvent(new PointerEvent(type, {
+                bubbles: true, pointerId: 1, pointerType: "mouse", isPrimary: true, button: 0,
+            }))
+        }
     }
     const close = () => {
-        dialog?.close()
-        button?.setAttribute("aria-expanded", "false")
-        restoreScroll()
-    }
-    const makeLink = (text: string, href: string) => {
-        const link = document.createElement("a")
-        link.textContent = text
-        link.href = href
-        link.setAttribute("data-no-transition", "true")
-        return link
-    }
-    const open = () => {
-        if (!media.matches || !dialog || dialog.open) return
-        document.documentElement.classList.add("mh-mobile-menu-open")
-        locked = true
-        dialog.querySelectorAll<HTMLAnchorElement>("a").forEach((link) => {
-            if (link.pathname === window.location.pathname && link.origin === window.location.origin)
-                link.setAttribute("aria-current", "page")
-            else link.removeAttribute("aria-current")
-        })
-        dialog.showModal()
-        button?.setAttribute("aria-expanded", "true")
-        dialog.querySelector<HTMLButtonElement>("button")?.focus({ preventScroll: true })
-    }
-    const buildDialog = () => {
-        dialog = document.createElement("dialog")
-        dialog.id = "mh-mobile-navigation"
-        dialog.className = "mh-mobile-menu-dialog"
-        dialog.setAttribute("aria-label", "Main navigation")
-        dialog.setAttribute("data-lenis-prevent", "true")
-        const top = document.createElement("div")
-        top.className = "mh-mobile-menu-top"
-        const name = makeLink("Micah Hoang", "/")
-        name.className = "mh-mobile-menu-name"
-        const dismiss = document.createElement("button")
-        dismiss.type = "button"
-        dismiss.className = "mh-mobile-menu-button"
-        dismiss.textContent = "CLOSE"
-        dismiss.addEventListener("click", close)
-        top.append(name, dismiss)
-        const nav = document.createElement("nav")
-        nav.className = "mh-mobile-menu-routes"
-        nav.setAttribute("aria-label", "Primary")
-        const list = document.createElement("ul")
-        for (const [label, path] of [["Work", "/"], ["Play", "/play"], ["Index", "/index"], ["About", "/about"]]) {
-            const item = document.createElement("li")
-            item.append(makeLink(label, path))
-            list.append(item)
-        }
-        nav.append(list)
-        const socials = document.createElement("div")
-        socials.className = "mh-mobile-menu-socials"
-        socials.append(
-            makeLink("LINKEDIN", "https://www.linkedin.com/in/micah-hoang-b41028108/"),
-            makeLink("EMAIL", "mailto:micah.hoang@hey.com"),
-            makeLink("GITHUB", "https://github.com/ArticaVisuals")
-        )
-        dialog.append(top, nav, socials)
-        dialog.addEventListener("keydown", (event) => {
-            if (event.key !== "Tab" || !dialog) return
-            const targets = Array.from(dialog.querySelectorAll<HTMLElement>("a[href], button"))
-            const first = targets[0]
-            const last = targets[targets.length - 1]
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault()
-                last.focus()
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault()
-                first.focus()
-            }
-        })
-        dialog.addEventListener("close", () => {
-            button?.setAttribute("aria-expanded", "false")
-            restoreScroll()
-        })
-        document.body.append(dialog)
+        if (root?.getAttribute("data-framer-name") === "Open") activateToggle()
+        restoreBackground()
     }
     const detach = () => {
         close()
-        button?.remove()
-        slot?.removeAttribute("data-mh-mobile-menu-slot")
         if (header) {
             if (previousTransitionExclusion === null) header.removeAttribute("data-no-transition")
             else header.setAttribute("data-no-transition", previousTransitionExclusion)
         }
-        header = null
-        button = null
-        slot = null
-        dialog?.remove()
-        dialog = null
+        header = root = button = null
+        expanded = false
     }
     const sync = () => {
         frame = 0
         if (!media.matches) { detach(); return }
-        if (button?.isConnected) return
-        if (button) detach()
-        // The native Phone variant authors the label and reserves its 60×44 box.
-        // Replace only that label's hit area, leaving the desktop tree intact.
-        const label = Array.from(document.querySelectorAll<HTMLElement>('nav[data-framer-name="Navigation"] [data-framer-name="Text Link Black"]'))
-            .find((el) => /^(MENU)+$/.test(labelText(el)) && el.getBoundingClientRect().width > 0)
-        if (!label?.parentElement) return
-        header = label.closest('nav[data-framer-name="Navigation"]')
-        previousTransitionExclusion = header?.getAttribute("data-no-transition") ?? null
-        header?.setAttribute("data-no-transition", "true")
-        slot = label.parentElement
-        button = document.createElement("button")
-        button.type = "button"
-        button.className = "mh-mobile-menu-button"
-        button.textContent = "MENU"
-        button.setAttribute("aria-haspopup", "dialog")
-        button.setAttribute("aria-controls", "mh-mobile-navigation")
-        button.setAttribute("aria-expanded", "false")
-        button.addEventListener("click", open)
-        slot.append(button)
-        slot.setAttribute("data-mh-mobile-menu-slot", "true")
-        buildDialog()
+        const nextRoot = Array.from(document.querySelectorAll<HTMLElement>(
+            'nav[data-framer-name="Navigation"] [data-framer-name="Closed"], nav[data-framer-name="Navigation"] [data-framer-name="Open"]'
+        )).find((element) => element.getBoundingClientRect().width > 0) || null
+        if (!nextRoot) { if (root) detach(); return }
+        const nextHeader = nextRoot.closest<HTMLElement>('nav[data-framer-name="Navigation"]')
+        if (header !== nextHeader) {
+            detach()
+            header = nextHeader
+            previousTransitionExclusion = header?.getAttribute("data-no-transition") ?? null
+            header?.setAttribute("data-no-transition", "true")
+        }
+        root = nextRoot
+        button = root.querySelector<HTMLElement>('[data-framer-name="Menu Button"]')
+        const isOpen = root.getAttribute("data-framer-name") === "Open"
+        button?.setAttribute("role", "button")
+        button?.setAttribute("tabindex", "0")
+        button?.setAttribute("aria-label", isOpen ? "Close menu" : "Menu")
+        button?.setAttribute("aria-expanded", String(isOpen))
+        button?.setAttribute("aria-haspopup", "dialog")
+        root.setAttribute("data-lenis-prevent", "true")
+        if (isOpen) {
+            root.setAttribute("role", "dialog")
+            root.setAttribute("aria-modal", "true")
+            root.setAttribute("aria-label", "Main navigation")
+        } else {
+            root.removeAttribute("role")
+            root.removeAttribute("aria-modal")
+            root.removeAttribute("aria-label")
+        }
+        root.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((link) => {
+            if (link.origin === window.location.origin && link.pathname === window.location.pathname) link.setAttribute("aria-current", "page")
+            else link.removeAttribute("aria-current")
+        })
+        if (isOpen !== expanded) {
+            expanded = isOpen
+            if (isOpen) lockBackground()
+            else restoreBackground()
+            button?.focus({ preventScroll: true })
+        }
     }
     const schedule = () => { if (!frame) frame = window.requestAnimationFrame(sync) }
-    // These mobile navigation links use normal browser navigation, with no
-    // desktop curtain/rollover interception. Preserve modifier-click behavior.
+    const onKeyDown = (event: KeyboardEvent) => {
+        if (!media.matches || !root) return
+        if (event.target === button && (event.key === "Enter" || event.key === " ")) {
+            event.preventDefault()
+            event.stopImmediatePropagation()
+            activateToggle()
+        } else if (expanded && event.key === "Escape") {
+            event.preventDefault()
+            close()
+        } else if (expanded && event.key === "Tab") {
+            const targets = Array.from(root.querySelectorAll<HTMLElement>('a[href], [data-framer-name="Menu Button"]'))
+            const first = targets[0], last = targets[targets.length - 1]
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault(); last?.focus()
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault(); first?.focus()
+            }
+        }
+    }
     const onNavigate = (event: MouseEvent) => {
         if (!media.matches || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
         const anchor = (event.target as Element)?.closest?.("a[href]") as HTMLAnchorElement | null
-        if (!anchor || !(dialog?.contains(anchor) || anchor.closest('nav[data-framer-name="Navigation"]'))) return
-        if (anchor.origin !== window.location.origin || anchor.target === "_blank") return
+        if (!anchor || !header?.contains(anchor) || anchor.origin !== window.location.origin || anchor.target === "_blank") return
         close()
-        // Case-study lightbox protection may already own a Framer router
-        // fallback. Close the menu, then let that navigation finish.
-        if (event.defaultPrevented) return
-        event.stopPropagation()
+        // A document navigation also clears the case-study guard's delayed
+        // router fallbacks, which otherwise can replay after a quick Back.
+        event.preventDefault()
+        event.stopImmediatePropagation()
         if (anchor.pathname === window.location.pathname && !anchor.hash) {
-            event.preventDefault()
             window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior })
+        } else {
+            window.location.assign(anchor.href)
         }
     }
     const onRoute = () => {
@@ -306,8 +207,9 @@ function installMobileNavigation() {
         schedule()
     }
     const observer = new MutationObserver(schedule)
-    observer.observe(document.body, { childList: true, subtree: true })
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-framer-name"] })
     media.addEventListener("change", schedule)
+    window.addEventListener("keydown", onKeyDown, true)
     window.addEventListener("click", onNavigate, true)
     window.addEventListener("pagehide", close)
     window.addEventListener("popstate", close)
@@ -318,6 +220,7 @@ function installMobileNavigation() {
         observer.disconnect()
         window.cancelAnimationFrame(frame)
         media.removeEventListener("change", schedule)
+        window.removeEventListener("keydown", onKeyDown, true)
         window.removeEventListener("click", onNavigate, true)
         window.removeEventListener("pagehide", close)
         window.removeEventListener("popstate", close)

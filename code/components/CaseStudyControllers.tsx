@@ -2,8 +2,9 @@ import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 // Framer resolves these module URLs to the project's other code components at
 // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
+// The pinned lightbox cancels route retries on Back/Forward and page exit.
 // @ts-ignore
-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY"
+import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@ho2rRUp5oQKLHLwaQPIW"
 // @ts-ignore
 import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
 // @ts-ignore
