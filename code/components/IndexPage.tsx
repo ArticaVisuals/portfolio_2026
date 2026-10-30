@@ -181,6 +181,7 @@ const DEFAULT_TOKENS = {
     bg: "#F7F5F0",
     dividerStrong: "#141414",
     dividerSubtle: "#141414",
+    dividerGap: "10px", // global.spacing.divider-gap in micahhoang-tokens.json
     surfaceOverlay: "rgba(215, 213, 207, 0.72)",
     surfaceActive: "#EAE8E3",
     fontDisplay: "'GT Standard Trial', 'Inter', sans-serif",
@@ -2120,7 +2121,10 @@ function buildGlobalCss(): string {
     .idx-mobile-view { display: flex; align-items: center; gap: 8px; margin-left: auto; }
     .idx-mobile-clear:disabled { visibility: hidden; pointer-events: none; }
     .idx-mobile-filter-status { min-height: 48px; }
-    .idx-mobile-filter-status[data-view="grid"] { border-bottom: 1px solid ${tokens.dividerSubtle}; }
+    .idx-mobile-filter-status[data-view="grid"] {
+      border-bottom: 1px solid ${tokens.dividerSubtle};
+      margin-bottom: ${tokens.dividerGap};
+    }
     .idx-mobile-filter-status > :last-child { text-align: right; }
     .idx-grid-preview-locked .idx-list-view .idx-list-row-grid {
       grid-template-columns: minmax(0, 1fr) auto !important;
