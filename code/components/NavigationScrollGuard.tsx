@@ -36,7 +36,20 @@ const MOBILE_NAV_CSS = `
         min-width: 44px !important;
         box-sizing: border-box !important;
     }
+    /* Keep content aligned at rest, while the scroll viewport reaches both screen edges. */
+    [data-framer-name="Section Selected Works"] [data-framer-name="Projects"],
+    [data-framer-name="Section Selected Works"] > div:has([data-framer-name="Projects"]) {
+        overflow: visible !important;
+    }
     .selected-work-tags, .idx-grid-card-tags {
+        width: 100vw !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+        margin-inline: calc((100% - 100vw) / 2) !important;
+        padding-inline: calc((100vw - 100%) / 2) !important;
+        /* Clear fractional-pixel border clipping and the existing focus outline. */
+        padding-block: 4px !important;
+        margin-block: -4px !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
         overflow-y: hidden !important;
