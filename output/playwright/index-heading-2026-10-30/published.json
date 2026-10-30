@@ -1,0 +1,294 @@
+[
+  {
+    "type": "initial",
+    "width": 320,
+    "titleTop": 221,
+    "maskBottom": 214,
+    "transform": "perspective(1200px) translateY(120px)",
+    "hidden": true
+  },
+  {
+    "type": "initial",
+    "width": 390,
+    "titleTop": 221,
+    "maskBottom": 214,
+    "transform": "perspective(1200px) translateY(120px)",
+    "hidden": true
+  },
+  {
+    "type": "initial",
+    "width": 430,
+    "titleTop": 221,
+    "maskBottom": 214,
+    "transform": "perspective(1200px) translateY(120px)",
+    "hidden": true
+  },
+  {
+    "type": "initial",
+    "width": 809,
+    "titleTop": 221,
+    "maskBottom": 214,
+    "transform": "perspective(1200px) translateY(120px)",
+    "hidden": true
+  },
+  {
+    "type": "initial",
+    "width": 1200,
+    "titleTop": 271,
+    "maskBottom": 264,
+    "transform": "perspective(1200px) translateY(120px)",
+    "hidden": true
+  },
+  {
+    "type": "animated-direct",
+    "width": 390,
+    "first": [
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      }
+    ],
+    "last": [
+      {
+        "top": 101,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)",
+        "hold": false
+      }
+    ],
+    "holds": []
+  },
+  {
+    "type": "animated-navigation",
+    "width": 390,
+    "first": [
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 221,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      }
+    ],
+    "last": [
+      {
+        "top": 101,
+        "bottom": 214,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)",
+        "hold": false
+      }
+    ],
+    "holds": []
+  },
+  {
+    "type": "animated-direct",
+    "width": 1200,
+    "first": [
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 271,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 120, 0, 1)",
+        "hold": false
+      }
+    ],
+    "last": [
+      {
+        "top": 151,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)",
+        "hold": false
+      }
+    ],
+    "holds": []
+  },
+  {
+    "type": "animated-navigation",
+    "width": 1200,
+    "first": [
+      {
+        "top": 235.74400329589844,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 84.744, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 227.01998901367188,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 76.02, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 227.01998901367188,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 76.02, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 222.71200561523438,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 71.712, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 222.71200561523438,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 71.712, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 218.55999755859375,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 67.56, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 213.61599731445312,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 62.616, 0, 1)",
+        "hold": false
+      },
+      {
+        "top": 213.61599731445312,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 62.616, 0, 1)",
+        "hold": false
+      }
+    ],
+    "last": [
+      {
+        "top": 151,
+        "bottom": 264,
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)",
+        "hold": false
+      }
+    ],
+    "holds": []
+  }
+]
