@@ -26,6 +26,15 @@ const MOBILE_NAV_QUERY = "(max-width: 809px)"
 const MOBILE_NAV_CSS = `
 @media (max-width: 809px) {
     @view-transition { navigation: none; }
+    /* Match the existing page gutters; keep the menu's open/closed edges consistent. */
+    body:has(.selected-work-grid) nav[data-framer-name="Navigation"] {
+        --mh-nav-page-inset: 15px;
+    }
+    nav[data-framer-name="Navigation"] [data-framer-name="Mobile Navigation"] :is(
+        [data-framer-name="Header"], [data-framer-name="Routes"], [data-framer-name="Social Links"]
+    ) {
+        padding-inline: var(--mh-nav-page-inset, 20px) !important;
+    }
     /* Shared mobile accessibility floor. Preserve each control's authored typography. */
     a[data-framer-name="Social Link"] {
         min-height: 44px !important;
@@ -118,6 +127,11 @@ const MOBILE_NAV_CSS = `
         visibility: visible !important;
         animation: none !important;
         transition: none !important;
+    }
+}
+@media (max-width: 520px) {
+    body:has(.idx-container) nav[data-framer-name="Navigation"] {
+        --mh-nav-page-inset: 14px;
     }
 }
 html.mh-mobile-menu-open body { overflow: hidden !important; }

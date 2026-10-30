@@ -1,0 +1,11 @@
+async page=>{
+ const c=await page.context().browser().newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});const p=await c.newPage(),out=[];
+ for(const route of ['/','/index','/about','/case-studies/gaia']){
+ await p.goto('https://micahhoang.com'+route,{waitUntil:'domcontentloaded'});await p.waitForTimeout(1600);
+ for(const width of [320,390,430,809]){await p.setViewportSize({width,height:844});await p.waitForTimeout(100);out.push(await p.evaluate(({route})=>{const b=document.querySelector('[data-framer-name="Menu Button"]'),t=b.querySelector('p');return{route,width:innerWidth,labelRight:t.getBoundingClientRect().right,button:b.getBoundingClientRect().toJSON(),headerPadding:getComputedStyle(b.parentElement).paddingInline,expectedInset:route==='/'?15:route==='/index'&&innerWidth<=520?14:20,overflow:document.documentElement.scrollWidth>innerWidth}}, {route}));}
+ await p.setViewportSize({width:390,height:844});await p.getByRole('button',{name:'Menu',exact:true}).tap();await p.getByRole('dialog',{name:'Main navigation'}).waitFor();out.push({route,open:await p.locator('[data-framer-name="Menu Button"]').evaluate(e=>({text:e.innerText,right:e.querySelector('p').getBoundingClientRect().right,maskHeight:e.firstElementChild.getBoundingClientRect().height}))});await p.getByRole('button',{name:'Close menu',exact:true}).tap();
+ }
+ await p.goto('https://micahhoang.com',{waitUntil:'domcontentloaded'});await p.waitForTimeout(1400);
+ for(const width of [320,390,430]){await p.setViewportSize({width,height:844});await p.locator('[data-framer-name="Section CTA"]').scrollIntoViewIfNeeded();await p.waitForTimeout(500);const g=await p.evaluate(()=>{const c=document.querySelector('[data-framer-name="Section CTA"]'),b=document.querySelector('.mh-scroll-top-button'),t=[...c.querySelectorAll('p')].find(e=>e.textContent==='GET IN TOUCH');return {width:innerWidth,edge:c.getBoundingClientRect().top,button:b.getBoundingClientRect().toJSON(),label:b.querySelector('.mh-scroll-top-label-mask').getBoundingClientRect().toJSON(),get:t.getBoundingClientRect().toJSON()}});out.push({footer:g});await p.screenshot({path:'output/playwright/footer-gap-2026-10-30/final-'+width+'.png'});}
+ await p.locator('.mh-scroll-top-button').tap();await p.waitForTimeout(1100);out.push({scrollTop:await p.evaluate(()=>scrollY)});await c.close();return out;
+}
