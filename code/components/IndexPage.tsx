@@ -1592,7 +1592,7 @@ function buildGlobalCss(): string {
     display: inline-flex;
     font: inherit;
     font-family: ${tokens.fontMono};
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     justify-content: center;
     letter-spacing: 0;
@@ -1796,7 +1796,7 @@ function buildGlobalCss(): string {
 
     .idx-col-industry span {
       display: block !important;
-      font-size: 12px !important;
+      font-size: 13px !important;
       line-height: 14px !important;
       overflow: visible !important;
       text-overflow: clip !important;
@@ -2029,6 +2029,113 @@ function buildGlobalCss(): string {
       width: 100% !important;
     }
   }
+  .idx-mobile-filters, .idx-mobile-project-year { display: none; }
+  @media (max-width: 809px) {
+    .idx-desktop-filters { display: none; }
+    .idx-mobile-filters {
+      display: block;
+      font-family: ${tokens.fontMono};
+      font-size: 13px;
+      line-height: 1.3;
+      text-transform: uppercase;
+      color: ${tokens.textPrimary};
+    }
+    .idx-mobile-filters button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-transform: inherit;
+      letter-spacing: inherit;
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 8px 0;
+      touch-action: manipulation;
+    }
+    .idx-list-row-grid:focus-visible, .idx-mobile-filters button:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+    .idx-mobile-dropdowns { position: relative; z-index: 4; }
+    .idx-mobile-triggers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      border-block: 1px solid ${tokens.textTertiary};
+    }
+    .idx-mobile-filters .idx-mobile-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      min-width: 0;
+      min-height: 48px;
+      text-align: left;
+    }
+    .idx-mobile-trigger > span { min-width: 0; overflow-wrap: anywhere; }
+    .idx-mobile-filters svg { flex: 0 0 12px; }
+    .idx-mobile-trigger[aria-expanded="true"] > svg { transform: rotate(180deg); }
+    .idx-mobile-trigger[aria-expanded="true"],
+    .idx-mobile-filters button[aria-pressed="true"], .idx-mobile-clear {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .idx-mobile-panel {
+      position: absolute;
+      top: 100%;
+      inset-inline: 0;
+      background: ${tokens.bg};
+      border: 1px solid ${tokens.textTertiary};
+      padding: 8px 16px 0;
+    }
+    .idx-mobile-panel[hidden] { display: none; }
+    .idx-mobile-choices {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 12px;
+      max-height: min(50dvh, 360px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 4px;
+      margin-inline: -4px;
+    }
+    .idx-mobile-choices button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+    .idx-mobile-panel-footer, .idx-mobile-toolbar, .idx-mobile-filter-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .idx-mobile-panel-footer { border-top: 1px solid ${tokens.textTertiary}; }
+    .idx-mobile-toolbar { min-height: 56px; border-bottom: 1px solid ${tokens.textTertiary}; }
+    .idx-mobile-view { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+    .idx-mobile-clear:disabled { visibility: hidden; pointer-events: none; }
+    .idx-mobile-filter-status { min-height: 48px; }
+    .idx-mobile-filter-status > :last-child { text-align: right; }
+    .idx-grid-preview-locked .idx-list-view .idx-list-row-grid {
+      grid-template-columns: minmax(0, 1fr) auto !important;
+      column-gap: 12px !important;
+    }
+    .idx-grid-preview-locked .idx-list-view .idx-list-title { grid-column: 1 !important; }
+    .idx-mobile-project-year {
+      display: block;
+      grid-column: 2;
+      font-family: ${tokens.fontMono};
+      font-size: 13px;
+      line-height: 1.3;
+      color: ${tokens.textSecondary};
+    }
+  }
+
 `
 }
 
@@ -2224,6 +2331,124 @@ function IndexRule({
             data-idx-appeared={appeared ? "true" : "false"}
             style={style}
         />
+    )
+}
+
+// Compact mobile disclosures share the existing CMS taxonomy and filter state.
+function MobileTaxonomyControls({
+    filters, disciplineNavItems, industryNavItems, yearNavItems,
+    onFilterToggle, onFilterClear, onClearFilters, activeView, onViewChange, resultCount,
+}: {
+    filters: Filters
+    disciplineNavItems: string[]
+    industryNavItems: string[]
+    yearNavItems: number[]
+    onFilterToggle: (type: FilterType, value: string | number) => void
+    onFilterClear: (type: FilterType) => void
+    onClearFilters: () => void
+    activeView: string
+    onViewChange: (view: "grid" | "list") => void
+    resultCount: number
+}) {
+    const [open, setOpen] = useState<FilterType | null>(null)
+    const rootRef = useRef<HTMLDivElement>(null)
+    const triggerRefs = useRef<Partial<Record<FilterType, HTMLButtonElement>>>({})
+    const id = React.useId()
+    const groups: { key: FilterType; label: string; values: (string | number)[] }[] = [
+        { key: "years", label: "Year", values: yearNavItems },
+        { key: "disciplines", label: "Service", values: disciplineNavItems },
+        { key: "industries", label: "Industry", values: industryNavItems },
+    ]
+    const activeCount = filters.years.length + filters.disciplines.length + filters.industries.length
+    const close = () => {
+        if (open) triggerRefs.current[open]?.focus({ preventScroll: true })
+        setOpen(null)
+    }
+    useEffect(() => {
+        if (!open) return
+        const outside = (event: PointerEvent) => {
+            if (!rootRef.current?.contains(event.target as Node)) setOpen(null)
+        }
+        const query = window.matchMedia("(max-width: 809px)")
+        const onResize = () => { if (!query.matches) setOpen(null) }
+        document.addEventListener("pointerdown", outside)
+        query.addEventListener("change", onResize)
+        return () => {
+            document.removeEventListener("pointerdown", outside)
+            query.removeEventListener("change", onResize)
+        }
+    }, [open])
+    return (
+        <div className="idx-mobile-filters" ref={rootRef}
+            onBlur={(event) => {
+                if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(null)
+            }}
+            onKeyDown={(event) => {
+                if (event.key === "Escape" && open) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    close()
+                }
+            }}>
+            <div className="idx-mobile-dropdowns">
+                <div className="idx-mobile-triggers">
+                    {groups.map(({ key, label }) => (
+                        <button type="button" key={key} className="idx-mobile-trigger"
+                            id={`${id}-${key}-trigger`}
+                            ref={(node) => { if (node) triggerRefs.current[key] = node }}
+                            aria-expanded={open === key} aria-controls={`${id}-${key}-panel`}
+                            aria-label={`${label} filters, ${filters[key].length ? `${filters[key].length} selected` : "all"}`}
+                            onClick={() => setOpen(open === key ? null : key)}
+                            onKeyDown={(event) => {
+                                if (event.key === "ArrowDown") {
+                                    event.preventDefault()
+                                    setOpen(key)
+                                    requestAnimationFrame(() => document.getElementById(`${id}-${key}-panel`)?.querySelector<HTMLButtonElement>("button")?.focus())
+                                }
+                            }}>
+                            <span>{label}{filters[key].length > 0 && <span className="idx-mobile-selection-count"> ({filters[key].length})</span>}</span>
+                            <svg viewBox="0 0 12 12" width="12" height="12" fill="none" aria-hidden="true"><path d="m2 4 4 4 4-4" stroke="currentColor" /></svg>
+                        </button>
+                    ))}
+                </div>
+                {groups.map(({ key, label, values }) => (
+                    <section key={key} id={`${id}-${key}-panel`} hidden={open !== key}
+                        className="idx-mobile-panel" aria-labelledby={`${id}-${key}-trigger`}>
+                        <div className="idx-mobile-choices" role="group" aria-label={`${label} options`}>
+                            {[null, ...values].map((value) => {
+                                const selected = value === null ? filters[key].length === 0 : (filters[key] as (string | number)[]).includes(value)
+                                return <button type="button" key={value ?? "all"} aria-pressed={selected}
+                                    onClick={() => value === null ? onFilterClear(key) : onFilterToggle(key, value)}>
+                                    <span>{value ?? "All"}</span>
+                                    {selected && <svg viewBox="0 0 12 12" width="12" height="12" fill="none" aria-hidden="true"><path d="m1.5 6 3 3 6-6" stroke="currentColor" /></svg>}
+                                </button>
+                            })}
+                        </div>
+                        <div className="idx-mobile-panel-footer">
+                            <button type="button" aria-label={`Reset ${label.toLowerCase()} filters`} onClick={() => onFilterClear(key)}>Reset</button>
+                            <button type="button" onClick={close}>Done</button>
+                        </div>
+                    </section>
+                ))}
+            </div>
+            <div className="idx-mobile-toolbar">
+                <button type="button" className="idx-mobile-clear" disabled={!activeCount}
+                    onClick={() => {
+                        onClearFilters()
+                        setOpen(null)
+                        triggerRefs.current.years?.focus({ preventScroll: true })
+                    }}>Clear filters</button>
+                <div className="idx-mobile-view" role="group" aria-label="Project view">
+                    <button type="button" aria-pressed={activeView === "grid"} onClick={() => { setOpen(null); onViewChange("grid") }}>Grid</button>
+                    <span aria-hidden="true">/</span>
+                    <button type="button" aria-pressed={activeView === "list"} onClick={() => { setOpen(null); onViewChange("list") }}>List</button>
+                </div>
+            </div>
+            <div className="idx-mobile-filter-status" role="status" aria-live="polite" aria-atomic="true">
+                <span>{resultCount} {resultCount === 1 ? "project" : "projects"}</span>
+                <span>{activeCount ? `${activeCount} active ${activeCount === 1 ? "filter" : "filters"}` : ""}</span>
+            </div>
+        </div>
     )
 }
 
@@ -2637,7 +2862,8 @@ function ListView({
 
                             return (
                                 <div key={p.slug || p.title}>
-                                    <div
+                                    <a
+                                        href={url || undefined}
                                         className="idx-list-row idx-row idx-list-row-grid"
                                         style={{
                                             display: "grid",
@@ -2648,9 +2874,8 @@ function ListView({
                                             minHeight: 56,
                                             padding: "9px 0",
                                             cursor: url ? "pointer" : "default",
-                                        }}
-                                        onClick={() => {
-                                            if (url) window.location.href = url
+                                            color: "inherit",
+                                            textDecoration: "none",
                                         }}
                                     >
                                         <div
@@ -2696,6 +2921,8 @@ function ListView({
                                             )}
                                         </div>
 
+                                        <span className="idx-mobile-project-year">{year > 0 ? year : "—"}</span>
+
                                         <div
                                             className="idx-col-discipline idx-list-discipline"
                                             style={{
@@ -2733,7 +2960,7 @@ function ListView({
                                                 {p.industry}
                                             </FadeInText>
                                         </div>
-                                    </div>
+                                    </a>
 
                                     {ri < items.length - 1 && (
                                         <IndexRule
@@ -3632,6 +3859,19 @@ export default function IndexPage({
                 }
             >
                 <div className="idx-index-nav">
+                    <MobileTaxonomyControls
+                        filters={filters}
+                        disciplineNavItems={taxonomyNavItems.disciplines}
+                        industryNavItems={taxonomyNavItems.industries}
+                        yearNavItems={taxonomyNavItems.years}
+                        onFilterToggle={handleFilterToggle}
+                        onFilterClear={handleFilterClear}
+                        onClearFilters={handleClearFilters}
+                        activeView={activeView}
+                        onViewChange={handleViewChange}
+                        resultCount={filteredProjects.length}
+                    />
+                    <div className="idx-desktop-filters">
                     <div
                         style={{
                             opacity: 1,
@@ -3656,6 +3896,7 @@ export default function IndexPage({
                         onViewChange={handleViewChange}
                         revealStartRow={viewToggleRevealRow}
                     />
+                    </div>
                 </div>
 
                 <div key={renderKey}>

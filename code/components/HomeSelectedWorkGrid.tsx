@@ -1381,7 +1381,7 @@ export default function HomeSelectedWorkGrid({
                     }
 
                     .selected-work-tag {
-                        font-size: 12px;
+                        font-size: 13px;
                         min-height: 23px;
                         padding: 5px 9px 6px;
                     }
@@ -1472,7 +1472,7 @@ export default function HomeSelectedWorkGrid({
                     }
 
                     .selected-work-tag {
-                        font-size: 12px;
+                        font-size: 13px;
                         min-height: 25px;
                         padding: 7px 10px;
                     }
