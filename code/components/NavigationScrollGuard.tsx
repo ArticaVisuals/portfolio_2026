@@ -170,6 +170,88 @@ const MOBILE_NAV_CSS = `
         padding-block: 8px 7px !important;
     }
 }
+/* Canonical route scoping also covers legacy case studies without the bundled controller.
+   Unnamed native rows retain their stable Framer export classes; named rows use their authoring names. */
+@media (max-width: 809px) {
+    /* Legacy intro/credits columns must also release their 320px minimum. */
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body :is(.framer-16emxs8, .framer-18ggn3t, .framer-1a3mxks, .framer-1bwccjy, .framer-1dnsfeb, .framer-1ph9pfe, .framer-1pn08we, .framer-1pye8rg, .framer-1t0l1i0, .framer-gula0y, .framer-oqp0w2) {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body :is(.framer-16emxs8, .framer-18ggn3t, .framer-1a3mxks, .framer-1bwccjy, .framer-1dnsfeb, .framer-1ph9pfe, .framer-1pn08we, .framer-1pye8rg, .framer-1t0l1i0, .framer-gula0y, .framer-oqp0w2) > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body div:has(> [data-framer-component-type="RichTextContainer"] > [data-mh-paragraph-pretty="true"]),
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body [data-framer-component-type="RichTextContainer"]:has([data-mh-paragraph-pretty="true"]) {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body [data-mh-paragraph-pretty="true"] {
+        text-wrap: wrap !important;
+        text-wrap-style: auto !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body :is(
+        [data-framer-name="Image Row"],
+        [data-framer-name="Social Media"] > div:has(> [data-framer-name="Video Wrapper"]),
+        .framer-197d4ih, .framer-tcsjdq, .framer-1m0v5w7, .framer-1iks8es,
+        .framer-efd54j, .framer-1l3xtqa, .framer-1aejlgb, .framer-1ghoceu, .framer-j9c4ta, .framer-1fc3kwa,
+        .framer-16kn0aq, .framer-1nj99ab, .framer-uelx8v, .framer-116sj3z,
+        .framer-f1nm24, .framer-2zyixz, .framer-15v9q1u, .framer-1k2ixaf,
+        .framer-5ckims, .framer-mqvrdn, .framer-ch7tr0, .framer-mypv6
+    ) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        gap: 10px !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body :is(
+        [data-framer-name="Image Row"],
+        [data-framer-name="Social Media"] > div:has(> [data-framer-name="Video Wrapper"]),
+        .framer-197d4ih, .framer-tcsjdq, .framer-1m0v5w7, .framer-1iks8es,
+        .framer-efd54j, .framer-1l3xtqa, .framer-1aejlgb, .framer-1ghoceu, .framer-j9c4ta, .framer-1fc3kwa,
+        .framer-16kn0aq, .framer-1nj99ab, .framer-uelx8v, .framer-116sj3z,
+        .framer-f1nm24, .framer-2zyixz, .framer-15v9q1u, .framer-1k2ixaf,
+        .framer-5ckims, .framer-mqvrdn, .framer-ch7tr0, .framer-mypv6
+    ) > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 auto !important;
+        height: auto !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body .framer-mypv6 > .ssr-variant > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body .mh-next-projects-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body .mh-next-projects-col {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: 0 0 auto !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body .framer-1nn7mg1-container {
+        width: 100% !important;
+        height: auto !important;
+    }
+    html:has(link[rel="canonical"][href*="/case-studies/"]) body :is(
+        [data-double-stack-gallery-grid], .double-stack-gallery-left,
+        [data-matched-stack-media-pair] .matched-stack-media-pair-grid
+    ) {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 10px !important;
+    }
+}
 html.mh-mobile-menu-open body { overflow: hidden !important; }
 `
 

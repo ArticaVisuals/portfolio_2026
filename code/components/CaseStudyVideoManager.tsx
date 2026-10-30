@@ -61,6 +61,8 @@ export default function CaseStudyVideoManager(props: Config) {
         const cfg = () => configRef.current
         const storedSources = new WeakMap<HTMLVideoElement, StoredVideoSource>()
         const unloadedVideos = new Set<HTMLVideoElement>()
+        const pendingPlays = new WeakSet<HTMLVideoElement>()
+        const mobileControls = new Set<HTMLVideoElement>()
         const suppressedAttributeMutations = new WeakMap<Element, Set<string>>()
 
         function suppressAttributeMutation(element: Element, attribute: string) {
@@ -102,7 +104,7 @@ export default function CaseStudyVideoManager(props: Config) {
 
         function shouldManage(v: HTMLVideoElement): boolean {
             if (v.closest("[data-cslb-overlay]")) return false // lightbox's own video
-            if (!v.hasAttribute("autoplay")) return false // only the looping clips
+            if (!v.hasAttribute("autoplay") && v.dataset.caseStudyAutoplayIntent !== "true") return false
             if (!cfg().manageControlsVideos && v.controls) return false
             if (v.closest("[data-no-autopause]")) return false
             const sel = cfg().excludeSelector.trim()
@@ -381,6 +383,13 @@ export default function CaseStudyVideoManager(props: Config) {
                     restoreSource(video)
                 }
             })
+            const mobile = window.matchMedia("(max-width: 809px)").matches
+            mobileControls.forEach((video) => {
+                if (!mobile || !video.isConnected) {
+                    video.controls = true
+                    mobileControls.delete(video)
+                }
+            })
             const vids = document.querySelectorAll<HTMLVideoElement>("video")
             const vh = window.innerHeight || 800
             const authoredLookahead = Math.max(0, Number(c.lookahead) || 0)
@@ -392,6 +401,13 @@ export default function CaseStudyVideoManager(props: Config) {
             // Read phase: gather decisions (rect reads only).
             const actions: Array<[HTMLVideoElement, boolean]> = []
             vids.forEach((v) => {
+                // Mobile autoplay previews should not acquire native player chrome.
+                // Preserve manual films and restore authored controls on desktop.
+                if (mobile && v.autoplay && v.muted && v.controls &&
+                    !v.closest("[data-cslb-overlay], [data-no-autopause]")) {
+                    mobileControls.add(v)
+                    v.controls = false
+                }
                 if (!shouldManage(v)) return
                 const r = v.getBoundingClientRect()
                 // A visible hero may briefly have no intrinsic video height during restore.
@@ -406,9 +422,17 @@ export default function CaseStudyVideoManager(props: Config) {
             for (const [v, near] of actions) {
                 if (near) {
                     if (c.unloadFarVideos) restoreSource(v)
-                    if (v.paused) {
+                    if (v.paused && !pendingPlays.has(v)) {
+                        // Preserve the authored silent/inline state through source restoration.
+                        if (v.muted) v.defaultMuted = true
+                        v.playsInline = true
+                        pendingPlays.add(v)
                         const p = v.play()
-                        if (p && typeof p.catch === "function") p.catch(() => {})
+                        if (p && typeof p.catch === "function") {
+                            p.catch(() => {}).finally(() => pendingPlays.delete(v))
+                        } else {
+                            pendingPlays.delete(v)
+                        }
                     }
                 } else {
                     if (!v.paused) v.pause()
@@ -425,6 +449,13 @@ export default function CaseStudyVideoManager(props: Config) {
         window.addEventListener("resize", schedule, { passive: true })
         window.addEventListener("pageshow", schedule)
         document.addEventListener("visibilitychange", schedule)
+        // A restored source may not be ready at the first play request. Retry on
+        // readiness, including a late-hydrated lazy clip, without a polling loop.
+        const onMediaReady = (event: Event) => {
+            if (event.target instanceof HTMLVideoElement && shouldManage(event.target)) schedule()
+        }
+        document.addEventListener("loadeddata", onMediaReady, true)
+        document.addEventListener("canplay", onMediaReady, true)
         const mo = new MutationObserver((mutations) => {
             const videosToReload = new Set<HTMLVideoElement>()
             let hasChildListMutation = false
@@ -479,6 +510,7 @@ export default function CaseStudyVideoManager(props: Config) {
                 "class",
                 "controls",
                 "data-no-autopause",
+                "data-case-study-autoplay-intent",
                 "id",
                 "preload",
                 "src",
@@ -498,11 +530,14 @@ export default function CaseStudyVideoManager(props: Config) {
             window.removeEventListener("resize", schedule)
             window.removeEventListener("pageshow", schedule)
             document.removeEventListener("visibilitychange", schedule)
+            document.removeEventListener("loadeddata", onMediaReady, true)
+            document.removeEventListener("canplay", onMediaReady, true)
             mo.disconnect()
             if (frame) cancelAnimationFrame(frame)
             window.clearTimeout(t1)
             window.clearTimeout(t2)
             window.clearTimeout(t3)
+            mobileControls.forEach((video) => { video.controls = true })
             unloadedVideos.forEach((video) => restoreSource(video))
             scheduleRef.current = () => {}
             delete (window as unknown as Record<string, unknown>).__cslbVideoActive

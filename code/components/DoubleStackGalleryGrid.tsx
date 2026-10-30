@@ -283,7 +283,7 @@ export default function DoubleStackGalleryGrid(props: Props) {
 
                     .${rootClass} .double-stack-gallery-left {
                         gap: ${mobileGap}px;
-                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        grid-template-columns: minmax(0, 1fr);
                     }
                 }
             `}</style>

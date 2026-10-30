@@ -6,7 +6,7 @@ import { addPropertyControls, ControlType } from "framer"
 // @ts-ignore
 import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@ho2rRUp5oQKLHLwaQPIW"
 // @ts-ignore
-import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
+import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js@fLMRKrzWoZ5D8vWlpSPB"
 // @ts-ignore
 import CaseStudyLinkRepair from "https://framer.com/m/CaseStudyLinkRepair-xbwFmJ.js"
 
