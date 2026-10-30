@@ -560,13 +560,26 @@ function scheduleFramerRouteFallback(
         }
     }
 
+    const timers: number[] = []
+    const cancel = () => {
+        timers.forEach(timer => window.clearTimeout(timer))
+        window.removeEventListener("popstate", cancel)
+        window.removeEventListener("pagehide", cancel)
+    }
     const fallback = () => {
-        if (hasArrived() || window.location.href !== fromHref) return
+        if (hasArrived() || window.location.href !== fromHref) {
+            cancel()
+            return
+        }
         if (!navigateFramerRoute(router, match)) window.location.assign(targetUrl.href)
     }
 
-    window.setTimeout(fallback, 180)
-    window.setTimeout(fallback, 900)
+    // A pending retry belongs to this click only. Back/Forward or leaving the
+    // document must not replay it when the original page becomes current again.
+    window.addEventListener("popstate", cancel)
+    window.addEventListener("pagehide", cancel)
+    timers.push(window.setTimeout(fallback, 180))
+    timers.push(window.setTimeout(() => { fallback(); cancel() }, 900))
 }
 
 function stabilizeTopScrollAfterRoute(href: string) {

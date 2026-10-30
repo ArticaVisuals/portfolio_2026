@@ -4,7 +4,7 @@ section: Components
 order: 7
 description: A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.
 status: live
-framer: Native "Navigation" component; NavigationScrollGuard (Wnd19lx) for scroll/Lenis
+framer: Native Mobile Navigation (qajbM_0Ju); NavigationScrollGuard (Wnd19lx) for accessibility/scroll/Lenis
 codeFileId: Wnd19lx
 classes: [mh-nav, mh-nav__name, mh-nav__role, mh-nav__location, mh-nav__links]
 tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
@@ -51,11 +51,13 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 
 ### Mobile menu
 
-- The **Hybrid** and **Black** layout templates author the mobile header: name at left, a 60×44 MENU slot at right. The desktop and tablet variants remain unchanged.
-- `NavigationScrollGuard` enhances the native Phone label with a plain button and a native HTML dialog. Keep the native label `MENU` so the helper can find its slot. It does not use the desktop rollover animation.
+- The **Hybrid** and **Black** layout templates mount the native **Mobile Navigation** component (`qajbM_0Ju`) on Phone only. Desktop and tablet retain their existing header.
+- Edit **Assets → Mobile Navigation → Closed / Open** for the layout, labels, links, and colors. The component owns its native Click interactions with an Instant transition.
+- MENU and CLOSE each use one text node inside a 13px-high `Label Mask` with hidden overflow, inside a 60×44 hit area. There is no rollover duplicate and no runtime-generated replacement label.
+- `NavigationScrollGuard` adds dialog semantics, keyboard controls, focus containment, background inertness, and viewport-height handling to the native component. It does not create or own the menu's visual content.
 - The open panel uses Forest Green with Cream type, 42px GT Standard (`type.display-m` mobile), 13px GT Standard Mono labels, and the existing 20px nav gutters.
-- Route order: Work, Play, Index, About. LinkedIn, Email, and GitHub sit at the bottom. CLOSE occupies the same 60×44 box as MENU; route rows are 54px high.
-- The dialog contains keyboard focus, supports Escape, locks background scrolling, and restores focus and scroll on close. It closes and cleans up when resizing to 810px or wider.
+- Route order: Work, Play, Index, About. LinkedIn, Email, and GitHub sit at the bottom. CLOSE occupies the same 60×44 box as MENU; route rows fit their text line height plus 12px top and bottom padding (`--mh-space-4`). This gives 66px rows with 42px phone type and prevents larger canvas type from overlapping.
+- The open variant contains keyboard focus, supports Enter/Space and Escape, locks background scrolling, and restores focus and scroll on close. It closes and cleans up when resizing to 810px or wider.
 - Mobile header links use ordinary browser navigation without the desktop curtain interception. Selecting Work while already on Home closes the menu and returns to the top.
 - Mobile Home name, descriptor, and Selected/work headings render in place. Their previous appear/replay effects visibly restarted after settling. Desktop motion is unchanged.
 
@@ -77,6 +79,8 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 ## Framer mapping
 
 - The live bars are native layers in **Hybrid** and **Black** layout templates. Desktop links use the shared **Text Link** hover variants.
+- Mobile Navigation asset: `qajbM_0Ju`; Closed `wAv2cBhhn`; Open `gdGCs2vyp`. The Phone instances are `tK8RS0JyeF6qyNICpc` (Hybrid) and `rzjQrYrtJwE5QaaCdz` (Black). Their desktop source instances remain hidden.
+- [Open Mobile Navigation in Framer](https://framer.com/projects/Micah-Hoang-Portfolio--BvGjN2gCRDHG41LzAVYE-b78r3?node=qajbM_0Ju).
 - Scroll behavior and global smooth scroll: `NavigationScrollGuard` (`Wnd19lx`), mounted through `ResumeAssetHost` (`xDqfenf`). It owns the single Lenis 1.3.26 instance (`lerp 0.12`, native touch) and is destroyed on `/play`.
 - Exposed controls: `Smooth`, `Scroll feel`.
 

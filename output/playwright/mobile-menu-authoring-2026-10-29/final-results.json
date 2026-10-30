@@ -1,0 +1,166 @@
+{
+  "routes": [
+    {
+      "slug": "gaia",
+      "path": "/case-studies/gaia",
+      "menu": "MENU",
+      "locked": false,
+      "stableAfterResize": true
+    },
+    {
+      "slug": "airpods",
+      "path": "/case-studies/airpods",
+      "menu": "MENU",
+      "locked": false,
+      "stableAfterResize": true
+    }
+  ],
+  "errors": [],
+  "keyboard": true,
+  "spacing": [
+    {
+      "width": 320,
+      "rows": [
+        {
+          "label": "WORK",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "PLAY",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "INDEX",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "ABOUT",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "rows": [
+        {
+          "label": "WORK",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "PLAY",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "INDEX",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "ABOUT",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 430,
+      "rows": [
+        {
+          "label": "WORK",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "PLAY",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "INDEX",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "ABOUT",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 809,
+      "rows": [
+        {
+          "label": "WORK",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "PLAY",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "INDEX",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        },
+        {
+          "label": "ABOUT",
+          "rowHeight": 66,
+          "textHeight": 42,
+          "paddingTop": "12px",
+          "paddingBottom": "12px"
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "singleClippedLabel": {
+    "text": "MENU",
+    "count": 1,
+    "overflow": "hidden",
+    "height": 13
+  },
+  "desktopHeaderPixelIdentical": true,
+  "session": "Fresh browser context with no prior injected audit scripts"
+}
