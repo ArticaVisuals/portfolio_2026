@@ -1,0 +1,2772 @@
+[
+  {
+    "route": "/",
+    "type": [
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MICAH HOANG",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 85.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MENU",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 31.203125
+      },
+      {
+        "tag": "H1",
+        "cls": "framer-text framer-styles-preset-zw7hg5",
+        "text": "Micah Hoang",
+        "size": "58px",
+        "line": "66.12px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "700",
+        "width": 345.6875
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "Brand designer with a systems mind.",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 181
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "LINKEDIN",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 62.40625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": ",",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 7.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "RESUME",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "EMAIL",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 39
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "GITHUB",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "\u00a92026",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 39
+      },
+      {
+        "tag": "H2",
+        "cls": "framer-text framer-styles-preset-hh1wpb",
+        "text": "Selected",
+        "size": "42px",
+        "line": "42px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 163.34375
+      },
+      {
+        "tag": "H2",
+        "cls": "framer-text framer-styles-preset-hh1wpb",
+        "text": "work",
+        "size": "42px",
+        "line": "42px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 91.3125
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "VISUAL IDENTITY",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 158
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "UX/UI",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 86
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "STRATEGY",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 107.6015625
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "2D MOTION",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "3D MOTION",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "SOCIAL MEDIA",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 136.40625
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "EDITORIAL",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "PRODUCT",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 100.40625
+      },
+      {
+        "tag": "A",
+        "cls": "selected-work-tag",
+        "text": "PACKAGING",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "VIEW ALL",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 62.40625
+      },
+      {
+        "tag": "H2",
+        "cls": "framer-text framer-styles-preset-hh1wpb",
+        "text": "About",
+        "size": "42px",
+        "line": "42px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 112.6875
+      },
+      {
+        "tag": "H2",
+        "cls": "framer-text framer-styles-preset-hh1wpb",
+        "text": "Micah",
+        "size": "42px",
+        "line": "42px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 113.6171875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "I'm a brand designer with a systems mind. I work across strategy, visual identity, and motion to build brands that hold ",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 360
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text",
+        "text": "READ MORE",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 69.03125
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "mh-scroll-top-button",
+        "text": "SCROLL TO TOP\nSCROLL TO TOP\n\u2191\n\u2191\n\u2191",
+        "size": "13px",
+        "line": "16px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 118.7109375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "GET IN TOUCH",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 93.6015625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "@HEY.COM",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 62.40625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "CONNECT",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 54.6015625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "INSPIRE",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 54.6015625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "BUILD",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 39
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "COSMOS",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 46.8046875
+      }
+    ],
+    "rows": [
+      {
+        "rect": {
+          "x": 15,
+          "y": 708.5859375,
+          "width": 360,
+          "height": 44,
+          "top": 708.5859375,
+          "right": 375,
+          "bottom": 752.5859375,
+          "left": 15
+        },
+        "scroll": 44,
+        "client": 44,
+        "children": [
+          {
+            "x": 15,
+            "y": 708.5859375,
+            "width": 158,
+            "height": 44,
+            "top": 708.5859375,
+            "right": 173,
+            "bottom": 752.5859375,
+            "left": 15
+          },
+          {
+            "x": 178,
+            "y": 708.5859375,
+            "width": 86,
+            "height": 44,
+            "top": 708.5859375,
+            "right": 264,
+            "bottom": 752.5859375,
+            "left": 178
+          },
+          {
+            "x": 269,
+            "y": 708.5859375,
+            "width": 107.6015625,
+            "height": 44,
+            "top": 708.5859375,
+            "right": 376.6015625,
+            "bottom": 752.5859375,
+            "left": 269
+          }
+        ],
+        "ancestors": [
+          {
+            "cls": "selected-work-tags",
+            "overflow": "auto hidden",
+            "width": "360px",
+            "height": "44px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 708.5859375,
+              "width": 360,
+              "height": 44,
+              "top": 708.5859375,
+              "right": 375,
+              "bottom": 752.5859375,
+              "left": 15
+            }
+          },
+          {
+            "cls": "selected-work-card",
+            "overflow": "visible",
+            "width": "360px",
+            "height": "291.586px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 291.5859375,
+              "top": 461,
+              "right": 375,
+              "bottom": 752.5859375,
+              "left": 15
+            }
+          },
+          {
+            "cls": "selected-work-grid",
+            "overflow": "visible",
+            "width": "360px",
+            "height": "1999.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 1999.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2460.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-1ctlg1v-container",
+            "overflow": "visible",
+            "width": "360px",
+            "height": "1999.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 1999.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2460.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-1lfnpy7",
+            "name": "Projects",
+            "overflow": "hidden",
+            "width": "360px",
+            "height": "1999.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 1999.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2460.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-1pgu8t3",
+            "overflow": "clip",
+            "width": "360px",
+            "height": "2063.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 2063.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2524.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-j95x1t",
+            "name": "Section Selected Works",
+            "overflow": "hidden",
+            "width": "390px",
+            "height": "2277.52px",
+            "padding": "0px 15px 100px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": 347,
+              "width": 390,
+              "height": 2277.515625,
+              "top": 347,
+              "right": 390,
+              "bottom": 2624.515625,
+              "left": 0
+            }
+          }
+        ]
+      },
+      {
+        "rect": {
+          "x": 15,
+          "y": 1050.171875,
+          "width": 360,
+          "height": 44,
+          "top": 1050.171875,
+          "right": 375,
+          "bottom": 1094.171875,
+          "left": 15
+        },
+        "scroll": 44,
+        "client": 44,
+        "children": [
+          {
+            "x": 15,
+            "y": 1050.171875,
+            "width": 158,
+            "height": 44,
+            "top": 1050.171875,
+            "right": 173,
+            "bottom": 1094.171875,
+            "left": 15
+          },
+          {
+            "x": 178,
+            "y": 1050.171875,
+            "width": 114.8046875,
+            "height": 44,
+            "top": 1050.171875,
+            "right": 292.8046875,
+            "bottom": 1094.171875,
+            "left": 178
+          },
+          {
+            "x": 297.8046875,
+            "y": 1050.171875,
+            "width": 114.8046875,
+            "height": 44,
+            "top": 1050.171875,
+            "right": 412.609375,
+            "bottom": 1094.171875,
+            "left": 297.8046875
+          }
+        ],
+        "ancestors": [
+          {
+            "cls": "selected-work-tags",
+            "overflow": "auto hidden",
+            "width": "360px",
+            "height": "44px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 1050.171875,
+              "width": 360,
+              "height": 44,
+              "top": 1050.171875,
+              "right": 375,
+              "bottom": 1094.171875,
+              "left": 15
+            }
+          },
+          {
+            "cls": "selected-work-card",
+            "overflow": "visible",
+            "width": "360px",
+            "height": "291.586px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 802.5859375,
+              "width": 360,
+              "height": 291.5859375,
+              "top": 802.5859375,
+              "right": 375,
+              "bottom": 1094.171875,
+              "left": 15
+            }
+          },
+          {
+            "cls": "selected-work-grid",
+            "overflow": "visible",
+            "width": "360px",
+            "height": "1999.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 1999.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2460.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-1ctlg1v-container",
+            "overflow": "visible",
+            "width": "360px",
+            "height": "1999.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 1999.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2460.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-1lfnpy7",
+            "name": "Projects",
+            "overflow": "hidden",
+            "width": "360px",
+            "height": "1999.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 1999.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2460.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-1pgu8t3",
+            "overflow": "clip",
+            "width": "360px",
+            "height": "2063.52px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 15,
+              "y": 461,
+              "width": 360,
+              "height": 2063.515625,
+              "top": 461,
+              "right": 375,
+              "bottom": 2524.515625,
+              "left": 15
+            }
+          },
+          {
+            "cls": "framer-j95x1t",
+            "name": "Section Selected Works",
+            "overflow": "hidden",
+            "width": "390px",
+            "height": "2277.52px",
+            "padding": "0px 15px 100px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": 347,
+              "width": 390,
+              "height": 2277.515625,
+              "top": 347,
+              "right": 390,
+              "bottom": 2624.515625,
+              "left": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/index",
+    "type": [
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MICAH HOANG",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 85.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MENU",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 31.203125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Gaia",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 31.265625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "AirPods Pro 3",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 89.5546875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Peak Energy",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 83.5390625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Motion Connect 2025",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 149.4609375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Simon & Schuster",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 119.671875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "National Park Playing Cards",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 184.4765625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Yomo",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 38.6015625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Highland Harvests",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 124.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Weaponized Innocence",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 161.4609375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Wolff Olins x ArtCenter",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 154.5625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Cellular Symphony",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 127.3828125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Seek Truth",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 71.625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Independent Lens",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 122.4765625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "TYPLDN",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 55.125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "WhatsApp",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 72.7421875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Caliper Sans",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 85.0234375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Optro CRX",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 74.1484375
+      },
+      {
+        "tag": "H1",
+        "cls": "framer-text",
+        "text": "Index",
+        "size": "72px",
+        "line": "82.08px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "700",
+        "width": 183.3125
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item",
+        "text": "ALL",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "2026",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "2025",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "2024",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "2023",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "2019",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "2D MOTION",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "3D MOTION",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "EDITORIAL",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "PACKAGING",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "PRODUCT",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "SOCIAL MEDIA",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "STRATEGY",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "TYPE DESIGN",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "UX/UI",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "VISUAL IDENTITY",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "EDUCATION",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "HEALTH",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "HUMAN RIGHTS",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "LITERATURE",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "NATURE",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "SCIENCE",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-tax-item idx-tax-value",
+        "text": "TECHNOLOGY",
+        "size": "13px",
+        "line": "24px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 230.1640625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-view-toggle-option",
+        "text": "GRID",
+        "size": "13px",
+        "line": "28px",
+        "color": "rgb(43, 43, 43)",
+        "weight": "400",
+        "width": 44
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-view-toggle-option",
+        "text": "LIST",
+        "size": "13px",
+        "line": "28px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 44
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "VISUAL IDENTITY",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 158
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "UX/UI",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 86.21875
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "STRATEGY",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 107.6015625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "2D MOTION",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "3D MOTION",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "SOCIAL MEDIA",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 136.40625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "EDITORIAL",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "PRODUCT",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 100.40625
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "PACKAGING",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 114.8046875
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "idx-grid-card-tag",
+        "text": "TYPE DESIGN",
+        "size": "12px",
+        "line": "12px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "400",
+        "width": 129.203125
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "LINKEDIN",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 62.40625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": ",",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 7.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "RESUME",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "COSMOS",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "GITHUB",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "\u00a92026",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 39
+      }
+    ],
+    "rows": [
+      {
+        "rect": {
+          "x": 14,
+          "y": 712.8203125,
+          "width": 362,
+          "height": 44,
+          "top": 712.8203125,
+          "right": 376,
+          "bottom": 756.8203125,
+          "left": 14
+        },
+        "scroll": 44,
+        "client": 44,
+        "children": [
+          {
+            "x": 14,
+            "y": 712.8203125,
+            "width": 158,
+            "height": 44,
+            "top": 712.8203125,
+            "right": 172,
+            "bottom": 756.8203125,
+            "left": 14
+          },
+          {
+            "x": 178,
+            "y": 712.8203125,
+            "width": 86.21875,
+            "height": 44,
+            "top": 712.8203125,
+            "right": 264.21875,
+            "bottom": 756.8203125,
+            "left": 178
+          },
+          {
+            "x": 270.21875,
+            "y": 712.8203125,
+            "width": 107.6015625,
+            "height": 44,
+            "top": 712.8203125,
+            "right": 377.8203125,
+            "bottom": 756.8203125,
+            "left": 270.21875
+          }
+        ],
+        "ancestors": [
+          {
+            "cls": "idx-grid-card-tags",
+            "overflow": "auto hidden",
+            "width": "362px",
+            "height": "44px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 712.8203125,
+              "width": 362,
+              "height": 44,
+              "top": 712.8203125,
+              "right": 376,
+              "bottom": 756.8203125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "idx-grid-card",
+            "overflow": "visible",
+            "width": "362px",
+            "height": "288.625px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 468.1953125,
+              "width": 362,
+              "height": 288.625,
+              "top": 468.1953125,
+              "right": 376,
+              "bottom": 756.8203125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "idx-project-grid",
+            "overflow": "visible",
+            "width": "362px",
+            "height": "5738.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 468.1953125,
+              "width": 362,
+              "height": 5738.625,
+              "top": 468.1953125,
+              "right": 376,
+              "bottom": 6206.8203125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "",
+            "overflow": "visible",
+            "width": "362px",
+            "height": "5738.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 468.1953125,
+              "width": 362,
+              "height": 5738.625,
+              "top": 468.1953125,
+              "right": 376,
+              "bottom": 6206.8203125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "idx-container",
+            "overflow": "visible",
+            "width": "390px",
+            "height": "7190.62px",
+            "padding": "0px 14px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": -779.8046875,
+              "width": 390,
+              "height": 7190.625,
+              "top": -779.8046875,
+              "right": 390,
+              "bottom": 6410.8203125,
+              "left": 0
+            }
+          },
+          {
+            "cls": "idx-grid-preview-locked",
+            "overflow": "visible",
+            "width": "390px",
+            "height": "7190.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": -779.8046875,
+              "width": 390,
+              "height": 7190.625,
+              "top": -779.8046875,
+              "right": 390,
+              "bottom": 6410.8203125,
+              "left": 0
+            }
+          },
+          {
+            "cls": "framer-33qxx5-container",
+            "overflow": "visible",
+            "width": "390px",
+            "height": "7190.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": -779.8046875,
+              "width": 390,
+              "height": 7190.625,
+              "top": -779.8046875,
+              "right": 390,
+              "bottom": 6410.8203125,
+              "left": 0
+            }
+          }
+        ]
+      },
+      {
+        "rect": {
+          "x": 14,
+          "y": 1053.4453125,
+          "width": 362,
+          "height": 44,
+          "top": 1053.4453125,
+          "right": 376,
+          "bottom": 1097.4453125,
+          "left": 14
+        },
+        "scroll": 44,
+        "client": 44,
+        "children": [
+          {
+            "x": 14,
+            "y": 1053.4453125,
+            "width": 158,
+            "height": 44,
+            "top": 1053.4453125,
+            "right": 172,
+            "bottom": 1097.4453125,
+            "left": 14
+          },
+          {
+            "x": 178,
+            "y": 1053.4453125,
+            "width": 114.8046875,
+            "height": 44,
+            "top": 1053.4453125,
+            "right": 292.8046875,
+            "bottom": 1097.4453125,
+            "left": 178
+          },
+          {
+            "x": 298.8046875,
+            "y": 1053.4453125,
+            "width": 114.8046875,
+            "height": 44,
+            "top": 1053.4453125,
+            "right": 413.609375,
+            "bottom": 1097.4453125,
+            "left": 298.8046875
+          }
+        ],
+        "ancestors": [
+          {
+            "cls": "idx-grid-card-tags",
+            "overflow": "auto hidden",
+            "width": "362px",
+            "height": "44px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 1053.4453125,
+              "width": 362,
+              "height": 44,
+              "top": 1053.4453125,
+              "right": 376,
+              "bottom": 1097.4453125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "idx-grid-card",
+            "overflow": "visible",
+            "width": "362px",
+            "height": "288.625px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 808.8203125,
+              "width": 362,
+              "height": 288.625,
+              "top": 808.8203125,
+              "right": 376,
+              "bottom": 1097.4453125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "idx-project-grid",
+            "overflow": "visible",
+            "width": "362px",
+            "height": "5738.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 468.1953125,
+              "width": 362,
+              "height": 5738.625,
+              "top": 468.1953125,
+              "right": 376,
+              "bottom": 6206.8203125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "",
+            "overflow": "visible",
+            "width": "362px",
+            "height": "5738.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 14,
+              "y": 468.1953125,
+              "width": 362,
+              "height": 5738.625,
+              "top": 468.1953125,
+              "right": 376,
+              "bottom": 6206.8203125,
+              "left": 14
+            }
+          },
+          {
+            "cls": "idx-container",
+            "overflow": "visible",
+            "width": "390px",
+            "height": "7190.62px",
+            "padding": "0px 14px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": -779.8046875,
+              "width": 390,
+              "height": 7190.625,
+              "top": -779.8046875,
+              "right": 390,
+              "bottom": 6410.8203125,
+              "left": 0
+            }
+          },
+          {
+            "cls": "idx-grid-preview-locked",
+            "overflow": "visible",
+            "width": "390px",
+            "height": "7190.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": -779.8046875,
+              "width": 390,
+              "height": 7190.625,
+              "top": -779.8046875,
+              "right": 390,
+              "bottom": 6410.8203125,
+              "left": 0
+            }
+          },
+          {
+            "cls": "framer-33qxx5-container",
+            "overflow": "visible",
+            "width": "390px",
+            "height": "7190.62px",
+            "padding": "0px",
+            "box": "border-box",
+            "rect": {
+              "x": 0,
+              "y": -779.8046875,
+              "width": 390,
+              "height": 7190.625,
+              "top": -779.8046875,
+              "right": 390,
+              "bottom": 6410.8203125,
+              "left": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "type": [
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MICAH HOANG",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 85.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MENU",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 31.203125
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "LINKEDIN",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 62.40625
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "RESUME",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "COSMOS",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "GITHUB",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "H1",
+        "cls": "framer-text framer-styles-preset-772zhe",
+        "text": "Hey, I'm Micah.",
+        "size": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "700",
+        "width": 248.859375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "I\u2019m a brand designer with a systems mind. I treat design as problem-solving: start with what the brand needs to do, then",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "Outside of design, I\u2019m most likely training for a marathon, out on the trails, or on a rock wall somewhere.",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ EXPERIENCE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 92.046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "BRAND NEW SCHOOL, DESIGN + MOTION INTERN",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "2026",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 30.6875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "APPLE MARCOM, IDENTITY DESIGN INTERN",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "2025",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 30.6875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "SKYCAR CREATIVE, DESIGN + MOTION INTERN",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "2024",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 30.6875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "ARTCENTER GRAPHIC DESIGN, PRODUCER + DESIGNER",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "2023",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 30.6875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "AUDITBOARD, VISUAL DESIGNER",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "NATIONAL PARK PLAYING CARDS, FOUNDER",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "2019",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 30.6875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ EDUCATION",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 84.375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "BFA, GRAPHIC DESIGN \u00b7 PROVOST\u2019S LIST",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ RECOGNITION",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 99.7109375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "SIMON & SCHUSTER, INDIGO DESIGN, GOLD",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "SIMON & SCHUSTER, DNA PARIS, WINNER",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "SIMON & SCHUSTER, FONTS IN USE, FEATURE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 273.6015625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "SEEK TRUTH, YOUNG ONES ADC, MERIT",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "SEEK TRUTH, FONTS IN USE, FEATURE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 273.6015625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ PRESS",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 53.6953125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 311.3125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ WHAT PEOPLE SAY",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 130.390625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "\u201cHe went above and beyond his role, approaching problems with creativity and curiosity, and contributing massively to cr",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "ASSOCIATE CREATIVE DIRECTOR, APPLE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 260.78125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "NADIA SHIREEN HUSAIN",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 153.40625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "\u201cFrom day one, Micah approached our projects with a thoughtful mindset, consistently delivering beautiful and sometimes ",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "CO-FOUNDER, SKYCAR CREATIVE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 207.09375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "AARON BARRY",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 84.375
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "GET IN TOUCH",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 92.046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "@HEY.COM",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 61.3671875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "CONNECT",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 53.6953125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "INSPIRE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 53.6953125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "BUILD",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 38.3515625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": ",",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 7.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "\u00a92026",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 39
+      }
+    ],
+    "rows": []
+  },
+  {
+    "route": "/case-studies/gaia",
+    "type": [
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MICAH HOANG",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 85.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "MENU",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 31.203125
+      },
+      {
+        "tag": "H1",
+        "cls": "framer-text framer-styles-preset-772zhe",
+        "text": "Gaia",
+        "size": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "700",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-772zhe",
+        "text": "Turning noticing",
+        "size": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "700",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-772zhe",
+        "text": "into a way of caring",
+        "size": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "700",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-772zhe",
+        "text": "for the living world.",
+        "size": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "weight": "700",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ INDUSTRY",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Nature",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ SCOPE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Visual Identity, UX/UI, Brand Strategy",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ CREDITS",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Self-Initiated Proposal",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "Designer: Micah Hoang",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ YEAR",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "2026",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "/ ABOUT THE PROJECT",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-1dmv8xw",
+        "text": "A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care. Gaia is a rebrand a",
+        "size": "15px",
+        "line": "19.5px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "The Insight",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "iNaturalist lets people photograph an organism, receive an AI-assisted identification, and contribute research-grade dat",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "Strategy",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "Three goals shape every decision: increase access, increase motivation, increase meaning. Across the arc from wonder to ",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "iNaturalist asks you to be a naturalist first. For most people, that is a title they never claim. Gaia preserves the sam",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "Visual Identity",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "The mark grows from a branching, living form. Inspired by Werner's Nomenclature of Colours, the palette draws from moss,",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "Brand in the World",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "Gaia reaches people where they already meet the living world: botanical gardens, museums, trailheads, and community biob",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "Interface",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 77.046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "A custom icon system pairs with botanical illustrations drawn in a nineteenth-century naturalist style, keeping the inte",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "The map invites before it asks. Plain language and an obvious way in lower the barrier to a first observation.",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "A single observation becomes part of something shared, joining a community record that gives each find meaning beyond th",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "Every find is met with a small moment of pride, turning a single observation into a reason to look again.",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "H3",
+        "cls": "framer-text framer-styles-preset-rhmsro",
+        "text": "Designed to Ship",
+        "size": "20px",
+        "line": "22px",
+        "color": "rgb(20, 20, 20)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-p5x7tw",
+        "text": "The work was pressure-tested against real constraints, not presented only as static screens. Core interactions, includin",
+        "size": "14px",
+        "line": "19.6px",
+        "color": "rgb(82, 82, 82)",
+        "weight": "400",
+        "width": 350
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "mh-scroll-top-button",
+        "text": "SCROLL TO TOP\nSCROLL TO TOP\n\u2191\n\u2191\n\u2191",
+        "size": "13px",
+        "line": "16px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 118.7109375
+      },
+      {
+        "tag": "H2",
+        "cls": "framer-text framer-styles-preset-hh1wpb",
+        "text": "OTHER",
+        "size": "42px",
+        "line": "42px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 132.6796875
+      },
+      {
+        "tag": "H2",
+        "cls": "framer-text framer-styles-preset-hh1wpb",
+        "text": "PROJECTS",
+        "size": "42px",
+        "line": "42px",
+        "color": "rgb(35, 51, 36)",
+        "weight": "400",
+        "width": 194.25
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "GET IN TOUCH",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 92.046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "@HEY.COM",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 61.3671875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "CONNECT",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 53.6953125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "INSPIRE",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 53.6953125
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-10eso7a",
+        "text": "BUILD",
+        "size": "13px",
+        "line": "18.2px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 38.3515625
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "LINKEDIN",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 62.40625
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": ",",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 7.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "RESUME",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "COSMOS",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "GITHUB",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 46.8046875
+      },
+      {
+        "tag": "P",
+        "cls": "framer-text framer-styles-preset-188rqyj",
+        "text": "\u00a92026",
+        "size": "13px",
+        "line": "13px",
+        "color": "rgb(247, 245, 240)",
+        "weight": "400",
+        "width": 39
+      }
+    ],
+    "rows": []
+  },
+  {
+    "menu": [
+      {
+        "text": "MICAH HOANG",
+        "children": [
+          {
+            "text": "MICAH HOANG",
+            "size": "13px",
+            "line": "13px"
+          }
+        ],
+        "rect": {
+          "x": 20,
+          "y": 4.5,
+          "width": 85.8046875,
+          "height": 44,
+          "top": 4.5,
+          "right": 105.8046875,
+          "bottom": 48.5,
+          "left": 20
+        }
+      },
+      {
+        "text": "Work",
+        "children": [
+          {
+            "text": "Work",
+            "size": "42px",
+            "line": "42px"
+          }
+        ],
+        "rect": {
+          "x": 20,
+          "y": 288.5,
+          "width": 350,
+          "height": 66,
+          "top": 288.5,
+          "right": 370,
+          "bottom": 354.5,
+          "left": 20
+        }
+      },
+      {
+        "text": "Play",
+        "children": [
+          {
+            "text": "Play",
+            "size": "42px",
+            "line": "42px"
+          }
+        ],
+        "rect": {
+          "x": 20,
+          "y": 354.5,
+          "width": 350,
+          "height": 66,
+          "top": 354.5,
+          "right": 370,
+          "bottom": 420.5,
+          "left": 20
+        }
+      },
+      {
+        "text": "Index",
+        "children": [
+          {
+            "text": "Index",
+            "size": "42px",
+            "line": "42px"
+          }
+        ],
+        "rect": {
+          "x": 20,
+          "y": 420.5,
+          "width": 350,
+          "height": 66,
+          "top": 420.5,
+          "right": 370,
+          "bottom": 486.5,
+          "left": 20
+        }
+      },
+      {
+        "text": "About",
+        "children": [
+          {
+            "text": "About",
+            "size": "42px",
+            "line": "42px"
+          }
+        ],
+        "rect": {
+          "x": 20,
+          "y": 486.5,
+          "width": 350,
+          "height": 66,
+          "top": 486.5,
+          "right": 370,
+          "bottom": 552.5,
+          "left": 20
+        }
+      },
+      {
+        "text": "LINKEDIN",
+        "children": [
+          {
+            "text": "LINKEDIN",
+            "size": "13px",
+            "line": "13px"
+          }
+        ],
+        "rect": {
+          "x": 20,
+          "y": 788,
+          "width": 62.40625,
+          "height": 44,
+          "top": 788,
+          "right": 82.40625,
+          "bottom": 832,
+          "left": 20
+        }
+      },
+      {
+        "text": "EMAIL",
+        "children": [
+          {
+            "text": "EMAIL",
+            "size": "13px",
+            "line": "13px"
+          }
+        ],
+        "rect": {
+          "x": 102.40625,
+          "y": 788,
+          "width": 39,
+          "height": 44,
+          "top": 788,
+          "right": 141.40625,
+          "bottom": 832,
+          "left": 102.40625
+        }
+      },
+      {
+        "text": "GITHUB",
+        "children": [
+          {
+            "text": "GITHUB",
+            "size": "13px",
+            "line": "13px"
+          }
+        ],
+        "rect": {
+          "x": 161.40625,
+          "y": 788,
+          "width": 46.8046875,
+          "height": 44,
+          "top": 788,
+          "right": 208.2109375,
+          "bottom": 832,
+          "left": 161.40625
+        }
+      }
+    ]
+  }
+]
