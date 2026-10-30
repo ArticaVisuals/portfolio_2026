@@ -26,15 +26,6 @@ const MOBILE_NAV_QUERY = "(max-width: 809px)"
 const MOBILE_NAV_CSS = `
 @media (max-width: 809px) {
     @view-transition { navigation: none; }
-    /* Match the existing page gutters; keep the menu's open/closed edges consistent. */
-    body:has(.selected-work-grid) nav[data-framer-name="Navigation"] {
-        --mh-nav-page-inset: 15px;
-    }
-    nav[data-framer-name="Navigation"] [data-framer-name="Mobile Navigation"] :is(
-        [data-framer-name="Header"], [data-framer-name="Routes"], [data-framer-name="Social Links"]
-    ) {
-        padding-inline: var(--mh-nav-page-inset, 20px) !important;
-    }
     /* Shared mobile accessibility floor. Preserve each control's authored typography. */
     a[data-framer-name="Social Link"] {
         min-height: 44px !important;
@@ -129,9 +120,51 @@ const MOBILE_NAV_CSS = `
         transition: none !important;
     }
 }
-@media (max-width: 520px) {
-    body:has(.idx-container) nav[data-framer-name="Navigation"] {
-        --mh-nav-page-inset: 14px;
+@media (max-width: 809px) {
+    /* One existing page gutter across routes, including open-menu contents. */
+    html body nav[data-framer-name="Navigation"] [data-framer-name="Mobile Navigation"] :is(
+        [data-framer-name="Header"], [data-framer-name="Routes"], [data-framer-name="Social Links"]
+    ),
+    body:has(.selected-work-grid) :is(
+        [data-framer-name="Section Hero"], [data-framer-name="Header Bottom"],
+        [data-framer-name="Section Selected Works"], [data-framer-name="Section About"]
+    ),
+    html body .idx-grid-preview-locked .idx-container,
+    html body [data-framer-name="Section CTA"] > :is([data-framer-name="Tag Wrapper"], [data-framer-name="Container"]),
+    [data-framer-name="FooterBlackPhone"], [data-framer-name="FooterWhitePhone"] {
+        padding-inline: 20px !important;
+    }
+    /* The existing case-study footer scale, shared by every route and all four links.
+       Override older per-link patches before hydration, including the omitted GitHub row. */
+    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] {
+        align-items: flex-start !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        gap: 10px !important;
+        height: auto !important;
+        min-height: 44px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :first-child,
+    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :first-child * {
+        font-size: 32px !important;
+        line-height: 1em !important;
+        letter-spacing: -0.01em !important;
+        height: 32px !important;
+        min-height: 0 !important;
+        max-width: 100% !important;
+    }
+    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :not(:first-child) * {
+        font-size: 13px !important;
+        line-height: 1em !important;
+        letter-spacing: 0.01em !important;
+    }
+    html body .selected-work-tag,
+    html body .idx-grid-preview-locked .idx-grid-card-tag {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
     }
 }
 html.mh-mobile-menu-open body { overflow: hidden !important; }
