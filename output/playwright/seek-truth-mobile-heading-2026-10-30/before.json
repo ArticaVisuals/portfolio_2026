@@ -1,0 +1,220 @@
+[
+  {
+    "slug": "seek-truth",
+    "w": 1200,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(247, 245, 240)",
+        "appear": "ieoaxc",
+        "clip": "ssr-variant hidden-gu1ce"
+      },
+      {
+        "text": "The visual art of protest.",
+        "rect": {
+          "x": 20,
+          "y": 175,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(82, 82, 82)",
+        "appear": "1wfsv19",
+        "clip": "ssr-variant hidden-gu1ce"
+      }
+    ]
+  },
+  {
+    "slug": "seek-truth",
+    "w": 810,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(247, 245, 240)",
+        "appear": "ieoaxc",
+        "clip": "ssr-variant hidden-gu1ce"
+      },
+      {
+        "text": "The visual art of protest.",
+        "rect": {
+          "x": 20,
+          "y": 157,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(82, 82, 82)",
+        "appear": "1wfsv19",
+        "clip": "ssr-variant hidden-gu1ce"
+      }
+    ]
+  },
+  {
+    "slug": "airpods",
+    "w": 390,
+    "headings": [
+      {
+        "text": "AirPods Pro 3,",
+        "rect": {
+          "x": 20,
+          "y": 101,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "appear": "9y3rf0",
+        "clip": "framer-bbufhu"
+      }
+    ]
+  },
+  {
+    "slug": "gaia",
+    "w": 390,
+    "headings": [
+      {
+        "text": "Gaia",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "appear": "1izws4c",
+        "clip": "framer-b99rer"
+      }
+    ]
+  },
+  {
+    "slug": "simon-schuster",
+    "w": 390,
+    "headings": [
+      {
+        "text": "Simon & Schuster",
+        "rect": {
+          "x": 20,
+          "y": 101,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "appear": "8je526",
+        "clip": "framer-m9jt17"
+      },
+      {
+        "text": "The last",
+        "rect": {
+          "x": 20,
+          "y": 142,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "appear": "1ht919d",
+        "clip": "ssr-variant hidden-18g0a1u hidden-105kit8"
+      },
+      {
+        "text": "independent,",
+        "rect": {
+          "x": 20,
+          "y": 183,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "appear": "1gtxv75",
+        "clip": "framer-1sq96ij hidden-18g0a1u hidden-105kit8"
+      },
+      {
+        "text": "made to look like it.",
+        "rect": {
+          "x": 20,
+          "y": 224.00367736816406,
+          "width": 350,
+          "height": 37.99998474121094
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "appear": "kgl7gn",
+        "clip": "ssr-variant"
+      }
+    ]
+  },
+  {
+    "slug": "motion-connect-2025",
+    "w": 390,
+    "headings": [
+      {
+        "text": "Motion Connect",
+        "rect": {
+          "x": 20,
+          "y": 102,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(35, 51, 36)",
+        "appear": "117bwt5",
+        "clip": "framer-10qsoh0"
+      },
+      {
+        "text": "Amping up the world",
+        "rect": {
+          "x": 20,
+          "y": 146,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "appear": "12in7gd",
+        "clip": "ssr-variant hidden-dgh4h4 hidden-1waun02"
+      },
+      {
+        "text": "of moving design.",
+        "rect": {
+          "x": 20,
+          "y": 190,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(132, 132, 132)",
+        "appear": "15et0ef",
+        "clip": "ssr-variant hidden-dgh4h4 hidden-1waun02"
+      }
+    ]
+  }
+]

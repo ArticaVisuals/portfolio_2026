@@ -1,0 +1,1493 @@
+[
+  {
+    "w": 320,
+    "overflow": false,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 280,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(247, 245, 240)",
+        "mask": "framer-18tp7nl",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 40
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "The visual art of",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 141,
+          "width": 280,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-tc4d20",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "protest.",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 182,
+          "width": 280,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-1i5lxti hidden-1ax50uw hidden-14t33l",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "w": 390,
+    "overflow": false,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(247, 245, 240)",
+        "mask": "framer-18tp7nl",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 40
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "The visual art of",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 141,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-tc4d20",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "protest.",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 182,
+          "width": 350,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-1i5lxti hidden-1ax50uw hidden-14t33l",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "w": 430,
+    "overflow": false,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 390,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(247, 245, 240)",
+        "mask": "framer-18tp7nl",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 40
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "The visual art of",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 141,
+          "width": 390,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-tc4d20",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "protest.",
+        "tag": "H2",
+        "rect": {
+          "x": 20,
+          "y": 182,
+          "width": 390,
+          "height": 38
+        },
+        "font": "38px",
+        "line": "38px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-1i5lxti hidden-1ax50uw hidden-14t33l",
+        "maskHeight": 41,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.5,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "w": 810,
+    "overflow": false,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "tag": "H1",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(247, 245, 240)",
+        "mask": "framer-18tp7nl",
+        "maskHeight": 57,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 40
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "The visual art of protest.",
+        "tag": "H1",
+        "rect": {
+          "x": 20,
+          "y": 157,
+          "width": 770,
+          "height": 52
+        },
+        "font": "52px",
+        "line": "52px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-tc4d20",
+        "maskHeight": 57,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "w": 1200,
+    "overflow": false,
+    "headings": [
+      {
+        "text": "Seek Truth",
+        "tag": "H1",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(247, 245, 240)",
+        "mask": "framer-18tp7nl",
+        "maskHeight": 75,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 40
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.1,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      },
+      {
+        "text": "The visual art of protest.",
+        "tag": "H1",
+        "rect": {
+          "x": 20,
+          "y": 175,
+          "width": 1160,
+          "height": 70
+        },
+        "font": "70px",
+        "line": "70px",
+        "color": "rgb(82, 82, 82)",
+        "mask": "framer-tc4d20",
+        "maskHeight": 75,
+        "animation": {
+          "default": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "14t33l": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 69
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "gu1ce": {
+            "initial": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "x": 0,
+              "y": 39
+            },
+            "animate": {
+              "opacity": 1,
+              "rotate": 0,
+              "rotateX": 0,
+              "rotateY": 0,
+              "scale": 1,
+              "skewX": 0,
+              "skewY": 0,
+              "transformPerspective": 1200,
+              "transition": {
+                "delay": 0.3,
+                "duration": 2,
+                "ease": [
+                  0.16,
+                  1,
+                  0.3,
+                  1
+                ],
+                "type": "tween"
+              },
+              "x": 0,
+              "y": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "reducedMotion": {
+      "headings": [
+        {
+          "text": "Seek Truth",
+          "transform": "perspective(1200px) translateY(1.61347px)"
+        },
+        {
+          "text": "The visual art of",
+          "transform": "perspective(1200px) translateY(3.27153px)"
+        },
+        {
+          "text": "protest.",
+          "transform": "perspective(1200px) translateY(6.61269px)"
+        }
+      ],
+      "active": 1
+    }
+  }
+]
