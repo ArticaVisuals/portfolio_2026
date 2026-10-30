@@ -2,7 +2,7 @@
 title: Navigation
 section: Components
 order: 7
-description: The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.
+description: A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.
 status: live
 framer: Native "Navigation" component; NavigationScrollGuard (Wnd19lx) for scroll/Lenis
 codeFileId: Wnd19lx
@@ -37,7 +37,7 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
 | Name | "Micah Hoang", links to `/` | Kept |
 | Role | "Brand designer" | Hidden |
 | Location | "Los Angeles, California" | Hidden |
-| Links | Work, Play, Index, About | Kept |
+| Links | Work, Play, Index, About | Replaced by MENU; routes appear in the full-screen panel |
 
 Desktop columns are fixed: name 258px, role 340px, location fills, links hug the right edge (measured identical at 1200 and 1280). Tablet uses fixed 123px / 145px columns. Links sit 31px apart. The nav gutter is 20px at every breakpoint.
 
@@ -45,9 +45,19 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 
 - Same bar, same copy, on every page. Only the links change state.
 - Routes: Work → `/`, Play → `/play`, Index → `/index`, About → `/about`.
-- The bar sits on the page surface, 20px from the top and sides, 53px tall. It hides on scroll down and returns on scroll up.
+- The bar is 53px tall with 20px side gutters. Desktop hides on scroll down and returns on scroll up. Below 810px it stays fixed and visible.
 - Grain starts below the nav, so the bar always stays crisp.
 - The live site doesn't style the current link. Mark it with `aria-current="page"` for assistive tech only.
+
+### Mobile menu
+
+- The **Hybrid** and **Black** layout templates author the mobile header: name at left, a 60×44 MENU slot at right. The desktop and tablet variants remain unchanged.
+- `NavigationScrollGuard` enhances the native Phone label with a plain button and a native HTML dialog. Keep the native label `MENU` so the helper can find its slot. It does not use the desktop rollover animation.
+- The open panel uses Forest Green with Cream type, 42px GT Standard (`type.display-m` mobile), 13px GT Standard Mono labels, and the existing 20px nav gutters.
+- Route order: Work, Play, Index, About. LinkedIn, Email, and GitHub sit at the bottom. CLOSE occupies the same 60×44 box as MENU; route rows are 54px high.
+- The dialog contains keyboard focus, supports Escape, locks background scrolling, and restores focus and scroll on close. It closes and cleans up when resizing to 810px or wider.
+- Mobile header links use ordinary browser navigation without the desktop curtain interception. Selecting Work while already on Home closes the menu and returns to the top.
+- Mobile Home name, descriptor, and Selected/work headings render in place. Their previous appear/replay effects visibly restarted after settling. Desktop motion is unchanged.
 
 ## API
 
@@ -66,12 +76,12 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 
 ## Framer mapping
 
-- The live bar is the native **Navigation** component, with the flip implemented as hover variants.
+- The live bars are native layers in **Hybrid** and **Black** layout templates. Desktop links use the shared **Text Link** hover variants.
 - Scroll behavior and global smooth scroll: `NavigationScrollGuard` (`Wnd19lx`), mounted through `ResumeAssetHost` (`xDqfenf`). It owns the single Lenis 1.3.26 instance (`lerp 0.12`, native touch) and is destroyed on `/play`.
 - Exposed controls: `Smooth`, `Scroll feel`.
 
 ## Don't
 
 - Don't add a logo, hamburger icon or CTA button to the bar.
-- Don't put a background color or blur behind it.
+- Don't add a new palette or decorative blur. The mobile panel uses the existing Forest Green/Cream surface pairing.
 - Don't change the order of the four zones.
