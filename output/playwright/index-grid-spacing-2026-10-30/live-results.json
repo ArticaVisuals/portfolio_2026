@@ -1,0 +1,47 @@
+{
+  "out": [
+    {
+      "width": 320,
+      "view": "grid",
+      "border": "1px solid rgb(20, 20, 20)",
+      "gap": "10px",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "list",
+      "border": "0px none rgb(20, 20, 20)",
+      "gap": "0px",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "grid",
+      "border": "1px solid rgb(20, 20, 20)",
+      "gap": "10px",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "list",
+      "border": "0px none rgb(20, 20, 20)",
+      "gap": "0px",
+      "overflow": false
+    },
+    {
+      "width": 430,
+      "view": "grid",
+      "border": "1px solid rgb(20, 20, 20)",
+      "gap": "10px",
+      "overflow": false
+    },
+    {
+      "width": 430,
+      "view": "list",
+      "border": "0px none rgb(20, 20, 20)",
+      "gap": "0px",
+      "overflow": false
+    }
+  ],
+  "desktopHidden": true
+}
