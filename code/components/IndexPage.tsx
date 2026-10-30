@@ -2063,7 +2063,7 @@ function buildGlobalCss(): string {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-      border-block: 1px solid ${tokens.textTertiary};
+      border-block: 1px solid ${tokens.dividerSubtle};
     }
     .idx-mobile-filters .idx-mobile-trigger {
       display: flex;
@@ -2087,7 +2087,7 @@ function buildGlobalCss(): string {
       top: 100%;
       inset-inline: 0;
       background: ${tokens.bg};
-      border: 1px solid ${tokens.textTertiary};
+      border: 1px solid ${tokens.dividerSubtle};
       padding: 8px 16px 0;
     }
     .idx-mobile-panel[hidden] { display: none; }
@@ -2115,8 +2115,8 @@ function buildGlobalCss(): string {
       justify-content: space-between;
       gap: 12px;
     }
-    .idx-mobile-panel-footer { border-top: 1px solid ${tokens.textTertiary}; }
-    .idx-mobile-toolbar { min-height: 56px; border-bottom: 1px solid ${tokens.textTertiary}; }
+    .idx-mobile-panel-footer { border-top: 1px solid ${tokens.dividerSubtle}; }
+    .idx-mobile-toolbar { min-height: 56px; border-bottom: 1px solid ${tokens.dividerSubtle}; }
     .idx-mobile-view { display: flex; align-items: center; gap: 8px; margin-left: auto; }
     .idx-mobile-clear:disabled { visibility: hidden; pointer-events: none; }
     .idx-mobile-filter-status { min-height: 48px; }
