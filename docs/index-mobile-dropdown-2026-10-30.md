@@ -1,6 +1,6 @@
 # Mobile Index category dropdowns — 2026-10-30
 
-Status: implemented and verified locally; awaiting Framer MCP reconnection before syncing and publishing. The live site is unchanged by this work. User selected the category-dropdown direction from the local prototype comparison.
+Status: synced to Framer, published, and verified on the live site. User selected the category-dropdown direction from the local prototype comparison.
 
 ## Implementation
 
@@ -27,8 +27,14 @@ A local harness bundles the actual modified IndexPage and IndexPageGridPreview c
 
 Evidence: `output/playwright/index-dropdown-2026-10-30/local-a11y.json` and `local-webkit-a11y.json`. Local implementation preview: http://127.0.0.1:8770/.
 
-## Remaining deployment work
+## Published verification
 
-Framer MCP readCodeFile timed out, then reported the plugin disconnected. Closing/relaunching Tommy's MCP and force-reloading Framer left its launch stuck at “Tommy's MCP is working…”. No live code was overwritten. Before syncing, read the current Framer sources, reconcile any newer edits, update IndexPage (`rgAZFOv`), IndexPageGridPreview (`LgIzFjJ`) and HomeSelectedWorkGrid (`FecepLS`), check Framer diagnostics, publish, and repeat the targeted checks on `/index` using live CMS data.
+Synced IndexPage (`rgAZFOv`), IndexPageGridPreview (`LgIzFjJ`) and HomeSelectedWorkGrid (`FecepLS`) through Framer MCP, then published through Framer. The main file read/update responses timed out because of the large file, so its official Framer source map was used for verification: the pre-update source matched the previous local implementation after formatting normalization, and the post-update source exactly matched the new local TSX. The smaller components returned successful updates with empty typecheck diagnostics.
+
+Live CMS checks passed in Chromium and WebKit at 320, 390, 430 and 809px: all three panels have no scoped axe WCAG A/AA violations, controls meet 44×44px minimums, all control text is 13px, and there is no horizontal overflow. Verified year filtering (2025: 2 projects), Grid/List selection retention, Clear (17 projects), Arrow Down, Enter/Space, Escape, Done focus restoration, outside dismissal, and expanded text spacing. No runtime page errors occurred in these checks. These are targeted checks of the new controls, not a whole-site accessibility certification.
+
+Live typography checks on Home and Index at mobile, tablet and desktop widths found only 13px visible monospaced text. Desktop taxonomy remains visible from 810px; mobile controls remain hidden there. No horizontal overflow. See `live-typography.json`.
+
+Evidence: `live-a11y.json`, `live-webkit-a11y.json`, `live-closed.png`, and `live-open.png` under `output/playwright/index-dropdown-2026-10-30/`.
 
 References: [WAI disclosure pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/), [WCAG target size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
