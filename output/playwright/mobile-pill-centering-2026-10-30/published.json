@@ -1,0 +1,298 @@
+[
+  {
+    "width": 320,
+    "path": "/",
+    "overflow": 320,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 167,
+        "y": 663.5625
+      },
+      {
+        "text": "UX/UI",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 89,
+        "y": 663.5625
+      },
+      {
+        "text": "Strategy",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 112.40625,
+        "y": 663.5625
+      }
+    ],
+    "scroll": [
+      {
+        "w": 320,
+        "scroll": 418
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "path": "/index",
+    "overflow": 320,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 167,
+        "y": 666.6953125
+      },
+      {
+        "text": "UX/UI",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 89.2421875,
+        "y": 666.6953125
+      },
+      {
+        "text": "Strategy",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 112.40625,
+        "y": 666.6953125
+      }
+    ],
+    "scroll": [
+      {
+        "w": 320,
+        "scroll": 421
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/",
+    "overflow": 390,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 167,
+        "y": 702.9609375
+      },
+      {
+        "text": "UX/UI",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 89,
+        "y": 702.9609375
+      },
+      {
+        "text": "Strategy",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 112.40625,
+        "y": 702.9609375
+      }
+    ],
+    "scroll": [
+      {
+        "w": 390,
+        "scroll": 418
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/index",
+    "overflow": 390,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 167,
+        "y": 706.0703125
+      },
+      {
+        "text": "UX/UI",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 89.2421875,
+        "y": 706.0703125
+      },
+      {
+        "text": "Strategy",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 112.40625,
+        "y": 706.0703125
+      }
+    ],
+    "scroll": [
+      {
+        "w": 390,
+        "scroll": 421
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/",
+    "overflow": 430,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 167,
+        "y": 725.46875
+      },
+      {
+        "text": "UX/UI",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 89,
+        "y": 725.46875
+      },
+      {
+        "text": "Strategy",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 44,
+        "w": 112.40625,
+        "y": 725.46875
+      }
+    ],
+    "scroll": [
+      {
+        "w": 430,
+        "scroll": 430
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/index",
+    "overflow": 430,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 167,
+        "y": 728.5703125
+      },
+      {
+        "text": "UX/UI",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 89.2421875,
+        "y": 728.5703125
+      },
+      {
+        "text": "Strategy",
+        "pad": "8px 24px 7px",
+        "font": "13px / 16.9px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 44,
+        "w": 112.40625,
+        "y": 728.5703125
+      }
+    ],
+    "scroll": [
+      {
+        "w": 430,
+        "scroll": 430
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/",
+    "overflow": 1200,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "5px 10px 6px",
+        "font": "13px / 13px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 26,
+        "w": 139,
+        "y": 944.7578125
+      },
+      {
+        "text": "UX/UI",
+        "pad": "5px 10px 6px",
+        "font": "13px / 13px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 26,
+        "w": 61,
+        "y": 944.7578125
+      },
+      {
+        "text": "Strategy",
+        "pad": "5px 10px 6px",
+        "font": "13px / 13px \"GT Standard Mono Trial\", \"GT Standard Mono\", \"Azeret Mono\", monospace",
+        "h": 26,
+        "w": 84.40625,
+        "y": 944.7578125
+      }
+    ],
+    "scroll": [
+      {
+        "w": 570,
+        "scroll": 570
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/index",
+    "overflow": 1200,
+    "pills": [
+      {
+        "text": "Visual Identity",
+        "pad": "5px 10px 6px",
+        "font": "12px / 12px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 25,
+        "w": 130,
+        "y": 917.5859375
+      },
+      {
+        "text": "UX/UI",
+        "pad": "5px 10px 6px",
+        "font": "12px / 12px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 25,
+        "w": 58.21875,
+        "y": 917.5859375
+      },
+      {
+        "text": "Strategy",
+        "pad": "5px 10px 6px",
+        "font": "12px / 12px \"GT Standard Mono Trial\", \"Azeret Mono\", \"SF Mono\", monospace",
+        "h": 25,
+        "w": 79.6015625,
+        "y": 917.5859375
+      }
+    ],
+    "scroll": [
+      {
+        "w": 373,
+        "scroll": 373
+      }
+    ]
+  }
+]

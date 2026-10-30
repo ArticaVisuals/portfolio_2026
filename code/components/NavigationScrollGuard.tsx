@@ -165,6 +165,9 @@ const MOBILE_NAV_CSS = `
     html body .idx-grid-preview-locked .idx-grid-card-tag {
         font-size: 13px !important;
         line-height: 1.3 !important;
+        /* Center the visible mono capitals, including the Index button's anonymous text.
+           The 1px padding bias gives a half-pixel optical correction inside the 44px target. */
+        padding-block: 8px 7px !important;
     }
 }
 html.mh-mobile-menu-open body { overflow: hidden !important; }
