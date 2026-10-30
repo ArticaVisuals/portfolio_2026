@@ -1,0 +1,364 @@
+[
+  {
+    "path": "/",
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "width": 622.9375,
+        "height": 85,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 550.53125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 62.40625,
+            "height": 13,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "width": 397.3515625,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 332.75,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 54.6015625,
+            "height": 13,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "width": 405.7421875,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 341.140625,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 54.6015625,
+            "height": 13,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "width": 323.8203125,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 274.8203125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 39,
+            "height": 13,
+            "font": "13px"
+          }
+        ]
+      }
+    ],
+    "hero": null
+  },
+  {
+    "path": "/about",
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "width": 621.8984375,
+        "height": 90,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 550.53125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 61.3671875,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "width": 396.4453125,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 332.75,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 53.6953125,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "width": 404.8359375,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 341.140625,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 53.6953125,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "width": 323.171875,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 274.8203125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 38.3515625,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      }
+    ],
+    "hero": null
+  },
+  {
+    "path": "/index",
+    "rows": [],
+    "hero": null
+  },
+  {
+    "path": "/case-studies/optro",
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "width": 621.8984375,
+        "height": 90,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 550.53125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 61.3671875,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "width": 396.4453125,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 332.75,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 53.6953125,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "width": 404.8359375,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 341.140625,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 53.6953125,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "width": 323.171875,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 274.8203125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 38.3515625,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "text": "CRX 2026",
+        "rect": {
+          "x": 20,
+          "y": -5885.2919921875,
+          "width": 332.5,
+          "height": 70,
+          "top": -5885.2919921875,
+          "right": 352.5,
+          "bottom": -5815.2919921875,
+          "left": 20
+        },
+        "font": "70px"
+      },
+      {
+        "text": "Transform risk into opportunity.",
+        "rect": {
+          "x": 20,
+          "y": -5790.6669921875,
+          "width": 973.140625,
+          "height": 70,
+          "top": -5790.6669921875,
+          "right": 993.140625,
+          "bottom": -5720.6669921875,
+          "left": 20
+        },
+        "font": "70px"
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "width": 621.8984375,
+        "height": 90,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 550.53125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 61.3671875,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "width": 396.4453125,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 332.75,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 53.6953125,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "width": 404.8359375,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 341.140625,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 53.6953125,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "width": 323.171875,
+        "height": 80,
+        "gap": "10px",
+        "parentGap": "12px",
+        "children": [
+          {
+            "width": 274.8203125,
+            "height": 80,
+            "font": "80px"
+          },
+          {
+            "width": 38.3515625,
+            "height": 16.8984375,
+            "font": "13px"
+          }
+        ]
+      }
+    ],
+    "hero": null
+  }
+]
