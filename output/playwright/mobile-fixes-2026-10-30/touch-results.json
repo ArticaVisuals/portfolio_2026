@@ -1,0 +1,1294 @@
+[
+  {
+    "route": "/",
+    "width": 320,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-pw433q framer-22mm1d"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-1qfuuuf framer-22mm1d"
+      },
+      {
+        "text": "EMAIL\n\n,",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-1o29gbn framer-22mm1d"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-n12bck framer-22mm1d"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "UX/UI",
+        "w": 58,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 79.6015625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 108.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 108.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 79.6015625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "EDITORIAL",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "PRODUCT",
+        "w": 72.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "PACKAGING",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VIEW ALL\n\nVIEW ALL",
+        "w": 62.40625,
+        "h": 44,
+        "cls": "framer-0huOU framer-Gyx0Q framer-cpv035 framer-v-1qnmq40 framer-1be4gvd"
+      },
+      {
+        "text": "scroll to top",
+        "w": 118.7109375,
+        "h": 44,
+        "cls": "mh-scroll-top-button"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-pw433q framer-22mm1d"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-1qfuuuf framer-22mm1d"
+      },
+      {
+        "text": "EMAIL\n\n,",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-1o29gbn framer-22mm1d"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-n12bck framer-22mm1d"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "UX/UI",
+        "w": 58,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 79.6015625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 108.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 108.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 79.6015625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "EDITORIAL",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "PRODUCT",
+        "w": 72.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "PACKAGING",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VIEW ALL\n\nVIEW ALL",
+        "w": 62.40625,
+        "h": 44,
+        "cls": "framer-0huOU framer-Gyx0Q framer-cpv035 framer-v-1qnmq40 framer-1be4gvd"
+      },
+      {
+        "text": "scroll to top",
+        "w": 118.7109375,
+        "h": 44,
+        "cls": "mh-scroll-top-button"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "width": 430,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-pw433q framer-22mm1d"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-1qfuuuf framer-22mm1d"
+      },
+      {
+        "text": "EMAIL\n\n,",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-1o29gbn framer-22mm1d"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-n12bck framer-22mm1d"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "UX/UI",
+        "w": 58,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 79.6015625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 108.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 108.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 79.6015625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 130,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "EDITORIAL",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "PRODUCT",
+        "w": 72.40625,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "PACKAGING",
+        "w": 86.8046875,
+        "h": 44,
+        "cls": "selected-work-tag"
+      },
+      {
+        "text": "VIEW ALL\n\nVIEW ALL",
+        "w": 62.40625,
+        "h": 44,
+        "cls": "framer-0huOU framer-Gyx0Q framer-cpv035 framer-v-1qnmq40 framer-1be4gvd"
+      },
+      {
+        "text": "scroll to top",
+        "w": 118.7109375,
+        "h": 44,
+        "cls": "mh-scroll-top-button"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "viewAll": true
+  },
+  {
+    "route": "/index",
+    "width": 320,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "Show all years",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "2026",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2025",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2024",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2023",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2019",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "Show all services",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "EDITORIAL",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "PACKAGING",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "PRODUCT",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "TYPE DESIGN",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "UX/UI",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "Show all industries",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "EDUCATION",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "HEALTH",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "HUMAN RIGHTS",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "LITERATURE",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "NATURE",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "SCIENCE",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "w": 182.5625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "",
+        "w": 101.40625,
+        "h": 44,
+        "cls": "idx-tax-item idx-clear-filters"
+      },
+      {
+        "text": "GRID",
+        "w": 44,
+        "h": 44,
+        "cls": "idx-view-toggle-option"
+      },
+      {
+        "text": "LIST",
+        "w": 44,
+        "h": 44,
+        "cls": "idx-view-toggle-option"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "route": "/index",
+    "width": 390,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "Show all years",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "2026",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2025",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2024",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2023",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2019",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "Show all services",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "EDITORIAL",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "PACKAGING",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "PRODUCT",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "TYPE DESIGN",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "UX/UI",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "Show all industries",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "EDUCATION",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "HEALTH",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "HUMAN RIGHTS",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "LITERATURE",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "NATURE",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "SCIENCE",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "w": 230.1640625,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "",
+        "w": 101.40625,
+        "h": 44,
+        "cls": "idx-tax-item idx-clear-filters"
+      },
+      {
+        "text": "GRID",
+        "w": 44,
+        "h": 44,
+        "cls": "idx-view-toggle-option"
+      },
+      {
+        "text": "LIST",
+        "w": 44,
+        "h": 44,
+        "cls": "idx-view-toggle-option"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "route": "/index",
+    "width": 430,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "Show all years",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "2026",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2025",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2024",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2023",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "2019",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "Show all services",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "2D MOTION",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "3D MOTION",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "EDITORIAL",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "PACKAGING",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "PRODUCT",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "SOCIAL MEDIA",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "STRATEGY",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "TYPE DESIGN",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "UX/UI",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "VISUAL IDENTITY",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "Show all industries",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item"
+      },
+      {
+        "text": "EDUCATION",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "HEALTH",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "HUMAN RIGHTS",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "LITERATURE",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "NATURE",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "SCIENCE",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "w": 257.3671875,
+        "h": 44,
+        "cls": "idx-tax-item idx-tax-value"
+      },
+      {
+        "text": "",
+        "w": 101.40625,
+        "h": 44,
+        "cls": "idx-tax-item idx-clear-filters"
+      },
+      {
+        "text": "GRID",
+        "w": 44,
+        "h": 44,
+        "cls": "idx-view-toggle-option"
+      },
+      {
+        "text": "LIST",
+        "w": 44,
+        "h": 44,
+        "cls": "idx-view-toggle-option"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "filter": "https://micahhoang.com/index?year=2026",
+    "pressed": "true"
+  },
+  {
+    "list": "true"
+  },
+  {
+    "route": "/about",
+    "width": 320,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "LINKEDIN",
+        "w": 62.40625,
+        "h": 44,
+        "cls": "framer-1l3odso framer-er304w"
+      },
+      {
+        "text": "RESUME",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-hh49bv framer-er304w"
+      },
+      {
+        "text": "COSMOS",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-12ycpb0 framer-er304w"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-dl05hv framer-er304w"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "width": 390,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "LINKEDIN",
+        "w": 62.40625,
+        "h": 44,
+        "cls": "framer-1l3odso framer-er304w"
+      },
+      {
+        "text": "RESUME",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-hh49bv framer-er304w"
+      },
+      {
+        "text": "COSMOS",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-12ycpb0 framer-er304w"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-dl05hv framer-er304w"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "route": "/about",
+    "width": 430,
+    "overflow": false,
+    "targets": [
+      {
+        "text": "LINKEDIN",
+        "w": 62.40625,
+        "h": 44,
+        "cls": "framer-1l3odso framer-er304w"
+      },
+      {
+        "text": "RESUME",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-hh49bv framer-er304w"
+      },
+      {
+        "text": "COSMOS",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-12ycpb0 framer-er304w"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-dl05hv framer-er304w"
+      },
+      {
+        "text": "LINKEDIN\n\n,",
+        "w": 70.2109375,
+        "h": 44,
+        "cls": "framer-1fr4fgp framer-q65lnj"
+      },
+      {
+        "text": "RESUME\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-6eivmt framer-q65lnj"
+      },
+      {
+        "text": "COSMOS\n\n,",
+        "w": 54.609375,
+        "h": 44,
+        "cls": "framer-nvaw5a framer-q65lnj"
+      },
+      {
+        "text": "GITHUB",
+        "w": 46.8046875,
+        "h": 44,
+        "cls": "framer-197w6x6 framer-q65lnj"
+      }
+    ]
+  },
+  {
+    "galleryExists": 1
+  },
+  {
+    "gallery": {
+      "paused": false,
+      "ready": 4,
+      "height": 204.16403198242188
+    }
+  },
+  {
+    "menu": true
+  }
+]

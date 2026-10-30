@@ -1,0 +1,127 @@
+[
+  {
+    "route": "/case-studies/gaia",
+    "i": 0,
+    "shifts": [],
+    "css": "@media (max-width:809px){html body [data-framer-name=\"Hero image\"],html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;height:auto !important;}}@media (min-width:810px){html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;}}",
+    "hero": [
+      {
+        "r": {
+          "x": 0,
+          "y": 314,
+          "width": 390,
+          "height": 219.375,
+          "top": 314,
+          "right": 390,
+          "bottom": 533.375,
+          "left": 0
+        },
+        "ratio": "1.77778 / 1",
+        "video": {
+          "paused": false,
+          "ready": 4
+        }
+      }
+    ],
+    "bytes": 7112861
+  },
+  {
+    "route": "/case-studies/gaia",
+    "returnHero": {
+      "paused": false,
+      "ready": 4,
+      "h": 219.375
+    }
+  },
+  {
+    "route": "/case-studies/gaia",
+    "i": 1,
+    "shifts": [],
+    "css": "@media (max-width:809px){html body [data-framer-name=\"Hero image\"],html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;height:auto !important;}}@media (min-width:810px){html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;}}",
+    "hero": [
+      {
+        "r": {
+          "x": 0,
+          "y": 314,
+          "width": 390,
+          "height": 219.375,
+          "top": 314,
+          "right": 390,
+          "bottom": 533.375,
+          "left": 0
+        },
+        "ratio": "1.77778 / 1",
+        "video": {
+          "paused": false,
+          "ready": 4
+        }
+      }
+    ],
+    "bytes": 7112861
+  },
+  {
+    "route": "/case-studies/gaia",
+    "i": 2,
+    "shifts": [],
+    "css": "@media (max-width:809px){html body [data-framer-name=\"Hero image\"],html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;height:auto !important;}}@media (min-width:810px){html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;}}",
+    "hero": [
+      {
+        "r": {
+          "x": 0,
+          "y": 314,
+          "width": 390,
+          "height": 219.375,
+          "top": 314,
+          "right": 390,
+          "bottom": 533.375,
+          "left": 0
+        },
+        "ratio": "1.77778 / 1",
+        "video": {
+          "paused": false,
+          "ready": 4
+        }
+      }
+    ],
+    "bytes": 7112861
+  },
+  {
+    "route": "/case-studies/airpods",
+    "i": 0,
+    "shifts": [],
+    "css": "@media (max-width:809px){html body [data-framer-name=\"Hero image\"],html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;height:auto !important;}}@media (min-width:810px){html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;}}",
+    "hero": [],
+    "bytes": 5282164
+  },
+  {
+    "route": "/case-studies/airpods",
+    "returnHero": {
+      "paused": false,
+      "ready": 4,
+      "h": 219.375
+    }
+  },
+  {
+    "route": "/case-studies/airpods",
+    "i": 1,
+    "shifts": [],
+    "css": "@media (max-width:809px){html body [data-framer-name=\"Hero image\"],html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;height:auto !important;}}@media (min-width:810px){html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;}}",
+    "hero": [],
+    "bytes": 5282164
+  },
+  {
+    "route": "/case-studies/airpods",
+    "i": 2,
+    "shifts": [],
+    "css": "@media (max-width:809px){html body [data-framer-name=\"Hero image\"],html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;height:auto !important;}}@media (min-width:810px){html body [data-framer-name=\"Hero image\"][data-case-study-media-skeleton=\"true\"]{aspect-ratio:1.777778 !important;}}",
+    "hero": [],
+    "bytes": 5282164
+  },
+  {
+    "viewAll": {
+      "height": 44,
+      "maskOverflow": "hidden",
+      "maskHeight": 13
+    }
+  }
+]

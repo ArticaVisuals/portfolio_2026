@@ -1,6 +1,24 @@
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
+function ViewportVideo(props: React.VideoHTMLAttributes<HTMLVideoElement>) {
+    const ref = React.useRef<HTMLVideoElement>(null)
+    const [near, setNear] = React.useState(false)
+    React.useEffect(() => {
+        const video = ref.current
+        if (!video) return
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setNear(true)
+                observer.disconnect()
+            }
+        }, { rootMargin: "200px" })
+        observer.observe(video)
+        return () => observer.disconnect()
+    }, [props.src])
+    return <video {...props} ref={ref} autoPlay={near && props.autoPlay} preload={near ? "metadata" : "none"} />
+}
+
 type MediaKind = "image" | "video"
 type MediaFit = "cover" | "contain"
 
@@ -524,7 +542,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
 
                             const media =
                                 item.kind === "video" ? (
-                                    <video
+                                    <ViewportVideo
                                         src={item.src}
                                         poster={item.poster || undefined}
                                         autoPlay={autoplay}
@@ -533,14 +551,6 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                         controls={controls}
                                         playsInline
                                         preload="metadata"
-                                        ref={(video) => {
-                                            if (!video || video.readyState < 1) return
-                                            rememberRatio(
-                                                item.src,
-                                                video.videoWidth,
-                                                video.videoHeight
-                                            )
-                                        }}
                                         onLoadedMetadata={(event) => {
                                             const video = event.currentTarget
                                             rememberRatio(

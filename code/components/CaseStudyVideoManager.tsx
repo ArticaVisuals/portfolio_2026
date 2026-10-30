@@ -383,14 +383,21 @@ export default function CaseStudyVideoManager(props: Config) {
             })
             const vids = document.querySelectorAll<HTMLVideoElement>("video")
             const vh = window.innerHeight || 800
-            const margin = Math.max(0, vh * (Number(c.lookahead) || 0) / 100)
+            const authoredLookahead = Math.max(0, Number(c.lookahead) || 0)
+            const lookahead = window.matchMedia("(max-width: 809px)").matches
+                ? Math.min(authoredLookahead, 25)
+                : authoredLookahead
+            const margin = vh * lookahead / 100
             const pageVisible = document.visibilityState !== "hidden"
             // Read phase: gather decisions (rect reads only).
             const actions: Array<[HTMLVideoElement, boolean]> = []
             vids.forEach((v) => {
                 if (!shouldManage(v)) return
                 const r = v.getBoundingClientRect()
-                const rendered = r.width >= 4 && r.height >= 4
+                // A visible hero may briefly have no intrinsic video height during restore.
+                // Do not strand it in the deferred pool; hidden breakpoint copies still have width 0.
+                const isHero = Boolean(v.closest('[data-framer-name="Hero image"]'))
+                const rendered = r.width >= 4 && (r.height >= 4 || isHero)
                 const near =
                     pageVisible && rendered && r.bottom > -margin && r.top < vh + margin
                 actions.push([v, c.enabled ? near : true])

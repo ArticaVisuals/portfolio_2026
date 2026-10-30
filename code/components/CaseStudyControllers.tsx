@@ -251,7 +251,8 @@ function getStableHeroRatioStyle(ratio: number): string {
     const safeRatio = Number(ratio)
     if (!Number.isFinite(safeRatio) || safeRatio <= 0) return ""
 
-    return `@media (min-width:${STABLE_HERO_RATIO_MIN_WIDTH}px){html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;}}`
+    // Reserve mobile geometry in the server-rendered HTML, before skeleton tagging.
+    return `@media (max-width:${STABLE_HERO_RATIO_MIN_WIDTH - 1}px){html body [data-framer-name="Hero image"],html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;height:auto !important;}}@media (min-width:${STABLE_HERO_RATIO_MIN_WIDTH}px){html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;}}`
 }
 
 function isCaseStudyDetailPage(): boolean {
@@ -305,9 +306,7 @@ function syncFeaturedProjectVideoPosters() {
         if (!video.getAttribute("poster")) {
             video.setAttribute("poster", poster)
         }
-        if (video.getAttribute("preload") !== "metadata") {
-            video.setAttribute("preload", "metadata")
-        }
+        // Loading belongs to the video manager; poster refreshes must not restart it.
         video.setAttribute("data-featured-project-poster", "true")
     })
 }
