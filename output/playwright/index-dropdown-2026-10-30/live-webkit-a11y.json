@@ -1,0 +1,100 @@
+{
+  "out": [
+    {
+      "width": 320,
+      "label": "Year",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 320,
+      "label": "Service",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 320,
+      "label": "Industry",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 390,
+      "label": "Year",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 390,
+      "label": "Service",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 390,
+      "label": "Industry",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 430,
+      "label": "Year",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 430,
+      "label": "Service",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 430,
+      "label": "Industry",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 809,
+      "label": "Year",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 809,
+      "label": "Service",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    },
+    {
+      "width": 809,
+      "label": "Industry",
+      "issues": [],
+      "overflow": false,
+      "targets": []
+    }
+  ],
+  "interactions": {
+    "filteredCount": "2 PROJECTS\n1 ACTIVE FILTER",
+    "restored": true,
+    "arrowFocused": "All",
+    "cards": 2,
+    "selectedAfterView": "Year filters, 1 selected",
+    "cleared": "17 PROJECTS",
+    "outsideClosed": true,
+    "tabFocus": "All",
+    "expandedOverflow": false
+  },
+  "errors": []
+}

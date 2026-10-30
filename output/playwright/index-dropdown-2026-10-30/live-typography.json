@@ -1,0 +1,82 @@
+[
+  {
+    "page": "index",
+    "width": 390,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": true,
+    "desktopFilters": false
+  },
+  {
+    "page": "index-list",
+    "width": 810,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": true
+  },
+  {
+    "page": "index-grid",
+    "width": 810,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": true
+  },
+  {
+    "page": "index-list",
+    "width": 1200,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": true
+  },
+  {
+    "page": "index-grid",
+    "width": 1200,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": true
+  },
+  {
+    "page": "home",
+    "width": 390,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": false
+  },
+  {
+    "page": "home",
+    "width": 810,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": false
+  },
+  {
+    "page": "home",
+    "width": 1200,
+    "overflow": false,
+    "mono": [
+      "13px"
+    ],
+    "mobileFilters": false,
+    "desktopFilters": false
+  }
+]
