@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/",
+    "violations": []
+  },
+  {
+    "path": "/about",
+    "violations": []
+  },
+  {
+    "path": "/case-studies/optro",
+    "violations": []
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "violations": []
+  }
+]

@@ -1,6 +1,42 @@
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
+const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
+// Reuse the site's 44px mobile target floor without changing desktop controls.
+const MOBILE_CONTROL_CSS = `
+@media (max-width: 809px) {
+    .mh-carousel-arrow { min-width: 44px; min-height: 44px; touch-action: manipulation; }
+    .mh-carousel-dots {
+        flex-wrap: nowrap !important;
+        justify-content: safe center !important;
+        gap: 0 !important;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+    }
+    .mh-carousel-dots::-webkit-scrollbar { display: none; }
+    .mh-carousel-dot {
+        flex: 0 0 44px;
+        width: 44px !important;
+        height: 44px !important;
+        display: grid;
+        place-items: center;
+        background: transparent !important;
+        touch-action: manipulation;
+        transition: none !important;
+    }
+    .mh-carousel-dot::after {
+        content: "";
+        width: var(--mh-dot-width);
+        height: 5px;
+        border-radius: inherit;
+        background: var(--mh-dot-color);
+    }
+    .mh-carousel-dot:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+}
+`
+
+
 type ResponsiveImage = {
     src?: string
     srcSet?: string
@@ -112,6 +148,7 @@ export default function ImageCarousel(props: Props) {
         return parseManifest(slidesData)
     }, [slideControls, slidesData, sourceMode])
     const [index, setIndex] = React.useState(0)
+    const dotsRef = React.useRef<HTMLDivElement>(null)
     const [isHovered, setIsHovered] = React.useState(false)
     const [naturalAspects, setNaturalAspects] = React.useState<Record<string, number>>({})
 
@@ -144,7 +181,15 @@ export default function ImageCarousel(props: Props) {
         return () => window.clearInterval(timer)
     }, [advance, autoplay, interval, isHovered, slideCount])
 
-    const transition = `opacity ${Math.max(0, transitionDuration)}s cubic-bezier(0.12, 0.23, 0.5, 1)`
+    React.useEffect(() => {
+        const dots = dotsRef.current
+        const selected = dots?.children[index] as HTMLElement | undefined
+        if (!dots || !selected || !window.matchMedia("(max-width: 809px)").matches) return
+        // Scroll only this strip; never move the page when autoplay advances.
+        dots.scrollLeft = Math.max(0, selected.offsetLeft - (dots.clientWidth - selected.offsetWidth) / 2)
+    }, [index, slideCount])
+
+    const transition = `opacity ${Math.max(0, transitionDuration)}s ${SMOOTH_EASE}`
     const safeAspectRatio = Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : 3014 / 1924
     const safeCustomAspectRatio = Number.isFinite(customAspectRatio) && customAspectRatio > 0 ? customAspectRatio : safeAspectRatio
     const cropStrength = Number.isFinite(cropTightness) ? Math.max(0, Math.min(150, cropTightness)) / 100 : 1
@@ -198,6 +243,7 @@ export default function ImageCarousel(props: Props) {
             aria-roledescription="carousel"
             aria-label={ariaLabel}
         >
+            <style>{MOBILE_CONTROL_CSS}</style>
             {shouldMeasureOwnHeight && (
                 <div
                     aria-hidden="true"
@@ -270,6 +316,8 @@ export default function ImageCarousel(props: Props) {
             {showDots && slideCount > 1 && (
                 <div
                     aria-label="Slide navigation"
+                    className="mh-carousel-dots"
+                    ref={dotsRef}
                     style={{
                         position: "absolute",
                         left: 16,
@@ -287,11 +335,15 @@ export default function ImageCarousel(props: Props) {
                             key={dotIndex}
                             type="button"
                             aria-label={`Go to slide ${dotIndex + 1}`}
+                            aria-current={dotIndex === index ? "true" : undefined}
+                            className="mh-carousel-dot"
                             onClick={(event) => {
                                 event.stopPropagation()
                                 goTo(dotIndex)
                             }}
                             style={{
+                                ["--mh-dot-width" as string]: dotIndex === index ? "16px" : "5px",
+                                ["--mh-dot-color" as string]: dotIndex === index ? activeDotColor : dotColor,
                                 width: dotIndex === index ? 16 : 5,
                                 height: 5,
                                 borderRadius: 999,
@@ -299,7 +351,7 @@ export default function ImageCarousel(props: Props) {
                                 padding: 0,
                                 background: dotIndex === index ? activeDotColor : dotColor,
                                 cursor: "pointer",
-                                transition: "width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1)",
+                                transition: `width 0.2s ${SMOOTH_EASE}, background 0.2s ${SMOOTH_EASE}`,
                             }}
                         />
                     ))}
@@ -424,6 +476,7 @@ function ArrowButton({ label, side, color, background, fixed = false, onClick }:
         <button
             type="button"
             aria-label={label}
+            className="mh-carousel-arrow"
             onClick={(event) => {
                 event.stopPropagation()
                 onClick()
