@@ -1,5 +1,6 @@
 import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
+// @ts-ignore Framer resolves the existing pinned ESM dependency at runtime.
 import Lenis from "https://esm.sh/lenis@1.3.26"
 
 // Apply Lenis globally while preserving native touch, reduced-motion,
@@ -25,6 +26,30 @@ const MOBILE_NAV_QUERY = "(max-width: 809px)"
 const MOBILE_NAV_CSS = `
 @media (max-width: 809px) {
     @view-transition { navigation: none; }
+    /* Shared mobile accessibility floor. Preserve each control's authored typography. */
+    a[data-framer-name="Social Link"] {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    .idx-tax-item, .idx-view-toggle-option, .selected-work-tag {
+        min-height: 44px !important;
+        min-width: 44px !important;
+        box-sizing: border-box !important;
+    }
+    .selected-work-tag {
+        padding-inline: 20px !important;
+    }
+    /* Keep the rolling text's existing mask; enlarge only its outer link. */
+    a[data-framer-name^="Text Link"] {
+        padding-top: 15.5px !important;
+        padding-bottom: 15.5px !important;
+        min-width: 44px !important;
+        box-sizing: content-box !important;
+    }
+    a[data-framer-name^="Text Link"] > [data-nested-link] {
+        overflow: hidden !important;
+        transform: none !important;
+    }
     nav[data-framer-name="Navigation"] {
         transform: none !important;
         opacity: 1 !important;

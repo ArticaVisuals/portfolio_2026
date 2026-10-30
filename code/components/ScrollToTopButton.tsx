@@ -214,6 +214,13 @@ export default function ScrollToTopButton({
                     }
                 }
 
+                @media (max-width: 809px) {
+                    .mh-scroll-top-button {
+                        min-width: 44px;
+                        min-height: 44px;
+                    }
+                }
+
                 @media (prefers-reduced-motion: reduce) {
                     .mh-scroll-top-label-rail,
                     .mh-scroll-top-arrow-rail {
