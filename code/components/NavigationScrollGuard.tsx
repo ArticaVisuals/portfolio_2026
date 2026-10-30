@@ -36,6 +36,24 @@ const MOBILE_NAV_CSS = `
         min-width: 44px !important;
         box-sizing: border-box !important;
     }
+    nav[data-framer-name="Navigation"] [data-framer-name="Social Links"] a {
+        min-width: 44px !important;
+        min-height: 44px !important;
+    }
+    html:has(link[rel="canonical"][href$="/about"]) p[data-styles-preset="EoCREtojJ"]:has(> a) {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        column-gap: 4px !important;
+    }
+    html:has(link[rel="canonical"][href$="/about"]) p[data-styles-preset="EoCREtojJ"] > a {
+        display: inline-flex !important;
+        align-items: center !important;
+        min-height: 44px !important;
+        min-width: 44px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
     /* Keep content aligned at rest, while the scroll viewport reaches both screen edges. */
     [data-framer-name="Section Selected Works"] [data-framer-name="Projects"],
     [data-framer-name="Section Selected Works"] > div:has([data-framer-name="Projects"]) {
@@ -74,6 +92,7 @@ const MOBILE_NAV_CSS = `
         box-sizing: content-box !important;
     }
     a[data-framer-name^="Text Link"] > [data-nested-link] {
+        pointer-events: none !important;
         overflow: hidden !important;
         transform: none !important;
     }
@@ -136,7 +155,7 @@ const MOBILE_NAV_CSS = `
     }
     /* The existing case-study footer scale, shared by every route and all four links.
        Override older per-link patches before hydration, including the omitted GitHub row. */
-    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] {
+    html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) {
         align-items: flex-start !important;
         flex-wrap: wrap !important;
         justify-content: flex-start !important;
@@ -147,8 +166,8 @@ const MOBILE_NAV_CSS = `
         max-width: 100% !important;
         padding: 0 !important;
     }
-    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :first-child,
-    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :first-child * {
+    html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :first-child,
+    html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :first-child * {
         font-size: 32px !important;
         line-height: 1em !important;
         letter-spacing: -0.01em !important;
@@ -156,7 +175,7 @@ const MOBILE_NAV_CSS = `
         min-height: 0 !important;
         max-width: 100% !important;
     }
-    html body [data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :not(:first-child) * {
+    html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :not(:first-child) * {
         font-size: 13px !important;
         line-height: 1em !important;
         letter-spacing: 0.01em !important;
@@ -267,6 +286,16 @@ function installMobileNavigation() {
     let frame = 0
     let currentPath = window.location.pathname
     const inertSiblings = new Map<HTMLElement, boolean>()
+    const nestedLinks = new Map<HTMLElement, { role: string | null; tabIndex: string | null }>()
+    const restoreNestedLinks = () => {
+        nestedLinks.forEach((value, element) => {
+            if (value.role === null) element.removeAttribute("role")
+            else element.setAttribute("role", value.role)
+            if (value.tabIndex === null) element.removeAttribute("tabindex")
+            else element.setAttribute("tabindex", value.tabIndex)
+        })
+        nestedLinks.clear()
+    }
 
     const restoreBackground = () => {
         document.documentElement.classList.remove("mh-mobile-menu-open")
@@ -308,7 +337,14 @@ function installMobileNavigation() {
     }
     const sync = () => {
         frame = 0
-        if (!media.matches) { detach(); return }
+        if (!media.matches) { restoreNestedLinks(); detach(); return }
+        document.querySelectorAll<HTMLElement>('a[data-framer-name^="Text Link"] > [data-nested-link]').forEach((element) => {
+            if (!nestedLinks.has(element)) nestedLinks.set(element, {
+                role: element.getAttribute("role"), tabIndex: element.getAttribute("tabindex"),
+            })
+            element.removeAttribute("role")
+            element.removeAttribute("tabindex")
+        })
         const nextRoot = Array.from(document.querySelectorAll<HTMLElement>(
             'nav[data-framer-name="Navigation"] [data-framer-name="Closed"], nav[data-framer-name="Navigation"] [data-framer-name="Open"]'
         )).find((element) => element.getBoundingClientRect().width > 0) || null
@@ -411,6 +447,7 @@ function installMobileNavigation() {
         window.removeEventListener("mh:locationchange", onRoute)
         window.removeEventListener("framer:pageLoad", onRoute)
         detach()
+        restoreNestedLinks()
     }
 }
 
