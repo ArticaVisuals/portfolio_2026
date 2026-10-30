@@ -1,0 +1,99 @@
+{
+  "rect": {
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 53,
+    "top": 0,
+    "right": 1440,
+    "bottom": 53,
+    "left": 0
+  },
+  "links": [
+    {
+      "text": "Micah Hoang",
+      "href": "./",
+      "rect": {
+        "x": 20,
+        "y": 20,
+        "width": 248,
+        "height": 13,
+        "top": 20,
+        "right": 268,
+        "bottom": 33,
+        "left": 20
+      }
+    },
+    {
+      "text": "WorkWork",
+      "href": "./",
+      "rect": {
+        "x": 1186.59375,
+        "y": 20,
+        "width": 31.203125,
+        "height": 13,
+        "top": 20,
+        "right": 1217.796875,
+        "bottom": 33,
+        "left": 1186.59375
+      }
+    },
+    {
+      "text": "PLAYPLAY",
+      "href": "./play",
+      "rect": {
+        "x": 1248.796875,
+        "y": 20,
+        "width": 31.203125,
+        "height": 13,
+        "top": 20,
+        "right": 1280,
+        "bottom": 33,
+        "left": 1248.796875
+      }
+    },
+    {
+      "text": "INDEXINDEX",
+      "href": "./index",
+      "rect": {
+        "x": 1311,
+        "y": 20,
+        "width": 39,
+        "height": 13,
+        "top": 20,
+        "right": 1350,
+        "bottom": 33,
+        "left": 1311
+      }
+    },
+    {
+      "text": "ABOUTABOUT",
+      "href": "./about",
+      "rect": {
+        "x": 1381,
+        "y": 20,
+        "width": 39,
+        "height": 13,
+        "top": 20,
+        "right": 1420,
+        "bottom": 33,
+        "left": 1381
+      }
+    }
+  ],
+  "menuButtons": 0,
+  "hover": {
+    "text": "INDEXINDEX",
+    "rect": {
+      "x": 1311,
+      "y": 20,
+      "width": 39,
+      "height": 13,
+      "top": 20,
+      "right": 1350,
+      "bottom": 33,
+      "left": 1311
+    },
+    "visible": "visible"
+  }
+}

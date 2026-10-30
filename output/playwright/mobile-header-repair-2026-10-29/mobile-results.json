@@ -1,0 +1,418 @@
+{
+  "motion": [
+    {
+      "width": 390,
+      "frames": 2100,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 1820,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2070,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2070,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2070,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2070,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "frames": 2105,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 2100,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2105,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2105,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2105,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2105,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "frames": 2165,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 2155,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2165,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2165,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2165,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2165,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "via": "About",
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "Play",
+      "path": "/play",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "Index",
+      "path": "/index",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "Work",
+      "path": "/",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "gaia \u2192 About",
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "airpods \u2192 About",
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "browser back",
+      "path": "/case-studies/airpods",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    }
+  ],
+  "controls": {
+    "viewport-390": {
+      "open": true,
+      "width": 390,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "Micah Hoang",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "Work",
+          "height": 54
+        },
+        {
+          "text": "Play",
+          "height": 54
+        },
+        {
+          "text": "Index",
+          "height": 54
+        },
+        {
+          "text": "About",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "viewport-320": {
+      "open": true,
+      "width": 320,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "Micah Hoang",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "Work",
+          "height": 54
+        },
+        {
+          "text": "Play",
+          "height": 54
+        },
+        {
+          "text": "Index",
+          "height": 54
+        },
+        {
+          "text": "About",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "viewport-430": {
+      "open": true,
+      "width": 430,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "Micah Hoang",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "Work",
+          "height": 54
+        },
+        {
+          "text": "Play",
+          "height": 54
+        },
+        {
+          "text": "Index",
+          "height": 54
+        },
+        {
+          "text": "About",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "keyboard": {
+      "focusStayedInside": true,
+      "restoredFocus": "MENU",
+      "scrollY": 500,
+      "overflow": "",
+      "open": false
+    },
+    "samePageWork": {
+      "scrollY": 0,
+      "open": false,
+      "overflow": ""
+    },
+    "desktopBoundary": {
+      "dialogCount": 0,
+      "menuCount": 0,
+      "overflow": "",
+      "navText": "Micah HoangBRAND DESIGNERLOS ANGELES, CALIFORNIAWorkWorkPLAYPLAYINDEXINDEXABOUTABOUT"
+    },
+    "returnToMobile": {
+      "path": "/case-studies/airpods",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    }
+  },
+  "errors": []
+}
