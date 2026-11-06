@@ -6,6 +6,14 @@ and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
 `workspace-organization-plan.md` + `code/mirror/manifest.json`.
 
+**2026-11-05 Home SEO update:** `HomeSelectedWorkGrid` now supports a native
+Framer `Projects` array. The production Home instance uses `useCMS=false` and
+six entries copied from the current CMS, so the initial HTML includes real
+project titles, links, tags, and media. Edit Home's `Projects` controls to
+maintain this list; `/index` remains CMS-driven. No project content is baked
+into the code component. See `case-study-seo-settings.md` for the SEO repair
+record and the plan-gated `/info` redirect that remains outstanding.
+
 After the 2026-06-18 audit: **34 code components + 5 overrides** (down from 44).
 2026-06-23 additions: **`TestimonialLineReveal`** (`tpDdaaJ`, live) and
 **`DoubleStackGalleryGrid`** (new case-study gallery layout; local mirror present,

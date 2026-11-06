@@ -4,6 +4,7 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 type Props = {
     useCMS: boolean
+    projects: Project[]
     collectionId: string
     collectionModuleUrl: string
     sortFieldIds: string
@@ -39,6 +40,7 @@ type Project = {
     number: number
     slug: string
     thumbnail?: ImageValue
+    posterUrl?: string
     thumbnailVideoLink?: string
     thumbnailStroke?: boolean
     category1?: string
@@ -1035,6 +1037,7 @@ function ProjectCard({
  */
 export default function HomeSelectedWorkGrid({
     useCMS = true,
+    projects: authoredProjects = [],
     collectionId = COLLECTION_ID,
     collectionModuleUrl = "",
     sortFieldIds = DEFAULT_SORT_FIELD_IDS,
@@ -1106,10 +1109,26 @@ export default function HomeSelectedWorkGrid({
         cacheKey,
     ])
 
+    // Authored projects are render-time props, so Framer includes the complete
+    // cards in static HTML and hydrates the same content without a CMS fetch.
+    const staticProjects = React.useMemo(
+        () => authoredProjects
+            .map((project, index) => ({
+                ...project,
+                title: normalizeText(project.title),
+                slug: normalizeSlug(project.slug),
+                number: normalizeNumber(project.number, index + 1),
+                thumbnail: normalizeImage(project.posterUrl || project.thumbnail),
+                isHomepage: true,
+            }))
+            .filter((project) => project.title && project.slug),
+        [authoredProjects]
+    )
+    const renderedProjects = useCMS ? projects : staticProjects
     const itemLimit = Math.max(1, Math.floor(Number(maxItems) || 6))
     const visibleProjects = React.useMemo(
-        () => getVisibleProjects(projects, itemLimit),
-        [projects, itemLimit]
+        () => getVisibleProjects(renderedProjects, itemLimit),
+        [renderedProjects, itemLimit]
     )
     const reserveLoadingLayout =
         Boolean(useCMS) && !cmsSettled && visibleProjects.length === 0
@@ -1136,16 +1155,14 @@ export default function HomeSelectedWorkGrid({
                       >
                           <div className="selected-work-card-link">
                               <div className="selected-work-card-meta">
-                                  <span>00</span>
-                                  <span>/</span>
-                                  <span>Placeholder</span>
+                                  <span aria-hidden="true">&nbsp;</span>
                               </div>
                               <div className="selected-work-media" />
                           </div>
                           {showTags ? (
                               <div className="selected-work-tags">
                                   <span className="selected-work-tag">
-                                      Placeholder
+                                      &nbsp;
                                   </span>
                               </div>
                           ) : null}
@@ -1551,6 +1568,27 @@ export default function HomeSelectedWorkGrid({
 }
 
 addPropertyControls(HomeSelectedWorkGrid, {
+    projects: {
+        type: ControlType.Array,
+        title: "Projects",
+        hidden: (props) => props.useCMS !== false,
+        control: {
+            type: ControlType.Object,
+            controls: {
+                title: { type: ControlType.String, title: "Title" },
+                slug: { type: ControlType.String, title: "Case Study Slug" },
+                number: { type: ControlType.Number, title: "Number", min: 1, displayStepper: true },
+                posterUrl: { type: ControlType.String, title: "Poster URL" },
+                thumbnailVideoLink: { type: ControlType.String, title: "Video URL" },
+                thumbnailStroke: { type: ControlType.Boolean, title: "Stroke", defaultValue: false },
+                category1: { type: ControlType.String, title: "Category 1" },
+                category2: { type: ControlType.String, title: "Category 2" },
+                category3: { type: ControlType.String, title: "Category 3" },
+            },
+        },
+        defaultValue: [],
+        maxCount: 12,
+    },
     useCMS: {
         type: ControlType.Boolean,
         title: "Use CMS",

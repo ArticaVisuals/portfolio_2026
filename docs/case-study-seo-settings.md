@@ -1,5 +1,34 @@
 # Case Study SEO Settings
 
+## November 5, 2026 SEO repairs
+
+- Home `HomeSelectedWorkGrid` (`FecepLS`, instance `h0ZkBCWe1`) now uses
+  `useCMS=false` with six authorable `Projects` entries copied from the current
+  All Projects collection. Titles, direct case-study links, tags, posters, and
+  videos render from props in the initial HTML. Maintain Home through this
+  instance's `Projects` array (including Poster URL and Video URL); `/index`
+  continues to use CMS. Switching Home back to CMS restores the asynchronous
+  discovery path, so it does not provide the same crawler-visible content.
+- The homepage headings are complete `Selected work` and `About Micah` text
+  nodes. The former second-word wrappers are hidden, with their original
+  content retained for rollback.
+- All 17 bespoke case-study title layers now include descriptive project
+  keywords. The applied copy and layer IDs are recorded in
+  `output/seo-2026-11-05/heading-changes.json`. Existing responsive copy
+  overrides remain where the phone design splits project names across rows.
+- The shared Footer link `AC1CBa3hD` and About hero link `mQD7l_6bj` now use
+  `https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf`,
+  matching the Home hero and ResumeAssetHost. This PDF contains the current
+  `.com` domain and updated role/skills copy; the old `j0eYAP…pdf` does not.
+- **Still blocked:** Framer Settings → Hosting → Redirects shows an
+  **Upgrade plan** gate. The current plan cannot author the requested permanent
+  `/info` → `/about` redirect. No plan purchase or JavaScript substitute was
+  applied; `/info` still returns HTTP 404. Add the redirect after upgrading to
+  a plan that includes redirects.
+
+Published HTML checks and browser QA artifacts are under
+`output/seo-2026-11-05/`.
+
 Generated July 14, 2026 from Framer MCP page/CMS inspection and published HTML
 checks. Production implementation and verification updated July 30, 2026.
 
