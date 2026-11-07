@@ -40,20 +40,8 @@ const MOBILE_NAV_CSS = `
         min-width: 44px !important;
         min-height: 44px !important;
     }
-    html:has(link[rel="canonical"][href$="/about"]) p[data-styles-preset="EoCREtojJ"]:has(> a) {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        column-gap: 4px !important;
-    }
-    html:has(link[rel="canonical"][href$="/about"]) p[data-styles-preset="EoCREtojJ"] > a {
-        display: inline-flex !important;
-        align-items: center !important;
-        min-height: 44px !important;
-        min-width: 44px !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
+    /* About mono links remain inline: native rows own the 44px minimum,
+       so separate links can wrap together with the shared text leading. */
     /* Keep content aligned at rest, while the scroll viewport reaches both screen edges. */
     [data-framer-name="Section Selected Works"] [data-framer-name="Projects"],
     [data-framer-name="Section Selected Works"] > div:has([data-framer-name="Projects"]) {

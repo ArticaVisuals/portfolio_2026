@@ -1,0 +1,397 @@
+[
+  {
+    "width": 390,
+    "viewport": 390,
+    "documentWidth": 390,
+    "rows": [
+      {
+        "text": "/ RECOGNITION",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "flex"
+      },
+      {
+        "text": "SIMON & SCHUSTER, INDIGO DESIGN, GOLD",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2026",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "SIMON & SCHUSTER, DNA PARIS, WINNER",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2026",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "SIMON & SCHUSTER, FONTS IN USE, FEATURE",
+        "height": 33.796875,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "SEEK TRUTH, YOUNG ONES ADC, MERIT",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "SEEK TRUTH, FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE",
+        "height": 33.796875,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION",
+        "height": 33.796875,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 810,
+    "viewport": 810,
+    "documentWidth": 810,
+    "rows": [
+      {
+        "text": "/ RECOGNITION",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "flex"
+      },
+      {
+        "text": "SIMON & SCHUSTER",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "INDIGO DESIGN, GOLD",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2026",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "DNA PARIS, WINNER",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2026",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "SEEK TRUTH",
+        "height": 28,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "YOUNG ONES ADC, MERIT",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "WEAPONIZED INNOCENCE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "INDEPENDENT LENS",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "GRAPHIS,HONORABLE MENTION",
+        "height": 33.796875,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "rows": [
+      {
+        "text": "/ RECOGNITION",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "flex"
+      },
+      {
+        "text": "SIMON & SCHUSTER",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "INDIGO DESIGN, GOLD",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2026",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "DNA PARIS, WINNER",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2026",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "SEEK TRUTH",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "YOUNG ONES ADC, MERIT",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "WEAPONIZED INNOCENCE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "INDEPENDENT LENS",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "GRAPHIS, HONORABLE MENTION",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "none",
+        "display": "-webkit-box"
+      },
+      {
+        "text": "2024",
+        "height": 16.890625,
+        "lineHeight": "16.9px",
+        "clamp": "1",
+        "display": "-webkit-box"
+      }
+    ],
+    "errors": []
+  }
+]
