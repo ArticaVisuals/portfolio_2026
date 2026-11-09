@@ -1,0 +1,5707 @@
+[
+  {
+    "width": 320,
+    "path": "/",
+    "overflow": 320,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 240,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 300
+      }
+    ],
+    "body": [
+      {
+        "text": "I'm a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2707.2734375,
+        "w": 280,
+        "h": 126.015625,
+        "right": 300
+      }
+    ],
+    "headings": [
+      {
+        "text": "Micah Hoang",
+        "fs": "58px",
+        "line": "66.12px",
+        "ls": "-0.58px",
+        "x": 17,
+        "y": 76.8984375,
+        "w": 345.6875,
+        "h": 66.1171875,
+        "right": 362.6875
+      },
+      {
+        "text": "Brand designer with a systems mind.",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 143.8984375,
+        "w": 184.796875,
+        "h": 79.1953125,
+        "right": 204.796875
+      },
+      {
+        "text": "Selected",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 369,
+        "w": 163.34375,
+        "h": 42,
+        "right": 183.34375
+      },
+      {
+        "text": "work",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 191.34375,
+        "y": 369,
+        "w": 91.3125,
+        "h": 42,
+        "right": 282.65625
+      },
+      {
+        "text": "About",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 2475.375,
+        "w": 112.6875,
+        "h": 42,
+        "right": 132.6875
+      },
+      {
+        "text": "Micah",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 144.6875,
+        "y": 2475.375,
+        "w": 113.6171875,
+        "h": 42,
+        "right": 258.3046875
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 3072.2890625,
+        "w": 280,
+        "h": 55,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 3137.2890625,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 3191.2890625,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 3245.2890625,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [
+      {
+        "scroll": 418,
+        "w": 320,
+        "children": [
+          {
+            "x": 20,
+            "y": 663.5625,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 192,
+            "y": 663.5625,
+            "w": 89,
+            "h": 44,
+            "right": 281,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 286,
+            "y": 663.5625,
+            "w": 112.40625,
+            "h": 44,
+            "right": 398.40625,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 347,
+        "right": 320
+      },
+      {
+        "x": 20,
+        "y": 461,
+        "w": 280,
+        "h": 246.5625,
+        "right": 300
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "path": "/about",
+    "overflow": 320,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 240,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 300
+      }
+    ],
+    "body": [
+      {
+        "text": "I\u2019m a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 531.4210815429688,
+        "w": 280,
+        "h": 126.015625,
+        "right": 300
+      },
+      {
+        "text": "Outside of design, I",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 667.4367065429688,
+        "w": 280,
+        "h": 75.609375,
+        "right": 300
+      },
+      {
+        "text": "\u201cHe went above and b",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1969.484375,
+        "w": 280,
+        "h": 126.015625,
+        "right": 300
+      },
+      {
+        "text": "\u201cFrom day one, Micah",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2183.90625,
+        "w": 280,
+        "h": 226.828125,
+        "right": 300
+      }
+    ],
+    "headings": [
+      {
+        "text": "Hey, I'm Micah.",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 447.8589782714844,
+        "w": 248.859375,
+        "h": 38,
+        "right": 268.859375
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 2524.34375,
+        "w": 280,
+        "h": 55,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 2589.34375,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 2643.34375,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 2697.34375,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 320,
+    "path": "/case-studies/gaia",
+    "overflow": 320,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 240,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 300
+      }
+    ],
+    "body": [
+      {
+        "text": "Nature",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1104.4375,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      },
+      {
+        "text": "Visual Identity, UX/",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1198.84375,
+        "w": 280,
+        "h": 50.40625,
+        "right": 300
+      },
+      {
+        "text": "Self-Initiated Propo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1318.453125,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      },
+      {
+        "text": "Designer: Micah Hoan",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1348.65625,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      },
+      {
+        "text": "2026",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1443.0625,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      },
+      {
+        "text": "A photograph becomes",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 711.9840087890625,
+        "w": 280,
+        "h": 252.03125,
+        "right": 300
+      },
+      {
+        "text": "iNaturalist lets peo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1936.4140625,
+        "w": 280,
+        "h": 151.21875,
+        "right": 300
+      },
+      {
+        "text": "Three goals shape ev",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2215.9375,
+        "w": 280,
+        "h": 151.21875,
+        "right": 300
+      },
+      {
+        "text": "iNaturalist asks you",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2660.0234375,
+        "w": 280,
+        "h": 151.21875,
+        "right": 300
+      },
+      {
+        "text": "The mark grows from ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 3377.34375,
+        "w": 280,
+        "h": 176.421875,
+        "right": 300
+      },
+      {
+        "text": "Gaia reaches people ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 4866.4609375,
+        "w": 280,
+        "h": 126.015625,
+        "right": 300
+      },
+      {
+        "text": "A custom icon system",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5501.5625,
+        "w": 280,
+        "h": 126.015625,
+        "right": 300
+      },
+      {
+        "text": "The map invites befo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6150.0546875,
+        "w": 280,
+        "h": 100.8125,
+        "right": 300
+      },
+      {
+        "text": "A single observation",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6773.34375,
+        "w": 280,
+        "h": 100.8125,
+        "right": 300
+      },
+      {
+        "text": "Every find is met wi",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7002.4921875,
+        "w": 280,
+        "h": 100.8125,
+        "right": 300
+      },
+      {
+        "text": "The work was pressur",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7591.2578125,
+        "w": 280,
+        "h": 302.4375,
+        "right": 300
+      }
+    ],
+    "headings": [
+      {
+        "text": "Gaia",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 102.27687072753906,
+        "w": 280,
+        "h": 38,
+        "right": 300
+      },
+      {
+        "text": "The Insight",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 1528.265625,
+        "w": 280,
+        "h": 26.3984375,
+        "right": 300
+      },
+      {
+        "text": "Strategy",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2107.6328125,
+        "w": 280,
+        "h": 26.3984375,
+        "right": 300
+      },
+      {
+        "text": "Visual Identity",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2831.2421875,
+        "w": 280,
+        "h": 26.3984375,
+        "right": 300
+      },
+      {
+        "text": "Brand in the World",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 3573.765625,
+        "w": 280,
+        "h": 26.3984375,
+        "right": 300
+      },
+      {
+        "text": "Interface",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 5012.4765625,
+        "w": 92.453125,
+        "h": 26.3984375,
+        "right": 112.453125
+      },
+      {
+        "text": "Designed to Ship",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 7292.5078125,
+        "w": 280,
+        "h": 26.3984375,
+        "right": 300
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 8325.9921875,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 8367.9921875,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 9153.6953125,
+        "w": 280,
+        "h": 55,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 9218.6953125,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 9272.6953125,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 9326.6953125,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 320,
+    "path": "/case-studies/airpods",
+    "overflow": 320,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 240,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 300
+      }
+    ],
+    "body": [
+      {
+        "text": "AirPods Pro 3 launch",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 594.9918212890625,
+        "w": 280,
+        "h": 352.84375,
+        "right": 300
+      },
+      {
+        "text": "Technology",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1089.25,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      },
+      {
+        "text": "Visual Identity, 2D ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1167.65625,
+        "w": 280,
+        "h": 50.40625,
+        "right": 300
+      },
+      {
+        "text": "Client: Apple",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1287.265625,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      },
+      {
+        "text": "Design Team: Jo\u00e3o Pe",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1317.46875,
+        "w": 280,
+        "h": 201.625,
+        "right": 300
+      },
+      {
+        "text": "2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1588.296875,
+        "w": 280,
+        "h": 25.203125,
+        "right": 300
+      }
+    ],
+    "headings": [
+      {
+        "text": "AirPods Pro 3,",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 103.25860595703125,
+        "w": 280,
+        "h": 38,
+        "right": 300
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 4672.671875,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 4714.671875,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 5600.375,
+        "w": 280,
+        "h": 55,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 5665.375,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 5719.375,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 5773.375,
+        "w": 280,
+        "h": 44,
+        "right": 300,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 320,
+    "path": "/index",
+    "overflow": 320,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 240,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 300
+      }
+    ],
+    "body": [
+      {
+        "text": "Gaia",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -412.1015625,
+        "w": 36.796875,
+        "h": 25.203125,
+        "right": -125.203125
+      },
+      {
+        "text": "AirPods Pro 3",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -362.1015625,
+        "w": 105.125,
+        "h": 25.203125,
+        "right": -56.875
+      },
+      {
+        "text": "Peak Energy",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -312.1015625,
+        "w": 98.265625,
+        "h": 25.203125,
+        "right": -63.734375
+      },
+      {
+        "text": "Motion Connect 2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -262.1015625,
+        "w": 175.9375,
+        "h": 25.203125,
+        "right": 13.9375
+      },
+      {
+        "text": "Simon & Schuster",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -212.1015625,
+        "w": 140.7265625,
+        "h": 25.203125,
+        "right": -21.2734375
+      },
+      {
+        "text": "National Park Playin",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -162.1015625,
+        "w": 216.5078125,
+        "h": 25.203125,
+        "right": 54.5078125
+      },
+      {
+        "text": "Yomo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -112.1015625,
+        "w": 45.6015625,
+        "h": 25.203125,
+        "right": -116.3984375
+      },
+      {
+        "text": "Highland Harvests",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -62.1015625,
+        "w": 146.109375,
+        "h": 25.203125,
+        "right": -15.890625
+      },
+      {
+        "text": "Weaponized Innocence",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -12.1015625,
+        "w": 190.15625,
+        "h": 25.203125,
+        "right": 28.15625
+      },
+      {
+        "text": "Wolff Olins x ArtCen",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 37.8984375,
+        "w": 181.3359375,
+        "h": 25.203125,
+        "right": 19.3359375
+      },
+      {
+        "text": "Cellular Symphony",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 87.8984375,
+        "w": 149.796875,
+        "h": 25.203125,
+        "right": -12.203125
+      },
+      {
+        "text": "Seek Truth",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 137.8984375,
+        "w": 84.15625,
+        "h": 25.203125,
+        "right": -77.84375
+      },
+      {
+        "text": "Independent Lens",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 187.8984375,
+        "w": 144.09375,
+        "h": 25.203125,
+        "right": -17.90625
+      },
+      {
+        "text": "TYPLDN",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 237.8984375,
+        "w": 65.0703125,
+        "h": 25.203125,
+        "right": -96.9296875
+      },
+      {
+        "text": "WhatsApp",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 287.8984375,
+        "w": 85.84375,
+        "h": 25.203125,
+        "right": -76.15625
+      },
+      {
+        "text": "Caliper Sans",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 337.8984375,
+        "w": 99.8671875,
+        "h": 25.203125,
+        "right": -62.1328125
+      },
+      {
+        "text": "Optro CRX",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 387.8984375,
+        "w": 87.359375,
+        "h": 25.203125,
+        "right": -74.640625
+      }
+    ],
+    "headings": [
+      {
+        "text": "Index",
+        "fs": "72px",
+        "line": "82.08px",
+        "ls": "-0.72px",
+        "x": 20,
+        "y": -933,
+        "w": 183.3125,
+        "h": 82.078125,
+        "right": 203.3125
+      }
+    ],
+    "cta": [],
+    "pills": [
+      {
+        "scroll": 421,
+        "w": 320,
+        "children": [
+          {
+            "x": 20,
+            "y": 666.6953125,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 193,
+            "y": 666.6953125,
+            "w": 89.2421875,
+            "h": 44,
+            "right": 282.2421875,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 288.2421875,
+            "y": 666.6953125,
+            "w": 112.40625,
+            "h": 44,
+            "right": 400.6484375,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": -1033,
+        "w": 320,
+        "h": 253.1953125,
+        "right": 320
+      },
+      {
+        "x": 0,
+        "y": -779.8046875,
+        "w": 320,
+        "h": 6406.5,
+        "right": 320
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/",
+    "overflow": 390,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 310,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 370
+      }
+    ],
+    "body": [
+      {
+        "text": "I'm a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2943.6640625,
+        "w": 350,
+        "h": 100.8125,
+        "right": 370
+      }
+    ],
+    "headings": [
+      {
+        "text": "Micah Hoang",
+        "fs": "58px",
+        "line": "66.12px",
+        "ls": "-0.58px",
+        "x": 17,
+        "y": 90.1015625,
+        "w": 345.6875,
+        "h": 66.1171875,
+        "right": 362.6875
+      },
+      {
+        "text": "Brand designer with a systems mind.",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 157.1015625,
+        "w": 231,
+        "h": 52.796875,
+        "right": 251
+      },
+      {
+        "text": "Selected",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 369,
+        "w": 163.34375,
+        "h": 42,
+        "right": 183.34375
+      },
+      {
+        "text": "work",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 191.34375,
+        "y": 369,
+        "w": 91.3125,
+        "h": 42,
+        "right": 282.65625
+      },
+      {
+        "text": "About",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 2711.765625,
+        "w": 112.6875,
+        "h": 42,
+        "right": 132.6875
+      },
+      {
+        "text": "Micah",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 144.6875,
+        "y": 2711.765625,
+        "w": 113.6171875,
+        "h": 42,
+        "right": 258.3046875
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 3283.4765625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 3337.4765625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 3391.4765625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 3445.4765625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [
+      {
+        "scroll": 418,
+        "w": 390,
+        "children": [
+          {
+            "x": 20,
+            "y": 702.9609375,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 192,
+            "y": 702.9609375,
+            "w": 89,
+            "h": 44,
+            "right": 281,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 286,
+            "y": 702.9609375,
+            "w": 112.40625,
+            "h": 44,
+            "right": 398.40625,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 347,
+        "right": 390
+      },
+      {
+        "x": 20,
+        "y": 461,
+        "w": 350,
+        "h": 285.9609375,
+        "right": 370
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/about",
+    "overflow": 390,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 310,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 370
+      }
+    ],
+    "body": [
+      {
+        "text": "I\u2019m a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 527.2752685546875,
+        "w": 350,
+        "h": 100.8125,
+        "right": 370
+      },
+      {
+        "text": "Outside of design, I",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 638.0877685546875,
+        "w": 350,
+        "h": 75.609375,
+        "right": 370
+      },
+      {
+        "text": "\u201cHe went above and b",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1877.03125,
+        "w": 350,
+        "h": 100.8125,
+        "right": 370
+      },
+      {
+        "text": "\u201cFrom day one, Micah",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2066.25,
+        "w": 350,
+        "h": 176.421875,
+        "right": 370
+      }
+    ],
+    "headings": [
+      {
+        "text": "Hey, I'm Micah.",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 447.8594970703125,
+        "w": 248.859375,
+        "h": 38,
+        "right": 268.859375
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 2356.28125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 2410.28125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 2464.28125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 2518.28125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 390,
+    "path": "/case-studies/gaia",
+    "overflow": 390,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 310,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 370
+      }
+    ],
+    "body": [
+      {
+        "text": "Nature",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 992.203125,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "Visual Identity, UX/",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1086.609375,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "Self-Initiated Propo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1181.015625,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "Designer: Micah Hoan",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1211.21875,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "2026",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1305.625,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "A photograph becomes",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 669.29345703125,
+        "w": 350,
+        "h": 176.421875,
+        "right": 370
+      },
+      {
+        "text": "iNaturalist lets peo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1886.9609375,
+        "w": 350,
+        "h": 126.015625,
+        "right": 370
+      },
+      {
+        "text": "Three goals shape ev",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2156.7578125,
+        "w": 350,
+        "h": 126.015625,
+        "right": 370
+      },
+      {
+        "text": "iNaturalist asks you",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2638.9921875,
+        "w": 350,
+        "h": 126.015625,
+        "right": 370
+      },
+      {
+        "text": "The mark grows from ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 3451.0390625,
+        "w": 350,
+        "h": 151.21875,
+        "right": 370
+      },
+      {
+        "text": "Gaia reaches people ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5214.0234375,
+        "w": 350,
+        "h": 100.8125,
+        "right": 370
+      },
+      {
+        "text": "A custom icon system",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5932.09375,
+        "w": 350,
+        "h": 100.8125,
+        "right": 370
+      },
+      {
+        "text": "The map invites befo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6673.5078125,
+        "w": 350,
+        "h": 75.609375,
+        "right": 370
+      },
+      {
+        "text": "A single observation",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7389.71875,
+        "w": 350,
+        "h": 100.8125,
+        "right": 370
+      },
+      {
+        "text": "Every find is met wi",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7644.359375,
+        "w": 350,
+        "h": 75.609375,
+        "right": 370
+      },
+      {
+        "text": "The work was pressur",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 8306.6015625,
+        "w": 350,
+        "h": 252.03125,
+        "right": 370
+      }
+    ],
+    "headings": [
+      {
+        "text": "Gaia",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 102.23381042480469,
+        "w": 350,
+        "h": 38,
+        "right": 370
+      },
+      {
+        "text": "The Insight",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 1390.828125,
+        "w": 350,
+        "h": 26.3984375,
+        "right": 370
+      },
+      {
+        "text": "Strategy",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2032.9765625,
+        "w": 350,
+        "h": 26.3984375,
+        "right": 370
+      },
+      {
+        "text": "Visual Identity",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2785.0078125,
+        "w": 350,
+        "h": 26.3984375,
+        "right": 370
+      },
+      {
+        "text": "Brand in the World",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 3622.2578125,
+        "w": 350,
+        "h": 26.3984375,
+        "right": 370
+      },
+      {
+        "text": "Interface",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 5334.8359375,
+        "w": 92.453125,
+        "h": 26.3984375,
+        "right": 112.453125
+      },
+      {
+        "text": "Designed to Ship",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 7946.4765625,
+        "w": 350,
+        "h": 26.3984375,
+        "right": 370
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 9030,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 9072,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 9975.828125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 10029.828125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 10083.828125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 10137.828125,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 390,
+    "path": "/case-studies/airpods",
+    "overflow": 390,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 310,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 370
+      }
+    ],
+    "body": [
+      {
+        "text": "AirPods Pro 3 launch",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 629.1797485351562,
+        "w": 350,
+        "h": 277.234375,
+        "right": 370
+      },
+      {
+        "text": "Technology",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1053.015625,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "Visual Identity, 2D ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1131.421875,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "Client: Apple",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1225.828125,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      },
+      {
+        "text": "Design Team: Jo\u00e3o Pe",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1256.03125,
+        "w": 350,
+        "h": 151.21875,
+        "right": 370
+      },
+      {
+        "text": "2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1476.453125,
+        "w": 350,
+        "h": 25.203125,
+        "right": 370
+      }
+    ],
+    "headings": [
+      {
+        "text": "AirPods Pro 3,",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 103.21112060546875,
+        "w": 350,
+        "h": 38,
+        "right": 370
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 5173.1875,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 5215.1875,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 6219.015625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 6273.015625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 6327.015625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 6381.015625,
+        "w": 350,
+        "h": 44,
+        "right": 370,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 390,
+    "path": "/index",
+    "overflow": 390,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 310,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 370
+      }
+    ],
+    "body": [
+      {
+        "text": "Gaia",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -412.1015625,
+        "w": 36.796875,
+        "h": 25.203125,
+        "right": -125.203125
+      },
+      {
+        "text": "AirPods Pro 3",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -362.1015625,
+        "w": 105.125,
+        "h": 25.203125,
+        "right": -56.875
+      },
+      {
+        "text": "Peak Energy",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -312.1015625,
+        "w": 98.265625,
+        "h": 25.203125,
+        "right": -63.734375
+      },
+      {
+        "text": "Motion Connect 2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -262.1015625,
+        "w": 175.9375,
+        "h": 25.203125,
+        "right": 13.9375
+      },
+      {
+        "text": "Simon & Schuster",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -212.1015625,
+        "w": 140.7265625,
+        "h": 25.203125,
+        "right": -21.2734375
+      },
+      {
+        "text": "National Park Playin",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -162.1015625,
+        "w": 216.5078125,
+        "h": 25.203125,
+        "right": 54.5078125
+      },
+      {
+        "text": "Yomo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -112.1015625,
+        "w": 45.6015625,
+        "h": 25.203125,
+        "right": -116.3984375
+      },
+      {
+        "text": "Highland Harvests",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -62.1015625,
+        "w": 146.109375,
+        "h": 25.203125,
+        "right": -15.890625
+      },
+      {
+        "text": "Weaponized Innocence",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -12.1015625,
+        "w": 190.15625,
+        "h": 25.203125,
+        "right": 28.15625
+      },
+      {
+        "text": "Wolff Olins x ArtCen",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 37.8984375,
+        "w": 181.3359375,
+        "h": 25.203125,
+        "right": 19.3359375
+      },
+      {
+        "text": "Cellular Symphony",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 87.8984375,
+        "w": 149.796875,
+        "h": 25.203125,
+        "right": -12.203125
+      },
+      {
+        "text": "Seek Truth",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 137.8984375,
+        "w": 84.15625,
+        "h": 25.203125,
+        "right": -77.84375
+      },
+      {
+        "text": "Independent Lens",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 187.8984375,
+        "w": 144.09375,
+        "h": 25.203125,
+        "right": -17.90625
+      },
+      {
+        "text": "TYPLDN",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 237.8984375,
+        "w": 65.0703125,
+        "h": 25.203125,
+        "right": -96.9296875
+      },
+      {
+        "text": "WhatsApp",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 287.8984375,
+        "w": 85.84375,
+        "h": 25.203125,
+        "right": -76.15625
+      },
+      {
+        "text": "Caliper Sans",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 337.8984375,
+        "w": 99.8671875,
+        "h": 25.203125,
+        "right": -62.1328125
+      },
+      {
+        "text": "Optro CRX",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 387.8984375,
+        "w": 87.359375,
+        "h": 25.203125,
+        "right": -74.640625
+      }
+    ],
+    "headings": [
+      {
+        "text": "Index",
+        "fs": "72px",
+        "line": "82.08px",
+        "ls": "-0.72px",
+        "x": 20,
+        "y": -933,
+        "w": 183.3125,
+        "h": 82.078125,
+        "right": 203.3125
+      }
+    ],
+    "cta": [],
+    "pills": [
+      {
+        "scroll": 421,
+        "w": 390,
+        "children": [
+          {
+            "x": 20,
+            "y": 706.0703125,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 193,
+            "y": 706.0703125,
+            "w": 89.2421875,
+            "h": 44,
+            "right": 282.2421875,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 288.2421875,
+            "y": 706.0703125,
+            "w": 112.40625,
+            "h": 44,
+            "right": 400.6484375,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": -1033,
+        "w": 390,
+        "h": 253.1953125,
+        "right": 390
+      },
+      {
+        "x": 0,
+        "y": -779.8046875,
+        "w": 390,
+        "h": 7075.875,
+        "right": 390
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/",
+    "overflow": 430,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 350,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 410
+      }
+    ],
+    "body": [
+      {
+        "text": "I'm a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 3078.7109375,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      }
+    ],
+    "headings": [
+      {
+        "text": "Micah Hoang",
+        "fs": "58px",
+        "line": "66.12px",
+        "ls": "-0.58px",
+        "x": 17,
+        "y": 90.1015625,
+        "w": 345.6875,
+        "h": 66.1171875,
+        "right": 362.6875
+      },
+      {
+        "text": "Brand designer with a systems mind.",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 157.1015625,
+        "w": 257.3984375,
+        "h": 52.796875,
+        "right": 277.3984375
+      },
+      {
+        "text": "Selected",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 369,
+        "w": 163.34375,
+        "h": 42,
+        "right": 183.34375
+      },
+      {
+        "text": "work",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 191.34375,
+        "y": 369,
+        "w": 91.3125,
+        "h": 42,
+        "right": 282.65625
+      },
+      {
+        "text": "About",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 2846.8125,
+        "w": 112.6875,
+        "h": 42,
+        "right": 132.6875
+      },
+      {
+        "text": "Micah",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 144.6875,
+        "y": 2846.8125,
+        "w": 113.6171875,
+        "h": 42,
+        "right": 258.3046875
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 3418.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 3472.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 3526.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 3580.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [
+      {
+        "scroll": 430,
+        "w": 430,
+        "children": [
+          {
+            "x": 20,
+            "y": 725.46875,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 192,
+            "y": 725.46875,
+            "w": 89,
+            "h": 44,
+            "right": 281,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 286,
+            "y": 725.46875,
+            "w": 112.40625,
+            "h": 44,
+            "right": 398.40625,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 430,
+        "h": 347,
+        "right": 430
+      },
+      {
+        "x": 20,
+        "y": 461,
+        "w": 390,
+        "h": 308.46875,
+        "right": 410
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/about",
+    "overflow": 430,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 350,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 410
+      }
+    ],
+    "body": [
+      {
+        "text": "I\u2019m a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 527.3110961914062,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      },
+      {
+        "text": "Outside of design, I",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 638.1235961914062,
+        "w": 390,
+        "h": 75.60943603515625,
+        "right": 410
+      },
+      {
+        "text": "\u201cHe went above and b",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1835,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      },
+      {
+        "text": "\u201cFrom day one, Micah",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2024.21875,
+        "w": 390,
+        "h": 151.21875,
+        "right": 410
+      }
+    ],
+    "headings": [
+      {
+        "text": "Hey, I'm Micah.",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 447.85797119140625,
+        "w": 248.859375,
+        "h": 38,
+        "right": 268.859375
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 2289.046875,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 2343.046875,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 2397.046875,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 2451.046875,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 430,
+    "path": "/case-studies/gaia",
+    "overflow": 430,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 350,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 410
+      }
+    ],
+    "body": [
+      {
+        "text": "Nature",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1014.703125,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "Visual Identity, UX/",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1109.109375,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "Self-Initiated Propo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1203.515625,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "Designer: Micah Hoan",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1233.71875,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "2026",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1328.125,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "A photograph becomes",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 691.8040161132812,
+        "w": 390,
+        "h": 176.421875,
+        "right": 410
+      },
+      {
+        "text": "iNaturalist lets peo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1958.578125,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      },
+      {
+        "text": "Three goals shape ev",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2212.015625,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      },
+      {
+        "text": "iNaturalist asks you",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2423.28125,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      },
+      {
+        "text": "The mark grows from ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 3278.65625,
+        "w": 390,
+        "h": 126.015625,
+        "right": 410
+      },
+      {
+        "text": "Gaia reaches people ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5187.34375,
+        "w": 390,
+        "h": 75.609375,
+        "right": 410
+      },
+      {
+        "text": "A custom icon system",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5942.0234375,
+        "w": 390,
+        "h": 100.8125,
+        "right": 410
+      },
+      {
+        "text": "The map invites befo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6750.9375,
+        "w": 390,
+        "h": 75.609375,
+        "right": 410
+      },
+      {
+        "text": "A single observation",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7534.6484375,
+        "w": 390,
+        "h": 75.609375,
+        "right": 410
+      },
+      {
+        "text": "Every find is met wi",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7778.65625,
+        "w": 390,
+        "h": 75.609375,
+        "right": 410
+      },
+      {
+        "text": "The work was pressur",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 8497.28125,
+        "w": 390,
+        "h": 226.828125,
+        "right": 410
+      }
+    ],
+    "headings": [
+      {
+        "text": "Gaia",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 102.25382232666016,
+        "w": 390,
+        "h": 37.99999237060547,
+        "right": 410
+      },
+      {
+        "text": "The Insight",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 1413.328125,
+        "w": 390,
+        "h": 26.3984375,
+        "right": 410
+      },
+      {
+        "text": "Strategy",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2079.390625,
+        "w": 390,
+        "h": 26.3984375,
+        "right": 410
+      },
+      {
+        "text": "Visual Identity",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2544.09375,
+        "w": 390,
+        "h": 26.3984375,
+        "right": 410
+      },
+      {
+        "text": "Brand in the World",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 3424.671875,
+        "w": 390,
+        "h": 26.3984375,
+        "right": 410
+      },
+      {
+        "text": "Interface",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 5282.953125,
+        "w": 92.453125,
+        "h": 26.3984375,
+        "right": 112.453125
+      },
+      {
+        "text": "Designed to Ship",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 8102.0859375,
+        "w": 390,
+        "h": 26.3984375,
+        "right": 410
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 9217.8046875,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 9259.8046875,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 10231.1328125,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 10285.1328125,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 10339.1328125,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 10393.1328125,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 430,
+    "path": "/case-studies/airpods",
+    "overflow": 430,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 350,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 410
+      }
+    ],
+    "body": [
+      {
+        "text": "AirPods Pro 3 launch",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 651.7001342773438,
+        "w": 390,
+        "h": 252.03118896484375,
+        "right": 410
+      },
+      {
+        "text": "Technology",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1050.3125,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "Visual Identity, 2D ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1128.71875,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "Client: Apple",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1223.125,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      },
+      {
+        "text": "Design Team: Jo\u00e3o Pe",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1253.328125,
+        "w": 390,
+        "h": 126.015625,
+        "right": 410
+      },
+      {
+        "text": "2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1448.546875,
+        "w": 390,
+        "h": 25.203125,
+        "right": 410
+      }
+    ],
+    "headings": [
+      {
+        "text": "AirPods Pro 3,",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 103.27687072753906,
+        "w": 390,
+        "h": 38,
+        "right": 410
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 5495.1953125,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 5537.1953125,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 6608.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 6662.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 6716.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 6770.5234375,
+        "w": 390,
+        "h": 44,
+        "right": 410,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 430,
+    "path": "/index",
+    "overflow": 430,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 350,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 410
+      }
+    ],
+    "body": [
+      {
+        "text": "Gaia",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -412.1015625,
+        "w": 36.796875,
+        "h": 25.203125,
+        "right": -125.203125
+      },
+      {
+        "text": "AirPods Pro 3",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -362.1015625,
+        "w": 105.125,
+        "h": 25.203125,
+        "right": -56.875
+      },
+      {
+        "text": "Peak Energy",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -312.1015625,
+        "w": 98.265625,
+        "h": 25.203125,
+        "right": -63.734375
+      },
+      {
+        "text": "Motion Connect 2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -262.1015625,
+        "w": 175.9375,
+        "h": 25.203125,
+        "right": 13.9375
+      },
+      {
+        "text": "Simon & Schuster",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -212.1015625,
+        "w": 140.7265625,
+        "h": 25.203125,
+        "right": -21.2734375
+      },
+      {
+        "text": "National Park Playin",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -162.1015625,
+        "w": 216.5078125,
+        "h": 25.203125,
+        "right": 54.5078125
+      },
+      {
+        "text": "Yomo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -112.1015625,
+        "w": 45.6015625,
+        "h": 25.203125,
+        "right": -116.3984375
+      },
+      {
+        "text": "Highland Harvests",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -62.1015625,
+        "w": 146.109375,
+        "h": 25.203125,
+        "right": -15.890625
+      },
+      {
+        "text": "Weaponized Innocence",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -12.1015625,
+        "w": 190.15625,
+        "h": 25.203125,
+        "right": 28.15625
+      },
+      {
+        "text": "Wolff Olins x ArtCen",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 37.8984375,
+        "w": 181.3359375,
+        "h": 25.203125,
+        "right": 19.3359375
+      },
+      {
+        "text": "Cellular Symphony",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 87.8984375,
+        "w": 149.796875,
+        "h": 25.203125,
+        "right": -12.203125
+      },
+      {
+        "text": "Seek Truth",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 137.8984375,
+        "w": 84.15625,
+        "h": 25.203125,
+        "right": -77.84375
+      },
+      {
+        "text": "Independent Lens",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 187.8984375,
+        "w": 144.09375,
+        "h": 25.203125,
+        "right": -17.90625
+      },
+      {
+        "text": "TYPLDN",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 237.8984375,
+        "w": 65.0703125,
+        "h": 25.203125,
+        "right": -96.9296875
+      },
+      {
+        "text": "WhatsApp",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 287.8984375,
+        "w": 85.84375,
+        "h": 25.203125,
+        "right": -76.15625
+      },
+      {
+        "text": "Caliper Sans",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 337.8984375,
+        "w": 99.8671875,
+        "h": 25.203125,
+        "right": -62.1328125
+      },
+      {
+        "text": "Optro CRX",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 387.8984375,
+        "w": 87.359375,
+        "h": 25.203125,
+        "right": -74.640625
+      }
+    ],
+    "headings": [
+      {
+        "text": "Index",
+        "fs": "72px",
+        "line": "82.08px",
+        "ls": "-0.72px",
+        "x": 20,
+        "y": -933,
+        "w": 183.3125,
+        "h": 82.078125,
+        "right": 203.3125
+      }
+    ],
+    "cta": [],
+    "pills": [
+      {
+        "scroll": 430,
+        "w": 430,
+        "children": [
+          {
+            "x": 20,
+            "y": 728.5703125,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 193,
+            "y": 728.5703125,
+            "w": 89.2421875,
+            "h": 44,
+            "right": 282.2421875,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 288.2421875,
+            "y": 728.5703125,
+            "w": 112.40625,
+            "h": 44,
+            "right": 400.6484375,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": -1033,
+        "w": 430,
+        "h": 253.1953125,
+        "right": 430
+      },
+      {
+        "x": 0,
+        "y": -779.8046875,
+        "w": 430,
+        "h": 7458.375,
+        "right": 430
+      }
+    ]
+  },
+  {
+    "width": 809,
+    "path": "/",
+    "overflow": 809,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 729,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 789
+      }
+    ],
+    "body": [
+      {
+        "text": "I'm a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 4358.3984375,
+        "w": 600,
+        "h": 75.609375,
+        "right": 620
+      }
+    ],
+    "headings": [
+      {
+        "text": "Micah Hoang",
+        "fs": "58px",
+        "line": "66.12px",
+        "ls": "-0.58px",
+        "x": 17,
+        "y": 103.296875,
+        "w": 345.6875,
+        "h": 66.1171875,
+        "right": 362.6875
+      },
+      {
+        "text": "Brand designer with a systems mind.",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 170.296875,
+        "w": 507.5390625,
+        "h": 26.3984375,
+        "right": 527.5390625
+      },
+      {
+        "text": "Selected",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 369,
+        "w": 163.34375,
+        "h": 42,
+        "right": 183.34375
+      },
+      {
+        "text": "work",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 191.34375,
+        "y": 369,
+        "w": 91.3125,
+        "h": 42,
+        "right": 282.65625
+      },
+      {
+        "text": "About",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 4126.5,
+        "w": 112.6875,
+        "h": 42,
+        "right": 132.6875
+      },
+      {
+        "text": "Micah",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 144.6875,
+        "y": 4126.5,
+        "w": 113.6171875,
+        "h": 42,
+        "right": 258.3046875
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 4673.0078125,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 4727.0078125,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 4781.0078125,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 4835.0078125,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [
+      {
+        "scroll": 809,
+        "w": 809,
+        "children": [
+          {
+            "x": 20,
+            "y": 938.75,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 192,
+            "y": 938.75,
+            "w": 89,
+            "h": 44,
+            "right": 281,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 286,
+            "y": 938.75,
+            "w": 112.40625,
+            "h": 44,
+            "right": 398.40625,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 809,
+        "h": 347,
+        "right": 809
+      },
+      {
+        "x": 20,
+        "y": 461,
+        "w": 769,
+        "h": 521.75,
+        "right": 789
+      }
+    ]
+  },
+  {
+    "width": 809,
+    "path": "/about",
+    "overflow": 809,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 729,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 789
+      }
+    ],
+    "body": [
+      {
+        "text": "I\u2019m a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 289.6640625,
+        "y": 183.74139404296875,
+        "w": 499.3359375,
+        "h": 75.609375,
+        "right": 789
+      },
+      {
+        "text": "Outside of design, I",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 289.6640625,
+        "y": 269.35076904296875,
+        "w": 499.3359375,
+        "h": 50.40625,
+        "right": 789
+      },
+      {
+        "text": "\u201cHe went above and b",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 289.6640625,
+        "y": 1566.25,
+        "w": 329.5546875,
+        "h": 100.8125,
+        "right": 619.21875
+      },
+      {
+        "text": "\u201cFrom day one, Micah",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 289.6640625,
+        "y": 1734.265625,
+        "w": 329.5546875,
+        "h": 176.421875,
+        "right": 619.21875
+      }
+    ],
+    "headings": [
+      {
+        "text": "Hey, I'm Micah.",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 289.6640625,
+        "y": 90.2937240600586,
+        "w": 248.859375,
+        "h": 38.00000762939453,
+        "right": 538.5234375
+      }
+    ],
+    "cta": [],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 809,
+    "path": "/case-studies/gaia",
+    "overflow": 809,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 729,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 789
+      }
+    ],
+    "body": [
+      {
+        "text": "Nature",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1152.28125,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      },
+      {
+        "text": "Visual Identity, UX/",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1246.6875,
+        "w": 680,
+        "h": 25.203125,
+        "right": 700
+      },
+      {
+        "text": "Self-Initiated Propo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1341.09375,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      },
+      {
+        "text": "Designer: Micah Hoan",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1371.296875,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      },
+      {
+        "text": "2026",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1465.703125,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      },
+      {
+        "text": "A photograph becomes",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 982.265625,
+        "w": 680,
+        "h": 100.8125,
+        "right": 700
+      },
+      {
+        "text": "iNaturalist lets peo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2573.0625,
+        "w": 760,
+        "h": 50.40625,
+        "right": 780
+      },
+      {
+        "text": "Three goals shape ev",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 24.5,
+        "y": 2859.8828125,
+        "w": 760,
+        "h": 50.40625,
+        "right": 784.5
+      },
+      {
+        "text": "iNaturalist asks you",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 24.5,
+        "y": 3101.46875,
+        "w": 760,
+        "h": 50.40625,
+        "right": 784.5
+      },
+      {
+        "text": "The mark grows from ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 4555.7734375,
+        "w": 760,
+        "h": 75.609375,
+        "right": 780
+      },
+      {
+        "text": "Gaia reaches people ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5474.6015625,
+        "w": 760,
+        "h": 50.40625,
+        "right": 780
+      },
+      {
+        "text": "A custom icon system",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6789.75,
+        "w": 760,
+        "h": 50.40625,
+        "right": 780
+      },
+      {
+        "text": "The map invites befo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 8187.8203125,
+        "w": 760,
+        "h": 50.40625,
+        "right": 780
+      },
+      {
+        "text": "A single observation",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 8408.65625,
+        "w": 760,
+        "h": 50.40625,
+        "right": 780
+      },
+      {
+        "text": "Every find is met wi",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 8765.4921875,
+        "w": 760,
+        "h": 50.40625,
+        "right": 780
+      },
+      {
+        "text": "The work was pressur",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 9463.1015625,
+        "w": 760,
+        "h": 126.015625,
+        "right": 780
+      }
+    ],
+    "headings": [
+      {
+        "text": "Gaia",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 102.26435852050781,
+        "w": 769,
+        "h": 38,
+        "right": 789
+      },
+      {
+        "text": "The Insight",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 1550.90625,
+        "w": 769,
+        "h": 26.3984375,
+        "right": 789
+      },
+      {
+        "text": "Strategy",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 2643.46875,
+        "w": 769,
+        "h": 26.3984375,
+        "right": 789
+      },
+      {
+        "text": "Visual Identity",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 3171.875,
+        "w": 769,
+        "h": 26.3984375,
+        "right": 789
+      },
+      {
+        "text": "Brand in the World",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 4651.3828125,
+        "w": 769,
+        "h": 26.3984375,
+        "right": 789
+      },
+      {
+        "text": "Interface",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 5545.0078125,
+        "w": 92.453125,
+        "h": 26.3984375,
+        "right": 112.453125
+      },
+      {
+        "text": "Designed to Ship",
+        "fs": "24px",
+        "line": "26.4px",
+        "ls": "-0.24px",
+        "x": 20,
+        "y": 9265.6796875,
+        "w": 769,
+        "h": 26.3984375,
+        "right": 789
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 10294.375,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 10336.375,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 10688.265625,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 10742.265625,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 10796.265625,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 10850.265625,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 809,
+    "path": "/case-studies/airpods",
+    "overflow": 809,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 729,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 789
+      }
+    ],
+    "body": [
+      {
+        "text": "AirPods Pro 3 launch",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 942.265625,
+        "w": 680,
+        "h": 151.21875,
+        "right": 700
+      },
+      {
+        "text": "Technology",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1162.6875,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      },
+      {
+        "text": "Visual Identity, 2D ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1241.09375,
+        "w": 680,
+        "h": 25.203125,
+        "right": 700
+      },
+      {
+        "text": "Client: Apple",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1335.5,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      },
+      {
+        "text": "Design Team: Jo\u00e3o Pe",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1365.703125,
+        "w": 769,
+        "h": 75.609375,
+        "right": 789
+      },
+      {
+        "text": "2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1510.515625,
+        "w": 769,
+        "h": 25.203125,
+        "right": 789
+      }
+    ],
+    "headings": [
+      {
+        "text": "AirPods Pro 3,",
+        "fs": "38px",
+        "line": "38px",
+        "ls": "-0.76px",
+        "x": 20,
+        "y": 103.24141693115234,
+        "w": 769,
+        "h": 37.99999237060547,
+        "right": 789
+      },
+      {
+        "text": "OTHER",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 8142.90625,
+        "w": 132.6796875,
+        "h": 42,
+        "right": 152.6796875
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "42px",
+        "line": "42px",
+        "ls": "-0.42px",
+        "x": 20,
+        "y": 8184.90625,
+        "w": 194.25,
+        "h": 42,
+        "right": 214.25
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 8636.796875,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 8690.796875,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 8744.796875,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 8798.796875,
+        "w": 769,
+        "h": 44,
+        "right": 789,
+        "fs": "32px",
+        "line": "32px",
+        "ls": "-0.32px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "0.13px"
+        }
+      }
+    ],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 809,
+    "path": "/index",
+    "overflow": 809,
+    "nav": [
+      {
+        "x": 20,
+        "y": 4.5,
+        "w": 85.8046875,
+        "h": 44,
+        "right": 105.8046875
+      },
+      {
+        "x": 729,
+        "y": 4.5,
+        "w": 60,
+        "h": 44,
+        "right": 789
+      }
+    ],
+    "body": [
+      {
+        "text": "Gaia",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -412.1015625,
+        "w": 36.796875,
+        "h": 25.203125,
+        "right": -125.203125
+      },
+      {
+        "text": "AirPods Pro 3",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -362.1015625,
+        "w": 105.125,
+        "h": 25.203125,
+        "right": -56.875
+      },
+      {
+        "text": "Peak Energy",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -312.1015625,
+        "w": 98.265625,
+        "h": 25.203125,
+        "right": -63.734375
+      },
+      {
+        "text": "Motion Connect 2025",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -262.1015625,
+        "w": 175.9375,
+        "h": 25.203125,
+        "right": 13.9375
+      },
+      {
+        "text": "Simon & Schuster",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -212.1015625,
+        "w": 140.7265625,
+        "h": 25.203125,
+        "right": -21.2734375
+      },
+      {
+        "text": "National Park Playin",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -162.1015625,
+        "w": 216.5078125,
+        "h": 25.203125,
+        "right": 54.5078125
+      },
+      {
+        "text": "Yomo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -112.1015625,
+        "w": 45.6015625,
+        "h": 25.203125,
+        "right": -116.3984375
+      },
+      {
+        "text": "Highland Harvests",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -62.1015625,
+        "w": 146.109375,
+        "h": 25.203125,
+        "right": -15.890625
+      },
+      {
+        "text": "Weaponized Innocence",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": -12.1015625,
+        "w": 190.15625,
+        "h": 25.203125,
+        "right": 28.15625
+      },
+      {
+        "text": "Wolff Olins x ArtCen",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 37.8984375,
+        "w": 181.3359375,
+        "h": 25.203125,
+        "right": 19.3359375
+      },
+      {
+        "text": "Cellular Symphony",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 87.8984375,
+        "w": 149.796875,
+        "h": 25.203125,
+        "right": -12.203125
+      },
+      {
+        "text": "Seek Truth",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 137.8984375,
+        "w": 84.15625,
+        "h": 25.203125,
+        "right": -77.84375
+      },
+      {
+        "text": "Independent Lens",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 187.8984375,
+        "w": 144.09375,
+        "h": 25.203125,
+        "right": -17.90625
+      },
+      {
+        "text": "TYPLDN",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 237.8984375,
+        "w": 65.0703125,
+        "h": 25.203125,
+        "right": -96.9296875
+      },
+      {
+        "text": "WhatsApp",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 287.8984375,
+        "w": 85.84375,
+        "h": 25.203125,
+        "right": -76.15625
+      },
+      {
+        "text": "Caliper Sans",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 337.8984375,
+        "w": 99.8671875,
+        "h": 25.203125,
+        "right": -62.1328125
+      },
+      {
+        "text": "Optro CRX",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": -162,
+        "y": 387.8984375,
+        "w": 87.359375,
+        "h": 25.203125,
+        "right": -74.640625
+      }
+    ],
+    "headings": [
+      {
+        "text": "Index",
+        "fs": "72px",
+        "line": "82.08px",
+        "ls": "-0.72px",
+        "x": 20,
+        "y": -937,
+        "w": 183.3125,
+        "h": 82.078125,
+        "right": 203.3125
+      }
+    ],
+    "cta": [],
+    "pills": [
+      {
+        "scroll": 809,
+        "w": 809,
+        "children": [
+          {
+            "x": 20,
+            "y": 941.7578125,
+            "w": 167,
+            "h": 44,
+            "right": 187,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 193,
+            "y": 941.7578125,
+            "w": 89.2421875,
+            "h": 44,
+            "right": 282.2421875,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          },
+          {
+            "x": 288.2421875,
+            "y": 941.7578125,
+            "w": 112.40625,
+            "h": 44,
+            "right": 400.6484375,
+            "fs": "13px",
+            "line": "16.9px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": -1037,
+        "w": 809,
+        "h": 253.1953125,
+        "right": 809
+      },
+      {
+        "x": 0,
+        "y": -783.8046875,
+        "w": 809,
+        "h": 11086.5625,
+        "right": 809
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/",
+    "overflow": 1200,
+    "nav": [],
+    "body": [
+      {
+        "text": "I'm a brand designer",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 215,
+        "y": 2118.2734375,
+        "w": 600,
+        "h": 79.1953125,
+        "right": 815
+      }
+    ],
+    "headings": [
+      {
+        "text": "Micah Hoang",
+        "fs": "120px",
+        "line": "120px",
+        "ls": "-1.2px",
+        "x": 14,
+        "y": 91.50202941894531,
+        "w": 715.203125,
+        "h": 120,
+        "right": 729.203125
+      },
+      {
+        "text": "Brand designer with a systems mind.",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 223.659423828125,
+        "w": 382,
+        "h": 77,
+        "right": 402
+      },
+      {
+        "text": "Selected",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 20,
+        "y": 440.050048828125,
+        "w": 272.234375,
+        "h": 70,
+        "right": 292.234375
+      },
+      {
+        "text": "work",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 307.234375,
+        "y": 440.8512268066406,
+        "w": 152.1875,
+        "h": 70.00003051757812,
+        "right": 459.421875
+      },
+      {
+        "text": "About",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 20,
+        "y": 2118.2734375,
+        "w": 187.8125,
+        "h": 70,
+        "right": 207.8125
+      },
+      {
+        "text": "Micah",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 227.8125,
+        "y": 2118.2734375,
+        "w": 189.3515625,
+        "h": 70,
+        "right": 417.1640625
+      }
+    ],
+    "cta": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "x": 20,
+        "y": 2552.171875,
+        "w": 622.9375,
+        "h": 85,
+        "right": 642.9375,
+        "fs": "80px",
+        "line": "80px",
+        "ls": "-1.6px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "normal"
+        }
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "x": 20,
+        "y": 2649.171875,
+        "w": 397.3515625,
+        "h": 80,
+        "right": 417.3515625,
+        "fs": "80px",
+        "line": "80px",
+        "ls": "-1.6px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "normal"
+        }
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "x": 20,
+        "y": 2741.171875,
+        "w": 405.7421875,
+        "h": 80,
+        "right": 425.7421875,
+        "fs": "80px",
+        "line": "80px",
+        "ls": "-1.6px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "normal"
+        }
+      },
+      {
+        "text": "GITHUBBUILD",
+        "x": 20,
+        "y": 2833.171875,
+        "w": 323.8203125,
+        "h": 80,
+        "right": 343.8203125,
+        "fs": "80px",
+        "line": "80px",
+        "ls": "-1.6px",
+        "meta": {
+          "fs": "13px",
+          "line": "13px",
+          "ls": "normal"
+        }
+      }
+    ],
+    "pills": [
+      {
+        "scroll": 570,
+        "w": 570,
+        "children": [
+          {
+            "x": 20,
+            "y": 944.7578125,
+            "w": 139,
+            "h": 26,
+            "right": 159,
+            "fs": "13px",
+            "line": "13px",
+            "ls": "normal"
+          },
+          {
+            "x": 165,
+            "y": 944.7578125,
+            "w": 61,
+            "h": 26,
+            "right": 226,
+            "fs": "13px",
+            "line": "13px",
+            "ls": "normal"
+          },
+          {
+            "x": 232,
+            "y": 944.7578125,
+            "w": 84.40625,
+            "h": 26,
+            "right": 316.40625,
+            "fs": "13px",
+            "line": "13px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 1200,
+        "h": 407,
+        "right": 1200
+      },
+      {
+        "x": 20,
+        "y": 579,
+        "w": 570,
+        "h": 391.7578125,
+        "right": 590
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/about",
+    "overflow": 1200,
+    "nav": [],
+    "body": [
+      {
+        "text": "I\u2019m a brand designer",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 420,
+        "y": 238.73419189453125,
+        "w": 501.59375,
+        "h": 75.609375,
+        "right": 921.59375
+      },
+      {
+        "text": "Outside of design, I",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 420,
+        "y": 334.34356689453125,
+        "w": 501.59375,
+        "h": 50.40625,
+        "right": 921.59375
+      },
+      {
+        "text": "\u201cHe went above and b",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 420,
+        "y": 1703.5078125,
+        "w": 501.59375,
+        "h": 75.609375,
+        "right": 921.59375
+      },
+      {
+        "text": "\u201cFrom day one, Micah",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 420,
+        "y": 1845.015625,
+        "w": 501.59375,
+        "h": 126.015625,
+        "right": 921.59375
+      }
+    ],
+    "headings": [
+      {
+        "text": "Hey, I'm Micah.",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 420,
+        "y": 100.29098510742188,
+        "w": 468.9296875,
+        "h": 70,
+        "right": 888.9296875
+      }
+    ],
+    "cta": [],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 1200,
+    "path": "/case-studies/gaia",
+    "overflow": 1200,
+    "nav": [],
+    "body": [
+      {
+        "text": "A photograph becomes",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 20,
+        "y": 1184.51025390625,
+        "w": 565,
+        "h": 158.390625,
+        "right": 585
+      },
+      {
+        "text": "Nature",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 20,
+        "y": 1492.1875,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 585
+      },
+      {
+        "text": "Visual Identity, UX/",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1184.51025390625,
+        "w": 302.6796875,
+        "h": 26.3984375,
+        "right": 917.6796875
+      },
+      {
+        "text": "Client: Self-Initiat",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1282.80712890625,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 1180
+      },
+      {
+        "text": "Designer: Micah Hoan",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1324.20556640625,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 1180
+      },
+      {
+        "text": "2026",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1499.890625,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 1180
+      },
+      {
+        "text": "iNaturalist lets peo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 1947.8828125,
+        "w": 580,
+        "h": 75.609375,
+        "right": 600
+      },
+      {
+        "text": "Three goals shape ev",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2378.4609375,
+        "w": 580,
+        "h": 75.609375,
+        "right": 600
+      },
+      {
+        "text": "iNaturalist asks you",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 2746.015625,
+        "w": 580,
+        "h": 75.609375,
+        "right": 600
+      },
+      {
+        "text": "The mark grows from ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 3966.8984375,
+        "w": 580,
+        "h": 100.8125,
+        "right": 600
+      },
+      {
+        "text": "Gaia reaches people ",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5362.9375,
+        "w": 580,
+        "h": 50.40625,
+        "right": 600
+      },
+      {
+        "text": "A custom icon system",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 5934.125,
+        "w": 580,
+        "h": 75.609375,
+        "right": 600
+      },
+      {
+        "text": "The map invites befo",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6279.7265625,
+        "w": 580,
+        "h": 50.40625,
+        "right": 600
+      },
+      {
+        "text": "A single observation",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 6600.125,
+        "w": 580,
+        "h": 50.40625,
+        "right": 600
+      },
+      {
+        "text": "Every find is met wi",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 7125.7265625,
+        "w": 580,
+        "h": 50.40625,
+        "right": 600
+      },
+      {
+        "text": "The work was pressur",
+        "fs": "18px",
+        "line": "25.2px",
+        "ls": "normal",
+        "x": 20,
+        "y": 8485.4921875,
+        "w": 580,
+        "h": 151.21875,
+        "right": 600
+      }
+    ],
+    "headings": [
+      {
+        "text": "Gaia",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 20,
+        "y": 102.22055053710938,
+        "w": 1160,
+        "h": 70,
+        "right": 1180
+      },
+      {
+        "text": "The Insight",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 1586.2890625,
+        "w": 1160,
+        "h": 38.5,
+        "right": 1180
+      },
+      {
+        "text": "Strategy",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 2063.4921875,
+        "w": 1160,
+        "h": 38.5,
+        "right": 1180
+      },
+      {
+        "text": "Visual Identity",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 2861.625,
+        "w": 1160,
+        "h": 38.5,
+        "right": 1180
+      },
+      {
+        "text": "Brand in the World",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 4107.7109375,
+        "w": 1160,
+        "h": 38.5,
+        "right": 1180
+      },
+      {
+        "text": "Interface",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 5453.34375,
+        "w": 134.8203125,
+        "h": 38.5,
+        "right": 154.8203125
+      },
+      {
+        "text": "Designed to Ship",
+        "fs": "35px",
+        "line": "38.5px",
+        "ls": "-0.35px",
+        "x": 20,
+        "y": 7874.2734375,
+        "w": 1160,
+        "h": 38.5,
+        "right": 1180
+      },
+      {
+        "text": "OTHER",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 20,
+        "y": 9600.2265625,
+        "w": 221.1328125,
+        "h": 70,
+        "right": 241.1328125
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 260.1328125,
+        "y": 9600.2265625,
+        "w": 323.7578125,
+        "h": 70,
+        "right": 583.890625
+      }
+    ],
+    "cta": [],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 1200,
+    "path": "/case-studies/airpods",
+    "overflow": 1200,
+    "nav": [],
+    "body": [
+      {
+        "text": "AirPods Pro 3 launch",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 20,
+        "y": 1187.8984375,
+        "w": 565,
+        "h": 211.1875,
+        "right": 585
+      },
+      {
+        "text": "Technology",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 20,
+        "y": 1470.984375,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 585
+      },
+      {
+        "text": "Visual Identity, 2D ",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1187.8984375,
+        "w": 364.171875,
+        "h": 26.3984375,
+        "right": 979.171875
+      },
+      {
+        "text": "Client: Apple",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1286.1953125,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 1180
+      },
+      {
+        "text": "Design Team: Jo\u00e3o Pe",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1327.59375,
+        "w": 565,
+        "h": 131.9921875,
+        "right": 1180
+      },
+      {
+        "text": "2025",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": 615,
+        "y": 1531.484375,
+        "w": 565,
+        "h": 26.3984375,
+        "right": 1180
+      }
+    ],
+    "headings": [
+      {
+        "text": "AirPods Pro 3,",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 20,
+        "y": 103.24236297607422,
+        "w": 1160,
+        "h": 70.00000762939453,
+        "right": 1180
+      },
+      {
+        "text": "OTHER",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 20,
+        "y": 9157.8515625,
+        "w": 221.1328125,
+        "h": 70,
+        "right": 241.1328125
+      },
+      {
+        "text": "PROJECTS",
+        "fs": "70px",
+        "line": "70px",
+        "ls": "-0.7px",
+        "x": 260.1328125,
+        "y": 9157.8515625,
+        "w": 323.7578125,
+        "h": 70,
+        "right": 583.890625
+      }
+    ],
+    "cta": [],
+    "pills": [],
+    "hero": []
+  },
+  {
+    "width": 1200,
+    "path": "/index",
+    "overflow": 1200,
+    "nav": [],
+    "body": [
+      {
+        "text": "Gaia",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -412.703125,
+        "w": 45.8515625,
+        "h": 26.3984375,
+        "right": -116.1484375
+      },
+      {
+        "text": "AirPods Pro 3",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -362.703125,
+        "w": 131.34375,
+        "h": 26.3984375,
+        "right": -30.65625
+      },
+      {
+        "text": "Peak Energy",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -312.703125,
+        "w": 122.5234375,
+        "h": 26.3984375,
+        "right": -39.4765625
+      },
+      {
+        "text": "Motion Connect 2025",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -262.703125,
+        "w": 219.2109375,
+        "h": 26.3984375,
+        "right": 57.2109375
+      },
+      {
+        "text": "Simon & Schuster",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -212.703125,
+        "w": 175.5234375,
+        "h": 26.3984375,
+        "right": 13.5234375
+      },
+      {
+        "text": "National Park Playin",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -162.703125,
+        "w": 270.5625,
+        "h": 26.3984375,
+        "right": 108.5625
+      },
+      {
+        "text": "Yomo",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -112.703125,
+        "w": 56.609375,
+        "h": 26.3984375,
+        "right": -105.390625
+      },
+      {
+        "text": "Highland Harvests",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -62.703125,
+        "w": 182.3203125,
+        "h": 26.3984375,
+        "right": 20.3203125
+      },
+      {
+        "text": "Weaponized Innocence",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": -12.703125,
+        "w": 236.8125,
+        "h": 26.3984375,
+        "right": 74.8125
+      },
+      {
+        "text": "Wolff Olins x ArtCen",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 37.296875,
+        "w": 226.6953125,
+        "h": 26.3984375,
+        "right": 64.6953125
+      },
+      {
+        "text": "Cellular Symphony",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 87.296875,
+        "w": 186.828125,
+        "h": 26.3984375,
+        "right": 24.828125
+      },
+      {
+        "text": "Seek Truth",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 137.296875,
+        "w": 105.0546875,
+        "h": 26.3984375,
+        "right": -56.9453125
+      },
+      {
+        "text": "Independent Lens",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 187.296875,
+        "w": 179.6328125,
+        "h": 26.3984375,
+        "right": 17.6328125
+      },
+      {
+        "text": "TYPLDN",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 237.296875,
+        "w": 80.8515625,
+        "h": 26.3984375,
+        "right": -81.1484375
+      },
+      {
+        "text": "WhatsApp",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 287.296875,
+        "w": 106.6796875,
+        "h": 26.3984375,
+        "right": -55.3203125
+      },
+      {
+        "text": "Caliper Sans",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 337.296875,
+        "w": 124.703125,
+        "h": 26.3984375,
+        "right": -37.296875
+      },
+      {
+        "text": "Optro CRX",
+        "fs": "22px",
+        "line": "26.4px",
+        "ls": "0.22px",
+        "x": -162,
+        "y": 387.296875,
+        "w": 108.75,
+        "h": 26.3984375,
+        "right": -53.25
+      }
+    ],
+    "headings": [
+      {
+        "text": "Index",
+        "fs": "120px",
+        "line": "120px",
+        "ls": "-1.2px",
+        "x": 20,
+        "y": 151,
+        "w": 305.5234375,
+        "h": 120,
+        "right": 325.5234375
+      }
+    ],
+    "cta": [],
+    "pills": [
+      {
+        "scroll": 373,
+        "w": 373,
+        "children": [
+          {
+            "x": 20,
+            "y": 917.5859375,
+            "w": 130,
+            "h": 25,
+            "right": 150,
+            "fs": "12px",
+            "line": "12px",
+            "ls": "normal"
+          },
+          {
+            "x": 156,
+            "y": 917.5859375,
+            "w": 58.21875,
+            "h": 25,
+            "right": 214.21875,
+            "fs": "12px",
+            "line": "12px",
+            "ls": "normal"
+          },
+          {
+            "x": 220.21875,
+            "y": 917.5859375,
+            "w": 79.6015625,
+            "h": 25,
+            "right": 299.8203125,
+            "fs": "12px",
+            "line": "12px",
+            "ls": "normal"
+          }
+        ]
+      }
+    ],
+    "hero": [
+      {
+        "x": 0,
+        "y": 1,
+        "w": 1200,
+        "h": 337.59375,
+        "right": 1200
+      },
+      {
+        "x": 0,
+        "y": 338.59375,
+        "w": 1200,
+        "h": 2448,
+        "right": 1200
+      }
+    ]
+  }
+]

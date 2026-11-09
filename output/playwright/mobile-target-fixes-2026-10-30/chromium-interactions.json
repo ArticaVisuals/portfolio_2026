@@ -1,0 +1,98 @@
+[
+  {
+    "menuEmail": {
+      "w": 44,
+      "h": 44
+    }
+  },
+  {
+    "viewAll": {
+      "label": "VIEW ALLVIEW ALL",
+      "targets": 0,
+      "height": 44,
+      "childPointer": "none"
+    }
+  },
+  {
+    "viewAllNavigation": true
+  },
+  {
+    "nextArrow": true
+  },
+  {
+    "dots": {
+      "count": 35,
+      "selected": "Go to slide 35",
+      "w": 44,
+      "h": 44,
+      "stripHeight": 44,
+      "selectedInView": true,
+      "scrollWidth": 1540,
+      "clientWidth": 318
+    }
+  },
+  {
+    "aboutLinks": [
+      {
+        "text": "SIMON & SCHUSTER, INDIGO DESIGN, GOLD",
+        "h": 44,
+        "w": 283.796875,
+        "hit": true
+      },
+      {
+        "text": "SIMON & SCHUSTER, ",
+        "h": 44,
+        "w": 130.390625,
+        "hit": true
+      },
+      {
+        "text": "DNA PARIS, WINNER",
+        "h": 44,
+        "w": 130.390625,
+        "hit": true
+      },
+      {
+        "text": "SIMON & SCHUSTER, ",
+        "h": 44,
+        "w": 130.390625,
+        "hit": true
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "h": 44,
+        "w": 161.0703125,
+        "hit": true
+      },
+      {
+        "text": "SEEK TRUTH, YOUNG ONES ADC, MERIT",
+        "h": 44,
+        "w": 253.1171875,
+        "hit": true
+      },
+      {
+        "text": "SEEK TRUTH, FONTS IN USE, FEATURE",
+        "h": 44,
+        "w": 253.1171875,
+        "hit": true
+      },
+      {
+        "text": "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE",
+        "h": 44,
+        "w": 311.3125,
+        "hit": true
+      },
+      {
+        "text": "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION",
+        "h": 44,
+        "w": 311.3125,
+        "hit": true
+      },
+      {
+        "text": "MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST",
+        "h": 44,
+        "w": 311.3125,
+        "hit": true
+      }
+    ]
+  }
+]

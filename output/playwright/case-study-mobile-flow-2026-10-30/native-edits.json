@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-30",
+  "changes": [
+    {
+      "page": "/case-studies/wolff-olins-x-artcenter",
+      "nodeId": "gY6k1wbWX",
+      "change": "Moved existing CaseStudyControllers from canvas into Desktop breakpoint H81RmZPCY so mobile inherits its playback manager."
+    },
+    {
+      "page": "/case-studies/national-park-cards",
+      "nodeId": "qzR44nHZq",
+      "property": "srcType / srcFile",
+      "before": "https://freight.cargo.site/t/original/i/J1543046243473909932978774201877/Joker-Animation-2.mp4",
+      "after": {
+        "srcType": "Upload",
+        "srcFile": "https://framerusercontent.com/assets/8b5XFvqJ3JcoBKdJuw1WJXjOcU.mp4"
+      },
+      "asset": "assets/by-project/national-park-cards/current-site/Web Optimized/videos/006-joker-animation-2-1400-crf23-noaudio.mp4",
+      "reason": "Original URL returned HTTP403; correct existing optimized H.264 silent clip uploaded. Stored srcFile was a different HEVC clip and was not used."
+    },
+    {
+      "page": "/case-studies/whatsapp",
+      "nodeId": "rR4KVf0ev",
+      "before": "https://files.catbox.moe/xh4ax9.mp4",
+      "after": "https://framerusercontent.com/assets/rCxHv6tLCDNRW3zVAh4LebS7YU.mp4",
+      "asset": "assets/by-project/whatsapp/brand-new-school-04.mp4",
+      "reason": "External source unavailable; uploaded matching optimized H.264 asset to Framer."
+    },
+    {
+      "page": "/case-studies/whatsapp",
+      "nodeId": "BoIhjWgun",
+      "before": "https://files.catbox.moe/dcmuwk.mp4",
+      "after": "https://framerusercontent.com/assets/n2Vc9aSoBRZ41TP7zlEIqV4mMQ.mp4",
+      "reason": "Reused verified existing Framer upload for URL variants."
+    }
+  ]
+}

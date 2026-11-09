@@ -1,0 +1,433 @@
+[
+  {
+    "route": "/",
+    "width": 320,
+    "labelRight": 305,
+    "button": {
+      "x": 245,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 305,
+      "bottom": 48.5,
+      "left": 245
+    },
+    "headerPadding": "15px",
+    "expectedInset": 15,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "labelRight": 375,
+    "button": {
+      "x": 315,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 375,
+      "bottom": 48.5,
+      "left": 315
+    },
+    "headerPadding": "15px",
+    "expectedInset": 15,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 430,
+    "labelRight": 415,
+    "button": {
+      "x": 355,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 415,
+      "bottom": 48.5,
+      "left": 355
+    },
+    "headerPadding": "15px",
+    "expectedInset": 15,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 809,
+    "labelRight": 794,
+    "button": {
+      "x": 734,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 794,
+      "bottom": 48.5,
+      "left": 734
+    },
+    "headerPadding": "15px",
+    "expectedInset": 15,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "open": {
+      "text": "CLOSE",
+      "right": 375,
+      "maskHeight": 13
+    }
+  },
+  {
+    "route": "/index",
+    "width": 320,
+    "labelRight": 306,
+    "button": {
+      "x": 246,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 306,
+      "bottom": 48.5,
+      "left": 246
+    },
+    "headerPadding": "14px",
+    "expectedInset": 14,
+    "overflow": false
+  },
+  {
+    "route": "/index",
+    "width": 390,
+    "labelRight": 376,
+    "button": {
+      "x": 316,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 376,
+      "bottom": 48.5,
+      "left": 316
+    },
+    "headerPadding": "14px",
+    "expectedInset": 14,
+    "overflow": false
+  },
+  {
+    "route": "/index",
+    "width": 430,
+    "labelRight": 416,
+    "button": {
+      "x": 356,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 416,
+      "bottom": 48.5,
+      "left": 356
+    },
+    "headerPadding": "14px",
+    "expectedInset": 14,
+    "overflow": false
+  },
+  {
+    "route": "/index",
+    "width": 809,
+    "labelRight": 789,
+    "button": {
+      "x": 729,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 789,
+      "bottom": 48.5,
+      "left": 729
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/index",
+    "open": {
+      "text": "CLOSE",
+      "right": 376,
+      "maskHeight": 13
+    }
+  },
+  {
+    "route": "/about",
+    "width": 320,
+    "labelRight": 300,
+    "button": {
+      "x": 240,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 300,
+      "bottom": 48.5,
+      "left": 240
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 390,
+    "labelRight": 370,
+    "button": {
+      "x": 310,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 370,
+      "bottom": 48.5,
+      "left": 310
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 430,
+    "labelRight": 410,
+    "button": {
+      "x": 350,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 410,
+      "bottom": 48.5,
+      "left": 350
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "width": 809,
+    "labelRight": 789,
+    "button": {
+      "x": 729,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 789,
+      "bottom": 48.5,
+      "left": 729
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/about",
+    "open": {
+      "text": "CLOSE",
+      "right": 370,
+      "maskHeight": 13
+    }
+  },
+  {
+    "route": "/case-studies/gaia",
+    "width": 320,
+    "labelRight": 300,
+    "button": {
+      "x": 240,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 300,
+      "bottom": 48.5,
+      "left": 240
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/case-studies/gaia",
+    "width": 390,
+    "labelRight": 370,
+    "button": {
+      "x": 310,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 370,
+      "bottom": 48.5,
+      "left": 310
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/case-studies/gaia",
+    "width": 430,
+    "labelRight": 410,
+    "button": {
+      "x": 350,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 410,
+      "bottom": 48.5,
+      "left": 350
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/case-studies/gaia",
+    "width": 809,
+    "labelRight": 789,
+    "button": {
+      "x": 729,
+      "y": 4.5,
+      "width": 60,
+      "height": 44,
+      "top": 4.5,
+      "right": 789,
+      "bottom": 48.5,
+      "left": 729
+    },
+    "headerPadding": "20px",
+    "expectedInset": 20,
+    "overflow": false
+  },
+  {
+    "route": "/case-studies/gaia",
+    "open": {
+      "text": "CLOSE",
+      "right": 370,
+      "maskHeight": 13
+    }
+  },
+  {
+    "footer": {
+      "width": 320,
+      "edge": 463.0703125,
+      "button": {
+        "x": 15,
+        "y": 413.0703125,
+        "width": 118.7109375,
+        "height": 44,
+        "top": 413.0703125,
+        "right": 133.7109375,
+        "bottom": 457.0703125,
+        "left": 15
+      },
+      "label": {
+        "x": 15,
+        "y": 427.0703125,
+        "width": 99.7109375,
+        "height": 16,
+        "top": 427.0703125,
+        "right": 114.7109375,
+        "bottom": 443.0703125,
+        "left": 15
+      },
+      "get": {
+        "x": 15,
+        "y": 483.0703125,
+        "width": 93.6015625,
+        "height": 13,
+        "top": 483.0703125,
+        "right": 108.6015625,
+        "bottom": 496.0703125,
+        "left": 15
+      }
+    }
+  },
+  {
+    "footer": {
+      "width": 390,
+      "edge": 462.9140625,
+      "button": {
+        "x": 15,
+        "y": 412.9140625,
+        "width": 118.7109375,
+        "height": 44,
+        "top": 412.9140625,
+        "right": 133.7109375,
+        "bottom": 456.9140625,
+        "left": 15
+      },
+      "label": {
+        "x": 15,
+        "y": 426.9140625,
+        "width": 99.7109375,
+        "height": 16,
+        "top": 426.9140625,
+        "right": 114.7109375,
+        "bottom": 442.9140625,
+        "left": 15
+      },
+      "get": {
+        "x": 15,
+        "y": 482.9140625,
+        "width": 93.6015625,
+        "height": 13,
+        "top": 482.9140625,
+        "right": 108.6015625,
+        "bottom": 495.9140625,
+        "left": 15
+      }
+    }
+  },
+  {
+    "footer": {
+      "width": 430,
+      "edge": 462.9609375,
+      "button": {
+        "x": 15,
+        "y": 412.9609375,
+        "width": 118.7109375,
+        "height": 44,
+        "top": 412.9609375,
+        "right": 133.7109375,
+        "bottom": 456.9609375,
+        "left": 15
+      },
+      "label": {
+        "x": 15,
+        "y": 426.9609375,
+        "width": 99.7109375,
+        "height": 16,
+        "top": 426.9609375,
+        "right": 114.7109375,
+        "bottom": 442.9609375,
+        "left": 15
+      },
+      "get": {
+        "x": 15,
+        "y": 482.9609375,
+        "width": 93.6015625,
+        "height": 13,
+        "top": 482.9609375,
+        "right": 108.6015625,
+        "bottom": 495.9609375,
+        "left": 15
+      }
+    }
+  },
+  {
+    "scrollTop": 0
+  }
+]

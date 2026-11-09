@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Gaia",
+    "number": 1,
+    "slug": "gaia",
+    "thumbnail": {
+      "src": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png"
+    },
+    "thumbnailVideoLink": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+    "thumbnailStroke": false,
+    "category1": "Visual Identity",
+    "category2": "UX/UI",
+    "category3": "Strategy",
+    "isHomepage": true
+  },
+  {
+    "title": "AirPods Pro 3",
+    "number": 2,
+    "slug": "airpods",
+    "thumbnail": {
+      "src": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg"
+    },
+    "thumbnailVideoLink": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+    "thumbnailStroke": true,
+    "category1": "Visual Identity",
+    "category2": "2D Motion",
+    "category3": "3D Motion",
+    "isHomepage": true
+  },
+  {
+    "title": "Peak Energy",
+    "number": 3,
+    "slug": "peak-energy",
+    "thumbnail": {
+      "src": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg"
+    },
+    "thumbnailVideoLink": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+    "thumbnailStroke": false,
+    "category1": "2D Motion",
+    "category2": "3D Motion",
+    "category3": "Social Media",
+    "isHomepage": true
+  },
+  {
+    "title": "Motion Connect 2025",
+    "number": 4,
+    "slug": "motion-connect-2025",
+    "thumbnail": {
+      "src": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg"
+    },
+    "thumbnailVideoLink": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+    "thumbnailStroke": false,
+    "category1": "2D Motion",
+    "category2": "3D Motion",
+    "category3": "Social Media",
+    "isHomepage": true
+  },
+  {
+    "title": "Simon & Schuster",
+    "number": 5,
+    "slug": "simon-schuster",
+    "thumbnail": {
+      "src": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png"
+    },
+    "thumbnailVideoLink": "",
+    "thumbnailStroke": false,
+    "category1": "Strategy",
+    "category2": "Visual Identity",
+    "category3": "Editorial",
+    "isHomepage": true
+  },
+  {
+    "title": "National Park Playing Cards",
+    "number": 6,
+    "slug": "national-park-cards",
+    "thumbnail": {
+      "src": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png"
+    },
+    "thumbnailVideoLink": "",
+    "thumbnailStroke": false,
+    "category1": "Product",
+    "category2": "Packaging",
+    "category3": "",
+    "isHomepage": true
+  }
+]

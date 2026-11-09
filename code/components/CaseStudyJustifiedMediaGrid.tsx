@@ -1,6 +1,26 @@
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
+function ViewportVideo(props: React.VideoHTMLAttributes<HTMLVideoElement>) {
+    const ref = React.useRef<HTMLVideoElement>(null)
+    const [near, setNear] = React.useState(false)
+    React.useEffect(() => {
+        const video = ref.current
+        if (!video) return
+        // React sets the muted property; Safari also needs the default muted state.
+        if (props.muted) video.defaultMuted = true
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setNear(true)
+                observer.disconnect()
+            }
+        }, { rootMargin: "200px" })
+        observer.observe(video)
+        return () => observer.disconnect()
+    }, [props.src, props.muted])
+    return <video {...props} ref={ref} data-case-study-autoplay-intent={props.autoPlay ? "true" : undefined} autoPlay={near && props.autoPlay} preload={near ? "metadata" : "none"} />
+}
+
 type MediaKind = "image" | "video"
 type MediaFit = "cover" | "contain"
 
@@ -343,6 +363,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
 
     const rootRef = React.useRef<HTMLDivElement>(null)
     const [containerWidth, setContainerWidth] = React.useState(0)
+    const [mobile, setMobile] = React.useState(false)
     const [measuredRatios, setMeasuredRatios] = React.useState<Record<string, number>>({})
 
     React.useLayoutEffect(() => {
@@ -355,6 +376,14 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
         const resizeObserver = new ResizeObserver(updateWidth)
         resizeObserver.observe(root)
         return () => resizeObserver.disconnect()
+    }, [])
+
+    React.useLayoutEffect(() => {
+        const query = window.matchMedia("(max-width: 809px)")
+        const sync = () => setMobile(query.matches)
+        sync()
+        query.addEventListener("change", sync)
+        return () => query.removeEventListener("change", sync)
     }, [])
 
     const rememberRatio = React.useCallback((src: string, width?: number, height?: number) => {
@@ -383,7 +412,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
     const safeTargetHeight = Math.max(1, Number(targetRowHeight) || 420)
     const safeMinHeight = Math.max(1, Number(minRowHeight) || 160)
     const safeStackBelow = Math.max(0, Number(stackBelow) || 0)
-    const shouldStack = containerWidth > 0 && containerWidth < safeStackBelow
+    const shouldStack = mobile || (containerWidth > 0 && containerWidth < safeStackBelow)
     const useCompactGap =
         containerWidth > 0 && containerWidth < COMPACT_GAP_BREAKPOINT
     const activeGap = useCompactGap ? safeMobileGap : safeGap
@@ -404,6 +433,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
     return (
         <div
             ref={rootRef}
+            data-case-study-media-grid="true"
             style={{
                 ...style,
                 width: "100%",
@@ -415,6 +445,19 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                 background: "transparent",
             }}
         >
+            <style>{`
+                @media (max-width: 809px) {
+                    [data-case-study-media-grid] > [data-media-row] {
+                        flex-direction: column !important;
+                        height: auto !important;
+                    }
+                    [data-case-study-media-grid] [data-media-frame],
+                    [data-case-study-media-grid] [data-media-shell] {
+                        width: 100% !important;
+                        height: auto !important;
+                    }
+                }
+            `}</style>
             {rows.map((row, rowIndex) => {
                 const totalRatio = row.items.reduce(
                     (sum, item) => sum + getRatio(item),
@@ -429,6 +472,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                 return (
                     <div
                         key={rowIndex}
+                        data-media-row="true"
                         style={{
                             width: "100%",
                             height: frameHeight,
@@ -487,7 +531,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                 height: frameHeight,
                                 // Preserve the authored ratio in Framer's server render.
                                 // ResizeObserver replaces this with the measured row height.
-                                aspectRatio: hasMeasuredWidth ? undefined : ratio,
+                                aspectRatio: ratio,
                                 position: "relative",
                                 flex: "0 0 auto",
                                 boxSizing: "border-box",
@@ -497,6 +541,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                 overflow: "visible",
                             }
                             const mediaShellStyle: React.CSSProperties = {
+                                aspectRatio: ratio,
                                 width: shellWidth,
                                 height: shellHeight,
                                 position: "relative",
@@ -524,7 +569,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
 
                             const media =
                                 item.kind === "video" ? (
-                                    <video
+                                    <ViewportVideo
                                         src={item.src}
                                         poster={item.poster || undefined}
                                         autoPlay={autoplay}
@@ -533,14 +578,6 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                         controls={controls}
                                         playsInline
                                         preload="metadata"
-                                        ref={(video) => {
-                                            if (!video || video.readyState < 1) return
-                                            rememberRatio(
-                                                item.src,
-                                                video.videoWidth,
-                                                video.videoHeight
-                                            )
-                                        }}
                                         onLoadedMetadata={(event) => {
                                             const video = event.currentTarget
                                             rememberRatio(
@@ -580,8 +617,8 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                 )
 
                             return (
-                                <div key={`${item.src}-${itemIndex}`} style={frameStyle}>
-                                    <div style={mediaShellStyle}>
+                                <div key={`${item.src}-${itemIndex}`} data-media-frame="true" style={frameStyle}>
+                                    <div data-media-shell="true" style={mediaShellStyle}>
                                         {media}
                                         {item.stroke ? (
                                             <div aria-hidden="true" style={strokeStyle} />

@@ -214,6 +214,16 @@ export default function ScrollToTopButton({
                     }
                 }
 
+                @media (max-width: 809px) {
+                    .mh-scroll-top-button {
+                        min-width: 44px;
+                        min-height: 44px;
+                        /* Center the touch target on Framer's authored 16px label slot. */
+                        position: relative;
+                        top: ${(ROW_HEIGHT - 44) / 2}px;
+                    }
+                }
+
                 @media (prefers-reduced-motion: reduce) {
                     .mh-scroll-top-label-rail,
                     .mh-scroll-top-arrow-rail {

@@ -2,10 +2,11 @@ import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 // Framer resolves these module URLs to the project's other code components at
 // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
+// The pinned lightbox cancels route retries on Back/Forward and page exit.
 // @ts-ignore
-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@qS53TFbO3xwEMqj7FPzY"
+import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@ho2rRUp5oQKLHLwaQPIW"
 // @ts-ignore
-import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js"
+import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js@fLMRKrzWoZ5D8vWlpSPB"
 // @ts-ignore
 import CaseStudyLinkRepair from "https://framer.com/m/CaseStudyLinkRepair-xbwFmJ.js"
 
@@ -250,7 +251,8 @@ function getStableHeroRatioStyle(ratio: number): string {
     const safeRatio = Number(ratio)
     if (!Number.isFinite(safeRatio) || safeRatio <= 0) return ""
 
-    return `@media (min-width:${STABLE_HERO_RATIO_MIN_WIDTH}px){html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;}}`
+    // Reserve mobile geometry in the server-rendered HTML, before skeleton tagging.
+    return `@media (max-width:${STABLE_HERO_RATIO_MIN_WIDTH - 1}px){html body [data-framer-name="Hero image"],html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;height:auto !important;}}@media (min-width:${STABLE_HERO_RATIO_MIN_WIDTH}px){html body [data-framer-name="Hero image"][data-case-study-media-skeleton="true"]{aspect-ratio:${safeRatio} !important;}}`
 }
 
 function isCaseStudyDetailPage(): boolean {
@@ -304,9 +306,7 @@ function syncFeaturedProjectVideoPosters() {
         if (!video.getAttribute("poster")) {
             video.setAttribute("poster", poster)
         }
-        if (video.getAttribute("preload") !== "metadata") {
-            video.setAttribute("preload", "metadata")
-        }
+        // Loading belongs to the video manager; poster refreshes must not restart it.
         video.setAttribute("data-featured-project-poster", "true")
     })
 }

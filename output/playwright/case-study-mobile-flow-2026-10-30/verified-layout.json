@@ -1,0 +1,804 @@
+{
+  "note": "Gaia was rechecked after hydration settled; see published-gaia-recheck.txt. Desktop wrapping remains pretty.",
+  "checks": [
+    {
+      "path": "/case-studies/gaia",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/gaia",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/gaia",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/gaia",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/gaia",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/airpods",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/airpods",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/airpods",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/airpods",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/airpods",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/simon-schuster",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/simon-schuster",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/simon-schuster",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/simon-schuster",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/simon-schuster",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/motion-connect-2025",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 7,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/motion-connect-2025",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 7,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/motion-connect-2025",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 7,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/motion-connect-2025",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 7,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/motion-connect-2025",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 7,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/caliper",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/caliper",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/caliper",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/caliper",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/caliper",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/national-park-cards",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/national-park-cards",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/national-park-cards",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/national-park-cards",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/national-park-cards",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 13,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/yomo",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/yomo",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/yomo",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/yomo",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/yomo",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 14,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/highland-harvests",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/highland-harvests",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/highland-harvests",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/highland-harvests",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/highland-harvests",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 11,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/weaponized-innocence",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/weaponized-innocence",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/weaponized-innocence",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/weaponized-innocence",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/weaponized-innocence",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 10,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/typldn",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/typldn",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/typldn",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/typldn",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/typldn",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/seek-truth",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 9,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/seek-truth",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 9,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/seek-truth",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 9,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/seek-truth",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 9,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/seek-truth",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 9,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/cellular-symphony",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 0,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/cellular-symphony",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 3,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/cellular-symphony",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 3,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/cellular-symphony",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 3,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/cellular-symphony",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 3,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/wolff-olins-x-artcenter",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/wolff-olins-x-artcenter",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/wolff-olins-x-artcenter",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/wolff-olins-x-artcenter",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/wolff-olins-x-artcenter",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 2,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/independent-lens",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 4,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/independent-lens",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 4,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/independent-lens",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 4,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/independent-lens",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 4,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/independent-lens",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 4,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/peak-energy",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/peak-energy",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/peak-energy",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/peak-energy",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/peak-energy",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/whatsapp",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/whatsapp",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/whatsapp",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/whatsapp",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/whatsapp",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 1,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/optro",
+      "width": 320,
+      "overflow": 320,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/optro",
+      "width": 390,
+      "overflow": 390,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/optro",
+      "width": 430,
+      "overflow": 430,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/optro",
+      "width": 809,
+      "overflow": 809,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [],
+      "narrowMedia": []
+    },
+    {
+      "path": "/case-studies/optro",
+      "width": 1200,
+      "overflow": 1200,
+      "paragraphCount": 8,
+      "textIssues": [],
+      "desktopWraps": [
+        "pretty"
+      ],
+      "narrowMedia": []
+    }
+  ]
+}

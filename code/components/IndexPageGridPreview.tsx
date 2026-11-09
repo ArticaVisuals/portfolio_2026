@@ -72,7 +72,7 @@ const GRID_LOCK_CSS = `
 }
 
 .idx-grid-preview-locked .idx-grid-card-tag {
-    font-size: 12px !important;
+    font-size: 13px !important;
     line-height: 1 !important;
     min-height: 23px !important;
     padding: 5px 10px 6px !important;

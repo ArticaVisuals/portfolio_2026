@@ -1,0 +1,17 @@
+[
+  {
+    "width": 320,
+    "clearPixelsAbove": 23,
+    "clearPixelsBelow": 23
+  },
+  {
+    "width": 390,
+    "clearPixelsAbove": 22,
+    "clearPixelsBelow": 22
+  },
+  {
+    "width": 430,
+    "clearPixelsAbove": 23,
+    "clearPixelsBelow": 23
+  }
+]

@@ -1,0 +1,539 @@
+[
+  {
+    "path": "/about",
+    "width": 320,
+    "overflow": false,
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "rect": {
+          "x": 20,
+          "y": 548.09375,
+          "width": 280,
+          "height": 44,
+          "top": 548.09375,
+          "right": 300,
+          "bottom": 592.09375,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 548.09375,
+              "width": 198.1015625,
+              "height": 28,
+              "top": 548.09375,
+              "right": 218.1015625,
+              "bottom": 576.09375,
+              "left": 20
+            },
+            "font": "28px"
+          },
+          {
+            "rect": {
+              "x": 228.1015625,
+              "y": 548.09375,
+              "width": 63.4453125,
+              "height": 13,
+              "top": 548.09375,
+              "right": 291.546875,
+              "bottom": 561.09375,
+              "left": 228.1015625
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "rect": {
+          "x": 20,
+          "y": 592.09375,
+          "width": 280,
+          "height": 44,
+          "top": 592.09375,
+          "right": 300,
+          "bottom": 636.09375,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 592.09375,
+              "width": 120.578125,
+              "height": 28,
+              "top": 592.09375,
+              "right": 140.578125,
+              "bottom": 620.09375,
+              "left": 20
+            },
+            "font": "28px"
+          },
+          {
+            "rect": {
+              "x": 150.578125,
+              "y": 592.09375,
+              "width": 55.515625,
+              "height": 13,
+              "top": 592.09375,
+              "right": 206.09375,
+              "bottom": 605.09375,
+              "left": 150.578125
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "rect": {
+          "x": 20,
+          "y": 636.09375,
+          "width": 280,
+          "height": 44,
+          "top": 636.09375,
+          "right": 300,
+          "bottom": 680.09375,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 636.09375,
+              "width": 121.7421875,
+              "height": 28,
+              "top": 636.09375,
+              "right": 141.7421875,
+              "bottom": 664.09375,
+              "left": 20
+            },
+            "font": "28px"
+          },
+          {
+            "rect": {
+              "x": 151.7421875,
+              "y": 636.09375,
+              "width": 55.515625,
+              "height": 13,
+              "top": 636.09375,
+              "right": 207.2578125,
+              "bottom": 649.09375,
+              "left": 151.7421875
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "GITHUBBUILD",
+        "rect": {
+          "x": 20,
+          "y": 680.09375,
+          "width": 280,
+          "height": 44,
+          "top": 680.09375,
+          "right": 300,
+          "bottom": 724.09375,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 680.09375,
+              "width": 99.03125,
+              "height": 28,
+              "top": 680.09375,
+              "right": 119.03125,
+              "bottom": 708.09375,
+              "left": 20
+            },
+            "font": "28px"
+          },
+          {
+            "rect": {
+              "x": 129.03125,
+              "y": 680.09375,
+              "width": 39.65625,
+              "height": 13,
+              "top": 680.09375,
+              "right": 168.6875,
+              "bottom": 693.09375,
+              "left": 129.03125
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "width": 390,
+    "overflow": false,
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "rect": {
+          "x": 20,
+          "y": 548.15625,
+          "width": 350,
+          "height": 44,
+          "top": 548.15625,
+          "right": 370,
+          "bottom": 592.15625,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 548.15625,
+              "width": 247.59375,
+              "height": 35,
+              "top": 548.15625,
+              "right": 267.59375,
+              "bottom": 583.15625,
+              "left": 20
+            },
+            "font": "35px"
+          },
+          {
+            "rect": {
+              "x": 277.59375,
+              "y": 548.15625,
+              "width": 63.4453125,
+              "height": 13,
+              "top": 548.15625,
+              "right": 341.0390625,
+              "bottom": 561.15625,
+              "left": 277.59375
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "rect": {
+          "x": 20,
+          "y": 592.15625,
+          "width": 350,
+          "height": 44,
+          "top": 592.15625,
+          "right": 370,
+          "bottom": 636.15625,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 592.15625,
+              "width": 150.6953125,
+              "height": 35,
+              "top": 592.15625,
+              "right": 170.6953125,
+              "bottom": 627.15625,
+              "left": 20
+            },
+            "font": "35px"
+          },
+          {
+            "rect": {
+              "x": 180.6953125,
+              "y": 592.15625,
+              "width": 55.515625,
+              "height": 13,
+              "top": 592.15625,
+              "right": 236.2109375,
+              "bottom": 605.15625,
+              "left": 180.6953125
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "rect": {
+          "x": 20,
+          "y": 636.15625,
+          "width": 350,
+          "height": 44,
+          "top": 636.15625,
+          "right": 370,
+          "bottom": 680.15625,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 636.15625,
+              "width": 152.1796875,
+              "height": 35,
+              "top": 636.15625,
+              "right": 172.1796875,
+              "bottom": 671.15625,
+              "left": 20
+            },
+            "font": "35px"
+          },
+          {
+            "rect": {
+              "x": 182.1796875,
+              "y": 636.15625,
+              "width": 55.515625,
+              "height": 13,
+              "top": 636.15625,
+              "right": 237.6953125,
+              "bottom": 649.15625,
+              "left": 182.1796875
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "GITHUBBUILD",
+        "rect": {
+          "x": 20,
+          "y": 680.15625,
+          "width": 350,
+          "height": 44,
+          "top": 680.15625,
+          "right": 370,
+          "bottom": 724.15625,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 680.15625,
+              "width": 123.78125,
+              "height": 35,
+              "top": 680.15625,
+              "right": 143.78125,
+              "bottom": 715.15625,
+              "left": 20
+            },
+            "font": "35px"
+          },
+          {
+            "rect": {
+              "x": 153.78125,
+              "y": 680.15625,
+              "width": 39.65625,
+              "height": 13,
+              "top": 680.15625,
+              "right": 193.4375,
+              "bottom": 693.15625,
+              "left": 153.78125
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "width": 430,
+    "overflow": false,
+    "rows": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "rect": {
+          "x": 20,
+          "y": 548.046875,
+          "width": 390,
+          "height": 44,
+          "top": 548.046875,
+          "right": 410,
+          "bottom": 592.046875,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 548.046875,
+              "width": 268.8203125,
+              "height": 38,
+              "top": 548.046875,
+              "right": 288.8203125,
+              "bottom": 586.046875,
+              "left": 20
+            },
+            "font": "38px"
+          },
+          {
+            "rect": {
+              "x": 298.8203125,
+              "y": 548.046875,
+              "width": 63.4453125,
+              "height": 13,
+              "top": 548.046875,
+              "right": 362.265625,
+              "bottom": 561.046875,
+              "left": 298.8203125
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "rect": {
+          "x": 20,
+          "y": 592.046875,
+          "width": 390,
+          "height": 44,
+          "top": 592.046875,
+          "right": 410,
+          "bottom": 636.046875,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 592.046875,
+              "width": 163.6171875,
+              "height": 38,
+              "top": 592.046875,
+              "right": 183.6171875,
+              "bottom": 630.046875,
+              "left": 20
+            },
+            "font": "38px"
+          },
+          {
+            "rect": {
+              "x": 193.6171875,
+              "y": 592.046875,
+              "width": 55.515625,
+              "height": 13,
+              "top": 592.046875,
+              "right": 249.1328125,
+              "bottom": 605.046875,
+              "left": 193.6171875
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "rect": {
+          "x": 20,
+          "y": 636.046875,
+          "width": 390,
+          "height": 44,
+          "top": 636.046875,
+          "right": 410,
+          "bottom": 680.046875,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 636.046875,
+              "width": 165.2109375,
+              "height": 38,
+              "top": 636.046875,
+              "right": 185.2109375,
+              "bottom": 674.046875,
+              "left": 20
+            },
+            "font": "38px"
+          },
+          {
+            "rect": {
+              "x": 195.2109375,
+              "y": 636.046875,
+              "width": 55.515625,
+              "height": 13,
+              "top": 636.046875,
+              "right": 250.7265625,
+              "bottom": 649.046875,
+              "left": 195.2109375
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      },
+      {
+        "text": "GITHUBBUILD",
+        "rect": {
+          "x": 20,
+          "y": 680.046875,
+          "width": 390,
+          "height": 44,
+          "top": 680.046875,
+          "right": 410,
+          "bottom": 724.046875,
+          "left": 20
+        },
+        "gap": "0px",
+        "children": [
+          {
+            "rect": {
+              "x": 20,
+              "y": 680.046875,
+              "width": 134.390625,
+              "height": 38,
+              "top": 680.046875,
+              "right": 154.390625,
+              "bottom": 718.046875,
+              "left": 20
+            },
+            "font": "38px"
+          },
+          {
+            "rect": {
+              "x": 164.390625,
+              "y": 680.046875,
+              "width": 39.65625,
+              "height": 13,
+              "top": 680.046875,
+              "right": 204.046875,
+              "bottom": 693.046875,
+              "left": 164.390625
+            },
+            "font": "13px"
+          }
+        ],
+        "hit": true
+      }
+    ]
+  }
+]

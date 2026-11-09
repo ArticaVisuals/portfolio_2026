@@ -6,6 +6,14 @@ and gotchas see `framer-current-state.md`; for strategy/IA see
 `portfolio-framework.md`; for codeFileId↔localPath see
 `workspace-organization-plan.md` + `code/mirror/manifest.json`.
 
+**2026-11-05 Home SEO update:** `HomeSelectedWorkGrid` now supports a native
+Framer `Projects` array. The production Home instance uses `useCMS=false` and
+six entries copied from the current CMS, so the initial HTML includes real
+project titles, links, tags, and media. Edit Home's `Projects` controls to
+maintain this list; `/index` remains CMS-driven. No project content is baked
+into the code component. See `case-study-seo-settings.md` for the SEO repair
+record and the plan-gated `/info` redirect that remains outstanding.
+
 After the 2026-06-18 audit: **34 code components + 5 overrides** (down from 44).
 2026-06-23 additions: **`TestimonialLineReveal`** (`tpDdaaJ`, live) and
 **`DoubleStackGalleryGrid`** (new case-study gallery layout; local mirror present,
@@ -181,3 +189,21 @@ Do each as: migrate one → Publish → QA `/`, `/index`, `/play`, `/info`,
 - **N1 — UI renames** (safe, componentId-bound): `Test`→`ProjectRegistrar`,
   `CaseStudyScrambleText`→`CaseStudyHeaderLink`, carousel→`ImageCarousel`.
 - **N2 — retire** `PageTransition_v7_12_Backup` once the frozen module URL is noted elsewhere.
+
+
+### Caliper type specimen (published 2026-10-23)
+
+`CaliperTypeTester.tsx` (`avtpt1Q`) embeds Caliper Sans 1.003 and provides
+native typing, auto fitting, a dimmed idle typing demo, and mirrored metric
+values (740, 510, 0, -230) that disappear before crowding. The 800 guide is omitted. Paper (`NhCmBtZpq`) is the selected
+variant; the user moved it inside Design (`W1AV_RZef`) on
+`/case-studies/caliper`. Preserve that placement when updating the source.
+Paper uses #EEEEEE with #191919 specimen ink, a shared muted gray for all
+detail rules/marks/values, 1px rule and registration strokes, and monochrome
+text selection. The original navy comparison remains available through the
+same color props and local preview. There are no visitor controls or corner
+copy. See `caliper-type-tester.md` for behavior, references, and verification.
+The published typing area retains its monochrome selection. Site-wide green
+selection is managed in Framer Settings > Code by `Text Selection`, mirrored at
+`code/mirror/custom-code/TextSelection.html`. Keep its selector at `body ::selection`
+so the component's more specific `.caliper-tester ::selection` style wins.

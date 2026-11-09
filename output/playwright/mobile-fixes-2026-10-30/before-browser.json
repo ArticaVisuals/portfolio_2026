@@ -1,0 +1,1611 @@
+[
+  {
+    "width": 390,
+    "route": "/case-studies/gaia",
+    "errors": [],
+    "shifts": [
+      {
+        "v": 0.11160463601446509,
+        "t": 2196.1000000089407,
+        "s": [
+          {
+            "name": "Credits & Info",
+            "prev": {
+              "x": 0,
+              "y": 464,
+              "width": 390,
+              "height": 380,
+              "top": 464,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            },
+            "cur": {
+              "x": 0,
+              "y": 314,
+              "width": 390,
+              "height": 530,
+              "top": 314,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            }
+          },
+          {
+            "name": "Credits",
+            "prev": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "cur": {
+              "x": 20,
+              "y": 777.609375,
+              "width": 350,
+              "height": 66.390625,
+              "top": 777.609375,
+              "right": 370,
+              "bottom": 844,
+              "left": 20
+            }
+          }
+        ]
+      }
+    ],
+    "videoBytes": 26391874,
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 0,
+          "y": 314,
+          "width": 390,
+          "height": 0,
+          "top": 314,
+          "right": 390,
+          "bottom": 314,
+          "left": 0
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 2020.796875,
+          "width": 350,
+          "height": 262.5,
+          "top": 2020.796875,
+          "right": 370,
+          "bottom": 2283.296875,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 2845.84375,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 2845.84375,
+          "right": 370,
+          "bottom": 3042.7109375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "rect": {
+          "x": 20,
+          "y": 5498.5546875,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 5498.5546875,
+          "right": 370,
+          "bottom": 5695.421875,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 5705.421875,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 5705.421875,
+          "right": 370,
+          "bottom": 5902.2890625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 5912.2890625,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 5912.2890625,
+          "right": 370,
+          "bottom": 6109.15625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "rect": {
+          "x": 20,
+          "y": 6168.359375,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 6168.359375,
+          "right": 370,
+          "bottom": 6365.2265625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 6375.2265625,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 6375.2265625,
+          "right": 370,
+          "bottom": 6572.09375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 6582.09375,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 6582.09375,
+          "right": 370,
+          "bottom": 6778.9609375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "rect": {
+          "x": 149.8515625,
+          "y": 6857.765625,
+          "width": 220.140625,
+          "height": 123.828125,
+          "top": 6857.765625,
+          "right": 369.9921875,
+          "bottom": 6981.59375,
+          "left": 149.8515625
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+        "rect": {
+          "x": 180.015625,
+          "y": 7279.3046875,
+          "width": 189.9765625,
+          "height": 106.859375,
+          "top": 7279.3046875,
+          "right": 369.9921875,
+          "bottom": 7386.1640625,
+          "left": 180.015625
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "",
+        "rect": {
+          "x": 20,
+          "y": 7396.1640625,
+          "width": 350,
+          "height": 196.8671875,
+          "top": 7396.1640625,
+          "right": 370,
+          "bottom": 7593.03125,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 20,
+          "y": 8294.2109375,
+          "width": 350,
+          "height": 196.875,
+          "top": 8294.2109375,
+          "right": 370,
+          "bottom": 8491.0859375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 20,
+          "y": 8540.0859375,
+          "width": 350,
+          "height": 196.875,
+          "top": 8540.0859375,
+          "right": 370,
+          "bottom": 8736.9609375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 20,
+          "y": 8785.9609375,
+          "width": 350,
+          "height": 196.875,
+          "top": 8785.9609375,
+          "right": 370,
+          "bottom": 8982.8359375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      }
+    ],
+    "geometry": [
+      {
+        "name": "H1",
+        "text": "Gaia",
+        "r": {
+          "x": 20,
+          "y": 100,
+          "width": 350,
+          "height": 38,
+          "top": 100,
+          "right": 370,
+          "bottom": 138,
+          "left": 20
+        }
+      },
+      {
+        "name": "Hero image",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 314,
+          "width": 390,
+          "height": 0,
+          "top": 314,
+          "right": 390,
+          "bottom": 314,
+          "left": 0
+        }
+      },
+      {
+        "name": "Credits & Info",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 314,
+          "width": 390,
+          "height": 729.515625,
+          "top": 314,
+          "right": 390,
+          "bottom": 1043.515625,
+          "left": 0
+        }
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "route": "/case-studies/airpods",
+    "errors": [],
+    "shifts": [],
+    "videoBytes": 16515911,
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "rect": {
+          "x": 0,
+          "y": 274,
+          "width": 390,
+          "height": 219.375,
+          "top": 274,
+          "right": 390,
+          "bottom": 493.375,
+          "left": 0
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "rect": {
+          "x": 20,
+          "y": 1383.390625,
+          "width": 350,
+          "height": 196.875,
+          "top": 1383.390625,
+          "right": 370,
+          "bottom": 1580.265625,
+          "left": 20
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/lpU1HaQ0vaqbGneboJZ60UBCE.mp4",
+        "rect": {
+          "x": 20,
+          "y": 1590.265625,
+          "width": 350,
+          "height": 204.1640625,
+          "top": 1590.265625,
+          "right": 370,
+          "bottom": 1794.4296875,
+          "left": 20
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "rect": {
+          "x": 20,
+          "y": 2011.2109375,
+          "width": 350,
+          "height": 196.875,
+          "top": 2011.2109375,
+          "right": 370,
+          "bottom": 2208.0859375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+        "rect": {
+          "x": 20,
+          "y": 2218.0859375,
+          "width": 350,
+          "height": 196.875,
+          "top": 2218.0859375,
+          "right": 370,
+          "bottom": 2414.9609375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+        "rect": {
+          "x": 20,
+          "y": 2424.9609375,
+          "width": 350,
+          "height": 196.875,
+          "top": 2424.9609375,
+          "right": 370,
+          "bottom": 2621.8359375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+        "rect": {
+          "x": 20,
+          "y": 2838.6171875,
+          "width": 350,
+          "height": 196.875,
+          "top": 2838.6171875,
+          "right": 370,
+          "bottom": 3035.4921875,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+        "rect": {
+          "x": 20,
+          "y": 3045.4921875,
+          "width": 350,
+          "height": 196.875,
+          "top": 3045.4921875,
+          "right": 370,
+          "bottom": 3242.3671875,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+        "rect": {
+          "x": 20,
+          "y": 3927.4765625,
+          "width": 350,
+          "height": 196.875,
+          "top": 3927.4765625,
+          "right": 370,
+          "bottom": 4124.3515625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 20,
+          "y": 4443.3515625,
+          "width": 350,
+          "height": 196.875,
+          "top": 4443.3515625,
+          "right": 370,
+          "bottom": 4640.2265625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 20,
+          "y": 4689.2265625,
+          "width": 350,
+          "height": 196.875,
+          "top": 4689.2265625,
+          "right": 370,
+          "bottom": 4886.1015625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      }
+    ],
+    "geometry": [
+      {
+        "name": "Section Header",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 1,
+          "width": 390,
+          "height": 273,
+          "top": 1,
+          "right": 390,
+          "bottom": 274,
+          "left": 0
+        }
+      },
+      {
+        "name": "H1",
+        "text": "AirPods Pro 3,",
+        "r": {
+          "x": 20,
+          "y": 101,
+          "width": 350,
+          "height": 38,
+          "top": 101,
+          "right": 370,
+          "bottom": 139,
+          "left": 20
+        }
+      },
+      {
+        "name": "Credits & Info",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 493.375,
+          "width": 390,
+          "height": 850.015625,
+          "top": 493.375,
+          "right": 390,
+          "bottom": 1343.390625,
+          "left": 0
+        }
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "errors": [],
+    "shifts": [],
+    "videoBytes": 1158682,
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 11.416717529296875,
+          "y": 489.004638671875,
+          "width": 367.16656494140625,
+          "height": 204.57666015625,
+          "top": 489.004638671875,
+          "right": 378.5832824707031,
+          "bottom": 693.581298828125,
+          "left": 11.416717529296875
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 13.203125,
+          "y": 815.5859375,
+          "width": 363.59375,
+          "height": 202.5859375,
+          "top": 815.5859375,
+          "right": 376.796875,
+          "bottom": 1018.171875,
+          "left": 13.203125
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 13.203125,
+          "y": 1141.171875,
+          "width": 363.59375,
+          "height": 202.5859375,
+          "top": 1141.171875,
+          "right": 376.796875,
+          "bottom": 1343.7578125,
+          "left": 13.203125
+        },
+        "paused": true,
+        "ready": 0
+      }
+    ],
+    "geometry": [
+      {
+        "name": "H1",
+        "text": "Micah Hoang",
+        "r": {
+          "x": 12,
+          "y": 94.5,
+          "width": 345.6875,
+          "height": 66.1171875,
+          "top": 94.5,
+          "right": 357.6875,
+          "bottom": 160.6171875,
+          "left": 12
+        }
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "route": "/case-studies/gaia",
+    "errors": [],
+    "shifts": [
+      {
+        "v": 5.2562872317667186e-05,
+        "t": 1152.5,
+        "s": [
+          {
+            "name": null,
+            "prev": {
+              "x": 1105.609375,
+              "y": 20,
+              "width": 52.234375,
+              "height": 13,
+              "top": 20,
+              "right": 1157.84375,
+              "bottom": 33,
+              "left": 1105.609375
+            },
+            "cur": {
+              "x": 1072.40625,
+              "y": 20,
+              "width": 39,
+              "height": 13,
+              "top": 20,
+              "right": 1111.40625,
+              "bottom": 33,
+              "left": 1072.40625
+            }
+          },
+          {
+            "name": "Text Link Black",
+            "prev": {
+              "x": 1032.171875,
+              "y": 20,
+              "width": 42.4375,
+              "height": 13,
+              "top": 20,
+              "right": 1074.609375,
+              "bottom": 33,
+              "left": 1032.171875
+            },
+            "cur": {
+              "x": 1010.203125,
+              "y": 20,
+              "width": 31.203125,
+              "height": 13,
+              "top": 20,
+              "right": 1041.40625,
+              "bottom": 33,
+              "left": 1010.203125
+            }
+          }
+        ]
+      },
+      {
+        "v": 0.16535841232227488,
+        "t": 1754.8999999910593,
+        "s": [
+          {
+            "name": "Credits & Info",
+            "prev": {
+              "x": 0,
+              "y": 525,
+              "width": 1200,
+              "height": 319,
+              "top": 525,
+              "right": 1200,
+              "bottom": 844,
+              "left": 0
+            },
+            "cur": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          }
+        ]
+      }
+    ],
+    "videoBytes": 30006056,
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 0,
+          "y": -1107,
+          "width": 1200,
+          "height": 675,
+          "top": -1107,
+          "right": 1200,
+          "bottom": -432,
+          "left": 0
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+        "rect": {
+          "x": 823.796875,
+          "y": 1012.0703125,
+          "width": 356.1953125,
+          "height": 267.140625,
+          "top": 1012.0703125,
+          "right": 1179.9921875,
+          "bottom": 1279.2109375,
+          "left": 823.796875
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+        "rect": {
+          "x": 843.578125,
+          "y": 2170.703125,
+          "width": 336.4140625,
+          "height": 448.5546875,
+          "top": 2170.703125,
+          "right": 1179.9921875,
+          "bottom": 2619.2578125,
+          "left": 843.578125
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "rect": {
+          "x": 20,
+          "y": 4722.09375,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 4722.09375,
+          "right": 393.328125,
+          "bottom": 4932.0859375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+        "rect": {
+          "x": 413.328125,
+          "y": 4722.09375,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 4722.09375,
+          "right": 786.65625,
+          "bottom": 4932.0859375,
+          "left": 413.328125
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "rect": {
+          "x": 806.65625,
+          "y": 4722.09375,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 4722.09375,
+          "right": 1179.984375,
+          "bottom": 4932.0859375,
+          "left": 806.65625
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "rect": {
+          "x": 20,
+          "y": 5042.4921875,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 5042.4921875,
+          "right": 393.328125,
+          "bottom": 5252.484375,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "rect": {
+          "x": 413.328125,
+          "y": 5042.4921875,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 5042.4921875,
+          "right": 786.65625,
+          "bottom": 5252.484375,
+          "left": 413.328125
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "rect": {
+          "x": 806.65625,
+          "y": 5042.4921875,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 5042.4921875,
+          "right": 1179.984375,
+          "bottom": 5252.484375,
+          "left": 806.65625
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "rect": {
+          "x": 441.859375,
+          "y": 5362.890625,
+          "width": 738.1328125,
+          "height": 415.1953125,
+          "top": 5362.890625,
+          "right": 1179.9921875,
+          "bottom": 5778.0859375,
+          "left": 441.859375
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+        "rect": {
+          "x": 427.5546875,
+          "y": 6605.1328125,
+          "width": 490.796875,
+          "height": 276.0703125,
+          "top": 6605.1328125,
+          "right": 918.3515625,
+          "bottom": 6881.203125,
+          "left": 427.5546875
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+        "rect": {
+          "x": 318.5625,
+          "y": 6901.203125,
+          "width": 420.7109375,
+          "height": 236.6484375,
+          "top": 6901.203125,
+          "right": 739.2734375,
+          "bottom": 7137.8515625,
+          "left": 318.5625
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+        "rect": {
+          "x": 759.2734375,
+          "y": 6901.203125,
+          "width": 420.7109375,
+          "height": 236.6484375,
+          "top": 6901.203125,
+          "right": 1179.984375,
+          "bottom": 7137.8515625,
+          "left": 759.2734375
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 20,
+          "y": 8321.5859375,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 8321.5859375,
+          "right": 393.328125,
+          "bottom": 8531.578125,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 413.328125,
+          "y": 8321.5859375,
+          "width": 373.3359375,
+          "height": 210,
+          "top": 8321.5859375,
+          "right": 786.6640625,
+          "bottom": 8531.5859375,
+          "left": 413.328125
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 806.6640625,
+          "y": 8321.5859375,
+          "width": 373.3359375,
+          "height": 210,
+          "top": 8321.5859375,
+          "right": 1180,
+          "bottom": 8531.5859375,
+          "left": 806.6640625
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      }
+    ],
+    "geometry": [
+      {
+        "name": "H1",
+        "text": "Gaia",
+        "r": {
+          "x": 20,
+          "y": -1382,
+          "width": 1160,
+          "height": 70,
+          "top": -1382,
+          "right": 1180,
+          "bottom": -1312,
+          "left": 20
+        }
+      },
+      {
+        "name": "Hero image",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": -1107,
+          "width": 1200,
+          "height": 675,
+          "top": -1107,
+          "right": 1200,
+          "bottom": -432,
+          "left": 0
+        }
+      },
+      {
+        "name": "Credits & Info",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": -432,
+          "width": 1200,
+          "height": 496.2890625,
+          "top": -432,
+          "right": 1200,
+          "bottom": 64.2890625,
+          "left": 0
+        }
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "route": "/case-studies/airpods",
+    "errors": [],
+    "shifts": [
+      {
+        "v": 5.2562872317667186e-05,
+        "t": 1247.7999999970198,
+        "s": [
+          {
+            "name": null,
+            "prev": {
+              "x": 1105.609375,
+              "y": 20,
+              "width": 52.234375,
+              "height": 13,
+              "top": 20,
+              "right": 1157.84375,
+              "bottom": 33,
+              "left": 1105.609375
+            },
+            "cur": {
+              "x": 1072.40625,
+              "y": 20,
+              "width": 39,
+              "height": 13,
+              "top": 20,
+              "right": 1111.40625,
+              "bottom": 33,
+              "left": 1072.40625
+            }
+          },
+          {
+            "name": "Text Link Black",
+            "prev": {
+              "x": 1032.171875,
+              "y": 20,
+              "width": 42.4375,
+              "height": 13,
+              "top": 20,
+              "right": 1074.609375,
+              "bottom": 33,
+              "left": 1032.171875
+            },
+            "cur": {
+              "x": 1010.203125,
+              "y": 20,
+              "width": 31.203125,
+              "height": 13,
+              "top": 20,
+              "right": 1041.40625,
+              "bottom": 33,
+              "left": 1010.203125
+            }
+          }
+        ]
+      }
+    ],
+    "videoBytes": 16730030,
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "rect": {
+          "x": 0,
+          "y": 301,
+          "width": 1200,
+          "height": 675,
+          "top": 301,
+          "right": 1200,
+          "bottom": 976,
+          "left": 0
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "rect": {
+          "x": 20,
+          "y": 1617.8828125,
+          "width": 580.359375,
+          "height": 326.453125,
+          "top": 1617.8828125,
+          "right": 600.359375,
+          "bottom": 1944.3359375,
+          "left": 20
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/lpU1HaQ0vaqbGneboJZ60UBCE.mp4",
+        "rect": {
+          "x": 620.359375,
+          "y": 1617.8828125,
+          "width": 559.6328125,
+          "height": 326.453125,
+          "top": 1617.8828125,
+          "right": 1179.9921875,
+          "bottom": 1944.3359375,
+          "left": 620.359375
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "rect": {
+          "x": 20,
+          "y": 2636.5390625,
+          "width": 1160,
+          "height": 652.5,
+          "top": 2636.5390625,
+          "right": 1180,
+          "bottom": 3289.0390625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+        "rect": {
+          "x": 20,
+          "y": 3309.0390625,
+          "width": 570,
+          "height": 320.625,
+          "top": 3309.0390625,
+          "right": 590,
+          "bottom": 3629.6640625,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+        "rect": {
+          "x": 610,
+          "y": 3309.0390625,
+          "width": 570,
+          "height": 320.625,
+          "top": 3309.0390625,
+          "right": 1180,
+          "bottom": 3629.6640625,
+          "left": 610
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+        "rect": {
+          "x": 20,
+          "y": 4321.8671875,
+          "width": 570,
+          "height": 320.625,
+          "top": 4321.8671875,
+          "right": 590,
+          "bottom": 4642.4921875,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+        "rect": {
+          "x": 610,
+          "y": 4321.8671875,
+          "width": 570,
+          "height": 320.625,
+          "top": 4321.8671875,
+          "right": 1180,
+          "bottom": 4642.4921875,
+          "left": 610
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+        "rect": {
+          "x": 20,
+          "y": 6248.3125,
+          "width": 1160,
+          "height": 652.5,
+          "top": 6248.3125,
+          "right": 1180,
+          "bottom": 6900.8125,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 20,
+          "y": 7225.8125,
+          "width": 373.328125,
+          "height": 209.9921875,
+          "top": 7225.8125,
+          "right": 393.328125,
+          "bottom": 7435.8046875,
+          "left": 20
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 413.328125,
+          "y": 7225.8125,
+          "width": 373.3359375,
+          "height": 210,
+          "top": 7225.8125,
+          "right": 786.6640625,
+          "bottom": 7435.8125,
+          "left": 413.328125
+        },
+        "paused": true,
+        "ready": 0,
+        "deferred": "true"
+      }
+    ],
+    "geometry": [
+      {
+        "name": "Section Header",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 1,
+          "width": 1200,
+          "height": 300,
+          "top": 1,
+          "right": 1200,
+          "bottom": 301,
+          "left": 0
+        }
+      },
+      {
+        "name": "H1",
+        "text": "AirPods Pro 3,",
+        "r": {
+          "x": 20,
+          "y": 101,
+          "width": 1160,
+          "height": 70,
+          "top": 101,
+          "right": 1180,
+          "bottom": 171,
+          "left": 20
+        }
+      },
+      {
+        "name": "Credits & Info",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 976,
+          "width": 1200,
+          "height": 601.8828125,
+          "top": 976,
+          "right": 1200,
+          "bottom": 1577.8828125,
+          "left": 0
+        }
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "route": "/",
+    "errors": [],
+    "shifts": [
+      {
+        "v": 0.00015089970127163966,
+        "t": 580.0999999940395,
+        "s": [
+          {
+            "name": null,
+            "prev": {
+              "x": 1105.609375,
+              "y": 20,
+              "width": 52.234375,
+              "height": 13,
+              "top": 20,
+              "right": 1157.84375,
+              "bottom": 33,
+              "left": 1105.609375
+            },
+            "cur": {
+              "x": 1072.40625,
+              "y": 20,
+              "width": 39,
+              "height": 13,
+              "top": 20,
+              "right": 1111.40625,
+              "bottom": 33,
+              "left": 1072.40625
+            }
+          },
+          {
+            "name": "Social Link",
+            "prev": {
+              "x": 113.5,
+              "y": 383,
+              "width": 77.8671875,
+              "height": 13,
+              "top": 383,
+              "right": 191.3671875,
+              "bottom": 396,
+              "left": 113.5
+            },
+            "cur": {
+              "x": 116.5,
+              "y": 383,
+              "width": 80.921875,
+              "height": 13,
+              "top": 383,
+              "right": 197.421875,
+              "bottom": 396,
+              "left": 116.5
+            }
+          },
+          {
+            "name": "Social Link",
+            "prev": {
+              "x": 267.5,
+              "y": 383,
+              "width": 64.5703125,
+              "height": 13,
+              "top": 383,
+              "right": 332.0703125,
+              "bottom": 396,
+              "left": 267.5
+            },
+            "cur": {
+              "x": 276.5,
+              "y": 383,
+              "width": 64.5703125,
+              "height": 13,
+              "top": 383,
+              "right": 341.0703125,
+              "bottom": 396,
+              "left": 276.5
+            }
+          },
+          {
+            "name": "Social Link",
+            "prev": {
+              "x": 201.5,
+              "y": 383,
+              "width": 56.0390625,
+              "height": 13,
+              "top": 383,
+              "right": 257.5390625,
+              "bottom": 396,
+              "left": 201.5
+            },
+            "cur": {
+              "x": 207.5,
+              "y": 383,
+              "width": 59.09375,
+              "height": 13,
+              "top": 383,
+              "right": 266.59375,
+              "bottom": 396,
+              "left": 207.5
+            }
+          },
+          {
+            "name": "Text Link Black",
+            "prev": {
+              "x": 1032.171875,
+              "y": 20,
+              "width": 42.4375,
+              "height": 13,
+              "top": 20,
+              "right": 1074.609375,
+              "bottom": 33,
+              "left": 1032.171875
+            },
+            "cur": {
+              "x": 1010.203125,
+              "y": 20,
+              "width": 31.203125,
+              "height": 13,
+              "top": 20,
+              "right": 1041.40625,
+              "bottom": 33,
+              "left": 1010.203125
+            }
+          }
+        ]
+      },
+      {
+        "v": 0.00013707461163770405,
+        "t": 588.7000000029802,
+        "s": [
+          {
+            "name": "Social Link",
+            "prev": {
+              "x": 276.5,
+              "y": 383,
+              "width": 64.5703125,
+              "height": 13,
+              "top": 383,
+              "right": 341.0703125,
+              "bottom": 396,
+              "left": 276.5
+            },
+            "cur": {
+              "x": 221.5,
+              "y": 383,
+              "width": 46.8046875,
+              "height": 13,
+              "top": 383,
+              "right": 268.3046875,
+              "bottom": 396,
+              "left": 221.5
+            }
+          },
+          {
+            "name": "Social Link",
+            "prev": {
+              "x": 207.5,
+              "y": 383,
+              "width": 59.09375,
+              "height": 13,
+              "top": 383,
+              "right": 266.59375,
+              "bottom": 396,
+              "left": 207.5
+            },
+            "cur": {
+              "x": 165,
+              "y": 383,
+              "width": 46.8046875,
+              "height": 13,
+              "top": 383,
+              "right": 211.8046875,
+              "bottom": 396,
+              "left": 165
+            }
+          },
+          {
+            "name": "Social Link",
+            "prev": {
+              "x": 116.5,
+              "y": 383,
+              "width": 80.921875,
+              "height": 13,
+              "top": 383,
+              "right": 197.421875,
+              "bottom": 396,
+              "left": 116.5
+            },
+            "cur": {
+              "x": 100,
+              "y": 383,
+              "width": 54.609375,
+              "height": 13,
+              "top": 383,
+              "right": 154.609375,
+              "bottom": 396,
+              "left": 100
+            }
+          }
+        ]
+      },
+      {
+        "v": 4.2457777428087154e-05,
+        "t": 630.4000000059605,
+        "s": [
+          {
+            "name": null,
+            "prev": {
+              "x": 302.5390625,
+              "y": 439,
+              "width": 145.390625,
+              "height": 70,
+              "top": 439,
+              "right": 447.9296875,
+              "bottom": 509,
+              "left": 302.5390625
+            },
+            "cur": {
+              "x": 307.234375,
+              "y": 439,
+              "width": 152.1875,
+              "height": 70,
+              "top": 439,
+              "right": 459.421875,
+              "bottom": 509,
+              "left": 307.234375
+            }
+          }
+        ]
+      }
+    ],
+    "videoBytes": 1158682,
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 17.15234375,
+          "y": 608,
+          "width": 575.6953125,
+          "height": 320.7578125,
+          "top": 608,
+          "right": 592.84765625,
+          "bottom": 928.7578125,
+          "left": 17.15234375
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 607.15234375,
+          "y": 608,
+          "width": 575.6953125,
+          "height": 320.7578125,
+          "top": 608,
+          "right": 1182.84765625,
+          "bottom": 928.7578125,
+          "left": 607.15234375
+        },
+        "paused": false,
+        "ready": 4
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 17.15234375,
+          "y": 1049.7578125,
+          "width": 575.6953125,
+          "height": 320.7578125,
+          "top": 1049.7578125,
+          "right": 592.84765625,
+          "bottom": 1370.515625,
+          "left": 17.15234375
+        },
+        "paused": true,
+        "ready": 0
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 607.15234375,
+          "y": 1049.7578125,
+          "width": 575.6953125,
+          "height": 320.7578125,
+          "top": 1049.7578125,
+          "right": 1182.84765625,
+          "bottom": 1370.515625,
+          "left": 607.15234375
+        },
+        "paused": true,
+        "ready": 0
+      }
+    ],
+    "geometry": [
+      {
+        "name": "H1",
+        "text": "Micah Hoang",
+        "r": {
+          "x": 14,
+          "y": 90,
+          "width": 715.203125,
+          "height": 120,
+          "top": 90,
+          "right": 729.203125,
+          "bottom": 210,
+          "left": 14
+        }
+      }
+    ]
+  }
+]

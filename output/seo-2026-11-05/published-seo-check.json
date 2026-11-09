@@ -1,0 +1,383 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "headings": [
+      "Micah Hoang",
+      "Selected work",
+      "About Micah"
+    ],
+    "updated": null,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": [
+      {
+        "href": "/case-studies/gaia",
+        "title": "1  /    Gaia  VIEW PROJECT"
+      },
+      {
+        "href": "/case-studies/airpods",
+        "title": "2  /    AirPods Pro 3  VIEW PROJECT"
+      },
+      {
+        "href": "/case-studies/peak-energy",
+        "title": "3  /    Peak Energy  VIEW PROJECT"
+      },
+      {
+        "href": "/case-studies/motion-connect-2025",
+        "title": "4  /    Motion Connect 2025  VIEW PROJECT"
+      },
+      {
+        "href": "/case-studies/simon-schuster",
+        "title": "5  /    Simon & Schuster  VIEW PROJECT"
+      },
+      {
+        "href": "/case-studies/national-park-cards",
+        "title": "6  /    National Park Playing Cards  VIEW PROJECT"
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "status": 200,
+    "headings": [
+      "Hey, I'm Micah."
+    ],
+    "updated": null,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/index",
+    "status": 200,
+    "headings": [
+      "Index",
+      "Index"
+    ],
+    "updated": null,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/play",
+    "status": 200,
+    "headings": [],
+    "updated": null,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/gaia",
+    "status": 200,
+    "headings": [
+      "Gaia \u2014 iNaturalist rebrand and app",
+      "OTHER",
+      "PROJECTS",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/airpods",
+    "status": 200,
+    "headings": [
+      "AirPods Pro 3 \u2014 launch identity and motion design",
+      "OTHER",
+      "PROJECTS",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "status": 200,
+    "headings": [
+      "Simon & Schuster \u2014 rebrand concept",
+      "The last independent,",
+      "The last",
+      "independent,",
+      "made to look like it.",
+      "OTHER",
+      "PROJECTS",
+      "OTHER"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/peak-energy",
+    "status": 200,
+    "headings": [
+      "Peak Energy & GM \u2014 partnership motion design",
+      "Announcing a new",
+      "era of energy.",
+      "OTHER",
+      "PROJECTS",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "status": 200,
+    "headings": [
+      "Motion Connect 2025 \u2014 ArtCenter event identity",
+      "Amping up the world of",
+      "Amping up the world",
+      "moving design.",
+      "of moving design.",
+      "OTHER",
+      "PROJECTS",
+      "OTHER"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "status": 200,
+    "headings": [
+      "National Park Playing Cards \u2014 illustration and packaging",
+      "National Park",
+      "Bestselling love letter",
+      "Playing Cards",
+      "to the outdoors.",
+      "Bestselling love",
+      "letter to the",
+      "outdoors."
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/yomo",
+    "status": 200,
+    "headings": [
+      "Yomo \u2014 food navigation UX/UI and identity",
+      "Yomo \u2014 food navigation UX/UI and identity",
+      "Every plate, on your terms.",
+      "Every plate,",
+      "on your terms.",
+      "OTHER",
+      "PROJECTS",
+      "OTHER"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "status": 200,
+    "headings": [
+      "Highland Harvests \u2014 brand identity and packaging",
+      "Highland Harvests \u2014 brand identity and packaging",
+      "Good for forests,",
+      "Good for forests,",
+      "better for people.",
+      "better for people.",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "status": 200,
+    "headings": [
+      "Weaponized Innocence \u2014 editorial and advocacy design",
+      "Weaponized",
+      "Innocence",
+      "Some childhoods are taken.",
+      "Some",
+      "childhoods are",
+      "taken.",
+      "OTHER"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/typldn",
+    "status": 200,
+    "headings": [
+      "TYPLDN \u2014 typography conference identity",
+      "TYPLDN \u2014 typography conference identity",
+      "Where letters meet.",
+      "Where letters meet.",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "status": 200,
+    "headings": [
+      "Seek Truth \u2014 censorship and editorial design",
+      "Seek Truth \u2014 censorship and editorial design",
+      "The visual art of protest.",
+      "The visual art of",
+      "protest.",
+      "OTHER",
+      "PROJECTS",
+      "OTHER"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "status": 200,
+    "headings": [
+      "Cellular Symphony \u2014 3D motion design",
+      "Cellular",
+      "Symphony",
+      "Organelles in concert.",
+      "Organelles in",
+      "concert.",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "status": 200,
+    "headings": [
+      "Wolff Olins \u00d7 ArtCenter \u2014 event identity",
+      "Wolff Olins",
+      "x ArtCenter",
+      "A studio walks into a school.",
+      "A studio walks",
+      "into a school.",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "status": 200,
+    "headings": [
+      "Independent Lens \u2014 PBS poster and editorial design",
+      "Independent",
+      "Lens",
+      "The issues, through",
+      "The issues,",
+      "through",
+      "the people living them.",
+      "the people"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/whatsapp",
+    "status": 200,
+    "headings": [
+      "WhatsApp \u2014 Meta AI launch motion design",
+      "WhatsApp \u2014 Meta AI launch motion design",
+      "OTHER PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/caliper",
+    "status": 200,
+    "headings": [
+      "Caliper Sans \u2014 typeface design",
+      "A measured,",
+      "A measured, functional face.",
+      "functional face.",
+      "OTHER",
+      "PROJECTS",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  },
+  {
+    "path": "/case-studies/optro",
+    "status": 200,
+    "headings": [
+      "Optro CRX 2026 \u2014 conference motion design",
+      "Transform risk into opportunity.",
+      "Transform risk",
+      "into opportunity.",
+      "OTHER",
+      "PROJECTS"
+    ],
+    "updated": true,
+    "pdfs": [
+      "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+    ],
+    "cards": []
+  }
+]

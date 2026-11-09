@@ -1,0 +1,17 @@
+<!-- Framer Settings > Code: Text Selection; Start of <head>; All pages. -->
+<style id="mh-text-selection">
+  body {
+    --mh-selection-background: color-mix(
+      in srgb,
+      var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, #233324) 28%,
+      var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, #f7f5f0) 72%
+    );
+    --mh-selection-foreground: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, #233324);
+  }
+
+  body ::selection {
+    background-color: var(--mh-selection-background);
+    color: var(--mh-selection-foreground);
+    text-shadow: none;
+  }
+</style>

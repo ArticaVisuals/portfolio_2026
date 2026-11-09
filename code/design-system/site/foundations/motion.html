@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion – Micah Hoang Design System</title>
+<meta name="description" content="Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.">
+<link rel="alternate" type="text/markdown" href="../../content/foundations/motion.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link is-current" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Foundations</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Motion</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/foundations/motion.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="overview"><a class="ds-anchor" href="#overview">Overview</a></h2>
+<p>Motion should feel like the site is alive, not performing. It decelerates into place, moves only a few pixels, and respects <code>prefers-reduced-motion</code>. There are three easing curves, and the first one handles almost everything.</p>
+<h2 id="easing"><a class="ds-anchor" href="#easing">Easing</a></h2>
+<div class="ds-ease"><button type="button" class="ds-ease__row" data-ease="snappy"><span class="mh-label">snappy</span><code>cubic-bezier(0.16, 1, 0.3, 1)</code><span class="ds-ease__track"><span class="ds-ease__dot" style="transition-timing-function:var(--mh-ease-snappy)"></span></span></button><button type="button" class="ds-ease__row" data-ease="smooth"><span class="mh-label">smooth</span><code>cubic-bezier(0.12, 0.23, 0.5, 1)</code><span class="ds-ease__track"><span class="ds-ease__dot" style="transition-timing-function:var(--mh-ease-smooth)"></span></span></button><button type="button" class="ds-ease__row" data-ease="springy"><span class="mh-label">springy</span><code>cubic-bezier(0.25, 1, 0.5, 1)</code><span class="ds-ease__track"><span class="ds-ease__dot" style="transition-timing-function:var(--mh-ease-springy)"></span></span></button><p class="mh-label mh-text-muted">Click a row to play it at 900ms.</p></div>
+<div class="ds-table"><table><thead><tr><th>Token</th><th>Curve</th><th>Use</th></tr></thead><tbody><tr><td><code>--mh-ease-snappy</code></td><td><code>cubic-bezier(0.16, 1, 0.3, 1)</code></td><td><strong>Default.</strong> Reveals, hover transforms, media scale, fades, page transitions.</td></tr><tr><td><code>--mh-ease-smooth</code></td><td><code>cubic-bezier(0.12, 0.23, 0.5, 1)</code></td><td>Symmetric changes: row hover wash, filter color, loader bar.</td></tr><tr><td><code>--mh-ease-springy</code></td><td><code>cubic-bezier(0.25, 1, 0.5, 1)</code></td><td>Gesture-like only: rule line draw, cursor trails. Never UI state.</td></tr></tbody></table></div>
+<h2 id="durations"><a class="ds-anchor" href="#durations">Durations</a></h2>
+<div class="ds-table"><table><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td><code>--mh-duration-instant</code></td><td>150ms</td><td>Row hover wash</td></tr><tr><td><code>--mh-duration-fast</code></td><td>250ms</td><td>Color changes (tag hover)</td></tr><tr><td><code>--mh-duration-zoom</code></td><td>260ms</td><td>Lightbox open / close</td></tr><tr><td><code>--mh-duration-base</code></td><td>420ms</td><td>Hover transforms: flip rail, media scale</td></tr><tr><td><code>--mh-duration-slow</code></td><td>620ms</td><td>Index flip rail, media fade-in</td></tr><tr><td><code>--mh-duration-reveal</code></td><td>900ms</td><td>Type reveal; scroll-to-top travel</td></tr><tr><td><code>--mh-duration-page</code></td><td>1200ms</td><td>Boot curtain lift, page transition</td></tr><tr><td><code>--mh-duration-draw</code></td><td>2000ms</td><td>Rule line draw (200ms delay)</td></tr><tr><td><code>--mh-stagger-reveal</code></td><td>90ms</td><td>Between lines in a type reveal</td></tr><tr><td><code>--mh-stagger-media</code></td><td>58ms</td><td>Between thumbnails fading in</td></tr></tbody></table></div>
+<h2 id="springs"><a class="ds-anchor" href="#springs">Springs</a></h2>
+<p>Hovers and reveals use the curves above. Anything the visitor can <strong>grab</strong> (drag, swipe, sheets) uses spring tokens instead: critically damped by default, bounce only after a throw. See <a href="gesture.html">Gesture</a> and <a href="interaction.html">Interaction Principles</a>.</p>
+<div class="ds-table"><table><thead><tr><th>Token</th><th>Damping</th><th>Response</th></tr></thead><tbody><tr><td><code>motion.spring.default</code></td><td>1.0</td><td>0.4s</td></tr><tr><td><code>motion.spring.quick</code></td><td>1.0</td><td>0.3s</td></tr><tr><td><code>motion.spring.momentum</code></td><td>0.8</td><td>0.4s</td></tr></tbody></table></div>
+<h2 id="flip-rail"><a class="ds-anchor" href="#flip-rail">Flip rail</a></h2>
+<p>The site's main hover. A label is stacked over a copy of itself in a one-line window; on hover the stack slides up by one line plus <code>--mh-distance-flip-gap</code> (5px). Used on nav links, project titles, index rows and text actions. It works with CSS alone.</p>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-row">
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>Work</span><span aria-hidden="true">Work</span></span></span>
+  </a>
+  <a class="mh-link mh-label" href="#">
+    <span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span>
+  </a>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-row"&gt;
+  &lt;a class="mh-link mh-label" href="#"&gt;
+    &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Work&lt;/span&gt;&lt;span aria-hidden="true"&gt;Work&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class="mh-link mh-label" href="#"&gt;
+    &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;View all&lt;/span&gt;&lt;span aria-hidden="true"&gt;View all&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<h2 id="type-reveal"><a class="ds-anchor" href="#type-reveal">Type reveal</a></h2>
+<p>Display lines rise into a clipping mask: start at <code>translateY(115%)</code>, end at 0, 900ms Snappy, 90ms between lines. Add <code>.mh-reveal</code> per line and set <code>--i</code> for the order; <code>components.js</code> adds <code>.is-in</code> when it enters the viewport.</p>
+<figure class="ds-example" id="ex-2"><div class="ds-example__bar"><span>Example 2</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><h2 class="mh-text-display-m" style="margin:0">
+  <span class="mh-reveal" style="--i:0"><span>Selected</span></span>
+  <span class="mh-reveal" style="--i:1"><span>work</span></span>
+</h2></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;h2 class="mh-text-display-m" style="margin:0"&gt;
+  &lt;span class="mh-reveal" style="--i:0"&gt;&lt;span&gt;Selected&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="mh-reveal" style="--i:1"&gt;&lt;span&gt;work&lt;/span&gt;&lt;/span&gt;
+&lt;/h2&gt;</code></pre></details></figure>
+<h2 id="hover-scale"><a class="ds-anchor" href="#hover-scale">Hover scale</a></h2>
+<p>Media inside a link scales to <code>--mh-scale-hover</code> (1.02) over 420ms Snappy. The frame doesn't move; only the image does, clipped by the frame. See <a href="../components/media-frame.html">Media Frame</a>.</p>
+<h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
+<ul><li>Default to Snappy + 420ms. Reach for anything else only if the table above says so.</li><li>Move things a few pixels or one line. Don't fly elements in from off-screen.</li><li>Animate <code>transform</code> and <code>opacity</code> only.</li><li>Under <code>prefers-reduced-motion: reduce</code>, transitions collapse to 1ms and reveals render in place (<code>css/base.css</code>).</li><li><strong>Framer</strong>: use the same curves in Appear/Hover effects (Framer "Custom bezier"). Page transitions and the boot curtain belong to <code>PageTransition</code> (<code>gmalnRr</code>); don't build a second transition system.</li></ul>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>No bounce, elastic or overshoot curves on UI (the <code>momentum</code> spring is only for thrown gestures).</li><li>No parallax, scroll-jacking or auto-playing carousels.</li><li>No looping attention animations on UI (the grain shimmer is the only ambient motion).</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/motion.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#easing">Easing</a><a href="#durations">Durations</a><a href="#springs">Springs</a><a href="#flip-rail">Flip rail</a><a href="#type-reveal">Type reveal</a><a href="#hover-scale">Hover scale</a><a href="#usage">Usage</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

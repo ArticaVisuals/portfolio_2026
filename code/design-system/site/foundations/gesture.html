@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesture – Micah Hoang Design System</title>
+<meta name="description" content="How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.">
+<link rel="alternate" type="text/markdown" href="../../content/foundations/gesture.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link is-current" href="../foundations/gesture.html">Gesture</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
+<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
+<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Foundations</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Gesture</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/foundations/gesture.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><h2 id="overview"><a class="ds-anchor" href="#overview">Overview</a></h2>
+<p>Most of the site is hover and scroll. The exception is <code>/play</code>, an endless two-axis archive you drag, throw and wheel through. This page describes its physics, so new gesture UI feels like the same material, and it defines spring tokens for that new work. See <a href="interaction.html">Interaction Principles</a> for the reasoning.</p>
+<blockquote><strong><code>/play</code> is protected.</strong> Its drag, inertia, video pool and WebKit clamp are performance contracts (repo <code>AGENTS.md</code>). This page describes them. It does not ask anyone to retune them. Run <code>npm test</code> after any change to <code>Play.tsx</code> or <code>ArchivePlayground.tsx</code>.</blockquote>
+<h2 id="what-play-does-already-true"><a class="ds-anchor" href="#what-play-does-already-true">What /play does (already true)</a></h2>
+<div class="ds-table"><table><thead><tr><th>Behavior</th><th>Value</th><th>Source</th></tr></thead><tbody><tr><td>Pointer capture on press</td><td><code>setPointerCapture</code></td><td><code>ArchivePlayground.tsx</code> (<code>QNpkYp5</code>)</td></tr><tr><td>Grab offset respected</td><td>World moves by pointer delta from its origin, never re-centers</td><td>same</td></tr><tr><td>Tap vs drag threshold</td><td>18px (<code>--mh-gesture-tap-threshold</code>)</td><td><code>TAP_THRESHOLD</code></td></tr><tr><td>Velocity</td><td>Per-axis <code>vx</code>, <code>vy</code> from the last move sample × 1.75</td><td><code>throwVelocityScale</code></td></tr><tr><td>Throw range</td><td>Ignored below 220 px/s, clamped at 5200 px/s</td><td><code>throwMinSpeed</code>, <code>throwMaxSpeed</code></td></tr><tr><td>Deceleration</td><td>Velocity × 0.85 per 60fps frame (exponential decay, ≈0.990/ms)</td><td><code>throwFriction</code></td></tr><tr><td>Boundaries</td><td>None. The grid wraps infinitely, so no rubber-band is needed</td><td>n/a</td></tr><tr><td>Edge scrolling</td><td>Pointer within 90px of an edge drifts the world at up to 220 px/s</td><td><code>edgeScrollZone</code>, <code>edgeScrollSpeed</code></td></tr><tr><td>Smooth scroll</td><td>Lenis is destroyed on <code>/play</code>; the archive owns wheel input</td><td><code>NavigationScrollGuard</code> (<code>Wnd19lx</code>)</td></tr><tr><td>Video during motion</td><td>The center video pool freezes during drag, throw and edge scroll and refills after settling; max 6 concurrent in Chromium/Arc</td><td><code>Play.tsx</code> (<code>PN1RVOf</code>)</td></tr></tbody></table></div>
+<h2 id="springs-for-new-work"><a class="ds-anchor" href="#springs-for-new-work">Springs for new work</a></h2>
+<p>When you build something new that the visitor can grab, such as a sheet, a swipeable gallery or a draggable comparison slider, animate it with a spring, not a fixed-duration curve. A spring starts from the current on-screen value and carries velocity, so it can be grabbed and reversed mid-flight.</p>
+<div class="ds-table"><table><thead><tr><th>Token</th><th>Damping</th><th>Response</th><th>Use</th></tr></thead><tbody><tr><td><code>motion.spring.default</code></td><td>1.0</td><td>0.4s</td><td>Settling, snapping, repositioning. The default.</td></tr><tr><td><code>motion.spring.quick</code></td><td>1.0</td><td>0.3s</td><td>Short moves: thumbs, toggles, small slides.</td></tr><tr><td><code>motion.spring.momentum</code></td><td>0.8</td><td>0.4s</td><td>Only when a flick or throw preceded it.</td></tr></tbody></table></div>
+<p>CSS variables: <code>--mh-spring-default-damping</code>, <code>--mh-spring-default-response</code>, and so on.</p>
+<div class="ds-codeblock"><button type="button" class="ds-copy">Copy</button><pre><code class="language-js">// Motion / Framer Motion. bounce = 1 - damping, duration = response
+import { animate } from "motion"
+
+const s = getComputedStyle(document.documentElement)
+const spring = (name, velocity = 0) =&gt; ({
+  type: "spring",
+  bounce: 1 - parseFloat(s.getPropertyValue(`--mh-spring-${name}-damping`)),
+  duration: parseFloat(s.getPropertyValue(`--mh-spring-${name}-response`)),
+  velocity,
+})
+
+animate(sheet, { y: 0 }, spring("default"))
+animate(card, { x: target }, spring("momentum", releaseVelocity)) // after a flick only</code></pre></div>
+<h2 id="rules-for-new-gesture-ui"><a class="ds-anchor" href="#rules-for-new-gesture-ui">Rules for new gesture UI</a></h2>
+<ol><li><strong>Feedback on pointer-down.</strong> Show the pressed state immediately; commit on release.</li><li><strong>Track 1:1</strong> with pointer capture, from the grab offset.</li><li><strong>Threshold first.</strong> Wait for 18px of movement before committing to a drag direction; below that it's a tap.</li><li><strong>Hand off velocity.</strong> Pass the release velocity into the spring (<code>velocity</code> option).</li><li><strong>Project, then snap.</strong> Choose the snap target from where the throw would land, not where the finger lifted: ``<code>js const project = (v, d = 0.99) =&gt; (v / 1000) * d / (1 - d) // d = 0.99 matches /play's feel const target = nearestSnap(current + project(velocity)) </code>``</li><li><strong>Decide by velocity sign</strong>, not position, when choosing open vs close.</li><li><strong>Rubber-band</strong> past bounds instead of stopping hard: ``<code>js const rubberband = (over, dim, c = 0.55) =&gt; (over * dim * c) / (dim + c * Math.abs(over)) </code>``</li><li><strong>Same path in and out.</strong> A sheet that rises from the bottom dismisses to the bottom.</li><li><strong>Reduced motion:</strong> swap slides and springs for a 200ms opacity cross-fade; keep the state change.</li><li><strong>Animate only <code>transform</code> and <code>opacity</code>.</strong></li></ol>
+<h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
+<ul><li>Don't use springs for hover, reveal or color changes. The bezier canon covers those.</li><li>Don't add bounce to anything that wasn't thrown.</li><li>Don't touch <code>/play</code>'s physics to "match" these springs. They're already consistent.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/gesture.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#what-play-does-already-true">What /play does (already true)</a><a href="#springs-for-new-work">Springs for new work</a><a href="#rules-for-new-gesture-ui">Rules for new gesture UI</a><a href="#don-t">Don't</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

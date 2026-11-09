@@ -1,0 +1,146 @@
+{
+  "steps": [
+    {
+      "label": "Gaia",
+      "count": 135,
+      "states": [
+        {
+          "path": "/",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        },
+        {
+          "path": "/case-studies/gaia",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "label": "Back from Gaia",
+      "count": 61,
+      "states": [
+        {
+          "path": "/case-studies/gaia",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        },
+        {
+          "path": "/",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "label": "AirPods Pro 3",
+      "count": 138,
+      "states": [
+        {
+          "path": "/",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        },
+        {
+          "path": "/case-studies/airpods",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "label": "Back from AirPods Pro 3",
+      "count": 54,
+      "states": [
+        {
+          "path": "/",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "label": "open menu",
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "routes": [
+        {
+          "text": "Work",
+          "x": 20,
+          "h": 66
+        },
+        {
+          "text": "Play",
+          "x": 20,
+          "h": 66
+        },
+        {
+          "text": "Index",
+          "x": 20,
+          "h": 66
+        },
+        {
+          "text": "About",
+          "x": 20,
+          "h": 66
+        }
+      ],
+      "mask": [
+        {
+          "h": 13,
+          "overflow": "hidden"
+        }
+      ]
+    },
+    {
+      "label": "Menu to About",
+      "count": 163,
+      "states": [
+        {
+          "path": "/",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        },
+        {
+          "path": "/",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 43.999996185302734
+        },
+        {
+          "path": "/about",
+          "x": 20,
+          "right": 370,
+          "w": 60,
+          "h": 44
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

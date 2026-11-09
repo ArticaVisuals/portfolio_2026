@@ -1,0 +1,8 @@
+### Result
+[{"width":390,"title":"TYPLDN — typography conference identity","titleWidth":350,"titleHeight":114,"clipped":false,"verticallyClipped":false,"overflow":false},{"width":810,"title":"TYPLDN — typography conference identity","titleWidth":770,"titleHeight":104,"clipped":false,"verticallyClipped":false,"overflow":false},{"width":1440,"title":"TYPLDN — typography conference identity","titleWidth":1400,"titleHeight":70,"clipped":false,"verticallyClipped":false,"overflow":false}]
+### Ran Playwright code
+```js
+await (async page => { const rows=[];for(const width of [390,810,1440]) { await page.setViewportSize({width,height:1000});await page.goto("https://micahhoang.com/case-studies/typldn");await page.waitForTimeout(1800);rows.push(await page.evaluate(()=>{const e=[...document.querySelectorAll("h1,h2")].find(e=>e.getBoundingClientRect().width>0);const r=e.getBoundingClientRect();const p=e.parentElement.getBoundingClientRect();return{width:innerWidth,title:e.textContent,titleWidth:r.width,titleHeight:r.height,clipped:r.right>innerWidth+1||r.left< -1,verticallyClipped:r.bottom>p.bottom+3,overflow:document.documentElement.scrollWidth>innerWidth};}));await page.screenshot({path:"output/seo-2026-11-05/verified-typldn-"+width+".png"});}return rows; })(page);
+```
+### Events
+- New console entries: .playwright-cli/console-2026-11-06T04-35-40-944Z.log#L16679-L17119

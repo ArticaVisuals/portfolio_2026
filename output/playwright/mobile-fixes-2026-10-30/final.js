@@ -1,0 +1,12 @@
+async page=>{
+ const browser=page.context().browser(),out=[];
+ for(const route of ['/case-studies/gaia','/case-studies/airpods'])for(let i=0;i<3;i++){
+ const c=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+ await c.addInitScript(()=>{window.__shifts=[];new PerformanceObserver(l=>l.getEntries().forEach(e=>{if(!e.hadRecentInput)window.__shifts.push({value:e.value,time:e.startTime,s:e.sources?.map(s=>({name:s.node?.dataset?.framerName,prev:s.previousRect,cur:s.currentRect}))});})).observe({type:'layout-shift',buffered:true});});const p=await c.newPage();
+ await p.goto('https://micahhoang.com'+route,{waitUntil:'domcontentloaded'});await p.waitForTimeout(2500);
+ out.push(await p.evaluate(({route,i})=>({route,i,shifts:window.__shifts,css:document.querySelector('[data-case-study-stable-hero-ratio]')?.textContent,hero:[...document.querySelectorAll('[data-framer-name="Hero image"]')].map(e=>({r:e.getBoundingClientRect().toJSON(),ratio:getComputedStyle(e).aspectRatio,video:e.querySelector('video')?{paused:e.querySelector('video').paused,ready:e.querySelector('video').readyState}:null})),bytes:performance.getEntriesByType('resource').filter(e=>e.initiatorType==='video').reduce((n,e)=>n+e.transferSize,0)}),{route,i}));
+ if(i===0){await p.screenshot({path:'output/playwright/mobile-fixes-2026-10-30/'+route.split('/').pop()+'-final.png'});await p.evaluate(()=>window.scrollTo(0,document.body.scrollHeight/2));await p.waitForTimeout(350);await p.evaluate(()=>window.scrollTo(0,0));await p.waitForTimeout(800);out.push({route,returnHero:await p.evaluate(()=>{const e=document.querySelector('video');return e?{paused:e.paused,ready:e.readyState,h:e.getBoundingClientRect().height}:null})});}
+ await c.close();
+ }
+ const c=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});const p=await c.newPage();await p.goto('https://micahhoang.com');await p.waitForTimeout(1200);const link=p.locator('a[data-framer-name="Text Link Black"]').filter({hasText:'VIEW ALL'});await link.scrollIntoViewIfNeeded();await p.waitForTimeout(800);out.push({viewAll:await link.evaluate(e=>({height:e.getBoundingClientRect().height,maskOverflow:getComputedStyle(e.firstElementChild).overflow,maskHeight:e.firstElementChild.getBoundingClientRect().height}))});await p.screenshot({path:'output/playwright/mobile-fixes-2026-10-30/home-view-all-final.png'});await c.close();return out;
+}

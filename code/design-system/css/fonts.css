@@ -1,0 +1,53 @@
+/*
+ * GT Standard faces, loaded from the same Framer-hosted files micahhoang.com
+ * already serves (captured from code/mirror/published on 2026-10-01).
+ *
+ * The Framer project registers each weight as its own family ("GT Standard
+ * Trial L Bd", "GT Standard L Regular", ...). Here they are folded into two
+ * families so `font-weight` works normally:
+ *   "MH GT Standard"      400 Regular / 500 Medium / 700 Bold
+ *   "MH GT Standard Mono" 400 Regular
+ *
+ * Licensing: the Medium and Bold files are GT Standard *Trial* faces. Confirm
+ * the Grilli Type license before shipping these outside the portfolio.
+ */
+
+@font-face {
+    font-family: "MH GT Standard";
+    src: url("https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MH GT Standard";
+    src: url("https://framerusercontent.com/assets/9yJuW3KljT9gCmBoAWEht1NaQ.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MH GT Standard";
+    src: url("https://framerusercontent.com/assets/DNrckardB2jvGZnn0Iagvf20zY.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MH GT Standard";
+    src: url("https://framerusercontent.com/assets/crhfNLaqXfVV61Bkd6ep2NhowE.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MH GT Standard Mono";
+    src: url("https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
