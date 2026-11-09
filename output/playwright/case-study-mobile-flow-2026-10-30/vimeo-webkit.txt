@@ -1,0 +1,7 @@
+### Result
+{"url":"https://player.vimeo.com/video/1200258330?h=e612fdb6f1&controls=0&autoplay=1&muted=1&loop=1&dnt=1","allow":"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share","videos":1,"video":{"paused":false,"muted":true,"inline":true,"ready":4,"time":1.364480835},"body":null}
+### Ran Playwright code
+```js
+await (async page=>{const ctx=await page.context().browser().newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});const p=await ctx.newPage();await p.goto('https://micahhoang.com/case-studies/peak-energy',{waitUntil:'domcontentloaded'});const el=p.locator('iframe[src*="autoplay=1"]');await el.scrollIntoViewIfNeeded();await p.waitForTimeout(3000);const f=await el.contentFrame();const n=await f.locator('video').count();const result={url:await el.getAttribute('src'),allow:await el.getAttribute('allow'),videos:n,video:n?await f.locator('video').first().evaluate(e=>({paused:e.paused,muted:e.muted,inline:e.playsInline,ready:e.readyState,time:e.currentTime})):null,body:n?null:(await f.locator('body').innerText()).slice(0,500)};await ctx.close();return result}
+)(page);
+```

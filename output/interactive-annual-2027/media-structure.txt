@@ -1,0 +1,1461 @@
+### Result
+[
+  {
+    "type": "IMG",
+    "src": "FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg",
+    "attrs": [
+      [
+        "decoding",
+        "auto"
+      ],
+      [
+        "width",
+        "1920"
+      ],
+      [
+        "height",
+        "1080"
+      ],
+      [
+        "sizes",
+        "(min-width: 1200px) 100vw, (min-width: 810px) and (max-width: 1199.98px) 100vw, (max-width: 809.98px) 100vw"
+      ],
+      [
+        "src",
+        "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?width=1920&height=1080"
+      ],
+      [
+        "alt",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?width=1920&height=1080:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div style=\"position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0\" data-framer-background-image-wrapper=\"true\"><img decoding=\"auto\" width=\"1920\" height=\"1080\" sizes=\"(min-width: 1200px) 100vw, (min-width: 810px) and (max-width: 1199.98px) 100vw, (max-width: 809.98px) 100vw\" srcset=\"https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?scale-down-to=512&amp;width=1920&amp;height=1080 512w,https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQ",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4"
+      ],
+      [
+        "loop",
+        ""
+      ],
+      [
+        "preload",
+        "auto"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "poster",
+        "https://files.catbox.moe/5rxz22.jpg"
+      ],
+      [
+        "data-featured-project-poster",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4:https://files.catbox.moe/5rxz22.jpg"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://files.catbox.moe/5rxz22.jpg"
+      ],
+      [
+        "autoplay",
+        ""
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://files.catbox.moe/5rxz22.jpg"
+      ]
+    ],
+    "parent": "<div class=\"framer-1qa818k-container\"><!--$--><video src=\"https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4\" loop=\"\" preload=\"auto\" muted=\"\" playsinline=\"\" style=\"cursor:auto;width:100%;height:100%;border-radius:0px;display:block;object-fit:contain;background-color:rgba(0, 0, 0, 0);object-position:50% 50%\" poster=\"https://files.catbox.moe/5rxz22.jpg\" data-featured-project-poster=\"true\" data-case-study-media-skeleton-signature=\"video:https://framerusercontent.com/assets/UbkFFOnZ",
+    "sameParentMedia": 1,
+    "grandMedia": 2
+  },
+  {
+    "type": "IMG",
+    "src": "DcicrFmUxqgU5jGTpUKyIWKwCA.png",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?width=1995&height=1827"
+      ],
+      [
+        "alt",
+        "Gaia conservation premise over a forest landscape: one million species face extinction this century."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?width=1995&height=1827:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.09215 / 1; width: 330.796px; height: 302.885px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-ready=\"true\"><img src=\"https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?width=1995&amp;height=1827\" srcset=\"https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?scale",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "rMadioVkjNUlwuCAwu3Iu6AU9gQ.png",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?width=6806&height=2322"
+      ],
+      [
+        "alt",
+        "Gaia brand message over a mountain landscape: We can't protect what we can't see."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=2048&width=6806&height=2322:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 2.93578 / 1; width: 889.204px; height: 302.885px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-ready=\"true\"><img src=\"https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?width=6806&amp;height=2322\" srcset=\"https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?sca",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "pxlGB0XdAkcu30nxixqoivDsn8.webp",
+    "attrs": [
+      [
+        "decoding",
+        "auto"
+      ],
+      [
+        "width",
+        "2560"
+      ],
+      [
+        "height",
+        "566"
+      ],
+      [
+        "sizes",
+        "(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)"
+      ],
+      [
+        "src",
+        "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?width=2560&height=566"
+      ],
+      [
+        "alt",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?scale-down-to=2048&width=2560&height=566:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div style=\"position: absolute; border-radius: inherit; corner-shape: inherit; inset: 0px; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-framer-background-image-wrapper=\"true\" data-case-study-media-skeleton=\"true\" data-case-study-media-ready=\"true\"><img decoding=\"auto\" width=\"2560\" height=\"566\" sizes=\"(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)\" srcset=\"https://frameruserco",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "PQwqOy9SjY9BJEFmykGLzjKewg.png",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?width=6806&height=2322"
+      ],
+      [
+        "alt",
+        "Gaia invitation over nature photography: Invite everyone into joyful discovery."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=2048&width=6806&height=2322:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 2.93109 / 1; width: 759.4px; height: 259.084px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?width=6806&amp;height=2322\" srcset=\"https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=512&amp;width=6806&amp;heigh",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.7778 / 1; width: 460.6px; height: 259.084px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden;\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" style=\"display: block; width: 100%; height: 100%; object-fit: contain; object-position: center center; background: transparent; border-radius: inherit;\" data-video-source-deferred=\"true\" muted=\"\"></video><div aria-hidden=\"true\" style=\"posit",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "VZXPWa0V8UVoMHfEqwChvjbDoQ.webp",
+    "attrs": [
+      [
+        "decoding",
+        "auto"
+      ],
+      [
+        "width",
+        "2560"
+      ],
+      [
+        "height",
+        "1517"
+      ],
+      [
+        "sizes",
+        "(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)"
+      ],
+      [
+        "src",
+        "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?width=2560&height=1517"
+      ],
+      [
+        "alt",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?scale-down-to=2048&width=2560&height=1517:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div style=\"position: absolute; border-radius: inherit; corner-shape: inherit; inset: 0px; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-framer-background-image-wrapper=\"true\" data-case-study-media-skeleton=\"true\" data-case-study-media-ready=\"true\"><img decoding=\"auto\" width=\"2560\" height=\"1517\" sizes=\"(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)\" srcset=\"https://frameruserc",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "jb1IGn4by6Z5vtzzyHVQy3YQkY.webp",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?width=2560&height=1429"
+      ],
+      [
+        "alt",
+        "Gaia voice and style booklet photographed among wildflowers."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=2048&width=2560&height=1429:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.79146 / 1; width: 612.335px; height: 341.807px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?width=2560&amp;height=1429\" srcset=\"https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=512&amp;width=2560&amp;h",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 607.656 / 341.797 !important; width: 607.665px; height: 341.807px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6); --case-study-media-stable-video-aspect-ratio: 0.75;\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-stable-video-ratio=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-a",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "HdIgx7Gnsv581nIB2dbKZPWFC3A.webp",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?width=2560&height=1429"
+      ],
+      [
+        "alt",
+        "Gaia outdoor campaign billboard: Small finds. Big impact."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=2048&width=2560&height=1429:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.79146 / 1; width: 657.075px; height: 366.781px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?width=2560&amp;height=1429\" srcset=\"https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=512&amp;width=2560&amp",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "LX86Gx6KBYH0TPKdwD1bPisPAFU.webp",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?width=2560&height=1668"
+      ],
+      [
+        "alt",
+        "Gaia street banners pairing nature symbols with Small finds. Big impact."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=2048&width=2560&height=1668:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.53477 / 1; width: 562.925px; height: 366.781px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?width=2560&amp;height=1668\" srcset=\"https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=512&amp;width=2560&amp",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "We8CbT3tANj0LRWhRW1EWqwQNIU.webp",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?width=2560&height=1429"
+      ],
+      [
+        "alt",
+        "Gaia wordmark on a cream card among red flowers."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=2048&width=2560&height=1429:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.79146 / 1; width: 841.618px; height: 469.794px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?width=2560&amp;height=1429\" srcset=\"https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=512&amp;width=2560&amp",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "cJLznMixCN2nBkZw2WKy85Io.jpg",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?width=3299&height=4096"
+      ],
+      [
+        "alt",
+        "The Living Record exhibition poster with nature photography."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?scale-down-to=2048&width=3299&height=4096:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 0.80542 / 1; width: 378.382px; height: 469.794px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?width=3299&amp;height=4096\" srcset=\"https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?scale-down-to=1024&amp;width=3299&amp;height",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?width=3072&height=1713"
+      ],
+      [
+        "alt",
+        "Gaia Field Notes notebook with an embossed branching symbol."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=2048&width=3072&height=1713:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.79335 / 1; width: 681.355px; height: 379.935px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?width=3072&amp;height=1713\" srcset=\"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512&amp;width=3072&amp;hei",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?width=2447&height=1726"
+      ],
+      [
+        "alt",
+        "Los Angeles Bioblitz event T-shirt with a grid of nature photographs."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=2048&width=2447&height=1726:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.41773 / 1; width: 538.645px; height: 379.935px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?width=2447&amp;height=1726\" srcset=\"https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=512&amp;width=2447&amp;h",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?width=2560&height=1396"
+      ],
+      [
+        "alt",
+        "Gaia interface design system with nature icons, observation statistics, weather, and navigation."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=2048&width=2560&height=1396:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.83381 / 1; width: 789.484px; height: 430.516px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?width=2560&amp;height=1396\" srcset=\"https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=512&amp;width=2560&amp",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "jnO3X6kihC9RS4UIQjowcI3dPY.gif",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?width=2160&height=2160"
+      ],
+      [
+        "alt",
+        "Animated Gaia nature-symbol family in cream on green."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=2048&width=2160&height=2160:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1 / 1; width: 430.516px; height: 430.516px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?width=2160&amp;height=2160\" srcset=\"https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=512&amp;width=2160&amp;height=21",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+    "attrs": [
+      [
+        "poster",
+        "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&height=1600"
+      ],
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4:https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 400 / 224.984 !important; width: 400px; height: 224.997px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video poster=\"https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&amp;height=1600\" loop=\"\" playsinline=\"\" pr",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+    "attrs": [
+      [
+        "poster",
+        "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&height=1600"
+      ],
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4:https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 400 / 224.984 !important; width: 400px; height: 224.997px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video poster=\"https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&amp;height=1600\" loop=\"\" playsinline=\"\" ",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+    "attrs": [
+      [
+        "poster",
+        "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&height=1600"
+      ],
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4:https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&height=1600"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 400 / 224.984 !important; width: 400px; height: 224.997px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video poster=\"https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&amp;height=1600\" loop=\"\" playsinline=\"\" pr",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "gFR7q15nPC48QC7ap45JjG12riY.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4:https://files.catbox.moe/50xion.jpg"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "poster",
+        "https://files.catbox.moe/50xion.jpg"
+      ],
+      [
+        "data-featured-project-poster",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://files.catbox.moe/50xion.jpg"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://files.catbox.moe/50xion.jpg"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 400 / 224.984 !important; width: 400px; height: 224.997px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" muted=\"\" style=\"display: block; width: 100%; height",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 400 / 224.984 !important; width: 400px; height: 224.997px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6); --case-study-media-skeleton-aspect-ratio: 0.8;\" data-case-study-media-skeleton=\"true\" data-case-study-media-skeleton-ratio=\"true\" data-case-study-media-layout-locked=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"t",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "TNpc8c5YNncEarPZc27ldVMU.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4:https://files.catbox.moe/00tm9g.jpg"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "poster",
+        "https://files.catbox.moe/00tm9g.jpg"
+      ],
+      [
+        "data-featured-project-poster",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://files.catbox.moe/00tm9g.jpg"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://files.catbox.moe/00tm9g.jpg"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 400 / 224.984 !important; width: 400px; height: 224.997px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" muted=\"\" style=\"display: block; width: 100%; height",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?width=1567&height=1619"
+      ],
+      [
+        "alt",
+        "Gaia app icon on an iPhone home screen."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?width=1567&height=1619:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 0.967881 / 1; width: 430.063px; height: 444.334px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?width=1567&amp;height=1619\" srcset=\"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=1024&amp;width=1567&amp;h",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4:https://files.catbox.moe/7iwwxa.jpg"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "poster",
+        "https://files.catbox.moe/7iwwxa.jpg"
+      ],
+      [
+        "data-featured-project-poster",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://files.catbox.moe/7iwwxa.jpg"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://files.catbox.moe/7iwwxa.jpg"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 789.922 / 444.328 !important; width: 789.937px; height: 444.334px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" muted=\"\" style=\"display: block; width: 100%",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg",
+    "attrs": [
+      [
+        "decoding",
+        "auto"
+      ],
+      [
+        "width",
+        "7208"
+      ],
+      [
+        "height",
+        "3841"
+      ],
+      [
+        "sizes",
+        "(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)"
+      ],
+      [
+        "src",
+        "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?width=7208&height=3841"
+      ],
+      [
+        "alt",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?scale-down-to=2048&width=7208&height=3841:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div style=\"position: absolute; border-radius: inherit; corner-shape: inherit; inset: 0px; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-framer-background-image-wrapper=\"true\" data-case-study-media-skeleton=\"true\" data-case-study-media-ready=\"true\"><img decoding=\"auto\" width=\"7208\" height=\"3841\" sizes=\"(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)\" srcset=\"https://frameruserc",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "ZN5xIYWteQ32fyOxgSsFzxp0rU.png",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?width=2642&height=1882"
+      ],
+      [
+        "alt",
+        "Gaia mobile app flow map linking screens and interaction states."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=2048&width=2642&height=1882:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.40383 / 1; width: 415.241px; height: 295.793px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?width=2642&amp;height=1882\" srcset=\"https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=512&amp;width=2642&amp;hei",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4:https://files.catbox.moe/aq8akp.jpg"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "poster",
+        "https://files.catbox.moe/aq8akp.jpg"
+      ],
+      [
+        "data-featured-project-poster",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://files.catbox.moe/aq8akp.jpg"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://files.catbox.moe/aq8akp.jpg"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 525.859 / 295.781 !important; width: 525.86px; height: 295.793px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" muted=\"\" style=\"display: block; width: 100%;",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "A6DvwXGXMEFZPWt9xOnVZAJow.png",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?width=1628&height=1860"
+      ],
+      [
+        "alt",
+        "Gaia interface exploration board with mobile screens and component studies."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?width=1628&height=1860:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 0.875269 / 1; width: 258.898px; height: 295.793px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?width=1628&amp;height=1860\" srcset=\"https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?scale-down-to=1024&amp;width=1628&amp;hei",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "53KFBdZp49V7ToYem3gagSK9tbE.png",
+    "attrs": [
+      [
+        "src",
+        "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?width=2140&height=1818"
+      ],
+      [
+        "alt",
+        "Gaia image library organizing nature photography by subject."
+      ],
+      [
+        "loading",
+        "lazy"
+      ],
+      [
+        "decoding",
+        "async"
+      ],
+      [
+        "draggable",
+        "false"
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=2048&width=2140&height=1818:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 1.17712 / 1; width: 298.463px; height: 253.554px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\"><img src=\"https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?width=2140&amp;height=1818\" srcset=\"https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=512&amp;width=2140&amp;h",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4:https://files.catbox.moe/n0n3jb.jpg"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ],
+      [
+        "poster",
+        "https://files.catbox.moe/n0n3jb.jpg"
+      ],
+      [
+        "data-featured-project-poster",
+        "true"
+      ],
+      [
+        "data-case-study-media-skeleton-poster",
+        "https://files.catbox.moe/n0n3jb.jpg"
+      ],
+      [
+        "data-case-study-media-skeleton-poster-ready",
+        "https://files.catbox.moe/n0n3jb.jpg"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 450.766 / 253.547 !important; width: 450.768px; height: 253.554px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-skeleton=\"true\" data-case-study-media-layout-locked=\"true\" data-case-study-media-ready=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" muted=\"\" style=\"display: block; width: 100%",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "VIDEO",
+    "src": "PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+    "attrs": [
+      [
+        "loop",
+        ""
+      ],
+      [
+        "playsinline",
+        ""
+      ],
+      [
+        "preload",
+        "none"
+      ],
+      [
+        "data-case-study-autoplay-intent",
+        "true"
+      ],
+      [
+        "muted",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "video:https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4:"
+      ],
+      [
+        "data-case-study-media-skeleton-media",
+        "true"
+      ],
+      [
+        "data-video-source-deferred",
+        "true"
+      ]
+    ],
+    "parent": "<div data-media-shell=\"true\" style=\"aspect-ratio: 450.766 / 253.547 !important; width: 450.768px; height: 253.554px; position: relative; flex: 0 0 auto; border-radius: inherit; overflow: hidden; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6); --case-study-media-skeleton-aspect-ratio: 0.8;\" data-case-study-media-skeleton=\"true\" data-case-study-media-skeleton-ratio=\"true\" data-case-study-media-layout-locked=\"true\"><video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-i",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  },
+  {
+    "type": "IMG",
+    "src": "cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp",
+    "attrs": [
+      [
+        "decoding",
+        "auto"
+      ],
+      [
+        "width",
+        "2560"
+      ],
+      [
+        "height",
+        "1429"
+      ],
+      [
+        "sizes",
+        "(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)"
+      ],
+      [
+        "src",
+        "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?width=2560&height=1429"
+      ],
+      [
+        "alt",
+        ""
+      ],
+      [
+        "data-case-study-media-skeleton-signature",
+        "img:https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?scale-down-to=2048&width=2560&height=1429:"
+      ],
+      [
+        "data-case-study-media-state",
+        "ready"
+      ]
+    ],
+    "parent": "<div style=\"position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0\" data-framer-background-image-wrapper=\"true\"><img decoding=\"auto\" width=\"2560\" height=\"1429\" sizes=\"(min-width: 1200px) calc(100vw - 40px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 40px), (max-width: 809.98px) calc(100vw - 40px)\" srcset=\"https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?scale-down-to=512&amp;width=2560&amp;height=1429 512w,https://frameruse",
+    "sameParentMedia": 1,
+    "grandMedia": 1
+  }
+]
+### Ran Playwright code
+```js
+await page.evaluate('() => Array.from(document.querySelectorAll("img,video")).filter(e=>!e.closest("[data-framer-name=NextProjectsSection],nav,footer")).map(e=>({type:e.tagName,src:(e.currentSrc||e.src||"").split("/").pop().split("?")[0],attrs:Array.from(e.attributes).filter(x=>![\'style\',\'srcset\'].includes(x.name)).map(x=>[x.name,x.value]),parent:e.parentElement.outerHTML.slice(0,500),sameParentMedia:e.parentElement.querySelectorAll("img,video").length,grandMedia:e.parentElement.parentElement.querySelectorAll("img,video").length}))');
+```

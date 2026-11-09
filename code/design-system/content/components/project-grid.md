@@ -20,14 +20,14 @@ tokens: [layout.column-gap, layout.card-row-gap]
 <ul class="mh-project-grid">
   <li class="mh-project-card">
     <a class="mh-project-card__link" href="#">
-      <div class="mh-project-card__meta mh-label"><span>5</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Simon &amp; Schuster</span><span aria-hidden="true">Simon &amp; Schuster</span></span></span></div>
+      <div class="mh-project-card__meta mh-label"><span>5</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Simon &amp; Schuster</span><span aria-hidden="true">View project</span></span></span></div>
       <div class="mh-media"><img src="../../assets/samples/simon-schuster.jpg" alt="Uncover Forbidden Stories poster on a city building"></div>
     </a>
     <ul class="mh-tags"><li class="mh-tag">Strategy</li><li class="mh-tag">Visual identity</li><li class="mh-tag">Editorial</li></ul>
   </li>
   <li class="mh-project-card">
     <a class="mh-project-card__link" href="#">
-      <div class="mh-project-card__meta mh-label"><span>6</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>National Park Playing Cards</span><span aria-hidden="true">National Park Playing Cards</span></span></span></div>
+      <div class="mh-project-card__meta mh-label"><span>6</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>National Park Playing Cards</span><span aria-hidden="true">View project</span></span></span></div>
       <div class="mh-media"><img src="../../assets/samples/national-park-cards.jpg" alt="Hands dealing National Park playing cards on a wooden table"></div>
     </a>
     <ul class="mh-tags"><li class="mh-tag">Product</li><li class="mh-tag">Packaging</li></ul>
@@ -39,9 +39,9 @@ tokens: [layout.column-gap, layout.card-row-gap]
 
 ```html example
 <ul class="mh-project-grid" data-columns="3">
-  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
-  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>3</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></div><div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt=""></div></a></li>
-  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>4</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>3</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>4</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
 </ul>
 ```
 

@@ -1,0 +1,189 @@
+{
+  "origin": "https://micahhoang.com",
+  "results": [
+    {
+      "path": "/dive",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive",
+      "sha256": "8239e65f96d06993b0f9793ae4118cdec2a0928455632b00e61aa13987e05e4d",
+      "bytes": 292092,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/about",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/about",
+      "sha256": "fe6199a90d036a41378cf7fbe3d789e2018ae2e0786a6674957a6654030bfffe",
+      "bytes": 266621,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/case-studies/gaia",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/case-studies/gaia",
+      "sha256": "1207a72b40252ad5b4ab7a4110cffbcbb8692d49e93d3b355ebf791ff49f2975",
+      "bytes": 364724,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/case-studies/airpods",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/case-studies/airpods",
+      "sha256": "73d38036658fbb096fe51d379da7e9505ed9724c7479df401e381b2c2b2a4e3f",
+      "bytes": 295583,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/case-studies/peak-energy",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/case-studies/peak-energy",
+      "sha256": "79c81ebe4bbcd60e589cffc8c57664dfc321dbc4d5065cecc6ab6a210f5c3b5d",
+      "bytes": 301018,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/case-studies/motion-connect-2025",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/case-studies/motion-connect-2025",
+      "sha256": "5855a91276348a0f880dc4bfe2eecb9daf6d4d94b21216883c57efe3cf932eb1",
+      "bytes": 328749,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/case-studies/simon-schuster",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/case-studies/simon-schuster",
+      "sha256": "4ff76689ffd34798ea397ad2d0832e2ec7867d55815a27d4f46c64f9254274ca",
+      "bytes": 387090,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/dive/case-studies/national-park-cards",
+      "status": 200,
+      "final_url": "https://micahhoang.com/dive/case-studies/national-park-cards",
+      "sha256": "bf70ac3418407ed7ec5ed07dcd53e0cface4b8de84777f1981f40cfc276d4e9a",
+      "bytes": 331794,
+      "widget_count": 1,
+      "inflight_script_count": 1,
+      "bridge_count": 1,
+      "robots": [
+        "noindex"
+      ],
+      "widget_in_head": true,
+      "widget_exact_tag": true,
+      "noindex": true,
+      "bridge_sha256": "2ecbc2600aa483b7e9e0c770fbd1580ba9bc116cc559a5630905a38333442f63"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "final_url": "https://micahhoang.com/",
+      "sha256": "1fe8798f280e5f3cda42ada49c37538e59c326dbd74f99d08ecf184032e0f730",
+      "bytes": 292898,
+      "widget_count": 0,
+      "inflight_script_count": 0,
+      "bridge_count": 0,
+      "robots": [
+        "max-image-preview:large"
+      ]
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "final_url": "https://micahhoang.com/about",
+      "sha256": "6a708f5566ee20fd5cc13ce4d12b2fac4469a572e53ed5a33cc1449fce28847f",
+      "bytes": 257638,
+      "widget_count": 0,
+      "inflight_script_count": 0,
+      "bridge_count": 0,
+      "robots": [
+        "max-image-preview:large"
+      ]
+    },
+    {
+      "path": "/case-studies/gaia",
+      "status": 200,
+      "final_url": "https://micahhoang.com/case-studies/gaia",
+      "sha256": "665052e09dceb5183eef1f6d0ef2a97412c599e477a58909785eaa3efa6b9e99",
+      "bytes": 365377,
+      "widget_count": 0,
+      "inflight_script_count": 0,
+      "bridge_count": 0,
+      "robots": [
+        "max-image-preview:large"
+      ]
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "final_url": "https://micahhoang.com/sitemap.xml",
+      "sha256": "2f88c9c71bfeffdb8894b1e9ab0a7ae0485400a083b2a2e02509cae4538e6de0",
+      "bytes": 1453,
+      "review_urls": []
+    }
+  ],
+  "failures": []
+}

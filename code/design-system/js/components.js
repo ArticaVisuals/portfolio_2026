@@ -46,6 +46,66 @@
         filter.dispatchEvent(new CustomEvent("mh:filter", { bubbles: true, detail: { values: [...filter.querySelectorAll('.mh-filter__item[aria-pressed="true"]')].map((b) => b.value || b.textContent.trim()) } }))
     }
 
+    // ---- Mobile filter disclosures (one panel open at a time) -------------
+    const closeFilterPanels = (filter, except) =>
+        filter.querySelectorAll(".mh-filter__group[data-open]").forEach((g) => {
+            if (g === except) return
+            g.removeAttribute("data-open")
+            g.querySelector(".mh-filter__toggle")?.setAttribute("aria-expanded", "false")
+        })
+    document.addEventListener("click", (ev) => {
+        const toggle = ev.target.closest(".mh-filter__toggle")
+        if (toggle) {
+            const group = toggle.closest(".mh-filter__group")
+            const open = !group.hasAttribute("data-open")
+            closeFilterPanels(group.closest(".mh-filter"), group)
+            group.toggleAttribute("data-open", open)
+            toggle.setAttribute("aria-expanded", String(open))
+            return
+        }
+        const done = ev.target.closest(".mh-filter__done")
+        if (done) {
+            const group = done.closest(".mh-filter__group")
+            closeFilterPanels(group.closest(".mh-filter"))
+            group.querySelector(".mh-filter__toggle")?.focus()
+            return
+        }
+        document.querySelectorAll(".mh-filter").forEach((f) => {
+            if (!f.contains(ev.target)) closeFilterPanels(f)
+        })
+    })
+    document.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Escape") return
+        const group = ev.target.closest?.(".mh-filter__group[data-open]")
+        if (!group) return
+        closeFilterPanels(group.closest(".mh-filter"))
+        group.querySelector(".mh-filter__toggle")?.focus()
+    })
+
+    // ---- Mobile navigation panel ------------------------------------------
+    const setMenu = (btn, open) => {
+        const panel = document.getElementById(btn.getAttribute("aria-controls"))
+        if (!panel) return
+        panel.hidden = !open
+        document.querySelectorAll(`[aria-controls="${panel.id}"]`).forEach((b) => b.setAttribute("aria-expanded", String(open)))
+        document.documentElement.style.overflow = open ? "hidden" : ""
+        ;(open ? panel.querySelector(".mh-nav__menu, a") : document.querySelector(`.mh-nav > .mh-nav__menu[aria-controls="${panel.id}"]`))?.focus()
+    }
+    document.addEventListener("click", (ev) => {
+        const btn = ev.target.closest(".mh-nav__menu[aria-controls]")
+        if (btn) setMenu(btn, btn.getAttribute("aria-expanded") !== "true")
+    })
+    document.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Escape") return
+        const open = document.querySelector('.mh-nav__menu[aria-expanded="true"]')
+        if (open) setMenu(open, false)
+    })
+    window.matchMedia("(min-width: 810px)").addEventListener("change", (mq) => {
+        if (!mq.matches) return
+        const open = document.querySelector('.mh-nav__menu[aria-expanded="true"]')
+        if (open) setMenu(open, false)
+    })
+
     // ---- View toggle -----------------------------------------------------
     document.addEventListener("click", (ev) => {
         const btn = ev.target.closest(".mh-view-toggle button")

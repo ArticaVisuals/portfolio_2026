@@ -1,0 +1,11 @@
+### Result
+{"paused":true,"active":{"active":true,"grainTop":"0px"},"after":{"active":false,"grainTop":"53px","navHeight":53,"prototypeStylePresent":true}}
+### Ran Playwright code
+```js
+await (async page => { await page.evaluate(()=>{const s=document.createElement("style");s.id="grain-transition-probe";s.textContent="html:active-view-transition div[aria-hidden=true]:has(>svg>filter>feTurbulence){top:0px!important;}";document.head.appendChild(s);window.__pauseProbe=new Promise(resolve=>{let n=0;const tick=()=>{const anims=document.getAnimations();if(anims.some(a=>a.animationName==="__pt-nav-in")){for(const a of anims.filter(a=>a.effect?.pseudoElement)){a.pause();a.currentTime=690;}resolve(true);}else if(n++<400)requestAnimationFrame(tick);else resolve(false);};requestAnimationFrame(tick);});}); await page.locator("aria-ref=f4e30").click(); const paused=await page.evaluate(()=>window.__pauseProbe); const active=await page.evaluate(()=>({active:document.documentElement.matches(":active-view-transition"),grainTop:getComputedStyle([...document.querySelectorAll("svg")].find(el=>el.querySelector("feTurbulence")).parentElement).top})); await page.screenshot({path:"output/playwright/play-nav-index-prototype-2026-09-19.png"}); await page.evaluate(()=>{for(const a of document.getAnimations().filter(a=>a.effect?.pseudoElement))a.play();}); await page.waitForFunction(()=>!document.documentElement.matches(":active-view-transition")); const after=await page.evaluate(()=>({active:document.documentElement.matches(":active-view-transition"),grainTop:getComputedStyle([...document.querySelectorAll("svg")].find(el=>el.querySelector("feTurbulence")).parentElement).top,navHeight:document.querySelector("nav").getBoundingClientRect().height,prototypeStylePresent:!!document.getElementById("grain-transition-probe")})); await page.evaluate(()=>document.getElementById("grain-transition-probe")?.remove()); return {paused,active,after}; })(page);
+```
+### Page
+- Page URL: https://micahhoang.com/play
+- Page Title: Play — Motion & Visual Experiments | Micah Hoang
+### Events
+- New console entries: .playwright-cli/console-2026-09-19T23-34-16-880Z.log#L1

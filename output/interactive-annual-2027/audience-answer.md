@@ -1,0 +1,5 @@
+I wouldn't describe the audience as particularly difficult to reach. I wanted Gaia to welcome anyone who notices something in the natural world and wants to share it. That could be a high school student photographing something in their backyard, a retired nature enthusiast, a hobbyist, or a professional. They would bring different levels of knowledge, but each could contribute a finding and learn something about what was around them.
+
+The problem I saw in iNaturalist was that its name and visual language made it feel like a tool built for professionals. Someone who was simply curious about nature might not see themselves as a naturalist, even though they had something to contribute.
+
+My goal with Gaia was to make that invitation clearer through the name, look, and feel of the app. I wanted students and older adults alike to feel comfortable exploring and sharing what they noticed. The rebrand needed to welcome people across ages and experience levels, with room to learn as they participated.

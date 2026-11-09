@@ -1,0 +1,31 @@
+
+@media (max-width: 809px) {
+    .mh-carousel-arrow { min-width: 44px; min-height: 44px; touch-action: manipulation; }
+    .mh-carousel-dots {
+        flex-wrap: nowrap !important;
+        justify-content: safe center !important;
+        gap: 0 !important;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+    }
+    .mh-carousel-dots::-webkit-scrollbar { display: none; }
+    .mh-carousel-dot {
+        flex: 0 0 44px;
+        width: 44px !important;
+        height: 44px !important;
+        display: grid;
+        place-items: center;
+        background: transparent !important;
+        touch-action: manipulation;
+        transition: none !important;
+    }
+    .mh-carousel-dot::after {
+        content: "";
+        width: var(--mh-dot-width);
+        height: 5px;
+        border-radius: inherit;
+        background: var(--mh-dot-color);
+    }
+    .mh-carousel-dot:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+}

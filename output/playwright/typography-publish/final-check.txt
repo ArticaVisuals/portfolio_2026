@@ -1,0 +1,17 @@
+### Result
+[{"path":"/","width":1440,"overflow":false,"legacyLabels":[{"text":"Micah Hoang","size":"13px","line":"13px","tracking":"normal"},{"text":"BRAND DESIGNER","size":"13px","line":"13px","tracking":"normal"},{"text":"LOS ANGELES, CALIFORNIA","size":"13px","line":"13px","tracking":"normal"},{"text":"Work","size":"13px","line":"13px","tracking":"normal"},{"text":"PLAY","size":"13px","line":"13px","tracking":"normal"}],"hero":[{"text":"Micah Hoang","size":"120px","line":"120px","tracking":"-1.2px"}],"footer":[],"hasLegacyFix":false},{"path":"/","width":390,"overflow":false,"legacyLabels":[{"text":"VIEW ALL","size":"13px","line":"13px","tracking":"normal"},{"text":"GET IN TOUCH","size":"13px","line":"13px","tracking":"normal"},{"text":",","size":"13px","line":"13px","tracking":"normal"},{"text":",","size":"13px","line":"13px","tracking":"normal"},{"text":",","size":"13px","line":"13px","tracking":"normal"}],"hero":[{"text":"Micah Hoang","size":"58px","line":"58px","tracking":"-0.58px"}],"footer":[],"hasLegacyFix":false},{"path":"/case-studies/gaia","width":1440,"overflow":false,"legacyLabels":[{"text":"Micah Hoang","size":"13px","line":"13px","tracking":"normal"},{"text":"BRAND DESIGNER","size":"13px","line":"13px","tracking":"normal"},{"text":"LOS ANGELES, CALIFORNIA","size":"13px","line":"13px","tracking":"normal"},{"text":"Work","size":"13px","line":"13px","tracking":"normal"},{"text":"PLAY","size":"13px","line":"13px","tracking":"normal"}],"hero":[{"text":"Gaia","size":"70px","line":"70px","tracking":"-0.7px"}],"footer":[],"hasLegacyFix":false},{"path":"/case-studies/gaia","width":390,"overflow":false,"legacyLabels":[{"text":",","size":"13px","line":"13px","tracking":"normal"},{"text":",","size":"13px","line":"13px","tracking":"normal"},{"text":",","size":"13px","line":"13px","tracking":"normal"},{"text":"©2026","size":"13px","line":"13px","tracking":"normal"}],"hero":[{"text":"Gaia","size":"38px","line":"38px","tracking":"-0.38px"}],"footer":[],"hasLegacyFix":false}]
+### Ran Playwright code
+```js
+await (async(page)=>{
+ const result=[];
+ for(const path of ['/','/case-studies/gaia'])for(const width of [1440,390]){
+  await page.setViewportSize({width,height:1000});await page.goto('https://micahhoang.com'+path,{waitUntil:'load'});await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(3500);
+  result.push(await page.evaluate(()=>{const visible=e=>e.getBoundingClientRect().width>0;const metric=e=>{const c=getComputedStyle(e);return {text:e.textContent?.trim().slice(0,45),size:c.fontSize,line:c.lineHeight,tracking:c.letterSpacing};};return {path:location.pathname,width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,legacyLabels:[...document.querySelectorAll('.framer-styles-preset-188rqyj')].filter(visible).map(metric).slice(0,5),hero:[...document.querySelectorAll('h1')].filter(visible).slice(0,2).map(metric),footer:[...document.querySelectorAll('[data-framer-name="Section CTA"] [data-framer-name="CTA Row"] > :first-child p,[data-framer-name="Section CTA"] a[data-framer-name="Row"] > :first-child p')].filter(visible).slice(0,2).map(metric),hasLegacyFix:[...document.querySelectorAll('style')].some(s=>s.textContent.includes('Retired label preset'))};}));
+ }
+ return result;
+}
+)(page);
+```
+### Events
+- New console entries: .playwright-cli/console-2026-11-07T02-25-02-462Z.log#L5308-L8485
+

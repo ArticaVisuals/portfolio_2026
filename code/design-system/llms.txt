@@ -18,7 +18,7 @@ Every page is plain markdown under `content/`. Read `agents.md` first. Tokens li
 - [Motion](content/foundations/motion.md): Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.
 - [Gesture](content/foundations/gesture.md): How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.
 - [Texture](content/foundations/texture.md): The umber film grain that sits over every page, and how to keep it out of the way.
-- [Identity](content/foundations/identity.md): The name as wordmark, the ©2026 signature, and where each appears.
+- [Identity](content/foundations/identity.md): The © Micah Hoang wordmark, the name set in type, and where each appears.
 
 ## Components
 
@@ -28,20 +28,20 @@ Every page is plain markdown under `content/`. Read `agents.md` first. Tokens li
 - [Tag](content/components/tag.md): Outlined mono pills that name a project's disciplines and double as filters.
 - [Rule](content/components/rule.md): The 1px near-black line that does the work boxes and cards do elsewhere, with an optional draw-in.
 - [Section Header](content/components/section-header.md): A full-width rule followed by a Display M title. This is how every major section on the site starts.
-- [Navigation](content/components/navigation.md): The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.
+- [Navigation](content/components/navigation.md): A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.
 - [Footer](content/components/footer.md): A Forest Green block with oversized uppercase contact links and a mono base bar.
 - [Hero](content/components/hero.md): The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.
 - [Media Frame](content/components/media-frame.md): An aspect-locked, square-cornered frame for images and video, with a poster-under-video stack and an optional 1px stroke.
 - [Project Card](content/components/project-card.md): The main way work appears on the site. A numbered mono title that flips on hover, a 16:9 media frame, and discipline tags.
 - [Project Grid](content/components/project-grid.md): The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.
 - [Index List](content/components/index-list.md): The complete archive as a ruled table. Year groups, uppercase titles, discipline and industry columns, with a hover wash and a flip.
-- [Filter Group](content/components/filter-group.md): Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.
+- [Filter Group](content/components/filter-group.md): Taxonomy columns of mono toggles (year, service, industry) that filter the Index in place; disclosure buttons on mobile.
 - [View Toggle](content/components/view-toggle.md): A mono "GRID / LIST" switch that changes how the Index renders, with an underline on the active view.
 - [Meta Grid](content/components/meta-grid.md): The case-study fact sheet. "/ LABEL" mono headings over Body L values, in two columns.
 - [Lightbox](content/components/lightbox.md): A white full-screen viewer for case-study media, with thin near-black arrows and a quick zoom.
 - [Testimonial](content/components/testimonial.md): A large quote with name and role, stepped with typed arrows. Used inside case studies.
 - [Scroll to Top](content/components/scroll-to-top.md): A mono text action at the end of long pages that glides back to the top in 900ms.
-- [Page Loader](content/components/page-loader.md): The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.
+- [Page Loader](content/components/page-loader.md): The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.
 - [Grain Overlay](content/components/grain-overlay.md): The page-level SVG film grain, fixed under the nav, multiplied at 10%, with an optional 16fps shimmer.
 
 ## Patterns

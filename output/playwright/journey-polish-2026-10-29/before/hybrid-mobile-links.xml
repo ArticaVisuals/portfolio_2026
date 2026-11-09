@@ -1,0 +1,71 @@
+WARNING: 5 of the selected nodes are replicas (variants). It's recommended to update the original components instead.
+
+Selected nodes XML:
+<Phone nodeId="tK8RS0Jye">
+  <Navigation nodeId="tK8RS0JyeuUauaPIbN">
+    <Container nodeId="tK8RS0JyeKzolMAwiT">
+      <NavRow nodeId="tK8RS0JyesZA4_gpXL">
+        <Stack nodeId="tK8RS0JyexwoQQKVRz">
+          <LogoLink
+              nodeId="tK8RS0JyellWzWjT5c"
+              width="98px"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="jRXzTKEh2"
+              variant="Z4V6ICLXS"
+              CINbpXIT7="Micah Hoang"
+              pStQrnGpz="/"
+           />
+        </Stack>
+        <Stack nodeId="tK8RS0JyemPjv55W1V">
+          <Stack nodeId="tK8RS0JyeJjUJtDFce">
+            <TextLink
+                nodeId="tK8RS0JyebTyl8cjiq"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="dVTZgYLeH"
+                variant="fYjqF5g84"
+                Kpveh2Q8O="Work"
+                bwVWMSt6G="/"
+             />
+          </Stack>
+          <TextLink
+              nodeId="tK8RS0JyeP1J41x1ds"
+              width="fit-content"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="dVTZgYLeH"
+              variant="fYjqF5g84"
+              Kpveh2Q8O="PLAY"
+              bwVWMSt6G="/play"
+           />
+          <Stack nodeId="tK8RS0JyejqBq37CMl">
+            <TextLink
+                nodeId="tK8RS0JyeSsb9Zyi3c"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="dVTZgYLeH"
+                variant="fYjqF5g84"
+                Kpveh2Q8O="INDEX"
+                bwVWMSt6G="/index"
+             />
+          </Stack>
+          <Stack nodeId="tK8RS0JyeC48qH4tPN">
+            <TextLink
+                nodeId="tK8RS0JyeDDOwggPjY"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="dVTZgYLeH"
+                variant="fYjqF5g84"
+                Kpveh2Q8O="ABOUT"
+                bwVWMSt6G="/about"
+             />
+          </Stack>
+        </Stack>
+      </NavRow>
+    </Container>
+  </Navigation>
+</Phone>

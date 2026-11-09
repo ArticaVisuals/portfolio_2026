@@ -1,0 +1,3 @@
+The biggest obstacle was turning my designs into a working app I could install on my phone and use. That was much more ambitious than I expected, even with the tools I was using. I spent a lot of time experimenting with my process, learning Swift and SwiftUI, and figuring out how to work with code as a designer.
+
+I made it manageable by being more deliberate about what needed to be built in code. I focused on refining features that needed to be interactive and couldn't be demonstrated well in After Effects. For simpler transitions that I could communicate through animation, I kept using After Effects prototypes.

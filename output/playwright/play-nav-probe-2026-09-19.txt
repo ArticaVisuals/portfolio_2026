@@ -1,0 +1,9 @@
+### Ran Playwright code
+```js
+await (async page => { await page.setViewportSize({width:1440,height:1000}); await page.evaluate(() => { window.__navProbe=[]; window.__navProbeStarted=performance.now(); window.__navProbeTimer=setInterval(()=>{ const nav=document.querySelector("nav"); const roots=nav?[nav,...Array.from((function*(el){while(el.parentElement){el=el.parentElement;yield el}})(nav))]:[]; window.__navProbe.push({t:Math.round(performance.now()-window.__navProbeStarted),path:location.pathname,blank:document.documentElement.getAttribute("data-playground-force-blank"),layers:roots.map(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return {tag:el.tagName,name:el.getAttribute("data-framer-name"),class:el.className,bg:s.backgroundColor,vt:s.viewTransitionName,opacity:s.opacity,rect:{x:r.x,y:r.y,w:r.width,h:r.height}}}),animations:document.getAnimations().map(a=>({name:a.animationName,time:a.currentTime,playState:a.playState,pseudo:a.effect?.pseudoElement,duration:a.effect?.getTiming().duration,delay:a.effect?.getTiming().delay})).filter(a=>a.name?.startsWith("__pt"))}); if(window.__navProbe.length>160) clearInterval(window.__navProbeTimer);},20); }); await page.locator("aria-ref=e30").click(); await page.waitForTimeout(2200); console.log(JSON.stringify(await page.evaluate(()=>window.__navProbe))); })(page);
+```
+### Page
+- Page URL: https://micahhoang.com/play
+- Page Title: Play — Motion & Visual Experiments | Micah Hoang
+### Events
+- New console entries: .playwright-cli/console-2026-09-19T23-31-47-239Z.log#L1

@@ -42,7 +42,9 @@ Apple's eight design principles line up with the site's own five words ([Princip
 | Enter and exit along the same path | **Already true** | Flip rail goes up and comes back down; lightbox zooms from and back to the clicked thumbnail; the boot curtain lifts up and off. |
 | Anchor overlays to their source | **Already true** | `CaseStudyLightbox` zooms out of the thumbnail rather than the screen center. |
 | Default motion doesn't overshoot | **Already true** | The Snappy curve is a deceleration with no overshoot. No bounce anywhere in the UI. |
-| Reduced motion means gentler, not none | **Already true** | Transitions collapse, reveals render in place, the grain stops shimmering, scroll-to-top jumps. Color and opacity feedback stays. |
+| Reduced motion means gentler, not none | **Already true** | Transitions collapse, reveals render in place, the grain stops shimmering, scroll-to-top jumps. On mobile case studies a head stylesheet renders animated headings in place before first paint. Color and opacity feedback stays. |
+| 44px minimum touch targets | **Already true** | Since 2026-10-30, every mobile link, pill, filter, view toggle, menu button, scroll-to-top and footer row is at least 44×44px; labels keep their size inside larger hit areas. |
+| Show that a row scrolls; use native scrolling | **Already true** | Mobile pill rows run edge to edge so a cut-off pill signals more; the browser's own scrolling supplies momentum and interruption. No gradients, no custom gesture engine. |
 | Respond on pointer-down, not release | **For new work** | New controls show their pressed state on `:active` / `pointerdown`. Live components keep their hover-led feedback. |
 | Use springs for anything the user can grab | **For new work** | Use `motion.spring.*` tokens (damping 1.0, response 0.3–0.4s). Bounce (damping 0.8) only after a flick. See [Gesture](gesture.md). |
 | Hand release velocity to the animation; project momentum | **For new work** | See [Gesture](gesture.md). |
@@ -83,13 +85,13 @@ Apple's eight design principles line up with the site's own five words ([Princip
 | Rule | Label | Here |
 | --- | --- | --- |
 | Four feedback kinds: status, completion, warning, error | **For new work** | The site has no forms today. A new form validates inline, in mono labels, using `--mh-text-strong`. Don't add a red; ask first. |
-| Where am I / where can I go / how do I get out | **Already true (partly)** | Persistent nav on every page; logo link home; lightbox closes with Esc. The nav has no visible current-page state; that's a live decision, not something to add. |
+| Where am I / where can I go / how do I get out | **Already true (partly)** | Persistent nav on every page; logo link home; the mobile menu is a full-screen dialog that closes with CLOSE or Escape and restores focus; lightbox closes with Esc. The nav has no visible current-page state; that's a live decision, not something to add. |
 | Proximity implies relationship | **Already true** | Tags sit under their card; the view toggle shares a line with the list it controls. |
 | Multimodal feedback (sound, haptics) | **Departure** | None. A portfolio isn't the place for it. |
 
 ## Accessibility notes
 
-- Stroke Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Stroke Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
+- Stroke Gray `#848484` on Cream measures about **3.43:1** (it was `#979797`, 2.68:1, until 2026-10-30). It's used for tags, muted meta and the gray continuation of case-study titles. That passes 3:1 for large text and outlines but stays below 4.5:1 for small text: a deliberate, documented tradeoff. Don't use Stroke Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
 - Forest Green on Cream ≈ 12:1; near-black on Cream ≈ 17:1; Cream on Forest Green ≈ 12:1.
 
 ## Changing the live site
@@ -101,4 +103,4 @@ Nothing on this page asks for a change to micahhoang.com. If a future task wants
 3. Make the change in Framer behind a kill switch where possible, publish, then run published QA. `npm test` too if any Play-related file changes.
 4. Update the relevant page here, and move the rule's label to **Already true**.
 
-**Proposed live-site changes:** none currently open.
+**Proposed live-site changes:** none currently open. (The 2026-10-30 mobile pass, which added 44px targets, 18px mobile reading text and unified gutters, was approved and published; its rules are now marked Already true above.)

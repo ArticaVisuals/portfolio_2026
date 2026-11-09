@@ -6,8 +6,8 @@ description: A four-zone desktop mono bar and a compact mobile name/MENU header 
 status: live
 framer: Native Mobile Navigation (qajbM_0Ju); NavigationScrollGuard (Wnd19lx) for accessibility/scroll/Lenis
 codeFileId: Wnd19lx
-classes: [mh-nav, mh-nav__name, mh-nav__role, mh-nav__location, mh-nav__links]
-tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
+classes: [mh-nav, mh-nav__name, mh-nav__role, mh-nav__location, mh-nav__links, mh-nav__menu, mh-nav-panel, mh-nav-panel__routes, mh-nav-panel__social]
+tokens: [type.label, type.display-m, layout.gutter, layout.nav-height, layout.touch-target, z.nav]
 ---
 
 # Navigation
@@ -27,8 +27,28 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
     <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span></a></li>
     <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span></a></li>
   </ul>
+  <button class="mh-nav__menu mh-label" type="button" aria-expanded="false" aria-controls="mh-menu-demo">Menu</button>
 </nav>
+<div class="mh-nav-panel" id="mh-menu-demo" role="dialog" aria-modal="true" aria-label="Menu" data-surface="green" hidden>
+  <div class="mh-nav-panel__header">
+    <a class="mh-link mh-label" href="#">Micah Hoang</a>
+    <button class="mh-nav__menu mh-label" type="button" aria-expanded="true" aria-controls="mh-menu-demo">Close</button>
+  </div>
+  <ul class="mh-nav-panel__routes">
+    <li><a href="#" aria-current="page">Work</a></li>
+    <li><a href="#">Play</a></li>
+    <li><a href="#">Index</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <ul class="mh-nav-panel__social mh-label">
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">Email</a></li>
+    <li><a href="#">GitHub</a></li>
+  </ul>
+</div>
 ```
+
+Resize below 810px to see the MENU button; it opens the full-screen panel.
 
 ## Anatomy
 
@@ -68,7 +88,13 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 | `mh-nav` | `nav` | Sticky; grid `258px 340px 1fr auto` (tablet `123px 145px 1fr auto`), 53px tall |
 | `mh-nav__name` | `a` | Flip link |
 | `mh-nav__role`, `mh-nav__location` | `p` | Static labels, hidden on mobile |
-| `mh-nav__links` | `ul` | Flip links, 31px gap |
+| `mh-nav__links` | `ul` | Flip links, 31px gap; hidden below 810px |
+| `mh-nav__menu` | `button[aria-controls][aria-expanded]` | Mobile only: MENU / CLOSE, 60×44px target, label right-aligned to the gutter |
+| `mh-nav-panel` | `div[role=dialog][hidden]` | Mobile only: full-screen Forest Green panel (`data-surface="green"`) |
+| `mh-nav-panel__routes` | `ul` | Display M (42px) routes in title case, 12px above and below: 66px rows |
+| `mh-nav-panel__social` | `ul.mh-label` | LinkedIn, Email, GitHub at the bottom; 44×44px targets |
+
+`components.js` opens and closes the panel, locks page scroll, restores focus to MENU, closes on Escape, and closes when the viewport grows past 810px.
 
 ## Accessibility
 

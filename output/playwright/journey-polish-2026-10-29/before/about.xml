@@ -1,0 +1,2631 @@
+Node xml:
+<Desktop
+    nodeId="lrj3lqaWF"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="0px"
+    left="46px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="clip"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+>
+  <Grid
+      nodeId="ptCWG2Axm"
+      width="1fr"
+      height="fit-content"
+      <!-- background color string or project color style path (if starts with /) -->
+      backgroundColor="rgba(0,0,0,0)"
+      overflow="clip"
+      layout="grid"
+      gap="40px"
+      padding="50px 20px 56px 20px"
+      gridColumns="6"
+      gridRows="1"
+      gridAlignment="start"
+      gridColumnWidthType="minmax"
+      gridColumnWidth="200"
+      gridColumnMinWidth="50"
+      gridRowHeightType="fit"
+      gridRowHeight="200"
+  >
+    <Stack
+        nodeId="geoJ22o8r"
+        position="sticky"
+        width="1fr"
+        height="fit-content"
+        top="56px"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="rgba(0,0,0,0)"
+        zIndex="3"
+        layout="stack"
+        gap="20px"
+        padding="50px 0px 0px 0px"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="start"
+        gridFillHeight="false"
+        gridAlignX="start"
+        gridAlignY="start"
+        gridColumnSpan="2"
+        gridRowSpan="1"
+    >
+      <Image
+          nodeId="fY1MnAifQ"
+          width="90%"
+          height="fit-image"
+          <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+          backgroundImage="https://framerusercontent.com/images/geBwSsIC1HJB3whFBU4BH2joXW8.jpg"
+          overflow="clip"
+          layout="stack"
+          padding="100px 0px 0px 0px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+       />
+      <Stack
+          nodeId="YtNcrbbom"
+          width="1fr"
+          height="fit-content"
+          overflow="clip"
+          layout="stack"
+          gap="10px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="center"
+      >
+        <SocialWrapper
+            nodeId="OFp8nKkOS"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <SocialLink
+              nodeId="c06xzB9gk"
+              width="fit-content"
+              height="fit-content"
+              link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="M8fKphdMr"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="LINKEDIN"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+          </SocialLink>
+        </SocialWrapper>
+        <SocialWrapper
+            nodeId="WOnePsIBg"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <SocialLink
+              nodeId="mQD7l_6bj"
+              width="fit-content"
+              height="fit-content"
+              link="https://framerusercontent.com/assets/j0eYAPD44l2J9eaM1ZNfafxGPI.pdf"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="wy4hmK2lI"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="RESUME"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+          </SocialLink>
+        </SocialWrapper>
+        <SocialWrapper
+            nodeId="PGipqn2j1"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <SocialLink
+              nodeId="eY5ej4SmU"
+              width="fit-content"
+              height="fit-content"
+              link="https://www.cosmos.so/articavisuals"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="E4ZEeiG5m"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="COSMOS"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+          </SocialLink>
+        </SocialWrapper>
+        <SocialWrapper
+            nodeId="XZQqBRCGO"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <SocialLink
+              nodeId="I2_NRXaYP"
+              width="fit-content"
+              height="fit-content"
+              link="https://github.com/ArticaVisuals"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="gJVA9JR_V"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="GITHUB"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+          </SocialLink>
+        </SocialWrapper>
+      </Stack>
+    </Stack>
+    <Stack
+        nodeId="c4bmldgX6"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="rgba(0,0,0,0)"
+        layout="stack"
+        gap="36px"
+        padding="50px 0px 0px 0px"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="start"
+        gridFillHeight="false"
+        gridColumnSpan="4"
+    >
+      <HeadingRowWrapper
+          nodeId="n7BB1pIOl"
+          width="1fr"
+          height="82px"
+          borderRadius="0px"
+          overflow="hidden"
+          layout="stack"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <InfoHeading
+            nodeId="HhA0wJbp7"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Heading 2 Bold"
+        >
+          Hey, I&apos;m Micah.
+        </InfoHeading>
+      </HeadingRowWrapper>
+      <Stack
+          nodeId="K5V6ymntK"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          gap="48px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="center"
+      >
+        <Stack
+            nodeId="HcvOVsW4_"
+            width="100%"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            layout="stack"
+            gap="18px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <LineAnimation
+              nodeId="dVq9FrSzE"
+              width="1fr"
+              height="1px"
+              <!-- the component id this instance uses -->
+              componentId="CKAXHxDqW"
+              variant="zh0P0ZNrl"
+              nhvtjR0LA="rgb(151, 151, 151)"
+           />
+          <IMABrandDesignerWithASystemsMindITreatDesignAsProblemSolving
+              nodeId="MfkHkV0qJ"
+              width="66%"
+              height="fit-content"
+              maxWidth="502px"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Body M"
+          >
+            I’m a brand designer with a systems mind. I treat design as problem-solving: start with what the brand needs to do, then build the whole system that gets it there.Outside of design, I’m most likely training for a marathon, out on the trails, or on a rock wall somewhere.
+          </IMABrandDesignerWithASystemsMindITreatDesignAsProblemSolving>
+        </Stack>
+        <Stack
+            nodeId="ETxZ5vgf8"
+            width="100%"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            layout="stack"
+            gap="18px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <Experience
+              nodeId="VXfPfPZEy"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            / EXPERIENCE
+          </Experience>
+          <Stack
+              nodeId="DeU0kBhWN"
+              width="100%"
+              height="fit-content"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              layout="stack"
+              gap="5px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <LineAnimation
+                nodeId="zEE8TA73p"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="RXvvFOobW"
+                width="100%"
+                height="fit-content"
+                minHeight="44px"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="8px"
+                padding="8px 0px 8px 0px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="PrTOv8iyd"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+                  gridFillHeight="false"
+                  gridAlignX="center"
+                  gridAlignY="center"
+                  gridColumnSpan="1"
+                  gridRowSpan="1"
+              >
+                <BrandNewSchool
+                    nodeId="lc61jYaxB"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    link="https://www.brandnewschool.com/"
+                    linkOpenInNewTab="true"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridFillHeight="false"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  BRAND NEW SCHOOL
+                </BrandNewSchool>
+              </Stack>
+              <Stack
+                  nodeId="LBOO8pb8U"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+                  gridFillHeight="false"
+                  gridAlignX="center"
+                  gridAlignY="center"
+                  gridColumnSpan="1"
+                  gridRowSpan="1"
+              >
+                <DesignMotionIntern
+                    nodeId="jRr8TDdT2"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridFillHeight="false"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  DESIGN + MOTION INTERN
+                </DesignMotionIntern>
+              </Stack>
+              <Stack
+                  nodeId="R0e_oxM4M"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="end"
+                  stackAlignment="center"
+                  gridFillHeight="false"
+                  gridAlignX="center"
+                  gridAlignY="center"
+                  gridColumnSpan="1"
+                  gridRowSpan="1"
+              >
+                <2026
+                    nodeId="oGXv3Htn7"
+                    width="fit-content"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="1"
+                    gridFillWidth="false"
+                    gridFillHeight="false"
+                    gridAlignX="end"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  2026
+                </2026>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="GBt6muhbN"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="XE4KUctMv"
+                width="100%"
+                height="fit-content"
+                minHeight="44px"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="8px"
+                padding="8px 0px 8px 0px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="TiEjhVico"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <AppleMarcom
+                    nodeId="d6PGD7J6S"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    link="https://www.apple.com/airpods-pro/"
+                    linkOpenInNewTab="true"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  APPLE, MARCOM
+                </AppleMarcom>
+              </Stack>
+              <Stack
+                  nodeId="lwjHgc5cn"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <IdentityDesignIntern
+                    nodeId="GWxw9BuIj"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  IDENTITY DESIGN INTERN
+                </IdentityDesignIntern>
+              </Stack>
+              <Stack
+                  nodeId="f0ZfV1lFt"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="end"
+                  stackAlignment="center"
+              >
+                <2025
+                    nodeId="XipWIF1LJ"
+                    width="fit-content"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="1"
+                    gridFillWidth="false"
+                    gridAlignX="end"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  2025
+                </2025>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="N65NfVICM"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="KU8W4Unh6"
+                width="100%"
+                height="fit-content"
+                minHeight="44px"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="8px"
+                padding="8px 0px 8px 0px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="zwbN6KJ6B"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <SkycarCreative
+                    nodeId="Y_JXQmpeU"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    link="https://www.skycar.tv/"
+                    linkOpenInNewTab="true"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  SKYCAR CREATIVE
+                </SkycarCreative>
+              </Stack>
+              <Stack
+                  nodeId="uyO6xuupW"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <DesignMotionIntern
+                    nodeId="tMDHPTHpw"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  DESIGN + MOTION INTERN
+                </DesignMotionIntern>
+              </Stack>
+              <Stack
+                  nodeId="b7i00AFmL"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="end"
+                  stackAlignment="center"
+              >
+                <2024
+                    nodeId="Q_jcBo3Ys"
+                    width="fit-content"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="1"
+                    gridFillWidth="false"
+                    gridAlignX="end"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  2024
+                </2024>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="e6zbzJMxK"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="ADdpG8L99"
+                width="100%"
+                height="fit-content"
+                minHeight="44px"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="8px"
+                padding="8px 0px 8px 0px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="HYloLMqiU"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <ArtcenterGraphicDesign
+                    nodeId="a7IghDqpO"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    link="https://www.artcentergraphicdesign.com/"
+                    linkOpenInNewTab="true"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  ARTCENTER GRAPHIC DESIGN
+                </ArtcenterGraphicDesign>
+              </Stack>
+              <Stack
+                  nodeId="WjYexF44w"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <ProducerDesigner
+                    nodeId="iT_4DVIMA"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  PRODUCER + DESIGNER
+                </ProducerDesigner>
+              </Stack>
+              <Stack
+                  nodeId="HiDHM1e2P"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="end"
+                  stackAlignment="center"
+              >
+                <2023
+                    nodeId="aAtKqREnq"
+                    width="fit-content"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="1"
+                    gridFillWidth="false"
+                    gridAlignX="end"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  2023
+                </2023>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="D_H75gdfy"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="UEiwE4Q5R"
+                width="100%"
+                height="fit-content"
+                minHeight="44px"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="8px"
+                padding="8px 0px 8px 0px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="QicDz5CPR"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <Auditboard
+                    nodeId="kFrpE2QMi"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    link="https://optro.ai/"
+                    linkOpenInNewTab="true"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  AUDITBOARD
+                </Auditboard>
+              </Stack>
+              <Stack
+                  nodeId="CF01nXQvN"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <VisualDesigner
+                    nodeId="fpKX0BImu"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  VISUAL DESIGNER
+                </VisualDesigner>
+              </Stack>
+              <Stack
+                  nodeId="f1BJC74Sf"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="end"
+                  stackAlignment="center"
+              >
+                <2023
+                    nodeId="s_oIll15p"
+                    width="fit-content"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="1"
+                    gridFillWidth="false"
+                    gridAlignX="end"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  2023
+                </2023>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="JrRSB_Y3c"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="Gc8EHeVNm"
+                width="100%"
+                height="fit-content"
+                minHeight="44px"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="8px"
+                padding="8px 0px 8px 0px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="SLYaoNNSu"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <NationalParkPlayingCards
+                    nodeId="B0H6VN8lZ"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    link="https://www.faire.com/product/p_de7dhhtuzs"
+                    linkOpenInNewTab="true"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  NATIONAL PARK PLAYING CARDS
+                </NationalParkPlayingCards>
+              </Stack>
+              <Stack
+                  nodeId="eWEfaqtz5"
+                  width="4fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <Founder
+                    nodeId="Y6PqUJqO1"
+                    width="100%"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="2"
+                    gridAlignX="start"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  FOUNDER
+                </Founder>
+              </Stack>
+              <Stack
+                  nodeId="xEGMgJKlX"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="end"
+                  stackAlignment="center"
+              >
+                <2019
+                    nodeId="FguQDgAbr"
+                    width="fit-content"
+                    height="fit-content"
+                    maxHeight="300px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Small Mono"
+                    overflow="visible"
+                    textTruncation="1"
+                    gridFillWidth="false"
+                    gridAlignX="end"
+                    gridAlignY="center"
+                    gridColumnSpan="1"
+                    gridRowSpan="1"
+                >
+                  2019
+                </2019>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="hS6FCeFTM"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+          </Stack>
+        </Stack>
+        <Stack
+            nodeId="z5exV9_3P"
+            width="100%"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            layout="stack"
+            gap="18px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <Education
+              nodeId="XtictVA5_"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            / EDUCATION
+          </Education>
+          <Stack
+              nodeId="JpXiTb98s"
+              width="100%"
+              height="fit-content"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              layout="stack"
+              gap="5px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <LineAnimation
+                nodeId="IVdZuhsQq"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="PWWXONNUi"
+                width="100%"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                layout="stack"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="gB8TbLiWQ"
+                  width="100%"
+                  height="fit-content"
+                  minHeight="44px"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="8px"
+                  padding="8px 0px 8px 0px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <Stack
+                    nodeId="GDtkXyc0_"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <ArtcenterCollegeOfDesign
+                      nodeId="TQg6Cs648"
+                      width="100%"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="hidden"
+                      textTruncation="1"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    ARTCENTER COLLEGE OF DESIGN
+                  </ArtcenterCollegeOfDesign>
+                </Stack>
+                <Stack
+                    nodeId="yvQ39uEA7"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <BfaGraphicDesignProvostSList
+                      nodeId="AVHkTKypc"
+                      width="100%"
+                      height="fit-content"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="hidden"
+                      textTruncation="1"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    BFA, GRAPHIC DESIGN · PROVOST’S LIST
+                  </BfaGraphicDesignProvostSList>
+                </Stack>
+                <Stack
+                    nodeId="ntXmvgPUc"
+                    width="1fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="end"
+                    stackAlignment="center"
+                >
+                  <2026
+                      nodeId="t2ma_ubsp"
+                      width="fit-content"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="1"
+                      gridFillWidth="false"
+                      gridAlignX="end"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    2026
+                  </2026>
+                </Stack>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="kirV648Tu"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+          </Stack>
+        </Stack>
+        <Stack
+            nodeId="VH2JADNCm"
+            width="100%"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            layout="stack"
+            gap="18px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <Recognition
+              nodeId="suLRifFHs"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            / RECOGNITION
+          </Recognition>
+          <Stack
+              nodeId="zNBMlJ0JX"
+              width="100%"
+              height="fit-content"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              layout="stack"
+              gap="5px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <LineAnimation
+                nodeId="BRKC1QCse"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="XoFsUok3b"
+                width="100%"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                layout="stack"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="PuOUHHBh0"
+                  width="100%"
+                  height="fit-content"
+                  minHeight="44px"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="1.6px"
+                  padding="0px 0px 0px 0px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="start"
+              >
+                <Stack
+                    nodeId="TSMYdfVaC"
+                    width="4fr"
+                    height="fit-content"
+                    minHeight="44px"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    padding="8px 0px 8px 0px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <SimonSchuster
+                      nodeId="IkrWqGJva"
+                      width="100%"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    SIMON &amp; SCHUSTER
+                  </SimonSchuster>
+                </Stack>
+                <Stack
+                    nodeId="jRtOihyRq"
+                    width="5fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="2px"
+                    stackDirection="vertical"
+                    stackDistribution="start"
+                    stackAlignment="start"
+                >
+                  <Stack
+                      nodeId="D4mEkQJOO"
+                      width="100%"
+                      height="fit-content"
+                      minHeight="44px"
+                      <!-- background color string or project color style path (if starts with /) -->
+                      backgroundColor="rgba(0,0,0,0)"
+                      overflow="visible"
+                      layout="stack"
+                      gap="8px"
+                      padding="8px 0px 8px 0px"
+                      stackDirection="horizontal"
+                      stackDistribution="start"
+                      stackAlignment="center"
+                  >
+                    <Stack
+                        nodeId="iXbYC_XdV"
+                        width="4fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="start"
+                        stackAlignment="center"
+                    >
+                      <IndigoDesignGold
+                          nodeId="oXlou5x19"
+                          width="100%"
+                          height="fit-content"
+                          maxHeight="300px"
+                          link="https://indigoaward.com/winners/12032"
+                          linkOpenInNewTab="true"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="2"
+                          gridAlignX="start"
+                          gridAlignY="center"
+                          gridColumnSpan="1"
+                          gridRowSpan="1"
+                      >
+                        INDIGO DESIGN, GOLD
+                      </IndigoDesignGold>
+                    </Stack>
+                    <Stack
+                        nodeId="D_E4Ly2yW"
+                        width="1fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="end"
+                        stackAlignment="center"
+                    >
+                      <2026
+                          nodeId="ugyGe9cap"
+                          width="fit-content"
+                          height="fit-content"
+                          maxHeight="300px"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="1"
+                          gridFillWidth="false"
+                          gridAlignX="end"
+                          gridAlignY="center"
+                          gridColumnSpan="1"
+                          gridRowSpan="1"
+                      >
+                        2026
+                      </2026>
+                    </Stack>
+                  </Stack>
+                  <LineAnimation
+                      nodeId="HLWTcfWPe"
+                      width="100%"
+                      height="1px"
+                      <!-- the component id this instance uses -->
+                      componentId="CKAXHxDqW"
+                      variant="zh0P0ZNrl"
+                      nhvtjR0LA="rgb(151, 151, 151)"
+                   />
+                  <Stack
+                      nodeId="zqGQU5CaF"
+                      width="100%"
+                      height="fit-content"
+                      minHeight="44px"
+                      <!-- background color string or project color style path (if starts with /) -->
+                      backgroundColor="rgba(0,0,0,0)"
+                      overflow="visible"
+                      layout="stack"
+                      gap="8px"
+                      padding="8px 0px 8px 0px"
+                      stackDirection="horizontal"
+                      stackDistribution="start"
+                      stackAlignment="center"
+                  >
+                    <Stack
+                        nodeId="m3jAjU7nS"
+                        width="4fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="start"
+                        stackAlignment="center"
+                    >
+                      <DnaParisWinner
+                          nodeId="tAeFeO96r"
+                          width="100%"
+                          height="fit-content"
+                          maxHeight="300px"
+                          link="https://dna.paris/social/zoom.php?eid=71-95047-26"
+                          linkOpenInNewTab="true"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="2"
+                          gridAlignX="start"
+                          gridAlignY="center"
+                          gridColumnSpan="1"
+                          gridRowSpan="1"
+                      >
+                        DNA PARIS, WINNER
+                      </DnaParisWinner>
+                    </Stack>
+                    <Stack
+                        nodeId="TZ450Ncf7"
+                        width="1fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="end"
+                        stackAlignment="center"
+                    >
+                      <2026
+                          nodeId="Qw4uNBnqe"
+                          width="fit-content"
+                          height="fit-content"
+                          maxHeight="300px"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="1"
+                          gridFillWidth="false"
+                          gridAlignX="end"
+                          gridAlignY="center"
+                          gridColumnSpan="1"
+                          gridRowSpan="1"
+                      >
+                        2026
+                      </2026>
+                    </Stack>
+                  </Stack>
+                  <LineAnimation
+                      nodeId="kwqA5lmqM"
+                      width="100%"
+                      height="1px"
+                      <!-- the component id this instance uses -->
+                      componentId="CKAXHxDqW"
+                      variant="zh0P0ZNrl"
+                      nhvtjR0LA="rgb(151, 151, 151)"
+                   />
+                  <Stack
+                      nodeId="JM5mmxR1i"
+                      width="100%"
+                      height="fit-content"
+                      minHeight="44px"
+                      <!-- background color string or project color style path (if starts with /) -->
+                      backgroundColor="rgba(0,0,0,0)"
+                      overflow="visible"
+                      layout="stack"
+                      gap="8px"
+                      padding="8px 0px 8px 0px"
+                      stackDirection="horizontal"
+                      stackDistribution="start"
+                      stackAlignment="center"
+                  >
+                    <Stack
+                        nodeId="CMyILpBIg"
+                        width="4fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="start"
+                        stackAlignment="center"
+                    >
+                      <FontsInUseFeature
+                          nodeId="w4i7ta1fa"
+                          width="100%"
+                          height="fit-content"
+                          maxHeight="300px"
+                          link="https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional"
+                          linkOpenInNewTab="true"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="2"
+                      >
+                        FONTS IN USE, FEATURE
+                      </FontsInUseFeature>
+                    </Stack>
+                    <Stack
+                        nodeId="eHnUCIq8b"
+                        width="1fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="end"
+                        stackAlignment="center"
+                    >
+                      <2024
+                          nodeId="bLpn3yn3o"
+                          width="fit-content"
+                          height="fit-content"
+                          maxHeight="300px"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="1"
+                      >
+                        2024
+                      </2024>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="BCMnqU7J5"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="PX8q88u3E"
+                width="100%"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                layout="stack"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="ppEz9QJJA"
+                  width="100%"
+                  height="fit-content"
+                  minHeight="44px"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="1.6px"
+                  padding="0px 0px 0px 0px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="start"
+              >
+                <Stack
+                    nodeId="yJr9qxftB"
+                    width="4fr"
+                    height="fit-content"
+                    minHeight="44px"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    padding="8px 0px 8px 0px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <SeekTruth
+                      nodeId="dTMLMhOLD"
+                      width="100%"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    SEEK TRUTH
+                  </SeekTruth>
+                </Stack>
+                <Stack
+                    nodeId="nWjaw397C"
+                    width="5fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="2px"
+                    stackDirection="vertical"
+                    stackDistribution="start"
+                    stackAlignment="start"
+                >
+                  <Stack
+                      nodeId="r_85FzLsD"
+                      width="100%"
+                      height="fit-content"
+                      minHeight="44px"
+                      <!-- background color string or project color style path (if starts with /) -->
+                      backgroundColor="rgba(0,0,0,0)"
+                      overflow="visible"
+                      layout="stack"
+                      gap="8px"
+                      padding="8px 0px 8px 0px"
+                      stackDirection="horizontal"
+                      stackDistribution="start"
+                      stackAlignment="center"
+                  >
+                    <Stack
+                        nodeId="Sb9FPVbJ7"
+                        width="4fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="start"
+                        stackAlignment="center"
+                    >
+                      <YoungOnesAdcMerit
+                          nodeId="BIfXBcUT2"
+                          width="100%"
+                          height="fit-content"
+                          maxHeight="300px"
+                          link="https://www.oneclub.org/awards/youngones/-award/54102/seek-truth"
+                          linkOpenInNewTab="true"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="2"
+                          gridAlignX="start"
+                          gridAlignY="center"
+                          gridColumnSpan="1"
+                          gridRowSpan="1"
+                      >
+                        YOUNG ONES ADC, MERIT
+                      </YoungOnesAdcMerit>
+                    </Stack>
+                    <Stack
+                        nodeId="oXuyD1L86"
+                        width="1fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="end"
+                        stackAlignment="center"
+                    >
+                      <2024
+                          nodeId="xc2wJiscr"
+                          width="fit-content"
+                          height="fit-content"
+                          maxHeight="300px"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="1"
+                          gridFillWidth="false"
+                          gridAlignX="end"
+                          gridAlignY="center"
+                          gridColumnSpan="1"
+                          gridRowSpan="1"
+                      >
+                        2024
+                      </2024>
+                    </Stack>
+                  </Stack>
+                  <LineAnimation
+                      nodeId="Bd5DUDlOE"
+                      width="100%"
+                      height="1px"
+                      <!-- the component id this instance uses -->
+                      componentId="CKAXHxDqW"
+                      variant="zh0P0ZNrl"
+                      nhvtjR0LA="rgb(151, 151, 151)"
+                   />
+                  <Stack
+                      nodeId="NK3zN2_2k"
+                      width="100%"
+                      height="fit-content"
+                      minHeight="44px"
+                      <!-- background color string or project color style path (if starts with /) -->
+                      backgroundColor="rgba(0,0,0,0)"
+                      overflow="visible"
+                      layout="stack"
+                      gap="8px"
+                      padding="8px 0px 8px 0px"
+                      stackDirection="horizontal"
+                      stackDistribution="start"
+                      stackAlignment="center"
+                  >
+                    <Stack
+                        nodeId="E6Q2Yuv3S"
+                        width="4fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="8px"
+                        stackDirection="horizontal"
+                        stackDistribution="start"
+                        stackAlignment="center"
+                    >
+                      <FontsInUseFeature
+                          nodeId="iWB6KRlOi"
+                          width="100%"
+                          height="fit-content"
+                          maxHeight="300px"
+                          link="https://fontsinuse.com/uses/64712/seek-truth-artcenter-college-of-design-projec"
+                          linkOpenInNewTab="true"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="2"
+                      >
+                        FONTS IN USE, FEATURE
+                      </FontsInUseFeature>
+                    </Stack>
+                    <Stack
+                        nodeId="Zw7wTIXEc"
+                        width="1fr"
+                        height="fit-content"
+                        <!-- background color string or project color style path (if starts with /) -->
+                        backgroundColor="rgba(0,0,0,0)"
+                        overflow="visible"
+                        layout="stack"
+                        gap="10px"
+                        stackDirection="horizontal"
+                        stackDistribution="end"
+                        stackAlignment="center"
+                    >
+                      <2024
+                          nodeId="ptPesJHFL"
+                          width="fit-content"
+                          height="fit-content"
+                          maxHeight="300px"
+                          <!-- project text style path, always starts with / -->
+                          inlineTextStyle="/Text Styles/Small Mono"
+                          overflow="visible"
+                          textTruncation="1"
+                      >
+                        2024
+                      </2024>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="nv83STFQO"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="uwKgNrY97"
+                width="100%"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                layout="stack"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="mOe8RXJ_w"
+                  width="100%"
+                  height="fit-content"
+                  minHeight="44px"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="8px"
+                  padding="8px 0px 8px 0px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <Stack
+                    nodeId="WuDtHNnFE"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <WeaponizedInnocence
+                      nodeId="eaI_IhcKD"
+                      width="4fr"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    WEAPONIZED INNOCENCE
+                  </WeaponizedInnocence>
+                </Stack>
+                <Stack
+                    nodeId="h2lawpUm1"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <FontsInUseFeature
+                      nodeId="Q6CZPKKDa"
+                      width="100%"
+                      height="fit-content"
+                      link="https://fontsinuse.com/uses/65224/weaponized-innocence"
+                      linkOpenInNewTab="true"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    FONTS IN USE, FEATURE
+                  </FontsInUseFeature>
+                </Stack>
+                <Stack
+                    nodeId="E2GG0x0mO"
+                    width="1fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="end"
+                    stackAlignment="center"
+                >
+                  <2024
+                      nodeId="GKEJ2Lp3n"
+                      width="fit-content"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="1"
+                      gridFillWidth="false"
+                      gridAlignX="end"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    2024
+                  </2024>
+                </Stack>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="lKXrdA2W3"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="WThBKjT3y"
+                width="100%"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                layout="stack"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="nDlJ0x2Xj"
+                  width="100%"
+                  height="fit-content"
+                  minHeight="44px"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="8px"
+                  padding="8px 0px 8px 0px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <Stack
+                    nodeId="i9dfAP9jp"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <IndependentLens
+                      nodeId="MLFhbLoJW"
+                      width="100%"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    INDEPENDENT LENS
+                  </IndependentLens>
+                </Stack>
+                <Stack
+                    nodeId="xXH5l4YOi"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <GraphisHonorableMention
+                      nodeId="X4ykO_Il6"
+                      width="100%"
+                      height="fit-content"
+                      maxHeight="300px"
+                      link="https://graphis.com/entry/d1a1f8e9-1353-49ac-a490-1556385f21fd"
+                      linkOpenInNewTab="true"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    GRAPHIS, HONORABLE MENTION
+                  </GraphisHonorableMention>
+                </Stack>
+                <Stack
+                    nodeId="ZFCg2939m"
+                    width="1fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="end"
+                    stackAlignment="center"
+                >
+                  <2024
+                      nodeId="W36PJXO6C"
+                      width="fit-content"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="1"
+                      gridFillWidth="false"
+                      gridAlignX="end"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    2024
+                  </2024>
+                </Stack>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="gtV7u9QKL"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+          </Stack>
+        </Stack>
+        <Stack
+            nodeId="QnYSIh_mL"
+            width="100%"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            layout="stack"
+            gap="18px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <Press
+              nodeId="n65gqiyMC"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            / PRESS
+          </Press>
+          <Stack
+              nodeId="YFBtfBkS9"
+              width="100%"
+              height="fit-content"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              layout="stack"
+              gap="5px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <LineAnimation
+                nodeId="CJT1R4m7G"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+            <Stack
+                nodeId="QXg2oEbq9"
+                width="100%"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                layout="stack"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <Stack
+                  nodeId="dP_eCCRYn"
+                  width="100%"
+                  height="fit-content"
+                  minHeight="44px"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(0,0,0,0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="8px"
+                  padding="8px 0px 8px 0px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <Stack
+                    nodeId="EQVrwYk2r"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <MeetMicahHoang
+                      nodeId="WcULuZ0mX"
+                      width="100%"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    MEET MICAH HOANG
+                  </MeetMicahHoang>
+                </Stack>
+                <Stack
+                    nodeId="hoTgjsbhJ"
+                    width="4fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="center"
+                >
+                  <HiddenCharactersPodcast
+                      nodeId="uCDEnpq3S"
+                      width="100%"
+                      height="fit-content"
+                      link="https://www.youtube.com/watch?v=jFF8EivITPs"
+                      linkOpenInNewTab="true"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="2"
+                      gridAlignX="start"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    HIDDEN CHARACTERS PODCAST
+                  </HiddenCharactersPodcast>
+                </Stack>
+                <Stack
+                    nodeId="p8bBcN3CF"
+                    width="1fr"
+                    height="fit-content"
+                    <!-- background color string or project color style path (if starts with /) -->
+                    backgroundColor="rgba(0,0,0,0)"
+                    overflow="visible"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="end"
+                    stackAlignment="center"
+                >
+                  <2025
+                      nodeId="sZ6JpKmv8"
+                      width="fit-content"
+                      height="fit-content"
+                      maxHeight="300px"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Small Mono"
+                      overflow="visible"
+                      textTruncation="1"
+                      gridFillWidth="false"
+                      gridAlignX="end"
+                      gridAlignY="center"
+                      gridColumnSpan="1"
+                      gridRowSpan="1"
+                  >
+                    2025
+                  </2025>
+                </Stack>
+              </Stack>
+            </Stack>
+            <LineAnimation
+                nodeId="LwsiNUUEw"
+                width="1fr"
+                height="1px"
+                <!-- the component id this instance uses -->
+                componentId="CKAXHxDqW"
+                variant="zh0P0ZNrl"
+                nhvtjR0LA="rgb(151, 151, 151)"
+             />
+          </Stack>
+        </Stack>
+        <Stack
+            nodeId="hYdGWoOeK"
+            width="100%"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            layout="stack"
+            gap="16px"
+            padding="0px 0px 0px 0px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <WhatPeopleSay
+              nodeId="i1P_8N8V0"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            / WHAT PEOPLE SAY
+          </WhatPeopleSay>
+          <LineAnimation
+              nodeId="EBf0LPiQ_"
+              width="1fr"
+              height="1px"
+              <!-- the component id this instance uses -->
+              componentId="CKAXHxDqW"
+              variant="zh0P0ZNrl"
+              nhvtjR0LA="rgb(151, 151, 151)"
+           />
+          <Stack
+              nodeId="oxvgUjWMd"
+              width="66%"
+              height="fit-content"
+              maxWidth="502px"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              layout="stack"
+              gap="16px"
+              padding="0px 0px 0px 0px"
+              stackDirection="vertical"
+              stackDistribution="start"
+              stackAlignment="start"
+          >
+            <HeWentAboveAndBeyondHisRoleApproachingProblemsWithCreativity
+                nodeId="dAY622YUj"
+                width="100%"
+                height="fit-content"
+                maxWidth="640px"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Body M"
+            >
+              “He went above and beyond his role, approaching problems with creativity and curiosity, and contributing massively to create high quality work.”
+            </HeWentAboveAndBeyondHisRoleApproachingProblemsWithCreativity>
+            <Stack
+                nodeId="ZE1XJX_rJ"
+                width="1fr"
+                height="fit-content"
+                overflow="clip"
+                layout="stack"
+                gap="10px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="center"
+            >
+              <NadiaShireenHusainAssociateCreativeDirectorApple
+                  nodeId="ZReTTscfg"
+                  opacity="0.7"
+                  width="fit-content"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                NADIA SHIREEN HUSAIN, ASSOCIATE CREATIVE DIRECTOR, APPLE
+              </NadiaShireenHusainAssociateCreativeDirectorApple>
+            </Stack>
+          </Stack>
+          <LineAnimation
+              nodeId="Tclhpjbdi"
+              width="1fr"
+              height="1px"
+              <!-- the component id this instance uses -->
+              componentId="CKAXHxDqW"
+              variant="zh0P0ZNrl"
+              nhvtjR0LA="rgb(151, 151, 151)"
+           />
+          <Stack
+              nodeId="nYmERrx9T"
+              width="66%"
+              height="fit-content"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              layout="stack"
+              gap="16px"
+              padding="0px 0px 0px 0px"
+              stackDirection="vertical"
+              stackDistribution="start"
+              stackAlignment="start"
+          >
+            <FromDayOneMicahApproachedOurProjectsWithAThoughtfulMindsetCo
+                nodeId="d2bjOxUHX"
+                width="100%"
+                height="fit-content"
+                maxWidth="502px"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Body M"
+            >
+              “From day one, Micah approached our projects with a thoughtful mindset, consistently delivering beautiful and sometimes surprising results. He’s a clear communicator, a strong collaborator, and even helps to find efficient workflows based on the goals of each project.”
+            </FromDayOneMicahApproachedOurProjectsWithAThoughtfulMindsetCo>
+            <Stack
+                nodeId="dCeDdThWR"
+                width="1fr"
+                height="fit-content"
+                overflow="clip"
+                layout="stack"
+                gap="10px"
+                stackDirection="vertical"
+                stackDistribution="start"
+                stackAlignment="start"
+            >
+              <AaronBarryCoFounderSkycarCreative
+                  nodeId="URvZ7HMCs"
+                  opacity="0.7"
+                  width="fit-content"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                AARON BARRY, CO-FOUNDER, SKYCAR CREATIVE
+              </AaronBarryCoFounderSkycarCreative>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+    </Stack>
+  </Grid>
+  <SectionCta
+      nodeId="xNOZYjJOK"
+      width="1fr"
+      height="fit-content"
+      <!-- background color string or project color style path (if starts with /) -->
+      backgroundColor="/Colors/Forest Green"
+      zIndex="5"
+      overflow="hidden"
+      layout="stack"
+      gap="30px"
+      padding="0px 0px 0px 0px"
+      stackDirection="vertical"
+      stackDistribution="start"
+      stackAlignment="center"
+  >
+    <TagWrapper
+        nodeId="WnsXkmWLe"
+        width="1fr"
+        height="fit-content"
+        overflow="hidden"
+        layout="stack"
+        gap="20px"
+        padding="20px 20px 0px 20px"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="start"
+    >
+      <Tag
+          nodeId="ApnrZ8bf_"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="10px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <GetInTouch
+            nodeId="oRKWohNUQ"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Small Mono"
+        >
+          Get in touch
+        </GetInTouch>
+      </Tag>
+    </TagWrapper>
+    <Container
+        nodeId="TJIyY_UNR"
+        width="1fr"
+        height="fit-content"
+        overflow="hidden"
+        layout="stack"
+        gap="12px"
+        padding="0px 20px 120px 20px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="start"
+    >
+      <Row
+          nodeId="ZW82T3Oig"
+          width="fit-content"
+          height="fit-content"
+          link="mailto:micah.hoang@hey.com"
+          linkOpenInNewTab="false"
+          borderRadius="0px 0px 0px 0px"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          padding="10px 0px 0px 0px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <MagText
+            nodeId="EGVUxkedL"
+            width="fit-content"
+            height="fit-content"
+            text="MICAH.HOANG"
+            font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+            color="rgb(247, 245, 240)"
+         />
+        <HeyCom
+            nodeId="E65Ivbi89"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Small Mono"
+        >
+          @HEY.COM
+        </HeyCom>
+      </Row>
+      <Row
+          nodeId="Ix7leajdr"
+          width="fit-content"
+          height="fit-content"
+          link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+          linkOpenInNewTab="true"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <MagText
+            nodeId="UU7NNQTha"
+            width="fit-content"
+            height="fit-content"
+            text="LINKEDIN"
+            font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+            color="rgb(247, 245, 240)"
+         />
+        <Connect
+            nodeId="bM9Tgrgw7"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Small Mono"
+        >
+          CONNECT
+        </Connect>
+      </Row>
+      <Row
+          nodeId="jrSl5JLaO"
+          width="fit-content"
+          height="fit-content"
+          link="https://www.cosmos.so/articavisuals"
+          linkOpenInNewTab="true"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <MagText
+            nodeId="rfmJvvTZo"
+            width="fit-content"
+            height="fit-content"
+            text="COSMOS"
+            font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+            color="rgb(247, 245, 240)"
+         />
+        <Inspire
+            nodeId="nPaUmRtni"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Small Mono"
+        >
+          INSPIRE
+        </Inspire>
+      </Row>
+      <Row
+          nodeId="Ibzc2cq5A"
+          width="fit-content"
+          height="fit-content"
+          link="https://github.com/ArticaVisuals"
+          linkOpenInNewTab="true"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <MagText
+            nodeId="svcE_wnqO"
+            width="fit-content"
+            height="fit-content"
+            text="GITHUB"
+            font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+            color="rgb(247, 245, 240)"
+         />
+        <Build
+            nodeId="VjDOROMde"
+            width="fit-content"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Small Mono"
+        >
+          BUILD
+        </Build>
+      </Row>
+    </Container>
+  </SectionCta>
+</Desktop>

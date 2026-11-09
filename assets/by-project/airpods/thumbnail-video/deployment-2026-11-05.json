@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-05",
+  "status": "published and verified",
+  "file": "airpods-duo-first-thumbnail-6.5s.mp4",
+  "framerUrl": "https://framerusercontent.com/assets/YRAOJaERvJX4rwByjdTY1r2WaHc.mp4",
+  "sha256": "119007e94d6fc04bbd383c37950814c72a13277054f2f5f64b467ecf49a5e541",
+  "durationSeconds": 6.5065,
+  "targets": {
+    "cms": {
+      "collectionId": "yTHrQWMIY",
+      "itemId": "LECMv7KC0",
+      "fieldId": "SvOqFqdby"
+    },
+    "home": {
+      "nodeId": "h0ZkBCWe1",
+      "property": "projects",
+      "slug": "airpods",
+      "field": "thumbnailVideoLink"
+    },
+    "index": "CMS-driven /index grid"
+  },
+  "backup": "../thumbnail-backups/2026-11-05/rollback.json",
+  "rollbackInstructions": "Restore only the AirPods CMS Thumbnail Video field and the Home Projects entry with slug airpods to the backup URL, preserving every other current Home entry, then publish.",
+  "verification": {
+    "uploadedBytesMatchApprovedSample": true,
+    "home": "readyState 4, playing, muted, loop, no media error",
+    "indexGrid": "readyState 4, playing, muted, loop, no media error",
+    "browserConsoleErrors": 0
+  },
+  "poster": "Existing static Thumbnail image retained"
+}

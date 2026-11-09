@@ -58,8 +58,12 @@ tokens: [type.label, motion.duration.base, motion.ease.snappy, motion.distance.f
 | Link list | Social and document links in the hero and footer: "LinkedIn, Resume, Email, Cosmos" |
 | Inline link | Links inside body copy |
 
-- The flip copy must match the label exactly; the motion is the feedback, not a text change.
+- On nav links, social links and actions the second line repeats the label exactly; the motion is the feedback. Project cards and Index rows are the exception: their second line says what the click does (VIEW PROJECT, View Project →). Don't invent other hover copy.
 - Inline links inherit color, underline at 1px, and turn interactive green on hover.
+
+### Mobile
+
+Below 810px the flip doesn't roll. One label stays visible inside its 13px mask, and the link around it grows to a 44px touch target: 15.5px of padding above and below, at least 44px wide. Desktop keeps the 13px target and the hover roll. Comma-joined link lists keep their text positions; each link's box grows vertically around the label.
 
 ## API
 

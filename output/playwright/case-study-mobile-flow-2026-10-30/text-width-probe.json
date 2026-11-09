@@ -1,0 +1,7217 @@
+[
+  {
+    "path": "/case-studies/gaia",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/airpods",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/caliper",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "width": 320,
+    "text": [
+      {
+        "text": "National Park Playing Cards st",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1wlh8uf",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-5kvf1w",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ezy48n",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ph9pfe",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xtxc8k",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "Client: Self-Initiated Proposa",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-16fk4pm",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-zy1yhm",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ry6x3e",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ph9pfe",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xtxc8k",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/yomo",
+    "width": 320,
+    "text": [
+      {
+        "text": "Yomo is a personalized food na",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mdjelw",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ovyhcx",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ynttr4",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-16emxs8",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ebi1a3",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "width": 320,
+    "text": [
+      {
+        "text": "Highland Harvests is a collect",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ynglxk",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4p8j0p",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-cr97zb",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-gula0y",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-cry68c",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "width": 320,
+    "text": [
+      {
+        "text": "Weaponized Innocence is a news",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ku3tgc",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-2s55jh",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-rl9e4",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1pye8rg",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1pqklzh",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Complementing the editorial is",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ku3tgc",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-2s55jh",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-rl9e4",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1pye8rg",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1pqklzh",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/typldn",
+    "width": 320,
+    "text": [
+      {
+        "text": "This branding project was crea",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xfl50d",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ckoilf",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1imomjr",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1bwccjy",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1yrszbf",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "width": 320,
+    "text": [
+      {
+        "text": "The Chinese government uses st",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-gsc3eh",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j4clno",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-fo959s",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1pn08we",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-a7okpl",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "width": 320,
+    "text": [
+      {
+        "text": "A mesmerizing 3D motion graphi",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-g5undk",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-12c0cjt",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-lcv183",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18ggn3t",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-tv1x4s",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "width": 320,
+    "text": [
+      {
+        "text": "I organized an event featuring",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-q0l6f4",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-12g24h0",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pe40j9",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1dnsfeb",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1q3i8a1",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "width": 320,
+    "text": [
+      {
+        "text": "Independent Lens is a modern d",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1kd74xx",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1smx8dn",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rzxsa0",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-oqp0w2",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1uj2u7u",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/peak-energy",
+    "width": 320,
+    "text": [
+      {
+        "text": "Peak Energy builds sodium-ion ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-a03rxd",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4vnt65",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18hsr08",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1a3mxks",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1h8o153",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "I led the central animation se",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-r95cbm",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4vnt65",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18hsr08",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1a3mxks",
+            "x": 20,
+            "w": 280,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1h8o153",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/whatsapp",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/optro",
+    "width": 320,
+    "text": [
+      {
+        "text": "Optro CRX is an annual confere",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-idh1h6",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-17p5fxe",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1lybp3y",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1t0l1i0",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-l5usf9",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "As the solo motion designer, I",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-sf6glc",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-17p5fxe",
+            "x": 20,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1lybp3y",
+            "x": 20,
+            "w": 320,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1t0l1i0",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-l5usf9",
+            "x": 0,
+            "w": 320,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/gaia",
+    "width": 809,
+    "text": [
+      {
+        "text": "A photograph becomes a data po",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-3iew8f",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-i1h2ha",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-19qhna6 hidden-akapyo hidden-1a31pwc",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-sveydl",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-vpunsk",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "iNaturalist lets people photog",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-gc06sq",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1hxqpr0",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-epza5n",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Three goals shape every decisi",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 24.5,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-i5ytdd",
+            "framerType": "RichTextContainer",
+            "x": 24.5,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c5hu0d",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1gou4nl",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-infjjp",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "iNaturalist asks you to be a n",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 24.5,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-3lh7j1",
+            "framerType": "RichTextContainer",
+            "x": 24.5,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1b7lu36",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-lbrwb8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-infjjp",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The mark grows from a branchin",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1l0punu",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15ukqbj",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-epza5n",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Gaia reaches people where they",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1rzoo7f",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-m7b72u",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-epza5n",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A custom icon system pairs wit",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1wdxtq9",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1jb33om",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-grmejr",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The map invites before it asks",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1j8hhdj",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-apr2r4",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-grmejr",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A single observation becomes p",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-vfh2xa",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-jm4vpa",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-grmejr",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Every find is met with a small",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-808dd",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wel76q",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-grmejr",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The work was pressure-tested a",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-tm469w",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-v9g6ua",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w5bqpn",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kcz253",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-epza5n",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/airpods",
+    "width": 809,
+    "text": [
+      {
+        "text": "AirPods Pro 3 launched with a ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1f9pprt",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ldj58a",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1i0rach",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-11pcbb4",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1fevwj0",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "width": 809,
+    "text": [
+      {
+        "text": "A strategic provocation. In 20",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1b57vbm",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1d9t08j",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-jq68am",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-17amcqq",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-35l9k3",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "An antitrust block looks like ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mgwyps",
+            "name": "A Brand Manifesto Was Crafted To Embody Simon & Schuster's Renewed Values, Positioning It As A Beacon Of Independence, Free From Media Influence. It Champions Emerging Authors, Diverse Perspectives, And Transparency In Editorial And Acquisition Practices. The Brand Is Committed To Shaping The Future Of Publishing Through Mentorships, Conferences, And Industry Initiatives.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ktth8l",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1hrh5g4",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I merged the ampersand with an",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-wzs2md",
+            "name": "The Redesigned Logo Merges An Ampersand With An \"S,\" Symbolizing Unity And Simon & Schuster's Role In Connecting Diverse Genres, Authors, And Media. Using The PP Editorial New Typeface, It Achieves An Elegant, Classic, Yet Modern Look. The Logo Works Standalone, With Type, Or As A Stamp Mark, And Pairs With Author Autographs For Unique Collaboration Lockups.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-u53tz2",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-dayyhh",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1806cp5",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A 65-page book to govern 2,000",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-zvo67j",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1gswjkq",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1n4ij6i",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Three divisions, more than 50 ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xqjfu0",
+            "name": "Simon & Schuster Spans Three Divisions: Adult, Children's, And Audio. Across Them Sit Over 50 Imprints, Each With Its Own Identity. Pairing The New Wordmark With Each Imprint Logo Aligns Them Under One Simon & Schuster Umbrella While Keeping Their Individual Logos Intact.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-s3zyu2",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-z0hl4d",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-cqsu27",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I built the storefront to beat",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-11ey5hg",
+            "name": "The Identity Extends Beyond Print Into A Digital Experience Built For Browsing And Buying, With Events And Promotions That Spotlight Small And Diverse Authors. A More Curated, Refined Storefront Lets Simon & Schuster Compete With The Online Marketplaces.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-hi1p1w",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-qqbc2x",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I launched a new Children's im",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-c8xlvb",
+            "name": "To Showcase The Versatility Of The Updated Brand Architecture, Simon & Schuster Established A New Imprint Within Its Children's Publishing Division Called Voyager.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1e2e3qf",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-oeba0g",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I designed a campaign with the",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1fvqm5v",
+            "name": "In Line With Simon & Schuster's Commitment To Diversity, A Marketing Campaign With The ALA's Office For Intellectual Freedom Highlights Historically Banned Books, Offering Them at 50% Off. Custom Posters Are Created For Each Release, Blending The Book's Branding With The Institutional Identity.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-yfzpy1",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tky1at",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "width": 809,
+    "text": [
+      {
+        "text": "Motion Connect is an ArtCenter",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1xjbbpe",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1dngkn5",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1uhu3gi",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-z06bi",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w6tpz9",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A 45-second reel introduced th",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-2btp00",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1yhnv7k",
+            "name": "Hype Reel",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ydlje1",
+            "name": "Section Images",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15rqvvi",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "An animated Instagram carousel",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-h8mlsx",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mzs9av",
+            "name": "Social Media",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ydlje1",
+            "name": "Section Images",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15rqvvi",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A printed poster and widescree",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-qmyneq",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ifp2rq",
+            "name": "Print",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ydlje1",
+            "name": "Section Images",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15rqvvi",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "One effect holds the whole ide",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-3pxzps",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1t6daat",
+            "name": "The System",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ydlje1",
+            "name": "Section Images",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15rqvvi",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Working solo for two weeks, I ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-4kz37c",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1qdrkr3",
+            "name": "Buit Under Constraint",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ydlje1",
+            "name": "Section Images",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15rqvvi",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "At the live event, the system ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1e8gr4h",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1009txg",
+            "name": "Live",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ydlje1",
+            "name": "Section Images",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-15rqvvi",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/caliper",
+    "width": 809,
+    "text": [
+      {
+        "text": "Caliper Sans is a measured, fu",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1t8jh8o",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1oym0kl",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4iufy3",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-amdvzz",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1wqtu7s",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The result is a face that hold",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1t8jh8o",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1oym0kl",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4iufy3",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-amdvzz",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1wqtu7s",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "width": 809,
+    "text": [
+      {
+        "text": "National Park Playing Cards st",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1wlh8uf",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-5kvf1w",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ezy48n",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ph9pfe",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xtxc8k",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "Client: Self-Initiated Proposa",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-16fk4pm",
+            "framerType": "RichTextContainer",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-zy1yhm",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ry6x3e",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ph9pfe",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xtxc8k",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "Each suit maps to a U.S. regio",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-qi53rl",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1cifa2n",
+            "x": 20,
+            "w": 374.5,
+            "min": "280px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1l3xtqa",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ino6ei",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kkefe8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The jokers depict two iconic N",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1dbzj4k",
+            "framerType": "RichTextContainer",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1wh71vx",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "280px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1l3xtqa",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ino6ei",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kkefe8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Driven by my love for the outd",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1vj6nrj",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-111x158",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-10u3cwv",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c519z0",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-UpQVv framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-9xjnfo",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "After the first run sold out, ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ojhf1k",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rvr81n",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-10u3cwv",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c519z0",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-UpQVv framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-9xjnfo",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "As demand grew, I moved the bu",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-15itatb",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-95hxlf",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-10u3cwv",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c519z0",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-UpQVv framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-9xjnfo",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/yomo",
+    "width": 809,
+    "text": [
+      {
+        "text": "Yomo is a personalized food na",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mdjelw",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ovyhcx",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ynttr4",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-16emxs8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ebi1a3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Limited food transparency make",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ddj8ei",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1mnku31",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1mf5t6z",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wfh3m",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Jordan Bennett, who manages gl",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-by59oa",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1t7asyo",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1mf5t6z",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wfh3m",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Yomo\u2019s desktop homepage offers",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1s2b7fs",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1kco3d9",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Yomo's mobile interface makes ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-mgn6qn",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1jt9phx",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The desktop dashboard is built",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-18evlq0",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ikou9i",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The mobile interface offers a ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mwe0t1",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-405s4w",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The smart glasses interface ex",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-yfxgim",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1dwtv5n",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The profile page on the mobile",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mg7bkv",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-up5etg",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Yomo's identity centers on ene",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ss55m4",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant hidden-1qfls9v",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-17akxgm",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The primary use case follows J",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-z2dyra",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-sdhlx6",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1at4ybs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "From the primary use case, use",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ojtsy8",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1qmrim1",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4ie7se",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kezvkf",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Rough wireframes were develope",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xidt35",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ocji09",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4ie7se",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kezvkf",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pywb2c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "width": 809,
+    "text": [
+      {
+        "text": "Highland Harvests is a collect",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ynglxk",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4p8j0p",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-cr97zb",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-gula0y",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-cry68c",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "Karuna works with Tai Dam fami",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1myn3qe",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rjjf90",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1iq1um5",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-fq9l8p",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kncqtx",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "These bees forage in an unspoi",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-mug1u9",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1mh4run",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1iq1um5",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-fq9l8p",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kncqtx",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The brand identity balances mo",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1rra8ri",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-mr4du0",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-s3tl1h",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The honeybee logomark position",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1oqhtiv",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-mr4du0",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-s3tl1h",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Packaging details draw from Ta",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1h3lkln",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1r88bmq",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-KAFBq framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-qnwd6j",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The beeswax candle in the High",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-200wo7",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1fp54cv",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-KAFBq framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-qnwd6j",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The Highland Harvests beeswax ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1vywo5v",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-171lcrp",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-KAFBq framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-qnwd6j",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The Highland Harvests packagin",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-17m3naa",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18k7pz2",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-KAFBq framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-qnwd6j",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I had the privilege of develop",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1iz3mkh",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1moaedq",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-tsckjm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-um8rc4",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-KAFBq framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-qnwd6j",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "width": 809,
+    "text": [
+      {
+        "text": "Weaponized Innocence is a news",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ku3tgc",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-2s55jh",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-rl9e4",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1pye8rg",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1pqklzh",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Complementing the editorial is",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-ku3tgc",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-2s55jh",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-rl9e4",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1pye8rg",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1pqklzh",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Child soldiers represent one o",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-3dl918",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-186m0ec",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j3t84b",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1yHGk framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iqcbgk",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The front cover captures the c",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1uudnd0",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-lgtkag",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j3t84b",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1yHGk framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iqcbgk",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The interior moves from disjoi",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xeuyje",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1q8nn6a",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j3t84b",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1yHGk framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iqcbgk",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Stark infographics establish s",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1fvl691",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ukpjle",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j3t84b",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1yHGk framer-tJ0Gf framer-WVO3s framer-PaeN2 framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iqcbgk",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The Pinwheel Project is a hand",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-k7v6x4",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-y0bvhh",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9jlha1",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j3t84b",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Each pinwheel design showcases",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-al1eu",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-n8wcz3",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1htnin4",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9jlha1",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A 9-column grid creates dynami",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-8nhkce",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-601y60",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4ean01",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kzr7y8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Midjourney AI was used to gene",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-4mqnfm",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-y5i70w",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4ean01",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kzr7y8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tnj00f",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/typldn",
+    "width": 809,
+    "text": [
+      {
+        "text": "This branding project was crea",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xfl50d",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ckoilf",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1imomjr",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1bwccjy",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1yrszbf",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "width": 809,
+    "text": [
+      {
+        "text": "The Chinese government uses st",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 369.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-gsc3eh",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 369.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-j4clno",
+            "x": 20,
+            "w": 369.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-fo959s",
+            "x": 20,
+            "w": 369.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1pn08we",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-a7okpl",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The book cover features a bold",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-12v7gh0",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pj0vw6",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9fvyd3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "SEEK TRUTH spans 72 pages of p",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1n4ru9a",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-x6i3xp",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9fvyd3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The launch poster, displayed p",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-18popgm",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-w4z0a",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-16ejtv3",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9fvyd3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A secondary version appeared a",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1jtdnqp",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-y4m3tm",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-16ejtv3",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9fvyd3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The book measures 8 \u00d7 12 inche",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-10u6pdb",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-11k251u",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-5io7vu",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9fvyd3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "To create a unified visual lan",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-cgvo4u",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-gm0tic",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-5io7vu",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9fvyd3",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A 1971 propaganda poster from ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-2pusa1",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rechjb",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-vggp2e",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-5io7vu",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "With the CCP controlling socia",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1a8kdn3",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-n9yzi8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-vggp2e",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-5io7vu",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-9x7zfc",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "width": 809,
+    "text": [
+      {
+        "text": "A mesmerizing 3D motion graphi",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-g5undk",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-12c0cjt",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-lcv183",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18ggn3t",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-tv1x4s",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I used Midjourney to create co",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1jht5h4",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ncb9qv",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1amo8op",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ajpjjs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18vlllm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I modeled the organelles indiv",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-17x2zbd",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1oan2ki",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ajpjjs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18vlllm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "width": 809,
+    "text": [
+      {
+        "text": "I organized an event featuring",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-q0l6f4",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-12g24h0",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-pe40j9",
+            "x": 20,
+            "w": 769,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1dnsfeb",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1q3i8a1",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "width": 809,
+    "text": [
+      {
+        "text": "Independent Lens is a modern d",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 369.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1kd74xx",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 369.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1smx8dn",
+            "x": 20,
+            "w": 369.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rzxsa0",
+            "x": 20,
+            "w": 369.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-oqp0w2",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1uj2u7u",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "The imagery uses a three-dimen",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-hp4lsb",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1qybh8x",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-rfaepw",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-u1fd7x",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wvqwp7",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "To reduce ink costs and improv",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-14p2i99",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rwbt3x",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-u1fd7x",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wvqwp7",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-Sp4ls framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1muu5jf",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Figma components shaped the wo",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-20vhli",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-qqmxby",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-u1fd7x",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wvqwp7",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-Sp4ls framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1muu5jf",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/peak-energy",
+    "width": 809,
+    "text": [
+      {
+        "text": "Peak Energy builds sodium-ion ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-a03rxd",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4vnt65",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18hsr08",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1a3mxks",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1h8o153",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "I led the central animation se",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-r95cbm",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4vnt65",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18hsr08",
+            "x": 20,
+            "w": 374.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1a3mxks",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1h8o153",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          }
+        ]
+      },
+      {
+        "text": "Sodium-ion is an emerging cate",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1aeiwza",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-2znxio",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c56cwk",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-i7y016",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I led the central sequence fro",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1pmsfac",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-p6rr47",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c56cwk",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-i7y016",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The film had to move between t",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-k5jb6v",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ckqwke",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c56cwk",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-i7y016",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "We chose a line-based language",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-43mts3",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-156h5jw",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-11c5djo",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c56cwk",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The team modeled in Blender an",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-suh3os",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-12c9xs6",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-11c5djo",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c56cwk",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Our sequence anchors the cente",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1wsu8z7",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-pnxwyj",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1c56cwk",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-i7y016",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/whatsapp",
+    "width": 809,
+    "text": [
+      {
+        "text": "A series of short-form motion ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1kbt570",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1avog01",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-4jr0nf",
+            "name": "About",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-175jub8",
+            "name": "Left Column",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-3cyhnf",
+            "name": "Container",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/optro",
+    "width": 809,
+    "text": [
+      {
+        "text": "Optro CRX is an annual confere",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 366.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-idh1h6",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 366.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-17p5fxe",
+            "x": 20,
+            "w": 366.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1lybp3y",
+            "x": 20,
+            "w": 366.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1t0l1i0",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-l5usf9",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "As the solo motion designer, I",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "x": 20,
+            "w": 366.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-sf6glc",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 366.5,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-17p5fxe",
+            "x": 20,
+            "w": 366.5,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1lybp3y",
+            "x": 20,
+            "w": 366.5,
+            "min": "320px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1t0l1i0",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-l5usf9",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I translated Optro\u2019s motion pr",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-w9emg2",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1qrsmj9",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-207miy",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1r74hwm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-l5usf9",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I built an interactive stage p",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-fdttw5",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "ssr-variant hidden-1iktv9s hidden-1ywcn4p",
+            "x": 0,
+            "w": 0,
+            "min": "0px",
+            "max": "none",
+            "display": "contents",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1wn6utq",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-207miy",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1r74hwm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "On-site, I worked with executi",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-pyd4ok",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-17tmtd5",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-207miy",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1r74hwm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-l5usf9",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -49,7 +49,7 @@ Hovers and reveals use the curves above. Anything the visitor can **grab** (drag
 
 ## Flip rail
 
-The site's main hover. A label is stacked over a copy of itself in a one-line window; on hover the stack slides up by one line plus `--mh-distance-flip-gap` (5px). Used on nav links, project titles, index rows and text actions. It works with CSS alone.
+The site's main hover. A label is stacked over a second line in a one-line window; on hover the stack slides up by one line plus `--mh-distance-flip-gap` (5px). On nav links and text actions the second line repeats the label. On project cards it reads **VIEW PROJECT**, and on Index rows **View Project →**: the hover says what the click does. It works with CSS alone and doesn't roll below 810px.
 
 ```html example
 <div class="ds-demo-row">

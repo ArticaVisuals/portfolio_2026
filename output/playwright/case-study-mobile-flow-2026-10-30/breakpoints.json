@@ -1,0 +1,818 @@
+[
+  {
+    "width": 320,
+    "path": "/case-studies/gaia",
+    "overflow": 320,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      }
+    ],
+    "nativeRows": []
+  },
+  {
+    "width": 320,
+    "path": "/case-studies/motion-connect-2025",
+    "overflow": 320,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(3, 1fr)"
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "path": "/case-studies/independent-lens",
+    "overflow": 320,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 320,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(2, 1fr)"
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "overflow": 320,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 320,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 280,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      },
+      {
+        "x": 20,
+        "w": 280
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(2, minmax(50px, 1fr))"
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/case-studies/gaia",
+    "overflow": 430,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      }
+    ],
+    "nativeRows": []
+  },
+  {
+    "width": 430,
+    "path": "/case-studies/motion-connect-2025",
+    "overflow": 430,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(3, 1fr)"
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/case-studies/independent-lens",
+    "overflow": 430,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(2, 1fr)"
+      }
+    ]
+  },
+  {
+    "width": 430,
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "overflow": 430,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 390,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      },
+      {
+        "x": 20,
+        "w": 390
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(2, minmax(50px, 1fr))"
+      }
+    ]
+  },
+  {
+    "width": 809,
+    "path": "/case-studies/gaia",
+    "overflow": 809,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 680,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 760,
+        "wrap": "wrap"
+      },
+      {
+        "x": 24.5,
+        "w": 760,
+        "wrap": "wrap"
+      },
+      {
+        "x": 24.5,
+        "w": 760,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      }
+    ],
+    "nativeRows": []
+  },
+  {
+    "width": 809,
+    "path": "/case-studies/motion-connect-2025",
+    "overflow": 809,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 680,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 680,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 680,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 680,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(3, 1fr)"
+      }
+    ]
+  },
+  {
+    "width": 809,
+    "path": "/case-studies/independent-lens",
+    "overflow": 809,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 369.5,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 760,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 760,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 760,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(2, 1fr)"
+      }
+    ]
+  },
+  {
+    "width": 809,
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "overflow": 809,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 680,
+        "wrap": "wrap"
+      },
+      {
+        "x": 20,
+        "w": 769,
+        "wrap": "wrap"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      },
+      {
+        "x": 20,
+        "w": 769
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "flex",
+        "dir": "column",
+        "grid": "repeat(2, minmax(50px, 1fr))"
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/case-studies/gaia",
+    "overflow": 1200,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 565,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 309.390625
+      },
+      {
+        "x": 349.390625,
+        "w": 830.6015625
+      },
+      {
+        "x": 20,
+        "w": 709.8671875
+      },
+      {
+        "x": 749.8671875,
+        "w": 430.125
+      },
+      {
+        "x": 20,
+        "w": 572.1796875
+      }
+    ],
+    "nativeRows": []
+  },
+  {
+    "width": 1200,
+    "path": "/case-studies/motion-connect-2025",
+    "overflow": 1200,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 565,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 789.2890625
+      },
+      {
+        "x": 829.2890625,
+        "w": 350.703125
+      },
+      {
+        "x": 20,
+        "w": 789.2890625
+      },
+      {
+        "x": 829.2890625,
+        "w": 350.703125
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "grid",
+        "dir": "row",
+        "grid": "373.328px 373.336px 373.336px"
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/case-studies/independent-lens",
+    "overflow": 1200,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 565,
+        "wrap": "pretty"
+      },
+      {
+        "x": 610,
+        "w": 570,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 373.328125
+      },
+      {
+        "x": 413.328125,
+        "w": 373.328125
+      },
+      {
+        "x": 806.65625,
+        "w": 373.328125
+      },
+      {
+        "x": 20,
+        "w": 409.984375
+      },
+      {
+        "x": 449.984375,
+        "w": 730.0078125
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "grid",
+        "dir": "row",
+        "grid": "275px 275px 275px 275px"
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "overflow": 1200,
+    "paragraphs": [
+      {
+        "x": 20,
+        "w": 565,
+        "wrap": "pretty"
+      },
+      {
+        "x": 20,
+        "w": 580,
+        "wrap": "pretty"
+      }
+    ],
+    "media": [
+      {
+        "x": 20,
+        "w": 443.7734375
+      },
+      {
+        "x": 483.7734375,
+        "w": 265.265625
+      },
+      {
+        "x": 769.0390625,
+        "w": 410.9453125
+      },
+      {
+        "x": 20,
+        "w": 223.84375
+      },
+      {
+        "x": 263.84375,
+        "w": 160.015625
+      }
+    ],
+    "nativeRows": [
+      {
+        "display": "grid",
+        "dir": "row",
+        "grid": "275px 275px 275px 275px"
+      }
+    ]
+  }
+]

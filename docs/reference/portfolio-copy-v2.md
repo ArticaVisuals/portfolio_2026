@@ -1,7 +1,7 @@
 # Portfolio Copy — Tone of Voice & Case Study Openings
 
 **For:** Micah Hoang
-**Version:** 1.10 - June 15 CMS/page parity reflected. Home shows six CMS-limited selected-work cards with Peak Energy still visible. CMS now has 17 real projects, including Rejuve, Belly Bar, and WhatsApp, and each CMS slug has a matching bespoke case-study route. `/info` is the live profile route and includes testimonials.
+**Version:** 1.11 - October 25, 2026. Optro CRX 2026 added as a Tier 1 entry with copy revised against the portfolio ICP. June 15 CMS/page parity still reflected. Home shows six CMS-limited selected-work cards with Peak Energy still visible. CMS now has 17 real projects, including Rejuve, Belly Bar, and WhatsApp, and each CMS slug has a matching bespoke case-study route. `/info` is the live profile route and includes testimonials.
 **Date:** May 2026
 **Last Framer structure audit:** June 15, 2026. Published/staging URL `https://khaki-ship-257706.framer.app`. Current-state companion: `framer-current-state.md`.
 
@@ -101,6 +101,73 @@ The strategic priority set has shifted with the current CMS. The CMS-backed Fram
 
 > "He was collaborative, thoughtful, and took direction well."
 > — Nadia Shireen Husain, Associate Creative Director, Apple
+
+---
+
+### Optro CRX 2026 — *Revised October 25, 2026, against the portfolio ICP*
+
+**Tier:** 1 — Full case study
+**Route:** `/case-studies/optro`
+**Metadata line:** 2026 · Optro · 2D Motion, 3D Motion
+**Credits:** Client: Optro · Creative Director: Minou Sinios · Art Director: Emily Asami, William Weigel · Digital Media Director: Myron Kim · Digital Media Manager: Will Kil · Visual Design: Jake Brenner, Joanne Park · Motion Design: Micah Hoang
+
+**Framer field values**
+
+| Field | Value |
+| --- | --- |
+| Title | CRX 2026 |
+| Subline | Stage motion for a 1,150-person conference. |
+| Industry | Technology |
+| Scope | 2D Motion, 3D Motion |
+| Year | 2026 |
+
+#### Opening — `/ ABOUT THE PROJECT`
+
+> Optro CRX is an annual conference for audit, risk, compliance, and information security. The 2026 event ran in San Diego for 1,150 attendees in person and 3,000 online.
+>
+> I was the only motion designer on the project. I translated the visual identity into keynote sequences and speaker introductions, then built a shared set of motion rules so every sequence in the program moved the same way. I owned the month from asset handoff to live execution, working with the design team, executive stakeholders, and stage production.
+
+#### Section copy
+
+**Executive Keynote**
+
+> I used the ultra-wide screen to move the Product Wheel between flat diagram and dimensional view. Each shift in perspective explained the structure of Optro's GRC Intelligence Platform.
+
+*Caption: cut. The retired line, "Brand elements and product abstractions take shape through shifts in depth and perspective," has no actor and restates the paragraph above it. If the layout requires a caption, use: "The Product Wheel moves between flat diagram and dimensional view."*
+
+**A Shared Motion System**
+
+> One person cannot hand-animate a program this size in a month. I translated Optro's motion principles into shared guidelines for timing, easing, and sequencing, then used agent-assisted prototypes to apply them across the program. The guidelines gave every prototype the same starting point, and they kept evolving as I refined the final motion by hand.
+
+**Testing at Stage Scale** *(heading was "Pre-visualization")*
+
+> I built an interactive stage pre-vis so the design team could test ideas at full stage scale before anything was animated. It shortened approval rounds and gave production a single reference for what would appear on each screen. Drag to orbit and pan around this showcase version.
+
+**On Site**
+
+> On site, I adjusted the motion to the multi-screen setup and to each speaker's pacing. I also created a Nasdaq board animation for Richard Chambers's new book.
+
+**Homecoming Party** *(exclamation mark removed)*
+
+> I paired kinetic typography with stop-motion rhythms and film-inspired movement to set a playful tone for the conference's closing Homecoming party.
+
+#### What changed and why
+
+| Change | ICP or copy-rule reason |
+| --- | --- |
+| Subline replaces the client slogan "Transform risk into opportunity" | The slogan is Optro's marketing line. It makes craft, attribution, and point of view no clearer, which is the ICP's keep-or-cut test. Keep the slogan only if it is rendering as a typographic artifact of the identity rather than as the page headline. |
+| "I was the only motion designer on the project" promoted to its own sentence | Attribution is the ICP's number one reason to pass, and it is most acute next to a credits block naming eight other people. A standalone claim reads as fact; a subordinate clause reads as a qualifier. |
+| Agentic-workflow mention removed from the opening | The first AI claim previously landed unqualified, in the same paragraph as "I translated the visual identity," which compounds the attribution question. The qualified version now carries it, and the page stays at one AI mention for the studio-CD secondary reader. |
+| "One person cannot hand-animate a program this size in a month" added | The page had no editorial sentence. Copy rule 7 allows one per opening. This one converts a production fact into evidence of a systems mind, which is the single thing the ICP wants remembered. |
+| Scope corrected to "2D Motion, 3D Motion" | The page shows dimensional keynote views and an orbiting pre-vis. It matches the AirPods metadata pattern. Stop at two so range reads as consequence, not menu. |
+| "Pre-visualization" renamed "Testing at Stage Scale" | A scanning reader gets 10 to 20 seconds. The heading now carries the argument instead of naming a category. |
+| Stakeholder list cut from "On Site" | It repeated the opening paragraph verbatim in substance. The opening frames the room, the section carries the specifics. |
+| "welcomed 1,150 attendees" to "ran in San Diego for 1,150 attendees" | Copy rule 6. The number is the rhetoric; "welcomed" is brochure voice. |
+| "On-site" to "On site" | Adverbial use takes no hyphen. |
+
+#### Open item
+
+The page still has no output-scale number. Attendance describes the audience, not the work, and a design lead is asking how much Micah personally produced. Add one flat figure to the opening paragraph once it is confirmed: number of keynote sequences, number of speaker introductions, screen count or aspect ratio, or run-of-show length. Do not estimate it.
 
 ---
 
@@ -279,7 +346,7 @@ Patterns to maintain across all case studies so the portfolio reads as one voice
 
 ## 06 — Status
 
-Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Peak Energy is part of the six-card CMS-backed Home grid and has a WIP-gated bespoke page, but still needs approved case-study copy before public launch. Rejuve, Belly Bar, and WhatsApp now have WIP-gated bespoke shells; WhatsApp is homepage-flagged but remains outside the six-card Home query because its sort order is 17. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 17 real projects and no sample/template projects.
+Optro CRX 2026 is live at `/case-studies/optro` and now has an approved copy entry in Section 03, revised against the ICP. Its only outstanding item is an output-scale number for the opening paragraph. Core copy decisions remain locked. Simon & Schuster is corrected to "concept." Peak Energy is part of the six-card CMS-backed Home grid and has a WIP-gated bespoke page, but still needs approved case-study copy before public launch. Rejuve, Belly Bar, and WhatsApp now have WIP-gated bespoke shells; WhatsApp is homepage-flagged but remains outside the six-card Home query because its sort order is 17. "Concept" labels are added to school/speculative project metadata. The Framer CMS currently contains 17 real projects and no sample/template projects.
 
 Current live-copy drift to remember: Home uses `AVAILABLE FOR WORK` instead of the planned green-dot/time treatment, and `/info` currently uses a forest-green editorial profile structure with selected experience, testimonials, recognition, and CTA sections rather than the older photo/résumé/currently layout.
 

@@ -22,9 +22,13 @@ tokens: [type.label, motion.duration.reveal, motion.ease.snappy]
 
 ## Usage
 
-- Place it at the end of long pages (Home, About), right-aligned above the footer.
+- Place it at the end of long pages (Home, About), on the left gutter, 60px below the content and above the footer.
 - 900ms with a Snappy-like curve. Jumps instantly under reduced motion.
 - Uses the same flip rail as every other text action.
+
+### Mobile
+
+Below 810px the button is a 44px target. It's offset by `(row height − 44) / 2` (−14px in a 16px slot) so the target centers on the label and the visible gaps above and below the green footer edge stay equal (22–23px at 320–430px).
 
 ## API
 

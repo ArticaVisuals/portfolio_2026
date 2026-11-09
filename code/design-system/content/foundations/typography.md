@@ -30,17 +30,18 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 | Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% / 114% / 114% | -1% | /Heading 1 | Home hero name. Once per site. |
 | Display L | `mh-text-display-l` | 70 / 52 / 38 | 700 | 100% | -1% (-2% mobile) | /Heading 2 Bold | Case-study title + muted continuation |
 | Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | /Heading 2 | Section headers: "Selected work", "About Micah" |
-| Display Footer | `mh-text-display-footer` | 80 / 70 / 40 | 400 | 100% | -2% | (MagText) | Uppercase footer contact rows |
-| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | /Heading 3 | Hero descriptor, case-study section titles |
+| Display Footer | `mh-text-display-footer` | 80 / 70 / fluid 28–38 | 400 | 100% | -2% (-1% mobile) | (MagText) | Uppercase footer contact rows; mobile `clamp(27px, (100vw − 40px) / 10, 38px)` |
+| Heading | `mh-text-heading` | 35 / 28 / 24 | 400 | 110% | -1% | /Heading 3 | Hero descriptor, case-study section titles |
 | Heading S | `mh-text-heading-sm` | 20 | 700 | 140% | 0 | /Heading 4 | Small bold heading |
 | Title | `mh-text-title` | 22 | 400 | 120% | 0 | (IndexPage) | Index rows, uppercase |
 | Body XL | `mh-text-body-xl` | 22 | 500 | 110% | -1% | /Body XL | Medium-weight lead line |
-| Body L | `mh-text-body-lg` | 22 / 18 / 15 | 400 | 120% / 120% / 130% | +1% | /Body L | Lead paragraphs, About, meta values |
-| Body | `mh-text-body` | 18 / 16 / 14 | 400 | 140% | 0 | /Body M | Case-study long-form (580px measure) |
+| Body L | `mh-text-body-lg` | 22 / 18 / 18 | 400 | 120% / 120% / 140% | +1% (0 mobile) | /Body L | Lead paragraphs, About, meta values |
+| Body | `mh-text-body` | 18 / 16 / 18 | 400 | 140% | 0 | /Body M | Case-study long-form (580px measure on desktop) |
 | Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | (none) | Captions, small notes |
 | Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | /Small Mono Footers | Nav, links, ©year, Read more, actions |
 | Label relaxed | `mh-text-label-relaxed` / `mh-label[data-leading=relaxed]` | 13 | 400 mono | 130% (140% mobile) | -1% | /Small Mono | GET IN TOUCH, "/ About the project" |
-| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px |
+| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (none) | Legacy. Since 2026-10-30 every visible mono label is 13px |
+| (Optro) | n/a | 70 | 700 | 100% | -1% | /Optro CRX Heading | Optro CRX case-study hero only; same values as Heading 2 Bold with 0 paragraph spacing |
 
 ## Pairings
 
@@ -59,6 +60,9 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 ```
 
 ## Source
+
+Framer keeps these in the **`/Text Styles/`** folder (`/Text Styles/Heading 1`, `/Text Styles/Body L`, ...); the table uses the short names. On 2026-10-30 the mobile (S) breakpoint of **Body L** and **Body M** moved to 18px / 140% for readability: reading text on a phone is now 18px, the existing Body M desktop baseline, instead of 14–15px. Heading 3 also stepped up to 28px on tablet and 24px on phone. Mono labels are 13px everywhere; the 12px tablet/mobile tag exception is gone.
+
 
 Desktop values come from the Framer project's text styles (read through the Framer MCP on 2026-10-01). Tablet and mobile values were measured on the published site, because Framer's breakpoint overrides aren't readable through the MCP. `code/tokens/framer-active-text-styles.tokens.json` is an older export: its Heading 1 (110px), Index Title and Paragraph styles no longer match the project.
 

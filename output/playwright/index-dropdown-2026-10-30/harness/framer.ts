@@ -1,0 +1,1 @@
+export const addPropertyControls=()=>{}; export const ControlType=new Proxy({},{get:(_,key)=>key}); export const RenderTarget={canvas:"canvas",thumbnail:"thumbnail",current:()=>"preview"};

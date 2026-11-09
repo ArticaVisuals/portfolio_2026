@@ -1,0 +1,761 @@
+[
+  {
+    "oldName": "motion-01-reel-row-1-loop.gif",
+    "name": "motion-01-reel-row-1-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-01-reel-row-1-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/GGcVRlbftAw0hNbMBYLjrvfvWys (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/BooHwPmFdZzaDuHv8nbfI9xjdtQ.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/YRNgtRGLiypNlDrdmqujQ3rVQM.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "Typography and speaker introductions from the hype reel.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-01-reel-row-1-loop.gif",
+    "panelSizes": [
+      [
+        391,
+        220
+      ],
+      [
+        391,
+        220
+      ],
+      [
+        394,
+        220
+      ]
+    ],
+    "bytes": 9426037,
+    "frames": 102,
+    "width": 1200,
+    "height": 220,
+    "duration": 8.5,
+    "whiteGaps": [
+      [
+        391,
+        0,
+        402,
+        219
+      ],
+      [
+        794,
+        0,
+        805,
+        219
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-02-reel-row-2-loop.gif",
+    "name": "motion-02-reel-row-2-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-02-reel-row-2-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/G9HKqWgaaBJSqDA4opMt4l7Mg (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/MUBo4NUg9h0TfJLiZeRurJpSfRM.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/vJHDjZwQuswz3dQ6bmJSVRzgGmg.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "Speaker features and showreel graphics.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-02-reel-row-2-loop.gif",
+    "panelSizes": [
+      [
+        391,
+        220
+      ],
+      [
+        391,
+        220
+      ],
+      [
+        394,
+        220
+      ]
+    ],
+    "bytes": 7638823,
+    "frames": 102,
+    "width": 1200,
+    "height": 220,
+    "duration": 8.5,
+    "whiteGaps": [
+      [
+        391,
+        0,
+        402,
+        219
+      ],
+      [
+        794,
+        0,
+        805,
+        219
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-03-reel-row-3-loop.gif",
+    "name": "motion-03-reel-row-3-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-03-reel-row-3-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/pRWPOFnQdEvvHXAqiKkHcG0nZw (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/YKby7PllFLfF04tfPrMxwe46WKQ.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/mxVLCW1f8gRxzoHxpP6LnoZTghU.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "Showreel clips and auditorium graphics.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-03-reel-row-3-loop.gif",
+    "panelSizes": [
+      [
+        391,
+        220
+      ],
+      [
+        391,
+        220
+      ],
+      [
+        394,
+        220
+      ]
+    ],
+    "bytes": 11095889,
+    "frames": 102,
+    "width": 1200,
+    "height": 220,
+    "duration": 8.5,
+    "whiteGaps": [
+      [
+        391,
+        0,
+        402,
+        219
+      ],
+      [
+        794,
+        0,
+        805,
+        219
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-04-social-row-1-loop.gif",
+    "name": "motion-04-social-row-1-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-04-social-row-1-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/XK5ZSqhpv1vkfOHYBhp5xbUJkUs (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/9MUCKEON6m1zFwfIR89rHq01GBY.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/VMIfEJOf6GhNJVSK9YlmePkeNU (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/AgT58DVg5HKAar6048Y06Wn2s.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "Social posts introducing the event and Bon Zhang.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-04-social-row-1-loop.gif",
+    "panelSizes": [
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ]
+    ],
+    "bytes": 5075789,
+    "frames": 150,
+    "width": 1200,
+    "height": 291,
+    "duration": 12.5,
+    "whiteGaps": [
+      [
+        291,
+        0,
+        302,
+        290
+      ],
+      [
+        594,
+        0,
+        605,
+        290
+      ],
+      [
+        897,
+        0,
+        908,
+        290
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-12-full-social-row-2-loop.gif",
+    "name": "motion-12-full-social-row-2-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-12-full-social-row-2-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/sicsuW5K3Kjh9xM14ErsrRVgk (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/EGVFftYxs9PXOCWTZgOQPMLs03M.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/YaWWIBrKvKC4X7pFhlRCCi2ZosQ.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/BcenVmrHAZ9jjNwQuW8osEeTYc.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "Social posts for Cathy Xiao and Jay Tevel.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-12-full-social-row-2-loop.gif",
+    "panelSizes": [
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ]
+    ],
+    "bytes": 3816209,
+    "frames": 178,
+    "width": 1200,
+    "height": 291,
+    "duration": 14.83,
+    "whiteGaps": [
+      [
+        291,
+        0,
+        302,
+        290
+      ],
+      [
+        594,
+        0,
+        605,
+        290
+      ],
+      [
+        897,
+        0,
+        908,
+        290
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-13-full-social-row-3-loop.gif",
+    "name": "motion-13-full-social-row-3-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-13-full-social-row-3-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/I0rPChsYcbHmRItzAGCMaOE5sNk.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/k6cRK3ELjZoyVUXgOBK2eOTmcaU.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/qvk2JjfVZ1fwhrIrF2vVDODDU.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/FcUYlM409Qi4TNdLQO4I6luHWs.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "Social posts for Simon Clowes and event reminders.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-13-full-social-row-3-loop.gif",
+    "panelSizes": [
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        291,
+        291
+      ]
+    ],
+    "bytes": 8665929,
+    "frames": 241,
+    "width": 1200,
+    "height": 291,
+    "duration": 20.08,
+    "whiteGaps": [
+      [
+        291,
+        0,
+        302,
+        290
+      ],
+      [
+        594,
+        0,
+        605,
+        290
+      ],
+      [
+        897,
+        0,
+        908,
+        290
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-10-complete-system-process-loop.gif",
+    "name": "motion-10-complete-system-process-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-10-complete-system-process-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/fB1UokXRbC9y9v6p4jHE2sdVw (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/1C2aMBrHIm6dxQeXcdJcqDx0xs0 (1).mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": true,
+    "caption": "3D workflow, After Effects compositing, and type animation.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-10-complete-system-process-loop.gif",
+    "panelSizes": [
+      [
+        381,
+        215
+      ],
+      [
+        381,
+        215
+      ],
+      [
+        800,
+        450
+      ]
+    ],
+    "bytes": 2452520,
+    "frames": 96,
+    "width": 1200,
+    "height": 450,
+    "duration": 8.0,
+    "whiteGaps": [
+      [
+        381,
+        0,
+        399,
+        449
+      ],
+      [
+        0,
+        215,
+        380,
+        234
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-11-ai-workflow-demonstrations-loop.gif",
+    "name": "motion-11-ai-workflow-demonstrations-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-11-ai-workflow-demonstrations-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/qCignb1pMHKPdwRrDTF57gpagSo.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/motion-connect-2025/WBfSwlJMaWbkJMRpHfYzlbZPLl4.mp4"
+    ],
+    "project": "motion",
+    "kind": "gif",
+    "special": false,
+    "caption": "AI-assisted lighting and motion tests.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/motion-11-ai-workflow-demonstrations-loop.gif",
+    "panelSizes": [
+      [
+        647,
+        364
+      ],
+      [
+        541,
+        364
+      ]
+    ],
+    "bytes": 11272481,
+    "frames": 80,
+    "width": 1200,
+    "height": 364,
+    "duration": 10.01,
+    "whiteGaps": [
+      [
+        647,
+        0,
+        658,
+        363
+      ]
+    ]
+  },
+  {
+    "oldName": "peak-02-battery-film-sequences-loop.gif",
+    "name": "peak-02-battery-film-sequences-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/peak-02-battery-film-sequences-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/peak-energy/HHTkUi7SKOAAtY1MmzC0Q1b54Q (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/peak-energy/o0EK9YezE48hWm1UC3BcEme8ifY.mp4"
+    ],
+    "project": "peak",
+    "kind": "gif",
+    "special": false,
+    "caption": "Battery sequences from the film.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/peak-02-battery-film-sequences-loop.gif",
+    "panelSizes": [
+      [
+        594,
+        334
+      ],
+      [
+        594,
+        334
+      ]
+    ],
+    "bytes": 8648231,
+    "frames": 102,
+    "width": 1200,
+    "height": 334,
+    "duration": 8.5,
+    "whiteGaps": [
+      [
+        594,
+        0,
+        605,
+        333
+      ]
+    ]
+  },
+  {
+    "oldName": "peak-03-process-comparison-loop.gif",
+    "name": "peak-03-process-comparison-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/peak-03-process-comparison-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/peak-energy/9Z12PCxBfwmh6gJITSSks4qYGLM (1).mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/peak-energy/7MFleSRgo8r2lOEcs94tDjD41TI (1).mp4"
+    ],
+    "project": "peak",
+    "kind": "gif",
+    "special": false,
+    "caption": "3D animation tests.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/peak-03-process-comparison-loop.gif",
+    "panelSizes": [
+      [
+        594,
+        334
+      ],
+      [
+        594,
+        334
+      ]
+    ],
+    "bytes": 1238905,
+    "frames": 114,
+    "width": 1200,
+    "height": 334,
+    "duration": 9.5,
+    "whiteGaps": [
+      [
+        594,
+        0,
+        605,
+        333
+      ]
+    ]
+  },
+  {
+    "oldName": "peak-04-animation-development-loop.gif",
+    "name": "peak-04-animation-development-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/peak-04-animation-development-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/peak-energy/YTha6qQtYqtUuIUE9g1ffdEVKc.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/peak-energy/vkN4eGEAUSjfMw2lXOgnL5wcSo.mp4"
+    ],
+    "project": "peak",
+    "kind": "gif",
+    "special": false,
+    "caption": "Animation and compositing development.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/peak-04-animation-development-loop.gif",
+    "panelSizes": [
+      [
+        594,
+        334
+      ],
+      [
+        594,
+        334
+      ]
+    ],
+    "bytes": 9020712,
+    "frames": 63,
+    "width": 1200,
+    "height": 334,
+    "duration": 10.51,
+    "whiteGaps": [
+      [
+        594,
+        0,
+        605,
+        333
+      ]
+    ]
+  },
+  {
+    "oldName": "simon-01-logo-and-brand-architecture-loop.gif",
+    "name": "simon-01-logo-and-brand-architecture-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/simon-01-logo-and-brand-architecture-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/simon-schuster/S-S-Logo-Animation-2.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/simon-schuster/npEWAtDub3QRSPyGSrWh42ns6H8.mp4"
+    ],
+    "project": "simon",
+    "kind": "gif",
+    "special": false,
+    "caption": "Animated logo and publishing imprint system.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/simon-01-logo-and-brand-architecture-loop.gif",
+    "panelSizes": [
+      [
+        594,
+        334
+      ],
+      [
+        594,
+        334
+      ]
+    ],
+    "bytes": 1523695,
+    "frames": 150,
+    "width": 1200,
+    "height": 334,
+    "duration": 12.5,
+    "whiteGaps": [
+      [
+        594,
+        0,
+        605,
+        333
+      ]
+    ]
+  },
+  {
+    "oldName": "simon-03-animated-print-applications-loop.gif",
+    "name": "simon-03-animated-print-applications-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/simon-03-animated-print-applications-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/normalized-animations/WTalcsvjai0k4dkWUrzGSAPwyU0.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/normalized-animations/Igm51uPiEdyEX3NV5PtmrfoZg.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/normalized-animations/mNui1SR1Xo6TvZhvffo8q8TzxM.mp4"
+    ],
+    "project": "simon",
+    "kind": "gif",
+    "special": false,
+    "caption": "Animated print and event mockups.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/simon-03-animated-print-applications-loop.gif",
+    "panelSizes": [
+      [
+        340,
+        255
+      ],
+      [
+        383,
+        255
+      ],
+      [
+        453,
+        255
+      ]
+    ],
+    "bytes": 1023222,
+    "frames": 144,
+    "width": 1200,
+    "height": 255,
+    "duration": 12.0,
+    "whiteGaps": [
+      [
+        340,
+        0,
+        351,
+        254
+      ],
+      [
+        735,
+        0,
+        746,
+        254
+      ]
+    ]
+  },
+  {
+    "oldName": "cards-05-full-deck-animation-loop.gif",
+    "name": "cards-05-full-deck-animation-loop-aligned-white.gif",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/cards-05-full-deck-animation-loop-aligned-white.gif",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/national-park-cards/8b5XFvqJ3JcoBKdJuw1WJXjOcU.mp4",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/national-park-cards/All-Cards-Animation_1.mp4"
+    ],
+    "project": "cards",
+    "kind": "gif",
+    "special": false,
+    "caption": "Park illustrations and animated deck overview.",
+    "gifSource": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/gif-loops/uploads/cards-05-full-deck-animation-loop.gif",
+    "panelSizes": [
+      [
+        593,
+        334
+      ],
+      [
+        595,
+        334
+      ]
+    ],
+    "bytes": 797073,
+    "frames": 295,
+    "width": 1200,
+    "height": 334,
+    "duration": 24.58,
+    "whiteGaps": [
+      [
+        593,
+        0,
+        604,
+        333
+      ]
+    ]
+  },
+  {
+    "oldName": "gaia-03-insight.jpg",
+    "name": "gaia-03-insight-aligned-white.jpg",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/gaia-03-insight-aligned-white.jpg",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/DcicrFmUxqgU5jGTpUKyIWKwCA.png",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png"
+    ],
+    "project": "gaia",
+    "kind": "still",
+    "special": false,
+    "caption": null,
+    "gifSource": null,
+    "panelSizes": [
+      [
+        322,
+        295
+      ],
+      [
+        866,
+        295
+      ]
+    ]
+  },
+  {
+    "oldName": "gaia-08-outdoor-campaign.jpg",
+    "name": "gaia-08-outdoor-campaign-aligned-white.jpg",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/gaia-08-outdoor-campaign-aligned-white.jpg",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp"
+    ],
+    "project": "gaia",
+    "kind": "still",
+    "special": false,
+    "caption": null,
+    "gifSource": null,
+    "panelSizes": [
+      [
+        640,
+        357
+      ],
+      [
+        548,
+        357
+      ]
+    ]
+  },
+  {
+    "oldName": "gaia-09-identity-and-exhibition.jpg",
+    "name": "gaia-09-identity-and-exhibition-aligned-white.jpg",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/gaia-09-identity-and-exhibition-aligned-white.jpg",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/We8CbT3tANj0LRWhRW1EWqwQNIU.webp",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/cJLznMixCN2nBkZw2WKy85Io.jpg"
+    ],
+    "project": "gaia",
+    "kind": "still",
+    "special": false,
+    "caption": null,
+    "gifSource": null,
+    "panelSizes": [
+      [
+        819,
+        457
+      ],
+      [
+        369,
+        457
+      ]
+    ]
+  },
+  {
+    "oldName": "gaia-10-field-notes-and-bioblitz.jpg",
+    "name": "gaia-10-field-notes-and-bioblitz-aligned-white.jpg",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/gaia-10-field-notes-and-bioblitz-aligned-white.jpg",
+    "sources": [
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+      "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/portfolio-layout-composites/sources/gaia/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg"
+    ],
+    "project": "gaia",
+    "kind": "still",
+    "special": false,
+    "caption": null,
+    "gifSource": null,
+    "panelSizes": [
+      [
+        664,
+        370
+      ],
+      [
+        524,
+        370
+      ]
+    ]
+  },
+  {
+    "oldName": "motion-07-print-assets.jpg",
+    "name": "motion-07-print-assets-aligned-white.jpg",
+    "path": "/Users/micahhoang/.codex/visualizations/2026/11/06/01a1b2be-ae60-7e92-9765-efc2e7bbcd43/media-alignment/uploads/motion-07-print-assets-aligned-white.jpg",
+    "sources": [
+      "/Users/micahhoang/My Drive/Portfolio Prep/Portfolio 2026/output/grad-show-2026-11-06/images/motion-connect-2025/05-motion-connect-2025.jpg",
+      "/Users/micahhoang/My Drive/Portfolio Prep/Portfolio 2026/output/grad-show-2026-11-06/images/motion-connect-2025/06-motion-connect-2025.jpg"
+    ],
+    "project": "motion",
+    "kind": "still",
+    "special": false,
+    "caption": null,
+    "gifSource": null,
+    "panelSizes": [
+      [
+        822,
+        548
+      ],
+      [
+        366,
+        548
+      ]
+    ]
+  }
+]

@@ -1,0 +1,393 @@
+### Result
+{
+  "at": "https://micahhoang.com/play",
+  "sampleCount": 161,
+  "states": [
+    {
+      "t": 23,
+      "path": "/info",
+      "blank": null,
+      "layers": [
+        {
+          "tag": "NAV",
+          "name": "Navigation",
+          "class": "framer-1uhx28u",
+          "bg": "rgb(247, 245, 240)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 53
+          }
+        },
+        {
+          "tag": "DIV",
+          "name": null,
+          "class": "framer-RswBQ framer-Gyx0Q framer-bij1zb",
+          "bg": "rgb(247, 245, 240)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        },
+        {
+          "tag": "DIV",
+          "name": null,
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        },
+        {
+          "tag": "BODY",
+          "name": null,
+          "class": "",
+          "bg": "rgb(247, 245, 240)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        },
+        {
+          "tag": "HTML",
+          "name": null,
+          "class": "lenis lenis-autoToggle mh-nav-at-page-top",
+          "bg": "rgba(0, 0, 0, 0)",
+          "vt": "root",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        }
+      ],
+      "animations": []
+    },
+    {
+      "t": 69,
+      "path": "/play",
+      "blank": null,
+      "layers": [
+        {
+          "tag": "NAV",
+          "name": "Navigation",
+          "class": "framer-1uhx28u",
+          "bg": "rgb(247, 245, 240)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 53
+          }
+        },
+        {
+          "tag": "DIV",
+          "name": null,
+          "class": "framer-RswBQ framer-Gyx0Q framer-bij1zb",
+          "bg": "rgb(247, 245, 240)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        },
+        {
+          "tag": "DIV",
+          "name": null,
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        },
+        {
+          "tag": "BODY",
+          "name": null,
+          "class": "",
+          "bg": "rgb(247, 245, 240)",
+          "vt": "none",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        },
+        {
+          "tag": "HTML",
+          "name": null,
+          "class": "lenis lenis-autoToggle mh-nav-at-page-top",
+          "bg": "rgba(0, 0, 0, 0)",
+          "vt": "root",
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 2479.9296875
+          }
+        }
+      ],
+      "animations": []
+    }
+  ],
+  "layers": [
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "framer-hEmRH framer-Gyx0Q framer-u25mxi",
+      "bg": "rgb(247, 245, 240)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "fixed",
+      "z": "auto"
+    },
+    {
+      "tag": "NAV",
+      "name": "Navigation",
+      "id": "",
+      "class": "framer-pt0ppz",
+      "bg": "rgb(247, 245, 240)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 0,
+      "bottom": 53,
+      "w": 1440,
+      "position": "fixed",
+      "z": "8"
+    },
+    {
+      "tag": "DIV",
+      "name": "Container",
+      "id": "",
+      "class": "framer-z6xbv1",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 20,
+      "bottom": 33,
+      "w": 1400,
+      "position": "relative",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": "Nav Row",
+      "id": "",
+      "class": "framer-c6eoo7",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 20,
+      "bottom": 33,
+      "w": 1400,
+      "position": "relative",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "framer-16ol41v",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 20,
+      "bottom": 33,
+      "w": 928,
+      "position": "relative",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "framer-1w8mm25-container",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "fixed",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "fixed",
+      "z": "0"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgb(247, 245, 240)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(20, 20, 20)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "relative",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(20, 20, 20)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "absolute",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(20, 20, 20)",
+      "top": -476.01800537109375,
+      "bottom": 523.9819946289062,
+      "w": 1440,
+      "position": "absolute",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(20, 20, 20)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "fixed",
+      "z": "2147483646"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgb(33, 33, 33)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(20, 20, 20)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "absolute",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgba(225, 220, 213, 0.2)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(20, 20, 20)",
+      "top": 0,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "absolute",
+      "z": "auto"
+    },
+    {
+      "tag": "DIV",
+      "name": null,
+      "id": "",
+      "class": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 53,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "fixed",
+      "z": "0"
+    },
+    {
+      "tag": "svg",
+      "name": null,
+      "id": "",
+      "class": {},
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 53,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "absolute",
+      "z": "auto"
+    },
+    {
+      "tag": "rect",
+      "name": null,
+      "id": "",
+      "class": {},
+      "bg": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "border": "0px none rgb(0, 0, 0)",
+      "top": 53,
+      "bottom": 1000,
+      "w": 1440,
+      "position": "static",
+      "z": "auto"
+    }
+  ]
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({at:location.href,sampleCount:window.__navProbe?.length,states:window.__navProbe?.filter((v,i,a)=>i===0||v.path!==a[i-1].path||v.blank!==a[i-1].blank||v.animations.length!==a[i-1].animations.length),layers:[...document.querySelectorAll("body *")].map(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return {tag:el.tagName,name:el.getAttribute("data-framer-name"),id:el.id,class:el.className,bg:s.backgroundColor,backgroundImage:s.backgroundImage.slice(0,150),border:s.borderBottom,top:r.top,bottom:r.bottom,w:r.width,position:s.position,z:s.zIndex}}).filter(el=>el.top<100&&el.bottom>0&&el.w>500)})');
+```

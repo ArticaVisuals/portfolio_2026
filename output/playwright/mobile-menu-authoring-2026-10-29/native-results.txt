@@ -1,0 +1,118 @@
+### Result
+{"motion":[{"width":390,"frames":2754,"elements":[{"name":"header name","samples":459,"xRange":0,"yRange":0},{"name":"hero name","samples":2754,"xRange":0,"yRange":0},{"name":"descriptor","samples":2754,"xRange":0,"yRange":0},{"name":"Selected","samples":2754,"xRange":0,"yRange":0},{"name":"work","samples":2754,"xRange":0,"yRange":0}]},{"width":320,"frames":2796,"elements":[{"name":"header name","samples":466,"xRange":0,"yRange":0},{"name":"hero name","samples":2796,"xRange":0,"yRange":0},{"name":"descriptor","samples":2796,"xRange":0,"yRange":0},{"name":"Selected","samples":2796,"xRange":0,"yRange":0},{"name":"work","samples":2796,"xRange":0,"yRange":0}]},{"width":430,"frames":2664,"elements":[{"name":"header name","samples":444,"xRange":0,"yRange":0},{"name":"hero name","samples":2664,"xRange":0,"yRange":0},{"name":"descriptor","samples":2664,"xRange":0,"yRange":0},{"name":"Selected","samples":2664,"xRange":0,"yRange":0},{"name":"work","samples":2664,"xRange":0,"yRange":0}]},{"width":809,"frames":2580,"elements":[{"name":"header name","samples":430,"xRange":0,"yRange":0},{"name":"hero name","samples":2580,"xRange":0,"yRange":0},{"name":"descriptor","samples":2580,"xRange":0,"yRange":0},{"name":"Selected","samples":2580,"xRange":0,"yRange":0},{"name":"work","samples":2580,"xRange":0,"yRange":0}]}],"routes":[{"via":"About","path":"/about","menuCount":1,"nav":{"x":0,"y":0,"width":390,"height":53,"top":0,"right":390,"bottom":53,"left":0},"horizontalOverflow":false,"bodyOverflow":"","menuOpen":false,"menuScrollLock":false},{"via":"Play","path":"/play","menuCount":1,"nav":{"x":0,"y":0,"width":390,"height":53,"top":0,"right":390,"bottom":53,"left":0},"horizontalOverflow":false,"bodyOverflow":"","menuOpen":false,"menuScrollLock":false},{"via":"Index","path":"/index","menuCount":1,"nav":{"x":0,"y":0,"width":390,"height":53,"top":0,"right":390,"bottom":53,"left":0},"horizontalOverflow":false,"bodyOverflow":"","menuOpen":false,"menuScrollLock":false},{"via":"Work","path":"/","menuCount":1,"nav":{"x":0,"y":0,"width":390,"height":53,"top":0,"right":390,"bottom":53,"left":0},"horizontalOverflow":false,"bodyOverflow":"","menuOpen":false,"menuScrollLock":false}],"controls":{"closed-390":{"text":"MICAH HOANG\n\nMENU","menuLabels":1,"maskHeight":13,"maskOverflow":"hidden","width":390,"overflow":false},"viewport-390":{"open":true,"width":390,"height":664,"horizontalOverflow":false,"targets":[{"text":"MICAH HOANG","height":44},{"text":"CLOSE","height":44},{"text":"WORK","height":54},{"text":"PLAY","height":54},{"text":"INDEX","height":54},{"text":"ABOUT","height":54},{"text":"LINKEDIN","height":44},{"text":"EMAIL","height":44},{"text":"GITHUB","height":44}]},"closed-320":{"text":"MICAH HOANG\n\nMENU","menuLabels":1,"maskHeight":13,"maskOverflow":"hidden","width":320,"overflow":false},"viewport-320":{"open":true,"width":320,"height":664,"horizontalOverflow":false,"targets":[{"text":"MICAH HOANG","height":44},{"text":"CLOSE","height":44},{"text":"WORK","height":54},{"text":"PLAY","height":54},{"text":"INDEX","height":54},{"text":"ABOUT","height":54},{"text":"LINKEDIN","height":44},{"text":"EMAIL","height":44},{"text":"GITHUB","height":44}]},"closed-430":{"text":"MICAH HOANG\n\nMENU","menuLabels":1,"maskHeight":13,"maskOverflow":"hidden","width":430,"overflow":false},"viewport-430":{"open":true,"width":430,"height":664,"horizontalOverflow":false,"targets":[{"text":"MICAH HOANG","height":44},{"text":"CLOSE","height":44},{"text":"WORK","height":54},{"text":"PLAY","height":54},{"text":"INDEX","height":54},{"text":"ABOUT","height":54},{"text":"LINKEDIN","height":44},{"text":"EMAIL","height":44},{"text":"GITHUB","height":44}]},"closed-809":{"text":"MICAH HOANG\n\nMENU","menuLabels":1,"maskHeight":13,"maskOverflow":"hidden","width":809,"overflow":false},"viewport-809":{"open":true,"width":809,"height":664,"horizontalOverflow":false,"targets":[{"text":"MICAH HOANG","height":44},{"text":"CLOSE","height":44},{"text":"WORK","height":54},{"text":"PLAY","height":54},{"text":"INDEX","height":54},{"text":"ABOUT","height":54},{"text":"LINKEDIN","height":44},{"text":"EMAIL","height":44},{"text":"GITHUB","height":44}]},"keyboardToggle":true,"keyboard":{"focusStayedInside":true,"restoredFocus":"MENU","scrollY":500,"overflow":"","open":false},"samePageWork":{"scrollY":0,"open":false,"overflow":""}},"errors":[],"failure":{"message":"locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Menu', exact: true }) to be visible\u001b[22m\n","url":"https://micahhoang.com/case-studies/gaia"}}
+### Ran Playwright code
+```js
+await (async page => {
+    const results = { motion: [], routes: [], controls: {}, errors: [] }
+    try {
+    page.on('pageerror', error => results.errors.push(error.message))
+    const ready = () => page.getByRole('button', { name: 'Menu', exact: true }).waitFor({ timeout: 15000 })
+    const open = async () => {
+        await page.getByRole('button', { name: 'Menu', exact: true }).click()
+        await page.getByRole('dialog', { name: 'Main navigation' }).waitFor()
+    }
+    const summary = () => page.evaluate(() => ({
+        path: location.pathname,
+        menuCount: document.querySelectorAll('nav[data-framer-name="Navigation"] [data-framer-name="Menu Button"]').length,
+        nav: document.querySelector('nav[data-framer-name="Navigation"]').getBoundingClientRect().toJSON(),
+        horizontalOverflow: document.documentElement.scrollWidth > innerWidth,
+        bodyOverflow: document.body.style.overflow,
+        menuOpen: !!document.querySelector('[role="dialog"]'),
+        menuScrollLock: document.documentElement.classList.contains('mh-mobile-menu-open'),
+    }))
+    await page.addInitScript(() => {
+        window.__mhColdFrames = []
+        const start = performance.now()
+        const selectors = [
+            'nav[data-framer-name="Navigation"] [data-framer-name="Name Link"]',
+            'h1', 'h3', '[data-framer-name="SELECTED"]', '[data-framer-name="WORK"]',
+        ]
+        function sample() {
+            window.__mhColdFrames.push({ t: performance.now() - start, positions: selectors.map(s => {
+                const e = document.querySelector(s)
+                if (!e) return null
+                const r = e.getBoundingClientRect()
+                return [r.x, r.y, r.width, r.height]
+            }) })
+            if (performance.now() - start < 3500) requestAnimationFrame(sample)
+        }
+        requestAnimationFrame(sample)
+    })
+    for (const width of [390, 320, 430, 809]) {
+        await page.setViewportSize({ width, height: 664 })
+        await page.goto('https://micahhoang.com/', { waitUntil: 'domcontentloaded' })
+        await ready()
+        await page.waitForTimeout(3700)
+        results.controls['closed-' + width] = await page.evaluate(() => { const nav = document.querySelector('nav[data-framer-name="Navigation"]'); const mask = nav.querySelector('[data-framer-name="Label Mask"]'); return {text:nav.innerText, menuLabels:[...nav.querySelectorAll('p')].filter(p=>p.textContent === 'MENU').length, maskHeight:mask.offsetHeight, maskOverflow:getComputedStyle(mask).overflow, width:innerWidth, overflow:document.documentElement.scrollWidth>innerWidth}; });
+        results.motion.push(await page.evaluate(() => ({
+            width: innerWidth,
+            frames: window.__mhColdFrames.length,
+            elements: ['header name', 'hero name', 'descriptor', 'Selected', 'work'].map((name, index) => {
+                const values = window.__mhColdFrames.map(f => f.positions[index]).filter(v => v && v[2] > 0 && v[3] > 0)
+                return { name, samples: values.length, xRange: Math.max(...values.map(v => v[0])) - Math.min(...values.map(v => v[0])), yRange: Math.max(...values.map(v => v[1])) - Math.min(...values.map(v => v[1])) }
+            }),
+        })))
+        await open()
+        results.controls['viewport-' + width] = await page.evaluate(() => {
+            const dialog = document.querySelector('[role="dialog"]')
+            return { open: !!dialog, width: dialog.clientWidth, height: dialog.clientHeight, horizontalOverflow: dialog.scrollWidth > dialog.clientWidth, targets: Array.from(dialog.querySelectorAll('a,[role=button]')).map(e => ({ text: e.textContent, height: e.getBoundingClientRect().height })) }
+        })
+        await page.keyboard.press('Escape'); await ready()
+    }
+    await page.setViewportSize({ width: 390, height: 664 })
+    await ready(); await page.getByRole('button',{name:'Menu',exact:true}).focus(); await page.keyboard.press('Enter'); await page.getByRole('dialog').waitFor(); await page.keyboard.press('Space'); await ready(); results.controls.keyboardToggle = true;
+    await page.evaluate(() => window.scrollTo(0, 500))
+    await open()
+    const focus = []
+    for (let i = 0; i < 12; i++) {
+        await page.keyboard.press('Tab')
+        focus.push(await page.evaluate(() => document.querySelector('[role="dialog"]').contains(document.activeElement)))
+    }
+    await page.keyboard.press('Escape'); await ready()
+    results.controls.keyboard = { focusStayedInside: focus.every(Boolean), ...await page.evaluate(() => ({ restoredFocus: document.activeElement.textContent, scrollY, overflow: document.body.style.overflow, open: !!document.querySelector('[role="dialog"]') })) }
+    await open()
+    await page.getByRole('dialog').getByRole('link', { name: 'WORK', exact: true }).click()
+    await ready(); results.controls.samePageWork = await page.evaluate(() => ({ scrollY, open: !!document.querySelector('[role="dialog"]'), overflow: document.body.style.overflow }))
+    for (const [label, path] of [['About', '/about'], ['Play', '/play'], ['Index', '/index'], ['Work', '/']]) {
+        await open()
+        await Promise.all([page.waitForURL('https://micahhoang.com' + path, { waitUntil: 'domcontentloaded' }), page.getByRole('dialog').getByRole('link', { name: label.toUpperCase(), exact: true }).click()])
+        await page.waitForLoadState('domcontentloaded')
+        await ready()
+        await page.waitForFunction(() => !document.querySelector('[role="dialog"]') && !document.documentElement.classList.contains('mh-mobile-menu-open'))
+        results.routes.push({ via: label, ...await summary() })
+    }
+    for (const slug of ['gaia', 'airpods']) {
+        await page.goto('https://micahhoang.com/case-studies/' + slug, { waitUntil: 'domcontentloaded' })
+        await ready()
+        await open()
+        await Promise.all([page.waitForURL('https://micahhoang.com/about', { waitUntil: 'domcontentloaded' }), page.getByRole('dialog').getByRole('link', { name: 'ABOUT', exact: true }).click()])
+        await page.waitForLoadState('domcontentloaded')
+        await ready()
+        await page.waitForFunction(() => !document.querySelector('[role="dialog"]') && !document.documentElement.classList.contains('mh-mobile-menu-open'))
+        results.routes.push({ via: slug + ' → About', ...await summary() })
+    }
+    await page.goBack({ waitUntil: 'domcontentloaded' })
+    await ready()
+    results.routes.push({ via: 'browser back', ...await summary() })
+    await open()
+    await page.setViewportSize({ width: 810, height: 1000 })
+    await page.waitForTimeout(300)
+    results.controls.desktopBoundary = await page.evaluate(() => ({ dialogCount: document.querySelectorAll('[role="dialog"]').length, menuCount: document.querySelectorAll('[data-framer-name="Menu Button"]').length, overflow: document.body.style.overflow, navText: document.querySelector('nav[data-framer-name="Navigation"]').textContent }))
+    await page.setViewportSize({ width: 390, height: 664 })
+    await ready()
+    results.controls.returnToMobile = await summary()
+    await page.goto('https://micahhoang.com/', { waitUntil: 'domcontentloaded' })
+    await ready()
+    return results
+    } catch (error) {
+        results.failure = { message: error.message, url: page.url() }
+        return results
+    }
+}
+)(page);
+```
+### Page
+- Page URL: https://micahhoang.com/case-studies/gaia
+- Page Title: Gaia Brand and UX/UI Case Study - Micah Hoang
+### Events
+- New console entries: .playwright-cli/console-2026-10-30T00-39-22-452Z.log#L2-L6

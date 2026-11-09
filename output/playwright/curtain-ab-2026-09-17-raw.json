@@ -1,0 +1,387 @@
+[
+  {
+    "mode": "baseline",
+    "start": 1881.2999999523163,
+    "end": 3102.600000023842,
+    "count": 51,
+    "median": 33.09999999999991,
+    "max": 34.09999999999991,
+    "over20": 32,
+    "videos": [
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 713.44921875,
+          "bottom": 996.2890625,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 720.01123046875,
+          "y": 604.3563842773438,
+          "width": 709.9775390625,
+          "height": 395.5762939453125,
+          "top": 604.3563842773438,
+          "right": 1429.98876953125,
+          "bottom": 999.9326782226562,
+          "left": 720.01123046875
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 713.44921875,
+          "bottom": 1505.578125,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 1423.44921875,
+          "bottom": 1505.578125,
+          "left": 726.55078125
+        }
+      }
+    ],
+    "globals": [
+      "__mhGlobalLenisState",
+      "lenisVersion",
+      "lenis",
+      "__mhLenis"
+    ]
+  },
+  {
+    "mode": "no-media",
+    "start": 1955.0999999046326,
+    "end": 3156.0999999046326,
+    "count": 80,
+    "median": 8.5,
+    "max": 35.09999999999991,
+    "over20": 23,
+    "videos": [
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 713.44921875,
+          "bottom": 996.2890625,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 1423.44921875,
+          "bottom": 996.2890625,
+          "left": 726.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 713.44921875,
+          "bottom": 1505.578125,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 1423.44921875,
+          "bottom": 1505.578125,
+          "left": 726.55078125
+        }
+      }
+    ],
+    "globals": [
+      "__mhGlobalLenisState",
+      "lenisVersion",
+      "lenis",
+      "__mhLenis"
+    ]
+  },
+  {
+    "mode": "no-replay",
+    "start": 1829.7999999523163,
+    "end": 3042.6999999284744,
+    "count": 50,
+    "median": 33,
+    "max": 34,
+    "over20": 32,
+    "videos": [
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 713.44921875,
+          "bottom": 996.2890625,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 1423.44921875,
+          "bottom": 996.2890625,
+          "left": 726.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 713.44921875,
+          "bottom": 1505.578125,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 1423.44921875,
+          "bottom": 1505.578125,
+          "left": 726.55078125
+        }
+      }
+    ],
+    "globals": [
+      "__mhGlobalLenisState",
+      "lenisVersion",
+      "lenis",
+      "__mhLenis"
+    ]
+  },
+  {
+    "mode": "no-lenis",
+    "start": 1779.8999999761581,
+    "end": 2980,
+    "count": 50,
+    "median": 33,
+    "max": 34,
+    "over20": 32,
+    "videos": [
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 713.44921875,
+          "bottom": 996.2890625,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 1423.44921875,
+          "bottom": 996.2890625,
+          "left": 726.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 713.44921875,
+          "bottom": 1505.578125,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 1423.44921875,
+          "bottom": 1505.578125,
+          "left": 726.55078125
+        }
+      }
+    ],
+    "globals": [
+      "__mhGlobalLenisState",
+      "lenisVersion",
+      "lenis",
+      "__mhLenis"
+    ]
+  },
+  {
+    "mode": "content-hidden",
+    "start": 1932.3000000715256,
+    "end": 3130.100000023842,
+    "count": 159,
+    "median": 7.7999999999999545,
+    "max": 12.400000000000091,
+    "over20": 0,
+    "videos": [
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 713.44921875,
+          "bottom": 996.2890625,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": false,
+        "readyState": 4,
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 608,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 608,
+          "right": 1423.44921875,
+          "bottom": 996.2890625,
+          "left": 726.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "rect": {
+          "x": 16.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 713.44921875,
+          "bottom": 1505.578125,
+          "left": 16.55078125
+        }
+      },
+      {
+        "paused": true,
+        "readyState": 0,
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "rect": {
+          "x": 726.55078125,
+          "y": 1117.2890625,
+          "width": 696.8984375,
+          "height": 388.2890625,
+          "top": 1117.2890625,
+          "right": 1423.44921875,
+          "bottom": 1505.578125,
+          "left": 726.55078125
+        }
+      }
+    ],
+    "globals": [
+      "__mhGlobalLenisState",
+      "lenisVersion",
+      "lenis",
+      "__mhLenis"
+    ]
+  }
+]

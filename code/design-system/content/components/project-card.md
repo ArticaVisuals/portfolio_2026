@@ -20,7 +20,7 @@ tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
     <a class="mh-project-card__link" href="#">
       <div class="mh-project-card__meta mh-label">
         <span>1</span><span>/</span>
-        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span>
       </div>
       <div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>
     </a>
@@ -30,7 +30,7 @@ tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
     <a class="mh-project-card__link" href="#">
       <div class="mh-project-card__meta mh-label">
         <span>2</span><span>/</span>
-        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span>
       </div>
       <div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"></div>
     </a>
@@ -41,7 +41,7 @@ tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
 
 ## Anatomy
 
-1. **Meta row**: mono label in a `24px 11px 1fr` grid: number, slash, title. The title is a flip rail.
+1. **Meta row**: mono label in a `24px 11px 1fr` grid: number, slash, title. The title is a flip rail whose second line reads **VIEW PROJECT**.
 2. **Media**: [Media Frame](media-frame.md), 16:9, optional stroke.
 3. **Tags**: up to three [Tags](tag.md), outside the link.
 
@@ -51,7 +51,7 @@ The meta row and media share one link; tags sit outside it so they can be their 
 
 - Number cards in display order starting at 1, without zero padding.
 - The title is the CMS project title, set by CSS in uppercase mono.
-- Hover/focus on the link triggers two moves together: the title flips (18px, 420ms Snappy) and the image scales to 1.02.
+- Hover/focus on the link triggers two moves together: the title rolls up to VIEW PROJECT (18px, 420ms Snappy) and the image scales to 1.02. Below 810px neither moves; the title stays put.
 - Use a poster image under a thumbnail video, so a returning visitor never sees an empty frame.
 
 ## API
@@ -83,7 +83,7 @@ Map cards to the Framer CMS `All Projects` collection (`yTHrQWMIY`):
 
 ## Accessibility
 
-- The link's accessible name is "1 / Gaia" (the duplicate flip span is `aria-hidden`).
+- The link's accessible name is "1 / Gaia": the VIEW PROJECT line is `aria-hidden`.
 - Card media `alt` describes the image, not the project name.
 
 ## Framer mapping

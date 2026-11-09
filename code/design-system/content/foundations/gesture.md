@@ -29,6 +29,14 @@ Most of the site is hover and scroll. The exception is `/play`, an endless two-a
 | Smooth scroll | Lenis is destroyed on `/play`; the archive owns wheel input | `NavigationScrollGuard` (`Wnd19lx`) |
 | Video during motion | The center video pool freezes during drag, throw and edge scroll and refills after settling; max 6 concurrent in Chromium/Arc | `Play.tsx` (`PN1RVOf`) |
 
+## Other live gesture surfaces
+
+| Surface | Behavior | Source |
+| --- | --- | --- |
+| `/play` detail drawer | Opens in 500ms and closes in 400ms on the Smooth curve; interrupt-safe; keyboard open/close and reduced motion skip the transition. Desktop Chromium lets the background drift slowly with videos paused; Safari, mobile and reduced motion don't drift. | `ArchivePlayground.tsx` (`QNpkYp5`), published 2026-10-23 |
+| Mobile pill rows | Native horizontal scroll (momentum, interruption and rubber-banding from the browser), hidden scrollbar, rows run edge to edge | `NavigationScrollGuard` (`Wnd19lx`) |
+| Image carousels (Simon & Schuster, Weaponized Innocence, Seek Truth) | 44×44px arrows; dots sit in 44×44px buttons in a horizontally scrolling strip that keeps the selected dot in view | `SimonSchusterGuidelinesCarousel.tsx` (`tYFZCey`) |
+
 ## Springs for new work
 
 When you build something new that the visitor can grab, such as a sheet, a swipeable gallery or a draggable comparison slider, animate it with a spring, not a fixed-duration curve. A spring starts from the current on-screen value and carries velocity, so it can be grabbed and reversed mid-flight.

@@ -1,0 +1,50 @@
+{
+  "status": "Published and live-verified; Framer reports no unpublished changes",
+  "source": "/Users/micahhoang/Library/CloudStorage/SynologyDrive-ArticaVisuals/FREELANCE/2026/Peak Energy/3_DELIVERY/Film Animation/PeakEnergy_HeroFilmAnim_v08b.mp4",
+  "current_url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+  "current_range_seconds": [
+    26,
+    29
+  ],
+  "proposed_range_seconds": [
+    20.9,
+    25.9
+  ],
+  "output": "peak-energy-thumbnail-earlier-20.9-25.9-web.mp4",
+  "encoding": "H.264, 1280x720, 30 fps, yuv420p, CRF 25, slow preset, no audio, faststart",
+  "bytes": 2128675,
+  "update_targets": {
+    "cms_collection": "yTHrQWMIY",
+    "cms_item": "W2n1YmGHA",
+    "cms_field": "SvOqFqdby",
+    "home_page": "R6_F7xjGZ",
+    "home_projects_slug": "peak-energy"
+  },
+  "unchanged": "All live Framer content, poster, layout, speed, crop, other projects",
+  "verification": {
+    "faststart": true,
+    "full_decode": "passed",
+    "video": "H.264 1280x720 yuv420p 150 frames at 30 fps",
+    "duration_seconds": 5,
+    "audio_tracks": 0,
+    "uploaded_sha256": "6b673b00fed390f29c0e82de85a1efe3e89b6fef46136560d6a8914350f00a7a",
+    "uploaded_file_matches_approved": true,
+    "home_delta": "Only Peak Energy thumbnailVideoLink changed; remaining page XML identical aside from regenerated Framer array item IDs",
+    "peak_cms_delta": "Only SvOqFqdby (Thumbnail Video) changed",
+    "live_home": {
+      "asset": "https://framerusercontent.com/assets/1KJal8hV09oIBU2Y8MKC3iqk3nw.mp4",
+      "duration_seconds": 5,
+      "loop": true,
+      "playing": true,
+      "ready_state": 4
+    },
+    "published_cms": {
+      "approved_asset_found": true,
+      "data_urls": [
+        "https://framerusercontent.com/cms/v2WSqRmVTq3B4ixUX8A8/65FL0bYLHsfqWZxdkmxz/yTHrQWMIY-indexes-default-0.framercms",
+        "https://framerusercontent.com/cms/v2WSqRmVTq3B4ixUX8A8/65FL0bYLHsfqWZxdkmxz/yTHrQWMIY-chunk-default-0.framercms"
+      ]
+    }
+  },
+  "framer_asset_url": "https://framerusercontent.com/assets/1KJal8hV09oIBU2Y8MKC3iqk3nw.mp4"
+}

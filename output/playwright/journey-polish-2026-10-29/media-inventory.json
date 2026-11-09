@@ -1,0 +1,620 @@
+[
+  {
+    "node": "VHv5Sl0mw",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "YYcl4bK3d",
+      "kind": "image",
+      "image": {
+        "id": "DcicrFmUxqgU5jGTpUKyIWKwCA.png",
+        "url": "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "iYVJWra2W8xywBIJLyzKocplcos.mp4",
+        "url": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "VHv5Sl0mw",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "cJ_4I4Mfw",
+      "kind": "image",
+      "image": {
+        "id": "rMadioVkjNUlwuCAwu3Iu6AU9gQ.png",
+        "url": "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Exts4jMyL",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "cJ_4I4Mfw",
+      "kind": "image",
+      "image": {
+        "id": "PQwqOy9SjY9BJEFmykGLzjKewg.png",
+        "url": "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Exts4jMyL",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "YYcl4bK3d",
+      "kind": "video",
+      "video": {
+        "id": "iYVJWra2W8xywBIJLyzKocplcos.mp4",
+        "url": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "FTCZkFT3I",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "EM9LIvPQv",
+      "kind": "image",
+      "image": {
+        "id": "jb1IGn4by6Z5vtzzyHVQy3YQkY.webp",
+        "url": "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp",
+        "thumbnailUrl": "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "FTCZkFT3I",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "WpKQNcSo4",
+      "kind": "video",
+      "video": {
+        "id": "JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+        "url": "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "GaiaLogoAnimation",
+      "stroke": false
+    }
+  },
+  {
+    "node": "qNacLTVRv",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "Ldt37Fyxz",
+      "kind": "image",
+      "image": {
+        "id": "HdIgx7Gnsv581nIB2dbKZPWFC3A.webp",
+        "url": "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp",
+        "thumbnailUrl": "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "qNacLTVRv",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "NuA72RHJI",
+      "kind": "image",
+      "image": {
+        "id": "LX86Gx6KBYH0TPKdwD1bPisPAFU.webp",
+        "url": "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp",
+        "thumbnailUrl": "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "YoqVnDxK_",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "B4LhP0lzO",
+      "kind": "image",
+      "image": {
+        "id": "We8CbT3tANj0LRWhRW1EWqwQNIU.webp",
+        "url": "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp",
+        "thumbnailUrl": "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "YoqVnDxK_",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "f8Hz5vYOI",
+      "kind": "image",
+      "image": {
+        "id": "cJLznMixCN2nBkZw2WKy85Io.jpg",
+        "url": "https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "fAuNlVwR9",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "WpKQNcSo4",
+      "kind": "image",
+      "image": {
+        "id": "MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+        "url": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "poster": {
+        "id": "MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+        "url": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "GaiaLogoAnimation",
+      "stroke": false
+    }
+  },
+  {
+    "node": "fAuNlVwR9",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "EM9LIvPQv",
+      "kind": "image",
+      "image": {
+        "id": "nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg",
+        "url": "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "BbUSAbY3X",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "f8Hz5vYOI",
+      "kind": "image",
+      "image": {
+        "id": "C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp",
+        "url": "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp",
+        "thumbnailUrl": "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "BbUSAbY3X",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "B4LhP0lzO",
+      "kind": "image",
+      "image": {
+        "id": "jnO3X6kihC9RS4UIQjowcI3dPY.gif",
+        "url": "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif",
+        "thumbnailUrl": "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "x4Tbfnv8c",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "f8Hz5vYOI",
+      "kind": "video",
+      "image": {
+        "id": "QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg",
+        "url": "https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "url": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "extension": "mp4"
+      },
+      "poster": {
+        "id": "gtKcBanSRA6PXcpDAXZrNRJCE.jpg",
+        "url": "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "x4Tbfnv8c",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "B4LhP0lzO",
+      "kind": "video",
+      "image": {
+        "id": "txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+        "url": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+        "url": "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+        "extension": "mp4"
+      },
+      "poster": {
+        "id": "ntuGPTHTjyjkDIASrRv61aQtyDw.jpg",
+        "url": "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "x4Tbfnv8c",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 2,
+    "item": {
+      "id": "qZjxAHYsv",
+      "kind": "video",
+      "video": {
+        "id": "TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "url": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "extension": "mp4"
+      },
+      "poster": {
+        "id": "zYY346QdJ6zsHBvmvaXmo9M2E.jpg",
+        "url": "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Xs9RUkUM2",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "B4LhP0lzO",
+      "kind": "video",
+      "image": {
+        "id": "txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+        "url": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "url": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Xs9RUkUM2",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "f8Hz5vYOI",
+      "kind": "video",
+      "image": {
+        "id": "QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg",
+        "url": "https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "url": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Xs9RUkUM2",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 2,
+    "item": {
+      "id": "P3iy4kCX9",
+      "kind": "video",
+      "video": {
+        "id": "TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "url": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "NGDBsyRXZ",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "B4LhP0lzO",
+      "kind": "image",
+      "image": {
+        "id": "txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+        "url": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "NGDBsyRXZ",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "f8Hz5vYOI",
+      "kind": "video",
+      "image": {
+        "id": "QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg",
+        "url": "https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg",
+        "thumbnailUrl": "https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "url": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "dLLMKyVlH",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "B4LhP0lzO",
+      "kind": "image",
+      "image": {
+        "id": "ZN5xIYWteQ32fyOxgSsFzxp0rU.png",
+        "url": "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "BLZ0XUnO4R1iDSusukr9oZxQc.mp4",
+        "url": "https://framerusercontent.com/assets/BLZ0XUnO4R1iDSusukr9oZxQc.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "dLLMKyVlH",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "h2wkZRsQu",
+      "kind": "video",
+      "video": {
+        "id": "EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+        "url": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "dLLMKyVlH",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 2,
+    "item": {
+      "id": "Otoj0owdY",
+      "kind": "image",
+      "image": {
+        "id": "A6DvwXGXMEFZPWt9xOnVZAJow.png",
+        "url": "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Mz3Cd49qQ",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 0,
+    "item": {
+      "id": "UCZShoyxE",
+      "kind": "image",
+      "image": {
+        "id": "53KFBdZp49V7ToYem3gagSK9tbE.png",
+        "url": "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  },
+  {
+    "node": "Mz3Cd49qQ",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 1,
+    "item": {
+      "id": "nBL4gTiv3",
+      "kind": "video",
+      "video": {
+        "id": "BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+        "url": "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": false
+    }
+  },
+  {
+    "node": "Mz3Cd49qQ",
+    "type": "CaseStudyJustifiedMediaGrid",
+    "index": 2,
+    "item": {
+      "id": "f8Hz5vYOI",
+      "kind": "video",
+      "image": {
+        "id": "MuJbL7GSk4Maaf9PRd10LlJXJA.png",
+        "url": "https://framerusercontent.com/images/MuJbL7GSk4Maaf9PRd10LlJXJA.png",
+        "thumbnailUrl": "https://framerusercontent.com/images/MuJbL7GSk4Maaf9PRd10LlJXJA.png?scale-down-to=512",
+        "resolution": "auto"
+      },
+      "video": {
+        "id": "PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+        "url": "https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+        "extension": "mp4"
+      },
+      "src": "",
+      "ratio": 1.7778,
+      "fit": "contain",
+      "alt": "Case study media",
+      "stroke": true
+    }
+  }
+]

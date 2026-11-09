@@ -37,6 +37,7 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 - **Tokens, never raw values.** Use `var(--mh-…)` from `tokens/tokens.css`, or the token path from `tokens.json` in Framer. If a value is missing, add it to `tokens.json` and run `node build.mjs`; don't inline a hex.
 - **Semantic color roles, not primitives.** Write `var(--mh-text-muted)`, not `var(--mh-color-light-gray)`. Roles re-map on `data-surface="green"`; primitives don't.
 - **Respect the breakpoints**: desktop ≥1200px, tablet 810–1199px, mobile <810px (Framer frames: 1200 / 810 / 390).
+- **One 20px gutter, 44px touch targets.** The page gutter is 20px at every breakpoint. Below 810px every interactive target is at least 44×44px; grow padding, not type.
 - **Don't invent brand.** No new colors, fonts, radii, shadows, gradients, emoji or icon sets. If a design feels too plain, the answer is better type scale, more space, or real project media, not decoration.
 - **Mono is always uppercase** and never used for paragraphs.
 - **One H1 per page.** Display XL is reserved for the home hero name.
@@ -60,8 +61,8 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 
 ## Quick start (Framer)
 
-- Colors: use the project color styles `/Cream`, `/Forest Green`, `/Off-Black`, `/Text Gray`, `/Stroke Gray`, `/White`. Accent green `#25593A` is not a style; it's set per component instance.
-- Type: use the Framer text styles `/Heading 1`, `/Heading 2`, `/Heading 2 Bold`, `/Heading 3`, `/Heading 4`, `/Body XL`, `/Body L`, `/Body M`, `/Small Mono`, `/Small Mono Footers` (see the Typography page).
+- Colors: use the project color styles in the `/Colors/` folder: `Cream`, `Forest Green`, `Off-Black`, `Text Gray`, `Stroke Gray` (`#848484`), `White`. Accent green `#25593A` is not a style; it's set per component instance.
+- Type: use the Framer text styles in the `/Text Styles/` folder: `Heading 1`, `Heading 2`, `Heading 2 Bold`, `Heading 3`, `Heading 4`, `Body XL`, `Body L`, `Body M`, `Small Mono`, `Small Mono Footers` (`Optro CRX Heading` is page-specific). See the Typography page.
 - Layout: Stacks and Grids with the gutter and gap tokens; desktop-first with tablet and phone breakpoint overrides.
 - Code components: look up the `codeFileId` in `components.json` and the repo's `code/mirror/manifest.json`.
 
@@ -226,7 +227,9 @@ Apple's eight design principles line up with the site's own five words ([Princip
 | Enter and exit along the same path | **Already true** | Flip rail goes up and comes back down; lightbox zooms from and back to the clicked thumbnail; the boot curtain lifts up and off. |
 | Anchor overlays to their source | **Already true** | `CaseStudyLightbox` zooms out of the thumbnail rather than the screen center. |
 | Default motion doesn't overshoot | **Already true** | The Snappy curve is a deceleration with no overshoot. No bounce anywhere in the UI. |
-| Reduced motion means gentler, not none | **Already true** | Transitions collapse, reveals render in place, the grain stops shimmering, scroll-to-top jumps. Color and opacity feedback stays. |
+| Reduced motion means gentler, not none | **Already true** | Transitions collapse, reveals render in place, the grain stops shimmering, scroll-to-top jumps. On mobile case studies a head stylesheet renders animated headings in place before first paint. Color and opacity feedback stays. |
+| 44px minimum touch targets | **Already true** | Since 2026-10-30, every mobile link, pill, filter, view toggle, menu button, scroll-to-top and footer row is at least 44×44px; labels keep their size inside larger hit areas. |
+| Show that a row scrolls; use native scrolling | **Already true** | Mobile pill rows run edge to edge so a cut-off pill signals more; the browser's own scrolling supplies momentum and interruption. No gradients, no custom gesture engine. |
 | Respond on pointer-down, not release | **For new work** | New controls show their pressed state on `:active` / `pointerdown`. Live components keep their hover-led feedback. |
 | Use springs for anything the user can grab | **For new work** | Use `motion.spring.*` tokens (damping 1.0, response 0.3–0.4s). Bounce (damping 0.8) only after a flick. See [Gesture](gesture.md). |
 | Hand release velocity to the animation; project momentum | **For new work** | See [Gesture](gesture.md). |
@@ -267,13 +270,13 @@ Apple's eight design principles line up with the site's own five words ([Princip
 | Rule | Label | Here |
 | --- | --- | --- |
 | Four feedback kinds: status, completion, warning, error | **For new work** | The site has no forms today. A new form validates inline, in mono labels, using `--mh-text-strong`. Don't add a red; ask first. |
-| Where am I / where can I go / how do I get out | **Already true (partly)** | Persistent nav on every page; logo link home; lightbox closes with Esc. The nav has no visible current-page state; that's a live decision, not something to add. |
+| Where am I / where can I go / how do I get out | **Already true (partly)** | Persistent nav on every page; logo link home; the mobile menu is a full-screen dialog that closes with CLOSE or Escape and restores focus; lightbox closes with Esc. The nav has no visible current-page state; that's a live decision, not something to add. |
 | Proximity implies relationship | **Already true** | Tags sit under their card; the view toggle shares a line with the list it controls. |
 | Multimodal feedback (sound, haptics) | **Departure** | None. A portfolio isn't the place for it. |
 
 ## Accessibility notes
 
-- Stroke Gray `#979797` on Cream measures about **2.7:1**. It's used for tags, muted meta and the gray continuation of case-study titles. That's below WCAG AA for small text, and below 3:1 even for large text. It's a known property of the live design. Don't use Stroke Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
+- Stroke Gray `#848484` on Cream measures about **3.43:1** (it was `#979797`, 2.68:1, until 2026-10-30). It's used for tags, muted meta and the gray continuation of case-study titles. That passes 3:1 for large text and outlines but stays below 4.5:1 for small text: a deliberate, documented tradeoff. Don't use Stroke Gray for anything new that a visitor must read to understand the page; use `--mh-text-body` (Graphite, ~7.2:1) or stronger.
 - Forest Green on Cream ≈ 12:1; near-black on Cream ≈ 17:1; Cream on Forest Green ≈ 12:1.
 
 ## Changing the live site
@@ -285,7 +288,7 @@ Nothing on this page asks for a change to micahhoang.com. If a future task wants
 3. Make the change in Framer behind a kill switch where possible, publish, then run published QA. `npm test` too if any Play-related file changes.
 4. Update the relevant page here, and move the rule's label to **Already true**.
 
-**Proposed live-site changes:** none currently open.
+**Proposed live-site changes:** none currently open. (The 2026-10-30 mobile pass, which added 44px targets, 18px mobile reading text and unified gutters, was approved and published; its rules are now marked Already true above.)
 
 ---
 
@@ -309,15 +312,19 @@ The palette is deliberately small: a warm Cream ground, one Forest Green for bra
 
 | Token | Value | Framer style | Role |
 | --- | --- | --- | --- |
-| `--mh-color-cream` | `#F7F5F0` | `/Cream` | Page background; text on Forest Green |
-| `--mh-color-forest-green` | `#233324` | `/Forest Green` | Brand: display type, nav, labels; inverse surface |
+| `--mh-color-cream` | `#F7F5F0` | `/Colors/Cream` | Page background; text on Forest Green |
+| `--mh-color-forest-green` | `#233324` | `/Colors/Forest Green` | Brand: display type, nav, labels; inverse surface |
 | `--mh-color-accent-green` | `#25593A` | none: set per instance (`tagHoverColor`, IndexPage hover) | Hover / active for tags, filters, toggles |
-| `--mh-color-near-black` | `#141414` | `/Off-Black` | Rules, index list, lightbox chrome, strong body |
-| `--mh-color-graphite` | `#525252` | `/Text Gray` | Long-form case-study body |
-| `--mh-color-light-gray` | `#979797` | `/Stroke Gray` | Muted text, tags, media stroke |
-| `--mh-color-white` | `#FFFFFF` | `/White` | Lightbox backdrop, media placeholder |
+| `--mh-color-near-black` | `#141414` | `/Colors/Off-Black` | Rules, index list, lightbox chrome, strong body |
+| `--mh-color-graphite` | `#525252` | `/Colors/Text Gray` | Long-form case-study body |
+| `--mh-color-light-gray` | `#848484` | `/Colors/Stroke Gray` | Muted text, tags, media stroke. Was `#979797` until 2026-10-30 |
+| `--mh-color-white` | `#FFFFFF` | `/Colors/White` | Lightbox backdrop, media placeholder |
 | `--mh-color-white-60` | `#FFFFFF99` | none (published CSS token) | Muted text on Forest Green |
 | `--mh-color-grain-umber` | `#501D07` | (GrainOverlay control) | Grain tint only |
+
+### Stroke Gray history
+
+Stroke Gray is the one primitive that has moved. It started at `#979797` (2.68:1 on Cream), was darkened to `#707070` for contrast, then on 2026-10-30 lightened to the midpoint, **`#848484`** (3.43:1), at Micah's request. That passes 3:1 for large text and UI outlines but not 4.5:1 for small text, so keep it for tags, strokes and secondary meta, never for text someone has to read to use the page. The Home grid (`tagColor`, `strokeColor`) and Index wrapper (`advanced.textTertiary`) store their own copies of this value; change all three together.
 
 ## Surfaces
 
@@ -403,17 +410,18 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 | Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% / 114% / 114% | -1% | /Heading 1 | Home hero name. Once per site. |
 | Display L | `mh-text-display-l` | 70 / 52 / 38 | 700 | 100% | -1% (-2% mobile) | /Heading 2 Bold | Case-study title + muted continuation |
 | Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | /Heading 2 | Section headers: "Selected work", "About Micah" |
-| Display Footer | `mh-text-display-footer` | 80 / 70 / 40 | 400 | 100% | -2% | (MagText) | Uppercase footer contact rows |
-| Heading | `mh-text-heading` | 35 / 24 / 20 | 400 | 110% | -1% | /Heading 3 | Hero descriptor, case-study section titles |
+| Display Footer | `mh-text-display-footer` | 80 / 70 / fluid 28–38 | 400 | 100% | -2% (-1% mobile) | (MagText) | Uppercase footer contact rows; mobile `clamp(27px, (100vw − 40px) / 10, 38px)` |
+| Heading | `mh-text-heading` | 35 / 28 / 24 | 400 | 110% | -1% | /Heading 3 | Hero descriptor, case-study section titles |
 | Heading S | `mh-text-heading-sm` | 20 | 700 | 140% | 0 | /Heading 4 | Small bold heading |
 | Title | `mh-text-title` | 22 | 400 | 120% | 0 | (IndexPage) | Index rows, uppercase |
 | Body XL | `mh-text-body-xl` | 22 | 500 | 110% | -1% | /Body XL | Medium-weight lead line |
-| Body L | `mh-text-body-lg` | 22 / 18 / 15 | 400 | 120% / 120% / 130% | +1% | /Body L | Lead paragraphs, About, meta values |
-| Body | `mh-text-body` | 18 / 16 / 14 | 400 | 140% | 0 | /Body M | Case-study long-form (580px measure) |
+| Body L | `mh-text-body-lg` | 22 / 18 / 18 | 400 | 120% / 120% / 140% | +1% (0 mobile) | /Body L | Lead paragraphs, About, meta values |
+| Body | `mh-text-body` | 18 / 16 / 18 | 400 | 140% | 0 | /Body M | Case-study long-form (580px measure on desktop) |
 | Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | (none) | Captions, small notes |
 | Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | /Small Mono Footers | Nav, links, ©year, Read more, actions |
 | Label relaxed | `mh-text-label-relaxed` / `mh-label[data-leading=relaxed]` | 13 | 400 mono | 130% (140% mobile) | -1% | /Small Mono | GET IN TOUCH, "/ About the project" |
-| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (component) | Tags below 1200px |
+| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (none) | Legacy. Since 2026-10-30 every visible mono label is 13px |
+| (Optro) | n/a | 70 | 700 | 100% | -1% | /Optro CRX Heading | Optro CRX case-study hero only; same values as Heading 2 Bold with 0 paragraph spacing |
 
 ## Pairings
 
@@ -432,6 +440,8 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 ```
 
 ## Source
+
+Framer keeps these in the **`/Text Styles/`** folder (`/Text Styles/Heading 1`, `/Text Styles/Body L`, ...); the table uses the short names. On 2026-10-30 the mobile (S) breakpoint of **Body L** and **Body M** moved to 18px / 140% for readability: reading text on a phone is now 18px, the existing Body M desktop baseline, instead of 14–15px. Heading 3 also stepped up to 28px on tablet and 24px on phone. Mono labels are 13px everywhere; the 12px tablet/mobile tag exception is gone.
 
 Desktop values come from the Framer project's text styles (read through the Framer MCP on 2026-10-01). Tablet and mobile values were measured on the published site, because Framer's breakpoint overrides aren't readable through the MCP. `code/tokens/framer-active-text-styles.tokens.json` is an older export: its Heading 1 (110px), Index Title and Paragraph styles no longer match the project.
 
@@ -484,17 +494,18 @@ Desktop-first, matching the Framer frames.
 
 | Token | Desktop | Tablet | Mobile | Use |
 | --- | --- | --- | --- | --- |
-| `--mh-gutter` | 20px | 20px | 15px | Page side padding (`.mh-container`) |
+| `--mh-gutter` | 20px | 20px | 20px | Page side padding (`.mh-container`). Mobile was 15px (14 on Index) until 2026-10-30 |
 | `--mh-column-gap` | 20px | 20px | 20px | Card grids, index columns |
 | `--mh-split-gap` | 30px | 30px | n/a (stacks) | Two-column text splits (`.mh-split`, meta grid) |
 | `--mh-card-row-gap` | 50px | 50px | 50px | Between project-card rows |
 | `--mh-measure` | 580px | 580px | 100% | Long-form body |
-| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row (doesn't drop to 15 on mobile) |
+| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row; equal to the page gutter |
 | `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
 | `--mh-hero-name-top` | 90px | 90px | 97px | Hero top → name line box (nav overlays it) |
 | `--mh-hero-descriptor-top` | 220px | 186px | 162px | Hero top → descriptor |
 | `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
-| `--mh-footer-min-height` | 50vh | 40vh | 50vh | Home CTA/footer block |
+| `--mh-footer-min-height` | 50vh | 40vh | none | Footer block (content is usually taller) |
+| `--mh-touch-target` | n/a | n/a | 44px | Minimum size of every interactive target below 810px |
 | `--mh-nav-height` | 53px | 53px | 53px | Sticky nav; grain starts below it |
 
 Grids in use on the live site:
@@ -505,7 +516,7 @@ Grids in use on the live site:
 | Other projects / index grid | 3 columns | 2 columns | 1 column |
 | Case-study meta / split | 2 columns | 2 columns | 1 column |
 | Index list | year + 5fr content | year + content | stacked |
-| Navigation | 4 zones (name, role, location, links) | 4 zones | name + links |
+| Navigation | 4 zones (name, role, location, links) | 4 zones | name + MENU |
 
 ```html example
 <div class="mh-split">
@@ -550,7 +561,8 @@ Desktop values are read from the Framer project (Home page layers via the Framer
 
 - **Rules, not boxes.** Separate sections with a full-width [Rule](../components/rule.md); separate rows with rules; never wrap content in a bordered or shadowed card.
 - **Space is the main tool.** When a layout feels busy, add vertical space between sections before anything else.
-- **Align to the gutter.** Every left edge on a page (nav, hero, headings, grid) sits on `--mh-gutter`.
+- **Align to the gutter.** Every left edge on a page (nav, hero, headings, grid, footer, open menu) sits on `--mh-gutter`, 20px at every breakpoint, so the header doesn't shift between routes. Only full-bleed media and the mobile pill scroll rows cross it.
+- **44px targets on touch.** Below 810px every link, pill, filter, toggle and footer row is at least 44×44px. Grow the hit area around the label (padding), not the type.
 - **Framer**: build with Stacks (vertical, gap = space token) and Grids (`1fr` columns, gap = column-gap token); set tablet and phone overrides on the breakpoint frames rather than using fixed pixel widths.
 
 ## Don't
@@ -612,7 +624,7 @@ Hovers and reveals use the curves above. Anything the visitor can **grab** (drag
 
 ## Flip rail
 
-The site's main hover. A label is stacked over a copy of itself in a one-line window; on hover the stack slides up by one line plus `--mh-distance-flip-gap` (5px). Used on nav links, project titles, index rows and text actions. It works with CSS alone.
+The site's main hover. A label is stacked over a second line in a one-line window; on hover the stack slides up by one line plus `--mh-distance-flip-gap` (5px). On nav links and text actions the second line repeats the label. On project cards it reads **VIEW PROJECT**, and on Index rows **View Project →**: the hover says what the click does. It works with CSS alone and doesn't roll below 810px.
 
 ```html example
 <div class="ds-demo-row">
@@ -688,6 +700,14 @@ Most of the site is hover and scroll. The exception is `/play`, an endless two-a
 | Edge scrolling | Pointer within 90px of an edge drifts the world at up to 220 px/s | `edgeScrollZone`, `edgeScrollSpeed` |
 | Smooth scroll | Lenis is destroyed on `/play`; the archive owns wheel input | `NavigationScrollGuard` (`Wnd19lx`) |
 | Video during motion | The center video pool freezes during drag, throw and edge scroll and refills after settling; max 6 concurrent in Chromium/Arc | `Play.tsx` (`PN1RVOf`) |
+
+## Other live gesture surfaces
+
+| Surface | Behavior | Source |
+| --- | --- | --- |
+| `/play` detail drawer | Opens in 500ms and closes in 400ms on the Smooth curve; interrupt-safe; keyboard open/close and reduced motion skip the transition. Desktop Chromium lets the background drift slowly with videos paused; Safari, mobile and reduced motion don't drift. | `ArchivePlayground.tsx` (`QNpkYp5`), published 2026-10-23 |
+| Mobile pill rows | Native horizontal scroll (momentum, interruption and rubber-banding from the browser), hidden scrollbar, rows run edge to edge | `NavigationScrollGuard` (`Wnd19lx`) |
+| Image carousels (Simon & Schuster, Weaponized Innocence, Seek Truth) | 44×44px arrows; dots sit in 44×44px buttons in a horizontally scrolling strip that keeps the selected dot in view | `SimonSchusterGuidelinesCarousel.tsx` (`tYFZCey`) |
 
 ## Springs for new work
 
@@ -813,22 +833,43 @@ The full snippet lives on the [Grain Overlay](../components/grain-overlay.md) pa
 title: Identity
 section: Foundations
 order: 7
-description: The name as wordmark, the ©2026 signature, and where each appears.
+description: The © Micah Hoang wordmark, the name set in type, and where each appears.
 ---
 
 # Identity
 
 ## Overview
 
-There is no logo. The identity is the name set in type, plus a few repeated signatures. Consistency is what makes it work: the same words, set the same way, in the same places.
+The identity is the name. One drawn mark exists, the **© Micah Hoang wordmark**, outlined from the personal-identity Figma file and used where the name has to stand alone (the boot loader). Everywhere else the name is set in type. Consistency is what makes it work: the same words, set the same way, in the same places.
 
-## Marks
+## Wordmark
+
+```html example surface=green
+<img class="mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang">
+```
+
+```html example
+<img class="mh-wordmark" src="../../assets/identity/wordmark-forest-green.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px">
+```
+
+| File | Fill | Use |
+| --- | --- | --- |
+| `assets/identity/wordmark.svg` | `currentColor` | Inline in HTML or a code component, so it takes the text color |
+| `assets/identity/wordmark-cream.svg` | Cream `#F7F5F0` | `<img>` on Forest Green (the boot loader) |
+| `assets/identity/wordmark-forest-green.svg` | Forest Green `#233324` | `<img>` on Cream |
+
+- **Source:** Figma personal-identity node `91:521`, saved in the repo at `assets/identity/micah-hoang-copyright.svg`. The design-system copies use the live loader's corrected outline: the © is one filled and stroked path (no mask), which removes the antialiasing seams the original export showed. 11 paths, no bitmaps.
+- **Proportions:** viewBox `7682.3 × 1025.01` (about 7.5 : 1). Never stretch it; set width only.
+- **Size:** 556px wide on desktop, 444px on tablet, never wider than the viewport minus 64px (`.mh-wordmark` does this). Don't render it below about 200px wide.
+- **Color:** Cream on Forest Green or Forest Green on Cream. No other colors, outlines or effects.
+- **Render as vector.** Inline SVG or `<img>`. The live loader moved off a CSS mask because it looked soft at small sizes.
+
+## Marks set in type
 
 | Mark | Setting | Where |
 | --- | --- | --- |
 | **Micah Hoang** (display) | Display XL, GT Standard Bold, Forest Green | Home hero, once |
 | **MICAH HOANG** (label) | Mono label, uppercase | Nav, top left, every page; links home |
-| **Micah Hoang ©2026** | Heading style, GT Standard Regular, Cream on Forest Green, centered | Boot loader identity |
 | **©2026** | Mono label | Right end of the hero link row and the footer bar |
 | **MICAH.HOANG @HEY.COM** | Display Footer + mono superscript | Footer contact |
 
@@ -843,10 +884,6 @@ There is no logo. The identity is the name set in type, plus a few repeated sign
 </div>
 ```
 
-```html example surface=green
-<p class="mh-loader__identity" style="color:var(--mh-text-brand)">Micah Hoang ©2026</p>
-```
-
 ## Descriptor
 
 The positioning line sits under the hero name in the Heading style, broken over two lines:
@@ -859,8 +896,9 @@ The nav repeats it in short form: `BRAND DESIGNER` and `LOS ANGELES, CALIFORNIA`
 ## Usage
 
 - Write the name exactly "Micah Hoang"; uppercase only through mono labels.
-- The copyright year comes from `FooterCopyrightYear` (`BF2H03E`) in Framer; don't hard-code a different year.
-- Don't add a monogram, logo or favicon glyph that isn't the name.
+- The copyright year comes from `FooterCopyrightYear` (`BF2H03E`) in Framer; don't hard-code a different year. The wordmark's © carries no year.
+- Use the wordmark only where the name stands alone. Don't put it in the nav, footer or hero, which set the name in type.
+- Don't add a monogram, favicon glyph or second logo.
 
 ---
 
@@ -994,8 +1032,12 @@ tokens: [type.label, motion.duration.base, motion.ease.snappy, motion.distance.f
 | Link list | Social and document links in the hero and footer: "LinkedIn, Resume, Email, Cosmos" |
 | Inline link | Links inside body copy |
 
-- The flip copy must match the label exactly; the motion is the feedback, not a text change.
+- On nav links, social links and actions the second line repeats the label exactly; the motion is the feedback. Project cards and Index rows are the exception: their second line says what the click does (VIEW PROJECT, View Project →). Don't invent other hover copy.
 - Inline links inherit color, underline at 1px, and turn interactive green on hover.
+
+### Mobile
+
+Below 810px the flip doesn't roll. One label stays visible inside its 13px mask, and the link around it grows to a 44px touch target: 15.5px of padding above and below, at least 44px wide. Desktop keeps the 13px target and the hover roll. Comma-joined link lists keep their text positions; each link's box grows vertically around the label.
 
 ## API
 
@@ -1078,6 +1120,10 @@ The site never uses a filled, colored button. A call to action is either a mono 
 - At most one pill per view. If everything is a pill, nothing is.
 - Direction characters (↗ external, ↑ top, → next) go at the end of the label as text.
 
+### Mobile
+
+Text actions (View all, Read more, Scroll to top) get a 44px touch target below 810px, centered on the original label slot so surrounding spacing doesn't move. The flip doesn't roll on mobile.
+
 ## API
 
 | Attribute | Values | Effect |
@@ -1155,15 +1201,25 @@ tokens: [type.label, type.label-sm, radius.pill, color.*.border.stroke, color.*.
 - At rest a tag is Stroke Gray text with a Stroke Gray outline. Interactive tags (links or toggle buttons) turn Accent Green on hover; a pressed toggle stays green.
 - On the live site, clicking a grid tag on `/index` toggles that discipline filter in place.
 
+## Responsive
+
+| Breakpoint | Type | Box | Row |
+| --- | --- | --- | --- |
+| Desktop | 13px, 100% leading | 24px min height, padding `5px 10px 6px` (26px tall) | Wraps, 6px gap |
+| Tablet | 13px, 100% leading | 23px min height, padding `5px 9px 6px` (26px tall) | Wraps, 5px gap |
+| Mobile | 13px, 1.3 leading | 44px touch target, padding `8px 24px 7px` | One line, scrolls sideways, 5px gap |
+
+On mobile the row runs from screen edge to screen edge while its first pill rests on the 20px gutter, so pills further along are visibly cut off at the edge, which signals that the row scrolls. Scrolling is the browser's own (momentum and interruption for free); the scrollbar is hidden and there are no fade gradients. The 8 / 7px vertical padding lifts the mono capitals half a pixel to sit optically centered. A 4px clearance above and below keeps borders and focus rings from clipping. Tags were 12px on tablet and mobile until 2026-10-30; every mono label on the site is now 13px.
+
 ## API
 
 | Class / attribute | Effect |
 | --- | --- |
-| `mh-tags` | Wrapping flex row, 6px gap (5px below 1200px); use on `ul` or `div` |
+| `mh-tags` | Wrapping flex row, 6px gap (5px below 1200px); on mobile a single row that scrolls sideways edge to edge; use on `ul` or `div` |
 | `mh-tag` | 13px mono pill, 24px min height, `5px 10px 6px` padding |
 | `a.mh-tag` / `button.mh-tag` | Hover → `--mh-text-interactive`, 250ms Snappy |
 | `aria-pressed="true"` | Selected state (green), for filter toggles |
-| `data-size="sm"` | 12px, 23px height (applied automatically below 1200px) |
+| `data-size="sm"` | 12px legacy size. Not used on the live site since 2026-10-30 |
 
 ## Accessibility
 
@@ -1335,12 +1391,12 @@ tokens: [type.display-m, border.hairline, space.7]
 title: Navigation
 section: Components
 order: 7
-description: The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.
+description: A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.
 status: live
-framer: Native "Navigation" component; NavigationScrollGuard (Wnd19lx) for scroll/Lenis
+framer: Native Mobile Navigation (qajbM_0Ju); NavigationScrollGuard (Wnd19lx) for accessibility/scroll/Lenis
 codeFileId: Wnd19lx
-classes: [mh-nav, mh-nav__name, mh-nav__role, mh-nav__location, mh-nav__links]
-tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
+classes: [mh-nav, mh-nav__name, mh-nav__role, mh-nav__location, mh-nav__links, mh-nav__menu, mh-nav-panel, mh-nav-panel__routes, mh-nav-panel__social]
+tokens: [type.label, type.display-m, layout.gutter, layout.nav-height, layout.touch-target, z.nav]
 ---
 
 # Navigation
@@ -1360,8 +1416,28 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
     <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span></a></li>
     <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span></a></li>
   </ul>
+  <button class="mh-nav__menu mh-label" type="button" aria-expanded="false" aria-controls="mh-menu-demo">Menu</button>
 </nav>
+<div class="mh-nav-panel" id="mh-menu-demo" role="dialog" aria-modal="true" aria-label="Menu" data-surface="green" hidden>
+  <div class="mh-nav-panel__header">
+    <a class="mh-link mh-label" href="#">Micah Hoang</a>
+    <button class="mh-nav__menu mh-label" type="button" aria-expanded="true" aria-controls="mh-menu-demo">Close</button>
+  </div>
+  <ul class="mh-nav-panel__routes">
+    <li><a href="#" aria-current="page">Work</a></li>
+    <li><a href="#">Play</a></li>
+    <li><a href="#">Index</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <ul class="mh-nav-panel__social mh-label">
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">Email</a></li>
+    <li><a href="#">GitHub</a></li>
+  </ul>
+</div>
 ```
+
+Resize below 810px to see the MENU button; it opens the full-screen panel.
 
 ## Anatomy
 
@@ -1370,7 +1446,7 @@ tokens: [type.label, layout.gutter, layout.nav-height, z.nav]
 | Name | "Micah Hoang", links to `/` | Kept |
 | Role | "Brand designer" | Hidden |
 | Location | "Los Angeles, California" | Hidden |
-| Links | Work, Play, Index, About | Kept |
+| Links | Work, Play, Index, About | Replaced by MENU; routes appear in the full-screen panel |
 
 Desktop columns are fixed: name 258px, role 340px, location fills, links hug the right edge (measured identical at 1200 and 1280). Tablet uses fixed 123px / 145px columns. Links sit 31px apart. The nav gutter is 20px at every breakpoint.
 
@@ -1378,9 +1454,21 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 
 - Same bar, same copy, on every page. Only the links change state.
 - Routes: Work → `/`, Play → `/play`, Index → `/index`, About → `/about`.
-- The bar sits on the page surface, 20px from the top and sides, 53px tall. It hides on scroll down and returns on scroll up.
+- The bar is 53px tall with 20px side gutters. Desktop hides on scroll down and returns on scroll up. Below 810px it stays fixed and visible.
 - Grain starts below the nav, so the bar always stays crisp.
 - The live site doesn't style the current link. Mark it with `aria-current="page"` for assistive tech only.
+
+### Mobile menu
+
+- The **Hybrid** and **Black** layout templates mount the native **Mobile Navigation** component (`qajbM_0Ju`) on Phone only. Desktop and tablet retain their existing header.
+- Edit **Assets → Mobile Navigation → Closed / Open** for the layout, labels, links, and colors. The component owns its native Click interactions with an Instant transition.
+- MENU and CLOSE each use one text node inside a 13px-high `Label Mask` with hidden overflow, inside a 60×44 hit area. There is no rollover duplicate and no runtime-generated replacement label.
+- `NavigationScrollGuard` adds dialog semantics, keyboard controls, focus containment, background inertness, and viewport-height handling to the native component. It does not create or own the menu's visual content.
+- The open panel uses Forest Green with Cream type, the existing responsive **Heading 2** text style (GT Standard, 42px on phone; `type.display-m`), 13px GT Standard Mono labels, and the existing 20px nav gutters.
+- Route labels use title case: Work, Play, Index, About. Each retains the shared Heading 2 style; do not introduce a separate menu text style or uppercase the route copy. LinkedIn, Email, and GitHub sit at the bottom. CLOSE occupies the same 60×44 box as MENU; route rows fit their text line height plus 12px top and bottom padding (`--mh-space-4`). This gives 66px rows with 42px phone type and prevents larger canvas type from overlapping.
+- The open variant contains keyboard focus, supports Enter/Space and Escape, locks background scrolling, and restores focus and scroll on close. It closes and cleans up when resizing to 810px or wider.
+- Mobile header links use ordinary browser navigation without the desktop curtain interception. Selecting Work while already on Home closes the menu and returns to the top.
+- Mobile Home name, descriptor, and Selected/work headings render in place. Their previous appear/replay effects visibly restarted after settling. Desktop motion is unchanged.
 
 ## API
 
@@ -1389,7 +1477,13 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 | `mh-nav` | `nav` | Sticky; grid `258px 340px 1fr auto` (tablet `123px 145px 1fr auto`), 53px tall |
 | `mh-nav__name` | `a` | Flip link |
 | `mh-nav__role`, `mh-nav__location` | `p` | Static labels, hidden on mobile |
-| `mh-nav__links` | `ul` | Flip links, 31px gap |
+| `mh-nav__links` | `ul` | Flip links, 31px gap; hidden below 810px |
+| `mh-nav__menu` | `button[aria-controls][aria-expanded]` | Mobile only: MENU / CLOSE, 60×44px target, label right-aligned to the gutter |
+| `mh-nav-panel` | `div[role=dialog][hidden]` | Mobile only: full-screen Forest Green panel (`data-surface="green"`) |
+| `mh-nav-panel__routes` | `ul` | Display M (42px) routes in title case, 12px above and below: 66px rows |
+| `mh-nav-panel__social` | `ul.mh-label` | LinkedIn, Email, GitHub at the bottom; 44×44px targets |
+
+`components.js` opens and closes the panel, locks page scroll, restores focus to MENU, closes on Escape, and closes when the viewport grows past 810px.
 
 ## Accessibility
 
@@ -1399,14 +1493,16 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 
 ## Framer mapping
 
-- The live bar is the native **Navigation** component, with the flip implemented as hover variants.
+- The live bars are native layers in **Hybrid** and **Black** layout templates. Desktop links use the shared **Text Link** hover variants.
+- Mobile Navigation asset: `qajbM_0Ju`; Closed `wAv2cBhhn`; Open `gdGCs2vyp`. The Phone instances are `tK8RS0JyeF6qyNICpc` (Hybrid) and `rzjQrYrtJwE5QaaCdz` (Black). Their desktop source instances remain hidden.
+- [Open Mobile Navigation in Framer](https://framer.com/projects/Micah-Hoang-Portfolio--BvGjN2gCRDHG41LzAVYE-b78r3?node=qajbM_0Ju).
 - Scroll behavior and global smooth scroll: `NavigationScrollGuard` (`Wnd19lx`), mounted through `ResumeAssetHost` (`xDqfenf`). It owns the single Lenis 1.3.26 instance (`lerp 0.12`, native touch) and is destroyed on `/play`.
 - Exposed controls: `Smooth`, `Scroll feel`.
 
 ## Don't
 
 - Don't add a logo, hamburger icon or CTA button to the bar.
-- Don't put a background color or blur behind it.
+- Don't add a new palette or decorative blur. The mobile panel uses the existing Forest Green/Cream surface pairing.
 - Don't change the order of the four zones.
 
 ---
@@ -1436,6 +1532,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
     <li><a class="mh-footer__contact" href="#">micah.hoang<sup>@hey.com</sup></a></li>
     <li><a class="mh-footer__contact" href="#">LinkedIn<sup>Connect</sup></a></li>
     <li><a class="mh-footer__contact" href="#">Cosmos<sup>Inspire</sup></a></li>
+    <li><a class="mh-footer__contact" href="#">GitHub<sup>Build</sup></a></li>
   </ul>
   <div class="mh-footer__bar">
     <p class="mh-label">Available for work</p>
@@ -1443,6 +1540,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
       <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>LinkedIn</span><span aria-hidden="true">LinkedIn</span></span></span></a></li>
       <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Resume</span><span aria-hidden="true">Resume</span></span></span></a></li>
       <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Cosmos</span><span aria-hidden="true">Cosmos</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>GitHub</span><span aria-hidden="true">GitHub</span></span></span></a></li>
     </ul>
     <p class="mh-label">©2026</p>
   </div>
@@ -1452,16 +1550,18 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 ## Anatomy
 
 1. **Eyebrow** (`mh-footer__eyebrow`): "Get in touch", `/Small Mono` 20px from the top. Its leading drops from 130% to 100% below 1200px.
-2. **Contacts**: 30px below the eyebrow (10px mobile). Three Display Footer rows (80 / 70 / 40px, uppercase, -2%), 10px apart, each with a `/Small Mono Footers` superscript 10px to its right and 2px down: `@HEY.COM`, `CONNECT`, `INSPIRE`.
-3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
+2. **Contacts**: four Display Footer rows, uppercase, each with a `/Small Mono Footers` superscript 10px to its right: `MICAH.HOANG` `@HEY.COM`, `LINKEDIN` `CONNECT`, `COSMOS` `INSPIRE`, `GITHUB` `BUILD` (added 2026-10).
+   - Desktop / tablet: 80 / 70px, -2% tracking, rows 12px apart, superscript 2px down.
+   - Mobile: rows are 44px touch targets with no gap between them. The label is fluid, `clamp(27px, (100vw − 40px) / 10, 38px)`: 28px at 320, 35px at 390, 38px at 430, with 1em leading and -1% tracking, so the full email stays on one line inside the 20px gutters. Superscripts use 0.01em tracking.
+3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list (LinkedIn, Resume, Cosmos, GitHub) starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
 
-The whole block is 50vh tall on desktop and mobile, 40vh on tablet.
+With four rows the block is content height: about 548px on desktop and 501px on tablet (at least 50vh / 40vh), and 365px on a 390px phone.
 
 ## Usage
 
 - The footer is the only large Forest Green block outside the boot loader. Always `data-surface="green"`.
 - The email reads as `MICAH.HOANG` with `@HEY.COM` as its superscript, so the display line stays one word.
-- Keep exactly three contact lines. Availability text reflects real status; change it when it changes.
+- Keep exactly four contact lines, in this order. Availability text reflects real status; change it when it changes.
 
 ## API
 
@@ -1469,8 +1569,8 @@ The whole block is 50vh tall on desktop and mobile, 40vh on tablet.
 | --- | --- | --- |
 | `mh-footer` | `footer` | Add `data-surface="green"`; `min-height: var(--mh-footer-min-height)` |
 | `mh-footer__eyebrow` | `p.mh-label` | 130% leading on desktop, 100% below |
-| `mh-footer__contacts` | `ul` | Vertical list, 10px apart |
-| `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag |
+| `mh-footer__contacts` | `ul` | Vertical list, 12px apart (no gap on mobile) |
+| `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag; 44px min height on mobile |
 | `mh-footer__bar` | `div` | 2 equal columns, 40px gap; children: availability, link list, ©year |
 
 ## Accessibility
@@ -1480,7 +1580,8 @@ The whole block is 50vh tall on desktop and mobile, 40vh on tablet.
 
 ## Framer mapping
 
-- Home renders this as the page section `SectionCta` plus the `FooterWhite*` bar; case studies use the **Footer** component, whose contact rows measure 80 / 80 / 42px. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Home desktop treatment.
+- Home renders this as the page section `SectionCta` plus the `FooterWhite*` bar; case studies use the **Footer** component. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Regular treatment.
+- Mobile rules (fluid size, 44px rows, 20px gutters, Optro's legacy `Row` layers) live in `NavigationScrollGuard` (`Wnd19lx`), pinned by `ResumeAssetHost` (`xDqfenf`). See `docs/mobile-footer-crx-polish-2026-10-30.md`.
 
 - Native **Footer** component with desktop/tablet/phone variants (`FooterWhiteDesktop`, ...).
 - The display links use `TextEncryptionEffect` (`p7tSTaD`) for the per-letter scramble on hover. Keep it on these three links only.
@@ -1689,7 +1790,7 @@ tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
     <a class="mh-project-card__link" href="#">
       <div class="mh-project-card__meta mh-label">
         <span>1</span><span>/</span>
-        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span>
       </div>
       <div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>
     </a>
@@ -1699,7 +1800,7 @@ tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
     <a class="mh-project-card__link" href="#">
       <div class="mh-project-card__meta mh-label">
         <span>2</span><span>/</span>
-        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span>
       </div>
       <div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"></div>
     </a>
@@ -1710,7 +1811,7 @@ tokens: [type.label, space.5, motion.duration.base, motion.scale.hover]
 
 ## Anatomy
 
-1. **Meta row**: mono label in a `24px 11px 1fr` grid: number, slash, title. The title is a flip rail.
+1. **Meta row**: mono label in a `24px 11px 1fr` grid: number, slash, title. The title is a flip rail whose second line reads **VIEW PROJECT**.
 2. **Media**: [Media Frame](media-frame.md), 16:9, optional stroke.
 3. **Tags**: up to three [Tags](tag.md), outside the link.
 
@@ -1720,7 +1821,7 @@ The meta row and media share one link; tags sit outside it so they can be their 
 
 - Number cards in display order starting at 1, without zero padding.
 - The title is the CMS project title, set by CSS in uppercase mono.
-- Hover/focus on the link triggers two moves together: the title flips (18px, 420ms Snappy) and the image scales to 1.02.
+- Hover/focus on the link triggers two moves together: the title rolls up to VIEW PROJECT (18px, 420ms Snappy) and the image scales to 1.02. Below 810px neither moves; the title stays put.
 - Use a poster image under a thumbnail video, so a returning visitor never sees an empty frame.
 
 ## API
@@ -1752,7 +1853,7 @@ Map cards to the Framer CMS `All Projects` collection (`yTHrQWMIY`):
 
 ## Accessibility
 
-- The link's accessible name is "1 / Gaia" (the duplicate flip span is `aria-hidden`).
+- The link's accessible name is "1 / Gaia": the VIEW PROJECT line is `aria-hidden`.
 - Card media `alt` describes the image, not the project name.
 
 ## Framer mapping
@@ -1794,14 +1895,14 @@ tokens: [layout.column-gap, layout.card-row-gap]
 <ul class="mh-project-grid">
   <li class="mh-project-card">
     <a class="mh-project-card__link" href="#">
-      <div class="mh-project-card__meta mh-label"><span>5</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Simon &amp; Schuster</span><span aria-hidden="true">Simon &amp; Schuster</span></span></span></div>
+      <div class="mh-project-card__meta mh-label"><span>5</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Simon &amp; Schuster</span><span aria-hidden="true">View project</span></span></span></div>
       <div class="mh-media"><img src="../../assets/samples/simon-schuster.jpg" alt="Uncover Forbidden Stories poster on a city building"></div>
     </a>
     <ul class="mh-tags"><li class="mh-tag">Strategy</li><li class="mh-tag">Visual identity</li><li class="mh-tag">Editorial</li></ul>
   </li>
   <li class="mh-project-card">
     <a class="mh-project-card__link" href="#">
-      <div class="mh-project-card__meta mh-label"><span>6</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>National Park Playing Cards</span><span aria-hidden="true">National Park Playing Cards</span></span></span></div>
+      <div class="mh-project-card__meta mh-label"><span>6</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>National Park Playing Cards</span><span aria-hidden="true">View project</span></span></span></div>
       <div class="mh-media"><img src="../../assets/samples/national-park-cards.jpg" alt="Hands dealing National Park playing cards on a wooden table"></div>
     </a>
     <ul class="mh-tags"><li class="mh-tag">Product</li><li class="mh-tag">Packaging</li></ul>
@@ -1813,9 +1914,9 @@ tokens: [layout.column-gap, layout.card-row-gap]
 
 ```html example
 <ul class="mh-project-grid" data-columns="3">
-  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
-  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>3</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></div><div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt=""></div></a></li>
-  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>4</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>3</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/peak-energy.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>4</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
 </ul>
 ```
 
@@ -1860,7 +1961,7 @@ description: The complete archive as a ruled table. Year groups, uppercase title
 status: live
 framer: IndexPage (rgAZFOv) via IndexPageGridPreview (LgIzFjJ)
 codeFileId: rgAZFOv
-classes: [mh-index, mh-index__group, mh-index__year, mh-index__rows, mh-index__row, mh-index__title, mh-index__discipline, mh-index__industry]
+classes: [mh-index, mh-index__group, mh-index__year, mh-index__rows, mh-index__row, mh-index__title, mh-index__discipline, mh-index__industry, mh-index__row-year]
 tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color.*.bg.hover, motion.duration.slow]
 ---
 
@@ -1874,19 +1975,19 @@ tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color
     <h3 class="mh-index__year">2026</h3>
     <ul class="mh-index__rows">
       <li><a class="mh-index__row" href="#">
-        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Caliper Sans</span><span aria-hidden="true">Caliper Sans</span></span></span></span>
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Caliper Sans</span><span aria-hidden="true">View project →</span></span></span></span>
         <span class="mh-index__discipline mh-label">Type design</span>
-        <span class="mh-index__industry mh-label">Technology</span>
+        <span class="mh-index__industry mh-label">Technology</span><span class="mh-index__row-year mh-label">2026</span>
       </a></li>
       <li><a class="mh-index__row" href="#">
-        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></span>
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project →</span></span></span></span>
         <span class="mh-index__discipline mh-label">Visual identity, UX/UI</span>
-        <span class="mh-index__industry mh-label">Nature</span>
+        <span class="mh-index__industry mh-label">Nature</span><span class="mh-index__row-year mh-label">2026</span>
       </a></li>
       <li><a class="mh-index__row" href="#">
-        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></span>
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">View project →</span></span></span></span>
         <span class="mh-index__discipline mh-label">Visual identity</span>
-        <span class="mh-index__industry mh-label">Technology</span>
+        <span class="mh-index__industry mh-label">Technology</span><span class="mh-index__row-year mh-label">2026</span>
       </a></li>
     </ul>
   </li>
@@ -1894,14 +1995,14 @@ tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color
     <h3 class="mh-index__year">2025</h3>
     <ul class="mh-index__rows">
       <li><a class="mh-index__row" href="#">
-        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></span>
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project →</span></span></span></span>
         <span class="mh-index__discipline mh-label">2D motion, 3D motion</span>
-        <span class="mh-index__industry mh-label">Technology</span>
+        <span class="mh-index__industry mh-label">Technology</span><span class="mh-index__row-year mh-label">2025</span>
       </a></li>
       <li><a class="mh-index__row" href="#">
-        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Motion Connect 2025</span><span aria-hidden="true">Motion Connect 2025</span></span></span></span>
+        <span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Motion Connect 2025</span><span aria-hidden="true">View project →</span></span></span></span>
         <span class="mh-index__discipline mh-label">Event identity</span>
-        <span class="mh-index__industry mh-label">Education</span>
+        <span class="mh-index__industry mh-label">Education</span><span class="mh-index__row-year mh-label">2025</span>
       </a></li>
     </ul>
   </li>
@@ -1913,7 +2014,7 @@ tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color
 | Column | Content | Type | Below 1200px | Below 810px |
 | --- | --- | --- | --- | --- |
 | Year | Group label, first column, once per group | Title, 22px | Kept | Stacked above rows |
-| Title | Project name, uppercase, flips on hover | Title, 22px | Kept | 16px |
+| Title | Project name, uppercase; rolls to "View Project →" on hover | Title, 22px | Kept | 22px |
 | Discipline | Comma-joined disciplines | Mono label | Hidden | Hidden |
 | Industry | One industry | Mono label, right-aligned | Kept | Kept |
 
@@ -1921,7 +2022,8 @@ tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color
 
 - Groups are years, newest first. A full-width rule opens each group; rules separate rows inside it; a final rule closes the list.
 - Text is near-black (`--mh-text-strong`), not Forest Green. This is the one dense, data-like surface on the site.
-- Row hover: a 4% near-black wash (150ms Smooth) plus the title flip (620ms Snappy).
+- Row hover: a 4% near-black wash (150ms Smooth) plus the title rolling up to **View Project →** (620ms Snappy).
+- **Mobile** (below 810px): no year group labels. Each row is a 56px link with the 22px uppercase title on the left and its year in 13px mono on the right; industry and discipline are hidden. Rows don't roll.
 - The list sits under the [Filter Group](filter-group.md) and the [View Toggle](view-toggle.md); filtering hides rows and empty groups without moving the filters.
 
 ## API
@@ -1934,7 +2036,8 @@ tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color
 | `mh-index__rows` | `ul` | Rows, divided by rules |
 | `mh-index__row` | `a` | Grid `2fr 2fr 1fr`; hover wash, 2px radius |
 | `mh-index__title` | `span` | Holds a flip rail (`--mh-flip-h: 1.2em`) |
-| `mh-index__discipline`, `mh-index__industry` | `span.mh-label` | Ellipsis on overflow |
+| `mh-index__discipline`, `mh-index__industry` | `span.mh-label` | Ellipsis on overflow; hidden on mobile |
+| `mh-index__row-year` | `span.mh-label` | The row's year, shown only below 810px (right-aligned, 13px) |
 
 ## Data model (CMS)
 
@@ -1947,7 +2050,7 @@ Fields map to `All Projects` (`yTHrQWMIY`). Years come from the CMS; never hard-
 ## Accessibility
 
 - Year headings make the groups navigable by heading.
-- Each row is a single link whose name is the project title (duplicate flip span is hidden).
+- Each row is a single link whose name is the project title (the View Project → line is `aria-hidden`).
 
 ## Framer mapping
 
@@ -1969,11 +2072,11 @@ Fields map to `All Projects` (`yTHrQWMIY`). Years come from the CMS; never hard-
 title: Filter Group
 section: Components
 order: 14
-description: Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.
+description: Taxonomy columns of mono toggles (year, service, industry) that filter the Index in place; disclosure buttons on mobile.
 status: live
 framer: IndexPage (rgAZFOv), IndexFilterContext + URL sync
 codeFileId: rgAZFOv
-classes: [mh-filter, mh-filter__group, mh-filter__heading, mh-filter__item, mh-filter__clear]
+classes: [mh-filter, mh-filter__group, mh-filter__heading, mh-filter__toggle, mh-filter__options, mh-filter__item, mh-filter__done, mh-filter__clear]
 tokens: [type.label, color.*.text.interactive, motion.duration.fast]
 ---
 
@@ -1982,35 +2085,56 @@ tokens: [type.label, color.*.text.interactive, motion.duration.fast]
 ## Examples
 
 ```html example
-<div class="mh-filter" aria-label="Filter projects">
+<div class="mh-filter" role="group" aria-label="Filter projects">
   <fieldset class="mh-filter__group">
     <legend class="mh-filter__heading mh-label">Year</legend>
-    <button class="mh-filter__item" type="button" aria-pressed="false" value="2026">2026</button>
-    <button class="mh-filter__item" type="button" aria-pressed="false" value="2025">2025</button>
-    <button class="mh-filter__item" type="button" aria-pressed="false" value="2024">2024</button>
+    <button class="mh-filter__toggle" type="button" aria-expanded="false" aria-controls="filter-year">Year</button>
+    <div class="mh-filter__options" id="filter-year">
+      <button class="mh-filter__item" type="button" aria-pressed="false">2026</button>
+      <button class="mh-filter__item" type="button" aria-pressed="false">2025</button>
+      <button class="mh-filter__item" type="button" aria-pressed="false">2024</button>
+      <button class="mh-filter__done" type="button">Done</button>
+    </div>
   </fieldset>
   <fieldset class="mh-filter__group">
-    <legend class="mh-filter__heading mh-label">Discipline</legend>
-    <button class="mh-filter__item" type="button" aria-pressed="false">Packaging</button>
-    <button class="mh-filter__item" type="button" aria-pressed="true">Product</button>
-    <button class="mh-filter__item" type="button" aria-pressed="false">Strategy</button>
-    <button class="mh-filter__item" type="button" aria-pressed="false">Visual identity</button>
+    <legend class="mh-filter__heading mh-label">Service</legend>
+    <button class="mh-filter__toggle" type="button" aria-expanded="false" aria-controls="filter-service">Service</button>
+    <div class="mh-filter__options" id="filter-service">
+      <button class="mh-filter__item" type="button" aria-pressed="false">Packaging</button>
+      <button class="mh-filter__item" type="button" aria-pressed="true">Product</button>
+      <button class="mh-filter__item" type="button" aria-pressed="false">Strategy</button>
+      <button class="mh-filter__item" type="button" aria-pressed="false">Visual identity</button>
+      <button class="mh-filter__done" type="button">Done</button>
+    </div>
   </fieldset>
   <fieldset class="mh-filter__group">
     <legend class="mh-filter__heading mh-label">Industry</legend>
-    <button class="mh-filter__item" type="button" aria-pressed="false">Literature</button>
-    <button class="mh-filter__item" type="button" aria-pressed="false">Nature</button>
-    <button class="mh-filter__item" type="button" aria-pressed="false">Technology</button>
+    <button class="mh-filter__toggle" type="button" aria-expanded="false" aria-controls="filter-industry">Industry</button>
+    <div class="mh-filter__options" id="filter-industry">
+      <button class="mh-filter__item" type="button" aria-pressed="false">Literature</button>
+      <button class="mh-filter__item" type="button" aria-pressed="false">Nature</button>
+      <button class="mh-filter__item" type="button" aria-pressed="false">Technology</button>
+      <button class="mh-filter__done" type="button">Done</button>
+    </div>
   </fieldset>
   <button class="mh-filter__clear mh-action" type="button">Clear filters</button>
 </div>
 ```
 
-Click the items to toggle. "Clear filters" appears as soon as one is active.
+Click the items to toggle. "Clear filters" appears as soon as one is active. Below 810px the three groups collapse into Year / Service / Industry disclosure buttons.
+
+## Mobile (below 810px)
+
+Since 2026-10-30 the long taxonomy columns become three disclosure buttons, **Year / Service / Industry**, in equal columns 12px apart between two 1px rules.
+
+- Triggers are 48px tall, 13px mono with 1.3 leading, uppercase, with a chevron on the right that flips when open.
+- One panel opens at a time, full width under the triggers. Options, Done and Clear filters are 44px targets.
+- Selections apply immediately. Done, Escape and a tap outside close the panel and return focus to its trigger. The live site also offers a per-category Reset and moves into the options with Arrow Down.
+- The result count below ("17 projects") is a polite live region; the Grid / List buttons are 44×44px.
 
 ## Usage
 
-- Three taxonomies, in this order: **Year**, **Discipline**, **Industry**. Values come from the CMS.
+- Three taxonomies, in this order: **Year**, **Service** (disciplines), **Industry**. Values come from the CMS.
 - Multiple selections combine as OR within a group and AND across groups.
 - Selected items turn Accent Green and get a leading dot. Hover previews the same color.
 - **Clear filters** is always rendered and only toggles `visibility`, so activating a filter never shifts the layout.
@@ -2020,10 +2144,13 @@ Click the items to toggle. "Clear filters" appears as soon as one is active.
 
 | Class / attribute | Element | Notes |
 | --- | --- | --- |
-| `mh-filter` | `div` | Grid `1fr 2fr 2fr 1fr` (2 columns on mobile). Gets `data-active` while any item is pressed |
+| `mh-filter` | `div` | Grid `1fr 2fr 2fr 1fr`; on mobile three equal trigger columns between rules. Gets `data-active` while any item is pressed |
 | `mh-filter__group` | `fieldset` | One taxonomy |
 | `mh-filter__heading` | `legend` | Muted mono heading |
-| `mh-filter__item` | `button[aria-pressed]` | 13px mono, 28px line height |
+| `mh-filter__toggle` | `button[aria-expanded][aria-controls]` | Mobile disclosure trigger; hidden on desktop/tablet |
+| `mh-filter__options` | `div` | The group's items (+ Done on mobile) |
+| `mh-filter__item` | `button[aria-pressed]` | 13px mono, 28px line height; 44px min height on mobile |
+| `mh-filter__done` | `button` | Mobile only: closes the panel |
 | `mh-filter__clear` | `button` | Visible only with `data-active` |
 | `mh:filter` event | n/a | Fired by `components.js` on change with `detail.values` |
 
@@ -2327,9 +2454,13 @@ tokens: [type.label, motion.duration.reveal, motion.ease.snappy]
 
 ## Usage
 
-- Place it at the end of long pages (Home, About), right-aligned above the footer.
+- Place it at the end of long pages (Home, About), on the left gutter, 60px below the content and above the footer.
 - 900ms with a Snappy-like curve. Jumps instantly under reduced motion.
 - Uses the same flip rail as every other text action.
+
+### Mobile
+
+Below 810px the button is a 44px target. It's offset by `(row height − 44) / 2` (−14px in a 16px slot) so the target centers on the label and the visible gaps above and below the green footer edge stay equal (22–23px at 320–430px).
 
 ## API
 
@@ -2355,7 +2486,7 @@ tokens: [type.label, motion.duration.reveal, motion.ease.snappy]
 title: Page Loader
 section: Components
 order: 20
-description: The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.
+description: The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.
 status: live
 framer: PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)
 codeFileId: gmalnRr
@@ -2371,7 +2502,7 @@ tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.pa
 <div class="ds-demo-frame">
   <div class="mh-loader" data-contained>
     <span class="mh-loader__bar"></span>
-    <p class="mh-loader__identity">Micah Hoang ©2026</p>
+    <img class="mh-loader__identity mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px">
   </div>
   <button class="mh-action" data-variant="pill" type="button" data-play-loader style="position:absolute;right:16px;bottom:16px;color:var(--mh-text-brand)">Replay</button>
 </div>
@@ -2383,15 +2514,15 @@ Press **Replay** to run the sequence.
 
 | Step | What happens | Timing |
 | --- | --- | --- |
-| 1. Boot | Forest Green covers the viewport; "Micah Hoang ©2026" centered in Cream | Painted at parse time, before the app hydrates |
+| 1. Boot | Forest Green covers the viewport; the © Micah Hoang [wordmark](../foundations/identity.md) centered in Cream | Painted at parse time, before the app hydrates |
 | 2. Progress | An 8px Cream bar fills from the left along the top edge | ≥ 1200ms (`bootMinMs`), Smooth |
-| 3. Identity out | The name fades | 420ms, during bar completion |
+| 3. Identity out | The wordmark fades | 420ms, during bar completion |
 | 4. Lift | The curtain slides up and off | 1200ms, Snappy |
 
 ## Usage
 
 - **Home only, first visit only** (direct entries and reloads of `/`). Never on internal navigations, case studies or mobile ≤ the boot-disable width.
-- The identity uses the Heading style: 30 / 24 / 19px, 120% leading, -1% tracking.
+- The identity is the outlined [wordmark](../foundations/identity.md) as inline SVG (no font or image request): 556px wide on desktop, 444px on tablet, capped at the viewport minus 64px. Since 2026-10-23 it replaces the earlier "Micah Hoang ©2026" text. The demo above shows it at half size.
 - `theme-color` and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.
 - Videos behind the curtain hold until it lifts.
 
@@ -2527,7 +2658,7 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 | 2 | Hero | [Hero](../components/hero.md) (home) | Name, two-line descriptor, link list + ©2026, rule |
 | 3 | Selected work | [Section Header](../components/section-header.md), [Project Grid](../components/project-grid.md) | 6 projects, 2 columns, "View all" right-aligned below |
 | 4 | About Micah | Section Header, portrait [Media Frame](../components/media-frame.md), Body L, [Action](../components/action.md) "Read more" | Portrait left, copy right. Hovering the image or the link triggers both (image scale + link flip) |
-| 5 | Scroll to top | [Scroll to Top](../components/scroll-to-top.md) | Right-aligned |
+| 5 | Scroll to top | [Scroll to Top](../components/scroll-to-top.md) | Left gutter, 60px below the About content |
 | 6 | Footer | [Footer](../components/footer.md) | Forest Green |
 | n/a | Texture | [Grain Overlay](../components/grain-overlay.md) | Page-level |
 
@@ -2549,8 +2680,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
       <h2 class="mh-section-header__title"><span>Selected</span><span>work</span></h2>
     </header>
     <ul class="mh-project-grid">
-      <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
-      <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
+      <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
+      <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
     </ul>
     <div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
   </section>
@@ -2689,8 +2820,8 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
   </div>
   <ol class="mh-index" reversed>
     <li class="mh-index__group"><h2 class="mh-index__year">2026</h2><ul class="mh-index__rows">
-      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity, UX/UI</span><span class="mh-index__industry mh-label">Nature</span></a></li>
-      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity</span><span class="mh-index__industry mh-label">Technology</span></a></li>
+      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project →</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity, UX/UI</span><span class="mh-index__industry mh-label">Nature</span><span class="mh-index__row-year mh-label">2026</span></a></li>
+      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">View project →</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity</span><span class="mh-index__industry mh-label">Technology</span><span class="mh-index__row-year mh-label">2026</span></a></li>
     </ul></li>
   </ol>
 </div>
@@ -2715,17 +2846,17 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
 
 ```json
 {
-  "$description": "Micah Hoang design tokens. Source of truth for code/design-system. Format: W3C Design Tokens (DTCG) with $value/$type. Values were measured from the published micahhoang.com and the Framer text/color styles on 2026-10-01. Edit here, then run `node build.mjs` to regenerate tokens.css. Supersedes code/tokens/micahhoang-tokens.json (Manrope era, stale).",
+  "$description": "Micah Hoang design tokens. Source of truth for code/design-system. Format: W3C Design Tokens (DTCG) with $value/$type. Values were measured from the published micahhoang.com and the Framer text/color styles on 2026-10-01, refreshed 2026-10-30. Edit here, then run `node build.mjs` to regenerate tokens.css. Supersedes code/tokens/micahhoang-tokens.json (Manrope era, stale).",
   "color": {
     "$type": "color",
     "primitive": {
       "cream": {
         "$value": "#F7F5F0",
-        "$description": "Framer style /Cream. Page background, text on Forest Green."
+        "$description": "Framer style /Colors/Cream. Page background, text on Forest Green."
       },
       "forest-green": {
         "$value": "#233324",
-        "$description": "Framer style /Forest Green. Brand color: headings, nav, mono labels; inverse surface for footer and boot loader."
+        "$description": "Framer style /Colors/Forest Green. Brand color: headings, nav, mono labels; inverse surface for footer and boot loader."
       },
       "accent-green": {
         "$value": "#25593A",
@@ -2733,19 +2864,19 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
       },
       "near-black": {
         "$value": "#141414",
-        "$description": "Framer style /Off-Black. Rules, dividers, index list text, lightbox chrome, strong body."
+        "$description": "Framer style /Colors/Off-Black. Rules, dividers, index list text, lightbox chrome, strong body."
       },
       "graphite": {
         "$value": "#525252",
-        "$description": "Framer style /Text Gray. Long-form body copy on case studies."
+        "$description": "Framer style /Colors/Text Gray. Long-form body copy on case studies."
       },
       "light-gray": {
-        "$value": "#979797",
-        "$description": "Framer style /Stroke Gray. Secondary headline line, tag text, thumbnail stroke."
+        "$value": "#848484",
+        "$description": "Framer style /Colors/Stroke Gray (rgb 132,132,132; was #979797 until 2026-10-30). Muted text, tags, thumbnail stroke. 3.43:1 on Cream."
       },
       "white": {
         "$value": "#FFFFFF",
-        "$description": "Framer style /White. Lightbox backdrop, media placeholder."
+        "$description": "Framer style /Colors/White. Lightbox backdrop, media placeholder."
       },
       "white-60": {
         "$value": "#FFFFFF99",
@@ -2956,13 +3087,13 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "fontSize": {
           "desktop": "80px",
           "tablet": "70px",
-          "mobile": "40px"
+          "mobile": "clamp(27px, calc((100vw - 40px) / 10), 38px)"
         },
         "lineHeight": "100%",
         "letterSpacing": "-0.02em",
         "textTransform": "uppercase"
       },
-      "$description": "Footer contact links on Forest Green (Home CTA). Measured; the case-study Footer component renders 80 / 80 / 42px."
+      "$description": "Footer contact links (Home CTA and case-study footers). Mobile is fluid: 28px at 320, 35px at 390, 38px at 430. Tablet renders in GT Standard Medium on the live site."
     },
     "heading": {
       "$type": "typography",
@@ -2971,13 +3102,13 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "fontWeight": 400,
         "fontSize": {
           "desktop": "35px",
-          "tablet": "24px",
-          "mobile": "20px"
+          "tablet": "28px",
+          "mobile": "24px"
         },
         "lineHeight": "110%",
         "letterSpacing": "-0.01em"
       },
-      "$description": "Hero descriptor and case-study section titles. Framer: /Heading 3 (1.1em leading)."
+      "$description": "Hero descriptor and case-study section titles. Framer: /Text Styles/Heading 3 (1.1em leading)."
     },
     "heading-sm": {
       "$type": "typography",
@@ -3014,16 +3145,20 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "fontSize": {
           "desktop": "22px",
           "tablet": "18px",
-          "mobile": "15px"
+          "mobile": "18px"
         },
         "lineHeight": {
           "desktop": "120%",
           "tablet": "120%",
-          "mobile": "130%"
+          "mobile": "140%"
         },
-        "letterSpacing": "0.01em"
+        "letterSpacing": {
+          "desktop": "0.01em",
+          "tablet": "0.01em",
+          "mobile": "0"
+        }
       },
-      "$description": "Lead paragraphs, About copy, metadata values. Framer: /Body L (paragraph spacing 15)."
+      "$description": "Lead paragraphs, About copy, metadata values. Framer: /Text Styles/Body L. Mobile 18px / 140% / 0 since 2026-10-30."
     },
     "body-xl": {
       "$type": "typography",
@@ -3044,12 +3179,12 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "fontSize": {
           "desktop": "18px",
           "tablet": "16px",
-          "mobile": "14px"
+          "mobile": "18px"
         },
         "lineHeight": "140%",
         "letterSpacing": "0"
       },
-      "$description": "Case-study long-form body. Framer: /Body M (paragraph spacing 20). Color text.body (/Text Gray). Max ~620px measure."
+      "$description": "Case-study long-form body. Framer: /Text Styles/Body M. Mobile is 18px (larger than tablet's 16px) since 2026-10-30. Color text.body. Max 580px measure on desktop."
     },
     "body-sm": {
       "$type": "typography",
@@ -3100,7 +3235,7 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "letterSpacing": "0",
         "textTransform": "uppercase"
       },
-      "$description": "Tags below 1200px, dense meta."
+      "$description": "12px mono. No longer used on the live site: since 2026-10-30 every visible mono label, including tags at tablet and mobile, is 13px. Keep for legacy only."
     }
   },
   "space": {
@@ -3149,12 +3284,8 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
   "layout": {
     "$type": "dimension",
     "gutter": {
-      "$value": {
-        "desktop": "20px",
-        "tablet": "20px",
-        "mobile": "15px"
-      },
-      "$description": "Page side padding. Content spans edge to edge inside it."
+      "$value": "20px",
+      "$description": "Page side padding at every breakpoint. Mobile was 15px until 2026-10-30, when header, content, footer and menu were unified to 20px."
     },
     "column-gap": {
       "$value": "20px",
@@ -3220,10 +3351,10 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
     "hero-descriptor-width": {
       "$value": {
         "desktop": "382px",
-        "tablet": "218px",
-        "mobile": "181px"
+        "tablet": "254px",
+        "mobile": "231px"
       },
-      "$description": "Fixed width that breaks the hero descriptor over two lines."
+      "$description": "Width that breaks the hero descriptor over two lines (Heading 3 at 35 / 28 / 24px)."
     },
     "about-image-width": {
       "$value": {
@@ -3238,12 +3369,16 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
       "$description": "Home About paragraph max width."
     },
     "cta-row-gap": {
-      "$value": "10px",
-      "$description": "Footer CTA display word to its mono superscript."
+      "$value": {
+        "desktop": "12px",
+        "tablet": "12px",
+        "mobile": "0px"
+      },
+      "$description": "Gap between footer contact rows. Mobile rows are 44px touch targets with no gap."
     },
     "nav-gutter": {
       "$value": "20px",
-      "$description": "Nav and hero link-row side padding. Stays 20px at every breakpoint (the page gutter drops to 15px on mobile)."
+      "$description": "Nav and hero link-row side padding. Equal to the page gutter (20px) at every breakpoint."
     },
     "section-header-after-compact": {
       "$value": {
@@ -3257,9 +3392,9 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
       "$value": {
         "desktop": "50vh",
         "tablet": "40vh",
-        "mobile": "50vh"
+        "mobile": "0px"
       },
-      "$description": "Home CTA/footer block height."
+      "$description": "Footer block minimum height. With four contact rows the content is taller than this on desktop/tablet; mobile is content height."
     },
     "footer-gap": {
       "$value": {
@@ -3289,15 +3424,15 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
       "$value": {
         "desktop": "90px",
         "tablet": "90px",
-        "mobile": "97px"
+        "mobile": "90px"
       },
-      "$description": "Hero top edge to the name's line box. Framer: 100px section padding + 13px wrapper padding, name absolutely positioned at top -10px (mobile 75 + 32 + -10)."
+      "$description": "Hero top edge to the name's line box. Framer: 100px section padding + 13px wrapper padding, name absolutely positioned at top -10px. Mobile renders in place at 90px (no entrance)."
     },
     "hero-descriptor-top": {
       "$value": {
         "desktop": "220px",
         "tablet": "186px",
-        "mobile": "162px"
+        "mobile": "157px"
       },
       "$description": "Hero top edge to the descriptor."
     },
@@ -3313,7 +3448,7 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
       "$value": {
         "desktop": "100px",
         "tablet": "100px",
-        "mobile": "131px"
+        "mobile": "127px"
       },
       "$description": "Descriptor block to the hero's bottom edge; the link row sits 10px above that edge."
     },
@@ -3328,6 +3463,18 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
     "nav-link-gap": {
       "$value": "31px",
       "$description": "Gap between nav links (measured: Work 948, Play 1010, Index 1072, About 1142 at 1200px)."
+    },
+    "touch-target": {
+      "$value": "44px",
+      "$description": "Minimum touch target below 810px: links, pills, filters, view toggle, menu, scroll to top, footer rows."
+    },
+    "pill-scroll-clearance": {
+      "$value": "4px",
+      "$description": "Vertical padding on the mobile pill scroll row (cancelled by negative margin) so borders and focus rings aren't clipped."
+    },
+    "cta-suffix-gap": {
+      "$value": "10px",
+      "$description": "Footer contact label to its mono superscript."
     }
   },
   "radius": {

@@ -141,7 +141,7 @@
       "title": "Identity",
       "slug": "identity",
       "section": "Foundations",
-      "description": "The name as wordmark, the ©2026 signature, and where each appears.",
+      "description": "The © Micah Hoang wordmark, the name set in type, and where each appears.",
       "status": null,
       "doc": "content/foundations/identity.md",
       "classes": [],
@@ -274,7 +274,7 @@
       "title": "Navigation",
       "slug": "navigation",
       "section": "Components",
-      "description": "The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.",
+      "description": "A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.",
       "status": "live",
       "doc": "content/components/navigation.md",
       "classes": [
@@ -282,15 +282,21 @@
         "mh-nav__name",
         "mh-nav__role",
         "mh-nav__location",
-        "mh-nav__links"
+        "mh-nav__links",
+        "mh-nav__menu",
+        "mh-nav-panel",
+        "mh-nav-panel__routes",
+        "mh-nav-panel__social"
       ],
       "tokens": [
         "type.label",
+        "type.display-m",
         "layout.gutter",
         "layout.nav-height",
+        "layout.touch-target",
         "z.nav"
       ],
-      "framer": "Native \"Navigation\" component; NavigationScrollGuard (Wnd19lx) for scroll/Lenis",
+      "framer": "Native Mobile Navigation (qajbM_0Ju); NavigationScrollGuard (Wnd19lx) for accessibility/scroll/Lenis",
       "codeFileId": "Wnd19lx"
     },
     {
@@ -410,7 +416,8 @@
         "mh-index__row",
         "mh-index__title",
         "mh-index__discipline",
-        "mh-index__industry"
+        "mh-index__industry",
+        "mh-index__row-year"
       ],
       "tokens": [
         "type.title",
@@ -427,14 +434,17 @@
       "title": "Filter Group",
       "slug": "filter-group",
       "section": "Components",
-      "description": "Taxonomy columns of mono toggles (year, discipline, industry) that filter the Index in place.",
+      "description": "Taxonomy columns of mono toggles (year, service, industry) that filter the Index in place; disclosure buttons on mobile.",
       "status": "live",
       "doc": "content/components/filter-group.md",
       "classes": [
         "mh-filter",
         "mh-filter__group",
         "mh-filter__heading",
+        "mh-filter__toggle",
+        "mh-filter__options",
         "mh-filter__item",
+        "mh-filter__done",
         "mh-filter__clear"
       ],
       "tokens": [
@@ -553,7 +563,7 @@
       "title": "Page Loader",
       "slug": "page-loader",
       "section": "Components",
-      "description": "The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.",
+      "description": "The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.",
       "status": "live",
       "doc": "content/components/page-loader.md",
       "classes": [

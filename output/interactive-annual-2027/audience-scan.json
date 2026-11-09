@@ -1,0 +1,17 @@
+[
+  {
+    "scanner": "scan_residue.py",
+    "exit": 0,
+    "output": "OK: scan_residue found no mechanical defects.\nNOTE: Mechanical defect report only. This scanner reports residue, placeholders, reference integrity, package existence, or house style. It does not judge authorship and it is not evidence about who or what wrote the text.\n"
+  },
+  {
+    "scanner": "scan_placeholders.py",
+    "exit": 0,
+    "output": "OK: scan_placeholders found no mechanical defects.\nNOTE: Mechanical defect report only. This scanner reports residue, placeholders, reference integrity, package existence, or house style. It does not judge authorship and it is not evidence about who or what wrote the text.\n"
+  },
+  {
+    "scanner": "lint_voice.py",
+    "exit": 0,
+    "output": "HOUSE STYLE ONLY. These findings are house style rules chosen by the owner of this document. They are not a slop verdict, not a quality judgement, and not an authorship signal. Punctuation preference says nothing about who or what wrote the text.\nOK: lint_voice found no mechanical defects.\nNOTE: Mechanical defect report only. This scanner reports residue, placeholders, reference integrity, package existence, or house style. It does not judge authorship and it is not evidence about who or what wrote the text.\nHOUSE STYLE ONLY. These findings are house style rules chosen by the owner of this document. They are not a slop verdict, not a quality judgement, and not an authorship signal. Punctuation preference says nothing about who or what wrote the text.\n"
+  }
+]

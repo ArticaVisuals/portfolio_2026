@@ -1,0 +1,624 @@
+[
+  {
+    "path": "/case-studies/airpods",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "AirPods Pro 3,",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "9y3rf0"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Simon & Schuster",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "8je526"
+      },
+      {
+        "text": "The last",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1ht919d"
+      },
+      {
+        "text": "independent,",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1gtxv75"
+      },
+      {
+        "text": "made to look like it.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "kgl7gn"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Motion Connect",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "117bwt5"
+      },
+      {
+        "text": "Amping up the world",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "12in7gd"
+      },
+      {
+        "text": "of moving design.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "15et0ef"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/caliper",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Caliper Sans",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1imu8lw"
+      },
+      {
+        "text": "A measured,",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1870w0b"
+      },
+      {
+        "text": "functional face.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "wz1n4v"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "National Park",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "19yud18"
+      },
+      {
+        "text": "Playing Cards",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1hs1oqk"
+      },
+      {
+        "text": "Bestselling love",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1w2sjew"
+      },
+      {
+        "text": "letter to the",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "2u1s1c"
+      },
+      {
+        "text": "outdoors.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "ptyvin"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/yomo",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Yomo",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1xf3mgs"
+      },
+      {
+        "text": "Every plate, ",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "rz90n8"
+      },
+      {
+        "text": "on your terms.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "l0pbka"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Highland Harvests",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "10f9pmv"
+      },
+      {
+        "text": "Good for forests,",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1v8fb7d"
+      },
+      {
+        "text": "better for people.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "pi40wf"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/gaia",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Gaia",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1izws4c"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Weaponized",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "18kvq5z"
+      },
+      {
+        "text": "Innocence",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1vwzvhg"
+      },
+      {
+        "text": "Some",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "17olm6c"
+      },
+      {
+        "text": "childhoods are",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1tcoc8a"
+      },
+      {
+        "text": "taken.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "rb5qrh"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/typldn",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "TYPLDN",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "16uqnqn"
+      },
+      {
+        "text": "Where letters meet.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "14czkf8"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Seek Truth",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "ieoaxc"
+      },
+      {
+        "text": "The visual art of",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1wfsv19"
+      },
+      {
+        "text": "protest.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "vc2s"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Cellular",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "14cg7k1"
+      },
+      {
+        "text": "Symphony",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1eqd5lm"
+      },
+      {
+        "text": "Organelles in",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1p1duj8"
+      },
+      {
+        "text": "concert.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1jlccd8"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Wolff Olins",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "j9cpqt"
+      },
+      {
+        "text": "x ArtCenter",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1eyru6a"
+      },
+      {
+        "text": "A studio walks",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1whnvkh"
+      },
+      {
+        "text": "into a school.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "12s9cpf"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Independent",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1gbaw2r"
+      },
+      {
+        "text": "Lens",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "bj16jb"
+      },
+      {
+        "text": "The issues,",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1k1ifg6"
+      },
+      {
+        "text": "through",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "kqq9d5"
+      },
+      {
+        "text": "the people",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1whdama"
+      },
+      {
+        "text": "living them.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1ow791o"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/peak-energy",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "Peak Energy & GM",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1it0ake"
+      },
+      {
+        "text": "Announcing a new",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "11taquf"
+      },
+      {
+        "text": "era of energy.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "17d23n2"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/whatsapp",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "WhatsApp In-App",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1u32iqy"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "path": "/case-studies/optro",
+    "reduce": true,
+    "headCSS": true,
+    "rows": [
+      {
+        "text": "CRX 2026",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "5ajdxe"
+      },
+      {
+        "text": "Transform risk",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "16hx26l"
+      },
+      {
+        "text": "into opportunity.",
+        "font": "38px",
+        "line": "38px",
+        "height": 38,
+        "transform": "none",
+        "opacity": "1",
+        "appear": "1904eql"
+      }
+    ],
+    "overflow": false
+  }
+]

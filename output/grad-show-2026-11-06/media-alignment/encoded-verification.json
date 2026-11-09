@@ -1,0 +1,100 @@
+[
+  {
+    "name": "motion-01-reel-row-1-loop-aligned-white.gif",
+    "frames": 102,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 8500
+  },
+  {
+    "name": "motion-02-reel-row-2-loop-aligned-white.gif",
+    "frames": 102,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 8500
+  },
+  {
+    "name": "motion-03-reel-row-3-loop-aligned-white.gif",
+    "frames": 102,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 8500
+  },
+  {
+    "name": "motion-04-social-row-1-loop-aligned-white.gif",
+    "frames": 150,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 12500
+  },
+  {
+    "name": "motion-12-full-social-row-2-loop-aligned-white.gif",
+    "frames": 178,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 14830
+  },
+  {
+    "name": "motion-13-full-social-row-3-loop-aligned-white.gif",
+    "frames": 241,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 20080
+  },
+  {
+    "name": "motion-10-complete-system-process-loop-aligned-white.gif",
+    "frames": 96,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 8000
+  },
+  {
+    "name": "motion-11-ai-workflow-demonstrations-loop-aligned-white.gif",
+    "frames": 80,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 10020
+  },
+  {
+    "name": "peak-02-battery-film-sequences-loop-aligned-white.gif",
+    "frames": 102,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 8500
+  },
+  {
+    "name": "peak-03-process-comparison-loop-aligned-white.gif",
+    "frames": 114,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 9500
+  },
+  {
+    "name": "peak-04-animation-development-loop-aligned-white.gif",
+    "frames": 63,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 10500
+  },
+  {
+    "name": "simon-01-logo-and-brand-architecture-loop-aligned-white.gif",
+    "frames": 149,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 12500
+  },
+  {
+    "name": "simon-03-animated-print-applications-loop-aligned-white.gif",
+    "frames": 143,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 12000
+  },
+  {
+    "name": "cards-05-full-deck-animation-loop-aligned-white.gif",
+    "frames": 285,
+    "loop": 0,
+    "whiteGaps": true,
+    "durationMS": 24580
+  }
+]

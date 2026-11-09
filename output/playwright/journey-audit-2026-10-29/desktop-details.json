@@ -1,0 +1,124 @@
+{
+  "gaia": {
+    "headings": [
+      {
+        "text": "The Insight",
+        "color": "rgb(20, 20, 20)",
+        "opacity": "1"
+      },
+      {
+        "text": "Strategy",
+        "color": "rgb(20, 20, 20)",
+        "opacity": "1"
+      },
+      {
+        "text": "Visual Identity",
+        "color": "rgb(20, 20, 20)",
+        "opacity": "1"
+      },
+      {
+        "text": "Brand in the World",
+        "color": "rgb(20, 20, 20)",
+        "opacity": "1"
+      },
+      {
+        "text": "Interface",
+        "color": "rgb(20, 20, 20)",
+        "opacity": "1"
+      },
+      {
+        "text": "Designed to Ship",
+        "color": "rgb(20, 20, 20)",
+        "opacity": "1"
+      }
+    ],
+    "body": [
+      {
+        "text": "A custom icon system pairs with botanical illustrations drawn in a nineteenth-century naturalist style, keeping the interface scientific in structure and warm in tone.",
+        "color": "rgb(82, 82, 82)",
+        "opacity": "1"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=2048&width=3072&height=1713",
+        "alt": "GaiaLogoAnimation",
+        "loaded": true
+      },
+      {
+        "src": "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=2048&width=2447&height=1726",
+        "alt": "Case study media",
+        "loaded": true
+      },
+      {
+        "src": "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=2048&width=2560&height=1396",
+        "alt": "Case study media",
+        "loaded": true
+      },
+      {
+        "src": "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=2048&width=2160&height=2160",
+        "alt": "Case study media",
+        "loaded": true
+      }
+    ],
+    "videos": []
+  },
+  "pills": [
+    {
+      "text": "Visual Identity",
+      "color": "rgb(151, 151, 151)",
+      "background": "rgb(247, 245, 240)"
+    },
+    {
+      "text": "UX/UI",
+      "color": "rgb(151, 151, 151)",
+      "background": "rgb(247, 245, 240)"
+    },
+    {
+      "text": "Strategy",
+      "color": "rgb(151, 151, 151)",
+      "background": "rgb(247, 245, 240)"
+    },
+    {
+      "text": "Visual Identity",
+      "color": "rgb(151, 151, 151)",
+      "background": "rgb(247, 245, 240)"
+    },
+    {
+      "text": "2D Motion",
+      "color": "rgb(151, 151, 151)",
+      "background": "rgb(247, 245, 240)"
+    },
+    {
+      "text": "3D Motion",
+      "color": "rgb(151, 151, 151)",
+      "background": "rgb(247, 245, 240)"
+    }
+  ],
+  "beforeBack": 0,
+  "afterBack": {
+    "url": "https://micahhoang.com/",
+    "y": 0,
+    "images": [
+      {
+        "complete": true,
+        "width": 690,
+        "opacity": "1"
+      },
+      {
+        "complete": true,
+        "width": 690,
+        "opacity": "1"
+      }
+    ]
+  },
+  "desktopReadMore": "./about",
+  "desktopReadMoreDestination": "https://micahhoang.com/about",
+  "resume": {
+    "url": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 176446
+  },
+  "mailto": "mailto:micah.hoang@hey.com"
+}

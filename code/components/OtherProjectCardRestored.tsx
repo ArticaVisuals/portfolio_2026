@@ -19,6 +19,7 @@ type Props = {
     link: LinkValue
     thumbnailSrc: string
     thumbnailVideoSrc: string
+    thumbnailStroke: boolean
     useCMS: boolean
     collectionId: string
     collectionModuleUrl: string
@@ -597,6 +598,7 @@ export default function OtherProjectCardRestored({
     link = "#",
     thumbnailSrc = "",
     thumbnailVideoSrc = "",
+    thumbnailStroke = false,
     useCMS = true,
     collectionId = COLLECTION_ID,
     collectionModuleUrl = "",
@@ -620,6 +622,7 @@ export default function OtherProjectCardRestored({
     })
     const resolvedThumbnailSrc = cmsRecord?.thumbnailSrc || normalizeMediaSource(thumbnailSrc)
     const resolvedVideoSrc = cmsRecord?.thumbnailVideoSrc || normalizeMediaSource(thumbnailVideoSrc)
+    const resolvedThumbnailStroke = cmsRecord?.thumbnailStroke ?? thumbnailStroke
     const hasVideo = Boolean(resolvedVideoSrc)
 
     const handleClick = React.useCallback(
@@ -852,7 +855,7 @@ export default function OtherProjectCardRestored({
                 <div
                     data-framer-name="ImageWrapper"
                     className="mh-other-project-media"
-                    data-thumbnail-stroke={cmsRecord?.thumbnailStroke ? "true" : undefined}
+data-thumbnail-stroke={resolvedThumbnailStroke ? "true" : undefined}
                     style={
                         {
                             "--mh-other-project-stroke": strokeColor,
@@ -918,6 +921,12 @@ addPropertyControls(OtherProjectCardRestored, {
         type: ControlType.String,
         title: "Video URL",
         defaultValue: "",
+    },
+    thumbnailStroke: {
+        type: ControlType.Boolean,
+        title: "Fallback Stroke",
+        description: "Used when CMS data is unavailable. Live CMS takes precedence.",
+        defaultValue: false,
     },
     useCMS: {
         type: ControlType.Boolean,

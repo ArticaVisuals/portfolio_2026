@@ -1,0 +1,252 @@
+### Result
+{
+  "counts": {
+    "IMG": 21,
+    "VIDEO": 13
+  },
+  "rows": [
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?width=1920&height=1080",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://files.catbox.moe/5rxz22.jpg"
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?width=1995&height=1827",
+      "alt": "Gaia conservation premise over a forest landscape: one million species face extinction this century.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=2048&width=6806&height=2322",
+      "alt": "Gaia brand message over a mountain landscape: We can't protect what we can't see.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp?scale-down-to=2048&width=2560&height=566",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=2048&width=6806&height=2322",
+      "alt": "Gaia invitation over nature photography: Invite everyone into joyful discovery.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp?scale-down-to=2048&width=2560&height=1517",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=2048&width=2560&height=1429",
+      "alt": "Gaia voice and style booklet photographed among wildflowers.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=2048&width=2560&height=1429",
+      "alt": "Gaia outdoor campaign billboard: Small finds. Big impact.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=2048&width=2560&height=1668",
+      "alt": "Gaia street banners pairing nature symbols with Small finds. Big impact.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=2048&width=2560&height=1429",
+      "alt": "Gaia wordmark on a cream card among red flowers.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?scale-down-to=2048&width=3299&height=4096",
+      "alt": "The Living Record exhibition poster with nature photography.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=2048&width=3072&height=1713",
+      "alt": "Gaia Field Notes notebook with an embossed branching symbol.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=2048&width=2447&height=1726",
+      "alt": "Los Angeles Bioblitz event T-shirt with a grid of nature photographs.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=2048&width=2560&height=1396",
+      "alt": "Gaia interface design system with nature icons, observation statistics, weather, and navigation.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=2048&width=2160&height=2160",
+      "alt": "Animated Gaia nature-symbol family in cream on green.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?width=1067&height=1600"
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?width=1067&height=1600"
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?width=1067&height=1600"
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://files.catbox.moe/50xion.jpg"
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://files.catbox.moe/00tm9g.jpg"
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?width=1567&height=1619",
+      "alt": "Gaia app icon on an iPhone home screen.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://files.catbox.moe/7iwwxa.jpg"
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg?scale-down-to=2048&width=7208&height=3841",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=2048&width=2642&height=1882",
+      "alt": "Gaia mobile app flow map linking screens and interaction states.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://files.catbox.moe/aq8akp.jpg"
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?width=1628&height=1860",
+      "alt": "Gaia interface exploration board with mobile screens and component studies.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=2048&width=2140&height=1818",
+      "alt": "Gaia image library organizing nature photography by subject.",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": "https://files.catbox.moe/n0n3jb.jpg"
+    },
+    {
+      "type": "VIDEO",
+      "url": "https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    },
+    {
+      "type": "IMG",
+      "url": "https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp?scale-down-to=2048&width=2560&height=1429",
+      "alt": "",
+      "visible": true,
+      "poster": ""
+    }
+  ],
+  "carousels": []
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => { const all=Array.from(document.querySelectorAll("img,video")).filter(e=>!e.closest("[data-framer-name=NextProjectsSection],nav,footer")); const rows=all.map(e=>({type:e.tagName,url:(e.currentSrc||e.src||e.querySelector("source")?.src||""),alt:e.alt||"",visible:!!e.getClientRects().length,poster:e.poster||""})); return {counts:rows.reduce((a,x)=>(a[x.type]=(a[x.type]||0)+1,a),{}),rows,carousels:Array.from(document.querySelectorAll("[data-carousel-root],[aria-roledescription=carousel]")).map(e=>({html:e.outerHTML.slice(0,1000)}))}; }');
+```

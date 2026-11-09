@@ -1,0 +1,107 @@
+# Gaia: 2027 Interactive Annual questionnaire
+
+Prepared for Micah’s review. Timeline and release status confirmed November 6, 2026. The media count covers the full live case study, including the cover image and excluding other-project thumbnails and video poster frames. The exact number submitted is not asserted. Three Section 3 answers meet the 150-word minimum.
+
+## Your email
+
+micah.hoang@hey.com
+
+## Please write the interviewee’s name(s) and role(s) on the project here.
+
+Micah Hoang, designer. I worked independently on the strategy, naming, visual identity, interface design, and app prototyping.
+
+## Please write the project’s name here.
+
+Gaia
+
+## Please describe your project in 100 words or more.
+
+Gaia is a self-initiated reimagining of iNaturalist that grew out of my interest in the outdoors and the people who share what they find there. I wanted to make contributing to biodiversity science feel approachable to someone who is curious about nature but would never call themselves a naturalist. I renamed the platform and designed its identity, then carried that system into a working iOS prototype. A branching mark, colors drawn from the natural world, and botanical illustrations establish the visual language. The interface puts a map at the center of discovery and guides people toward making an observation. Each find connects a personal moment outdoors to a shared record of living things. I worked alone from strategy through implementation, building core interactions in SwiftUI. The proposal also includes print, outdoor, and community-event applications, showing how the same invitation could reach people beyond the app.
+
+## From concept to completion, how long did the project take to produce?
+
+14 weeks, over the course of one ArtCenter term.
+
+## How many people and/or agencies worked on the development?
+
+One person. I developed Gaia independently, from naming and brand strategy through the visual system, interface, and working app prototype.
+
+## How many videos, images, and other media elements does the project have?
+
+The full online case study includes 20 still images, one animated GIF, and 13 videos, for 34 media assets in total. The competition submission used a smaller selection from that presentation.
+
+## What software, back-end technology and programming languages were used?
+
+I used Figma for interface design and flow mapping, and SwiftUI in Xcode for the iOS prototype. The project also includes a live map prototype running on Mapbox GL. Midjourney supported directed image generation; Claude, Claude Code, and Codex supported app development, prototype testing, and token management.
+
+## What was the project’s objective, and who was its target audience?
+
+I wanted to make biodiversity participation accessible to people who already notice nature but may not see themselves as qualified to contribute. The audience includes casual walkers and anyone curious about a plant or animal they encounter. The design also had to respect the scientific purpose that makes iNaturalist useful.
+
+I organized the work around access, motivation, and meaning: make it easier to begin, give people a reason to return, and show how an individual observation contributes to a shared record. Those goals shaped the name, language, visual identity, and observation experience.
+
+## Was the project part of a larger promotional campaign? If so, how?
+
+Gaia was a self-initiated brand and product proposal. I extended it into outdoor advertising, print, and community-event materials to show how people might encounter it before opening the app. The applications include billboards, street banners, field notes, and event merchandise. Botanical gardens, museums, and trailheads offered a useful context for the identity because people are already there to look closely at the living world.
+
+## Did you meet with any obstacles during development? How did you overcome them?
+
+The biggest obstacle was turning my designs into a working app I could install on my phone and use. That was much more ambitious than I expected, even with the tools I was using. I spent a lot of time experimenting with my process, learning Swift and SwiftUI, and figuring out how to work with code as a designer.
+
+I made it manageable by being more deliberate about what needed to be built in code. I focused on refining features that needed to be interactive and couldn't be demonstrated well in After Effects. For simpler transitions that I could communicate through animation, I kept using After Effects prototypes.
+
+## What are the project’s core features?
+
+The core experience centers on a discovery map, browsing observations, viewing the details of a find, and an observation flow. Map clustering helps organize nearby finds, while a bottom sheet and detail tabs provide ways to move into more information. The interface connects each observation to a community record.
+
+The brand system continues through the product in custom icons, botanical illustrations, species badges, and data and content cards. I wanted the app to feel recognizable as Gaia while people were using it, including in the practical screens where they browse or record a find.
+
+## Describe any special interactive features that the project has.
+
+The relationship between the map and the bottom sheet was a central part of the prototype. People can explore geographically, move into the information about a find, and use detail tabs to inspect it more closely. I built map clustering, the sheet, the observation flow, and the tabs as working interactions.
+
+I also treated the response to an observation as part of the design. A small moment of recognition gives the find some weight and supports the larger aim of making observation something people want to repeat.
+
+## What was the thinking behind the navigation structure?
+
+I started with the map because it gives people a familiar way to explore what is around them. Someone should be able to enter through curiosity about a place or an organism, without first needing to understand the platform's scientific structure.
+
+The navigation follows that progression: explore the map, inspect a find, and move toward making an observation. The bottom sheet and detail tabs let information become more specific as someone chooses to go deeper. Plain language supports that progression throughout the interface.
+
+## Are there any special navigational features?
+
+The map, bottom sheet, and detail tabs work as related layers of exploration. Clustering organizes observations at the map level; the sheet brings a find into focus; and tabs organize its details. That structure lets the experience begin with a broad view and become more specific without presenting all the information at once.
+
+## Are there any other technological features you’d like to call attention to?
+
+I took the design into a working SwiftUI prototype because I wanted to evaluate interactions on a device. The map, sheet behavior, observation flow, and detail tabs were the core pieces to make functional. The live map prototype used Mapbox GL.
+
+AI tools supported the making process: directed image generation with Midjourney, and app development, testing, and token management with Claude, Claude Code, and Codex. I owned the design decisions and used those tools to develop and test the proposal.
+
+## What was the response to the project like? For web projects and/or apps, how many visitors or downloads has it received since launch?
+
+Gaia was developed as a student project and has not had an official public release. The work is presented in my portfolio as a brand and product proposal, with a working prototype. I don't have visitor or download figures to report.
+
+## What was the most challenging aspect of the project?
+
+The hardest part was carrying the invitation in the identity into the actual experience of using the app. A new name and warmer colors could make the platform look approachable, but the interface still had to help someone begin. I kept returning to the person who notices something outdoors and is curious about it, but does not think of themselves as a naturalist.
+
+That shaped the map-led experience, the plain language, and the observation flow. It also shaped the visual system. Botanical illustrations and expressive typography gave the project warmth, while the icons, data cards, and working typography had to make information easy to navigate.
+
+Building the prototype made the challenge more concrete. A map, a bottom sheet, and detail tabs have to make sense together while someone is using them. I built those core interactions in SwiftUI so I could work through their behavior alongside their appearance. The aim was to carry the same care from the first impression through the practical act of browsing or recording a find.
+
+## Is the audience you were targeting a particularly difficult one to reach?
+
+I wouldn't describe the audience as particularly difficult to reach. I wanted Gaia to welcome anyone who notices something in the natural world and wants to share it. That could be a high school student photographing something in their backyard, a retired nature enthusiast, a hobbyist, or a professional. They would bring different levels of knowledge, but each could contribute a finding and learn something about what was around them.
+
+The problem I saw in iNaturalist was that its name and visual language made it feel like a tool built for professionals. Someone who was simply curious about nature might not see themselves as a naturalist, even though they had something to contribute.
+
+My goal with Gaia was to make that invitation clearer through the name, look, and feel of the app. I wanted students and older adults alike to feel comfortable exploring and sharing what they noticed. The rebrand needed to welcome people across ages and experience levels, with room to learn as they participated.
+
+## Did you learn anything new during the process?
+
+Gaia gave me a clearer understanding of how much of a brand lives in everyday product decisions. The name and mark establish an impression, but the language around an observation, the organization of a detail screen, and the response to a find continue that impression. Those decisions became part of the identity work.
+
+I also learned from taking the interface into a working app. In a static layout, I could judge the hierarchy of an individual screen. In the prototype, I had to consider how the map, sheet, observation flow, and detail tabs connected as an experience. That made implementation a useful part of the design process.
+
+Working independently across the project meant I could follow a decision from strategy into the product and the wider applications. The branching mark, natural color palette, icons, and botanical imagery had to work across very different contexts. I came away wanting to bring that same continuity to future projects, with the brand's purpose expressed in the things people actually use.

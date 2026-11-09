@@ -1,0 +1,15 @@
+### Result
+[{"path":"/case-studies/independent-lens","headings":[{"text":"OTHER","x":20,"right":152.6796875,"y":149.8515625,"parentY":149.8515625,"overflow":"hidden","transform":"none"},{"text":"PROJECTS","x":171.6796875,"right":365.9296875,"y":149.8515625,"parentY":149.8515625,"overflow":"hidden","transform":"none"}]},{"path":"/case-studies/optro","headings":[{"text":"OTHER","x":20,"right":152.6796875,"y":2199.359375,"parentY":2199.359375,"overflow":"visible","transform":"matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)"},{"text":"PROJECTS","x":20,"right":214.25,"y":2241.359375,"parentY":2241.359375,"overflow":"visible","transform":"matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)"}]}]
+### Ran Playwright code
+```js
+await (async page=>{
+ const ctx=await page.context().browser().newContext({viewport:{width:320,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});const p=await ctx.newPage();const out=[];
+ for(const slug of ['independent-lens','optro']){
+  await p.goto('https://micahhoang.com/case-studies/'+slug,{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);
+  await p.evaluate(()=>{const e=[...document.querySelectorAll('h2')].find(e=>e.textContent==='OTHER'&&e.getBoundingClientRect().width);window.scrollTo({top:e.parentElement.parentElement.getBoundingClientRect().top+scrollY-150,behavior:'instant'});});await p.waitForTimeout(4000);
+  out.push(await p.evaluate(()=>({path:location.pathname,headings:[...document.querySelectorAll('h2')].filter(e=>['OTHER','PROJECTS'].includes(e.textContent)&&e.getBoundingClientRect().width).map(e=>({text:e.textContent,x:e.getBoundingClientRect().x,right:e.getBoundingClientRect().right,y:e.getBoundingClientRect().y,parentY:e.parentElement.parentElement.getBoundingClientRect().y,overflow:getComputedStyle(e.parentElement.parentElement).overflow,transform:getComputedStyle(e.parentElement).transform}))})));
+  await p.screenshot({path:'output/playwright/case-header-footer-audit-2026-10-30/'+slug+'-other-projects-320.png',timeout:8000});
+ }
+ await ctx.close();return out;
+})(page);
+```

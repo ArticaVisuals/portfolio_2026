@@ -1,0 +1,119 @@
+[
+  {
+    "course": "Communication Design 5: Visual Experience Design",
+    "faculty": "Junie Jeong",
+    "term": "2026 Spring",
+    "collaborators": "",
+    "process": "I began with three goals: increase access, increase motivation, and increase meaning. I developed the strategy, identity, palette, typography, and icons, then extended the system across print, out of home, and a working SwiftUI app. The interface was pressure-tested through map clustering, bottom sheets, observation flows, and detail tabs.",
+    "learning": "The project connected brand strategy to a working product, testing how one identity can remain consistent across physical and digital experiences. Building the app made interaction states, technical constraints, and reusable design tokens part of the design process.",
+    "slug": "gaia",
+    "title": "Gaia",
+    "description": "Gaia began as a personal exploration of two things I love: the outdoors and the community of people who share what they find there. I rebranded and redesigned iNaturalist, the world’s largest biodiversity platform, to turn a tool built for experts into an open invitation for anyone curious about nature. I scaled one identity into a complete visual system of logotype, color, typography, and icons, then extended the system across print, out of home, digital, and interactive pieces. I worked alone at every stage, from strategy and identity to a working iOS app I built in SwiftUI.",
+    "website": "https://micahhoang.com/case-studies/gaia",
+    "tags": [
+      "Branding",
+      "Identity Design",
+      "App Design",
+      "UI/UX",
+      "Software Development"
+    ]
+  },
+  {
+    "slug": "weaponized-innocence",
+    "title": "Weaponized Innocence",
+    "description": "Weaponized Innocence is a newsprint publication about the exploitation of children in warfare. It moves from the realities of child soldiering toward the possibility of rehabilitation, emphasizing UNICEF’s role in protecting affected children and helping them rebuild their lives. Complementing the editorial is The Pinwheel Project, an interactive bonus piece featuring pinwheels adorned with drawings by child survivors and excerpts from Emmanuel Jal and Betty Ejang. Together, the publication and pinwheel kit are built to drive advocacy and support for UNICEF’s mission.",
+    "website": "https://micahhoang.com/case-studies/weaponized-innocence",
+    "course": "Typography 4",
+    "faculty": "Tracey Shiffman",
+    "term": "2024 Fall",
+    "collaborators": "",
+    "process": "I used a nine-column grid to move from dynamic, asymmetric spreads toward a clean, informational tone. Stark infographics establish context while childlike illustrations convey the emotional toll of child soldiering. Midjourney supported the creation of chaotic, childlike drawings; the accompanying pinwheel kit turns the narrative of rehabilitation into a hands-on act of assembly.",
+    "learning": "The project explores how editorial structure, typography, information design, and a participatory object can carry one advocacy narrative. The shift in layout rhythm connects the publication’s emotional arc to the physical act of rebuilding a pinwheel.",
+    "recognition": "Recognition: Fonts in Use, Feature (2024).",
+    "tags": [
+      "Publication Design",
+      "Typography",
+      "Data Visualization",
+      "Illustration",
+      "Product Design"
+    ]
+  },
+  {
+    "course": "Not applicable — professional work",
+    "faculty": "Not applicable — professional work",
+    "term": "2026 Fall",
+    "collaborators": "Jonathan Kusnadi, Wesley Ching; sound and voiceover by the Peak Energy team",
+    "process": "I led the central sequence from storyboard pitches through client reviews and visual development. Jonathan Kusnadi and Wesley Ching developed 3D animation; I handled 2D animation, compositing, and timing to the voiceover. A consistent line treatment, subtle grain, film chatter, and shake connected abstract energy concepts to an exploded battery view.",
+    "learning": "The project tested how a consistent motion language can bridge abstract concepts and technically accurate product detail. Storyboards, client reviews, and coordinated 2D and 3D production kept the sequence coherent across changes in scale.",
+    "slug": "peak-energy",
+    "title": "Peak Energy",
+    "description": "Peak Energy builds sodium-ion batteries, a domestic alternative to lithium and a technology at the center of the next energy shift. This brand film announced the company's partnership with General Motors. It places sodium-ion on the timeline of human energy and frames Peak Energy as a leader in the next phase of power. I led the central animation sequence, developing the storyboards, directing the visual language, and building a precise line-based system that could carry both abstract concepts and product detail.",
+    "website": "https://micahhoang.com/case-studies/peak-energy",
+    "tags": [
+      "Motion Design",
+      "Animation",
+      "3D Design",
+      "Storyboarding",
+      "Film Editing"
+    ]
+  },
+  {
+    "course": "Not applicable — ArtCenter event identity commission",
+    "faculty": "Not applicable — non-course project",
+    "term": "2025 Fall",
+    "collaborators": "Concept development: Allyssa Acevedo, Michelle Theodorus",
+    "process": "I built the identity from 1980s arcade graphics: bitmap glow, scanlines, and the energy of a machine booting up. Type was modeled and animated in 3D, unified in After Effects through color and a scanline pass, then finished in Photoshop for print. Working solo over two weeks, I carried the system across the hype reel, social media, campus graphics, and live event screens.",
+    "learning": "The project tested how one visual effect can unify motion, social, print, and environmental applications. AI-supported lighting and motion tests helped close production gaps before committing to full renders.",
+    "slug": "motion-connect-2025",
+    "title": "Motion Connect 2025",
+    "description": "Motion Connect is an ArtCenter talk series bringing the motion design community together, with 2025 speakers from Apple TV, Hornet, and Brand New School. I based the identity on 1980s arcade graphics: bitmap glow, scanlines, and the boot-up energy of a machine powering on. From those cues, I built a brand system and carried the system across the motion reel, social media, and print, so every piece reads as part of one season.",
+    "website": "https://micahhoang.com/case-studies/motion-connect-2025",
+    "tags": [
+      "Motion Design",
+      "Animation",
+      "Identity Design",
+      "3D Design",
+      "Typography"
+    ]
+  },
+  {
+    "course": "Communication Design 4",
+    "faculty": "Charles Lin",
+    "term": "2024 Spring",
+    "collaborators": "",
+    "process": "I grounded the self-initiated rebrand in publishing-market research and positioned independence as the central asset. I combined an ampersand with an S, then developed imprint lockups, author-signature collaborations, a 65-page guideline system, and applications across print, digital, events, and campaigns.",
+    "learning": "The project tested how a brand strategy can become a flexible identity for more than 50 imprints. The architecture preserved individual imprint identities while giving the parent brand a recognizable presence.",
+    "recognition": "Recognition: Indigo Design Award, Gold (2026); DNA Paris, Winner (2026); Fonts in Use, Feature (2024).",
+    "slug": "simon-schuster",
+    "title": "Simon & Schuster",
+    "description": "In 2022, the Justice Department blocked Penguin Random House from buying Simon & Schuster, preserving one of the last independently owned Big Five publishers. Most coverage framed the ruling as a near miss, but I saw a positioning opportunity: independence as the asset, not the consolation prize. I grounded this self-initiated rebrand in real market data and focused my work on the visual result: an identity system spanning print, event design, digital, and social media.",
+    "website": "https://micahhoang.com/case-studies/simon-schuster",
+    "tags": [
+      "Branding",
+      "Identity Design",
+      "Publication Design",
+      "Typography",
+      "Web Design"
+    ]
+  },
+  {
+    "course": "Not applicable — self-initiated business (founded 2019)",
+    "faculty": "Not applicable — self-initiated work",
+    "term": "2020 Spring",
+    "collaborators": "Photography: Keaton Wong, Ethan Hosford",
+    "process": "I organized 52 national parks into a playable card system, using suits for U.S. regions and ranks for visitation. I designed the illustrations, foil-stamped packaging, brand, and storefront; funded the initial production through Kickstarter; and built direct and wholesale sales through retailer outreach.",
+    "learning": "The project joined design and entrepreneurship: product structure, materials, print production, crowdfunding, e-commerce, and wholesale outreach. It grew into a continuing business with 20,000+ decks sold and placement in 220+ stores.",
+    "note": "Founded in 2019. Spring 2020 is the earliest available term in this form and is an administrative placeholder, not the project’s start date.",
+    "slug": "national-park-cards",
+    "title": "National Park Playing Cards",
+    "description": "National Park Playing Cards started as my tribute to U.S. national parks and grew into a business I still run, with 20,000+ decks sold. The decks sell in 220+ stores nationwide, including REI and six national park visitor centers. I designed the full product system: cards, box, brand, and storefront. I also funded the launch on Kickstarter, built the business, and pitched retailers myself.",
+    "website": "https://micahhoang.com/case-studies/national-park-cards",
+    "tags": [
+      "Packaging",
+      "Product Design",
+      "Illustration",
+      "Branding",
+      "Typography"
+    ]
+  }
+]

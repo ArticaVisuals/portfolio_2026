@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-05",
+  "cms": {
+    "id": "LECMv7KC0",
+    "slug": "airpods",
+    "draft": false,
+    "fieldData": {
+      "oeXZcmPna": {
+        "type": "string",
+        "value": "AirPods Pro 3"
+      },
+      "DLBifmgp1": {
+        "type": "number",
+        "value": 2
+      },
+      "kuvJcmOFr": {
+        "type": "string",
+        "value": "Visual Identity"
+      },
+      "VV1CggU2J": {
+        "type": "string",
+        "value": "2D Motion"
+      },
+      "E6OpH0hSs": {
+        "type": "string",
+        "value": "3D Motion"
+      },
+      "Jy7hBJady": {
+        "type": "image",
+        "value": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg"
+      },
+      "WG62tRjG8": {
+        "type": "string",
+        "value": ""
+      },
+      "QZqSK_3OF": {
+        "type": "string",
+        "value": "2025"
+      },
+      "fsFlSPDTa": {
+        "type": "image",
+        "value": null
+      },
+      "mBIilFqVM": {
+        "type": "string",
+        "value": "Technology"
+      },
+      "myUIfK0j7": {
+        "type": "boolean",
+        "value": true
+      },
+      "OHdUYs6Mo": {
+        "type": "boolean",
+        "value": true
+      },
+      "SvOqFqdby": {
+        "type": "file",
+        "value": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4"
+      }
+    }
+  },
+  "homeNodeId": "h0ZkBCWe1",
+  "homeProjects": [
+    {
+      "id": "SfNUc89ww",
+      "title": "Gaia",
+      "slug": "gaia",
+      "number": 1,
+      "posterUrl": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png",
+      "thumbnailVideoLink": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+      "thumbnailStroke": false,
+      "category1": "Visual Identity",
+      "category2": "UX/UI",
+      "category3": "Strategy"
+    },
+    {
+      "id": "rIeqwtxZV",
+      "title": "AirPods Pro 3",
+      "slug": "airpods",
+      "number": 2,
+      "posterUrl": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg",
+      "thumbnailVideoLink": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+      "thumbnailStroke": true,
+      "category1": "Visual Identity",
+      "category2": "2D Motion",
+      "category3": "3D Motion"
+    },
+    {
+      "id": "wp9r7dJWW",
+      "title": "Peak Energy",
+      "slug": "peak-energy",
+      "number": 3,
+      "posterUrl": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg",
+      "thumbnailVideoLink": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+      "thumbnailStroke": false,
+      "category1": "2D Motion",
+      "category2": "3D Motion",
+      "category3": "Social Media"
+    },
+    {
+      "id": "ocskXcQsS",
+      "title": "Motion Connect 2025",
+      "slug": "motion-connect-2025",
+      "number": 4,
+      "posterUrl": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+      "thumbnailVideoLink": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+      "thumbnailStroke": false,
+      "category1": "2D Motion",
+      "category2": "3D Motion",
+      "category3": "Social Media"
+    },
+    {
+      "id": "qeoq92XYn",
+      "title": "Simon & Schuster",
+      "slug": "simon-schuster",
+      "number": 5,
+      "posterUrl": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png",
+      "thumbnailVideoLink": "",
+      "thumbnailStroke": false,
+      "category1": "Strategy",
+      "category2": "Visual Identity",
+      "category3": "Editorial"
+    },
+    {
+      "id": "vc75Epzhh",
+      "title": "National Park Playing Cards",
+      "slug": "national-park-cards",
+      "number": 6,
+      "posterUrl": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png",
+      "thumbnailVideoLink": "",
+      "thumbnailStroke": false,
+      "category1": "Product",
+      "category2": "Packaging",
+      "category3": ""
+    }
+  ],
+  "oldVideoLocal": "airpods-hardware-thumbnail-backup.mp4",
+  "restore": {
+    "cmsCollection": "yTHrQWMIY",
+    "cmsItem": "LECMv7KC0",
+    "videoField": "SvOqFqdby",
+    "oldVideoUrl": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+    "homeArrayProperty": "projects",
+    "homeSlug": "airpods"
+  }
+}

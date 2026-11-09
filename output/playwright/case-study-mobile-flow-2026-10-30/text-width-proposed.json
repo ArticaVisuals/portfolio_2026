@@ -1,0 +1,793 @@
+[
+  {
+    "path": "/case-studies/gaia",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/airpods",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/caliper",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/yomo",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/typldn",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/peak-energy",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/whatsapp",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/optro",
+    "width": 320,
+    "text": []
+  },
+  {
+    "path": "/case-studies/gaia",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/airpods",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "width": 809,
+    "text": [
+      {
+        "text": "An antitrust block looks like ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1mgwyps",
+            "name": "A Brand Manifesto Was Crafted To Embody Simon & Schuster's Renewed Values, Positioning It As A Beacon Of Independence, Free From Media Influence. It Champions Emerging Authors, Diverse Perspectives, And Transparency In Editorial And Acquisition Practices. The Brand Is Committed To Shaping The Future Of Publishing Through Mentorships, Conferences, And Industry Initiatives.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1ktth8l",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1hrh5g4",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I merged the ampersand with an",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-wzs2md",
+            "name": "The Redesigned Logo Merges An Ampersand With An \"S,\" Symbolizing Unity And Simon & Schuster's Role In Connecting Diverse Genres, Authors, And Media. Using The PP Editorial New Typeface, It Achieves An Elegant, Classic, Yet Modern Look. The Logo Works Standalone, With Type, Or As A Stamp Mark, And Pairs With Author Autographs For Unique Collaboration Lockups.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-u53tz2",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-dayyhh",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1806cp5",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "A 65-page book to govern 2,000",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-zvo67j",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1gswjkq",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1n4ij6i",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "Three divisions, more than 50 ",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-xqjfu0",
+            "name": "Simon & Schuster Spans Three Divisions: Adult, Children's, And Audio. Across Them Sit Over 50 Imprints, Each With Its Own Identity. Pairing The New Wordmark With Each Imprint Logo Aligns Them Under One Simon & Schuster Umbrella While Keeping Their Individual Logos Intact.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-s3zyu2",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-z0hl4d",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-cqsu27",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I built the storefront to beat",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-11ey5hg",
+            "name": "The Identity Extends Beyond Print Into A Digital Experience Built For Browsing And Buying, With Events And Promotions That Spotlight Small And Diverse Authors. A More Curated, Refined Storefront Lets Simon & Schuster Compete With The Online Marketplaces.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-hi1p1w",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-qqbc2x",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I launched a new Children's im",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-c8xlvb",
+            "name": "To Showcase The Versatility Of The Updated Brand Architecture, Simon & Schuster Established A New Imprint Within Its Children's Publishing Division Called Voyager.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1e2e3qf",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-oeba0g",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "I designed a campaign with the",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1fvqm5v",
+            "name": "In Line With Simon & Schuster's Commitment To Diversity, A Marketing Campaign With The ALA's Office For Intellectual Freedom Highlights Historically Banned Books, Offering Them at 50% Off. Custom Posters Are Created For Each Release, Blending The Book's Branding With The Institutional Identity.",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 680,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-yfzpy1",
+            "x": 20,
+            "w": 680,
+            "min": "auto",
+            "max": "680px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1tky1at",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-wiif92",
+            "name": "Simon&Schuster Stack",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1rukb5i",
+            "name": "Main",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/caliper",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "width": 809,
+    "text": [
+      {
+        "text": "Each suit maps to a U.S. regio",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-qi53rl",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 374.5,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1cifa2n",
+            "x": 20,
+            "w": 374.5,
+            "min": "280px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1l3xtqa",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ino6ei",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kkefe8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      },
+      {
+        "text": "The jokers depict two iconic N",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1dbzj4k",
+            "framerType": "RichTextContainer",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1wh71vx",
+            "x": 414.5,
+            "w": 374.5,
+            "min": "280px",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1l3xtqa",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1ino6ei",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-kkefe8",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/yomo",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/typldn",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "width": 809,
+    "text": [
+      {
+        "text": "I used Midjourney to create co",
+        "ancestors": [
+          {
+            "cls": "framer-text framer-styles-preset-p5x7tw",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "none",
+            "display": "block",
+            "dir": "row"
+          },
+          {
+            "cls": "framer-1jht5h4",
+            "framerType": "RichTextContainer",
+            "x": 20,
+            "w": 760,
+            "min": "0px",
+            "max": "100%",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ncb9qv",
+            "x": 20,
+            "w": 760,
+            "min": "auto",
+            "max": "760px",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-1amo8op",
+            "x": 20,
+            "w": 769,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-ajpjjs",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          },
+          {
+            "cls": "framer-18vlllm",
+            "x": 0,
+            "w": 809,
+            "min": "auto",
+            "max": "none",
+            "display": "flex",
+            "dir": "column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/peak-energy",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/whatsapp",
+    "width": 809,
+    "text": []
+  },
+  {
+    "path": "/case-studies/optro",
+    "width": 809,
+    "text": []
+  }
+]

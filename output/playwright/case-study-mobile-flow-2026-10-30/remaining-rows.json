@@ -1,0 +1,4949 @@
+[
+  {
+    "path": "/case-studies/simon-schuster",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-efderu",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-16un73j",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-197d4ih",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-1hrh5g4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-wiif92",
+          "name": "Simon&Schuster Stack",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 12
+        },
+        {
+          "cls": "framer-1rukb5i",
+          "name": "Main",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-134kdr1",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-35g114 framer-s7u9s4",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-197d4ih",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-1hrh5g4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-wiif92",
+          "name": "Simon&Schuster Stack",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 12
+        },
+        {
+          "cls": "framer-1rukb5i",
+          "name": "Main",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/national-park-cards",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "framer-p7gg40-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-emhib3",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-tcsjdq",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-24uere",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-10u3cwv",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 12
+        },
+        {
+          "cls": "framer-1c519z0",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-HMxcl framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-9xjnfo",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "framer-kk4zjm-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-ugbsbh",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-tcsjdq",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-24uere",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-10u3cwv",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 12
+        },
+        {
+          "cls": "framer-1c519z0",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-HMxcl framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-9xjnfo",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "framer-1hjs46n-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1t2825v framer-j39q6k",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-tcsjdq",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-24uere",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-10u3cwv",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 12
+        },
+        {
+          "cls": "framer-1c519z0",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-HMxcl framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-9xjnfo",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/yomo",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-13lutr6",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1m0v5w7",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-1dwtv5n",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ezb10e",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1m0v5w7",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-1dwtv5n",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-nwwjdg",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1m0v5w7",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-1dwtv5n",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "ssr-variant hidden-1qfls9v hidden-15t7gl4",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1nn7mg1-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1atqnro",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1iks8es",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-up5etg",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-88gtid",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant hidden-1qfls9v hidden-15t7gl4",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1iks8es",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-up5etg",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ogla4q",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-efd54j",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-17akxgm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 5
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1er7w2u",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-efd54j",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-17akxgm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 5
+        },
+        {
+          "cls": "framer-pywb2c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 13
+        },
+        {
+          "cls": "framer-1at4ybs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-YlxLx framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-15t7gl4",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 4
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1gcbnue",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1aejlgb",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "ssr-variant hidden-7ofxw8 hidden-qnwd6j",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1r88bmq",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-tsckjm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 9
+        },
+        {
+          "cls": "framer-um8rc4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 7
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-lbgm7a",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1aejlgb",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "ssr-variant hidden-7ofxw8 hidden-qnwd6j",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1r88bmq",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-tsckjm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 9
+        },
+        {
+          "cls": "framer-um8rc4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 7
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-16n3y1p",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1aejlgb",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "ssr-variant hidden-7ofxw8 hidden-qnwd6j",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1r88bmq",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-tsckjm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 9
+        },
+        {
+          "cls": "framer-um8rc4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 7
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-wh86sz",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-10bve41",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-pney6s",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1j18cxo",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1x3jb22",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1q81ncs",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1w5ncxo",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1sfskay",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1hqij1d",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-oo2h06",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-dx2cun",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1szzyhf",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1wj1in0",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-lhsfjx",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-5l0tim",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-118iv4y",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-fdugls",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1sg8edc",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1qzirtf",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-8nqf3r",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1y8ngcx",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-bshxm0",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1qx8rgq",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ref0k5",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-ctv8c1",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-59te4e",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1br8wpa",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-srkuq2",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-xhq6wb",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ljcmgx",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1onjsx2",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-bjwq5q",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-1e0da9s",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-c3czfk",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "framer-hjcrcd",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 83.75,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ghoceu",
+          "display": "grid",
+          "dir": "row",
+          "grid": "83.75px 83.75px 83.75px 83.75px",
+          "width": 350,
+          "children": 35
+        },
+        {
+          "cls": "framer-5io7vu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 4
+        },
+        {
+          "cls": "framer-9x7zfc",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-9fvyd3",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-J9LTu framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-WVO3s framer-8QeCg framer-zv5dI framer-T9z4l framer-1ax50uw",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 3
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/cellular-symphony",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-138fu2c",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant hidden-1okl2g6",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1geu02j",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-l4972m",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-imhczo",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1j64o8v",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-rq7bvc",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1oh67bl",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-13ms0vf",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "framer-1x7xys9",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 110,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-j9c4ta",
+          "display": "grid",
+          "dir": "row",
+          "grid": "110px 110px 110px",
+          "width": 350,
+          "children": 9
+        },
+        {
+          "cls": "framer-1ezqc7c",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "framer-ajpjjs",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-18vlllm",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-U16CK framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-WVO3s framer-T9z4l framer-yyb6e9",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 6
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/wolff-olins-x-artcenter",
+    "managers": 0,
+    "rows": [
+      [
+        {
+          "cls": "framer-1qo3syp-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-kivm1j",
+          "name": "Video Wrapper",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-3fKMQ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1xzvsu",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "framer-1okumf4-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-5u5wjc",
+          "name": "Video Wrapper",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-3fKMQ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1xzvsu",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "framer-qxlobl-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1d2883v",
+          "name": "Video Wrapper",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-3fKMQ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1xzvsu",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "framer-2tnd5f-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1by4a3s",
+          "name": "Video Wrapper",
+          "display": "flex",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-3fKMQ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1xzvsu",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 6
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1se6fsq",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1od5ioh",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1jxjpx0",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-7w7wl1",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-y725bx",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "ssr-variant",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-nbii9q",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-17rglk0-container",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-z3t4f9",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1fc3kwa",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 8
+        },
+        {
+          "cls": "framer-eqe6w4",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-5xcrvu",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        },
+        {
+          "cls": "framer-4jrmzb",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 5
+        },
+        {
+          "cls": "framer-3fKMQ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1xzvsu",
+          "display": "contents",
+          "dir": "column",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "managers": 1,
+    "rows": [
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-104d1ox",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-10t3wkf",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 4
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-11ocahe",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1jsb14b",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 4
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1gsx5d3",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-e8ydhk",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 4
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-youpy5",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-15kco1b",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 4
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-r6aypw",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-hwvzxh",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 3
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-uminmn",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-1ew5c1n",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 3
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ],
+      [
+        {
+          "cls": "",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-8fx3p2",
+          "display": "block",
+          "dir": "row",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "framer-14y5mu6",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 1
+        },
+        {
+          "cls": "",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 170,
+          "children": 3
+        },
+        {
+          "cls": "framer-1rxxnx4",
+          "name": "Image Row",
+          "display": "grid",
+          "dir": "row",
+          "grid": "170px 170px",
+          "width": 350,
+          "children": 2
+        },
+        {
+          "cls": "ssr-variant hidden-5psz7j hidden-1muu5jf",
+          "display": "contents",
+          "dir": "row",
+          "grid": "none",
+          "width": 0,
+          "children": 1
+        },
+        {
+          "cls": "framer-1rwbt3x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 350,
+          "children": 3
+        },
+        {
+          "cls": "framer-u1fd7x",
+          "display": "flex",
+          "dir": "column",
+          "grid": "none",
+          "width": 390,
+          "children": 4
+        }
+      ]
+    ]
+  }
+]

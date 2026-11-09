@@ -1,0 +1,37 @@
+async page => {
+ const out='output/playwright/journey-audit-2026-10-29';
+ const report={checks:[],errors:[],responses:[]};
+ const setup=p=>{p.on('pageerror',e=>report.errors.push({url:p.url(),error:e.message}));p.on('response',r=>{if(r.status()>=400)report.responses.push({url:r.url(),status:r.status(),page:p.url()})})};
+ const capture=async(p,device,name)=>{
+  await p.waitForTimeout(1800);
+  await p.evaluate(()=>window.scrollTo(0,0));await p.waitForTimeout(300);
+  await p.screenshot({path:`${out}/${device}-${name}-top.png`});
+  const info=await p.evaluate(()=>{
+   const vis=e=>e.checkVisibility({checkOpacity:true,checkVisibilityCSS:true})&&e.getBoundingClientRect().width>0;
+   const rect=e=>{const r=e.getBoundingClientRect();return {x:Math.round(r.x),y:Math.round(r.y+scrollY),w:Math.round(r.width),h:Math.round(r.height)}};
+   return {url:location.href,title:document.title,viewport:{w:innerWidth,h:innerHeight},height:document.documentElement.scrollHeight,overflow:document.documentElement.scrollWidth-innerWidth,
+    headings:[...document.querySelectorAll('h1,h2,h3')].filter(vis).map(e=>({tag:e.tagName,text:e.textContent,...rect(e),color:getComputedStyle(e).color,size:getComputedStyle(e).fontSize})),
+    paragraphs:[...document.querySelectorAll('main p')].filter(vis).filter(e=>e.textContent.length>110).map(e=>({text:e.textContent,...rect(e),color:getComputedStyle(e).color,size:getComputedStyle(e).fontSize})),
+    links:[...document.querySelectorAll('a,button')].filter(vis).map(e=>({tag:e.tagName,text:(e.getAttribute('aria-label')||e.innerText).slice(0,100),href:e.getAttribute('href'),...rect(e)})),
+    media:[...document.querySelectorAll('img,video')].filter(vis).map(e=>({tag:e.tagName,alt:e.getAttribute('alt'),src:(e.currentSrc||e.src).slice(0,200),...rect(e),complete:e.complete,naturalWidth:e.naturalWidth,ready:e.readyState,paused:e.paused,error:e.error?.code})),
+    frames:[...document.querySelectorAll('iframe')].filter(vis).map(e=>({src:e.src,title:e.title,...rect(e)}))};
+  });
+  const positions=[...new Set([Math.min(info.height-900,850),...info.paragraphs.slice(0,2).map(p=>Math.max(0,p.y-80)),Math.round(info.height*.5),Math.max(0,info.height-1000)])].filter(y=>y>0);
+  for(let i=0;i<positions.length;i++){await p.evaluate(y=>window.scrollTo(0,y),positions[i]);await p.waitForTimeout(500);await p.screenshot({path:`${out}/${device}-${name}-section${i+1}.png`});}
+  // Warm lazy media while walking the page, then preserve a full-page view.
+  for(let y=0;y<info.height;y+=800){await p.evaluate(y=>window.scrollTo(0,y),y);await p.waitForTimeout(90)}
+  await p.waitForTimeout(500);await p.screenshot({path:`${out}/${device}-${name}-full.png`,fullPage:true});
+  info.afterScroll=await p.evaluate(()=>({overflow:document.documentElement.scrollWidth-innerWidth,broken:[...document.images].filter(e=>e.checkVisibility()&&e.complete&&!e.naturalWidth).map(e=>e.src),videos:[...document.querySelectorAll('video')].map(v=>({ready:v.readyState,error:v.error?.code}))}));
+  report.checks.push({device,name,positions,...info});
+ };
+ setup(page);
+ await capture(page,'desktop','airpods');
+ await page.goBack();await page.waitForTimeout(1500);
+ report.checks.push({device:'desktop',name:'airpods-back',url:page.url(),scroll:await page.evaluate(()=>scrollY)});
+ await capture(page,'desktop','home');
+ await page.getByRole('link',{name:'Gaia case study',exact:true}).click();
+ await capture(page,'desktop','gaia');
+ await page.locator('nav a[href$="about"]').click();
+ await capture(page,'desktop','about');
+ console.log(JSON.stringify(report));
+}

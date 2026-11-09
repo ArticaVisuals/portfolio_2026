@@ -1,0 +1,178 @@
+{
+  "events": [
+    {
+      "type": "added",
+      "at": 178.5,
+      "id": "__pt-first-paint",
+      "text": "html::before{content:'';position:fixed;inset:0;width:100%;height:100vh;min-height:100vh;background:#233324;z-index:2147483599;pointer-events:none}@supports(height:100dvh){html::before{height:100dvh;min-height:100dvh}}"
+    },
+    {
+      "type": "state",
+      "at": 232.5,
+      "state": "true:false:false:loaded",
+      "visible": "visible"
+    },
+    {
+      "type": "state",
+      "at": 236.80000007152557,
+      "state": "true:false:false:loading",
+      "visible": "visible"
+    },
+    {
+      "type": "added",
+      "at": 246.39999997615814,
+      "id": "__pt-boot",
+      "text": "Micah Hoang \u00a92026"
+    },
+    {
+      "type": "removed",
+      "at": 246.5,
+      "id": "__pt-first-paint"
+    },
+    {
+      "type": "state",
+      "at": 254.30000007152557,
+      "state": "false:true:true:loading",
+      "visible": "visible"
+    },
+    {
+      "type": "DOMContentLoaded",
+      "at": 309.2000000476837
+    },
+    {
+      "type": "fonts-loaded",
+      "at": 2410.5,
+      "fonts": [
+        "GT Standard Mono Regular Placeholder",
+        "GT Standard Trial L Bd Placeholder",
+        "GT Standard L Regular Placeholder",
+        "GT Standard Mono Trial Rg Placeholder",
+        "GT Standard Trial L Rg Placeholder",
+        "GT Standard Mono Trial Rg",
+        "GT Standard Trial L Rg",
+        "GT Standard Trial L Bd",
+        "GT Standard Mono Regular",
+        "GT Standard L Regular"
+      ]
+    },
+    {
+      "type": "state",
+      "at": 2412.3000000715256,
+      "state": "false:true:true:loaded",
+      "visible": "visible"
+    },
+    {
+      "type": "load",
+      "at": 2725.399999976158
+    },
+    {
+      "type": "transitionrun",
+      "at": 2740,
+      "id": "__pt-boot-label",
+      "property": "opacity"
+    },
+    {
+      "type": "pt:reveal",
+      "at": 2803.100000023842
+    },
+    {
+      "type": "transitionend",
+      "at": 2995.2000000476837,
+      "id": "__pt-boot-label",
+      "property": "opacity"
+    },
+    {
+      "type": "pt:reveal",
+      "at": 3026.600000023842
+    },
+    {
+      "type": "transitionrun",
+      "at": 3037.2000000476837,
+      "id": "__pt-boot",
+      "property": "transform"
+    },
+    {
+      "type": "transitionend",
+      "at": 4229.700000047684,
+      "id": "__pt-boot",
+      "property": "transform"
+    },
+    {
+      "type": "removed",
+      "at": 4348,
+      "id": "__pt-boot"
+    },
+    {
+      "type": "state",
+      "at": 4353.800000071526,
+      "state": "false:false:false:loaded",
+      "visible": "visible"
+    }
+  ],
+  "paints": [
+    {
+      "name": "first-paint",
+      "entryType": "paint",
+      "startTime": 260,
+      "duration": 0,
+      "navigationId": 2611,
+      "paintTime": 235.60000002384186,
+      "presentationTime": 260
+    },
+    {
+      "name": "first-contentful-paint",
+      "entryType": "paint",
+      "startTime": 260,
+      "duration": 0,
+      "navigationId": 2611,
+      "paintTime": 235.60000002384186,
+      "presentationTime": 260
+    }
+  ],
+  "frames": [
+    {
+      "at": 228,
+      "delta": 0,
+      "cover": true,
+      "boot": false,
+      "label": false,
+      "opacity": null,
+      "transform": null,
+      "fontReady": null,
+      "textWidth": null
+    },
+    {
+      "at": 253.4,
+      "delta": 8.400000000000006,
+      "cover": false,
+      "boot": true,
+      "label": true,
+      "opacity": "1",
+      "transform": "none",
+      "fontReady": false,
+      "textWidth": 269.578125
+    },
+    {
+      "at": 2411.7,
+      "delta": 8.299999999999727,
+      "cover": false,
+      "boot": true,
+      "label": true,
+      "opacity": "1",
+      "transform": "none",
+      "fontReady": true,
+      "textWidth": 277.7421875
+    },
+    {
+      "at": 4353.5,
+      "delta": 9.399999999999636,
+      "cover": false,
+      "boot": false,
+      "label": false,
+      "opacity": null,
+      "transform": null,
+      "fontReady": null,
+      "textWidth": null
+    }
+  ]
+}

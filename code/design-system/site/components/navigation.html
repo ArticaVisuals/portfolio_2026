@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Navigation – Micah Hoang Design System</title>
-<meta name="description" content="The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.">
+<meta name="description" content="A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.">
 <link rel="alternate" type="text/markdown" href="../../content/components/navigation.md">
 <link rel="stylesheet" href="../../css/fonts.css">
 <link rel="stylesheet" href="../../tokens/tokens.css">
@@ -74,8 +74,8 @@
         <h1 class="mh-text-display-m">Navigation</h1>
         <a class="mh-action" data-variant="pill" href="../../content/components/navigation.md" title="This page as markdown, for agents">Markdown</a>
       </div>
-      <p class="ds-lede mh-text-heading">The four-zone mono bar on every page (name, role, location, links) that hides on scroll and stays clear of the grain.</p>
-      <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: Native "Navigation" component; NavigationScrollGuard (Wnd19lx) for scroll/Lenis</span></div>
+      <p class="ds-lede mh-text-heading">A four-zone desktop mono bar and a compact mobile name/MENU header with a full-screen navigation panel.</p>
+      <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: Native Mobile Navigation (qajbM_0Ju); NavigationScrollGuard (Wnd19lx) for accessibility/scroll/Lenis</span></div>
       <hr class="mh-rule">
     </header>
     <article class="ds-prose"><h2 id="examples"><a class="ds-anchor" href="#examples">Examples</a></h2>
@@ -91,7 +91,25 @@
     <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Index</span><span aria-hidden="true">Index</span></span></span></a></li>
     <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>About</span><span aria-hidden="true">About</span></span></span></a></li>
   </ul>
-</nav></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;nav class="mh-nav" aria-label="Primary" style="position:relative"&gt;
+  <button class="mh-nav__menu mh-label" type="button" aria-expanded="false" aria-controls="mh-menu-demo">Menu</button>
+</nav>
+<div class="mh-nav-panel" id="mh-menu-demo" role="dialog" aria-modal="true" aria-label="Menu" data-surface="green" hidden>
+  <div class="mh-nav-panel__header">
+    <a class="mh-link mh-label" href="#">Micah Hoang</a>
+    <button class="mh-nav__menu mh-label" type="button" aria-expanded="true" aria-controls="mh-menu-demo">Close</button>
+  </div>
+  <ul class="mh-nav-panel__routes">
+    <li><a href="#" aria-current="page">Work</a></li>
+    <li><a href="#">Play</a></li>
+    <li><a href="#">Index</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <ul class="mh-nav-panel__social mh-label">
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">Email</a></li>
+    <li><a href="#">GitHub</a></li>
+  </ul>
+</div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;nav class="mh-nav" aria-label="Primary" style="position:relative"&gt;
   &lt;a class="mh-nav__name mh-link mh-label" href="#"&gt;
     &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Micah Hoang&lt;/span&gt;&lt;span aria-hidden="true"&gt;Micah Hoang&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
   &lt;/a&gt;
@@ -103,20 +121,42 @@
     &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Index&lt;/span&gt;&lt;span aria-hidden="true"&gt;Index&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;About&lt;/span&gt;&lt;span aria-hidden="true"&gt;About&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/nav&gt;</code></pre></details></figure>
+  &lt;button class="mh-nav__menu mh-label" type="button" aria-expanded="false" aria-controls="mh-menu-demo"&gt;Menu&lt;/button&gt;
+&lt;/nav&gt;
+&lt;div class="mh-nav-panel" id="mh-menu-demo" role="dialog" aria-modal="true" aria-label="Menu" data-surface="green" hidden&gt;
+  &lt;div class="mh-nav-panel__header"&gt;
+    &lt;a class="mh-link mh-label" href="#"&gt;Micah Hoang&lt;/a&gt;
+    &lt;button class="mh-nav__menu mh-label" type="button" aria-expanded="true" aria-controls="mh-menu-demo"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;ul class="mh-nav-panel__routes"&gt;
+    &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Work&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Play&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Index&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="mh-nav-panel__social mh-label"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Email&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre></details></figure>
+<p>Resize below 810px to see the MENU button; it opens the full-screen panel.</p>
 <h2 id="anatomy"><a class="ds-anchor" href="#anatomy">Anatomy</a></h2>
-<div class="ds-table"><table><thead><tr><th>Zone</th><th>Content</th><th>Below 810px</th></tr></thead><tbody><tr><td>Name</td><td>"Micah Hoang", links to <code>/</code></td><td>Kept</td></tr><tr><td>Role</td><td>"Brand designer"</td><td>Hidden</td></tr><tr><td>Location</td><td>"Los Angeles, California"</td><td>Hidden</td></tr><tr><td>Links</td><td>Work, Play, Index, About</td><td>Kept</td></tr></tbody></table></div>
+<div class="ds-table"><table><thead><tr><th>Zone</th><th>Content</th><th>Below 810px</th></tr></thead><tbody><tr><td>Name</td><td>"Micah Hoang", links to <code>/</code></td><td>Kept</td></tr><tr><td>Role</td><td>"Brand designer"</td><td>Hidden</td></tr><tr><td>Location</td><td>"Los Angeles, California"</td><td>Hidden</td></tr><tr><td>Links</td><td>Work, Play, Index, About</td><td>Replaced by MENU; routes appear in the full-screen panel</td></tr></tbody></table></div>
 <p>Desktop columns are fixed: name 258px, role 340px, location fills, links hug the right edge (measured identical at 1200 and 1280). Tablet uses fixed 123px / 145px columns. Links sit 31px apart. The nav gutter is 20px at every breakpoint.</p>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>Same bar, same copy, on every page. Only the links change state.</li><li>Routes: Work → <code>/</code>, Play → <code>/play</code>, Index → <code>/index</code>, About → <code>/about</code>.</li><li>The bar sits on the page surface, 20px from the top and sides, 53px tall. It hides on scroll down and returns on scroll up.</li><li>Grain starts below the nav, so the bar always stays crisp.</li><li>The live site doesn't style the current link. Mark it with <code>aria-current="page"</code> for assistive tech only.</li></ul>
+<ul><li>Same bar, same copy, on every page. Only the links change state.</li><li>Routes: Work → <code>/</code>, Play → <code>/play</code>, Index → <code>/index</code>, About → <code>/about</code>.</li><li>The bar is 53px tall with 20px side gutters. Desktop hides on scroll down and returns on scroll up. Below 810px it stays fixed and visible.</li><li>Grain starts below the nav, so the bar always stays crisp.</li><li>The live site doesn't style the current link. Mark it with <code>aria-current="page"</code> for assistive tech only.</li></ul>
+<h3 id="mobile-menu"><a class="ds-anchor" href="#mobile-menu">Mobile menu</a></h3>
+<ul><li>The <strong>Hybrid</strong> and <strong>Black</strong> layout templates mount the native <strong>Mobile Navigation</strong> component (<code>qajbM_0Ju</code>) on Phone only. Desktop and tablet retain their existing header.</li><li>Edit <strong>Assets → Mobile Navigation → Closed / Open</strong> for the layout, labels, links, and colors. The component owns its native Click interactions with an Instant transition.</li><li>MENU and CLOSE each use one text node inside a 13px-high <code>Label Mask</code> with hidden overflow, inside a 60×44 hit area. There is no rollover duplicate and no runtime-generated replacement label.</li><li><code>NavigationScrollGuard</code> adds dialog semantics, keyboard controls, focus containment, background inertness, and viewport-height handling to the native component. It does not create or own the menu's visual content.</li><li>The open panel uses Forest Green with Cream type, the existing responsive <strong>Heading 2</strong> text style (GT Standard, 42px on phone; <code>type.display-m</code>), 13px GT Standard Mono labels, and the existing 20px nav gutters.</li><li>Route labels use title case: Work, Play, Index, About. Each retains the shared Heading 2 style; do not introduce a separate menu text style or uppercase the route copy. LinkedIn, Email, and GitHub sit at the bottom. CLOSE occupies the same 60×44 box as MENU; route rows fit their text line height plus 12px top and bottom padding (<code>--mh-space-4</code>). This gives 66px rows with 42px phone type and prevents larger canvas type from overlapping.</li><li>The open variant contains keyboard focus, supports Enter/Space and Escape, locks background scrolling, and restores focus and scroll on close. It closes and cleans up when resizing to 810px or wider.</li><li>Mobile header links use ordinary browser navigation without the desktop curtain interception. Selecting Work while already on Home closes the menu and returns to the top.</li><li>Mobile Home name, descriptor, and Selected/work headings render in place. Their previous appear/replay effects visibly restarted after settling. Desktop motion is unchanged.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
-<div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-nav</code></td><td><code>nav</code></td><td>Sticky; grid <code>258px 340px 1fr auto</code> (tablet <code>123px 145px 1fr auto</code>), 53px tall</td></tr><tr><td><code>mh-nav__name</code></td><td><code>a</code></td><td>Flip link</td></tr><tr><td><code>mh-nav__role</code>, <code>mh-nav__location</code></td><td><code>p</code></td><td>Static labels, hidden on mobile</td></tr><tr><td><code>mh-nav__links</code></td><td><code>ul</code></td><td>Flip links, 31px gap</td></tr></tbody></table></div>
+<div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-nav</code></td><td><code>nav</code></td><td>Sticky; grid <code>258px 340px 1fr auto</code> (tablet <code>123px 145px 1fr auto</code>), 53px tall</td></tr><tr><td><code>mh-nav__name</code></td><td><code>a</code></td><td>Flip link</td></tr><tr><td><code>mh-nav__role</code>, <code>mh-nav__location</code></td><td><code>p</code></td><td>Static labels, hidden on mobile</td></tr><tr><td><code>mh-nav__links</code></td><td><code>ul</code></td><td>Flip links, 31px gap; hidden below 810px</td></tr><tr><td><code>mh-nav__menu</code></td><td><code>button[aria-controls][aria-expanded]</code></td><td>Mobile only: MENU / CLOSE, 60×44px target, label right-aligned to the gutter</td></tr><tr><td><code>mh-nav-panel</code></td><td><code>div[role=dialog][hidden]</code></td><td>Mobile only: full-screen Forest Green panel (<code>data-surface="green"</code>)</td></tr><tr><td><code>mh-nav-panel__routes</code></td><td><code>ul</code></td><td>Display M (42px) routes in title case, 12px above and below: 66px rows</td></tr><tr><td><code>mh-nav-panel__social</code></td><td><code>ul.mh-label</code></td><td>LinkedIn, Email, GitHub at the bottom; 44×44px targets</td></tr></tbody></table></div>
+<p><code>components.js</code> opens and closes the panel, locks page scroll, restores focus to MENU, closes on Escape, and closes when the viewport grows past 810px.</p>
 <h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
 <ul><li><code>&lt;nav aria-label="Primary"&gt;</code>, links in a list.</li><li>Add a "Skip to content" link before the nav in real pages.</li><li>Keep visible focus on every link (the flip triggers on focus too).</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
-<ul><li>The live bar is the native <strong>Navigation</strong> component, with the flip implemented as hover variants.</li><li>Scroll behavior and global smooth scroll: <code>NavigationScrollGuard</code> (<code>Wnd19lx</code>), mounted through <code>ResumeAssetHost</code> (<code>xDqfenf</code>). It owns the single Lenis 1.3.26 instance (<code>lerp 0.12</code>, native touch) and is destroyed on <code>/play</code>.</li><li>Exposed controls: <code>Smooth</code>, <code>Scroll feel</code>.</li></ul>
+<ul><li>The live bars are native layers in <strong>Hybrid</strong> and <strong>Black</strong> layout templates. Desktop links use the shared <strong>Text Link</strong> hover variants.</li><li>Mobile Navigation asset: <code>qajbM_0Ju</code>; Closed <code>wAv2cBhhn</code>; Open <code>gdGCs2vyp</code>. The Phone instances are <code>tK8RS0JyeF6qyNICpc</code> (Hybrid) and <code>rzjQrYrtJwE5QaaCdz</code> (Black). Their desktop source instances remain hidden.</li><li><a href="https://framer.com/projects/Micah-Hoang-Portfolio--BvGjN2gCRDHG41LzAVYE-b78r3?node=qajbM_0Ju" target="_blank" rel="noopener">Open Mobile Navigation in Framer</a>.</li><li>Scroll behavior and global smooth scroll: <code>NavigationScrollGuard</code> (<code>Wnd19lx</code>), mounted through <code>ResumeAssetHost</code> (<code>xDqfenf</code>). It owns the single Lenis 1.3.26 instance (<code>lerp 0.12</code>, native touch) and is destroyed on <code>/play</code>.</li><li>Exposed controls: <code>Smooth</code>, <code>Scroll feel</code>.</li></ul>
 <h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
-<ul><li>Don't add a logo, hamburger icon or CTA button to the bar.</li><li>Don't put a background color or blur behind it.</li><li>Don't change the order of the four zones.</li></ul></article>
+<ul><li>Don't add a logo, hamburger icon or CTA button to the bar.</li><li>Don't add a new palette or decorative blur. The mobile panel uses the existing Forest Green/Cream surface pairing.</li><li>Don't change the order of the four zones.</li></ul></article>
     <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/components/navigation.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
   </main>
   <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#examples">Examples</a><a href="#anatomy">Anatomy</a><a href="#usage">Usage</a><a href="#api">API</a><a href="#accessibility">Accessibility</a><a href="#framer-mapping">Framer mapping</a><a href="#don-t">Don't</a></nav>

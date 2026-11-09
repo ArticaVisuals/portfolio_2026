@@ -1,0 +1,96 @@
+Node xml:
+<TextLink nodeId="dVTZgYLeH" />
+<TextLink
+    nodeId="eyytyxpGy"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="fKuOqu6WY"
+    position="absolute"
+    width="fit-content"
+    height="13px"
+    centerX="50%"
+    centerY="50%"
+    overflow="hidden"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<TextLinkHover
+    nodeId="gDw4mfhIy"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="238px"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<ViewProject
+    nodeId="mM_eFo8QJ"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono Footers"
+>
+</ViewProject>
+<ViewProject
+    nodeId="RfxUJwLIS"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono Footers"
+>
+</ViewProject>
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<TextLinkBlack
+    nodeId="fYjqF5g84"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="69px"
+    left="0px"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<TextLinkBlackHover
+    nodeId="ny4XsDWk_"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="69px"
+    left="238px"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />

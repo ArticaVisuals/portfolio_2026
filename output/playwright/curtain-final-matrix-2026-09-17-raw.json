@@ -1,0 +1,247 @@
+[
+  {
+    "mode": "desktop",
+    "events": [
+      {
+        "type": "transitionrun",
+        "at": 1935.7999999523163,
+        "visibility": "visible"
+      },
+      {
+        "type": "transitionend",
+        "at": 3131.899999976158,
+        "visibility": "visible"
+      },
+      {
+        "type": "complete",
+        "at": 3245.7999999523163,
+        "visibility": "visible"
+      }
+    ],
+    "bootEverVisible": true,
+    "holdEver": true,
+    "holdNow": false,
+    "bootNow": false,
+    "median": 8.399999999999636,
+    "max": 9.300000000000182,
+    "over20": 0,
+    "widths": [
+      268.84375,
+      277.7421875
+    ],
+    "playingDuringSweep": 0,
+    "videos": [
+      {
+        "paused": false,
+        "time": 1.882177,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 1.882112,
+        "visible": "true"
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      }
+    ],
+    "homeReturn": {
+      "path": "/",
+      "boot": false,
+      "hold": false,
+      "hero": true,
+      "headline": "Micah Hoang",
+      "videos": [
+        false,
+        false,
+        true,
+        true
+      ]
+    },
+    "errors": []
+  },
+  {
+    "mode": "tablet",
+    "events": [
+      {
+        "type": "transitionrun",
+        "at": 1983.5,
+        "visibility": "visible"
+      },
+      {
+        "type": "transitionend",
+        "at": 3181.899999976158,
+        "visibility": "visible"
+      },
+      {
+        "type": "complete",
+        "at": 3296.7999999523163,
+        "visibility": "visible"
+      }
+    ],
+    "bootEverVisible": true,
+    "holdEver": true,
+    "holdNow": false,
+    "bootNow": false,
+    "median": 8.399999999999636,
+    "max": 10.5,
+    "over20": 0,
+    "widths": [
+      222.1953125
+    ],
+    "playingDuringSweep": 0,
+    "videos": [
+      {
+        "paused": false,
+        "time": 1.883244,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 1.883235,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 1.883237,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 1.883237,
+        "visible": "true"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "events": [],
+    "bootEverVisible": false,
+    "holdEver": false,
+    "bootNow": false,
+    "max": null,
+    "over20": 0,
+    "widths": [],
+    "playingDuringSweep": 0,
+    "videos": [
+      {
+        "paused": false,
+        "time": 0.925845,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 4.245263,
+        "visible": "true"
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      }
+    ],
+    "errors": []
+  },
+  {
+    "mode": "reduced",
+    "events": [],
+    "bootEverVisible": false,
+    "holdEver": false,
+    "bootNow": false,
+    "max": null,
+    "over20": 0,
+    "widths": [],
+    "playingDuringSweep": 0,
+    "videos": [
+      {
+        "paused": false,
+        "time": 0.926953,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 4.138901,
+        "visible": "true"
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      }
+    ],
+    "errors": []
+  },
+  {
+    "mode": "background",
+    "events": [
+      {
+        "type": "transitionrun",
+        "at": 1936.3999999761581,
+        "visibility": "visible"
+      },
+      {
+        "type": "transitionend",
+        "at": 3144.399999976158,
+        "visibility": "visible"
+      },
+      {
+        "type": "complete",
+        "at": 3244.5,
+        "visibility": "visible"
+      }
+    ],
+    "bootEverVisible": true,
+    "holdEver": true,
+    "holdNow": false,
+    "bootNow": false,
+    "median": 8.200000000000045,
+    "max": 9.200000000000273,
+    "over20": 0,
+    "widths": [
+      268.84375,
+      277.7421875
+    ],
+    "playingDuringSweep": 0,
+    "videos": [
+      {
+        "paused": false,
+        "time": 2.390466,
+        "visible": "true"
+      },
+      {
+        "paused": false,
+        "time": 2.390374,
+        "visible": "true"
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      },
+      {
+        "paused": true,
+        "time": 0,
+        "visible": null
+      }
+    ],
+    "errors": []
+  }
+]

@@ -1,0 +1,359 @@
+[
+  {
+    "path": "/case-studies/optro",
+    "reduced": true,
+    "first": [
+      {
+        "text": "OTHER",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+        "y": 300.09375,
+        "maskY": 200.09375,
+        "mask": "visible"
+      },
+      {
+        "text": "PROJECTS",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+        "y": 342.09375,
+        "maskY": 242.09375,
+        "mask": "visible"
+      }
+    ],
+    "last": [
+      {
+        "text": "OTHER",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+        "y": 300.125,
+        "maskY": 200.125,
+        "mask": "visible"
+      },
+      {
+        "text": "PROJECTS",
+        "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+        "y": 342.125,
+        "maskY": 242.125,
+        "mask": "visible"
+      }
+    ],
+    "uniqueTransforms": 1,
+    "samples": [
+      [
+        {
+          "text": "OTHER",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 300.09375,
+          "maskY": 200.09375,
+          "mask": "visible"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 342.09375,
+          "maskY": 242.09375,
+          "mask": "visible"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 300.09375,
+          "maskY": 200.09375,
+          "mask": "visible"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 342.09375,
+          "maskY": 242.09375,
+          "mask": "visible"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 300.09375,
+          "maskY": 200.09375,
+          "mask": "visible"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 342.09375,
+          "maskY": 242.09375,
+          "mask": "visible"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 300.09375,
+          "maskY": 200.09375,
+          "mask": "visible"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 342.09375,
+          "maskY": 242.09375,
+          "mask": "visible"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 300.09375,
+          "maskY": 200.09375,
+          "mask": "visible"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 100, 0, 1)",
+          "y": 342.09375,
+          "maskY": 242.09375,
+          "mask": "visible"
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/airpods",
+    "reduced": true,
+    "first": [
+      {
+        "text": "OTHER",
+        "transform": "none",
+        "y": 200.1875,
+        "maskY": 200.1875,
+        "mask": "hidden"
+      },
+      {
+        "text": "PROJECTS",
+        "transform": "none",
+        "y": 242.1875,
+        "maskY": 242.1875,
+        "mask": "hidden"
+      }
+    ],
+    "last": [
+      {
+        "text": "OTHER",
+        "transform": "none",
+        "y": -40.4375,
+        "maskY": -40.4375,
+        "mask": "hidden"
+      },
+      {
+        "text": "PROJECTS",
+        "transform": "none",
+        "y": 1.5625,
+        "maskY": 1.5625,
+        "mask": "hidden"
+      }
+    ],
+    "uniqueTransforms": 1,
+    "samples": [
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": 200.1875,
+          "maskY": 200.1875,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 242.1875,
+          "maskY": 242.1875,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": -40.4375,
+          "maskY": -40.4375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 1.5625,
+          "maskY": 1.5625,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": -40.4375,
+          "maskY": -40.4375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 1.5625,
+          "maskY": 1.5625,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": -40.4375,
+          "maskY": -40.4375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 1.5625,
+          "maskY": 1.5625,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": -40.4375,
+          "maskY": -40.4375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 1.5625,
+          "maskY": 1.5625,
+          "mask": "hidden"
+        }
+      ]
+    ]
+  },
+  {
+    "path": "/case-studies/independent-lens",
+    "reduced": true,
+    "first": [
+      {
+        "text": "OTHER",
+        "transform": "none",
+        "y": 199.9453125,
+        "maskY": 199.9453125,
+        "mask": "hidden"
+      },
+      {
+        "text": "PROJECTS",
+        "transform": "none",
+        "y": 199.9453125,
+        "maskY": 199.9453125,
+        "mask": "hidden"
+      }
+    ],
+    "last": [
+      {
+        "text": "OTHER",
+        "transform": "none",
+        "y": 199.8359375,
+        "maskY": 199.8359375,
+        "mask": "hidden"
+      },
+      {
+        "text": "PROJECTS",
+        "transform": "none",
+        "y": 199.8359375,
+        "maskY": 199.8359375,
+        "mask": "hidden"
+      }
+    ],
+    "uniqueTransforms": 1,
+    "samples": [
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": 199.9453125,
+          "maskY": 199.9453125,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 199.9453125,
+          "maskY": 199.9453125,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        }
+      ],
+      [
+        {
+          "text": "OTHER",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        },
+        {
+          "text": "PROJECTS",
+          "transform": "none",
+          "y": 199.8359375,
+          "maskY": 199.8359375,
+          "mask": "hidden"
+        }
+      ]
+    ]
+  }
+]

@@ -1,0 +1,592 @@
+[
+  {
+    "path": "/case-studies/optro",
+    "targets": [
+      {
+        "html": "<a class=\"framer-c95wwq framer-1t1g6m\" data-framer-name=\"Row\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\"><div class=\"framer-1tiwxcn-container\"><!--$--><div class=\"ssr-variant hidden-1iktv9s hidden-1ywcn4p\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Md&quot;, &quot;GT Standard Trial L Md Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:40px;font-weight:500;letter-spacing:-0.00025em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">L</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">I</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">N</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">K</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">E</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">D</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">I</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">N</span></div></div><!--/$--></div><div class=\"framer-1r6jy27\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240))\">CONNECT</p>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "name": "Container",
+            "cls": "framer-89zhgo",
+            "style": null,
+            "html": "<!--$--><a class=\"framer-1tbe9i8 framer-1t1g6m\" data-framer-name=\"Row\" href=\"mailto:micah.hoang@hey.com\"><div class=\"framer-1ysp0wh-container\"><!--$--><div class=\"ssr-variant hidden-1iktv9s hidden-1ywcn4p\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Tri"
+          },
+          {
+            "tag": "SECTION",
+            "name": "Section CTA",
+            "cls": "framer-186n654",
+            "style": null,
+            "html": "<div class=\"framer-14fqx9d\" data-framer-name=\"Tag Wrapper\"><div class=\"framer-2pwayb\" data-framer-name=\"Tag\"><div class=\"framer-1jep6cc\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\""
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-l5usf9",
+            "style": null,
+            "html": "<div class=\"framer-13p45u0\"><div class=\"framer-f2ldhf\"><div class=\"framer-5ajdxe\" data-framer-appear-id=\"5ajdxe\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; transform: perspective(1200px) translateY(0.524638px); will-change: transform;\"><h1 class=\"framer-text framer-styles-pres"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-C41nv framer-supbJ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iktv9s",
+            "style": "min-height:100vh;width:auto;display:contents",
+            "html": "<div class=\"framer-wue9ac-container\" data-code-component-plugin-id=\"mcp001\"><!--$--><span data-casestudy-controllers=\"\" style=\"display:block;width:1px;height:1px;opacity:0\"><span data-casestudy-lightbox=\"\" style=\"display:block;width:1px;height:1px;opacity:0\"></span><span data-casestudy-videomanager="
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+            "style": "--kyev4z:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(246, 243, 236));min-height:100vh;width:auto",
+            "html": "<nav class=\"framer-1uhx28u\" data-framer-name=\"Navigation\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px) translateY(-64px);\" data-no-transition=\"true\"><div class=\"ssr-variant\"><div class=\"framer-ygtves-container hidden-bij1zb hidden-9uks1w\" data-framer-name=\"Mobile Navigat"
+          }
+        ]
+      },
+      {
+        "html": "<a class=\"framer-6c8lbg framer-1t1g6m\" data-framer-name=\"Row\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\"><div class=\"framer-15x0ffp-container\"><!--$--><div class=\"ssr-variant hidden-1iktv9s hidden-1ywcn4p\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Md&quot;, &quot;GT Standard Trial L Md Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:40px;font-weight:500;letter-spacing:-0.00025em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">C</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">O</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">S</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">M</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">O</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">S</span></div></div><!--/$--></div><div class=\"framer-13u5cel\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240))\">INSPIRE</p></div></a>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "name": "Container",
+            "cls": "framer-89zhgo",
+            "style": null,
+            "html": "<!--$--><a class=\"framer-1tbe9i8 framer-1t1g6m\" data-framer-name=\"Row\" href=\"mailto:micah.hoang@hey.com\"><div class=\"framer-1ysp0wh-container\"><!--$--><div class=\"ssr-variant hidden-1iktv9s hidden-1ywcn4p\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Tri"
+          },
+          {
+            "tag": "SECTION",
+            "name": "Section CTA",
+            "cls": "framer-186n654",
+            "style": null,
+            "html": "<div class=\"framer-14fqx9d\" data-framer-name=\"Tag Wrapper\"><div class=\"framer-2pwayb\" data-framer-name=\"Tag\"><div class=\"framer-1jep6cc\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\""
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-l5usf9",
+            "style": null,
+            "html": "<div class=\"framer-13p45u0\"><div class=\"framer-f2ldhf\"><div class=\"framer-5ajdxe\" data-framer-appear-id=\"5ajdxe\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; transform: perspective(1200px) translateY(0.524638px); will-change: transform;\"><h1 class=\"framer-text framer-styles-pres"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-C41nv framer-supbJ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iktv9s",
+            "style": "min-height:100vh;width:auto;display:contents",
+            "html": "<div class=\"framer-wue9ac-container\" data-code-component-plugin-id=\"mcp001\"><!--$--><span data-casestudy-controllers=\"\" style=\"display:block;width:1px;height:1px;opacity:0\"><span data-casestudy-lightbox=\"\" style=\"display:block;width:1px;height:1px;opacity:0\"></span><span data-casestudy-videomanager="
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+            "style": "--kyev4z:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(246, 243, 236));min-height:100vh;width:auto",
+            "html": "<nav class=\"framer-1uhx28u\" data-framer-name=\"Navigation\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px) translateY(-64px);\" data-no-transition=\"true\"><div class=\"ssr-variant\"><div class=\"framer-ygtves-container hidden-bij1zb hidden-9uks1w\" data-framer-name=\"Mobile Navigat"
+          }
+        ]
+      },
+      {
+        "html": "<a class=\"framer-1cw2o7y framer-1t1g6m\" data-framer-name=\"Row\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\"><div class=\"framer-ndmjrj-container\"><!--$--><div class=\"ssr-variant hidden-1iktv9s hidden-1ywcn4p\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Md&quot;, &quot;GT Standard Trial L Md Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:40px;font-weight:500;letter-spacing:-0.00025em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">G</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">I</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">T</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">H</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">U</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">B</span></div></div><!--/$--></div><div class=\"framer-1b8ystr\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240))\">BUILD</p></div></a>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "name": "Container",
+            "cls": "framer-89zhgo",
+            "style": null,
+            "html": "<!--$--><a class=\"framer-1tbe9i8 framer-1t1g6m\" data-framer-name=\"Row\" href=\"mailto:micah.hoang@hey.com\"><div class=\"framer-1ysp0wh-container\"><!--$--><div class=\"ssr-variant hidden-1iktv9s hidden-1ywcn4p\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Tri"
+          },
+          {
+            "tag": "SECTION",
+            "name": "Section CTA",
+            "cls": "framer-186n654",
+            "style": null,
+            "html": "<div class=\"framer-14fqx9d\" data-framer-name=\"Tag Wrapper\"><div class=\"framer-2pwayb\" data-framer-name=\"Tag\"><div class=\"framer-1jep6cc\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\""
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-l5usf9",
+            "style": null,
+            "html": "<div class=\"framer-13p45u0\"><div class=\"framer-f2ldhf\"><div class=\"framer-5ajdxe\" data-framer-appear-id=\"5ajdxe\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; transform: perspective(1200px) translateY(0.524638px); will-change: transform;\"><h1 class=\"framer-text framer-styles-pres"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-C41nv framer-supbJ framer-PaeN2 framer-tJ0Gf framer-l8fCa framer-8QeCg framer-zv5dI framer-T9z4l framer-1iktv9s",
+            "style": "min-height:100vh;width:auto;display:contents",
+            "html": "<div class=\"framer-wue9ac-container\" data-code-component-plugin-id=\"mcp001\"><!--$--><span data-casestudy-controllers=\"\" style=\"display:block;width:1px;height:1px;opacity:0\"><span data-casestudy-lightbox=\"\" style=\"display:block;width:1px;height:1px;opacity:0\"></span><span data-casestudy-videomanager="
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-jQzLE framer-Gyx0Q framer-bij1zb",
+            "style": "--kyev4z:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(246, 243, 236));min-height:100vh;width:auto",
+            "html": "<nav class=\"framer-1uhx28u\" data-framer-name=\"Navigation\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px) translateY(-64px);\" data-no-transition=\"true\"><div class=\"ssr-variant\"><div class=\"framer-ygtves-container hidden-bij1zb hidden-9uks1w\" data-framer-name=\"Mobile Navigat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "targets": [
+      {
+        "html": "<a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://indigoaward.com/winners/12032\" target=\"_blank\" rel=\"\">SIMON &amp; SCHUSTER, INDIGO DESIGN, GOLD</a>",
+        "parents": [
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-10eso7a",
+            "style": "--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)",
+            "html": "<!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://indigoaward.com/winners/12032\" target=\"_blank\" rel=\"\">SIMON &amp; SCHUSTER, INDIGO DESIGN, GOLD</a><!--/$-->"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1aeic18",
+            "style": "transform:none",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)\" data-mh-paragraph-pretty=\"true\"><!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-st"
+          },
+          {
+            "tag": "DIV",
+            "cls": "ssr-variant hidden-16caqa8 hidden-14stmyf",
+            "style": null,
+            "html": "<div class=\"framer-1aeic18\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)\" "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-efnq49",
+            "style": null,
+            "html": "<div class=\"ssr-variant hidden-16caqa8 hidden-14stmyf\"><div class=\"framer-1aeic18\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-co"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1wcvmvk",
+            "style": null,
+            "html": "<div class=\"framer-efnq49\"><div class=\"ssr-variant hidden-16caqa8 hidden-14stmyf\"><div class=\"framer-1aeic18\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-align"
+          }
+        ]
+      },
+      {
+        "html": "<a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://dna.paris/social/zoom.php?eid=71-95047-26\" target=\"_blank\" rel=\"\">DNA PARIS, WINNER</a>",
+        "parents": [
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-10eso7a",
+            "style": "--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)",
+            "html": "<!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://indigoaward.com/winners/12032\" target=\"_blank\" rel=\"\">SIMON &amp; SCHUSTER, </a><!--/$--><!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://dna"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-15atb6v",
+            "style": "transform:none",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)\" data-mh-paragraph-pretty=\"true\"><!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-st"
+          },
+          {
+            "tag": "DIV",
+            "cls": "ssr-variant hidden-16caqa8 hidden-14stmyf",
+            "style": null,
+            "html": "<div class=\"framer-15atb6v\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)\" "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1xbh8s5",
+            "style": null,
+            "html": "<div class=\"ssr-variant hidden-16caqa8 hidden-14stmyf\"><div class=\"framer-15atb6v\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-co"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-13tqmw9",
+            "style": null,
+            "html": "<div class=\"framer-1xbh8s5\"><div class=\"ssr-variant hidden-16caqa8 hidden-14stmyf\"><div class=\"framer-15atb6v\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alig"
+          }
+        ]
+      },
+      {
+        "html": "<a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://www.youtube.com/watch?v=jFF8EivITPs\" target=\"_blank\" rel=\"\">MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST</a>",
+        "parents": [
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-10eso7a",
+            "style": "--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)",
+            "html": "<!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://www.youtube.com/watch?v=jFF8EivITPs\" target=\"_blank\" rel=\"\">MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST</a><!--/$-->"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-113f2fg",
+            "style": "transform:none",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)\" data-mh-paragraph-pretty=\"true\"><!--$--><a class=\"framer-text framer-styles-preset-eeskf2\" data-st"
+          },
+          {
+            "tag": "DIV",
+            "cls": "ssr-variant hidden-16caqa8 hidden-14stmyf",
+            "style": null,
+            "html": "<div class=\"framer-113f2fg\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27)\" "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1im5jel",
+            "style": null,
+            "html": "<div class=\"ssr-variant hidden-16caqa8 hidden-14stmyf\"><div class=\"framer-113f2fg\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alignment:start;--framer-text-co"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1k7886a",
+            "style": null,
+            "html": "<div class=\"framer-1im5jel\"><div class=\"ssr-variant hidden-16caqa8 hidden-14stmyf\"><div class=\"framer-113f2fg\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-alig"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/seek-truth",
+    "targets": [
+      {
+        "html": "<button type=\"button\" aria-label=\"Previous slide\" style=\"position: absolute; top: 50%; left: 15px; transform: translateY(-50%); width: 30px; height: 30px; border: 0px; border-radius: 999px; background: rgba(255, 255, 255, 0.78); color: rgb(17, 17, 17); cursor: pointer; display: grid; place-items: center; z-index: 2;\"><span aria-hidden=\"true\" style=\"font-family: &quot;GT Standard L Regular&quot;, &quot;GT Standard&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 24px; line-height: 1; font-weight: 400; display: block; transform: translate(-1px, -2.6px);\">\u2039</span></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9fvyd3",
+            "style": null,
+            "html": "<div class=\"framer-1g1j9b2\"><div class=\"framer-xn06hc\"><div class=\"framer-18tp7nl\"><div class=\"framer-ieoaxc\" data-framer-appear-id=\"ieoaxc\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; transform: perspective(1200px) translateY(0.36763px); will-change: transform;\"><h2 class=\"fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Next slide\" style=\"position: absolute; top: 50%; right: 15px; transform: translateY(-50%); width: 30px; height: 30px; border: 0px; border-radius: 999px; background: rgba(255, 255, 255, 0.78); color: rgb(17, 17, 17); cursor: pointer; display: grid; place-items: center; z-index: 2;\"><span aria-hidden=\"true\" style=\"font-family: &quot;GT Standard L Regular&quot;, &quot;GT Standard&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-size: 24px; line-height: 1; font-weight: 400; display: block; transform: translate(1px, -2.6px);\">\u203a</span></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9fvyd3",
+            "style": null,
+            "html": "<div class=\"framer-1g1j9b2\"><div class=\"framer-xn06hc\"><div class=\"framer-18tp7nl\"><div class=\"framer-ieoaxc\" data-framer-appear-id=\"ieoaxc\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; transform: perspective(1200px) translateY(0.36763px); will-change: transform;\"><h2 class=\"fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; pointer-events: auto;",
+            "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>"
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Go to slide 2\" style=\"width: 16px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgb(20, 20, 20); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; pointer-events: auto;",
+            "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>"
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Go to slide 3\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; pointer-events: auto;",
+            "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>"
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Go to slide 4\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; pointer-events: auto;",
+            "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>"
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Go to slide 5\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; pointer-events: auto;",
+            "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>"
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Go to slide 6\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; pointer-events: auto;",
+            "html": "<button type=\"button\" aria-label=\"Go to slide 1\" style=\"width: 5px; height: 5px; border-radius: 999px; border: 0px; padding: 0px; background: rgba(20, 20, 20, 0.32); cursor: pointer; transition: width 0.2s cubic-bezier(0.12, 0.23, 0.5, 1), background 0.2s cubic-bezier(0.12, 0.23, 0.5, 1);\"></button>"
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width: 100%; padding-top: 75%; pointer-events: none;\"></div><div role=\"group\" aria-label=\"Seek Truth interior spreads\" style=\"position: absolute; inset: 0px;\"><img src=\"https://framerusercontent.com/images/jkj0vv9MK2veNBVjQtfDwhvVM.png\" alt=\"Seek Truth interior spread "
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-pzavdd-container",
+            "style": "will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);",
+            "html": "<div aria-roledescription=\"carousel\" aria-label=\"Seek Truth interior spreads\" style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" data-case-study-media-sk"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-x6i3xp",
+            "style": null,
+            "html": "<div class=\"framer-11vu94m\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--framer-text-color: var(--toke"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-9x7zfc",
+            "style": null,
+            "html": "<div class=\"framer-pj0vw6\"><div class=\"framer-wxebuu\" data-framer-component-type=\"RichTextContainer\" style=\"will-change: transform; opacity: 0; transform: perspective(1200px) translateY(40px);\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\" style=\"--fra"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "targets": [
+      {
+        "html": "<button type=\"button\" aria-label=\"Previous slide\" style=\"position:absolute;top:50%;left:15px;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:999px;background:rgba(87, 87, 87, 0.35);color:rgba(255, 255, 255, 0.9);cursor:pointer;display:grid;place-items:center;z-index:2\"><span aria-hidden=\"true\" style=\"font-family:&quot;GT Standard L Regular&quot;, &quot;GT Standard&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:24px;line-height:1;font-weight:400;display:block;transform:translate(-1px, -2.6px)\">\u2039</span></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width:100%;padding-top:63.83543463835434%;pointer-events:none\"></div><div role=\"group\" aria-label=\"Image carousel\" style=\"position:absolute;inset:0\"><img src=\"https://framerusercontent.com/images/OKLqenloiKhq3LWURpepNfAcOaI.jpg\" alt=\"Simon &amp; Schuster brand guidelin"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-11pbpm1-container",
+            "style": "will-change:transform;opacity:0;transform:perspective(1200px) translateY(40px)",
+            "html": "<!--$--><div style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" aria-roledescription=\"carousel\" aria-label=\"Image carousel\" data-case-study-media-skeleto"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1n4ij6i",
+            "style": null,
+            "html": "<div class=\"framer-1418lko\" data-framer-component-type=\"RichTextContainer\" style=\"will-change:transform;opacity:0;transform:perspective(1200px) translateY(40px)\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\">Guidelines</h3></div><div class=\"framer-11pb"
+          },
+          {
+            "tag": "DIV",
+            "name": "Simon&Schuster Stack",
+            "cls": "framer-wiif92",
+            "style": null,
+            "html": "<div class=\"framer-11ckxk6\"><div class=\"framer-1brjeox\" data-framer-component-type=\"RichTextContainer\" style=\"will-change:transform;opacity:0;transform:perspective(1200px) translateY(40px)\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\">Background</h3><"
+          },
+          {
+            "tag": "MAIN",
+            "name": "Main",
+            "cls": "framer-1rukb5i",
+            "style": null,
+            "html": "<header class=\"framer-1fl7ep5\" data-framer-name=\"Section Header\"><div class=\"framer-1335vo9\" data-framer-name=\"Container\"><div class=\"framer-m9jt17\" data-framer-name=\"Heading\"><div class=\"framer-8je526\" data-framer-appear-id=\"8je526\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; "
+          }
+        ]
+      },
+      {
+        "html": "<button type=\"button\" aria-label=\"Next slide\" style=\"position:absolute;top:50%;right:15px;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:999px;background:rgba(87, 87, 87, 0.35);color:rgba(255, 255, 255, 0.9);cursor:pointer;display:grid;place-items:center;z-index:2\"><span aria-hidden=\"true\" style=\"font-family:&quot;GT Standard L Regular&quot;, &quot;GT Standard&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:24px;line-height:1;font-weight:400;display:block;transform:translate(1px, -2.6px)\">\u203a</span></button>",
+        "parents": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "style": "width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);",
+            "html": "<div aria-hidden=\"true\" style=\"width:100%;padding-top:63.83543463835434%;pointer-events:none\"></div><div role=\"group\" aria-label=\"Image carousel\" style=\"position:absolute;inset:0\"><img src=\"https://framerusercontent.com/images/OKLqenloiKhq3LWURpepNfAcOaI.jpg\" alt=\"Simon &amp; Schuster brand guidelin"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-11pbpm1-container",
+            "style": "will-change:transform;opacity:0;transform:perspective(1200px) translateY(40px)",
+            "html": "<!--$--><div style=\"width: 100%; position: relative; height: auto; overflow: hidden; background: transparent; border-radius: 0px; user-select: none; --case-study-media-skeleton-color: rgba(255, 255, 255, 0.6);\" aria-roledescription=\"carousel\" aria-label=\"Image carousel\" data-case-study-media-skeleto"
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1n4ij6i",
+            "style": null,
+            "html": "<div class=\"framer-1418lko\" data-framer-component-type=\"RichTextContainer\" style=\"will-change:transform;opacity:0;transform:perspective(1200px) translateY(40px)\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\">Guidelines</h3></div><div class=\"framer-11pb"
+          },
+          {
+            "tag": "DIV",
+            "name": "Simon&Schuster Stack",
+            "cls": "framer-wiif92",
+            "style": null,
+            "html": "<div class=\"framer-11ckxk6\"><div class=\"framer-1brjeox\" data-framer-component-type=\"RichTextContainer\" style=\"will-change:transform;opacity:0;transform:perspective(1200px) translateY(40px)\"><h3 class=\"framer-text framer-styles-preset-rhmsro\" data-styles-preset=\"ngPzaVWSI\" dir=\"auto\">Background</h3><"
+          },
+          {
+            "tag": "MAIN",
+            "name": "Main",
+            "cls": "framer-1rukb5i",
+            "style": null,
+            "html": "<header class=\"framer-1fl7ep5\" data-framer-name=\"Section Header\"><div class=\"framer-1335vo9\" data-framer-name=\"Container\"><div class=\"framer-m9jt17\" data-framer-name=\"Heading\"><div class=\"framer-8je526\" data-framer-appear-id=\"8je526\" data-framer-component-type=\"RichTextContainer\" style=\"opacity: 1; "
+          }
+        ]
+      }
+    ]
+  }
+]

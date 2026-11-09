@@ -85,7 +85,9 @@
   &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Scroll to top ↑&lt;/span&gt;&lt;span aria-hidden="true"&gt;Scroll to top ↑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/button&gt;</code></pre></details></figure>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>Place it at the end of long pages (Home, About), right-aligned above the footer.</li><li>900ms with a Snappy-like curve. Jumps instantly under reduced motion.</li><li>Uses the same flip rail as every other text action.</li></ul>
+<ul><li>Place it at the end of long pages (Home, About), on the left gutter, 60px below the content and above the footer.</li><li>900ms with a Snappy-like curve. Jumps instantly under reduced motion.</li><li>Uses the same flip rail as every other text action.</li></ul>
+<h3 id="mobile"><a class="ds-anchor" href="#mobile">Mobile</a></h3>
+<p>Below 810px the button is a 44px target. It's offset by <code>(row height − 44) / 2</code> (−14px in a 16px slot) so the target centers on the label and the visible gaps above and below the green footer edge stay equal (22–23px at 320–430px).</p>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class / attribute</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-action mh-scroll-top</code></td><td>Text action; <code>components.js</code> handles the scroll</td></tr><tr><td><code>data-target</code></td><td>Optional selector of a scroll container (default: the document)</td></tr></tbody></table></div>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>

@@ -1,0 +1,89 @@
+{
+  "motion": [],
+  "routes": [
+    {
+      "via": "gaia \u2192 About",
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "airpods \u2192 About",
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "browser back",
+      "path": "/case-studies/airpods",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    }
+  ],
+  "controls": {
+    "desktopBoundary": {
+      "dialogCount": 0,
+      "menuCount": 0,
+      "overflow": "",
+      "navText": "Micah HoangBRAND DESIGNERLOS ANGELES, CALIFORNIAWorkWorkPLAYPLAYINDEXINDEXABOUTABOUT"
+    },
+    "returnToMobile": {
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    }
+  },
+  "errors": []
+}

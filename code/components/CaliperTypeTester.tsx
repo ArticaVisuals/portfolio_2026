@@ -9,6 +9,7 @@ const FONT_DATA = "data:font/woff;base64,d09GRk9UVE8AACwkAAsAAAAAO3wAAQDFAAAAAAA
 const REGISTRATION_MARK = "data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJXaW5kb3cgQ29udHJvbCI+CjxwYXRoIGlkPSJMaW5lIDEiIGQ9Ik0wIDEyLjVIMjQiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlPSIjRUVFRUVFIi8+CjxwYXRoIGlkPSJMaW5lIDIiIGQ9Ik0xMS41IDI0TDExLjUgMCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiNFRUVFRUUiLz4KPC9nPgo8L3N2Zz4K"
 const FONT_FAMILY = "Caliper Specimen 1003"
 const DEMO_PHRASES = ["Type here", "Caliper Sans", "Hamburgefontsiv"]
+const MOBILE_DEMO_PHRASES = ["Type", "Caliper", "Lorem"]
 const METRICS = { capHeight: 740, xHeight: 510, baseline: 0, descender: -230 }
 // Figma Caliper editorial tokens, distinct from the surrounding portfolio chrome.
 const COLORS = { blue: "#1C2440", white: "#EEEEEE" }
@@ -64,6 +65,20 @@ const CSS = `
     appearance: none; -webkit-appearance: none;
 }
 .caliper-tester .caliper-input::placeholder { color: inherit; opacity: .28; }
+.caliper-tester .caliper-demo-caret {
+    position: absolute; pointer-events: none; user-select: none;
+    text-align: center; white-space: pre; line-height: 1.2; visibility: hidden;
+}
+.caliper-tester .caliper-demo-caret span { position: relative; display: inline-block; height: 1.2em; vertical-align: top; }
+.caliper-tester .caliper-demo-caret span::after {
+    content: ""; position: absolute; left: calc(100% + 2px); top: .23em;
+    width: 2px; height: .97em; background: currentColor; visibility: visible;
+    opacity: .28; animation: caliper-caret-blink 1s steps(1, end) infinite;
+}
+@keyframes caliper-caret-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+    .caliper-tester .caliper-demo-caret span::after { animation: none; }
+}
 .caliper-tester ::selection {
     background: var(--caliper-ink); color: var(--caliper-bg); text-shadow: none;
 }
@@ -77,7 +92,7 @@ const CSS = `
 }
 .caliper-tester .caliper-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @container (max-width: 440px) {
-    .caliper-tester .caliper-registration { padding: 20px 12px 12px; }
+    .caliper-tester .caliper-registration { padding: 12px; }
     .caliper-tester .caliper-stage { margin-inline: 12px; }
 }
 `
@@ -108,10 +123,13 @@ export default function CaliperTypeTester({
     const [reducedMotion, setReducedMotion] = React.useState(true)
     const [demo, setDemo] = React.useState({ phrase: DEMO_PHRASES[0], text: "" })
     const measureCanvas = React.useRef<HTMLCanvasElement | null>(null)
+    const mobile = width < 440
+    const demoPhrases = mobile ? MOBILE_DEMO_PHRASES : DEMO_PHRASES
+    const prompt = demoPhrases[0]
     const demoActive = !interacted && !text && !reducedMotion && inView && fontReady
-    const placeholder = demoActive ? (demo.text || " ") : "Type here"
+    const placeholder = demoActive ? (demo.text || " ") : prompt
     // Measure the complete demo phrase so its size stays steady while letters appear.
-    const measuredText = text || (demoActive ? demo.phrase : "Type here")
+    const measuredText = text || (demoActive ? demo.phrase : prompt)
 
     React.useEffect(() => { setText(initialText) }, [initialText])
     React.useEffect(() => {
@@ -128,18 +146,18 @@ export default function CaliperTypeTester({
         let deleting = false
         let timer: ReturnType<typeof setTimeout>
         const tick = () => {
-            const phrase = DEMO_PHRASES[phraseIndex]
+            const phrase = demoPhrases[phraseIndex]
             count += deleting ? -1 : 1
             setDemo({ phrase, text: phrase.slice(0, count) })
             let delay = deleting ? 55 : 125
             if (count === phrase.length) { deleting = true; delay = 1600 }
-            else if (count === 0) { deleting = false; phraseIndex = (phraseIndex + 1) % DEMO_PHRASES.length; delay = 450 }
+            else if (count === 0) { deleting = false; phraseIndex = (phraseIndex + 1) % demoPhrases.length; delay = 450 }
             timer = setTimeout(tick, delay)
         }
-        setDemo({ phrase: DEMO_PHRASES[0], text: "" })
+        setDemo({ phrase: demoPhrases[0], text: "" })
         timer = setTimeout(tick, 350)
         return () => clearTimeout(timer)
-    }, [demoActive])
+    }, [demoActive, demoPhrases])
     React.useEffect(() => {
         let cancelled = false
         document.fonts.load(`400 100px "${FONT_FAMILY}"`).then((faces) => {
@@ -168,14 +186,19 @@ export default function CaliperTypeTester({
         setTextWidth(Math.max(metrics.width, metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight, 1))
     }, [measuredText, fontReady, composing])
 
-    const stageHeight = Math.max(300, Math.min(480, width * .4))
+    const stageHeight = mobile ? Math.max(180, Math.min(220, width * .65)) : Math.max(300, Math.min(480, width * .4))
     const compact = width < 700
     const gutter = guides ? (compact ? 40 : 56) : (compact ? 16 : 24)
-    const baseline = stageHeight * .72
-    const heightLimit = (stageHeight - 106) / 1.2
+    const heightLimit = (stageHeight - (mobile ? 64 : 106)) / 1.2
     const size = Math.floor(Math.max(20, Math.min(maxSize, heightLimit, (width - gutter * 2 - 4) / textWidth * 100)))
+    // Balance the visible cap-to-descender area inside the shorter mobile stage.
+    const baseline = mobile ? stageHeight / 2 + (METRICS.capHeight + METRICS.descender) / 2000 * size : stageHeight * .72
     // 12px labels have a 15.6px line box; remove them before the closest lines meet.
     const numbersVisible = .23 * size >= 18
+    const specimenStyle: React.CSSProperties = {
+        top: baseline - .97 * size, left: gutter,
+        width: `calc(100% - ${gutter * 2}px)`, height: 1.2 * size, fontSize: size,
+    }
     const cssVariables = {
         ...style,
         background, color: foreground,
@@ -209,11 +232,16 @@ export default function CaliperTypeTester({
                     <input ref={input} id={`${id}-text`} className="caliper-input" type="text" value={text} placeholder={placeholder}
                         autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} maxLength={160}
                         aria-busy={!fontReady && !fontFailed}
-                        style={{ top: baseline - .97 * size, left: gutter, width: `calc(100% - ${gutter * 2}px)`, height: 1.2 * size, fontSize: size, opacity: fontReady ? 1 : 0 }}
+                        style={{ ...specimenStyle, opacity: fontReady ? 1 : 0 }}
                         onFocus={() => setInteracted(true)}
                         onChange={event => { setInteracted(true); setText(event.target.value) }}
                         onCompositionStart={() => setComposing(true)} onCompositionEnd={event => { setComposing(false); setText(event.currentTarget.value) }}
                     />
+                    {!mobile && !interacted && !text && fontReady && inView && (
+                        <div className="caliper-demo-caret" style={specimenStyle} aria-hidden="true">
+                            <span>{demoActive ? demo.text : prompt}</span>
+                        </div>
+                    )}
                     {!fontReady && <div role="status" style={{ position: "absolute", inset: "46% 20px auto", textAlign: "center" }}>{fontFailed ? "The font could not load. Please refresh to try again." : "Loading Caliper Sans…"}</div>}
                 </div>
                 {marks}

@@ -1,0 +1,3532 @@
+{
+  "version": 1,
+  "pageId": "1603:644",
+  "fonts": {
+    "regular": {
+      "family": "GT Standard",
+      "style": "L Regular"
+    },
+    "medium": {
+      "family": "GT Standard Trial",
+      "style": "L Md"
+    },
+    "bold": {
+      "family": "GT Standard Trial",
+      "style": "L Bd"
+    },
+    "mono": {
+      "family": "GT Standard Mono",
+      "style": "Regular"
+    },
+    "footer": {
+      "family": "GT Standard Trial",
+      "style": "L Rg"
+    }
+  },
+  "frames": [
+    {
+      "name": "Typography / Web hierarchy",
+      "x": 8660,
+      "y": 1430,
+      "w": 1920,
+      "h": 1080,
+      "bg": "#F7F5F0",
+      "items": [
+        {
+          "kind": "text",
+          "name": "Sheet title",
+          "text": "Typography — Web",
+          "x": 36,
+          "y": 28,
+          "w": 1280,
+          "size": 32,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 40
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Sheet status",
+          "text": "CURRENT WEBSITE / PX",
+          "x": 1512,
+          "y": 38,
+          "w": 372,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "align": "RIGHT"
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 84,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.8
+        },
+        {
+          "kind": "text",
+          "name": "System / units",
+          "text": "GT Standard L + GT Standard Mono   |   Desktop ≥1200   /   Tablet 810–1199   /   Mobile <810",
+          "x": 36,
+          "y": 108,
+          "w": 1848,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / ROLE / USE",
+          "text": "ROLE / USE",
+          "x": 36,
+          "y": 144,
+          "w": 230,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / DESKTOP",
+          "text": "DESKTOP",
+          "x": 290,
+          "y": 144,
+          "w": 72,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / TABLET",
+          "text": "TABLET",
+          "x": 376,
+          "y": 144,
+          "w": 100,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / MOBILE",
+          "text": "MOBILE",
+          "x": 500,
+          "y": 144,
+          "w": 150,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / WEIGHT",
+          "text": "WEIGHT",
+          "x": 680,
+          "y": 144,
+          "w": 160,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / LEADING",
+          "text": "LEADING",
+          "x": 864,
+          "y": 144,
+          "w": 144,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / TRACKING",
+          "text": "TRACKING",
+          "x": 1032,
+          "y": 144,
+          "w": 156,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / DESKTOP SPECIMEN",
+          "text": "DESKTOP SPECIMEN",
+          "x": 1216,
+          "y": 144,
+          "w": 668,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 168,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.5
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Role",
+          "text": "Display XL",
+          "x": 36,
+          "y": 174,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true,
+          "sub": "Hero name"
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Desktop",
+          "text": "120",
+          "x": 290,
+          "y": 174,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Tablet",
+          "text": "94",
+          "x": 376,
+          "y": 174,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Mobile",
+          "text": "58",
+          "x": 500,
+          "y": 174,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Weight",
+          "text": "700",
+          "x": 680,
+          "y": 174,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Leading",
+          "text": "100 /114 /114%",
+          "x": 864,
+          "y": 174,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Tracking",
+          "text": "−1%",
+          "x": 1032,
+          "y": 174,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display XL / Specimen",
+          "text": "Micah",
+          "x": 1216,
+          "y": 174,
+          "w": 668,
+          "size": 120,
+          "font": "bold",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 100
+          },
+          "tracking": -1,
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 306,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Role",
+          "text": "Display L",
+          "x": 36,
+          "y": 306,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true,
+          "sub": "Case-study title"
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Desktop",
+          "text": "70",
+          "x": 290,
+          "y": 306,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Tablet",
+          "text": "52",
+          "x": 376,
+          "y": 306,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Mobile",
+          "text": "38",
+          "x": 500,
+          "y": 306,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Weight",
+          "text": "700",
+          "x": 680,
+          "y": 306,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Leading",
+          "text": "100%",
+          "x": 864,
+          "y": 306,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Tracking",
+          "text": "−1 /−1 /−2%",
+          "x": 1032,
+          "y": 306,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display L / Specimen",
+          "text": "Gaia",
+          "x": 1216,
+          "y": 306,
+          "w": 668,
+          "size": 70,
+          "font": "bold",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 100
+          },
+          "tracking": -1,
+          "rowY": 306,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 384,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Role",
+          "text": "Display M",
+          "x": 36,
+          "y": 384,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true,
+          "sub": "Section title"
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Desktop",
+          "text": "70",
+          "x": 290,
+          "y": 384,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Tablet",
+          "text": "53",
+          "x": 376,
+          "y": 384,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Mobile",
+          "text": "42",
+          "x": 500,
+          "y": 384,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Weight",
+          "text": "400",
+          "x": 680,
+          "y": 384,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Leading",
+          "text": "100%",
+          "x": 864,
+          "y": 384,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Tracking",
+          "text": "−1%",
+          "x": 1032,
+          "y": 384,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display M / Specimen",
+          "text": "Selected work",
+          "x": 1216,
+          "y": 384,
+          "w": 668,
+          "size": 70,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 100
+          },
+          "tracking": -1,
+          "rowY": 384,
+          "rowH": 78,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 462,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Role",
+          "text": "Display Footer",
+          "x": 36,
+          "y": 462,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true,
+          "sub": "Contact statement"
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Desktop",
+          "text": "80",
+          "x": 290,
+          "y": 462,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Tablet",
+          "text": "70 /80*",
+          "x": 376,
+          "y": 462,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Mobile",
+          "text": "27–38*",
+          "x": 500,
+          "y": 462,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Weight",
+          "text": "400 /500*",
+          "x": 680,
+          "y": 462,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Leading",
+          "text": "100%",
+          "x": 864,
+          "y": 462,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Tracking",
+          "text": "−2 /−2 /−1%",
+          "x": 1032,
+          "y": 462,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display Footer / Specimen",
+          "text": "GET IN TOUCH",
+          "x": 1216,
+          "y": 462,
+          "w": 668,
+          "size": 80,
+          "font": "footer",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 100
+          },
+          "tracking": -2,
+          "rowY": 462,
+          "rowH": 88,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 550,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Role",
+          "text": "Heading",
+          "x": 36,
+          "y": 550,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true,
+          "sub": "Descriptor / section"
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Desktop",
+          "text": "35",
+          "x": 290,
+          "y": 550,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Tablet",
+          "text": "28",
+          "x": 376,
+          "y": 550,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Mobile",
+          "text": "24",
+          "x": 500,
+          "y": 550,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Weight",
+          "text": "400",
+          "x": 680,
+          "y": 550,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Leading",
+          "text": "110%",
+          "x": 864,
+          "y": 550,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Tracking",
+          "text": "−1%",
+          "x": 1032,
+          "y": 550,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Heading / Specimen",
+          "text": "Brand designer",
+          "x": 1216,
+          "y": 550,
+          "w": 668,
+          "size": 35,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 110
+          },
+          "tracking": -1,
+          "rowY": 550,
+          "rowH": 50,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 600,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Title / Role",
+          "text": "Title",
+          "x": 36,
+          "y": 600,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true,
+          "sub": "Index rows / uppercase"
+        },
+        {
+          "kind": "text",
+          "name": "Title / Desktop",
+          "text": "22",
+          "x": 290,
+          "y": 600,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Title / Tablet",
+          "text": "22",
+          "x": 376,
+          "y": 600,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Title / Mobile",
+          "text": "22",
+          "x": 500,
+          "y": 600,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Title / Weight",
+          "text": "400",
+          "x": 680,
+          "y": 600,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Title / Leading",
+          "text": "120%",
+          "x": 864,
+          "y": 600,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Title / Tracking",
+          "text": "0%",
+          "x": 1032,
+          "y": 600,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Title / Specimen",
+          "text": "GAIA",
+          "x": 1216,
+          "y": 600,
+          "w": 668,
+          "size": 22,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 120
+          },
+          "tracking": 0,
+          "rowY": 600,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 640,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Role",
+          "text": "Body XL",
+          "x": 36,
+          "y": 640,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true,
+          "sub": "Utility / emphasized lead"
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Desktop",
+          "text": "22",
+          "x": 290,
+          "y": 640,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Tablet",
+          "text": "22",
+          "x": 376,
+          "y": 640,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Mobile",
+          "text": "22",
+          "x": 500,
+          "y": 640,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Weight",
+          "text": "500",
+          "x": 680,
+          "y": 640,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Leading",
+          "text": "110%",
+          "x": 864,
+          "y": 640,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Tracking",
+          "text": "−1%",
+          "x": 1032,
+          "y": 640,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body XL / Specimen",
+          "text": "One idea, every surface.",
+          "x": 1216,
+          "y": 640,
+          "w": 668,
+          "size": 22,
+          "font": "medium",
+          "color": "#525252",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 110
+          },
+          "tracking": -1,
+          "rowY": 640,
+          "rowH": 40,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 680,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Role",
+          "text": "Body L",
+          "x": 36,
+          "y": 680,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true,
+          "sub": "Lead / metadata"
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Desktop",
+          "text": "22",
+          "x": 290,
+          "y": 680,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Tablet",
+          "text": "18",
+          "x": 376,
+          "y": 680,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Mobile",
+          "text": "18",
+          "x": 500,
+          "y": 680,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Weight",
+          "text": "400",
+          "x": 680,
+          "y": 680,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Leading",
+          "text": "120 /120 /140%",
+          "x": 864,
+          "y": 680,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Tracking",
+          "text": "+1 /+1 /0%",
+          "x": 1032,
+          "y": 680,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body L / Specimen",
+          "text": "Brand systems with clarity.",
+          "x": 1216,
+          "y": 680,
+          "w": 668,
+          "size": 22,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 120
+          },
+          "tracking": 1,
+          "rowY": 680,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 724,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Role",
+          "text": "Body M",
+          "x": 36,
+          "y": 724,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true,
+          "sub": "Long-form / 580px measure"
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Desktop",
+          "text": "18",
+          "x": 290,
+          "y": 724,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Tablet",
+          "text": "16",
+          "x": 376,
+          "y": 724,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Mobile",
+          "text": "18",
+          "x": 500,
+          "y": 724,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Weight",
+          "text": "400",
+          "x": 680,
+          "y": 724,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Leading",
+          "text": "140%",
+          "x": 864,
+          "y": 724,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Tracking",
+          "text": "0%",
+          "x": 1032,
+          "y": 724,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body M / Specimen",
+          "text": "Made to hold together.",
+          "x": 1216,
+          "y": 724,
+          "w": 668,
+          "size": 18,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 140
+          },
+          "tracking": 0,
+          "rowY": 724,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 768,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Label / Role",
+          "text": "Label",
+          "x": 36,
+          "y": 768,
+          "w": 230,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true,
+          "sub": "Navigation / actions"
+        },
+        {
+          "kind": "text",
+          "name": "Label / Desktop",
+          "text": "13",
+          "x": 290,
+          "y": 768,
+          "w": 72,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Label / Tablet",
+          "text": "13",
+          "x": 376,
+          "y": 768,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Label / Mobile",
+          "text": "13",
+          "x": 500,
+          "y": 768,
+          "w": 150,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Label / Weight",
+          "text": "400 mono",
+          "x": 680,
+          "y": 768,
+          "w": 160,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Label / Leading",
+          "text": "130 /130 /140%",
+          "x": 864,
+          "y": 768,
+          "w": 144,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Label / Tracking",
+          "text": "−1%",
+          "x": 1032,
+          "y": 768,
+          "w": 156,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Label / Specimen",
+          "text": "/ ABOUT THE PROJECT\nVISUAL IDENTITY",
+          "x": 1216,
+          "y": 768,
+          "w": 668,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PERCENT",
+            "value": 130
+          },
+          "tracking": -1,
+          "rowY": 768,
+          "rowH": 44,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 812,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Responsive exceptions",
+          "text": "* Footer: tablet 70px home / 80px case studies; Regular desktop + case-study tablet, Medium home tablet + mobile. Mobile fluid: 27–38px (35 at 390).",
+          "x": 36,
+          "y": 1030,
+          "w": 1848,
+          "size": 12,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Source / conventions",
+          "text": "Leading / tracking splits follow D / T / M. † Mono actions may use −1% tracking. Utility = defined site style. Source: micahhoang.com + system tokens · 06 NOV 2026.",
+          "x": 36,
+          "y": 1050,
+          "w": 1848,
+          "size": 12,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        }
+      ]
+    },
+    {
+      "name": "Typography / Print hierarchy — suggested",
+      "x": 8660,
+      "y": 2622,
+      "w": 1920,
+      "h": 1080,
+      "bg": "#F7F5F0",
+      "items": [
+        {
+          "kind": "text",
+          "name": "Sheet title",
+          "text": "Typography — Print",
+          "x": 36,
+          "y": 28,
+          "w": 1280,
+          "size": 32,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 40
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Sheet status",
+          "text": "SUGGESTED PRINT SYSTEM / PT",
+          "x": 1512,
+          "y": 38,
+          "w": 372,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "align": "RIGHT"
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 84,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.8
+        },
+        {
+          "kind": "text",
+          "name": "System / units",
+          "text": "GT Standard L + GT Standard Mono   |   Business cards / Résumés / Stationery   |   Specimens shown at 3×; sizes below are final print points.",
+          "x": 36,
+          "y": 108,
+          "w": 1848,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / ROLE",
+          "text": "ROLE",
+          "x": 36,
+          "y": 144,
+          "w": 240,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / SIZE (PT)",
+          "text": "SIZE (PT)",
+          "x": 300,
+          "y": 144,
+          "w": 100,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / LEADING (PT)",
+          "text": "LEADING (PT)",
+          "x": 430,
+          "y": 144,
+          "w": 120,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / TRACKING*",
+          "text": "TRACKING*",
+          "x": 580,
+          "y": 144,
+          "w": 132,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / FACE / WEIGHT",
+          "text": "FACE / WEIGHT",
+          "x": 738,
+          "y": 144,
+          "w": 190,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / APPLICATION",
+          "text": "APPLICATION",
+          "x": 956,
+          "y": 144,
+          "w": 260,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Column / SPECIMEN / 3×",
+          "text": "SPECIMEN / 3×",
+          "x": 1250,
+          "y": 144,
+          "w": 634,
+          "size": 13,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 168,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.5
+        },
+        {
+          "kind": "text",
+          "name": "Display / Role",
+          "text": "Display",
+          "x": 36,
+          "y": 174,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display / Size",
+          "text": "36",
+          "x": 300,
+          "y": 174,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display / Leading",
+          "text": "38",
+          "x": 430,
+          "y": 174,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display / Tracking",
+          "text": "−10",
+          "x": 580,
+          "y": 174,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display / Face",
+          "text": "L Bold",
+          "x": 738,
+          "y": 174,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display / Application",
+          "text": "Portfolio covers / large\npromotional pieces",
+          "x": 956,
+          "y": 174,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Display / Specimen",
+          "text": "Identity",
+          "x": 1250,
+          "y": 174,
+          "w": 634,
+          "size": 108,
+          "font": "bold",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 114
+          },
+          "tracking": -1,
+          "rowY": 174,
+          "rowH": 132,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 306,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Role",
+          "text": "Document title",
+          "x": 36,
+          "y": 306,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Size",
+          "text": "24",
+          "x": 300,
+          "y": 306,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Leading",
+          "text": "26",
+          "x": 430,
+          "y": 306,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Tracking",
+          "text": "−10",
+          "x": 580,
+          "y": 306,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Face",
+          "text": "L Regular",
+          "x": 738,
+          "y": 306,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Application",
+          "text": "Editorial title / short\npresentation opener",
+          "x": 956,
+          "y": 306,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Document title / Specimen",
+          "text": "Brand systems",
+          "x": 1250,
+          "y": 306,
+          "w": 634,
+          "size": 72,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 78
+          },
+          "tracking": -1,
+          "rowY": 306,
+          "rowH": 84,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 390,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Role",
+          "text": "Section heading",
+          "x": 36,
+          "y": 390,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Size",
+          "text": "14",
+          "x": 300,
+          "y": 390,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Leading",
+          "text": "17",
+          "x": 430,
+          "y": 390,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 390,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Face",
+          "text": "L Bold",
+          "x": 738,
+          "y": 390,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Application",
+          "text": "Résumé sections /\nletterhead hierarchy",
+          "x": 956,
+          "y": 390,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Section heading / Specimen",
+          "text": "Recognition",
+          "x": 1250,
+          "y": 390,
+          "w": 634,
+          "size": 42,
+          "font": "bold",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 51
+          },
+          "tracking": 0,
+          "rowY": 390,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 452,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Role",
+          "text": "Subheading",
+          "x": 36,
+          "y": 452,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Size",
+          "text": "11",
+          "x": 300,
+          "y": 452,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Leading",
+          "text": "14",
+          "x": 430,
+          "y": 452,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 452,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Face",
+          "text": "L Medium",
+          "x": 738,
+          "y": 452,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Application",
+          "text": "Role names / project\nsubheads",
+          "x": 956,
+          "y": 452,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Subheading / Specimen",
+          "text": "Brand Designer",
+          "x": 1250,
+          "y": 452,
+          "w": 634,
+          "size": 33,
+          "font": "medium",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 42
+          },
+          "tracking": 0,
+          "rowY": 452,
+          "rowH": 60,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 512,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Role",
+          "text": "Lead",
+          "x": 36,
+          "y": 512,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Size",
+          "text": "12",
+          "x": 300,
+          "y": 512,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Leading",
+          "text": "16",
+          "x": 430,
+          "y": 512,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 512,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Face",
+          "text": "L Regular",
+          "x": 738,
+          "y": 512,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Application",
+          "text": "Short introductory copy /\nportfolio summaries",
+          "x": 956,
+          "y": 512,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Lead / Specimen",
+          "text": "Ideas made clear.",
+          "x": 1250,
+          "y": 512,
+          "w": 634,
+          "size": 36,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 48
+          },
+          "tracking": 0,
+          "rowY": 512,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 576,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Body / Role",
+          "text": "Body",
+          "x": 36,
+          "y": 576,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body / Size",
+          "text": "10",
+          "x": 300,
+          "y": 576,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body / Leading",
+          "text": "14",
+          "x": 430,
+          "y": 576,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 576,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body / Face",
+          "text": "L Regular",
+          "x": 738,
+          "y": 576,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body / Application",
+          "text": "Cover letters / résumé\nreading text / stationery",
+          "x": 956,
+          "y": 576,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Body / Specimen",
+          "text": "Made to hold together.",
+          "x": 1250,
+          "y": 576,
+          "w": 634,
+          "size": 30,
+          "font": "regular",
+          "color": "#141414",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 42
+          },
+          "tracking": 0,
+          "rowY": 576,
+          "rowH": 76,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 652,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Role",
+          "text": "Compact body",
+          "x": 36,
+          "y": 652,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Size",
+          "text": "8.5",
+          "x": 300,
+          "y": 652,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Leading",
+          "text": "10.5",
+          "x": 430,
+          "y": 652,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 652,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Face",
+          "text": "L Regular",
+          "x": 738,
+          "y": 652,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Application",
+          "text": "Dense résumé text;\nproof at actual size",
+          "x": 956,
+          "y": 652,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Compact body / Specimen",
+          "text": "Clear, considered, connected.",
+          "x": 1250,
+          "y": 652,
+          "w": 634,
+          "size": 25.5,
+          "font": "regular",
+          "color": "#141414",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 31.5
+          },
+          "tracking": 0,
+          "rowY": 652,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 714,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Role",
+          "text": "Card name",
+          "x": 36,
+          "y": 714,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Size",
+          "text": "12",
+          "x": 300,
+          "y": 714,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Leading",
+          "text": "14",
+          "x": 430,
+          "y": 714,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 714,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Face",
+          "text": "L Bold",
+          "x": 738,
+          "y": 714,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Application",
+          "text": "Business-card name /\nprimary identity line",
+          "x": 956,
+          "y": 714,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card name / Specimen",
+          "text": "Micah Hoang",
+          "x": 1250,
+          "y": 714,
+          "w": 634,
+          "size": 36,
+          "font": "bold",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 42
+          },
+          "tracking": 0,
+          "rowY": 714,
+          "rowH": 64,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 778,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Role",
+          "text": "Card details",
+          "x": 36,
+          "y": 778,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Size",
+          "text": "8.5",
+          "x": 300,
+          "y": 778,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Leading",
+          "text": "11",
+          "x": 430,
+          "y": 778,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 778,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Face",
+          "text": "L Regular",
+          "x": 738,
+          "y": 778,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Application",
+          "text": "Business-card title /\nemail / website / phone",
+          "x": 956,
+          "y": 778,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Card details / Specimen",
+          "text": "micahhoang.com",
+          "x": 1250,
+          "y": 778,
+          "w": 634,
+          "size": 25.5,
+          "font": "regular",
+          "color": "#141414",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 33
+          },
+          "tracking": 0,
+          "rowY": 778,
+          "rowH": 62,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 840,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Role",
+          "text": "Mono label",
+          "x": 36,
+          "y": 840,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Size",
+          "text": "8",
+          "x": 300,
+          "y": 840,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Leading",
+          "text": "10",
+          "x": 430,
+          "y": 840,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 840,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Face",
+          "text": "Mono Regular",
+          "x": 738,
+          "y": 840,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Application",
+          "text": "Short all-caps labels /\npage numbers / metadata",
+          "x": 956,
+          "y": 840,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Mono label / Specimen",
+          "text": "BRAND DESIGNER",
+          "x": 1250,
+          "y": 840,
+          "w": 634,
+          "size": 24,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 30
+          },
+          "tracking": 0,
+          "rowY": 840,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 896,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Role",
+          "text": "Caption / note",
+          "x": 36,
+          "y": 896,
+          "w": 240,
+          "size": 16,
+          "font": "regular",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Size",
+          "text": "8",
+          "x": 300,
+          "y": 896,
+          "w": 100,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Leading",
+          "text": "10",
+          "x": 430,
+          "y": 896,
+          "w": 120,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Tracking",
+          "text": "0",
+          "x": 580,
+          "y": 896,
+          "w": 132,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Face",
+          "text": "L Regular",
+          "x": 738,
+          "y": 896,
+          "w": 190,
+          "size": 14,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Application",
+          "text": "Secondary captions /\nnonessential notes",
+          "x": 956,
+          "y": 896,
+          "w": 260,
+          "size": 14,
+          "font": "regular",
+          "color": "#525252",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "text",
+          "name": "Caption / note / Specimen",
+          "text": "Details, carefully considered.",
+          "x": 1250,
+          "y": 896,
+          "w": 634,
+          "size": 24,
+          "font": "regular",
+          "color": "#141414",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 30
+          },
+          "tracking": 0,
+          "rowY": 896,
+          "rowH": 56,
+          "center": true
+        },
+        {
+          "kind": "rect",
+          "name": "Horizontal rule",
+          "x": 36,
+          "y": 952,
+          "w": 1848,
+          "h": 1,
+          "color": "#2C402D",
+          "opacity": 0.22
+        },
+        {
+          "kind": "text",
+          "name": "Print tracking convention",
+          "text": "* Tracking uses InDesign units (1/1000 em): −10 = −1%, 0 = default. This is a suggested print scale, not a px-to-pt conversion of the website.",
+          "x": 36,
+          "y": 1030,
+          "w": 1848,
+          "size": 12,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        },
+        {
+          "kind": "text",
+          "name": "Print production note",
+          "text": "Start with Body 10/14; use Compact Body 8.5/10.5 only when needed. Keep small résumé text black and proof cards on the final stock at 100%.",
+          "x": 36,
+          "y": 1050,
+          "w": 1848,
+          "size": 12,
+          "font": "mono",
+          "color": "#2C402D",
+          "lh": {
+            "unit": "PIXELS",
+            "value": 18
+          }
+        }
+      ]
+    }
+  ]
+}

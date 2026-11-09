@@ -12,9 +12,9 @@ The Claude artifact reference returned “Page not found” twice and was not us
 
 ## Current behavior
 
-- The field starts empty. A placeholder types and deletes “Type here”, “Caliper Sans”, and “Hamburgefontsiv” while idle and visible. Each complete phrase is measured in advance so its size stays steady while letters appear.
-- The placeholder and demo use 28% opacity. Actual user text uses full ink opacity.
-- Pointer interaction, keyboard focus, or editing stops the demo for that mounted instance. It never resumes over user text, including after the field is cleared. Reduced-motion preference uses a static “Type here” prompt. Timers stop offscreen and clean up on unmount.
+- The field starts empty. A placeholder types and deletes “Type here”, “Caliper Sans”, and “Hamburgefontsiv” while idle and visible; mobile uses “Type”, “Caliper”, and “Lorem”. Each complete phrase is measured in advance so its size stays steady while letters appear.
+- The placeholder and demo use 28% opacity. A matching desktop idle caret follows the animated text and blinks once per second. It disappears permanently on interaction, is omitted on mobile, and stays static under reduced motion. Actual user text uses full ink opacity.
+- Pointer interaction, keyboard focus, or editing stops the demo for that mounted instance. It never resumes over user text, including after the field is cleared. Reduced-motion preference uses a static “Type here” prompt, shortened to “Type” on mobile. Timers stop offscreen and clean up on unmount.
 - Native input supplies selection, caret movement, paste, editing, and composition. Type fits automatically with a 20px minimum, normal input scrolling for long text, and a 160-character limit.
 - Four dashed metric lines remain: 740, 510, 0, and -230. The 800 ascender line is omitted. Numeric values repeat on both left and right, with no descriptive labels. All numbers use 12px Caliper Regular in the same muted detail color as the rules and registration marks.
 - All numeric values disappear when the closest gap is below 18px, before their 15.6px line boxes overlap. The guides stay visible.
@@ -75,3 +75,15 @@ rule retain the designed ink highlight and paper-colored glyphs.
 Published browser checks confirmed the tester uses `rgb(25, 25, 25)` behind
 `rgb(238, 238, 238)` selected text, while the page heading still uses the green
 selection. Screenshot: `output/text-selection/caliper-restored-selection.png`.
+
+## Mobile sizing refinement — October 23, 2026
+
+When the inner stage is narrower than 440px, the demo cycles through “Type”, “Caliper”, and “Lorem”, and the empty prompt uses “Type”. The complete mobile cycle was observed in Chromium. The mobile stage is 180–220px tall instead of a minimum of 300px, and the cap-to-descender area is centered vertically. The existing narrow-container registration padding is reduced to 12px. Tablet and desktop retain the previous prompt and geometry.
+
+Chromium checks at 320, 390, 430, 810, and 1440px passed for prompt selection, input containment, four guides, non-overlapping values, long text, and page overflow. At 390px the complete component is approximately 332px tall, down from 456px. The animated mobile “Type” prompt, permanent editing takeover, and input preservation across resizing passed with no runtime errors. Framer typecheck returned `[]`; source read-back matched. Physical mobile keyboard and Safari behavior were not tested. Screenshots: `caliper-mobile-refined-390.png` and `caliper-mobile-refined-1440.png`.
+
+## Desktop idle caret — October 23, 2026
+
+A non-interactive, aria-hidden overlay positions a 2px caret after the current placeholder text. The sizing text is hidden, so it cannot double-render glyphs. The overlay shares the input geometry and inherits its font; only caret opacity animates. No additional measurement effect or animation timer is added. It unmounts offscreen, on mobile, or on the first interaction, preserving native editing.
+
+Chromium checks confirmed both blink phases across 36 samples, less than 0.01px deviation from the measured text endpoint, bounds containment including the empty demo state, immediate focus takeover, no return after clearing, static reduced-motion behavior, and no mobile idle caret or runtime errors. Desktop/mobile captures were reviewed together: `caliper-idle-caret-desktop.png` and `caliper-idle-caret-mobile.png`. Framer typecheck passed.

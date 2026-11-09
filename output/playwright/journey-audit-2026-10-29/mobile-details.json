@@ -1,0 +1,135 @@
+{
+  "engine": "chromium",
+  "version": "156.0.8078.48",
+  "aboutArrival": {
+    "url": "https://micahhoang.com/about",
+    "y": 0,
+    "nav": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 98,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "WORK",
+        "x": 136.59375,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "PLAY",
+        "x": 198.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "INDEX",
+        "x": 261,
+        "y": 20,
+        "w": 39,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "ABOUT",
+        "x": 331,
+        "y": 20,
+        "w": 39,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      }
+    ]
+  },
+  "gaiaArrival": {
+    "url": "https://micahhoang.com/case-studies/gaia",
+    "y": 0,
+    "nav": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 98,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "WORK",
+        "x": 136.59375,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "PLAY",
+        "x": 198.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "INDEX",
+        "x": 261,
+        "y": 20,
+        "w": 39,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      },
+      {
+        "text": "ABOUT",
+        "x": 331,
+        "y": 20,
+        "w": 39,
+        "h": 13,
+        "opacity": "1",
+        "hit": true
+      }
+    ]
+  },
+  "gaiaMedia": {
+    "videos": [],
+    "images": [
+      {
+        "src": "https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=2048&width=2447&height=1726",
+        "alt": "Case study media",
+        "loaded": true
+      },
+      {
+        "src": "https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=2048&width=2560&height=1396",
+        "alt": "Case study media",
+        "loaded": true
+      },
+      {
+        "src": "https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=2048&width=2160&height=2160",
+        "alt": "Case study media",
+        "loaded": true
+      }
+    ]
+  },
+  "beforeTap": {
+    "url": "https://micahhoang.com/",
+    "href": "./"
+  },
+  "afterTap": {
+    "url": "https://micahhoang.com/",
+    "y": 2633.5
+  },
+  "portraitDestination": "https://micahhoang.com/about"
+}

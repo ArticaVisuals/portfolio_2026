@@ -1,0 +1,107 @@
+<link rel="preconnect" href="https://framerusercontent.com" crossorigin>
+
+<script id="mh-head-first-paint-guard">
+(function () {
+  try {
+    var path = (location.pathname || "/").replace(/\/+$/, "") || "/";
+    var width = window.innerWidth || document.documentElement.clientWidth || 0;
+    var reduced = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var navType = nav ? nav.type : "navigate";
+    var fresh = navType === "reload";
+    if (!fresh && navType === "navigate") {
+      var ref = document.referrer;
+      fresh = !ref;
+      try { if (ref) fresh = new URL(ref).origin !== location.origin; } catch (_) { fresh = true; }
+    }
+    if (path !== "/" || width <= 809 || reduced || !fresh || document.prerendering) return;
+
+    var parent = document.head || document.documentElement;
+    var presentationId = "mh-boot-presentation";
+    if (!document.getElementById(presentationId)) {
+      var presentation = document.createElement("style");
+      presentation.id = presentationId;
+      presentation.textContent = "\n@font-face{font-family:\"MH Boot Identity\";src:url(\"data:font/woff2;base64,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\") format(\"woff2\");font-style:normal;font-weight:400;font-display:block;}\nhtml #__pt-boot-label{font-family:\"MH Boot Identity\",sans-serif!important;font-synthesis:none!important;}\n";
+      parent.appendChild(presentation);
+    }
+    var coverId = "__pt-first-paint";
+    var bootId = "__pt-boot";
+    var existingBoot = document.getElementById(bootId);
+    if (existingBoot) { holdBootVideos(existingBoot); return; }
+    if (document.getElementById(coverId)) return;
+    var cover = document.createElement("style");
+    cover.id = coverId;
+    cover.textContent = "\nhtml::before{content:\"Micah Hoang ©2026\";position:fixed;top:0;right:0;bottom:auto;left:0;width:100%;height:100vh;min-height:100vh;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:32px;background:#233324;color:#F7F5F0;font-family:\"MH Boot Identity\",sans-serif;font-size:30px;font-style:normal;font-weight:400;line-height:120%;letter-spacing:-0.01em;font-synthesis:none;text-align:center;white-space:normal;z-index:2147483599;pointer-events:none;}\n@supports(height:100dvh){html::before{height:100dvh;min-height:100dvh;}}\n@media(max-width:1199px){html::before{font-size:24px;}}\n@media(max-width:809px),(prefers-reduced-motion:reduce){html::before{display:none;}}\n";
+    parent.appendChild(cover);
+
+    var observer = null;
+    var released = false;
+    var fallbackTimer = 0;
+    function holdBootVideos(boot) {
+      if (typeof window.__mhBootVideoHold === "boolean") return;
+      window.__mhBootVideoHold = true;
+      var videoObserver = null;
+      var videoTimer = 0;
+      var videoSelector = "video.selected-work-video";
+      function pauseVideo(event) {
+        var video = event.target;
+        if (video && video.matches && video.matches(videoSelector)) video.pause();
+      }
+      function resumeVideos() {
+        if (!window.__mhBootVideoHold) return;
+        window.__mhBootVideoHold = false;
+        document.removeEventListener("play", pauseVideo, true);
+        document.removeEventListener("playing", pauseVideo, true);
+        window.removeEventListener("resize", onResize);
+        window.removeEventListener("pagehide", resumeVideos);
+        if (videoObserver) videoObserver.disconnect();
+        clearTimeout(videoTimer);
+        window.dispatchEvent(new Event("mh:boot-complete"));
+      }
+      function onResize() {
+        if (window.innerWidth <= 809) resumeVideos();
+      }
+      // Native autoplay bypasses play() helpers. Hold its events too, so video
+      // compositing cannot pull the curtain down to the media's 30fps cadence.
+      document.addEventListener("play", pauseVideo, true);
+      document.addEventListener("playing", pauseVideo, true);
+      document.querySelectorAll(videoSelector).forEach(function (video) { video.pause(); });
+      window.addEventListener("resize", onResize, {passive:true});
+      window.addEventListener("pagehide", resumeVideos, {once:true});
+      videoObserver = new MutationObserver(function () {
+        if (!boot.isConnected) resumeVideos();
+      });
+      videoObserver.observe(document.documentElement, {childList:true});
+      videoTimer = setTimeout(resumeVideos, 12000);
+    }
+    function release() {
+      if (released) return;
+      released = true;
+      if (observer) observer.disconnect();
+      document.removeEventListener("DOMContentLoaded", releaseAfterReady);
+      clearTimeout(fallbackTimer);
+      if (cover.parentNode) cover.parentNode.removeChild(cover);
+    }
+    function handoff() {
+      var boot = document.getElementById(bootId);
+      if (!boot) return false;
+      holdBootVideos(boot);
+      release();
+      return true;
+    }
+    function releaseAfterReady() {
+      fallbackTimer = setTimeout(function () { if (!handoff()) release(); }, 0);
+    }
+    if (typeof MutationObserver !== "undefined") {
+      observer = new MutationObserver(handoff);
+      observer.observe(document.documentElement, {childList:true, subtree:true});
+    }
+    if (handoff()) return;
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", releaseAfterReady, {once:true});
+    else releaseAfterReady();
+  } catch (_) {
+    var stale = document.getElementById("__pt-first-paint");
+    if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+  }
+})();
+</script>

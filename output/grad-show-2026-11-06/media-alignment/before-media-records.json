@@ -1,0 +1,391 @@
+[
+  {
+    "caption": "Gaia identity animation.",
+    "edit": "https://gradshow.artcenter.edu/media/231436/edit",
+    "name": "gaia-02-hero-in-motion-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "Conservation premise and brand message.",
+    "edit": "https://gradshow.artcenter.edu/media/231373/edit",
+    "name": "gaia-03-insight.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Brand journey: wonder, discovery, insight, contribution, and stewardship.",
+    "edit": "https://gradshow.artcenter.edu/media/231374/edit",
+    "name": "gaia-04-brand-strategy.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Brand invitation: “Invite everyone into joyful discovery.”",
+    "edit": "https://gradshow.artcenter.edu/media/231419/edit",
+    "name": "gaia-separate-05a-brand-invitation.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Identity development from iNaturalist to Gaia.",
+    "edit": "https://gradshow.artcenter.edu/media/231438/edit",
+    "name": "gaia-separate-05b-identity-development-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "Logo, typography, color palette, symbols, and voice guidelines.",
+    "edit": "https://gradshow.artcenter.edu/media/231375/edit",
+    "name": "gaia-06-visual-identity.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Voice and style booklet.",
+    "edit": "https://gradshow.artcenter.edu/media/231421/edit",
+    "name": "gaia-separate-07a-voice-booklet.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Gaia identity applied to the app.",
+    "edit": "https://gradshow.artcenter.edu/media/231441/edit",
+    "name": "gaia-separate-07b-app-identity-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "Billboard and street banners.",
+    "edit": "https://gradshow.artcenter.edu/media/231376/edit",
+    "name": "gaia-08-outdoor-campaign.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Gaia logotype and The Living Record exhibition poster.",
+    "edit": "https://gradshow.artcenter.edu/media/231377/edit",
+    "name": "gaia-09-identity-and-exhibition.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Field Notes notebook and Los Angeles Bioblitz T-shirt.",
+    "edit": "https://gradshow.artcenter.edu/media/231378/edit",
+    "name": "gaia-10-field-notes-and-bioblitz.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Interface components and nature icons.",
+    "edit": "https://gradshow.artcenter.edu/media/231422/edit",
+    "name": "gaia-separate-11a-interface-components.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Animated nature symbol.",
+    "edit": "https://gradshow.artcenter.edu/media/231435/edit",
+    "name": "gaia-loop-nature-symbol.gif",
+    "project": "gaia"
+  },
+  {
+    "name": "gaia-12-onboarding-editorial-discovery-map.mp4",
+    "project": "gaia",
+    "edit": "https://gradshow.artcenter.edu/media/231385/edit"
+  },
+  {
+    "name": "gaia-13-app-interactions.mp4",
+    "project": "gaia",
+    "edit": "https://gradshow.artcenter.edu/media/231386/edit"
+  },
+  {
+    "caption": "Gaia app icon.",
+    "edit": "https://gradshow.artcenter.edu/media/231423/edit",
+    "name": "gaia-separate-14a-app-icon.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Observation interface.",
+    "edit": "https://gradshow.artcenter.edu/media/231445/edit",
+    "name": "gaia-separate-14b-observation-interface-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "App screen overview.",
+    "edit": "https://gradshow.artcenter.edu/media/231379/edit",
+    "name": "gaia-15-interface-overview.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "App flows and screen connections.",
+    "edit": "https://gradshow.artcenter.edu/media/231424/edit",
+    "name": "gaia-separate-16a-app-flow.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Design tokens and interface components.",
+    "edit": "https://gradshow.artcenter.edu/media/231449/edit",
+    "name": "gaia-separate-16b-design-tokens-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "Screen explorations.",
+    "edit": "https://gradshow.artcenter.edu/media/231425/edit",
+    "name": "gaia-separate-16c-screen-explorations.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Image library.",
+    "edit": "https://gradshow.artcenter.edu/media/231426/edit",
+    "name": "gaia-separate-17a-image-library.jpg",
+    "project": "gaia"
+  },
+  {
+    "caption": "Interface development.",
+    "edit": "https://gradshow.artcenter.edu/media/231451/edit",
+    "name": "gaia-separate-17b-interface-development-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "SwiftUI implementation.",
+    "edit": "https://gradshow.artcenter.edu/media/231453/edit",
+    "name": "gaia-separate-17c-swiftui-implementation-loop.gif",
+    "project": "gaia"
+  },
+  {
+    "caption": "Campaign posters: “Everyone belongs in nature’s story.”",
+    "edit": "https://gradshow.artcenter.edu/media/231380/edit",
+    "name": "gaia-18-campaign-in-the-world.jpg",
+    "project": "gaia"
+  },
+  {
+    "name": "Peak Energy × General Motors Brand Film",
+    "project": "peak",
+    "edit": "https://gradshow.artcenter.edu/media/231347/edit"
+  },
+  {
+    "caption": "Line-animation tests.",
+    "edit": "https://gradshow.artcenter.edu/media/231452/edit",
+    "name": "peak-separate-01b-line-animation-loop.gif",
+    "project": "peak"
+  },
+  {
+    "caption": "Battery sequences from the film.",
+    "edit": "https://gradshow.artcenter.edu/media/231437/edit",
+    "name": "peak-02-battery-film-sequences-loop.gif",
+    "project": "peak"
+  },
+  {
+    "caption": "3D animation tests.",
+    "edit": "https://gradshow.artcenter.edu/media/231440/edit",
+    "name": "peak-03-process-comparison-loop.gif",
+    "project": "peak"
+  },
+  {
+    "caption": "Animation and compositing development.",
+    "edit": "https://gradshow.artcenter.edu/media/231444/edit",
+    "name": "peak-04-animation-development-loop.gif",
+    "project": "peak"
+  },
+  {
+    "caption": "Closing partnership lockup.",
+    "edit": "https://gradshow.artcenter.edu/media/231448/edit",
+    "name": "peak-05-shipped-film-excerpt-loop.gif",
+    "project": "peak"
+  },
+  {
+    "caption": "Opening energy sequence.",
+    "edit": "https://gradshow.artcenter.edu/media/231450/edit",
+    "name": "peak-06-brand-film-opening-loop.gif",
+    "project": "peak"
+  },
+  {
+    "name": "Motion Connect Fall 2025",
+    "project": "motion",
+    "edit": "https://gradshow.artcenter.edu/media/231348/edit"
+  },
+  {
+    "caption": "Animated identity teaser.",
+    "edit": "https://gradshow.artcenter.edu/media/231458/edit",
+    "name": "motion-09-identity-teaser-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Typography and speaker introductions from the hype reel.",
+    "edit": "https://gradshow.artcenter.edu/media/231454/edit",
+    "name": "motion-01-reel-row-1-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Speaker features and showreel graphics.",
+    "edit": "https://gradshow.artcenter.edu/media/231455/edit",
+    "name": "motion-02-reel-row-2-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Showreel clips and auditorium graphics.",
+    "edit": "https://gradshow.artcenter.edu/media/231456/edit",
+    "name": "motion-03-reel-row-3-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Social posts introducing the event and Bon Zhang.",
+    "edit": "https://gradshow.artcenter.edu/media/231457/edit",
+    "name": "motion-04-social-row-1-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Social posts for Cathy Xiao and Jay Tevel.",
+    "edit": "https://gradshow.artcenter.edu/media/231461/edit",
+    "name": "motion-12-full-social-row-2-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Social posts for Simon Clowes and event reminders.",
+    "edit": "https://gradshow.artcenter.edu/media/231462/edit",
+    "name": "motion-13-full-social-row-3-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Campus display and printed poster.",
+    "edit": "https://gradshow.artcenter.edu/media/231402/edit",
+    "name": "motion-07-print-assets.jpg",
+    "project": "motion"
+  },
+  {
+    "caption": "3D workflow, After Effects compositing, and type animation.",
+    "edit": "https://gradshow.artcenter.edu/media/231459/edit",
+    "name": "motion-10-complete-system-process-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "AI-assisted lighting and motion tests.",
+    "edit": "https://gradshow.artcenter.edu/media/231460/edit",
+    "name": "motion-11-ai-workflow-demonstrations-loop.gif",
+    "project": "motion"
+  },
+  {
+    "caption": "Event graphics behind the speaker panel.",
+    "edit": "https://gradshow.artcenter.edu/media/231315/edit",
+    "name": "02-motion-connect-2025.jpg",
+    "project": "motion"
+  },
+  {
+    "caption": "Building banner: “Uncover forbidden stories.”",
+    "edit": "https://gradshow.artcenter.edu/media/231313/edit",
+    "name": "01-simon-schuster.jpg",
+    "project": "simon"
+  },
+  {
+    "caption": "Campaign posters in a transit station.",
+    "edit": "https://gradshow.artcenter.edu/media/231316/edit",
+    "name": "02-simon-schuster.jpg",
+    "project": "simon"
+  },
+  {
+    "caption": "Centennial poster in an archway.",
+    "edit": "https://gradshow.artcenter.edu/media/231320/edit",
+    "name": "03-simon-schuster.jpg",
+    "project": "simon"
+  },
+  {
+    "caption": "Ampersand and S mark on a projecting sign.",
+    "edit": "https://gradshow.artcenter.edu/media/231323/edit",
+    "name": "04-simon-schuster.jpg",
+    "project": "simon"
+  },
+  {
+    "caption": "Postcard and wax seal.",
+    "edit": "https://gradshow.artcenter.edu/media/231328/edit",
+    "name": "05-simon-schuster.jpg",
+    "project": "simon"
+  },
+  {
+    "caption": "Animated logo and publishing imprint system.",
+    "edit": "https://gradshow.artcenter.edu/media/231439/edit",
+    "name": "simon-01-logo-and-brand-architecture-loop.gif",
+    "project": "simon"
+  },
+  {
+    "caption": "Animated author collaboration campaign.",
+    "edit": "https://gradshow.artcenter.edu/media/231443/edit",
+    "name": "simon-02-collaboration-animation-loop.gif",
+    "project": "simon"
+  },
+  {
+    "caption": "Animated print and event mockups.",
+    "edit": "https://gradshow.artcenter.edu/media/231447/edit",
+    "name": "simon-03-animated-print-applications-loop.gif",
+    "project": "simon"
+  },
+  {
+    "caption": "Foil-stamped box on a picnic table.",
+    "edit": "https://gradshow.artcenter.edu/media/231325/edit",
+    "name": "02-national-park-cards.jpg",
+    "project": "cards"
+  },
+  {
+    "caption": "Card system: suits, U.S. regions, and visitation rankings.",
+    "edit": "https://gradshow.artcenter.edu/media/231318/edit",
+    "name": "01-national-park-cards.jpg",
+    "project": "cards"
+  },
+  {
+    "caption": "Park illustrations and animated deck overview.",
+    "edit": "https://gradshow.artcenter.edu/media/231446/edit",
+    "name": "cards-05-full-deck-animation-loop.gif",
+    "project": "cards"
+  },
+  {
+    "caption": "Playing cards outdoors.",
+    "edit": "https://gradshow.artcenter.edu/media/231330/edit",
+    "name": "03-national-park-cards.jpg",
+    "project": "cards"
+  },
+  {
+    "caption": "Card faces and backs.",
+    "edit": "https://gradshow.artcenter.edu/media/231333/edit",
+    "name": "04-national-park-cards.jpg",
+    "project": "cards"
+  },
+  {
+    "name": "cards-06-full-card-demonstrations.mp4",
+    "project": "cards",
+    "edit": "https://gradshow.artcenter.edu/media/231418/edit"
+  },
+  {
+    "caption": "Packaging displayed with travel books.",
+    "edit": "https://gradshow.artcenter.edu/media/231335/edit",
+    "name": "05-national-park-cards.jpg",
+    "project": "cards"
+  },
+  {
+    "caption": "Retail display at REI.",
+    "edit": "https://gradshow.artcenter.edu/media/231337/edit",
+    "name": "06-national-park-cards.jpg",
+    "project": "cards"
+  },
+  {
+    "name": "cards-03-printing-process.mp4",
+    "project": "cards",
+    "edit": "https://gradshow.artcenter.edu/media/231413/edit"
+  },
+  {
+    "caption": "Sales and retail results.",
+    "edit": "https://gradshow.artcenter.edu/media/231442/edit",
+    "name": "cards-04-by-the-numbers-loop.gif",
+    "project": "cards"
+  },
+  {
+    "caption": "Newsprint publication and Pinwheel Project kit.",
+    "edit": "https://gradshow.artcenter.edu/media/231321/edit",
+    "name": "01-weaponized-innocence.jpg",
+    "project": "weaponized"
+  },
+  {
+    "name": "weaponized-01-publication-flip-through.mp4",
+    "project": "weaponized",
+    "edit": "https://gradshow.artcenter.edu/media/231403/edit"
+  },
+  {
+    "caption": "Assembling a pinwheel from the kit.",
+    "edit": "https://gradshow.artcenter.edu/media/231336/edit",
+    "name": "05-weaponized-innocence.jpg",
+    "project": "weaponized"
+  },
+  {
+    "caption": "Printed pieces for the Pinwheel Project.",
+    "edit": "https://gradshow.artcenter.edu/media/231338/edit",
+    "name": "06-weaponized-innocence.jpg",
+    "project": "weaponized"
+  }
+]

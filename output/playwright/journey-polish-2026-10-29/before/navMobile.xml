@@ -1,0 +1,20 @@
+WARNING: This is a replica node (variant). It's recommended to update the original component instead to maintain consistency. Only update a few attributes on variants. These attributes will no longer inherit the primary variant values.
+
+Node xml:
+<NavigationBlackMobile
+    nodeId="IZofKJ4e0"
+    position="absolute"
+    width="390px"
+    height="fit-content"
+    top="0px"
+    left="1424px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 15px 20px 15px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />

@@ -149,8 +149,8 @@
       "role": "Site-wide page transition",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/PageTransition.tsx",
-      "bytes": 58746,
-      "sha256": "343317c99049842b0edeb427284f67094ddb6b18a84949ed9b52c720cb2748eb"
+      "bytes": 63695,
+      "sha256": "65a1ee6719bae7ea18b5331e04cce705f3326d23ffebbcf4c38bca9cf2611e87"
     },
     {
       "codeFileId": "rdTIUkW",
@@ -214,8 +214,8 @@
       "role": "Caliper Sans interactive type specimen; published on /case-studies/caliper",
       "sourceKind": "active-root-working-tsx",
       "localPath": "code/components/CaliperTypeTester.tsx",
-      "bytes": 27436,
-      "sha256": "2678d3006cf55b5343c1cd7a5d4d98ede28d30726f3bbcf9b051421e13c1401a"
+      "bytes": 29011,
+      "sha256": "1f1d1b2c1050d233bfafae703cc62db0ae1019aca7376cac91295c4e7953a68a"
     }
   ],
   "mirroredCompiledCodeComponents": [

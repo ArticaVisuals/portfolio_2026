@@ -1,5 +1,45 @@
 # Site-wide page transition (zitafernandez.com style)
 
+**2026-10-23 — copyright SVG seam correction (published).**
+The copyright export combined a fill with a separately masked outside stroke.
+Chromium A/B captures showed thin antialiasing seams where those layers met.
+The inline runtime SVG now renders that same copyright outline as a single
+filled and stroked path, retaining the exported 20-unit stroke, viewBox, and
+placement. This removes the mask, duplicate definition, and two `use` elements;
+the original Figma asset stays untouched. The rendered SVG has 11 paths and no
+masks or bitmap images. Both the first-paint and runtime stages use this version.
+
+At 1x and 2x pixel density, screenshot differences are confined to the copyright
+symbol; the name is pixel-identical. Widths remain 556px desktop and 444px tablet.
+Framer typecheck returned `[]`, and the published head script matches generated
+source. Evidence: `output/playwright/preloader-seams-2026-10-23/`.
+This addresses the visible copyright seams; it does not establish the cause of
+any perceived crispness across the lettering on the user's display.
+
+**2026-10-23 — Figma vector preloader identity, enlarged follow-up (published; copyright rendering superseded above).**
+`PageTransition.tsx` (`gmalnRr`) and the **Preloaders** head entry use the original
+outlined SVG from personal-identity Figma node `91:521`, saved at
+`assets/identity/micah-hoang-copyright.svg`. All 12 path definitions, the viewBox,
+kerning, copyright placement, and internal copyright stroke mask are preserved.
+SVG IDs are namespaced for safe inline use; CSS applies the existing Cream color.
+The asset contains no bitmap images.
+
+Following feedback about softness at the initial small size, both loader stages
+now render actual SVG elements directly, replacing the earlier CSS-image mask.
+The first-paint cover contains the same SVG as the animated runtime label;
+handoff installs it before removing the early cover. Widths are 556px desktop
+and 444px tablet, approximately twice the original 278px/222px footprint, with
+proportional heights and whole-pixel horizontal centering. This needs no image
+or font request. Existing progress, fade/lift timing, video hold, Home-only
+eligibility, mobile skip, and reduced-motion behavior remain intact.
+
+Regenerate the head entry after edits with `node code/tools/sync-boot-head.mjs`.
+Framer typecheck returned `[]`. Browser checks at 1x and 2x pixel density confirm
+12 matching vector paths, zero bitmap images, no outer CSS mask, correct size,
+and clean curtain/first-paint-style cleanup. Latest evidence lives in
+`output/playwright/preloader-vector-2x-2026-10-23/`; the initial smaller version's
+evidence remains in `output/playwright/preloader-vector-2026-10-23/`.
+
 **2026-09-19 — Play empty-nav strip repair (Framer draft; publish pending).**
 `GrainOverlay.tsx` (`MhR7Ukl`, version `ptTqhah7cDBxIznwLZpp`) now extends
 grain to the configured top inset while `:root:active-view-transition` matches.

@@ -1,0 +1,239 @@
+### Page
+- Page URL: https://micahhoang.com/
+- Page Title: Micah Hoang — Brand Designer
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link [ref=e10] [cursor=pointer]:
+        - /url: ./
+        - paragraph [ref=e12]: Micah Hoang
+      - generic [ref=e19]:
+        - link [ref=e23] [cursor=pointer]:
+          - /url: ./
+          - paragraph [ref=e25]: Work
+          - paragraph [ref=e27]: Work
+        - link [ref=e30] [cursor=pointer]:
+          - /url: ./play
+          - paragraph [ref=e32]: PLAY
+          - paragraph [ref=e34]: PLAY
+        - link [ref=e38] [cursor=pointer]:
+          - /url: ./index
+          - paragraph [ref=e40]: INDEX
+          - paragraph [ref=e42]: INDEX
+        - link [ref=e46] [cursor=pointer]:
+          - /url: ./about
+          - paragraph [ref=e48]: ABOUT
+          - paragraph [ref=e50]: ABOUT
+  - main [ref=e527]:
+    - generic [ref=e528]:
+      - generic [ref=e529]:
+        - heading "Micah Hoang" [level=1] [ref=e532]
+        - heading "Brand designer with a systems mind." [level=3] [ref=e535]
+      - generic [ref=e536]:
+        - generic [ref=e537]:
+          - link [ref=e538] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/micah-hoang-b41028108/
+            - paragraph [ref=e540]: LINKEDIN
+            - paragraph [ref=e542]: ","
+          - link [ref=e543] [cursor=pointer]:
+            - /url: https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf
+            - paragraph [ref=e545]: RESUME
+            - paragraph [ref=e547]: ","
+          - link [ref=e548] [cursor=pointer]:
+            - /url: mailto:micah.hoang@hey.com
+            - paragraph [ref=e550]: EMAIL
+            - paragraph [ref=e552]: ","
+          - link [ref=e553] [cursor=pointer]:
+            - /url: https://www.cosmos.so/articavisuals
+            - paragraph [ref=e555]: COSMOS
+        - paragraph [ref=e558]: ©2026
+    - generic [ref=e559]:
+      - generic [ref=e565]:
+        - heading "Selected" [level=2] [ref=e568]
+        - heading "work" [level=2] [ref=e571]
+      - generic [ref=e572]:
+        - generic [ref=e575]:
+          - generic [ref=e576]:
+            - link "Gaia case study" [ref=e577] [cursor=pointer]:
+              - /url: /case-studies/gaia
+              - generic [ref=e578]:
+                - generic [ref=e579]: "1"
+                - generic [aria-hidden] [ref=e580]: /
+                - generic [ref=e582]:
+                  - generic [ref=e583]: Gaia
+                  - generic [aria-hidden] [ref=e584]: VIEW PROJECT
+              - img "Gaia" [ref=e586]
+            - generic "Gaia services" [ref=e588]:
+              - link "Visual Identity" [ref=e589] [cursor=pointer]:
+                - /url: /index#service=visual-identity
+              - link "UX/UI" [ref=e591] [cursor=pointer]:
+                - /url: /index#service=ux-ui
+              - link "Strategy" [ref=e593] [cursor=pointer]:
+                - /url: /index#service=strategy
+          - generic [ref=e595]:
+            - link "AirPods Pro 3 case study" [ref=e596] [cursor=pointer]:
+              - /url: /case-studies/airpods
+              - generic [ref=e597]:
+                - generic [ref=e598]: "2"
+                - generic [aria-hidden] [ref=e599]: /
+                - generic [ref=e601]:
+                  - generic [ref=e602]: AirPods Pro 3
+                  - generic [aria-hidden] [ref=e603]: VIEW PROJECT
+              - img "AirPods Pro 3" [ref=e605]
+            - generic "AirPods Pro 3 services" [ref=e607]:
+              - link "Visual Identity" [ref=e608] [cursor=pointer]:
+                - /url: /index#service=visual-identity
+              - link "2D Motion" [ref=e610] [cursor=pointer]:
+                - /url: /index#service=2d-motion
+              - link "3D Motion" [ref=e612] [cursor=pointer]:
+                - /url: /index#service=3d-motion
+          - generic [ref=e614]:
+            - link "Peak Energy case study" [ref=e615] [cursor=pointer]:
+              - /url: /case-studies/peak-energy
+              - generic [ref=e616]:
+                - generic [ref=e617]: "3"
+                - generic [aria-hidden] [ref=e618]: /
+                - generic [ref=e620]:
+                  - generic [ref=e621]: Peak Energy
+                  - generic [aria-hidden] [ref=e622]: VIEW PROJECT
+              - img "Peak Energy" [ref=e624]
+            - generic "Peak Energy services" [ref=e626]:
+              - link "2D Motion" [ref=e627] [cursor=pointer]:
+                - /url: /index#service=2d-motion
+              - link "3D Motion" [ref=e629] [cursor=pointer]:
+                - /url: /index#service=3d-motion
+              - link "Social Media" [ref=e631] [cursor=pointer]:
+                - /url: /index#service=social-media
+          - generic [ref=e633]:
+            - link "Motion Connect 2025 case study" [ref=e634] [cursor=pointer]:
+              - /url: /case-studies/motion-connect-2025
+              - generic [ref=e635]:
+                - generic [ref=e636]: "4"
+                - generic [aria-hidden] [ref=e637]: /
+                - generic [ref=e639]:
+                  - generic [ref=e640]: Motion Connect 2025
+                  - generic [aria-hidden] [ref=e641]: VIEW PROJECT
+              - img "Motion Connect 2025" [ref=e643]
+            - generic "Motion Connect 2025 services" [ref=e644]:
+              - link "2D Motion" [ref=e645] [cursor=pointer]:
+                - /url: /index#service=2d-motion
+              - link "3D Motion" [ref=e647] [cursor=pointer]:
+                - /url: /index#service=3d-motion
+              - link "Social Media" [ref=e649] [cursor=pointer]:
+                - /url: /index#service=social-media
+          - generic [ref=e651]:
+            - link "Simon & Schuster case study" [ref=e652] [cursor=pointer]:
+              - /url: /case-studies/simon-schuster
+              - generic [ref=e653]:
+                - generic [ref=e654]: "5"
+                - generic [aria-hidden] [ref=e655]: /
+                - generic [ref=e657]:
+                  - generic [ref=e658]: Simon & Schuster
+                  - generic [aria-hidden] [ref=e659]: VIEW PROJECT
+              - img "Simon & Schuster" [ref=e661]
+            - generic "Simon & Schuster services" [ref=e662]:
+              - link "Strategy" [ref=e663] [cursor=pointer]:
+                - /url: /index#service=strategy
+              - link "Visual Identity" [ref=e665] [cursor=pointer]:
+                - /url: /index#service=visual-identity
+              - link "Editorial" [ref=e667] [cursor=pointer]:
+                - /url: /index#service=editorial
+          - generic [ref=e669]:
+            - link "National Park Playing Cards case study" [ref=e670] [cursor=pointer]:
+              - /url: /case-studies/national-park-cards
+              - generic [ref=e671]:
+                - generic [ref=e672]: "6"
+                - generic [aria-hidden] [ref=e673]: /
+                - generic [ref=e675]:
+                  - generic [ref=e676]: National Park Playing Cards
+                  - generic [aria-hidden] [ref=e677]: VIEW PROJECT
+              - img "National Park Playing Cards" [ref=e679]
+            - generic "National Park Playing Cards services" [ref=e680]:
+              - link "Product" [ref=e681] [cursor=pointer]:
+                - /url: /index#service=product
+              - link "Packaging" [ref=e683] [cursor=pointer]:
+                - /url: /index#service=packaging
+        - link [ref=e689] [cursor=pointer]:
+          - /url: ./index
+          - paragraph [ref=e691]: VIEW ALL
+          - paragraph [ref=e693]: VIEW ALL
+    - generic [ref=e694]:
+      - generic [ref=e698]:
+        - heading "About" [level=2] [ref=e701]
+        - heading "Micah" [level=2] [ref=e704]
+      - generic [ref=e706]:
+        - link "About MIcah Hoang" [ref=e709] [cursor=pointer]:
+          - /url: ./about
+        - generic [ref=e712]:
+          - paragraph [ref=e714]: I'm a brand designer with a systems mind. I work across strategy, visual identity, and motion to build brands that hold together across every surface they touch.
+          - link [ref=e715] [cursor=pointer]:
+            - /url: ./
+            - generic [ref=e717]:
+              - paragraph [ref=e719]: READ MORE
+              - paragraph [ref=e721]: READ MORE
+      - button "scroll to top" [ref=e724] [cursor=pointer]:
+        - generic [ref=e726]:
+          - generic [ref=e727]: scroll to top
+          - generic [ref=e728]: scroll to top
+        - generic [ref=e730]:
+          - generic [ref=e731]: ↑
+          - generic [ref=e732]: ↑
+          - generic [ref=e733]: ↑
+    - generic [ref=e734]:
+      - paragraph [ref=e738]: GET IN TOUCH
+      - generic [ref=e739]:
+        - link "M I C A H . H O A N G @HEY.COM" [ref=e740] [cursor=pointer]:
+          - /url: mailto:micah.hoang@hey.com
+          - generic [ref=e742]:
+            - generic [ref=e743]: M
+            - generic [ref=e744]: I
+            - generic [ref=e745]: C
+            - generic [ref=e746]: A
+            - generic [ref=e747]: H
+            - generic [ref=e748]: .
+            - generic [ref=e749]: H
+            - generic [ref=e750]: O
+            - generic [ref=e751]: A
+            - generic [ref=e752]: "N"
+            - generic [ref=e753]: G
+          - paragraph [ref=e755]: "@HEY.COM"
+        - link "L I N K E D I N CONNECT" [ref=e756] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/micah-hoang-b41028108/
+          - generic [ref=e758]:
+            - generic [ref=e759]: L
+            - generic [ref=e760]: I
+            - generic [ref=e761]: "N"
+            - generic [ref=e762]: K
+            - generic [ref=e763]: E
+            - generic [ref=e764]: D
+            - generic [ref=e765]: I
+            - generic [ref=e766]: "N"
+          - paragraph [ref=e768]: CONNECT
+        - link "C O S M O S INSPIRE" [ref=e769] [cursor=pointer]:
+          - /url: https://www.cosmos.so/articavisuals
+          - generic [ref=e771]:
+            - generic [ref=e772]: C
+            - generic [ref=e773]: O
+            - generic [ref=e774]: S
+            - generic [ref=e775]: M
+            - generic [ref=e776]: O
+            - generic [ref=e777]: S
+          - paragraph [ref=e779]: INSPIRE
+  - contentinfo [ref=e412]:
+    - generic [ref=e420]:
+      - generic [ref=e421]:
+        - link [ref=e422] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/micah-hoang-b41028108/
+          - paragraph [ref=e424]: LINKEDIN
+          - paragraph [ref=e426]: ","
+        - link [ref=e427] [cursor=pointer]:
+          - /url: https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf
+          - paragraph [ref=e429]: RESUME
+          - paragraph [ref=e431]: ","
+        - link [ref=e432] [cursor=pointer]:
+          - /url: https://www.cosmos.so/articavisuals
+          - paragraph [ref=e434]: COSMOS
+      - paragraph [ref=e437]: ©2026
+```

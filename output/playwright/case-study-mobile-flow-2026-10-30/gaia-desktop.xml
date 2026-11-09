@@ -1,0 +1,1488 @@
+Node xml:
+<Desktop
+    nodeId="W9GkBUh9P"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/White"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+>
+  <CaseStudyControllers
+      nodeId="Gd3vknMRq"
+      opacity="0"
+      position="absolute"
+      width="1px"
+      height="1px"
+      top="0px"
+      left="-101px"
+      <!-- the component id this instance uses -->
+      componentId="z13WRHS"
+      lightbox="true"
+      videoManager="true"
+      linkRepair="true"
+      lightboxVideos="true"
+      videoLookahead="100"
+      videoUnloadFar="true"
+      stableHeroRatio="1.777778"
+      linkCollectionId="yTHrQWMIY"
+      linkTitleFieldId="oeXZcmPna"
+   />
+  <PageTransition
+      nodeId="O29Rhz9aO"
+      opacity="0"
+      position="absolute"
+      width="1px"
+      height="1px"
+      top="0px"
+      left="-303px"
+      <!-- the component id this instance uses -->
+      componentId="gmalnRr"
+      enabled="true"
+      homeArrivalMode="animate"
+      duration="700"
+      navDuration="400"
+      drift="10"
+      dim="0.35"
+      navSelector="nav[data-framer-name="Navigation"], nav"
+      excludeSelector="[data-no-transition]"
+      prefetch="true"
+      holdAppear="true"
+      skipCaseStudyTransitions="true"
+      firstBoot="true"
+      bootMode="once"
+      bootColor="rgb(35, 51, 36)"
+      barColor="rgb(247, 245, 240)"
+      barHeight="8"
+      bootMinMs="1200"
+      bootMaxWaitMs="4500"
+      barEaseMs="3000"
+      barHold="0.86"
+      bootSwipeMs="1200"
+      bootSwipeDelayMs="300"
+   />
+  <Stack
+      nodeId="K0bzXdWjK"
+      width="1fr"
+      height="fit-content"
+      <!-- background color string or project color style path (if starts with /) -->
+      backgroundColor="rgba(0,0,0,0)"
+      overflow="visible"
+      layout="stack"
+      stackDirection="vertical"
+      stackDistribution="start"
+      stackAlignment="start"
+  >
+    <Stack
+        nodeId="rkO9BExOh"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="rgba(0,0,0,0)"
+        overflow="hidden"
+        layout="stack"
+        padding="100px 20px 50px 20px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="end"
+    >
+      <Header
+          nodeId="NhGb_MaE0"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(0,0,0,0)"
+          overflow="clip"
+          layout="stack"
+          gap="40px"
+          padding="0px 0px 5px 0px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <Gaia
+            nodeId="Xw6s_3dnE"
+            width="1fr"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Heading 2 Bold"
+        >
+          Gaia
+        </Gaia>
+      </Header>
+      <Header
+          nodeId="RmaLY5KCC"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(0,0,0,0)"
+          overflow="clip"
+          layout="stack"
+          gap="40px"
+          padding="0px 0px 5px 0px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <TurningNoticingIntoAWayOf
+            nodeId="HgWPMMnA4"
+            width="1fr"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Heading 2 Bold"
+        >
+          Turning noticing into a way of
+        </TurningNoticingIntoAWayOf>
+      </Header>
+      <Header
+          nodeId="wlesDQbLI"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(0,0,0,0)"
+          overflow="clip"
+          layout="stack"
+          gap="40px"
+          padding="0px 0px 5px 0px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <CaringForTheLivingWorld
+            nodeId="LY6Q0OwsC"
+            width="1fr"
+            height="fit-content"
+            <!-- project text style path, always starts with / -->
+            inlineTextStyle="/Text Styles/Heading 2 Bold"
+        >
+          caring for the living world.
+        </CaringForTheLivingWorld>
+      </Header>
+    </Stack>
+    <ThumbnailImage
+        nodeId="l6_vIghn2"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="rgba(0,0,0,0)"
+        overflow="visible"
+        layout="stack"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="center"
+    >
+      <HeroImage
+          nodeId="DKE8lorve"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(0,0,0,0)"
+          overflow="visible"
+          layout="stack"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <Image
+            nodeId="rwX2cqiCd"
+            position="absolute"
+            width="100%"
+            height="100%"
+            top="0px"
+            left="0px"
+            <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+            backgroundImage="https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg"
+            zIndex="0"
+            overflow="hidden"
+         />
+        <Video
+            nodeId="rZwOqsYwI"
+            width="100%"
+            height="100%"
+            srcType="Upload"
+            srcUrl="https://d.uguu.se/WgmCVyFb.mp4"
+            srcFile="https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4"
+            playing="true"
+            posterEnabled="true"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0, 0, 0, 0)"
+            startTime="0"
+            loop="true"
+            objectFit="contain"
+            controls="false"
+            muted="true"
+            volume="50"
+         />
+      </HeroImage>
+      <CreditsInfo
+          nodeId="HMeB8E6Dx"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          padding="100px 20px 100px 20px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <Container
+            nodeId="n3s0j6yBH"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="30px"
+            padding="0px 0px 0px 0px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <LeftColumn
+              nodeId="dOfuImMaX"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="40px"
+              stackDirection="vertical"
+              stackDistribution="start"
+              stackAlignment="start"
+          >
+            <About
+                nodeId="xXQ7d_tQT"
+                width="1fr"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="15px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="start"
+            >
+              <AboutTheProject
+                  nodeId="BaXwMu1w1"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                / About the project
+              </AboutTheProject>
+              <Stack
+                  nodeId="Si0Ginyag"
+                  width="1fr"
+                  height="fit-content"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="vertical"
+                  stackDistribution="center"
+                  stackAlignment="start"
+              >
+                <APhotographBecomesADataPointADataPointBecomesARecordARecordB
+                    nodeId="q1h4liY7X"
+                    width="1fr"
+                    height="fit-content"
+                    maxWidth="680px"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Body L"
+                >
+                  A photograph becomes a data point. A data point becomes a record. A record becomes a reason to care. Gaia is a rebrand and redesign of iNaturalist, repositioning the world&apos;s largest biodiversity platform from a tool for experts into an open invitation to notice and protect the living world.
+                </APhotographBecomesADataPointADataPointBecomesARecordARecordB>
+              </Stack>
+            </About>
+            <Industry
+                nodeId="Jz6232nAX"
+                width="1fr"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="15px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="center"
+            >
+              <AboutTheProject
+                  nodeId="Nncdk5NBk"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                / INDUSTRY
+              </AboutTheProject>
+              <IndustryWrapper
+                  nodeId="VWHxlBou2"
+                  width="1fr"
+                  height="fit-content"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="center"
+                  stackAlignment="center"
+              >
+                <2023
+                    nodeId="eb71soxQq"
+                    width="1fr"
+                    height="fit-content"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Body L"
+                >
+                  Nature
+                </2023>
+              </IndustryWrapper>
+            </Industry>
+          </LeftColumn>
+          <RightColumn
+              nodeId="gvC5uA5k2"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="40px"
+              stackDirection="vertical"
+              stackDistribution="start"
+              stackAlignment="center"
+          >
+            <Stack
+                nodeId="kW6QXKnTs"
+                width="1fr"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(0,0,0,0)"
+                overflow="visible"
+                layout="stack"
+                gap="15px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="start"
+            >
+              <Scope
+                  nodeId="lbuWPV76c"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                / SCOPE
+              </Scope>
+              <VisualIdentityUxUiStrategy
+                  nodeId="TepK70ZAu"
+                  width="fit-content"
+                  height="fit-content"
+                  maxWidth="680px"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Body L"
+              >
+                Visual Identity, UX/UI, Strategy
+              </VisualIdentityUxUiStrategy>
+            </Stack>
+            <Credits
+                nodeId="wQr8N1W3t"
+                width="1fr"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="15px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="center"
+            >
+              <Credits
+                  nodeId="jWfMtlZNA"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                / Credits
+              </Credits>
+              <Container
+                  nodeId="arcW4zX7Q"
+                  width="1fr"
+                  height="fit-content"
+                  overflow="visible"
+                  layout="stack"
+                  stackDirection="vertical"
+                  stackDistribution="center"
+                  stackAlignment="center"
+              >
+                <Credits
+                    nodeId="VoqoEzm0w"
+                    width="1fr"
+                    height="fit-content"
+                    overflow="visible"
+                    layout="stack"
+                    gap="5px"
+                    stackDirection="horizontal"
+                    stackDistribution="start"
+                    stackAlignment="start"
+                >
+                  <ClientSelfInitiatedProposalDesignerMicahHoang
+                      nodeId="Jb8wt4_HV"
+                      width="1fr"
+                      height="fit-content"
+                      <!-- project text style path, always starts with / -->
+                      inlineTextStyle="/Text Styles/Body L"
+                  >
+                    Client: Self-Initiated ProposalDesigner: Micah Hoang
+                  </ClientSelfInitiatedProposalDesignerMicahHoang>
+                </Credits>
+              </Container>
+            </Credits>
+            <Year
+                nodeId="v0Uho9cY9"
+                width="1fr"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="15px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="center"
+            >
+              <Year
+                  nodeId="MFYMrt_Y5"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Small Mono"
+              >
+                / Year
+              </Year>
+              <YearWrapper
+                  nodeId="wC_L5L2Lw"
+                  width="1fr"
+                  height="fit-content"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="center"
+                  stackAlignment="center"
+              >
+                <2023
+                    nodeId="h__Wr0qoU"
+                    width="1fr"
+                    height="fit-content"
+                    <!-- project text style path, always starts with / -->
+                    inlineTextStyle="/Text Styles/Body L"
+                >
+                  2026
+                </2023>
+              </YearWrapper>
+            </Year>
+          </RightColumn>
+        </Container>
+      </CreditsInfo>
+    </ThumbnailImage>
+    <Stack
+        nodeId="xFEjTA2DH"
+        width="1fr"
+        height="fit-content"
+        overflow="visible"
+        layout="stack"
+        gap="80px"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="center"
+    >
+      <Stack
+          nodeId="UHZ4MuFdy"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(0,0,0,0)"
+          overflow="visible"
+          layout="stack"
+          gap="40px"
+          padding="0px 20px 160px 20px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <Stack
+            nodeId="AD4NF3f_s"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <TheInsight
+              nodeId="ZQ1amsL9i"
+              width="1fr"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Heading 3"
+          >
+            The Insight
+          </TheInsight>
+          <CaseStudyJustifiedMediaGrid
+              nodeId="VHv5Sl0mw"
+              width="1fr"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="c0iPrbN"
+              items="[{"id":"Prz5TeTCb","kind":"image","image":{"id":"DcicrFmUxqgU5jGTpUKyIWKwCA.png","url":"https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png","thumbnailUrl":"https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?scale-down-to=512","resolution":"auto"},"video":{"id":"iYVJWra2W8xywBIJLyzKocplcos.mp4","url":"https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia conservation premise over a forest landscape: one million species face extinction this century.","stroke":true},{"id":"P2y9bGnq0","kind":"image","image":{"id":"rMadioVkjNUlwuCAwu3Iu6AU9gQ.png","url":"https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png","thumbnailUrl":"https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia brand message over a mountain landscape: We can't protect what we can't see.","stroke":false}]"
+              showLegacyData="false"
+              itemsData="video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion;;image|2.931094|https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png|Gaia joyful discovery headline"
+              forceSingleRow="true"
+              targetRowHeight="260"
+              minRowHeight="80"
+              maxRowHeight="620"
+              gap="20"
+              mobileGap="10"
+              stackBelow="240"
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controls="false"
+           />
+          <INaturalistLetsPeoplePhotographAnOrganismReceiveAnAiAssisted
+              nodeId="buQYI0pyK"
+              width="0.5fr"
+              height="fit-content"
+              maxWidth="760px"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Body M"
+          >
+            iNaturalist lets people photograph an organism, receive an AI-assisted identification, and contribute research-grade data used by scientists to combat a global extinction crisis.
+          </INaturalistLetsPeoplePhotographAnOrganismReceiveAnAiAssisted>
+        </Stack>
+        <Stack
+            nodeId="Bw2g57lUG"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="40px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <Stack
+              nodeId="f3HXn_iR2"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <Stack
+                nodeId="XSaO2r6Qq"
+                width="1fr"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="10px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="start"
+            >
+              <Strategy
+                  nodeId="IeVM4SZ0I"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Heading 3"
+              >
+                Strategy
+              </Strategy>
+              <Image
+                  nodeId="OinNQnqUK"
+                  width="1fr"
+                  height="fit-image"
+                  <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+                  backgroundImage="https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp"
+               />
+              <ThreeGoalsShapeEveryDecisionIncreaseAccessIncreaseMotivation
+                  nodeId="smOK12Iwv"
+                  width="0.5fr"
+                  height="fit-content"
+                  maxWidth="760px"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Body M"
+              >
+                Three goals shape every decision: increase access, increase motivation, increase meaning. Across the arc from wonder to stewardship, noticing becomes a habit of care.
+              </ThreeGoalsShapeEveryDecisionIncreaseAccessIncreaseMotivation>
+            </Stack>
+          </Stack>
+          <Stack
+              nodeId="m21Dqu6rP"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <Stack
+                nodeId="j9voYjpMm"
+                width="1fr"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="10px"
+                stackDirection="vertical"
+                stackDistribution="center"
+                stackAlignment="start"
+            >
+              <CaseStudyJustifiedMediaGrid
+                  nodeId="Exts4jMyL"
+                  width="1fr"
+                  height="fit-content"
+                  <!-- the component id this instance uses -->
+                  componentId="c0iPrbN"
+                  items="[{"id":"H33V0PVhc","kind":"image","image":{"id":"PQwqOy9SjY9BJEFmykGLzjKewg.png","url":"https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png","thumbnailUrl":"https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia invitation over nature photography: Invite everyone into joyful discovery.","stroke":false},{"id":"RkmYzEgA3","kind":"video","video":{"id":"iYVJWra2W8xywBIJLyzKocplcos.mp4","url":"https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia wordmark animation with the message Everyone belongs in nature's story.","stroke":true}]"
+                  showLegacyData="false"
+                  itemsData="video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion;;image|2.931094|https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png|Gaia joyful discovery headline"
+                  forceSingleRow="true"
+                  targetRowHeight="260"
+                  minRowHeight="80"
+                  maxRowHeight="620"
+                  gap="20"
+                  mobileGap="10"
+                  stackBelow="240"
+                  autoplay="true"
+                  loop="true"
+                  muted="true"
+                  controls="false"
+               />
+              <INaturalistAsksYouToBeANaturalistFirstForMostPeopleThatIsATi
+                  nodeId="zEVsU3q4G"
+                  width="0.5fr"
+                  height="fit-content"
+                  maxWidth="760px"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Body M"
+              >
+                iNaturalist asks you to be a naturalist first. For most people, that is a title they never claim. Gaia preserves the same scientific rigor while opening the platform to a broader audience.
+              </INaturalistAsksYouToBeANaturalistFirstForMostPeopleThatIsATi>
+            </Stack>
+          </Stack>
+        </Stack>
+        <Stack
+            nodeId="CoEYQUXfD"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            padding="0px 0px 0px 0px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <VisualIdentity
+              nodeId="JouiX1TuL"
+              width="1fr"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Heading 3"
+          >
+            Visual Identity
+          </VisualIdentity>
+          <Image
+              nodeId="oapYuD06H"
+              width="1fr"
+              height="fit-image"
+              <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+              backgroundImage="https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp"
+              borderWidth="0.5px"
+              borderStyle="solid"
+              borderColor="/Colors/Stroke Gray"
+           />
+          <CaseStudyJustifiedMediaGrid
+              nodeId="FTCZkFT3I"
+              width="1fr"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="c0iPrbN"
+              items="[{"id":"O4tz4YJSG","kind":"image","image":{"id":"jb1IGn4by6Z5vtzzyHVQy3YQkY.webp","url":"https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp","thumbnailUrl":"https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia voice and style booklet photographed among wildflowers.","stroke":false},{"id":"T53vLVw95","kind":"video","video":{"id":"JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4","url":"https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia logo animation on a phone against a sky background.","stroke":false}]"
+              showLegacyData="false"
+              itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+              forceSingleRow="true"
+              targetRowHeight="320"
+              minRowHeight="80"
+              maxRowHeight="620"
+              gap="20"
+              mobileGap="10"
+              stackBelow="240"
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controls="false"
+           />
+          <TheMarkGrowsFromABranchingLivingFormInspiredByWernerSNomencl
+              nodeId="E8hzB54oM"
+              width="0.5fr"
+              height="fit-content"
+              maxWidth="760px"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Body M"
+          >
+            The mark grows from a branching, living form. Inspired by Werner&apos;s Nomenclature of Colours, the palette draws from moss, paper, soil, and sky. New Spirit carries the expressive moments; Neue Haas Unica handles every working word.
+          </TheMarkGrowsFromABranchingLivingFormInspiredByWernerSNomencl>
+        </Stack>
+        <Stack
+            nodeId="SWqhWEZ6S"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            padding="0px 0px 0px 0px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <BrandInTheWorld
+              nodeId="M_9JeToqJ"
+              width="1fr"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Heading 3"
+          >
+            Brand in the World
+          </BrandInTheWorld>
+          <CaseStudyJustifiedMediaGrid
+              nodeId="qNacLTVRv"
+              width="1fr"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="c0iPrbN"
+              items="[{"id":"SNx8rdCYj","kind":"image","image":{"id":"HdIgx7Gnsv581nIB2dbKZPWFC3A.webp","url":"https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp","thumbnailUrl":"https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia outdoor campaign billboard: Small finds. Big impact.","stroke":false},{"id":"UO73F6kJl","kind":"image","image":{"id":"LX86Gx6KBYH0TPKdwD1bPisPAFU.webp","url":"https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp","thumbnailUrl":"https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia street banners pairing nature symbols with Small finds. Big impact.","stroke":false}]"
+              showLegacyData="false"
+              itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+              forceSingleRow="true"
+              targetRowHeight="320"
+              minRowHeight="80"
+              maxRowHeight="620"
+              gap="20"
+              mobileGap="10"
+              stackBelow="240"
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controls="false"
+           />
+          <CaseStudyJustifiedMediaGrid
+              nodeId="YoqVnDxK_"
+              width="1fr"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="c0iPrbN"
+              items="[{"id":"Vug5pcY5m","kind":"image","image":{"id":"We8CbT3tANj0LRWhRW1EWqwQNIU.webp","url":"https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp","thumbnailUrl":"https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia wordmark on a cream card among red flowers.","stroke":false},{"id":"niVAgY0Zk","kind":"image","image":{"id":"cJLznMixCN2nBkZw2WKy85Io.jpg","url":"https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg","thumbnailUrl":"https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"The Living Record exhibition poster with nature photography.","stroke":false}]"
+              showLegacyData="false"
+              itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+              forceSingleRow="true"
+              targetRowHeight="320"
+              minRowHeight="80"
+              maxRowHeight="620"
+              gap="20"
+              mobileGap="10"
+              stackBelow="240"
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controls="false"
+           />
+          <CaseStudyJustifiedMediaGrid
+              nodeId="fAuNlVwR9"
+              width="1fr"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="c0iPrbN"
+              items="[{"id":"TIqgg7ldU","kind":"image","image":{"id":"MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","url":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","thumbnailUrl":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512","resolution":"auto"},"poster":{"id":"MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","url":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","thumbnailUrl":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia Field Notes notebook with an embossed branching symbol.","stroke":false},{"id":"IK4y2zxJ1","kind":"image","image":{"id":"nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg","url":"https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg","thumbnailUrl":"https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Los Angeles Bioblitz event T-shirt with a grid of nature photographs.","stroke":false}]"
+              showLegacyData="false"
+              itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+              forceSingleRow="true"
+              targetRowHeight="320"
+              minRowHeight="80"
+              maxRowHeight="620"
+              gap="20"
+              mobileGap="10"
+              stackBelow="240"
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controls="false"
+           />
+          <GaiaReachesPeopleWhereTheyAlreadyMeetTheLivingWorldBotanical
+              nodeId="ogTUEvDo_"
+              width="0.5fr"
+              height="fit-content"
+              maxWidth="760px"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Body M"
+          >
+            Gaia reaches people where they already meet the living world: botanical gardens, museums, trailheads, and community bioblitzes.
+          </GaiaReachesPeopleWhereTheyAlreadyMeetTheLivingWorldBotanical>
+        </Stack>
+        <Stack
+            nodeId="QpuzASPkE"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="40px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <Stack
+              nodeId="EIwCJnhyB"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <Interface
+                nodeId="w8_u8lW3M"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 3"
+            >
+              Interface
+            </Interface>
+            <CaseStudyJustifiedMediaGrid
+                nodeId="BbUSAbY3X"
+                width="1fr"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="c0iPrbN"
+                items="[{"id":"rZ1xJuh2f","kind":"image","image":{"id":"C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp","url":"https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp","thumbnailUrl":"https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia interface design system with nature icons, observation statistics, weather, and navigation.","stroke":true},{"id":"inkxqZjeG","kind":"image","image":{"id":"jnO3X6kihC9RS4UIQjowcI3dPY.gif","url":"https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif","thumbnailUrl":"https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Animated Gaia nature-symbol family in cream on green.","stroke":false}]"
+                showLegacyData="false"
+                itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+                forceSingleRow="true"
+                targetRowHeight="320"
+                minRowHeight="80"
+                maxRowHeight="620"
+                gap="20"
+                mobileGap="10"
+                stackBelow="240"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controls="false"
+             />
+            <ACustomIconSystemPairsWithBotanicalIllustrationsDrawnInANine
+                nodeId="H2Gsdy6Cx"
+                width="0.5fr"
+                height="fit-content"
+                maxWidth="760px"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Body M"
+            >
+              A custom icon system pairs with botanical illustrations drawn in a nineteenth-century naturalist style, keeping the interface scientific in structure and warm in tone.
+            </ACustomIconSystemPairsWithBotanicalIllustrationsDrawnInANine>
+          </Stack>
+          <Stack
+              nodeId="gAQd4J8Bh"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <CaseStudyJustifiedMediaGrid
+                nodeId="x4Tbfnv8c"
+                width="1fr"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="c0iPrbN"
+                items="[{"id":"FVXSxi2Bf","kind":"video","image":{"id":"QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","url":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","thumbnailUrl":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"xFNYAo0QzdwSajgUHI3bDjcOf38.mp4","url":"https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4","extension":"mp4"},"poster":{"id":"gtKcBanSRA6PXcpDAXZrNRJCE.jpg","url":"https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg","thumbnailUrl":"https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia account creation and onboarding flow on a phone outdoors.","stroke":false},{"id":"DYZIlAwgy","kind":"video","image":{"id":"txe25VHc4ovbSUywoGPaUd8Vbk.jpg","url":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg","thumbnailUrl":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"kL29aExodKvi9s0DeCZSJhtsiRs.mp4","url":"https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4","extension":"mp4"},"poster":{"id":"ntuGPTHTjyjkDIASrRv61aQtyDw.jpg","url":"https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg","thumbnailUrl":"https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia learning experience featuring The Story of a Keystone on a phone against the sky.","stroke":true},{"id":"O63VEmzbo","kind":"video","video":{"id":"TnTBiMq8cIakgl5VM28aQcE2gbE.mp4","url":"https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4","extension":"mp4"},"poster":{"id":"zYY346QdJ6zsHBvmvaXmo9M2E.jpg","url":"https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg","thumbnailUrl":"https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia map experience for exploring nearby nature observations.","stroke":false}]"
+                showLegacyData="false"
+                itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+                forceSingleRow="true"
+                targetRowHeight="320"
+                minRowHeight="80"
+                maxRowHeight="620"
+                gap="20"
+                mobileGap="10"
+                stackBelow="240"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controls="false"
+             />
+            <TheMapInvitesBeforeItAsksPlainLanguageAndAnObviousWayInLower
+                nodeId="ISZK0eKcH"
+                width="0.5fr"
+                height="fit-content"
+                maxWidth="760px"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Body M"
+            >
+              The map invites before it asks. Plain language and an obvious way in lower the barrier to a first observation.
+            </TheMapInvitesBeforeItAsksPlainLanguageAndAnObviousWayInLower>
+          </Stack>
+          <Stack
+              nodeId="AFmt9SgCl"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <CaseStudyJustifiedMediaGrid
+                nodeId="Xs9RUkUM2"
+                width="1fr"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="c0iPrbN"
+                items="[{"id":"TYfb3vszP","kind":"video","image":{"id":"txe25VHc4ovbSUywoGPaUd8Vbk.jpg","url":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg","thumbnailUrl":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"gFR7q15nPC48QC7ap45JjG12riY.mp4","url":"https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia Nearby discovery flow showing a map and local observation cards.","stroke":false},{"id":"wALZCEqOt","kind":"video","image":{"id":"QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","url":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","thumbnailUrl":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"vVeKfdIytQG2Y5ABFC01AjwPOY.mp4","url":"https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia species identification flow on a phone held beside the coast.","stroke":false},{"id":"Xs9uuQXTJ","kind":"video","video":{"id":"TNpc8c5YNncEarPZc27ldVMU.mp4","url":"https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia profile and observation history demonstrated on a phone.","stroke":false}]"
+                showLegacyData="false"
+                itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+                forceSingleRow="true"
+                targetRowHeight="320"
+                minRowHeight="80"
+                maxRowHeight="620"
+                gap="20"
+                mobileGap="10"
+                stackBelow="240"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controls="false"
+             />
+            <ASingleObservationBecomesPartOfSomethingSharedJoiningACommun
+                nodeId="IzSqDtLjg"
+                width="0.5fr"
+                height="fit-content"
+                maxWidth="760px"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Body M"
+            >
+              A single observation becomes part of something shared, joining a community record that gives each find meaning beyond the moment.
+            </ASingleObservationBecomesPartOfSomethingSharedJoiningACommun>
+          </Stack>
+          <Stack
+              nodeId="dXYYSdOqc"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="start"
+          >
+            <CaseStudyJustifiedMediaGrid
+                nodeId="NGDBsyRXZ"
+                width="1fr"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="c0iPrbN"
+                items="[{"id":"u4u8juasS","kind":"image","image":{"id":"txe25VHc4ovbSUywoGPaUd8Vbk.jpg","url":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg","thumbnailUrl":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia app icon on an iPhone home screen.","stroke":true},{"id":"CW1bJszTJ","kind":"video","image":{"id":"QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","url":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","thumbnailUrl":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"dpqOPTuyEtCuEw9TsvIGBZULM.mp4","url":"https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia Nice Find observation confirmation flow on a phone among plants.","stroke":false}]"
+                showLegacyData="false"
+                itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+                forceSingleRow="true"
+                targetRowHeight="320"
+                minRowHeight="80"
+                maxRowHeight="620"
+                gap="20"
+                mobileGap="10"
+                stackBelow="240"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controls="false"
+             />
+            <EveryFindIsMetWithASmallMomentOfPrideTurningASingleObservati
+                nodeId="J0ldRSKNI"
+                width="0.5fr"
+                height="fit-content"
+                maxWidth="760px"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Body M"
+            >
+              Every find is met with a small moment of pride, turning a single observation into a reason to look again.
+            </EveryFindIsMetWithASmallMomentOfPrideTurningASingleObservati>
+          </Stack>
+          <Stack
+              nodeId="NiN0ODV0F"
+              width="1fr"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="10px"
+              stackDirection="vertical"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <Image
+                nodeId="Epuf7ERVS"
+                width="1fr"
+                height="fit-image"
+                <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+                backgroundImage="https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg"
+                borderWidth="0.5px"
+                borderStyle="solid"
+                borderColor="/Colors/Stroke Gray"
+             />
+          </Stack>
+        </Stack>
+        <Stack
+            nodeId="qA8zPnoBY"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="20px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <DesignedToShip
+              nodeId="zA8aXWU6A"
+              width="1fr"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Heading 3"
+          >
+            Designed to Ship
+          </DesignedToShip>
+          <Stack
+              nodeId="BVysOGK5S"
+              width="1fr"
+              height="fit-content"
+              <!-- background color string or project color style path (if starts with /) -->
+              backgroundColor="rgba(0,0,0,0)"
+              overflow="visible"
+              layout="stack"
+              gap="20px"
+              stackDirection="vertical"
+              stackDistribution="start"
+              stackAlignment="start"
+              stackWrap="true"
+          >
+            <CaseStudyJustifiedMediaGrid
+                nodeId="dLLMKyVlH"
+                width="1fr"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="c0iPrbN"
+                items="[{"id":"SSrsxo7Lp","kind":"image","image":{"id":"ZN5xIYWteQ32fyOxgSsFzxp0rU.png","url":"https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png","thumbnailUrl":"https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=512","resolution":"auto"},"video":{"id":"BLZ0XUnO4R1iDSusukr9oZxQc.mp4","url":"https://framerusercontent.com/assets/BLZ0XUnO4R1iDSusukr9oZxQc.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia mobile app flow map linking screens and interaction states.","stroke":true},{"id":"hHE5QNt4R","kind":"video","video":{"id":"EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4","url":"https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia design tokens and color variables shown in a design workspace.","stroke":true},{"id":"URnlrJsxm","kind":"image","image":{"id":"A6DvwXGXMEFZPWt9xOnVZAJow.png","url":"https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png","thumbnailUrl":"https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia interface exploration board with mobile screens and component studies.","stroke":false}]"
+                showLegacyData="false"
+                itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+                forceSingleRow="false"
+                targetRowHeight="168"
+                minRowHeight="73"
+                maxRowHeight="620"
+                gap="20"
+                mobileGap="10"
+                stackBelow="240"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controls="false"
+             />
+            <CaseStudyJustifiedMediaGrid
+                nodeId="Mz3Cd49qQ"
+                width="1fr"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="c0iPrbN"
+                items="[{"id":"W2uDAGdrp","kind":"image","image":{"id":"53KFBdZp49V7ToYem3gagSK9tbE.png","url":"https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png","thumbnailUrl":"https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia image library organizing nature photography by subject.","stroke":true},{"id":"NcwNSKv83","kind":"video","video":{"id":"BTLOyDlC22T6zdTexVcfRIi1sSM.mp4","url":"https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia profile design documentation with annotated interface details.","stroke":false},{"id":"lL3A8KMak","kind":"video","image":{"id":"MuJbL7GSk4Maaf9PRd10LlJXJA.png","url":"https://framerusercontent.com/images/MuJbL7GSk4Maaf9PRd10LlJXJA.png","thumbnailUrl":"https://framerusercontent.com/images/MuJbL7GSk4Maaf9PRd10LlJXJA.png?scale-down-to=512","resolution":"auto"},"video":{"id":"PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4","url":"https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Gaia prototype implementation in a code editor beside an iPhone map preview.","stroke":true}]"
+                showLegacyData="false"
+                itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+                forceSingleRow="false"
+                targetRowHeight="320"
+                minRowHeight="80"
+                maxRowHeight="620"
+                gap="20"
+                mobileGap="10"
+                stackBelow="240"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controls="false"
+             />
+          </Stack>
+          <TheWorkWasPressureTestedAgainstRealConstraintsNotPresentedOn
+              nodeId="ba0m1Ml2U"
+              width="0.5fr"
+              height="fit-content"
+              maxWidth="760px"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Body M"
+          >
+            The work was pressure-tested against real constraints, not presented only as static screens. Core interactions, including map clustering, the bottom sheet, the observation flow, and the detail tabs, were built in SwiftUI, with a live prototype running on Mapbox GL. Midjourney supported directed image generation, while Claude Code accelerated prototype testing and token management.
+          </TheWorkWasPressureTestedAgainstRealConstraintsNotPresentedOn>
+        </Stack>
+        <EndImage
+            nodeId="crK1P5XY7"
+            width="1fr"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(0,0,0,0)"
+            overflow="visible"
+            layout="stack"
+            stackDirection="vertical"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <Image
+              nodeId="WE5LyPVZo"
+              width="1fr"
+              height="fit-image"
+              <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+              backgroundImage="https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp"
+           />
+        </EndImage>
+        <ScrollToTop
+            nodeId="xQOBaotX4"
+            width="1fr"
+            height="fit-content"
+            <!-- background color string or project color style path (if starts with /) -->
+            backgroundColor="rgba(255, 255, 255, 0)"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            padding="0px 0px 0px 0px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <ScrollToTopButton
+              nodeId="BnufTHPxd"
+              width="fit-content"
+              height="16px"
+              <!-- the component id this instance uses -->
+              componentId="gh4ngZN"
+              label="scroll to top"
+              color="rgb(35, 51, 36)"
+              scrollDuration="900"
+              animationDuration="1.35"
+              easing="cubic-bezier(0.16, 1, 0.3, 1)"
+           />
+        </ScrollToTop>
+      </Stack>
+    </Stack>
+    <SectionNextProject
+        nodeId="RdC_dP6nw"
+        width="1fr"
+        height="fit-content"
+        overflow="hidden"
+        layout="stack"
+        gap="10px"
+        padding="0px 0px 120px 0px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="start"
+    >
+      <HeadingWrapper
+          nodeId="fS9ddEelJ"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          padding="0px 20px 40px 20px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Heading
+            nodeId="MhdyOy2gl"
+            width="1fr"
+            height="fit-content"
+            overflow="visible"
+            layout="stack"
+            gap="19px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <Stack
+              nodeId="GtflhHuF2"
+              width="fit-content"
+              height="fit-content"
+              overflow="hidden"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <Other
+                nodeId="WoFgImvf2"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 2"
+            >
+              OTHER
+            </Other>
+          </Stack>
+          <Stack
+              nodeId="mw4qhONMI"
+              width="fit-content"
+              height="fit-content"
+              overflow="hidden"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <Projects
+                nodeId="z0C9V7Lu1"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 2"
+            >
+              PROJECTS
+            </Projects>
+          </Stack>
+        </Heading>
+      </HeadingWrapper>
+      <NextProjectWrapper
+          nodeId="zPjY3SEkk"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="20px"
+          padding="0px 20px 0px 20px"
+          stackDirection="horizontal"
+          stackDistribution="center"
+          stackAlignment="start"
+          stackWrap="true"
+      >
+        <NextProjectsSection
+            nodeId="gZiRks5zu"
+            width="100%"
+            height="fit-content"
+            <!-- the component id this instance uses -->
+            componentId="mFVVHj5"
+            currentSlug="gaia"
+            count="3"
+            gap="20"
+            textColor="rgb(35, 51, 36)"
+            strokeColor="rgb(151, 151, 151)"
+         />
+      </NextProjectWrapper>
+    </SectionNextProject>
+    <SectionCta
+        nodeId="LhdLFGLNc"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="/Colors/Forest Green"
+        zIndex="5"
+        overflow="hidden"
+        layout="stack"
+        gap="30px"
+        padding="0px 0px 0px 0px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="center"
+    >
+      <TagWrapper
+          nodeId="u2dPDJD_E"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="20px"
+          padding="20px 20px 0px 20px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Tag
+            nodeId="vBM1kC4BQ"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="vertical"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <GetInTouch
+              nodeId="F4aEATG85"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            Get in touch
+          </GetInTouch>
+        </Tag>
+      </TagWrapper>
+      <Container
+          nodeId="bjHk11jzA"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="12px"
+          padding="0px 20px 120px 20px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <Row
+            nodeId="U6bQTC4E9"
+            width="fit-content"
+            height="fit-content"
+            link="mailto:micah.hoang@hey.com"
+            linkOpenInNewTab="false"
+            borderRadius="0px 0px 0px 0px"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            padding="10px 0px 0px 0px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="g3s_BSxDK"
+              width="fit-content"
+              height="fit-content"
+              text="MICAH.HOANG"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <HeyCom
+              nodeId="ZRWROClcV"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            @HEY.COM
+          </HeyCom>
+        </Row>
+        <Row
+            nodeId="xrQsl7Uck"
+            width="fit-content"
+            height="fit-content"
+            link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="mIo0pYxDm"
+              width="fit-content"
+              height="fit-content"
+              text="LINKEDIN"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <Connect
+              nodeId="A6e2toeGr"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            CONNECT
+          </Connect>
+        </Row>
+        <Row
+            nodeId="HjwGcYUFS"
+            width="fit-content"
+            height="fit-content"
+            link="https://www.cosmos.so/articavisuals"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="JazAb2Y_j"
+              width="fit-content"
+              height="fit-content"
+              text="COSMOS"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <Inspire
+              nodeId="DcqADFZtE"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            INSPIRE
+          </Inspire>
+        </Row>
+        <Row
+            nodeId="Teg06O5oY"
+            width="fit-content"
+            height="fit-content"
+            link="https://github.com/ArticaVisuals"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="eFKCj_ZMg"
+              width="fit-content"
+              height="fit-content"
+              text="GITHUB"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <Build
+              nodeId="V7J2ksoQs"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            BUILD
+          </Build>
+        </Row>
+      </Container>
+    </SectionCta>
+  </Stack>
+</Desktop>
+

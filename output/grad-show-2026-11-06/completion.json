@@ -1,0 +1,100 @@
+{
+  "profileUrl": "https://gradshow.artcenter.edu/profile/micah-hoang",
+  "visibility": "Public",
+  "stage": {
+    "url": "https://gradshow.artcenter.edu/node/26169/edit",
+    "state": "Needs Review",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 326929
+  },
+  "projects": [
+    {
+      "title": "Gaia",
+      "url": "https://gradshow.artcenter.edu/project/micah-hoang/gaia",
+      "course": "Communication Design 5: Visual Experience Design",
+      "faculty": "Junie Jeong",
+      "term": "2026 Spring",
+      "tags": [
+        "Branding",
+        "Identity Design",
+        "App Design",
+        "UI/UX",
+        "Software Development"
+      ]
+    },
+    {
+      "title": "Weaponized Innocence",
+      "url": "https://gradshow.artcenter.edu/project/micah-hoang/weaponized-innocence",
+      "course": "Typography 4",
+      "faculty": "Tracey Shiffman",
+      "term": "2024 Fall",
+      "tags": [
+        "Publication Design",
+        "Typography",
+        "Data Visualization",
+        "Illustration",
+        "Product Design"
+      ]
+    },
+    {
+      "title": "Peak Energy",
+      "url": "https://gradshow.artcenter.edu/project/micah-hoang/peak-energy",
+      "course": "Not applicable — professional work",
+      "faculty": "Not applicable — professional work",
+      "term": "2026 Fall",
+      "tags": [
+        "Motion Design",
+        "Animation",
+        "3D Design",
+        "Storyboarding",
+        "Film Editing"
+      ]
+    },
+    {
+      "title": "Motion Connect 2025",
+      "url": "https://gradshow.artcenter.edu/project/micah-hoang/motion-connect-2025",
+      "course": "Not applicable — ArtCenter event identity commission",
+      "faculty": "Not applicable — non-course project",
+      "term": "2025 Fall",
+      "tags": [
+        "Motion Design",
+        "Animation",
+        "Identity Design",
+        "3D Design",
+        "Typography"
+      ]
+    },
+    {
+      "title": "Simon & Schuster",
+      "url": "https://gradshow.artcenter.edu/project/micah-hoang/simon-schuster",
+      "course": "Communication Design 4",
+      "faculty": "Charles Lin",
+      "term": "2024 Spring",
+      "tags": [
+        "Branding",
+        "Identity Design",
+        "Publication Design",
+        "Typography",
+        "Web Design"
+      ]
+    },
+    {
+      "title": "National Park Playing Cards",
+      "url": "https://gradshow.artcenter.edu/project/micah-hoang/national-park-playing-cards",
+      "course": "Not applicable — self-initiated business (founded 2019)",
+      "faculty": "Not applicable — self-initiated work",
+      "term": "2020 Spring",
+      "tags": [
+        "Packaging",
+        "Product Design",
+        "Illustration",
+        "Branding",
+        "Typography"
+      ]
+    }
+  ],
+  "imageCount": 44,
+  "resume": "Micah-Hoang-Resume.pdf",
+  "airpodsExcluded": true
+}

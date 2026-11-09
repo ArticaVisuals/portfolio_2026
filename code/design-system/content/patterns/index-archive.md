@@ -41,8 +41,8 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
   </div>
   <ol class="mh-index" reversed>
     <li class="mh-index__group"><h2 class="mh-index__year">2026</h2><ul class="mh-index__rows">
-      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity, UX/UI</span><span class="mh-index__industry mh-label">Nature</span></a></li>
-      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">Peak Energy</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity</span><span class="mh-index__industry mh-label">Technology</span></a></li>
+      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project →</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity, UX/UI</span><span class="mh-index__industry mh-label">Nature</span><span class="mh-index__row-year mh-label">2026</span></a></li>
+      <li><a class="mh-index__row" href="#"><span class="mh-index__title"><span class="mh-flip"><span class="mh-flip__track"><span>Peak Energy</span><span aria-hidden="true">View project →</span></span></span></span><span class="mh-index__discipline mh-label">Visual identity</span><span class="mh-index__industry mh-label">Technology</span><span class="mh-index__row-year mh-label">2026</span></a></li>
     </ul></li>
   </ol>
 </div>

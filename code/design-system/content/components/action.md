@@ -46,6 +46,10 @@ The site never uses a filled, colored button. A call to action is either a mono 
 - At most one pill per view. If everything is a pill, nothing is.
 - Direction characters (↗ external, ↑ top, → next) go at the end of the label as text.
 
+### Mobile
+
+Text actions (View all, Read more, Scroll to top) get a 44px touch target below 810px, centered on the original label slot so surrounding spacing doesn't move. The flip doesn't roll on mobile.
+
 ## API
 
 | Attribute | Values | Effect |

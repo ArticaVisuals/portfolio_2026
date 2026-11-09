@@ -1,0 +1,35 @@
+{
+  "state": "visible",
+  "body": null,
+  "html": "<html lang=\"en\" data-redirect-timezone=\"1\" data-pt-case-study-transition=\"off\" class=\"lenis lenis-autoToggle mh-nav-at-page-top\"><head>\n\t<meta charset=\"utf-8\">\n\t<meta name=\"viewport\" content=\"width=device-width\">\n\t<meta name=\"generator\" content=\"Framer e2b4fd1\">\n\t<title>Gaia Brand and UX/UI Case Study - Micah Hoang</title>\n    <link rel=\"canonical\" href=\"https://micahhoang.com/case-studies/gaia\"><meta property=\"og:url\" content=\"https://micahhoang.com/case-studies/gaia\"><meta name=\"description\" c",
+  "headings": [
+    {
+      "text": "Gaia",
+      "op": "1"
+    },
+    {
+      "text": "OTHER",
+      "op": "1"
+    },
+    {
+      "text": "PROJECTS",
+      "op": "1"
+    }
+  ],
+  "video": [
+    {
+      "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+      "paused": false,
+      "ready": 4,
+      "time": 2.6743,
+      "outer": "<video src=\"https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4\" loop=\"\" preload=\"auto\" muted=\"\" playsinline=\"\" style=\"cursor:auto;width:100%;height:100%;border-radius:0px;display:block;object-fit:contain;background-color:rgba(0, 0, 0, 0);object-position:50% 50%\" data-case-study-media-skeleton-signature=\"video:https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4:https://files.catbox.moe/5rxz22.jpg\" poster=\"https://files.catbox.moe/5rxz22.jpg\" data-featured-project-poster=\"true\" autoplay=\"\" data-case-study-media-skeleton-poster=\"https://files.catbox.moe/5rxz22.jpg\" data-case-study-media-state=\"ready\"></video>"
+    },
+    {
+      "src": "",
+      "paused": true,
+      "ready": 0,
+      "time": 0,
+      "outer": "<video loop=\"\" playsinline=\"\" preload=\"none\" data-case-study-autoplay-intent=\"true\" muted=\"\" style=\"display: block; width: 100%; height: 100%; object-fit: contain; object-position: center center; background: transparent; border-radius: inherit;\" data-video-source-deferred=\"true\"></video>"
+    }
+  ]
+}

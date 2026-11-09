@@ -1,0 +1,1207 @@
+[
+  {
+    "path": "/case-studies/national-park-cards",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/national-park-cards",
+    "title": "National Park Playing Cards - Micah Hoang",
+    "h1": [],
+    "height": 14120,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [
+      {
+        "text": "National Park Playing Cards started as a passion project and",
+        "x": 20,
+        "y": 710.0550537109375,
+        "w": 350,
+        "h": 277.234375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Client: Self-Initiated ProposalFounder and Designer: Micah H",
+        "x": 20,
+        "y": 1324.828125,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Minimal linework is used to depict the 52 most popular US Na",
+        "x": 20,
+        "y": 1834.78125,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The back of each card depicts natural elements, including th",
+        "x": 20,
+        "y": 1970.796875,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Each suit maps to a U.S. region: diamonds to the Southwest, ",
+        "x": 20,
+        "y": 2309.6796875,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The jokers depict two iconic North American animals: the Ame",
+        "x": 20,
+        "y": 2918.3984375,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Minimal linework is used to depict the 52 most popular US Na",
+        "x": 20,
+        "y": 3948.3984375,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The back of each card depicts natural elements, including th",
+        "x": 20,
+        "y": 4084.4140625,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The deck is engineered as a working deck, not a decorative o",
+        "x": 20,
+        "y": 6287.5,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I specified silver foil pressed onto a matte uncoated box. V",
+        "x": 20,
+        "y": 7469.2734375,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The cards reached more than 200 boutique retailers across 49",
+        "x": 20,
+        "y": 10364.890625,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Driven by my love for the outdoors and U.S. national parks, ",
+        "x": 20,
+        "y": 11084.3671875,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "After the first run sold out, I built the direct-to-consumer",
+        "x": 20,
+        "y": 11721.140625,
+        "w": 350,
+        "h": 226.828125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "As demand grew, I moved the business toward wholesale, which",
+        "x": 20,
+        "y": 12240.4375,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/8b5XFvqJ3JcoBKdJuw1WJXjOcU.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4121,
+        "rect": {
+          "w": 350,
+          "h": 197,
+          "y": 187.5499267578125
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/J1542517319778170274194483566101/All-Cards-Animation_1.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.6885,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 646.9453125
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/G1540917371720490845266153559573/National-Park-Reel.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.349387,
+        "rect": {
+          "w": 350,
+          "h": 622.21875,
+          "y": 96.8376235961914
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/bAgMXouDBARz3iQbZ7hg5ZwlC4.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.445143,
+        "rect": {
+          "w": 350,
+          "h": 622.21875,
+          "y": 221.9375
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/L1543258461716816171227936970261/SnapTik_App_7063886141824683311-HD.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.368432,
+        "rect": {
+          "w": 350,
+          "h": 622.21875,
+          "y": 95.9722900390625
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/S1544927208271577561383525668373/IMG_1174.mov",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.230199,
+        "rect": {
+          "w": 350,
+          "h": 198.328125,
+          "y": 306.1044616699219
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/Z2116629357142052312463249233429/By-the-Numbers.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4024,
+        "rect": {
+          "w": 350,
+          "h": 119,
+          "y": 346.8700866699219
+        }
+      }
+    ],
+    "axe": [
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "count": 1,
+        "nodes": [
+          {
+            "target": [
+              ".framer-1t2825v"
+            ],
+            "summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+            "html": "<a class=\"framer-1t2825v frame...\" data-border=\"true\" href=\"https://www.tiktok.c...\" target=\"_blank\" style=\"will-change: transfo...\" data-case-study-medi...=\"true\" data-case-study-medi...=\"true\" data-case-study-medi...=\"true\" data-case-study-medi...=\"true\">"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/yomo",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/yomo",
+    "title": "Yomo Food Navigation UX/UI - Micah Hoang",
+    "h1": [],
+    "height": 10051,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [
+      {
+        "text": "Yomo is a personalized food navigation platform crafted for ",
+        "x": 20,
+        "y": 627.0340576171875,
+        "w": 350,
+        "h": 252.03125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Limited food transparency makes it hard for people with diet",
+        "x": 20,
+        "y": 1669.703125,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Jordan Bennett, who manages gluten, dairy, and nut allergies",
+        "x": 20,
+        "y": 2098.2265625,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Yomo\u2019s desktop homepage offers easy access to the Dashboard,",
+        "x": 20,
+        "y": 2512.7109375,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Yomo's mobile interface makes it easy to find local restaura",
+        "x": 20,
+        "y": 3612.0625,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The desktop dashboard is built for recipe discovery: users f",
+        "x": 20,
+        "y": 3990.15625,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The mobile interface offers a Map mode for visually locating",
+        "x": 20,
+        "y": 4902.8046875,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Users can search for recipes using a range of dietary and al",
+        "x": 20,
+        "y": 5280.8984375,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The smart glasses interface extends saved grocery lists into",
+        "x": 20,
+        "y": 5433.3984375,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The profile page on the mobile interface allows users to man",
+        "x": 20,
+        "y": 6036.9140625,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Yomo's identity centers on energy and freshness. The lowerca",
+        "x": 20,
+        "y": 6713.875,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The primary use case follows Jordan across allergen verifica",
+        "x": 20,
+        "y": 7178.796875,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "From the primary use case, user goals were defined and trans",
+        "x": 20,
+        "y": 7601.59375,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Rough wireframes were developed from the sitemap, providing ",
+        "x": 20,
+        "y": 7987.9921875,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/TlurcfF0hy7zDnCapZ0SuhkcM.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.353838,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 307.8072204589844
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/zO2m4xJRbI4wZv6Ca3jOpuCTM.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.36205,
+        "rect": {
+          "w": 350,
+          "h": 457.7655944824219,
+          "y": 187.69790649414062
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/highland-harvests",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/highland-harvests",
+    "title": "Highland Harvests Packaging & Identity - Micah Hoang",
+    "h1": [],
+    "height": 10752,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [
+      {
+        "text": "WORK",
+        "href": "../case-studies",
+        "x": 20,
+        "y": 22.5,
+        "w": 30.6875,
+        "h": 15
+      },
+      {
+        "text": "PLAY",
+        "href": "../play",
+        "x": 68.6875,
+        "y": 22.5,
+        "w": 30.6875,
+        "h": 15
+      },
+      {
+        "text": "INDEX",
+        "href": "../index",
+        "x": 117.375,
+        "y": 22.5,
+        "w": 38.3515625,
+        "h": 15
+      },
+      {
+        "text": "ABOUT",
+        "href": "../about",
+        "x": 173.7265625,
+        "y": 22.5,
+        "w": 38.3515625,
+        "h": 15
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Highland Harvests is a collection of bee-derived products by",
+        "x": 20,
+        "y": 660.3621826171875,
+        "w": 350,
+        "h": 277.234375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Karuna works with Tai Dam families in Th\u01b0\u1eddng Xu\u00e2n, where def",
+        "x": 20,
+        "y": 1721.2109375,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "These bees forage in an unspoiled mountain ecosystem, produc",
+        "x": 20,
+        "y": 2125.0546875,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The brand identity balances modern refinement with organic w",
+        "x": 20,
+        "y": 3183.046875,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The honeybee logomark positions the bee as the brand\u2019s hero:",
+        "x": 20,
+        "y": 3319.0625,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Packaging details draw from Tai Dam textile traditions, usin",
+        "x": 20,
+        "y": 4500.6484375,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The beeswax candle in the Highland Harvests kit is a handcra",
+        "x": 20,
+        "y": 4965.765625,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The Highland Harvests beeswax food wrap is a sustainable, re",
+        "x": 20,
+        "y": 5884.90625,
+        "w": 350,
+        "h": 226.828125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The Highland Harvests packaging embodies Karuna's commitment",
+        "x": 20,
+        "y": 6840.3515625,
+        "w": 350,
+        "h": 226.828125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I had the privilege of developing this packaging kit concept",
+        "x": 20,
+        "y": 7329.734375,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The production process involved sourcing and crafting each p",
+        "x": 20,
+        "y": 9023.15625,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/ORU3hQhNAupQ0P5eI2cp0zuQs.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4061,
+        "rect": {
+          "w": 350,
+          "h": 621.703125,
+          "y": 308.1274719238281
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/OwnPOrKXjQ3JHvUOoHfD2bgp8Fo.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4227,
+        "rect": {
+          "w": 350,
+          "h": 622.21875,
+          "y": 111.125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.371325,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 323.3125
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/weaponized-innocence",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/weaponized-innocence",
+    "title": "Weaponized Innocence Editorial - Micah Hoang",
+    "h1": [],
+    "height": 10310,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [
+      {
+        "text": "Fonts in Use: Feature",
+        "href": "https://fontsinuse.com/uses/65224/weaponized-innocence",
+        "x": 20,
+        "y": 1611.859375,
+        "w": 164.34375,
+        "h": 21
+      },
+      {
+        "text": "Previous slide",
+        "href": null,
+        "x": 35,
+        "y": 3227.9375,
+        "w": 30,
+        "h": 30
+      },
+      {
+        "text": "Next slide",
+        "href": null,
+        "x": 325,
+        "y": 3227.9375,
+        "w": 30,
+        "h": 30
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Weaponized Innocence is a newsprint publication about the ex",
+        "x": 20,
+        "y": 695.2332153320312,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Complementing the editorial is The Pinwheel Project, an inte",
+        "x": 20,
+        "y": 876.6550903320312,
+        "w": 350,
+        "h": 201.62493896484375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Child soldiers represent one of the most harrowing violation",
+        "x": 20,
+        "y": 2065.2109375,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The front cover captures the chaos and horror of child soldi",
+        "x": 20,
+        "y": 2918.65625,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The interior moves from disjointed, chaotic layouts to clean",
+        "x": 20,
+        "y": 3369.6015625,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Stark infographics establish scale and context, while childl",
+        "x": 20,
+        "y": 4922.46875,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The Pinwheel Project is a hands-on pinwheel-making kit desig",
+        "x": 20,
+        "y": 5336.9609375,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Each pinwheel design showcases a distinctive blend of drawin",
+        "x": 20,
+        "y": 5973.1171875,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "A 9-column grid creates dynamic, asymmetric spreads in the f",
+        "x": 20,
+        "y": 8448.546875,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Midjourney AI was used to generate chaotic, childlike, and n",
+        "x": 20,
+        "y": 8681.578125,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      },
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 21,
+        "w": 84.375,
+        "h": 18.203125
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "framer-2dc9zm",
+            "w": 320,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1cb0noz",
+            "w": 320,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-c2vvqk",
+            "w": 320,
+            "x": 20
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-10eso7a",
+            "w": 320,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1dju32h",
+            "w": 320,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1rpjgoq",
+            "w": 320,
+            "x": 20
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 320,
+            "x": 20
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.380332,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 323.7109375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.9327,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 569.5859375
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/typldn",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/typldn",
+    "title": "TYPLDN Conference Identity - Micah Hoang",
+    "h1": [],
+    "height": 7299,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [
+      {
+        "text": "This branding project was created for TYPLDN, an internation",
+        "x": 20,
+        "y": 580.0083618164062,
+        "w": 350,
+        "h": 252.03131103515625,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "framer-1hzmexk",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-lf27of",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1gji5zf",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1cfi1os",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-14czkf8",
+            "w": 327.7890625,
+            "x": 20
+          },
+          {
+            "tag": "H2",
+            "cls": "framer-text framer-styles-preset-772zhe",
+            "w": 327.7890625,
+            "x": 20
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "framer-1hzmexk",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-lf27of",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1gji5zf",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1cfi1os",
+            "w": 1160,
+            "x": 20
+          }
+        ]
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "framer-1hzmexk",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-lf27of",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1gji5zf",
+            "w": 1160,
+            "x": 20
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1cfi1os",
+            "w": 1160,
+            "x": 20
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://freight.cargo.site/t/original/i/I1536330345899837002649459480085/Typo-London-Logo-Animation.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.275296,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 308.1977844238281
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/E1539767266959917077443847116309/f6aa8485-6f2d-41b1-90e0-32753836bd0e.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.5674,
+        "rect": {
+          "w": 350,
+          "h": 233.328125,
+          "y": 567.0703125
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/W1537681897480517488239549077013/ID-Card-Option-Animation_1.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 308.32666015625
+        }
+      },
+      {
+        "src": "https://freight.cargo.site/t/original/i/C1538106533449420377832965789205/Typo-London-Logo-Variants_1.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 307.8775939941406
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/sJBQH6h9WTFj1JFq5lrOA6NoXLQ.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3184,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 286.1328125
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  }
+]

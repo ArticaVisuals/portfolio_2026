@@ -1,0 +1,40 @@
+{
+  "size": {
+    "w": 30,
+    "h": 30
+  },
+  "before": "",
+  "hit": [
+    {
+      "offset": -20,
+      "inside": false,
+      "tag": "IMG"
+    },
+    {
+      "offset": -15,
+      "inside": true,
+      "tag": "BUTTON"
+    },
+    {
+      "offset": 0,
+      "inside": true,
+      "tag": "SPAN"
+    },
+    {
+      "offset": 15,
+      "inside": false,
+      "tag": "IMG"
+    },
+    {
+      "offset": 20,
+      "inside": false,
+      "tag": "IMG"
+    }
+  ],
+  "h1": 0,
+  "headings": [
+    "Simon & Schuster",
+    "The last",
+    "independent,"
+  ]
+}

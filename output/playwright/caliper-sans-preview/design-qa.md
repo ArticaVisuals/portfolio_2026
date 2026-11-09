@@ -2,6 +2,14 @@
 
 final result: passed (simplified revision)
 
+## Desktop idle caret
+
+Added a dimmed 2px blinking caret after desktop demo text; mobile has no idle caret. Confirmed both blink phases, text-end alignment, native-editing takeover, static reduced-motion behavior, and no runtime errors in Chromium. Desktop/mobile screenshots were reviewed together: `caliper-idle-caret-desktop.png`, `caliper-idle-caret-mobile.png`.
+
+## Mobile sizing refinement
+
+The mobile opening preview is “Type”. Its inner stage is 180–220px tall, with vertically centered metric bounds and tighter registration padding. At 390px the full component fell from 456px to about 332px. Resized Chromium checks at 320/390/430/810/1440 passed for layout, fitting, numeric-label overlap, and overflow; the mobile typing demo, takeover, and resize persistence also passed. Mobile and desktop screenshots were reviewed together (`caliper-mobile-refined-390.png`, `caliper-mobile-refined-1440.png`). No runtime errors or Framer typecheck errors. No physical device or Safari validation.
+
 ## Final guide simplification
 
 Removed the 800 ascender line and its values from both sides. Four guides remain (740, 510, 0, -230). Desktop and mobile browser checks confirmed the guide count, matching left/right values, and no numeric label overlap. Visual evidence: `caliper-four-guides.png`. Framer typecheck passed.

@@ -26,17 +26,18 @@ Desktop-first, matching the Framer frames.
 
 | Token | Desktop | Tablet | Mobile | Use |
 | --- | --- | --- | --- | --- |
-| `--mh-gutter` | 20px | 20px | 15px | Page side padding (`.mh-container`) |
+| `--mh-gutter` | 20px | 20px | 20px | Page side padding (`.mh-container`). Mobile was 15px (14 on Index) until 2026-10-30 |
 | `--mh-column-gap` | 20px | 20px | 20px | Card grids, index columns |
 | `--mh-split-gap` | 30px | 30px | n/a (stacks) | Two-column text splits (`.mh-split`, meta grid) |
 | `--mh-card-row-gap` | 50px | 50px | 50px | Between project-card rows |
 | `--mh-measure` | 580px | 580px | 100% | Long-form body |
-| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row (doesn't drop to 15 on mobile) |
+| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row; equal to the page gutter |
 | `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
 | `--mh-hero-name-top` | 90px | 90px | 97px | Hero top → name line box (nav overlays it) |
 | `--mh-hero-descriptor-top` | 220px | 186px | 162px | Hero top → descriptor |
 | `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
-| `--mh-footer-min-height` | 50vh | 40vh | 50vh | Home CTA/footer block |
+| `--mh-footer-min-height` | 50vh | 40vh | none | Footer block (content is usually taller) |
+| `--mh-touch-target` | n/a | n/a | 44px | Minimum size of every interactive target below 810px |
 | `--mh-nav-height` | 53px | 53px | 53px | Sticky nav; grain starts below it |
 
 Grids in use on the live site:
@@ -47,7 +48,7 @@ Grids in use on the live site:
 | Other projects / index grid | 3 columns | 2 columns | 1 column |
 | Case-study meta / split | 2 columns | 2 columns | 1 column |
 | Index list | year + 5fr content | year + content | stacked |
-| Navigation | 4 zones (name, role, location, links) | 4 zones | name + links |
+| Navigation | 4 zones (name, role, location, links) | 4 zones | name + MENU |
 
 ```html example
 <div class="mh-split">
@@ -94,7 +95,8 @@ Desktop values are read from the Framer project (Home page layers via the Framer
 
 - **Rules, not boxes.** Separate sections with a full-width [Rule](../components/rule.md); separate rows with rules; never wrap content in a bordered or shadowed card.
 - **Space is the main tool.** When a layout feels busy, add vertical space between sections before anything else.
-- **Align to the gutter.** Every left edge on a page (nav, hero, headings, grid) sits on `--mh-gutter`.
+- **Align to the gutter.** Every left edge on a page (nav, hero, headings, grid, footer, open menu) sits on `--mh-gutter`, 20px at every breakpoint, so the header doesn't shift between routes. Only full-bleed media and the mobile pill scroll rows cross it.
+- **44px targets on touch.** Below 810px every link, pill, filter, toggle and footer row is at least 44×44px. Grow the hit area around the label (padding), not the type.
 - **Framer**: build with Stacks (vertical, gap = space token) and Grids (`1fr` columns, gap = column-gap token); set tablet and phone overrides on the breakpoint frames rather than using fixed pixel widths.
 
 ## Don't

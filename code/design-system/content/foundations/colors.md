@@ -18,15 +18,19 @@ The palette is deliberately small: a warm Cream ground, one Forest Green for bra
 
 | Token | Value | Framer style | Role |
 | --- | --- | --- | --- |
-| `--mh-color-cream` | `#F7F5F0` | `/Cream` | Page background; text on Forest Green |
-| `--mh-color-forest-green` | `#233324` | `/Forest Green` | Brand: display type, nav, labels; inverse surface |
+| `--mh-color-cream` | `#F7F5F0` | `/Colors/Cream` | Page background; text on Forest Green |
+| `--mh-color-forest-green` | `#233324` | `/Colors/Forest Green` | Brand: display type, nav, labels; inverse surface |
 | `--mh-color-accent-green` | `#25593A` | none: set per instance (`tagHoverColor`, IndexPage hover) | Hover / active for tags, filters, toggles |
-| `--mh-color-near-black` | `#141414` | `/Off-Black` | Rules, index list, lightbox chrome, strong body |
-| `--mh-color-graphite` | `#525252` | `/Text Gray` | Long-form case-study body |
-| `--mh-color-light-gray` | `#979797` | `/Stroke Gray` | Muted text, tags, media stroke |
-| `--mh-color-white` | `#FFFFFF` | `/White` | Lightbox backdrop, media placeholder |
+| `--mh-color-near-black` | `#141414` | `/Colors/Off-Black` | Rules, index list, lightbox chrome, strong body |
+| `--mh-color-graphite` | `#525252` | `/Colors/Text Gray` | Long-form case-study body |
+| `--mh-color-light-gray` | `#848484` | `/Colors/Stroke Gray` | Muted text, tags, media stroke. Was `#979797` until 2026-10-30 |
+| `--mh-color-white` | `#FFFFFF` | `/Colors/White` | Lightbox backdrop, media placeholder |
 | `--mh-color-white-60` | `#FFFFFF99` | none (published CSS token) | Muted text on Forest Green |
 | `--mh-color-grain-umber` | `#501D07` | (GrainOverlay control) | Grain tint only |
+
+### Stroke Gray history
+
+Stroke Gray is the one primitive that has moved. It started at `#979797` (2.68:1 on Cream), was darkened to `#707070` for contrast, then on 2026-10-30 lightened to the midpoint, **`#848484`** (3.43:1), at Micah's request. That passes 3:1 for large text and UI outlines but not 4.5:1 for small text, so keep it for tags, strokes and secondary meta, never for text someone has to read to use the page. The Home grid (`tagColor`, `strokeColor`) and Index wrapper (`advanced.textTertiary`) store their own copies of this value; change all three together.
 
 ## Surfaces
 

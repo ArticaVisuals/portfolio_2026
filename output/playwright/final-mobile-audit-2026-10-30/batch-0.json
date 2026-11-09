@@ -1,0 +1,851 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "url": "https://micahhoang.com/",
+    "title": "Micah Hoang \u2014 Brand Designer",
+    "h1": [
+      "Micah Hoang"
+    ],
+    "height": 3609,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [
+      {
+        "tag": "IMG",
+        "x": 20,
+        "y": 2673.765625,
+        "w": 170,
+        "h": 249.8984375,
+        "src": "https://framerusercontent.com/images/5SSyB10nNP8Fa1PU0ixS57P5RA.jpg?width=2000&height=2940"
+      }
+    ],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "framer-k6i83t",
+            "name": "art",
+            "w": 345.6875,
+            "x": 17
+          },
+          {
+            "tag": "H1",
+            "cls": "framer-text framer-styles-preset-zw7hg5",
+            "w": 345.6875,
+            "x": 17
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 112.40625,
+            "x": 286
+          },
+          {
+            "tag": "SPAN",
+            "cls": "selected-work-tag-text",
+            "w": 62.40625,
+            "x": 311
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 120.203125,
+            "x": 317.203125
+          },
+          {
+            "tag": "SPAN",
+            "cls": "selected-work-tag-text",
+            "w": 70.203125,
+            "x": 342.203125
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 143.6015625,
+            "x": 270.40625
+          },
+          {
+            "tag": "SPAN",
+            "cls": "selected-work-tag-text",
+            "w": 93.6015625,
+            "x": 295.40625
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 112.40625,
+            "x": 286
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 120.203125,
+            "x": 317.203125
+          },
+          {
+            "tag": "SPAN",
+            "cls": "selected-work-tag-text",
+            "w": 70.203125,
+            "x": 342.203125
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 143.6015625,
+            "x": 270.40625
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 143.6015625,
+            "x": 270.40625
+          },
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 120.203125,
+            "x": 309.40625
+          },
+          {
+            "tag": "SPAN",
+            "cls": "selected-work-tag-text",
+            "w": 70.203125,
+            "x": 334.40625
+          }
+        ]
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": [
+          {
+            "tag": "A",
+            "cls": "selected-work-tag",
+            "w": 120.203125,
+            "x": 317.203125
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.6878,
+        "rect": {
+          "w": 353.5,
+          "h": 196.9609375,
+          "y": 490
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 3.1985,
+        "rect": {
+          "w": 353.5,
+          "h": 196.9609375,
+          "y": 646.9609375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "error": 4,
+        "rect": {
+          "w": 353.5,
+          "h": 196.9609375,
+          "y": 323.421875
+        }
+      }
+    ],
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "count": 17,
+        "nodes": [
+          {
+            "target": [
+              "div[aria-label=\"Gaia services\"] > .selected-work-tag[href=\"/index#service=visual-identity\"] > .selected-work-tag-text"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #848484, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"selected-work-tag-text\">Visual Identity</span>"
+          },
+          {
+            "target": [
+              "a[href$=\"index#service=ux-ui\"] > .selected-work-tag-text"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #848484, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"selected-work-tag-text\">UX/UI</span>"
+          },
+          {
+            "target": [
+              "div[aria-label=\"Gaia services\"] > .selected-work-tag[href$=\"index#service=strategy\"] > .selected-work-tag-text"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #848484, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"selected-work-tag-text\">Strategy</span>"
+          },
+          {
+            "target": [
+              "div[aria-label=\"AirPods Pro 3 services\"] > .selected-work-tag[href=\"/index#service=visual-identity\"] > .selected-work-tag-text"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #848484, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"selected-work-tag-text\">Visual Identity</span>"
+          }
+        ]
+      },
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "count": 2,
+        "nodes": [
+          {
+            "target": [
+              ".framer-0huOU"
+            ],
+            "summary": "Fix any of the following:\n  Target has insufficient size because it is partially obscured (smallest space is 62.4px by 15.5px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 4.6px instead of at least 24px.",
+            "html": "<a bnxfswbjm=\"25th of January\" moysdpisl=\"var(--token-c699fcc5-0cab-44f3-a5d0-b178cb28fc4c, rgb(20, 20, 20))\" class=\"framer-0huOU framer-Gyx0Q framer-cpv035 framer-v-1qnmq40 framer-1be4gvd\" data-framer-name=\"Text Link Black\" data-highlight=\"true\" href=\"./index\" style=\"opacity: 1;\">"
+          },
+          {
+            "target": [
+              ".framer-5ifad7"
+            ],
+            "summary": "Fix any of the following:\n  Target has insufficient size (62.4px by 13px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 0px instead of at least 24px.",
+            "html": "<span class=\"framer-5ifad7 framer-1be4gvd\" href=\"./index\" data-nested-link=\"true\" role=\"link\" tabindex=\"0\" data-hydrated=\"true\" style=\"opacity: 1;\">"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "path": "/index",
+    "status": 200,
+    "url": "https://micahhoang.com/index",
+    "title": "Project Index \u2014 Brand, Motion & Product Design | Micah Hoang",
+    "h1": [
+      "Index"
+    ],
+    "height": 1582,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [
+      {
+        "text": "Gaia",
+        "href": "./",
+        "x": -202,
+        "y": -414.5,
+        "w": 86.796875,
+        "h": 30
+      },
+      {
+        "text": "AirPods Pro 3",
+        "href": "./",
+        "x": -202,
+        "y": -364.5,
+        "w": 155.125,
+        "h": 30
+      },
+      {
+        "text": "Peak Energy",
+        "href": "./",
+        "x": -202,
+        "y": -314.5,
+        "w": 148.265625,
+        "h": 30
+      },
+      {
+        "text": "Motion Connect 2025",
+        "href": "./",
+        "x": -202,
+        "y": -264.5,
+        "w": 225.9375,
+        "h": 30
+      },
+      {
+        "text": "Simon & Schuster",
+        "href": "./",
+        "x": -202,
+        "y": -214.5,
+        "w": 190.7265625,
+        "h": 30
+      },
+      {
+        "text": "National Park Playing Cards",
+        "href": "./",
+        "x": -202,
+        "y": -164.5,
+        "w": 266.5078125,
+        "h": 30
+      },
+      {
+        "text": "Yomo",
+        "href": "./",
+        "x": -202,
+        "y": -114.5,
+        "w": 95.6015625,
+        "h": 30
+      },
+      {
+        "text": "Highland Harvests",
+        "href": "./",
+        "x": -202,
+        "y": -64.5,
+        "w": 196.109375,
+        "h": 30
+      },
+      {
+        "text": "Weaponized Innocence",
+        "href": "./",
+        "x": -202,
+        "y": -14.5,
+        "w": 240.15625,
+        "h": 30
+      },
+      {
+        "text": "Wolff Olins x ArtCenter",
+        "href": "./",
+        "x": -202,
+        "y": 35.5,
+        "w": 231.3359375,
+        "h": 30
+      },
+      {
+        "text": "Cellular Symphony",
+        "href": "./",
+        "x": -202,
+        "y": 85.5,
+        "w": 199.796875,
+        "h": 30
+      },
+      {
+        "text": "Seek Truth",
+        "href": "./",
+        "x": -202,
+        "y": 135.5,
+        "w": 134.15625,
+        "h": 30
+      },
+      {
+        "text": "Independent Lens",
+        "href": "./",
+        "x": -202,
+        "y": 185.5,
+        "w": 194.09375,
+        "h": 30
+      },
+      {
+        "text": "TYPLDN",
+        "href": "./",
+        "x": -202,
+        "y": 235.5,
+        "w": 115.0703125,
+        "h": 30
+      },
+      {
+        "text": "WhatsApp",
+        "href": "./",
+        "x": -202,
+        "y": 285.5,
+        "w": 135.84375,
+        "h": 30
+      },
+      {
+        "text": "Caliper Sans",
+        "href": "./",
+        "x": -202,
+        "y": 335.5,
+        "w": 149.8671875,
+        "h": 30
+      },
+      {
+        "text": "Optro CRX",
+        "href": "./",
+        "x": -202,
+        "y": 385.5,
+        "w": 137.359375,
+        "h": 30
+      }
+    ],
+    "paragraphs": [],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 86.796875,
+            "x": -202
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 155.125,
+            "x": -202
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-begyn5",
+            "name": "Title",
+            "w": 105.125,
+            "x": -162
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 105.125,
+            "x": -162
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 148.265625,
+            "x": -202
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-begyn5",
+            "name": "Title",
+            "w": 98.265625,
+            "x": -162
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 98.265625,
+            "x": -162
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 225.9375,
+            "x": -202
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 86.796875,
+            "x": -202
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 155.125,
+            "x": -202
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-begyn5",
+            "name": "Title",
+            "w": 105.125,
+            "x": -162
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 105.125,
+            "x": -162
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 148.265625,
+            "x": -202
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-begyn5",
+            "name": "Title",
+            "w": 98.265625,
+            "x": -162
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 98.265625,
+            "x": -162
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 225.9375,
+            "x": -202
+          }
+        ]
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": [
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 86.796875,
+            "x": -202
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 155.125,
+            "x": -202
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-begyn5",
+            "name": "Title",
+            "w": 105.125,
+            "x": -162
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 105.125,
+            "x": -162
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 148.265625,
+            "x": -202
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-begyn5",
+            "name": "Title",
+            "w": 98.265625,
+            "x": -162
+          },
+          {
+            "tag": "P",
+            "cls": "framer-text framer-styles-preset-1dmv8xw",
+            "w": 98.265625,
+            "x": -162
+          },
+          {
+            "tag": "A",
+            "cls": "framer-wqb5zs framer-11aflm3",
+            "w": 225.9375,
+            "x": -202
+          }
+        ]
+      }
+    ],
+    "videos": [],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "status": 200,
+    "url": "https://micahhoang.com/about",
+    "title": "About Micah Hoang \u2014 Brand Designer",
+    "h1": [
+      "Hey, I'm Micah."
+    ],
+    "height": 2682,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [
+      {
+        "text": "SIMON & SCHUSTER, INDIGO DESIGN, GOLD",
+        "href": "https://indigoaward.com/winners/12032",
+        "x": 20,
+        "y": 1331.3984375,
+        "w": 283.796875,
+        "h": 15
+      },
+      {
+        "text": "SIMON & SCHUSTER,",
+        "href": "https://indigoaward.com/winners/12032",
+        "x": 20,
+        "y": 1380.3984375,
+        "w": 138.0625,
+        "h": 15
+      },
+      {
+        "text": "DNA PARIS, WINNER",
+        "href": "https://dna.paris/social/zoom.php?eid=71-95047-26",
+        "x": 158.0625,
+        "y": 1380.3984375,
+        "w": 130.390625,
+        "h": 15
+      },
+      {
+        "text": "SIMON & SCHUSTER,",
+        "href": "https://indigoaward.com/winners/12032",
+        "x": 20,
+        "y": 1424.5,
+        "w": 138.0625,
+        "h": 15
+      },
+      {
+        "text": "FONTS IN USE, FEATURE",
+        "href": "https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional",
+        "x": 20,
+        "y": 1424.5,
+        "w": 199.4296875,
+        "h": 33.203125
+      },
+      {
+        "text": "SEEK TRUTH, YOUNG ONES ADC, MERIT",
+        "href": "https://www.oneclub.org/awards/youngones/-award/54102/seek-truth",
+        "x": 20,
+        "y": 1482.8046875,
+        "w": 253.1171875,
+        "h": 15
+      },
+      {
+        "text": "SEEK TRUTH, FONTS IN USE, FEATURE",
+        "href": "https://fontsinuse.com/uses/64712/seek-truth-artcenter-college-of-design-projec",
+        "x": 20,
+        "y": 1531.8046875,
+        "w": 253.1171875,
+        "h": 15
+      },
+      {
+        "text": "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE",
+        "href": "https://fontsinuse.com/uses/65224/weaponized-innocence",
+        "x": 20,
+        "y": 1571.90625,
+        "w": 230.1015625,
+        "h": 33.203125
+      },
+      {
+        "text": "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION",
+        "href": "https://graphis.com/entry/d1a1f8e9-1353-49ac-a490-1556385f21fd",
+        "x": 20,
+        "y": 1625.3125,
+        "w": 199.421875,
+        "h": 33.203125
+      },
+      {
+        "text": "MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST",
+        "href": "https://www.youtube.com/watch?v=jFF8EivITPs",
+        "x": 20,
+        "y": 1745.921875,
+        "w": 184.0859375,
+        "h": 33.203125
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "I\u2019m a brand designer with a systems mind. I treat design as ",
+        "x": 20,
+        "y": 525.8352661132812,
+        "w": 350,
+        "h": 100.81256103515625,
+        "font": "18px",
+        "wrap": "pretty"
+      },
+      {
+        "text": "Outside of design, I\u2019m most likely training for a marathon, ",
+        "x": 20,
+        "y": 636.6478271484375,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "pretty"
+      },
+      {
+        "text": "\u201cHe went above and beyond his role, approaching problems wit",
+        "x": 20,
+        "y": 1877.03125,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "pretty"
+      },
+      {
+        "text": "\u201cFrom day one, Micah approached our projects with a thoughtf",
+        "x": 20,
+        "y": 2066.25,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "pretty"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [
+      {
+        "tag": "IMG",
+        "x": 20,
+        "y": 60,
+        "w": 231,
+        "h": 339.5625,
+        "src": "https://framerusercontent.com/images/geBwSsIC1HJB3whFBU4BH2joXW8.jpg?scale-down-to=1024&width=2000&height=2940"
+      }
+    ],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "framer-9b508f",
+            "name": "Social Wrapper",
+            "w": 62.40625,
+            "x": 269
+          },
+          {
+            "tag": "A",
+            "cls": "framer-1l3odso framer-er304w",
+            "name": "Social Link",
+            "w": 62.40625,
+            "x": 269
+          },
+          {
+            "tag": "DIV",
+            "cls": "framer-1r92pbx-container",
+            "w": 62.40625,
+            "x": 269
+          },
+          {
+            "tag": "P",
+            "cls": "",
+            "w": 62.40625,
+            "x": 269
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [],
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "count": 4,
+        "nodes": [
+          {
+            "target": [
+              ".framer-18yx8py > .framer-styles-preset-10eso7a[data-styles-preset=\"EoCREtojJ\"][dir=\"auto\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.34 (foreground color: #868684, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-8806283a-2b9e-462a-824e-e48eb4186b9a, rgb(110, 110, 110))\">ASSOCIATE CREATIVE DIRECTOR, APPLE</p>"
+          },
+          {
+            "target": [
+              ".framer-1ub1uom > .framer-styles-preset-10eso7a[data-styles-preset=\"EoCREtojJ\"][dir=\"auto\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.34 (foreground color: #868684, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-8806283a-2b9e-462a-824e-e48eb4186b9a, rgb(110, 110, 110))\">NADIA SHIREEN HUSAIN</p>"
+          },
+          {
+            "target": [
+              ".framer-1tzh9e0 > .framer-styles-preset-10eso7a[data-styles-preset=\"EoCREtojJ\"][dir=\"auto\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.34 (foreground color: #868684, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-8806283a-2b9e-462a-824e-e48eb4186b9a, rgb(110, 110, 110))\">CO-FOUNDER, SKYCAR CREATIVE</p>"
+          },
+          {
+            "target": [
+              ".framer-1v60x4a > .framer-styles-preset-10eso7a[data-styles-preset=\"EoCREtojJ\"][dir=\"auto\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.34 (foreground color: #868684, background color: #f7f5f0, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"framer-text framer-styles-preset-10eso7a\" data-styles-preset=\"EoCREtojJ\" dir=\"auto\" style=\"--framer-text-color:var(--token-8806283a-2b9e-462a-824e-e48eb4186b9a, rgb(110, 110, 110))\">AARON BARRY</p>"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  }
+]

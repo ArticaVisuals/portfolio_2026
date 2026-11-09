@@ -1,0 +1,997 @@
+Node xml:
+<Desktop
+    nodeId="ZVqAQ0z7x"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+>
+  <PageTransition
+      nodeId="UEsgXArRW"
+      opacity="0"
+      position="absolute"
+      width="1px"
+      height="1px"
+      top="0px"
+      left="-202px"
+      <!-- the component id this instance uses -->
+      componentId="gmalnRr"
+      enabled="true"
+      homeArrivalMode="animate"
+      duration="700"
+      navDuration="400"
+      drift="10"
+      dim="0.35"
+      navSelector="nav[data-framer-name="Navigation"], nav"
+      excludeSelector="[data-no-transition]"
+      prefetch="true"
+      holdAppear="true"
+      skipCaseStudyTransitions="true"
+      firstBoot="true"
+      bootMode="once"
+      bootColor="rgb(35, 51, 36)"
+      barColor="rgb(247, 245, 240)"
+      barHeight="8"
+      bootMinMs="1200"
+      bootMaxWaitMs="4500"
+      barEaseMs="3000"
+      barHold="0.86"
+      bootSwipeMs="1200"
+      bootSwipeDelayMs="300"
+   />
+  <Main
+      nodeId="oy90vqbHw"
+      width="1fr"
+      height="fit-content"
+      zIndex="6"
+      overflow="visible"
+      layout="stack"
+      stackDirection="vertical"
+      stackDistribution="center"
+      stackAlignment="center"
+  >
+    <SectionHero
+        nodeId="pPeNEI2it"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="/Colors/Cream"
+        zIndex="3"
+        overflow="clip"
+        layout="stack"
+        gap="1px"
+        padding="100px 20px 100px 20px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="center"
+    >
+      <Stack
+          nodeId="GudP0mJsp"
+          width="1fr"
+          height="fit-content"
+          overflow="clip"
+          layout="stack"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <HeadingRowWrapper
+            nodeId="WEfLueaUm"
+            width="1fr"
+            height="fit-content"
+            borderRadius="0px"
+            overflow="clip"
+            layout="stack"
+            gap="20px"
+            padding="13px 0px 20px 0px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <Art
+              nodeId="ababAciDn"
+              position="absolute"
+              width="fit-content"
+              height="fit-content"
+              top="-10px"
+              left="-6px"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Heading 1"
+              zIndex="1"
+          >
+            Micah Hoang
+          </Art>
+        </HeadingRowWrapper>
+        <HeadingRow
+            nodeId="Q8DBELSgX"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            padding="0px 0px 10px 0px"
+            stackDirection="vertical"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <BrandDesignerWithASystemsMind
+              nodeId="SvbYsUhaf"
+              width="382px"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Heading 3"
+          >
+            Brand designer with a systems mind.
+          </BrandDesignerWithASystemsMind>
+        </HeadingRow>
+      </Stack>
+      <HeaderBottom
+          nodeId="wSKlaiMpm"
+          position="absolute"
+          height="fit-content"
+          right="0px"
+          bottom="0px"
+          left="0px"
+          zIndex="9"
+          overflow="visible"
+          layout="stack"
+          gap="20px"
+          padding="0px 20px 10px 20px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="center"
+      >
+        <SocialWrapper
+            nodeId="LKzEdV91l"
+            width="4fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <SocialLink
+              nodeId="JJapnWkb3"
+              width="fit-content"
+              height="fit-content"
+              link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="tQNKbtkRE"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="LINKEDIN"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+            <Node
+                nodeId="h16fOhpgl"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Small Mono Footers"
+            >
+              ,
+            </Node>
+          </SocialLink>
+          <SocialLink
+              nodeId="VR63wdnMg"
+              width="fit-content"
+              height="fit-content"
+              link="https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="Ccgbdlja6"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="RESUME"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+            <Node
+                nodeId="O0wrkTzBy"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Small Mono Footers"
+            >
+              ,
+            </Node>
+          </SocialLink>
+          <SocialLink
+              nodeId="G5G0HOgb9"
+              width="fit-content"
+              height="fit-content"
+              link="mailto:micah.hoang@hey.com"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="SF_XphndP"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="EMAIL"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+            <Node
+                nodeId="sfG7VIqRW"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Small Mono Footers"
+            >
+              ,
+            </Node>
+          </SocialLink>
+          <SocialLink
+              nodeId="ScigptHjQ"
+              width="fit-content"
+              height="fit-content"
+              link="https://github.com/ArticaVisuals"
+              linkOpenInNewTab="true"
+              overflow="hidden"
+              layout="stack"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextEncryptionEffect
+                nodeId="pCAja78sO"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="p7tSTaD"
+                text="GITHUB"
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                interval="0.07"
+                activators="{"hover":true,"press":false,"trigger":"none","replay":true}"
+                fontColor="rgb(35, 51, 36)"
+                font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Mono Trial Rg\", \"GT Standard Mono Trial Rg Placeholder\", monospace","fontSize":"13px","lineHeight":"1em","letterSpacing":"0em"}"
+                textSelect="true"
+             />
+          </SocialLink>
+        </SocialWrapper>
+        <Stack
+            nodeId="KDvUTuS1v"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            padding="2px 0px 0px 0px"
+            stackDirection="horizontal"
+            stackDistribution="end"
+            stackAlignment="center"
+        >
+          <StudioB2023
+              nodeId="r9hMWXUvE"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono Footers"
+          >
+            ©2026
+          </StudioB2023>
+        </Stack>
+      </HeaderBottom>
+    </SectionHero>
+    <SectionSelectedWorks
+        nodeId="nFjim4UT5"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="/Colors/Cream"
+        zIndex="3"
+        overflow="hidden"
+        layout="stack"
+        gap="10px"
+        padding="0px 20px 100px 20px"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="center"
+    >
+      <LineAnimationActive
+          nodeId="SgS9NzKQD"
+          width="787px"
+          height="1px"
+          overflow="hidden"
+          layout="stack"
+          gap="10px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="center"
+       />
+      <HeadingWrapper
+          nodeId="qp7AaTYlq"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          padding="0px 0px 60px 0px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="center"
+      >
+        <LineAnimation
+            nodeId="yEnWmhMPa"
+            width="1fr"
+            height="1px"
+            <!-- the component id this instance uses -->
+            componentId="CKAXHxDqW"
+            variant="zh0P0ZNrl"
+            nhvtjR0LA="rgb(35, 51, 36)"
+         />
+        <Heading
+            nodeId="bJyb_ChpB"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="15px"
+            padding="20px 0px 0px 0px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <Stack
+              nodeId="XzikUe04m"
+              width="fit-content"
+              height="fit-content"
+              overflow="visible"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="start"
+              stackAlignment="center"
+          >
+            <Selected
+                nodeId="saBDYmVLX"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 2"
+            >
+              Selected
+            </Selected>
+          </Stack>
+          <Stack
+              nodeId="tRNMIZnBA"
+              width="fit-content"
+              height="fit-content"
+              overflow="hidden"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="start"
+              stackAlignment="center"
+          >
+            <Work
+                nodeId="c1plRGj6k"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 2"
+            >
+              work
+            </Work>
+          </Stack>
+        </Heading>
+      </HeadingWrapper>
+      <Stack
+          nodeId="nNDJpcJTn"
+          width="1fr"
+          height="fit-content"
+          overflow="clip"
+          layout="stack"
+          gap="10px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="center"
+      >
+        <Projects
+            nodeId="k7gSpMtLR"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="40px"
+            padding="0px 0px 20px 0px"
+            stackDirection="vertical"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <HomeSelectedWorkGrid
+              nodeId="h0ZkBCWe1"
+              width="1fr"
+              height="fit-content"
+              <!-- the component id this instance uses -->
+              componentId="FecepLS"
+              useCMS="true"
+              collectionId="yTHrQWMIY"
+              collectionModuleUrl=""
+              sortFieldIds="DLBifmgp1"
+              thumbnailVideoFieldIds="SvOqFqdby"
+              tagFieldIds="kuvJcmOFr
+VV1CggU2J
+E6OpH0hSs"
+              maxItems="6"
+              showTags="true"
+              textColor="rgb(35, 51, 36)"
+              strokeColor="rgb(132, 132, 132)"
+              tagColor="rgb(132, 132, 132)"
+              tagHoverColor="rgb(37, 89, 58)"
+           />
+        </Projects>
+        <Stack
+            nodeId="VXOaDwN80"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="end"
+            stackAlignment="center"
+        >
+          <Stack
+              nodeId="qIlXdkTYn"
+              width="fit-content"
+              height="fit-content"
+              overflow="hidden"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="center"
+              stackAlignment="center"
+          >
+            <TextLink
+                nodeId="Fyt6pSRm9"
+                width="fit-content"
+                height="fit-content"
+                <!-- the component id this instance uses -->
+                componentId="dVTZgYLeH"
+                variant="fYjqF5g84"
+                Kpveh2Q8O="VIEW ALL"
+                bwVWMSt6G="/index"
+             />
+          </Stack>
+        </Stack>
+      </Stack>
+    </SectionSelectedWorks>
+    <SectionAbout
+        nodeId="BDtBlhG4Q"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="/Colors/Cream"
+        zIndex="3"
+        overflow="hidden"
+        layout="stack"
+        padding="0px 20px 20px 20px"
+        stackDirection="vertical"
+        stackDistribution="center"
+        stackAlignment="start"
+    >
+      <HeadingWrapper
+          nodeId="J36aanu2q"
+          width="1fr"
+          height="fit-content"
+          overflow="visible"
+          layout="stack"
+          padding="0px 0px 0px 0px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="center"
+      >
+        <LineAnimation
+            nodeId="jJOPkl7zh"
+            width="1fr"
+            height="1px"
+            <!-- the component id this instance uses -->
+            componentId="CKAXHxDqW"
+            variant="zh0P0ZNrl"
+            nhvtjR0LA="rgb(35, 51, 36)"
+         />
+        <Heading
+            nodeId="NAvOIYza8"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="20px"
+            padding="20px 0px 30px 0px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="center"
+        >
+          <Stack
+              nodeId="dv01ms90A"
+              width="fit-content"
+              height="fit-content"
+              overflow="clip"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="start"
+              stackAlignment="center"
+          >
+            <About
+                nodeId="j9eeRrGB8"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 2"
+            >
+              About
+            </About>
+          </Stack>
+          <Stack
+              nodeId="wXn8anOQ3"
+              width="fit-content"
+              height="fit-content"
+              overflow="clip"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="start"
+              stackAlignment="center"
+          >
+            <Micah
+                nodeId="YXpLNoKyu"
+                width="fit-content"
+                height="fit-content"
+                <!-- project text style path, always starts with / -->
+                inlineTextStyle="/Text Styles/Heading 2"
+            >
+              Micah
+            </Micah>
+          </Stack>
+        </Heading>
+      </HeadingWrapper>
+      <Container
+          nodeId="Xuoe7GFph"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="10px"
+          stackDirection="horizontal"
+          stackDistribution="end"
+          stackAlignment="start"
+      >
+        <ContentWrapper
+            nodeId="wTtoegX5q"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="20px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <ColumnImage
+              nodeId="TxJExKcIq"
+              width="fit-content"
+              height="fit-content"
+              overflow="hidden"
+              layout="stack"
+              gap="10px"
+              stackDirection="horizontal"
+              stackDistribution="start"
+              stackAlignment="start"
+          >
+            <Stack
+                nodeId="a6ehevTMT"
+                width="fit-content"
+                height="fit-content"
+                <!-- background color string or project color style path (if starts with /) -->
+                backgroundColor="rgba(255, 255, 255, 0)"
+                overflow="hidden"
+                layout="stack"
+                gap="10px"
+                stackDirection="horizontal"
+                stackDistribution="start"
+                stackAlignment="start"
+            >
+              <Image
+                  nodeId="AxJPFvKD6"
+                  width="175px"
+                  height="fit-image"
+                  link="/about"
+                  linkOpenInNewTab="false"
+                  borderRadius="0px"
+                  <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+                  backgroundImage="https://framerusercontent.com/images/5SSyB10nNP8Fa1PU0ixS57P5RA.jpg"
+               />
+            </Stack>
+          </ColumnImage>
+          <Stack
+              nodeId="wq2tuw8Fd"
+              width="1fr"
+              height="271px"
+              overflow="hidden"
+              layout="stack"
+              gap="20px"
+              stackDirection="horizontal"
+              stackDistribution="start"
+              stackAlignment="start"
+          >
+            <Paragraph
+                nodeId="yK6SInt21"
+                width="fit-content"
+                height="fit-content"
+                overflow="visible"
+                layout="stack"
+                gap="40px"
+                padding="0px 0px 0px 0px"
+                stackDirection="vertical"
+                stackDistribution="start"
+                stackAlignment="start"
+            >
+              <IMABrandDesignerWithASystemsMindIWorkAcrossStrategyVisualIde
+                  nodeId="zb8n_RG9g"
+                  width="600px"
+                  height="fit-content"
+                  maxWidth="600px"
+                  <!-- project text style path, always starts with / -->
+                  inlineTextStyle="/Text Styles/Body L"
+              >
+                I&apos;m a brand designer with a systems mind. I work across strategy, visual identity, and motion to build brands that hold together across every surface they touch.
+              </IMABrandDesignerWithASystemsMindIWorkAcrossStrategyVisualIde>
+              <ButtonWrapper
+                  nodeId="TvfJmt1e6"
+                  width="1fr"
+                  height="fit-content"
+                  link="/about"
+                  linkOpenInNewTab="false"
+                  <!-- background color string or project color style path (if starts with /) -->
+                  backgroundColor="rgba(255, 255, 255, 0)"
+                  overflow="visible"
+                  layout="stack"
+                  gap="10px"
+                  stackDirection="horizontal"
+                  stackDistribution="start"
+                  stackAlignment="center"
+              >
+                <TextLinkBlack
+                    nodeId="UpLdtDkH8"
+                    width="fit-content"
+                    height="13px"
+                    overflow="hidden"
+                    layout="stack"
+                    gap="10px"
+                    stackDirection="horizontal"
+                    stackDistribution="center"
+                    stackAlignment="start"
+                >
+                  <Stack
+                      nodeId="uHhvuxijx"
+                      width="fit-content"
+                      height="fit-content"
+                      overflow="visible"
+                      layout="stack"
+                      stackDirection="vertical"
+                      stackDistribution="start"
+                      stackAlignment="center"
+                  >
+                    <ViewProject
+                        nodeId="gtUBNGFea"
+                        width="fit-content"
+                        height="fit-content"
+                        <!-- project text style path, always starts with / -->
+                        inlineTextStyle="/Text Styles/Small Mono Footers"
+                    >
+                      READ MORE
+                    </ViewProject>
+                    <ViewProject
+                        nodeId="FodWCgmfK"
+                        width="fit-content"
+                        height="fit-content"
+                        <!-- project text style path, always starts with / -->
+                        inlineTextStyle="/Text Styles/Small Mono Footers"
+                    >
+                      READ MORE
+                    </ViewProject>
+                  </Stack>
+                </TextLinkBlack>
+              </ButtonWrapper>
+            </Paragraph>
+          </Stack>
+        </ContentWrapper>
+      </Container>
+      <ScrollToTop
+          nodeId="XGuI7Vc40"
+          width="1fr"
+          height="fit-content"
+          <!-- background color string or project color style path (if starts with /) -->
+          backgroundColor="rgba(255, 255, 255, 0)"
+          overflow="visible"
+          layout="stack"
+          gap="10px"
+          padding="60px 0px 0px 0px"
+          stackDirection="horizontal"
+          stackDistribution="start"
+          stackAlignment="center"
+      >
+        <ScrollToTopButton
+            nodeId="SZFtRBteB"
+            width="fit-content"
+            height="16px"
+            <!-- the component id this instance uses -->
+            componentId="gh4ngZN"
+            label="scroll to top"
+            color="rgb(35, 51, 36)"
+            scrollDuration="900"
+            animationDuration="1.35"
+            easing="cubic-bezier(0.16, 1, 0.3, 1)"
+         />
+      </ScrollToTop>
+    </SectionAbout>
+    <SectionCta
+        nodeId="PzjiRIRtf"
+        width="1fr"
+        height="fit-content"
+        <!-- background color string or project color style path (if starts with /) -->
+        backgroundColor="/Colors/Forest Green"
+        zIndex="5"
+        overflow="hidden"
+        layout="stack"
+        gap="30px"
+        padding="0px 0px 0px 0px"
+        stackDirection="vertical"
+        stackDistribution="start"
+        stackAlignment="center"
+    >
+      <TagWrapper
+          nodeId="oWro1lB9I"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="20px"
+          padding="20px 20px 0px 20px"
+          stackDirection="vertical"
+          stackDistribution="center"
+          stackAlignment="start"
+      >
+        <Tag
+            nodeId="LLU2bBPHG"
+            width="1fr"
+            height="fit-content"
+            overflow="hidden"
+            layout="stack"
+            gap="10px"
+            stackDirection="vertical"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <GetInTouch
+              nodeId="jsCVhbB9m"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono"
+          >
+            GET IN TOUCH
+          </GetInTouch>
+        </Tag>
+      </TagWrapper>
+      <Container
+          nodeId="DTJ2CnBm8"
+          width="1fr"
+          height="fit-content"
+          overflow="hidden"
+          layout="stack"
+          gap="12px"
+          padding="0px 20px 120px 20px"
+          stackDirection="vertical"
+          stackDistribution="start"
+          stackAlignment="start"
+      >
+        <CtaRow
+            nodeId="EA7_NjuwQ"
+            width="fit-content"
+            height="85px"
+            link="mailto:micah.hoang@hey.com"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            padding="2px 0px 0px 0px"
+            stackDirection="horizontal"
+            stackDistribution="center"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="kD_tjwIri"
+              width="fit-content"
+              height="fit-content"
+              text="MICAH.HOANG"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <HeyCom
+              nodeId="UDjtv0imE"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono Footers"
+          >
+            @HEY.COM
+          </HeyCom>
+        </CtaRow>
+        <CtaRow
+            nodeId="drb6VHTBP"
+            width="fit-content"
+            height="fit-content"
+            link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="RMqbkCuPl"
+              width="fit-content"
+              height="fit-content"
+              text="LINKEDIN"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <Connect
+              nodeId="Zc2alajd5"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono Footers"
+          >
+            CONNECT
+          </Connect>
+        </CtaRow>
+        <CtaRow
+            nodeId="YV7l6r5uO"
+            width="fit-content"
+            height="fit-content"
+            link="https://www.cosmos.so/articavisuals"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="aoP0Qf_vn"
+              width="fit-content"
+              height="fit-content"
+              text="COSMOS"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <Inspire
+              nodeId="oB12JYrx2"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono Footers"
+          >
+            INSPIRE
+          </Inspire>
+        </CtaRow>
+        <CtaRow
+            nodeId="UmZ7k1se7"
+            width="fit-content"
+            height="fit-content"
+            link="https://github.com/ArticaVisuals"
+            linkOpenInNewTab="true"
+            overflow="visible"
+            layout="stack"
+            gap="10px"
+            stackDirection="horizontal"
+            stackDistribution="start"
+            stackAlignment="start"
+        >
+          <MagText
+              nodeId="t2Z76jwYc"
+              width="fit-content"
+              height="fit-content"
+              text="GITHUB"
+              font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+              color="rgb(247, 245, 240)"
+           />
+          <Build
+              nodeId="c8pK_wMqs"
+              width="fit-content"
+              height="fit-content"
+              <!-- project text style path, always starts with / -->
+              inlineTextStyle="/Text Styles/Small Mono Footers"
+          >
+            BUILD
+          </Build>
+        </CtaRow>
+      </Container>
+    </SectionCta>
+  </Main>
+</Desktop>
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<Tablet
+    nodeId="KSQ9xlxtY"
+    position="absolute"
+    width="810px"
+    height="fit-content"
+    top="0px"
+    left="1300px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<Phone
+    nodeId="ZGsjsMX75"
+    position="absolute"
+    width="390px"
+    height="fit-content"
+    top="0px"
+    left="2210px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />

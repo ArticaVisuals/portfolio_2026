@@ -1,0 +1,3432 @@
+[
+  {
+    "route": "/",
+    "top": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "pageHeight": 3479,
+      "overflow": false,
+      "smallTargets": [
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 20,
+            "y": 324,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 100.2109375,
+            "y": 324,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "EMAIL,",
+          "tag": "A",
+          "href": "mailto:micah.hoang@hey.com",
+          "rect": {
+            "x": 164.8203125,
+            "y": 324,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 221.625,
+            "y": 324,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "A",
+          "href": "/index#service=visual-identity",
+          "rect": {
+            "x": 15,
+            "y": 708.5859375,
+            "w": 130,
+            "h": 28
+          }
+        },
+        {
+          "label": "UX/UI",
+          "tag": "A",
+          "href": "/index#service=ux-ui",
+          "rect": {
+            "x": 150,
+            "y": 708.5859375,
+            "w": 58,
+            "h": 28
+          }
+        },
+        {
+          "label": "Strategy",
+          "tag": "A",
+          "href": "/index#service=strategy",
+          "rect": {
+            "x": 213,
+            "y": 708.5859375,
+            "w": 79.6015625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "A",
+          "href": "/index#service=visual-identity",
+          "rect": {
+            "x": 15,
+            "y": 1034.171875,
+            "w": 130,
+            "h": 28
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "A",
+          "href": "/index#service=2d-motion",
+          "rect": {
+            "x": 150,
+            "y": 1034.171875,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "A",
+          "href": "/index#service=3d-motion",
+          "rect": {
+            "x": 241.8046875,
+            "y": 1034.171875,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "A",
+          "href": "/index#service=2d-motion",
+          "rect": {
+            "x": 15,
+            "y": 1359.7578125,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "A",
+          "href": "/index#service=3d-motion",
+          "rect": {
+            "x": 106.8046875,
+            "y": 1359.7578125,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "Social Media",
+          "tag": "A",
+          "href": "/index#service=social-media",
+          "rect": {
+            "x": 198.609375,
+            "y": 1359.7578125,
+            "w": 108.40625,
+            "h": 28
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "A",
+          "href": "/index#service=2d-motion",
+          "rect": {
+            "x": 15,
+            "y": 1685.34375,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "A",
+          "href": "/index#service=3d-motion",
+          "rect": {
+            "x": 106.8046875,
+            "y": 1685.34375,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "Social Media",
+          "tag": "A",
+          "href": "/index#service=social-media",
+          "rect": {
+            "x": 198.609375,
+            "y": 1685.34375,
+            "w": 108.40625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Strategy",
+          "tag": "A",
+          "href": "/index#service=strategy",
+          "rect": {
+            "x": 15,
+            "y": 2010.9296875,
+            "w": 79.6015625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "A",
+          "href": "/index#service=visual-identity",
+          "rect": {
+            "x": 99.6015625,
+            "y": 2010.9296875,
+            "w": 130,
+            "h": 28
+          }
+        },
+        {
+          "label": "Editorial",
+          "tag": "A",
+          "href": "/index#service=editorial",
+          "rect": {
+            "x": 234.6015625,
+            "y": 2010.9296875,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "Product",
+          "tag": "A",
+          "href": "/index#service=product",
+          "rect": {
+            "x": 15,
+            "y": 2336.515625,
+            "w": 72.40625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Packaging",
+          "tag": "A",
+          "href": "/index#service=packaging",
+          "rect": {
+            "x": 92.40625,
+            "y": 2336.515625,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "VIEW ALLVIEW ALL",
+          "tag": "A",
+          "href": "./index",
+          "rect": {
+            "x": 312.59375,
+            "y": 2384.515625,
+            "w": 62.40625,
+            "h": 13
+          },
+          "name": "Text Link Black"
+        },
+        {
+          "label": "scroll to top",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 15,
+            "y": 3062.4140625,
+            "w": 118.7109375,
+            "h": 16
+          }
+        },
+        {
+          "label": "MICAH.HOANG@HEY.COM",
+          "tag": "A",
+          "href": "mailto:micah.hoang@hey.com",
+          "rect": {
+            "x": 15,
+            "y": 3167.4140625,
+            "w": 359.671875,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 3219.4140625,
+            "w": 239.9453125,
+            "h": 40
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 3269.4140625,
+            "w": 240.84375,
+            "h": 40
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 3319.4140625,
+            "w": 192.8125,
+            "h": 40
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 3444.4140625,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 3444.4140625,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 3444.4140625,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 3444.4140625,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Micah Hoang"
+        },
+        {
+          "tag": "H3",
+          "text": "Brand designer with a systems mind."
+        },
+        {
+          "tag": "H2",
+          "text": "Selected"
+        },
+        {
+          "tag": "H2",
+          "text": "work"
+        },
+        {
+          "tag": "H2",
+          "text": "About"
+        },
+        {
+          "tag": "H2",
+          "text": "Micah"
+        }
+      ],
+      "badImages": [],
+      "missingAlt": 1,
+      "media": {
+        "images": 7,
+        "videos": 3,
+        "playing": 2
+      },
+      "audit": {
+        "shifts": [],
+        "lcp": [
+          {
+            "time": 564,
+            "url": "",
+            "size": 1837
+          },
+          {
+            "time": 604,
+            "url": "",
+            "size": 18975
+          },
+          {
+            "time": 1404,
+            "url": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?scale-down-to=512&width=3236&height=1810",
+            "size": 72900
+          }
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "bytes": 729800,
+          "decoded": 729500,
+          "duration": 234.20000000298023,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "bytes": 428882,
+          "decoded": 428582,
+          "duration": 246.3999999910593,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dd2Tiset.mjs",
+          "bytes": 107564,
+          "decoded": 389015,
+          "duration": 358.70000000298023,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+          "bytes": 63032,
+          "decoded": 62732,
+          "duration": 327.29999999701977,
+          "kind": "css"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.BSUunFcV.mjs",
+          "bytes": 49882,
+          "decoded": 155053,
+          "duration": 345.20000000298023,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.B4lOa1lM.mjs",
+          "bytes": 45362,
+          "decoded": 145044,
+          "duration": 341.40000000596046,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+          "bytes": 33276,
+          "decoded": 32976,
+          "duration": 386.40000000596046,
+          "kind": "css"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/toplevel-deps.wo48WDff.mjs",
+          "bytes": 30044,
+          "decoded": 172051,
+          "duration": 301.79999999701977,
+          "kind": "script"
+        }
+      ]
+    },
+    "widths": [
+      {
+        "width": 320,
+        "overflow": false,
+        "scrollWidth": 320
+      },
+      {
+        "width": 430,
+        "overflow": false,
+        "scrollWidth": 430
+      },
+      {
+        "width": 699,
+        "overflow": false,
+        "scrollWidth": 699
+      }
+    ],
+    "bottom": {
+      "badImages": [],
+      "smallTargets": [
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 20,
+            "y": -2311.5,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 100.2109375,
+            "y": -2311.5,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "EMAIL,",
+          "tag": "A",
+          "href": "mailto:micah.hoang@hey.com",
+          "rect": {
+            "x": 164.8203125,
+            "y": -2311.5,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 221.625,
+            "y": -2311.5,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "A",
+          "href": "/index#service=visual-identity",
+          "rect": {
+            "x": 15,
+            "y": -1926.9140625,
+            "w": 130,
+            "h": 28
+          }
+        },
+        {
+          "label": "UX/UI",
+          "tag": "A",
+          "href": "/index#service=ux-ui",
+          "rect": {
+            "x": 150,
+            "y": -1926.9140625,
+            "w": 58,
+            "h": 28
+          }
+        },
+        {
+          "label": "Strategy",
+          "tag": "A",
+          "href": "/index#service=strategy",
+          "rect": {
+            "x": 213,
+            "y": -1926.9140625,
+            "w": 79.6015625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "A",
+          "href": "/index#service=visual-identity",
+          "rect": {
+            "x": 15,
+            "y": -1601.328125,
+            "w": 130,
+            "h": 28
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "A",
+          "href": "/index#service=2d-motion",
+          "rect": {
+            "x": 150,
+            "y": -1601.328125,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "A",
+          "href": "/index#service=3d-motion",
+          "rect": {
+            "x": 241.8046875,
+            "y": -1601.328125,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "A",
+          "href": "/index#service=2d-motion",
+          "rect": {
+            "x": 15,
+            "y": -1275.7421875,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "A",
+          "href": "/index#service=3d-motion",
+          "rect": {
+            "x": 106.8046875,
+            "y": -1275.7421875,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "Social Media",
+          "tag": "A",
+          "href": "/index#service=social-media",
+          "rect": {
+            "x": 198.609375,
+            "y": -1275.7421875,
+            "w": 108.40625,
+            "h": 28
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "A",
+          "href": "/index#service=2d-motion",
+          "rect": {
+            "x": 15,
+            "y": -950.15625,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "A",
+          "href": "/index#service=3d-motion",
+          "rect": {
+            "x": 106.8046875,
+            "y": -950.15625,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "Social Media",
+          "tag": "A",
+          "href": "/index#service=social-media",
+          "rect": {
+            "x": 198.609375,
+            "y": -950.15625,
+            "w": 108.40625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Strategy",
+          "tag": "A",
+          "href": "/index#service=strategy",
+          "rect": {
+            "x": 15,
+            "y": -624.5703125,
+            "w": 79.6015625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "A",
+          "href": "/index#service=visual-identity",
+          "rect": {
+            "x": 99.6015625,
+            "y": -624.5703125,
+            "w": 130,
+            "h": 28
+          }
+        },
+        {
+          "label": "Editorial",
+          "tag": "A",
+          "href": "/index#service=editorial",
+          "rect": {
+            "x": 234.6015625,
+            "y": -624.5703125,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "Product",
+          "tag": "A",
+          "href": "/index#service=product",
+          "rect": {
+            "x": 15,
+            "y": -298.984375,
+            "w": 72.40625,
+            "h": 28
+          }
+        },
+        {
+          "label": "Packaging",
+          "tag": "A",
+          "href": "/index#service=packaging",
+          "rect": {
+            "x": 92.40625,
+            "y": -298.984375,
+            "w": 86.8046875,
+            "h": 28
+          }
+        },
+        {
+          "label": "VIEW ALLVIEW ALL",
+          "tag": "A",
+          "href": "./index",
+          "rect": {
+            "x": 312.59375,
+            "y": -250.984375,
+            "w": 62.40625,
+            "h": 13
+          },
+          "name": "Text Link Black"
+        },
+        {
+          "label": "scroll to top",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 15,
+            "y": 426.9140625,
+            "w": 118.7109375,
+            "h": 16
+          }
+        },
+        {
+          "label": "MICAH.HOANG@HEY.COM",
+          "tag": "A",
+          "href": "mailto:micah.hoang@hey.com",
+          "rect": {
+            "x": 15,
+            "y": 531.9140625,
+            "w": 359.671875,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 583.9140625,
+            "w": 239.9453125,
+            "h": 40
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 633.9140625,
+            "w": 240.84375,
+            "h": 40
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 683.9140625,
+            "w": 192.8125,
+            "h": 40
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 808.9140625,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 808.9140625,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 808.9140625,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 808.9140625,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "media": {
+        "images": 7,
+        "videos": 3,
+        "playing": 0
+      }
+    },
+    "errors": [],
+    "failures": []
+  },
+  {
+    "route": "/about",
+    "top": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "pageHeight": 2497,
+      "overflow": false,
+      "smallTargets": [
+        {
+          "label": "SIMON & SCHUSTER, INDIGO DESIGN, GOLD",
+          "tag": "A",
+          "href": "https://indigoaward.com/winners/12032",
+          "rect": {
+            "x": 20,
+            "y": 1252.984375,
+            "w": 283.796875,
+            "h": 15
+          }
+        },
+        {
+          "label": "SIMON & SCHUSTER,",
+          "tag": "A",
+          "href": "https://indigoaward.com/winners/12032",
+          "rect": {
+            "x": 20,
+            "y": 1301.984375,
+            "w": 138.0625,
+            "h": 15
+          }
+        },
+        {
+          "label": "DNA PARIS, WINNER",
+          "tag": "A",
+          "href": "https://dna.paris/social/zoom.php?eid=71-95047-26",
+          "rect": {
+            "x": 158.0625,
+            "y": 1301.984375,
+            "w": 130.390625,
+            "h": 15
+          }
+        },
+        {
+          "label": "SIMON & SCHUSTER,",
+          "tag": "A",
+          "href": "https://indigoaward.com/winners/12032",
+          "rect": {
+            "x": 20,
+            "y": 1346.0859375,
+            "w": 138.0625,
+            "h": 15
+          }
+        },
+        {
+          "label": "FONTS IN USE, FEATURE",
+          "tag": "A",
+          "href": "https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional",
+          "rect": {
+            "x": 20,
+            "y": 1346.0859375,
+            "w": 199.4296875,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "SEEK TRUTH, YOUNG ONES ADC, MERIT",
+          "tag": "A",
+          "href": "https://www.oneclub.org/awards/youngones/-award/54102/seek-truth",
+          "rect": {
+            "x": 20,
+            "y": 1404.390625,
+            "w": 253.1171875,
+            "h": 15
+          }
+        },
+        {
+          "label": "SEEK TRUTH, FONTS IN USE, FEATURE",
+          "tag": "A",
+          "href": "https://fontsinuse.com/uses/64712/seek-truth-artcenter-college-of-design-projec",
+          "rect": {
+            "x": 20,
+            "y": 1453.390625,
+            "w": 253.1171875,
+            "h": 15
+          }
+        },
+        {
+          "label": "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE",
+          "tag": "A",
+          "href": "https://fontsinuse.com/uses/65224/weaponized-innocence",
+          "rect": {
+            "x": 20,
+            "y": 1493.4921875,
+            "w": 230.1015625,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION",
+          "tag": "A",
+          "href": "https://graphis.com/entry/d1a1f8e9-1353-49ac-a490-1556385f21fd",
+          "rect": {
+            "x": 20,
+            "y": 1546.8984375,
+            "w": 199.421875,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST",
+          "tag": "A",
+          "href": "https://www.youtube.com/watch?v=jFF8EivITPs",
+          "rect": {
+            "x": 20,
+            "y": 1667.5078125,
+            "w": 184.0859375,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 2231.046875,
+            "w": 239.890625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 2283.046875,
+            "w": 242.8125,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 2335.046875,
+            "w": 193.40625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 2462.046875,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 2462.046875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 2462.046875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 2462.046875,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Hey, I'm Micah."
+        }
+      ],
+      "badImages": [],
+      "missingAlt": 1,
+      "media": {
+        "images": 1,
+        "videos": 0,
+        "playing": 0
+      },
+      "audit": {
+        "shifts": [],
+        "lcp": [
+          {
+            "time": 368,
+            "url": "",
+            "size": 1837
+          },
+          {
+            "time": 436,
+            "url": "https://framerusercontent.com/images/geBwSsIC1HJB3whFBU4BH2joXW8.jpg?scale-down-to=1024&width=2000&height=2940",
+            "size": 78424
+          }
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dd2Tiset.mjs",
+          "bytes": 107564,
+          "decoded": 389015,
+          "duration": 74.70000000298023,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+          "bytes": 63032,
+          "decoded": 62732,
+          "duration": 120,
+          "kind": "css"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.BSUunFcV.mjs",
+          "bytes": 49882,
+          "decoded": 155053,
+          "duration": 81.79999999701977,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.B4lOa1lM.mjs",
+          "bytes": 45362,
+          "decoded": 145044,
+          "duration": 56.29999999701977,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/images/geBwSsIC1HJB3whFBU4BH2joXW8.jpg?scale-down-to=1024&width=2000&height=2940",
+          "bytes": 35387,
+          "decoded": 35087,
+          "duration": 86,
+          "kind": "img"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+          "bytes": 33276,
+          "decoded": 32976,
+          "duration": 130.40000000596046,
+          "kind": "css"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/toplevel-deps.wo48WDff.mjs",
+          "bytes": 30044,
+          "decoded": 172051,
+          "duration": 75.20000000298023,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/PageTransition.DBVCUhTL.mjs",
+          "bytes": 17324,
+          "decoded": 56583,
+          "duration": 31,
+          "kind": "script"
+        }
+      ]
+    },
+    "widths": [
+      {
+        "width": 320,
+        "overflow": false,
+        "scrollWidth": 320
+      },
+      {
+        "width": 430,
+        "overflow": false,
+        "scrollWidth": 430
+      },
+      {
+        "width": 699,
+        "overflow": false,
+        "scrollWidth": 699
+      }
+    ],
+    "bottom": {
+      "badImages": [],
+      "smallTargets": [
+        {
+          "label": "SIMON & SCHUSTER, INDIGO DESIGN, GOLD",
+          "tag": "A",
+          "href": "https://indigoaward.com/winners/12032",
+          "rect": {
+            "x": 20,
+            "y": -400.015625,
+            "w": 283.796875,
+            "h": 15
+          }
+        },
+        {
+          "label": "SIMON & SCHUSTER,",
+          "tag": "A",
+          "href": "https://indigoaward.com/winners/12032",
+          "rect": {
+            "x": 20,
+            "y": -351.015625,
+            "w": 138.0625,
+            "h": 15
+          }
+        },
+        {
+          "label": "DNA PARIS, WINNER",
+          "tag": "A",
+          "href": "https://dna.paris/social/zoom.php?eid=71-95047-26",
+          "rect": {
+            "x": 158.0625,
+            "y": -351.015625,
+            "w": 130.390625,
+            "h": 15
+          }
+        },
+        {
+          "label": "SIMON & SCHUSTER,",
+          "tag": "A",
+          "href": "https://indigoaward.com/winners/12032",
+          "rect": {
+            "x": 20,
+            "y": -306.9140625,
+            "w": 138.0625,
+            "h": 15
+          }
+        },
+        {
+          "label": "FONTS IN USE, FEATURE",
+          "tag": "A",
+          "href": "https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional",
+          "rect": {
+            "x": 20,
+            "y": -306.9140625,
+            "w": 199.4296875,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "SEEK TRUTH, YOUNG ONES ADC, MERIT",
+          "tag": "A",
+          "href": "https://www.oneclub.org/awards/youngones/-award/54102/seek-truth",
+          "rect": {
+            "x": 20,
+            "y": -248.609375,
+            "w": 253.1171875,
+            "h": 15
+          }
+        },
+        {
+          "label": "SEEK TRUTH, FONTS IN USE, FEATURE",
+          "tag": "A",
+          "href": "https://fontsinuse.com/uses/64712/seek-truth-artcenter-college-of-design-projec",
+          "rect": {
+            "x": 20,
+            "y": -199.609375,
+            "w": 253.1171875,
+            "h": 15
+          }
+        },
+        {
+          "label": "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE",
+          "tag": "A",
+          "href": "https://fontsinuse.com/uses/65224/weaponized-innocence",
+          "rect": {
+            "x": 20,
+            "y": -159.5078125,
+            "w": 230.1015625,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION",
+          "tag": "A",
+          "href": "https://graphis.com/entry/d1a1f8e9-1353-49ac-a490-1556385f21fd",
+          "rect": {
+            "x": 20,
+            "y": -106.1015625,
+            "w": 199.421875,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST",
+          "tag": "A",
+          "href": "https://www.youtube.com/watch?v=jFF8EivITPs",
+          "rect": {
+            "x": 20,
+            "y": -61.4365234375,
+            "w": 184.0859375,
+            "h": 33.203125
+          }
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 578.046875,
+            "w": 239.890625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 630.046875,
+            "w": 242.8125,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 682.046875,
+            "w": 193.40625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 809.046875,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 809.046875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 809.046875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 809.046875,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "media": {
+        "images": 1,
+        "videos": 0,
+        "playing": 0
+      }
+    },
+    "errors": [],
+    "failures": []
+  },
+  {
+    "route": "/case-studies/gaia",
+    "top": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "pageHeight": 9767,
+      "overflow": false,
+      "smallTargets": [
+        {
+          "label": "scroll to top",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 20,
+            "y": 8225.6328125,
+            "w": 118.7109375,
+            "h": 16
+          }
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 9501.4609375,
+            "w": 239.890625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 9553.4609375,
+            "w": 242.8125,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 9605.4609375,
+            "w": 193.40625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 9732.4609375,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 9732.4609375,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 9732.4609375,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 9732.4609375,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Gaia"
+        },
+        {
+          "tag": "H3",
+          "text": "The Insight"
+        },
+        {
+          "tag": "H3",
+          "text": "Strategy"
+        },
+        {
+          "tag": "H3",
+          "text": "Visual Identity"
+        },
+        {
+          "tag": "H3",
+          "text": "Brand in the World"
+        },
+        {
+          "tag": "H3",
+          "text": "Interface"
+        },
+        {
+          "tag": "H3",
+          "text": "Designed to Ship"
+        },
+        {
+          "tag": "H2",
+          "text": "OTHER"
+        },
+        {
+          "tag": "H2",
+          "text": "PROJECTS"
+        }
+      ],
+      "badImages": [],
+      "missingAlt": 7,
+      "media": {
+        "images": 22,
+        "videos": 15,
+        "playing": 0
+      },
+      "audit": {
+        "shifts": [
+          {
+            "value": 0.1800414411176748,
+            "sources": [
+              "Credits & Info",
+              "Left Column"
+            ]
+          },
+          {
+            "value": 0.3627150670470115,
+            "sources": [
+              "Credits & Info",
+              "Left Column"
+            ]
+          }
+        ],
+        "lcp": [
+          {
+            "time": 396,
+            "url": "",
+            "size": 1837
+          },
+          {
+            "time": 1832,
+            "url": "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?scale-down-to=512&width=1920&height=1080",
+            "size": 58500
+          }
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+          "bytes": 7472454,
+          "decoded": 7472154,
+          "duration": 1212.1000000089407,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+          "bytes": 4126934,
+          "decoded": 4126634,
+          "duration": 1018.2999999970198,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+          "bytes": 3469219,
+          "decoded": 3468919,
+          "duration": 848.5,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "bytes": 2723635,
+          "decoded": 2736415,
+          "duration": 490.70000000298023,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+          "bytes": 2704549,
+          "decoded": 2704249,
+          "duration": 851.1999999880791,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+          "bytes": 1389350,
+          "decoded": 1389050,
+          "duration": 758.4000000059605,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "bytes": 1047604,
+          "decoded": 1047304,
+          "duration": 633.2000000029802,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+          "bytes": 809139,
+          "decoded": 808839,
+          "duration": 618.9000000059605,
+          "kind": "video"
+        }
+      ]
+    },
+    "widths": [
+      {
+        "width": 320,
+        "overflow": false,
+        "scrollWidth": 320
+      },
+      {
+        "width": 430,
+        "overflow": false,
+        "scrollWidth": 430
+      },
+      {
+        "width": 699,
+        "overflow": false,
+        "scrollWidth": 699
+      }
+    ],
+    "bottom": {
+      "badImages": [],
+      "smallTargets": [
+        {
+          "label": "scroll to top",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 20,
+            "y": -697.9453125,
+            "w": 118.7109375,
+            "h": 16
+          }
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 577.8828125,
+            "w": 239.890625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 629.8828125,
+            "w": 242.8125,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 681.8828125,
+            "w": 193.40625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 808.8828125,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 808.8828125,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 808.8828125,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 808.8828125,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "media": {
+        "images": 22,
+        "videos": 15,
+        "playing": 3
+      }
+    },
+    "errors": [],
+    "failures": []
+  },
+  {
+    "route": "/case-studies/airpods",
+    "top": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "pageHeight": 5646,
+      "overflow": false,
+      "smallTargets": [
+        {
+          "label": "Design Team: Jo\u00e3o Peres,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/jo%C3%A3o-peres-creative-director",
+          "rect": {
+            "x": 20,
+            "y": 1138.1875,
+            "w": 173.78125,
+            "h": 17.5
+          }
+        },
+        {
+          "label": "scroll to top",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 20,
+            "y": 4104.3515625,
+            "w": 118.7109375,
+            "h": 16
+          }
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 5380.1796875,
+            "w": 239.890625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 5432.1796875,
+            "w": 242.8125,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 5484.1796875,
+            "w": 187.40625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 5611.1796875,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 5611.1796875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 5611.1796875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 5611.1796875,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "AirPods Pro 3,"
+        },
+        {
+          "tag": "H2",
+          "text": "OTHER"
+        },
+        {
+          "tag": "H2",
+          "text": "PROJECTS"
+        }
+      ],
+      "badImages": [],
+      "missingAlt": 8,
+      "media": {
+        "images": 8,
+        "videos": 11,
+        "playing": 3
+      },
+      "audit": {
+        "shifts": [
+          {
+            "value": 0.13193289512428125,
+            "sources": [
+              "Credits & Info",
+              "Left Column"
+            ]
+          },
+          {
+            "value": 0.13192905103771255,
+            "sources": [
+              "Credits & Info",
+              "Left Column"
+            ]
+          }
+        ],
+        "lcp": [
+          {
+            "time": 528,
+            "url": "",
+            "size": 1837
+          },
+          {
+            "time": 1764,
+            "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IE",
+            "size": 5184
+          }
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://framerusercontent.com/assets/lpU1HaQ0vaqbGneboJZ60UBCE.mp4",
+          "bytes": 9432375,
+          "decoded": 9432075,
+          "duration": 585.2999999970198,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "bytes": 3949131,
+          "decoded": 3948831,
+          "duration": 458.20000000298023,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+          "bytes": 1722654,
+          "decoded": 1722354,
+          "duration": 383.79999999701977,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "bytes": 1047604,
+          "decoded": 1047304,
+          "duration": 310.3999999910593,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+          "bytes": 348439,
+          "decoded": 348139,
+          "duration": 217.40000000596046,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "bytes": 190792,
+          "decoded": 190492,
+          "duration": 26.100000008940697,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg",
+          "bytes": 150170,
+          "decoded": 149870,
+          "duration": 338.29999999701977,
+          "kind": "img"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dd2Tiset.mjs",
+          "bytes": 107564,
+          "decoded": 389015,
+          "duration": 121.40000000596046,
+          "kind": "script"
+        }
+      ]
+    },
+    "widths": [
+      {
+        "width": 320,
+        "overflow": false,
+        "scrollWidth": 320
+      },
+      {
+        "width": 430,
+        "overflow": false,
+        "scrollWidth": 430
+      },
+      {
+        "width": 699,
+        "overflow": false,
+        "scrollWidth": 699
+      }
+    ],
+    "bottom": {
+      "badImages": [],
+      "smallTargets": [
+        {
+          "label": "Design Team: Jo\u00e3o Peres,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/jo%C3%A3o-peres-creative-director",
+          "rect": {
+            "x": 20,
+            "y": -3633.8125,
+            "w": 173.78125,
+            "h": 17.5
+          }
+        },
+        {
+          "label": "scroll to top",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 20,
+            "y": -667.6484375,
+            "w": 118.7109375,
+            "h": 16
+          }
+        },
+        {
+          "label": "MICAH.HOANG@HEY.COM",
+          "tag": "A",
+          "href": "mailto:micah.hoang@hey.com",
+          "rect": {
+            "x": 15,
+            "y": 554.1796875,
+            "w": 279.2734375,
+            "h": 34
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDINCONNECT",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 598.1796875,
+            "w": 188.046875,
+            "h": 32
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "COSMOSINSPIRE",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 15,
+            "y": 640.1796875,
+            "w": 192.734375,
+            "h": 32
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "GITHUBBUILD",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 15,
+            "y": 682.1796875,
+            "w": 187.40625,
+            "h": 42
+          },
+          "name": "CTA Row"
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 809.1796875,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 809.1796875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 809.1796875,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 809.1796875,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "media": {
+        "images": 8,
+        "videos": 11,
+        "playing": 3
+      }
+    },
+    "errors": [],
+    "failures": []
+  },
+  {
+    "route": "/index",
+    "top": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "pageHeight": 2144,
+      "overflow": false,
+      "smallTargets": [
+        {
+          "label": "Gaia",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -414.5,
+            "w": 81.265625,
+            "h": 30
+          }
+        },
+        {
+          "label": "AirPods Pro 3",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -364.5,
+            "w": 139.5546875,
+            "h": 30
+          }
+        },
+        {
+          "label": "Peak Energy",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -314.5,
+            "w": 133.5390625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Motion Connect 2025",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -264.5,
+            "w": 199.4609375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Simon & Schuster",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -214.5,
+            "w": 169.671875,
+            "h": 30
+          }
+        },
+        {
+          "label": "National Park Playing Cards",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -164.5,
+            "w": 234.4765625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Yomo",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -114.5,
+            "w": 88.6015625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Highland Harvests",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -64.5,
+            "w": 174.3125,
+            "h": 30
+          }
+        },
+        {
+          "label": "Weaponized Innocence",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -14.5,
+            "w": 211.4609375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Wolff Olins x ArtCenter",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 35.5,
+            "w": 204.5625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Cellular Symphony",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 85.5,
+            "w": 177.3828125,
+            "h": 30
+          }
+        },
+        {
+          "label": "Seek Truth",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 135.5,
+            "w": 121.625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Independent Lens",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 185.5,
+            "w": 172.4765625,
+            "h": 30
+          }
+        },
+        {
+          "label": "TYPLDN",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 235.5,
+            "w": 105.125,
+            "h": 30
+          }
+        },
+        {
+          "label": "WhatsApp",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 285.5,
+            "w": 122.7421875,
+            "h": 30
+          }
+        },
+        {
+          "label": "Caliper Sans",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 335.5,
+            "w": 135.0234375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Optro CRX",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 385.5,
+            "w": 124.1484375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Show all years",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 254.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2026",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 278.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2025",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 302.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2024",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 326.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2023",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 350.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2019",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 374.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Show all services",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 424.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 448.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 472.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Editorial",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 496.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Packaging",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 520.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Product",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 544.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Social Media",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 568.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Strategy",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 592.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Type Design",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 616.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "UX/UI",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 640.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 664.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Show all industries",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 714.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Education",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 738.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Health",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 762.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Human Rights",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 786.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Literature",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 810.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Nature",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 834.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Science",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 858.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Technology",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": 882.1953125,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "grid",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 289.5546875,
+            "y": 918.1953125,
+            "w": 31.203125,
+            "h": 28
+          }
+        },
+        {
+          "label": "list",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 344.796875,
+            "y": 918.1953125,
+            "w": 31.203125,
+            "h": 28
+          }
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 2109.1953125,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 2109.1953125,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 2109.1953125,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 2109.1953125,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Index"
+        }
+      ],
+      "badImages": [],
+      "missingAlt": 17,
+      "media": {
+        "images": 17,
+        "videos": 0,
+        "playing": 0
+      },
+      "audit": {
+        "shifts": [
+          {
+            "value": 0.3005033061321105,
+            "sources": [
+              "DIV",
+              "DIV",
+              "DIV",
+              "FooterBlackPhone",
+              "DIV"
+            ]
+          }
+        ],
+        "lcp": [
+          {
+            "time": 368,
+            "url": "",
+            "size": 1837
+          },
+          {
+            "time": 552,
+            "url": "",
+            "size": 3811
+          }
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dd2Tiset.mjs",
+          "bytes": 107564,
+          "decoded": 389015,
+          "duration": 68.09999999403954,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2",
+          "bytes": 63032,
+          "decoded": 62732,
+          "duration": 204.5,
+          "kind": "css"
+        },
+        {
+          "url": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png?scale-down-to=512&width=1600&height=900",
+          "bytes": 56072,
+          "decoded": 55772,
+          "duration": 142.20000000298023,
+          "kind": "img"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/motion.BSUunFcV.mjs",
+          "bytes": 49882,
+          "decoded": 155053,
+          "duration": 55.79999999701977,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/react.B4lOa1lM.mjs",
+          "bytes": 45362,
+          "decoded": 145044,
+          "duration": 46.599999994039536,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/images/8fV7L1MlzeOAlHSxXchHzUHO7c.jpg?scale-down-to=512&width=1600&height=900",
+          "bytes": 40627,
+          "decoded": 40327,
+          "duration": 120.29999999701977,
+          "kind": "img"
+        },
+        {
+          "url": "https://micahhoang.com/index",
+          "bytes": 37602,
+          "decoded": 301058,
+          "duration": 172.20000000298023,
+          "kind": "fetch"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2",
+          "bytes": 33276,
+          "decoded": 32976,
+          "duration": 288.40000000596046,
+          "kind": "css"
+        }
+      ]
+    },
+    "widths": [
+      {
+        "width": 320,
+        "overflow": false,
+        "scrollWidth": 320
+      },
+      {
+        "width": 430,
+        "overflow": false,
+        "scrollWidth": 430
+      },
+      {
+        "width": 699,
+        "overflow": false,
+        "scrollWidth": 699
+      }
+    ],
+    "bottom": {
+      "badImages": [],
+      "smallTargets": [
+        {
+          "label": "Gaia",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -414.5,
+            "w": 81.265625,
+            "h": 30
+          }
+        },
+        {
+          "label": "AirPods Pro 3",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -364.5,
+            "w": 139.5546875,
+            "h": 30
+          }
+        },
+        {
+          "label": "Peak Energy",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -314.5,
+            "w": 133.5390625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Motion Connect 2025",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -264.5,
+            "w": 199.4609375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Simon & Schuster",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -214.5,
+            "w": 169.671875,
+            "h": 30
+          }
+        },
+        {
+          "label": "National Park Playing Cards",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -164.5,
+            "w": 234.4765625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Yomo",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -114.5,
+            "w": 88.6015625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Highland Harvests",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -64.5,
+            "w": 174.3125,
+            "h": 30
+          }
+        },
+        {
+          "label": "Weaponized Innocence",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": -14.5,
+            "w": 211.4609375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Wolff Olins x ArtCenter",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 35.5,
+            "w": 204.5625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Cellular Symphony",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 85.5,
+            "w": 177.3828125,
+            "h": 30
+          }
+        },
+        {
+          "label": "Seek Truth",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 135.5,
+            "w": 121.625,
+            "h": 30
+          }
+        },
+        {
+          "label": "Independent Lens",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 185.5,
+            "w": 172.4765625,
+            "h": 30
+          }
+        },
+        {
+          "label": "TYPLDN",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 235.5,
+            "w": 105.125,
+            "h": 30
+          }
+        },
+        {
+          "label": "WhatsApp",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 285.5,
+            "w": 122.7421875,
+            "h": 30
+          }
+        },
+        {
+          "label": "Caliper Sans",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 335.5,
+            "w": 135.0234375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Optro CRX",
+          "tag": "A",
+          "href": "./",
+          "rect": {
+            "x": -202,
+            "y": 385.5,
+            "w": 124.1484375,
+            "h": 30
+          }
+        },
+        {
+          "label": "Show all years",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -1045.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2026",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -1021.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2025",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -997.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2024",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -973.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2023",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -949.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2019",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -925.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Show all services",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -875.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "2D Motion",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -851.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "3D Motion",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -827.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Editorial",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -803.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Packaging",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -779.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Product",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -755.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Social Media",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -731.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Strategy",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -707.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Type Design",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -683.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "UX/UI",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -659.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Visual Identity",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -635.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Show all industries",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -585.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Education",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -561.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Health",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -537.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Human Rights",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -513.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Literature",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -489.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Nature",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -465.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Science",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -441.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "Technology",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 145.8359375,
+            "y": -417.8046875,
+            "w": 230.1640625,
+            "h": 24
+          }
+        },
+        {
+          "label": "grid",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 289.5546875,
+            "y": -381.8046875,
+            "w": 31.203125,
+            "h": 28
+          }
+        },
+        {
+          "label": "list",
+          "tag": "BUTTON",
+          "href": null,
+          "rect": {
+            "x": 344.796875,
+            "y": -381.8046875,
+            "w": 31.203125,
+            "h": 28
+          }
+        },
+        {
+          "label": "LINKEDIN,",
+          "tag": "A",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "rect": {
+            "x": 15,
+            "y": 809.1953125,
+            "w": 70.2109375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "RESUME,",
+          "tag": "A",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "rect": {
+            "x": 95.2109375,
+            "y": 809.1953125,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "COSMOS,",
+          "tag": "A",
+          "href": "https://www.cosmos.so/articavisuals",
+          "rect": {
+            "x": 159.8203125,
+            "y": 809.1953125,
+            "w": 54.609375,
+            "h": 13
+          },
+          "name": "Social Link"
+        },
+        {
+          "label": "GITHUB",
+          "tag": "A",
+          "href": "https://github.com/ArticaVisuals",
+          "rect": {
+            "x": 224.4296875,
+            "y": 809.1953125,
+            "w": 46.8046875,
+            "h": 13
+          },
+          "name": "Social Link"
+        }
+      ],
+      "media": {
+        "images": 17,
+        "videos": 0,
+        "playing": 0
+      }
+    },
+    "errors": [],
+    "failures": []
+  },
+  {
+    "route": "/play",
+    "top": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "pageHeight": 844,
+      "overflow": false,
+      "smallTargets": [],
+      "headings": [],
+      "badImages": [],
+      "missingAlt": 24,
+      "media": {
+        "images": 24,
+        "videos": 4,
+        "playing": 4
+      },
+      "audit": {
+        "shifts": [],
+        "lcp": [
+          {
+            "time": 480,
+            "url": "",
+            "size": 1837
+          }
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://framerusercontent.com/assets/4qJQzg9TPvCPP0U4x10xdWvjL04.mp4",
+          "bytes": 991040,
+          "decoded": 990740,
+          "duration": 73.80000001192093,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/t1S2CPN4P17rRkZe1IkBuD9usys.mp4",
+          "bytes": 598392,
+          "decoded": 598092,
+          "duration": 73.5,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/2kSBdtqGiNneZjBLOHTPc1wCVFI.mp4",
+          "bytes": 280748,
+          "decoded": 280448,
+          "duration": 66,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/assets/1cDSJZISExU8kmmfUYhFKblwUMQ.mp4",
+          "bytes": 165385,
+          "decoded": 165085,
+          "duration": 28.900000005960464,
+          "kind": "video"
+        },
+        {
+          "url": "https://framerusercontent.com/images/iy1sObMg41oR8m9v2WvxmlEd4.jpg?scale-down-to=600&format=webp",
+          "bytes": 121958,
+          "decoded": 121658,
+          "duration": 230.29999999701977,
+          "kind": "img"
+        },
+        {
+          "url": "https://framerusercontent.com/sites/Qw9YlQnLg7aytImZPPgM1/framer.Dd2Tiset.mjs",
+          "bytes": 107564,
+          "decoded": 389015,
+          "duration": 236.70000000298023,
+          "kind": "script"
+        },
+        {
+          "url": "https://framerusercontent.com/images/f89szG4lvZjowuSJLIo4Vjm8.jpg?scale-down-to=600&format=webp",
+          "bytes": 74518,
+          "decoded": 74218,
+          "duration": 200.29999999701977,
+          "kind": "img"
+        },
+        {
+          "url": "https://framerusercontent.com/images/euKunoBNRSjwqLs66ONG9XdQjw.jpg?scale-down-to=600&format=webp",
+          "bytes": 61238,
+          "decoded": 60938,
+          "duration": 213.8999999910593,
+          "kind": "img"
+        }
+      ]
+    },
+    "widths": [
+      {
+        "width": 320,
+        "overflow": false,
+        "scrollWidth": 320
+      },
+      {
+        "width": 430,
+        "overflow": false,
+        "scrollWidth": 430
+      },
+      {
+        "width": 699,
+        "overflow": false,
+        "scrollWidth": 699
+      }
+    ],
+    "bottom": {
+      "badImages": [],
+      "smallTargets": [],
+      "media": {
+        "images": 24,
+        "videos": 6,
+        "playing": 6
+      }
+    },
+    "errors": [],
+    "failures": []
+  }
+]

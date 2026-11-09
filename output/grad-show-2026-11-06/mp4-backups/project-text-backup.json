@@ -1,0 +1,27 @@
+{
+  "gaia": [
+    "Gaia grew out of my interest in the outdoors and the people who share what they find there. I rebranded and redesigned iNaturalist, the world’s largest biodiversity platform, to make it more approachable for anyone curious about nature. I designed the logo, typography, color palette, and icons, then applied them to print, outdoor campaigns, and a working iOS app. I worked on every stage myself, including building the app in SwiftUI.",
+    "I started with three goals: make the platform easier to access, give people a reason to take part, and make their contributions feel meaningful. After developing the brand, I built and tested the interface in SwiftUI. That meant working through map clustering, bottom sheets, observation flows, and detail tabs.",
+    "I learned how to carry the same identity through printed materials and a working app. Building the app meant accounting for interaction states and technical constraints, and making the design tokens reusable."
+  ],
+  "peak": [
+    "Peak Energy builds sodium-ion batteries as a domestic alternative to lithium batteries. This film announced its partnership with General Motors. The story follows the history of human energy before introducing Peak’s battery technology. I led the central animation sequence, from storyboards and visual development to 2D animation and compositing. I developed a line-based style for both abstract energy concepts and detailed views of the battery.",
+    "I pitched storyboards, worked through client reviews, and directed the sequence’s visual development. Jonathan Kusnadi and Wesley Ching made the 3D animation. I handled the 2D animation, compositing, and timing to the voiceover. I used a consistent line treatment with subtle grain, film chatter, and shake to connect the abstract scenes to the exploded battery view.",
+    "I learned to keep abstract energy scenes and detailed battery views visually consistent. Coordinating the storyboards, client reviews, and 2D and 3D production helped me carry the sequence through changes in scale."
+  ],
+  "motion": [
+    "Motion Connect is an ArtCenter talk series for the motion design community. Its 2025 speakers came from Apple TV, Hornet, and Brand New School. I designed the season’s identity around 1980s arcade graphics, using bitmap glow, scanlines, and the look of a machine booting up. I applied that treatment to the hype reel, social posts, and print materials.",
+    "I modeled and animated the type in 3D, then used After Effects to bring the renders together with color and scanlines. I finished the print assets in Photoshop. I worked solo on production over two weeks, making the hype reel, social posts, campus graphics, and live event screens.",
+    "I learned how to keep the arcade treatment consistent across animation, social posts, and print. I used AI-assisted lighting and motion tests to work through production gaps before making full renders."
+  ],
+  "simon": [
+    "Simon & Schuster stayed independent after the Justice Department blocked Penguin Random House’s proposed purchase in 2022. I saw an opportunity to make that independence the basis of a concept rebrand for one of the Big Five publishers. I used publishing-market research to develop an identity across print, events, digital, and social media.\n\nRecognition: Indigo Design Award, Gold (2026); DNA Paris, Winner (2026); Fonts in Use, Feature (2024).",
+    "I combined an ampersand with an S to make the main mark. From there I developed the imprint lockups, author-signature collaborations, and a 65-page set of brand guidelines. I applied the identity to printed materials, digital designs, events, and campaigns.",
+    "I learned how a shared parent identity could support more than 50 imprints while leaving room for their individual identities."
+  ],
+  "cards": [
+    "I started National Park Playing Cards in 2019 as a tribute to U.S. national parks. It grew into a business I still run, with more than 20,000 decks sold. The decks are stocked in more than 220 stores nationwide, including REI and six national park visitor centers. I designed the cards, foil-stamped box, brand, and storefront. I funded the first production run on Kickstarter and pitched retailers myself.\n\nSpring 2020 is listed above because it is the earliest term this site allows.",
+    "I used the four suits for U.S. regions and card ranks for park visitation, organizing 52 national parks into a playable deck. I designed the illustrations, packaging, brand, and storefront. After funding the first run on Kickstarter, I built direct and wholesale sales through retailer outreach.",
+    "I learned to take a product from its initial structure and material choices through print production, crowdfunding, and sales. Running the business also meant handling e-commerce and wholesale outreach."
+  ]
+}

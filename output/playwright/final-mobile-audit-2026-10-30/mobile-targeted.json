@@ -1,0 +1,1460 @@
+[
+  {
+    "path": "/index",
+    "lines": [
+      {
+        "cls": "idx-mobile-triggers",
+        "height": 50,
+        "borderTop": "1px solid rgb(132, 132, 132)",
+        "borderBottom": "1px solid rgb(132, 132, 132)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "transform": "none"
+      },
+      {
+        "cls": "idx-mobile-toolbar",
+        "height": 56,
+        "borderTop": "0px none rgb(20, 20, 20)",
+        "borderBottom": "1px solid rgb(132, 132, 132)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "transform": "none"
+      },
+      {
+        "cls": "idx-rule idx-row-divider",
+        "height": 1,
+        "borderTop": "0px none rgb(20, 20, 20)",
+        "borderBottom": "0px none rgb(20, 20, 20)",
+        "bg": "rgb(20, 20, 20)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "cls": "idx-rule idx-row-divider",
+        "height": 1,
+        "borderTop": "0px none rgb(20, 20, 20)",
+        "borderBottom": "0px none rgb(20, 20, 20)",
+        "bg": "rgb(20, 20, 20)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "cls": "idx-rule idx-row-divider",
+        "height": 1,
+        "borderTop": "0px none rgb(20, 20, 20)",
+        "borderBottom": "0px none rgb(20, 20, 20)",
+        "bg": "rgb(20, 20, 20)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "cls": "idx-rule idx-row-divider",
+        "height": 1,
+        "borderTop": "0px none rgb(20, 20, 20)",
+        "borderBottom": "0px none rgb(20, 20, 20)",
+        "bg": "rgb(20, 20, 20)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "cls": "idx-rule idx-row-divider",
+        "height": 1,
+        "borderTop": "0px none rgb(20, 20, 20)",
+        "borderBottom": "0px none rgb(20, 20, 20)",
+        "bg": "rgb(20, 20, 20)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    ],
+    "footer": [],
+    "videos": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Index"
+      }
+    ],
+    "visibility": "visible"
+  },
+  {
+    "path": "/",
+    "lines": [],
+    "footer": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": ".",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "@HEY.COM",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "L",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "K",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "E",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "D",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "CONNECT",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "INSPIRE",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "T",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "U",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "B",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "BUILD",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "paused": false,
+        "ready": 4,
+        "time": 2.374,
+        "auto": true,
+        "controls": false
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "paused": false,
+        "ready": 4,
+        "time": 2.3725,
+        "auto": true,
+        "controls": false
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Micah Hoang"
+      },
+      {
+        "tag": "H2",
+        "text": "Selected"
+      },
+      {
+        "tag": "H2",
+        "text": "work"
+      },
+      {
+        "tag": "H2",
+        "text": "About"
+      },
+      {
+        "tag": "H2",
+        "text": "Micah"
+      }
+    ],
+    "visibility": "visible"
+  },
+  {
+    "path": "/case-studies/gaia",
+    "lines": [],
+    "footer": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": ".",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "@HEY.COM",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "L",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "K",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "E",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "D",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "CONNECT",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "INSPIRE",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "T",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "U",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "B",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "BUILD",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "paused": false,
+        "ready": 4,
+        "time": 2.2722,
+        "auto": true,
+        "controls": false
+      },
+      {
+        "src": "",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      },
+      {
+        "src": "",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Gaia"
+      },
+      {
+        "tag": "H2",
+        "text": "OTHER"
+      },
+      {
+        "tag": "H2",
+        "text": "PROJECTS"
+      }
+    ],
+    "visibility": "visible"
+  },
+  {
+    "path": "/case-studies/airpods",
+    "lines": [],
+    "footer": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": ".",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "@HEY.COM",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "L",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "K",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "E",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "D",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "CONNECT",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "INSPIRE",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "T",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "U",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "B",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "BUILD",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "paused": false,
+        "ready": 4,
+        "time": 2.426228,
+        "auto": true,
+        "controls": false
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      },
+      {
+        "src": "",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "AirPods Pro 3,"
+      },
+      {
+        "tag": "H2",
+        "text": "OTHER"
+      },
+      {
+        "tag": "H2",
+        "text": "PROJECTS"
+      }
+    ],
+    "visibility": "visible"
+  },
+  {
+    "path": "/case-studies/optro",
+    "lines": [],
+    "footer": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "h": 70.203125,
+        "leaves": [
+          {
+            "text": "M",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "I",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "C",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "A",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "H",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": ".",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "H",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "O",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "A",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "N",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "G",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "@HEY.COM",
+            "size": "13px",
+            "line": "18.2px",
+            "letter": "-0.13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "h": 40,
+        "leaves": [
+          {
+            "text": "L",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "I",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "N",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "K",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "E",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "D",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "I",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "N",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "CONNECT",
+            "size": "13px",
+            "line": "18.2px",
+            "letter": "-0.13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "h": 40,
+        "leaves": [
+          {
+            "text": "C",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "O",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "S",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "M",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "O",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "S",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "INSPIRE",
+            "size": "13px",
+            "line": "18.2px",
+            "letter": "-0.13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "h": 40,
+        "leaves": [
+          {
+            "text": "G",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "I",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "T",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "H",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "U",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "B",
+            "size": "40px",
+            "line": "40px",
+            "letter": "-0.01px"
+          },
+          {
+            "text": "BUILD",
+            "size": "13px",
+            "line": "18.2px",
+            "letter": "-0.13px"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/sJBQH6h9WTFj1JFq5lrOA6NoXLQ.mp4",
+        "paused": false,
+        "ready": 4,
+        "time": 2.151,
+        "auto": true,
+        "controls": false
+      },
+      {
+        "src": "https://framerusercontent.com/assets/qtkitrxpvsJwNJTgz1BjToIPA.mp4",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ikTkMs0BrIXgKDYL0jSOUX78o.mp4",
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "auto": false,
+        "controls": false
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "CRX 2026"
+      },
+      {
+        "tag": "H1",
+        "text": "Transform risk into"
+      },
+      {
+        "tag": "H1",
+        "text": "opportunity."
+      },
+      {
+        "tag": "H2",
+        "text": "OTHER"
+      },
+      {
+        "tag": "H2",
+        "text": "PROJECTS"
+      }
+    ],
+    "visibility": "visible"
+  },
+  {
+    "path": "/about",
+    "lines": [],
+    "footer": [
+      {
+        "text": "MICAH.HOANG@HEY.COM",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": ".",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "A",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "@HEY.COM",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "LINKEDINCONNECT",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "L",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "K",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "E",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "D",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "N",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "CONNECT",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "COSMOSINSPIRE",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "C",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "M",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "O",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "S",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "INSPIRE",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      },
+      {
+        "text": "GITHUBBUILD",
+        "h": 44,
+        "leaves": [
+          {
+            "text": "G",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "I",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "T",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "H",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "U",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "B",
+            "size": "32px",
+            "line": "32px",
+            "letter": "-0.32px"
+          },
+          {
+            "text": "BUILD",
+            "size": "13px",
+            "line": "13px",
+            "letter": "0.13px"
+          }
+        ]
+      }
+    ],
+    "videos": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Hey, I'm Micah."
+      }
+    ],
+    "visibility": "visible"
+  }
+]

@@ -1,0 +1,2332 @@
+Node xml:
+<Desktop
+    nodeId="W9GkBUh9P"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/White"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<CaseStudyControllers
+    nodeId="Gd3vknMRq"
+    opacity="0"
+    position="absolute"
+    width="1px"
+    height="1px"
+    top="0px"
+    left="-101px"
+    <!-- the component id this instance uses -->
+    componentId="z13WRHS"
+    lightbox="true"
+    videoManager="true"
+    linkRepair="true"
+    lightboxVideos="true"
+    videoLookahead="100"
+    videoUnloadFar="true"
+    stableHeroRatio="1.777778"
+    linkCollectionId="yTHrQWMIY"
+    linkTitleFieldId="oeXZcmPna"
+ />
+<PageTransition
+    nodeId="O29Rhz9aO"
+    opacity="0"
+    position="absolute"
+    width="1px"
+    height="1px"
+    top="0px"
+    left="-303px"
+    <!-- the component id this instance uses -->
+    componentId="gmalnRr"
+    enabled="true"
+    homeArrivalMode="animate"
+    duration="700"
+    navDuration="400"
+    drift="10"
+    dim="0.35"
+    navSelector="nav[data-framer-name="Navigation"], nav"
+    excludeSelector="[data-no-transition]"
+    prefetch="true"
+    holdAppear="true"
+    skipCaseStudyTransitions="true"
+    firstBoot="true"
+    bootMode="once"
+    bootColor="rgb(35, 51, 36)"
+    barColor="rgb(247, 245, 240)"
+    barHeight="8"
+    bootMinMs="1200"
+    bootMaxWaitMs="4500"
+    barEaseMs="3000"
+    barHold="0.86"
+    bootSwipeMs="1200"
+    bootSwipeDelayMs="300"
+ />
+<Stack
+    nodeId="K0bzXdWjK"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="rkO9BExOh"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="2%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="hidden"
+    layout="stack"
+    padding="100px 20px 50px 20px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="end"
+ />
+<Header
+    nodeId="NhGb_MaE0"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="clip"
+    layout="stack"
+    gap="40px"
+    padding="0px 0px 5px 0px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Header
+    nodeId="RmaLY5KCC"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="clip"
+    layout="stack"
+    gap="40px"
+    padding="0px 0px 5px 0px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Gaia
+    nodeId="Xw6s_3dnE"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2 Bold"
+>
+</Gaia>
+<TurningNoticingIntoAWayOf
+    nodeId="HgWPMMnA4"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2 Bold"
+>
+</TurningNoticingIntoAWayOf>
+<IntoAWayOfCaring
+    nodeId="IIPhbMP6F"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2 Bold"
+>
+</IntoAWayOfCaring>
+<Header
+    nodeId="wlesDQbLI"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="clip"
+    layout="stack"
+    gap="40px"
+    padding="0px 0px 5px 0px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<ForTheLivingWorld
+    nodeId="y7bH8GKUX"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2 Bold"
+>
+</ForTheLivingWorld>
+<ThumbnailImage
+    nodeId="l6_vIghn2"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="9%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<CaringForTheLivingWorld
+    nodeId="LY6Q0OwsC"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2 Bold"
+>
+</CaringForTheLivingWorld>
+<HeroImage
+    nodeId="DKE8lorve"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="82%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Image
+    nodeId="rwX2cqiCd"
+    position="absolute"
+    width="100%"
+    height="100%"
+    top="0px"
+    left="0px"
+    <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+    backgroundImage="https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg"
+    zIndex="0"
+    overflow="hidden"
+ />
+<Video
+    nodeId="rZwOqsYwI"
+    position="absolute"
+    width="100%"
+    height="100%"
+    centerX="50%"
+    centerY="151%"
+    srcType="Upload"
+    srcUrl="https://d.uguu.se/WgmCVyFb.mp4"
+    srcFile="https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4"
+    playing="true"
+    posterEnabled="true"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0, 0, 0, 0)"
+    startTime="0"
+    loop="true"
+    objectFit="contain"
+    controls="false"
+    muted="true"
+    volume="50"
+ />
+<CreditsInfo
+    nodeId="HMeB8E6Dx"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    padding="100px 20px 100px 20px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Container
+    nodeId="n3s0j6yBH"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="30px"
+    padding="0px 0px 0px 0px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<LeftColumn
+    nodeId="dOfuImMaX"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="40px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<About
+    nodeId="xXQ7d_tQT"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="Si0Ginyag"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<AboutTheProject
+    nodeId="BaXwMu1w1"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="3%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</AboutTheProject>
+<APhotographBecomesADataPointADataPointBecomesARecordARecordB
+    nodeId="q1h4liY7X"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="56%"
+    maxWidth="680px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</APhotographBecomesADataPointADataPointBecomesARecordARecordB>
+<Industry
+    nodeId="Jz6232nAX"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<IndustryWrapper
+    nodeId="VWHxlBou2"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="78%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<AboutTheProject
+    nodeId="Nncdk5NBk"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="3%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</AboutTheProject>
+<2023
+    nodeId="eb71soxQq"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</2023>
+<Stack
+    nodeId="zGGdwPH3K"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Credits
+    nodeId="zuksfyvzC"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Scope
+    nodeId="pbesN9Tq1"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Scope>
+<VisualIdentityUxUiBrandStrategy
+    nodeId="IUQtuWoBE"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    maxWidth="680px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</VisualIdentityUxUiBrandStrategy>
+<Container
+    nodeId="mZdC4DoXp"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="0.5px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Credits
+    nodeId="pUGlbExXv"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Credits>
+<Credits
+    nodeId="OvumNYpen"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="72.5px"
+    centerX="50%"
+    overflow="visible"
+    layout="stack"
+    gap="5px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<SelfInitiatedProposalDesignerMicahHoang
+    nodeId="pfPoZ7E3V"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</SelfInitiatedProposalDesignerMicahHoang>
+<YearWrapper
+    nodeId="jIynyYtKz"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="78%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="kQ5gEJVm2"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    link="https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional"
+    linkOpenInNewTab="true"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<CaseStudyHeaderLink
+    nodeId="LhemLsqAy"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="-300px"
+    <!-- the component id this instance uses -->
+    componentId="dHFQCIH"
+    text="Fonts in Use →"
+    color="rgb(35, 51, 36)"
+    hoverColor="rgb(151, 151, 151)"
+    fontFamily="GT Standard L Regular, sans-serif"
+    fontSize="22"
+    lineHeight="120%"
+    letterSpacing="0px"
+    userSelect="true"
+    characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    interval="0.07"
+ />
+<Year
+    nodeId="PcUi4Znbh"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Year>
+<Year
+    nodeId="ZhbS4U7hf"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="94%"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<YearWrapper
+    nodeId="bYA7fzyTH"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="78%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="V38ThuwWL"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Year
+    nodeId="P2YLoMZxo"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Year>
+<2023
+    nodeId="ONqzqBaWl"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</2023>
+<AboutTheProject
+    nodeId="D2_0rAETw"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="3%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</AboutTheProject>
+<APhotographBecomesADataPointADataPointBecomesARecordARecordB
+    nodeId="YVs06Cmbz"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="56%"
+    maxWidth="680px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</APhotographBecomesADataPointADataPointBecomesARecordARecordB>
+<RightColumn
+    nodeId="gvC5uA5k2"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="40px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="kW6QXKnTs"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Credits
+    nodeId="wQr8N1W3t"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Scope
+    nodeId="lbuWPV76c"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Scope>
+<VisualIdentityUxUiStrategy
+    nodeId="TepK70ZAu"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    maxWidth="680px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</VisualIdentityUxUiStrategy>
+<Container
+    nodeId="arcW4zX7Q"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="0.5px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Credits
+    nodeId="jWfMtlZNA"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Credits>
+<Credits
+    nodeId="VoqoEzm0w"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="72.5px"
+    centerX="50%"
+    overflow="visible"
+    layout="stack"
+    gap="5px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<ClientSelfInitiatedProposalDesignerMicahHoang
+    nodeId="Jb8wt4_HV"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</ClientSelfInitiatedProposalDesignerMicahHoang>
+<YearWrapper
+    nodeId="QmxM3fgUc"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="78%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="ytMDtYmhR"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    link="https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional"
+    linkOpenInNewTab="true"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<CaseStudyHeaderLink
+    nodeId="G88qdSANG"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="-300px"
+    <!-- the component id this instance uses -->
+    componentId="dHFQCIH"
+    text="Fonts in Use →"
+    color="rgb(35, 51, 36)"
+    hoverColor="rgb(151, 151, 151)"
+    fontFamily="GT Standard L Regular, sans-serif"
+    fontSize="22"
+    lineHeight="120%"
+    letterSpacing="0px"
+    userSelect="true"
+    characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    interval="0.07"
+ />
+<Year
+    nodeId="FY496jB8J"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Year>
+<Year
+    nodeId="v0Uho9cY9"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="94%"
+    overflow="visible"
+    layout="stack"
+    gap="15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<YearWrapper
+    nodeId="wC_L5L2Lw"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="78%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="xFEjTA2DH"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    left="0px"
+    centerY="48%"
+    overflow="visible"
+    layout="stack"
+    gap="80px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="UHZ4MuFdy"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="52%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    gap="40px"
+    padding="0px 20px 160px 20px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="AD4NF3f_s"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="11%"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Year
+    nodeId="MFYMrt_Y5"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0.5px"
+    centerX="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Year>
+<2023
+    nodeId="h__Wr0qoU"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body L"
+>
+</2023>
+<CaseStudyJustifiedMediaGrid
+    nodeId="VHv5Sl0mw"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="-1462px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"YYcl4bK3d","kind":"image","image":{"id":"DcicrFmUxqgU5jGTpUKyIWKwCA.png","url":"https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png","thumbnailUrl":"https://framerusercontent.com/images/DcicrFmUxqgU5jGTpUKyIWKwCA.png?scale-down-to=512","resolution":"auto"},"video":{"id":"iYVJWra2W8xywBIJLyzKocplcos.mp4","url":"https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"cJ_4I4Mfw","kind":"image","image":{"id":"rMadioVkjNUlwuCAwu3Iu6AU9gQ.png","url":"https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png","thumbnailUrl":"https://framerusercontent.com/images/rMadioVkjNUlwuCAwu3Iu6AU9gQ.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion;;image|2.931094|https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png|Gaia joyful discovery headline"
+    forceSingleRow="true"
+    targetRowHeight="260"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<Stack
+    nodeId="Bw2g57lUG"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="601px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="40px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="f3HXn_iR2"
+    position="absolute"
+    height="fit-content"
+    top="62px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<TheInsight
+    nodeId="ZQ1amsL9i"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="3%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 3"
+>
+</TheInsight>
+<Stack
+    nodeId="XSaO2r6Qq"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<INaturalistLetsPeoplePhotographAnOrganismReceiveAnAiAssisted
+    nodeId="buQYI0pyK"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="28%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</INaturalistLetsPeoplePhotographAnOrganismReceiveAnAiAssisted>
+<Image
+    nodeId="OinNQnqUK"
+    position="absolute"
+    width="1fr"
+    height="fit-image"
+    centerX="50%"
+    centerY="46%"
+    <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+    backgroundImage="https://framerusercontent.com/images/pxlGB0XdAkcu30nxixqoivDsn8.webp"
+ />
+<Stack
+    nodeId="m21Dqu6rP"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="-0.5px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="j9voYjpMm"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Strategy
+    nodeId="IeVM4SZ0I"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="5%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 3"
+>
+</Strategy>
+<CaseStudyJustifiedMediaGrid
+    nodeId="Exts4jMyL"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="37%"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"cJ_4I4Mfw","kind":"image","image":{"id":"PQwqOy9SjY9BJEFmykGLzjKewg.png","url":"https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png","thumbnailUrl":"https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"YYcl4bK3d","kind":"video","video":{"id":"iYVJWra2W8xywBIJLyzKocplcos.mp4","url":"https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true}]"
+    showLegacyData="false"
+    itemsData="video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion;;image|2.931094|https://framerusercontent.com/images/PQwqOy9SjY9BJEFmykGLzjKewg.png|Gaia joyful discovery headline"
+    forceSingleRow="true"
+    targetRowHeight="260"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<ThreeGoalsShapeEveryDecisionIncreaseAccessIncreaseMotivation
+    nodeId="smOK12Iwv"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="25%"
+    centerY="91%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</ThreeGoalsShapeEveryDecisionIncreaseAccessIncreaseMotivation>
+<Stack
+    nodeId="CoEYQUXfD"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="1769px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="0px 0px 0px 0px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Image
+    nodeId="oapYuD06H"
+    position="absolute"
+    width="1fr"
+    height="fit-image"
+    top="0px"
+    left="0px"
+    <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+    backgroundImage="https://framerusercontent.com/images/VZXPWa0V8UVoMHfEqwChvjbDoQ.webp"
+    borderWidth="0.5px"
+    borderStyle="solid"
+    borderColor="/Colors/Stroke Gray"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="FTCZkFT3I"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"EM9LIvPQv","kind":"image","image":{"id":"jb1IGn4by6Z5vtzzyHVQy3YQkY.webp","url":"https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp","thumbnailUrl":"https://framerusercontent.com/images/jb1IGn4by6Z5vtzzyHVQy3YQkY.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"WpKQNcSo4","kind":"video","video":{"id":"JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4","url":"https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"GaiaLogoAnimation","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<INaturalistAsksYouToBeANaturalistFirstForMostPeopleThatIsATi
+    nodeId="zEVsU3q4G"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="25%"
+    centerY="90%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</INaturalistAsksYouToBeANaturalistFirstForMostPeopleThatIsATi>
+<VisualIdentity
+    nodeId="JouiX1TuL"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="101%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 3"
+>
+</VisualIdentity>
+<TheMarkGrowsFromABranchingLivingFormInspiredByWernerSNomencl
+    nodeId="E8hzB54oM"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</TheMarkGrowsFromABranchingLivingFormInspiredByWernerSNomencl>
+<Stack
+    nodeId="SWqhWEZ6S"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="1769px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="0px 0px 0px 0px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="qNacLTVRv"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="-1462px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"Ldt37Fyxz","kind":"image","image":{"id":"HdIgx7Gnsv581nIB2dbKZPWFC3A.webp","url":"https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp","thumbnailUrl":"https://framerusercontent.com/images/HdIgx7Gnsv581nIB2dbKZPWFC3A.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"NuA72RHJI","kind":"image","image":{"id":"LX86Gx6KBYH0TPKdwD1bPisPAFU.webp","url":"https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp","thumbnailUrl":"https://framerusercontent.com/images/LX86Gx6KBYH0TPKdwD1bPisPAFU.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="YoqVnDxK_"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"B4LhP0lzO","kind":"image","image":{"id":"We8CbT3tANj0LRWhRW1EWqwQNIU.webp","url":"https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp","thumbnailUrl":"https://framerusercontent.com/images/We8CbT3tANj0LRWhRW1EWqwQNIU.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"f8Hz5vYOI","kind":"image","image":{"id":"cJLznMixCN2nBkZw2WKy85Io.jpg","url":"https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg","thumbnailUrl":"https://framerusercontent.com/images/cJLznMixCN2nBkZw2WKy85Io.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="fAuNlVwR9"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"WpKQNcSo4","kind":"image","image":{"id":"MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","url":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","thumbnailUrl":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512","resolution":"auto"},"poster":{"id":"MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","url":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg","thumbnailUrl":"https://framerusercontent.com/images/MMcz3rjQckYn5e4TX6Y57pZFXU.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"GaiaLogoAnimation","stroke":false},{"id":"EM9LIvPQv","kind":"image","image":{"id":"nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg","url":"https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg","thumbnailUrl":"https://framerusercontent.com/images/nvzHZTW5FwZbprhU8EhsuQeyfp4.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<BrandInTheWorld
+    nodeId="M_9JeToqJ"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="101%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 3"
+>
+</BrandInTheWorld>
+<GaiaReachesPeopleWhereTheyAlreadyMeetTheLivingWorldBotanical
+    nodeId="ogTUEvDo_"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</GaiaReachesPeopleWhereTheyAlreadyMeetTheLivingWorldBotanical>
+<Stack
+    nodeId="QpuzASPkE"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="11%"
+    centerY="36%"
+    overflow="visible"
+    layout="stack"
+    gap="40px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="EIwCJnhyB"
+    position="absolute"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="BbUSAbY3X"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="47%"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"f8Hz5vYOI","kind":"image","image":{"id":"C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp","url":"https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp","thumbnailUrl":"https://framerusercontent.com/images/C2PzMy7sjdUzZNb87a6tjfm6Dy4.webp?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"B4LhP0lzO","kind":"image","image":{"id":"jnO3X6kihC9RS4UIQjowcI3dPY.gif","url":"https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif","thumbnailUrl":"https://framerusercontent.com/images/jnO3X6kihC9RS4UIQjowcI3dPY.gif?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<Interface
+    nodeId="w8_u8lW3M"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="6%"
+    centerY="4%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 3"
+>
+</Interface>
+<ACustomIconSystemPairsWithBotanicalIllustrationsDrawnInANine
+    nodeId="H2Gsdy6Cx"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="25%"
+    centerY="93%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</ACustomIconSystemPairsWithBotanicalIllustrationsDrawnInANine>
+<Stack
+    nodeId="gAQd4J8Bh"
+    position="absolute"
+    height="fit-content"
+    top="580px"
+    right="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="x4Tbfnv8c"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="44%"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"f8Hz5vYOI","kind":"video","image":{"id":"QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","url":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","thumbnailUrl":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"xFNYAo0QzdwSajgUHI3bDjcOf38.mp4","url":"https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4","extension":"mp4"},"poster":{"id":"gtKcBanSRA6PXcpDAXZrNRJCE.jpg","url":"https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg","thumbnailUrl":"https://framerusercontent.com/images/gtKcBanSRA6PXcpDAXZrNRJCE.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"B4LhP0lzO","kind":"video","image":{"id":"txe25VHc4ovbSUywoGPaUd8Vbk.jpg","url":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg","thumbnailUrl":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"kL29aExodKvi9s0DeCZSJhtsiRs.mp4","url":"https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4","extension":"mp4"},"poster":{"id":"ntuGPTHTjyjkDIASrRv61aQtyDw.jpg","url":"https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg","thumbnailUrl":"https://framerusercontent.com/images/ntuGPTHTjyjkDIASrRv61aQtyDw.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"qZjxAHYsv","kind":"video","video":{"id":"TnTBiMq8cIakgl5VM28aQcE2gbE.mp4","url":"https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4","extension":"mp4"},"poster":{"id":"zYY346QdJ6zsHBvmvaXmo9M2E.jpg","url":"https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg","thumbnailUrl":"https://framerusercontent.com/images/zYY346QdJ6zsHBvmvaXmo9M2E.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<Stack
+    nodeId="AFmt9SgCl"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="502.5px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<TheMapInvitesBeforeItAsksPlainLanguageAndAnObviousWayInLower
+    nodeId="ISZK0eKcH"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="25%"
+    centerY="96%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</TheMapInvitesBeforeItAsksPlainLanguageAndAnObviousWayInLower>
+<CaseStudyJustifiedMediaGrid
+    nodeId="Xs9RUkUM2"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="41%"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"B4LhP0lzO","kind":"video","image":{"id":"txe25VHc4ovbSUywoGPaUd8Vbk.jpg","url":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg","thumbnailUrl":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"gFR7q15nPC48QC7ap45JjG12riY.mp4","url":"https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"f8Hz5vYOI","kind":"video","image":{"id":"QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","url":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","thumbnailUrl":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"vVeKfdIytQG2Y5ABFC01AjwPOY.mp4","url":"https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"P3iy4kCX9","kind":"video","video":{"id":"TNpc8c5YNncEarPZc27ldVMU.mp4","url":"https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<Stack
+    nodeId="dXYYSdOqc"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="-0.5px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="NGDBsyRXZ"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="43%"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"B4LhP0lzO","kind":"image","image":{"id":"txe25VHc4ovbSUywoGPaUd8Vbk.jpg","url":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg","thumbnailUrl":"https://framerusercontent.com/images/txe25VHc4ovbSUywoGPaUd8Vbk.jpg?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"f8Hz5vYOI","kind":"video","image":{"id":"QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","url":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg","thumbnailUrl":"https://framerusercontent.com/images/QYwWK4MdSyHdVZVHhg9f3wGLKCI.jpg?scale-down-to=512","resolution":"auto"},"video":{"id":"dpqOPTuyEtCuEw9TsvIGBZULM.mp4","url":"https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="true"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<ASingleObservationBecomesPartOfSomethingSharedJoiningACommun
+    nodeId="IzSqDtLjg"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="25%"
+    centerY="93%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</ASingleObservationBecomesPartOfSomethingSharedJoiningACommun>
+<Stack
+    nodeId="NiN0ODV0F"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    left="0px"
+    centerY="89%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Image
+    nodeId="Epuf7ERVS"
+    position="absolute"
+    width="1fr"
+    height="fit-image"
+    centerX="50%"
+    centerY="50%"
+    <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+    backgroundImage="https://framerusercontent.com/images/7IZ0Hr8WoTD4zcuiiotqMhOxag.jpg"
+    borderWidth="0.5px"
+    borderStyle="solid"
+    borderColor="/Colors/Stroke Gray"
+ />
+<EveryFindIsMetWithASmallMomentOfPrideTurningASingleObservati
+    nodeId="J0ldRSKNI"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    centerX="25%"
+    centerY="95%"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</EveryFindIsMetWithASmallMomentOfPrideTurningASingleObservati>
+<Stack
+    nodeId="qA8zPnoBY"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="212.5px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Stack
+    nodeId="BVysOGK5S"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="64%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+    stackWrap="true"
+ />
+<DesignedToShip
+    nodeId="zA8aXWU6A"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="2%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 3"
+>
+</DesignedToShip>
+<CaseStudyJustifiedMediaGrid
+    nodeId="dLLMKyVlH"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="-402px"
+    left="-580px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"B4LhP0lzO","kind":"image","image":{"id":"ZN5xIYWteQ32fyOxgSsFzxp0rU.png","url":"https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png","thumbnailUrl":"https://framerusercontent.com/images/ZN5xIYWteQ32fyOxgSsFzxp0rU.png?scale-down-to=512","resolution":"auto"},"video":{"id":"BLZ0XUnO4R1iDSusukr9oZxQc.mp4","url":"https://framerusercontent.com/assets/BLZ0XUnO4R1iDSusukr9oZxQc.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"h2wkZRsQu","kind":"video","video":{"id":"EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4","url":"https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"Otoj0owdY","kind":"image","image":{"id":"A6DvwXGXMEFZPWt9xOnVZAJow.png","url":"https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png","thumbnailUrl":"https://framerusercontent.com/images/A6DvwXGXMEFZPWt9xOnVZAJow.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="false"
+    targetRowHeight="168"
+    minRowHeight="73"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<CaseStudyJustifiedMediaGrid
+    nodeId="Mz3Cd49qQ"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="-402px"
+    left="-580px"
+    <!-- the component id this instance uses -->
+    componentId="c0iPrbN"
+    items="[{"id":"UCZShoyxE","kind":"image","image":{"id":"53KFBdZp49V7ToYem3gagSK9tbE.png","url":"https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png","thumbnailUrl":"https://framerusercontent.com/images/53KFBdZp49V7ToYem3gagSK9tbE.png?scale-down-to=512","resolution":"auto"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true},{"id":"nBL4gTiv3","kind":"video","video":{"id":"BTLOyDlC22T6zdTexVcfRIi1sSM.mp4","url":"https://framerusercontent.com/assets/BTLOyDlC22T6zdTexVcfRIi1sSM.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":false},{"id":"f8Hz5vYOI","kind":"video","image":{"id":"MuJbL7GSk4Maaf9PRd10LlJXJA.png","url":"https://framerusercontent.com/images/MuJbL7GSk4Maaf9PRd10LlJXJA.png","thumbnailUrl":"https://framerusercontent.com/images/MuJbL7GSk4Maaf9PRd10LlJXJA.png?scale-down-to=512","resolution":"auto"},"video":{"id":"PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4","url":"https://framerusercontent.com/assets/PfzXmLSZD4Sj71Ns4551AbAWOm8.mp4","extension":"mp4"},"src":"","ratio":1.7778,"fit":"contain","alt":"Case study media","stroke":true}]"
+    showLegacyData="false"
+    itemsData="image|1.791776|https://framerusercontent.com/images/E2e6l7Lc6cbC2HoNhyaYoiKIa2A.png|Gaia field guide in flowers;;video|1.777778|https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4|Gaia ocean motion"
+    forceSingleRow="false"
+    targetRowHeight="320"
+    minRowHeight="80"
+    maxRowHeight="620"
+    gap="20"
+    mobileGap="10"
+    stackBelow="240"
+    autoplay="true"
+    loop="true"
+    muted="true"
+    controls="false"
+ />
+<EndImage
+    nodeId="crK1P5XY7"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="106%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(0,0,0,0)"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<TheWorkWasPressureTestedAgainstRealConstraintsNotPresentedOn
+    nodeId="ba0m1Ml2U"
+    position="absolute"
+    width="0.5fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    maxWidth="760px"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Body M"
+>
+</TheWorkWasPressureTestedAgainstRealConstraintsNotPresentedOn>
+<Image
+    nodeId="WE5LyPVZo"
+    position="absolute"
+    width="1fr"
+    height="fit-image"
+    top="0px"
+    left="0px"
+    <!-- background image URL, if you pass a new image url, the image will be uploaded to Framer -->
+    backgroundImage="https://framerusercontent.com/images/cZRPRJ9u0FMy4rZtoSbAFnDWxMI.webp"
+ />
+<ScrollToTop
+    nodeId="xQOBaotX4"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="100%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(255, 255, 255, 0)"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    padding="0px 0px 0px 0px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<ScrollToTopButton
+    nodeId="BnufTHPxd"
+    position="absolute"
+    width="fit-content"
+    height="16px"
+    top="0px"
+    left="-401px"
+    <!-- the component id this instance uses -->
+    componentId="gh4ngZN"
+    label="scroll to top"
+    color="rgb(35, 51, 36)"
+    scrollDuration="900"
+    animationDuration="1.35"
+    easing="cubic-bezier(0.16, 1, 0.3, 1)"
+ />
+<SectionNextProject
+    nodeId="RdC_dP6nw"
+    position="absolute"
+    height="fit-content"
+    right="0px"
+    bottom="119.5px"
+    left="0px"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    padding="0px 0px 120px 0px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<HeadingWrapper
+    nodeId="fS9ddEelJ"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    padding="0px 20px 40px 20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Heading
+    nodeId="MhdyOy2gl"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="43%"
+    overflow="visible"
+    layout="stack"
+    gap="19px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="GtflhHuF2"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="25%"
+    centerY="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="mw4qhONMI"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="75%"
+    centerY="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Other
+    nodeId="WoFgImvf2"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2"
+>
+</Other>
+<Projects
+    nodeId="z0C9V7Lu1"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2"
+>
+</Projects>
+<Stack
+    nodeId="isDXVRu4u"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="25%"
+    centerY="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="MAfOtITkG"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="75%"
+    centerY="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Other
+    nodeId="P9yEQe133"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2"
+>
+</Other>
+<NextProjectWrapper
+    nodeId="zPjY3SEkk"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="58%"
+    overflow="hidden"
+    layout="stack"
+    gap="20px"
+    padding="0px 20px 0px 20px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="start"
+    stackWrap="true"
+ />
+<Projects
+    nodeId="NFap73l9F"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2"
+>
+</Projects>
+<NextProjectsSection
+    nodeId="gZiRks5zu"
+    position="absolute"
+    width="100%"
+    height="fit-content"
+    top="0px"
+    left="-603px"
+    <!-- the component id this instance uses -->
+    componentId="mFVVHj5"
+    currentSlug="gaia"
+    count="3"
+    gap="20"
+    textColor="rgb(35, 51, 36)"
+    strokeColor="rgb(151, 151, 151)"
+ />
+<TagWrapper
+    nodeId="bAsmaqFFl"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    centerX="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="20px"
+    padding="20px 15px 0px 15px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Tag
+    nodeId="PbRQVxrXk"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="49%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Container
+    nodeId="seA3hHfU_"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="0px"
+    centerX="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    padding="20px 15px 120px 15px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<GetInTouch
+    nodeId="DkbCotlrr"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="49%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</GetInTouch>
+<CtaRow
+    nodeId="neuaBZTo0"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    link="mailto:micah.hoang@hey.com"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    padding="2px 0px 0px 0px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<MagText
+    nodeId="KPpH6obfM"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="MICAH.HOANG"
+    font="{"fontWeight":500,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Md\", \"GT Standard Trial L Md Placeholder\", sans-serif","fontSize":"42px","lineHeight":"1em","letterSpacing":"-1px"}"
+    color="rgb(247, 245, 240)"
+ />
+<CtaRow
+    nodeId="b6PRuJP0M"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="92%"
+    link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<HeyCom
+    nodeId="yCleT4OMA"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</HeyCom>
+<MagText
+    nodeId="TzFCBsU3B"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="LINKEDIN"
+    font="{"fontWeight":500,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Md\", \"GT Standard Trial L Md Placeholder\", sans-serif","fontSize":"42px","lineHeight":"1em","letterSpacing":"-1px"}"
+    color="rgb(247, 245, 240)"
+ />
+<CtaRow
+    nodeId="fecuo1fzJ"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="22%"
+    centerY="50%"
+    link="https://www.cosmos.so/articavisuals"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<MagText
+    nodeId="hP6cQiMlt"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="COSMOS"
+    font="{"fontWeight":500,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Md\", \"GT Standard Trial L Md Placeholder\", sans-serif","fontSize":"42px","lineHeight":"1em","letterSpacing":"-1px"}"
+    color="rgb(247, 245, 240)"
+ />
+<Connect
+    nodeId="B_t6JpSi3"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Connect>
+<CtaRow
+    nodeId="Z_6OVUwhT"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="22%"
+    centerY="50%"
+    link="https://github.com/ArticaVisuals"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<MagText
+    nodeId="FY61rQs88"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="GITHUB"
+    font="{"fontWeight":500,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Md\", \"GT Standard Trial L Md Placeholder\", sans-serif","fontSize":"42px","lineHeight":"1em","letterSpacing":"-1px"}"
+    color="rgb(247, 245, 240)"
+ />
+<Inspire
+    nodeId="tSb65ZX1L"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Inspire>
+<SectionCta
+    nodeId="LhdLFGLNc"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="17%"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Forest Green"
+    zIndex="5"
+    overflow="hidden"
+    layout="stack"
+    gap="30px"
+    padding="0px 0px 0px 0px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<TagWrapper
+    nodeId="u2dPDJD_E"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    centerX="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="20px"
+    padding="20px 20px 0px 20px"
+    stackDirection="vertical"
+    stackDistribution="center"
+    stackAlignment="start"
+ />
+<Build
+    nodeId="wMFpc5Tcx"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Build>
+<Tag
+    nodeId="vBM1kC4BQ"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="49%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Container
+    nodeId="bjHk11jzA"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    bottom="0px"
+    centerX="50%"
+    overflow="hidden"
+    layout="stack"
+    gap="12px"
+    padding="0px 20px 120px 20px"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<Row
+    nodeId="U6bQTC4E9"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    link="mailto:micah.hoang@hey.com"
+    linkOpenInNewTab="false"
+    borderRadius="0px 0px 0px 0px"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    padding="10px 0px 0px 0px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<GetInTouch
+    nodeId="F4aEATG85"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="49%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</GetInTouch>
+<MagText
+    nodeId="g3s_BSxDK"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="MICAH.HOANG"
+    font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+    color="rgb(247, 245, 240)"
+ />
+<HeyCom
+    nodeId="ZRWROClcV"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</HeyCom>
+<Row
+    nodeId="xrQsl7Uck"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="92%"
+    link="https://www.linkedin.com/in/micah-hoang-b41028108/"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<MagText
+    nodeId="mIo0pYxDm"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="LINKEDIN"
+    font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+    color="rgb(247, 245, 240)"
+ />
+<Row
+    nodeId="HjwGcYUFS"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="92%"
+    link="https://www.cosmos.so/articavisuals"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<MagText
+    nodeId="JazAb2Y_j"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="COSMOS"
+    font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+    color="rgb(247, 245, 240)"
+ />
+<Connect
+    nodeId="A6e2toeGr"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Connect>
+<Row
+    nodeId="Teg06O5oY"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="92%"
+    link="https://github.com/ArticaVisuals"
+    linkOpenInNewTab="true"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="start"
+ />
+<MagText
+    nodeId="eFKCj_ZMg"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    text="GITHUB"
+    font="{"fontWeight":400,"fontStyle":"normal","fontFamily":"\"GT Standard Trial L Rg\", \"GT Standard Trial L Rg Placeholder\", sans-serif","fontSize":"80px","lineHeight":"1em","letterSpacing":"-0.02em"}"
+    color="rgb(247, 245, 240)"
+ />
+<Inspire
+    nodeId="DcqADFZtE"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Inspire>
+<Build
+    nodeId="V7J2ksoQs"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</Build>

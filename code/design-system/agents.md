@@ -37,6 +37,7 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 - **Tokens, never raw values.** Use `var(--mh-…)` from `tokens/tokens.css`, or the token path from `tokens.json` in Framer. If a value is missing, add it to `tokens.json` and run `node build.mjs`; don't inline a hex.
 - **Semantic color roles, not primitives.** Write `var(--mh-text-muted)`, not `var(--mh-color-light-gray)`. Roles re-map on `data-surface="green"`; primitives don't.
 - **Respect the breakpoints**: desktop ≥1200px, tablet 810–1199px, mobile <810px (Framer frames: 1200 / 810 / 390).
+- **One 20px gutter, 44px touch targets.** The page gutter is 20px at every breakpoint. Below 810px every interactive target is at least 44×44px; grow padding, not type.
 - **Don't invent brand.** No new colors, fonts, radii, shadows, gradients, emoji or icon sets. If a design feels too plain, the answer is better type scale, more space, or real project media, not decoration.
 - **Mono is always uppercase** and never used for paragraphs.
 - **One H1 per page.** Display XL is reserved for the home hero name.
@@ -60,8 +61,8 @@ Every page opens with YAML front matter: `title`, `section`, `description`, and,
 
 ## Quick start (Framer)
 
-- Colors: use the project color styles `/Cream`, `/Forest Green`, `/Off-Black`, `/Text Gray`, `/Stroke Gray`, `/White`. Accent green `#25593A` is not a style; it's set per component instance.
-- Type: use the Framer text styles `/Heading 1`, `/Heading 2`, `/Heading 2 Bold`, `/Heading 3`, `/Heading 4`, `/Body XL`, `/Body L`, `/Body M`, `/Small Mono`, `/Small Mono Footers` (see the Typography page).
+- Colors: use the project color styles in the `/Colors/` folder: `Cream`, `Forest Green`, `Off-Black`, `Text Gray`, `Stroke Gray` (`#848484`), `White`. Accent green `#25593A` is not a style; it's set per component instance.
+- Type: use the Framer text styles in the `/Text Styles/` folder: `Heading 1`, `Heading 2`, `Heading 2 Bold`, `Heading 3`, `Heading 4`, `Body XL`, `Body L`, `Body M`, `Small Mono`, `Small Mono Footers` (`Optro CRX Heading` is page-specific). See the Typography page.
 - Layout: Stacks and Grids with the gutter and gap tokens; desktop-first with tablet and phone breakpoint overrides.
 - Code components: look up the `codeFileId` in `components.json` and the repo's `code/mirror/manifest.json`.
 

@@ -1,0 +1,51 @@
+### Result
+[{"mode":"media-blocked","start":1990.7000000476837,"end":3190.899999976158,"count":146,"median":8.300000000000182,"max":9.300000000000182,"over20":0,"videos":[{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4","rect":{"x":16.55078125,"y":608,"width":696.8984375,"height":388.2890625,"top":608,"right":713.44921875,"bottom":996.2890625,"left":16.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4","rect":{"x":726.55078125,"y":608,"width":696.8984375,"height":388.2890625,"top":608,"right":1423.44921875,"bottom":996.2890625,"left":726.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4","rect":{"x":16.55078125,"y":1117.2890625,"width":696.8984375,"height":388.2890625,"top":1117.2890625,"right":713.44921875,"bottom":1505.578125,"left":16.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4","rect":{"x":726.55078125,"y":1117.2890625,"width":696.8984375,"height":388.2890625,"top":1117.2890625,"right":1423.44921875,"bottom":1505.578125,"left":726.55078125}}],"globals":["__mhGlobalLenisState","lenisVersion","lenis","__mhLenis"]},{"mode":"video-hidden","start":1891.3999999761581,"end":3096.0999999046326,"count":145,"median":8.300000000000182,"max":9.299999999999955,"over20":0,"videos":[{"paused":false,"readyState":4,"src":"https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4","rect":{"x":16.55078125,"y":541,"width":696.8984375,"height":388.2890625,"top":541,"right":713.44921875,"bottom":929.2890625,"left":16.55078125}},{"paused":false,"readyState":4,"src":"https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4","rect":{"x":726.55078125,"y":541,"width":696.8984375,"height":388.2890625,"top":541,"right":1423.44921875,"bottom":929.2890625,"left":726.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4","rect":{"x":16.55078125,"y":1050.2890625,"width":696.8984375,"height":388.2890625,"top":1050.2890625,"right":713.44921875,"bottom":1438.578125,"left":16.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4","rect":{"x":726.55078125,"y":1050.2890625,"width":696.8984375,"height":388.2890625,"top":1050.2890625,"right":1423.44921875,"bottom":1438.578125,"left":726.55078125}}],"globals":["__mhGlobalLenisState","lenisVersion","lenis","__mhLenis"]},{"mode":"pause-native","start":1912.5,"end":3120,"count":145,"median":8.300000000000182,"max":9.300000000000182,"over20":0,"videos":[{"paused":true,"readyState":4,"src":"https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4","rect":{"x":16.55078125,"y":608,"width":696.8984375,"height":388.2890625,"top":608,"right":713.44921875,"bottom":996.2890625,"left":16.55078125}},{"paused":true,"readyState":4,"src":"https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4","rect":{"x":726.55078125,"y":608,"width":696.8984375,"height":388.2890625,"top":608,"right":1423.44921875,"bottom":996.2890625,"left":726.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4","rect":{"x":16.55078125,"y":1117.2890625,"width":696.8984375,"height":388.2890625,"top":1117.2890625,"right":713.44921875,"bottom":1505.578125,"left":16.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4","rect":{"x":726.55078125,"y":1117.2890625,"width":696.8984375,"height":388.2890625,"top":1117.2890625,"right":1423.44921875,"bottom":1505.578125,"left":726.55078125}}],"globals":["__mhGlobalLenisState","lenisVersion","lenis","__mhLenis"]},{"mode":"no-css-animations","start":1828.6000000238419,"end":3032.9000000953674,"count":51,"median":33,"max":33.69999999999982,"over20":32,"videos":[{"paused":false,"readyState":4,"src":"https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4","rect":{"x":16.55078125,"y":608,"width":696.8984375,"height":388.2890625,"top":608,"right":713.44921875,"bottom":996.2890625,"left":16.55078125}},{"paused":false,"readyState":4,"src":"https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4","rect":{"x":726.55078125,"y":608,"width":696.8984375,"height":388.2890625,"top":608,"right":1423.44921875,"bottom":996.2890625,"left":726.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4","rect":{"x":16.55078125,"y":1117.2890625,"width":696.8984375,"height":388.2890625,"top":1117.2890625,"right":713.44921875,"bottom":1505.578125,"left":16.55078125}},{"paused":true,"readyState":0,"src":"https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4","rect":{"x":726.55078125,"y":1117.2890625,"width":696.8984375,"height":388.2890625,"top":1117.2890625,"right":1423.44921875,"bottom":1505.578125,"left":726.55078125}}],"globals":["__mhGlobalLenisState","lenisVersion","lenis","__mhLenis"]}]
+### Ran Playwright code
+```js
+await (async (page) => {
+    await page.goto('about:blank')
+    const browser=page.context().browser(), results=[]
+    for(const mode of ['media-blocked','video-hidden','pause-native','no-css-animations']) {
+        const context=await browser.newContext({viewport:{width:1440,height:1000}})
+        const p=await context.newPage()
+        await p.bringToFront()
+        if(mode==='media-blocked') await p.route('**/*', r=>r.request().resourceType()==='media'?r.abort():r.continue())
+        await p.addInitScript(mode=>{
+            window.__ab={frames:[],events:[],mode}
+            if(mode==='pause-native') {
+                document.addEventListener('play',e=>{if(e.target instanceof HTMLMediaElement)e.target.pause()},true)
+                document.addEventListener('playing',e=>{if(e.target instanceof HTMLMediaElement)e.target.pause()},true)
+            }
+            if(mode==='video-hidden'||mode==='no-css-animations') {
+                const style=()=>{const s=document.createElement('style');s.textContent=mode==='video-hidden'?'video{visibility:hidden!important}':'body *{animation:none!important;transition:none!important}';(document.head||document.documentElement).append(s)};document.documentElement?style():document.addEventListener('DOMContentLoaded',style)
+            }
+            if(mode==='no-media') HTMLMediaElement.prototype.play=function(){return Promise.resolve()}
+            if(mode==='no-replay') Object.defineProperty(window,'__ptReplayAppear',{configurable:true,get(){return function(){}},set(){}})
+            if(mode==='content-hidden') {
+                const install=()=>{const s=document.createElement('style');s.textContent='body{visibility:hidden!important}';(document.head||document.documentElement).append(s)}
+                document.documentElement?install():document.addEventListener('DOMContentLoaded',install)
+            }
+            if(mode==='no-lenis') {
+                let timer=setInterval(()=>{const l=window.__mhLenis;if(l){l.destroy?.();clearInterval(timer)}},10)
+                setTimeout(()=>clearInterval(timer),6000)
+            }
+            document.addEventListener('transitionrun',e=>{if(e.target.id==='__pt-boot')window.__ab.events.push({type:'start',at:performance.now()})},true)
+            document.addEventListener('transitionend',e=>{if(e.target.id==='__pt-boot')window.__ab.events.push({type:'end',at:performance.now()})},true)
+            let last=0
+            const frame=t=>{const b=document.getElementById('__pt-boot');window.__ab.frames.push({at:t,dt:last?t-last:0,transform:b?getComputedStyle(b).transform:null});last=t;if(t<6500)requestAnimationFrame(frame)}
+            requestAnimationFrame(frame)
+        },mode)
+        await p.goto('https://micahhoang.com/?curtain-ab='+mode,{waitUntil:'domcontentloaded'})
+        await p.waitForTimeout(5200)
+        const result=await p.evaluate(()=>{
+            const d=window.__ab,start=d.events.find(e=>e.type==='start')?.at,end=d.events.find(e=>e.type==='end')?.at
+            const f=d.frames.filter(f=>f.at>=start&&f.at<=end),ds=f.map(f=>f.dt).sort((a,b)=>a-b)
+            return {mode:d.mode,start,end,count:f.length,median:ds[Math.floor(ds.length/2)],max:Math.max(...ds),over20:ds.filter(x=>x>20).length,videos:Array.from(document.querySelectorAll('video')).map(v=>({paused:v.paused,readyState:v.readyState,src:v.currentSrc,rect:v.getBoundingClientRect().toJSON()})),globals:Object.keys(window).filter(k=>/lenis/i.test(k))}
+        })
+        results.push(result)
+        await context.close()
+    }
+    return results
+}
+)(page);
+```

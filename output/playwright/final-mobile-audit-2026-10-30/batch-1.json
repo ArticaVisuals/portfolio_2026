@@ -1,0 +1,2074 @@
+[
+  {
+    "path": "/case-studies/gaia",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/gaia",
+    "title": "Gaia Brand and UX/UI Case Study - Micah Hoang",
+    "h1": [
+      "Gaia"
+    ],
+    "height": 8367,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [
+      {
+        "text": "A photograph becomes a data point. A data point becomes a re",
+        "x": 20,
+        "y": 746.578125,
+        "w": 350,
+        "h": 176.421875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "iNaturalist lets people photograph an organism, receive an A",
+        "x": 20,
+        "y": 1757.75,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Three goals shape every decision: increase access, increase ",
+        "x": 20,
+        "y": 2027.546875,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "iNaturalist asks you to be a naturalist first. For most peop",
+        "x": 20,
+        "y": 2380.4296875,
+        "w": 350,
+        "h": 126.015625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The mark grows from a branching, living form. Inspired by We",
+        "x": 20,
+        "y": 2987.109375,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Gaia reaches people where they already meet the living world",
+        "x": 20,
+        "y": 4134.1953125,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "A custom icon system pairs with botanical illustrations draw",
+        "x": 20,
+        "y": 4651.40625,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The map invites before it asks. Plain language and an obviou",
+        "x": 20,
+        "y": 4979.0859375,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "A single observation becomes part of something shared, joini",
+        "x": 20,
+        "y": 5281.5625,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Every find is met with a small moment of pride, turning a si",
+        "x": 20,
+        "y": 5773.984375,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The work was pressure-tested against real constraints, not p",
+        "x": 20,
+        "y": 6371.8125,
+        "w": 350,
+        "h": 252.03125,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "VIDEO",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "VIDEO",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          }
+        ]
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "VIDEO",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 390,
+          "h": 219.375,
+          "y": 354
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/iYVJWra2W8xywBIJLyzKocplcos.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.5625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/JUjSjmQG5WRJxlNwn2Lv8s5mcwI.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.7421875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/xFNYAo0QzdwSajgUHI3bDjcOf38.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.71875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/kL29aExodKvi9s0DeCZSJhtsiRs.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.71875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/TnTBiMq8cIakgl5VM28aQcE2gbE.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.71875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/gFR7q15nPC48QC7ap45JjG12riY.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 626.1953125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/vVeKfdIytQG2Y5ABFC01AjwPOY.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 626.1953125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/TNpc8c5YNncEarPZc27ldVMU.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 626.1953125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/dpqOPTuyEtCuEw9TsvIGBZULM.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/EeZjqzoE1D0NFtLGsMSjIr3PPE.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.5
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/IdWfQ1KiQZOMK9ZEa4e4E8TmjSY.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.5
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3919,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 323.7109375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.9112,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 569.5859375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 1.4113,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 646.9609375
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/airpods",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/airpods",
+    "title": "AirPods Pro 3 Launch Identity - Micah Hoang",
+    "h1": [
+      "AirPods Pro 3,"
+    ],
+    "height": 6467,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [
+      {
+        "text": "Design Team: Jo\u00e3o Peres,",
+        "href": "https://www.linkedin.com/in/jo%C3%A3o-peres-creative-director",
+        "x": 20,
+        "y": 1258.0234375,
+        "w": 204.03125,
+        "h": 21
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "AirPods Pro 3 launched with a single identity system that ha",
+        "x": 20,
+        "y": 706.5703125,
+        "w": 350,
+        "h": 277.234375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Design Team: Jo\u00e3o Peres, Nadia Shireen Husain, Karlo Fuertes",
+        "x": 20,
+        "y": 1256.0234375,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          },
+          {
+            "tag": "VIDEO",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          },
+          {
+            "tag": "VIDEO",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          }
+        ]
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          },
+          {
+            "tag": "VIDEO",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": true,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 390,
+          "h": 219.3671875,
+          "y": 314
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.6484375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/lpU1HaQ0vaqbGneboJZ60UBCE.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.6484375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/ynObrP88oTyxGe9M0RFDnyidpM.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 150,
+          "y": 693.796875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/Kwt4oi40ORaRFxzAIQujvjGXMk.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.6640625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/7PuYs1APbgGwIxd227rdUCzCF00.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 530.53125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/D6e9MQJzqxMfkIqWM3IYl2x9A.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.6796875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/cTVYsNQBRzQD3HMzG5jD1JbXGHs.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 530.546875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/rmXYG0OmltnEUJJr0GIfDKaoLU.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 196.8671875,
+          "y": 323.5390625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.1045,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 646.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4286,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 323.78125
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/simon-schuster",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/simon-schuster",
+    "title": "Simon & Schuster Rebrand Concept - Micah Hoang",
+    "h1": [],
+    "height": 12754,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [
+      {
+        "text": "Indigo Design Award: Gold",
+        "href": "https://indigoaward.com/winners/12032",
+        "x": 20,
+        "y": 1579.03125,
+        "w": 209.8671875,
+        "h": 21
+      },
+      {
+        "text": "Fonts in Use: Feature",
+        "href": "https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional",
+        "x": 20,
+        "y": 1614.234375,
+        "w": 164.34375,
+        "h": 21
+      },
+      {
+        "text": "DNA Paris: Winner",
+        "href": "https://dna.paris/social/zoom.php?eid=71-95047-26",
+        "x": 20,
+        "y": 1649.4375,
+        "w": 144.0546875,
+        "h": 21
+      },
+      {
+        "text": "Previous slide",
+        "href": null,
+        "x": 35,
+        "y": 5104.109375,
+        "w": 30,
+        "h": 30
+      },
+      {
+        "text": "Next slide",
+        "href": null,
+        "x": 325,
+        "y": 5104.109375,
+        "w": 30,
+        "h": 30
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "A strategic provocation. In 2022, the Justice Department blo",
+        "x": 20,
+        "y": 788.359375,
+        "w": 350,
+        "h": 327.640625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Five conglomerates control trade publishing. S&S is the smal",
+        "x": 20,
+        "y": 2182.7890625,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I started where the conglomerates weren't looking.  Both poi",
+        "x": 20,
+        "y": 2831.03125,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "An antitrust block looks like a loss. I made it the advantag",
+        "x": 20,
+        "y": 3904.9140625,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I merged the ampersand with an \u201cS\u201d so one mark could carry m",
+        "x": 20,
+        "y": 4749.375,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "A 65-page book to govern 2,000 titles a year across dozens o",
+        "x": 20,
+        "y": 5240.8203125,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Three divisions, more than 50 imprints. I paired the new wor",
+        "x": 20,
+        "y": 6308.703125,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I built the storefront to beat the marketplaces on the one a",
+        "x": 20,
+        "y": 8700.25,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I launched a new Children's imprint, Voyager, to stress-test",
+        "x": 20,
+        "y": 9993.0546875,
+        "w": 350,
+        "h": 75.609375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "I designed a campaign with the ALA's Office for Intellectual",
+        "x": 20,
+        "y": 10771.765625,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 280,
+            "x": 310
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 280,
+            "x": 320
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 620
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 280,
+            "x": 620
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 350,
+            "x": 380
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 350,
+            "x": 390
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 760
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 350,
+            "x": 760
+          }
+        ]
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": [
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 390,
+            "x": 420
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          },
+          {
+            "tag": "IMG",
+            "cls": "",
+            "w": 390,
+            "x": 430
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 840
+          },
+          {
+            "tag": "DIV",
+            "cls": "",
+            "w": 390,
+            "x": 840
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://freight.cargo.site/t/original/i/K1752285800188626851517885044245/S-S-Logo-Animation-2.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 150,
+          "y": 347.03125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/npEWAtDub3QRSPyGSrWh42ns6H8.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 150,
+          "y": 346.9375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/b9f0GkZjSgHCSTkQ6p5mSRBOFRo.mp4",
+        "autoplay": false,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": true,
+        "ready": 0,
+        "time": 0,
+        "rect": {
+          "w": 350,
+          "h": 150,
+          "y": 346.765625
+        }
+      }
+    ],
+    "axe": [
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "count": 1,
+        "nodes": [
+          {
+            "target": [
+              ".framer-35g114"
+            ],
+            "summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+            "html": "<a class=\"framer-35g114 framer-s7u9s4\" href=\"https://freight.cargo.site/m/M1745823474030454838562163774997/S-S-Strategy-Poster.pdf\" target=\"_blank\">"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/motion-connect-2025",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/motion-connect-2025",
+    "title": "Motion Connect 2025 Identity - Micah Hoang",
+    "h1": [],
+    "height": 14605,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [
+      {
+        "text": "Motion Connect is an ArtCenter event series that brings the ",
+        "x": 20,
+        "y": 637.09716796875,
+        "w": 350,
+        "h": 277.234375,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "A 45-second reel introduced the speakers, showed their work,",
+        "x": 20,
+        "y": 3606.1953125,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "An animated Instagram carousel translated the system into a ",
+        "x": 20,
+        "y": 8103.40625,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "A printed poster and widescreen graphic brought the identity",
+        "x": 20,
+        "y": 9059.0703125,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "One effect holds the whole identity together: a bitmap scanl",
+        "x": 20,
+        "y": 9856.90625,
+        "w": 350,
+        "h": 226.828125,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "Working solo for two weeks, I built every asset from scratch",
+        "x": 20,
+        "y": 10938.5859375,
+        "w": 350,
+        "h": 151.21875,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "At the live event, the system took over the room. An ambient",
+        "x": 20,
+        "y": 12956.3046875,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/iQPA3NNaExqTtFm2iHBm97Ml8s.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.1687,
+        "rect": {
+          "w": 390,
+          "h": 219.375,
+          "y": 284
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/GGcVRlbftAw0hNbMBYLjrvfvWys.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4093,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 307.9091491699219
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/G9HKqWgaaBJSqDA4opMt4l7Mg.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8891,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 490.1953125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/pRWPOFnQdEvvHXAqiKkHcG0nZw.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.811,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 647.0703125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/BooHwPmFdZzaDuHv8nbfI9xjdtQ.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4128,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 323.4453125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/MUBo4NUg9h0TfJLiZeRurJpSfRM.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.9091,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 530.3203125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/YKby7PllFLfF04tfPrMxwe46WKQ.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 1.3754,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 647.1953125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/YRNgtRGLiypNlDrdmqujQ3rVQM.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4078,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 323.5703125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/vJHDjZwQuswz3dQ6bmJSVRzgGmg.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8783,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 530.4453125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/mxVLCW1f8gRxzoHxpP6LnoZTghU.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 1.3725,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 647.3203125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/XK5ZSqhpv1vkfOHYBhp5xbUJkUs.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.364,
+        "rect": {
+          "w": 350,
+          "h": 350.0000305175781,
+          "y": 232.60604858398438
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/9MUCKEON6m1zFwfIR89rHq01GBY.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.5163,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 493.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VMIfEJOf6GhNJVSK9YlmePkeNU.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4003,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 246.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/AgT58DVg5HKAar6048Y06Wn2s.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8872,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 493.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/sicsuW5K3Kjh9xM14ErsrRVgk.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3945,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 246.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/EGVFftYxs9PXOCWTZgOQPMLs03M.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8861,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 493.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/YaWWIBrKvKC4X7pFhlRCCi2ZosQ.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4023,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 246.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/BcenVmrHAZ9jjNwQuW8osEeTYc.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8708,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 493.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/I0rPChsYcbHmRItzAGCMaOE5sNk.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4066,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 246.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/k6cRK3ELjZoyVUXgOBK2eOTmcaU.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8759,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 493.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/qvk2JjfVZ1fwhrIrF2vVDODDU.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4006,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 246.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/FcUYlM409Qi4TNdLQO4I6luHWs.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.88,
+        "rect": {
+          "w": 350,
+          "h": 350,
+          "y": 493.90625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/fB1UokXRbC9y9v6p4jHE2sdVw.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.289947,
+        "rect": {
+          "w": 350,
+          "h": 196.87503051757812,
+          "y": 310.127197265625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/bZzIGGcdr27KAso8g1l9AEnulCo.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.4603,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 490.65625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/1C2aMBrHIm6dxQeXcdJcqDx0xs0.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.872171,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 647.03125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/qCignb1pMHKPdwRrDTF57gpagSo.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.334136,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 290.5445251464844
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/WBfSwlJMaWbkJMRpHfYzlbZPLl4.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.4605,
+        "rect": {
+          "w": 350,
+          "h": 235.0703125,
+          "y": 472.0078125
+        }
+      }
+    ],
+    "axe": [],
+    "errors": []
+  },
+  {
+    "path": "/case-studies/caliper",
+    "status": 200,
+    "url": "https://micahhoang.com/case-studies/caliper",
+    "title": "Caliper Sans - Micah Hoang",
+    "h1": [],
+    "height": 9550,
+    "mono": [
+      "13px"
+    ],
+    "smallTargets": [],
+    "paragraphs": [
+      {
+        "text": "Caliper Sans is a measured, functional face, built to read s",
+        "x": 20,
+        "y": 637.0601806640625,
+        "w": 350,
+        "h": 201.625,
+        "font": "18px",
+        "wrap": "wrap"
+      },
+      {
+        "text": "The result is a face that holds up at nine points in a dense",
+        "x": 20,
+        "y": 843.6851806640625,
+        "w": 350,
+        "h": 100.8125,
+        "font": "18px",
+        "wrap": "wrap"
+      }
+    ],
+    "header": [
+      {
+        "text": "MICAH HOANG",
+        "x": 20,
+        "y": 20,
+        "w": 85.8046875,
+        "h": 13
+      },
+      {
+        "text": "MENU",
+        "x": 338.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    ],
+    "narrowMedia": [],
+    "widths": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "overflow": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": []
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "overflow": []
+      }
+    ],
+    "videos": [
+      {
+        "src": "https://framerusercontent.com/assets/7wccD82ku4uk19EOTHMFvj830kQ.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3249,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 307.7055969238281
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/Nu5qLYyAxEtwmk9JwPyuPusuXk.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4154,
+        "rect": {
+          "w": 350,
+          "h": 248.234375,
+          "y": 289.7994384765625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/45pD654qcbqwLnpkew0KeZOEHGI.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3937,
+        "rect": {
+          "w": 350,
+          "h": 226.40626525878906,
+          "y": 143.5337371826172
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/YdkTfJ5vs7V2a9P6GZZZBrZpQ6Y.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.9693,
+        "rect": {
+          "w": 350,
+          "h": 452.828125,
+          "y": 355.6015625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/R8YS5njtYujWCRclEboIc16Dw.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.4056,
+        "rect": {
+          "w": 350,
+          "h": 496.47662353515625,
+          "y": 159.53326416015625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/yTv78CLGzXBEU3DeSiE8yADGkY.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.4,
+        "rect": {
+          "w": 350,
+          "h": 496.4765625,
+          "y": 347.40625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/lWLw46No3unGhfJcsSamCiz9Y.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3692,
+        "rect": {
+          "w": 350,
+          "h": 496.3046875,
+          "y": 173.8828125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/KOeleiX8T7ZVUsUXUIeXjVHeFQg.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8567,
+        "rect": {
+          "w": 350,
+          "h": 496.4765625,
+          "y": 347.6875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/jrR8PT6Sv6XI4d8tvnyam8CBs4.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.33674,
+        "rect": {
+          "w": 350,
+          "h": 201.25,
+          "y": 188.44232177734375
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/3X7cIvkjeocU6GoS1NuGmJ2U0.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.431074,
+        "rect": {
+          "w": 350,
+          "h": 201.25,
+          "y": 374.3125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/H6a8YIARh6MaUkzzyBcnywbf9A4.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 2.891185,
+        "rect": {
+          "w": 350,
+          "h": 201.25,
+          "y": 585.5625
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/sJBQH6h9WTFj1JFq5lrOA6NoXLQ.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.3499,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 286.3125
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 0.8765,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 532.1875
+        }
+      },
+      {
+        "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+        "autoplay": true,
+        "muted": true,
+        "playsInline": true,
+        "controls": false,
+        "paused": false,
+        "ready": 4,
+        "time": 1.3762,
+        "rect": {
+          "w": 350,
+          "h": 196.875,
+          "y": 647.0625
+        }
+      }
+    ],
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "count": 6,
+        "nodes": [
+          {
+            "target": [
+              "div[data-metric=\"capHeight\"] > .caliper-guide-value[data-side=\"left\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"caliper-guide-value\" data-side=\"left\" style=\"left: 8px;\">740</span>"
+          },
+          {
+            "target": [
+              "div[data-metric=\"capHeight\"] > .caliper-guide-value[data-side=\"right\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"caliper-guide-value\" data-side=\"right\" style=\"right: 8px;\">740</span>"
+          },
+          {
+            "target": [
+              "div[data-metric=\"xHeight\"] > .caliper-guide-value[data-side=\"left\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"caliper-guide-value\" data-side=\"left\" style=\"left: 8px;\">510</span>"
+          },
+          {
+            "target": [
+              "div[data-metric=\"xHeight\"] > .caliper-guide-value[data-side=\"right\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"caliper-guide-value\" data-side=\"right\" style=\"right: 8px;\">510</span>"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  }
+]

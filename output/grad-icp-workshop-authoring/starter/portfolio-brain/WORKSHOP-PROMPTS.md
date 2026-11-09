@@ -1,0 +1,113 @@
+# Build your ICP Brain — copyable student prompts
+
+Download and unzip the provided starter folder. Open portfolio-brain as the project folder in Claude Code. Keep its provided references/ folder. Run prompts 1–5 in order. Correct the facts before continuing. Prompt 6 goes into a regular Claude chat after sharing the interview brief.
+
+## Folder to prepare before class
+
+```text
+portfolio-brain/
+  sources/
+    resume.pdf
+    portfolio-project.pdf
+    project-notes.txt
+    reflections.pdf
+    relationship-map.pdf
+  targets/
+    job-description.txt
+    company-notes.txt  (optional)
+  references/  (provided)
+    interview-question-bank.md
+    IBM-CDO-Design-Interview-Questions.pdf
+```
+
+Use these filenames so the prompts work as written. Combine existing self-assessment/leadership homework into reflections.pdf; do not rewrite it. Export the relevant relationship map. Save one case study as a readable PDF, including its visuals and captions. In job-description.txt, include the original URL, title, company, and complete posting text. In project-notes.txt, add brief facts about the brief, your role, collaborators, decisions, tools, and outcomes; mark unknown results as unknown.
+
+## Prompt 01 — Check what Claude knows.
+
+```text
+Read the files in sources/. List what you could and could not read.
+
+Summarize my experience, project contributions, strengths, and growth areas. Cite a source for each claim.
+
+Flag missing or contradictory facts. Do not invent outcomes or infer my role from a team credit. Ask up to three questions that would improve your understanding.
+```
+
+## Prompt 02 — Understand your target.
+
+```text
+Read targets/job-description.txt and only company notes relevant to that job.
+
+Separate the employer’s stated requirements from your assumptions. Describe the likely portfolio reviewer and three reasons they might pass on work like mine. Cite evidence.
+
+Compare those priorities with my project evidence. Identify one positioning tension: what could read as either a strength or a weakness? Turn it into three testable review rules.
+```
+
+## Prompt 03 — Make it reusable.
+
+```text
+Create ICP.md with my positioning, evidence, reviewer priorities, and unknowns. Keep shared candidate facts separate from each job’s lens.
+
+Create .claude/skills/portfolio-review/SKILL.md and .claude/skills/interview-prep/SKILL.md with valid name and description frontmatter. Both read ICP.md and sources.
+
+The reviewer gives three sourced edits and states its scope. Make interview prep adaptive: role-specific questions, follow-ups, no fixed question cap, varied retakes, and job switching. Update existing skills to these rules. Show the saved files and slash commands.
+```
+
+## Prompt 04 — Review one project.
+
+```text
+/portfolio-review sources/portfolio-project.pdf
+
+Review this project using ICP.md and targets/job-description.txt. Give three prioritized edits.
+
+For each edit, identify the specific sentence or visible detail, the hiring concern, and the proposed change. Cite the evidence.
+
+State what you could actually read or see. Mark any new fact as needing my confirmation. Do not rewrite the whole project.
+```
+
+## Prompt 05 — Build the interview brief.
+
+```text
+/interview-prep brief targets/job-description.txt
+
+Use ICP.md, my evidence, this job, and references/interview-question-bank.md.
+
+Save outputs/INTERVIEW-BRIEF.md as a portable context pack: sourced role priorities, simulated ICP interviewer lens, supported stories, unknowns, and 8–12 seed questions. Seeds are not a limit.
+
+Include intro → “Tell me about yourself” → coaching/retry, adaptive follow-ups, new questions, varied retakes, and job switching. Label inferences and question sources; never claim actual employer questions. Preserve a separate brief per job.
+```
+
+## Prompt 06 — Coach me after each answer.
+
+Upload outputs/INTERVIEW-BRIEF.md or paste its complete text into a regular Claude chat. Paste this prompt, then switch to voice.
+
+```text
+Use my brief. Wait until I say “Start the interview.” Give a short simulated interviewer intro, then ask “Tell me about yourself.” Wait; no example first.
+
+After each answer, coach relevance, contribution, and evidence; suggest a supported example and invite a retry. Never invent facts.
+
+Choose role-specific questions and follow-ups from my answers and the ICP lens. Keep going beyond the seeds. Support “continue,” “retry,” and “new round” with fresh questions after the opening. Switch jobs when I share a new description or brief.
+```
+
+## Checkpoints
+
+- After prompt 1: correct unread files, attribution, dates, and outcomes.
+- After prompt 3: confirm ICP.md and both SKILL.md files exist. Open a fresh session in this folder if the slash commands do not appear.
+- After prompt 4: keep one useful edit and challenge one recommendation.
+- After prompt 5: check that the brief contains the facts another chat needs without local-file access.
+- During voice practice: hear the simulated interviewer introduction, answer “Tell me about yourself,” receive coaching, and retry. Aim for about 60–90 seconds; connect your positioning, relevant experience, and interest in this role. The opening leads to adaptive practice, with no fixed question cap.
+
+Before class, test Claude Code, test regular Claude voice, and bring headphones.
+
+## Keep practicing — no new pre-work
+
+Your original sources/ and targets/job-description.txt still work. No need to redo the homework or download a new starter. Prompts 3 and 5 update the skill and brief, including an earlier five-question version. PORTFOLIO-REVIEW.md is the critique; INTERVIEW-BRIEF.md carries the interviewer context.
+
+- “Continue” / “one more”: a fresh role-relevant question or follow-up.
+- “Go deeper on collaboration”: focus on that competency if relevant to the job.
+- “Retry”: answer the same question again.
+- “New round” / “reshuffle”: begin again with the interviewer intro and “Tell me about yourself,” then different question angles and ordering. Keep this chat or share its checkpoint to preserve question history.
+- “Pause”: get a short recap and checkpoint you can save.
+
+For another job later, optionally add targets/company-role.txt alongside your existing job-description.txt. In Code, run `/interview-prep brief targets/company-role.txt`. It preserves the separate role brief and refreshes outputs/INTERVIEW-BRIEF.md for sharing. In regular Claude, attach that new brief or paste the new job description and say “Switch jobs.” The voice chat cannot read your local folder automatically.
+
+The simulation follows sourced job priorities and labeled ICP hypotheses. It does not predict the employer's exact questions or private hiring rubric. The 45-minute class still practices the introduction and retry first; extended rounds are available afterward.

@@ -1,0 +1,59 @@
+{
+  "status": "local review only; no Framer changes or publication",
+  "currentThumbnailUrl": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+  "currentDurationSeconds": 9.7,
+  "previews": [
+    {
+      "file": "airpods-lifestyle-thumbnail-9.7s.mp4",
+      "source": "assets/by-project/airpods/current-site/001-airpods-pro-3-reveal-4k.mp4",
+      "sourceInSeconds": 10.7,
+      "sourceOutSeconds": 20.4,
+      "speed": "original",
+      "decodeCheck": "passed",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1600,
+            "height": 900,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30000/1001"
+          }
+        ],
+        "format": {
+          "duration": "9.709700",
+          "size": "2357374"
+        }
+      }
+    },
+    {
+      "file": "airpods-duo-first-thumbnail-6.5s.mp4",
+      "source": "assets/by-project/airpods/current-site/001-airpods-pro-3-reveal-4k.mp4",
+      "sourceInSeconds": 13.9,
+      "sourceOutSeconds": 20.4,
+      "speed": "original",
+      "decodeCheck": "passed",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1600,
+            "height": 900,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30000/1001"
+          }
+        ],
+        "format": {
+          "duration": "6.506500",
+          "size": "1071953"
+        }
+      }
+    }
+  ]
+}

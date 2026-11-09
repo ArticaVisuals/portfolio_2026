@@ -1,0 +1,12 @@
+Node xml:
+<AirPodsPro3
+    nodeId="xFiGc9NK5"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="50%"
+    centerY="50%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Heading 2 Bold"
+>
+</AirPodsPro3>

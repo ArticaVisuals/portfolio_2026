@@ -1,0 +1,459 @@
+Node xml:
+<Navigation nodeId="yGfvD64UY" />
+<NavigationBlack
+    nodeId="FeKwNXxsb"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 20px 20px 20px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<Container
+    nodeId="pO6YK4B1r"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    centerX="45%"
+    centerY="3108%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<NavRow
+    nodeId="fpGbSz7ON"
+    position="absolute"
+    width="1fr"
+    height="fit-content"
+    top="0px"
+    centerX="50%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="ELJbNgKCq"
+    position="absolute"
+    width="3fr"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(255,255,255,0)"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<TextLink
+    nodeId="qkZdGZM6p"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="-161px"
+    <!-- the component id this instance uses -->
+    componentId="dVTZgYLeH"
+    variant="eyytyxpGy"
+    Kpveh2Q8O="Micah Hoang"
+    bwVWMSt6G="/"
+ />
+<Stack
+    nodeId="XQPjY57F1"
+    position="absolute"
+    width="4fr"
+    height="fit-content"
+    left="285px"
+    centerY="46%"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="PYztneNCT"
+    position="absolute"
+    width="4fr"
+    height="fit-content"
+    right="101.5px"
+    centerY="46%"
+    overflow="hidden"
+    layout="stack"
+    gap="4px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<ArtDirector
+    nodeId="CdR5ZRsGc"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="46%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</ArtDirector>
+<LaCalifornia
+    nodeId="N_LPr6qR9"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    left="0px"
+    centerY="46%"
+    <!-- project text style path, always starts with / -->
+    inlineTextStyle="/Text Styles/Small Mono"
+>
+</LaCalifornia>
+<Stack
+    nodeId="cdhMc3QIX"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    right="0px"
+    overflow="visible"
+    layout="stack"
+    gap="31px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="VyKl_E97z"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(255,255,255,0)"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="end"
+    stackAlignment="center"
+ />
+<TextLink
+    nodeId="p0mdHnoOe"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="89%"
+    <!-- the component id this instance uses -->
+    componentId="dVTZgYLeH"
+    variant="eyytyxpGy"
+    Kpveh2Q8O="Work"
+    bwVWMSt6G="/"
+ />
+<Stack
+    nodeId="Qh7HeHBYy"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(255,255,255,0)"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="end"
+    stackAlignment="center"
+ />
+<TextLink
+    nodeId="s53gn7S2y"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="89%"
+    <!-- the component id this instance uses -->
+    componentId="dVTZgYLeH"
+    variant="eyytyxpGy"
+    Kpveh2Q8O="INDEX"
+    bwVWMSt6G="/index"
+ />
+<Image
+    nodeId="FKGHTvuQ9"
+    position="absolute"
+    width="1fr"
+    height="1fr"
+    bottom="61px"
+    left="-270px"
+    overflow="hidden"
+ />
+<Stack
+    nodeId="Fi5eqTVff"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="0%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="Xd24ltg6W"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="37%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="IVoU2dMsG"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="0%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="I8uyJSYas"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="0%"
+    centerY="0%"
+    overflow="visible"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="center"
+    stackAlignment="center"
+ />
+<NavigationScrollGuard
+    nodeId="I0Wh3P9o8"
+    position="absolute"
+    width="1px"
+    height="1px"
+    top="0px"
+    left="-202px"
+    <!-- the component id this instance uses -->
+    componentId="Wnd19lx"
+    enabled="true"
+    selector="nav[data-framer-name="Navigation"], nav[name="Navigation"], [data-framer-name="Navigation"], [name="Navigation"]"
+    topThreshold="4"
+    smoothScroll="true"
+    scrollLerp="0.12"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<NavigationWhite
+    nodeId="uyF164vS7"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="157px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Forest Green"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 20px 20px 20px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<NavigationClear
+    nodeId="jcCoQwoAa"
+    position="absolute"
+    width="1200px"
+    height="fit-content"
+    top="320px"
+    left="0px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 20px 20px 20px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<NavigationBlackMobile
+    nodeId="IZofKJ4e0"
+    position="absolute"
+    width="390px"
+    height="fit-content"
+    top="0px"
+    left="1424px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 15px 20px 15px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<NavigationWhiteMobile
+    nodeId="KCRveuxVb"
+    position="absolute"
+    width="390px"
+    height="fit-content"
+    top="157px"
+    left="1424px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Forest Green"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 15px 20px 15px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<!-- This is a non-primary variant. To see children inside, call getNodeXml again on this nodeId. -->
+<NavigationClearMobile
+    nodeId="OBAYI94ML"
+    position="absolute"
+    width="390px"
+    height="fit-content"
+    top="314px"
+    left="1424px"
+    overflow="visible"
+    layout="stack"
+    gap="20px"
+    padding="20px 15px 20px 15px"
+    stackDirection="horizontal"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+<Stack
+    nodeId="Ou8gIyThB"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    top="0px"
+    left="0px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="rgba(255,255,255,0)"
+    overflow="hidden"
+    layout="stack"
+    gap="10px"
+    stackDirection="horizontal"
+    stackDistribution="end"
+    stackAlignment="center"
+ />
+<TextLink
+    nodeId="qgb8Pm0bn"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="89%"
+    <!-- the component id this instance uses -->
+    componentId="dVTZgYLeH"
+    variant="eyytyxpGy"
+    Kpveh2Q8O="ABOUT"
+    bwVWMSt6G="/about"
+ />
+<OpenNavigationLink
+    nodeId="DriyMzDI3"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    <!-- the component id this instance uses -->
+    componentId="V3EjteYMK"
+    variant="hgGgywLPq"
+    pmLxJr3U4="CONTACT"
+    b89VyIKsR="rgb(255, 255, 255)"
+ />
+<OpenNavigationLink
+    nodeId="Pp5TVf4pa"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    <!-- the component id this instance uses -->
+    componentId="V3EjteYMK"
+    variant="hgGgywLPq"
+    pmLxJr3U4="PROFILE"
+    b89VyIKsR="rgb(255, 255, 255)"
+ />
+<OpenNavigationLink
+    nodeId="vqYu_A2uq"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    <!-- the component id this instance uses -->
+    componentId="V3EjteYMK"
+    variant="hgGgywLPq"
+    pmLxJr3U4="PLAYGROUND"
+    fHKDDMhyL="playground"
+    b89VyIKsR="rgb(255, 255, 255)"
+ />
+<OpenNavigationLink
+    nodeId="giDjPQm7q"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    <!-- the component id this instance uses -->
+    componentId="V3EjteYMK"
+    variant="hgGgywLPq"
+    pmLxJr3U4="CASE STUDIES"
+    b89VyIKsR="rgb(255, 255, 255)"
+ />
+<OpenNavigationLink
+    nodeId="u8M3U5mVr"
+    position="absolute"
+    width="fit-content"
+    height="fit-content"
+    centerX="50%"
+    centerY="12%"
+    <!-- the component id this instance uses -->
+    componentId="V3EjteYMK"
+    variant="hgGgywLPq"
+    pmLxJr3U4="CASE STUDIES v2"
+    b89VyIKsR="rgb(255, 255, 255)"
+ />

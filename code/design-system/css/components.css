@@ -70,6 +70,26 @@
     transform: translateY(calc(-1 * (var(--mh-flip-h) + var(--mh-distance-flip-gap))));
 }
 
+/* Below 810px the rail doesn't roll: one label stays visible, and the link
+   around it grows to a 44px target (15.5px above and below a 13px mask). */
+@media (max-width: 809px) {
+    .mh-flip__track,
+    :is(a, button, .mh-flip-host):is(:hover, :focus-visible) .mh-flip__track,
+    .mh-flip:hover .mh-flip__track {
+        transform: none;
+        transition: none;
+    }
+
+    :is(a, button).mh-link:has(> .mh-flip),
+    .mh-link-list .mh-link,
+    .mh-action:not([data-variant]) {
+        display: inline-flex;
+        align-items: center;
+        min-width: var(--mh-touch-target);
+        min-height: var(--mh-touch-target);
+    }
+}
+
 /* ======================================================================
    Text link
    ====================================================================== */
@@ -224,19 +244,44 @@
     padding: 5px 9px 6px;
 }
 
+/* Tablet keeps the desktop type size (13px since 2026-10-30) with a tighter box. */
 @media (max-width: 1199px) {
     .mh-tags { gap: 5px; }
     .mh-tag {
-        font-size: var(--mh-type-label-sm-size);
         min-height: 23px;
         padding: 5px 9px 6px;
     }
 }
 
+/* Mobile: 44px pills in one row that scrolls sideways from screen edge to
+   screen edge, while the first pill still starts on the page gutter. */
 @media (max-width: 809px) {
+    .mh-tags {
+        flex-wrap: nowrap;
+        width: 100vw;
+        max-width: none;
+        margin-inline: calc((100% - 100vw) / 2);
+        padding-inline: calc((100vw - 100%) / 2);
+        /* Room for borders and focus rings, cancelled by the negative margin. */
+        padding-block: var(--mh-pill-scroll-clearance);
+        margin-block: calc(-1 * var(--mh-pill-scroll-clearance));
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    .mh-tags::-webkit-scrollbar {
+        display: none;
+    }
+
     .mh-tag {
-        min-height: 25px;
-        padding: 7px 10px;
+        flex: 0 0 auto;
+        max-width: none;
+        min-width: var(--mh-touch-target);
+        min-height: var(--mh-touch-target);
+        /* 8 / 7px: a half-pixel optical lift for the mono capitals. */
+        padding: 8px 24px 7px;
+        line-height: 1.3;
     }
 }
 
@@ -340,14 +385,100 @@
     }
 }
 
+.mh-nav__menu,
+.mh-nav-panel {
+    display: none;
+}
+
+/* Mobile: name + MENU. Routes live in a full-screen Forest Green panel. */
 @media (max-width: 809px) {
     .mh-nav {
+        position: fixed;
+        inset: 0 0 auto 0;
         grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        padding-top: 0;
     }
 
     .mh-nav__role,
-    .mh-nav__location {
+    .mh-nav__location,
+    .mh-nav__links {
         display: none;
+    }
+
+    .mh-nav__menu {
+        appearance: none;
+        background: none;
+        border: 0;
+        padding: 0;
+        color: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 60px;
+        height: var(--mh-touch-target);
+        touch-action: manipulation;
+    }
+
+    .mh-nav-panel {
+        position: fixed;
+        inset: 0;
+        z-index: calc(var(--mh-z-nav) + 1);
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 0 var(--mh-gutter) max(12px, env(safe-area-inset-bottom));
+        color: var(--mh-text-brand);
+        background-color: var(--mh-bg-page);
+    }
+
+    .mh-nav-panel[hidden] {
+        display: none;
+    }
+
+    .mh-nav-panel__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: var(--mh-nav-height);
+    }
+
+    .mh-nav-panel__routes {
+        margin: var(--mh-space-6) 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* Display M (42px on phone), title case, 12px above and below: 66px rows. */
+    .mh-nav-panel__routes a {
+        display: block;
+        padding-block: var(--mh-space-4);
+        color: inherit;
+        text-decoration: none;
+        font-family: var(--mh-type-display-m-family);
+        font-size: var(--mh-type-display-m-size);
+        line-height: var(--mh-type-display-m-leading);
+        letter-spacing: var(--mh-type-display-m-tracking);
+    }
+
+    .mh-nav-panel__social {
+        display: flex;
+        gap: var(--mh-space-6);
+        margin: auto 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mh-nav-panel__social a {
+        display: inline-flex;
+        align-items: center;
+        min-width: var(--mh-touch-target);
+        min-height: var(--mh-touch-target);
+        color: inherit;
+        text-decoration: none;
     }
 }
 
@@ -392,7 +523,7 @@
 .mh-footer__contact {
     display: inline-flex;
     align-items: flex-start;
-    gap: var(--mh-cta-row-gap);
+    gap: var(--mh-cta-suffix-gap);
     color: inherit;
     text-decoration: none;
     font-family: var(--mh-type-display-footer-family);
@@ -435,6 +566,37 @@
 }
 
 @media (max-width: 809px) {
+    /* Measured from the live phone footer: 16px section gap + 20px container
+       padding above the rows; the 44px base-bar links sit inside the
+       container's 120px bottom padding, their labels 22px off the edge. */
+    .mh-footer {
+        gap: 0;
+        padding-bottom: 6.5px;
+    }
+
+    .mh-footer__contacts {
+        width: 100%;
+        margin-top: 36px;
+        margin-left: 0;
+    }
+
+    .mh-footer__bar {
+        margin-top: 69.5px;
+        padding-bottom: 0;
+    }
+
+    .mh-footer__contact {
+        width: 100%;
+        min-height: var(--mh-touch-target);
+        line-height: 1em;
+        white-space: nowrap;
+    }
+
+    .mh-footer__contact sup {
+        padding-top: 0;
+        letter-spacing: 0.01em;
+    }
+
     .mh-footer__bar {
         grid-template-columns: minmax(0, 1fr) auto;
     }
@@ -659,17 +821,33 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     }
 }
 
+/* Per-row year: shown only on mobile, where the year groups collapse. */
+.mh-index__row-year {
+    display: none;
+}
+
 @media (max-width: 809px) {
     .mh-index__group {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .mh-index__year {
-        padding-bottom: 0;
+    .mh-index__year,
+    .mh-index__industry {
+        display: none;
     }
 
-    .mh-index__title {
-        font-size: var(--mh-type-body-size);
+    .mh-index__group + .mh-index__group {
+        border-top: var(--mh-border-hairline) solid var(--mh-border-rule);
+    }
+
+    .mh-index__row {
+        grid-template-columns: minmax(0, 1fr) max-content;
+        min-height: 56px;
+    }
+
+    .mh-index__row-year {
+        display: block;
+        text-align: right;
     }
 }
 
@@ -698,6 +876,12 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     padding: 0;
     margin-bottom: var(--mh-space-4);
     color: var(--mh-text-muted);
+}
+
+.mh-filter__options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .mh-filter__item {
@@ -736,10 +920,100 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     visibility: visible;
 }
 
+/* Mobile-only disclosure triggers; hidden on desktop and tablet. */
+.mh-filter__toggle,
+.mh-filter__done {
+    display: none;
+}
+
+/* Mobile: Year / Service / Industry become three disclosure buttons between
+   two rules. One panel opens at a time, full width under the triggers. */
 @media (max-width: 809px) {
     .mh-filter {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: var(--mh-space-7);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: var(--mh-space-4);
+        border-block: var(--mh-border-hairline) solid var(--mh-border-rule);
+    }
+
+    .mh-filter__group {
+        display: contents;
+    }
+
+    .mh-filter__heading {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .mh-filter__toggle {
+        appearance: none;
+        background: none;
+        border: 0;
+        grid-row: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 48px;
+        padding: 8px 0;
+        color: var(--mh-text-strong);
+        cursor: pointer;
+        font-family: var(--mh-type-label-family);
+        font-size: var(--mh-type-label-size);
+        line-height: 1.3;
+        text-transform: uppercase;
+    }
+
+    .mh-filter__toggle::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        margin-right: 3px;
+        border-right: var(--mh-border-hairline) solid currentColor;
+        border-bottom: var(--mh-border-hairline) solid currentColor;
+        transform: translateY(-2px) rotate(45deg);
+    }
+
+    .mh-filter__toggle[aria-expanded="true"]::after {
+        transform: translateY(2px) rotate(-135deg);
+    }
+
+    .mh-filter__options {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: none;
+        flex-direction: column;
+        padding-bottom: var(--mh-space-4);
+    }
+
+    .mh-filter__group[data-open] .mh-filter__options {
+        display: flex;
+    }
+
+    .mh-filter__item,
+    .mh-filter__done {
+        min-height: var(--mh-touch-target);
+    }
+
+    .mh-filter__done {
+        appearance: none;
+        background: none;
+        border: 0;
+        padding: 0;
+        display: block;
+        align-self: flex-end;
+        color: inherit;
+        cursor: pointer;
+        font-family: var(--mh-type-label-family);
+        font-size: var(--mh-type-label-size);
+        text-transform: uppercase;
+    }
+
+    .mh-filter__clear {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        min-height: var(--mh-touch-target);
     }
 }
 
@@ -773,6 +1047,13 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     text-decoration: underline;
     text-decoration-thickness: var(--mh-border-hairline);
     text-underline-offset: 3px;
+}
+
+@media (max-width: 809px) {
+    .mh-view-toggle button {
+        min-width: var(--mh-touch-target);
+        min-height: var(--mh-touch-target);
+    }
 }
 
 /* ======================================================================
@@ -859,6 +1140,12 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     align-items: center;
     gap: var(--mh-space-6);
     padding-bottom: 10px;
+}
+
+@media (max-width: 809px) {
+    .mh-hero__bar .mh-link {
+        min-height: var(--mh-touch-target);
+    }
 }
 
 /* Case-study variant: bold title, sentence continues in Stroke Gray. */
@@ -1042,11 +1329,6 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 
 .mh-loader__identity {
     margin: 0;
-    font-family: var(--mh-type-heading-family);
-    font-size: 30px;
-    line-height: 120%;
-    letter-spacing: -0.01em;
-    text-align: center;
     transition: opacity var(--mh-duration-base) var(--mh-ease-smooth);
 }
 
@@ -1070,12 +1352,21 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 .mh-loader[data-state="lifted"] .mh-loader__bar { transform: scaleX(1); }
 .mh-loader[data-state="lifted"] .mh-loader__identity { opacity: 0; }
 
-@media (max-width: 1199px) {
-    .mh-loader__identity { font-size: 24px; }
+/* ======================================================================
+   Wordmark: © Micah Hoang, outlined from Figma node 91:521
+   ====================================================================== */
+
+.mh-wordmark {
+    display: block;
+    width: var(--mh-wordmark-width, 556px);
+    max-width: calc(100vw - 64px);
+    height: auto;
+    aspect-ratio: 7682.3 / 1025.01;
+    flex: none;
 }
 
-@media (max-width: 809px) {
-    .mh-loader__identity { font-size: 19px; }
+@media (max-width: 1199px) {
+    .mh-wordmark { width: var(--mh-wordmark-width, 444px); }
 }
 
 /* ======================================================================

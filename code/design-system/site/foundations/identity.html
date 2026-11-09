@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Identity – Micah Hoang Design System</title>
-<meta name="description" content="The name as wordmark, the ©2026 signature, and where each appears.">
+<meta name="description" content="The © Micah Hoang wordmark, the name set in type, and where each appears.">
 <link rel="alternate" type="text/markdown" href="../../content/foundations/identity.md">
 <link rel="stylesheet" href="../../css/fonts.css">
 <link rel="stylesheet" href="../../tokens/tokens.css">
@@ -74,15 +74,20 @@
         <h1 class="mh-text-display-m">Identity</h1>
         <a class="mh-action" data-variant="pill" href="../../content/foundations/identity.md" title="This page as markdown, for agents">Markdown</a>
       </div>
-      <p class="ds-lede mh-text-heading">The name as wordmark, the ©2026 signature, and where each appears.</p>
+      <p class="ds-lede mh-text-heading">The © Micah Hoang wordmark, the name set in type, and where each appears.</p>
       
       <hr class="mh-rule">
     </header>
     <article class="ds-prose"><h2 id="overview"><a class="ds-anchor" href="#overview">Overview</a></h2>
-<p>There is no logo. The identity is the name set in type, plus a few repeated signatures. Consistency is what makes it work: the same words, set the same way, in the same places.</p>
-<h2 id="marks"><a class="ds-anchor" href="#marks">Marks</a></h2>
-<div class="ds-table"><table><thead><tr><th>Mark</th><th>Setting</th><th>Where</th></tr></thead><tbody><tr><td><strong>Micah Hoang</strong> (display)</td><td>Display XL, GT Standard Bold, Forest Green</td><td>Home hero, once</td></tr><tr><td><strong>MICAH HOANG</strong> (label)</td><td>Mono label, uppercase</td><td>Nav, top left, every page; links home</td></tr><tr><td><strong>Micah Hoang ©2026</strong></td><td>Heading style, GT Standard Regular, Cream on Forest Green, centered</td><td>Boot loader identity</td></tr><tr><td><strong>©2026</strong></td><td>Mono label</td><td>Right end of the hero link row and the footer bar</td></tr><tr><td><strong>MICAH.HOANG @HEY.COM</strong></td><td>Display Footer + mono superscript</td><td>Footer contact</td></tr></tbody></table></div>
-<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-stack">
+<p>The identity is the name. One drawn mark exists, the <strong>© Micah Hoang wordmark</strong>, outlined from the personal-identity Figma file and used where the name has to stand alone (the boot loader). Everywhere else the name is set in type. Consistency is what makes it work: the same words, set the same way, in the same places.</p>
+<h2 id="wordmark"><a class="ds-anchor" href="#wordmark">Wordmark</a></h2>
+<figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="false">Cream</button><button type="button" data-set-surface="green" aria-pressed="true">Green</button></div></div><div class="ds-preview" data-surface="green"><img class="mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang"></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;img class="mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang"&gt;</code></pre></details></figure>
+<figure class="ds-example" id="ex-2"><div class="ds-example__bar"><span>Example 2</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><img class="mh-wordmark" src="../../assets/identity/wordmark-forest-green.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px"></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;img class="mh-wordmark" src="../../assets/identity/wordmark-forest-green.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px"&gt;</code></pre></details></figure>
+<div class="ds-table"><table><thead><tr><th>File</th><th>Fill</th><th>Use</th></tr></thead><tbody><tr><td><code>assets/identity/wordmark.svg</code></td><td><code>currentColor</code></td><td>Inline in HTML or a code component, so it takes the text color</td></tr><tr><td><code>assets/identity/wordmark-cream.svg</code></td><td>Cream <code>#F7F5F0</code></td><td><code>&lt;img&gt;</code> on Forest Green (the boot loader)</td></tr><tr><td><code>assets/identity/wordmark-forest-green.svg</code></td><td>Forest Green <code>#233324</code></td><td><code>&lt;img&gt;</code> on Cream</td></tr></tbody></table></div>
+<ul><li><strong>Source:</strong> Figma personal-identity node <code>91:521</code>, saved in the repo at <code>assets/identity/micah-hoang-copyright.svg</code>. The design-system copies use the live loader's corrected outline: the © is one filled and stroked path (no mask), which removes the antialiasing seams the original export showed. 11 paths, no bitmaps.</li><li><strong>Proportions:</strong> viewBox <code>7682.3 × 1025.01</code> (about 7.5 : 1). Never stretch it; set width only.</li><li><strong>Size:</strong> 556px wide on desktop, 444px on tablet, never wider than the viewport minus 64px (<code>.mh-wordmark</code> does this). Don't render it below about 200px wide.</li><li><strong>Color:</strong> Cream on Forest Green or Forest Green on Cream. No other colors, outlines or effects.</li><li><strong>Render as vector.</strong> Inline SVG or <code>&lt;img&gt;</code>. The live loader moved off a CSS mask because it looked soft at small sizes.</li></ul>
+<h2 id="marks-set-in-type"><a class="ds-anchor" href="#marks-set-in-type">Marks set in type</a></h2>
+<div class="ds-table"><table><thead><tr><th>Mark</th><th>Setting</th><th>Where</th></tr></thead><tbody><tr><td><strong>Micah Hoang</strong> (display)</td><td>Display XL, GT Standard Bold, Forest Green</td><td>Home hero, once</td></tr><tr><td><strong>MICAH HOANG</strong> (label)</td><td>Mono label, uppercase</td><td>Nav, top left, every page; links home</td></tr><tr><td><strong>©2026</strong></td><td>Mono label</td><td>Right end of the hero link row and the footer bar</td></tr><tr><td><strong>MICAH.HOANG @HEY.COM</strong></td><td>Display Footer + mono superscript</td><td>Footer contact</td></tr></tbody></table></div>
+<figure class="ds-example" id="ex-3"><div class="ds-example__bar"><span>Example 3</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview" data-surface="cream"><div class="ds-demo-stack">
   <p class="mh-text-display-xl" style="margin:0">Micah Hoang</p>
   <div class="ds-demo-row" style="justify-content:space-between">
     <span class="mh-label">Micah Hoang</span>
@@ -97,16 +102,15 @@
     &lt;span class="mh-label"&gt;©2026&lt;/span&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></details></figure>
-<figure class="ds-example" id="ex-2"><div class="ds-example__bar"><span>Example 2</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="false">Cream</button><button type="button" data-set-surface="green" aria-pressed="true">Green</button></div></div><div class="ds-preview" data-surface="green"><p class="mh-loader__identity" style="color:var(--mh-text-brand)">Micah Hoang ©2026</p></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;p class="mh-loader__identity" style="color:var(--mh-text-brand)"&gt;Micah Hoang ©2026&lt;/p&gt;</code></pre></details></figure>
 <h2 id="descriptor"><a class="ds-anchor" href="#descriptor">Descriptor</a></h2>
 <p>The positioning line sits under the hero name in the Heading style, broken over two lines:</p>
 <blockquote>Brand designer with a systems mind.</blockquote>
 <p>The nav repeats it in short form: <code>BRAND DESIGNER</code> and <code>LOS ANGELES, CALIFORNIA</code>.</p>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>Write the name exactly "Micah Hoang"; uppercase only through mono labels.</li><li>The copyright year comes from <code>FooterCopyrightYear</code> (<code>BF2H03E</code>) in Framer; don't hard-code a different year.</li><li>Don't add a monogram, logo or favicon glyph that isn't the name.</li></ul></article>
+<ul><li>Write the name exactly "Micah Hoang"; uppercase only through mono labels.</li><li>The copyright year comes from <code>FooterCopyrightYear</code> (<code>BF2H03E</code>) in Framer; don't hard-code a different year. The wordmark's © carries no year.</li><li>Use the wordmark only where the name stands alone. Don't put it in the nav, footer or hero, which set the name in type.</li><li>Don't add a monogram, favicon glyph or second logo.</li></ul></article>
     <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/foundations/identity.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
   </main>
-  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#marks">Marks</a><a href="#descriptor">Descriptor</a><a href="#usage">Usage</a></nav>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#overview">Overview</a><a href="#wordmark">Wordmark</a><a href="#marks-set-in-type">Marks set in type</a><a href="#descriptor">Descriptor</a><a href="#usage">Usage</a></nav>
 </div>
 <script src="../assets/search-index.js"></script>
 <script src="../../js/components.js"></script>

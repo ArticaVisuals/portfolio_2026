@@ -1,0 +1,320 @@
+[
+  {
+    "n": 1,
+    "layout": "cover",
+    "section": "45-minute graduate workshop",
+    "title": "Build your\nICP Brain",
+    "body": "A portfolio reviewer.\nAn interview coach.\nGrounded in your own work.",
+    "footer": "Micah Hoang"
+  },
+  {
+    "n": 2,
+    "layout": "split",
+    "section": "Today’s goal",
+    "title": "One body of context.\nTwo useful tools.",
+    "items": [
+      [
+        "Portfolio reviewer",
+        "Find the most useful next edit for one project."
+      ],
+      [
+        "Interview coach",
+        "Practice one answer, get feedback, then try again."
+      ]
+    ]
+  },
+  {
+    "n": 3,
+    "layout": "demo",
+    "section": "Watch first",
+    "title": "See the full loop.",
+    "body": "A real review.\nOne coached answer.",
+    "demoPurpose": "Overview: review and interview"
+  },
+  {
+    "n": 4,
+    "layout": "flow",
+    "section": "The idea",
+    "title": "The context does the work.",
+    "items": [
+      [
+        "Your evidence",
+        "Projects, experience, reflections"
+      ],
+      [
+        "Their priorities",
+        "One job description + company research"
+      ],
+      [
+        "Your ICP Brain",
+        "A shared lens for reviewing and practicing"
+      ]
+    ],
+    "footer": "A simulated hiring perspective. Keep checking its judgment."
+  },
+  {
+    "n": 5,
+    "layout": "demo",
+    "section": "Before we begin",
+    "title": "Open your workshop folder.",
+    "body": "In Code, choose\nportfolio-brain\nas your folder.",
+    "demoPurpose": "Choose folder and inspect source files"
+  },
+  {
+    "n": 6,
+    "layout": "section",
+    "section": "01 / Understand yourself",
+    "title": "Start with what\nyou already know.",
+    "body": "Your homework is useful context.\nYou do not need to rewrite it.",
+    "tone": "light"
+  },
+  {
+    "n": 7,
+    "layout": "split",
+    "section": "01 / Gather the evidence",
+    "title": "Your homework already\ncontains interview stories.",
+    "items": [
+      [
+        "Strengths + growth",
+        "How you collaborate, make decisions, and want to improve."
+      ],
+      [
+        "Relationship map",
+        "People, projects, and moments that reveal how you work."
+      ]
+    ],
+    "footer": "Include relevant context. Leave out other people’s private details."
+  },
+  {
+    "n": 8,
+    "layout": "prompt",
+    "section": "01 / Understand yourself",
+    "step": "01",
+    "title": "Check what Claude knows.",
+    "prompt": "Read the files in sources/. List what you could and could not read.\n\nSummarize my experience, project contributions, strengths, and growth areas. Cite a source for each claim.\n\nFlag missing or contradictory facts. Do not invent outcomes or infer my role from a team credit. Ask up to three questions that would improve your understanding."
+  },
+  {
+    "n": 9,
+    "layout": "demo",
+    "section": "01 / Checkpoint",
+    "title": "Check what Claude understood.",
+    "body": "Check file access.\nCorrect your role\nand missing facts.",
+    "demoPurpose": "Audit output and factual corrections"
+  },
+  {
+    "n": 10,
+    "layout": "section",
+    "section": "02 / Build your reviewer",
+    "title": "Give the reviewer\na point of view.",
+    "body": "Your ICP is the person you want to hire you, described through their priorities.",
+    "tone": "dark"
+  },
+  {
+    "n": 11,
+    "layout": "prompt",
+    "section": "02 / Define the hiring lens",
+    "step": "02",
+    "title": "Understand your target.",
+    "prompt": "Read targets/job-description.txt and only company notes relevant to that job.\n\nSeparate the employer’s stated requirements from your assumptions. Describe the likely portfolio reviewer and three reasons they might pass on work like mine. Cite evidence.\n\nCompare those priorities with my project evidence. Identify one positioning tension: what could read as either a strength or a weakness? Turn it into three testable review rules."
+  },
+  {
+    "n": 12,
+    "layout": "contrast",
+    "section": "02 / Micah’s example",
+    "title": "Range needs a center.",
+    "items": [
+      [
+        "The risk",
+        "“I do a little of everything.”"
+      ],
+      [
+        "The argument",
+        "“I build brand systems.\nThe range is the proof.”"
+      ]
+    ],
+    "footer": "For Decagon, test that argument against brand coherence, marketing work, and speed."
+  },
+  {
+    "n": 13,
+    "layout": "prompt",
+    "section": "02 / Save the context",
+    "step": "03",
+    "title": "Make it reusable.",
+    "prompt": "Create ICP.md with my positioning, evidence, reviewer priorities, and unknowns. Keep shared candidate facts separate from each job’s lens.\n\nCreate .claude/skills/portfolio-review/SKILL.md and .claude/skills/interview-prep/SKILL.md with valid name and description frontmatter. Both read ICP.md and sources.\n\nThe reviewer gives three sourced edits and states its scope. Make interview prep adaptive: role-specific questions, follow-ups, no fixed question cap, varied retakes, and job switching. Update existing skills to these rules. Show the saved files and slash commands."
+  },
+  {
+    "n": 14,
+    "layout": "demo",
+    "section": "02 / Checkpoint",
+    "title": "Find your saved context and skills.",
+    "body": "Open ICP.md.\nFind both SKILL.md files.\nTry the slash commands.",
+    "demoPurpose": "Saved ICP, skill files and slash menu"
+  },
+  {
+    "n": 15,
+    "layout": "prompt",
+    "section": "02 / Test the reviewer",
+    "step": "04",
+    "title": "Review one project.",
+    "prompt": "/portfolio-review sources/portfolio-project.pdf\n\nReview this project using ICP.md and targets/job-description.txt. Give three prioritized edits.\n\nFor each edit, identify the specific sentence or visible detail, the hiring concern, and the proposed change. Cite the evidence.\n\nState what you could actually read or see. Mark any new fact as needing my confirmation. Do not rewrite the whole project."
+  },
+  {
+    "n": 16,
+    "layout": "demo",
+    "section": "02 / Checkpoint",
+    "title": "Ask it to show the evidence.",
+    "body": "Ask which sentence\nor image supports\nthe recommendation.",
+    "demoPurpose": "Portfolio review and pushback"
+  },
+  {
+    "n": 17,
+    "layout": "section",
+    "section": "03 / Practice the interview",
+    "title": "Use the same context\nto tell a stronger story.",
+    "body": "Start with “Tell me about yourself.”\nGet coaching. Try again.",
+    "tone": "light"
+  },
+  {
+    "n": 18,
+    "layout": "prompt",
+    "section": "03 / Prepare for one job",
+    "step": "05",
+    "title": "Build the interview brief.",
+    "prompt": "/interview-prep brief targets/job-description.txt\n\nUse ICP.md, my evidence, this job, and references/interview-question-bank.md.\n\nSave outputs/INTERVIEW-BRIEF.md as a portable context pack: sourced role priorities, simulated ICP interviewer lens, supported stories, unknowns, and 8–12 seed questions. Seeds are not a limit.\n\nInclude intro → “Tell me about yourself” → coaching/retry, adaptive follow-ups, new questions, varied retakes, and job switching. Label inferences and question sources; never claim actual employer questions. Preserve a separate brief per job."
+  },
+  {
+    "n": 19,
+    "layout": "demo",
+    "section": "03 / Move the context",
+    "title": "Move the brief into Claude.",
+    "body": "Share the full brief\nin a regular Claude chat.\nYour local files stay\nin the Code project.",
+    "demoPurpose": "Upload or paste the brief in regular Claude"
+  },
+  {
+    "n": 20,
+    "layout": "prompt",
+    "section": "03 / Start the conversation",
+    "step": "06",
+    "title": "Coach me after each answer.",
+    "prompt": "Use my brief. Wait until I say “Start the interview.” Give a short simulated interviewer intro, then ask “Tell me about yourself.” Wait; no example first.\n\nAfter each answer, coach relevance, contribution, and evidence; suggest a supported example and invite a retry. Never invent facts.\n\nChoose role-specific questions and follow-ups from my answers and the ICP lens. Keep going beyond the seeds. Support “continue,” “retry,” and “new round” with fresh questions after the opening. Switch jobs when I share a new description or brief."
+  },
+  {
+    "n": 21,
+    "layout": "demo",
+    "section": "03 / Voice walkthrough",
+    "title": "“Tell me about yourself.”",
+    "body": "Hear the interviewer intro.\nAnswer aloud.\nGet coaching. Retry.",
+    "demoPurpose": "Interviewer intro → Tell me about yourself → coaching → retry"
+  },
+  {
+    "n": 22,
+    "layout": "practice",
+    "section": "03 / Paired practice · 9 minutes",
+    "title": "Six pairs.\nTwo short rounds.",
+    "items": [
+      [
+        "Round 1 · 4 minutes",
+        "Partner A practices “Tell me about yourself,” hears coaching, and retries. Partner B listens."
+      ],
+      [
+        "Round 2 · 4 minutes",
+        "Switch roles. Practice your own introduction for your target job."
+      ]
+    ],
+    "footer": "Use the final minute to save one improvement. Headphones; push-to-talk if the room is noisy."
+  },
+  {
+    "n": 23,
+    "layout": "checklist",
+    "section": "03 / Listen for the difference",
+    "title": "Does the retry\nsound more like you?",
+    "items": [
+      [
+        "Relevant",
+        "It answers the question and connects to the job."
+      ],
+      [
+        "Specific",
+        "It names your decision, action, and contribution."
+      ],
+      [
+        "Grounded",
+        "Its claims are true, supported, and in your voice."
+      ]
+    ]
+  },
+  {
+    "n": 24,
+    "layout": "deliverables",
+    "section": "What you take away",
+    "title": "A reviewer you can reuse.\nAn answer you improved.",
+    "items": [
+      [
+        "ICP.md + two skills",
+        "Your context and repeatable workflows"
+      ],
+      [
+        "One portfolio review",
+        "A specific next edit you understand"
+      ],
+      [
+        "INTERVIEW-BRIEF.md",
+        "A portable setup for your next practice"
+      ]
+    ]
+  },
+  {
+    "n": 25,
+    "layout": "statement",
+    "section": "After the workshop",
+    "title": "Keep going.\nTry a new round.\nSwitch jobs.",
+    "body": "Say “continue,” “retry,” or “new round.”\nFor another job, share its description or brief."
+  },
+  {
+    "n": 26,
+    "layout": "contact",
+    "section": "Keep in touch",
+    "title": "Questions?\nSend me a note.",
+    "body": "Happy to help you get unstuck.",
+    "email": "micah.hoang@hey.com",
+    "site": "micahhoang.com"
+  },
+  {
+    "n": 27,
+    "layout": "checklist",
+    "section": "Pre-work · send before class",
+    "title": "Arrive ready to build.",
+    "items": [
+      [
+        "Set up",
+        "Open a local folder in Claude Code and send a test prompt."
+      ],
+      [
+        "Collect",
+        "Save your resume, one portfolio project, homework, and one full job description."
+      ],
+      [
+        "Test voice",
+        "Start a voice conversation in regular Claude. Bring headphones."
+      ]
+    ],
+    "footer": "Export Miro content into readable text or PDF. Bring only material you want the tools to use."
+  },
+  {
+    "n": 28,
+    "layout": "example",
+    "section": "Reference · the live demo target",
+    "title": "Same person.\nA more specific lens.",
+    "items": [
+      [
+        "Micah’s broad ICP",
+        "A senior design lead looking for craft, attribution, and a systems mind."
+      ],
+      [
+        "Decagon’s role",
+        "Brand system growth, marketing storytelling, and fast iteration with craft."
+      ]
+    ],
+    "footer": "The listing says “Brand Design Lead” and asks for 4–6 years. Treat seniority and fit as questions to investigate."
+  }
+]

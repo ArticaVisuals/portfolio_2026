@@ -85,6 +85,7 @@
     <li><a class="mh-footer__contact" href="#">micah.hoang<sup>@hey.com</sup></a></li>
     <li><a class="mh-footer__contact" href="#">LinkedIn<sup>Connect</sup></a></li>
     <li><a class="mh-footer__contact" href="#">Cosmos<sup>Inspire</sup></a></li>
+    <li><a class="mh-footer__contact" href="#">GitHub<sup>Build</sup></a></li>
   </ul>
   <div class="mh-footer__bar">
     <p class="mh-label">Available for work</p>
@@ -92,6 +93,7 @@
       <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>LinkedIn</span><span aria-hidden="true">LinkedIn</span></span></span></a></li>
       <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Resume</span><span aria-hidden="true">Resume</span></span></span></a></li>
       <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>Cosmos</span><span aria-hidden="true">Cosmos</span></span></span></a></li>
+      <li><a class="mh-link" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>GitHub</span><span aria-hidden="true">GitHub</span></span></span></a></li>
     </ul>
     <p class="mh-label">©2026</p>
   </div>
@@ -101,6 +103,7 @@
     &lt;li&gt;&lt;a class="mh-footer__contact" href="#"&gt;micah.hoang&lt;sup&gt;@hey.com&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="mh-footer__contact" href="#"&gt;LinkedIn&lt;sup&gt;Connect&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="mh-footer__contact" href="#"&gt;Cosmos&lt;sup&gt;Inspire&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="mh-footer__contact" href="#"&gt;GitHub&lt;sup&gt;Build&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;div class="mh-footer__bar"&gt;
     &lt;p class="mh-label"&gt;Available for work&lt;/p&gt;
@@ -108,21 +111,22 @@
       &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;LinkedIn&lt;/span&gt;&lt;span aria-hidden="true"&gt;LinkedIn&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Resume&lt;/span&gt;&lt;span aria-hidden="true"&gt;Resume&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Cosmos&lt;/span&gt;&lt;span aria-hidden="true"&gt;Cosmos&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="mh-link" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;GitHub&lt;/span&gt;&lt;span aria-hidden="true"&gt;GitHub&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
     &lt;p class="mh-label"&gt;©2026&lt;/p&gt;
   &lt;/div&gt;
 &lt;/footer&gt;</code></pre></details></figure>
 <h2 id="anatomy"><a class="ds-anchor" href="#anatomy">Anatomy</a></h2>
-<ol><li><strong>Eyebrow</strong> (<code>mh-footer__eyebrow</code>): "Get in touch", <code>/Small Mono</code> 20px from the top. Its leading drops from 130% to 100% below 1200px.</li><li><strong>Contacts</strong>: 30px below the eyebrow (10px mobile). Three Display Footer rows (80 / 70 / 40px, uppercase, -2%), 10px apart, each with a <code>/Small Mono Footers</code> superscript 10px to its right and 2px down: <code>@HEY.COM</code>, <code>CONNECT</code>, <code>INSPIRE</code>.</li><li><strong>Base bar</strong>: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.</li></ol>
-<p>The whole block is 50vh tall on desktop and mobile, 40vh on tablet.</p>
+<ol><li><strong>Eyebrow</strong> (<code>mh-footer__eyebrow</code>): "Get in touch", <code>/Small Mono</code> 20px from the top. Its leading drops from 130% to 100% below 1200px.</li><li><strong>Contacts</strong>: four Display Footer rows, uppercase, each with a <code>/Small Mono Footers</code> superscript 10px to its right: <code>MICAH.HOANG</code> <code>@HEY.COM</code>, <code>LINKEDIN</code> <code>CONNECT</code>, <code>COSMOS</code> <code>INSPIRE</code>, <code>GITHUB</code> <code>BUILD</code> (added 2026-10).</li><li>Desktop / tablet: 80 / 70px, -2% tracking, rows 12px apart, superscript 2px down.</li><li>Mobile: rows are 44px touch targets with no gap between them. The label is fluid, <code>clamp(27px, (100vw − 40px) / 10, 38px)</code>: 28px at 320, 35px at 390, 38px at 430, with 1em leading and -1% tracking, so the full email stays on one line inside the 20px gutters. Superscripts use 0.01em tracking.</li><li><strong>Base bar</strong>: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list (LinkedIn, Resume, Cosmos, GitHub) starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.</li></ol>
+<p>With four rows the block is content height: about 548px on desktop and 501px on tablet (at least 50vh / 40vh), and 365px on a 390px phone.</p>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>The footer is the only large Forest Green block outside the boot loader. Always <code>data-surface="green"</code>.</li><li>The email reads as <code>MICAH.HOANG</code> with <code>@HEY.COM</code> as its superscript, so the display line stays one word.</li><li>Keep exactly three contact lines. Availability text reflects real status; change it when it changes.</li></ul>
+<ul><li>The footer is the only large Forest Green block outside the boot loader. Always <code>data-surface="green"</code>.</li><li>The email reads as <code>MICAH.HOANG</code> with <code>@HEY.COM</code> as its superscript, so the display line stays one word.</li><li>Keep exactly four contact lines, in this order. Availability text reflects real status; change it when it changes.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
-<div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-footer</code></td><td><code>footer</code></td><td>Add <code>data-surface="green"</code>; <code>min-height: var(--mh-footer-min-height)</code></td></tr><tr><td><code>mh-footer__eyebrow</code></td><td><code>p.mh-label</code></td><td>130% leading on desktop, 100% below</td></tr><tr><td><code>mh-footer__contacts</code></td><td><code>ul</code></td><td>Vertical list, 10px apart</td></tr><tr><td><code>mh-footer__contact</code></td><td><code>a</code></td><td>Display Footer type; <code>sup</code> child is the mono tag</td></tr><tr><td><code>mh-footer__bar</code></td><td><code>div</code></td><td>2 equal columns, 40px gap; children: availability, link list, ©year</td></tr></tbody></table></div>
+<div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-footer</code></td><td><code>footer</code></td><td>Add <code>data-surface="green"</code>; <code>min-height: var(--mh-footer-min-height)</code></td></tr><tr><td><code>mh-footer__eyebrow</code></td><td><code>p.mh-label</code></td><td>130% leading on desktop, 100% below</td></tr><tr><td><code>mh-footer__contacts</code></td><td><code>ul</code></td><td>Vertical list, 12px apart (no gap on mobile)</td></tr><tr><td><code>mh-footer__contact</code></td><td><code>a</code></td><td>Display Footer type; <code>sup</code> child is the mono tag; 44px min height on mobile</td></tr><tr><td><code>mh-footer__bar</code></td><td><code>div</code></td><td>2 equal columns, 40px gap; children: availability, link list, ©year</td></tr></tbody></table></div>
 <h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
 <ul><li>The <code>sup</code> text is part of the link name ("micah.hoang @hey.com"). Make sure the <code>href</code> matches (<code>mailto:</code>).</li><li>Cream on Forest Green is about 12:1 contrast, fine at every size.</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
-<ul><li>Home renders this as the page section <code>SectionCta</code> plus the <code>FooterWhite*</code> bar; case studies use the <strong>Footer</strong> component, whose contact rows measure 80 / 80 / 42px. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Home desktop treatment.</li></ul>
+<ul><li>Home renders this as the page section <code>SectionCta</code> plus the <code>FooterWhite*</code> bar; case studies use the <strong>Footer</strong> component. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Regular treatment.</li><li>Mobile rules (fluid size, 44px rows, 20px gutters, Optro's legacy <code>Row</code> layers) live in <code>NavigationScrollGuard</code> (<code>Wnd19lx</code>), pinned by <code>ResumeAssetHost</code> (<code>xDqfenf</code>). See <code>docs/mobile-footer-crx-polish-2026-10-30.md</code>.</li></ul>
 <ul><li>Native <strong>Footer</strong> component with desktop/tablet/phone variants (<code>FooterWhiteDesktop</code>, ...).</li><li>The display links use <code>TextEncryptionEffect</code> (<code>p7tSTaD</code>) for the per-letter scramble on hover. Keep it on these three links only.</li><li>Year: <code>FooterCopyrightYear</code> (<code>BF2H03E</code>).</li><li><code>ResumeAssetHost</code> (<code>xDqfenf</code>) is mounted invisibly inside the footer. It supplies the resume file and hosts the global helpers (<code>ParagraphPrettyWrap</code>, <code>NavigationScrollGuard</code>). <strong>Never remove it from the footer.</strong></li></ul>
 <h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>
 <ul><li>Don't add a sitemap, newsletter form or social icons.</li><li>Don't put the footer on Cream.</li></ul></article>

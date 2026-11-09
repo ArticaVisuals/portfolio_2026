@@ -1,0 +1,31 @@
+{
+  "title": "About Micah Hoang — Brand Designer",
+  "viewport": {
+    "width": 810,
+    "height": 1080
+  },
+  "scrollWidth": 810,
+  "navigation": [
+    {
+      "text": "MICAH HOANG",
+      "href": "./"
+    },
+    {
+      "text": "WORK\n\nWORK",
+      "href": "./"
+    },
+    {
+      "text": "PLAY\n\nPLAY",
+      "href": "./play"
+    },
+    {
+      "text": "INDEX\n\nINDEX",
+      "href": "./index"
+    },
+    {
+      "text": "ABOUT\n\nABOUT",
+      "href": "./about"
+    }
+  ],
+  "brokenImages": []
+}

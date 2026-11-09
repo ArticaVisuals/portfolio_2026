@@ -1,0 +1,42 @@
+{
+  "source": "https://www.figma.com/design/UQzClaXLADvU1tEfb1jX5C?node-id=87-266",
+  "status": "Complete in Framer draft: all six case-study headers match approved Figma copy across responsive layouts. Peak Energy already matched and was preserved. Six previously saved SEO summaries remain. CMS unchanged; temporary empty Description field removed. Nothing published.",
+  "projects": [
+    {
+      "figmaFrame": "163:2",
+      "title": "Gaia",
+      "description": "Gaia began as a personal exploration of two things I love: the outdoors and the community of people who share what they find there. I rebranded and redesigned iNaturalist, the world’s largest biodiversity platform, to turn a tool built for experts into an open invitation for anyone curious about nature. I scaled one identity into a complete visual system of logotype, color, typography, and icons, then extended the system across print, out of home, digital, and interactive pieces. I worked alone at every stage, from strategy and identity to a working iOS app I built in SwiftUI.",
+      "slug": "gaia"
+    },
+    {
+      "figmaFrame": "163:21",
+      "title": "AirPods Pro 3",
+      "description": "As a design intern on Apple’s Marcom Identity team, I worked on the AirPods Pro 3 launch, where one identity system had to hold across the keynote, Apple Retail, the web, and partner channels. I focused on hardware lighting, image making, and product angle lockups, plus feature and typography animations for motion. The role taught me to design within a large team, present work to stakeholders across marketing, and refine every asset through their feedback.",
+      "slug": "airpods"
+    },
+    {
+      "figmaFrame": "163:40",
+      "title": "Peak Energy",
+      "description": "Peak Energy builds sodium-ion batteries, a domestic alternative to lithium and a technology at the center of the next energy shift. This brand film announced the company's partnership with General Motors. It places sodium-ion on the timeline of human energy and frames Peak Energy as a leader in the next phase of power. I led the central animation sequence, developing the storyboards, directing the visual language, and building a precise line-based system that could carry both abstract concepts and product detail.",
+      "slug": "peak-energy"
+    },
+    {
+      "figmaFrame": "163:59",
+      "title": "Motion Connect 2025",
+      "description": "Motion Connect is an ArtCenter talk series bringing the motion design community together, with 2025 speakers from Apple TV, Hornet, and Brand New School. I based the identity on 1980s arcade graphics: bitmap glow, scanlines, and the boot-up energy of a machine powering on. From those cues, I built a brand system and carried the system across the motion reel, social media, and print, so every piece reads as part of one season.",
+      "slug": "motion-connect-2025"
+    },
+    {
+      "figmaFrame": "163:78",
+      "title": "Simon & Schuster",
+      "description": "In 2022, the Justice Department blocked Penguin Random House from buying Simon & Schuster, preserving one of the last independently owned Big Five publishers. Most coverage framed the ruling as a near miss, but I saw a positioning opportunity: independence as the asset, not the consolation prize. I grounded this self-initiated rebrand in real market data and focused my work on the visual result: an identity system spanning print, event design, digital, and social media.",
+      "slug": "simon-schuster"
+    },
+    {
+      "figmaFrame": "163:97",
+      "title": "National Park Playing Cards",
+      "description": "National Park Playing Cards started as my tribute to U.S. national parks and grew into a business I still run, with 20,000+ decks sold. The decks sell in 220+ stores nationwide, including REI and six national park visitor centers. I designed the full product system: cards, box, brand, and storefront. I also funded the launch on Kickstarter, built the business, and pitched retailers myself.",
+      "slug": "national-park-cards"
+    }
+  ]
+}

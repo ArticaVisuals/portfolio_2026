@@ -1,0 +1,2037 @@
+{
+  "pages": [
+    {
+      "url": "https://micahhoang.com/about",
+      "overflow": 0,
+      "h1": [
+        "Hey, I'm Micah."
+      ],
+      "headings": [
+        {
+          "text": "Hey, I'm Micah.",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "MICAH HOANG",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-wvJhz framer-Gyx0Q framer-d7p8lh framer-v-16mxeps framer-16ajx7x\" data-framer-name=\"Black\" href=\"./\" style=\"width: 100%; opacity: 1;\"><div class=\"framer-1y3ohui\" data-framer-name=\"Micah Hoang\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: rgb(255, 255, 255); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\">Micah Hoang</p></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 248,
+            "h": 13
+          }
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">Work</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "https://micahhoang.com/play",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./play\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">PLAY</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "https://micahhoang.com/index",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./index\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">INDEX</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "https://micahhoang.com/about",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./about\" data-framer-page-link-current=\"true\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">ABOUT</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "LINKEDIN",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1l3odso framer-er304w\" data-framer-appear-id=\"1l3odso\" data-framer-name=\"Social Link\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\" style=\"opacity: 1; transform: none; will-change: transform;\"><div class=\"framer-1r92pbx-container\" data-framer-appear-id=\"1r92pbx\" style=\"opacity: 1; transform: perspective(1200px); will-change: transform;\"><!--$--><div class=\"ssr-variant hidden-1vwimaa\"><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(1, 1, 3));user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&quot;, monospace;font-size:13px;f",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 62.40625,
+            "h": 13
+          }
+        },
+        {
+          "text": "RESUME",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-hh49bv framer-er304w\" data-framer-appear-id=\"hh49bv\" data-framer-name=\"Social Link\" href=\"https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf\" target=\"_blank\" style=\"opacity: 1; transform: none; will-change: transform;\"><div class=\"framer-1lk8mkj-container\" data-framer-appear-id=\"1lk8mkj\" style=\"opacity: 1; transform: perspective(1200px); will-change: transform;\"><!--$--><div class=\"ssr-variant hidden-1vwimaa\"><p data-mh-scramble-component=\"true\" style=\"margin:0;color:rgb(35, 51, 36);user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        },
+        {
+          "text": "COSMOS",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-12ycpb0 framer-er304w\" data-framer-appear-id=\"12ycpb0\" data-framer-name=\"Social Link\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\" style=\"opacity: 1; transform: none; will-change: transform;\"><div class=\"framer-1eukrf6-container\" data-framer-appear-id=\"1eukrf6\" style=\"opacity: 1; transform: perspective(1200px); will-change: transform;\"><!--$--><div class=\"ssr-variant hidden-1vwimaa\"><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(1, 1, 3));user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&quot;, monospace;font-size:13px;font-style:norma",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        },
+        {
+          "text": "GITHUB",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-dl05hv framer-er304w\" data-framer-appear-id=\"dl05hv\" data-framer-name=\"Social Link\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\" style=\"opacity: 1; transform: none; will-change: transform;\"><div class=\"framer-uu2p9h-container\" data-framer-appear-id=\"uu2p9h\" style=\"opacity: 1; transform: perspective(1200px); will-change: transform;\"><!--$--><div class=\"ssr-variant hidden-1vwimaa\"><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(1, 1, 3));user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        },
+        {
+          "text": "HIDDEN CHARACTERS PODCAST",
+          "href": "https://www.youtube.com/watch?v=jFF8EivITPs",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-text framer-styles-preset-eeskf2\" data-styles-preset=\"CyZvEVnxW\" href=\"https://www.youtube.com/watch?v=jFF8EivITPs\" target=\"_blank\" rel=\"\">HIDDEN CHARACTERS PODCAST</a>",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 191.75,
+            "h": 15
+          }
+        },
+        {
+          "text": "MICAH.HOANG\n\n@HEY.COM",
+          "href": "mailto:micah.hoang@hey.com",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-k0vvn3 framer-er304w\" data-framer-name=\"Row\" href=\"mailto:micah.hoang@hey.com\"><div class=\"framer-vxu5r3-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">M</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">I</span><sp",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 621.8984375,
+            "h": 90
+          }
+        },
+        {
+          "text": "LINKEDIN\n\nCONNECT",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1jhmb91 framer-er304w\" data-framer-name=\"Row\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\"><div class=\"framer-ljtqfy-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">L</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;paddi",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 396.4453125,
+            "h": 80
+          }
+        },
+        {
+          "text": "COSMOS\n\nINSPIRE",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-wgudnq framer-er304w\" data-framer-name=\"Row\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\"><div class=\"framer-1qjhfjj-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">C</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;t",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 404.8359375,
+            "h": 80
+          }
+        },
+        {
+          "text": "GITHUB\n\nBUILD",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1c1ru81 framer-er304w\" data-framer-name=\"Row\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\"><div class=\"framer-11hwmzi-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">G</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;tra",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 323.171875,
+            "h": 80
+          }
+        },
+        {
+          "text": "LINKEDIN\n\n,",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1fr4fgp framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-1lh0f5i-container\" data-framer-appear-id=\"1lh0f5i\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">LINKEDIN</p><!--/$--></div><div class=\"f",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 70.2109375,
+            "h": 13
+          }
+        },
+        {
+          "text": "RESUME\n\n,",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-6eivmt framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-11171y9-container\" data-framer-appear-id=\"11171y9\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">RESUME</p><!--/$--></di",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "COSMOS\n\n,",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-nvaw5a framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-8v1yej-container\" data-framer-appear-id=\"8v1yej\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">COSMOS</p><!--/$--></div><div class=\"framer-1bizf4g\" data-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "GITHUB",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-197w6x6 framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-b9wex3-container\" data-framer-appear-id=\"b9wex3\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f);user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">GITHUB</p><!--/$--></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        }
+      ],
+      "imgs": [
+        {
+          "alt": "",
+          "src": "https://framerusercontent.com/images/geBwSsIC1HJB3whFBU4BH2joXW8.jpg?scale-down-to=1024&width=2000&height=2940",
+          "loaded": true
+        }
+      ],
+      "videos": [],
+      "bodyBackground": "rgb(247, 245, 240)"
+    },
+    {
+      "url": "https://micahhoang.com/",
+      "overflow": 0,
+      "h1": [
+        "Micah Hoang"
+      ],
+      "headings": [
+        {
+          "text": "Micah Hoang",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "120px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "Brand designer with a systems mind.",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "35px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "Selected",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "work",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "About",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "Micah",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "MICAH HOANG",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-wvJhz framer-Gyx0Q framer-d7p8lh framer-v-16mxeps framer-16ajx7x\" data-framer-name=\"Black\" href=\"./\" data-framer-page-link-current=\"true\" style=\"width: 100%; opacity: 1;\"><div class=\"framer-1y3ohui\" data-framer-name=\"Micah Hoang\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: rgb(255, 255, 255); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\">Micah Hoang</p></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 248,
+            "h": 13
+          }
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./\" data-framer-page-link-current=\"true\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">Work</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv:",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "https://micahhoang.com/play",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./play\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">PLAY</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "https://micahhoang.com/index",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./index\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">INDEX</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "https://micahhoang.com/about",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./about\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">ABOUT</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "LINKEDIN\n\n,",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-pw433q framer-22mm1d\" data-framer-appear-id=\"pw433q\" data-framer-name=\"Social Link\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><div class=\"framer-1pe0kaj-container\" data-framer-appear-id=\"1pe0kaj\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(1, 1, 3));user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Tri",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 70.2109375,
+            "h": 13
+          }
+        },
+        {
+          "text": "RESUME\n\n,",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1qfuuuf framer-22mm1d\" data-framer-appear-id=\"1qfuuuf\" data-framer-name=\"Social Link\" href=\"https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf\" target=\"_blank\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><div class=\"framer-m9o96a-container\" data-framer-appear-id=\"m9o96a\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:rgb(35, 51, 36);user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&quot;, monos",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "EMAIL\n\n,",
+          "href": "mailto:micah.hoang@hey.com",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1o29gbn framer-22mm1d\" data-framer-appear-id=\"1o29gbn\" data-framer-name=\"Social Link\" href=\"mailto:micah.hoang@hey.com\" target=\"_blank\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><div class=\"framer-1kssfwy-container\" data-framer-appear-id=\"1kssfwy\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(1, 1, 3));user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&quot",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        },
+        {
+          "text": "GITHUB",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-n12bck framer-22mm1d\" data-framer-appear-id=\"n12bck\" data-framer-name=\"Social Link\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><div class=\"framer-1ivhjn9-container\" data-framer-appear-id=\"1ivhjn9\" style=\"opacity: 1 !important; transform: none !important; visibility: visible !important; will-change: transform;\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(1, 1, 3));user-select:auto;font-family:&quot;GT Standard Mono Trial Rg&quot;, &quot;GT Standard Mono Trial Rg Placeholder&",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        },
+        {
+          "text": "1\n/\nGAIA\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/gaia",
+          "label": "Gaia case study",
+          "hidden": null,
+          "html": "<a class=\"selected-work-card-link\" href=\"/case-studies/gaia\" aria-label=\"Gaia case study\"><div class=\"selected-work-card-meta\"><span class=\"selected-work-card-number\">1</span><span aria-hidden=\"true\">/</span><span class=\"selected-work-title-frame\"><span class=\"selected-work-title-stack\"><span>Gaia</span><span aria-hidden=\"true\">VIEW PROJECT</span></span></span></div><div class=\"selected-work-media\" data-has-media=\"true\" data-has-video=\"true\" data-video-mounted=\"true\" data-has-poster=\"true\" data-video-near=\"true\" data-video-visible=\"true\" data-media-ready=\"true\" data-poster-ready=\"true\" data-video-ready=\"true\"><img class=\"selected-work-poster\" src=\"https://framerusercontent.com/images/I8gYcpa",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 690,
+            "h": 417.2890625
+          }
+        },
+        {
+          "text": "VISUAL IDENTITY",
+          "href": "https://micahhoang.com/index#service=visual-identity",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=visual-identity\"><span class=\"selected-work-tag-text\">Visual Identity</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 139,
+            "h": 26
+          }
+        },
+        {
+          "text": "UX/UI",
+          "href": "https://micahhoang.com/index#service=ux-ui",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=ux-ui\"><span class=\"selected-work-tag-text\">UX/UI</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 61,
+            "h": 26
+          }
+        },
+        {
+          "text": "STRATEGY",
+          "href": "https://micahhoang.com/index#service=strategy",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=strategy\"><span class=\"selected-work-tag-text\">Strategy</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 84.40625,
+            "h": 26
+          }
+        },
+        {
+          "text": "2\n/\nAIRPODS PRO 3\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/airpods",
+          "label": "AirPods Pro 3 case study",
+          "hidden": null,
+          "html": "<a class=\"selected-work-card-link\" href=\"/case-studies/airpods\" aria-label=\"AirPods Pro 3 case study\"><div class=\"selected-work-card-meta\"><span class=\"selected-work-card-number\">2</span><span aria-hidden=\"true\">/</span><span class=\"selected-work-title-frame\"><span class=\"selected-work-title-stack\"><span>AirPods Pro 3</span><span aria-hidden=\"true\">VIEW PROJECT</span></span></span></div><div class=\"selected-work-media\" data-has-media=\"true\" data-has-video=\"true\" data-video-mounted=\"true\" data-has-poster=\"true\" data-thumbnail-stroke=\"true\" data-video-near=\"true\" data-video-visible=\"true\" data-media-ready=\"true\" data-poster-ready=\"true\" data-video-ready=\"true\"><img class=\"selected-work-poster\"",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 690,
+            "h": 417.2890625
+          }
+        },
+        {
+          "text": "VISUAL IDENTITY",
+          "href": "https://micahhoang.com/index#service=visual-identity",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=visual-identity\"><span class=\"selected-work-tag-text\">Visual Identity</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 139,
+            "h": 26
+          }
+        },
+        {
+          "text": "2D MOTION",
+          "href": "https://micahhoang.com/index#service=2d-motion",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=2d-motion\"><span class=\"selected-work-tag-text\">2D Motion</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "3D MOTION",
+          "href": "https://micahhoang.com/index#service=3d-motion",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=3d-motion\"><span class=\"selected-work-tag-text\">3D Motion</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "3\n/\nPEAK ENERGY\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/peak-energy",
+          "label": "Peak Energy case study",
+          "hidden": null,
+          "html": "<a class=\"selected-work-card-link\" href=\"/case-studies/peak-energy\" aria-label=\"Peak Energy case study\"><div class=\"selected-work-card-meta\"><span class=\"selected-work-card-number\">3</span><span aria-hidden=\"true\">/</span><span class=\"selected-work-title-frame\"><span class=\"selected-work-title-stack\"><span>Peak Energy</span><span aria-hidden=\"true\">VIEW PROJECT</span></span></span></div><div class=\"selected-work-media\" data-has-media=\"true\" data-has-video=\"true\" data-has-poster=\"true\" data-video-mounted=\"true\" data-video-near=\"true\" data-media-ready=\"true\" data-poster-ready=\"true\"><img class=\"selected-work-poster\" src=\"https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?widt",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 690,
+            "h": 417.2890625
+          }
+        },
+        {
+          "text": "2D MOTION",
+          "href": "https://micahhoang.com/index#service=2d-motion",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=2d-motion\"><span class=\"selected-work-tag-text\">2D Motion</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "3D MOTION",
+          "href": "https://micahhoang.com/index#service=3d-motion",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=3d-motion\"><span class=\"selected-work-tag-text\">3D Motion</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "SOCIAL MEDIA",
+          "href": "https://micahhoang.com/index#service=social-media",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=social-media\"><span class=\"selected-work-tag-text\">Social Media</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 115.6015625,
+            "h": 26
+          }
+        },
+        {
+          "text": "4\n/\nMOTION CONNECT 2025\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/motion-connect-2025",
+          "label": "Motion Connect 2025 case study",
+          "hidden": null,
+          "html": "<a class=\"selected-work-card-link\" href=\"/case-studies/motion-connect-2025\" aria-label=\"Motion Connect 2025 case study\"><div class=\"selected-work-card-meta\"><span class=\"selected-work-card-number\">4</span><span aria-hidden=\"true\">/</span><span class=\"selected-work-title-frame\"><span class=\"selected-work-title-stack\"><span>Motion Connect 2025</span><span aria-hidden=\"true\">VIEW PROJECT</span></span></span></div><div class=\"selected-work-media\" data-has-media=\"true\" data-has-video=\"true\" data-has-poster=\"true\" data-video-mounted=\"true\" data-video-near=\"true\" data-media-ready=\"true\" data-poster-ready=\"true\"><img class=\"selected-work-poster\" src=\"https://framerusercontent.com/images/W592y16ERqrZ",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 690,
+            "h": 417.2890625
+          }
+        },
+        {
+          "text": "2D MOTION",
+          "href": "https://micahhoang.com/index#service=2d-motion",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=2d-motion\"><span class=\"selected-work-tag-text\">2D Motion</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "3D MOTION",
+          "href": "https://micahhoang.com/index#service=3d-motion",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=3d-motion\"><span class=\"selected-work-tag-text\">3D Motion</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "SOCIAL MEDIA",
+          "href": "https://micahhoang.com/index#service=social-media",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=social-media\"><span class=\"selected-work-tag-text\">Social Media</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 115.6015625,
+            "h": 26
+          }
+        },
+        {
+          "text": "5\n/\nSIMON & SCHUSTER\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/simon-schuster",
+          "label": "Simon & Schuster case study",
+          "hidden": null,
+          "html": "<a class=\"selected-work-card-link\" href=\"/case-studies/simon-schuster\" aria-label=\"Simon &amp; Schuster case study\"><div class=\"selected-work-card-meta\"><span class=\"selected-work-card-number\">5</span><span aria-hidden=\"true\">/</span><span class=\"selected-work-title-frame\"><span class=\"selected-work-title-stack\"><span>Simon &amp; Schuster</span><span aria-hidden=\"true\">VIEW PROJECT</span></span></span></div><div class=\"selected-work-media\" data-has-media=\"true\" data-has-poster=\"true\" data-media-ready=\"true\" data-poster-ready=\"true\"><img class=\"selected-work-poster\" src=\"https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png?width=1600&amp;height=900\" srcset=\"https://framerusercon",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 690,
+            "h": 417.2890625
+          }
+        },
+        {
+          "text": "STRATEGY",
+          "href": "https://micahhoang.com/index#service=strategy",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=strategy\"><span class=\"selected-work-tag-text\">Strategy</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 84.40625,
+            "h": 26
+          }
+        },
+        {
+          "text": "VISUAL IDENTITY",
+          "href": "https://micahhoang.com/index#service=visual-identity",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=visual-identity\"><span class=\"selected-work-tag-text\">Visual Identity</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 139,
+            "h": 26
+          }
+        },
+        {
+          "text": "EDITORIAL",
+          "href": "https://micahhoang.com/index#service=editorial",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=editorial\"><span class=\"selected-work-tag-text\">Editorial</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "6\n/\nNATIONAL PARK PLAYING CARDS\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/national-park-cards",
+          "label": "National Park Playing Cards case study",
+          "hidden": null,
+          "html": "<a class=\"selected-work-card-link\" href=\"/case-studies/national-park-cards\" aria-label=\"National Park Playing Cards case study\"><div class=\"selected-work-card-meta\"><span class=\"selected-work-card-number\">6</span><span aria-hidden=\"true\">/</span><span class=\"selected-work-title-frame\"><span class=\"selected-work-title-stack\"><span>National Park Playing Cards</span><span aria-hidden=\"true\">VIEW PROJECT</span></span></span></div><div class=\"selected-work-media\" data-has-media=\"true\" data-has-poster=\"true\" data-media-ready=\"true\" data-poster-ready=\"true\"><img class=\"selected-work-poster\" src=\"https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png?width=1600&amp;height=900\" srcset=\"h",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 690,
+            "h": 417.2890625
+          }
+        },
+        {
+          "text": "PRODUCT",
+          "href": "https://micahhoang.com/index#service=product",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=product\"><span class=\"selected-work-tag-text\">Product</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 76.6015625,
+            "h": 26
+          }
+        },
+        {
+          "text": "PACKAGING",
+          "href": "https://micahhoang.com/index#service=packaging",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"selected-work-tag\" href=\"/index#service=packaging\"><span class=\"selected-work-tag-text\">Packaging</span></a>",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 92.203125,
+            "h": 26
+          }
+        },
+        {
+          "text": "VIEW ALL\n\nVIEW ALL",
+          "href": "https://micahhoang.com/index",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"./index\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">VIEW ALL</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 62.40625,
+            "h": 13
+          }
+        },
+        {
+          "text": "",
+          "href": "https://micahhoang.com/about",
+          "label": "About MIcah Hoang",
+          "hidden": null,
+          "html": "<a aria-label=\"About MIcah Hoang\" as=\"a\" class=\"framer-bp68xr framer-22mm1d\" data-framer-name=\"Image\" href=\"./about\" style=\"height:auto;aspect-ratio:0.6802721088435374\"><div style=\"position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0\" data-framer-background-image-wrapper=\"true\"><img decoding=\"async\" loading=\"lazy\" width=\"2000\" height=\"2940\" src=\"https://framerusercontent.com/images/5SSyB10nNP8Fa1PU0ixS57P5RA.jpg?width=2000&amp;height=2940\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:contain\"></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 175,
+            "h": 257.25
+          }
+        },
+        {
+          "text": "READ MORE\n\nREAD MORE",
+          "href": "https://micahhoang.com/about",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-8nxu5f framer-22mm1d\" data-framer-name=\"Button Wrapper\" href=\"./about\"><div class=\"framer-1mym8zi\" data-framer-name=\"Text Link Black\"><div class=\"framer-119kree\"><div class=\"framer-1q79eb5\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36))\">READ MORE</p></div><div class=\"framer-1e6m7c9\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"transform:none\"><p class=\"framer-text framer-styles-preset-188rqyj\" d",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(255, 255, 255, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 600,
+            "h": 13
+          }
+        },
+        {
+          "text": "MICAH.HOANG\n\n@HEY.COM",
+          "href": "mailto:micah.hoang@hey.com",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-g4ko1g framer-22mm1d\" data-framer-name=\"CTA Row\" href=\"mailto:micah.hoang@hey.com\" target=\"_blank\"><div class=\"framer-1ijfgh0-container\"><!--$--><div class=\"ssr-variant hidden-1lqp6ot hidden-1efm6vp\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">M</span><span style=\"display:i",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 622.9375,
+            "h": 85
+          }
+        },
+        {
+          "text": "LINKEDIN\n\nCONNECT",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1fllcdw framer-22mm1d\" data-framer-name=\"CTA Row\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\"><div class=\"framer-zuj0hp-container\"><!--$--><div class=\"ssr-variant hidden-1lqp6ot hidden-1efm6vp\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">L</spa",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 397.3515625,
+            "h": 80
+          }
+        },
+        {
+          "text": "COSMOS\n\nINSPIRE",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1nga8bg framer-22mm1d\" data-framer-name=\"CTA Row\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\"><div class=\"framer-k3u46o-container\"><!--$--><div class=\"ssr-variant hidden-1lqp6ot hidden-1efm6vp\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">C</span><span style=\"",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 405.7421875,
+            "h": 80
+          }
+        },
+        {
+          "text": "GITHUB\n\nBUILD",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1ba1yg9 framer-22mm1d\" data-framer-name=\"CTA Row\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\"><div class=\"framer-rljljw-container\"><!--$--><div class=\"ssr-variant hidden-1lqp6ot hidden-1efm6vp\"><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">G</span><span style=\"dis",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 323.8203125,
+            "h": 80
+          }
+        },
+        {
+          "text": "LINKEDIN\n\n,",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1fr4fgp framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-1lh0f5i-container\" data-framer-appear-id=\"1lh0f5i\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">LINKEDIN</p><!--/$--></div><div class=\"f",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 70.2109375,
+            "h": 13
+          }
+        },
+        {
+          "text": "RESUME\n\n,",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-6eivmt framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-11171y9-container\" data-framer-appear-id=\"11171y9\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">RESUME</p><!--/$--></di",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "COSMOS\n\n,",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-nvaw5a framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-8v1yej-container\" data-framer-appear-id=\"8v1yej\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">COSMOS</p><!--/$--></div><div class=\"framer-1bizf4g\" data-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "GITHUB",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-197w6x6 framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-b9wex3-container\" data-framer-appear-id=\"b9wex3\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f);user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">GITHUB</p><!--/$--></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        }
+      ],
+      "imgs": [
+        {
+          "alt": "Gaia",
+          "src": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png?width=3236&height=1810&scale-down-to=768",
+          "loaded": true
+        },
+        {
+          "alt": "AirPods Pro 3",
+          "src": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900&scale-down-to=768",
+          "loaded": true
+        },
+        {
+          "alt": "Peak Energy",
+          "src": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720&scale-down-to=768",
+          "loaded": true
+        },
+        {
+          "alt": "Motion Connect 2025",
+          "src": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080&scale-down-to=768",
+          "loaded": true
+        },
+        {
+          "alt": "Simon & Schuster",
+          "src": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png?width=1600&height=900&scale-down-to=768",
+          "loaded": true
+        },
+        {
+          "alt": "National Park Playing Cards",
+          "src": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png?width=1600&height=900&scale-down-to=768",
+          "loaded": true
+        },
+        {
+          "alt": "",
+          "src": "https://framerusercontent.com/images/5SSyB10nNP8Fa1PU0ixS57P5RA.jpg?width=2000&height=2940",
+          "loaded": false
+        }
+      ],
+      "videos": [
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "ready": 4,
+          "paused": true,
+          "controls": false,
+          "poster": ""
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "ready": 4,
+          "paused": true,
+          "controls": false,
+          "poster": ""
+        }
+      ],
+      "bodyBackground": "rgb(247, 245, 240)"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/airpods",
+      "overflow": 0,
+      "h1": [],
+      "headings": [
+        {
+          "text": "AirPods Pro 3,",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "Now with heart rate sensing.",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "OTHER",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "PROJECTS",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "MICAH HOANG",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-wvJhz framer-Gyx0Q framer-d7p8lh framer-v-16mxeps framer-16ajx7x\" data-framer-name=\"Black\" href=\"../\" style=\"width: 100%; opacity: 1;\"><div class=\"framer-1y3ohui\" data-framer-name=\"Micah Hoang\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: rgb(255, 255, 255); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\">Micah Hoang</p></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 248,
+            "h": 13
+          }
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">Work</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "https://micahhoang.com/play",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../play\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">PLAY</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "https://micahhoang.com/index",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../index\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">INDEX</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-403",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "https://micahhoang.com/about",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../about\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">ABOUT</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-403",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "3\n/\nPEAK ENERGY\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/peak-energy",
+          "label": "PEAK ENERGY project",
+          "hidden": null,
+          "html": "<a data-framer-name=\"Other Project Card\" href=\"/case-studies/peak-energy\" aria-label=\"PEAK ENERGY project\" class=\"mh-other-project-card\" style=\"color:rgb(35, 51, 36)\"><div data-framer-name=\"Title Wrapper\" class=\"mh-other-project-title\"><span class=\"mh-other-project-title__number\">3</span><span class=\"mh-other-project-title__slash\">/</span><span class=\"mh-other-project-title__copy\"><span class=\"mh-other-project-title__track\"><span class=\"mh-other-project-title__line\">PEAK ENERGY</span><span class=\"mh-other-project-title__line mh-other-project-title__line--hover\">VIEW PROJECT</span></span></span></div><div data-framer-name=\"ImageWrapper\" class=\"mh-other-project-media\" style=\"--mh-other-project",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 453.328125,
+            "h": 283.9921875
+          }
+        },
+        {
+          "text": "4\n/\nMOTION CONNECT 2025\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/motion-connect-2025",
+          "label": "MOTION CONNECT 2025 project",
+          "hidden": null,
+          "html": "<a data-framer-name=\"Other Project Card\" href=\"/case-studies/motion-connect-2025\" aria-label=\"MOTION CONNECT 2025 project\" class=\"mh-other-project-card\" style=\"color:rgb(35, 51, 36)\"><div data-framer-name=\"Title Wrapper\" class=\"mh-other-project-title\"><span class=\"mh-other-project-title__number\">4</span><span class=\"mh-other-project-title__slash\">/</span><span class=\"mh-other-project-title__copy\"><span class=\"mh-other-project-title__track\"><span class=\"mh-other-project-title__line\">MOTION CONNECT 2025</span><span class=\"mh-other-project-title__line mh-other-project-title__line--hover\">VIEW PROJECT</span></span></span></div><div data-framer-name=\"ImageWrapper\" class=\"mh-other-project-media\" s",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 453.3359375,
+            "h": 284
+          }
+        },
+        {
+          "text": "5\n/\nSIMON & SCHUSTER\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/simon-schuster",
+          "label": "SIMON & SCHUSTER project",
+          "hidden": null,
+          "html": "<a data-framer-name=\"Other Project Card\" href=\"/case-studies/simon-schuster\" aria-label=\"SIMON &amp; SCHUSTER project\" class=\"mh-other-project-card\" style=\"color:rgb(35, 51, 36)\"><div data-framer-name=\"Title Wrapper\" class=\"mh-other-project-title\"><span class=\"mh-other-project-title__number\">5</span><span class=\"mh-other-project-title__slash\">/</span><span class=\"mh-other-project-title__copy\"><span class=\"mh-other-project-title__track\"><span class=\"mh-other-project-title__line\">SIMON &amp; SCHUSTER</span><span class=\"mh-other-project-title__line mh-other-project-title__line--hover\">VIEW PROJECT</span></span></span></div><div data-framer-name=\"ImageWrapper\" class=\"mh-other-project-media\" styl",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 453.3359375,
+            "h": 284
+          }
+        },
+        {
+          "text": "MICAH.HOANG\n\n@HEY.COM",
+          "href": "mailto:micah.hoang@hey.com",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1f0i6qj framer-15gr50t\" data-framer-name=\"Row\" href=\"mailto:micah.hoang@hey.com\"><div class=\"framer-vgj4o-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">M</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">I</span><s",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 621.8984375,
+            "h": 90
+          }
+        },
+        {
+          "text": "LINKEDIN\n\nCONNECT",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1m81p5h framer-15gr50t\" data-framer-name=\"Row\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\"><div class=\"framer-kip4bj-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">L</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padd",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 396.4453125,
+            "h": 80
+          }
+        },
+        {
+          "text": "COSMOS\n\nINSPIRE",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-dsfx53 framer-15gr50t\" data-framer-name=\"Row\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\"><div class=\"framer-4a6vvq-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">C</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;t",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 404.8359375,
+            "h": 80
+          }
+        },
+        {
+          "text": "GITHUB\n\nBUILD",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1ijsuyd framer-15gr50t\" data-framer-name=\"Row\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\"><div class=\"framer-4776l6-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">G</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;tra",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 323.171875,
+            "h": 80
+          }
+        },
+        {
+          "text": "LINKEDIN\n\n,",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1fr4fgp framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-1lh0f5i-container\" data-framer-appear-id=\"1lh0f5i\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">LINKEDIN</p><!--/$--></div><div class=\"f",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 70.2109375,
+            "h": 13
+          }
+        },
+        {
+          "text": "RESUME\n\n,",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-6eivmt framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-11171y9-container\" data-framer-appear-id=\"11171y9\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">RESUME</p><!--/$--></di",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "COSMOS\n\n,",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-nvaw5a framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-8v1yej-container\" data-framer-appear-id=\"8v1yej\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">COSMOS</p><!--/$--></div><div class=\"framer-1bizf4g\" data-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "GITHUB",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-197w6x6 framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-b9wex3-container\" data-framer-appear-id=\"b9wex3\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f);user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">GITHUB</p><!--/$--></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        }
+      ],
+      "imgs": [],
+      "videos": [
+        {
+          "src": "https://framerusercontent.com/assets/iEdEhtbqCl66mHv5MKpCclJeb0.mp4",
+          "ready": 4,
+          "paused": false,
+          "controls": true,
+          "poster": "https://files.catbox.moe/7qmv8t.jpg"
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "ready": 0,
+          "paused": true,
+          "controls": false,
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720"
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "ready": 0,
+          "paused": true,
+          "controls": false,
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080"
+        }
+      ],
+      "bodyBackground": "rgb(247, 245, 240)"
+    },
+    {
+      "url": "https://micahhoang.com/case-studies/gaia",
+      "overflow": 0,
+      "h1": [
+        "Gaia",
+        "Turning noticing into a way of",
+        "caring for the living world."
+      ],
+      "headings": [
+        {
+          "text": "Gaia",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "Turning noticing into a way of",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "caring for the living world.",
+          "color": "rgb(151, 151, 151)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(151, 151, 151) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "OTHER",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        },
+        {
+          "text": "PROJECTS",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "70px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "MICAH HOANG",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-wvJhz framer-Gyx0Q framer-d7p8lh framer-v-16mxeps framer-16ajx7x\" data-framer-name=\"Black\" href=\"../\" style=\"width: 100%; opacity: 1;\"><div class=\"framer-1y3ohui\" data-framer-name=\"Micah Hoang\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: rgb(255, 255, 255); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\">Micah Hoang</p></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 248,
+            "h": 13
+          }
+        },
+        {
+          "text": "WORK\n\nWORK",
+          "href": "https://micahhoang.com/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">Work</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "PLAY\n\nPLAY",
+          "href": "https://micahhoang.com/play",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../play\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">PLAY</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 31.203125,
+            "h": 13
+          }
+        },
+        {
+          "text": "INDEX\n\nINDEX",
+          "href": "https://micahhoang.com/index",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../index\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">INDEX</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-403",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "ABOUT\n\nABOUT",
+          "href": "https://micahhoang.com/about",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-5ifad7 framer-1be4gvd\" href=\"../about\" style=\"opacity: 1;\"><div class=\"framer-1nvzjr6\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)); transform: none; opacity: 1;\"><p class=\"framer-text framer-styles-preset-188rqyj\" data-styles-preset=\"wubGyTYn8\" dir=\"auto\" style=\"--framer-text-color:var(--extracted-r6o4lv, var(--token-0e64c98e-2e3d-4034-8a86-e95f1a065f27, rgb(35, 51, 36)))\">ABOUT</p></div><div class=\"framer-1phqj0i\" data-framer-name=\"View project\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-r6o4lv: var(--token-0e64c98e-2e3d-403",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 39,
+            "h": 13
+          }
+        },
+        {
+          "text": "2\n/\nAIRPODS PRO 3\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/airpods",
+          "label": "AIRPODS PRO 3 project",
+          "hidden": null,
+          "html": "<a data-framer-name=\"Other Project Card\" href=\"/case-studies/airpods\" aria-label=\"AIRPODS PRO 3 project\" class=\"mh-other-project-card\" style=\"color:rgb(35, 51, 36)\"><div data-framer-name=\"Title Wrapper\" class=\"mh-other-project-title\"><span class=\"mh-other-project-title__number\">2</span><span class=\"mh-other-project-title__slash\">/</span><span class=\"mh-other-project-title__copy\"><span class=\"mh-other-project-title__track\"><span class=\"mh-other-project-title__line\">AIRPODS PRO 3</span><span class=\"mh-other-project-title__line mh-other-project-title__line--hover\">VIEW PROJECT</span></span></span></div><div data-framer-name=\"ImageWrapper\" class=\"mh-other-project-media\" data-thumbnail-stroke=\"tr",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 453.328125,
+            "h": 283.9921875
+          }
+        },
+        {
+          "text": "3\n/\nPEAK ENERGY\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/peak-energy",
+          "label": "PEAK ENERGY project",
+          "hidden": null,
+          "html": "<a data-framer-name=\"Other Project Card\" href=\"/case-studies/peak-energy\" aria-label=\"PEAK ENERGY project\" class=\"mh-other-project-card\" style=\"color:rgb(35, 51, 36)\"><div data-framer-name=\"Title Wrapper\" class=\"mh-other-project-title\"><span class=\"mh-other-project-title__number\">3</span><span class=\"mh-other-project-title__slash\">/</span><span class=\"mh-other-project-title__copy\"><span class=\"mh-other-project-title__track\"><span class=\"mh-other-project-title__line\">PEAK ENERGY</span><span class=\"mh-other-project-title__line mh-other-project-title__line--hover\">VIEW PROJECT</span></span></span></div><div data-framer-name=\"ImageWrapper\" class=\"mh-other-project-media\" style=\"--mh-other-project",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 453.3359375,
+            "h": 284
+          }
+        },
+        {
+          "text": "4\n/\nMOTION CONNECT 2025\nVIEW PROJECT",
+          "href": "https://micahhoang.com/case-studies/motion-connect-2025",
+          "label": "MOTION CONNECT 2025 project",
+          "hidden": null,
+          "html": "<a data-framer-name=\"Other Project Card\" href=\"/case-studies/motion-connect-2025\" aria-label=\"MOTION CONNECT 2025 project\" class=\"mh-other-project-card\" style=\"color:rgb(35, 51, 36)\"><div data-framer-name=\"Title Wrapper\" class=\"mh-other-project-title\"><span class=\"mh-other-project-title__number\">4</span><span class=\"mh-other-project-title__slash\">/</span><span class=\"mh-other-project-title__copy\"><span class=\"mh-other-project-title__track\"><span class=\"mh-other-project-title__line\">MOTION CONNECT 2025</span><span class=\"mh-other-project-title__line mh-other-project-title__line--hover\">VIEW PROJECT</span></span></span></div><div data-framer-name=\"ImageWrapper\" class=\"mh-other-project-media\" s",
+          "color": "rgb(35, 51, 36)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(35, 51, 36) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 453.3359375,
+            "h": 284
+          }
+        },
+        {
+          "text": "MICAH.HOANG\n\n@HEY.COM",
+          "href": "mailto:micah.hoang@hey.com",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-xiz518 framer-11xmviv\" data-framer-name=\"Row\" href=\"mailto:micah.hoang@hey.com\"><div class=\"framer-hmm732-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">M</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">I</span><s",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 621.8984375,
+            "h": 90
+          }
+        },
+        {
+          "text": "LINKEDIN\n\nCONNECT",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1gyste2 framer-11xmviv\" data-framer-name=\"Row\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\"><div class=\"framer-1d0f0lm-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">L</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;pad",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 396.4453125,
+            "h": 80
+          }
+        },
+        {
+          "text": "COSMOS\n\nINSPIRE",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-u7x2vz framer-11xmviv\" data-framer-name=\"Row\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\"><div class=\"framer-1vswef9-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">C</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 404.8359375,
+            "h": 80
+          }
+        },
+        {
+          "text": "GITHUB\n\nBUILD",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-9lzrgt framer-11xmviv\" data-framer-name=\"Row\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\"><div class=\"framer-1lhms0n-container\"><!--$--><div style=\"position:relative;cursor:default;white-space:pre;font-family:&quot;GT Standard Trial L Rg&quot;, &quot;GT Standard Trial L Rg Placeholder&quot;, sans-serif;color:rgb(247, 245, 240);font-size:80px;font-weight:400;letter-spacing:-0.02em;line-height:1em\"><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;transform:none\">G</span><span style=\"display:inline-block;-webkit-text-stroke-color:currentColor;-webkit-text-stroke-width:0em;padding-inline:0em;tra",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 323.171875,
+            "h": 80
+          }
+        },
+        {
+          "text": "LINKEDIN\n\n,",
+          "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-1fr4fgp framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.linkedin.com/in/micah-hoang-b41028108/\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-1lh0f5i-container\" data-framer-appear-id=\"1lh0f5i\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">LINKEDIN</p><!--/$--></div><div class=\"f",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 70.2109375,
+            "h": 13
+          }
+        },
+        {
+          "text": "RESUME\n\n,",
+          "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-6eivmt framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-11171y9-container\" data-framer-appear-id=\"11171y9\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">RESUME</p><!--/$--></di",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "COSMOS\n\n,",
+          "href": "https://www.cosmos.so/articavisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-nvaw5a framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://www.cosmos.so/articavisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-8v1yej-container\" data-framer-appear-id=\"8v1yej\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f, rgb(247, 245, 240));user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">COSMOS</p><!--/$--></div><div class=\"framer-1bizf4g\" data-",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 54.609375,
+            "h": 13
+          }
+        },
+        {
+          "text": "GITHUB",
+          "href": "https://github.com/ArticaVisuals",
+          "label": null,
+          "hidden": null,
+          "html": "<a class=\"framer-197w6x6 framer-q65lnj\" data-framer-name=\"Social Link\" href=\"https://github.com/ArticaVisuals\" target=\"_blank\" style=\"opacity: 1;\"><div class=\"framer-b9wex3-container\" data-framer-appear-id=\"b9wex3\" style=\"will-change: transform; opacity: 1; transform: perspective(1200px);\"><!--$--><p data-mh-scramble-component=\"true\" style=\"margin:0;color:var(--token-faf217ee-812d-4474-8131-b934f8e4dc1f);user-select:auto;font-family:&quot;GT Standard Mono Regular&quot;, &quot;GT Standard Mono Regular Placeholder&quot;, monospace;font-size:13px;font-style:normal;font-weight:400;letter-spacing:0em;line-height:1em\">GITHUB</p><!--/$--></div></a>",
+          "color": "rgb(0, 0, 238)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px",
+          "opacity": "1",
+          "outline": "rgb(0, 0, 238) none 3px",
+          "shadow": "none",
+          "rect": {
+            "w": 46.8046875,
+            "h": 13
+          }
+        }
+      ],
+      "imgs": [
+        {
+          "alt": "",
+          "src": "https://framerusercontent.com/images/FE6CYyLWuIAEO9KXA2kjQQeeOE.jpg?width=1920&height=1080",
+          "loaded": true
+        },
+        {
+          "alt": "",
+          "src": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720",
+          "loaded": true
+        },
+        {
+          "alt": "",
+          "src": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080",
+          "loaded": true
+        }
+      ],
+      "videos": [
+        {
+          "src": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4",
+          "ready": 4,
+          "paused": false,
+          "controls": false,
+          "poster": "https://files.catbox.moe/5rxz22.jpg"
+        },
+        {
+          "src": "https://framerusercontent.com/assets/VrXHwbJMGEUusCn1OzkDuUYE4FE.mp4",
+          "ready": 0,
+          "paused": true,
+          "controls": false,
+          "poster": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg?width=1600&height=900"
+        },
+        {
+          "src": "https://framerusercontent.com/assets/h3NSQj4n1g74pvOIvpgW19h1Qk.mp4",
+          "ready": 0,
+          "paused": true,
+          "controls": false,
+          "poster": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg?width=1280&height=720"
+        },
+        {
+          "src": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4",
+          "ready": 0,
+          "paused": true,
+          "controls": false,
+          "poster": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg?width=1920&height=1080"
+        }
+      ],
+      "bodyBackground": "rgb(247, 245, 240)"
+    }
+  ],
+  "keyboard": [
+    {
+      "tag": "A",
+      "text": "MICAH HOANG",
+      "href": "./",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 20,
+        "y": 20,
+        "w": 248,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "WORK\n\nWORK",
+      "href": "./",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 1186.59375,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "PLAY\n\nPLAY",
+      "href": "./play",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 1248.796875,
+        "y": 20,
+        "w": 31.203125,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "INDEX\n\nINDEX",
+      "href": "./index",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 1311,
+        "y": 20,
+        "w": 39,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "ABOUT\n\nABOUT",
+      "href": "./about",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 1381,
+        "y": 20,
+        "w": 39,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "LINKEDIN\n\n,",
+      "href": "https://www.linkedin.com/in/micah-hoang-b41028108/",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 20,
+        "y": 383,
+        "w": 70.2109375,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "RESUME\n\n,",
+      "href": "https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 100.2109375,
+        "y": 383,
+        "w": 54.609375,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "EMAIL\n\n,",
+      "href": "mailto:micah.hoang@hey.com",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 164.8203125,
+        "y": 383,
+        "w": 46.8046875,
+        "h": 13
+      }
+    },
+    {
+      "tag": "A",
+      "text": "GITHUB",
+      "href": "https://github.com/ArticaVisuals",
+      "focusVisible": true,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "shadow": "none",
+      "rect": {
+        "x": 221.625,
+        "y": 383,
+        "w": 46.8046875,
+        "h": 13
+      }
+    }
+  ]
+}

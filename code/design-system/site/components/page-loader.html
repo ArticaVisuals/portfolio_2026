@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page Loader – Micah Hoang Design System</title>
-<meta name="description" content="The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.">
+<meta name="description" content="The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.">
 <link rel="alternate" type="text/markdown" href="../../content/components/page-loader.md">
 <link rel="stylesheet" href="../../css/fonts.css">
 <link rel="stylesheet" href="../../tokens/tokens.css">
@@ -74,7 +74,7 @@
         <h1 class="mh-text-display-m">Page Loader</h1>
         <a class="mh-action" data-variant="pill" href="../../content/components/page-loader.md" title="This page as markdown, for agents">Markdown</a>
       </div>
-      <p class="ds-lede mh-text-heading">The first-visit boot curtain. Forest Green, a Cream progress bar, the name centered, then a lift.</p>
+      <p class="ds-lede mh-text-heading">The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.</p>
       <div class="ds-page-meta"><span class="mh-tag" data-size="sm">live</span><span class="mh-label mh-text-muted">Framer: PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)</span></div>
       <hr class="mh-rule">
     </header>
@@ -82,21 +82,21 @@
 <figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview ds-preview--bleed" data-surface="cream"><div class="ds-demo-frame">
   <div class="mh-loader" data-contained>
     <span class="mh-loader__bar"></span>
-    <p class="mh-loader__identity">Micah Hoang ©2026</p>
+    <img class="mh-loader__identity mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px">
   </div>
   <button class="mh-action" data-variant="pill" type="button" data-play-loader style="position:absolute;right:16px;bottom:16px;color:var(--mh-text-brand)">Replay</button>
 </div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="ds-demo-frame"&gt;
   &lt;div class="mh-loader" data-contained&gt;
     &lt;span class="mh-loader__bar"&gt;&lt;/span&gt;
-    &lt;p class="mh-loader__identity"&gt;Micah Hoang ©2026&lt;/p&gt;
+    &lt;img class="mh-loader__identity mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px"&gt;
   &lt;/div&gt;
   &lt;button class="mh-action" data-variant="pill" type="button" data-play-loader style="position:absolute;right:16px;bottom:16px;color:var(--mh-text-brand)"&gt;Replay&lt;/button&gt;
 &lt;/div&gt;</code></pre></details></figure>
 <p>Press <strong>Replay</strong> to run the sequence.</p>
 <h2 id="sequence"><a class="ds-anchor" href="#sequence">Sequence</a></h2>
-<div class="ds-table"><table><thead><tr><th>Step</th><th>What happens</th><th>Timing</th></tr></thead><tbody><tr><td>1. Boot</td><td>Forest Green covers the viewport; "Micah Hoang ©2026" centered in Cream</td><td>Painted at parse time, before the app hydrates</td></tr><tr><td>2. Progress</td><td>An 8px Cream bar fills from the left along the top edge</td><td>≥ 1200ms (<code>bootMinMs</code>), Smooth</td></tr><tr><td>3. Identity out</td><td>The name fades</td><td>420ms, during bar completion</td></tr><tr><td>4. Lift</td><td>The curtain slides up and off</td><td>1200ms, Snappy</td></tr></tbody></table></div>
+<div class="ds-table"><table><thead><tr><th>Step</th><th>What happens</th><th>Timing</th></tr></thead><tbody><tr><td>1. Boot</td><td>Forest Green covers the viewport; the © Micah Hoang <a href="../foundations/identity.html">wordmark</a> centered in Cream</td><td>Painted at parse time, before the app hydrates</td></tr><tr><td>2. Progress</td><td>An 8px Cream bar fills from the left along the top edge</td><td>≥ 1200ms (<code>bootMinMs</code>), Smooth</td></tr><tr><td>3. Identity out</td><td>The wordmark fades</td><td>420ms, during bar completion</td></tr><tr><td>4. Lift</td><td>The curtain slides up and off</td><td>1200ms, Snappy</td></tr></tbody></table></div>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li><strong>Home only, first visit only</strong> (direct entries and reloads of <code>/</code>). Never on internal navigations, case studies or mobile ≤ the boot-disable width.</li><li>The identity uses the Heading style: 30 / 24 / 19px, 120% leading, -1% tracking.</li><li><code>theme-color</code> and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.</li><li>Videos behind the curtain hold until it lifts.</li></ul>
+<ul><li><strong>Home only, first visit only</strong> (direct entries and reloads of <code>/</code>). Never on internal navigations, case studies or mobile ≤ the boot-disable width.</li><li>The identity is the outlined <a href="../foundations/identity.html">wordmark</a> as inline SVG (no font or image request): 556px wide on desktop, 444px on tablet, capped at the viewport minus 64px. Since 2026-10-23 it replaces the earlier "Micah Hoang ©2026" text. The demo above shows it at half size.</li><li><code>theme-color</code> and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.</li><li>Videos behind the curtain hold until it lifts.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class / attribute</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-loader</code></td><td>Fixed full-viewport curtain. <code>data-contained</code> makes it <code>position:absolute</code> for previews</td></tr><tr><td><code>mh-loader__bar</code></td><td>8px progress bar (scaleX)</td></tr><tr><td><code>mh-loader__identity</code></td><td>Centered name</td></tr><tr><td><code>data-state</code></td><td><code>idle</code> → <code>loading</code> → <code>done</code> → <code>lifted</code></td></tr><tr><td><code>data-autoplay</code> / <code>window.mhPlayLoader(el)</code></td><td>Run the sequence (<code>components.js</code>)</td></tr></tbody></table></div>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>

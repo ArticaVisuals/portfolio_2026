@@ -1,0 +1,454 @@
+{
+  "motion": [
+    {
+      "width": 390,
+      "frames": 2754,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 459,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2754,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2754,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2754,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2754,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "frames": 2796,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 466,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2796,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2796,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2796,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2796,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "frames": 2664,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 444,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2664,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2664,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2664,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2664,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    },
+    {
+      "width": 809,
+      "frames": 2580,
+      "elements": [
+        {
+          "name": "header name",
+          "samples": 430,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "hero name",
+          "samples": 2580,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "descriptor",
+          "samples": 2580,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "Selected",
+          "samples": 2580,
+          "xRange": 0,
+          "yRange": 0
+        },
+        {
+          "name": "work",
+          "samples": 2580,
+          "xRange": 0,
+          "yRange": 0
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "via": "About",
+      "path": "/about",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "Play",
+      "path": "/play",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "Index",
+      "path": "/index",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    },
+    {
+      "via": "Work",
+      "path": "/",
+      "menuCount": 1,
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 53,
+        "top": 0,
+        "right": 390,
+        "bottom": 53,
+        "left": 0
+      },
+      "horizontalOverflow": false,
+      "bodyOverflow": "",
+      "menuOpen": false,
+      "menuScrollLock": false
+    }
+  ],
+  "controls": {
+    "closed-390": {
+      "text": "MICAH HOANG\n\nMENU",
+      "menuLabels": 1,
+      "maskHeight": 13,
+      "maskOverflow": "hidden",
+      "width": 390,
+      "overflow": false
+    },
+    "viewport-390": {
+      "open": true,
+      "width": 390,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "MICAH HOANG",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "WORK",
+          "height": 54
+        },
+        {
+          "text": "PLAY",
+          "height": 54
+        },
+        {
+          "text": "INDEX",
+          "height": 54
+        },
+        {
+          "text": "ABOUT",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "closed-320": {
+      "text": "MICAH HOANG\n\nMENU",
+      "menuLabels": 1,
+      "maskHeight": 13,
+      "maskOverflow": "hidden",
+      "width": 320,
+      "overflow": false
+    },
+    "viewport-320": {
+      "open": true,
+      "width": 320,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "MICAH HOANG",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "WORK",
+          "height": 54
+        },
+        {
+          "text": "PLAY",
+          "height": 54
+        },
+        {
+          "text": "INDEX",
+          "height": 54
+        },
+        {
+          "text": "ABOUT",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "closed-430": {
+      "text": "MICAH HOANG\n\nMENU",
+      "menuLabels": 1,
+      "maskHeight": 13,
+      "maskOverflow": "hidden",
+      "width": 430,
+      "overflow": false
+    },
+    "viewport-430": {
+      "open": true,
+      "width": 430,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "MICAH HOANG",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "WORK",
+          "height": 54
+        },
+        {
+          "text": "PLAY",
+          "height": 54
+        },
+        {
+          "text": "INDEX",
+          "height": 54
+        },
+        {
+          "text": "ABOUT",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "closed-809": {
+      "text": "MICAH HOANG\n\nMENU",
+      "menuLabels": 1,
+      "maskHeight": 13,
+      "maskOverflow": "hidden",
+      "width": 809,
+      "overflow": false
+    },
+    "viewport-809": {
+      "open": true,
+      "width": 809,
+      "height": 664,
+      "horizontalOverflow": false,
+      "targets": [
+        {
+          "text": "MICAH HOANG",
+          "height": 44
+        },
+        {
+          "text": "CLOSE",
+          "height": 44
+        },
+        {
+          "text": "WORK",
+          "height": 54
+        },
+        {
+          "text": "PLAY",
+          "height": 54
+        },
+        {
+          "text": "INDEX",
+          "height": 54
+        },
+        {
+          "text": "ABOUT",
+          "height": 54
+        },
+        {
+          "text": "LINKEDIN",
+          "height": 44
+        },
+        {
+          "text": "EMAIL",
+          "height": 44
+        },
+        {
+          "text": "GITHUB",
+          "height": 44
+        }
+      ]
+    },
+    "keyboardToggle": true,
+    "keyboard": {
+      "focusStayedInside": true,
+      "restoredFocus": "MENU",
+      "scrollY": 500,
+      "overflow": "",
+      "open": false
+    },
+    "samePageWork": {
+      "scrollY": 0,
+      "open": false,
+      "overflow": ""
+    }
+  },
+  "errors": [],
+  "failure": {
+    "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Menu', exact: true }) to be visible\u001b[22m\n",
+    "url": "https://micahhoang.com/case-studies/gaia"
+  }
+}

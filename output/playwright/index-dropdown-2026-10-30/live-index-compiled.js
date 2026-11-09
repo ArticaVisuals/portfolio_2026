@@ -1,0 +1,914 @@
+// @ts-nocheck
+import{jsx as _jsx,jsxs as _jsxs,Fragment as _Fragment}from"react/jsx-runtime";import React,{useCallback,useEffect,useMemo,useRef,useState}from"react";import{addPropertyControls,ControlType,RenderTarget}from"framer";const HIDDEN_CMS_LINK_SELECTOR='[data-framer-name="CmsLink"], [name="CmsLink"]';const HIDDEN_CMS_INTERACTIVE_SELECTOR='a[href], [role="link"], [tabindex]';const HIDDEN_CMS_MEDIA_SELECTOR="img, video, source";const HIDDEN_CMS_LINK_INERT_ATTR="data-index-hidden-cms-link-inert";const HIDDEN_CMS_MEDIA_INERT_ATTR="data-index-hidden-cms-media-inert";function preventHiddenCMSLinkClick(event){const target=event.target;if(!(target instanceof Element))return;if(!target.closest(`[${HIDDEN_CMS_LINK_INERT_ATTR}="true"]`))return;event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();}function inertHiddenCMSLinks(){if(typeof document==="undefined")return 0;let count=0;document.querySelectorAll(HIDDEN_CMS_LINK_SELECTOR).forEach(container=>{container.setAttribute("aria-hidden","true");container.querySelectorAll(HIDDEN_CMS_MEDIA_SELECTOR).forEach(element=>{if(element instanceof HTMLVideoElement){const hasAttachedSource=element.hasAttribute("src")||element.hasAttribute("poster")||Boolean(element.querySelector("source[src]"));if(hasAttachedSource){element.pause();element.setAttribute("preload","none");element.removeAttribute("src");element.removeAttribute("poster");element.querySelectorAll("source").forEach(source=>source.removeAttribute("src"));element.load();}}else{element.removeAttribute("src");element.removeAttribute("srcset");}element.setAttribute(HIDDEN_CMS_MEDIA_INERT_ATTR,"true");});container.querySelectorAll(HIDDEN_CMS_INTERACTIVE_SELECTOR).forEach(element=>{if(element.getAttribute(HIDDEN_CMS_LINK_INERT_ATTR)!=="true"){element.addEventListener("click",preventHiddenCMSLinkClick,true);}element.setAttribute("tabindex","-1");element.setAttribute("aria-hidden","true");element.setAttribute(HIDDEN_CMS_LINK_INERT_ATTR,"true");count+=1;});});return count;}function useHiddenCMSLinkInerting(enabled){useEffect(()=>{if(!enabled||typeof window==="undefined")return;let frame=0;const timeouts=[];const run=()=>{window.cancelAnimationFrame(frame);frame=window.requestAnimationFrame(inertHiddenCMSLinks);};run();[100,350,900,1800,3200].forEach(delay=>{timeouts.push(window.setTimeout(run,delay));});const observer=new MutationObserver(run);observer.observe(document.body,{attributes:true,attributeFilter:["href","role","tabindex","data-framer-name","name","poster","preload","src","srcset"],childList:true,subtree:true});return()=>{window.cancelAnimationFrame(frame);timeouts.forEach(timeout=>window.clearTimeout(timeout));observer.disconnect();};},[enabled]);}const INDEX_GRID_GAP="var(--idx-grid-gap, 20px)";const INDEX_GRID_TEMPLATE="repeat(6, minmax(0, 1fr))";const INDEX_INITIAL_MOUNT_COUNT=6;const INDEX_MOUNT_BATCH_SIZE=12;const VIEW_TOGGLE_OPTIONS=["grid","list"];const SNAPPY_EASE="cubic-bezier(0.16, 1, 0.3, 1)";const SMOOTH_EASE="cubic-bezier(0.12, 0.23, 0.5, 1)";const INDEX_APPEAR_PRESET={durationMs:620,easing:SNAPPY_EASE,ruleDurationMs:2200,ruleEasing:SMOOTH_EASE,staggerMs:70,maxStaggerIndex:12,rootMargin:"0px 0px -8% 0px",threshold:.01};const INDEX_NAV_FADE_PRESET={durationMs:820,easing:SNAPPY_EASE,baseDelayMs:120,rowStaggerMs:92,columnStaggerMs:0,maxRowIndex:12};const INDEX_CONTENT_REVEAL_PRESET={baseDelayMs:130,rowStaggerMs:64,columnStaggerMs:24,// Caps the cumulative arrival stagger. At 34 the last row waited
+// 130 + 64*34 = 2306ms before it even started animating, which read as a
+// dead gap between the hero title and the content on client-side
+// navigation (the DOM lands at ~1155ms; the rest was pure delay).
+// 16 keeps the cascade but halves the tail to 130 + 64*16 = 1154ms.
+maxRowIndex:16};const INDEX_MEDIA_FADE_PRESET={durationMs:620,easing:SNAPPY_EASE,baseDelayMs:140,itemStaggerMs:58,maxItemIndex:24};const INDEX_MASK_REVEAL_PRESET={durationMs:900,easing:SNAPPY_EASE,baseDelayMs:90,staggerMs:90,distancePx:115};const indexGridStyle={display:"grid",gridTemplateColumns:INDEX_GRID_TEMPLATE,columnGap:INDEX_GRID_GAP,width:"100%"};const DEFAULT_TOKENS={textPrimary:"#26211f",textSecondary:"#141414",textTertiary:"#979797",bg:"#F7F5F0",dividerStrong:"#141414",dividerSubtle:"#141414",surfaceOverlay:"rgba(215, 213, 207, 0.72)",surfaceActive:"#EAE8E3",fontDisplay:"'GT Standard Trial', 'Inter', sans-serif",fontHeading:"'GT Standard Trial', 'Inter', sans-serif",fontProjectCta:"'GT Standard', 'GT Standard L Regular', 'GT Standard Trial', 'Inter', sans-serif",fontMono:"'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace"};// Mutable copy that IndexPage rewrites from props on every render so the
+// module-scope sub-components and the global CSS template see the live
+// values without needing to thread tokens through every prop.
+const tokens={...DEFAULT_TOKENS};const IndexFilterContext=/*#__PURE__*/React.createContext(null);const TAXONOMY_LINE_HEIGHT="24px";const INDEX_CMS_COLLECTION_ID="yTHrQWMIY";const INDEX_CMS_FIELD_IDS={title:"oeXZcmPna",slug:"pdXVG_fBO",sortOrder:"DLBifmgp1",category1:"kuvJcmOFr",category2:"VV1CggU2J",category3:"E6OpH0hSs",thumbnail:"Jy7hBJady",thumbnailVideoLink:"SvOqFqdby",thumbnailStroke:"OHdUYs6Mo",year:"QZqSK_3OF",industry:"mBIilFqVM",isHomepage:"myUIfK0j7"};const INDEX_CMS_LIVE_SCAN_PATHS=["/","/case-studies","/index"];const DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS=INDEX_CMS_FIELD_IDS.thumbnailVideoLink;const DEFAULT_ADVANCED_SETTINGS={defaultView:"list",listHoverVariant:"flip",gridLayoutVariant:"classic",textPrimary:"#141414",textSecondary:"#141414",textTertiary:"#979797",bg:"#F7F5F0",dividerStrong:"#141414",dividerSubtle:"#141414",surfaceActive:"#EAE8E3"};function getDisciplines(p){const seen=new Set;const out=[];for(const raw of[p.category1,p.category2,p.category3]){if(typeof raw!=="string")continue;const value=raw.trim();if(!value||seen.has(value))continue;seen.add(value);out.push(value);}return out;}function normalizeProjectDisciplines(p){const[category1="",category2="",category3=""]=getDisciplines(p);if(p.category1===category1&&(p.category2??"")===category2&&(p.category3??"")===category3){return p;}return{...p,category1,category2,category3};}function getDisciplineDisplay(p){return getDisciplines(p).join(", ");}function sortProjectsByDisplayOrder(projects){return[...projects].sort((a,b)=>{const aOrder=a.sortOrder??Number.MAX_SAFE_INTEGER;const bOrder=b.sortOrder??Number.MAX_SAFE_INTEGER;return aOrder-bOrder||a.title.localeCompare(b.title);});}function getTaxonomyNavItems(projects){const disciplineItems=[];const industryItems=[];const seenDisciplines=new Set;const seenIndustries=new Set;for(const p of sortProjectsByDisplayOrder(projects)){for(const raw of getDisciplines(p)){const value=raw.trim();if(!value||seenDisciplines.has(value))continue;seenDisciplines.add(value);disciplineItems.push(value);}const industry=String(p.industry??"").trim();if(industry&&!seenIndustries.has(industry)){seenIndustries.add(industry);industryItems.push(industry);}}return{disciplines:sortTaxonomyLabels(disciplineItems),industries:sortTaxonomyLabels(industryItems),years:getYearNavItems(projects)};}function getYearNavItems(projects){const seen=new Set;for(const p of projects){const y=normalizeYear(p.year);if(y>0)seen.add(y);}return Array.from(seen).sort((a,b)=>b-a);}function sortTaxonomyLabels(items){return[...items].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true,sensitivity:"base"}));}function getCaseStudyUrl(p){return p.slug?`/case-studies/${p.slug}`:"";}function getThumbnailVideoLink(project){return normalizeIndexMediaSource(project.thumbnailVideoLink);}function isLoopingImageMediaSource(source){const cleanSource=source.split(/[?#]/)[0]?.toLowerCase()||"";return/\.(gif|webp|apng)$/.test(cleanSource);}function normalizeYear(raw){if(raw===null||raw===undefined)return 0;if(typeof raw==="number"){return Number.isFinite(raw)&&raw>1900?Math.floor(raw):0;}if(typeof raw==="object"){if(raw instanceof Date){const y=raw.getFullYear();return Number.isFinite(y)&&y>1900?y:0;}const r=raw;if("value"in r)return normalizeYear(r.value);if("year"in r)return normalizeYear(r.year);return 0;}const str=String(raw).trim();if(!str)return 0;const direct=Number(str);if(Number.isFinite(direct)&&direct>1900)return Math.floor(direct);const match=str.match(/(?:19|20)\d{2}/);return match?Number(match[0]):0;}function normalizeThumbnailUrl(raw){if(!raw)return undefined;if(typeof raw==="string")return raw||undefined;if(typeof raw==="object"){const r=raw;if(typeof r.src==="string")return r.src||undefined;if(typeof r.url==="string")return r.url||undefined;}return undefined;}function normalizeMediaSource(raw){if(!raw)return"";if(typeof raw==="string")return raw.trim();if(Array.isArray(raw)){return raw.map(normalizeMediaSource).find(Boolean)||"";}if(typeof raw==="object"){const record=raw;if("value"in record)return normalizeMediaSource(record.value);for(const key of["src","url","href","file"]){const source=normalizeMediaSource(record[key]);if(source)return source;}}return"";}function normalizeIndexMediaSource(raw){return normalizeMediaSource(raw);}function normalizeIndexThumbnailUrl(raw){return normalizeMediaSource(raw)||normalizeThumbnailUrl(raw)||"";}function splitFieldIds(value){return String(value||"").split(/[\n,]/).map(fieldId=>fieldId.trim()).filter(Boolean);}function readFirstCMSMediaField(data,fieldIds){for(const fieldId of splitFieldIds(fieldIds)){const source=normalizeIndexMediaSource(readCMSField(data,fieldId));if(source)return source;}return"";}function escapeRegExp(value){return value.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");}function uniqueStrings(values){return Array.from(new Set(values.filter(Boolean)));}function readCMSField(data,fieldId){const field=data?.[fieldId];if(field&&typeof field==="object"&&"value"in field){return field.value;}return field;}function normalizeCMSText(value){return String(value??"").trim();}function normalizeCMSNumber(value){const parsed=typeof value==="number"?value:Number(value);return Number.isFinite(parsed)?parsed:undefined;}function normalizeCMSBoolean(value){if(value&&typeof value==="object"&&"value"in value){return normalizeCMSBoolean(value.value);}if(typeof value==="boolean")return value;if(typeof value==="number")return value!==0;if(typeof value==="string"){const normalized=value.trim().toLowerCase();if(!normalized||normalized==="false"||normalized==="0")return false;return true;}return Boolean(value);}function isCMSModuleUrl(url,collectionId){const collectionPattern=escapeRegExp(collectionId);return new RegExp(`/${collectionPattern}(?:\\.[^/?#]+)?\\.(?:js|mjs)(?:[?#].*)?$`).test(url);}function findCMSModuleUrlInMarkup(markup,collectionId){const collectionPattern=escapeRegExp(collectionId);const match=markup.match(new RegExp(`https://framerusercontent\\.com/(?:sites|modules)/[^"']+/${collectionPattern}(?:\\.[^"'/]+)?\\.(?:js|mjs)`,"i"));return match?.[0];}function getDocumentResourceUrls(){if(typeof document==="undefined")return[];const elementUrls=Array.from(document.querySelectorAll("link[href], script[src], img[src], source[src]")).map(element=>{if("href"in element&&element.href)return element.href;if("src"in element&&element.src)return element.src;return"";});const performanceUrls=typeof performance!=="undefined"&&typeof performance.getEntriesByType==="function"?performance.getEntriesByType("resource").map(entry=>entry.name):[];return uniqueStrings([...elementUrls,...performanceUrls]);}function findCMSModuleUrlInDocument(collectionId){const fromResources=getDocumentResourceUrls().find(url=>isCMSModuleUrl(url,collectionId));if(fromResources)return fromResources;if(typeof document!=="undefined"&&document.documentElement){return findCMSModuleUrlInMarkup(document.documentElement.outerHTML,collectionId);}return undefined;}const cmsModuleUrlCache=new Map;function getCurrentDocumentPath(){if(typeof window==="undefined"||!window.location)return"";return window.location.pathname||"";}async function findCMSModuleUrlByFetchingPaths(paths,collectionId){for(const path of paths){if(!path)continue;try{// no-store: the current route's freshly-served HTML is the only source
+// that names *this* page's own (current) collection-module version. A
+// cached copy could still point at a superseded hash.
+const response=await fetch(path,{credentials:"same-origin",cache:"no-store"});if(!response.ok)continue;const html=await response.text();const found=findCMSModuleUrlInMarkup(html,collectionId);if(found)return found;}catch{// Framer canvas, preview, and published URLs can live on different origins.
+}}return undefined;}async function resolveCMSModuleUrl(collectionId,preferredModuleUrl){const preferred=normalizeCMSText(preferredModuleUrl);if(preferred)return preferred;const cached=cmsModuleUrlCache.get(collectionId);if(cached)return cached;// 1) Prefer the CURRENT route's freshly-served HTML. The session resource
+//    buffer (performance entries + DOM) retains modules loaded by *other*
+//    routes during a client-side navigation — e.g. the home selected-work
+//    grid, which can resolve a different/older hash of this same collection.
+//    Scanning it first (as this used to) lets that stale module win, so the
+//    grid renders thumbnails from a version no longer in the CMS until a hard
+//    refresh clears the buffer. The current route's own HTML only ever names
+//    this page's current collection module, so it cannot be poisoned.
+const fromLiveMarkup=await findCMSModuleUrlByFetchingPaths(uniqueStrings([getCurrentDocumentPath(),...INDEX_CMS_LIVE_SCAN_PATHS]),collectionId);if(fromLiveMarkup){cmsModuleUrlCache.set(collectionId,fromLiveMarkup);return fromLiveMarkup;}// 2) Fallback for the Framer editor/canvas & preview, where the fetches above
+//    are cross-origin or 404. There the in-document/resource scan is the only
+//    resolver available, and there is no other route to be poisoned by.
+const inDocument=findCMSModuleUrlInDocument(collectionId);if(inDocument){cmsModuleUrlCache.set(collectionId,inDocument);return inDocument;}return undefined;}function initializeCMSModule(module){const candidates=[module.t,module.r,module.default,...Object.values(module)];candidates.forEach(candidate=>{try{if(typeof candidate==="function")candidate();}catch{// Framer generated modules can be initialized already in preview.
+}});}function isCMSCollectionExport(value){const collection=value?.collectionByLocaleId?.default;return!!collection&&typeof collection.scanItems==="function";}function getCMSCollection(module){const candidates=[module.a,module.r,module.default,...Object.values(module)];for(const candidate of candidates){let resolved=candidate;if(typeof resolved==="function"){try{resolved=resolved();}catch{resolved=undefined;}}if(isCMSCollectionExport(resolved)){return resolved.collectionByLocaleId?.default;}}return undefined;}function cmsItemToProject(item,thumbnailVideoFieldIds){const data=item.data;const fields=INDEX_CMS_FIELD_IDS;const title=normalizeCMSText(readCMSField(data,fields.title));if(!title)return null;const slug=normalizeCMSText(readCMSField(data,fields.slug))||normalizeCMSText(item.slug);return{title,slug,sortOrder:normalizeCMSNumber(readCMSField(data,fields.sortOrder)),category1:normalizeCMSText(readCMSField(data,fields.category1)),category2:normalizeCMSText(readCMSField(data,fields.category2)),category3:normalizeCMSText(readCMSField(data,fields.category3)),industry:normalizeCMSText(readCMSField(data,fields.industry)),year:normalizeCMSText(readCMSField(data,fields.year)),thumbnail:normalizeIndexThumbnailUrl(readCMSField(data,fields.thumbnail)),thumbnailVideoLink:readFirstCMSMediaField(data,thumbnailVideoFieldIds),thumbnailStroke:normalizeCMSBoolean(readCMSField(data,fields.thumbnailStroke)),isHomepage:Boolean(readCMSField(data,fields.isHomepage))};}async function loadCMSProjects(preferredModuleUrl,thumbnailVideoFieldIds=DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS){const moduleUrl=await resolveCMSModuleUrl(INDEX_CMS_COLLECTION_ID,preferredModuleUrl);if(!moduleUrl)return[];const module=await import(/* @vite-ignore */moduleUrl);initializeCMSModule(module);const collection=getCMSCollection(module);if(typeof collection?.scanItems!=="function")return[];const items=await collection.scanItems();return items.map(item=>cmsItemToProject(item,thumbnailVideoFieldIds)).filter(project=>Boolean(project));}function groupByYear(projects){const map=new Map;for(const p of projects){const year=normalizeYear(p.year);const bucket=map.get(year);if(bucket)bucket.push(p);else map.set(year,[p]);}return Array.from(map.entries()).sort(([a],[b])=>{if(a===0)return 1;if(b===0)return-1;return b-a;}).map(([year,items])=>({year,items:[...items].sort((a,b)=>a.title.localeCompare(b.title))}));}function filterProjects(projects,filters,query){const normalizedQuery=query.trim().toLowerCase();const hasDisciplineFilters=filters.disciplines.length>0;const hasIndustryFilters=filters.industries.length>0;const hasYearFilters=filters.years.length>0;if(!hasDisciplineFilters&&!hasIndustryFilters&&!hasYearFilters&&!normalizedQuery){return projects;}const disciplineFilters=hasDisciplineFilters?new Set(filters.disciplines):null;const industryFilters=hasIndustryFilters?new Set(filters.industries):null;const yearFilters=hasYearFilters?new Set(filters.years):null;return projects.filter(p=>{const pDisciplines=getDisciplines(p);const matchDiscipline=!disciplineFilters||filters.disciplines.every(d=>pDisciplines.includes(d));const matchIndustry=!industryFilters||industryFilters.has(p.industry);const matchYear=!yearFilters||yearFilters.has(normalizeYear(p.year));const matchSearch=!normalizedQuery||p.title.toLowerCase().includes(normalizedQuery);return matchDiscipline&&matchIndustry&&matchYear&&matchSearch;});}function toggleFilterValue(items,value){return items.includes(value)?items.filter(item=>item!==value):[...items,value];}/* ------------------------------------------------------------------ *
+ * URL filter sync (added 2026-09-04)
+ *
+ * Lets /index be deep-linked to a taxonomy filter, so Home project tags
+ * can jump straight into a filtered index.
+ *
+ * Transport is the HASH (`/index#service=visual-identity`) because Framer's
+ * router carries a hash but has nowhere to put a query string. On arrival we
+ * rewrite to the readable `?service=visual-identity` form, which is what a
+ * cold load / pasted link reads back.
+ *
+ * KILL SWITCH: set ENABLE_URL_FILTER_SYNC to false. Everything below then
+ * no-ops and /index behaves exactly as it did before this block existed.
+ * FULL REVERT: code/mirror/backups/IndexPage.pre-url-filters-2026-09-04.tsx
+ * ------------------------------------------------------------------ */const ENABLE_URL_FILTER_SYNC=true;const URL_FILTER_KEYS={disciplines:"service",industries:"industry",years:"year"};/** "UX/UI" -> "ux-ui", "2D Motion" -> "2d-motion". */function slugifyTaxonomyValue(value){return String(value??"").trim().toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");}function readUrlFilterParams(){try{if(typeof window==="undefined")return null;const hash=String(window.location.hash||"").replace(/^#/,"");// A hash only counts as a filter payload if it looks like key=value;
+// a plain "#section" anchor is left alone for normal scroll behavior.
+const raw=hash.includes("=")?hash:String(window.location.search||"").replace(/^\?/,"");if(!raw)return null;return new URLSearchParams(raw);}catch{return null;}}function parseUrlFilterSelection(){try{const params=readUrlFilterParams();if(!params)return null;const readKey=key=>String(params.get(key)??"").split(",").map(part=>part.trim()).filter(Boolean);const selection={disciplines:readKey(URL_FILTER_KEYS.disciplines),industries:readKey(URL_FILTER_KEYS.industries),years:readKey(URL_FILTER_KEYS.years)};if(selection.disciplines.length===0&&selection.industries.length===0&&selection.years.length===0){return null;}return selection;}catch{return null;}}/**
+ * Map URL slugs back onto the real CMS labels. Derived from the live taxonomy
+ * rather than a hardcoded table, so new categories work with no code change.
+ * Unknown slugs are dropped silently (the index just renders unfiltered).
+ */function resolveTaxonomySlugs(slugs,labels){const bySlug=new Map;for(const label of labels){const slug=slugifyTaxonomyValue(label);if(slug&&!bySlug.has(slug))bySlug.set(slug,label);}const resolved=[];for(const raw of slugs){const label=bySlug.get(slugifyTaxonomyValue(raw));if(label&&!resolved.includes(label))resolved.push(label);}return resolved;}function resolveTaxonomyYears(slugs,years){const available=new Set(years);const resolved=[];for(const raw of slugs){const year=Number.parseInt(String(raw).trim(),10);if(!Number.isFinite(year))continue;if(!available.has(year)||resolved.includes(year))continue;resolved.push(year);}return resolved;}function serializeFiltersToQuery(filters){const parts=[];const pushValues=(key,values)=>{if(values.length===0)return;parts.push(`${key}=${values.join(",")}`);};pushValues(URL_FILTER_KEYS.disciplines,filters.disciplines.map(slugifyTaxonomyValue).filter(Boolean));pushValues(URL_FILTER_KEYS.industries,filters.industries.map(slugifyTaxonomyValue).filter(Boolean));pushValues(URL_FILTER_KEYS.years,filters.years.map(year=>String(year)).filter(Boolean));return parts.join("&");}/**
+ * Rewrite the address bar to match current filters. replaceState only, so the
+ * back button still means "the page before /index" rather than stepping back
+ * through every filter toggle.
+ */function writeFiltersToUrl(filters){try{if(typeof window==="undefined")return;if(typeof window.history?.replaceState!=="function")return;const query=serializeFiltersToQuery(filters);const next=`${window.location.pathname}${query?`?${query}`:""}`;const current=`${window.location.pathname}${window.location.search}`;if(next===current&&!window.location.hash)return;window.history.replaceState(window.history.state,"",next);}catch{// Address-bar cosmetics only; never let this break filtering.
+}}function urlFilterSyncEnabled(){if(!ENABLE_URL_FILTER_SYNC)return false;try{return RenderTarget.current()!==RenderTarget.canvas;}catch{return true;}}function shouldProgressivelyMountIndexContent(){if(typeof window==="undefined")return true;try{return RenderTarget.current()!==RenderTarget.canvas;}catch{return true;}}function prefersReducedIndexMotion(){if(typeof window==="undefined")return false;return window.matchMedia?.("(prefers-reduced-motion: reduce)").matches??false;}function indexViewTransitionActive(){try{return typeof document!=="undefined"&&document.documentElement.matches(":active-view-transition");}catch(error){return false;}}function getIndexStaggerIndex(index){return Math.max(0,Math.min(index,INDEX_APPEAR_PRESET.maxStaggerIndex));}function getIndexMaskRevealDelayMs(index){return INDEX_MASK_REVEAL_PRESET.baseDelayMs+getIndexStaggerIndex(index)*INDEX_MASK_REVEAL_PRESET.staggerMs;}function getIndexFadeDelayMs(index){return getIndexStaggerIndex(index)*INDEX_APPEAR_PRESET.staggerMs;}function getIndexNavFadeDelayMs(rowIndex,columnIndex=0){const row=Math.max(0,Math.min(rowIndex,INDEX_NAV_FADE_PRESET.maxRowIndex));const column=Math.max(0,columnIndex);return INDEX_NAV_FADE_PRESET.baseDelayMs+row*INDEX_NAV_FADE_PRESET.rowStaggerMs+column*INDEX_NAV_FADE_PRESET.columnStaggerMs;}function getIndexContentRevealDelayMs(rowIndex,columnIndex=0){const row=Math.max(0,Math.min(rowIndex,INDEX_CONTENT_REVEAL_PRESET.maxRowIndex));const column=Math.max(0,columnIndex);return INDEX_CONTENT_REVEAL_PRESET.baseDelayMs+row*INDEX_CONTENT_REVEAL_PRESET.rowStaggerMs+column*INDEX_CONTENT_REVEAL_PRESET.columnStaggerMs;}function getIndexMediaFadeDelayMs(index){return INDEX_MEDIA_FADE_PRESET.baseDelayMs+Math.max(0,Math.min(index,INDEX_MEDIA_FADE_PRESET.maxItemIndex))*INDEX_MEDIA_FADE_PRESET.itemStaggerMs;}function useIndexAppearTrigger(){const ref=useRef(null);const[appeared,setAppeared]=useState(false);useEffect(()=>{const element=ref.current;if(!element||typeof window==="undefined")return;const shouldReduce=prefersReducedIndexMotion();if(shouldReduce||!("IntersectionObserver"in window)){setAppeared(true);return;}let firstFrame=0;let secondFrame=0;let transitionPoll=0;let pageRevealTimer=0;let revealed=false;let waitingForTransition=false;let waitingRequiresVisible=true;let observer=null;const isVisible=()=>{const rect=element.getBoundingClientRect();const viewportHeight=window.innerHeight||document.documentElement.clientHeight;return rect.bottom>=0&&rect.top<=viewportHeight;};const reveal=()=>{if(revealed)return;revealed=true;waitingForTransition=false;window.clearTimeout(transitionPoll);window.cancelAnimationFrame(firstFrame);window.cancelAnimationFrame(secondFrame);observer?.disconnect();setAppeared(false);firstFrame=window.requestAnimationFrame(()=>{secondFrame=window.requestAnimationFrame(()=>{setAppeared(true);});});};const waitForTransitionThenReveal=requireVisible=>{if(revealed)return;if(waitingForTransition){waitingRequiresVisible=waitingRequiresVisible&&requireVisible;return;}waitingForTransition=true;waitingRequiresVisible=requireVisible;const poll=()=>{if(revealed)return;if(indexViewTransitionActive()){transitionPoll=window.setTimeout(poll,50);return;}const shouldRequireVisible=waitingRequiresVisible;waitingForTransition=false;if(!shouldRequireVisible||isVisible())reveal();};transitionPoll=window.setTimeout(poll,50);};const revealIfVisible=()=>{if(revealed||!isVisible())return;if(indexViewTransitionActive()){waitForTransitionThenReveal(true);return;}observer?.disconnect();reveal();};const revealForPageTransition=()=>{if(revealed)return;window.clearTimeout(pageRevealTimer);observer?.disconnect();reveal()// trusted: pt:reveal is emitted when the appear hold releases
+;};const revealForPageFallback=()=>{if(revealed)return;observer?.disconnect();if(indexViewTransitionActive()){waitForTransitionThenReveal(false);return;}reveal();};observer=new IntersectionObserver(entries=>{if(!entries.some(entry=>entry.isIntersecting))return;revealIfVisible();},{rootMargin:INDEX_APPEAR_PRESET.rootMargin,threshold:INDEX_APPEAR_PRESET.threshold});observer.observe(element);window.addEventListener("pt:reveal",revealForPageTransition);pageRevealTimer=window.setTimeout(revealForPageFallback,220);// Catch a pt:reveal that already fired before this effect mounted
+// (home→index race) so we still reveal at curtain-lift, not 220ms later.
+const recentPageRevealAt=Number(window.__ptRevealedAt||0);const recentPageRevealPath=String(window.__ptRevealedPath||"");if(recentPageRevealPath===window.location.pathname&&recentPageRevealAt>0&&Date.now()-recentPageRevealAt<2e3){revealForPageTransition();}return()=>{window.clearTimeout(transitionPoll);window.clearTimeout(pageRevealTimer);window.cancelAnimationFrame(firstFrame);window.cancelAnimationFrame(secondFrame);observer?.disconnect();window.removeEventListener("pt:reveal",revealForPageTransition);};},[]);return{ref,appeared};}function buildGlobalCss(){return`
+  ${HIDDEN_CMS_LINK_SELECTOR} {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    max-width: 1px !important;
+    max-height: 1px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    clip-path: inset(50%) !important;
+  }
+
+  ${HIDDEN_CMS_LINK_SELECTOR} * {
+    pointer-events: none !important;
+  }
+
+  .idx-fade-appear {
+    display: inline-block;
+    max-width: 100%;
+    opacity: 0;
+    will-change: opacity;
+  }
+
+  .idx-fade-appear-block {
+    display: block;
+    width: 100%;
+  }
+
+  .idx-fade-appear[data-idx-appeared="true"] {
+    opacity: 1;
+  }
+
+  .idx-mask-appear {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: inherit;
+  }
+
+  .idx-mask-appear-block {
+    display: block;
+    width: 100%;
+  }
+
+  .idx-mask-reveal-text {
+    display: inline-block;
+    max-width: 100%;
+    transform: translate3d(0, var(--idx-mask-distance, ${INDEX_MASK_REVEAL_PRESET.distancePx}px), 0);
+    will-change: transform;
+    line-height: inherit;
+    color: inherit;
+    -webkit-text-fill-color: inherit;
+    text-decoration: inherit;
+    text-underline-offset: inherit;
+    text-transform: inherit;
+  }
+
+  .idx-mask-appear-block > .idx-mask-reveal-text {
+    display: block;
+    width: 100%;
+  }
+
+  .idx-mask-appear[data-idx-appeared="true"] > .idx-mask-reveal-text {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .idx-rule {
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
+  }
+
+  .idx-rule[data-idx-appeared="true"] {
+    transform: scaleX(1);
+  }
+
+  .idx-tax-item {
+    cursor: pointer;
+    transition: opacity 150ms ${SMOOTH_EASE};
+    user-select: none;
+  }
+  .idx-tax-item:hover { opacity: 0.55; }
+  .idx-tax-item:focus-visible {
+    outline: 1px solid ${tokens.textPrimary};
+    outline-offset: 3px;
+  }
+
+  .idx-tax-item[aria-pressed="true"] .idx-mask-reveal-text,
+  .idx-tax-item[aria-pressed="true"] .idx-fade-appear,
+  .idx-clear-filters .idx-mask-reveal-text,
+  .idx-clear-filters .idx-fade-appear,
+  .idx-view-toggle-option[data-active="true"] .idx-mask-reveal-text,
+  .idx-view-toggle-option[data-active="true"] .idx-fade-appear {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+
+  .idx-list-row {
+    transition: background 150ms ${SMOOTH_EASE};
+    border-radius: 2px;
+  }
+  .idx-hover-highlight .idx-list-row:hover { background: rgba(20, 20, 20, 0.035); }
+
+  .idx-flip-text {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: var(--idx-flip-height);
+    line-height: var(--idx-flip-height);
+    overflow: hidden;
+    color: inherit;
+  }
+  .idx-flip-track {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transform: translateY(0);
+    transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .idx-flip-copy {
+    display: block;
+    flex: 0 0 var(--idx-flip-height);
+    height: var(--idx-flip-height);
+    line-height: var(--idx-flip-height);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .idx-hover-flip .idx-list-row:hover .idx-flip-track,
+  .idx-hover-flip .idx-list-row:focus-visible .idx-flip-track {
+    transform: translateY(calc((var(--idx-flip-height) + 5px) * -1));
+  }
+
+  .idx-rule,
+  .idx-row-divider,
+  .idx-year-rule,
+  .idx-grid-top-rule,
+  .idx-list-bottom-rule {
+    background-color: ${tokens.dividerSubtle} !important;
+    border-color: ${tokens.dividerSubtle} !important;
+    opacity: 1 !important;
+  }
+
+  .idx-view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 8px;
+    width: 100%;
+    margin: -46px 0 24px;
+    font-family: ${tokens.fontMono};
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: ${tokens.textPrimary} !important;
+    -webkit-text-fill-color: ${tokens.textPrimary} !important;
+    opacity: 1 !important;
+  }
+
+  .idx-taxonomy-shell + .idx-tax-item {
+    display: block;
+    margin-top: 12px !important;
+    line-height: 28px !important;
+  }
+
+  .idx-view-toggle-option {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    font: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    color: ${tokens.textPrimary} !important;
+    -webkit-text-fill-color: ${tokens.textPrimary} !important;
+    cursor: pointer;
+    text-decoration: none;
+    text-underline-offset: 3px;
+    transition:
+      color 150ms ${SMOOTH_EASE},
+      -webkit-text-fill-color 150ms ${SMOOTH_EASE};
+  }
+
+  .idx-view-toggle-option[data-active="true"] {
+    text-decoration: underline;
+    color: ${tokens.textPrimary} !important;
+    -webkit-text-fill-color: ${tokens.textPrimary} !important;
+    opacity: 1 !important;
+  }
+
+  .idx-view-toggle-option:hover {
+    color: ${tokens.textTertiary} !important;
+    -webkit-text-fill-color: ${tokens.textTertiary} !important;
+    opacity: 1;
+  }
+
+  .idx-view-toggle-option:focus-visible {
+    outline: 1px solid ${tokens.textPrimary};
+    outline-offset: 3px;
+  }
+
+  .idx-view-toggle-divider {
+    font: inherit;
+    line-height: inherit;
+    color: ${tokens.textPrimary} !important;
+    -webkit-text-fill-color: ${tokens.textPrimary} !important;
+    opacity: 1 !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .idx-fade-appear,
+    .idx-fade-appear[data-idx-appeared="true"],
+    .idx-mask-appear,
+    .idx-mask-appear[data-idx-appeared="true"],
+	    .idx-mask-reveal-text,
+	    .idx-row,
+	    .idx-grid-card,
+	    .idx-grid-card-media,
+	    .idx-rule {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      will-change: auto !important;
+    }
+    .idx-flip-track {
+      transition: none !important;
+      transform: none !important;
+    }
+    .idx-grid-title-stack {
+      transition: none !important;
+      transform: none !important;
+    }
+    .idx-grid-card-img,
+    .idx-grid-card-video,
+    .idx-grid-card-media > img,
+    .idx-grid-card-media > video {
+      transform: scale(1) !important;
+      transition: none !important;
+      will-change: auto !important;
+    }
+  }
+
+  .idx-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--idx-grid-gap, 20px);
+    row-gap: 56px;
+    width: 100%;
+  }
+  .idx-project-grid[data-grid-layout="figma"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    max-width: none;
+    row-gap: 52px;
+  }
+  .idx-grid-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .idx-grid-card-link {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .idx-grid-card[data-grid-layout="figma"],
+  .idx-grid-card[data-grid-layout="figma"] .idx-grid-card-link {
+    gap: 14px;
+  }
+  .idx-grid-card-link:focus-visible {
+    outline: 1px solid ${tokens.textPrimary};
+    outline-offset: 4px;
+  }
+  .idx-grid-card-heading {
+    align-items: start;
+    color: ${tokens.textPrimary};
+    display: grid;
+    font-family: ${tokens.fontMono};
+    font-size: 13px;
+    font-weight: 400;
+    grid-template-columns: 24px 11px minmax(0, 1fr);
+    letter-spacing: 0;
+    line-height: 100%;
+    min-height: 13px;
+    overflow: hidden;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .idx-grid-card-order {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .idx-grid-title-frame {
+    display: block;
+    height: 13px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .idx-grid-title-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transform: translateY(0);
+    transition: transform 420ms ${SNAPPY_EASE};
+    will-change: transform;
+  }
+  .idx-grid-title-stack > span {
+    display: block;
+    height: 13px;
+    line-height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .idx-grid-card-title {
+    width: 100%;
+    min-width: 0;
+  }
+  .idx-grid-card-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    clip-path: inset(0);
+    contain: paint;
+    isolation: isolate;
+    background: ${tokens.surfaceActive};
+    opacity: 0;
+    will-change: opacity;
+  }
+  .idx-grid-card-media[data-idx-media-appeared="true"] {
+    opacity: 1;
+  }
+  .idx-grid-card-media[data-thumbnail-stroke="true"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    box-sizing: border-box;
+    border: 1px solid ${tokens.textTertiary};
+    border-radius: inherit;
+    pointer-events: none;
+    background: transparent;
+  }
+  .idx-grid-card-meta {
+    margin-top: -2px;
+    font-family: ${tokens.fontMono};
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: ${tokens.textTertiary};
+  }
+  .idx-grid-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+    width: 100%;
+  }
+  .idx-grid-card-tag {
+    appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    background: transparent;
+    border: 1px solid ${tokens.textTertiary};
+    border-radius: 999px;
+    box-sizing: border-box;
+    color: ${tokens.textTertiary};
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-family: ${tokens.fontMono};
+    font-size: 12px;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 1;
+    margin: 0;
+    max-width: 100%;
+    min-height: 23px;
+    overflow: hidden;
+    padding: 5px 10px 6px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    transition:
+      color 250ms ${SMOOTH_EASE},
+      border-color 250ms ${SMOOTH_EASE};
+    white-space: nowrap;
+  }
+  @media (hover: hover) {
+    .idx-grid-card-tag:hover {
+      color: #25593a;
+      border-color: #25593a;
+    }
+  }
+  .idx-grid-card-tag[data-active="true"] {
+    color: #25593a;
+    border-color: #25593a;
+  }
+  .idx-grid-card-tag:focus-visible {
+    outline: 1px solid #25593a;
+    outline-offset: 3px;
+  }
+  .idx-grid-card-img,
+  .idx-grid-card-video,
+  .idx-grid-card-media > img,
+  .idx-grid-card-media > video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 0;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform 420ms ${SNAPPY_EASE};
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+  .idx-grid-card-video,
+  .idx-grid-card-media > video {
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .idx-grid-card-link:hover .idx-grid-card-img,
+    .idx-grid-card-link:focus-visible .idx-grid-card-img,
+    .idx-grid-card-link:focus-within .idx-grid-card-img,
+    .idx-grid-card-link:hover .idx-grid-card-video,
+    .idx-grid-card-link:focus-visible .idx-grid-card-video,
+    .idx-grid-card-link:focus-within .idx-grid-card-video,
+    .idx-grid-card-link:hover .idx-grid-card-media > img,
+    .idx-grid-card-link:focus-visible .idx-grid-card-media > img,
+    .idx-grid-card-link:focus-within .idx-grid-card-media > img,
+    .idx-grid-card-link:hover .idx-grid-card-media > video,
+    .idx-grid-card-link:focus-visible .idx-grid-card-media > video,
+    .idx-grid-card-link:focus-within .idx-grid-card-media > video {
+      transform: scale(1.02) !important;
+    }
+  }
+  .idx-grid-card-link:hover .idx-flip-track,
+  .idx-grid-card-link:focus-visible .idx-flip-track {
+    transform: translateY(calc((var(--idx-flip-height) + 5px) * -1));
+  }
+  .idx-grid-card-link:hover .idx-grid-title-stack,
+  .idx-grid-card-link:focus-visible .idx-grid-title-stack {
+    transform: translateY(-18px);
+  }
+
+  .idx-tax-label-year { grid-column: 1 / span 1; grid-row: 1; }
+  .idx-tax-items-year { grid-column: 2 / span 1; grid-row: 1; }
+  .idx-tax-label-discipline { grid-column: 3 / span 1; grid-row: 1; }
+  .idx-tax-items-discipline { grid-column: 4 / span 1; grid-row: 1; }
+  .idx-tax-label-industry { grid-column: 5 / span 1; grid-row: 1; }
+  .idx-tax-items-industry { grid-column: 6 / span 1; grid-row: 1; }
+
+  .idx-list-title { grid-column: 1 / span 2; }
+  .idx-list-discipline { grid-column: 3 / span 2; }
+  .idx-list-industry { grid-column: 5 / span 1; }
+
+  @media (max-width: 1199px) {
+    .idx-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    .idx-project-grid[data-grid-layout="figma"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      max-width: none !important;
+    }
+  }
+  @media (max-width: 899px) {
+    .idx-project-grid[data-grid-layout="figma"] {
+      grid-template-columns: 1fr !important;
+      row-gap: 52px !important;
+    }
+  }
+  @media (max-width: 809px) {
+    .idx-project-grid { grid-template-columns: 1fr !important; row-gap: 40px !important; }
+    .idx-project-grid[data-grid-layout="figma"] {
+      grid-template-columns: 1fr !important;
+      row-gap: 52px !important;
+    }
+    .idx-grid-card-link:hover .idx-flip-track,
+    .idx-grid-card-link:focus-visible .idx-flip-track,
+    .idx-grid-card-link:hover .idx-grid-title-stack,
+    .idx-grid-card-link:focus-visible .idx-grid-title-stack {
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .idx-container {
+      --idx-grid-gap: 16px !important;
+      padding: 0 20px !important;
+    }
+
+    .idx-year-group {
+      grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+      column-gap: var(--idx-grid-gap, 16px) !important;
+      row-gap: 0 !important;
+    }
+
+    .idx-year-label {
+      grid-column: 1 / span 1 !important;
+      padding-top: 15px !important;
+    }
+
+    .idx-list-content {
+      grid-column: 2 / span 5 !important;
+      min-width: 0 !important;
+    }
+
+    .idx-list-row-grid {
+      grid-template-columns: minmax(0, 1fr) max-content !important;
+      align-items: center !important;
+      column-gap: var(--idx-grid-gap, 16px) !important;
+      row-gap: 0 !important;
+      min-height: 56px !important;
+      padding: 9px 0 !important;
+    }
+
+    .idx-list-title {
+      grid-column: 1 / span 1 !important;
+      font-size: inherit !important;
+    }
+
+    .idx-list-discipline,
+    .idx-col-discipline {
+      display: none !important;
+    }
+
+    .idx-list-industry {
+      grid-column: 2 / span 1 !important;
+      justify-self: end !important;
+      text-align: right !important;
+      max-width: min(180px, 34vw) !important;
+    }
+
+    .idx-title-cell {
+      min-width: 0 !important;
+      overflow: hidden !important;
+      overflow-wrap: normal !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+    .idx-col-industry {
+      min-width: 0 !important;
+      overflow: visible !important;
+      overflow-wrap: normal !important;
+      text-overflow: clip !important;
+      white-space: normal !important;
+    }
+
+    .idx-year-number,
+    .idx-list-standard .idx-title-cell > span,
+    .idx-list-standard .idx-flip-copy {
+      font-size: 22px !important;
+      line-height: 1.2 !important;
+    }
+
+    .idx-list-standard .idx-flip-text {
+      --idx-flip-height: 27px !important;
+      height: 27px !important;
+      line-height: 27px !important;
+      overflow: hidden !important;
+    }
+
+    .idx-list-standard .idx-flip-copy {
+      flex: 0 0 var(--idx-flip-height) !important;
+      height: var(--idx-flip-height) !important;
+      line-height: var(--idx-flip-height) !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+    .idx-col-industry span {
+      display: block !important;
+      font-size: 12px !important;
+      line-height: 14px !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      white-space: normal !important;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .idx-taxonomy-shell {
+      grid-template-columns: minmax(112px, 24%) minmax(0, 1fr) !important;
+      column-gap: 20px !important;
+      row-gap: 28px !important;
+      align-items: start !important;
+    }
+
+    .idx-tax-label-discipline,
+    .idx-tax-label-industry,
+    .idx-tax-label-year {
+      grid-column: 1 / span 1 !important;
+      margin-top: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .idx-tax-items-discipline,
+    .idx-tax-items-industry,
+    .idx-tax-items-year {
+      grid-column: 2 / span 1 !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+    }
+
+    .idx-tax-label-year,
+    .idx-tax-items-year {
+      grid-row: 1 !important;
+    }
+
+    .idx-tax-label-discipline,
+    .idx-tax-items-discipline {
+      grid-row: 2 !important;
+    }
+
+    .idx-tax-label-industry,
+    .idx-tax-items-industry {
+      grid-row: 3 !important;
+    }
+
+    .idx-taxonomy-items {
+      align-items: flex-start !important;
+      overflow: visible !important;
+    }
+
+    .idx-tax-item {
+      white-space: normal !important;
+      overflow-wrap: break-word !important;
+    }
+  }
+
+  @media (max-width: 809px) {
+    .idx-container {
+      --idx-grid-gap: 10px !important;
+      padding: 0 20px !important;
+    }
+
+    .idx-taxonomy-shell {
+      grid-template-columns: minmax(96px, 28%) minmax(0, 1fr) !important;
+      column-gap: 18px !important;
+      row-gap: 28px !important;
+    }
+
+    .idx-year-group {
+      grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+      column-gap: var(--idx-grid-gap, 10px) !important;
+      row-gap: 0 !important;
+    }
+
+    .idx-year-label {
+      grid-column: 1 / span 1 !important;
+      padding-top: 15px !important;
+    }
+
+    .idx-list-content {
+      grid-column: 2 / span 5 !important;
+    }
+
+    .idx-list-row-grid {
+      grid-template-columns: minmax(0, 1fr) max-content !important;
+      align-items: center !important;
+      column-gap: var(--idx-grid-gap, 10px) !important;
+      row-gap: 0 !important;
+      min-height: 56px !important;
+      padding: 9px 0 !important;
+    }
+
+    .idx-list-title {
+      grid-column: 1 / span 1 !important;
+    }
+
+    .idx-list-discipline,
+    .idx-col-discipline {
+      display: none !important;
+    }
+
+    .idx-list-industry {
+      grid-column: 2 / span 1 !important;
+      max-width: min(150px, 34vw) !important;
+    }
+
+    .idx-flip-text {
+      --idx-flip-height: 27px !important;
+      height: 27px !important;
+      line-height: 27px !important;
+      overflow: hidden !important;
+    }
+
+    .idx-flip-track {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5px !important;
+      transform: translateY(0) !important;
+      transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: transform !important;
+    }
+
+    .idx-flip-copy,
+    .idx-flip-copy + .idx-flip-copy {
+      display: block !important;
+      flex: 0 0 var(--idx-flip-height) !important;
+      height: var(--idx-flip-height) !important;
+      line-height: var(--idx-flip-height) !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  @media (max-width: 809px) and (prefers-reduced-motion: reduce) {
+    .idx-flip-track {
+      transition: none !important;
+      transform: none !important;
+      will-change: auto !important;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .idx-container {
+      --idx-grid-gap: 8px !important;
+      padding: 0 14px !important;
+    }
+
+    .idx-taxonomy-shell {
+      grid-template-columns: minmax(84px, 32%) minmax(0, 1fr) !important;
+      column-gap: 16px !important;
+      row-gap: 26px !important;
+      align-items: start !important;
+    }
+
+    .idx-tax-label-discipline,
+    .idx-tax-label-industry,
+    .idx-tax-label-year {
+      grid-column: 1 / span 1 !important;
+      margin-top: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .idx-tax-items-discipline,
+    .idx-tax-items-industry,
+    .idx-tax-items-year {
+      grid-column: 2 / span 1 !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+    }
+
+    .idx-tax-label-year,
+    .idx-tax-items-year {
+      grid-row: 1 !important;
+    }
+
+    .idx-tax-label-discipline,
+    .idx-tax-items-discipline {
+      grid-row: 2 !important;
+    }
+
+    .idx-tax-label-industry,
+    .idx-tax-items-industry {
+      grid-row: 3 !important;
+    }
+
+    .idx-tax-item {
+      white-space: normal !important;
+      overflow-wrap: break-word !important;
+    }
+
+    .idx-year-group {
+      grid-template-columns: 1fr !important;
+      column-gap: 0 !important;
+    }
+
+    .idx-year-label {
+      display: none !important;
+    }
+
+    .idx-list-content {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
+    }
+
+    .idx-list-row-grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      column-gap: 0 !important;
+    }
+
+    .idx-list-title {
+      grid-column: 1 / -1 !important;
+      justify-self: stretch !important;
+      text-align: left !important;
+      width: 100% !important;
+    }
+
+    .idx-list-discipline,
+    .idx-col-discipline,
+    .idx-list-industry,
+    .idx-col-industry {
+      display: none !important;
+    }
+
+    .idx-list-view .idx-year-rule,
+    .idx-list-view .idx-row-divider,
+    .idx-list-bottom-rule {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
+    }
+  }
+`;}function MaskedSlideText({children,index,delayMs,block=false,className,style}){const{ref,appeared}=useIndexAppearTrigger();const textRef=useRef(null);useEffect(()=>{const element=textRef.current;if(!element||typeof window==="undefined")return;const hiddenTransform=`translate3d(0, ${INDEX_MASK_REVEAL_PRESET.distancePx}px, 0)`;element.getAnimations().forEach(animation=>animation.cancel());if(!appeared){element.style.transform=hiddenTransform;return;}if(prefersReducedIndexMotion()||typeof element.animate!=="function"){element.style.transform="translate3d(0, 0, 0)";return;}element.style.transform=hiddenTransform;const animation=element.animate([{transform:hiddenTransform},{transform:"translate3d(0, 0, 0)"}],{duration:INDEX_MASK_REVEAL_PRESET.durationMs,delay:delayMs??getIndexMaskRevealDelayMs(index),easing:INDEX_MASK_REVEAL_PRESET.easing,fill:"both"});return()=>{animation.cancel();};},[appeared,delayMs,index]);return /*#__PURE__*/_jsx("span",{ref:ref,className:["idx-mask-appear",block?"idx-mask-appear-block":"",className??""].filter(Boolean).join(" "),"data-idx-appeared":appeared?"true":"false",style:style,children:/*#__PURE__*/_jsx("span",{ref:textRef,className:"idx-mask-reveal-text",children:children})});}function FadeInText({children,index=0,delayMs,durationMs,easing,block=false,className,style}){const{ref,appeared}=useIndexAppearTrigger();useEffect(()=>{const element=ref.current;if(!element||typeof window==="undefined")return;element.getAnimations().forEach(animation=>animation.cancel());if(!appeared){element.style.opacity="0";return;}if(prefersReducedIndexMotion()||typeof element.animate!=="function"){element.style.opacity="1";return;}element.style.opacity="0";const animation=element.animate([{opacity:0},{opacity:1}],{duration:durationMs??INDEX_APPEAR_PRESET.durationMs,delay:delayMs??getIndexFadeDelayMs(index),easing:easing??INDEX_APPEAR_PRESET.easing,fill:"both"});return()=>{animation.cancel();};},[appeared,delayMs,durationMs,easing,index]);return /*#__PURE__*/_jsx("span",{ref:ref,className:["idx-fade-appear",block?"idx-fade-appear-block":"",className??""].filter(Boolean).join(" "),"data-idx-appeared":appeared?"true":"false",style:style,children:children});}function IndexRule({className,style,delayMs=0}){const{ref,appeared}=useIndexAppearTrigger();useEffect(()=>{const element=ref.current;if(!element||typeof window==="undefined")return;element.getAnimations().forEach(animation=>animation.cancel());if(!appeared){element.style.transform="scaleX(0)";return;}if(prefersReducedIndexMotion()||typeof element.animate!=="function"){element.style.transform="scaleX(1)";return;}element.style.transform="scaleX(0)";const animation=element.animate([{transform:"scaleX(0)"},{transform:"scaleX(1)"}],{duration:INDEX_APPEAR_PRESET.ruleDurationMs,delay:delayMs,easing:INDEX_APPEAR_PRESET.ruleEasing,fill:"both"});return()=>{animation.cancel();};},[appeared,delayMs]);return /*#__PURE__*/_jsx("div",{ref:ref,className:["idx-rule",className??""].filter(Boolean).join(" "),"data-idx-appeared":appeared?"true":"false",style:style});}function TaxonomySection({filters,disciplineNavItems,industryNavItems,yearNavItems,onFilterToggle,onFilterClear,onClearFilters}){const hasActive=filters.disciplines.length>0||filters.industries.length>0||filters.years.length>0;const shellStyle={...indexGridStyle,alignItems:"flex-start",fontFamily:tokens.fontMono,fontSize:13,lineHeight:TAXONOMY_LINE_HEIGHT,textTransform:"uppercase",color:tokens.textPrimary,letterSpacing:0};const labelStyle={minWidth:0,font:"inherit",lineHeight:TAXONOMY_LINE_HEIGHT,color:tokens.textPrimary,whiteSpace:"nowrap"};const itemsStyle={display:"flex",flexDirection:"column",alignItems:"flex-start",minWidth:0,overflow:"hidden"};const itemStyle=active=>({display:"block",width:"100%",margin:0,padding:0,border:"none",background:"transparent",font:"inherit",lineHeight:TAXONOMY_LINE_HEIGHT,textAlign:"left",textTransform:"inherit",color:tokens.textPrimary,letterSpacing:0,fontWeight:400,textDecoration:active?"underline":"none",textUnderlineOffset:"3px",cursor:"pointer",appearance:"none",WebkitAppearance:"none"});const navFadeProps=(rowIndex,columnIndex=0)=>({delayMs:getIndexNavFadeDelayMs(rowIndex,columnIndex),durationMs:INDEX_NAV_FADE_PRESET.durationMs,easing:INDEX_NAV_FADE_PRESET.easing});const clearFiltersRow=Math.max(yearNavItems.length,disciplineNavItems.length,industryNavItems.length)+2;return /*#__PURE__*/_jsxs("div",{children:[/*#__PURE__*/_jsxs("div",{className:"idx-taxonomy-shell",style:shellStyle,children:[/*#__PURE__*/_jsx("div",{className:"idx-taxonomy-label idx-tax-label-year",style:labelStyle,children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(0,0),children:"/ Year"})}),/*#__PURE__*/_jsxs("div",{className:"idx-taxonomy-items idx-tax-items-year",style:itemsStyle,children:[/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item",style:itemStyle(filters.years.length===0),"aria-pressed":filters.years.length===0,"aria-label":"Show all years",onClick:()=>onFilterClear("years"),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(0,0),children:"All"})}),yearNavItems.map((y,rowIndex)=>/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item idx-tax-value",style:itemStyle(filters.years.includes(y)),"aria-pressed":filters.years.includes(y),onClick:()=>onFilterToggle("years",y),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(rowIndex+1,0),children:y})},y))]}),/*#__PURE__*/_jsx("div",{className:"idx-taxonomy-label idx-tax-label-discipline",style:labelStyle,children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(0,1),children:"/ Service"})}),/*#__PURE__*/_jsxs("div",{className:"idx-taxonomy-items idx-tax-items-discipline",style:itemsStyle,children:[/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item",style:itemStyle(filters.disciplines.length===0),"aria-pressed":filters.disciplines.length===0,"aria-label":"Show all services",onClick:()=>onFilterClear("disciplines"),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(0,1),children:"All"})}),disciplineNavItems.map((d,rowIndex)=>/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item idx-tax-value",style:itemStyle(filters.disciplines.includes(d)),"aria-pressed":filters.disciplines.includes(d),onClick:()=>onFilterToggle("disciplines",d),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(rowIndex+1,1),children:d})},d))]}),/*#__PURE__*/_jsx("div",{className:"idx-taxonomy-label idx-tax-label-industry",style:labelStyle,children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(0,2),children:"/ Industry"})}),/*#__PURE__*/_jsxs("div",{className:"idx-taxonomy-items idx-tax-items-industry",style:itemsStyle,children:[/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item",style:itemStyle(filters.industries.length===0),"aria-pressed":filters.industries.length===0,"aria-label":"Show all industries",onClick:()=>onFilterClear("industries"),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(0,2),children:"All"})}),industryNavItems.map((i,rowIndex)=>/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item idx-tax-value",style:itemStyle(filters.industries.includes(i)),"aria-pressed":filters.industries.includes(i),onClick:()=>onFilterToggle("industries",i),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(rowIndex+1,2),children:i})},i))]})]}),/*#__PURE__*/_jsx("button",{type:"button",className:"idx-tax-item idx-clear-filters",onClick:onClearFilters,"aria-hidden":hasActive?undefined:"true",tabIndex:hasActive?undefined:-1,style:{marginTop:4,padding:0,border:"none",background:"transparent",fontFamily:tokens.fontMono,fontSize:13,lineHeight:"28px",textTransform:"uppercase",color:tokens.textSecondary,letterSpacing:0,cursor:"pointer",textDecoration:"underline",textUnderlineOffset:"3px",appearance:"none",WebkitAppearance:"none",visibility:hasActive?"visible":"hidden",pointerEvents:hasActive?"auto":"none"},children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(clearFiltersRow,0),children:"Clear filters"})})]});}function HoverFlipText({text,activeText,style,activeStyle,height}){const flipStyle={...style,["--idx-flip-height"]:height};return /*#__PURE__*/_jsx("span",{className:"idx-flip-text",style:flipStyle,"aria-label":text,children:/*#__PURE__*/_jsxs("span",{className:"idx-flip-track","aria-hidden":"true",children:[/*#__PURE__*/_jsx("span",{className:"idx-flip-copy",children:text}),/*#__PURE__*/_jsx("span",{className:"idx-flip-copy",style:activeStyle,children:activeText??text})]})});}function ListView({projects,hoverVariant="flip",progressiveMounting=false}){const groups=useMemo(()=>groupByYear(projects),[projects]);const metaTextStyle={fontFamily:tokens.fontMono,fontSize:13,fontWeight:400,lineHeight:"28px",textTransform:"uppercase",color:tokens.textPrimary,letterSpacing:0};const titleTextStyle={fontFamily:tokens.fontHeading,fontSize:22,fontWeight:500,textTransform:"uppercase",color:tokens.textPrimary,lineHeight:1.2};const projectCtaTextStyle={...titleTextStyle,fontFamily:tokens.fontProjectCta,fontWeight:400,color:tokens.textTertiary,WebkitTextFillColor:tokens.textTertiary};if(groups.length===0){return /*#__PURE__*/_jsx("div",{style:{padding:"64px 0",textAlign:"center",fontFamily:tokens.fontMono,fontSize:13,lineHeight:"28px",textTransform:"uppercase",color:tokens.textTertiary},children:"No work matches those filters."});}const totalRevealRows=groups.reduce((count,group)=>count+1+group.items.length,0);const closingRuleDelay=progressiveMounting?0:getIndexContentRevealDelayMs(totalRevealRows,0);let rowRevealIndex=0;let projectRevealIndex=0;return /*#__PURE__*/_jsxs("div",{className:`idx-list-view idx-list-standard idx-hover-${hoverVariant}`,children:[groups.map(({year,items})=>{const yearRevealRow=rowRevealIndex++;const skipYearRevealDelay=progressiveMounting&&projectRevealIndex>=INDEX_INITIAL_MOUNT_COUNT;const yearRevealDelay=skipYearRevealDelay?0:getIndexContentRevealDelayMs(yearRevealRow,0);return /*#__PURE__*/_jsxs("div",{className:"idx-year-group",style:indexGridStyle,children:[/*#__PURE__*/_jsx(IndexRule,{className:"idx-year-rule",delayMs:yearRevealDelay,style:{gridColumn:"1 / -1",height:1,backgroundColor:tokens.dividerStrong}}),/*#__PURE__*/_jsx("div",{className:"idx-year-label",style:{gridColumn:"1 / span 1",minWidth:0,paddingTop:15},children:/*#__PURE__*/_jsx("div",{className:"idx-year-number",style:titleTextStyle,children:/*#__PURE__*/_jsx(MaskedSlideText,{index:yearRevealRow,delayMs:yearRevealDelay,block:true,children:year>0?year:"—"})})}),/*#__PURE__*/_jsx("div",{className:"idx-list-content",style:{gridColumn:"2 / span 5",minWidth:0},children:items.map((p,ri)=>{const url=getCaseStudyUrl(p);const disciplineText=getDisciplineDisplay(p);const useFlipHover=hoverVariant==="flip";const itemRevealRow=rowRevealIndex++;const projectMountIndex=projectRevealIndex++;const skipItemRevealDelay=progressiveMounting&&projectMountIndex>=INDEX_INITIAL_MOUNT_COUNT;const titleRevealDelay=skipItemRevealDelay?0:getIndexContentRevealDelayMs(itemRevealRow,0);const disciplineRevealDelay=skipItemRevealDelay?0:getIndexContentRevealDelayMs(itemRevealRow,1);const industryRevealDelay=skipItemRevealDelay?0:getIndexContentRevealDelayMs(itemRevealRow,2);return /*#__PURE__*/_jsxs("div",{children:[/*#__PURE__*/_jsxs("div",{className:"idx-list-row idx-row idx-list-row-grid",style:{display:"grid",gridTemplateColumns:"repeat(5, minmax(0, 1fr))",columnGap:INDEX_GRID_GAP,alignItems:"center",minHeight:56,padding:"9px 0",cursor:url?"pointer":"default"},onClick:()=>{if(url)window.location.href=url;},children:[/*#__PURE__*/_jsx("div",{className:"idx-title-cell idx-list-title",style:{minWidth:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"},children:useFlipHover?/*#__PURE__*/_jsx(MaskedSlideText,{index:itemRevealRow,delayMs:titleRevealDelay,block:true,children:/*#__PURE__*/_jsx(HoverFlipText,{text:p.title,activeText:url?"View Project →":p.title,style:titleTextStyle,activeStyle:url?projectCtaTextStyle:undefined,height:"27px"})}):/*#__PURE__*/_jsx(MaskedSlideText,{index:itemRevealRow,delayMs:titleRevealDelay,block:true,style:titleTextStyle,children:p.title})}),/*#__PURE__*/_jsx("div",{className:"idx-col-discipline idx-list-discipline",style:{minWidth:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"},children:/*#__PURE__*/_jsx(FadeInText,{index:itemRevealRow,delayMs:disciplineRevealDelay,block:true,style:metaTextStyle,children:disciplineText})}),/*#__PURE__*/_jsx("div",{className:"idx-col-industry idx-list-industry",style:{minWidth:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"},children:/*#__PURE__*/_jsx(FadeInText,{index:itemRevealRow,delayMs:industryRevealDelay,block:true,style:metaTextStyle,children:p.industry})})]}),ri<items.length-1&&/*#__PURE__*/_jsx(IndexRule,{className:"idx-row-divider",delayMs:progressiveMounting?0:titleRevealDelay,style:{height:1,backgroundColor:tokens.dividerSubtle}})]},p.slug||p.title);})})]},year);}),/*#__PURE__*/_jsx(IndexRule,{className:"idx-list-bottom-rule",delayMs:closingRuleDelay,style:{height:1,width:"100%",backgroundColor:tokens.dividerStrong}})]});}function GridMediaFrame({children,index,delayMs,thumbnailStroke}){const{ref,appeared}=useIndexAppearTrigger();useEffect(()=>{const element=ref.current;if(!element||typeof window==="undefined")return;element.getAnimations().forEach(animation=>animation.cancel());if(!appeared){element.style.opacity="0";return;}if(prefersReducedIndexMotion()||typeof element.animate!=="function"){element.style.opacity="1";return;}element.style.opacity="0";const animation=element.animate([{opacity:0},{opacity:1}],{duration:INDEX_MEDIA_FADE_PRESET.durationMs,delay:delayMs??getIndexMediaFadeDelayMs(index),easing:INDEX_MEDIA_FADE_PRESET.easing,fill:"both"});return()=>{animation.cancel();};},[appeared,delayMs,index]);return /*#__PURE__*/_jsx("div",{ref:ref,className:"idx-grid-card-media","data-thumbnail-stroke":thumbnailStroke?"true":undefined,"data-idx-media-appeared":appeared?"true":"false",children:children});}function GridProjectMedia({project}){const thumbSrc=normalizeIndexThumbnailUrl(project.thumbnail);const videoSrc=getThumbnailVideoLink(project);const usesLoopingImage=isLoopingImageMediaSource(videoSrc);if(videoSrc&&usesLoopingImage){return /*#__PURE__*/_jsx("img",{className:"idx-grid-card-img",src:videoSrc,alt:`${project.title} motion thumbnail`,loading:"lazy",decoding:"async"});}if(videoSrc){return /*#__PURE__*/_jsx("video",{className:"idx-grid-card-video",src:videoSrc,poster:thumbSrc||undefined,muted:true,loop:true,playsInline:true,autoPlay:true,preload:"metadata"});}if(thumbSrc){return /*#__PURE__*/_jsx("img",{className:"idx-grid-card-img",src:thumbSrc,alt:`${project.title} thumbnail`,loading:"lazy",decoding:"async"});}return null;}function getGridProjectOrder(project,index){const sortOrder=Number(project.sortOrder);if(Number.isFinite(sortOrder)&&sortOrder>0){return String(Math.floor(sortOrder));}return String(index+1);}function ClassicGridProjectCard({project,index,skipRevealDelay=false}){const href=getCaseStudyUrl(project);const serviceText=getDisciplineDisplay(project);const yearText=normalizeYear(project.year);const metaLineTwo=[project.industry,yearText>0?String(yearText):""].filter(Boolean).join(" / ");const titleStyle={fontFamily:tokens.fontHeading,fontSize:22,fontWeight:500,textTransform:"uppercase",color:tokens.textPrimary,lineHeight:1.2};const projectCtaStyle={...titleStyle,fontFamily:tokens.fontProjectCta,fontWeight:400,color:tokens.textTertiary,WebkitTextFillColor:tokens.textTertiary};return /*#__PURE__*/_jsxs("a",{className:"idx-grid-card",href:href||undefined,"aria-label":project.title,children:[/*#__PURE__*/_jsx(GridMediaFrame,{index:index,delayMs:skipRevealDelay?0:undefined,thumbnailStroke:project.thumbnailStroke,children:/*#__PURE__*/_jsx(GridProjectMedia,{project:project})}),/*#__PURE__*/_jsx("div",{className:"idx-grid-card-title",children:/*#__PURE__*/_jsx(MaskedSlideText,{index:index,delayMs:skipRevealDelay?0:undefined,block:true,children:/*#__PURE__*/_jsx(HoverFlipText,{text:project.title,activeText:href?"View Project →":project.title,style:titleStyle,activeStyle:href?projectCtaStyle:undefined,height:"27px"})})}),/*#__PURE__*/_jsx("div",{className:"idx-grid-card-meta",children:/*#__PURE__*/_jsxs(FadeInText,{index:index+1,delayMs:skipRevealDelay?0:undefined,block:true,children:[serviceText,serviceText&&metaLineTwo?/*#__PURE__*/_jsx("br",{}):null,metaLineTwo]})})]});}function FigmaGridProjectCard({project,index,skipRevealDelay=false}){const href=getCaseStudyUrl(project);const tags=getDisciplines(project).slice(0,3);const order=getGridProjectOrder(project,index);const filterContext=React.useContext(IndexFilterContext);return /*#__PURE__*/_jsxs("div",{className:"idx-grid-card","data-grid-layout":"figma",children:[/*#__PURE__*/_jsxs("a",{className:"idx-grid-card-link",href:href||undefined,"aria-label":project.title,children:[/*#__PURE__*/_jsxs("div",{className:"idx-grid-card-heading","aria-label":`${order} / ${project.title}`,children:[/*#__PURE__*/_jsx("span",{className:"idx-grid-card-order",children:order}),/*#__PURE__*/_jsx("span",{"aria-hidden":"true",children:"/"}),/*#__PURE__*/_jsx("span",{className:"idx-grid-title-frame",children:/*#__PURE__*/_jsxs("span",{className:"idx-grid-title-stack","aria-hidden":"true",children:[/*#__PURE__*/_jsx("span",{children:project.title}),/*#__PURE__*/_jsx("span",{children:"VIEW PROJECT"})]})})]}),/*#__PURE__*/_jsx(GridMediaFrame,{index:index,delayMs:skipRevealDelay?0:undefined,thumbnailStroke:project.thumbnailStroke,children:/*#__PURE__*/_jsx(GridProjectMedia,{project:project})})]}),tags.length>0&&/*#__PURE__*/_jsx("div",{className:"idx-grid-card-tags","aria-label":`${project.title} services`,children:tags.map(tag=>{if(!filterContext){return /*#__PURE__*/_jsx("span",{className:"idx-grid-card-tag",children:tag},tag);}const active=filterContext.disciplines.includes(tag);return /*#__PURE__*/_jsx("button",{type:"button",className:"idx-grid-card-tag","data-active":active?"true":undefined,"aria-pressed":active,onClick:()=>filterContext.onToggleDiscipline(tag),children:tag},tag);})})]});}function GridView({projects,layoutVariant="classic",progressiveMounting=false}){if(projects.length===0){return /*#__PURE__*/_jsx("div",{style:{padding:"64px 0",textAlign:"center",fontFamily:tokens.fontMono,fontSize:13,lineHeight:"28px",textTransform:"uppercase",color:tokens.textTertiary},children:"No work matches those filters."});}const isFigmaLayout=layoutVariant==="figma";return /*#__PURE__*/_jsxs(_Fragment,{children:[!isFigmaLayout&&/*#__PURE__*/_jsx(IndexRule,{className:"idx-grid-top-rule",style:{height:1,width:"100%",backgroundColor:tokens.dividerStrong,marginBottom:24}}),/*#__PURE__*/_jsx("div",{className:"idx-project-grid","data-grid-layout":layoutVariant,"aria-label":"Filtered project grid",children:projects.map((project,index)=>isFigmaLayout?/*#__PURE__*/_jsx(FigmaGridProjectCard,{project:project,index:index,skipRevealDelay:progressiveMounting&&index>=INDEX_INITIAL_MOUNT_COUNT},project.slug||project.title):/*#__PURE__*/_jsx(ClassicGridProjectCard,{project:project,index:index,skipRevealDelay:progressiveMounting&&index>=INDEX_INITIAL_MOUNT_COUNT},project.slug||project.title))})]});}function ViewToggle({activeView,onViewChange,revealStartRow=0}){const navFadeProps=(rowIndex,columnIndex=0)=>({delayMs:getIndexNavFadeDelayMs(rowIndex,columnIndex),durationMs:INDEX_NAV_FADE_PRESET.durationMs,easing:INDEX_NAV_FADE_PRESET.easing});return /*#__PURE__*/_jsx("div",{className:"idx-view-toggle","aria-label":"Project view",children:VIEW_TOGGLE_OPTIONS.map((v,index)=>{const active=activeView===v;const revealColumn=index*2;return /*#__PURE__*/_jsxs(React.Fragment,{children:[index>0&&/*#__PURE__*/_jsx("span",{className:"idx-view-toggle-divider","aria-hidden":"true",children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(revealStartRow,revealColumn-1),children:"/"})}),/*#__PURE__*/_jsx("button",{type:"button",className:"idx-view-toggle-option","data-active":active?"true":"false","aria-pressed":active,onClick:()=>onViewChange(v),children:/*#__PURE__*/_jsx(FadeInText,{...navFadeProps(revealStartRow,revealColumn),children:v})})]},v);})});}export default function IndexPage({projects:projectsProp,useCMS=true,cmsModuleUrl="",thumbnailVideoFieldIds=DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS,defaultView="list",listHoverVariant="flip",gridLayoutVariant="classic",advanced,textPrimary,textSecondary,textTertiary,bg,dividerStrong,dividerSubtle,surfaceActive}){const resolvedCmsModuleUrl=cmsModuleUrl;const resolvedThumbnailVideoFieldIds=thumbnailVideoFieldIds??DEFAULT_THUMBNAIL_VIDEO_FIELD_IDS;const resolvedDefaultView=advanced?.defaultView??defaultView;const resolvedListHoverVariant=advanced?.listHoverVariant??listHoverVariant;const resolvedGridLayoutVariant=advanced?.gridLayoutVariant??gridLayoutVariant;// Mirror the color props onto the module-scope `tokens` so module-level
+// sub-components and buildGlobalCss() see the live values.
+tokens.textPrimary=advanced?.textPrimary||textPrimary||DEFAULT_TOKENS.textPrimary;tokens.textSecondary=advanced?.textSecondary||textSecondary||DEFAULT_TOKENS.textSecondary;tokens.textTertiary=advanced?.textTertiary||textTertiary||DEFAULT_TOKENS.textTertiary;tokens.bg=advanced?.bg||bg||DEFAULT_TOKENS.bg;tokens.dividerStrong=advanced?.dividerStrong||dividerStrong||DEFAULT_TOKENS.dividerStrong;tokens.dividerSubtle=advanced?.dividerSubtle||dividerSubtle||DEFAULT_TOKENS.dividerSubtle;tokens.surfaceActive=advanced?.surfaceActive||surfaceActive||DEFAULT_TOKENS.surfaceActive;const globalCss=useMemo(()=>buildGlobalCss(),[advanced,textPrimary,textSecondary,textTertiary,bg,dividerStrong,dividerSubtle,surfaceActive]);useHiddenCMSLinkInerting(useCMS);const[cmsModuleProjects,setCMSModuleProjects]=useState([]);const[cmsModuleLoaded,setCMSModuleLoaded]=useState(false);useEffect(()=>{if(!useCMS){setCMSModuleProjects([]);setCMSModuleLoaded(false);return;}let cancelled=false;setCMSModuleLoaded(false);loadCMSProjects(resolvedCmsModuleUrl,resolvedThumbnailVideoFieldIds).then(items=>{if(!cancelled){setCMSModuleProjects(items);setCMSModuleLoaded(true);}}).catch(()=>{if(!cancelled){setCMSModuleProjects([]);setCMSModuleLoaded(true);}});return()=>{cancelled=true;};},[useCMS,resolvedCmsModuleUrl,resolvedThumbnailVideoFieldIds]);const allProjects=useMemo(()=>{// In CMS mode, render only the generated All Projects CMS module.
+// If it has not loaded yet, stay empty/loading instead of flashing
+// registry rows, manual props, or any local snapshot.
+const fromCMSModule=useCMS&&cmsModuleProjects.length>0?cmsModuleProjects:null;const fromProps=projectsProp&&projectsProp.length>0?projectsProp:null;const sourceProjects=useCMS?fromCMSModule??[]:fromProps??[];return sourceProjects.map(normalizeProjectDisciplines);},[useCMS,cmsModuleProjects,projectsProp]);const initialView=resolvedDefaultView==="grid"?"grid":"list";const progressivelyMountContent=shouldProgressivelyMountIndexContent();const[activeView,setActiveView]=useState(initialView);const[renderKey,setRenderKey]=useState(0);const[progressiveMountState,setProgressiveMountState]=useState({projects:null,view:initialView,count:0});const hasCompletedInitialProgressiveMountRef=useRef(!progressivelyMountContent);if(!progressivelyMountContent){hasCompletedInitialProgressiveMountRef.current=true;}const[filters,setFilters]=useState({disciplines:[],industries:[],years:[]});const indexContainerRef=useRef(null);const taxonomyNavItems=useMemo(()=>getTaxonomyNavItems(allProjects),[allProjects]);/* --- URL filter sync (2026-09-04). See ENABLE_URL_FILTER_SYNC above. --- */// Raw slugs lifted off the URL, held until the CMS taxonomy arrives and we
+// can map them onto real labels.
+const pendingUrlFiltersRef=useRef(null);// Bumped on mount and on every hashchange, to re-run resolution.
+const[urlFilterTick,setUrlFilterTick]=useState(0);// Gate on the write-back effect so the very first render can't blank a URL
+// we haven't read yet.
+const[urlFilterReady,setUrlFilterReady]=useState(false);// Mount + hashchange: capture what the URL is asking for. This runs before
+// the first progressive content batch, so the grid's first paint is already
+// filtered rather than flashing the full set.
+useEffect(()=>{if(!urlFilterSyncEnabled())return;const captureFromUrl=()=>{setUrlFilterReady(false);pendingUrlFiltersRef.current=parseUrlFilterSelection();setUrlFilterTick(tick=>tick+1);};captureFromUrl();// Covers home -> index -> back -> a different tag, where Framer's
+// client-side router swaps only the hash.
+window.addEventListener("hashchange",captureFromUrl);return()=>window.removeEventListener("hashchange",captureFromUrl);},[]);// Apply once the taxonomy is populated, since slug -> label resolution
+// needs the CMS labels to compare against.
+useEffect(()=>{if(!urlFilterSyncEnabled()||urlFilterTick===0)return;const pending=pendingUrlFiltersRef.current;if(!pending){setUrlFilterReady(true);return;}const hasTaxonomy=taxonomyNavItems.disciplines.length>0||taxonomyNavItems.industries.length>0||taxonomyNavItems.years.length>0;if(!hasTaxonomy)return;// CMS still loading; try again when it lands.
+pendingUrlFiltersRef.current=null;setUrlFilterReady(true);const resolved={disciplines:resolveTaxonomySlugs(pending.disciplines,taxonomyNavItems.disciplines),industries:resolveTaxonomySlugs(pending.industries,taxonomyNavItems.industries),years:resolveTaxonomyYears(pending.years,taxonomyNavItems.years)};if(resolved.disciplines.length===0&&resolved.industries.length===0&&resolved.years.length===0){// Nothing in the URL matched the live taxonomy (stale or typo'd
+// link) — leave the index unfiltered rather than showing an error.
+return;}setFilters(resolved);},[urlFilterTick,taxonomyNavItems]);// Keep the address bar in step with the filters, so any filtered view is
+// shareable and the arriving #hash gets normalized to a readable ?query.
+useEffect(()=>{if(!urlFilterSyncEnabled()||!urlFilterReady)return;writeFiltersToUrl(filters);},[filters,urlFilterTick,urlFilterReady]);const handleViewChange=useCallback(v=>{if(v===activeView)return;setActiveView(v);setRenderKey(k=>k+1);},[activeView]);const handleFilterToggle=useCallback((type,value)=>{setFilters(prev=>{if(type==="years"){return{...prev,years:toggleFilterValue(prev.years,Number(value))};}if(type==="industries"){return{...prev,industries:toggleFilterValue(prev.industries,String(value))};}return{...prev,disciplines:toggleFilterValue(prev.disciplines,String(value))};});},[]);const indexFilterContextValue=useMemo(()=>({disciplines:filters.disciplines,onToggleDiscipline:value=>handleFilterToggle("disciplines",value)}),[filters.disciplines,handleFilterToggle]);const handleFilterClear=useCallback(type=>{setFilters(prev=>{if(prev[type].length===0)return prev;return{...prev,[type]:[]};});},[]);const handleClearFilters=useCallback(()=>setFilters(prev=>{if(prev.disciplines.length===0&&prev.industries.length===0&&prev.years.length===0){return prev;}return{disciplines:[],industries:[],years:[]};}),[]);const filteredProjects=useMemo(()=>filterProjects(allProjects,filters,""),[allProjects,filters]);const hasActiveFilters=filters.disciplines.length>0||filters.industries.length>0||filters.years.length>0;const isCMSLoading=useCMS&&!cmsModuleLoaded;const projectsForActiveView=useMemo(()=>activeView==="list"?groupByYear(filteredProjects).flatMap(group=>group.items):filteredProjects,[activeView,filteredProjects]);if(!hasCompletedInitialProgressiveMountRef.current&&progressiveMountState.projects!==null&&(progressiveMountState.projects!==projectsForActiveView||progressiveMountState.view!==activeView)){hasCompletedInitialProgressiveMountRef.current=true;}const isInitialProgressiveMountActive=progressivelyMountContent&&!hasCompletedInitialProgressiveMountRef.current;const mountedProjectCount=isInitialProgressiveMountActive&&progressiveMountState.projects===projectsForActiveView&&progressiveMountState.view===activeView?progressiveMountState.count:isInitialProgressiveMountActive?0:projectsForActiveView.length;const mountedProjects=mountedProjectCount>=projectsForActiveView.length?projectsForActiveView:projectsForActiveView.slice(0,mountedProjectCount);const isFirstContentBatchPending=isInitialProgressiveMountActive&&!isCMSLoading&&filteredProjects.length>0&&mountedProjects.length===0;useEffect(()=>{if(hasCompletedInitialProgressiveMountRef.current||!progressivelyMountContent||isCMSLoading||filteredProjects.length===0||typeof window==="undefined"){return;}const batchProjects=projectsForActiveView;const batchView=activeView;const totalProjects=batchProjects.length;let cancelled=false;let frameId=0;let idleId=0;let nextCount=0;const commitNextBatch=()=>{if(cancelled)return;nextCount=Math.min(totalProjects,nextCount===0?INDEX_INITIAL_MOUNT_COUNT:nextCount+INDEX_MOUNT_BATCH_SIZE);if(nextCount>=totalProjects){hasCompletedInitialProgressiveMountRef.current=true;}setProgressiveMountState({projects:batchProjects,view:batchView,count:nextCount});if(nextCount<totalProjects)scheduleNextBatch();};const scheduleNextBatch=()=>{frameId=window.requestAnimationFrame(()=>{frameId=0;if(cancelled)return;if(typeof window.requestIdleCallback==="function"){idleId=window.requestIdleCallback(()=>{idleId=0;commitNextBatch();},{timeout:100});return;}commitNextBatch();});};// Let the hero and page chrome paint first, then commit a small useful
+// slice instead of one monolithic grid/list render.
+frameId=window.requestAnimationFrame(()=>{frameId=0;commitNextBatch();});return()=>{cancelled=true;if(frameId)window.cancelAnimationFrame(frameId);if(idleId&&typeof window.cancelIdleCallback==="function"){window.cancelIdleCallback(idleId);}};},[activeView,isCMSLoading,projectsForActiveView,progressivelyMountContent]);const viewToggleRevealRow=Math.max(10,Math.max(taxonomyNavItems.years.length,taxonomyNavItems.disciplines.length,taxonomyNavItems.industries.length)+2);return /*#__PURE__*/_jsxs(IndexFilterContext.Provider,{value:indexFilterContextValue,children:[/*#__PURE__*/_jsx("style",{"data-index-global-css":"true",suppressHydrationWarning:true,children:globalCss}),/*#__PURE__*/_jsxs("div",{ref:indexContainerRef,className:"idx-container","data-media-priority":"video",style:{width:"100%",color:tokens.textPrimary,fontFamily:tokens.fontMono,boxSizing:"border-box",minHeight:"60vh",padding:"0 20px",WebkitFontSmoothing:"antialiased",MozOsxFontSmoothing:"grayscale"},children:[/*#__PURE__*/_jsxs("div",{className:"idx-index-nav",children:[/*#__PURE__*/_jsx("div",{style:{opacity:1,pointerEvents:"auto",transition:`opacity 200ms ${SMOOTH_EASE}`,marginBottom:18},children:/*#__PURE__*/_jsx(TaxonomySection,{filters:filters,disciplineNavItems:taxonomyNavItems.disciplines,industryNavItems:taxonomyNavItems.industries,yearNavItems:taxonomyNavItems.years,onFilterToggle:handleFilterToggle,onFilterClear:handleFilterClear,onClearFilters:handleClearFilters})}),/*#__PURE__*/_jsx(ViewToggle,{activeView:activeView,onViewChange:handleViewChange,revealStartRow:viewToggleRevealRow})]}),/*#__PURE__*/_jsx("div",{children:isCMSLoading?/*#__PURE__*/_jsx("div",{style:{padding:"64px 0",textAlign:"center",fontFamily:tokens.fontMono,fontSize:13,lineHeight:"28px",textTransform:"uppercase",color:tokens.textTertiary},children:"Loading work..."}):isFirstContentBatchPending?null:activeView==="grid"?/*#__PURE__*/_jsx(GridView,{projects:mountedProjects,layoutVariant:resolvedGridLayoutVariant,progressiveMounting:progressivelyMountContent}):/*#__PURE__*/_jsx(ListView,{projects:mountedProjects,hoverVariant:resolvedListHoverVariant,progressiveMounting:progressivelyMountContent})},renderKey),/*#__PURE__*/_jsxs("div",{style:{marginTop:16,paddingBottom:160,fontFamily:tokens.fontMono,fontSize:13,lineHeight:"28px",textTransform:"uppercase",color:tokens.textPrimary},children:[filteredProjects.length," ",filteredProjects.length===1?"Project":"Projects"]})]})]});}addPropertyControls(IndexPage,{useCMS:{type:ControlType.Boolean,title:"Use CMS",defaultValue:true,enabledTitle:"On",disabledTitle:"Off"},projects:{type:ControlType.Array,title:"Projects",hidden:props=>props.useCMS===true,control:{type:ControlType.Object,controls:{title:{type:ControlType.String,title:"Title"},category1:{type:ControlType.String,title:"Service 1"},category2:{type:ControlType.String,title:"Service 2"},category3:{type:ControlType.String,title:"Service 3"},industry:{type:ControlType.String,title:"Industry"},year:{type:ControlType.String,title:"Year"},thumbnail:{type:ControlType.Image,title:"Thumbnail"},thumbnailVideoLink:{type:ControlType.File,title:"Thumbnail Video",allowedFileTypes:["mp4","mov","m4v","webm"]},thumbnailStroke:{type:ControlType.Boolean,title:"Thumbnail Stroke",defaultValue:false},slug:{type:ControlType.String,title:"Slug"},sortOrder:{type:ControlType.Number,title:"Sorting Number"},isHomepage:{type:ControlType.Boolean,title:"Is Homepage"}}}},advanced:{type:ControlType.Object,title:"Advanced",buttonTitle:"Edit",icon:"effect",defaultValue:DEFAULT_ADVANCED_SETTINGS,controls:{defaultView:{type:ControlType.Enum,title:"Default View",options:["list","grid"],optionTitles:["List","Grid"],defaultValue:"list"},listHoverVariant:{type:ControlType.Enum,title:"List Hover",options:["flip","highlight"],optionTitles:["Flip","Highlight"],defaultValue:"flip",displaySegmentedControl:true},gridLayoutVariant:{type:ControlType.Enum,title:"Grid Layout",options:["classic","figma"],optionTitles:["Current","Figma"],defaultValue:"classic",displaySegmentedControl:true},textPrimary:{type:ControlType.Color,title:"Text Primary",defaultValue:DEFAULT_ADVANCED_SETTINGS.textPrimary},textSecondary:{type:ControlType.Color,title:"Text Secondary",defaultValue:DEFAULT_ADVANCED_SETTINGS.textSecondary},textTertiary:{type:ControlType.Color,title:"Text Tertiary",defaultValue:DEFAULT_ADVANCED_SETTINGS.textTertiary},bg:{type:ControlType.Color,title:"Background",defaultValue:DEFAULT_ADVANCED_SETTINGS.bg},dividerStrong:{type:ControlType.Color,title:"Divider Strong",defaultValue:DEFAULT_ADVANCED_SETTINGS.dividerStrong},dividerSubtle:{type:ControlType.Color,title:"Divider Subtle",defaultValue:DEFAULT_ADVANCED_SETTINGS.dividerSubtle},surfaceActive:{type:ControlType.Color,title:"Surface Active",defaultValue:DEFAULT_ADVANCED_SETTINGS.surfaceActive}}}});
+export const __FramerMetadata__ = {"exports":{"default":{"type":"reactComponent","name":"IndexPage","slots":[],"annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./IndexPage.map

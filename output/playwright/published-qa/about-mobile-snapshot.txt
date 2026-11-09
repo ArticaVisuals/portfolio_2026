@@ -1,0 +1,191 @@
+### Page
+- Page URL: https://micahhoang.com/about
+- Page Title: About Micah Hoang — Brand Designer
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link [ref=e10] [cursor=pointer]:
+        - /url: ./
+        - paragraph [ref=e12]: Micah Hoang
+      - generic [ref=e19]:
+        - link [ref=e23] [cursor=pointer]:
+          - /url: ./
+          - paragraph [ref=e25]: Work
+          - paragraph [ref=e27]: Work
+        - link [ref=e30] [cursor=pointer]:
+          - /url: ./play
+          - paragraph [ref=e32]: PLAY
+          - paragraph [ref=e34]: PLAY
+        - link [ref=e38] [cursor=pointer]:
+          - /url: ./index
+          - paragraph [ref=e40]: INDEX
+          - paragraph [ref=e42]: INDEX
+        - link [ref=e46] [cursor=pointer]:
+          - /url: ./about
+          - paragraph [ref=e48]: ABOUT
+          - paragraph [ref=e50]: ABOUT
+  - generic [ref=e51]:
+    - generic [ref=e52]:
+      - generic [ref=e57]:
+        - link [ref=e59] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/micah-hoang-b41028108/
+          - paragraph [ref=e62]: LINKEDIN
+        - link [ref=e64] [cursor=pointer]:
+          - /url: https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf
+          - paragraph [ref=e67]: RESUME
+        - link [ref=e69] [cursor=pointer]:
+          - /url: https://www.cosmos.so/articavisuals
+          - paragraph [ref=e72]: COSMOS
+      - generic [ref=e73]:
+        - heading "Hey, I'm Micah." [level=1] [ref=e76]
+        - generic [ref=e77]:
+          - generic [ref=e83]:
+            - paragraph [ref=e84]: "I’m a brand designer with a systems mind. I treat design as problem-solving: start with what the brand needs to do, then build the whole system that gets it there."
+            - paragraph [ref=e85]: Outside of design, I’m most likely training for a marathon, out on the trails, or on a rock wall somewhere.
+          - generic [ref=e86]:
+            - paragraph [ref=e88]: / EXPERIENCE
+            - generic [ref=e89]:
+              - generic [ref=e93]:
+                - paragraph [ref=e101]: BRAND NEW SCHOOL,DESIGN + MOTION INTERN
+                - paragraph [ref=e104]: "2026"
+              - generic [ref=e108]:
+                - paragraph [ref=e116]: APPLE MARCOM,IDENTITY DESIGN INTERN
+                - paragraph [ref=e119]: "2025"
+              - generic [ref=e123]:
+                - paragraph [ref=e131]: SKYCAR CREATIVE,DESIGN + MOTION INTERN
+                - paragraph [ref=e134]: "2024"
+              - generic [ref=e138]:
+                - paragraph [ref=e147]: ARTCENTER GRAPHIC DESIGN,PRODUCER + DESIGNER
+                - paragraph [ref=e150]: "2023"
+              - generic [ref=e154]:
+                - paragraph [ref=e162]: AUDITBOARD,VISUAL DESIGNER
+                - paragraph [ref=e165]: "2023"
+              - generic [ref=e169]:
+                - paragraph [ref=e177]: NATIONAL PARK PLAYING CARDS,FOUNDER
+                - paragraph [ref=e180]: "2019"
+          - generic [ref=e184]:
+            - paragraph [ref=e186]: / EDUCATION
+            - generic [ref=e192]:
+              - paragraph [ref=e200]: BFA, GRAPHIC DESIGN · PROVOST’S LIST
+              - paragraph [ref=e203]: "2026"
+          - generic [ref=e207]:
+            - paragraph [ref=e209]: / RECOGNITION
+            - generic [ref=e210]:
+              - generic [ref=e219]:
+                - generic [ref=e220]:
+                  - paragraph [ref=e224]:
+                    - link "SIMON & SCHUSTER, INDIGO DESIGN, GOLD" [ref=e455] [cursor=pointer]:
+                      - /url: https://indigoaward.com/winners/12032
+                  - paragraph [ref=e228]: "2026"
+                - generic [ref=e232]:
+                  - paragraph [ref=e236]:
+                    - link "SIMON & SCHUSTER," [ref=e456] [cursor=pointer]:
+                      - /url: https://indigoaward.com/winners/12032
+                    - link "DNA PARIS, WINNER" [ref=e457] [cursor=pointer]:
+                      - /url: https://dna.paris/social/zoom.php?eid=71-95047-26
+                  - paragraph [ref=e240]: "2026"
+                - generic [ref=e244]:
+                  - paragraph [ref=e248]:
+                    - link "SIMON & SCHUSTER," [ref=e458] [cursor=pointer]:
+                      - /url: https://indigoaward.com/winners/12032
+                    - link "FONTS IN USE, FEATURE" [ref=e459] [cursor=pointer]:
+                      - /url: https://fontsinuse.com/uses/64711/simon-and-schuster-redesign-fictional
+                  - paragraph [ref=e252]: "2024"
+              - generic [ref=e261]:
+                - generic [ref=e262]:
+                  - paragraph [ref=e266]:
+                    - link "SEEK TRUTH, YOUNG ONES ADC, MERIT" [ref=e461] [cursor=pointer]:
+                      - /url: https://www.oneclub.org/awards/youngones/-award/54102/seek-truth
+                  - paragraph [ref=e270]: "2024"
+                - generic [ref=e274]:
+                  - paragraph [ref=e278]:
+                    - link "SEEK TRUTH, FONTS IN USE, FEATURE" [ref=e463] [cursor=pointer]:
+                      - /url: https://fontsinuse.com/uses/64712/seek-truth-artcenter-college-of-design-projec
+                  - paragraph [ref=e282]: "2024"
+              - generic [ref=e287]:
+                - paragraph [ref=e294]:
+                  - link "WEAPONIZED INNOCENCE, FONTS IN USE, FEATURE" [ref=e465] [cursor=pointer]:
+                    - /url: https://fontsinuse.com/uses/65224/weaponized-innocence
+                - paragraph [ref=e298]: "2024"
+              - generic [ref=e303]:
+                - paragraph [ref=e310]:
+                  - link "INDEPENDENT LENS, GRAPHIS, HONORABLE MENTION" [ref=e467] [cursor=pointer]:
+                    - /url: https://graphis.com/entry/d1a1f8e9-1353-49ac-a490-1556385f21fd
+                - paragraph [ref=e314]: "2024"
+          - generic [ref=e318]:
+            - paragraph [ref=e320]: / PRESS
+            - generic [ref=e326]:
+              - paragraph [ref=e333]:
+                - link "MEET MICAH HOANG, HIDDEN CHARACTERS PODCAST" [ref=e470] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=jFF8EivITPs
+              - paragraph [ref=e337]: "2025"
+          - generic [ref=e341]:
+            - paragraph [ref=e343]: / WHAT PEOPLE SAY
+            - generic [ref=e347]:
+              - paragraph [ref=e349]: “He went above and beyond his role, approaching problems with creativity and curiosity, and contributing massively to create high quality work.”
+              - generic [ref=e350]:
+                - paragraph [ref=e474]: ASSOCIATE CREATIVE DIRECTOR, APPLE
+                - paragraph [ref=e353]: NADIA SHIREEN HUSAIN
+            - generic [ref=e357]:
+              - paragraph [ref=e359]: “From day one, Micah approached our projects with a thoughtful mindset, consistently delivering beautiful and sometimes surprising results. He’s a clear communicator, a strong collaborator, and even helps to find efficient workflows based on the goals of each project.”
+              - generic [ref=e360]:
+                - paragraph [ref=e477]: CO-FOUNDER, SKYCAR CREATIVE
+                - paragraph [ref=e363]: AARON BARRY
+    - generic [ref=e478]:
+      - paragraph [ref=e482]: GET IN TOUCH
+      - generic [ref=e483]:
+        - link "M I C A H . H O A N G @HEY.COM" [ref=e484] [cursor=pointer]:
+          - /url: mailto:micah.hoang@hey.com
+          - generic [ref=e486]:
+            - generic [ref=e487]: M
+            - generic [ref=e488]: I
+            - generic [ref=e489]: C
+            - generic [ref=e490]: A
+            - generic [ref=e491]: H
+            - generic [ref=e492]: .
+            - generic [ref=e493]: H
+            - generic [ref=e494]: O
+            - generic [ref=e495]: A
+            - generic [ref=e496]: "N"
+            - generic [ref=e497]: G
+          - paragraph [ref=e499]: "@HEY.COM"
+        - link "L I N K E D I N CONNECT" [ref=e500] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/micah-hoang-b41028108/
+          - generic [ref=e502]:
+            - generic [ref=e503]: L
+            - generic [ref=e504]: I
+            - generic [ref=e505]: "N"
+            - generic [ref=e506]: K
+            - generic [ref=e507]: E
+            - generic [ref=e508]: D
+            - generic [ref=e509]: I
+            - generic [ref=e510]: "N"
+          - paragraph [ref=e512]: CONNECT
+        - link "C O S M O S INSPIRE" [ref=e513] [cursor=pointer]:
+          - /url: https://www.cosmos.so/articavisuals
+          - generic [ref=e515]:
+            - generic [ref=e516]: C
+            - generic [ref=e517]: O
+            - generic [ref=e518]: S
+            - generic [ref=e519]: M
+            - generic [ref=e520]: O
+            - generic [ref=e521]: S
+          - paragraph [ref=e523]: INSPIRE
+  - contentinfo [ref=e412]:
+    - generic [ref=e420]:
+      - generic [ref=e421]:
+        - link [ref=e422] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/micah-hoang-b41028108/
+          - paragraph [ref=e424]: LINKEDIN
+          - paragraph [ref=e426]: ","
+        - link [ref=e427] [cursor=pointer]:
+          - /url: https://framerusercontent.com/assets/VzE19p8yHmwAEjM4VvWhnIWoapM.pdf
+          - paragraph [ref=e429]: RESUME
+          - paragraph [ref=e431]: ","
+        - link [ref=e432] [cursor=pointer]:
+          - /url: https://www.cosmos.so/articavisuals
+          - paragraph [ref=e434]: COSMOS
+      - paragraph [ref=e437]: ©2026
+```

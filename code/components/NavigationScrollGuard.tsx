@@ -128,6 +128,11 @@ const MOBILE_NAV_CSS = `
         transition: none !important;
     }
 }
+/* Retired label preset still survives in nested component breakpoint overrides. */
+html body .framer-styles-preset-188rqyj {
+    line-height: 1.3em !important;
+    letter-spacing: -0.01em !important;
+}
 @media (max-width: 809px) {
     /* One existing page gutter across routes, including open-menu contents. */
     html body nav[data-framer-name="Navigation"] [data-framer-name="Mobile Navigation"] :is(
@@ -165,15 +170,15 @@ const MOBILE_NAV_CSS = `
     html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :first-child * {
         font-size: var(--mh-footer-label-size) !important;
         line-height: 1em !important;
-        letter-spacing: -0.01em !important;
+        letter-spacing: -0.02em !important;
         height: var(--mh-footer-label-size) !important;
         min-height: 0 !important;
         max-width: 100% !important;
     }
     html body [data-framer-name="Section CTA"] :is([data-framer-name="CTA Row"], a[data-framer-name="Row"]) > :not(:first-child) * {
         font-size: 13px !important;
-        line-height: 1em !important;
-        letter-spacing: 0.01em !important;
+        line-height: 1.3em !important;
+        letter-spacing: -0.01em !important;
     }
     html body .selected-work-tag,
     html body .idx-grid-preview-locked .idx-grid-card-tag {

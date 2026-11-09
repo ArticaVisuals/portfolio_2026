@@ -84,7 +84,7 @@
     <a class="mh-project-card__link" href="#">
       <div class="mh-project-card__meta mh-label">
         <span>1</span><span>/</span>
-        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">Gaia</span></span></span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span>
       </div>
       <div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"></div>
     </a>
@@ -94,7 +94,7 @@
     <a class="mh-project-card__link" href="#">
       <div class="mh-project-card__meta mh-label">
         <span>2</span><span>/</span>
-        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">AirPods Pro 3</span></span></span>
+        <span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span>
       </div>
       <div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"></div>
     </a>
@@ -105,7 +105,7 @@
     &lt;a class="mh-project-card__link" href="#"&gt;
       &lt;div class="mh-project-card__meta mh-label"&gt;
         &lt;span&gt;1&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;
-        &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Gaia&lt;/span&gt;&lt;span aria-hidden="true"&gt;Gaia&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Gaia&lt;/span&gt;&lt;span aria-hidden="true"&gt;View project&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
       &lt;/div&gt;
       &lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/gaia.jpg" alt="Gaia app on a phone resting on a mirror in a field of daisies"&gt;&lt;/div&gt;
     &lt;/a&gt;
@@ -115,7 +115,7 @@
     &lt;a class="mh-project-card__link" href="#"&gt;
       &lt;div class="mh-project-card__meta mh-label"&gt;
         &lt;span&gt;2&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;
-        &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;AirPods Pro 3&lt;/span&gt;&lt;span aria-hidden="true"&gt;AirPods Pro 3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;AirPods Pro 3&lt;/span&gt;&lt;span aria-hidden="true"&gt;View project&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
       &lt;/div&gt;
       &lt;div class="mh-media" data-stroke&gt;&lt;img src="../../assets/samples/airpods.jpg" alt="AirPods Pro 3 earbuds on a white background"&gt;&lt;/div&gt;
     &lt;/a&gt;
@@ -123,10 +123,10 @@
   &lt;/article&gt;
 &lt;/div&gt;</code></pre></details></figure>
 <h2 id="anatomy"><a class="ds-anchor" href="#anatomy">Anatomy</a></h2>
-<ol><li><strong>Meta row</strong>: mono label in a <code>24px 11px 1fr</code> grid: number, slash, title. The title is a flip rail.</li><li><strong>Media</strong>: <a href="media-frame.html">Media Frame</a>, 16:9, optional stroke.</li><li><strong>Tags</strong>: up to three <a href="tag.html">Tags</a>, outside the link.</li></ol>
+<ol><li><strong>Meta row</strong>: mono label in a <code>24px 11px 1fr</code> grid: number, slash, title. The title is a flip rail whose second line reads <strong>VIEW PROJECT</strong>.</li><li><strong>Media</strong>: <a href="media-frame.html">Media Frame</a>, 16:9, optional stroke.</li><li><strong>Tags</strong>: up to three <a href="tag.html">Tags</a>, outside the link.</li></ol>
 <p>The meta row and media share one link; tags sit outside it so they can be their own links or filters.</p>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>Number cards in display order starting at 1, without zero padding.</li><li>The title is the CMS project title, set by CSS in uppercase mono.</li><li>Hover/focus on the link triggers two moves together: the title flips (18px, 420ms Snappy) and the image scales to 1.02.</li><li>Use a poster image under a thumbnail video, so a returning visitor never sees an empty frame.</li></ul>
+<ul><li>Number cards in display order starting at 1, without zero padding.</li><li>The title is the CMS project title, set by CSS in uppercase mono.</li><li>Hover/focus on the link triggers two moves together: the title rolls up to VIEW PROJECT (18px, 420ms Snappy) and the image scales to 1.02. Below 810px neither moves; the title stays put.</li><li>Use a poster image under a thumbnail video, so a returning visitor never sees an empty frame.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-project-card</code></td><td><code>article</code></td><td>Column, 16px gap</td></tr><tr><td><code>mh-project-card__link</code></td><td><code>a</code></td><td>Wraps meta + media; hover host</td></tr><tr><td><code>mh-project-card__meta</code></td><td><code>div</code> + <code>mh-label</code></td><td><code>24px 11px 1fr</code> grid; flip window is 13px</td></tr><tr><td><code>mh-media</code></td><td><code>div</code></td><td>See Media Frame</td></tr><tr><td><code>mh-tags</code></td><td><code>ul</code></td><td>Optional</td></tr></tbody></table></div>
 <h2 id="data-model-cms"><a class="ds-anchor" href="#data-model-cms">Data model (CMS)</a></h2>
@@ -134,7 +134,7 @@
 <div class="ds-table"><table><thead><tr><th>Card field</th><th>CMS field</th><th>Field id</th></tr></thead><tbody><tr><td>Title</td><td>Title</td><td><code>oeXZcmPna</code></td></tr><tr><td>href</td><td><code>/case-studies/{slug}</code></td><td><code>pdXVG_fBO</code></td></tr><tr><td>Poster image</td><td>Thumbnail</td><td><code>Jy7hBJady</code></td></tr><tr><td>Video</td><td>Thumbnail Video</td><td><code>SvOqFqdby</code></td></tr><tr><td><code>data-stroke</code></td><td>Thumbnail Stroke</td><td><code>OHdUYs6Mo</code></td></tr><tr><td>Tags</td><td>Category 1–3</td><td>(discipline fields)</td></tr></tbody></table></div>
 <div class="ds-codeblock"><button type="button" class="ds-copy">Copy</button><pre><code class="language-json">{ "title": "Gaia", "slug": "gaia", "thumbnail": "…/gaia.jpg", "thumbnailVideo": "…/gaia.mp4", "thumbnailStroke": false, "tags": ["Visual identity", "UX/UI", "Strategy"] }</code></pre></div>
 <h2 id="accessibility"><a class="ds-anchor" href="#accessibility">Accessibility</a></h2>
-<ul><li>The link's accessible name is "1 / Gaia" (the duplicate flip span is <code>aria-hidden</code>).</li><li>Card media <code>alt</code> describes the image, not the project name.</li></ul>
+<ul><li>The link's accessible name is "1 / Gaia": the VIEW PROJECT line is <code>aria-hidden</code>.</li><li>Card media <code>alt</code> describes the image, not the project name.</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
 <ul><li>Home: <code>HomeSelectedWorkGrid</code> (<code>FecepLS</code>). Six CMS-limited items, 2 columns, <code>Thumbnail Video</code> preferred with <code>Thumbnail</code> as poster, first-row videos <code>preload="auto"</code>, live CMS row reuse on return navigation. Read <code>docs/framer-current-state.md</code> before editing it.</li><li>Case-study "Other projects": <code>OtherProjectCardRestored</code> (<code>vlwa5Cz</code>), 3 columns.</li><li><code>/index</code> grid: <code>IndexPage</code> (<code>rgAZFOv</code>) through <code>IndexPageGridPreview</code> (<code>LgIzFjJ</code>), which supplies <code>gridLayoutVariant="figma"</code>. Never overwrite the wrapper.</li><li>Never add baked fallback rows or hard-coded media URLs; cards come from the CMS only.</li></ul>
 <h2 id="don-t"><a class="ds-anchor" href="#don-t">Don't</a></h2>

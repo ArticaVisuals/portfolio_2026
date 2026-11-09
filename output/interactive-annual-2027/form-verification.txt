@@ -1,0 +1,22 @@
+VERIFIED: Your email
+VERIFIED: Please write the interviewee’s name(s) and role(s) on the project here. Required question
+VERIFIED: Please write the project’s name here. Required question
+VERIFIED: Please describe your project in 100 words or more. Required question
+VERIFIED: From concept to completion, how long did the project take to produce? Required question
+VERIFIED: How many people and/or agencies worked on the development? Required question
+VERIFIED: How many videos, images, and other media elements does the project have? Required question
+MISMATCH OR EMPTY: What software, back-end technology and programming languages were used? Required question
+VERIFIED: What was the project’s objective, and who was its target audience?
+MISMATCH OR EMPTY: Was the project part of a larger promotional campaign? If so, how?
+VERIFIED: Did you meet with any obstacles during development? How did you overcome them?
+VERIFIED: What are the project’s core features?
+VERIFIED: Describe any special interactive features that the project has.
+VERIFIED: What was the thinking behind the navigation structure?
+VERIFIED: Are there any special navigational features?
+VERIFIED: Are there any other technological features you’d like to call attention to?
+VERIFIED: What was the response to the project like? For web projects and/or apps, how many visitors or downloads has it received since launch? Required question
+VERIFIED: What was the most challenging aspect of the project?
+VERIFIED: Did you learn anything new during the process?
+
+
+Two differing answers were read back and confirmed nonempty. Preserved Micah’s edits (SwiftUI wording and event merchandise), synchronized the local answer copy, and reran all three scanners with exit 0. Google Forms displayed Draft saved. No submission was made.

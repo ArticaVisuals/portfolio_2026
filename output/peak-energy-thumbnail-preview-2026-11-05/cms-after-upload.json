@@ -1,0 +1,1014 @@
+{
+  "message": "Retrieved 17 of 17 item(s) from collection \"All Projects\"",
+  "pagination": {
+    "total": 17,
+    "skip": 0,
+    "limit": 100,
+    "returned": 17
+  },
+  "items": [
+    {
+      "id": "Qw6kG4fCG",
+      "slug": "gaia",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Gaia"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 1
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "UX/UI"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "Strategy"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/I8gYcpaNfASGUI6TqjkW8OpxW8I.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2026"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Nature"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": true
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/UbkFFOnZrDDwQdrF7N6r3CEjeo.mp4"
+        }
+      }
+    },
+    {
+      "id": "LECMv7KC0",
+      "slug": "airpods",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "AirPods Pro 3"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 2
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "2D Motion"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "3D Motion"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/JITjBIRyOd5DdC7juV7X5RwU9I.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2025"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Technology"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": true
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": true
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/YRAOJaERvJX4rwByjdTY1r2WaHc.mp4"
+        }
+      }
+    },
+    {
+      "id": "W2n1YmGHA",
+      "slug": "peak-energy",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Peak Energy"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 3
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "2D Motion"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "3D Motion"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "Social Media"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/JcoGr4ds2RlrOT9CCbYE5gnkvpY.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2026"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Technology"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": true
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/1KJal8hV09oIBU2Y8MKC3iqk3nw.mp4"
+        }
+      }
+    },
+    {
+      "id": "XVLqS_2D4",
+      "slug": "motion-connect-2025",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Motion Connect 2025"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 4
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "2D Motion"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "3D Motion"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "Social Media"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/W592y16ERqrZ1qFuxRe3dcsv8I.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2025"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Education"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": true
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/MwQgxBbaiEE9PyqwTShCkltEUY.mp4"
+        }
+      }
+    },
+    {
+      "id": "FngFoqTIA",
+      "slug": "simon-schuster",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Simon & Schuster"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 5
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Strategy"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "Editorial"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/ZViKn9ASVVsE90tOfnWU7sW0U.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2024"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Literature"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": true
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "hk3HoC18f",
+      "slug": "national-park-cards",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "National Park Playing Cards"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 6
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Product"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Packaging"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/YdGKidrUlzOXfODfaQNqfCx5dM.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2019"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Nature"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": true
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "l37jLBj8o",
+      "slug": "yomo",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Yomo"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 7
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "UX/UI"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/PXsrzy7ezkkjSfUrVHhUuP2sk4k.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2024"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Health"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "imh3LEQkF",
+      "slug": "highland-harvests",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Highland Harvests"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 8
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Packaging"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "Product"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/jJW0KifU2kfkhlHdh7akkmu0XU.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2024"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Nature"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "xF8ZSqZq2",
+      "slug": "weaponized-innocence",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Weaponized Innocence"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 9
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Editorial"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Product"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/BRh73XzVlRBoYNh03pKXVIYYPw.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2024"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Human Rights"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "B5gGWYSDH",
+      "slug": "wolff-olins-x-artcenter",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Wolff Olins x ArtCenter"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 10
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "2D Motion"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": "Social Media"
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/8fV7L1MlzeOAlHSxXchHzUHO7c.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2024"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Education"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": true
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "ssDwpdE5F",
+      "slug": "cellular-symphony",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Cellular Symphony"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 11
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "3D Motion"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": ""
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2024"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Science"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v"
+        }
+      }
+    },
+    {
+      "id": "flrmVOqrv",
+      "slug": "seek-truth",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Seek Truth"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 12
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Editorial"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/ZUrXNdcJocPWJF6jCmu0QBr2yEs.webp"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2023"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Human Rights"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": true
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/6kI8ukCrbvBwM7zCO08wjY5pyo.mp4"
+        }
+      }
+    },
+    {
+      "id": "ySCXYkqpU",
+      "slug": "independent-lens",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Independent Lens"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 13
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Editorial"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/xgjosOS16LZVpd3huScx2lW1g.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2023"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Human Rights"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "N25_33SuV",
+      "slug": "typldn",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "TYPLDN"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 14
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": ""
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/jchJlOWt16iY8J0NEXEfm3G8cTE.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2023"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Education"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "JJ93bZiiY",
+      "slug": "whatsapp",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "WhatsApp"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 17
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "2D Motion"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Social Media"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/mkLySgu9nIi7dlpTac2Q3InIU.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2026"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Technology"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "vpuktzvXx",
+      "slug": "caliper",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Caliper Sans"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 18
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "Type Design"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": "Visual Identity"
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/03ONMMvWNiSZ9RkcgL2UNqKiYQE.png"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2026"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Technology"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": true
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": null
+        }
+      }
+    },
+    {
+      "id": "YeNNskV7m",
+      "slug": "optro",
+      "draft": false,
+      "fieldData": {
+        "oeXZcmPna": {
+          "type": "string",
+          "value": "Optro CRX"
+        },
+        "DLBifmgp1": {
+          "type": "number",
+          "value": 19
+        },
+        "kuvJcmOFr": {
+          "type": "string",
+          "value": "2D Motion"
+        },
+        "VV1CggU2J": {
+          "type": "string",
+          "value": ""
+        },
+        "E6OpH0hSs": {
+          "type": "string",
+          "value": ""
+        },
+        "Jy7hBJady": {
+          "type": "image",
+          "value": "https://framerusercontent.com/images/Y0QyDkheHTHPUcxQIQ3PYc6lWKk.jpg"
+        },
+        "WG62tRjG8": {
+          "type": "string",
+          "value": ""
+        },
+        "QZqSK_3OF": {
+          "type": "string",
+          "value": "2026"
+        },
+        "fsFlSPDTa": {
+          "type": "image",
+          "value": null
+        },
+        "mBIilFqVM": {
+          "type": "string",
+          "value": "Technology"
+        },
+        "myUIfK0j7": {
+          "type": "boolean",
+          "value": false
+        },
+        "OHdUYs6Mo": {
+          "type": "boolean",
+          "value": false
+        },
+        "SvOqFqdby": {
+          "type": "file",
+          "value": "https://framerusercontent.com/assets/sJBQH6h9WTFj1JFq5lrOA6NoXLQ.mp4"
+        }
+      }
+    }
+  ]
+}
