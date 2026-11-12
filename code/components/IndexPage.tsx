@@ -1388,8 +1388,9 @@ function buildGlobalCss(): string {
     text-decoration: none;
     text-underline-offset: 3px;
     transition:
-      color 150ms ${SMOOTH_EASE},
-      -webkit-text-fill-color 150ms ${SMOOTH_EASE};
+      color var(--duration-quick, 150ms) ${SMOOTH_EASE},
+      -webkit-text-fill-color var(--duration-quick, 150ms) ${SMOOTH_EASE},
+      opacity var(--duration-quick, 150ms) ${SMOOTH_EASE};
   }
 
   .idx-view-toggle-option[data-active="true"] {

@@ -662,6 +662,7 @@
 :is(a, .mh-flip-host):is(:hover, :focus-visible) .mh-media > :is(img, video),
 a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     transform: scale(var(--mh-scale-hover));
+    transition: transform var(--mh-duration-fast, 250ms) var(--mh-ease-snappy);
 }
 
 /* ======================================================================
@@ -1244,14 +1245,14 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     opacity: 0;
     visibility: hidden;
     transition:
-        opacity var(--mh-duration-zoom) var(--mh-ease-snappy),
-        visibility 0s linear var(--mh-duration-zoom);
+        opacity var(--duration-quick, 150ms) var(--mh-ease-snappy),
+        visibility 0s linear var(--duration-quick, 150ms);
 }
 
 .mh-lightbox[data-open] {
     opacity: 1;
     visibility: visible;
-    transition: opacity var(--mh-duration-zoom) var(--mh-ease-snappy);
+    transition: opacity var(--duration-fast, 250ms) var(--mh-ease-snappy);
 }
 
 .mh-lightbox__media {
@@ -1259,12 +1260,13 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     max-height: 100%;
     object-fit: contain;
     transform: scale(0.96);
-    transition: transform var(--mh-duration-zoom) var(--mh-ease-snappy);
+    transition: transform var(--duration-quick, 150ms) var(--mh-ease-snappy);
     cursor: pointer;
 }
 
 .mh-lightbox[data-open] .mh-lightbox__media {
     transform: scale(1);
+    transition: transform var(--duration-fast, 250ms) var(--mh-ease-snappy);
 }
 
 .mh-lightbox__btn {

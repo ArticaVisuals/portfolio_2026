@@ -181,7 +181,7 @@ export default function ScrollToTopButton({
                 .mh-scroll-top-label-rail {
                     gap: ${ROW_GAP}px;
                     transform: translateY(0);
-                    transition: transform 500ms ${DEFAULT_EASING};
+                    transition: transform var(--duration-slow, 400ms) ${DEFAULT_EASING};
                 }
 
                 .mh-scroll-top-label-rail span,
