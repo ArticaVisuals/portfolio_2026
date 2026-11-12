@@ -1,5 +1,64 @@
 # Site-wide page transition (zitafernandez.com style)
 
+**2026-11-11 — Index mask and nav baseline repair (published).**
+Home headline-fit rules now require the Home `art` heading, preventing them
+from overriding the Index mask. Published Index mask is `overflow: hidden`
+again. NavigationScrollGuard aligns both native rollover labels to 100% line
+height (13px); previously the primary label was 130% and its duplicate 100%.
+ResumeAssetHost pins the updated guard at `IAjnvWxwUpylYo9BsNDP`.
+Published hover geometry confirms the replacement label lands at the resting
+20px top; Home retains visible overflow and fits the checked viewport.
+Framer typechecks and npm test pass. Evidence: `output/playwright/nav-index-fix-2026-11-11/published-index.jpg`.
+
+**2026-11-11 — ©MH direct-vector cleanup (Framer draft; publish pending).**
+Supersedes the initial monogram CSS-mask rendering. Both loader stages now use
+three direct SVG paths. Original MH path data is byte-identical; the copyright
+uses the original filled outline plus a 4.94226-unit centered stroke, replacing
+the export's separate expanded outline and masked stroke (2 × 1.518 + 1.90626).
+There are no masks, image elements, external assets, or duplicate SVG IDs.
+Original export remains untouched; cleaned asset is
+`assets/identity/micah-hoang-monogram-clean.svg`. Sizes remain 190px / 152px,
+with the same viewBox and whole-lockup centering. Runtime and Preloaders head
+entry are synced to Framer, and the saved head was reopened to verify the stroke.
+Framer typecheck and project tests passed. Browser inspection confirms 3 paths,
+zero masks/images/use elements, correct desktop/tablet centers, and clean normal
+and 2× enlarged detail rendering. The 2× check is an enlarged vector render,
+not a separate physical Retina-device test.
+Evidence: `output/playwright/monogram-clean-2026-11-11/`.
+
+
+**2026-11-11 — Home headline clipping repair (published and verified).**
+`PageTransition` now emits a scoped SSR stylesheet for Home's `Heading Row Wrapper`
+and `art` headline. It removes absolute positioning/negative offsets from the
+rendered name, lets the row grow with the text, and removes the two inner clipping
+boundaries. Phone type scales down with available width (58px maximum); tablet
+and desktop retain 94px/120px. Text can wrap as a fallback. Native Framer layer
+settings were restored after confirming Phone overrides do not inherit the
+primary layout fix; no new component or dependency was added.
+The previous published name extended beyond 320px/360px viewports. The corrected
+published page was measured at 17 widths from 240px to 3840px, including
+809/810px and 1199/1200px: every name stays within the viewport and no ancestor
+clips its text bounds. Framer typecheck and `npm test` passed.
+Evidence: `output/playwright/home-headline-fit-2026-11-11/published-measurements.json`
+and `published-320.png`. Scope is the name, not unrelated narrow-screen content.
+
+
+**2026-11-11 — compact ©MH loader identity (Framer draft; publish pending).**
+Replaced the full wordmark with the exact asset from personal-identity Figma
+node `168:541`, saved unchanged at `assets/identity/micah-hoang-monogram.svg`.
+Both loader stages use its alpha mask with the existing Cream color on Forest
+Green. Widths are 190px desktop / 152px tablet, retaining approximately the
+previous lettering height. The asset is embedded, with no extra network request.
+The runtime component and generated **Preloaders** head entry are synced to
+Framer; the saved head entry was reopened and verified. Timing, video holds,
+Home-only eligibility, mobile skip, and reduced-motion behavior are unchanged.
+Framer typecheck returned `[]`; project tests passed. Local browser checks at
+1440px and 810px confirm centered, proportional geometry (190 × 62.8px and
+152 × 50.2px) and Cream tint. Uncropped preview: `output/playwright/loader-monogram-2026-11-11/centered.png`.
+The earlier desktop screenshot was cropped by the browser capture surface;
+1124 × 720 verification places the whole lockup center at (562, 360).
+Published end-to-end verification remains pending publication.
+
 **2026-10-23 — copyright SVG seam correction (published).**
 The copyright export combined a fill with a separately masked outside stroke.
 Chromium A/B captures showed thin antialiasing seams where those layers met.

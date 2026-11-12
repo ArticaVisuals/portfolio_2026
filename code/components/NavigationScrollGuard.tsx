@@ -24,6 +24,11 @@ const MOBILE_NAV_STATE_KEY = "__mhMobileNavigation"
 const MOBILE_NAV_QUERY = "(max-width: 809px)"
 // Framer color styles, type.display-m (mobile), type.label, and nav spacing.
 const MOBILE_NAV_CSS = `
+/* Both native roll labels must fit the same one-line mask. */
+nav[data-framer-name="Navigation"] a[data-framer-name^="Text Link"] [data-framer-name="View project"] p {
+    line-height: 1 !important;
+}
+
 @media (max-width: 809px) {
     @view-transition { navigation: none; }
     /* Shared mobile accessibility floor. Preserve each control's authored typography. */
