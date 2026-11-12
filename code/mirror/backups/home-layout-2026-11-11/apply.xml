@@ -1,0 +1,16 @@
+<Desktop nodeId="ZVqAQ0z7x">
+  <Main nodeId="oy90vqbHw">
+  <SectionSelectedWorks nodeId="nFjim4UT5" gap="5px">
+    <HeadingWrapper nodeId="qp7AaTYlq" padding="0px 0px 30px 0px">
+      <Heading nodeId="bJyb_ChpB" padding="10px 0px 0px 0px" minHeight="0px">
+        <Stack nodeId="XzikUe04m" visible="false" />
+      </Heading>
+    </HeadingWrapper>
+  </SectionSelectedWorks>
+</Main>
+</Desktop>
+<!-- Apply each existing node's attributes independently; do not reparent nodes.
+Phone overrides:
+ZGsjsMX75qp7AaTYlq padding="0px 0px 25px 0px"
+ZGsjsMX75bJyb_ChpB padding="10px 0px 0px 0px"
+-->

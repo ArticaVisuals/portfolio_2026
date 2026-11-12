@@ -1,0 +1,19 @@
+WARNING: This is a replica node (variant). It's recommended to update the original component instead to maintain consistency. Only update a few attributes on variants. These attributes will no longer inherit the primary variant values.
+
+Node xml:
+<Tablet
+    nodeId="KSQ9xlxtY"
+    position="absolute"
+    width="810px"
+    height="fit-content"
+    top="0px"
+    left="1300px"
+    <!-- background color string or project color style path (if starts with /) -->
+    backgroundColor="/Colors/Cream"
+    overflow="visible"
+    layout="stack"
+    stackDirection="vertical"
+    stackDistribution="start"
+    stackAlignment="center"
+ />
+
