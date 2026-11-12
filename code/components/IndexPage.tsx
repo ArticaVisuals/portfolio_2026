@@ -1218,7 +1218,9 @@ function buildGlobalCss(): string {
     transition: transform var(--idx-motion-switch) var(--idx-motion-ease);
   }
   .idx-view-indicator[data-ready="true"] { visibility: visible; }
-  .idx-view-toggle[data-indicator-ready="true"] .idx-view-toggle-option[data-active="true"] { text-decoration: none; }
+  .idx-view-toggle[data-indicator-ready="true"] .idx-view-toggle-option[data-active="true"],
+  .idx-view-toggle[data-indicator-ready="true"] .idx-view-toggle-option[data-active="true"] .idx-fade-appear,
+  .idx-view-toggle[data-indicator-ready="true"] .idx-view-toggle-option[data-active="true"] .idx-mask-reveal-text { text-decoration: none; }
   .idx-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
   .idx-count { display: inline-flex; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .idx-count-digit { display: inline-grid; width: 1ch; text-align: right; }
@@ -1228,16 +1230,28 @@ function buildGlobalCss(): string {
   @keyframes idx-value-in { from { opacity: 0; } to { opacity: 1; } }
   @keyframes idx-value-out { from { opacity: 1; } to { opacity: 0; } }
   .idx-loading-status { font: 13px/28px ${tokens.fontMono}; color: ${tokens.textTertiary}; text-transform: uppercase; }
-  .idx-skeleton { display: grid; gap: 0; }
-  .idx-skeleton-row { min-height: 56px; display: flex; align-items: center; border-top: 1px solid ${tokens.dividerSubtle}; }
-  .idx-skeleton-bar { height: 13px; width: 44%; background: ${tokens.surfaceActive}; }
-  .idx-skeleton-row:nth-child(even) .idx-skeleton-bar { width: 32%; }
-  .idx-skeleton[data-view="grid"] { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 52px 20px; }
-  .idx-skeleton[data-view="grid"] .idx-skeleton-row { display: block; border: 0; }
-  .idx-skeleton-media { aspect-ratio: 16 / 9; background: ${tokens.surfaceActive}; margin: 14px 0; }
-  .idx-results[data-loading="false"] { animation: idx-value-in var(--idx-motion-reveal) var(--idx-motion-ease) both; }
-  @media(max-width:1199px) { .idx-skeleton[data-view="grid"] { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-  @media(max-width:899px) { .idx-skeleton[data-view="grid"] { grid-template-columns: 1fr; } }
+  .idx-skeleton { pointer-events: none; }
+  .idx-skeleton .idx-grid-card-media { opacity: 1 !important; }
+  .idx-skeleton .idx-grid-card-media > *,
+  .idx-skeleton .idx-grid-card-heading > *,
+  .idx-skeleton .idx-grid-card-title > *,
+  .idx-skeleton .idx-grid-card-meta > *,
+  .idx-skeleton .idx-grid-card-tags > *,
+  .idx-skeleton .idx-year-number > *,
+  .idx-skeleton .idx-title-cell > *,
+  .idx-skeleton .idx-col-discipline > *,
+  .idx-skeleton .idx-col-industry > * { visibility: hidden; }
+  .idx-skeleton .idx-grid-card-heading,
+  .idx-skeleton .idx-grid-card-title,
+  .idx-skeleton .idx-grid-card-meta,
+  .idx-skeleton .idx-grid-card-tags,
+  .idx-skeleton .idx-year-number,
+  .idx-skeleton .idx-title-cell,
+  .idx-skeleton .idx-col-discipline,
+  .idx-skeleton .idx-col-industry {
+    background: linear-gradient(${tokens.surfaceActive}, ${tokens.surfaceActive}) left center / 60% 13px no-repeat;
+  }
+  .idx-skeleton .idx-mobile-project-year { visibility: hidden; }
   .idx-container[data-index-input="keyboard"] .idx-view-indicator { transition: none; }
   .idx-container[data-index-input="keyboard"] :is(.idx-digit-current,.idx-digit-previous) { animation: none; }
   .idx-container[data-index-input="keyboard"] .idx-digit-previous { display: none; }
@@ -3493,14 +3507,22 @@ function ProjectCount({ count, total, loading = false }: { count: number; total:
     </span>
 }
 
-function IndexLoadingSkeleton({ view }: { view: string }) {
+function IndexLoadingSkeleton({ view, layoutVariant, projects }: {
+    view: string
+    layoutVariant: GridLayoutVariant
+    projects: Project[]
+}) {
+    // Use the real layout so rules, gutters, media and responsive rows share geometry.
+    // Before CMS resolves, only the first representative group can be reserved.
+    const placeholders = (projects.length ? projects : Array.from({ length: 6 }, (_, i) => ({
+        title: "Loading project", year: 2026, category1: "Service", industry: "Industry", slug: `loading-${i}`,
+    }))).map((project, index) => ({ ...project, thumbnail: "", thumbnailVideoLink: "", slug: `loading-${index}` })) as Project[]
     return <div>
-        <div className="idx-loading-status" role="status">Loading work…</div>
-        <div className="idx-skeleton" data-view={view} aria-hidden="true">
-            {Array.from({ length: 6 }, (_, i) => <div className="idx-skeleton-row" key={i}>
-                <div className="idx-skeleton-bar" />
-                {view === "grid" && <div className="idx-skeleton-media" />}
-            </div>)}
+        <div className="idx-sr-only" role="status">Loading work…</div>
+        <div className="idx-skeleton" aria-hidden="true" inert="">
+            {view === "grid"
+                ? <GridView projects={placeholders} layoutVariant={layoutVariant} />
+                : <ListView projects={placeholders} />}
         </div>
     </div>
 }
@@ -4111,7 +4133,7 @@ export default function IndexPage({
                 <div className="idx-results" data-loading={isCMSLoading || isFirstContentBatchPending ? "true" : "false"} aria-busy={isCMSLoading || isFirstContentBatchPending}>
                 <div key={renderKey}>
                     {isCMSLoading || isFirstContentBatchPending ? (
-                        <IndexLoadingSkeleton view={activeView} />
+                        <IndexLoadingSkeleton view={activeView} layoutVariant={resolvedGridLayoutVariant} projects={filteredProjects} />
                     ) : activeView === "grid" ? (
                         <GridView
                             projects={mountedProjects}
