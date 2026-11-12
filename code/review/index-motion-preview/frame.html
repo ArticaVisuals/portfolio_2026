@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Index motion component preview</title>
+<style>
+@font-face{font-family:'GT Standard Trial';src:url('https://framerusercontent.com/assets/crhfNLaqXfVV61Bkd6ep2NhowE.woff2')}@font-face{font-family:'GT Standard';src:url('https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2')}@font-face{font-family:'GT Standard L Regular';src:url('https://framerusercontent.com/assets/6U9zVlEligfePRtJbFpZy8V9jbY.woff2')}@font-face{font-family:'GT Standard Mono Trial';src:url('https://framerusercontent.com/assets/kobh9oTdW4XhBcYvCEP3PeZIi5g.woff2')}
+*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#141414;font-family:'GT Standard L Regular',sans-serif}.preview-page-label{padding:12px 20px;border-bottom:1px solid #d6d4cd;font:11px 'GT Standard Mono Trial',monospace;text-transform:uppercase}.preview-hero{padding:48px 20px 64px}.preview-hero h1{margin:0;font:120px/1 'GT Standard Trial',sans-serif;letter-spacing:-.01em}.preview-hero p{margin:16px 0 0;font:13px 'GT Standard Mono Trial',monospace;text-transform:uppercase}@media(max-width:809px){.preview-hero{padding:32px 20px 40px}.preview-hero h1{font-size:64px}}
+</style></head><body><main id="app"></main><script type="module">const q=new URLSearchParams(location.search);
+if(q.get('motion')==='reduce'){
+  // Preview-only emulation. All unrelated media queries keep native behavior.
+  const nativeMatchMedia=window.matchMedia.bind(window);
+  window.matchMedia=query=>{
+    if(!/^\s*\(prefers-reduced-motion\s*:\s*reduce\)\s*$/.test(query))return nativeMatchMedia(query);
+    const target=new EventTarget();
+    return Object.assign(target,{matches:true,media:query,onchange:null,addListener:()=>{},removeListener:()=>{}});
+  };
+}
+const bundle=q.get('version')==='before'?'/before.js':'/after.js';
+import(bundle+'?motion='+encodeURIComponent(q.get('motion')||'system'));</script></body></html>

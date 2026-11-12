@@ -123,6 +123,13 @@ const INDEX_MOUNT_BATCH_SIZE = 12
 const VIEW_TOGGLE_OPTIONS = ["grid", "list"] as const
 const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
 const SMOOTH_EASE = "cubic-bezier(0.12, 0.23, 0.5, 1)"
+// Interaction durations are separate from the established editorial entrance presets.
+const INDEX_INTERACTION_MOTION = {
+    feedback: 150,
+    switch: 250,
+    reveal: 400,
+} as const
+
 const INDEX_APPEAR_PRESET = {
     durationMs: 620,
     easing: SNAPPY_EASE,
@@ -1197,6 +1204,49 @@ function useIndexAppearTrigger<T extends HTMLElement>() {
 
 function buildGlobalCss(): string {
     return `
+  .idx-container {
+    --idx-motion-feedback: ${INDEX_INTERACTION_MOTION.feedback}ms;
+    --idx-motion-switch: ${INDEX_INTERACTION_MOTION.switch}ms;
+    --idx-motion-reveal: ${INDEX_INTERACTION_MOTION.reveal}ms;
+    --idx-motion-ease: ${SMOOTH_EASE};
+  }
+  .idx-view-toggle { position: relative; }
+  .idx-view-indicator {
+    position: absolute; left: 0; bottom: 4px; width: 1px; height: 1px;
+    background: currentColor; transform-origin: left center; pointer-events: none;
+    visibility: hidden;
+    transition: transform var(--idx-motion-switch) var(--idx-motion-ease);
+  }
+  .idx-view-indicator[data-ready="true"] { visibility: visible; }
+  .idx-view-toggle[data-indicator-ready="true"] .idx-view-toggle-option[data-active="true"] { text-decoration: none; }
+  .idx-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .idx-count { display: inline-flex; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .idx-count-digit { display: inline-grid; width: 1ch; text-align: right; }
+  .idx-count-digit > span { grid-area: 1 / 1; }
+  .idx-count-digit[data-changed="true"] .idx-digit-current { animation: idx-value-in var(--idx-motion-feedback) var(--idx-motion-ease) both; }
+  .idx-digit-previous { animation: idx-value-out var(--idx-motion-feedback) var(--idx-motion-ease) both; }
+  @keyframes idx-value-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes idx-value-out { from { opacity: 1; } to { opacity: 0; } }
+  .idx-loading-status { font: 13px/28px ${tokens.fontMono}; color: ${tokens.textTertiary}; text-transform: uppercase; }
+  .idx-skeleton { display: grid; gap: 0; }
+  .idx-skeleton-row { min-height: 56px; display: flex; align-items: center; border-top: 1px solid ${tokens.dividerSubtle}; }
+  .idx-skeleton-bar { height: 13px; width: 44%; background: ${tokens.surfaceActive}; }
+  .idx-skeleton-row:nth-child(even) .idx-skeleton-bar { width: 32%; }
+  .idx-skeleton[data-view="grid"] { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 52px 20px; }
+  .idx-skeleton[data-view="grid"] .idx-skeleton-row { display: block; border: 0; }
+  .idx-skeleton-media { aspect-ratio: 16 / 9; background: ${tokens.surfaceActive}; margin: 14px 0; }
+  .idx-results[data-loading="false"] { animation: idx-value-in var(--idx-motion-reveal) var(--idx-motion-ease) both; }
+  @media(max-width:1199px) { .idx-skeleton[data-view="grid"] { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media(max-width:899px) { .idx-skeleton[data-view="grid"] { grid-template-columns: 1fr; } }
+  .idx-container[data-index-input="keyboard"] .idx-view-indicator { transition: none; }
+  .idx-container[data-index-input="keyboard"] :is(.idx-digit-current,.idx-digit-previous) { animation: none; }
+  .idx-container[data-index-input="keyboard"] .idx-digit-previous { display: none; }
+  @media(prefers-reduced-motion:reduce) {
+    .idx-view-indicator { transition: none !important; }
+    .idx-digit-current,.idx-digit-previous,.idx-results { animation: none !important; }
+    .idx-digit-previous { display: none; }
+  }
+
   ${HIDDEN_CMS_LINK_SELECTOR} {
     position: fixed !important;
     left: -10000px !important;
@@ -1388,9 +1438,9 @@ function buildGlobalCss(): string {
     text-decoration: none;
     text-underline-offset: 3px;
     transition:
-      color var(--duration-quick, 150ms) ${SMOOTH_EASE},
-      -webkit-text-fill-color var(--duration-quick, 150ms) ${SMOOTH_EASE},
-      opacity var(--duration-quick, 150ms) ${SMOOTH_EASE};
+      color var(--idx-motion-feedback) var(--idx-motion-ease),
+      -webkit-text-fill-color var(--idx-motion-feedback) var(--idx-motion-ease),
+      opacity var(--idx-motion-feedback) var(--idx-motion-ease);
   }
 
   .idx-view-toggle-option[data-active="true"] {
@@ -2091,7 +2141,9 @@ function buildGlobalCss(): string {
       background: ${tokens.bg};
       border: 1px solid ${tokens.dividerSubtle};
       padding: 8px 16px 0;
+      transform-origin: var(--idx-panel-origin, 50%) 0;
     }
+    .idx-mobile-panel[aria-hidden="true"] { pointer-events: none; }
     .idx-mobile-panel[hidden] { display: none; }
     .idx-mobile-choices {
       display: grid;
@@ -2343,7 +2395,7 @@ function IndexRule({
 // Compact mobile disclosures share the existing CMS taxonomy and filter state.
 function MobileTaxonomyControls({
     filters, disciplineNavItems, industryNavItems, yearNavItems,
-    onFilterToggle, onFilterClear, onClearFilters, activeView, onViewChange, resultCount,
+    onFilterToggle, onFilterClear, onClearFilters, activeView, onViewChange, resultCount, resultTotal, loading,
 }: {
     filters: Filters
     disciplineNavItems: string[]
@@ -2355,9 +2407,14 @@ function MobileTaxonomyControls({
     activeView: string
     onViewChange: (view: "grid" | "list") => void
     resultCount: number
+    resultTotal: number
+    loading: boolean
 }) {
     const [open, setOpen] = useState<FilterType | null>(null)
     const rootRef = useRef<HTMLDivElement>(null)
+    const openRef = useRef<FilterType | null>(null)
+    const panelRefs = useRef<Partial<Record<FilterType, HTMLElement>>>({})
+    const panelAnimations = useRef<Partial<Record<FilterType, Animation>>>({})
     const triggerRefs = useRef<Partial<Record<FilterType, HTMLButtonElement>>>({})
     const id = React.useId()
     const groups: { key: FilterType; label: string; values: (string | number)[] }[] = [
@@ -2366,34 +2423,97 @@ function MobileTaxonomyControls({
         { key: "industries", label: "Industry", values: industryNavItems },
     ]
     const activeCount = filters.years.length + filters.disciplines.length + filters.industries.length
-    const close = () => {
-        if (open) triggerRefs.current[open]?.focus({ preventScroll: true })
-        setOpen(null)
+    // Keep exit visuals mounted but inert. Read the interrupted position before
+    // canceling so rapid close/reopen starts from the current visual state.
+    const changeOpen = (next: FilterType | null, instant = false) => {
+        if (next === openRef.current && !instant) return
+        openRef.current = next
+        setOpen(next)
+        for (const { key } of groups) {
+            const panel = panelRefs.current[key]
+            if (!panel) continue
+            const entering = next === key
+            const wasHidden = panel.hidden
+            const current = getComputedStyle(panel)
+            const from = wasHidden
+                ? { opacity: "0", transform: "translateY(-4px) scale(0.97)" }
+                : { opacity: current.opacity, transform: current.transform }
+            panelAnimations.current[key]?.cancel()
+            delete panelAnimations.current[key]
+            panel.inert = !entering
+            panel.setAttribute("aria-hidden", String(!entering))
+            if (!entering && wasHidden) continue
+            if (instant || prefersReducedIndexMotion() || typeof panel.animate !== "function") {
+                panel.hidden = !entering
+                continue
+            }
+            panel.hidden = false
+            const trigger = triggerRefs.current[key]?.getBoundingClientRect()
+            const bounds = panel.getBoundingClientRect()
+            if (trigger) panel.style.setProperty("--idx-panel-origin", `${trigger.left + trigger.width / 2 - bounds.left}px`)
+            const styles = getComputedStyle(panel)
+            const durationToken = styles.getPropertyValue(entering ? "--idx-motion-switch" : "--idx-motion-feedback").trim()
+            const duration = parseFloat(durationToken) * (durationToken.endsWith("ms") ? 1 : 1000)
+            const animation = panel.animate([
+                from,
+                entering ? { opacity: "1", transform: "none" } : { opacity: "0", transform: "translateY(-4px) scale(0.97)" },
+            ], {
+                duration: Number.isFinite(duration) ? duration : entering ? 250 : 150,
+                easing: styles.getPropertyValue("--idx-motion-ease").trim() || SMOOTH_EASE,
+                fill: "both",
+            })
+            panelAnimations.current[key] = animation
+            animation.onfinish = () => {
+                if (panelAnimations.current[key] !== animation) return
+                panel.hidden = openRef.current !== key
+                animation.cancel()
+                delete panelAnimations.current[key]
+            }
+        }
+    }
+    const close = (instant = false) => {
+        if (openRef.current) triggerRefs.current[openRef.current]?.focus({ preventScroll: true })
+        changeOpen(null, instant)
     }
     useEffect(() => {
         if (!open) return
         const outside = (event: PointerEvent) => {
-            if (!rootRef.current?.contains(event.target as Node)) setOpen(null)
+            if (!rootRef.current?.contains(event.target as Node)) changeOpen(null)
         }
-        const query = window.matchMedia("(max-width: 809px)")
-        const onResize = () => { if (!query.matches) setOpen(null) }
         document.addEventListener("pointerdown", outside)
-        query.addEventListener("change", onResize)
-        return () => {
-            document.removeEventListener("pointerdown", outside)
-            query.removeEventListener("change", onResize)
-        }
+        return () => document.removeEventListener("pointerdown", outside)
     }, [open])
+    useEffect(() => {
+        const mobile = window.matchMedia("(max-width: 809px)")
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
+        const onResize = () => { if (!mobile.matches) changeOpen(null, true) }
+        const onMotionChange = () => {
+            if (!reduced.matches) return
+            for (const key of Object.keys(panelRefs.current) as FilterType[]) {
+                panelAnimations.current[key]?.cancel()
+                delete panelAnimations.current[key]
+                const panel = panelRefs.current[key]
+                if (panel) panel.hidden = openRef.current !== key
+            }
+        }
+        mobile.addEventListener("change", onResize)
+        reduced.addEventListener("change", onMotionChange)
+        return () => {
+            mobile.removeEventListener("change", onResize)
+            reduced.removeEventListener("change", onMotionChange)
+            Object.values(panelAnimations.current).forEach((animation) => animation?.cancel())
+        }
+    }, [])
     return (
         <div className="idx-mobile-filters" ref={rootRef}
             onBlur={(event) => {
-                if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(null)
+                if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) changeOpen(null, true)
             }}
             onKeyDown={(event) => {
                 if (event.key === "Escape" && open) {
                     event.preventDefault()
                     event.stopPropagation()
-                    close()
+                    close(true)
                 }
             }}>
             <div className="idx-mobile-dropdowns">
@@ -2404,12 +2524,14 @@ function MobileTaxonomyControls({
                             ref={(node) => { if (node) triggerRefs.current[key] = node }}
                             aria-expanded={open === key} aria-controls={`${id}-${key}-panel`}
                             aria-label={`${label} filters, ${filters[key].length ? `${filters[key].length} selected` : "all"}`}
-                            onClick={() => setOpen(open === key ? null : key)}
+                            onClick={(event) => changeOpen(open === key ? null : key, event.detail === 0)}
                             onKeyDown={(event) => {
                                 if (event.key === "ArrowDown") {
                                     event.preventDefault()
-                                    setOpen(key)
-                                    requestAnimationFrame(() => document.getElementById(`${id}-${key}-panel`)?.querySelector<HTMLButtonElement>("button")?.focus())
+                                    changeOpen(key, true)
+                                    requestAnimationFrame(() => {
+                                        if (openRef.current === key) panelRefs.current[key]?.querySelector<HTMLButtonElement>("button")?.focus()
+                                    })
                                 }
                             }}>
                             <span>{label}{filters[key].length > 0 && <span className="idx-mobile-selection-count"> ({filters[key].length})</span>}</span>
@@ -2418,7 +2540,14 @@ function MobileTaxonomyControls({
                     ))}
                 </div>
                 {groups.map(({ key, label, values }) => (
-                    <section key={key} id={`${id}-${key}-panel`} hidden={open !== key}
+                    <section key={key} id={`${id}-${key}-panel`} hidden
+                        ref={(node) => {
+                            if (!node) return
+                            if (panelRefs.current[key] !== node) node.hidden = openRef.current !== key
+                            panelRefs.current[key] = node
+                            node.inert = openRef.current !== key
+                        }}
+                        aria-hidden={open !== key}
                         className="idx-mobile-panel" aria-labelledby={`${id}-${key}-trigger`}>
                         <div className="idx-mobile-choices" role="group" aria-label={`${label} options`}>
                             {[null, ...values].map((value) => {
@@ -2432,26 +2561,26 @@ function MobileTaxonomyControls({
                         </div>
                         <div className="idx-mobile-panel-footer">
                             <button type="button" aria-label={`Reset ${label.toLowerCase()} filters`} onClick={() => onFilterClear(key)}>Reset</button>
-                            <button type="button" onClick={close}>Done</button>
+                            <button type="button" onClick={(event) => close(event.detail === 0)}>Done</button>
                         </div>
                     </section>
                 ))}
             </div>
             <div className="idx-mobile-toolbar">
                 <button type="button" className="idx-mobile-clear" disabled={!activeCount}
-                    onClick={() => {
+                    onClick={(event) => {
                         onClearFilters()
-                        setOpen(null)
+                        changeOpen(null, event.detail === 0)
                         triggerRefs.current.years?.focus({ preventScroll: true })
                     }}>Clear filters</button>
                 <div className="idx-mobile-view" role="group" aria-label="Project view">
-                    <button type="button" aria-pressed={activeView === "grid"} onClick={() => { setOpen(null); onViewChange("grid") }}>Grid</button>
+                    <button type="button" aria-pressed={activeView === "grid"} onClick={(event) => { changeOpen(null, event.detail === 0); onViewChange("grid") }}>Grid</button>
                     <span aria-hidden="true">/</span>
-                    <button type="button" aria-pressed={activeView === "list"} onClick={() => { setOpen(null); onViewChange("list") }}>List</button>
+                    <button type="button" aria-pressed={activeView === "list"} onClick={(event) => { changeOpen(null, event.detail === 0); onViewChange("list") }}>List</button>
                 </div>
             </div>
             <div className="idx-mobile-filter-status" data-view={activeView} role="status" aria-live="polite" aria-atomic="true">
-                <span>{resultCount} {resultCount === 1 ? "project" : "projects"}</span>
+                <ProjectCount count={resultCount} total={resultTotal} loading={loading} />
                 <span>{activeCount ? `${activeCount} active ${activeCount === 1 ? "filter" : "filters"}` : ""}</span>
             </div>
         </div>
@@ -3335,6 +3464,47 @@ function GridView({
     )
 }
 
+function CountDigit({ value }: { value: string }) {
+    const [pair, setPair] = useState({ current: value, previous: null as string | null })
+    const digitRef = useRef<HTMLSpanElement>(null)
+    if (pair.current !== value) setPair({ current: value, previous: pair.current })
+    useEffect(() => {
+        if (pair.previous === null) return
+        const digit = digitRef.current
+        const finish = () => setPair(current => current.current === pair.current ? { ...current, previous: null } : current)
+        if (!digit || prefersReducedIndexMotion() || digit.closest('[data-index-input="keyboard"]')) { finish(); return }
+        const duration = parseFloat(getComputedStyle(digit).getPropertyValue("--idx-motion-feedback")) || INDEX_INTERACTION_MOTION.feedback
+        const timer = window.setTimeout(finish, duration)
+        digit.addEventListener("animationend", finish)
+        digit.addEventListener("animationcancel", finish)
+        return () => { window.clearTimeout(timer); digit.removeEventListener("animationend", finish); digit.removeEventListener("animationcancel", finish) }
+    }, [pair.current, pair.previous])
+    return <span ref={digitRef} className="idx-count-digit" data-changed={pair.previous !== null ? "true" : "false"}>
+        {pair.previous !== null && <span key={`old-${pair.previous}`} className="idx-digit-previous">{pair.previous}</span>}
+        <span key={`new-${pair.current}`} className="idx-digit-current">{pair.current}</span>
+    </span>
+}
+
+function ProjectCount({ count, total, loading = false }: { count: number; total: number; loading?: boolean }) {
+    const digits = String(loading ? "–" : count).padStart(Math.max(2, String(total).length), " ")
+    return <span>
+        <span className="idx-sr-only">{loading ? "Loading projects" : `${count} ${count === 1 ? "project" : "projects"}`}</span>
+        <span aria-hidden="true"><span className="idx-count">{Array.from(digits).map((value, i) => <CountDigit key={i} value={value === " " ? "\u00a0" : value} />)}</span>{" "}{!loading && (count === 1 ? "Project" : "Projects")}</span>
+    </span>
+}
+
+function IndexLoadingSkeleton({ view }: { view: string }) {
+    return <div>
+        <div className="idx-loading-status" role="status">Loading work…</div>
+        <div className="idx-skeleton" data-view={view} aria-hidden="true">
+            {Array.from({ length: 6 }, (_, i) => <div className="idx-skeleton-row" key={i}>
+                <div className="idx-skeleton-bar" />
+                {view === "grid" && <div className="idx-skeleton-media" />}
+            </div>)}
+        </div>
+    </div>
+}
+
 function ViewToggle({
     activeView,
     onViewChange,
@@ -3344,6 +3514,34 @@ function ViewToggle({
     onViewChange: (v: string) => void
     revealStartRow?: number
 }) {
+    const toggleRef = useRef<HTMLDivElement>(null)
+    const indicatorRef = useRef<HTMLSpanElement>(null)
+    useEffect(() => {
+        const root = toggleRef.current
+        const indicator = indicatorRef.current
+        if (!root || !indicator) return
+        let frame = 0
+        const measure = (instant = false) => {
+            const active = root.querySelector<HTMLButtonElement>('[data-active="true"]')
+            if (!active || !root.getBoundingClientRect().width) return
+            if (instant || indicator.dataset.ready !== "true") indicator.style.transition = "none"
+            const r = active.getBoundingClientRect(), parent = root.getBoundingClientRect()
+            indicator.style.transform = `translateX(${r.left - parent.left}px) scaleX(${r.width})`
+            indicator.dataset.ready = "true"
+            root.dataset.indicatorReady = "true"
+            window.cancelAnimationFrame(frame)
+            frame = window.requestAnimationFrame(() => { indicator.style.transition = "" })
+        }
+        measure(true)
+        const observer = typeof ResizeObserver !== "undefined" ? new ResizeObserver(() => measure(true)) : null
+        observer?.observe(root)
+        root.querySelectorAll("button").forEach(el => observer?.observe(el))
+        const onChange = () => measure()
+        root.addEventListener("idx:view-change", onChange)
+        return () => { observer?.disconnect(); root.removeEventListener("idx:view-change", onChange); window.cancelAnimationFrame(frame) }
+    }, [])
+    useEffect(() => { toggleRef.current?.dispatchEvent(new Event("idx:view-change")) }, [activeView])
+
     const navFadeProps = (rowIndex: number, columnIndex = 0) => ({
         delayMs: getIndexNavFadeDelayMs(rowIndex, columnIndex),
         durationMs: INDEX_NAV_FADE_PRESET.durationMs,
@@ -3351,7 +3549,8 @@ function ViewToggle({
     })
 
     return (
-        <div className="idx-view-toggle" aria-label="Project view">
+        <div ref={toggleRef} className="idx-view-toggle" role="group" aria-label="Project view">
+            <FadeInText {...navFadeProps(revealStartRow)} style={{ position: "absolute", inset: 0, pointerEvents: "none" }}><span ref={indicatorRef} className="idx-view-indicator" aria-hidden="true" /></FadeInText>
             {VIEW_TOGGLE_OPTIONS.map((v, index) => {
                 const active = activeView === v
                 const revealColumn = index * 2
@@ -3849,6 +4048,8 @@ export default function IndexPage({
 
             <div
                 ref={indexContainerRef}
+                onKeyDownCapture={() => { if (indexContainerRef.current) indexContainerRef.current.dataset.indexInput = "keyboard" }}
+                onPointerDownCapture={() => { if (indexContainerRef.current) indexContainerRef.current.dataset.indexInput = "pointer" }}
                 className="idx-container"
                 data-media-priority="video"
                 style={
@@ -3876,6 +4077,8 @@ export default function IndexPage({
                         activeView={activeView}
                         onViewChange={handleViewChange}
                         resultCount={filteredProjects.length}
+                        resultTotal={allProjects.length}
+                        loading={isCMSLoading}
                     />
                     <div className="idx-desktop-filters">
                     <div
@@ -3905,22 +4108,11 @@ export default function IndexPage({
                     </div>
                 </div>
 
+                <div className="idx-results" data-loading={isCMSLoading || isFirstContentBatchPending ? "true" : "false"} aria-busy={isCMSLoading || isFirstContentBatchPending}>
                 <div key={renderKey}>
-                    {isCMSLoading ? (
-                        <div
-                            style={{
-                                padding: "64px 0",
-                                textAlign: "center",
-                                fontFamily: tokens.fontMono,
-                                fontSize: 13,
-                                lineHeight: "28px",
-                                textTransform: "uppercase",
-                                color: tokens.textTertiary,
-                            }}
-                        >
-                            Loading work...
-                        </div>
-                    ) : isFirstContentBatchPending ? null : activeView === "grid" ? (
+                    {isCMSLoading || isFirstContentBatchPending ? (
+                        <IndexLoadingSkeleton view={activeView} />
+                    ) : activeView === "grid" ? (
                         <GridView
                             projects={mountedProjects}
                             layoutVariant={resolvedGridLayoutVariant}
@@ -3935,6 +4127,8 @@ export default function IndexPage({
                     )}
                 </div>
 
+                </div>
+
                 <div
                     style={{
                         marginTop: 16,
@@ -3946,8 +4140,7 @@ export default function IndexPage({
                         color: tokens.textPrimary,
                     }}
                 >
-                    {filteredProjects.length}{" "}
-                    {filteredProjects.length === 1 ? "Project" : "Projects"}
+                    <ProjectCount count={filteredProjects.length} total={allProjects.length} loading={isCMSLoading} />
                 </div>
             </div>
         </IndexFilterContext.Provider>

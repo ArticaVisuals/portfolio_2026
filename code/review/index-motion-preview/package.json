@@ -1,0 +1,7 @@
+{
+  "name": "portfolio-index-motion-preview",
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "node server.mjs", "build": "node server.mjs --build"},
+  "devDependencies": {"esbuild": "0.25.12", "react": "19.2.0", "react-dom": "19.2.0"}
+}
