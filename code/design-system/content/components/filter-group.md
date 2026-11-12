@@ -6,7 +6,7 @@ description: Taxonomy columns of mono toggles (year, service, industry) that fil
 status: live
 framer: IndexPage (rgAZFOv), IndexFilterContext + URL sync
 codeFileId: rgAZFOv
-classes: [mh-filter, mh-filter__group, mh-filter__heading, mh-filter__toggle, mh-filter__options, mh-filter__item, mh-filter__done, mh-filter__clear]
+classes: [mh-count, mh-filter, mh-filter__group, mh-filter__heading, mh-filter__toggle, mh-filter__options, mh-filter__item, mh-filter__done, mh-filter__clear]
 tokens: [type.label, color.*.text.interactive, motion.duration.fast]
 ---
 
@@ -60,7 +60,20 @@ Since 2026-10-30 the long taxonomy columns become three disclosure buttons, **Ye
 - Triggers are 48px tall, 13px mono with 1.3 leading, uppercase, with a chevron on the right that flips when open.
 - One panel opens at a time, full width under the triggers. Options, Done and Clear filters are 44px targets.
 - Selections apply immediately. Done, Escape and a tap outside close the panel and return focus to its trigger. The live site also offers a per-category Reset and moves into the options with Arrow Down.
-- The result count below ("17 projects") is a polite live region; the Grid / List buttons are 44×44px.
+- Panels grow out of their trigger: from 4px above and 97% scale, origin at the trigger's centre, 250ms on the Smooth curve. They close in 150ms and stop taking taps immediately. Reduced motion shows and hides them without movement.
+- The Grid / List buttons are 44×44px.
+
+### Result count
+
+A polite live region under the filters ("17 Projects"). Digits sit in fixed-width tabular slots so the line never shifts; when a filter changes the count, only the changed digits cross-fade (150ms Smooth). Screen readers get the plain number once ("5 projects"), never the animated copies.
+
+```html example
+<p class="mh-label" role="status" aria-live="polite"><span class="mh-count" data-total="17" data-value="17"></span></p>
+<div class="ds-demo-row" style="margin-top:16px">
+  <button class="mh-action" data-variant="pill" type="button" onclick="mhSetCount(this.closest('.ds-preview').querySelector('.mh-count'), 5)">Filter to 5</button>
+  <button class="mh-action" data-variant="pill" type="button" onclick="mhSetCount(this.closest('.ds-preview').querySelector('.mh-count'), 17)">Clear</button>
+</div>
+```
 
 ## Usage
 
@@ -82,6 +95,7 @@ Since 2026-10-30 the long taxonomy columns become three disclosure buttons, **Ye
 | `mh-filter__item` | `button[aria-pressed]` | 13px mono, 28px line height; 44px min height on mobile |
 | `mh-filter__done` | `button` | Mobile only: closes the panel |
 | `mh-filter__clear` | `button` | Visible only with `data-active` |
+| `mh-count` + `mhSetCount(el, n)` | `span[data-total]` | Result count with fixed digit slots and a 150ms per-digit cross-fade |
 | `mh:filter` event | n/a | Fired by `components.js` on change with `detail.values` |
 
 ## Accessibility

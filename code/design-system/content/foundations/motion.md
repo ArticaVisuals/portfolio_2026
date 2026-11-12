@@ -37,6 +37,8 @@ Motion should feel like the site is alive, not performing. It decelerates into p
 | `--mh-stagger-reveal` | 90ms | Between lines in a type reveal |
 | `--mh-stagger-media` | 58ms | Between thumbnails fading in |
 
+Interaction timing on the Index (2026-11-11) maps to these tokens by purpose: **feedback** 150ms (`instant`: color, count digits, panel exit) and **switch** 250ms (`fast`: panel entry, view changes), both on the Smooth curve. Entrance choreography (type reveals, page transitions) keeps its own longer presets. Exits are faster than entries.
+
 ## Springs
 
 Hovers and reveals use the curves above. Anything the visitor can **grab** (drag, swipe, sheets) uses spring tokens instead: critically damped by default, bounce only after a throw. See [Gesture](gesture.md) and [Interaction Principles](interaction.md).

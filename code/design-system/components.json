@@ -141,7 +141,7 @@
       "title": "Identity",
       "slug": "identity",
       "section": "Foundations",
-      "description": "The © Micah Hoang wordmark, the name set in type, and where each appears.",
+      "description": "The ©MH monogram, the © Micah Hoang wordmark, the name set in type, and where each appears.",
       "status": null,
       "doc": "content/foundations/identity.md",
       "classes": [],
@@ -438,6 +438,7 @@
       "status": "live",
       "doc": "content/components/filter-group.md",
       "classes": [
+        "mh-count",
         "mh-filter",
         "mh-filter__group",
         "mh-filter__heading",
@@ -563,13 +564,14 @@
       "title": "Page Loader",
       "slug": "page-loader",
       "section": "Components",
-      "description": "The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.",
+      "description": "The first-visit boot curtain. Forest Green, a Cream progress bar, the ©MH monogram centered, then a lift.",
       "status": "live",
       "doc": "content/components/page-loader.md",
       "classes": [
         "mh-loader",
         "mh-loader__bar",
-        "mh-loader__identity"
+        "mh-loader__identity",
+        "mh-monogram"
       ],
       "tokens": [
         "color.primitive.forest-green",

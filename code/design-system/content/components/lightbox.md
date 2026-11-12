@@ -27,7 +27,7 @@ Click any image to open the viewer. Use ← → to step through and Esc to close
 
 - Opt in a gallery or section by adding `data-mh-lightbox` to its container; every `img` inside becomes openable and steppable.
 - Backdrop is white, chrome is near-black at weight 300, 24px. No counter by default.
-- Zoom is 260ms Snappy and starts **from the clicked thumbnail**: the live component clones the media over its source rect, keeps it opaque, and zooms it to full size while the white backdrop fades in. The `components.js` version here is a simplified center scale (0.96 → 1); match the live behavior, not the demo.
+- Zoom is 260ms Snappy and starts **from the clicked thumbnail**: the live component clones the media over its source rect, keeps it opaque, and zooms it to full size while the white backdrop fades in. The `components.js` version here is a simplified center scale (0.96 → 1), opening in 250ms and closing in 150ms (exits faster than entries); match the live behavior, not the demo.
 - Tapping the image advances; navigation loops.
 - 72px padding around the media on desktop, 16px on mobile.
 

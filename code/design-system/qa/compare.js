@@ -6,6 +6,8 @@
  * Values are relative so the fixture doesn't need the live page's boot
  * curtain or scroll position: hero landmarks from the hero top, section
  * landmarks from the rule, footer landmarks from the footer top.
+ * Home has had no "Selected work" title since 2026-11-11; the section is
+ * measured from its rule to the grid.
  * On the live site, run it after the hero type has finished revealing.
  */
 ;(() => {
@@ -23,13 +25,11 @@
     const el = live
         ? {
               hero: byName("Section Hero"),
-              name: byName("Heading Row Wrapper")?.querySelector("h1, p"),
+              name: byName("Heading Row Wrapper"), // the h1 inside may still carry its entrance transform
               descriptor: text("Brand designer with a systems mind."),
               heroLink: text("LINKEDIN"),
               heroYear: [...document.querySelectorAll("p")].find((p) => p.textContent.trim() === "©2026"),
-              rule: byName("Heading Wrapper"),
-              title: text("Selected"),
-              title2: text("work"),
+              rule: byName("Heading Wrapper")?.firstElementChild || byName("Heading Wrapper"),
               grid: byName("Projects"),
               navRole: text("BRAND DESIGNER"),
               navLoc: text("LOS ANGELES, CALIFORNIA"),
@@ -46,8 +46,6 @@
               heroLink: qa("hero-links"),
               heroYear: qa("hero-year"),
               rule: qa("work-rule"),
-              title: qa("work-title").firstElementChild,
-              title2: qa("work-title-2"),
               grid: qa("work-grid"),
               navRole: qa("nav-role"),
               navLoc: qa("nav-location"),
@@ -71,9 +69,7 @@
         "hero.linkRowX": r(b.heroLink.x),
         "hero.yearRight": r(innerWidth - (b.heroYear.x + b.heroYear.w)),
         "work.ruleFromHeroBottom": r(b.rule.y - b.hero.b),
-        "work.titleFromRule": r(b.title.y - b.rule.y),
-        "work.wordGap": r(b.title2.x - (b.title.x + b.title.w)),
-        "work.gridFromTitle": r(b.grid.y - b.title.b),
+        "work.gridFromRule": r(b.grid.y - b.rule.b),
         "nav.roleX": b.navRole ? r(b.navRole.x) : "hidden",
         "nav.locationX": b.navLoc ? r(b.navLoc.x) : "hidden",
         "nav.linksX": r(b.navWork.x),

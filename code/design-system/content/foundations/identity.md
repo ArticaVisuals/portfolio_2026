@@ -2,14 +2,35 @@
 title: Identity
 section: Foundations
 order: 7
-description: The © Micah Hoang wordmark, the name set in type, and where each appears.
+description: The ©MH monogram, the © Micah Hoang wordmark, the name set in type, and where each appears.
 ---
 
 # Identity
 
 ## Overview
 
-The identity is the name. One drawn mark exists, the **© Micah Hoang wordmark**, outlined from the personal-identity Figma file and used where the name has to stand alone (the boot loader). Everywhere else the name is set in type. Consistency is what makes it work: the same words, set the same way, in the same places.
+The identity is the name. Two drawn marks exist, both outlined from the personal-identity Figma file: the compact **©MH monogram**, which the boot loader shows, and the full **© Micah Hoang wordmark**. Everywhere else the name is set in type. Consistency is what makes it work: the same words, set the same way, in the same places.
+
+## Monogram
+
+```html example surface=green
+<img class="mh-monogram" src="../../assets/identity/monogram-cream.svg" alt="©MH">
+```
+
+```html example
+<img class="mh-monogram" src="../../assets/identity/monogram-forest-green.svg" alt="©MH" style="--mh-monogram-size: 120px">
+```
+
+| File | Fill | Use |
+| --- | --- | --- |
+| `assets/identity/monogram.svg` | `currentColor` | Inline, takes the text color |
+| `assets/identity/monogram-cream.svg` | Cream | `<img>` on Forest Green |
+| `assets/identity/monogram-forest-green.svg` | Forest Green | `<img>` on Cream |
+
+- **Source:** Figma personal-identity node `168:541`, saved unchanged at `assets/identity/micah-hoang-monogram.svg`. The design-system copies use the cleaned version (`micah-hoang-monogram-clean.svg`): three direct paths, with the © drawn as its filled outline plus a 4.94-unit centered stroke instead of the export's masked strokes. No masks, images or `use` elements.
+- **Where:** the boot loader since 2026-11-11, at 237.5px desktop and 190px tablet (`--mh-monogram-width`). It replaced the full wordmark there.
+- **Proportions:** viewBox `629.319 × 208.043` (about 3 : 1). Set width only.
+- **Color:** Cream on Forest Green or Forest Green on Cream.
 
 ## Wordmark
 
@@ -24,12 +45,13 @@ The identity is the name. One drawn mark exists, the **© Micah Hoang wordmark**
 | File | Fill | Use |
 | --- | --- | --- |
 | `assets/identity/wordmark.svg` | `currentColor` | Inline in HTML or a code component, so it takes the text color |
-| `assets/identity/wordmark-cream.svg` | Cream `#F7F5F0` | `<img>` on Forest Green (the boot loader) |
+| `assets/identity/wordmark-cream.svg` | Cream `#F7F5F0` | `<img>` on Forest Green |
 | `assets/identity/wordmark-forest-green.svg` | Forest Green `#233324` | `<img>` on Cream |
 
 - **Source:** Figma personal-identity node `91:521`, saved in the repo at `assets/identity/micah-hoang-copyright.svg`. The design-system copies use the live loader's corrected outline: the © is one filled and stroked path (no mask), which removes the antialiasing seams the original export showed. 11 paths, no bitmaps.
 - **Proportions:** viewBox `7682.3 × 1025.01` (about 7.5 : 1). Never stretch it; set width only.
-- **Size:** 556px wide on desktop, 444px on tablet, never wider than the viewport minus 64px (`.mh-wordmark` does this). Don't render it below about 200px wide.
+- **Size:** never wider than the viewport minus 64px (`.mh-wordmark` defaults to 556 / 444px, its old loader size). Don't render it below about 200px wide.
+- **Status:** not currently placed on the live site. It was the loader identity from 2026-10-23 until the monogram replaced it on 2026-11-11; keep it for contexts that need the full name as a mark.
 - **Color:** Cream on Forest Green or Forest Green on Cream. No other colors, outlines or effects.
 - **Render as vector.** Inline SVG or `<img>`. The live loader moved off a CSS mask because it looked soft at small sizes.
 
@@ -66,5 +88,5 @@ The nav repeats it in short form: `BRAND DESIGNER` and `LOS ANGELES, CALIFORNIA`
 
 - Write the name exactly "Micah Hoang"; uppercase only through mono labels.
 - The copyright year comes from `FooterCopyrightYear` (`BF2H03E`) in Framer; don't hard-code a different year. The wordmark's © carries no year.
-- Use the wordmark only where the name stands alone. Don't put it in the nav, footer or hero, which set the name in type.
-- Don't add a monogram, favicon glyph or second logo.
+- Use the drawn marks only where the name stands alone. Don't put them in the nav, footer or hero, which set the name in type.
+- Don't draw new marks (another monogram, a favicon glyph, a logo). The ©MH monogram and the wordmark are the complete set.

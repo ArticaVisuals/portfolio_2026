@@ -107,6 +107,7 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 - The live bars are native layers in **Hybrid** and **Black** layout templates. Desktop links use the shared **Text Link** hover variants.
 - Mobile Navigation asset: `qajbM_0Ju`; Closed `wAv2cBhhn`; Open `gdGCs2vyp`. The Phone instances are `tK8RS0JyeF6qyNICpc` (Hybrid) and `rzjQrYrtJwE5QaaCdz` (Black). Their desktop source instances remain hidden.
 - [Open Mobile Navigation in Framer](https://framer.com/projects/Micah-Hoang-Portfolio--BvGjN2gCRDHG41LzAVYE-b78r3?node=qajbM_0Ju).
+- Rollover labels: both stacked copies use 100% line height (13px), so the replacement lands exactly on the resting label's 20px top (fixed 2026-11-11; the primary label had been 130%).
 - Scroll behavior and global smooth scroll: `NavigationScrollGuard` (`Wnd19lx`), mounted through `ResumeAssetHost` (`xDqfenf`). It owns the single Lenis 1.3.26 instance (`lerp 0.12`, native touch) and is destroyed on `/play`.
 - Exposed controls: `Smooth`, `Scroll feel`.
 

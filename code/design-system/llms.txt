@@ -18,7 +18,7 @@ Every page is plain markdown under `content/`. Read `agents.md` first. Tokens li
 - [Motion](content/foundations/motion.md): Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.
 - [Gesture](content/foundations/gesture.md): How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.
 - [Texture](content/foundations/texture.md): The umber film grain that sits over every page, and how to keep it out of the way.
-- [Identity](content/foundations/identity.md): The © Micah Hoang wordmark, the name set in type, and where each appears.
+- [Identity](content/foundations/identity.md): The ©MH monogram, the © Micah Hoang wordmark, the name set in type, and where each appears.
 
 ## Components
 
@@ -41,7 +41,7 @@ Every page is plain markdown under `content/`. Read `agents.md` first. Tokens li
 - [Lightbox](content/components/lightbox.md): A white full-screen viewer for case-study media, with thin near-black arrows and a quick zoom.
 - [Testimonial](content/components/testimonial.md): A large quote with name and role, stepped with typed arrows. Used inside case studies.
 - [Scroll to Top](content/components/scroll-to-top.md): A mono text action at the end of long pages that glides back to the top in 900ms.
-- [Page Loader](content/components/page-loader.md): The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.
+- [Page Loader](content/components/page-loader.md): The first-visit boot curtain. Forest Green, a Cream progress bar, the ©MH monogram centered, then a lift.
 - [Grain Overlay](content/components/grain-overlay.md): The page-level SVG film grain, fixed under the nav, multiplied at 10%, with an optional 16fps shimmer.
 
 ## Patterns

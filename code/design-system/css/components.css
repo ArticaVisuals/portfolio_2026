@@ -326,6 +326,12 @@
     padding-bottom: var(--mh-section-header-after-compact);
 }
 
+/* Rule only, no title (Home Selected work since 2026-11-11). */
+.mh-section-header[data-variant="rule"] {
+    row-gap: 0;
+    padding-bottom: var(--mh-section-rule-after);
+}
+
 .mh-section-header > .mh-rule {
     grid-column: 1 / -1;
 }
@@ -346,7 +352,7 @@
 /* ======================================================================
    Navigation bar
    Column widths are measured from the published site: desktop 258/340px
-   (identical at 1200 and 1280), tablet 123/145px. Mobile keeps name + links.
+   (identical at 1200 and 1280), tablet 143/165px. Mobile keeps name + links.
    ====================================================================== */
 
 .mh-nav {
@@ -381,7 +387,7 @@
 
 @media (max-width: 1199px) {
     .mh-nav {
-        grid-template-columns: 123px 145px minmax(0, 1fr) auto;
+        grid-template-columns: 143px 165px minmax(0, 1fr) auto;
     }
 }
 
@@ -488,11 +494,12 @@
    ====================================================================== */
 
 .mh-footer {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--mh-footer-gap);
     min-height: var(--mh-footer-min-height);
-    padding: var(--mh-space-6) var(--mh-gutter);
+    padding: var(--mh-space-6) var(--mh-gutter) var(--mh-footer-rows-after);
     color: var(--mh-text-brand);
     background-color: var(--mh-bg-page);
 }
@@ -544,14 +551,20 @@
     vertical-align: top;
 }
 
+/* The bar sits inside the 120px below the last contact row. */
 .mh-footer__bar {
+    position: absolute;
+    left: var(--mh-gutter);
+    right: var(--mh-gutter);
+    bottom: var(--mh-footer-bar-bottom);
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: var(--mh-footer-bar-column-gap);
-    align-items: start;
-    margin-top: auto;
-    /* The live bar's 17px row sets its 13px text 2px off each edge. */
-    padding-bottom: 2px;
+    align-items: center;
+}
+
+.mh-footer__contacts > li:first-child .mh-footer__contact {
+    min-height: var(--mh-footer-first-row-height);
 }
 
 /* Link list and ©year share the second column: list left, year right. */
@@ -566,23 +579,9 @@
 }
 
 @media (max-width: 809px) {
-    /* Measured from the live phone footer: 16px section gap + 20px container
-       padding above the rows; the 44px base-bar links sit inside the
-       container's 120px bottom padding, their labels 22px off the edge. */
-    .mh-footer {
-        gap: 0;
-        padding-bottom: 6.5px;
-    }
-
     .mh-footer__contacts {
         width: 100%;
-        margin-top: 36px;
         margin-left: 0;
-    }
-
-    .mh-footer__bar {
-        margin-top: 69.5px;
-        padding-bottom: 0;
     }
 
     .mh-footer__contact {
@@ -662,7 +661,7 @@
 :is(a, .mh-flip-host):is(:hover, :focus-visible) .mh-media > :is(img, video),
 a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     transform: scale(var(--mh-scale-hover));
-    transition: transform var(--mh-duration-fast, 250ms) var(--mh-ease-snappy);
+    transition: transform var(--mh-duration-base) var(--mh-ease-snappy);
 }
 
 /* ======================================================================
@@ -988,8 +987,12 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
         padding-bottom: var(--mh-space-4);
     }
 
+    /* Grows out of its trigger: 4px drop + 0.97 scale, 250ms Smooth.
+       components.js sets --mh-panel-origin to the trigger's centre. */
     .mh-filter__group[data-open] .mh-filter__options {
         display: flex;
+        transform-origin: var(--mh-panel-origin, 50%) 0;
+        animation: mh-panel-in var(--mh-duration-fast) var(--mh-ease-smooth) both;
     }
 
     .mh-filter__item,
@@ -1016,6 +1019,59 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
         grid-row: 3;
         min-height: var(--mh-touch-target);
     }
+}
+
+@keyframes mh-panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px) scale(0.97);
+    }
+}
+
+/* ======================================================================
+   Result count: "17 Projects". Digits sit in fixed 1ch slots so the width
+   never jumps; a changed digit cross-fades (150ms Smooth).
+   ====================================================================== */
+
+.mh-count {
+    display: inline-flex;
+    gap: 0.6em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.mh-count__digits {
+    display: inline-flex;
+}
+
+.mh-count__digit {
+    display: inline-grid;
+    width: 1ch;
+    text-align: right;
+}
+
+.mh-count__digit > span {
+    grid-area: 1 / 1;
+}
+
+.mh-count__digit > [data-in] {
+    animation: mh-fade-in var(--mh-duration-instant) var(--mh-ease-smooth) both;
+}
+
+.mh-count__digit > [data-out] {
+    animation: mh-fade-out var(--mh-duration-instant) var(--mh-ease-smooth) both;
+}
+
+@keyframes mh-fade-in { from { opacity: 0; } }
+@keyframes mh-fade-out { to { opacity: 0; } }
+
+.mh-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 }
 
 /* ======================================================================
@@ -1100,8 +1156,9 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 /* ======================================================================
    Hero
    Home: positions measured from Framer + the live site (tokens hero-*).
-   The link row sits 10px off the bottom edge on the nav gutter. No rule:
-   the rule below belongs to the next Section Header.
+   Since 2026-11-11 the name sits in normal flow and the descriptor follows
+   it directly. The link row sits 10px off the bottom edge. No rule: the
+   rule below belongs to the next Section Header.
    ====================================================================== */
 
 .mh-hero {
@@ -1112,12 +1169,11 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     padding-bottom: var(--mh-hero-padding-bottom);
 }
 
-/* The live name is absolutely positioned, so its line box doesn't push the
-   descriptor. Fixing the block height reproduces the measured positions. */
+/* In flow at 100% leading. On phones the type shrinks to fit the width
+   (58px max) and may wrap rather than overflow. */
 .mh-hero__name {
-    height: calc(var(--mh-hero-descriptor-top) - var(--mh-hero-name-top));
-    margin: 0 0 0 var(--mh-hero-name-indent);
-    overflow: visible;
+    margin: 0;
+    overflow-wrap: anywhere;
     color: var(--mh-text-brand);
 }
 
@@ -1140,12 +1196,24 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     justify-content: space-between;
     align-items: center;
     gap: var(--mh-space-6);
+    min-height: calc(var(--mh-hero-link-row-height) + 10px);
     padding-bottom: 10px;
+}
+
+/* ©year sits 2px below the row top on desktop/tablet (live: Stack padding-top 2px). */
+.mh-hero__bar > :last-child {
+    align-self: flex-start;
+    padding-top: 2px;
 }
 
 @media (max-width: 809px) {
     .mh-hero__bar .mh-link {
         min-height: var(--mh-touch-target);
+    }
+
+    .mh-hero__bar > :last-child {
+        align-self: center;
+        padding-top: 0;
     }
 }
 
@@ -1155,7 +1223,6 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 }
 
 .mh-hero[data-variant="case-study"] .mh-hero__name {
-    height: auto;
     margin-left: 0;
     font-family: var(--mh-type-display-l-family);
     font-weight: var(--mh-type-display-l-weight);
@@ -1245,14 +1312,14 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     opacity: 0;
     visibility: hidden;
     transition:
-        opacity var(--duration-quick, 150ms) var(--mh-ease-snappy),
-        visibility 0s linear var(--duration-quick, 150ms);
+        opacity var(--mh-duration-instant) var(--mh-ease-snappy),
+        visibility 0s linear var(--mh-duration-instant);
 }
 
 .mh-lightbox[data-open] {
     opacity: 1;
     visibility: visible;
-    transition: opacity var(--duration-fast, 250ms) var(--mh-ease-snappy);
+    transition: opacity var(--mh-duration-fast) var(--mh-ease-snappy);
 }
 
 .mh-lightbox__media {
@@ -1260,13 +1327,13 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
     max-height: 100%;
     object-fit: contain;
     transform: scale(0.96);
-    transition: transform var(--duration-quick, 150ms) var(--mh-ease-snappy);
+    transition: transform var(--mh-duration-instant) var(--mh-ease-snappy);
     cursor: pointer;
 }
 
 .mh-lightbox[data-open] .mh-lightbox__media {
     transform: scale(1);
-    transition: transform var(--duration-fast, 250ms) var(--mh-ease-snappy);
+    transition: transform var(--mh-duration-fast) var(--mh-ease-snappy);
 }
 
 .mh-lightbox__btn {
@@ -1353,6 +1420,19 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 
 .mh-loader[data-state="lifted"] .mh-loader__bar { transform: scaleX(1); }
 .mh-loader[data-state="lifted"] .mh-loader__identity { opacity: 0; }
+
+/* ======================================================================
+   Monogram: ©MH, Figma node 168:541. The boot loader identity since 2026-11-11.
+   ====================================================================== */
+
+.mh-monogram {
+    display: block;
+    width: var(--mh-monogram-size, var(--mh-monogram-width));
+    max-width: calc(100vw - 64px);
+    height: auto;
+    aspect-ratio: 629.319 / 208.043;
+    flex: none;
+}
 
 /* ======================================================================
    Wordmark: © Micah Hoang, outlined from Figma node 91:521

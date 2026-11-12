@@ -33,8 +33,8 @@ Desktop-first, matching the Framer frames.
 | `--mh-measure` | 580px | 580px | 100% | Long-form body |
 | `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row; equal to the page gutter |
 | `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
-| `--mh-hero-name-top` | 90px | 90px | 97px | Hero top → name line box (nav overlays it) |
-| `--mh-hero-descriptor-top` | 220px | 186px | 162px | Hero top → descriptor |
+| `--mh-hero-name-top` | 100px | 100px | 101.4px | Hero top → name line box (nav overlays it); the descriptor follows the name |
+| `--mh-section-rule-after` | 45px | 45px | 35px | Rule-only section header (Home Selected work) → grid |
 | `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
 | `--mh-footer-min-height` | 50vh | 40vh | none | Footer block (content is usually taller) |
 | `--mh-touch-target` | n/a | n/a | 44px | Minimum size of every interactive target below 810px |

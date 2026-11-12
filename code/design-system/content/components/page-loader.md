@@ -2,11 +2,11 @@
 title: Page Loader
 section: Components
 order: 20
-description: The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.
+description: The first-visit boot curtain. Forest Green, a Cream progress bar, the ©MH monogram centered, then a lift.
 status: live
 framer: PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)
 codeFileId: gmalnRr
-classes: [mh-loader, mh-loader__bar, mh-loader__identity]
+classes: [mh-loader, mh-loader__bar, mh-loader__identity, mh-monogram]
 tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.page, z.loader]
 ---
 
@@ -18,7 +18,7 @@ tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.pa
 <div class="ds-demo-frame">
   <div class="mh-loader" data-contained>
     <span class="mh-loader__bar"></span>
-    <img class="mh-loader__identity mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px">
+    <img class="mh-loader__identity mh-monogram" src="../../assets/identity/monogram-cream.svg" alt="©MH" style="--mh-monogram-size: 160px">
   </div>
   <button class="mh-action" data-variant="pill" type="button" data-play-loader style="position:absolute;right:16px;bottom:16px;color:var(--mh-text-brand)">Replay</button>
 </div>
@@ -30,15 +30,15 @@ Press **Replay** to run the sequence.
 
 | Step | What happens | Timing |
 | --- | --- | --- |
-| 1. Boot | Forest Green covers the viewport; the © Micah Hoang [wordmark](../foundations/identity.md) centered in Cream | Painted at parse time, before the app hydrates |
+| 1. Boot | Forest Green covers the viewport; the ©MH [monogram](../foundations/identity.md) centered in Cream | Painted at parse time, before the app hydrates |
 | 2. Progress | An 8px Cream bar fills from the left along the top edge | ≥ 1200ms (`bootMinMs`), Smooth |
-| 3. Identity out | The wordmark fades | 420ms, during bar completion |
+| 3. Identity out | The monogram fades | 420ms, during bar completion |
 | 4. Lift | The curtain slides up and off | 1200ms, Snappy |
 
 ## Usage
 
 - **Home only, first visit only** (direct entries and reloads of `/`). Never on internal navigations, case studies or mobile ≤ the boot-disable width.
-- The identity is the outlined [wordmark](../foundations/identity.md) as inline SVG (no font or image request): 556px wide on desktop, 444px on tablet, capped at the viewport minus 64px. Since 2026-10-23 it replaces the earlier "Micah Hoang ©2026" text. The demo above shows it at half size.
+- The identity is the ©MH [monogram](../foundations/identity.md) as inline SVG (three paths, no font or image request): 237.5px wide on desktop, 190px on tablet, capped at the viewport minus 64px, centered as a whole lockup. History: "Micah Hoang ©2026" text until 2026-10-23, the full wordmark until 2026-11-11, the monogram since. The demo above is scaled down.
 - `theme-color` and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.
 - Videos behind the curtain hold until it lifts.
 

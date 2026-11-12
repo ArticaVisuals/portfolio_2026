@@ -58,7 +58,10 @@
         if (toggle) {
             const group = toggle.closest(".mh-filter__group")
             const open = !group.hasAttribute("data-open")
-            closeFilterPanels(group.closest(".mh-filter"), group)
+            const filter = group.closest(".mh-filter")
+            closeFilterPanels(filter, group)
+            const fb = filter.getBoundingClientRect(), tb = toggle.getBoundingClientRect()
+            group.style.setProperty("--mh-panel-origin", `${Math.round(tb.left + tb.width / 2 - fb.left)}px`)
             group.toggleAttribute("data-open", open)
             toggle.setAttribute("aria-expanded", String(open))
             return
@@ -104,6 +107,37 @@
         if (!mq.matches) return
         const open = document.querySelector('.mh-nav__menu[aria-expanded="true"]')
         if (open) setMenu(open, false)
+    })
+
+    // ---- Result count -----------------------------------------------------
+    // <span class="mh-count" data-total="17"> … mhSetCount(el, 5) re-renders
+    // the digits in fixed slots and cross-fades only the ones that changed.
+    window.mhSetCount = (el, count) => {
+        const total = Number(el.dataset.total) || count
+        const width = Math.max(2, String(total).length)
+        const next = String(count).padStart(width, "\u00a0")
+        const label = count === 1 ? "Project" : "Projects"
+        let digits = el.querySelector(".mh-count__digits")
+        if (!digits) {
+            el.innerHTML = `<span class="mh-visually-hidden"></span><span aria-hidden="true" class="mh-count__digits"></span><span aria-hidden="true" class="mh-count__label"></span>`
+            digits = el.querySelector(".mh-count__digits")
+        }
+        const prev = el.dataset.value ? String(el.dataset.value).padStart(width, "\u00a0") : null
+        digits.innerHTML = [...next]
+            .map((d, i) => {
+                const old = prev && prev[i]
+                if (!old || old === d || reduceMotion()) return `<span class="mh-count__digit"><span>${d}</span></span>`
+                return `<span class="mh-count__digit"><span data-out>${old}</span><span data-in>${d}</span></span>`
+            })
+            .join("")
+        el.querySelector(".mh-visually-hidden").textContent = `${count} ${label.toLowerCase()}`
+        el.querySelector(".mh-count__label").textContent = label
+        el.dataset.value = count
+    }
+    document.querySelectorAll(".mh-count[data-value]").forEach((el) => {
+        const v = Number(el.dataset.value)
+        delete el.dataset.value
+        window.mhSetCount(el, v)
     })
 
     // ---- View toggle -----------------------------------------------------

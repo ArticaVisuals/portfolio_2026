@@ -27,7 +27,7 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 
 | Style | Class | Size (D / T / M) | Weight | Leading | Tracking | Framer text style | Use |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% / 114% / 114% | -1% | /Heading 1 | Home hero name. Once per site. |
+| Display XL | `mh-text-display-xl` | 120 / 94 / fluid ≤58 | 700 | 100% | -1% | /Heading 1 | Home hero name. Once per site. Phone: `min(58px, (100vw − 40px) / 6.2)`, 56.45px at 390 |
 | Display L | `mh-text-display-l` | 70 / 52 / 38 | 700 | 100% | -1% (-2% mobile) | /Heading 2 Bold | Case-study title + muted continuation |
 | Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | /Heading 2 | Section headers: "Selected work", "About Micah" |
 | Display Footer | `mh-text-display-footer` | 80 / 70 / fluid 28–38 | 400 | 100% | -2% (-1% mobile) | (MagText) | Uppercase footer contact rows; mobile `clamp(27px, (100vw − 40px) / 10, 38px)` |

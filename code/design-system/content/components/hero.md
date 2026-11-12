@@ -54,7 +54,8 @@ tokens: [type.display-xl, type.display-l, type.heading, space.13]
 | Home | Display XL, bold, the name | Heading, two lines, Forest Green | `/` only |
 | Case study | Display L, bold, project name | Same size and weight, continues in Stroke Gray | `/case-studies/*` |
 
-- **Home**: the name's line box 90px from the top (97 mobile) under the fixed nav, with a 6px optical overhang to the left (5 tablet, 3 mobile); the descriptor 220 / 186 / 162px from the top, a two-line descriptor at a fixed width (382 / 218 / 181px), then the link row pinned 10px from the bottom of the 100px bottom padding, on the 20px nav gutter. There is no rule here: the rule that follows belongs to the Selected work [Section Header](section-header.md).
+- **Home**: the name sits in normal flow on the 20px gutter, its line box 100px from the top (101px on phone) under the fixed nav, at 100% leading: 120 / 94px, and on phones `min(58px, (100vw − 40px) / 6.2)` so it always fits the screen (it can wrap as a last resort). The descriptor follows directly (220 / 194 / 158px from the top), at a fixed width that breaks it over two lines (382 / 254 / 231px). The link row sits 10px above the hero's bottom edge: 16.9px links centered in an 18.9px row on desktop/tablet, 44px touch targets on phone. There is no rule here: the rule that follows belongs to the Selected work [Section Header](section-header.md).
+- Until 2026-11-11 the name was absolutely positioned 10px up and 6px left inside a padded wrapper. A narrow-screen fix moved it into flow so it can't overflow 320px phones.
 - **Case study**: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the [Meta Grid](meta-grid.md) follow.
 - Hero copy rises in with the type reveal (900ms, 90ms stagger).
 

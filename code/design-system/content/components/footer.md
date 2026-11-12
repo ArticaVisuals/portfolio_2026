@@ -44,7 +44,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
    - Mobile: rows are 44px touch targets with no gap between them. The label is fluid, `clamp(27px, (100vw − 40px) / 10, 38px)`: 28px at 320, 35px at 390, 38px at 430, with 1em leading and -1% tracking, so the full email stays on one line inside the 20px gutters. Superscripts use 0.01em tracking.
 3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list (LinkedIn, Resume, Cosmos, GitHub) starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
 
-With four rows the block is content height: about 548px on desktop and 501px on tablet (at least 50vh / 40vh), and 365px on a 390px phone.
+Spacing: the eyebrow sits 20px from the top; the first row starts 30px below it (36px on phone). The email row is taller than the rest (85px desktop, 72px tablet, a Framer fixed height). The last row ends **120px above the bottom edge**, and the base bar sits inside that space with its labels 35px up. With four rows the block is content height: 548px on desktop, 501px on tablet and 365px on a 390px phone (at least 50vh / 40vh on desktop / tablet).
 
 ## Usage
 
@@ -56,11 +56,11 @@ With four rows the block is content height: about 548px on desktop and 501px on 
 
 | Class | Element | Notes |
 | --- | --- | --- |
-| `mh-footer` | `footer` | Add `data-surface="green"`; `min-height: var(--mh-footer-min-height)` |
+| `mh-footer` | `footer` | Add `data-surface="green"`; 120px below the last row; `min-height: var(--mh-footer-min-height)` |
 | `mh-footer__eyebrow` | `p.mh-label` | 130% leading on desktop, 100% below |
 | `mh-footer__contacts` | `ul` | Vertical list, 12px apart (no gap on mobile) |
 | `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag; 44px min height on mobile |
-| `mh-footer__bar` | `div` | 2 equal columns, 40px gap; children: availability, link list, ©year |
+| `mh-footer__bar` | `div` | Pinned near the bottom inside the 120px; 2 equal columns, 40px gap; children: availability, link list, ©year |
 
 ## Accessibility
 

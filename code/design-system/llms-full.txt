@@ -407,7 +407,7 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 
 | Style | Class | Size (D / T / M) | Weight | Leading | Tracking | Framer text style | Use |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Display XL | `mh-text-display-xl` | 120 / 94 / 58 | 700 | 100% / 114% / 114% | -1% | /Heading 1 | Home hero name. Once per site. |
+| Display XL | `mh-text-display-xl` | 120 / 94 / fluid ≤58 | 700 | 100% | -1% | /Heading 1 | Home hero name. Once per site. Phone: `min(58px, (100vw − 40px) / 6.2)`, 56.45px at 390 |
 | Display L | `mh-text-display-l` | 70 / 52 / 38 | 700 | 100% | -1% (-2% mobile) | /Heading 2 Bold | Case-study title + muted continuation |
 | Display M | `mh-text-display-m` | 70 / 53 / 42 | 400 | 100% | -1% | /Heading 2 | Section headers: "Selected work", "About Micah" |
 | Display Footer | `mh-text-display-footer` | 80 / 70 / fluid 28–38 | 400 | 100% | -2% (-1% mobile) | (MagText) | Uppercase footer contact rows; mobile `clamp(27px, (100vw − 40px) / 10, 38px)` |
@@ -501,8 +501,8 @@ Desktop-first, matching the Framer frames.
 | `--mh-measure` | 580px | 580px | 100% | Long-form body |
 | `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row; equal to the page gutter |
 | `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
-| `--mh-hero-name-top` | 90px | 90px | 97px | Hero top → name line box (nav overlays it) |
-| `--mh-hero-descriptor-top` | 220px | 186px | 162px | Hero top → descriptor |
+| `--mh-hero-name-top` | 100px | 100px | 101.4px | Hero top → name line box (nav overlays it); the descriptor follows the name |
+| `--mh-section-rule-after` | 45px | 45px | 35px | Rule-only section header (Home Selected work) → grid |
 | `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
 | `--mh-footer-min-height` | 50vh | 40vh | none | Footer block (content is usually taller) |
 | `--mh-touch-target` | n/a | n/a | 44px | Minimum size of every interactive target below 810px |
@@ -611,6 +611,8 @@ Motion should feel like the site is alive, not performing. It decelerates into p
 | `--mh-duration-draw` | 2000ms | Rule line draw (200ms delay) |
 | `--mh-stagger-reveal` | 90ms | Between lines in a type reveal |
 | `--mh-stagger-media` | 58ms | Between thumbnails fading in |
+
+Interaction timing on the Index (2026-11-11) maps to these tokens by purpose: **feedback** 150ms (`instant`: color, count digits, panel exit) and **switch** 250ms (`fast`: panel entry, view changes), both on the Smooth curve. Entrance choreography (type reveals, page transitions) keeps its own longer presets. Exits are faster than entries.
 
 ## Springs
 
@@ -833,14 +835,35 @@ The full snippet lives on the [Grain Overlay](../components/grain-overlay.md) pa
 title: Identity
 section: Foundations
 order: 7
-description: The © Micah Hoang wordmark, the name set in type, and where each appears.
+description: The ©MH monogram, the © Micah Hoang wordmark, the name set in type, and where each appears.
 ---
 
 # Identity
 
 ## Overview
 
-The identity is the name. One drawn mark exists, the **© Micah Hoang wordmark**, outlined from the personal-identity Figma file and used where the name has to stand alone (the boot loader). Everywhere else the name is set in type. Consistency is what makes it work: the same words, set the same way, in the same places.
+The identity is the name. Two drawn marks exist, both outlined from the personal-identity Figma file: the compact **©MH monogram**, which the boot loader shows, and the full **© Micah Hoang wordmark**. Everywhere else the name is set in type. Consistency is what makes it work: the same words, set the same way, in the same places.
+
+## Monogram
+
+```html example surface=green
+<img class="mh-monogram" src="../../assets/identity/monogram-cream.svg" alt="©MH">
+```
+
+```html example
+<img class="mh-monogram" src="../../assets/identity/monogram-forest-green.svg" alt="©MH" style="--mh-monogram-size: 120px">
+```
+
+| File | Fill | Use |
+| --- | --- | --- |
+| `assets/identity/monogram.svg` | `currentColor` | Inline, takes the text color |
+| `assets/identity/monogram-cream.svg` | Cream | `<img>` on Forest Green |
+| `assets/identity/monogram-forest-green.svg` | Forest Green | `<img>` on Cream |
+
+- **Source:** Figma personal-identity node `168:541`, saved unchanged at `assets/identity/micah-hoang-monogram.svg`. The design-system copies use the cleaned version (`micah-hoang-monogram-clean.svg`): three direct paths, with the © drawn as its filled outline plus a 4.94-unit centered stroke instead of the export's masked strokes. No masks, images or `use` elements.
+- **Where:** the boot loader since 2026-11-11, at 237.5px desktop and 190px tablet (`--mh-monogram-width`). It replaced the full wordmark there.
+- **Proportions:** viewBox `629.319 × 208.043` (about 3 : 1). Set width only.
+- **Color:** Cream on Forest Green or Forest Green on Cream.
 
 ## Wordmark
 
@@ -855,12 +878,13 @@ The identity is the name. One drawn mark exists, the **© Micah Hoang wordmark**
 | File | Fill | Use |
 | --- | --- | --- |
 | `assets/identity/wordmark.svg` | `currentColor` | Inline in HTML or a code component, so it takes the text color |
-| `assets/identity/wordmark-cream.svg` | Cream `#F7F5F0` | `<img>` on Forest Green (the boot loader) |
+| `assets/identity/wordmark-cream.svg` | Cream `#F7F5F0` | `<img>` on Forest Green |
 | `assets/identity/wordmark-forest-green.svg` | Forest Green `#233324` | `<img>` on Cream |
 
 - **Source:** Figma personal-identity node `91:521`, saved in the repo at `assets/identity/micah-hoang-copyright.svg`. The design-system copies use the live loader's corrected outline: the © is one filled and stroked path (no mask), which removes the antialiasing seams the original export showed. 11 paths, no bitmaps.
 - **Proportions:** viewBox `7682.3 × 1025.01` (about 7.5 : 1). Never stretch it; set width only.
-- **Size:** 556px wide on desktop, 444px on tablet, never wider than the viewport minus 64px (`.mh-wordmark` does this). Don't render it below about 200px wide.
+- **Size:** never wider than the viewport minus 64px (`.mh-wordmark` defaults to 556 / 444px, its old loader size). Don't render it below about 200px wide.
+- **Status:** not currently placed on the live site. It was the loader identity from 2026-10-23 until the monogram replaced it on 2026-11-11; keep it for contexts that need the full name as a mark.
 - **Color:** Cream on Forest Green or Forest Green on Cream. No other colors, outlines or effects.
 - **Render as vector.** Inline SVG or `<img>`. The live loader moved off a CSS mask because it looked soft at small sizes.
 
@@ -897,8 +921,8 @@ The nav repeats it in short form: `BRAND DESIGNER` and `LOS ANGELES, CALIFORNIA`
 
 - Write the name exactly "Micah Hoang"; uppercase only through mono labels.
 - The copyright year comes from `FooterCopyrightYear` (`BF2H03E`) in Framer; don't hard-code a different year. The wordmark's © carries no year.
-- Use the wordmark only where the name stands alone. Don't put it in the nav, footer or hero, which set the name in type.
-- Don't add a monogram, favicon glyph or second logo.
+- Use the drawn marks only where the name stands alone. Don't put them in the nav, footer or hero, which set the name in type.
+- Don't draw new marks (another monogram, a favicon glyph, a logo). The ©MH monogram and the wordmark are the complete set.
 
 ---
 
@@ -1330,7 +1354,7 @@ tokens: [type.display-m, border.hairline, space.7]
 ```html example
 <header class="mh-section-header">
   <hr class="mh-rule">
-  <h2 class="mh-section-header__title">Selected work</h2>
+  <h2 class="mh-section-header__title">Other projects</h2>
 </header>
 ```
 
@@ -1355,9 +1379,22 @@ tokens: [type.display-m, border.hairline, space.7]
 </header>
 ```
 
+### Rule only
+
+```html example
+<header class="mh-section-header" data-variant="rule">
+  <hr class="mh-rule">
+</header>
+<ul class="mh-project-grid">
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a></li>
+  <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a></li>
+</ul>
+```
+
 ## Usage
 
-- Use for top-level page sections: Selected work, About Micah, Other projects, Index.
+- Use for top-level page sections: About Micah, Other projects, Index.
+- **Rule only** (`data-variant="rule"`): Home's Selected work has no title since 2026-11-11, because the six numbered cards already say what they are. The rule sits 6px into the section (1px on phone) and the grid starts 45px below it (35px on phone).
 - Titles are sentence case, two or three words. They label the section; they aren't headlines.
 - Spacing (Framer): the previous section ends with 100px bottom padding; rule → title 20px; title → content 70px (50px mobile) via the header's own bottom padding. Use `data-spacing="compact"` for About (30px, 20px mobile).
 - Multi-word titles reveal word by word: wrap each word in a `span`; words sit 15px apart (8px mobile).
@@ -1370,6 +1407,7 @@ tokens: [type.display-m, border.hairline, space.7]
 | `mh-section-header` | `header` | Grid: title left, optional action right |
 | `mh-rule` | `hr` | First child; spans both columns |
 | `mh-section-header__title` | `h2` | Display M (70 / 53 / 42px, regular, Forest Green); word spans 15px apart |
+| `data-variant="rule"` | `header` | Rule only, no title; 45px (35px phone) to the content |
 | `data-spacing="compact"` | `header` | 30px (20px mobile) below instead of 70px |
 
 ## Framer mapping
@@ -1496,6 +1534,7 @@ Desktop columns are fixed: name 258px, role 340px, location fills, links hug the
 - The live bars are native layers in **Hybrid** and **Black** layout templates. Desktop links use the shared **Text Link** hover variants.
 - Mobile Navigation asset: `qajbM_0Ju`; Closed `wAv2cBhhn`; Open `gdGCs2vyp`. The Phone instances are `tK8RS0JyeF6qyNICpc` (Hybrid) and `rzjQrYrtJwE5QaaCdz` (Black). Their desktop source instances remain hidden.
 - [Open Mobile Navigation in Framer](https://framer.com/projects/Micah-Hoang-Portfolio--BvGjN2gCRDHG41LzAVYE-b78r3?node=qajbM_0Ju).
+- Rollover labels: both stacked copies use 100% line height (13px), so the replacement lands exactly on the resting label's 20px top (fixed 2026-11-11; the primary label had been 130%).
 - Scroll behavior and global smooth scroll: `NavigationScrollGuard` (`Wnd19lx`), mounted through `ResumeAssetHost` (`xDqfenf`). It owns the single Lenis 1.3.26 instance (`lerp 0.12`, native touch) and is destroyed on `/play`.
 - Exposed controls: `Smooth`, `Scroll feel`.
 
@@ -1555,7 +1594,7 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
    - Mobile: rows are 44px touch targets with no gap between them. The label is fluid, `clamp(27px, (100vw − 40px) / 10, 38px)`: 28px at 320, 35px at 390, 38px at 430, with 1em leading and -1% tracking, so the full email stays on one line inside the 20px gutters. Superscripts use 0.01em tracking.
 3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list (LinkedIn, Resume, Cosmos, GitHub) starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
 
-With four rows the block is content height: about 548px on desktop and 501px on tablet (at least 50vh / 40vh), and 365px on a 390px phone.
+Spacing: the eyebrow sits 20px from the top; the first row starts 30px below it (36px on phone). The email row is taller than the rest (85px desktop, 72px tablet, a Framer fixed height). The last row ends **120px above the bottom edge**, and the base bar sits inside that space with its labels 35px up. With four rows the block is content height: 548px on desktop, 501px on tablet and 365px on a 390px phone (at least 50vh / 40vh on desktop / tablet).
 
 ## Usage
 
@@ -1567,11 +1606,11 @@ With four rows the block is content height: about 548px on desktop and 501px on 
 
 | Class | Element | Notes |
 | --- | --- | --- |
-| `mh-footer` | `footer` | Add `data-surface="green"`; `min-height: var(--mh-footer-min-height)` |
+| `mh-footer` | `footer` | Add `data-surface="green"`; 120px below the last row; `min-height: var(--mh-footer-min-height)` |
 | `mh-footer__eyebrow` | `p.mh-label` | 130% leading on desktop, 100% below |
 | `mh-footer__contacts` | `ul` | Vertical list, 12px apart (no gap on mobile) |
 | `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag; 44px min height on mobile |
-| `mh-footer__bar` | `div` | 2 equal columns, 40px gap; children: availability, link list, ©year |
+| `mh-footer__bar` | `div` | Pinned near the bottom inside the 120px; 2 equal columns, 40px gap; children: availability, link list, ©year |
 
 ## Accessibility
 
@@ -1653,7 +1692,8 @@ tokens: [type.display-xl, type.display-l, type.heading, space.13]
 | Home | Display XL, bold, the name | Heading, two lines, Forest Green | `/` only |
 | Case study | Display L, bold, project name | Same size and weight, continues in Stroke Gray | `/case-studies/*` |
 
-- **Home**: the name's line box 90px from the top (97 mobile) under the fixed nav, with a 6px optical overhang to the left (5 tablet, 3 mobile); the descriptor 220 / 186 / 162px from the top, a two-line descriptor at a fixed width (382 / 218 / 181px), then the link row pinned 10px from the bottom of the 100px bottom padding, on the 20px nav gutter. There is no rule here: the rule that follows belongs to the Selected work [Section Header](section-header.md).
+- **Home**: the name sits in normal flow on the 20px gutter, its line box 100px from the top (101px on phone) under the fixed nav, at 100% leading: 120 / 94px, and on phones `min(58px, (100vw − 40px) / 6.2)` so it always fits the screen (it can wrap as a last resort). The descriptor follows directly (220 / 194 / 158px from the top), at a fixed width that breaks it over two lines (382 / 254 / 231px). The link row sits 10px above the hero's bottom edge: 16.9px links centered in an 18.9px row on desktop/tablet, 44px touch targets on phone. There is no rule here: the rule that follows belongs to the Selected work [Section Header](section-header.md).
+- Until 2026-11-11 the name was absolutely positioned 10px up and 6px left inside a padded wrapper. A narrow-screen fix moved it into flow so it can't overflow 320px phones.
 - **Case study**: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the [Meta Grid](meta-grid.md) follow.
 - Hero copy rises in with the type reveal (900ms, 90ms stagger).
 
@@ -2076,7 +2116,7 @@ description: Taxonomy columns of mono toggles (year, service, industry) that fil
 status: live
 framer: IndexPage (rgAZFOv), IndexFilterContext + URL sync
 codeFileId: rgAZFOv
-classes: [mh-filter, mh-filter__group, mh-filter__heading, mh-filter__toggle, mh-filter__options, mh-filter__item, mh-filter__done, mh-filter__clear]
+classes: [mh-count, mh-filter, mh-filter__group, mh-filter__heading, mh-filter__toggle, mh-filter__options, mh-filter__item, mh-filter__done, mh-filter__clear]
 tokens: [type.label, color.*.text.interactive, motion.duration.fast]
 ---
 
@@ -2130,7 +2170,20 @@ Since 2026-10-30 the long taxonomy columns become three disclosure buttons, **Ye
 - Triggers are 48px tall, 13px mono with 1.3 leading, uppercase, with a chevron on the right that flips when open.
 - One panel opens at a time, full width under the triggers. Options, Done and Clear filters are 44px targets.
 - Selections apply immediately. Done, Escape and a tap outside close the panel and return focus to its trigger. The live site also offers a per-category Reset and moves into the options with Arrow Down.
-- The result count below ("17 projects") is a polite live region; the Grid / List buttons are 44×44px.
+- Panels grow out of their trigger: from 4px above and 97% scale, origin at the trigger's centre, 250ms on the Smooth curve. They close in 150ms and stop taking taps immediately. Reduced motion shows and hides them without movement.
+- The Grid / List buttons are 44×44px.
+
+### Result count
+
+A polite live region under the filters ("17 Projects"). Digits sit in fixed-width tabular slots so the line never shifts; when a filter changes the count, only the changed digits cross-fade (150ms Smooth). Screen readers get the plain number once ("5 projects"), never the animated copies.
+
+```html example
+<p class="mh-label" role="status" aria-live="polite"><span class="mh-count" data-total="17" data-value="17"></span></p>
+<div class="ds-demo-row" style="margin-top:16px">
+  <button class="mh-action" data-variant="pill" type="button" onclick="mhSetCount(this.closest('.ds-preview').querySelector('.mh-count'), 5)">Filter to 5</button>
+  <button class="mh-action" data-variant="pill" type="button" onclick="mhSetCount(this.closest('.ds-preview').querySelector('.mh-count'), 17)">Clear</button>
+</div>
+```
 
 ## Usage
 
@@ -2152,6 +2205,7 @@ Since 2026-10-30 the long taxonomy columns become three disclosure buttons, **Ye
 | `mh-filter__item` | `button[aria-pressed]` | 13px mono, 28px line height; 44px min height on mobile |
 | `mh-filter__done` | `button` | Mobile only: closes the panel |
 | `mh-filter__clear` | `button` | Visible only with `data-active` |
+| `mh-count` + `mhSetCount(el, n)` | `span[data-total]` | Result count with fixed digit slots and a 150ms per-digit cross-fade |
 | `mh:filter` event | n/a | Fired by `components.js` on change with `detail.values` |
 
 ## Accessibility
@@ -2334,7 +2388,7 @@ Click any image to open the viewer. Use ← → to step through and Esc to close
 
 - Opt in a gallery or section by adding `data-mh-lightbox` to its container; every `img` inside becomes openable and steppable.
 - Backdrop is white, chrome is near-black at weight 300, 24px. No counter by default.
-- Zoom is 260ms Snappy and starts **from the clicked thumbnail**: the live component clones the media over its source rect, keeps it opaque, and zooms it to full size while the white backdrop fades in. The `components.js` version here is a simplified center scale (0.96 → 1); match the live behavior, not the demo.
+- Zoom is 260ms Snappy and starts **from the clicked thumbnail**: the live component clones the media over its source rect, keeps it opaque, and zooms it to full size while the white backdrop fades in. The `components.js` version here is a simplified center scale (0.96 → 1), opening in 250ms and closing in 150ms (exits faster than entries); match the live behavior, not the demo.
 - Tapping the image advances; navigation loops.
 - 72px padding around the media on desktop, 16px on mobile.
 
@@ -2486,11 +2540,11 @@ Below 810px the button is a 44px target. It's offset by `(row height − 44) / 2
 title: Page Loader
 section: Components
 order: 20
-description: The first-visit boot curtain. Forest Green, a Cream progress bar, the © Micah Hoang wordmark centered, then a lift.
+description: The first-visit boot curtain. Forest Green, a Cream progress bar, the ©MH monogram centered, then a lift.
 status: live
 framer: PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)
 codeFileId: gmalnRr
-classes: [mh-loader, mh-loader__bar, mh-loader__identity]
+classes: [mh-loader, mh-loader__bar, mh-loader__identity, mh-monogram]
 tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.page, z.loader]
 ---
 
@@ -2502,7 +2556,7 @@ tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.pa
 <div class="ds-demo-frame">
   <div class="mh-loader" data-contained>
     <span class="mh-loader__bar"></span>
-    <img class="mh-loader__identity mh-wordmark" src="../../assets/identity/wordmark-cream.svg" alt="© Micah Hoang" style="--mh-wordmark-width: 278px">
+    <img class="mh-loader__identity mh-monogram" src="../../assets/identity/monogram-cream.svg" alt="©MH" style="--mh-monogram-size: 160px">
   </div>
   <button class="mh-action" data-variant="pill" type="button" data-play-loader style="position:absolute;right:16px;bottom:16px;color:var(--mh-text-brand)">Replay</button>
 </div>
@@ -2514,15 +2568,15 @@ Press **Replay** to run the sequence.
 
 | Step | What happens | Timing |
 | --- | --- | --- |
-| 1. Boot | Forest Green covers the viewport; the © Micah Hoang [wordmark](../foundations/identity.md) centered in Cream | Painted at parse time, before the app hydrates |
+| 1. Boot | Forest Green covers the viewport; the ©MH [monogram](../foundations/identity.md) centered in Cream | Painted at parse time, before the app hydrates |
 | 2. Progress | An 8px Cream bar fills from the left along the top edge | ≥ 1200ms (`bootMinMs`), Smooth |
-| 3. Identity out | The wordmark fades | 420ms, during bar completion |
+| 3. Identity out | The monogram fades | 420ms, during bar completion |
 | 4. Lift | The curtain slides up and off | 1200ms, Snappy |
 
 ## Usage
 
 - **Home only, first visit only** (direct entries and reloads of `/`). Never on internal navigations, case studies or mobile ≤ the boot-disable width.
-- The identity is the outlined [wordmark](../foundations/identity.md) as inline SVG (no font or image request): 556px wide on desktop, 444px on tablet, capped at the viewport minus 64px. Since 2026-10-23 it replaces the earlier "Micah Hoang ©2026" text. The demo above shows it at half size.
+- The identity is the ©MH [monogram](../foundations/identity.md) as inline SVG (three paths, no font or image request): 237.5px wide on desktop, 190px on tablet, capped at the viewport minus 64px, centered as a whole lockup. History: "Micah Hoang ©2026" text until 2026-10-23, the full wordmark until 2026-11-11, the monogram since. The demo above is scaled down.
 - `theme-color` and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.
 - Videos behind the curtain hold until it lifts.
 
@@ -2655,8 +2709,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 | --- | --- | --- | --- |
 | 0 | Boot (first visit) | [Page Loader](../components/page-loader.md) | Home only |
 | 1 | Nav | [Navigation](../components/navigation.md) | Same as every page |
-| 2 | Hero | [Hero](../components/hero.md) (home) | Name, two-line descriptor, link list + ©2026, rule |
-| 3 | Selected work | [Section Header](../components/section-header.md), [Project Grid](../components/project-grid.md) | 6 projects, 2 columns, "View all" right-aligned below |
+| 2 | Hero | [Hero](../components/hero.md) (home) | Name, two-line descriptor, link list + ©2026 |
+| 3 | Selected work | Rule-only [Section Header](../components/section-header.md), [Project Grid](../components/project-grid.md) | No title since 2026-11-11; 6 projects, 2 columns, "View all" right-aligned below |
 | 4 | About Micah | Section Header, portrait [Media Frame](../components/media-frame.md), Body L, [Action](../components/action.md) "Read more" | Portrait left, copy right. Hovering the image or the link triggers both (image scale + link flip) |
 | 5 | Scroll to top | [Scroll to Top](../components/scroll-to-top.md) | Left gutter, 60px below the About content |
 | 6 | Footer | [Footer](../components/footer.md) | Forest Green |
@@ -2675,9 +2729,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
     </div>
   </header>
   <section>
-    <header class="mh-section-header">
+    <header class="mh-section-header" data-variant="rule">
       <hr class="mh-rule">
-      <h2 class="mh-section-header__title"><span>Selected</span><span>work</span></h2>
     </header>
     <ul class="mh-project-grid">
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
@@ -2693,7 +2746,8 @@ A senior design lead should get the read in ten seconds: **brand designer, syste
 - **Selected-work order** is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon & Schuster, National Park Playing Cards). It comes from the CMS, not code.
 - Six projects, never more. Everything else lives in the Index.
 - No hero image. The first image a visitor sees is project 1.
-- Vertical rhythm (from the Framer page): hero padding 100px top (75 mobile) and 100px bottom; section rule → title 20px; title → grid 70px (50 mobile); grid → View all 30px (20 mobile); 100px section bottom padding before About; About title → content 30px (20 mobile); content → Scroll to top 60px.
+- Vertical rhythm (from the Framer page, 2026-11-11): hero padding 100px top and bottom (name at 101px and ~126px bottom on phone); Selected work rule 6px into its section (1px phone), rule → grid 45px (35px phone); grid → View all 30px (20 mobile); 100px section bottom padding before About; About rule → title 20px, title → content 30px (20 mobile); content → Scroll to top 60px.
+- The Selected work title was removed on 2026-11-11 (hidden in Framer for rollback, node `XzikUe04m`); the rollback recipe is in `code/mirror/backups/home-layout-2026-11-11/README.md`.
 - About: 175px portrait (170 tablet/mobile), 20px gap, copy max 600px in Body L, 40px to Read more (30 tablet/mobile). On mobile the portrait stacks above the copy.
 
 ## Framer mapping
@@ -2798,7 +2852,8 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
 | --- | --- | --- | --- |
 | 1 | Nav | [Navigation](../components/navigation.md) | |
 | 2 | Title | Display M "Index" | Rises in on arrival |
-| 3 | Filters | [Filter Group](../components/filter-group.md) | Year / Discipline / Industry; "Clear filters" reserved space |
+| 3 | Filters | [Filter Group](../components/filter-group.md) | Year / Service / Industry; "Clear filters" reserved space. Disclosure buttons on mobile |
+| 3b | Count | Result count ([Filter Group](../components/filter-group.md#result-count)) | "17 Projects", digits cross-fade when filters change |
 | 4 | View | [View Toggle](../components/view-toggle.md) | Right-aligned: GRID / LIST |
 | 5a | List view | [Index List](../components/index-list.md) | Year groups, ruled rows |
 | 5b | Grid view | [Project Grid](../components/project-grid.md) `data-columns="3"` | Cards with tags; tags toggle filters |
@@ -2846,7 +2901,7 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
 
 ```json
 {
-  "$description": "Micah Hoang design tokens. Source of truth for code/design-system. Format: W3C Design Tokens (DTCG) with $value/$type. Values were measured from the published micahhoang.com and the Framer text/color styles on 2026-10-01, refreshed 2026-10-30. Edit here, then run `node build.mjs` to regenerate tokens.css. Supersedes code/tokens/micahhoang-tokens.json (Manrope era, stale).",
+  "$description": "Micah Hoang design tokens. Source of truth for code/design-system. Format: W3C Design Tokens (DTCG) with $value/$type. Values were measured from the published micahhoang.com and the Framer text/color styles on 2026-10-01, refreshed 2026-11-11. Edit here, then run `node build.mjs` to regenerate tokens.css. Supersedes code/tokens/micahhoang-tokens.json (Manrope era, stale).",
   "color": {
     "$type": "color",
     "primitive": {
@@ -3033,17 +3088,13 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "fontSize": {
           "desktop": "120px",
           "tablet": "94px",
-          "mobile": "58px"
+          "mobile": "min(58px, calc((100vw - 40px) / 6.2))"
         },
-        "lineHeight": {
-          "desktop": "100%",
-          "tablet": "114%",
-          "mobile": "114%"
-        },
+        "lineHeight": "100%",
         "letterSpacing": "-0.01em",
         "textTransform": "capitalize"
       },
-      "$description": "Home hero name only. Framer: /Heading 1 (120px, GT Standard Trial L Bd). One per site."
+      "$description": "Home hero name only. Framer: /Text Styles/Heading 1. Since 2026-11-11 the name is in normal flow and, on phones, scales with the screen (58px max) so it never overflows; text can wrap as a last resort."
     },
     "display-l": {
       "$type": "typography",
@@ -3326,7 +3377,7 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
         "tablet": "70px",
         "mobile": "50px"
       },
-      "$description": "Section title to its content (HeadingWrapper bottom padding + stack gap). About uses the compact value."
+      "$description": "Titled section header: title to its content. (Home Selected work no longer has a title; see section-rule-after.)"
     },
     "heading-word-gap": {
       "$value": {
@@ -3400,9 +3451,9 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
       "$value": {
         "desktop": "30px",
         "tablet": "30px",
-        "mobile": "10px"
+        "mobile": "36px"
       },
-      "$description": "GET IN TOUCH to the contact rows."
+      "$description": "GET IN TOUCH to the first contact row."
     },
     "footer-bar-column-gap": {
       "$value": "40px",
@@ -3422,43 +3473,27 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
     },
     "hero-name-top": {
       "$value": {
-        "desktop": "90px",
-        "tablet": "90px",
-        "mobile": "90px"
+        "desktop": "100px",
+        "tablet": "100px",
+        "mobile": "101.4px"
       },
-      "$description": "Hero top edge to the name's line box. Framer: 100px section padding + 13px wrapper padding, name absolutely positioned at top -10px. Mobile renders in place at 90px (no entrance)."
-    },
-    "hero-descriptor-top": {
-      "$value": {
-        "desktop": "220px",
-        "tablet": "186px",
-        "mobile": "157px"
-      },
-      "$description": "Hero top edge to the descriptor."
-    },
-    "hero-name-indent": {
-      "$value": {
-        "desktop": "-6px",
-        "tablet": "-5px",
-        "mobile": "-3px"
-      },
-      "$description": "Optical overhang of the bold display caps past the gutter (Framer left: -6px)."
+      "$description": "Hero top edge to the name's line box (the section's top padding; the fixed nav overlays it). The descriptor follows the name directly."
     },
     "hero-padding-bottom": {
       "$value": {
         "desktop": "100px",
         "tablet": "100px",
-        "mobile": "127px"
+        "mobile": "126.4px"
       },
       "$description": "Descriptor block to the hero's bottom edge; the link row sits 10px above that edge."
     },
     "section-header-before": {
       "$value": {
-        "desktop": "11px",
-        "tablet": "11px",
+        "desktop": "6px",
+        "tablet": "6px",
         "mobile": "1px"
       },
-      "$description": "Section top to its rule: a hidden 1px LineAnimationActive layer + the section's 10px stack gap (0 on mobile)."
+      "$description": "Section top to its rule: a hidden 1px LineAnimationActive layer + the section's 5px stack gap (0 on mobile)."
     },
     "nav-link-gap": {
       "$value": "31px",
@@ -3475,6 +3510,50 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
     "cta-suffix-gap": {
       "$value": "10px",
       "$description": "Footer contact label to its mono superscript."
+    },
+    "hero-link-row-height": {
+      "$value": {
+        "desktop": "18.9px",
+        "tablet": "18.9px",
+        "mobile": "44px"
+      },
+      "$description": "Hero link row: 16.9px links centered in 18.9px on desktop/tablet; 44px touch targets on mobile."
+    },
+    "section-rule-after": {
+      "$value": {
+        "desktop": "45px",
+        "tablet": "45px",
+        "mobile": "35px"
+      },
+      "$description": "Rule-only section header (Home Selected work since 2026-11-11): rule bottom to the grid top."
+    },
+    "monogram-width": {
+      "$value": {
+        "desktop": "237.5px",
+        "tablet": "190px",
+        "mobile": "190px"
+      },
+      "$description": "Boot loader ©MH monogram width (the loader doesn't run on mobile)."
+    },
+    "footer-rows-after": {
+      "$value": "120px",
+      "$description": "Last contact row to the footer's bottom edge (Framer Container bottom padding). The base bar sits inside this space."
+    },
+    "footer-first-row-height": {
+      "$value": {
+        "desktop": "85px",
+        "tablet": "72px",
+        "mobile": "44px"
+      },
+      "$description": "The email row is taller than the others in Framer (fixed 85px desktop)."
+    },
+    "footer-bar-bottom": {
+      "$value": {
+        "desktop": "21px",
+        "tablet": "21px",
+        "mobile": "5.5px"
+      },
+      "$description": "Footer bottom edge to the base bar box, so its labels sit 35px up (label top to edge) like the live bar; on mobile the 44px link targets end 5.5px up."
     }
   },
   "radius": {
