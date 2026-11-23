@@ -130,7 +130,7 @@ hover CSS.
 ### Effects / misc
 | Component | id | What it does |
 |---|---|---|
-| `TextEncryptionEffect` | `p7tSTaD` | **The real scramble/dencrypt effect** (Home social labels). |
+| `TextEncryptionEffect` | `p7tSTaD` | **Text Flip Up** in Framer. Home and footer social labels move up one line on hover or keyboard focus, using the READ MORE timing and easing. |
 | `CaseStudyScrambleText` | `dHFQCIH` | **Misnomer — NOT a scramble.** Plain hover-color link; relabeled "Case Study Header Link" 2026-06-18. |
 | `ProfileTextRevealFix` | `LNjgKO2` | `/info` masked text reveal (DOM-patch). |
 | `Counter` | `hdPa_Gj` | `NumberCounter` — **live** project count on `/case-studies` (keep at 17). |

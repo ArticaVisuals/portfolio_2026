@@ -45,6 +45,10 @@ The `.tsx` in `code/components/` are local mirrors of Framer code components
 
 ## Workflow Constraints
 
+- Before changing portfolio code or Framer interactions, create and push a
+  dated rollback branch containing the current source for the affected files.
+  Capture the Framer editor source when it differs from the local mirror, then
+  make the change on a separate branch.
 - Use semantic HTML such as `header`, `main`, `section`, and `footer` when
   producing page structure or React components.
 - Use reusable modern React patterns and Framer Motion principles when motion or

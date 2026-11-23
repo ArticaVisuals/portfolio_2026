@@ -1,7 +1,5 @@
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
-import { useInView } from "framer-motion"
-import { useEffect, useState, useRef, type CSSProperties } from "react"
-// import { useDencrypt } from "use-dencrypt-effect"
+import { useEffect, useRef, type CSSProperties } from "react"
 
 type ActivatorTrigger = "none" | "appear" | "layerInView"
 type Activators = {
@@ -20,8 +18,6 @@ const defaultActivators: Activators = {
 
 type TextEncryptionEffectProps = {
     text?: string
-    characters?: string
-    interval?: number
     activators?: Partial<Activators>
     fontColor?: string
     font?: CSSProperties
@@ -29,70 +25,68 @@ type TextEncryptionEffectProps = {
     style?: CSSProperties
 }
 
-export default function TextEncryptionEffect(props: TextEncryptionEffectProps) {
-    const isCanvas = RenderTarget.current() === RenderTarget.canvas
-    const text = props.text || ""
-    const activators: Activators = {
-        ...defaultActivators,
-        ...props.activators,
+const flipDuration = 420
+const flipEase = "cubic-bezier(0.16, 1, 0.3, 1)"
+const flipStyles = `
+    .mh-flip-window, .mh-flip-track { display: block; }
+    .mh-flip-window { overflow: hidden; }
+    .mh-flip-track { position: relative; }
+    .mh-flip-copy {
+        position: absolute;
+        inset: 100% 0 auto;
+        user-select: none;
+        pointer-events: none;
     }
-    const activatorTrigger = String(activators.trigger)
-    const characters = props.characters || "!#%^&*[]{}=+\\/|;:"
-    const interval = Number(props.interval ?? 0.05)
-
-    const ref = useRef(null)
-    const isInView = useInView(ref, {
-        once: !activators.replay,
-        amount: "some",
-    })
-
-    const [value, setValue] = useDencrypt(
-        activatorTrigger === "none" ? text : "",
-        {
-            chars: [...characters],
-            interval: interval * 1000,
+    @media (prefers-reduced-motion: no-preference) {
+        .mh-flip-track { transition: transform ${flipDuration}ms ${flipEase}; }
+        a:focus-visible [data-mh-flip-hover] .mh-flip-track,
+        [data-mh-flip-hover]:focus-visible .mh-flip-track {
+            transform: translateY(-100%);
         }
-    )
-
-    function runAnimation() {
-        if (!isCanvas) {
-            setValue(text)
-        }
-    }
-
-    useEffect(() => {
-        if (activatorTrigger === "appear") {
-            runAnimation()
-        }
-    }, [])
-
-    useEffect(() => {
-        if (!isCanvas && activatorTrigger === "layerInView") {
-            if (isInView) {
-                runAnimation()
+        @media (hover: hover) {
+            a:hover [data-mh-flip-hover] .mh-flip-track,
+            [data-mh-flip-hover]:hover .mh-flip-track {
+                transform: translateY(-100%);
             }
         }
-    }, [isInView])
+    }
+`
+
+function playFlip(track: HTMLSpanElement | null) {
+    if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    return track.animate(
+        [{ transform: "translateY(0)" }, { transform: "translateY(-100%)" }],
+        { duration: flipDuration, easing: flipEase }
+    )
+}
+
+export default function TextEncryptionEffect(props: TextEncryptionEffectProps) {
+    const isCanvas = RenderTarget.current() === RenderTarget.canvas
+    const { hover, press, trigger, replay } = { ...defaultActivators, ...props.activators }
+    const track = useRef<HTMLSpanElement>(null)
+    const text = props.text ?? ""
+
+    useEffect(() => {
+        const element = track.current
+        if (isCanvas || !element || trigger === "none") return
+        if (trigger === "appear") {
+            const animation = playFlip(element)
+            return () => animation?.cancel()
+        }
+        // Observe the stationary mask while the label moves through it.
+        const observer = new IntersectionObserver(([entry]) => {
+            if (!entry.isIntersecting) return
+            playFlip(element)
+            if (!replay) observer.disconnect()
+        })
+        observer.observe(element.parentElement!)
+        return () => observer.disconnect()
+    }, [isCanvas, trigger, replay])
 
     return (
         <p
-            ref={ref}
-            data-mh-scramble-component="true"
-            onClick={() => {
-                if (activators.press) {
-                    setValue(text)
-                }
-            }}
-            onFocus={() => {
-                if (activators.hover) {
-                    setValue(text)
-                }
-            }}
-            onMouseEnter={() => {
-                if (activators.hover) {
-                    setValue(text)
-                }
-            }}
+            data-mh-flip-hover={hover && !isCanvas ? "" : undefined}
+            onClick={press && !isCanvas ? () => playFlip(track.current) : undefined}
             style={{
                 margin: 0,
                 color: props.fontColor || "#000",
@@ -101,30 +95,23 @@ export default function TextEncryptionEffect(props: TextEncryptionEffectProps) {
                 ...props.style,
             }}
         >
-            {isCanvas ? text : value}
+            <style>{flipStyles}</style>
+            <span className="mh-flip-window">
+                <span className="mh-flip-track" ref={track}>
+                    {text}
+                    <span className="mh-flip-copy" aria-hidden="true">{text}</span>
+                </span>
+            </span>
         </p>
     )
 }
 
-TextEncryptionEffect.displayName = "Text Encryption Effect"
+TextEncryptionEffect.displayName = "Text Flip Up"
 
 addPropertyControls(TextEncryptionEffect, {
     text: {
-        defaultValue: "Encrypted Text",
+        defaultValue: "Link",
         type: ControlType.String,
-    },
-    characters: {
-        type: ControlType.String,
-        defaultValue: "!#%^&*[]{}=+\\/|;:",
-        description:
-            "[Character Presets](https://next-acknowledge-092743.framer.app/components/text-encryption-effect)",
-    },
-    interval: {
-        type: ControlType.Number,
-        defaultValue: 0.05,
-        step: 0.001,
-        unit: "s",
-        title: "Interval",
     },
     activators: {
         type: ControlType.Object,
@@ -167,144 +154,3 @@ addPropertyControls(TextEncryptionEffect, {
         defaultValue: true,
     },
 })
-
-/*
- * use-dencrypt-effect by Roman Vesely on GitHub
- * https://github.com/crazko/use-dencrypt-effect
- *
- * Modified by Framestack.co to use support emojis and other multi-codepoint characters.
- */
-
-export type DencryptInitialOptions = {
-    initialValue?: string
-    callback: (value: string) => void
-}
-export type DencryptDefaultOptions = Partial<typeof defaultOptions>
-
-const defaultOptions = {
-    chars: [..."-./^*!}<~$012345abcdef"],
-    interval: 50,
-}
-
-const getRandomChar = (chars: Array<String>) =>
-    chars[Math.floor(Math.random() * chars.length)]
-
-const getChar = (
-    i: number,
-    j: number,
-    maxLength: number,
-    oldValue: string,
-    newValue: string,
-    chars: Array<String>
-) => {
-    if (j > i) {
-        return oldValue[j]
-    }
-
-    if (i >= maxLength && j < i - maxLength) {
-        return newValue[j]
-    }
-
-    return getRandomChar(chars)
-}
-
-export const dencrypt = (
-    options: DencryptInitialOptions & DencryptDefaultOptions
-) => {
-    const { chars, interval, callback, initialValue } = {
-        ...defaultOptions,
-        ...options,
-    }
-
-    let lastValue: string
-    let isCrypting: ReturnType<typeof setInterval>
-
-    if (initialValue) {
-        lastValue = initialValue
-        callback(lastValue)
-    }
-
-    function* calculateValues(nextValue: string, prevValue = "") {
-        const nextLength = nextValue.length
-        const prevLength = prevValue.length
-        const maxLength = Math.max(nextLength, prevLength)
-        const iterations = 2 * maxLength
-
-        let i = 0
-
-        yield prevValue
-
-        while (i < iterations) {
-            yield [...new Array(maxLength)]
-                .map((_, j) =>
-                    getChar(i, j, maxLength, prevValue, nextValue, chars)
-                )
-                .join("")
-
-            i++
-        }
-
-        yield nextValue
-    }
-
-    const setValue = (value: string) => {
-        clearInterval(isCrypting)
-        const values = calculateValues(value, lastValue)
-
-        return new Promise<string>((resolve) => {
-            isCrypting = setInterval(() => {
-                var next = values.next()
-
-                if (next.done) {
-                    clearInterval(isCrypting)
-                    resolve(lastValue)
-                } else {
-                    lastValue = next.value
-                    callback(lastValue)
-                }
-            }, interval)
-        })
-    }
-
-    return setValue
-}
-
-type DencryptReturnType = ReturnType<typeof dencrypt>
-type UseDencryptReturnType = [string, DencryptReturnType]
-
-export function useDencrypt(): UseDencryptReturnType
-export function useDencrypt(
-    initialValue: Required<DencryptInitialOptions["initialValue"]>
-): UseDencryptReturnType
-export function useDencrypt(
-    options: DencryptDefaultOptions
-): UseDencryptReturnType
-export function useDencrypt(
-    initialValue: Required<DencryptInitialOptions["initialValue"]>,
-    options: DencryptDefaultOptions
-): UseDencryptReturnType
-export function useDencrypt(
-    v?: string | DencryptDefaultOptions,
-    o?: DencryptDefaultOptions
-) {
-    let initialValue = ""
-    let options: DencryptDefaultOptions = {}
-
-    if (typeof v === "object") {
-        options = v
-    } else if (typeof v === "string") {
-        initialValue = v
-        options = o ? o : {}
-    }
-
-    const [result, setResult] = useState<string>()
-    const [setValue, setSetValue] = useState(() =>
-        dencrypt({
-            ...options,
-            initialValue,
-            callback: setResult,
-        })
-    )
-
-    return [result, setValue]
-}
