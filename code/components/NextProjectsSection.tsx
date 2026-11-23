@@ -181,7 +181,7 @@ const FALLBACK_RECORDS: ProjectRecord[] = [
         "slug": "cellular-symphony",
         "order": 11,
         "thumbnailSrc": "https://framerusercontent.com/images/j9uS8SZ6aEBOUihZfXOWVeSrVs8.jpg",
-        "thumbnailVideoSrc": "https://framerusercontent.com/assets/EFH57Xrk0gMJ5lTzBoOuGYJqifI.m4v",
+        "thumbnailVideoSrc": "https://framerusercontent.com/assets/TIupN5xUBOwWw5tMheEYKp1c5I.mp4",
         "thumbnailStroke": false
     },
     {
@@ -220,7 +220,7 @@ const FALLBACK_RECORDS: ProjectRecord[] = [
         "title": "Caliper Sans",
         "slug": "caliper",
         "order": 18,
-        "thumbnailSrc": "https://framerusercontent.com/images/03ONMMvWNiSZ9RkcgL2UNqKiYQE.png",
+        "thumbnailSrc": "https://framerusercontent.com/images/eRyWHJ3gCJq1hUcxnFgtb2zo.webp",
         "thumbnailVideoSrc": "",
         "thumbnailStroke": true
     }

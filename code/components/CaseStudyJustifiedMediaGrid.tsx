@@ -1,3 +1,5 @@
+// @ts-expect-error Framer resolves versioned project modules at runtime.
+import { caseStudyImageSrcSet } from "https://framerusercontent.com/modules/7FifqEsF4lgahpClwlsF/k6vOTOzzC5uKJzpHxOq0/CaseStudyImageSources.js"
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
@@ -50,6 +52,7 @@ type EditableMediaItem = {
 
 type MediaItem = {
     src: string
+    mobileVideo?: string
     alt: string
     ratio: number
     kind: MediaKind
@@ -63,6 +66,7 @@ type Props = {
     preset?: string
     items?: EditableMediaItem[] | string
     itemsData?: string
+    phoneVideos?: string
     showLegacyData?: boolean
     forceSingleRow?: boolean
     targetRowHeight?: number
@@ -236,6 +240,7 @@ function parseItemsData(itemsData: string): MediaItem[] {
                 kind,
                 ratio: imageRatio || (Number.isFinite(ratio) && ratio > 0 ? ratio : 1),
                 src: rawSrc || "",
+                srcSet: kind === "image" ? caseStudyImageSrcSet(rawSrc || "") : undefined,
                 alt: rawAlt || "Case study media",
                 poster: rawPoster || undefined,
                 fit: getMediaFit(rawFit),
@@ -348,6 +353,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
     const {
         items = [],
         itemsData = "",
+        phoneVideos = "",
         forceSingleRow = false,
         targetRowHeight = 420,
         minRowHeight = 160,
@@ -398,6 +404,14 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
         })
     }, [])
 
+    const phoneSources = React.useMemo(() => {
+        const sources = new Map<string, string>()
+        for (const line of phoneVideos.split("\n")) {
+            const [original, phone] = line.split("|").map((url) => url.trim())
+            if (original && phone) sources.set(original, phone)
+        }
+        return sources
+    }, [phoneVideos])
     const editableItems = normalizeEditableItems(items)
     const legacyItems = parseItemsData(itemsData)
     const selectedItems = editableItems.length > 0 ? editableItems : legacyItems
@@ -405,6 +419,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
         .filter((item) => item?.src)
         .map((item) => ({
             ...item,
+            mobileVideo: phoneSources.get(item.src),
             ratio: measuredRatios[item.src] || getRatio(item),
         }))
     const safeGap = Math.max(0, Number(gap) || 0)
@@ -570,7 +585,7 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                             const media =
                                 item.kind === "video" ? (
                                     <ViewportVideo
-                                        src={item.src}
+                                        src={item.mobileVideo ? undefined : item.src}
                                         poster={item.poster || undefined}
                                         autoPlay={autoplay}
                                         loop={loop}
@@ -587,11 +602,19 @@ export default function CaseStudyJustifiedMediaGrid(props: Props) {
                                             )
                                         }}
                                         style={mediaStyle}
-                                    />
+                                    >
+                                        {item.mobileVideo && (
+                                            <>
+                                                <source media="(max-width: 809px)" src={item.mobileVideo} />
+                                                <source src={item.src} />
+                                            </>
+                                        )}
+                                    </ViewportVideo>
                                 ) : (
                                     <img
                                         src={item.src}
                                         srcSet={item.srcSet}
+                                        sizes={item.srcSet ? "auto, (max-width: 809px) calc(100vw - 40px), 100vw" : undefined}
                                         alt={item.alt || "Case study image"}
                                         loading="lazy"
                                         decoding="async"
@@ -704,6 +727,13 @@ addPropertyControls(CaseStudyJustifiedMediaGrid, {
             },
         },
         defaultValue: [],
+    },
+    phoneVideos: {
+        type: ControlType.String,
+        title: "Phone Videos",
+        displayTextArea: true,
+        description: "One original video URL and phone video URL per line, separated by |.",
+        defaultValue: "",
     },
     showLegacyData: {
         type: ControlType.Boolean,

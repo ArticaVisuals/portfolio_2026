@@ -1424,8 +1424,9 @@ function InternalCaseStudyLightboxEngine(props: Config) {
 
             const image = el as HTMLImageElement
             const largest = largestLightboxSrcsetCandidate(image.srcset || "")
-            const source = image.currentSrc || image.src || largest
-            return { src: source || largest, hires: largest || source }
+            const original = image.dataset.lightboxSrc || largest
+            const source = image.currentSrc || image.src || original
+            return { src: source, hires: original || source }
         }
 
         function naturalMediaRatio(el: LightboxMediaElement, type: LightboxMediaType): number {
@@ -1442,7 +1443,7 @@ function InternalCaseStudyLightboxEngine(props: Config) {
             return (
                 ratioFromDimensions(image.naturalWidth, image.naturalHeight) ||
                 ratioFromDimensions(image.getAttribute("width"), image.getAttribute("height")) ||
-                getUrlRatio(image.currentSrc || image.src || "")
+                getUrlRatio(image.currentSrc || image.src || image.dataset.lightboxSrc || "")
             )
         }
 

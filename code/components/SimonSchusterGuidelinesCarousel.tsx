@@ -1,3 +1,5 @@
+// @ts-expect-error Framer resolves versioned project modules at runtime.
+import { caseStudyImageSrcSet } from "https://framerusercontent.com/modules/7FifqEsF4lgahpClwlsF/k6vOTOzzC5uKJzpHxOq0/CaseStudyImageSources.js"
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 
@@ -72,6 +74,7 @@ type Props = {
     showArrows: boolean
     showDots: boolean
     showCounter: boolean
+    nearbySlidesOnly?: boolean
     enableLightbox: boolean
     aspectRatio: number
     frameMode: "fitMedia" | "layerHeight" | "customAspect"
@@ -125,6 +128,7 @@ export default function ImageCarousel(props: Props) {
         showDots = false,
         showCounter = false,
         enableLightbox = true,
+        nearbySlidesOnly = false,
         aspectRatio = 3014 / 1924,
         frameMode = "fitMedia",
         customAspectRatio = 3014 / 1924,
@@ -152,6 +156,23 @@ export default function ImageCarousel(props: Props) {
     const [isHovered, setIsHovered] = React.useState(false)
     const [naturalAspects, setNaturalAspects] = React.useState<Record<string, number>>({})
 
+    const gallery = React.useRef<HTMLDivElement>(null)
+    const [inView, setInView] = React.useState(false)
+    const [lastReady, setLastReady] = React.useState("")
+    const requested = slides[index]?.src || ""
+    const visible = nearbySlidesOnly && !naturalAspects[requested] && lastReady ? lastReady : requested
+
+    React.useEffect(() => {
+        if (nearbySlidesOnly && naturalAspects[requested]) setLastReady(requested)
+    }, [nearbySlidesOnly, requested, naturalAspects])
+
+    React.useEffect(() => {
+        if (!nearbySlidesOnly || !gallery.current) return
+        const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting))
+        observer.observe(gallery.current)
+        return () => observer.disconnect()
+    }, [nearbySlidesOnly])
+
     const slideCount = slides.length
 
     const goTo = React.useCallback(
@@ -176,10 +197,10 @@ export default function ImageCarousel(props: Props) {
     }, [slideCount])
 
     React.useEffect(() => {
-        if (!autoplay || isHovered || slideCount < 2) return
+        if (!autoplay || isHovered || slideCount < 2 || (nearbySlidesOnly && !inView)) return
         const timer = window.setInterval(advance, Math.max(0.5, interval) * 1000)
         return () => window.clearInterval(timer)
-    }, [advance, autoplay, interval, isHovered, slideCount])
+    }, [advance, autoplay, interval, isHovered, slideCount, nearbySlidesOnly, inView])
 
     React.useEffect(() => {
         const dots = dotsRef.current
@@ -240,6 +261,7 @@ export default function ImageCarousel(props: Props) {
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            ref={gallery}
             aria-roledescription="carousel"
             aria-label={ariaLabel}
         >
@@ -263,14 +285,18 @@ export default function ImageCarousel(props: Props) {
                 }}
             >
                 {slides.map((slide, slideIndex) => {
-                    const isActive = slideIndex === index
+                    const isActive = nearbySlidesOnly ? slide.src === visible : slideIndex === index
+                    const distance = Math.abs(slideIndex - index)
+                    const load = !nearbySlidesOnly || isActive || Math.min(distance, slideCount - distance) <= 1
                     return (
                         <img
                             key={`${slide.src}-${slideIndex}`}
-                            src={slide.src}
-                            srcSet={slide.srcSet}
+                            src={load ? slide.src : undefined}
+                            srcSet={load ? slide.srcSet : undefined}
+                            sizes={nearbySlidesOnly ? "auto, (max-width: 809px) calc(100vw - 40px), 100vw" : undefined}
+                            data-lightbox-src={nearbySlidesOnly ? slide.src : undefined}
                             alt={slide.alt}
-                            loading={slideIndex < 2 ? "eager" : "lazy"}
+                            loading={nearbySlidesOnly || slideIndex >= 2 ? "lazy" : "eager"}
                             draggable={false}
                             onLoad={(event) => {
                                 const image = event.currentTarget
@@ -389,6 +415,7 @@ function parseManifest(manifest: string | undefined): NormalizedSlide[] {
             const [src, alt] = row.split("|")
             return {
                 src: (src || "").trim(),
+                srcSet: caseStudyImageSrcSet((src || "").trim()),
                 alt: (alt || `Slide ${index + 1}`).trim(),
                 aspect: getImageAspectFromUrl(src || ""),
             }
@@ -600,6 +627,11 @@ addPropertyControls(ImageCarousel, {
         defaultValue: false,
         enabledTitle: "Show",
         disabledTitle: "Hide",
+    },
+    nearbySlidesOnly: {
+        type: ControlType.Boolean,
+        title: "Load Neighbors",
+        defaultValue: false,
     },
     enableLightbox: {
         type: ControlType.Boolean,

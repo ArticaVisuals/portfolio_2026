@@ -4,7 +4,7 @@ import { addPropertyControls, ControlType } from "framer"
 // bundle time. The TS linter can't resolve URL imports, hence the suppressions.
 // The pinned lightbox cancels route retries on Back/Forward and page exit.
 // @ts-ignore
-import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@ho2rRUp5oQKLHLwaQPIW"
+import CaseStudyLightbox from "https://framer.com/m/CaseStudyLightbox-yOYpGN.js@27CBwQyco01OoBPnICxj"
 // @ts-ignore
 import CaseStudyVideoManager from "https://framer.com/m/CaseStudyVideoManager-L3xgEc.js@fLMRKrzWoZ5D8vWlpSPB"
 // @ts-ignore

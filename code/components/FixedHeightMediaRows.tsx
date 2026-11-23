@@ -1,7 +1,7 @@
 import * as React from "react"
 import { addPropertyControls, ControlType } from "framer"
 // @ts-expect-error Framer resolves project code-component URL imports at runtime.
-import CaseStudyJustifiedMediaGrid from "https://framer.com/m/CaseStudyJustifiedMediaGrid-9FvDJe.js"
+import CaseStudyJustifiedMediaGrid from "https://framer.com/m/CaseStudyJustifiedMediaGrid-9FvDJe.js@cbKP5G3MnCZfVRkvJFLA"
 
 type MediaKind = "image" | "video"
 type SourceMode = "items" | "data"
