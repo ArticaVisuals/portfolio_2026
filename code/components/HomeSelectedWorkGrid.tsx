@@ -1476,7 +1476,8 @@ export default function HomeSelectedWorkGrid({
                 :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):hover > *,
                 :is([data-framer-name="Section About"], [name="Section About"])
                 :is([data-framer-name="Text Link Black"], [name="Text Link Black"], [data-framer-name="TextLinkBlack"], [name="TextLinkBlack"], [data-framer-name="Text Link Black Hover"], [name="Text Link Black Hover"], [data-framer-name="TextLinkBlackHover"], [name="TextLinkBlackHover"]):focus-within > * {
-                    transform: translateY(-13px) !important;
+                    /* The two equal rows share this stack; move by one full row. */
+                    transform: translateY(-50%) !important;
                 }
 
                 @media (max-width: 809px) {
