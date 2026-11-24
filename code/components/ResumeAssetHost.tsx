@@ -618,6 +618,52 @@ function installPrettyWrapFallback(maxFontSize = 23) {
     }
 }
 
+// Shared by navigation, footer and case-study routes, including direct page loads.
+const textFlipStyles = `
+    :root {
+        --mh-flip-duration: 420ms;
+        --mh-flip-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        :root { --mh-flip-duration: 0ms; }
+    }
+    /* Keep the native Text Link mask stationary across Framer hover variants. */
+    a[data-framer-name^="Text Link"] > :has(> [data-framer-name="View project"] + [data-framer-name="View project"]) {
+        justify-content: flex-start !important;
+        overflow: hidden;
+    }
+    a[data-framer-name^="Text Link"] > div > [data-framer-name="View project"] {
+        flex: 0 0 100% !important;
+        height: 100% !important;
+        transform: none !important;
+    }
+    a[data-framer-name^="Text Link"] > div > [data-framer-name="View project"] > p {
+        line-height: 1 !important;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        /* The individual components own their travel distances and activation states. */
+        html .idx-flip-track,
+        .idx-grid-title-stack,
+        .selected-work-title-stack,
+        .mh-other-project-title__track,
+        .mh-flip-track,
+        [data-framer-name="Section About"] [data-framer-name="Button Wrapper"] [data-framer-name^="Text Link"] > div,
+        .mh-scroll-top-button .mh-scroll-top-label-rail,
+        [data-playground-panel-motion="smooth"] [data-playground-label-roll] {
+            transition-duration: var(--mh-flip-duration) !important;
+            transition-timing-function: var(--mh-flip-ease) !important;
+        }
+    }
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+        a[data-framer-name^="Text Link"] > div > [data-framer-name="View project"] {
+            transition: translate var(--mh-flip-duration) var(--mh-flip-ease);
+        }
+        a[data-framer-name^="Text Link"]:is(:hover, :focus-visible) > div > [data-framer-name="View project"] {
+            translate: 0 -100%;
+        }
+    }
+`
+
 /**
  * Footer compatibility host.
  *
@@ -646,6 +692,7 @@ export default function ResumeAssetHost(props: ResumeAssetHostProps) {
 
     return (
         <>
+            <style>{textFlipStyles}</style>
             <NavigationScrollGuard />
             <ParagraphPrettyWrap enabled={true} maxFontSize={23} minWords={2} />
             <script

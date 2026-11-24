@@ -13,7 +13,7 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
  * (Info / Index) and the /play panel CLOSE button:
  *   - 'GT Standard Mono Trial', 13px, uppercase, letterSpacing 0, 1:1 line-height
  *   - two stacked identical lines clipped to one line-height; the inner column
- *     rolls up by one line on hover (transform 360ms cubic-bezier(0.16,1,0.3,1)).
+ *     rolls up by one line on hover using the shared site timing.
  *
  * Bind `title`, `description`, `itemLink`, `ctaLabel` and `ctaLink` to Play
  * Archive CMS fields in the Framer UI.
@@ -22,8 +22,8 @@ import { addPropertyControls, ControlType, RenderTarget } from "framer"
 // ---- Tokens (matched to the site nav + /play panel) ----
 const MONO = "'GT Standard Mono Trial', 'Azeret Mono', 'SF Mono', monospace"
 const BODY = "'GT Standard Trial', 'Inter', system-ui, sans-serif"
-const SNAPPY_EASE = "cubic-bezier(0.16, 1, 0.3, 1)"
-const ROLL_MS = 360
+const ROLL_TRANSITION =
+    "transform var(--mh-flip-duration, 420ms) var(--mh-flip-ease, cubic-bezier(0.16, 1, 0.3, 1))"
 const BLACK = "rgb(20, 20, 20)"
 const TEXT_GRAY = "rgb(110, 110, 110)"
 
@@ -69,7 +69,7 @@ function RollLabel({
                     display: "flex",
                     flexDirection: "column",
                     transform: hovered ? `translateY(-${lh}px)` : "translateY(0)",
-                    transition: `transform ${ROLL_MS}ms ${SNAPPY_EASE}`,
+                    transition: ROLL_TRANSITION,
                     willChange: "transform",
                 }}
             >
