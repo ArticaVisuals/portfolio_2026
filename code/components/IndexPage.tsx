@@ -1345,7 +1345,7 @@ function buildGlobalCss(): string {
     flex-direction: column;
     gap: 5px;
     transform: translateY(0);
-    transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform var(--mh-flip-duration, 420ms) ${SNAPPY_EASE};
     will-change: transform;
   }
   .idx-flip-copy {
@@ -1944,7 +1944,7 @@ function buildGlobalCss(): string {
       flex-direction: column !important;
       gap: 5px !important;
       transform: translateY(0) !important;
-      transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      transition: transform var(--mh-flip-duration, 420ms) ${SNAPPY_EASE} !important;
       will-change: transform !important;
     }
 

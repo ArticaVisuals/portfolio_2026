@@ -1044,7 +1044,7 @@ function useDraftAnimationStyles(enabled: boolean) {
             }
             @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
                 [data-playground-panel-motion="smooth"] [data-playground-label-roll] {
-                    transition: transform 360ms ${SNAPPY_EASE};
+                    transition: transform var(--mh-flip-duration, 420ms) ${SNAPPY_EASE};
                 }
                 [data-playground-panel-motion="smooth"] [data-playground-label-trigger]:hover [data-playground-label-roll] {
                     transform: translateY(-13px);

@@ -2,7 +2,7 @@ import * as React from "react"
 import { addPropertyControls, ControlType, RenderTarget } from "framer"
 
 // @ts-ignore Framer code files can import project code components by module URL.
-import ArchivePlayground from "https://framer.com/m/ArchivePlayground-hjPIIx.js@Od3cfnky2uFWSan1tnFC"
+import ArchivePlayground from "https://framer.com/m/ArchivePlayground-hjPIIx.js@1vuVRshNww57eMtxXyRe"
 
 type Kind = "image" | "video" | "gif"
 type ImageValue = { src?: string; srcSet?: string; alt?: string } | string | null | undefined

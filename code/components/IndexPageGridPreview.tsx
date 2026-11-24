@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react"
 import { addPropertyControls, ControlType } from "framer"
-import BaseIndexPage from "https://framer.com/m/IndexPage-msQHCf.js"
+import BaseIndexPage from "https://framer.com/m/IndexPage-msQHCf.js@deytmwJp4kRsD0O2zHd2"
 
 const PREVIEW_ADVANCED_DEFAULT = {
     defaultView: "list",
