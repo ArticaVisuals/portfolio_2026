@@ -3292,6 +3292,8 @@ export default function ArchivePlayground(props: Props) {
                                         <p
                                             id={panelDescriptionId}
                                             style={{
+                                                WebkitUserSelect: "text",
+                                                userSelect: "text",
                                                 margin: 0,
                                                 minWidth: 0,
                                                 fontFamily: PARAGRAPH_REGULAR,
