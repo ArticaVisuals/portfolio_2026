@@ -9,15 +9,6 @@
     font-family: var(--mh-font-sans);
 }
 
-.ds-visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-}
-
 .ds-skip {
     position: absolute;
     left: var(--mh-gutter);

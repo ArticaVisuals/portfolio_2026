@@ -28,7 +28,7 @@ The identity is the name. Two drawn marks exist, both outlined from the personal
 | `assets/identity/monogram-forest-green.svg` | Forest Green | `<img>` on Cream |
 
 - **Source:** Figma personal-identity node `168:541`, saved unchanged at `assets/identity/micah-hoang-monogram.svg`. The design-system copies use the cleaned version (`micah-hoang-monogram-clean.svg`): three direct paths, with the © drawn as its filled outline plus a 4.94-unit centered stroke instead of the export's masked strokes. No masks, images or `use` elements.
-- **Where:** the boot loader since 2026-11-11, at 237.5px desktop and 190px tablet (`--mh-monogram-width`). It replaced the full wordmark there.
+- **Where:** the boot loader, at 237.5px desktop and 190px tablet (`--mh-monogram-width`).
 - **Proportions:** viewBox `629.319 × 208.043` (about 3 : 1). Set width only.
 - **Color:** Cream on Forest Green or Forest Green on Cream.
 
@@ -51,7 +51,7 @@ The identity is the name. Two drawn marks exist, both outlined from the personal
 - **Source:** Figma personal-identity node `91:521`, saved in the repo at `assets/identity/micah-hoang-copyright.svg`. The design-system copies use the live loader's corrected outline: the © is one filled and stroked path (no mask), which removes the antialiasing seams the original export showed. 11 paths, no bitmaps.
 - **Proportions:** viewBox `7682.3 × 1025.01` (about 7.5 : 1). Never stretch it; set width only.
 - **Size:** never wider than the viewport minus 64px (`.mh-wordmark` defaults to 556 / 444px, its old loader size). Don't render it below about 200px wide.
-- **Status:** not currently placed on the live site. It was the loader identity from 2026-10-23 until the monogram replaced it on 2026-11-11; keep it for contexts that need the full name as a mark.
+- **Status:** not placed on the live site; use it where the full name has to stand alone as a mark.
 - **Color:** Cream on Forest Green or Forest Green on Cream. No other colors, outlines or effects.
 - **Render as vector.** Inline SVG or `<img>`. The live loader moved off a CSS mask because it looked soft at small sizes.
 

@@ -6,7 +6,7 @@ description: A full-width rule followed by a Display M title. This is how every 
 status: live
 framer: Rule frame + text style "Heading 2"
 classes: [mh-section-header, mh-section-header__title]
-tokens: [type.display-m, border.hairline, space.7]
+tokens: [type.display-m, border.hairline, space.7, component.section-header.*]
 ---
 
 # Section Header
@@ -56,7 +56,7 @@ tokens: [type.display-m, border.hairline, space.7]
 ## Usage
 
 - Use for top-level page sections: About Micah, Other projects, Index.
-- **Rule only** (`data-variant="rule"`): Home's Selected work has no title since 2026-11-11, because the six numbered cards already say what they are. The rule sits 6px into the section (1px on phone) and the grid starts 45px below it (35px on phone).
+- **Rule only** (`data-variant="rule"`): Home's Selected work has no title, because the six numbered cards already say what they are. The rule sits 6px into the section (1px on phone) and the grid starts 45px below it (35px on phone).
 - Titles are sentence case, two or three words. They label the section; they aren't headlines.
 - Spacing (Framer): the previous section ends with 100px bottom padding; rule → title 20px; title → content 70px (50px mobile) via the header's own bottom padding. Use `data-spacing="compact"` for About (30px, 20px mobile).
 - Multi-word titles reveal word by word: wrap each word in a `span`; words sit 15px apart (8px mobile).

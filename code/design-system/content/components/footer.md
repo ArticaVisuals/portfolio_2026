@@ -4,10 +4,10 @@ section: Components
 order: 8
 description: A Forest Green block with oversized uppercase contact links and a mono base bar.
 status: live
-framer: Native "Footer" (FooterWhiteDesktop variants); FooterCopyrightYear (BF2H03E); TextEncryptionEffect (p7tSTaD); ResumeAssetHost (xDqfenf)
+framer: Native "Footer" (FooterWhite* variants) and Home SectionCta; MagText; Text Flip Up (p7tSTaD); FooterCopyrightYear (BF2H03E); ResumeAssetHost (xDqfenf)
 codeFileId: BF2H03E
 classes: [mh-footer, mh-footer__contacts, mh-footer__contact, mh-footer__bar]
-tokens: [type.display-footer, type.label, color.green.*, space.13]
+tokens: [type.display-footer, type.label, color.green.*, component.footer.*]
 ---
 
 # Footer
@@ -38,13 +38,13 @@ tokens: [type.display-footer, type.label, color.green.*, space.13]
 
 ## Anatomy
 
-1. **Eyebrow** (`mh-footer__eyebrow`): "Get in touch", `/Small Mono` 20px from the top. Its leading drops from 130% to 100% below 1200px.
+1. **Eyebrow** (`mh-footer__eyebrow`): "Get in touch", `/Small Mono` (130% leading at every size), 20px from the top.
 2. **Contacts**: four Display Footer rows, uppercase, each with a `/Small Mono Footers` superscript 10px to its right: `MICAH.HOANG` `@HEY.COM`, `LINKEDIN` `CONNECT`, `COSMOS` `INSPIRE`, `GITHUB` `BUILD` (added 2026-10).
    - Desktop / tablet: 80 / 70px, -2% tracking, rows 12px apart, superscript 2px down.
    - Mobile: rows are 44px touch targets with no gap between them. The label is fluid, `clamp(27px, (100vw − 40px) / 10, 38px)`: 28px at 320, 35px at 390, 38px at 430, with 1em leading and -1% tracking, so the full email stays on one line inside the 20px gutters. Superscripts use 0.01em tracking.
 3. **Base bar**: pinned to the bottom, 20px up. Two equal columns with a 40px gap: availability left; link list (LinkedIn, Resume, Cosmos, GitHub) starting at the page midpoint + 20px, ©year right. On mobile the availability label is hidden.
 
-Spacing: the eyebrow sits 20px from the top; the first row starts 30px below it (36px on phone). The email row is taller than the rest (85px desktop, 72px tablet, a Framer fixed height). The last row ends **120px above the bottom edge**, and the base bar sits inside that space with its labels 35px up. With four rows the block is content height: 548px on desktop, 501px on tablet and 365px on a 390px phone (at least 50vh / 40vh on desktop / tablet).
+Spacing: the eyebrow sits 20px from the top; the first row starts 30px below it (36px on phone). The email row is taller than the rest (85px desktop, 72px tablet, a Framer fixed height). The last row ends **120px above the bottom edge**, and the base bar sits inside that space with its labels 35px up. With four rows the block is content height: 548px on desktop, 505px on tablet and 369px on a 390px phone (at least 50vh / 40vh on desktop / tablet).
 
 ## Usage
 
@@ -57,7 +57,7 @@ Spacing: the eyebrow sits 20px from the top; the first row starts 30px below it 
 | Class | Element | Notes |
 | --- | --- | --- |
 | `mh-footer` | `footer` | Add `data-surface="green"`; 120px below the last row; `min-height: var(--mh-footer-min-height)` |
-| `mh-footer__eyebrow` | `p.mh-label` | 130% leading on desktop, 100% below |
+| `mh-footer__eyebrow` | `p.mh-label` | Small Mono, 130% leading |
 | `mh-footer__contacts` | `ul` | Vertical list, 12px apart (no gap on mobile) |
 | `mh-footer__contact` | `a` | Display Footer type; `sup` child is the mono tag; 44px min height on mobile |
 | `mh-footer__bar` | `div` | Pinned near the bottom inside the 120px; 2 equal columns, 40px gap; children: availability, link list, ©year |
@@ -70,10 +70,10 @@ Spacing: the eyebrow sits 20px from the top; the first row starts 30px below it 
 ## Framer mapping
 
 - Home renders this as the page section `SectionCta` plus the `FooterWhite*` bar; case studies use the **Footer** component. On tablet the Home contact rows render in GT Standard Medium; elsewhere they're Regular. That inconsistency is live; this system documents the Regular treatment.
-- Mobile rules (fluid size, 44px rows, 20px gutters, Optro's legacy `Row` layers) live in `NavigationScrollGuard` (`Wnd19lx`), pinned by `ResumeAssetHost` (`xDqfenf`). See `docs/mobile-footer-crx-polish-2026-10-30.md`.
+- Mobile rules (fluid size, 44px rows, 20px gutters, Optro's legacy `Row` layers) live in `NavigationScrollGuard` (`Wnd19lx`), pinned by `ResumeAssetHost` (`xDqfenf`). 
 
 - Native **Footer** component with desktop/tablet/phone variants (`FooterWhiteDesktop`, ...).
-- The display links use `TextEncryptionEffect` (`p7tSTaD`) for the per-letter scramble on hover. Keep it on these three links only.
+- The large contact words are a per-letter `MagText` component; the base-bar social labels use Text Flip Up (`p7tSTaD`), the same 420ms flip as every other link.
 - Year: `FooterCopyrightYear` (`BF2H03E`).
 - `ResumeAssetHost` (`xDqfenf`) is mounted invisibly inside the footer. It supplies the resume file and hosts the global helpers (`ParagraphPrettyWrap`, `NavigationScrollGuard`). **Never remove it from the footer.**
 

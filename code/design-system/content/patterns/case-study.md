@@ -21,9 +21,9 @@ Show the work in context and say exactly what Micah did. The media carries the s
 | 2 | Title | [Hero](../components/hero.md) (case-study) | Bold project name + Stroke Gray continuation, Display L |
 | 3 | Hero media | [Media Frame](../components/media-frame.md) | Full bleed (edge to edge, no gutter), 16:9 or wider, video preferred |
 | 4 | Fact sheet | [Meta Grid](../components/meta-grid.md) | About, Industry / Scope, Credits, Year |
-| 5…n | Chapters | Heading (35px, near-black) + galleries + Body (18px, Graphite, ≤620px) | e.g. The Insight, Strategy, Visual Identity, Brand in the World, Interface, Designed to Ship |
+| 5…n | Chapters | Heading (35px, near-black) + galleries + Body (18 / 16 / 18px, Graphite, ≤580px) | e.g. The Insight, Strategy, Visual Identity, Brand in the World, Interface, Designed to Ship |
 | | Testimonial | [Testimonial](../components/testimonial.md) | Optional, real quotes only |
-| n+1 | Other projects | [Section Header](../components/section-header.md), [Project Grid](../components/project-grid.md) `data-columns="3"` | Three projects, no tags |
+| n+1 | Other projects | [Section Header](../components/section-header.md), [Project Grid](../components/project-card.md) `data-columns="3"` | Three projects, no tags |
 | n+2 | Footer | [Footer](../components/footer.md) | |
 
 Every image on the page is [Lightbox](../components/lightbox.md)-enabled.
@@ -52,7 +52,7 @@ Every image on the page is [Lightbox](../components/lightbox.md)-enabled.
 ## Rules
 
 - **Title**: the project name plus one line of what it does for people, in the visitor's terms. Under about 12 words in the continuation.
-- **Chapters**: 4–7 chapters, each a Heading (sentence or Title Case as on the live pages), one gallery, and 1–3 short paragraphs. Paragraphs sit beside or under media, max 620px.
+- **Chapters**: 4–7 chapters, each a Heading (sentence or Title Case as on the live pages), one gallery, and 1–3 short paragraphs. Paragraphs sit beside or under media, max 580px (full width on phones).
 - **Text color**: chapter headings near-black (`--mh-text-strong`), body Graphite (`--mh-text-body`), meta values near-black.
 - **Media first**: lead each chapter with media. Galleries use the case-study gallery components (justified grid, double stack, matched pair); don't invent new layouts.
 - **Credits**: name collaborators and agencies precisely.

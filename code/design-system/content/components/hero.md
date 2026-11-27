@@ -4,9 +4,9 @@ section: Components
 order: 9
 description: The opening of a page. A huge name and descriptor on Home; a bold title continuing in Stroke Gray on case studies.
 status: live
-framer: Home "Header" section (Heading 1 + Heading 3); case-study hero (Heading 2b, two colors)
+framer: Home "Header" section (Heading 1 + Heading 3); case-study hero (Heading 2 Bold, two colors)
 classes: [mh-hero, mh-hero__name, mh-hero__descriptor, mh-hero__bar, mh-hero__continuation]
-tokens: [type.display-xl, type.display-l, type.heading, space.13]
+tokens: [type.display-xl, type.display-l, type.heading, component.hero.*]
 ---
 
 # Hero
@@ -55,7 +55,6 @@ tokens: [type.display-xl, type.display-l, type.heading, space.13]
 | Case study | Display L, bold, project name | Same size and weight, continues in Stroke Gray | `/case-studies/*` |
 
 - **Home**: the name sits in normal flow on the 20px gutter, its line box 100px from the top (101px on phone) under the fixed nav, at 100% leading: 120 / 94px, and on phones `min(58px, (100vw − 40px) / 6.2)` so it always fits the screen (it can wrap as a last resort). The descriptor follows directly (220 / 194 / 158px from the top), at a fixed width that breaks it over two lines (382 / 254 / 231px). The link row sits 10px above the hero's bottom edge: 16.9px links centered in an 18.9px row on desktop/tablet, 44px touch targets on phone. There is no rule here: the rule that follows belongs to the Selected work [Section Header](section-header.md).
-- Until 2026-11-11 the name was absolutely positioned 10px up and 6px left inside a padded wrapper. A narrow-screen fix moved it into flow so it can't overflow 320px phones.
 - **Case study**: the project name is the start of a sentence that continues in muted gray: name, then one line of what the project does for people. Up to three lines on desktop. The full-bleed hero media and the [Meta Grid](meta-grid.md) follow.
 - Hero copy rises in with the type reveal (900ms, 90ms stagger).
 
@@ -78,7 +77,7 @@ tokens: [type.display-xl, type.display-l, type.heading, space.13]
 ## Framer mapping
 
 - Home: text styles **Heading 1** (name) and **Heading 3** (descriptor). Appear effects: name `translateY 110px → 0`, descriptor `90px → 0`, Snappy; replays are coordinated by `PageTransition` (`gmalnRr`).
-- Case study: **Heading 2b** in two text layers (`/Forest Green` then `/Stroke Gray`) or one rich-text layer with a color span.
+- Case study: **Heading 2 Bold** in two text layers (`/Colors/Forest Green` then `/Colors/Stroke Gray`) or one rich-text layer with a color span.
 
 ## Don't
 

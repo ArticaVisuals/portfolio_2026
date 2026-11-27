@@ -116,12 +116,3 @@
     letter-spacing: var(--mh-type-label-relaxed-tracking);
     text-transform: var(--mh-type-label-relaxed-case);
 }
-
-.mh-text-label-sm {
-    font-family: var(--mh-type-label-sm-family);
-    font-weight: var(--mh-type-label-sm-weight);
-    font-size: var(--mh-type-label-sm-size);
-    line-height: var(--mh-type-label-sm-leading);
-    letter-spacing: var(--mh-type-label-sm-tracking);
-    text-transform: var(--mh-type-label-sm-case);
-}

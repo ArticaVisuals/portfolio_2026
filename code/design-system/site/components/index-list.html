@@ -18,7 +18,7 @@
 <header class="ds-header">
   <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
   <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
-  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <label class="ds-search"><span class="mh-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
   <div class="ds-search-results" data-ds-results hidden></div>
   <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
   <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
@@ -27,18 +27,15 @@
   <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
 <p class="ds-nav__section mh-label">Foundations</p>
 <a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
-<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
 <a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
 <a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
 <a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
 <a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
-<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
 <a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
 <a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
 <p class="ds-nav__section mh-label">Components</p>
 <a class="ds-nav__link" href="../components/label.html">Mono Label</a>
-<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
-<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/links-actions.html">Links & Actions</a>
 <a class="ds-nav__link" href="../components/tag.html">Tag</a>
 <a class="ds-nav__link" href="../components/rule.html">Rule</a>
 <a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
@@ -47,20 +44,18 @@
 <a class="ds-nav__link" href="../components/hero.html">Hero</a>
 <a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
 <a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
-<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
 <a class="ds-nav__link is-current" href="../components/index-list.html">Index List</a>
-<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
-<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/index-controls.html">Index Controls</a>
 <a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
 <a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
 <a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
-<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
 <a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
-<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
 <p class="ds-nav__section mh-label">Patterns</p>
 <a class="ds-nav__link" href="../patterns/home.html">Home</a>
 <a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
 <a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">Reference</p>
+<a class="ds-nav__link" href="../reference/changelog.html">Changelog</a>
 <p class="ds-nav__section mh-label">For agents</p>
 <a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
 <a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
@@ -155,7 +150,7 @@
 <h2 id="anatomy"><a class="ds-anchor" href="#anatomy">Anatomy</a></h2>
 <div class="ds-table"><table><thead><tr><th>Column</th><th>Content</th><th>Type</th><th>Below 1200px</th><th>Below 810px</th></tr></thead><tbody><tr><td>Year</td><td>Group label, first column, once per group</td><td>Title, 22px</td><td>Kept</td><td>Stacked above rows</td></tr><tr><td>Title</td><td>Project name, uppercase; rolls to "View Project →" on hover</td><td>Title, 22px</td><td>Kept</td><td>22px</td></tr><tr><td>Discipline</td><td>Comma-joined disciplines</td><td>Mono label</td><td>Hidden</td><td>Hidden</td></tr><tr><td>Industry</td><td>One industry</td><td>Mono label, right-aligned</td><td>Kept</td><td>Kept</td></tr></tbody></table></div>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>Groups are years, newest first. A full-width rule opens each group; rules separate rows inside it; a final rule closes the list.</li><li>Text is near-black (<code>--mh-text-strong</code>), not Forest Green. This is the one dense, data-like surface on the site.</li><li>Row hover: a 4% near-black wash (150ms Smooth) plus the title rolling up to <strong>View Project →</strong> (620ms Snappy).</li><li><strong>Mobile</strong> (below 810px): no year group labels. Each row is a 56px link with the 22px uppercase title on the left and its year in 13px mono on the right; industry and discipline are hidden. Rows don't roll.</li><li>The list sits under the <a href="filter-group.html">Filter Group</a> and the <a href="view-toggle.html">View Toggle</a>; filtering hides rows and empty groups without moving the filters.</li></ul>
+<ul><li>Groups are years, newest first. A full-width rule opens each group; rules separate rows inside it; a final rule closes the list.</li><li>Text is near-black (<code>--mh-text-strong</code>), not Forest Green. This is the one dense, data-like surface on the site.</li><li>Row hover: a 4% near-black wash (150ms Smooth) plus the title rolling up to <strong>View Project →</strong> (420ms Snappy, like every flip).</li><li><strong>Mobile</strong> (below 810px): no year group labels. Each row is a 56px link with the 22px uppercase title on the left and its year in 13px mono on the right; industry and discipline are hidden. Rows don't roll.</li><li>The list sits under the <a href="index-controls.html">Filter Group</a> and the <a href="index-controls.html">View Toggle</a>; filtering hides rows and empty groups without moving the filters.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-index</code></td><td><code>ol</code></td><td>Wrapper; <code>reversed</code> if numbering matters</td></tr><tr><td><code>mh-index__group</code></td><td><code>li</code></td><td>Grid <code>1fr 5fr</code>, top rule</td></tr><tr><td><code>mh-index__year</code></td><td><code>h3</code></td><td>Year label</td></tr><tr><td><code>mh-index__rows</code></td><td><code>ul</code></td><td>Rows, divided by rules</td></tr><tr><td><code>mh-index__row</code></td><td><code>a</code></td><td>Grid <code>2fr 2fr 1fr</code>; hover wash, 2px radius</td></tr><tr><td><code>mh-index__title</code></td><td><code>span</code></td><td>Holds a flip rail (<code>--mh-flip-h: 1.2em</code>)</td></tr><tr><td><code>mh-index__discipline</code>, <code>mh-index__industry</code></td><td><code>span.mh-label</code></td><td>Ellipsis on overflow; hidden on mobile</td></tr><tr><td><code>mh-index__row-year</code></td><td><code>span.mh-label</code></td><td>The row's year, shown only below 810px (right-aligned, 13px)</td></tr></tbody></table></div>
 <h2 id="data-model-cms"><a class="ds-anchor" href="#data-model-cms">Data model (CMS)</a></h2>

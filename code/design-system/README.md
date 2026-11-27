@@ -2,7 +2,7 @@
 
 The foundations, components and page patterns behind [micahhoang.com](https://micahhoang.com), documented for people and for design agents. It's modeled on [design.rogo.ai/product](https://design.rogo.ai/product): every page has live examples and also exists as plain markdown.
 
-It documents the **live** site, measured from the published pages on 2026-10-01 and mapped to Framer styles and code components. It's a local reference. Nothing here changes the Framer project.
+It documents the **live** site, read from the Framer project and measured on the published pages, and maps each piece to its Framer style or code component. Nothing here changes the Framer project. History lives in `content/reference/changelog.md`.
 
 ## Open it
 
@@ -17,11 +17,12 @@ Then visit http://localhost:4319/site/. In the Claude desktop app, the `design-s
 | Path | What it is | Edit? |
 | --- | --- | --- |
 | `agents.md` | Start here if you are an agent | Yes |
-| `content/**/*.md` | Every page (Foundations, Components, Patterns), with front matter | Yes, the source of truth |
+| `content/**/*.md` | Every page (Foundations, Components, Patterns, Reference), with front matter | Yes, the source of truth |
 | `tokens/tokens.json` | Design tokens (W3C DTCG format) | Yes, the source of truth |
 | `css/fonts.css`, `css/base.css`, `css/components.css` | Styles | Yes |
 | `js/components.js` | Optional behavior: reveals, lightbox, filters, toggles, loader, grain | Yes |
-| `assets/samples/` | A few project images used in examples | Yes |
+| `assets/samples/`, `assets/identity/` | Example project images; the ©MH monogram and wordmark SVGs | Yes |
+| `qa/home.html`, `qa/compare.js` | Home rebuilt from components + a landmark script to diff against the live page | Yes |
 | `site/assets/docs.css`, `docs.js` | Docs-site chrome | Yes |
 | `tokens/tokens.css`, `css/type.css` | Generated | No |
 | `site/**/*.html`, `site/assets/search-index.js` | Generated | No |
@@ -37,6 +38,6 @@ No dependencies (Node 18+).
 
 ## Notes
 
-- `code/tokens/micahhoang-tokens.json` is the retired Manrope token set. The live type and color now come from `tokens/tokens.json` here and `code/tokens/framer-active-text-styles.tokens.json`.
+- `code/tokens/micahhoang-tokens.json` (Manrope) and `code/tokens/framer-active-text-styles.tokens.json` are older exports. Use `tokens/tokens.json` here.
 - Fonts load from the Framer-hosted GT Standard files the site already uses. The Medium and Bold faces are GT Standard *Trial* files.
-- `content/foundations/interaction.md` applies Apple's WWDC interface principles as a labeled lens (already true / for new work / departure). It does not change live behavior.
+- The Principles page applies Apple's WWDC interface guidance as a labeled lens (already true / new work / departure). It doesn't change live behavior.

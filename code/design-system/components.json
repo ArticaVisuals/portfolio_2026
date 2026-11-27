@@ -24,21 +24,9 @@
       "title": "Principles",
       "slug": "principles",
       "section": "Foundations",
-      "description": "Five words that settle design decisions, and the voice the site writes in.",
+      "description": "Five words that settle design decisions, the voice the site writes in, and the interaction rules behind its behavior.",
       "status": null,
       "doc": "content/foundations/principles.md",
-      "classes": [],
-      "tokens": [],
-      "framer": null,
-      "codeFileId": null
-    },
-    {
-      "title": "Interaction Principles",
-      "slug": "interaction",
-      "section": "Foundations",
-      "description": "Apple's fluid-interface and design principles from its WWDC talks, applied to this brand. Each rule is labeled as already true, for new work, or a deliberate departure.",
-      "status": null,
-      "doc": "content/foundations/interaction.md",
       "classes": [],
       "tokens": [],
       "framer": null,
@@ -97,7 +85,7 @@
       "title": "Motion",
       "slug": "motion",
       "section": "Foundations",
-      "description": "Three curves, a short list of durations, and the two signature moves, the flip rail and the type reveal.",
+      "description": "Three curves, a short list of durations, the flip rail and type reveal, and how grab-able things move.",
       "status": null,
       "doc": "content/foundations/motion.md",
       "classes": [],
@@ -108,34 +96,23 @@
       "codeFileId": null
     },
     {
-      "title": "Gesture",
-      "slug": "gesture",
-      "section": "Foundations",
-      "description": "How things the visitor can grab should move. What /play already does, and the spring tokens for any new drag, swipe or sheet.",
-      "status": null,
-      "doc": "content/foundations/gesture.md",
-      "classes": [],
-      "tokens": [
-        "motion.spring.*",
-        "motion.gesture.*"
-      ],
-      "framer": null,
-      "codeFileId": null
-    },
-    {
       "title": "Texture",
       "slug": "texture",
       "section": "Foundations",
-      "description": "The umber film grain that sits over every page, and how to keep it out of the way.",
-      "status": null,
+      "description": "The umber film grain that sits over every page below the nav, and the one snippet that draws it.",
+      "status": "live",
       "doc": "content/foundations/texture.md",
-      "classes": [],
+      "classes": [
+        "mh-grain"
+      ],
       "tokens": [
         "texture.grain.*",
-        "color.primitive.grain-umber"
+        "color.primitive.grain-umber",
+        "component.nav.height",
+        "z.grain"
       ],
-      "framer": null,
-      "codeFileId": null
+      "framer": "GrainOverlay (MhR7Ukl)",
+      "codeFileId": "MhR7Ukl"
     },
     {
       "title": "Identity",
@@ -161,53 +138,37 @@
       ],
       "tokens": [
         "type.label",
-        "type.label-sm",
         "color.*.text.brand",
         "color.*.text.muted"
       ],
-      "framer": "Text styles \"Heading 5\", \"Body - 100%\", \"On Green Label\", \"Footer Mono White/Dark",
+      "framer": "Text styles /Text Styles/Small Mono Footers and /Text Styles/Small Mono",
       "codeFileId": null
     },
     {
-      "title": "Text Link",
-      "slug": "text-link",
+      "title": "Links & Actions",
+      "slug": "links-actions",
       "section": "Components",
-      "description": "Mono links with the flip-rail hover, inline underlined links for running text, and comma-joined link lists.",
+      "description": "Every clickable piece of text. Mono links and actions with the flip rail, link lists, inline links, outlined pills and Scroll to top. There is no filled button.",
       "status": "live",
-      "doc": "content/components/text-link.md",
+      "doc": "content/components/links-actions.md",
       "classes": [
         "mh-link",
         "mh-flip",
         "mh-flip__track",
-        "mh-link-list"
+        "mh-link-list",
+        "mh-action",
+        "mh-scroll-top"
       ],
       "tokens": [
         "type.label",
         "motion.duration.base",
         "motion.ease.snappy",
-        "motion.distance.flip-gap"
+        "motion.distance.flip-gap",
+        "component.link-list.gap",
+        "layout.touch-target"
       ],
-      "framer": "Native Link + \"Text Link Black\" hover variants; Case Study Header Link (dHFQCIH)",
-      "codeFileId": "dHFQCIH"
-    },
-    {
-      "title": "Action",
-      "slug": "action",
-      "section": "Components",
-      "description": "The brand's button. Mono text with a flip rail, or an outlined pill. There is no filled button.",
-      "status": "live",
-      "doc": "content/components/action.md",
-      "classes": [
-        "mh-action"
-      ],
-      "tokens": [
-        "type.label",
-        "radius.pill",
-        "border.hairline",
-        "color.*.text.interactive"
-      ],
-      "framer": "Native text/pill components; ScrollToTopButton (gh4ngZN) for the text action pattern",
-      "codeFileId": null
+      "framer": "Native Text Link (dVTZgYLeH); Text Flip Up (TextEncryptionEffect, p7tSTaD); ScrollToTopButton (gh4ngZN)",
+      "codeFileId": "p7tSTaD"
     },
     {
       "title": "Tag",
@@ -222,12 +183,12 @@
       ],
       "tokens": [
         "type.label",
-        "type.label-sm",
         "radius.pill",
         "color.*.border.stroke",
         "color.*.text.muted",
         "color.*.text.interactive",
-        "motion.duration.fast"
+        "motion.duration.fast",
+        "component.tag.*"
       ],
       "framer": "Rendered by HomeSelectedWorkGrid (FecepLS) and IndexPage (rgAZFOv) from CMS discipline fields",
       "codeFileId": "FecepLS"
@@ -265,7 +226,8 @@
       "tokens": [
         "type.display-m",
         "border.hairline",
-        "space.7"
+        "space.7",
+        "component.section-header.*"
       ],
       "framer": "Rule frame + text style \"Heading 2",
       "codeFileId": null
@@ -292,7 +254,7 @@
         "type.label",
         "type.display-m",
         "layout.gutter",
-        "layout.nav-height",
+        "component.nav.*",
         "layout.touch-target",
         "z.nav"
       ],
@@ -316,9 +278,9 @@
         "type.display-footer",
         "type.label",
         "color.green.*",
-        "space.13"
+        "component.footer.*"
       ],
-      "framer": "Native \"Footer\" (FooterWhiteDesktop variants); FooterCopyrightYear (BF2H03E); TextEncryptionEffect (p7tSTaD); ResumeAssetHost (xDqfenf)",
+      "framer": "Native \"Footer\" (FooterWhite* variants) and Home SectionCta; MagText; Text Flip Up (p7tSTaD); FooterCopyrightYear (BF2H03E); ResumeAssetHost (xDqfenf)",
       "codeFileId": "BF2H03E"
     },
     {
@@ -339,9 +301,9 @@
         "type.display-xl",
         "type.display-l",
         "type.heading",
-        "space.13"
+        "component.hero.*"
       ],
-      "framer": "Home \"Header\" section (Heading 1 + Heading 3); case-study hero (Heading 2b, two colors)",
+      "framer": "Home \"Header\" section (Heading 1 + Heading 3); case-study hero (Heading 2 Bold, two colors)",
       "codeFileId": null
     },
     {
@@ -367,10 +329,11 @@
       "title": "Project Card",
       "slug": "project-card",
       "section": "Components",
-      "description": "The main way work appears on the site. A numbered mono title that flips on hover, a 16:9 media frame, and discipline tags.",
+      "description": "How work appears on the site. A numbered mono title that rolls to VIEW PROJECT, a 16:9 media frame and discipline tags, laid out in a two- or three-column grid.",
       "status": "live",
       "doc": "content/components/project-card.md",
       "classes": [
+        "mh-project-grid",
         "mh-project-card",
         "mh-project-card__link",
         "mh-project-card__meta"
@@ -378,28 +341,14 @@
       "tokens": [
         "type.label",
         "space.5",
+        "layout.column-gap",
+        "layout.card-row-gap",
+        "component.project-grid.to-action",
         "motion.duration.base",
         "motion.scale.hover"
       ],
-      "framer": "HomeSelectedWorkGrid (FecepLS); OtherProjectCardRestored (vlwa5Cz); IndexPage grid (rgAZFOv)",
+      "framer": "HomeSelectedWorkGrid (FecepLS); OtherProjectCardRestored (vlwa5Cz); IndexPage grid (rgAZFOv via LgIzFjJ)",
       "codeFileId": "FecepLS"
-    },
-    {
-      "title": "Project Grid",
-      "slug": "project-grid",
-      "section": "Components",
-      "description": "The grid that holds project cards. Two columns for Selected work, three for Other projects and the index grid.",
-      "status": "live",
-      "doc": "content/components/project-grid.md",
-      "classes": [
-        "mh-project-grid"
-      ],
-      "tokens": [
-        "layout.column-gap",
-        "layout.card-row-gap"
-      ],
-      "framer": "HomeSelectedWorkGrid (FecepLS); IndexPageGridPreview (LgIzFjJ)",
-      "codeFileId": "LgIzFjJ"
     },
     {
       "title": "Index List",
@@ -425,20 +374,19 @@
         "color.*.text.strong",
         "color.*.border.rule",
         "color.*.bg.hover",
-        "motion.duration.slow"
+        "motion.duration.base"
       ],
       "framer": "IndexPage (rgAZFOv) via IndexPageGridPreview (LgIzFjJ)",
       "codeFileId": "rgAZFOv"
     },
     {
-      "title": "Filter Group",
-      "slug": "filter-group",
+      "title": "Index Controls",
+      "slug": "index-controls",
       "section": "Components",
-      "description": "Taxonomy columns of mono toggles (year, service, industry) that filter the Index in place; disclosure buttons on mobile.",
+      "description": "The controls above the Index. Year / Service / Industry filters (disclosure buttons on mobile), the project count and the GRID / LIST toggle.",
       "status": "live",
-      "doc": "content/components/filter-group.md",
+      "doc": "content/components/index-controls.md",
       "classes": [
-        "mh-count",
         "mh-filter",
         "mh-filter__group",
         "mh-filter__heading",
@@ -446,32 +394,21 @@
         "mh-filter__options",
         "mh-filter__item",
         "mh-filter__done",
-        "mh-filter__clear"
-      ],
-      "tokens": [
-        "type.label",
-        "color.*.text.interactive",
-        "motion.duration.fast"
-      ],
-      "framer": "IndexPage (rgAZFOv), IndexFilterContext + URL sync",
-      "codeFileId": "rgAZFOv"
-    },
-    {
-      "title": "View Toggle",
-      "slug": "view-toggle",
-      "section": "Components",
-      "description": "A mono \"GRID / LIST\" switch that changes how the Index renders, with an underline on the active view.",
-      "status": "live",
-      "doc": "content/components/view-toggle.md",
-      "classes": [
+        "mh-filter__clear",
+        "mh-count",
         "mh-view-toggle"
       ],
       "tokens": [
         "type.label",
-        "color.*.text.strong"
+        "color.*.text.interactive",
+        "color.*.text.strong",
+        "motion.duration.instant",
+        "motion.duration.fast",
+        "motion.ease.smooth",
+        "layout.touch-target"
       ],
-      "framer": "IndexPageGridPreview (LgIzFjJ) \"View\" control",
-      "codeFileId": "LgIzFjJ"
+      "framer": "IndexPage (rgAZFOv) via IndexPageGridPreview (LgIzFjJ)",
+      "codeFileId": "rgAZFOv"
     },
     {
       "title": "Meta Grid",
@@ -490,7 +427,8 @@
         "type.body-lg",
         "layout.split-gap",
         "space.9",
-        "space.5"
+        "space.5",
+        "component.meta.*"
       ],
       "framer": "Case-study \"Descriptor\" section; CaseStudyMobileDescriptorLayout (W62Sy75)",
       "codeFileId": "W62Sy75"
@@ -542,25 +480,6 @@
       "codeFileId": "tpDdaaJ"
     },
     {
-      "title": "Scroll to Top",
-      "slug": "scroll-to-top",
-      "section": "Components",
-      "description": "A mono text action at the end of long pages that glides back to the top in 900ms.",
-      "status": "live",
-      "doc": "content/components/scroll-to-top.md",
-      "classes": [
-        "mh-scroll-top",
-        "mh-action"
-      ],
-      "tokens": [
-        "type.label",
-        "motion.duration.reveal",
-        "motion.ease.snappy"
-      ],
-      "framer": "ScrollToTopButton (gh4ngZN)",
-      "codeFileId": "gh4ngZN"
-    },
-    {
       "title": "Page Loader",
       "slug": "page-loader",
       "section": "Components",
@@ -577,28 +496,11 @@
         "color.primitive.forest-green",
         "color.primitive.cream",
         "motion.duration.page",
-        "z.loader"
+        "z.loader",
+        "component.monogram.*"
       ],
       "framer": "PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)",
       "codeFileId": "gmalnRr"
-    },
-    {
-      "title": "Grain Overlay",
-      "slug": "grain-overlay",
-      "section": "Components",
-      "description": "The page-level SVG film grain, fixed under the nav, multiplied at 10%, with an optional 16fps shimmer.",
-      "status": "live",
-      "doc": "content/components/grain-overlay.md",
-      "classes": [
-        "mh-grain"
-      ],
-      "tokens": [
-        "texture.grain.*",
-        "layout.nav-height",
-        "z.grain"
-      ],
-      "framer": "GrainOverlay (MhR7Ukl)",
-      "codeFileId": "MhR7Ukl"
     },
     {
       "title": "Home",
@@ -634,6 +536,18 @@
       "classes": [],
       "tokens": [],
       "framer": "Page \"/index\"; IndexPageGridPreview (LgIzFjJ) wrapping IndexPage (rgAZFOv)",
+      "codeFileId": null
+    },
+    {
+      "title": "Changelog",
+      "slug": "changelog",
+      "section": "Reference",
+      "description": "How the live site and this design system have changed, newest first. Every other page describes the current state only.",
+      "status": null,
+      "doc": "content/reference/changelog.md",
+      "classes": [],
+      "tokens": [],
+      "framer": null,
       "codeFileId": null
     }
   ]

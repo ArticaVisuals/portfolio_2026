@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url"
 const ROOT = dirname(fileURLToPath(import.meta.url))
 const CONTENT = join(ROOT, "content")
 const SITE = join(ROOT, "site")
-const SECTIONS = ["Foundations", "Components", "Patterns"]
+const SECTIONS = ["Foundations", "Components", "Patterns", "Reference"]
 const BREAKPOINTS = { tablet: "(max-width: 1199px)", mobile: "(max-width: 809px)" }
 
 // ---------------------------------------------------------------------------
@@ -78,14 +78,22 @@ function buildTokensCss() {
     root.push("", "  /* Space scale */")
     for (const [k, v] of Object.entries(t.space)) if (!k.startsWith("$")) root.push(`  --mh-space-${k}: ${v.$value};`)
 
+    // Responsive values ({desktop, tablet, mobile}) become media-query overrides.
+    const emit = (name, value) => {
+        if (typeof value === "object") {
+            root.push(`  --mh-${name}: ${value.desktop};`)
+            if (value.tablet !== value.desktop) tablet.push(`    --mh-${name}: ${value.tablet};`)
+            if (value.mobile !== value.tablet) mobile.push(`    --mh-${name}: ${value.mobile};`)
+        } else root.push(`  --mh-${name}: ${value};`)
+    }
+
     root.push("", "  /* Layout */")
-    for (const [k, v] of Object.entries(t.layout)) {
-        if (k.startsWith("$")) continue
-        if (typeof v.$value === "object") {
-            root.push(`  --mh-${k}: ${v.$value.desktop};`)
-            if (v.$value.tablet !== v.$value.desktop) tablet.push(`    --mh-${k}: ${v.$value.tablet};`)
-            if (v.$value.mobile !== v.$value.tablet) mobile.push(`    --mh-${k}: ${v.$value.mobile};`)
-        } else root.push(`  --mh-${k}: ${v.$value};`)
+    for (const [k, v] of Object.entries(t.layout)) if (!k.startsWith("$")) emit(k, v.$value)
+
+    root.push("", "  /* Components: --mh-<component>-<name> */")
+    for (const [group, values] of Object.entries(t.component)) {
+        if (group.startsWith("$")) continue
+        for (const [k, v] of Object.entries(values)) if (!k.startsWith("$")) emit(`${group}-${k}`, v.$value)
     }
 
     root.push("", "  /* Shape */")
@@ -445,7 +453,7 @@ function pageHtml(page) {
 <header class="ds-header">
   <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
   <a class="ds-brand mh-label" href="${prefix}index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
-  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <label class="ds-search"><span class="mh-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
   <div class="ds-search-results" data-ds-results hidden></div>
   <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
   <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>

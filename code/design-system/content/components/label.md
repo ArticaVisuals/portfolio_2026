@@ -4,9 +4,9 @@ section: Components
 order: 1
 description: The uppercase 13px mono line that carries every piece of metadata, navigation and UI text on the site.
 status: live
-framer: Text styles "Heading 5", "Body - 100%", "On Green Label", "Footer Mono White/Dark"
+framer: Text styles /Text Styles/Small Mono Footers and /Text Styles/Small Mono
 classes: [mh-label]
-tokens: [type.label, type.label-sm, color.*.text.brand, color.*.text.muted]
+tokens: [type.label, color.*.text.brand, color.*.text.muted]
 ---
 
 # Mono Label
@@ -18,7 +18,6 @@ tokens: [type.label, type.label-sm, color.*.text.brand, color.*.text.muted]
   <p class="mh-label">Los Angeles, California</p>
   <p class="mh-label" data-tone="muted">2D motion</p>
   <p class="mh-label" data-leading="relaxed">/ About the project</p>
-  <p class="mh-label" data-size="sm">Available for work</p>
 </div>
 ```
 
@@ -40,11 +39,10 @@ The Mono Label is the site's second voice. Display type makes the statement; lab
 | Attribute | Values | Effect |
 | --- | --- | --- |
 | `class="mh-label"` | n/a | 13px GT Standard Mono, 100% leading, uppercase |
-| `data-size` | `sm` | 12px |
 | `data-tone` | `muted`, `strong` | `--mh-text-muted` / `--mh-text-strong` |
-| `data-leading` | `relaxed` | 130% leading for labels stacked over values |
+| `data-leading` | `relaxed` | 130% leading, -1% tracking (Small Mono) for labels stacked over values |
 
-Or use the plain utility `mh-text-label` / `mh-text-label-sm` on any element.
+Or use the plain utility `mh-text-label` on any element.
 
 ## Accessibility
 
@@ -53,7 +51,7 @@ Or use the plain utility `mh-text-label` / `mh-text-label-sm` on any element.
 
 ## Framer mapping
 
-- Text styles: **Heading 5** (13px, 100%, -1%, uppercase) for general labels; **On Green Label** / **Nav On Green Label** on Forest Green; **Footer Mono White / Dark** in the footer.
+- Text styles: **Small Mono Footers** (13px, 100%, 0 tracking) for nav, links and meta; **Small Mono** (13px, 130%, -1%) for labels stacked over content (`data-leading="relaxed"`).
 - Font: GT Standard Mono Regular (falls back to GT Standard Mono Trial Rg).
 
 ## Don't

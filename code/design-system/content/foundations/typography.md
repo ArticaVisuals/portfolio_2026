@@ -40,7 +40,6 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
 | Body S | `mh-text-body-sm` | 16 | 400 | 140% | 0 | (none) | Captions, small notes |
 | Label | `mh-text-label` / `mh-label` | 13 | 400 mono | 100% | 0 | /Small Mono Footers | Nav, links, ©year, Read more, actions |
 | Label relaxed | `mh-text-label-relaxed` / `mh-label[data-leading=relaxed]` | 13 | 400 mono | 130% (140% mobile) | -1% | /Small Mono | GET IN TOUCH, "/ About the project" |
-| Label S | `mh-text-label-sm` | 12 | 400 mono | 100% | 0 | (none) | Legacy. Since 2026-10-30 every visible mono label is 13px |
 | (Optro) | n/a | 70 | 700 | 100% | -1% | /Optro CRX Heading | Optro CRX case-study hero only; same values as Heading 2 Bold with 0 paragraph spacing |
 
 ## Pairings
@@ -54,17 +53,17 @@ Each style is one utility class, `.mh-text-<name>`, generated from `tokens.json`
   <hr class="mh-rule">
   <div>
     <h3 class="mh-text-heading mh-text-strong" style="margin:0 0 24px">The Insight</h3>
-    <p class="mh-text-body mh-text-body" style="margin:0;max-width:620px">iNaturalist lets people photograph an organism, record where they found it, and share it with a community of naturalists who help identify it.</p>
+    <p class="mh-text-body mh-text-body mh-measure" style="margin:0">iNaturalist lets people photograph an organism, record where they found it, and share it with a community of naturalists who help identify it.</p>
   </div>
 </div>
 ```
 
 ## Source
 
-Framer keeps these in the **`/Text Styles/`** folder (`/Text Styles/Heading 1`, `/Text Styles/Body L`, ...); the table uses the short names. On 2026-10-30 the mobile (S) breakpoint of **Body L** and **Body M** moved to 18px / 140% for readability: reading text on a phone is now 18px, the existing Body M desktop baseline, instead of 14–15px. Heading 3 also stepped up to 28px on tablet and 24px on phone. Mono labels are 13px everywhere; the 12px tablet/mobile tag exception is gone.
+Framer keeps these in the **`/Text Styles/`** folder (`/Text Styles/Heading 1`, `/Text Styles/Body L`, ...); the table uses the short names. Reading text on a phone is 18px / 140% (Body L and Body M), and every mono label is 13px at every size.
 
 
-Desktop values come from the Framer project's text styles (read through the Framer MCP on 2026-10-01). Tablet and mobile values were measured on the published site, because Framer's breakpoint overrides aren't readable through the MCP. `code/tokens/framer-active-text-styles.tokens.json` is an older export: its Heading 1 (110px), Index Title and Paragraph styles no longer match the project.
+Desktop values come from the Framer project's text styles (read through the Framer MCP). Tablet and mobile values were measured on the published site, because Framer's breakpoint overrides aren't readable through the MCP. `code/tokens/framer-active-text-styles.tokens.json` is an older export: its Heading 1 (110px), Index Title and Paragraph styles no longer match the project.
 
 ## Usage
 

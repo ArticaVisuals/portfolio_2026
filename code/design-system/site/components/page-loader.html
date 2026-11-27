@@ -18,7 +18,7 @@
 <header class="ds-header">
   <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
   <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
-  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <label class="ds-search"><span class="mh-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
   <div class="ds-search-results" data-ds-results hidden></div>
   <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
   <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
@@ -27,18 +27,15 @@
   <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
 <p class="ds-nav__section mh-label">Foundations</p>
 <a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
-<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
 <a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
 <a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
 <a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
 <a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
-<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
 <a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
 <a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
 <p class="ds-nav__section mh-label">Components</p>
 <a class="ds-nav__link" href="../components/label.html">Mono Label</a>
-<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
-<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/links-actions.html">Links & Actions</a>
 <a class="ds-nav__link" href="../components/tag.html">Tag</a>
 <a class="ds-nav__link" href="../components/rule.html">Rule</a>
 <a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
@@ -47,20 +44,18 @@
 <a class="ds-nav__link" href="../components/hero.html">Hero</a>
 <a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
 <a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
-<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
 <a class="ds-nav__link" href="../components/index-list.html">Index List</a>
-<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
-<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/index-controls.html">Index Controls</a>
 <a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
 <a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
 <a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
-<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
 <a class="ds-nav__link is-current" href="../components/page-loader.html">Page Loader</a>
-<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
 <p class="ds-nav__section mh-label">Patterns</p>
 <a class="ds-nav__link" href="../patterns/home.html">Home</a>
 <a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
 <a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">Reference</p>
+<a class="ds-nav__link" href="../reference/changelog.html">Changelog</a>
 <p class="ds-nav__section mh-label">For agents</p>
 <a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
 <a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
@@ -96,7 +91,7 @@
 <h2 id="sequence"><a class="ds-anchor" href="#sequence">Sequence</a></h2>
 <div class="ds-table"><table><thead><tr><th>Step</th><th>What happens</th><th>Timing</th></tr></thead><tbody><tr><td>1. Boot</td><td>Forest Green covers the viewport; the ©MH <a href="../foundations/identity.html">monogram</a> centered in Cream</td><td>Painted at parse time, before the app hydrates</td></tr><tr><td>2. Progress</td><td>An 8px Cream bar fills from the left along the top edge</td><td>≥ 1200ms (<code>bootMinMs</code>), Smooth</td></tr><tr><td>3. Identity out</td><td>The monogram fades</td><td>420ms, during bar completion</td></tr><tr><td>4. Lift</td><td>The curtain slides up and off</td><td>1200ms, Snappy</td></tr></tbody></table></div>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li><strong>Home only, first visit only</strong> (direct entries and reloads of <code>/</code>). Never on internal navigations, case studies or mobile ≤ the boot-disable width.</li><li>The identity is the ©MH <a href="../foundations/identity.html">monogram</a> as inline SVG (three paths, no font or image request): 237.5px wide on desktop, 190px on tablet, capped at the viewport minus 64px, centered as a whole lockup. History: "Micah Hoang ©2026" text until 2026-10-23, the full wordmark until 2026-11-11, the monogram since. The demo above is scaled down.</li><li><code>theme-color</code> and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.</li><li>Videos behind the curtain hold until it lifts.</li></ul>
+<ul><li><strong>Home only, first visit only</strong> (direct entries and reloads of <code>/</code>). Never on internal navigations, case studies or mobile ≤ the boot-disable width.</li><li>The identity is the ©MH <a href="../foundations/identity.html">monogram</a> as inline SVG (three paths, no font or image request): 237.5px wide on desktop, 190px on tablet, capped at the viewport minus 64px, centered as a whole lockup. The demo above is scaled down.</li><li><code>theme-color</code> and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.</li><li>Videos behind the curtain hold until it lifts.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class / attribute</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-loader</code></td><td>Fixed full-viewport curtain. <code>data-contained</code> makes it <code>position:absolute</code> for previews</td></tr><tr><td><code>mh-loader__bar</code></td><td>8px progress bar (scaleX)</td></tr><tr><td><code>mh-loader__identity</code></td><td>Centered name</td></tr><tr><td><code>data-state</code></td><td><code>idle</code> → <code>loading</code> → <code>done</code> → <code>lifted</code></td></tr><tr><td><code>data-autoplay</code> / <code>window.mhPlayLoader(el)</code></td><td>Run the sequence (<code>components.js</code>)</td></tr></tbody></table></div>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>

@@ -18,7 +18,7 @@
 <header class="ds-header">
   <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
   <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
-  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <label class="ds-search"><span class="mh-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
   <div class="ds-search-results" data-ds-results hidden></div>
   <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
   <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
@@ -27,18 +27,15 @@
   <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
 <p class="ds-nav__section mh-label">Foundations</p>
 <a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
-<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
 <a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
 <a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
 <a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
 <a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
-<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
 <a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
 <a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
 <p class="ds-nav__section mh-label">Components</p>
 <a class="ds-nav__link" href="../components/label.html">Mono Label</a>
-<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
-<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/links-actions.html">Links & Actions</a>
 <a class="ds-nav__link" href="../components/tag.html">Tag</a>
 <a class="ds-nav__link" href="../components/rule.html">Rule</a>
 <a class="ds-nav__link is-current" href="../components/section-header.html">Section Header</a>
@@ -47,20 +44,18 @@
 <a class="ds-nav__link" href="../components/hero.html">Hero</a>
 <a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
 <a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
-<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
 <a class="ds-nav__link" href="../components/index-list.html">Index List</a>
-<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
-<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/index-controls.html">Index Controls</a>
 <a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
 <a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
 <a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
-<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
 <a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
-<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
 <p class="ds-nav__section mh-label">Patterns</p>
 <a class="ds-nav__link" href="../patterns/home.html">Home</a>
 <a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
 <a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">Reference</p>
+<a class="ds-nav__link" href="../reference/changelog.html">Changelog</a>
 <p class="ds-nav__section mh-label">For agents</p>
 <a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
 <a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
@@ -123,7 +118,7 @@
   &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;AirPods Pro 3&lt;/span&gt;&lt;span aria-hidden="true"&gt;View project&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media" data-stroke&gt;&lt;img src="../../assets/samples/airpods.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre></details></figure>
 <h2 id="usage"><a class="ds-anchor" href="#usage">Usage</a></h2>
-<ul><li>Use for top-level page sections: About Micah, Other projects, Index.</li><li><strong>Rule only</strong> (<code>data-variant="rule"</code>): Home's Selected work has no title since 2026-11-11, because the six numbered cards already say what they are. The rule sits 6px into the section (1px on phone) and the grid starts 45px below it (35px on phone).</li><li>Titles are sentence case, two or three words. They label the section; they aren't headlines.</li><li>Spacing (Framer): the previous section ends with 100px bottom padding; rule → title 20px; title → content 70px (50px mobile) via the header's own bottom padding. Use <code>data-spacing="compact"</code> for About (30px, 20px mobile).</li><li>Multi-word titles reveal word by word: wrap each word in a <code>span</code>; words sit 15px apart (8px mobile).</li><li>An optional action (View all) sits on the title's baseline at the right edge.</li></ul>
+<ul><li>Use for top-level page sections: About Micah, Other projects, Index.</li><li><strong>Rule only</strong> (<code>data-variant="rule"</code>): Home's Selected work has no title, because the six numbered cards already say what they are. The rule sits 6px into the section (1px on phone) and the grid starts 45px below it (35px on phone).</li><li>Titles are sentence case, two or three words. They label the section; they aren't headlines.</li><li>Spacing (Framer): the previous section ends with 100px bottom padding; rule → title 20px; title → content 70px (50px mobile) via the header's own bottom padding. Use <code>data-spacing="compact"</code> for About (30px, 20px mobile).</li><li>Multi-word titles reveal word by word: wrap each word in a <code>span</code>; words sit 15px apart (8px mobile).</li><li>An optional action (View all) sits on the title's baseline at the right edge.</li></ul>
 <h2 id="api"><a class="ds-anchor" href="#api">API</a></h2>
 <div class="ds-table"><table><thead><tr><th>Class</th><th>Element</th><th>Notes</th></tr></thead><tbody><tr><td><code>mh-section-header</code></td><td><code>header</code></td><td>Grid: title left, optional action right</td></tr><tr><td><code>mh-rule</code></td><td><code>hr</code></td><td>First child; spans both columns</td></tr><tr><td><code>mh-section-header__title</code></td><td><code>h2</code></td><td>Display M (70 / 53 / 42px, regular, Forest Green); word spans 15px apart</td></tr><tr><td><code>data-variant="rule"</code></td><td><code>header</code></td><td>Rule only, no title; 45px (35px phone) to the content</td></tr><tr><td><code>data-spacing="compact"</code></td><td><code>header</code></td><td>30px (20px mobile) below instead of 70px</td></tr></tbody></table></div>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>

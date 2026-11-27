@@ -26,15 +26,15 @@ Desktop-first, matching the Framer frames.
 
 | Token | Desktop | Tablet | Mobile | Use |
 | --- | --- | --- | --- | --- |
-| `--mh-gutter` | 20px | 20px | 20px | Page side padding (`.mh-container`). Mobile was 15px (14 on Index) until 2026-10-30 |
+| `--mh-gutter` | 20px | 20px | 20px | Page side padding (`.mh-container`), nav and hero link row |
 | `--mh-column-gap` | 20px | 20px | 20px | Card grids, index columns |
 | `--mh-split-gap` | 30px | 30px | n/a (stacks) | Two-column text splits (`.mh-split`, meta grid) |
 | `--mh-card-row-gap` | 50px | 50px | 50px | Between project-card rows |
 | `--mh-measure` | 580px | 580px | 100% | Long-form body |
-| `--mh-nav-gutter` | 20px | 20px | 20px | Nav and hero link row; equal to the page gutter |
+| `--mh-gutter` | 20px | 20px | 20px | Nav and hero link row; equal to the page gutter |
 | `--mh-section-padding-y` | 100px | 100px | 100px | Hero bottom, section bottom |
 | `--mh-hero-name-top` | 100px | 100px | 101.4px | Hero top → name line box (nav overlays it); the descriptor follows the name |
-| `--mh-section-rule-after` | 45px | 45px | 35px | Rule-only section header (Home Selected work) → grid |
+| `--mh-section-header-rule-after` | 45px | 45px | 35px | Rule-only section header (Home Selected work) → grid |
 | `--mh-section-header-after` | 70px | 70px | 50px | Section title → content |
 | `--mh-footer-min-height` | 50vh | 40vh | none | Footer block (content is usually taller) |
 | `--mh-touch-target` | n/a | n/a | 44px | Minimum size of every interactive target below 810px |
@@ -75,7 +75,6 @@ Grids in use on the live site:
 | `--mh-space-10` | 50px | Card row gap |
 | `--mh-space-11` | 72px | Inside sections; lightbox padding |
 | `--mh-space-12` | 100px | Section padding (Framer) |
-| `--mh-space-13` | 144px | Extra-large breaks (docs only) |
 
 ## Shape and elevation
 

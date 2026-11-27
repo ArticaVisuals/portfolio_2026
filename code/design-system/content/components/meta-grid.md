@@ -7,7 +7,7 @@ status: live
 framer: Case-study "Descriptor" section; CaseStudyMobileDescriptorLayout (W62Sy75)
 codeFileId: W62Sy75
 classes: [mh-meta-grid, mh-meta-grid__col, mh-meta-grid__item]
-tokens: [type.label, type.body-lg, layout.split-gap, space.9, space.5]
+tokens: [type.label, type.body-lg, layout.split-gap, space.9, space.5, component.meta.*]
 ---
 
 # Meta Grid

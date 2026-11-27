@@ -7,7 +7,7 @@ status: live
 framer: Rendered by HomeSelectedWorkGrid (FecepLS) and IndexPage (rgAZFOv) from CMS discipline fields
 codeFileId: FecepLS
 classes: [mh-tags, mh-tag]
-tokens: [type.label, type.label-sm, radius.pill, color.*.border.stroke, color.*.text.muted, color.*.text.interactive, motion.duration.fast]
+tokens: [type.label, radius.pill, color.*.border.stroke, color.*.text.muted, color.*.text.interactive, motion.duration.fast, component.tag.*]
 ---
 
 # Tag
@@ -52,7 +52,7 @@ tokens: [type.label, type.label-sm, radius.pill, color.*.border.stroke, color.*.
 | Tablet | 13px, 100% leading | 23px min height, padding `5px 9px 6px` (26px tall) | Wraps, 5px gap |
 | Mobile | 13px, 1.3 leading | 44px touch target, padding `8px 24px 7px` | One line, scrolls sideways, 5px gap |
 
-On mobile the row runs from screen edge to screen edge while its first pill rests on the 20px gutter, so pills further along are visibly cut off at the edge, which signals that the row scrolls. Scrolling is the browser's own (momentum and interruption for free); the scrollbar is hidden and there are no fade gradients. The 8 / 7px vertical padding lifts the mono capitals half a pixel to sit optically centered. A 4px clearance above and below keeps borders and focus rings from clipping. Tags were 12px on tablet and mobile until 2026-10-30; every mono label on the site is now 13px.
+On mobile the row runs from screen edge to screen edge while its first pill rests on the 20px gutter, so pills further along are visibly cut off at the edge, which signals that the row scrolls. Scrolling is the browser's own (momentum and interruption for free); the scrollbar is hidden and there are no fade gradients. The 8 / 7px vertical padding lifts the mono capitals half a pixel to sit optically centered. A 4px clearance above and below keeps borders and focus rings from clipping.
 
 ## API
 
@@ -62,7 +62,6 @@ On mobile the row runs from screen edge to screen edge while its first pill rest
 | `mh-tag` | 13px mono pill, 24px min height, `5px 10px 6px` padding |
 | `a.mh-tag` / `button.mh-tag` | Hover → `--mh-text-interactive`, 250ms Snappy |
 | `aria-pressed="true"` | Selected state (green), for filter toggles |
-| `data-size="sm"` | 12px legacy size. Not used on the live site since 2026-10-30 |
 
 ## Accessibility
 

@@ -7,7 +7,7 @@ status: live
 framer: PageTransition (gmalnRr) + PageTransitionRuntime (rdTIUkW)
 codeFileId: gmalnRr
 classes: [mh-loader, mh-loader__bar, mh-loader__identity, mh-monogram]
-tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.page, z.loader]
+tokens: [color.primitive.forest-green, color.primitive.cream, motion.duration.page, z.loader, component.monogram.*]
 ---
 
 # Page Loader
@@ -38,7 +38,7 @@ Press **Replay** to run the sequence.
 ## Usage
 
 - **Home only, first visit only** (direct entries and reloads of `/`). Never on internal navigations, case studies or mobile ≤ the boot-disable width.
-- The identity is the ©MH [monogram](../foundations/identity.md) as inline SVG (three paths, no font or image request): 237.5px wide on desktop, 190px on tablet, capped at the viewport minus 64px, centered as a whole lockup. History: "Micah Hoang ©2026" text until 2026-10-23, the full wordmark until 2026-11-11, the monogram since. The demo above is scaled down.
+- The identity is the ©MH [monogram](../foundations/identity.md) as inline SVG (three paths, no font or image request): 237.5px wide on desktop, 190px on tablet, capped at the viewport minus 64px, centered as a whole lockup. The demo above is scaled down.
 - `theme-color` and the page canvas are synced to Cream, so mobile browser chrome doesn't flash green afterward.
 - Videos behind the curtain hold until it lifts.
 

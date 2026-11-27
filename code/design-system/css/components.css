@@ -19,10 +19,6 @@
     margin: 0;
 }
 
-.mh-label[data-size="sm"] {
-    font-size: var(--mh-type-label-sm-size);
-}
-
 .mh-label[data-tone="muted"] { color: var(--mh-text-muted); }
 .mh-label[data-tone="strong"] { color: var(--mh-text-strong); }
 
@@ -238,12 +234,6 @@
     border-color: var(--mh-text-interactive);
 }
 
-.mh-tag[data-size="sm"] {
-    font-size: var(--mh-type-label-sm-size);
-    min-height: 23px;
-    padding: 5px 9px 6px;
-}
-
 /* Tablet keeps the desktop type size (13px since 2026-10-30) with a tighter box. */
 @media (max-width: 1199px) {
     .mh-tags { gap: 5px; }
@@ -263,8 +253,8 @@
         margin-inline: calc((100% - 100vw) / 2);
         padding-inline: calc((100vw - 100%) / 2);
         /* Room for borders and focus rings, cancelled by the negative margin. */
-        padding-block: var(--mh-pill-scroll-clearance);
-        margin-block: calc(-1 * var(--mh-pill-scroll-clearance));
+        padding-block: var(--mh-tag-scroll-clearance);
+        margin-block: calc(-1 * var(--mh-tag-scroll-clearance));
         overflow-x: auto;
         overflow-y: hidden;
         scrollbar-width: none;
@@ -329,7 +319,7 @@
 /* Rule only, no title (Home Selected work since 2026-11-11). */
 .mh-section-header[data-variant="rule"] {
     row-gap: 0;
-    padding-bottom: var(--mh-section-rule-after);
+    padding-bottom: var(--mh-section-header-rule-after);
 }
 
 .mh-section-header > .mh-rule {
@@ -339,7 +329,7 @@
 .mh-section-header__title {
     display: flex;
     flex-wrap: wrap;
-    column-gap: var(--mh-heading-word-gap);
+    column-gap: var(--mh-section-header-word-gap);
     margin: 0;
     color: var(--mh-text-brand);
     font-family: var(--mh-type-display-m-family);
@@ -363,7 +353,7 @@
     grid-template-columns: 258px 340px minmax(0, 1fr) auto;
     align-items: start;
     min-height: var(--mh-nav-height);
-    padding: var(--mh-nav-gutter) var(--mh-nav-gutter) 0;
+    padding: var(--mh-gutter) var(--mh-gutter) 0;
     color: var(--mh-text-brand);
     background-color: var(--mh-bg-page);
 }
@@ -505,21 +495,16 @@
 }
 
 .mh-footer__eyebrow {
-    line-height: var(--mh-type-label-relaxed-leading);
+    /* Small Mono at 130% on every breakpoint (meta labels go to 140% on phones; this doesn't). */
+    line-height: 130%;
     letter-spacing: var(--mh-type-label-relaxed-tracking);
-}
-
-@media (max-width: 1199px) {
-    .mh-footer__eyebrow {
-        line-height: var(--mh-type-label-leading);
-    }
 }
 
 .mh-footer__contacts {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--mh-cta-row-gap);
+    gap: var(--mh-footer-row-gap);
     margin: 0;
     /* Optical: the display caps overhang their sidebearing by ~3px. */
     margin-left: -3px;
@@ -530,7 +515,7 @@
 .mh-footer__contact {
     display: inline-flex;
     align-items: flex-start;
-    gap: var(--mh-cta-suffix-gap);
+    gap: var(--mh-footer-suffix-gap);
     color: inherit;
     text-decoration: none;
     font-family: var(--mh-type-display-footer-family);
@@ -793,10 +778,6 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 
 .mh-index__title .mh-flip {
     --mh-flip-h: 1.2em;
-}
-
-.mh-index__title .mh-flip__track {
-    transition-duration: var(--mh-duration-slow);
 }
 
 .mh-index__discipline,
@@ -1186,11 +1167,9 @@ a.mh-media:is(:hover, :focus-visible) > :is(img, video) {
 }
 
 .mh-hero__bar {
-    /* The live row sits on the nav gutter (20px), which is 5px outside the
-       15px page gutter on mobile. Assumes the hero sits inside .mh-container. */
     position: absolute;
-    left: calc(var(--mh-nav-gutter) - var(--mh-gutter));
-    right: calc(var(--mh-nav-gutter) - var(--mh-gutter));
+    left: 0;
+    right: 0;
     bottom: 0;
     display: flex;
     justify-content: space-between;

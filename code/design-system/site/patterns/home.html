@@ -18,7 +18,7 @@
 <header class="ds-header">
   <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
   <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
-  <label class="ds-search"><span class="ds-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <label class="ds-search"><span class="mh-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
   <div class="ds-search-results" data-ds-results hidden></div>
   <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
   <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
@@ -27,18 +27,15 @@
   <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
 <p class="ds-nav__section mh-label">Foundations</p>
 <a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
-<a class="ds-nav__link" href="../foundations/interaction.html">Interaction Principles</a>
 <a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
 <a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
 <a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
 <a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
-<a class="ds-nav__link" href="../foundations/gesture.html">Gesture</a>
 <a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
 <a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
 <p class="ds-nav__section mh-label">Components</p>
 <a class="ds-nav__link" href="../components/label.html">Mono Label</a>
-<a class="ds-nav__link" href="../components/text-link.html">Text Link</a>
-<a class="ds-nav__link" href="../components/action.html">Action</a>
+<a class="ds-nav__link" href="../components/links-actions.html">Links & Actions</a>
 <a class="ds-nav__link" href="../components/tag.html">Tag</a>
 <a class="ds-nav__link" href="../components/rule.html">Rule</a>
 <a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
@@ -47,20 +44,18 @@
 <a class="ds-nav__link" href="../components/hero.html">Hero</a>
 <a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
 <a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
-<a class="ds-nav__link" href="../components/project-grid.html">Project Grid</a>
 <a class="ds-nav__link" href="../components/index-list.html">Index List</a>
-<a class="ds-nav__link" href="../components/filter-group.html">Filter Group</a>
-<a class="ds-nav__link" href="../components/view-toggle.html">View Toggle</a>
+<a class="ds-nav__link" href="../components/index-controls.html">Index Controls</a>
 <a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
 <a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
 <a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
-<a class="ds-nav__link" href="../components/scroll-to-top.html">Scroll to Top</a>
 <a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
-<a class="ds-nav__link" href="../components/grain-overlay.html">Grain Overlay</a>
 <p class="ds-nav__section mh-label">Patterns</p>
 <a class="ds-nav__link is-current" href="../patterns/home.html">Home</a>
 <a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
 <a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">Reference</p>
+<a class="ds-nav__link" href="../reference/changelog.html">Changelog</a>
 <p class="ds-nav__section mh-label">For agents</p>
 <a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
 <a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
@@ -81,7 +76,7 @@
     <article class="ds-prose"><h2 id="goal"><a class="ds-anchor" href="#goal">Goal</a></h2>
 <p>A senior design lead should get the read in ten seconds: <strong>brand designer, systems thinker, high craft, real shipped work.</strong> Home shows six projects, not all of them.</p>
 <h2 id="structure"><a class="ds-anchor" href="#structure">Structure</a></h2>
-<div class="ds-table"><table><thead><tr><th>#</th><th>Section</th><th>Components</th><th>Notes</th></tr></thead><tbody><tr><td>0</td><td>Boot (first visit)</td><td><a href="../components/page-loader.html">Page Loader</a></td><td>Home only</td></tr><tr><td>1</td><td>Nav</td><td><a href="../components/navigation.html">Navigation</a></td><td>Same as every page</td></tr><tr><td>2</td><td>Hero</td><td><a href="../components/hero.html">Hero</a> (home)</td><td>Name, two-line descriptor, link list + ©2026</td></tr><tr><td>3</td><td>Selected work</td><td>Rule-only <a href="../components/section-header.html">Section Header</a>, <a href="../components/project-grid.html">Project Grid</a></td><td>No title since 2026-11-11; 6 projects, 2 columns, "View all" right-aligned below</td></tr><tr><td>4</td><td>About Micah</td><td>Section Header, portrait <a href="../components/media-frame.html">Media Frame</a>, Body L, <a href="../components/action.html">Action</a> "Read more"</td><td>Portrait left, copy right. Hovering the image or the link triggers both (image scale + link flip)</td></tr><tr><td>5</td><td>Scroll to top</td><td><a href="../components/scroll-to-top.html">Scroll to Top</a></td><td>Left gutter, 60px below the About content</td></tr><tr><td>6</td><td>Footer</td><td><a href="../components/footer.html">Footer</a></td><td>Forest Green</td></tr><tr><td>n/a</td><td>Texture</td><td><a href="../components/grain-overlay.html">Grain Overlay</a></td><td>Page-level</td></tr></tbody></table></div>
+<div class="ds-table"><table><thead><tr><th>#</th><th>Section</th><th>Components</th><th>Notes</th></tr></thead><tbody><tr><td>0</td><td>Boot (first visit)</td><td><a href="../components/page-loader.html">Page Loader</a></td><td>Home only</td></tr><tr><td>1</td><td>Nav</td><td><a href="../components/navigation.html">Navigation</a></td><td>Same as every page</td></tr><tr><td>2</td><td>Hero</td><td><a href="../components/hero.html">Hero</a> (home)</td><td>Name, two-line descriptor, link list + ©2026</td></tr><tr><td>3</td><td>Selected work</td><td>Rule-only <a href="../components/section-header.html">Section Header</a>, <a href="../components/project-card.html">Project Grid</a></td><td>No title since 2026-11-11; 6 projects, 2 columns, "View all" right-aligned below</td></tr><tr><td>4</td><td>About Micah</td><td>Section Header, portrait <a href="../components/media-frame.html">Media Frame</a>, Body L, <a href="../components/links-actions.html">Action</a> "Read more"</td><td>Portrait left, copy right. Hovering the image or the link triggers both (image scale + link flip)</td></tr><tr><td>5</td><td>Scroll to top</td><td><a href="../components/links-actions.html">Scroll to Top</a></td><td>Left gutter, 60px below the About content</td></tr><tr><td>6</td><td>Footer</td><td><a href="../components/footer.html">Footer</a></td><td>Forest Green</td></tr><tr><td>n/a</td><td>Texture</td><td><a href="../foundations/texture.html">Grain Overlay</a></td><td>Page-level</td></tr></tbody></table></div>
 <h2 id="example-condensed"><a class="ds-anchor" href="#example-condensed">Example (condensed)</a></h2>
 <figure class="ds-example" id="ex-1"><div class="ds-example__bar"><span>Example 1</span><div class="ds-example__surfaces" role="group" aria-label="Preview surface"><button type="button" data-set-surface="cream" aria-pressed="true">Cream</button><button type="button" data-set-surface="green" aria-pressed="false">Green</button></div></div><div class="ds-preview ds-preview--bleed" data-surface="cream"><div class="mh-container" style="padding-bottom:var(--mh-section-padding-y)">
   <header class="mh-hero">
@@ -100,7 +95,7 @@
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>1</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>Gaia</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media"><img src="../../assets/samples/gaia.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">Visual identity</li><li class="mh-tag">UX/UI</li></ul></li>
       <li class="mh-project-card"><a class="mh-project-card__link" href="#"><div class="mh-project-card__meta mh-label"><span>2</span><span>/</span><span class="mh-flip"><span class="mh-flip__track"><span>AirPods Pro 3</span><span aria-hidden="true">View project</span></span></span></div><div class="mh-media" data-stroke><img src="../../assets/samples/airpods.jpg" alt=""></div></a><ul class="mh-tags"><li class="mh-tag">2D motion</li><li class="mh-tag">3D motion</li></ul></li>
     </ul>
-    <div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:var(--mh-project-grid-to-action)"><a class="mh-action" href="#"><span class="mh-flip"><span class="mh-flip__track"><span>View all</span><span aria-hidden="true">View all</span></span></span></a></div>
   </section>
 </div></div><details class="ds-code"><summary>Code</summary><button type="button" class="ds-copy">Copy</button><pre><code class="language-html">&lt;div class="mh-container" style="padding-bottom:var(--mh-section-padding-y)"&gt;
   &lt;header class="mh-hero"&gt;
@@ -119,13 +114,13 @@
       &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;Gaia&lt;/span&gt;&lt;span aria-hidden="true"&gt;View project&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media"&gt;&lt;img src="../../assets/samples/gaia.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;Visual identity&lt;/li&gt;&lt;li class="mh-tag"&gt;UX/UI&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
       &lt;li class="mh-project-card"&gt;&lt;a class="mh-project-card__link" href="#"&gt;&lt;div class="mh-project-card__meta mh-label"&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;AirPods Pro 3&lt;/span&gt;&lt;span aria-hidden="true"&gt;View project&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="mh-media" data-stroke&gt;&lt;img src="../../assets/samples/airpods.jpg" alt=""&gt;&lt;/div&gt;&lt;/a&gt;&lt;ul class="mh-tags"&gt;&lt;li class="mh-tag"&gt;2D motion&lt;/li&gt;&lt;li class="mh-tag"&gt;3D motion&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;div style="display:flex;justify-content:flex-end;margin-top:var(--mh-card-grid-to-action)"&gt;&lt;a class="mh-action" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;View all&lt;/span&gt;&lt;span aria-hidden="true"&gt;View all&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div style="display:flex;justify-content:flex-end;margin-top:var(--mh-project-grid-to-action)"&gt;&lt;a class="mh-action" href="#"&gt;&lt;span class="mh-flip"&gt;&lt;span class="mh-flip__track"&gt;&lt;span&gt;View all&lt;/span&gt;&lt;span aria-hidden="true"&gt;View all&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre></details></figure>
 <h2 id="rules"><a class="ds-anchor" href="#rules">Rules</a></h2>
-<ul><li><strong>Selected-work order</strong> is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon &amp; Schuster, National Park Playing Cards). It comes from the CMS, not code.</li><li>Six projects, never more. Everything else lives in the Index.</li><li>No hero image. The first image a visitor sees is project 1.</li><li>Vertical rhythm (from the Framer page, 2026-11-11): hero padding 100px top and bottom (name at 101px and ~126px bottom on phone); Selected work rule 6px into its section (1px phone), rule → grid 45px (35px phone); grid → View all 30px (20 mobile); 100px section bottom padding before About; About rule → title 20px, title → content 30px (20 mobile); content → Scroll to top 60px.</li><li>The Selected work title was removed on 2026-11-11 (hidden in Framer for rollback, node <code>XzikUe04m</code>); the rollback recipe is in <code>code/mirror/backups/home-layout-2026-11-11/README.md</code>.</li><li>About: 175px portrait (170 tablet/mobile), 20px gap, copy max 600px in Body L, 40px to Read more (30 tablet/mobile). On mobile the portrait stacks above the copy.</li></ul>
+<ul><li><strong>Selected-work order</strong> is a curation decision (current: Gaia, AirPods Pro 3, Peak Energy, Motion Connect 2025, Simon &amp; Schuster, National Park Playing Cards). It comes from the CMS, not code.</li><li>Six projects, never more. Everything else lives in the Index.</li><li>No hero image. The first image a visitor sees is project 1.</li><li>Vertical rhythm (from the Framer page): hero padding 100px top and bottom (name at 101px and ~126px bottom on phone); Selected work rule 6px into its section (1px phone), rule → grid 45px (35px phone); grid → View all 30px (20 mobile); 100px section bottom padding before About; About rule → title 20px, title → content 30px (20 mobile); content → Scroll to top 60px.</li><li>Selected work has no title; the label layer is hidden in Framer (node <code>XzikUe04m</code>). Rollback recipe: <code>code/mirror/backups/home-layout-2026-11-11/README.md</code>.</li><li>About: 175px portrait (170 tablet/mobile), 20px gap, copy max 600px in Body L, 40px to Read more (30 tablet/mobile). On mobile the portrait stacks above the copy.</li></ul>
 <h2 id="framer-mapping"><a class="ds-anchor" href="#framer-mapping">Framer mapping</a></h2>
-<ul><li>Selected work: <code>HomeSelectedWorkGrid</code> (<code>FecepLS</code>), which also owns the About portrait/link linked hover.</li><li>Boot and transitions: <code>PageTransition</code> (<code>gmalnRr</code>).</li><li>Home social labels: <code>TextEncryptionEffect</code> (<code>p7tSTaD</code>).</li></ul></article>
+<ul><li>Selected work: <code>HomeSelectedWorkGrid</code> (<code>FecepLS</code>), which also owns the About portrait/link linked hover.</li><li>Boot and transitions: <code>PageTransition</code> (<code>gmalnRr</code>).</li><li>Hero and footer-bar social labels: Text Flip Up (<code>TextEncryptionEffect.tsx</code>, <code>p7tSTaD</code>).</li></ul></article>
     <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/patterns/home.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
   </main>
   <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#goal">Goal</a><a href="#structure">Structure</a><a href="#example-condensed">Example (condensed)</a><a href="#rules">Rules</a><a href="#framer-mapping">Framer mapping</a></nav>

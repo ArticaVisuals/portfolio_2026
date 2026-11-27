@@ -7,7 +7,7 @@ status: live
 framer: IndexPage (rgAZFOv) via IndexPageGridPreview (LgIzFjJ)
 codeFileId: rgAZFOv
 classes: [mh-index, mh-index__group, mh-index__year, mh-index__rows, mh-index__row, mh-index__title, mh-index__discipline, mh-index__industry, mh-index__row-year]
-tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color.*.bg.hover, motion.duration.slow]
+tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color.*.bg.hover, motion.duration.base]
 ---
 
 # Index List
@@ -67,9 +67,9 @@ tokens: [type.title, type.label, color.*.text.strong, color.*.border.rule, color
 
 - Groups are years, newest first. A full-width rule opens each group; rules separate rows inside it; a final rule closes the list.
 - Text is near-black (`--mh-text-strong`), not Forest Green. This is the one dense, data-like surface on the site.
-- Row hover: a 4% near-black wash (150ms Smooth) plus the title rolling up to **View Project →** (620ms Snappy).
+- Row hover: a 4% near-black wash (150ms Smooth) plus the title rolling up to **View Project →** (420ms Snappy, like every flip).
 - **Mobile** (below 810px): no year group labels. Each row is a 56px link with the 22px uppercase title on the left and its year in 13px mono on the right; industry and discipline are hidden. Rows don't roll.
-- The list sits under the [Filter Group](filter-group.md) and the [View Toggle](view-toggle.md); filtering hides rows and empty groups without moving the filters.
+- The list sits under the [Filter Group](index-controls.md) and the [View Toggle](index-controls.md); filtering hides rows and empty groups without moving the filters.
 
 ## API
 

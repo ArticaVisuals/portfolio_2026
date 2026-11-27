@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog – Micah Hoang Design System</title>
+<meta name="description" content="How the live site and this design system have changed, newest first. Every other page describes the current state only.">
+<link rel="alternate" type="text/markdown" href="../../content/reference/changelog.md">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../css/type.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../assets/docs.css">
+</head>
+<body data-surface="cream" class="ds-body">
+<a class="ds-skip mh-label" href="#main">Skip to content</a>
+<header class="ds-header">
+  <button type="button" class="ds-menu mh-label" aria-expanded="false" aria-controls="ds-sidebar">Menu</button>
+  <a class="ds-brand mh-label" href="../index.html">Micah Hoang <span class="mh-text-muted">/ Design System</span></a>
+  <label class="ds-search"><span class="mh-visually-hidden">Search</span><input type="search" placeholder="Search" autocomplete="off" data-ds-search><kbd class="mh-label">⌘K</kbd></label>
+  <div class="ds-search-results" data-ds-results hidden></div>
+  <button type="button" class="ds-theme mh-label" data-ds-theme aria-pressed="false">Green</button>
+  <a class="ds-live mh-label" href="https://micahhoang.com" target="_blank" rel="noopener">micahhoang.com ↗</a>
+</header>
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="ds-sidebar"><nav class="ds-nav" aria-label="Design system"><a class="ds-nav__link" href="../index.html">Overview</a>
+<p class="ds-nav__section mh-label">Foundations</p>
+<a class="ds-nav__link" href="../foundations/principles.html">Principles</a>
+<a class="ds-nav__link" href="../foundations/colors.html">Colors</a>
+<a class="ds-nav__link" href="../foundations/typography.html">Typography</a>
+<a class="ds-nav__link" href="../foundations/layout.html">Layout</a>
+<a class="ds-nav__link" href="../foundations/motion.html">Motion</a>
+<a class="ds-nav__link" href="../foundations/texture.html">Texture</a>
+<a class="ds-nav__link" href="../foundations/identity.html">Identity</a>
+<p class="ds-nav__section mh-label">Components</p>
+<a class="ds-nav__link" href="../components/label.html">Mono Label</a>
+<a class="ds-nav__link" href="../components/links-actions.html">Links & Actions</a>
+<a class="ds-nav__link" href="../components/tag.html">Tag</a>
+<a class="ds-nav__link" href="../components/rule.html">Rule</a>
+<a class="ds-nav__link" href="../components/section-header.html">Section Header</a>
+<a class="ds-nav__link" href="../components/navigation.html">Navigation</a>
+<a class="ds-nav__link" href="../components/footer.html">Footer</a>
+<a class="ds-nav__link" href="../components/hero.html">Hero</a>
+<a class="ds-nav__link" href="../components/media-frame.html">Media Frame</a>
+<a class="ds-nav__link" href="../components/project-card.html">Project Card</a>
+<a class="ds-nav__link" href="../components/index-list.html">Index List</a>
+<a class="ds-nav__link" href="../components/index-controls.html">Index Controls</a>
+<a class="ds-nav__link" href="../components/meta-grid.html">Meta Grid</a>
+<a class="ds-nav__link" href="../components/lightbox.html">Lightbox</a>
+<a class="ds-nav__link" href="../components/testimonial.html">Testimonial</a>
+<a class="ds-nav__link" href="../components/page-loader.html">Page Loader</a>
+<p class="ds-nav__section mh-label">Patterns</p>
+<a class="ds-nav__link" href="../patterns/home.html">Home</a>
+<a class="ds-nav__link" href="../patterns/case-study.html">Case Study</a>
+<a class="ds-nav__link" href="../patterns/index-archive.html">Index</a>
+<p class="ds-nav__section mh-label">Reference</p>
+<a class="ds-nav__link is-current" href="../reference/changelog.html">Changelog</a>
+<p class="ds-nav__section mh-label">For agents</p>
+<a class="ds-nav__link ds-nav__link--file" href="../../agents.md">agents.md</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms.txt">llms.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../llms-full.txt">llms-full.txt</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../components.json">components.json</a>
+<a class="ds-nav__link ds-nav__link--file" href="../../tokens/tokens.json">tokens.json</a></nav></aside>
+  <main class="ds-main" id="main">
+    <header class="ds-page-head">
+      <p class="mh-label mh-text-muted">Reference</p>
+      <div class="ds-page-head__row">
+        <h1 class="mh-text-display-m">Changelog</h1>
+        <a class="mh-action" data-variant="pill" href="../../content/reference/changelog.md" title="This page as markdown, for agents">Markdown</a>
+      </div>
+      <p class="ds-lede mh-text-heading">How the live site and this design system have changed, newest first. Every other page describes the current state only.</p>
+      
+      <hr class="mh-rule">
+    </header>
+    <article class="ds-prose"><p>Dates are when the change was published on micahhoang.com. Each entry names where the detail lives in the repo.</p>
+<h2 id="2026-11-27-design-system-consolidation"><a class="ds-anchor" href="#2026-11-27-design-system-consolidation">2026-11-27: design system consolidation</a></h2>
+<ul><li>Pages merged, 34 → 27 (plus this changelog): Principles absorbs Interaction Principles; Motion absorbs Gesture; Texture absorbs Grain Overlay; <strong>Links &amp; Actions</strong> replaces Text Link, Action and Scroll to Top; Project Card absorbs Project Grid; <strong>Index Controls</strong> replaces Filter Group and View Toggle.</li><li>Tokens: per-component values moved from <code>layout</code> into a <code>component</code> group. Renamed: <code>heading-word-gap</code> → <code>section-header-word-gap</code>, <code>section-rule-after</code> → <code>section-header-rule-after</code>, <code>card-grid-to-action</code> → <code>project-grid-to-action</code>, <code>cta-row-gap</code> / <code>cta-suffix-gap</code> → <code>footer-row-gap</code> / <code>footer-suffix-gap</code>, <code>pill-scroll-clearance</code> → <code>tag-scroll-clearance</code>, <code>nav-gutter</code> → <code>gutter</code>. Removed (unused or retired): <code>about-image-width</code>, <code>about-copy-width</code>, <code>space-13</code>, <code>duration-slow</code>, <code>type.label-sm</code>, <code>bg-inverse</code>.</li><li>History moved here; pages are present tense.</li><li>Found on the live site while syncing: footer "Get in touch" now keeps its 130% leading on tablet and phone (it used to drop to 100%), so the contact rows sit 4px lower there.</li></ul>
+<h2 id="2026-11-23-one-flip-timing-social-flip-ups-responsive-case-study-media"><a class="ds-anchor" href="#2026-11-23-one-flip-timing-social-flip-ups-responsive-case-study-media">2026-11-23: one flip timing, social flip-ups, responsive case-study media</a></h2>
+<ul><li>Every text flip (nav, links, project titles, Index rows, Scroll to top, Play labels) runs 420ms Snappy through one variable, <code>--mh-flip-duration</code>, set in <code>ResumeAssetHost</code> and <code>0ms</code> under reduced motion. Index rows were 620ms.</li><li>Hero and footer-bar social labels flip up one line instead of scrambling (<code>TextEncryptionEffect.tsx</code>, <code>p7tSTaD</code>, now "Text Flip Up").</li><li>Case-study images serve responsive sizes; offscreen Simon &amp; Schuster spreads load late (<code>code/mirror/case-media-2026-11-23.json</code>).</li></ul>
+<h2 id="2026-11-11-home-simplification-monogram-index-refinements"><a class="ds-anchor" href="#2026-11-11-home-simplification-monogram-index-refinements">2026-11-11: Home simplification, monogram, Index refinements</a></h2>
+<ul><li>Home: the Selected work title was removed (Framer node <code>XzikUe04m</code> hidden; rollback in <code>code/mirror/backups/home-layout-2026-11-11/</code>). The rule now sits 45px above the grid (35px phone).</li><li>Home hero name moved into normal flow with a phone-fluid size, <code>min(58px, (100vw − 40px) / 6.2)</code>, so it can't overflow narrow screens. Before, it was absolutely positioned 10px up and 6px left.</li><li>The boot loader shows the ©MH monogram (Figma <code>168:541</code>) at 237.5 / 190px, replacing the full wordmark.</li><li>Index: the project count cross-fades changed digits in fixed slots; mobile filter panels grow from their trigger (250ms in, 150ms out).</li><li>Nav rollover labels both use 100% leading, so the replacement lands exactly on the resting label.</li></ul>
+<h2 id="2026-10-30-mobile-pass"><a class="ds-anchor" href="#2026-10-30-mobile-pass">2026-10-30: mobile pass</a></h2>
+<ul><li>Mobile gutter unified to 20px on every route (was 15px, 14px on Index).</li><li>44px minimum touch targets for every mobile link, pill, filter, toggle, menu button and footer row.</li><li>Phone reading text 18px / 140% (Body L was 15px / 130%, Body M 14px); Heading 3 is 28px on tablet and 24px on phone.</li><li>Every mono label is 13px; the 12px tablet/mobile tag size is gone. Mobile pills are 44px tall with 24px side padding, in a single row that scrolls edge to edge.</li><li>Stroke Gray lightened from <code>#707070</code> to <code>#848484</code> (3.43:1), the midpoint between the darker contrast fix and the original <code>#979797</code>.</li><li>Native mobile navigation: name + MENU, full-screen Forest Green panel.</li><li>Index: Year / Service / Industry disclosure buttons on mobile; rows carry their own year.</li><li>Footer: GitHub added as a fourth contact; phone contact labels are fluid (28–38px).</li><li>Case-study headings on mobile reveal line by line; a head stylesheet renders them in place under reduced motion.</li><li>Detail: the dated notes in <code>docs/</code> (e.g. <code>mobile-type-gutters-footer-2026-10-30.md</code>).</li></ul>
+<h2 id="2026-10-23-vector-loader-identity-play-drawer"><a class="ds-anchor" href="#2026-10-23-vector-loader-identity-play-drawer">2026-10-23: vector loader identity, Play drawer</a></h2>
+<ul><li>The boot loader showed an outlined © Micah Hoang wordmark (Figma <code>91:521</code>) instead of text. The monogram replaced it on 2026-11-11.</li><li><code>/play</code> drawer: 500ms open / 400ms close on the Smooth curve; Safari idle-drift fix.</li></ul>
+<h2 id="2026-10-01-first-version"><a class="ds-anchor" href="#2026-10-01-first-version">2026-10-01: first version</a></h2>
+<ul><li>Design system created from the published site and the Framer project: tokens, docs site, agent files and the QA fixture.</li></ul></article>
+    <footer class="ds-page-foot"><span class="mh-label mh-text-muted">Source: content/reference/changelog.md</span><span class="mh-label mh-text-muted">©2026</span></footer>
+  </main>
+  <nav class="ds-toc" aria-label="On this page"><p class="mh-label mh-text-muted">On this page</p><a href="#2026-11-27-design-system-consolidation">2026-11-27: design system consolidation</a><a href="#2026-11-23-one-flip-timing-social-flip-ups-responsive-case-study-media">2026-11-23: one flip timing, social flip-ups, responsive case-study media</a><a href="#2026-11-11-home-simplification-monogram-index-refinements">2026-11-11: Home simplification, monogram, Index refinements</a><a href="#2026-10-30-mobile-pass">2026-10-30: mobile pass</a><a href="#2026-10-23-vector-loader-identity-play-drawer">2026-10-23: vector loader identity, Play drawer</a><a href="#2026-10-01-first-version">2026-10-01: first version</a></nav>
+</div>
+<script src="../assets/search-index.js"></script>
+<script src="../../js/components.js"></script>
+<script src="../assets/docs.js"></script>
+</body>
+</html>

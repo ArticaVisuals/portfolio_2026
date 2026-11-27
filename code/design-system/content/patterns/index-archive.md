@@ -19,11 +19,11 @@ Everything Micah has made, scannable in seconds and filterable by year, discipli
 | --- | --- | --- | --- |
 | 1 | Nav | [Navigation](../components/navigation.md) | |
 | 2 | Title | Display M "Index" | Rises in on arrival |
-| 3 | Filters | [Filter Group](../components/filter-group.md) | Year / Service / Industry; "Clear filters" reserved space. Disclosure buttons on mobile |
-| 3b | Count | Result count ([Filter Group](../components/filter-group.md#result-count)) | "17 Projects", digits cross-fade when filters change |
-| 4 | View | [View Toggle](../components/view-toggle.md) | Right-aligned: GRID / LIST |
+| 3 | Filters | [Filter Group](../components/index-controls.md) | Year / Service / Industry; "Clear filters" reserved space. Disclosure buttons on mobile |
+| 3b | Count | Result count ([Filter Group](../components/index-controls.md#result-count)) | "17 Projects", digits cross-fade when filters change |
+| 4 | View | [View Toggle](../components/index-controls.md) | Right-aligned: GRID / LIST |
 | 5a | List view | [Index List](../components/index-list.md) | Year groups, ruled rows |
-| 5b | Grid view | [Project Grid](../components/project-grid.md) `data-columns="3"` | Cards with tags; tags toggle filters |
+| 5b | Grid view | [Project Grid](../components/project-card.md) `data-columns="3"` | Cards with tags; tags toggle filters |
 | 6 | Footer | [Footer](../components/footer.md) | |
 
 ## Example (condensed)
